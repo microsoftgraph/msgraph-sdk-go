@@ -51,13 +51,16 @@ func (m *EntitlementManagementRoleAssignmentsUnifiedRoleAssignmentItemRequestBui
     return NewEntitlementManagementRoleAssignmentsItemAppScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewEntitlementManagementRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderInternal instantiates a new UnifiedRoleAssignmentItemRequestBuilder and sets the default values.
-func NewEntitlementManagementRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) {
+func NewEntitlementManagementRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, unifiedRoleAssignmentId *string)(*EntitlementManagementRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) {
     m := &EntitlementManagementRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/roleManagement/entitlementManagement/roleAssignments/{unifiedRoleAssignment%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if unifiedRoleAssignmentId != nil {
+        urlTplParams["unifiedRoleAssignment%2Did"] = *unifiedRoleAssignmentId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -67,7 +70,7 @@ func NewEntitlementManagementRoleAssignmentsUnifiedRoleAssignmentItemRequestBuil
 func NewEntitlementManagementRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewEntitlementManagementRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewEntitlementManagementRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property roleAssignments for roleManagement
 func (m *EntitlementManagementRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *EntitlementManagementRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -170,7 +173,10 @@ func (m *EntitlementManagementRoleAssignmentsUnifiedRoleAssignmentItemRequestBui
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

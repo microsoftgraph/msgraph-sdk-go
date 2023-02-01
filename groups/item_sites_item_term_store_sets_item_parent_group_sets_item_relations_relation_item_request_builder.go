@@ -47,13 +47,16 @@ type ItemSitesItemTermStoreSetsItemParentGroupSetsItemRelationsRelationItemReque
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemSitesItemTermStoreSetsItemParentGroupSetsItemRelationsRelationItemRequestBuilderInternal instantiates a new RelationItemRequestBuilder and sets the default values.
-func NewItemSitesItemTermStoreSetsItemParentGroupSetsItemRelationsRelationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemTermStoreSetsItemParentGroupSetsItemRelationsRelationItemRequestBuilder) {
+func NewItemSitesItemTermStoreSetsItemParentGroupSetsItemRelationsRelationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, relationId *string)(*ItemSitesItemTermStoreSetsItemParentGroupSetsItemRelationsRelationItemRequestBuilder) {
     m := &ItemSitesItemTermStoreSetsItemParentGroupSetsItemRelationsRelationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/termStore/sets/{set%2Did}/parentGroup/sets/{set%2Did1}/relations/{relation%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if relationId != nil {
+        urlTplParams["relation%2Did"] = *relationId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewItemSitesItemTermStoreSetsItemParentGroupSetsItemRelationsRelationItemRe
 func NewItemSitesItemTermStoreSetsItemParentGroupSetsItemRelationsRelationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemTermStoreSetsItemParentGroupSetsItemRelationsRelationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemSitesItemTermStoreSetsItemParentGroupSetsItemRelationsRelationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemSitesItemTermStoreSetsItemParentGroupSetsItemRelationsRelationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property relations for groups
 func (m *ItemSitesItemTermStoreSetsItemParentGroupSetsItemRelationsRelationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSitesItemTermStoreSetsItemParentGroupSetsItemRelationsRelationItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -162,7 +165,10 @@ func (m *ItemSitesItemTermStoreSetsItemParentGroupSetsItemRelationsRelationItemR
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

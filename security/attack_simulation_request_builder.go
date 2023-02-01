@@ -129,10 +129,7 @@ func (m *AttackSimulationRequestBuilder) SimulationAutomationsById(id string)(*A
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["simulationAutomation%2Did"] = id
-    }
-    return NewAttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Simulations provides operations to manage the simulations property of the microsoft.graph.attackSimulationRoot entity.
 func (m *AttackSimulationRequestBuilder) Simulations()(*AttackSimulationSimulationsRequestBuilder) {
@@ -144,10 +141,7 @@ func (m *AttackSimulationRequestBuilder) SimulationsById(id string)(*AttackSimul
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["simulation%2Did"] = id
-    }
-    return NewAttackSimulationSimulationsSimulationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAttackSimulationSimulationsSimulationItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // ToDeleteRequestInformation delete navigation property attackSimulation for security
 func (m *AttackSimulationRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -184,7 +178,10 @@ func (m *AttackSimulationRequestBuilder) ToPatchRequestInformation(ctx context.C
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

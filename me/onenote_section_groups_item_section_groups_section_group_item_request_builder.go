@@ -33,13 +33,16 @@ type OnenoteSectionGroupsItemSectionGroupsSectionGroupItemRequestBuilderGetReque
     QueryParameters *OnenoteSectionGroupsItemSectionGroupsSectionGroupItemRequestBuilderGetQueryParameters
 }
 // NewOnenoteSectionGroupsItemSectionGroupsSectionGroupItemRequestBuilderInternal instantiates a new SectionGroupItemRequestBuilder and sets the default values.
-func NewOnenoteSectionGroupsItemSectionGroupsSectionGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OnenoteSectionGroupsItemSectionGroupsSectionGroupItemRequestBuilder) {
+func NewOnenoteSectionGroupsItemSectionGroupsSectionGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, sectionGroupId1 *string)(*OnenoteSectionGroupsItemSectionGroupsSectionGroupItemRequestBuilder) {
     m := &OnenoteSectionGroupsItemSectionGroupsSectionGroupItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/onenote/sectionGroups/{sectionGroup%2Did}/sectionGroups/{sectionGroup%2Did1}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if sectionGroupId1 != nil {
+        urlTplParams["sectionGroup%2Did1"] = *sectionGroupId1
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -49,7 +52,7 @@ func NewOnenoteSectionGroupsItemSectionGroupsSectionGroupItemRequestBuilderInter
 func NewOnenoteSectionGroupsItemSectionGroupsSectionGroupItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OnenoteSectionGroupsItemSectionGroupsSectionGroupItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewOnenoteSectionGroupsItemSectionGroupsSectionGroupItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewOnenoteSectionGroupsItemSectionGroupsSectionGroupItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get the section groups in the section. Read-only. Nullable.
 func (m *OnenoteSectionGroupsItemSectionGroupsSectionGroupItemRequestBuilder) Get(ctx context.Context, requestConfiguration *OnenoteSectionGroupsItemSectionGroupsSectionGroupItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SectionGroupable, error) {

@@ -55,13 +55,16 @@ func (m *EntitlementManagementAccessPackagesItemAssignmentPoliciesAccessPackageA
     return NewEntitlementManagementAccessPackagesItemAssignmentPoliciesItemCatalogRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewEntitlementManagementAccessPackagesItemAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilderInternal instantiates a new AccessPackageAssignmentPolicyItemRequestBuilder and sets the default values.
-func NewEntitlementManagementAccessPackagesItemAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackagesItemAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilder) {
+func NewEntitlementManagementAccessPackagesItemAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, accessPackageAssignmentPolicyId *string)(*EntitlementManagementAccessPackagesItemAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilder) {
     m := &EntitlementManagementAccessPackagesItemAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackages/{accessPackage%2Did}/assignmentPolicies/{accessPackageAssignmentPolicy%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if accessPackageAssignmentPolicyId != nil {
+        urlTplParams["accessPackageAssignmentPolicy%2Did"] = *accessPackageAssignmentPolicyId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -71,7 +74,7 @@ func NewEntitlementManagementAccessPackagesItemAssignmentPoliciesAccessPackageAs
 func NewEntitlementManagementAccessPackagesItemAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackagesItemAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewEntitlementManagementAccessPackagesItemAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewEntitlementManagementAccessPackagesItemAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property assignmentPolicies for identityGovernance
 func (m *EntitlementManagementAccessPackagesItemAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -162,7 +165,10 @@ func (m *EntitlementManagementAccessPackagesItemAssignmentPoliciesAccessPackageA
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

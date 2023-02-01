@@ -129,10 +129,7 @@ func (m *DirectoryRequestBuilder) RoleAssignmentsById(id string)(*DirectoryRoleA
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["unifiedRoleAssignment%2Did"] = id
-    }
-    return NewDirectoryRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDirectoryRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // RoleAssignmentScheduleInstances provides operations to manage the roleAssignmentScheduleInstances property of the microsoft.graph.rbacApplication entity.
 func (m *DirectoryRequestBuilder) RoleAssignmentScheduleInstances()(*DirectoryRoleAssignmentScheduleInstancesRequestBuilder) {
@@ -144,10 +141,7 @@ func (m *DirectoryRequestBuilder) RoleAssignmentScheduleInstancesById(id string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["unifiedRoleAssignmentScheduleInstance%2Did"] = id
-    }
-    return NewDirectoryRoleAssignmentScheduleInstancesUnifiedRoleAssignmentScheduleInstanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDirectoryRoleAssignmentScheduleInstancesUnifiedRoleAssignmentScheduleInstanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // RoleAssignmentScheduleRequests provides operations to manage the roleAssignmentScheduleRequests property of the microsoft.graph.rbacApplication entity.
 func (m *DirectoryRequestBuilder) RoleAssignmentScheduleRequests()(*DirectoryRoleAssignmentScheduleRequestsRequestBuilder) {
@@ -159,10 +153,7 @@ func (m *DirectoryRequestBuilder) RoleAssignmentScheduleRequestsById(id string)(
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["unifiedRoleAssignmentScheduleRequest%2Did"] = id
-    }
-    return NewDirectoryRoleAssignmentScheduleRequestsUnifiedRoleAssignmentScheduleRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDirectoryRoleAssignmentScheduleRequestsUnifiedRoleAssignmentScheduleRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // RoleAssignmentSchedules provides operations to manage the roleAssignmentSchedules property of the microsoft.graph.rbacApplication entity.
 func (m *DirectoryRequestBuilder) RoleAssignmentSchedules()(*DirectoryRoleAssignmentSchedulesRequestBuilder) {
@@ -174,10 +165,7 @@ func (m *DirectoryRequestBuilder) RoleAssignmentSchedulesById(id string)(*Direct
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["unifiedRoleAssignmentSchedule%2Did"] = id
-    }
-    return NewDirectoryRoleAssignmentSchedulesUnifiedRoleAssignmentScheduleItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDirectoryRoleAssignmentSchedulesUnifiedRoleAssignmentScheduleItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // RoleDefinitions provides operations to manage the roleDefinitions property of the microsoft.graph.rbacApplication entity.
 func (m *DirectoryRequestBuilder) RoleDefinitions()(*DirectoryRoleDefinitionsRequestBuilder) {
@@ -189,10 +177,7 @@ func (m *DirectoryRequestBuilder) RoleDefinitionsById(id string)(*DirectoryRoleD
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["unifiedRoleDefinition%2Did"] = id
-    }
-    return NewDirectoryRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDirectoryRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // RoleEligibilityScheduleInstances provides operations to manage the roleEligibilityScheduleInstances property of the microsoft.graph.rbacApplication entity.
 func (m *DirectoryRequestBuilder) RoleEligibilityScheduleInstances()(*DirectoryRoleEligibilityScheduleInstancesRequestBuilder) {
@@ -204,10 +189,7 @@ func (m *DirectoryRequestBuilder) RoleEligibilityScheduleInstancesById(id string
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["unifiedRoleEligibilityScheduleInstance%2Did"] = id
-    }
-    return NewDirectoryRoleEligibilityScheduleInstancesUnifiedRoleEligibilityScheduleInstanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDirectoryRoleEligibilityScheduleInstancesUnifiedRoleEligibilityScheduleInstanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // RoleEligibilityScheduleRequests provides operations to manage the roleEligibilityScheduleRequests property of the microsoft.graph.rbacApplication entity.
 func (m *DirectoryRequestBuilder) RoleEligibilityScheduleRequests()(*DirectoryRoleEligibilityScheduleRequestsRequestBuilder) {
@@ -219,10 +201,7 @@ func (m *DirectoryRequestBuilder) RoleEligibilityScheduleRequestsById(id string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["unifiedRoleEligibilityScheduleRequest%2Did"] = id
-    }
-    return NewDirectoryRoleEligibilityScheduleRequestsUnifiedRoleEligibilityScheduleRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDirectoryRoleEligibilityScheduleRequestsUnifiedRoleEligibilityScheduleRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // RoleEligibilitySchedules provides operations to manage the roleEligibilitySchedules property of the microsoft.graph.rbacApplication entity.
 func (m *DirectoryRequestBuilder) RoleEligibilitySchedules()(*DirectoryRoleEligibilitySchedulesRequestBuilder) {
@@ -234,10 +213,7 @@ func (m *DirectoryRequestBuilder) RoleEligibilitySchedulesById(id string)(*Direc
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["unifiedRoleEligibilitySchedule%2Did"] = id
-    }
-    return NewDirectoryRoleEligibilitySchedulesUnifiedRoleEligibilityScheduleItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDirectoryRoleEligibilitySchedulesUnifiedRoleEligibilityScheduleItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // ToDeleteRequestInformation delete navigation property directory for roleManagement
 func (m *DirectoryRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DirectoryRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -274,7 +250,10 @@ func (m *DirectoryRequestBuilder) ToPatchRequestInformation(ctx context.Context,
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

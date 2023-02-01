@@ -49,10 +49,7 @@ func (m *PrintRequestBuilder) ConnectorsById(id string)(*ConnectorsPrintConnecto
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["printConnector%2Did"] = id
-    }
-    return NewConnectorsPrintConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewConnectorsPrintConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // NewPrintRequestBuilderInternal instantiates a new PrintRequestBuilder and sets the default values.
 func NewPrintRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrintRequestBuilder) {
@@ -102,10 +99,7 @@ func (m *PrintRequestBuilder) OperationsById(id string)(*OperationsPrintOperatio
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["printOperation%2Did"] = id
-    }
-    return NewOperationsPrintOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewOperationsPrintOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Patch update print
 func (m *PrintRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Printable, requestConfiguration *PrintRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Printable, error) {
@@ -136,10 +130,7 @@ func (m *PrintRequestBuilder) PrintersById(id string)(*PrintersPrinterItemReques
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["printer%2Did"] = id
-    }
-    return NewPrintersPrinterItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPrintersPrinterItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Services provides operations to manage the services property of the microsoft.graph.print entity.
 func (m *PrintRequestBuilder) Services()(*ServicesRequestBuilder) {
@@ -151,10 +142,7 @@ func (m *PrintRequestBuilder) ServicesById(id string)(*ServicesPrintServiceItemR
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["printService%2Did"] = id
-    }
-    return NewServicesPrintServiceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewServicesPrintServiceItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Shares provides operations to manage the shares property of the microsoft.graph.print entity.
 func (m *PrintRequestBuilder) Shares()(*SharesRequestBuilder) {
@@ -166,10 +154,7 @@ func (m *PrintRequestBuilder) SharesById(id string)(*SharesPrinterShareItemReque
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["printerShare%2Did"] = id
-    }
-    return NewSharesPrinterShareItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSharesPrinterShareItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // TaskDefinitions provides operations to manage the taskDefinitions property of the microsoft.graph.print entity.
 func (m *PrintRequestBuilder) TaskDefinitions()(*TaskDefinitionsRequestBuilder) {
@@ -181,10 +166,7 @@ func (m *PrintRequestBuilder) TaskDefinitionsById(id string)(*TaskDefinitionsPri
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["printTaskDefinition%2Did"] = id
-    }
-    return NewTaskDefinitionsPrintTaskDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTaskDefinitionsPrintTaskDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // ToGetRequestInformation get print
 func (m *PrintRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrintRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -209,7 +191,10 @@ func (m *PrintRequestBuilder) ToPatchRequestInformation(ctx context.Context, bod
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

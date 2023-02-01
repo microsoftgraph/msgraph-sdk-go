@@ -47,13 +47,16 @@ type EntitlementManagementRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilder
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewEntitlementManagementRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilderInternal instantiates a new UnifiedRoleDefinitionItemRequestBuilder and sets the default values.
-func NewEntitlementManagementRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilder) {
+func NewEntitlementManagementRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, unifiedRoleDefinitionId *string)(*EntitlementManagementRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilder) {
     m := &EntitlementManagementRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/roleManagement/entitlementManagement/roleDefinitions/{unifiedRoleDefinition%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if unifiedRoleDefinitionId != nil {
+        urlTplParams["unifiedRoleDefinition%2Did"] = *unifiedRoleDefinitionId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewEntitlementManagementRoleDefinitionsUnifiedRoleDefinitionItemRequestBuil
 func NewEntitlementManagementRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewEntitlementManagementRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewEntitlementManagementRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property roleDefinitions for roleManagement
 func (m *EntitlementManagementRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *EntitlementManagementRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -110,10 +113,7 @@ func (m *EntitlementManagementRoleDefinitionsUnifiedRoleDefinitionItemRequestBui
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["unifiedRoleDefinition%2Did1"] = id
-    }
-    return NewEntitlementManagementRoleDefinitionsItemInheritsPermissionsFromUnifiedRoleDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEntitlementManagementRoleDefinitionsItemInheritsPermissionsFromUnifiedRoleDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Patch update the navigation property roleDefinitions in roleManagement
 func (m *EntitlementManagementRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleDefinitionable, requestConfiguration *EntitlementManagementRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleDefinitionable, error) {
@@ -169,7 +169,10 @@ func (m *EntitlementManagementRoleDefinitionsUnifiedRoleDefinitionItemRequestBui
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -47,13 +47,16 @@ type AccessReviewsHistoryDefinitionsItemInstancesAccessReviewHistoryInstanceItem
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewAccessReviewsHistoryDefinitionsItemInstancesAccessReviewHistoryInstanceItemRequestBuilderInternal instantiates a new AccessReviewHistoryInstanceItemRequestBuilder and sets the default values.
-func NewAccessReviewsHistoryDefinitionsItemInstancesAccessReviewHistoryInstanceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AccessReviewsHistoryDefinitionsItemInstancesAccessReviewHistoryInstanceItemRequestBuilder) {
+func NewAccessReviewsHistoryDefinitionsItemInstancesAccessReviewHistoryInstanceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, accessReviewHistoryInstanceId *string)(*AccessReviewsHistoryDefinitionsItemInstancesAccessReviewHistoryInstanceItemRequestBuilder) {
     m := &AccessReviewsHistoryDefinitionsItemInstancesAccessReviewHistoryInstanceItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/identityGovernance/accessReviews/historyDefinitions/{accessReviewHistoryDefinition%2Did}/instances/{accessReviewHistoryInstance%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if accessReviewHistoryInstanceId != nil {
+        urlTplParams["accessReviewHistoryInstance%2Did"] = *accessReviewHistoryInstanceId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewAccessReviewsHistoryDefinitionsItemInstancesAccessReviewHistoryInstanceI
 func NewAccessReviewsHistoryDefinitionsItemInstancesAccessReviewHistoryInstanceItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AccessReviewsHistoryDefinitionsItemInstancesAccessReviewHistoryInstanceItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewAccessReviewsHistoryDefinitionsItemInstancesAccessReviewHistoryInstanceItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewAccessReviewsHistoryDefinitionsItemInstancesAccessReviewHistoryInstanceItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property instances for identityGovernance
 func (m *AccessReviewsHistoryDefinitionsItemInstancesAccessReviewHistoryInstanceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AccessReviewsHistoryDefinitionsItemInstancesAccessReviewHistoryInstanceItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -80,10 +83,6 @@ func (m *AccessReviewsHistoryDefinitionsItemInstancesAccessReviewHistoryInstance
         return err
     }
     return nil
-}
-// GenerateDownloadUri provides operations to call the generateDownloadUri method.
-func (m *AccessReviewsHistoryDefinitionsItemInstancesAccessReviewHistoryInstanceItemRequestBuilder) GenerateDownloadUri()(*AccessReviewsHistoryDefinitionsItemInstancesItemGenerateDownloadUriRequestBuilder) {
-    return NewAccessReviewsHistoryDefinitionsItemInstancesItemGenerateDownloadUriRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get if the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that does not recur will have exactly one instance.
 func (m *AccessReviewsHistoryDefinitionsItemInstancesAccessReviewHistoryInstanceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AccessReviewsHistoryDefinitionsItemInstancesAccessReviewHistoryInstanceItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewHistoryInstanceable, error) {
@@ -103,6 +102,10 @@ func (m *AccessReviewsHistoryDefinitionsItemInstancesAccessReviewHistoryInstance
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewHistoryInstanceable), nil
+}
+// MicrosoftGraphGenerateDownloadUri provides operations to call the generateDownloadUri method.
+func (m *AccessReviewsHistoryDefinitionsItemInstancesAccessReviewHistoryInstanceItemRequestBuilder) MicrosoftGraphGenerateDownloadUri()(*AccessReviewsHistoryDefinitionsItemInstancesItemMicrosoftGraphGenerateDownloadUriGenerateDownloadUriRequestBuilder) {
+    return NewAccessReviewsHistoryDefinitionsItemInstancesItemMicrosoftGraphGenerateDownloadUriGenerateDownloadUriRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Patch update the navigation property instances in identityGovernance
 func (m *AccessReviewsHistoryDefinitionsItemInstancesAccessReviewHistoryInstanceItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewHistoryInstanceable, requestConfiguration *AccessReviewsHistoryDefinitionsItemInstancesAccessReviewHistoryInstanceItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewHistoryInstanceable, error) {
@@ -158,7 +161,10 @@ func (m *AccessReviewsHistoryDefinitionsItemInstancesAccessReviewHistoryInstance
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

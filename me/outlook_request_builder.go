@@ -78,22 +78,19 @@ func (m *OutlookRequestBuilder) MasterCategoriesById(id string)(*OutlookMasterCa
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["outlookCategory%2Did"] = id
-    }
-    return NewOutlookMasterCategoriesOutlookCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewOutlookMasterCategoriesOutlookCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
-// SupportedLanguages provides operations to call the supportedLanguages method.
-func (m *OutlookRequestBuilder) SupportedLanguages()(*OutlookSupportedLanguagesRequestBuilder) {
-    return NewOutlookSupportedLanguagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphSupportedLanguages provides operations to call the supportedLanguages method.
+func (m *OutlookRequestBuilder) MicrosoftGraphSupportedLanguages()(*OutlookMicrosoftGraphSupportedLanguagesSupportedLanguagesRequestBuilder) {
+    return NewOutlookMicrosoftGraphSupportedLanguagesSupportedLanguagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SupportedTimeZones provides operations to call the supportedTimeZones method.
-func (m *OutlookRequestBuilder) SupportedTimeZones()(*OutlookSupportedTimeZonesRequestBuilder) {
-    return NewOutlookSupportedTimeZonesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphSupportedTimeZones provides operations to call the supportedTimeZones method.
+func (m *OutlookRequestBuilder) MicrosoftGraphSupportedTimeZones()(*OutlookMicrosoftGraphSupportedTimeZonesSupportedTimeZonesRequestBuilder) {
+    return NewOutlookMicrosoftGraphSupportedTimeZonesSupportedTimeZonesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SupportedTimeZonesWithTimeZoneStandard provides operations to call the supportedTimeZones method.
-func (m *OutlookRequestBuilder) SupportedTimeZonesWithTimeZoneStandard(timeZoneStandard *string)(*OutlookSupportedTimeZonesWithTimeZoneStandardRequestBuilder) {
-    return NewOutlookSupportedTimeZonesWithTimeZoneStandardRequestBuilderInternal(m.pathParameters, m.requestAdapter, timeZoneStandard);
+// MicrosoftGraphSupportedTimeZonesWithTimeZoneStandard provides operations to call the supportedTimeZones method.
+func (m *OutlookRequestBuilder) MicrosoftGraphSupportedTimeZonesWithTimeZoneStandard(timeZoneStandard *string)(*OutlookMicrosoftGraphSupportedTimeZonesWithTimeZoneStandardSupportedTimeZonesWithTimeZoneStandardRequestBuilder) {
+    return NewOutlookMicrosoftGraphSupportedTimeZonesWithTimeZoneStandardSupportedTimeZonesWithTimeZoneStandardRequestBuilderInternal(m.pathParameters, m.requestAdapter, timeZoneStandard);
 }
 // ToGetRequestInformation get outlook from me
 func (m *OutlookRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OutlookRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

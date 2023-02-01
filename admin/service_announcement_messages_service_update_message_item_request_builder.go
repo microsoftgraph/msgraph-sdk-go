@@ -60,19 +60,19 @@ func (m *ServiceAnnouncementMessagesServiceUpdateMessageItemRequestBuilder) Atta
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["serviceAnnouncementAttachment%2Did"] = id
-    }
-    return NewServiceAnnouncementMessagesItemAttachmentsServiceAnnouncementAttachmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewServiceAnnouncementMessagesItemAttachmentsServiceAnnouncementAttachmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // NewServiceAnnouncementMessagesServiceUpdateMessageItemRequestBuilderInternal instantiates a new ServiceUpdateMessageItemRequestBuilder and sets the default values.
-func NewServiceAnnouncementMessagesServiceUpdateMessageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ServiceAnnouncementMessagesServiceUpdateMessageItemRequestBuilder) {
+func NewServiceAnnouncementMessagesServiceUpdateMessageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, serviceUpdateMessageId *string)(*ServiceAnnouncementMessagesServiceUpdateMessageItemRequestBuilder) {
     m := &ServiceAnnouncementMessagesServiceUpdateMessageItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/admin/serviceAnnouncement/messages/{serviceUpdateMessage%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if serviceUpdateMessageId != nil {
+        urlTplParams["serviceUpdateMessage%2Did"] = *serviceUpdateMessageId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -82,7 +82,7 @@ func NewServiceAnnouncementMessagesServiceUpdateMessageItemRequestBuilderInterna
 func NewServiceAnnouncementMessagesServiceUpdateMessageItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ServiceAnnouncementMessagesServiceUpdateMessageItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewServiceAnnouncementMessagesServiceUpdateMessageItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewServiceAnnouncementMessagesServiceUpdateMessageItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property messages for admin
 func (m *ServiceAnnouncementMessagesServiceUpdateMessageItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ServiceAnnouncementMessagesServiceUpdateMessageItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -173,7 +173,10 @@ func (m *ServiceAnnouncementMessagesServiceUpdateMessageItemRequestBuilder) ToPa
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

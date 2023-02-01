@@ -47,13 +47,16 @@ type ReportsExportJobsDeviceManagementExportJobItemRequestBuilderPatchRequestCon
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewReportsExportJobsDeviceManagementExportJobItemRequestBuilderInternal instantiates a new DeviceManagementExportJobItemRequestBuilder and sets the default values.
-func NewReportsExportJobsDeviceManagementExportJobItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReportsExportJobsDeviceManagementExportJobItemRequestBuilder) {
+func NewReportsExportJobsDeviceManagementExportJobItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, deviceManagementExportJobId *string)(*ReportsExportJobsDeviceManagementExportJobItemRequestBuilder) {
     m := &ReportsExportJobsDeviceManagementExportJobItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/reports/exportJobs/{deviceManagementExportJob%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if deviceManagementExportJobId != nil {
+        urlTplParams["deviceManagementExportJob%2Did"] = *deviceManagementExportJobId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewReportsExportJobsDeviceManagementExportJobItemRequestBuilderInternal(pat
 func NewReportsExportJobsDeviceManagementExportJobItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReportsExportJobsDeviceManagementExportJobItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewReportsExportJobsDeviceManagementExportJobItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewReportsExportJobsDeviceManagementExportJobItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property exportJobs for deviceManagement
 func (m *ReportsExportJobsDeviceManagementExportJobItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ReportsExportJobsDeviceManagementExportJobItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ReportsExportJobsDeviceManagementExportJobItemRequestBuilder) ToPatchRe
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

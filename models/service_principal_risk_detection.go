@@ -49,7 +49,7 @@ type ServicePrincipalRiskDetection struct {
     // Indicates the type of token issuer for the detected sign-in risk. The possible values are: AzureAD.
     tokenIssuerType *TokenIssuerType
 }
-// NewServicePrincipalRiskDetection instantiates a new ServicePrincipalRiskDetection and sets the default values.
+// NewServicePrincipalRiskDetection instantiates a new servicePrincipalRiskDetection and sets the default values.
 func NewServicePrincipalRiskDetection()(*ServicePrincipalRiskDetection) {
     m := &ServicePrincipalRiskDetection{
         Entity: *NewEntity(),

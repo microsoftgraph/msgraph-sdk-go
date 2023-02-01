@@ -51,13 +51,16 @@ func (m *ItemListsItemItemsListItemItemRequestBuilder) Analytics()(*ItemListsIte
     return NewItemListsItemItemsItemAnalyticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewItemListsItemItemsListItemItemRequestBuilderInternal instantiates a new ListItemItemRequestBuilder and sets the default values.
-func NewItemListsItemItemsListItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListsItemItemsListItemItemRequestBuilder) {
+func NewItemListsItemItemsListItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, listItemId *string)(*ItemListsItemItemsListItemItemRequestBuilder) {
     m := &ItemListsItemItemsListItemItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/items/{listItem%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if listItemId != nil {
+        urlTplParams["listItem%2Did"] = *listItemId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -67,7 +70,7 @@ func NewItemListsItemItemsListItemItemRequestBuilderInternal(pathParameters map[
 func NewItemListsItemItemsListItemItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListsItemItemsListItemItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemListsItemItemsListItemItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemListsItemItemsListItemItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property items for sites
 func (m *ItemListsItemItemsListItemItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemListsItemItemsListItemItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -95,10 +98,7 @@ func (m *ItemListsItemItemsListItemItemRequestBuilder) DocumentSetVersionsById(i
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["documentSetVersion%2Did"] = id
-    }
-    return NewItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // DriveItem provides operations to manage the driveItem property of the microsoft.graph.listItem entity.
 func (m *ItemListsItemItemsListItemItemRequestBuilder) DriveItem()(*ItemListsItemItemsItemDriveItemRequestBuilder) {
@@ -127,13 +127,13 @@ func (m *ItemListsItemItemsListItemItemRequestBuilder) Get(ctx context.Context, 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemable), nil
 }
-// GetActivitiesByInterval provides operations to call the getActivitiesByInterval method.
-func (m *ItemListsItemItemsListItemItemRequestBuilder) GetActivitiesByInterval()(*ItemListsItemItemsItemGetActivitiesByIntervalRequestBuilder) {
-    return NewItemListsItemItemsItemGetActivitiesByIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetActivitiesByInterval provides operations to call the getActivitiesByInterval method.
+func (m *ItemListsItemItemsListItemItemRequestBuilder) MicrosoftGraphGetActivitiesByInterval()(*ItemListsItemItemsItemMicrosoftGraphGetActivitiesByIntervalGetActivitiesByIntervalRequestBuilder) {
+    return NewItemListsItemItemsItemMicrosoftGraphGetActivitiesByIntervalGetActivitiesByIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval provides operations to call the getActivitiesByInterval method.
-func (m *ItemListsItemItemsListItemItemRequestBuilder) GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(endDateTime *string, interval *string, startDateTime *string)(*ItemListsItemItemsItemGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
-    return NewItemListsItemItemsItemGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter, endDateTime, interval, startDateTime);
+// MicrosoftGraphGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval provides operations to call the getActivitiesByInterval method.
+func (m *ItemListsItemItemsListItemItemRequestBuilder) MicrosoftGraphGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(endDateTime *string, interval *string, startDateTime *string)(*ItemListsItemItemsItemMicrosoftGraphGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
+    return NewItemListsItemItemsItemMicrosoftGraphGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter, endDateTime, interval, startDateTime);
 }
 // Patch update the navigation property items in sites
 func (m *ItemListsItemItemsListItemItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemable, requestConfiguration *ItemListsItemItemsListItemItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemable, error) {
@@ -189,7 +189,10 @@ func (m *ItemListsItemItemsListItemItemRequestBuilder) ToPatchRequestInformation
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -206,8 +209,5 @@ func (m *ItemListsItemItemsListItemItemRequestBuilder) VersionsById(id string)(*
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["listItemVersion%2Did"] = id
-    }
-    return NewItemListsItemItemsItemVersionsListItemVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemListsItemItemsItemVersionsListItemVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }

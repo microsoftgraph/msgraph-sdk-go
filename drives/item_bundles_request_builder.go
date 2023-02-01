@@ -16,7 +16,7 @@ type ItemBundlesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ItemBundlesRequestBuilderGetQueryParameters get a list of all the [bundles][bundle] in a user's drive.
+// ItemBundlesRequestBuilderGetQueryParameters collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
 type ItemBundlesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,10 +67,7 @@ func NewItemBundlesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *ItemBundlesRequestBuilder) Count()(*ItemBundlesCountRequestBuilder) {
     return NewItemBundlesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get get a list of all the [bundles][bundle] in a user's drive.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/bundle-list?view=graph-rest-1.0
+// Get collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
 func (m *ItemBundlesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemBundlesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +86,7 @@ func (m *ItemBundlesRequestBuilder) Get(ctx context.Context, requestConfiguratio
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemCollectionResponseable), nil
 }
-// ToGetRequestInformation get a list of all the [bundles][bundle] in a user's drive.
+// ToGetRequestInformation collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
 func (m *ItemBundlesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemBundlesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

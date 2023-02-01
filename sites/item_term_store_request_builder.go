@@ -113,10 +113,7 @@ func (m *ItemTermStoreRequestBuilder) GroupsById(id string)(*ItemTermStoreGroups
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["group%2Did"] = id
-    }
-    return NewItemTermStoreGroupsGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemTermStoreGroupsGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Patch update the properties of a store object.
 // [Find more info here]
@@ -150,10 +147,7 @@ func (m *ItemTermStoreRequestBuilder) SetsById(id string)(*ItemTermStoreSetsSetI
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["set%2Did"] = id
-    }
-    return NewItemTermStoreSetsSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemTermStoreSetsSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // ToDeleteRequestInformation delete navigation property termStore for sites
 func (m *ItemTermStoreRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTermStoreRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -190,7 +184,10 @@ func (m *ItemTermStoreRequestBuilder) ToPatchRequestInformation(ctx context.Cont
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

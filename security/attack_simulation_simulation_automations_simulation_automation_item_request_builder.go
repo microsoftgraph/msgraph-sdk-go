@@ -47,13 +47,16 @@ type AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilder
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewAttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilderInternal instantiates a new SimulationAutomationItemRequestBuilder and sets the default values.
-func NewAttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilder) {
+func NewAttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, simulationAutomationId *string)(*AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilder) {
     m := &AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/security/attackSimulation/simulationAutomations/{simulationAutomation%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if simulationAutomationId != nil {
+        urlTplParams["simulationAutomation%2Did"] = *simulationAutomationId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewAttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuil
 func NewAttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewAttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewAttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property simulationAutomations for security
 func (m *AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -129,10 +132,7 @@ func (m *AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBui
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["simulationAutomationRun%2Did"] = id
-    }
-    return NewAttackSimulationSimulationAutomationsItemRunsSimulationAutomationRunItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAttackSimulationSimulationAutomationsItemRunsSimulationAutomationRunItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // ToDeleteRequestInformation delete navigation property simulationAutomations for security
 func (m *AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +169,10 @@ func (m *AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBui
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

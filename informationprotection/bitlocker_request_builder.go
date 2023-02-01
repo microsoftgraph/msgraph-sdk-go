@@ -80,10 +80,7 @@ func (m *BitlockerRequestBuilder) RecoveryKeysById(id string)(*BitlockerRecovery
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["bitlockerRecoveryKey%2Did"] = id
-    }
-    return NewBitlockerRecoveryKeysBitlockerRecoveryKeyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewBitlockerRecoveryKeysBitlockerRecoveryKeyItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // ToGetRequestInformation get bitlocker from informationProtection
 func (m *BitlockerRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BitlockerRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

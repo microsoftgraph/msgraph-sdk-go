@@ -47,13 +47,16 @@ type BookingCurrenciesBookingCurrencyItemRequestBuilderPatchRequestConfiguration
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewBookingCurrenciesBookingCurrencyItemRequestBuilderInternal instantiates a new BookingCurrencyItemRequestBuilder and sets the default values.
-func NewBookingCurrenciesBookingCurrencyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BookingCurrenciesBookingCurrencyItemRequestBuilder) {
+func NewBookingCurrenciesBookingCurrencyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, bookingCurrencyId *string)(*BookingCurrenciesBookingCurrencyItemRequestBuilder) {
     m := &BookingCurrenciesBookingCurrencyItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/solutions/bookingCurrencies/{bookingCurrency%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if bookingCurrencyId != nil {
+        urlTplParams["bookingCurrency%2Did"] = *bookingCurrencyId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewBookingCurrenciesBookingCurrencyItemRequestBuilderInternal(pathParameter
 func NewBookingCurrenciesBookingCurrencyItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BookingCurrenciesBookingCurrencyItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewBookingCurrenciesBookingCurrencyItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewBookingCurrenciesBookingCurrencyItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property bookingCurrencies for solutions
 func (m *BookingCurrenciesBookingCurrencyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *BookingCurrenciesBookingCurrencyItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *BookingCurrenciesBookingCurrencyItemRequestBuilder) ToPatchRequestInfor
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

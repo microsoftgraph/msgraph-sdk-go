@@ -24,7 +24,7 @@ type AppRoleAssignment struct {
     // The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
     resourceId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
 }
-// NewAppRoleAssignment instantiates a new AppRoleAssignment and sets the default values.
+// NewAppRoleAssignment instantiates a new appRoleAssignment and sets the default values.
 func NewAppRoleAssignment()(*AppRoleAssignment) {
     m := &AppRoleAssignment{
         DirectoryObject: *NewDirectoryObject(),

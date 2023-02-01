@@ -47,13 +47,16 @@ type ItemChannelsItemTabsTeamsTabItemRequestBuilderPatchRequestConfiguration str
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemChannelsItemTabsTeamsTabItemRequestBuilderInternal instantiates a new TeamsTabItemRequestBuilder and sets the default values.
-func NewItemChannelsItemTabsTeamsTabItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemChannelsItemTabsTeamsTabItemRequestBuilder) {
+func NewItemChannelsItemTabsTeamsTabItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, teamsTabId *string)(*ItemChannelsItemTabsTeamsTabItemRequestBuilder) {
     m := &ItemChannelsItemTabsTeamsTabItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/teams/{team%2Did}/channels/{channel%2Did}/tabs/{teamsTab%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if teamsTabId != nil {
+        urlTplParams["teamsTab%2Did"] = *teamsTabId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewItemChannelsItemTabsTeamsTabItemRequestBuilderInternal(pathParameters ma
 func NewItemChannelsItemTabsTeamsTabItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemChannelsItemTabsTeamsTabItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemChannelsItemTabsTeamsTabItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemChannelsItemTabsTeamsTabItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property tabs for teams
 func (m *ItemChannelsItemTabsTeamsTabItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemChannelsItemTabsTeamsTabItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -158,7 +161,10 @@ func (m *ItemChannelsItemTabsTeamsTabItemRequestBuilder) ToPatchRequestInformati
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -60,19 +60,19 @@ func (m *SchoolsEducationSchoolItemRequestBuilder) ClassesById(id string)(*Schoo
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["educationClass%2Did"] = id
-    }
-    return NewSchoolsItemClassesEducationClassItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSchoolsItemClassesEducationClassItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // NewSchoolsEducationSchoolItemRequestBuilderInternal instantiates a new EducationSchoolItemRequestBuilder and sets the default values.
-func NewSchoolsEducationSchoolItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SchoolsEducationSchoolItemRequestBuilder) {
+func NewSchoolsEducationSchoolItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, educationSchoolId *string)(*SchoolsEducationSchoolItemRequestBuilder) {
     m := &SchoolsEducationSchoolItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/education/schools/{educationSchool%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if educationSchoolId != nil {
+        urlTplParams["educationSchool%2Did"] = *educationSchoolId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -82,7 +82,7 @@ func NewSchoolsEducationSchoolItemRequestBuilderInternal(pathParameters map[stri
 func NewSchoolsEducationSchoolItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SchoolsEducationSchoolItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewSchoolsEducationSchoolItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewSchoolsEducationSchoolItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property schools for education
 func (m *SchoolsEducationSchoolItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *SchoolsEducationSchoolItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -173,7 +173,10 @@ func (m *SchoolsEducationSchoolItemRequestBuilder) ToPatchRequestInformation(ctx
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -190,8 +193,5 @@ func (m *SchoolsEducationSchoolItemRequestBuilder) UsersById(id string)(*Schools
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["educationUser%2Did"] = id
-    }
-    return NewSchoolsItemUsersEducationUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSchoolsItemUsersEducationUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }

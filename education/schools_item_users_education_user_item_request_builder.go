@@ -14,13 +14,16 @@ type SchoolsItemUsersEducationUserItemRequestBuilder struct {
     urlTemplate string
 }
 // NewSchoolsItemUsersEducationUserItemRequestBuilderInternal instantiates a new EducationUserItemRequestBuilder and sets the default values.
-func NewSchoolsItemUsersEducationUserItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SchoolsItemUsersEducationUserItemRequestBuilder) {
+func NewSchoolsItemUsersEducationUserItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, educationUserId *string)(*SchoolsItemUsersEducationUserItemRequestBuilder) {
     m := &SchoolsItemUsersEducationUserItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/education/schools/{educationSchool%2Did}/users/{educationUser%2Did}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if educationUserId != nil {
+        urlTplParams["educationUser%2Did"] = *educationUserId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -30,7 +33,7 @@ func NewSchoolsItemUsersEducationUserItemRequestBuilderInternal(pathParameters m
 func NewSchoolsItemUsersEducationUserItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SchoolsItemUsersEducationUserItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewSchoolsItemUsersEducationUserItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewSchoolsItemUsersEducationUserItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Ref provides operations to manage the collection of educationRoot entities.
 func (m *SchoolsItemUsersEducationUserItemRequestBuilder) Ref()(*SchoolsItemUsersItemRefRequestBuilder) {

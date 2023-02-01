@@ -56,10 +56,7 @@ func (m *TermsOfUseRequestBuilder) AgreementAcceptancesById(id string)(*TermsOfU
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["agreementAcceptance%2Did"] = id
-    }
-    return NewTermsOfUseAgreementAcceptancesAgreementAcceptanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTermsOfUseAgreementAcceptancesAgreementAcceptanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Agreements provides operations to manage the agreements property of the microsoft.graph.termsOfUseContainer entity.
 func (m *TermsOfUseRequestBuilder) Agreements()(*TermsOfUseAgreementsRequestBuilder) {
@@ -71,10 +68,7 @@ func (m *TermsOfUseRequestBuilder) AgreementsById(id string)(*TermsOfUseAgreemen
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["agreement%2Did"] = id
-    }
-    return NewTermsOfUseAgreementsAgreementItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTermsOfUseAgreementsAgreementItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // NewTermsOfUseRequestBuilderInternal instantiates a new TermsOfUseRequestBuilder and sets the default values.
 func NewTermsOfUseRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TermsOfUseRequestBuilder) {
@@ -184,7 +178,10 @@ func (m *TermsOfUseRequestBuilder) ToPatchRequestInformation(ctx context.Context
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

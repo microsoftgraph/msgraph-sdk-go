@@ -47,13 +47,16 @@ type ItemChannelsItemMessagesItemHostedContentsChatMessageHostedContentItemReque
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemChannelsItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilderInternal instantiates a new ChatMessageHostedContentItemRequestBuilder and sets the default values.
-func NewItemChannelsItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemChannelsItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilder) {
+func NewItemChannelsItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, chatMessageHostedContentId *string)(*ItemChannelsItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilder) {
     m := &ItemChannelsItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/teams/{team%2Did}/channels/{channel%2Did}/messages/{chatMessage%2Did}/hostedContents/{chatMessageHostedContent%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if chatMessageHostedContentId != nil {
+        urlTplParams["chatMessageHostedContent%2Did"] = *chatMessageHostedContentId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewItemChannelsItemMessagesItemHostedContentsChatMessageHostedContentItemRe
 func NewItemChannelsItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemChannelsItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemChannelsItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemChannelsItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property hostedContents for teams
 func (m *ItemChannelsItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemChannelsItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemChannelsItemMessagesItemHostedContentsChatMessageHostedContentItemR
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -25,7 +25,7 @@ type ThreatAssessmentRequest struct {
     // The assessment process status. Possible values are: pending, completed.
     status *ThreatAssessmentStatus
 }
-// NewThreatAssessmentRequest instantiates a new threatAssessmentRequest and sets the default values.
+// NewThreatAssessmentRequest instantiates a new ThreatAssessmentRequest and sets the default values.
 func NewThreatAssessmentRequest()(*ThreatAssessmentRequest) {
     m := &ThreatAssessmentRequest{
         Entity: *NewEntity(),

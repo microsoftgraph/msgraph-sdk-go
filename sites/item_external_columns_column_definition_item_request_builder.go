@@ -33,13 +33,16 @@ type ItemExternalColumnsColumnDefinitionItemRequestBuilderGetRequestConfiguratio
     QueryParameters *ItemExternalColumnsColumnDefinitionItemRequestBuilderGetQueryParameters
 }
 // NewItemExternalColumnsColumnDefinitionItemRequestBuilderInternal instantiates a new ColumnDefinitionItemRequestBuilder and sets the default values.
-func NewItemExternalColumnsColumnDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemExternalColumnsColumnDefinitionItemRequestBuilder) {
+func NewItemExternalColumnsColumnDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, columnDefinitionId *string)(*ItemExternalColumnsColumnDefinitionItemRequestBuilder) {
     m := &ItemExternalColumnsColumnDefinitionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/sites/{site%2Did}/externalColumns/{columnDefinition%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if columnDefinitionId != nil {
+        urlTplParams["columnDefinition%2Did"] = *columnDefinitionId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -49,7 +52,7 @@ func NewItemExternalColumnsColumnDefinitionItemRequestBuilderInternal(pathParame
 func NewItemExternalColumnsColumnDefinitionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemExternalColumnsColumnDefinitionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemExternalColumnsColumnDefinitionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemExternalColumnsColumnDefinitionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get get externalColumns from sites
 func (m *ItemExternalColumnsColumnDefinitionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemExternalColumnsColumnDefinitionItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionable, error) {

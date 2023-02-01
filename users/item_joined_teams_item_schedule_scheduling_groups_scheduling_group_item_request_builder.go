@@ -45,13 +45,16 @@ type ItemJoinedTeamsItemScheduleSchedulingGroupsSchedulingGroupItemRequestBuilde
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemJoinedTeamsItemScheduleSchedulingGroupsSchedulingGroupItemRequestBuilderInternal instantiates a new SchedulingGroupItemRequestBuilder and sets the default values.
-func NewItemJoinedTeamsItemScheduleSchedulingGroupsSchedulingGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemJoinedTeamsItemScheduleSchedulingGroupsSchedulingGroupItemRequestBuilder) {
+func NewItemJoinedTeamsItemScheduleSchedulingGroupsSchedulingGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, schedulingGroupId *string)(*ItemJoinedTeamsItemScheduleSchedulingGroupsSchedulingGroupItemRequestBuilder) {
     m := &ItemJoinedTeamsItemScheduleSchedulingGroupsSchedulingGroupItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/schedule/schedulingGroups/{schedulingGroup%2Did}{?%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if schedulingGroupId != nil {
+        urlTplParams["schedulingGroup%2Did"] = *schedulingGroupId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -61,7 +64,7 @@ func NewItemJoinedTeamsItemScheduleSchedulingGroupsSchedulingGroupItemRequestBui
 func NewItemJoinedTeamsItemScheduleSchedulingGroupsSchedulingGroupItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemJoinedTeamsItemScheduleSchedulingGroupsSchedulingGroupItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemJoinedTeamsItemScheduleSchedulingGroupsSchedulingGroupItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemJoinedTeamsItemScheduleSchedulingGroupsSchedulingGroupItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property schedulingGroups for users
 func (m *ItemJoinedTeamsItemScheduleSchedulingGroupsSchedulingGroupItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemScheduleSchedulingGroupsSchedulingGroupItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -152,7 +155,10 @@ func (m *ItemJoinedTeamsItemScheduleSchedulingGroupsSchedulingGroupItemRequestBu
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

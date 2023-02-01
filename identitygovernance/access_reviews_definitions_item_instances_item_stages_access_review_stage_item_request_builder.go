@@ -47,13 +47,16 @@ type AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequest
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewAccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequestBuilderInternal instantiates a new AccessReviewStageItemRequestBuilder and sets the default values.
-func NewAccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequestBuilder) {
+func NewAccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, accessReviewStageId *string)(*AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequestBuilder) {
     m := &AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition%2Did}/instances/{accessReviewInstance%2Did}/stages/{accessReviewStage%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if accessReviewStageId != nil {
+        urlTplParams["accessReviewStage%2Did"] = *accessReviewStageId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewAccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequ
 func NewAccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewAccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewAccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Decisions provides operations to manage the decisions property of the microsoft.graph.accessReviewStage entity.
 func (m *AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequestBuilder) Decisions()(*AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsRequestBuilder) {
@@ -75,10 +78,7 @@ func (m *AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemReq
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["accessReviewInstanceDecisionItem%2Did"] = id
-    }
-    return NewAccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsAccessReviewInstanceDecisionItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsAccessReviewInstanceDecisionItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Delete delete navigation property stages for identityGovernance
 func (m *AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -115,6 +115,10 @@ func (m *AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemReq
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewStageable), nil
 }
+// MicrosoftGraphStop provides operations to call the stop method.
+func (m *AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequestBuilder) MicrosoftGraphStop()(*AccessReviewsDefinitionsItemInstancesItemStagesItemMicrosoftGraphStopStopRequestBuilder) {
+    return NewAccessReviewsDefinitionsItemInstancesItemStagesItemMicrosoftGraphStopStopRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Patch update the navigation property stages in identityGovernance
 func (m *AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewStageable, requestConfiguration *AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewStageable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -133,10 +137,6 @@ func (m *AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemReq
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewStageable), nil
-}
-// Stop provides operations to call the stop method.
-func (m *AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequestBuilder) Stop()(*AccessReviewsDefinitionsItemInstancesItemStagesItemStopRequestBuilder) {
-    return NewAccessReviewsDefinitionsItemInstancesItemStagesItemStopRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property stages for identityGovernance
 func (m *AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -173,7 +173,10 @@ func (m *AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemReq
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

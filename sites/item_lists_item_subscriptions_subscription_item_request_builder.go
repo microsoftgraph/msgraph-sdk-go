@@ -47,13 +47,16 @@ type ItemListsItemSubscriptionsSubscriptionItemRequestBuilderPatchRequestConfigu
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemListsItemSubscriptionsSubscriptionItemRequestBuilderInternal instantiates a new SubscriptionItemRequestBuilder and sets the default values.
-func NewItemListsItemSubscriptionsSubscriptionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListsItemSubscriptionsSubscriptionItemRequestBuilder) {
+func NewItemListsItemSubscriptionsSubscriptionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, subscriptionId *string)(*ItemListsItemSubscriptionsSubscriptionItemRequestBuilder) {
     m := &ItemListsItemSubscriptionsSubscriptionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/subscriptions/{subscription%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if subscriptionId != nil {
+        urlTplParams["subscription%2Did"] = *subscriptionId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewItemListsItemSubscriptionsSubscriptionItemRequestBuilderInternal(pathPar
 func NewItemListsItemSubscriptionsSubscriptionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListsItemSubscriptionsSubscriptionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemListsItemSubscriptionsSubscriptionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemListsItemSubscriptionsSubscriptionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property subscriptions for sites
 func (m *ItemListsItemSubscriptionsSubscriptionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemListsItemSubscriptionsSubscriptionItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -100,6 +103,10 @@ func (m *ItemListsItemSubscriptionsSubscriptionItemRequestBuilder) Get(ctx conte
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Subscriptionable), nil
 }
+// MicrosoftGraphReauthorize provides operations to call the reauthorize method.
+func (m *ItemListsItemSubscriptionsSubscriptionItemRequestBuilder) MicrosoftGraphReauthorize()(*ItemListsItemSubscriptionsItemMicrosoftGraphReauthorizeReauthorizeRequestBuilder) {
+    return NewItemListsItemSubscriptionsItemMicrosoftGraphReauthorizeReauthorizeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Patch update the navigation property subscriptions in sites
 func (m *ItemListsItemSubscriptionsSubscriptionItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Subscriptionable, requestConfiguration *ItemListsItemSubscriptionsSubscriptionItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Subscriptionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -118,10 +125,6 @@ func (m *ItemListsItemSubscriptionsSubscriptionItemRequestBuilder) Patch(ctx con
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Subscriptionable), nil
-}
-// Reauthorize provides operations to call the reauthorize method.
-func (m *ItemListsItemSubscriptionsSubscriptionItemRequestBuilder) Reauthorize()(*ItemListsItemSubscriptionsItemReauthorizeRequestBuilder) {
-    return NewItemListsItemSubscriptionsItemReauthorizeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property subscriptions for sites
 func (m *ItemListsItemSubscriptionsSubscriptionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemListsItemSubscriptionsSubscriptionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -158,7 +161,10 @@ func (m *ItemListsItemSubscriptionsSubscriptionItemRequestBuilder) ToPatchReques
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

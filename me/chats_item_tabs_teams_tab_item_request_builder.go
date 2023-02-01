@@ -47,13 +47,16 @@ type ChatsItemTabsTeamsTabItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewChatsItemTabsTeamsTabItemRequestBuilderInternal instantiates a new TeamsTabItemRequestBuilder and sets the default values.
-func NewChatsItemTabsTeamsTabItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ChatsItemTabsTeamsTabItemRequestBuilder) {
+func NewChatsItemTabsTeamsTabItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, teamsTabId *string)(*ChatsItemTabsTeamsTabItemRequestBuilder) {
     m := &ChatsItemTabsTeamsTabItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/chats/{chat%2Did}/tabs/{teamsTab%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if teamsTabId != nil {
+        urlTplParams["teamsTab%2Did"] = *teamsTabId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewChatsItemTabsTeamsTabItemRequestBuilderInternal(pathParameters map[strin
 func NewChatsItemTabsTeamsTabItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ChatsItemTabsTeamsTabItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewChatsItemTabsTeamsTabItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewChatsItemTabsTeamsTabItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property tabs for me
 func (m *ChatsItemTabsTeamsTabItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ChatsItemTabsTeamsTabItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -158,7 +161,10 @@ func (m *ChatsItemTabsTeamsTabItemRequestBuilder) ToPatchRequestInformation(ctx 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

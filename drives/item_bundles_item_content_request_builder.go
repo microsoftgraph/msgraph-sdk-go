@@ -49,9 +49,6 @@ func NewItemBundlesItemContentRequestBuilder(rawUrl string, requestAdapter i2ae4
     return NewItemBundlesItemContentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the content stream, if the item represents a file.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/bundle-list?view=graph-rest-1.0
 func (m *ItemBundlesItemContentRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemBundlesItemContentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

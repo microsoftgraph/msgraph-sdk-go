@@ -56,19 +56,19 @@ func (m *ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) Applie
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["managedAppPolicy%2Did"] = id
-    }
-    return NewManagedAppRegistrationsItemAppliedPoliciesManagedAppPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewManagedAppRegistrationsItemAppliedPoliciesManagedAppPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // NewManagedAppRegistrationsManagedAppRegistrationItemRequestBuilderInternal instantiates a new ManagedAppRegistrationItemRequestBuilder and sets the default values.
-func NewManagedAppRegistrationsManagedAppRegistrationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) {
+func NewManagedAppRegistrationsManagedAppRegistrationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, managedAppRegistrationId *string)(*ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) {
     m := &ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceAppManagement/managedAppRegistrations/{managedAppRegistration%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if managedAppRegistrationId != nil {
+        urlTplParams["managedAppRegistration%2Did"] = *managedAppRegistrationId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -78,7 +78,7 @@ func NewManagedAppRegistrationsManagedAppRegistrationItemRequestBuilderInternal(
 func NewManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewManagedAppRegistrationsManagedAppRegistrationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewManagedAppRegistrationsManagedAppRegistrationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property managedAppRegistrations for deviceAppManagement
 func (m *ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -125,10 +125,7 @@ func (m *ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) Intend
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["managedAppPolicy%2Did"] = id
-    }
-    return NewManagedAppRegistrationsItemIntendedPoliciesManagedAppPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewManagedAppRegistrationsItemIntendedPoliciesManagedAppPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Operations provides operations to manage the operations property of the microsoft.graph.managedAppRegistration entity.
 func (m *ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) Operations()(*ManagedAppRegistrationsItemOperationsRequestBuilder) {
@@ -140,10 +137,7 @@ func (m *ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) Operat
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["managedAppOperation%2Did"] = id
-    }
-    return NewManagedAppRegistrationsItemOperationsManagedAppOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewManagedAppRegistrationsItemOperationsManagedAppOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Patch update the navigation property managedAppRegistrations in deviceAppManagement
 func (m *ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAppRegistrationable, requestConfiguration *ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAppRegistrationable, error) {
@@ -199,7 +193,10 @@ func (m *ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) ToPatc
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

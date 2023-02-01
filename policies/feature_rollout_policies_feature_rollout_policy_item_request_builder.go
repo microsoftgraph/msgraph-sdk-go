@@ -56,19 +56,19 @@ func (m *FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder) AppliesTo
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["directoryObject%2Did"] = id
-    }
-    return NewFeatureRolloutPoliciesItemAppliesToDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewFeatureRolloutPoliciesItemAppliesToDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // NewFeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilderInternal instantiates a new FeatureRolloutPolicyItemRequestBuilder and sets the default values.
-func NewFeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder) {
+func NewFeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, featureRolloutPolicyId *string)(*FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder) {
     m := &FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/policies/featureRolloutPolicies/{featureRolloutPolicy%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if featureRolloutPolicyId != nil {
+        urlTplParams["featureRolloutPolicy%2Did"] = *featureRolloutPolicyId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -78,7 +78,7 @@ func NewFeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilderInternal(pat
 func NewFeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewFeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewFeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property featureRolloutPolicies for policies
 func (m *FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -169,7 +169,10 @@ func (m *FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder) ToPatchRe
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

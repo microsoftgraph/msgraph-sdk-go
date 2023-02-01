@@ -47,13 +47,16 @@ type ItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilderPatchRequest
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilderInternal instantiates a new AssociatedTeamInfoItemRequestBuilder and sets the default values.
-func NewItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilder) {
+func NewItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, associatedTeamInfoId *string)(*ItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilder) {
     m := &ItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/teamwork/associatedTeams/{associatedTeamInfo%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if associatedTeamInfoId != nil {
+        urlTplParams["associatedTeamInfo%2Did"] = *associatedTeamInfoId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilderInternal(
 func NewItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property associatedTeams for users
 func (m *ItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilder) ToPatc
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

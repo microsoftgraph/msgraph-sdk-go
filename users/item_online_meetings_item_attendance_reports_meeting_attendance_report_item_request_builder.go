@@ -56,19 +56,19 @@ func (m *ItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemReque
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["attendanceRecord%2Did"] = id
-    }
-    return NewItemOnlineMeetingsItemAttendanceReportsItemAttendanceRecordsAttendanceRecordItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemOnlineMeetingsItemAttendanceReportsItemAttendanceRecordsAttendanceRecordItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // NewItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilderInternal instantiates a new MeetingAttendanceReportItemRequestBuilder and sets the default values.
-func NewItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilder) {
+func NewItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, meetingAttendanceReportId *string)(*ItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilder) {
     m := &ItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/onlineMeetings/{onlineMeeting%2Did}/attendanceReports/{meetingAttendanceReport%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if meetingAttendanceReportId != nil {
+        urlTplParams["meetingAttendanceReport%2Did"] = *meetingAttendanceReportId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -78,7 +78,7 @@ func NewItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemReques
 func NewItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property attendanceReports for users
 func (m *ItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -169,7 +169,10 @@ func (m *ItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemReque
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

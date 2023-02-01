@@ -47,13 +47,16 @@ type ItemSitesItemTermStoresItemGroupsItemSetsItemChildrenItemChildrenItemRelati
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemSitesItemTermStoresItemGroupsItemSetsItemChildrenItemChildrenItemRelationsRelationItemRequestBuilderInternal instantiates a new RelationItemRequestBuilder and sets the default values.
-func NewItemSitesItemTermStoresItemGroupsItemSetsItemChildrenItemChildrenItemRelationsRelationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemTermStoresItemGroupsItemSetsItemChildrenItemChildrenItemRelationsRelationItemRequestBuilder) {
+func NewItemSitesItemTermStoresItemGroupsItemSetsItemChildrenItemChildrenItemRelationsRelationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, relationId *string)(*ItemSitesItemTermStoresItemGroupsItemSetsItemChildrenItemChildrenItemRelationsRelationItemRequestBuilder) {
     m := &ItemSitesItemTermStoresItemGroupsItemSetsItemChildrenItemChildrenItemRelationsRelationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/termStores/{store%2Did}/groups/{group%2Did1}/sets/{set%2Did}/children/{term%2Did}/children/{term%2Did1}/relations/{relation%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if relationId != nil {
+        urlTplParams["relation%2Did"] = *relationId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewItemSitesItemTermStoresItemGroupsItemSetsItemChildrenItemChildrenItemRel
 func NewItemSitesItemTermStoresItemGroupsItemSetsItemChildrenItemChildrenItemRelationsRelationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemTermStoresItemGroupsItemSetsItemChildrenItemChildrenItemRelationsRelationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemSitesItemTermStoresItemGroupsItemSetsItemChildrenItemChildrenItemRelationsRelationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemSitesItemTermStoresItemGroupsItemSetsItemChildrenItemChildrenItemRelationsRelationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property relations for groups
 func (m *ItemSitesItemTermStoresItemGroupsItemSetsItemChildrenItemChildrenItemRelationsRelationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSitesItemTermStoresItemGroupsItemSetsItemChildrenItemChildrenItemRelationsRelationItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -162,7 +165,10 @@ func (m *ItemSitesItemTermStoresItemGroupsItemSetsItemChildrenItemChildrenItemRe
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -47,13 +47,16 @@ type ItemFilesItemVersionsAgreementFileVersionItemRequestBuilderPatchRequestConf
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemFilesItemVersionsAgreementFileVersionItemRequestBuilderInternal instantiates a new AgreementFileVersionItemRequestBuilder and sets the default values.
-func NewItemFilesItemVersionsAgreementFileVersionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemFilesItemVersionsAgreementFileVersionItemRequestBuilder) {
+func NewItemFilesItemVersionsAgreementFileVersionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, agreementFileVersionId *string)(*ItemFilesItemVersionsAgreementFileVersionItemRequestBuilder) {
     m := &ItemFilesItemVersionsAgreementFileVersionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/agreements/{agreement%2Did}/files/{agreementFileLocalization%2Did}/versions/{agreementFileVersion%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if agreementFileVersionId != nil {
+        urlTplParams["agreementFileVersion%2Did"] = *agreementFileVersionId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewItemFilesItemVersionsAgreementFileVersionItemRequestBuilderInternal(path
 func NewItemFilesItemVersionsAgreementFileVersionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemFilesItemVersionsAgreementFileVersionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemFilesItemVersionsAgreementFileVersionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemFilesItemVersionsAgreementFileVersionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property versions for agreements
 func (m *ItemFilesItemVersionsAgreementFileVersionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemFilesItemVersionsAgreementFileVersionItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemFilesItemVersionsAgreementFileVersionItemRequestBuilder) ToPatchReq
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

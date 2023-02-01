@@ -47,13 +47,16 @@ type JoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilderPatchReques
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewJoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilderInternal instantiates a new ChatMessageItemRequestBuilder and sets the default values.
-func NewJoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*JoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) {
+func NewJoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, chatMessageId *string)(*JoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) {
     m := &JoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/joinedTeams/{team%2Did}/channels/{channel%2Did}/messages/{chatMessage%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if chatMessageId != nil {
+        urlTplParams["chatMessage%2Did"] = *chatMessageId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewJoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilderInternal
 func NewJoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*JoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewJoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewJoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property messages for me
 func (m *JoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *JoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -110,10 +113,15 @@ func (m *JoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) Hoste
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["chatMessageHostedContent%2Did"] = id
-    }
-    return NewJoinedTeamsItemChannelsItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewJoinedTeamsItemChannelsItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
+}
+// MicrosoftGraphSoftDelete provides operations to call the softDelete method.
+func (m *JoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) MicrosoftGraphSoftDelete()(*JoinedTeamsItemChannelsItemMessagesItemMicrosoftGraphSoftDeleteSoftDeleteRequestBuilder) {
+    return NewJoinedTeamsItemChannelsItemMessagesItemMicrosoftGraphSoftDeleteSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphUndoSoftDelete provides operations to call the undoSoftDelete method.
+func (m *JoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) MicrosoftGraphUndoSoftDelete()(*JoinedTeamsItemChannelsItemMessagesItemMicrosoftGraphUndoSoftDeleteUndoSoftDeleteRequestBuilder) {
+    return NewJoinedTeamsItemChannelsItemMessagesItemMicrosoftGraphUndoSoftDeleteUndoSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Patch update the navigation property messages in me
 func (m *JoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable, requestConfiguration *JoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable, error) {
@@ -144,14 +152,7 @@ func (m *JoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) Repli
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["chatMessage%2Did1"] = id
-    }
-    return NewJoinedTeamsItemChannelsItemMessagesItemRepliesChatMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// SoftDelete provides operations to call the softDelete method.
-func (m *JoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) SoftDelete()(*JoinedTeamsItemChannelsItemMessagesItemSoftDeleteRequestBuilder) {
-    return NewJoinedTeamsItemChannelsItemMessagesItemSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewJoinedTeamsItemChannelsItemMessagesItemRepliesChatMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // ToDeleteRequestInformation delete navigation property messages for me
 func (m *JoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *JoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -188,14 +189,13 @@ func (m *JoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) ToPat
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// UndoSoftDelete provides operations to call the undoSoftDelete method.
-func (m *JoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) UndoSoftDelete()(*JoinedTeamsItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilder) {
-    return NewJoinedTeamsItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

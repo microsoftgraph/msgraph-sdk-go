@@ -129,10 +129,7 @@ func (m *ItemSitesItemTermStoreSetsItemParentGroupRequestBuilder) SetsById(id st
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["set%2Did1"] = id
-    }
-    return NewItemSitesItemTermStoreSetsItemParentGroupSetsSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemSitesItemTermStoreSetsItemParentGroupSetsSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // ToDeleteRequestInformation delete navigation property parentGroup for groups
 func (m *ItemSitesItemTermStoreSetsItemParentGroupRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemTermStoreSetsItemParentGroupRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +166,10 @@ func (m *ItemSitesItemTermStoreSetsItemParentGroupRequestBuilder) ToPatchRequest
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

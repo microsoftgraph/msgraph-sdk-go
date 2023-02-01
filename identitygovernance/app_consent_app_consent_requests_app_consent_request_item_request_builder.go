@@ -47,13 +47,16 @@ type AppConsentAppConsentRequestsAppConsentRequestItemRequestBuilderPatchRequest
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewAppConsentAppConsentRequestsAppConsentRequestItemRequestBuilderInternal instantiates a new AppConsentRequestItemRequestBuilder and sets the default values.
-func NewAppConsentAppConsentRequestsAppConsentRequestItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AppConsentAppConsentRequestsAppConsentRequestItemRequestBuilder) {
+func NewAppConsentAppConsentRequestsAppConsentRequestItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, appConsentRequestId *string)(*AppConsentAppConsentRequestsAppConsentRequestItemRequestBuilder) {
     m := &AppConsentAppConsentRequestsAppConsentRequestItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/identityGovernance/appConsent/appConsentRequests/{appConsentRequest%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if appConsentRequestId != nil {
+        urlTplParams["appConsentRequest%2Did"] = *appConsentRequestId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewAppConsentAppConsentRequestsAppConsentRequestItemRequestBuilderInternal(
 func NewAppConsentAppConsentRequestsAppConsentRequestItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AppConsentAppConsentRequestsAppConsentRequestItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewAppConsentAppConsentRequestsAppConsentRequestItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewAppConsentAppConsentRequestsAppConsentRequestItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property appConsentRequests for identityGovernance
 func (m *AppConsentAppConsentRequestsAppConsentRequestItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AppConsentAppConsentRequestsAppConsentRequestItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *AppConsentAppConsentRequestsAppConsentRequestItemRequestBuilder) ToPatc
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -171,8 +177,5 @@ func (m *AppConsentAppConsentRequestsAppConsentRequestItemRequestBuilder) UserCo
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["userConsentRequest%2Did"] = id
-    }
-    return NewAppConsentAppConsentRequestsItemUserConsentRequestsUserConsentRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAppConsentAppConsentRequestsItemUserConsentRequestsUserConsentRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }

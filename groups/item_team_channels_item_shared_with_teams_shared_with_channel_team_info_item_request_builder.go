@@ -56,19 +56,19 @@ func (m *ItemTeamChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequest
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["conversationMember%2Did"] = id
-    }
-    return NewItemTeamChannelsItemSharedWithTeamsItemAllowedMembersConversationMemberItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemTeamChannelsItemSharedWithTeamsItemAllowedMembersConversationMemberItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // NewItemTeamChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilderInternal instantiates a new SharedWithChannelTeamInfoItemRequestBuilder and sets the default values.
-func NewItemTeamChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilder) {
+func NewItemTeamChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, sharedWithChannelTeamInfoId *string)(*ItemTeamChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilder) {
     m := &ItemTeamChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groups/{group%2Did}/team/channels/{channel%2Did}/sharedWithTeams/{sharedWithChannelTeamInfo%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if sharedWithChannelTeamInfoId != nil {
+        urlTplParams["sharedWithChannelTeamInfo%2Did"] = *sharedWithChannelTeamInfoId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -78,7 +78,7 @@ func NewItemTeamChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestB
 func NewItemTeamChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemTeamChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemTeamChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property sharedWithTeams for groups
 func (m *ItemTeamChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTeamChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -169,7 +169,10 @@ func (m *ItemTeamChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequest
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

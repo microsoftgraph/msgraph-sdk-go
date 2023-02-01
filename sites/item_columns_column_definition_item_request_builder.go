@@ -47,13 +47,16 @@ type ItemColumnsColumnDefinitionItemRequestBuilderPatchRequestConfiguration stru
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemColumnsColumnDefinitionItemRequestBuilderInternal instantiates a new ColumnDefinitionItemRequestBuilder and sets the default values.
-func NewItemColumnsColumnDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemColumnsColumnDefinitionItemRequestBuilder) {
+func NewItemColumnsColumnDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, columnDefinitionId *string)(*ItemColumnsColumnDefinitionItemRequestBuilder) {
     m := &ItemColumnsColumnDefinitionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/sites/{site%2Did}/columns/{columnDefinition%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if columnDefinitionId != nil {
+        urlTplParams["columnDefinition%2Did"] = *columnDefinitionId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewItemColumnsColumnDefinitionItemRequestBuilderInternal(pathParameters map
 func NewItemColumnsColumnDefinitionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemColumnsColumnDefinitionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemColumnsColumnDefinitionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemColumnsColumnDefinitionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property columns for sites
 func (m *ItemColumnsColumnDefinitionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemColumnsColumnDefinitionItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -158,7 +161,10 @@ func (m *ItemColumnsColumnDefinitionItemRequestBuilder) ToPatchRequestInformatio
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

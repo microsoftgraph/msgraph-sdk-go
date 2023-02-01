@@ -56,10 +56,7 @@ func (m *ItemListRequestBuilder) ColumnsById(id string)(*ItemListColumnsColumnDe
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["columnDefinition%2Did"] = id
-    }
-    return NewItemListColumnsColumnDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemListColumnsColumnDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // NewItemListRequestBuilderInternal instantiates a new ListRequestBuilder and sets the default values.
 func NewItemListRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListRequestBuilder) {
@@ -90,10 +87,7 @@ func (m *ItemListRequestBuilder) ContentTypesById(id string)(*ItemListContentTyp
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["contentType%2Did"] = id
-    }
-    return NewItemListContentTypesContentTypeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemListContentTypesContentTypeItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Delete delete navigation property list for shares
 func (m *ItemListRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemListRequestBuilderDeleteRequestConfiguration)(error) {
@@ -144,10 +138,7 @@ func (m *ItemListRequestBuilder) ItemsById(id string)(*ItemListItemsListItemItem
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["listItem%2Did"] = id
-    }
-    return NewItemListItemsListItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemListItemsListItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Operations provides operations to manage the operations property of the microsoft.graph.list entity.
 func (m *ItemListRequestBuilder) Operations()(*ItemListOperationsRequestBuilder) {
@@ -159,10 +150,7 @@ func (m *ItemListRequestBuilder) OperationsById(id string)(*ItemListOperationsRi
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["richLongRunningOperation%2Did"] = id
-    }
-    return NewItemListOperationsRichLongRunningOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemListOperationsRichLongRunningOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Patch update the navigation property list in shares
 func (m *ItemListRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Listable, requestConfiguration *ItemListRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Listable, error) {
@@ -193,10 +181,7 @@ func (m *ItemListRequestBuilder) SubscriptionsById(id string)(*ItemListSubscript
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["subscription%2Did"] = id
-    }
-    return NewItemListSubscriptionsSubscriptionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemListSubscriptionsSubscriptionItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // ToDeleteRequestInformation delete navigation property list for shares
 func (m *ItemListRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemListRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -233,7 +218,10 @@ func (m *ItemListRequestBuilder) ToPatchRequestInformation(ctx context.Context, 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// LocalizedNotificationMessage the text content of a Notification Message Template for the specified locale.
+// LocalizedNotificationMessage 
 type LocalizedNotificationMessage struct {
     Entity
     // Flag to indicate whether or not this is the default locale for language fallback. This flag can only be set. To unset, set this property to true on another Localized Notification Message.
@@ -19,7 +19,7 @@ type LocalizedNotificationMessage struct {
     // The Message Template Subject.
     subject *string
 }
-// NewLocalizedNotificationMessage instantiates a new localizedNotificationMessage and sets the default values.
+// NewLocalizedNotificationMessage instantiates a new LocalizedNotificationMessage and sets the default values.
 func NewLocalizedNotificationMessage()(*LocalizedNotificationMessage) {
     m := &LocalizedNotificationMessage{
         Entity: *NewEntity(),

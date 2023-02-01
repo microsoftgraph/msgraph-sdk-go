@@ -47,13 +47,16 @@ type DeviceEnrollmentConfigurationsItemAssignmentsEnrollmentConfigurationAssignm
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewDeviceEnrollmentConfigurationsItemAssignmentsEnrollmentConfigurationAssignmentItemRequestBuilderInternal instantiates a new EnrollmentConfigurationAssignmentItemRequestBuilder and sets the default values.
-func NewDeviceEnrollmentConfigurationsItemAssignmentsEnrollmentConfigurationAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceEnrollmentConfigurationsItemAssignmentsEnrollmentConfigurationAssignmentItemRequestBuilder) {
+func NewDeviceEnrollmentConfigurationsItemAssignmentsEnrollmentConfigurationAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, enrollmentConfigurationAssignmentId *string)(*DeviceEnrollmentConfigurationsItemAssignmentsEnrollmentConfigurationAssignmentItemRequestBuilder) {
     m := &DeviceEnrollmentConfigurationsItemAssignmentsEnrollmentConfigurationAssignmentItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration%2Did}/assignments/{enrollmentConfigurationAssignment%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if enrollmentConfigurationAssignmentId != nil {
+        urlTplParams["enrollmentConfigurationAssignment%2Did"] = *enrollmentConfigurationAssignmentId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewDeviceEnrollmentConfigurationsItemAssignmentsEnrollmentConfigurationAssi
 func NewDeviceEnrollmentConfigurationsItemAssignmentsEnrollmentConfigurationAssignmentItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceEnrollmentConfigurationsItemAssignmentsEnrollmentConfigurationAssignmentItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewDeviceEnrollmentConfigurationsItemAssignmentsEnrollmentConfigurationAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewDeviceEnrollmentConfigurationsItemAssignmentsEnrollmentConfigurationAssignmentItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property assignments for deviceManagement
 func (m *DeviceEnrollmentConfigurationsItemAssignmentsEnrollmentConfigurationAssignmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DeviceEnrollmentConfigurationsItemAssignmentsEnrollmentConfigurationAssignmentItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *DeviceEnrollmentConfigurationsItemAssignmentsEnrollmentConfigurationAss
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

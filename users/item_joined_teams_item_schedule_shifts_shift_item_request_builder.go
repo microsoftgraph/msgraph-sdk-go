@@ -45,13 +45,16 @@ type ItemJoinedTeamsItemScheduleShiftsShiftItemRequestBuilderPatchRequestConfigu
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemJoinedTeamsItemScheduleShiftsShiftItemRequestBuilderInternal instantiates a new ShiftItemRequestBuilder and sets the default values.
-func NewItemJoinedTeamsItemScheduleShiftsShiftItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemJoinedTeamsItemScheduleShiftsShiftItemRequestBuilder) {
+func NewItemJoinedTeamsItemScheduleShiftsShiftItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, shiftId *string)(*ItemJoinedTeamsItemScheduleShiftsShiftItemRequestBuilder) {
     m := &ItemJoinedTeamsItemScheduleShiftsShiftItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/schedule/shifts/{shift%2Did}{?%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if shiftId != nil {
+        urlTplParams["shift%2Did"] = *shiftId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -61,7 +64,7 @@ func NewItemJoinedTeamsItemScheduleShiftsShiftItemRequestBuilderInternal(pathPar
 func NewItemJoinedTeamsItemScheduleShiftsShiftItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemJoinedTeamsItemScheduleShiftsShiftItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemJoinedTeamsItemScheduleShiftsShiftItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemJoinedTeamsItemScheduleShiftsShiftItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property shifts for users
 func (m *ItemJoinedTeamsItemScheduleShiftsShiftItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemScheduleShiftsShiftItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -152,7 +155,10 @@ func (m *ItemJoinedTeamsItemScheduleShiftsShiftItemRequestBuilder) ToPatchReques
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

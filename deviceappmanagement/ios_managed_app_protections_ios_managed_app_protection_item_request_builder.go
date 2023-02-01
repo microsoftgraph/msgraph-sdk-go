@@ -56,19 +56,19 @@ func (m *IosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilder) Apps
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["managedMobileApp%2Did"] = id
-    }
-    return NewIosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewIosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // NewIosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilderInternal instantiates a new IosManagedAppProtectionItemRequestBuilder and sets the default values.
-func NewIosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilder) {
+func NewIosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, iosManagedAppProtectionId *string)(*IosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilder) {
     m := &IosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceAppManagement/iosManagedAppProtections/{iosManagedAppProtection%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if iosManagedAppProtectionId != nil {
+        urlTplParams["iosManagedAppProtection%2Did"] = *iosManagedAppProtectionId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -78,7 +78,7 @@ func NewIosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilderInterna
 func NewIosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewIosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewIosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property iosManagedAppProtections for deviceAppManagement
 func (m *IosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *IosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -173,7 +173,10 @@ func (m *IosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilder) ToPa
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

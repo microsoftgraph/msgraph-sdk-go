@@ -96,9 +96,9 @@ func (m *ItemJoinedTeamsItemChannelsRequestBuilder) Get(ctx context.Context, req
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChannelCollectionResponseable), nil
 }
-// GetAllMessages provides operations to call the getAllMessages method.
-func (m *ItemJoinedTeamsItemChannelsRequestBuilder) GetAllMessages()(*ItemJoinedTeamsItemChannelsGetAllMessagesRequestBuilder) {
-    return NewItemJoinedTeamsItemChannelsGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetAllMessages provides operations to call the getAllMessages method.
+func (m *ItemJoinedTeamsItemChannelsRequestBuilder) MicrosoftGraphGetAllMessages()(*ItemJoinedTeamsItemChannelsMicrosoftGraphGetAllMessagesGetAllMessagesRequestBuilder) {
+    return NewItemJoinedTeamsItemChannelsMicrosoftGraphGetAllMessagesGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post create a new channel in a team, as specified in the request body.  When you create a channel, the maximum length of the channel's `displayName` is 50 characters. This is the name that appears to the user in Microsoft Teams. If you're creating a private channel, you can add a maximum of 200 members.
 // [Find more info here]
@@ -145,7 +145,10 @@ func (m *ItemJoinedTeamsItemChannelsRequestBuilder) ToPostRequestInformation(ctx
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

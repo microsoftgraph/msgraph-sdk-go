@@ -51,13 +51,16 @@ func (m *ActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilder) Activi
     return NewActivitiesItemHistoryItemsItemActivityRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilderInternal instantiates a new ActivityHistoryItemItemRequestBuilder and sets the default values.
-func NewActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilder) {
+func NewActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, activityHistoryItemId *string)(*ActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilder) {
     m := &ActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/activities/{userActivity%2Did}/historyItems/{activityHistoryItem%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if activityHistoryItemId != nil {
+        urlTplParams["activityHistoryItem%2Did"] = *activityHistoryItemId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -67,7 +70,7 @@ func NewActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilderInternal(
 func NewActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property historyItems for me
 func (m *ActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -158,7 +161,10 @@ func (m *ActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilder) ToPatc
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

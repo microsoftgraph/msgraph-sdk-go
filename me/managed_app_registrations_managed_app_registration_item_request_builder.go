@@ -33,13 +33,16 @@ type ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilderGetRequestCo
     QueryParameters *ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilderGetQueryParameters
 }
 // NewManagedAppRegistrationsManagedAppRegistrationItemRequestBuilderInternal instantiates a new ManagedAppRegistrationItemRequestBuilder and sets the default values.
-func NewManagedAppRegistrationsManagedAppRegistrationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) {
+func NewManagedAppRegistrationsManagedAppRegistrationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, managedAppRegistrationId *string)(*ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) {
     m := &ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/managedAppRegistrations/{managedAppRegistration%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if managedAppRegistrationId != nil {
+        urlTplParams["managedAppRegistration%2Did"] = *managedAppRegistrationId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -49,7 +52,7 @@ func NewManagedAppRegistrationsManagedAppRegistrationItemRequestBuilderInternal(
 func NewManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewManagedAppRegistrationsManagedAppRegistrationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewManagedAppRegistrationsManagedAppRegistrationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get zero or more managed app registrations that belong to the user.
 func (m *ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAppRegistrationable, error) {

@@ -49,10 +49,7 @@ func (m *IdentityRequestBuilder) ApiConnectorsById(id string)(*ApiConnectorsIden
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["identityApiConnector%2Did"] = id
-    }
-    return NewApiConnectorsIdentityApiConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewApiConnectorsIdentityApiConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // B2xUserFlows provides operations to manage the b2xUserFlows property of the microsoft.graph.identityContainer entity.
 func (m *IdentityRequestBuilder) B2xUserFlows()(*B2xUserFlowsRequestBuilder) {
@@ -64,10 +61,7 @@ func (m *IdentityRequestBuilder) B2xUserFlowsById(id string)(*B2xUserFlowsB2xIde
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["b2xIdentityUserFlow%2Did"] = id
-    }
-    return NewB2xUserFlowsB2xIdentityUserFlowItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewB2xUserFlowsB2xIdentityUserFlowItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // ConditionalAccess provides operations to manage the conditionalAccess property of the microsoft.graph.identityContainer entity.
 func (m *IdentityRequestBuilder) ConditionalAccess()(*ConditionalAccessRequestBuilder) {
@@ -121,10 +115,7 @@ func (m *IdentityRequestBuilder) IdentityProvidersById(id string)(*IdentityProvi
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["identityProviderBase%2Did"] = id
-    }
-    return NewIdentityProvidersIdentityProviderBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewIdentityProvidersIdentityProviderBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Patch update identity
 func (m *IdentityRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityContainerable, requestConfiguration *IdentityRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityContainerable, error) {
@@ -168,7 +159,10 @@ func (m *IdentityRequestBuilder) ToPatchRequestInformation(ctx context.Context, 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -185,8 +179,5 @@ func (m *IdentityRequestBuilder) UserFlowAttributesById(id string)(*UserFlowAttr
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["identityUserFlowAttribute%2Did"] = id
-    }
-    return NewUserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }

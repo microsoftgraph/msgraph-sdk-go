@@ -56,19 +56,19 @@ func (m *TermsOfUseAgreementsAgreementItemRequestBuilder) AcceptancesById(id str
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["agreementAcceptance%2Did"] = id
-    }
-    return NewTermsOfUseAgreementsItemAcceptancesAgreementAcceptanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTermsOfUseAgreementsItemAcceptancesAgreementAcceptanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // NewTermsOfUseAgreementsAgreementItemRequestBuilderInternal instantiates a new AgreementItemRequestBuilder and sets the default values.
-func NewTermsOfUseAgreementsAgreementItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TermsOfUseAgreementsAgreementItemRequestBuilder) {
+func NewTermsOfUseAgreementsAgreementItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, agreementId *string)(*TermsOfUseAgreementsAgreementItemRequestBuilder) {
     m := &TermsOfUseAgreementsAgreementItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/identityGovernance/termsOfUse/agreements/{agreement%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if agreementId != nil {
+        urlTplParams["agreement%2Did"] = *agreementId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -78,7 +78,7 @@ func NewTermsOfUseAgreementsAgreementItemRequestBuilderInternal(pathParameters m
 func NewTermsOfUseAgreementsAgreementItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TermsOfUseAgreementsAgreementItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewTermsOfUseAgreementsAgreementItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewTermsOfUseAgreementsAgreementItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property agreements for identityGovernance
 func (m *TermsOfUseAgreementsAgreementItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TermsOfUseAgreementsAgreementItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -110,10 +110,7 @@ func (m *TermsOfUseAgreementsAgreementItemRequestBuilder) FilesById(id string)(*
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["agreementFileLocalization%2Did"] = id
-    }
-    return NewTermsOfUseAgreementsItemFilesAgreementFileLocalizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTermsOfUseAgreementsItemFilesAgreementFileLocalizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Get represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
 func (m *TermsOfUseAgreementsAgreementItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TermsOfUseAgreementsAgreementItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Agreementable, error) {
@@ -188,7 +185,10 @@ func (m *TermsOfUseAgreementsAgreementItemRequestBuilder) ToPatchRequestInformat
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

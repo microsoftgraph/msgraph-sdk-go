@@ -47,13 +47,16 @@ type ItemTeamOperationsTeamsAsyncOperationItemRequestBuilderPatchRequestConfigur
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemTeamOperationsTeamsAsyncOperationItemRequestBuilderInternal instantiates a new TeamsAsyncOperationItemRequestBuilder and sets the default values.
-func NewItemTeamOperationsTeamsAsyncOperationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamOperationsTeamsAsyncOperationItemRequestBuilder) {
+func NewItemTeamOperationsTeamsAsyncOperationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, teamsAsyncOperationId *string)(*ItemTeamOperationsTeamsAsyncOperationItemRequestBuilder) {
     m := &ItemTeamOperationsTeamsAsyncOperationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groups/{group%2Did}/team/operations/{teamsAsyncOperation%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if teamsAsyncOperationId != nil {
+        urlTplParams["teamsAsyncOperation%2Did"] = *teamsAsyncOperationId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewItemTeamOperationsTeamsAsyncOperationItemRequestBuilderInternal(pathPara
 func NewItemTeamOperationsTeamsAsyncOperationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamOperationsTeamsAsyncOperationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemTeamOperationsTeamsAsyncOperationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemTeamOperationsTeamsAsyncOperationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property operations for groups
 func (m *ItemTeamOperationsTeamsAsyncOperationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTeamOperationsTeamsAsyncOperationItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemTeamOperationsTeamsAsyncOperationItemRequestBuilder) ToPatchRequest
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

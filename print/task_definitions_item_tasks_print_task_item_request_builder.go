@@ -47,13 +47,16 @@ type TaskDefinitionsItemTasksPrintTaskItemRequestBuilderPatchRequestConfiguratio
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewTaskDefinitionsItemTasksPrintTaskItemRequestBuilderInternal instantiates a new PrintTaskItemRequestBuilder and sets the default values.
-func NewTaskDefinitionsItemTasksPrintTaskItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TaskDefinitionsItemTasksPrintTaskItemRequestBuilder) {
+func NewTaskDefinitionsItemTasksPrintTaskItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, printTaskId *string)(*TaskDefinitionsItemTasksPrintTaskItemRequestBuilder) {
     m := &TaskDefinitionsItemTasksPrintTaskItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/print/taskDefinitions/{printTaskDefinition%2Did}/tasks/{printTask%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if printTaskId != nil {
+        urlTplParams["printTask%2Did"] = *printTaskId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewTaskDefinitionsItemTasksPrintTaskItemRequestBuilderInternal(pathParamete
 func NewTaskDefinitionsItemTasksPrintTaskItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TaskDefinitionsItemTasksPrintTaskItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewTaskDefinitionsItemTasksPrintTaskItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewTaskDefinitionsItemTasksPrintTaskItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Definition provides operations to manage the definition property of the microsoft.graph.printTask entity.
 func (m *TaskDefinitionsItemTasksPrintTaskItemRequestBuilder) Definition()(*TaskDefinitionsItemTasksItemDefinitionRequestBuilder) {
@@ -158,7 +161,10 @@ func (m *TaskDefinitionsItemTasksPrintTaskItemRequestBuilder) ToPatchRequestInfo
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -47,13 +47,16 @@ type ItemMailFoldersItemMessagesItemExtensionsExtensionItemRequestBuilderPatchRe
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemMailFoldersItemMessagesItemExtensionsExtensionItemRequestBuilderInternal instantiates a new ExtensionItemRequestBuilder and sets the default values.
-func NewItemMailFoldersItemMessagesItemExtensionsExtensionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMailFoldersItemMessagesItemExtensionsExtensionItemRequestBuilder) {
+func NewItemMailFoldersItemMessagesItemExtensionsExtensionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, extensionId *string)(*ItemMailFoldersItemMessagesItemExtensionsExtensionItemRequestBuilder) {
     m := &ItemMailFoldersItemMessagesItemExtensionsExtensionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}/messages/{message%2Did}/extensions/{extension%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if extensionId != nil {
+        urlTplParams["extension%2Did"] = *extensionId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewItemMailFoldersItemMessagesItemExtensionsExtensionItemRequestBuilderInte
 func NewItemMailFoldersItemMessagesItemExtensionsExtensionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMailFoldersItemMessagesItemExtensionsExtensionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemMailFoldersItemMessagesItemExtensionsExtensionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemMailFoldersItemMessagesItemExtensionsExtensionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property extensions for users
 func (m *ItemMailFoldersItemMessagesItemExtensionsExtensionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemMailFoldersItemMessagesItemExtensionsExtensionItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemMailFoldersItemMessagesItemExtensionsExtensionItemRequestBuilder) T
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

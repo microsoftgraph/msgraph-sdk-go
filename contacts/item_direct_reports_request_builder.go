@@ -89,9 +89,13 @@ func (m *ItemDirectReportsRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
 }
-// OrgContact casts the previous resource to orgContact.
-func (m *ItemDirectReportsRequestBuilder) OrgContact()(*ItemDirectReportsOrgContactRequestBuilder) {
-    return NewItemDirectReportsOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphOrgContact casts the previous resource to orgContact.
+func (m *ItemDirectReportsRequestBuilder) MicrosoftGraphOrgContact()(*ItemDirectReportsMicrosoftGraphOrgContactOrgContactRequestBuilder) {
+    return NewItemDirectReportsMicrosoftGraphOrgContactOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphUser casts the previous resource to user.
+func (m *ItemDirectReportsRequestBuilder) MicrosoftGraphUser()(*ItemDirectReportsMicrosoftGraphUserUserRequestBuilder) {
+    return NewItemDirectReportsMicrosoftGraphUserUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToGetRequestInformation get directReports from contacts
 func (m *ItemDirectReportsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemDirectReportsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -108,8 +112,4 @@ func (m *ItemDirectReportsRequestBuilder) ToGetRequestInformation(ctx context.Co
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// User casts the previous resource to user.
-func (m *ItemDirectReportsRequestBuilder) User()(*ItemDirectReportsUserRequestBuilder) {
-    return NewItemDirectReportsUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

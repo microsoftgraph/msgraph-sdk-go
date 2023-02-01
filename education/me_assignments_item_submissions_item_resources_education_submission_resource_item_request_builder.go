@@ -47,13 +47,16 @@ type MeAssignmentsItemSubmissionsItemResourcesEducationSubmissionResourceItemReq
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewMeAssignmentsItemSubmissionsItemResourcesEducationSubmissionResourceItemRequestBuilderInternal instantiates a new EducationSubmissionResourceItemRequestBuilder and sets the default values.
-func NewMeAssignmentsItemSubmissionsItemResourcesEducationSubmissionResourceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MeAssignmentsItemSubmissionsItemResourcesEducationSubmissionResourceItemRequestBuilder) {
+func NewMeAssignmentsItemSubmissionsItemResourcesEducationSubmissionResourceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, educationSubmissionResourceId *string)(*MeAssignmentsItemSubmissionsItemResourcesEducationSubmissionResourceItemRequestBuilder) {
     m := &MeAssignmentsItemSubmissionsItemResourcesEducationSubmissionResourceItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/education/me/assignments/{educationAssignment%2Did}/submissions/{educationSubmission%2Did}/resources/{educationSubmissionResource%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if educationSubmissionResourceId != nil {
+        urlTplParams["educationSubmissionResource%2Did"] = *educationSubmissionResourceId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewMeAssignmentsItemSubmissionsItemResourcesEducationSubmissionResourceItem
 func NewMeAssignmentsItemSubmissionsItemResourcesEducationSubmissionResourceItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MeAssignmentsItemSubmissionsItemResourcesEducationSubmissionResourceItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewMeAssignmentsItemSubmissionsItemResourcesEducationSubmissionResourceItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewMeAssignmentsItemSubmissionsItemResourcesEducationSubmissionResourceItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property resources for education
 func (m *MeAssignmentsItemSubmissionsItemResourcesEducationSubmissionResourceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *MeAssignmentsItemSubmissionsItemResourcesEducationSubmissionResourceItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *MeAssignmentsItemSubmissionsItemResourcesEducationSubmissionResourceIte
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

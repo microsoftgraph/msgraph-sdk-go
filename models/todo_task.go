@@ -8,7 +8,7 @@ import (
 // TodoTask 
 type TodoTask struct {
     Entity
-    // The attachments property
+    // A collection of file attachments for the task.
     attachments []AttachmentBaseable
     // The attachmentSessions property
     attachmentSessions []AttachmentSessionable
@@ -28,7 +28,7 @@ type TodoTask struct {
     dueDateTime DateTimeTimeZoneable
     // The collection of open extensions defined for the task. Nullable.
     extensions []Extensionable
-    // The hasAttachments property
+    // Indicates whether the task has attachments.
     hasAttachments *bool
     // The importance property
     importance *Importance
@@ -42,7 +42,7 @@ type TodoTask struct {
     recurrence PatternedRecurrenceable
     // The date and time in the specified time zone for a reminder alert of the task to occur.
     reminderDateTime DateTimeTimeZoneable
-    // The startDateTime property
+    // The date and time in the specified time zone at which the task is scheduled to start.
     startDateTime DateTimeTimeZoneable
     // The status property
     status *TaskStatus
@@ -60,7 +60,7 @@ func NewTodoTask()(*TodoTask) {
 func CreateTodoTaskFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTodoTask(), nil
 }
-// GetAttachments gets the attachments property value. The attachments property
+// GetAttachments gets the attachments property value. A collection of file attachments for the task.
 func (m *TodoTask) GetAttachments()([]AttachmentBaseable) {
     return m.attachments
 }
@@ -329,7 +329,7 @@ func (m *TodoTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetHasAttachments gets the hasAttachments property value. The hasAttachments property
+// GetHasAttachments gets the hasAttachments property value. Indicates whether the task has attachments.
 func (m *TodoTask) GetHasAttachments()(*bool) {
     return m.hasAttachments
 }
@@ -357,7 +357,7 @@ func (m *TodoTask) GetRecurrence()(PatternedRecurrenceable) {
 func (m *TodoTask) GetReminderDateTime()(DateTimeTimeZoneable) {
     return m.reminderDateTime
 }
-// GetStartDateTime gets the startDateTime property value. The startDateTime property
+// GetStartDateTime gets the startDateTime property value. The date and time in the specified time zone at which the task is scheduled to start.
 func (m *TodoTask) GetStartDateTime()(DateTimeTimeZoneable) {
     return m.startDateTime
 }
@@ -519,7 +519,7 @@ func (m *TodoTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetAttachments sets the attachments property value. The attachments property
+// SetAttachments sets the attachments property value. A collection of file attachments for the task.
 func (m *TodoTask) SetAttachments(value []AttachmentBaseable)() {
     m.attachments = value
 }
@@ -559,7 +559,7 @@ func (m *TodoTask) SetDueDateTime(value DateTimeTimeZoneable)() {
 func (m *TodoTask) SetExtensions(value []Extensionable)() {
     m.extensions = value
 }
-// SetHasAttachments sets the hasAttachments property value. The hasAttachments property
+// SetHasAttachments sets the hasAttachments property value. Indicates whether the task has attachments.
 func (m *TodoTask) SetHasAttachments(value *bool)() {
     m.hasAttachments = value
 }
@@ -587,7 +587,7 @@ func (m *TodoTask) SetRecurrence(value PatternedRecurrenceable)() {
 func (m *TodoTask) SetReminderDateTime(value DateTimeTimeZoneable)() {
     m.reminderDateTime = value
 }
-// SetStartDateTime sets the startDateTime property value. The startDateTime property
+// SetStartDateTime sets the startDateTime property value. The date and time in the specified time zone at which the task is scheduled to start.
 func (m *TodoTask) SetStartDateTime(value DateTimeTimeZoneable)() {
     m.startDateTime = value
 }

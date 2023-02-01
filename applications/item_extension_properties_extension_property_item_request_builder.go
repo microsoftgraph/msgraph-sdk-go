@@ -47,13 +47,16 @@ type ItemExtensionPropertiesExtensionPropertyItemRequestBuilderPatchRequestConfi
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemExtensionPropertiesExtensionPropertyItemRequestBuilderInternal instantiates a new ExtensionPropertyItemRequestBuilder and sets the default values.
-func NewItemExtensionPropertiesExtensionPropertyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemExtensionPropertiesExtensionPropertyItemRequestBuilder) {
+func NewItemExtensionPropertiesExtensionPropertyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, extensionPropertyId *string)(*ItemExtensionPropertiesExtensionPropertyItemRequestBuilder) {
     m := &ItemExtensionPropertiesExtensionPropertyItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/applications/{application%2Did}/extensionProperties/{extensionProperty%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if extensionPropertyId != nil {
+        urlTplParams["extensionProperty%2Did"] = *extensionPropertyId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewItemExtensionPropertiesExtensionPropertyItemRequestBuilderInternal(pathP
 func NewItemExtensionPropertiesExtensionPropertyItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemExtensionPropertiesExtensionPropertyItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemExtensionPropertiesExtensionPropertyItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemExtensionPropertiesExtensionPropertyItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property extensionProperties for applications
 func (m *ItemExtensionPropertiesExtensionPropertyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemExtensionPropertiesExtensionPropertyItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemExtensionPropertiesExtensionPropertyItemRequestBuilder) ToPatchRequ
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -274,6 +274,18 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewDataPolicyOperation(), nil
                     case "#microsoft.graph.defaultManagedAppProtection":
                         return NewDefaultManagedAppProtection(), nil
+                    case "#microsoft.graph.delegatedAdminAccessAssignment":
+                        return NewDelegatedAdminAccessAssignment(), nil
+                    case "#microsoft.graph.delegatedAdminCustomer":
+                        return NewDelegatedAdminCustomer(), nil
+                    case "#microsoft.graph.delegatedAdminRelationship":
+                        return NewDelegatedAdminRelationship(), nil
+                    case "#microsoft.graph.delegatedAdminRelationshipOperation":
+                        return NewDelegatedAdminRelationshipOperation(), nil
+                    case "#microsoft.graph.delegatedAdminRelationshipRequest":
+                        return NewDelegatedAdminRelationshipRequest(), nil
+                    case "#microsoft.graph.delegatedAdminServiceManagementDetail":
+                        return NewDelegatedAdminServiceManagementDetail(), nil
                     case "#microsoft.graph.delegatedPermissionClassification":
                         return NewDelegatedPermissionClassification(), nil
                     case "#microsoft.graph.detectedApp":
@@ -520,6 +532,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewIosDeviceFeaturesConfiguration(), nil
                     case "#microsoft.graph.iosGeneralDeviceConfiguration":
                         return NewIosGeneralDeviceConfiguration(), nil
+                    case "#microsoft.graph.iosiPadOSWebClip":
+                        return NewIosiPadOSWebClip(), nil
                     case "#microsoft.graph.iosLobApp":
                         return NewIosLobApp(), nil
                     case "#microsoft.graph.iosManagedAppProtection":
@@ -1140,6 +1154,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewWindowsUniversalAppXContainedApp(), nil
                     case "#microsoft.graph.windowsUpdateForBusinessConfiguration":
                         return NewWindowsUpdateForBusinessConfiguration(), nil
+                    case "#microsoft.graph.windowsWebApp":
+                        return NewWindowsWebApp(), nil
                     case "#microsoft.graph.workbook":
                         return NewWorkbook(), nil
                     case "#microsoft.graph.workbookApplication":

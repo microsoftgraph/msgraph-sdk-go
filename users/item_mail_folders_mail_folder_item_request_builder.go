@@ -54,19 +54,19 @@ func (m *ItemMailFoldersMailFolderItemRequestBuilder) ChildFoldersById(id string
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["mailFolder%2Did1"] = id
-    }
-    return NewItemMailFoldersItemChildFoldersMailFolderItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemMailFoldersItemChildFoldersMailFolderItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // NewItemMailFoldersMailFolderItemRequestBuilderInternal instantiates a new MailFolderItemRequestBuilder and sets the default values.
-func NewItemMailFoldersMailFolderItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMailFoldersMailFolderItemRequestBuilder) {
+func NewItemMailFoldersMailFolderItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, mailFolderId *string)(*ItemMailFoldersMailFolderItemRequestBuilder) {
     m := &ItemMailFoldersMailFolderItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}{?%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if mailFolderId != nil {
+        urlTplParams["mailFolder%2Did"] = *mailFolderId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -76,11 +76,7 @@ func NewItemMailFoldersMailFolderItemRequestBuilderInternal(pathParameters map[s
 func NewItemMailFoldersMailFolderItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMailFoldersMailFolderItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemMailFoldersMailFolderItemRequestBuilderInternal(urlParams, requestAdapter)
-}
-// Copy provides operations to call the copy method.
-func (m *ItemMailFoldersMailFolderItemRequestBuilder) Copy()(*ItemMailFoldersItemCopyRequestBuilder) {
-    return NewItemMailFoldersItemCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemMailFoldersMailFolderItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property mailFolders for users
 func (m *ItemMailFoldersMailFolderItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemMailFoldersMailFolderItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -127,10 +123,7 @@ func (m *ItemMailFoldersMailFolderItemRequestBuilder) MessageRulesById(id string
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["messageRule%2Did"] = id
-    }
-    return NewItemMailFoldersItemMessageRulesMessageRuleItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemMailFoldersItemMessageRulesMessageRuleItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Messages provides operations to manage the messages property of the microsoft.graph.mailFolder entity.
 func (m *ItemMailFoldersMailFolderItemRequestBuilder) Messages()(*ItemMailFoldersItemMessagesRequestBuilder) {
@@ -142,14 +135,15 @@ func (m *ItemMailFoldersMailFolderItemRequestBuilder) MessagesById(id string)(*I
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["message%2Did"] = id
-    }
-    return NewItemMailFoldersItemMessagesMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemMailFoldersItemMessagesMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
-// Move provides operations to call the move method.
-func (m *ItemMailFoldersMailFolderItemRequestBuilder) Move()(*ItemMailFoldersItemMoveRequestBuilder) {
-    return NewItemMailFoldersItemMoveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphCopy provides operations to call the copy method.
+func (m *ItemMailFoldersMailFolderItemRequestBuilder) MicrosoftGraphCopy()(*ItemMailFoldersItemMicrosoftGraphCopyCopyRequestBuilder) {
+    return NewItemMailFoldersItemMicrosoftGraphCopyCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphMove provides operations to call the move method.
+func (m *ItemMailFoldersMailFolderItemRequestBuilder) MicrosoftGraphMove()(*ItemMailFoldersItemMicrosoftGraphMoveMoveRequestBuilder) {
+    return NewItemMailFoldersItemMicrosoftGraphMoveMoveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.mailFolder entity.
 func (m *ItemMailFoldersMailFolderItemRequestBuilder) MultiValueExtendedProperties()(*ItemMailFoldersItemMultiValueExtendedPropertiesRequestBuilder) {
@@ -161,10 +155,7 @@ func (m *ItemMailFoldersMailFolderItemRequestBuilder) MultiValueExtendedProperti
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["multiValueLegacyExtendedProperty%2Did"] = id
-    }
-    return NewItemMailFoldersItemMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemMailFoldersItemMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Patch update the navigation property mailFolders in users
 func (m *ItemMailFoldersMailFolderItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailFolderable, requestConfiguration *ItemMailFoldersMailFolderItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailFolderable, error) {
@@ -195,10 +186,7 @@ func (m *ItemMailFoldersMailFolderItemRequestBuilder) SingleValueExtendedPropert
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["singleValueLegacyExtendedProperty%2Did"] = id
-    }
-    return NewItemMailFoldersItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemMailFoldersItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // ToDeleteRequestInformation delete navigation property mailFolders for users
 func (m *ItemMailFoldersMailFolderItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemMailFoldersMailFolderItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -235,7 +223,10 @@ func (m *ItemMailFoldersMailFolderItemRequestBuilder) ToPatchRequestInformation(
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -47,13 +47,16 @@ type TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderPatchRequestConfi
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderInternal instantiates a new TokenLifetimePolicyItemRequestBuilder and sets the default values.
-func NewTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) {
+func NewTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, tokenLifetimePolicyId *string)(*TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) {
     m := &TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/policies/tokenLifetimePolicies/{tokenLifetimePolicy%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if tokenLifetimePolicyId != nil {
+        urlTplParams["tokenLifetimePolicy%2Did"] = *tokenLifetimePolicyId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderInternal(pathP
 func NewTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property tokenLifetimePolicies for policies
 func (m *TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) ToPatchRequ
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

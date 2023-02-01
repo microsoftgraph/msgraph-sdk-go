@@ -47,13 +47,16 @@ type ChatsItemMembersConversationMemberItemRequestBuilderPatchRequestConfigurati
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewChatsItemMembersConversationMemberItemRequestBuilderInternal instantiates a new ConversationMemberItemRequestBuilder and sets the default values.
-func NewChatsItemMembersConversationMemberItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ChatsItemMembersConversationMemberItemRequestBuilder) {
+func NewChatsItemMembersConversationMemberItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, conversationMemberId *string)(*ChatsItemMembersConversationMemberItemRequestBuilder) {
     m := &ChatsItemMembersConversationMemberItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/chats/{chat%2Did}/members/{conversationMember%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if conversationMemberId != nil {
+        urlTplParams["conversationMember%2Did"] = *conversationMemberId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewChatsItemMembersConversationMemberItemRequestBuilderInternal(pathParamet
 func NewChatsItemMembersConversationMemberItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ChatsItemMembersConversationMemberItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewChatsItemMembersConversationMemberItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewChatsItemMembersConversationMemberItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property members for me
 func (m *ChatsItemMembersConversationMemberItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ChatsItemMembersConversationMemberItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ChatsItemMembersConversationMemberItemRequestBuilder) ToPatchRequestInf
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

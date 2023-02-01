@@ -14,13 +14,16 @@ type SchoolsItemClassesEducationClassItemRequestBuilder struct {
     urlTemplate string
 }
 // NewSchoolsItemClassesEducationClassItemRequestBuilderInternal instantiates a new EducationClassItemRequestBuilder and sets the default values.
-func NewSchoolsItemClassesEducationClassItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SchoolsItemClassesEducationClassItemRequestBuilder) {
+func NewSchoolsItemClassesEducationClassItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, educationClassId *string)(*SchoolsItemClassesEducationClassItemRequestBuilder) {
     m := &SchoolsItemClassesEducationClassItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/education/schools/{educationSchool%2Did}/classes/{educationClass%2Did}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if educationClassId != nil {
+        urlTplParams["educationClass%2Did"] = *educationClassId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -30,7 +33,7 @@ func NewSchoolsItemClassesEducationClassItemRequestBuilderInternal(pathParameter
 func NewSchoolsItemClassesEducationClassItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SchoolsItemClassesEducationClassItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewSchoolsItemClassesEducationClassItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewSchoolsItemClassesEducationClassItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Ref provides operations to manage the collection of educationRoot entities.
 func (m *SchoolsItemClassesEducationClassItemRequestBuilder) Ref()(*SchoolsItemClassesItemRefRequestBuilder) {

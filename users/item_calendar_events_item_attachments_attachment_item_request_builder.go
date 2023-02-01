@@ -40,13 +40,16 @@ type ItemCalendarEventsItemAttachmentsAttachmentItemRequestBuilderGetRequestConf
     QueryParameters *ItemCalendarEventsItemAttachmentsAttachmentItemRequestBuilderGetQueryParameters
 }
 // NewItemCalendarEventsItemAttachmentsAttachmentItemRequestBuilderInternal instantiates a new AttachmentItemRequestBuilder and sets the default values.
-func NewItemCalendarEventsItemAttachmentsAttachmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarEventsItemAttachmentsAttachmentItemRequestBuilder) {
+func NewItemCalendarEventsItemAttachmentsAttachmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, attachmentId *string)(*ItemCalendarEventsItemAttachmentsAttachmentItemRequestBuilder) {
     m := &ItemCalendarEventsItemAttachmentsAttachmentItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/calendar/events/{event%2Did}/attachments/{attachment%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if attachmentId != nil {
+        urlTplParams["attachment%2Did"] = *attachmentId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -56,7 +59,7 @@ func NewItemCalendarEventsItemAttachmentsAttachmentItemRequestBuilderInternal(pa
 func NewItemCalendarEventsItemAttachmentsAttachmentItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarEventsItemAttachmentsAttachmentItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemCalendarEventsItemAttachmentsAttachmentItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemCalendarEventsItemAttachmentsAttachmentItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property attachments for users
 func (m *ItemCalendarEventsItemAttachmentsAttachmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemCalendarEventsItemAttachmentsAttachmentItemRequestBuilderDeleteRequestConfiguration)(error) {

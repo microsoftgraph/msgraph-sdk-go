@@ -56,10 +56,7 @@ func (m *TodoListsItemTasksTodoTaskItemRequestBuilder) AttachmentsById(id string
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["attachmentBase%2Did"] = id
-    }
-    return NewTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // AttachmentSessions provides operations to manage the attachmentSessions property of the microsoft.graph.todoTask entity.
 func (m *TodoListsItemTasksTodoTaskItemRequestBuilder) AttachmentSessions()(*TodoListsItemTasksItemAttachmentSessionsRequestBuilder) {
@@ -71,10 +68,7 @@ func (m *TodoListsItemTasksTodoTaskItemRequestBuilder) AttachmentSessionsById(id
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["attachmentSession%2Did"] = id
-    }
-    return NewTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // ChecklistItems provides operations to manage the checklistItems property of the microsoft.graph.todoTask entity.
 func (m *TodoListsItemTasksTodoTaskItemRequestBuilder) ChecklistItems()(*TodoListsItemTasksItemChecklistItemsRequestBuilder) {
@@ -86,19 +80,19 @@ func (m *TodoListsItemTasksTodoTaskItemRequestBuilder) ChecklistItemsById(id str
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["checklistItem%2Did"] = id
-    }
-    return NewTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // NewTodoListsItemTasksTodoTaskItemRequestBuilderInternal instantiates a new TodoTaskItemRequestBuilder and sets the default values.
-func NewTodoListsItemTasksTodoTaskItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TodoListsItemTasksTodoTaskItemRequestBuilder) {
+func NewTodoListsItemTasksTodoTaskItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, todoTaskId *string)(*TodoListsItemTasksTodoTaskItemRequestBuilder) {
     m := &TodoListsItemTasksTodoTaskItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/todo/lists/{todoTaskList%2Did}/tasks/{todoTask%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if todoTaskId != nil {
+        urlTplParams["todoTask%2Did"] = *todoTaskId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -108,7 +102,7 @@ func NewTodoListsItemTasksTodoTaskItemRequestBuilderInternal(pathParameters map[
 func NewTodoListsItemTasksTodoTaskItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TodoListsItemTasksTodoTaskItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewTodoListsItemTasksTodoTaskItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewTodoListsItemTasksTodoTaskItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property tasks for me
 func (m *TodoListsItemTasksTodoTaskItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TodoListsItemTasksTodoTaskItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -136,10 +130,7 @@ func (m *TodoListsItemTasksTodoTaskItemRequestBuilder) ExtensionsById(id string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["extension%2Did"] = id
-    }
-    return NewTodoListsItemTasksItemExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTodoListsItemTasksItemExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Get the tasks in this task list. Read-only. Nullable.
 func (m *TodoListsItemTasksTodoTaskItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TodoListsItemTasksTodoTaskItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TodoTaskable, error) {
@@ -170,10 +161,7 @@ func (m *TodoListsItemTasksTodoTaskItemRequestBuilder) LinkedResourcesById(id st
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["linkedResource%2Did"] = id
-    }
-    return NewTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Patch update the navigation property tasks in me
 func (m *TodoListsItemTasksTodoTaskItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TodoTaskable, requestConfiguration *TodoListsItemTasksTodoTaskItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TodoTaskable, error) {
@@ -229,7 +217,10 @@ func (m *TodoListsItemTasksTodoTaskItemRequestBuilder) ToPatchRequestInformation
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

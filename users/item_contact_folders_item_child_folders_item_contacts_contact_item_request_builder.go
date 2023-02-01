@@ -47,13 +47,16 @@ type ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilderPatc
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilderInternal instantiates a new ContactItemRequestBuilder and sets the default values.
-func NewItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilder) {
+func NewItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, contactId *string)(*ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilder) {
     m := &ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/contactFolders/{contactFolder%2Did}/childFolders/{contactFolder%2Did1}/contacts/{contact%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if contactId != nil {
+        urlTplParams["contact%2Did"] = *contactId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilderI
 func NewItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property contacts for users
 func (m *ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -91,10 +94,7 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilder
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["extension%2Did"] = id
-    }
-    return NewItemContactFoldersItemChildFoldersItemContactsItemExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemContactFoldersItemChildFoldersItemContactsItemExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Get the contacts in the folder. Navigation property. Read-only. Nullable.
 func (m *ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Contactable, error) {
@@ -125,10 +125,7 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilder
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["multiValueLegacyExtendedProperty%2Did"] = id
-    }
-    return NewItemContactFoldersItemChildFoldersItemContactsItemMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemContactFoldersItemChildFoldersItemContactsItemMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Patch update the navigation property contacts in users
 func (m *ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Contactable, requestConfiguration *ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Contactable, error) {
@@ -163,10 +160,7 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilder
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["singleValueLegacyExtendedProperty%2Did"] = id
-    }
-    return NewItemContactFoldersItemChildFoldersItemContactsItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemContactFoldersItemChildFoldersItemContactsItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // ToDeleteRequestInformation delete navigation property contacts for users
 func (m *ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -203,7 +197,10 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilder
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -47,13 +47,16 @@ type ItemLicenseDetailsLicenseDetailsItemRequestBuilderPatchRequestConfiguration
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemLicenseDetailsLicenseDetailsItemRequestBuilderInternal instantiates a new LicenseDetailsItemRequestBuilder and sets the default values.
-func NewItemLicenseDetailsLicenseDetailsItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemLicenseDetailsLicenseDetailsItemRequestBuilder) {
+func NewItemLicenseDetailsLicenseDetailsItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, licenseDetailsId *string)(*ItemLicenseDetailsLicenseDetailsItemRequestBuilder) {
     m := &ItemLicenseDetailsLicenseDetailsItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/licenseDetails/{licenseDetails%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if licenseDetailsId != nil {
+        urlTplParams["licenseDetails%2Did"] = *licenseDetailsId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewItemLicenseDetailsLicenseDetailsItemRequestBuilderInternal(pathParameter
 func NewItemLicenseDetailsLicenseDetailsItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemLicenseDetailsLicenseDetailsItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemLicenseDetailsLicenseDetailsItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemLicenseDetailsLicenseDetailsItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property licenseDetails for users
 func (m *ItemLicenseDetailsLicenseDetailsItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemLicenseDetailsLicenseDetailsItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemLicenseDetailsLicenseDetailsItemRequestBuilder) ToPatchRequestInfor
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

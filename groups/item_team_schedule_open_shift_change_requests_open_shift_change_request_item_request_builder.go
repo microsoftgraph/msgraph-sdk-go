@@ -47,13 +47,16 @@ type ItemTeamScheduleOpenShiftChangeRequestsOpenShiftChangeRequestItemRequestBui
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemTeamScheduleOpenShiftChangeRequestsOpenShiftChangeRequestItemRequestBuilderInternal instantiates a new OpenShiftChangeRequestItemRequestBuilder and sets the default values.
-func NewItemTeamScheduleOpenShiftChangeRequestsOpenShiftChangeRequestItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamScheduleOpenShiftChangeRequestsOpenShiftChangeRequestItemRequestBuilder) {
+func NewItemTeamScheduleOpenShiftChangeRequestsOpenShiftChangeRequestItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, openShiftChangeRequestId *string)(*ItemTeamScheduleOpenShiftChangeRequestsOpenShiftChangeRequestItemRequestBuilder) {
     m := &ItemTeamScheduleOpenShiftChangeRequestsOpenShiftChangeRequestItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groups/{group%2Did}/team/schedule/openShiftChangeRequests/{openShiftChangeRequest%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if openShiftChangeRequestId != nil {
+        urlTplParams["openShiftChangeRequest%2Did"] = *openShiftChangeRequestId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewItemTeamScheduleOpenShiftChangeRequestsOpenShiftChangeRequestItemRequest
 func NewItemTeamScheduleOpenShiftChangeRequestsOpenShiftChangeRequestItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamScheduleOpenShiftChangeRequestsOpenShiftChangeRequestItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemTeamScheduleOpenShiftChangeRequestsOpenShiftChangeRequestItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemTeamScheduleOpenShiftChangeRequestsOpenShiftChangeRequestItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property openShiftChangeRequests for groups
 func (m *ItemTeamScheduleOpenShiftChangeRequestsOpenShiftChangeRequestItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTeamScheduleOpenShiftChangeRequestsOpenShiftChangeRequestItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemTeamScheduleOpenShiftChangeRequestsOpenShiftChangeRequestItemReques
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

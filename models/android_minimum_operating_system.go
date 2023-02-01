@@ -77,7 +77,7 @@ func (m *AndroidMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            m.SetV10_0(val)
+            m.SetV100(val)
         }
         return nil
     }
@@ -87,7 +87,7 @@ func (m *AndroidMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            m.SetV11_0(val)
+            m.SetV110(val)
         }
         return nil
     }
@@ -97,7 +97,7 @@ func (m *AndroidMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            m.SetV4_0(val)
+            m.SetV40(val)
         }
         return nil
     }
@@ -107,7 +107,7 @@ func (m *AndroidMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            m.SetV4_0_3(val)
+            m.SetV403(val)
         }
         return nil
     }
@@ -117,7 +117,7 @@ func (m *AndroidMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            m.SetV4_1(val)
+            m.SetV41(val)
         }
         return nil
     }
@@ -127,7 +127,7 @@ func (m *AndroidMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            m.SetV4_2(val)
+            m.SetV42(val)
         }
         return nil
     }
@@ -137,7 +137,7 @@ func (m *AndroidMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            m.SetV4_3(val)
+            m.SetV43(val)
         }
         return nil
     }
@@ -147,7 +147,7 @@ func (m *AndroidMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            m.SetV4_4(val)
+            m.SetV44(val)
         }
         return nil
     }
@@ -157,7 +157,7 @@ func (m *AndroidMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            m.SetV5_0(val)
+            m.SetV50(val)
         }
         return nil
     }
@@ -167,7 +167,7 @@ func (m *AndroidMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            m.SetV5_1(val)
+            m.SetV51(val)
         }
         return nil
     }
@@ -177,7 +177,7 @@ func (m *AndroidMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            m.SetV6_0(val)
+            m.SetV60(val)
         }
         return nil
     }
@@ -187,7 +187,7 @@ func (m *AndroidMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            m.SetV7_0(val)
+            m.SetV70(val)
         }
         return nil
     }
@@ -197,7 +197,7 @@ func (m *AndroidMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            m.SetV7_1(val)
+            m.SetV71(val)
         }
         return nil
     }
@@ -207,7 +207,7 @@ func (m *AndroidMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            m.SetV8_0(val)
+            m.SetV80(val)
         }
         return nil
     }
@@ -217,7 +217,7 @@ func (m *AndroidMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            m.SetV8_1(val)
+            m.SetV81(val)
         }
         return nil
     }
@@ -227,7 +227,7 @@ func (m *AndroidMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            m.SetV9_0(val)
+            m.SetV90(val)
         }
         return nil
     }
@@ -237,68 +237,68 @@ func (m *AndroidMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
 func (m *AndroidMinimumOperatingSystem) GetOdataType()(*string) {
     return m.odataType
 }
-// GetV10_0 gets the v10_0 property value. When TRUE, only Version 10.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *AndroidMinimumOperatingSystem) GetV10_0()(*bool) {
+// GetV100 gets the v10_0 property value. When TRUE, only Version 10.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *AndroidMinimumOperatingSystem) GetV100()(*bool) {
     return m.v10_0
 }
-// GetV11_0 gets the v11_0 property value. When TRUE, only Version 11.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *AndroidMinimumOperatingSystem) GetV11_0()(*bool) {
+// GetV110 gets the v11_0 property value. When TRUE, only Version 11.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *AndroidMinimumOperatingSystem) GetV110()(*bool) {
     return m.v11_0
 }
-// GetV4_0 gets the v4_0 property value. When TRUE, only Version 4.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *AndroidMinimumOperatingSystem) GetV4_0()(*bool) {
+// GetV40 gets the v4_0 property value. When TRUE, only Version 4.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *AndroidMinimumOperatingSystem) GetV40()(*bool) {
     return m.v4_0
 }
-// GetV4_0_3 gets the v4_0_3 property value. When TRUE, only Version 4.0.3 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *AndroidMinimumOperatingSystem) GetV4_0_3()(*bool) {
+// GetV403 gets the v4_0_3 property value. When TRUE, only Version 4.0.3 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *AndroidMinimumOperatingSystem) GetV403()(*bool) {
     return m.v4_0_3
 }
-// GetV4_1 gets the v4_1 property value. When TRUE, only Version 4.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *AndroidMinimumOperatingSystem) GetV4_1()(*bool) {
+// GetV41 gets the v4_1 property value. When TRUE, only Version 4.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *AndroidMinimumOperatingSystem) GetV41()(*bool) {
     return m.v4_1
 }
-// GetV4_2 gets the v4_2 property value. When TRUE, only Version 4.2 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *AndroidMinimumOperatingSystem) GetV4_2()(*bool) {
+// GetV42 gets the v4_2 property value. When TRUE, only Version 4.2 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *AndroidMinimumOperatingSystem) GetV42()(*bool) {
     return m.v4_2
 }
-// GetV4_3 gets the v4_3 property value. When TRUE, only Version 4.3 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *AndroidMinimumOperatingSystem) GetV4_3()(*bool) {
+// GetV43 gets the v4_3 property value. When TRUE, only Version 4.3 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *AndroidMinimumOperatingSystem) GetV43()(*bool) {
     return m.v4_3
 }
-// GetV4_4 gets the v4_4 property value. When TRUE, only Version 4.4 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *AndroidMinimumOperatingSystem) GetV4_4()(*bool) {
+// GetV44 gets the v4_4 property value. When TRUE, only Version 4.4 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *AndroidMinimumOperatingSystem) GetV44()(*bool) {
     return m.v4_4
 }
-// GetV5_0 gets the v5_0 property value. When TRUE, only Version 5.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *AndroidMinimumOperatingSystem) GetV5_0()(*bool) {
+// GetV50 gets the v5_0 property value. When TRUE, only Version 5.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *AndroidMinimumOperatingSystem) GetV50()(*bool) {
     return m.v5_0
 }
-// GetV5_1 gets the v5_1 property value. When TRUE, only Version 5.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *AndroidMinimumOperatingSystem) GetV5_1()(*bool) {
+// GetV51 gets the v5_1 property value. When TRUE, only Version 5.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *AndroidMinimumOperatingSystem) GetV51()(*bool) {
     return m.v5_1
 }
-// GetV6_0 gets the v6_0 property value. When TRUE, only Version 6.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *AndroidMinimumOperatingSystem) GetV6_0()(*bool) {
+// GetV60 gets the v6_0 property value. When TRUE, only Version 6.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *AndroidMinimumOperatingSystem) GetV60()(*bool) {
     return m.v6_0
 }
-// GetV7_0 gets the v7_0 property value. When TRUE, only Version 7.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *AndroidMinimumOperatingSystem) GetV7_0()(*bool) {
+// GetV70 gets the v7_0 property value. When TRUE, only Version 7.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *AndroidMinimumOperatingSystem) GetV70()(*bool) {
     return m.v7_0
 }
-// GetV7_1 gets the v7_1 property value. When TRUE, only Version 7.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *AndroidMinimumOperatingSystem) GetV7_1()(*bool) {
+// GetV71 gets the v7_1 property value. When TRUE, only Version 7.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *AndroidMinimumOperatingSystem) GetV71()(*bool) {
     return m.v7_1
 }
-// GetV8_0 gets the v8_0 property value. When TRUE, only Version 8.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *AndroidMinimumOperatingSystem) GetV8_0()(*bool) {
+// GetV80 gets the v8_0 property value. When TRUE, only Version 8.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *AndroidMinimumOperatingSystem) GetV80()(*bool) {
     return m.v8_0
 }
-// GetV8_1 gets the v8_1 property value. When TRUE, only Version 8.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *AndroidMinimumOperatingSystem) GetV8_1()(*bool) {
+// GetV81 gets the v8_1 property value. When TRUE, only Version 8.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *AndroidMinimumOperatingSystem) GetV81()(*bool) {
     return m.v8_1
 }
-// GetV9_0 gets the v9_0 property value. When TRUE, only Version 9.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *AndroidMinimumOperatingSystem) GetV9_0()(*bool) {
+// GetV90 gets the v9_0 property value. When TRUE, only Version 9.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *AndroidMinimumOperatingSystem) GetV90()(*bool) {
     return m.v9_0
 }
 // Serialize serializes information the current object
@@ -310,97 +310,97 @@ func (m *AndroidMinimumOperatingSystem) Serialize(writer i878a80d2330e89d2689638
         }
     }
     {
-        err := writer.WriteBoolValue("v10_0", m.GetV10_0())
+        err := writer.WriteBoolValue("v10_0", m.GetV100())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteBoolValue("v11_0", m.GetV11_0())
+        err := writer.WriteBoolValue("v11_0", m.GetV110())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteBoolValue("v4_0", m.GetV4_0())
+        err := writer.WriteBoolValue("v4_0", m.GetV40())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteBoolValue("v4_0_3", m.GetV4_0_3())
+        err := writer.WriteBoolValue("v4_0_3", m.GetV403())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteBoolValue("v4_1", m.GetV4_1())
+        err := writer.WriteBoolValue("v4_1", m.GetV41())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteBoolValue("v4_2", m.GetV4_2())
+        err := writer.WriteBoolValue("v4_2", m.GetV42())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteBoolValue("v4_3", m.GetV4_3())
+        err := writer.WriteBoolValue("v4_3", m.GetV43())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteBoolValue("v4_4", m.GetV4_4())
+        err := writer.WriteBoolValue("v4_4", m.GetV44())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteBoolValue("v5_0", m.GetV5_0())
+        err := writer.WriteBoolValue("v5_0", m.GetV50())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteBoolValue("v5_1", m.GetV5_1())
+        err := writer.WriteBoolValue("v5_1", m.GetV51())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteBoolValue("v6_0", m.GetV6_0())
+        err := writer.WriteBoolValue("v6_0", m.GetV60())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteBoolValue("v7_0", m.GetV7_0())
+        err := writer.WriteBoolValue("v7_0", m.GetV70())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteBoolValue("v7_1", m.GetV7_1())
+        err := writer.WriteBoolValue("v7_1", m.GetV71())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteBoolValue("v8_0", m.GetV8_0())
+        err := writer.WriteBoolValue("v8_0", m.GetV80())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteBoolValue("v8_1", m.GetV8_1())
+        err := writer.WriteBoolValue("v8_1", m.GetV81())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteBoolValue("v9_0", m.GetV9_0())
+        err := writer.WriteBoolValue("v9_0", m.GetV90())
         if err != nil {
             return err
         }
@@ -421,67 +421,67 @@ func (m *AndroidMinimumOperatingSystem) SetAdditionalData(value map[string]any)(
 func (m *AndroidMinimumOperatingSystem) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetV10_0 sets the v10_0 property value. When TRUE, only Version 10.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *AndroidMinimumOperatingSystem) SetV10_0(value *bool)() {
+// SetV100 sets the v10_0 property value. When TRUE, only Version 10.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *AndroidMinimumOperatingSystem) SetV100(value *bool)() {
     m.v10_0 = value
 }
-// SetV11_0 sets the v11_0 property value. When TRUE, only Version 11.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *AndroidMinimumOperatingSystem) SetV11_0(value *bool)() {
+// SetV110 sets the v11_0 property value. When TRUE, only Version 11.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *AndroidMinimumOperatingSystem) SetV110(value *bool)() {
     m.v11_0 = value
 }
-// SetV4_0 sets the v4_0 property value. When TRUE, only Version 4.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *AndroidMinimumOperatingSystem) SetV4_0(value *bool)() {
+// SetV40 sets the v4_0 property value. When TRUE, only Version 4.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *AndroidMinimumOperatingSystem) SetV40(value *bool)() {
     m.v4_0 = value
 }
-// SetV4_0_3 sets the v4_0_3 property value. When TRUE, only Version 4.0.3 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *AndroidMinimumOperatingSystem) SetV4_0_3(value *bool)() {
+// SetV403 sets the v4_0_3 property value. When TRUE, only Version 4.0.3 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *AndroidMinimumOperatingSystem) SetV403(value *bool)() {
     m.v4_0_3 = value
 }
-// SetV4_1 sets the v4_1 property value. When TRUE, only Version 4.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *AndroidMinimumOperatingSystem) SetV4_1(value *bool)() {
+// SetV41 sets the v4_1 property value. When TRUE, only Version 4.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *AndroidMinimumOperatingSystem) SetV41(value *bool)() {
     m.v4_1 = value
 }
-// SetV4_2 sets the v4_2 property value. When TRUE, only Version 4.2 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *AndroidMinimumOperatingSystem) SetV4_2(value *bool)() {
+// SetV42 sets the v4_2 property value. When TRUE, only Version 4.2 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *AndroidMinimumOperatingSystem) SetV42(value *bool)() {
     m.v4_2 = value
 }
-// SetV4_3 sets the v4_3 property value. When TRUE, only Version 4.3 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *AndroidMinimumOperatingSystem) SetV4_3(value *bool)() {
+// SetV43 sets the v4_3 property value. When TRUE, only Version 4.3 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *AndroidMinimumOperatingSystem) SetV43(value *bool)() {
     m.v4_3 = value
 }
-// SetV4_4 sets the v4_4 property value. When TRUE, only Version 4.4 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *AndroidMinimumOperatingSystem) SetV4_4(value *bool)() {
+// SetV44 sets the v4_4 property value. When TRUE, only Version 4.4 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *AndroidMinimumOperatingSystem) SetV44(value *bool)() {
     m.v4_4 = value
 }
-// SetV5_0 sets the v5_0 property value. When TRUE, only Version 5.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *AndroidMinimumOperatingSystem) SetV5_0(value *bool)() {
+// SetV50 sets the v5_0 property value. When TRUE, only Version 5.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *AndroidMinimumOperatingSystem) SetV50(value *bool)() {
     m.v5_0 = value
 }
-// SetV5_1 sets the v5_1 property value. When TRUE, only Version 5.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *AndroidMinimumOperatingSystem) SetV5_1(value *bool)() {
+// SetV51 sets the v5_1 property value. When TRUE, only Version 5.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *AndroidMinimumOperatingSystem) SetV51(value *bool)() {
     m.v5_1 = value
 }
-// SetV6_0 sets the v6_0 property value. When TRUE, only Version 6.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *AndroidMinimumOperatingSystem) SetV6_0(value *bool)() {
+// SetV60 sets the v6_0 property value. When TRUE, only Version 6.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *AndroidMinimumOperatingSystem) SetV60(value *bool)() {
     m.v6_0 = value
 }
-// SetV7_0 sets the v7_0 property value. When TRUE, only Version 7.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *AndroidMinimumOperatingSystem) SetV7_0(value *bool)() {
+// SetV70 sets the v7_0 property value. When TRUE, only Version 7.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *AndroidMinimumOperatingSystem) SetV70(value *bool)() {
     m.v7_0 = value
 }
-// SetV7_1 sets the v7_1 property value. When TRUE, only Version 7.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *AndroidMinimumOperatingSystem) SetV7_1(value *bool)() {
+// SetV71 sets the v7_1 property value. When TRUE, only Version 7.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *AndroidMinimumOperatingSystem) SetV71(value *bool)() {
     m.v7_1 = value
 }
-// SetV8_0 sets the v8_0 property value. When TRUE, only Version 8.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *AndroidMinimumOperatingSystem) SetV8_0(value *bool)() {
+// SetV80 sets the v8_0 property value. When TRUE, only Version 8.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *AndroidMinimumOperatingSystem) SetV80(value *bool)() {
     m.v8_0 = value
 }
-// SetV8_1 sets the v8_1 property value. When TRUE, only Version 8.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *AndroidMinimumOperatingSystem) SetV8_1(value *bool)() {
+// SetV81 sets the v8_1 property value. When TRUE, only Version 8.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *AndroidMinimumOperatingSystem) SetV81(value *bool)() {
     m.v8_1 = value
 }
-// SetV9_0 sets the v9_0 property value. When TRUE, only Version 9.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-func (m *AndroidMinimumOperatingSystem) SetV9_0(value *bool)() {
+// SetV90 sets the v9_0 property value. When TRUE, only Version 9.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *AndroidMinimumOperatingSystem) SetV90(value *bool)() {
     m.v9_0 = value
 }

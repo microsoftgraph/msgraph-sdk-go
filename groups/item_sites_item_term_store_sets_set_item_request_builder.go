@@ -56,19 +56,19 @@ func (m *ItemSitesItemTermStoreSetsSetItemRequestBuilder) ChildrenById(id string
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["term%2Did"] = id
-    }
-    return NewItemSitesItemTermStoreSetsItemChildrenTermItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemSitesItemTermStoreSetsItemChildrenTermItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // NewItemSitesItemTermStoreSetsSetItemRequestBuilderInternal instantiates a new SetItemRequestBuilder and sets the default values.
-func NewItemSitesItemTermStoreSetsSetItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemTermStoreSetsSetItemRequestBuilder) {
+func NewItemSitesItemTermStoreSetsSetItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, setId *string)(*ItemSitesItemTermStoreSetsSetItemRequestBuilder) {
     m := &ItemSitesItemTermStoreSetsSetItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/termStore/sets/{set%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if setId != nil {
+        urlTplParams["set%2Did"] = *setId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -78,7 +78,7 @@ func NewItemSitesItemTermStoreSetsSetItemRequestBuilderInternal(pathParameters m
 func NewItemSitesItemTermStoreSetsSetItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemTermStoreSetsSetItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemSitesItemTermStoreSetsSetItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemSitesItemTermStoreSetsSetItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property sets for groups
 func (m *ItemSitesItemTermStoreSetsSetItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSitesItemTermStoreSetsSetItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -148,10 +148,7 @@ func (m *ItemSitesItemTermStoreSetsSetItemRequestBuilder) RelationsById(id strin
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["relation%2Did"] = id
-    }
-    return NewItemSitesItemTermStoreSetsItemRelationsRelationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemSitesItemTermStoreSetsItemRelationsRelationItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Terms provides operations to manage the terms property of the microsoft.graph.termStore.set entity.
 func (m *ItemSitesItemTermStoreSetsSetItemRequestBuilder) Terms()(*ItemSitesItemTermStoreSetsItemTermsRequestBuilder) {
@@ -163,10 +160,7 @@ func (m *ItemSitesItemTermStoreSetsSetItemRequestBuilder) TermsById(id string)(*
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["term%2Did"] = id
-    }
-    return NewItemSitesItemTermStoreSetsItemTermsTermItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemSitesItemTermStoreSetsItemTermsTermItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // ToDeleteRequestInformation delete navigation property sets for groups
 func (m *ItemSitesItemTermStoreSetsSetItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemTermStoreSetsSetItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -203,7 +197,10 @@ func (m *ItemSitesItemTermStoreSetsSetItemRequestBuilder) ToPatchRequestInformat
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -129,10 +129,7 @@ func (m *ItemInsightsRequestBuilder) SharedById(id string)(*ItemInsightsSharedSh
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["sharedInsight%2Did"] = id
-    }
-    return NewItemInsightsSharedSharedInsightItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemInsightsSharedSharedInsightItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // ToDeleteRequestInformation delete navigation property insights for users
 func (m *ItemInsightsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemInsightsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +166,10 @@ func (m *ItemInsightsRequestBuilder) ToPatchRequestInformation(ctx context.Conte
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -186,10 +186,7 @@ func (m *ItemInsightsRequestBuilder) TrendingById(id string)(*ItemInsightsTrendi
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["trending%2Did"] = id
-    }
-    return NewItemInsightsTrendingTrendingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemInsightsTrendingTrendingItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Used provides operations to manage the used property of the microsoft.graph.officeGraphInsights entity.
 func (m *ItemInsightsRequestBuilder) Used()(*ItemInsightsUsedRequestBuilder) {
@@ -201,8 +198,5 @@ func (m *ItemInsightsRequestBuilder) UsedById(id string)(*ItemInsightsUsedUsedIn
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["usedInsight%2Did"] = id
-    }
-    return NewItemInsightsUsedUsedInsightItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemInsightsUsedUsedInsightItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }

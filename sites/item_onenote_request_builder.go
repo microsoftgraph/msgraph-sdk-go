@@ -110,10 +110,7 @@ func (m *ItemOnenoteRequestBuilder) NotebooksById(id string)(*ItemOnenoteNoteboo
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["notebook%2Did"] = id
-    }
-    return NewItemOnenoteNotebooksNotebookItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemOnenoteNotebooksNotebookItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Operations provides operations to manage the operations property of the microsoft.graph.onenote entity.
 func (m *ItemOnenoteRequestBuilder) Operations()(*ItemOnenoteOperationsRequestBuilder) {
@@ -125,10 +122,7 @@ func (m *ItemOnenoteRequestBuilder) OperationsById(id string)(*ItemOnenoteOperat
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["onenoteOperation%2Did"] = id
-    }
-    return NewItemOnenoteOperationsOnenoteOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemOnenoteOperationsOnenoteOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Pages provides operations to manage the pages property of the microsoft.graph.onenote entity.
 func (m *ItemOnenoteRequestBuilder) Pages()(*ItemOnenotePagesRequestBuilder) {
@@ -140,10 +134,7 @@ func (m *ItemOnenoteRequestBuilder) PagesById(id string)(*ItemOnenotePagesOnenot
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["onenotePage%2Did"] = id
-    }
-    return NewItemOnenotePagesOnenotePageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemOnenotePagesOnenotePageItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Patch update the navigation property onenote in sites
 func (m *ItemOnenoteRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Onenoteable, requestConfiguration *ItemOnenoteRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Onenoteable, error) {
@@ -174,10 +165,7 @@ func (m *ItemOnenoteRequestBuilder) ResourcesById(id string)(*ItemOnenoteResourc
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["onenoteResource%2Did"] = id
-    }
-    return NewItemOnenoteResourcesOnenoteResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemOnenoteResourcesOnenoteResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // SectionGroups provides operations to manage the sectionGroups property of the microsoft.graph.onenote entity.
 func (m *ItemOnenoteRequestBuilder) SectionGroups()(*ItemOnenoteSectionGroupsRequestBuilder) {
@@ -189,10 +177,7 @@ func (m *ItemOnenoteRequestBuilder) SectionGroupsById(id string)(*ItemOnenoteSec
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["sectionGroup%2Did"] = id
-    }
-    return NewItemOnenoteSectionGroupsSectionGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemOnenoteSectionGroupsSectionGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Sections provides operations to manage the sections property of the microsoft.graph.onenote entity.
 func (m *ItemOnenoteRequestBuilder) Sections()(*ItemOnenoteSectionsRequestBuilder) {
@@ -204,10 +189,7 @@ func (m *ItemOnenoteRequestBuilder) SectionsById(id string)(*ItemOnenoteSections
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["onenoteSection%2Did"] = id
-    }
-    return NewItemOnenoteSectionsOnenoteSectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemOnenoteSectionsOnenoteSectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // ToDeleteRequestInformation delete navigation property onenote for sites
 func (m *ItemOnenoteRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemOnenoteRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -244,7 +226,10 @@ func (m *ItemOnenoteRequestBuilder) ToPatchRequestInformation(ctx context.Contex
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

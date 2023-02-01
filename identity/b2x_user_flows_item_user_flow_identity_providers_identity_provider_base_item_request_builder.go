@@ -14,13 +14,16 @@ type B2xUserFlowsItemUserFlowIdentityProvidersIdentityProviderBaseItemRequestBui
     urlTemplate string
 }
 // NewB2xUserFlowsItemUserFlowIdentityProvidersIdentityProviderBaseItemRequestBuilderInternal instantiates a new IdentityProviderBaseItemRequestBuilder and sets the default values.
-func NewB2xUserFlowsItemUserFlowIdentityProvidersIdentityProviderBaseItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*B2xUserFlowsItemUserFlowIdentityProvidersIdentityProviderBaseItemRequestBuilder) {
+func NewB2xUserFlowsItemUserFlowIdentityProvidersIdentityProviderBaseItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, identityProviderBaseId *string)(*B2xUserFlowsItemUserFlowIdentityProvidersIdentityProviderBaseItemRequestBuilder) {
     m := &B2xUserFlowsItemUserFlowIdentityProvidersIdentityProviderBaseItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}/userFlowIdentityProviders/{identityProviderBase%2Did}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if identityProviderBaseId != nil {
+        urlTplParams["identityProviderBase%2Did"] = *identityProviderBaseId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -30,7 +33,7 @@ func NewB2xUserFlowsItemUserFlowIdentityProvidersIdentityProviderBaseItemRequest
 func NewB2xUserFlowsItemUserFlowIdentityProvidersIdentityProviderBaseItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*B2xUserFlowsItemUserFlowIdentityProvidersIdentityProviderBaseItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewB2xUserFlowsItemUserFlowIdentityProvidersIdentityProviderBaseItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewB2xUserFlowsItemUserFlowIdentityProvidersIdentityProviderBaseItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Ref provides operations to manage the collection of identityContainer entities.
 func (m *B2xUserFlowsItemUserFlowIdentityProvidersIdentityProviderBaseItemRequestBuilder) Ref()(*B2xUserFlowsItemUserFlowIdentityProvidersItemRefRequestBuilder) {

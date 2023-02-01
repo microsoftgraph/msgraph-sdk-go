@@ -47,13 +47,16 @@ type RoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilderPatchRequ
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewRoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilderInternal instantiates a new RoleAssignmentItemRequestBuilder and sets the default values.
-func NewRoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilder) {
+func NewRoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, roleAssignmentId *string)(*RoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilder) {
     m := &RoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/roleDefinitions/{roleDefinition%2Did}/roleAssignments/{roleAssignment%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if roleAssignmentId != nil {
+        urlTplParams["roleAssignment%2Did"] = *roleAssignmentId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewRoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilderIntern
 func NewRoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewRoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewRoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property roleAssignments for deviceManagement
 func (m *RoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *RoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -158,7 +161,10 @@ func (m *RoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilder) ToP
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

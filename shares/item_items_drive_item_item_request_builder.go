@@ -33,13 +33,16 @@ type ItemItemsDriveItemItemRequestBuilderGetRequestConfiguration struct {
     QueryParameters *ItemItemsDriveItemItemRequestBuilderGetQueryParameters
 }
 // NewItemItemsDriveItemItemRequestBuilderInternal instantiates a new DriveItemItemRequestBuilder and sets the default values.
-func NewItemItemsDriveItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsDriveItemItemRequestBuilder) {
+func NewItemItemsDriveItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, driveItemId *string)(*ItemItemsDriveItemItemRequestBuilder) {
     m := &ItemItemsDriveItemItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/shares/{sharedDriveItem%2Did}/items/{driveItem%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if driveItemId != nil {
+        urlTplParams["driveItem%2Did"] = *driveItemId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -49,7 +52,7 @@ func NewItemItemsDriveItemItemRequestBuilderInternal(pathParameters map[string]s
 func NewItemItemsDriveItemItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsDriveItemItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemItemsDriveItemItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemItemsDriveItemItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Content provides operations to manage the media for the sharedDriveItem entity.
 func (m *ItemItemsDriveItemItemRequestBuilder) Content()(*ItemItemsItemContentRequestBuilder) {

@@ -47,13 +47,16 @@ type ItemScopedMembersScopedRoleMembershipItemRequestBuilderPatchRequestConfigur
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemScopedMembersScopedRoleMembershipItemRequestBuilderInternal instantiates a new ScopedRoleMembershipItemRequestBuilder and sets the default values.
-func NewItemScopedMembersScopedRoleMembershipItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemScopedMembersScopedRoleMembershipItemRequestBuilder) {
+func NewItemScopedMembersScopedRoleMembershipItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, scopedRoleMembershipId *string)(*ItemScopedMembersScopedRoleMembershipItemRequestBuilder) {
     m := &ItemScopedMembersScopedRoleMembershipItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/directoryRoles/{directoryRole%2Did}/scopedMembers/{scopedRoleMembership%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if scopedRoleMembershipId != nil {
+        urlTplParams["scopedRoleMembership%2Did"] = *scopedRoleMembershipId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewItemScopedMembersScopedRoleMembershipItemRequestBuilderInternal(pathPara
 func NewItemScopedMembersScopedRoleMembershipItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemScopedMembersScopedRoleMembershipItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemScopedMembersScopedRoleMembershipItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemScopedMembersScopedRoleMembershipItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property scopedMembers for directoryRoles
 func (m *ItemScopedMembersScopedRoleMembershipItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemScopedMembersScopedRoleMembershipItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemScopedMembersScopedRoleMembershipItemRequestBuilder) ToPatchRequest
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -47,13 +47,16 @@ type CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilderPatchRequestC
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewCallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilderInternal instantiates a new AudioRoutingGroupItemRequestBuilder and sets the default values.
-func NewCallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilder) {
+func NewCallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, audioRoutingGroupId *string)(*CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilder) {
     m := &CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/communications/calls/{call%2Did}/audioRoutingGroups/{audioRoutingGroup%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if audioRoutingGroupId != nil {
+        urlTplParams["audioRoutingGroup%2Did"] = *audioRoutingGroupId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewCallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilderInternal(p
 func NewCallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewCallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewCallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property audioRoutingGroups for communications
 func (m *CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilder) ToPatch
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -14,13 +14,16 @@ type ClassesItemMembersEducationUserItemRequestBuilder struct {
     urlTemplate string
 }
 // NewClassesItemMembersEducationUserItemRequestBuilderInternal instantiates a new EducationUserItemRequestBuilder and sets the default values.
-func NewClassesItemMembersEducationUserItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ClassesItemMembersEducationUserItemRequestBuilder) {
+func NewClassesItemMembersEducationUserItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, educationUserId *string)(*ClassesItemMembersEducationUserItemRequestBuilder) {
     m := &ClassesItemMembersEducationUserItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/education/classes/{educationClass%2Did}/members/{educationUser%2Did}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if educationUserId != nil {
+        urlTplParams["educationUser%2Did"] = *educationUserId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -30,7 +33,7 @@ func NewClassesItemMembersEducationUserItemRequestBuilderInternal(pathParameters
 func NewClassesItemMembersEducationUserItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ClassesItemMembersEducationUserItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewClassesItemMembersEducationUserItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewClassesItemMembersEducationUserItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Ref provides operations to manage the collection of educationRoot entities.
 func (m *ClassesItemMembersEducationUserItemRequestBuilder) Ref()(*ClassesItemMembersItemRefRequestBuilder) {

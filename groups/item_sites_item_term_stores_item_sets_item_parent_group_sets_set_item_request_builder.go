@@ -56,19 +56,19 @@ func (m *ItemSitesItemTermStoresItemSetsItemParentGroupSetsSetItemRequestBuilder
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["term%2Did"] = id
-    }
-    return NewItemSitesItemTermStoresItemSetsItemParentGroupSetsItemChildrenTermItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemSitesItemTermStoresItemSetsItemParentGroupSetsItemChildrenTermItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // NewItemSitesItemTermStoresItemSetsItemParentGroupSetsSetItemRequestBuilderInternal instantiates a new SetItemRequestBuilder and sets the default values.
-func NewItemSitesItemTermStoresItemSetsItemParentGroupSetsSetItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemTermStoresItemSetsItemParentGroupSetsSetItemRequestBuilder) {
+func NewItemSitesItemTermStoresItemSetsItemParentGroupSetsSetItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, setId1 *string)(*ItemSitesItemTermStoresItemSetsItemParentGroupSetsSetItemRequestBuilder) {
     m := &ItemSitesItemTermStoresItemSetsItemParentGroupSetsSetItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/termStores/{store%2Did}/sets/{set%2Did}/parentGroup/sets/{set%2Did1}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if setId1 != nil {
+        urlTplParams["set%2Did1"] = *setId1
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -78,7 +78,7 @@ func NewItemSitesItemTermStoresItemSetsItemParentGroupSetsSetItemRequestBuilderI
 func NewItemSitesItemTermStoresItemSetsItemParentGroupSetsSetItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemTermStoresItemSetsItemParentGroupSetsSetItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemSitesItemTermStoresItemSetsItemParentGroupSetsSetItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemSitesItemTermStoresItemSetsItemParentGroupSetsSetItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property sets for groups
 func (m *ItemSitesItemTermStoresItemSetsItemParentGroupSetsSetItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSitesItemTermStoresItemSetsItemParentGroupSetsSetItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -144,10 +144,7 @@ func (m *ItemSitesItemTermStoresItemSetsItemParentGroupSetsSetItemRequestBuilder
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["relation%2Did"] = id
-    }
-    return NewItemSitesItemTermStoresItemSetsItemParentGroupSetsItemRelationsRelationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemSitesItemTermStoresItemSetsItemParentGroupSetsItemRelationsRelationItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Terms provides operations to manage the terms property of the microsoft.graph.termStore.set entity.
 func (m *ItemSitesItemTermStoresItemSetsItemParentGroupSetsSetItemRequestBuilder) Terms()(*ItemSitesItemTermStoresItemSetsItemParentGroupSetsItemTermsRequestBuilder) {
@@ -159,10 +156,7 @@ func (m *ItemSitesItemTermStoresItemSetsItemParentGroupSetsSetItemRequestBuilder
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["term%2Did"] = id
-    }
-    return NewItemSitesItemTermStoresItemSetsItemParentGroupSetsItemTermsTermItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemSitesItemTermStoresItemSetsItemParentGroupSetsItemTermsTermItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // ToDeleteRequestInformation delete navigation property sets for groups
 func (m *ItemSitesItemTermStoresItemSetsItemParentGroupSetsSetItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemTermStoresItemSetsItemParentGroupSetsSetItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -199,7 +193,10 @@ func (m *ItemSitesItemTermStoresItemSetsItemParentGroupSetsSetItemRequestBuilder
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -33,13 +33,16 @@ type ClassesItemSchoolsEducationSchoolItemRequestBuilderGetRequestConfiguration 
     QueryParameters *ClassesItemSchoolsEducationSchoolItemRequestBuilderGetQueryParameters
 }
 // NewClassesItemSchoolsEducationSchoolItemRequestBuilderInternal instantiates a new EducationSchoolItemRequestBuilder and sets the default values.
-func NewClassesItemSchoolsEducationSchoolItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ClassesItemSchoolsEducationSchoolItemRequestBuilder) {
+func NewClassesItemSchoolsEducationSchoolItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, educationSchoolId *string)(*ClassesItemSchoolsEducationSchoolItemRequestBuilder) {
     m := &ClassesItemSchoolsEducationSchoolItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/education/classes/{educationClass%2Did}/schools/{educationSchool%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if educationSchoolId != nil {
+        urlTplParams["educationSchool%2Did"] = *educationSchoolId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -49,7 +52,7 @@ func NewClassesItemSchoolsEducationSchoolItemRequestBuilderInternal(pathParamete
 func NewClassesItemSchoolsEducationSchoolItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ClassesItemSchoolsEducationSchoolItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewClassesItemSchoolsEducationSchoolItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewClassesItemSchoolsEducationSchoolItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get all schools that this class is associated with. Nullable.
 func (m *ClassesItemSchoolsEducationSchoolItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassesItemSchoolsEducationSchoolItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationSchoolable, error) {

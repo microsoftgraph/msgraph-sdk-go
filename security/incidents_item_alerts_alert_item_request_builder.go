@@ -33,13 +33,16 @@ type IncidentsItemAlertsAlertItemRequestBuilderGetRequestConfiguration struct {
     QueryParameters *IncidentsItemAlertsAlertItemRequestBuilderGetQueryParameters
 }
 // NewIncidentsItemAlertsAlertItemRequestBuilderInternal instantiates a new AlertItemRequestBuilder and sets the default values.
-func NewIncidentsItemAlertsAlertItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IncidentsItemAlertsAlertItemRequestBuilder) {
+func NewIncidentsItemAlertsAlertItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, alertId *string)(*IncidentsItemAlertsAlertItemRequestBuilder) {
     m := &IncidentsItemAlertsAlertItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/security/incidents/{incident%2Did}/alerts/{alert%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if alertId != nil {
+        urlTplParams["alert%2Did"] = *alertId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -49,7 +52,7 @@ func NewIncidentsItemAlertsAlertItemRequestBuilderInternal(pathParameters map[st
 func NewIncidentsItemAlertsAlertItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IncidentsItemAlertsAlertItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewIncidentsItemAlertsAlertItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewIncidentsItemAlertsAlertItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get the list of related alerts. Supports $expand.
 func (m *IncidentsItemAlertsAlertItemRequestBuilder) Get(ctx context.Context, requestConfiguration *IncidentsItemAlertsAlertItemRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.Alertable, error) {

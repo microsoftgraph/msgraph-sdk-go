@@ -47,13 +47,16 @@ type ItemJoinedTeamsItemOperationsTeamsAsyncOperationItemRequestBuilderPatchRequ
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemJoinedTeamsItemOperationsTeamsAsyncOperationItemRequestBuilderInternal instantiates a new TeamsAsyncOperationItemRequestBuilder and sets the default values.
-func NewItemJoinedTeamsItemOperationsTeamsAsyncOperationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemJoinedTeamsItemOperationsTeamsAsyncOperationItemRequestBuilder) {
+func NewItemJoinedTeamsItemOperationsTeamsAsyncOperationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, teamsAsyncOperationId *string)(*ItemJoinedTeamsItemOperationsTeamsAsyncOperationItemRequestBuilder) {
     m := &ItemJoinedTeamsItemOperationsTeamsAsyncOperationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/operations/{teamsAsyncOperation%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if teamsAsyncOperationId != nil {
+        urlTplParams["teamsAsyncOperation%2Did"] = *teamsAsyncOperationId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewItemJoinedTeamsItemOperationsTeamsAsyncOperationItemRequestBuilderIntern
 func NewItemJoinedTeamsItemOperationsTeamsAsyncOperationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemJoinedTeamsItemOperationsTeamsAsyncOperationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemJoinedTeamsItemOperationsTeamsAsyncOperationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemJoinedTeamsItemOperationsTeamsAsyncOperationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property operations for users
 func (m *ItemJoinedTeamsItemOperationsTeamsAsyncOperationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemOperationsTeamsAsyncOperationItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemJoinedTeamsItemOperationsTeamsAsyncOperationItemRequestBuilder) ToP
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

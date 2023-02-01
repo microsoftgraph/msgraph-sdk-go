@@ -54,19 +54,19 @@ func (m *MessagesMessageItemRequestBuilder) AttachmentsById(id string)(*Messages
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["attachment%2Did"] = id
-    }
-    return NewMessagesItemAttachmentsAttachmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMessagesItemAttachmentsAttachmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // NewMessagesMessageItemRequestBuilderInternal instantiates a new MessageItemRequestBuilder and sets the default values.
-func NewMessagesMessageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MessagesMessageItemRequestBuilder) {
+func NewMessagesMessageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, messageId *string)(*MessagesMessageItemRequestBuilder) {
     m := &MessagesMessageItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/messages/{message%2Did}{?%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if messageId != nil {
+        urlTplParams["message%2Did"] = *messageId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -76,27 +76,11 @@ func NewMessagesMessageItemRequestBuilderInternal(pathParameters map[string]stri
 func NewMessagesMessageItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MessagesMessageItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewMessagesMessageItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewMessagesMessageItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Content provides operations to manage the media for the user entity.
 func (m *MessagesMessageItemRequestBuilder) Content()(*MessagesItemValueContentRequestBuilder) {
     return NewMessagesItemValueContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Copy provides operations to call the copy method.
-func (m *MessagesMessageItemRequestBuilder) Copy()(*MessagesItemCopyRequestBuilder) {
-    return NewMessagesItemCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// CreateForward provides operations to call the createForward method.
-func (m *MessagesMessageItemRequestBuilder) CreateForward()(*MessagesItemCreateForwardRequestBuilder) {
-    return NewMessagesItemCreateForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// CreateReply provides operations to call the createReply method.
-func (m *MessagesMessageItemRequestBuilder) CreateReply()(*MessagesItemCreateReplyRequestBuilder) {
-    return NewMessagesItemCreateReplyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// CreateReplyAll provides operations to call the createReplyAll method.
-func (m *MessagesMessageItemRequestBuilder) CreateReplyAll()(*MessagesItemCreateReplyAllRequestBuilder) {
-    return NewMessagesItemCreateReplyAllRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Delete delete navigation property messages for me
 func (m *MessagesMessageItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *MessagesMessageItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -124,14 +108,7 @@ func (m *MessagesMessageItemRequestBuilder) ExtensionsById(id string)(*MessagesI
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["extension%2Did"] = id
-    }
-    return NewMessagesItemExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// Forward provides operations to call the forward method.
-func (m *MessagesMessageItemRequestBuilder) Forward()(*MessagesItemForwardRequestBuilder) {
-    return NewMessagesItemForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMessagesItemExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Get the messages in a mailbox or folder. Read-only. Nullable.
 func (m *MessagesMessageItemRequestBuilder) Get(ctx context.Context, requestConfiguration *MessagesMessageItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Messageable, error) {
@@ -152,9 +129,41 @@ func (m *MessagesMessageItemRequestBuilder) Get(ctx context.Context, requestConf
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Messageable), nil
 }
-// Move provides operations to call the move method.
-func (m *MessagesMessageItemRequestBuilder) Move()(*MessagesItemMoveRequestBuilder) {
-    return NewMessagesItemMoveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphCopy provides operations to call the copy method.
+func (m *MessagesMessageItemRequestBuilder) MicrosoftGraphCopy()(*MessagesItemMicrosoftGraphCopyCopyRequestBuilder) {
+    return NewMessagesItemMicrosoftGraphCopyCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphCreateForward provides operations to call the createForward method.
+func (m *MessagesMessageItemRequestBuilder) MicrosoftGraphCreateForward()(*MessagesItemMicrosoftGraphCreateForwardCreateForwardRequestBuilder) {
+    return NewMessagesItemMicrosoftGraphCreateForwardCreateForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphCreateReply provides operations to call the createReply method.
+func (m *MessagesMessageItemRequestBuilder) MicrosoftGraphCreateReply()(*MessagesItemMicrosoftGraphCreateReplyCreateReplyRequestBuilder) {
+    return NewMessagesItemMicrosoftGraphCreateReplyCreateReplyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphCreateReplyAll provides operations to call the createReplyAll method.
+func (m *MessagesMessageItemRequestBuilder) MicrosoftGraphCreateReplyAll()(*MessagesItemMicrosoftGraphCreateReplyAllCreateReplyAllRequestBuilder) {
+    return NewMessagesItemMicrosoftGraphCreateReplyAllCreateReplyAllRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphForward provides operations to call the forward method.
+func (m *MessagesMessageItemRequestBuilder) MicrosoftGraphForward()(*MessagesItemMicrosoftGraphForwardForwardRequestBuilder) {
+    return NewMessagesItemMicrosoftGraphForwardForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphMove provides operations to call the move method.
+func (m *MessagesMessageItemRequestBuilder) MicrosoftGraphMove()(*MessagesItemMicrosoftGraphMoveMoveRequestBuilder) {
+    return NewMessagesItemMicrosoftGraphMoveMoveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphReply provides operations to call the reply method.
+func (m *MessagesMessageItemRequestBuilder) MicrosoftGraphReply()(*MessagesItemMicrosoftGraphReplyReplyRequestBuilder) {
+    return NewMessagesItemMicrosoftGraphReplyReplyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphReplyAll provides operations to call the replyAll method.
+func (m *MessagesMessageItemRequestBuilder) MicrosoftGraphReplyAll()(*MessagesItemMicrosoftGraphReplyAllReplyAllRequestBuilder) {
+    return NewMessagesItemMicrosoftGraphReplyAllReplyAllRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphSend provides operations to call the send method.
+func (m *MessagesMessageItemRequestBuilder) MicrosoftGraphSend()(*MessagesItemMicrosoftGraphSendSendRequestBuilder) {
+    return NewMessagesItemMicrosoftGraphSendSendRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.message entity.
 func (m *MessagesMessageItemRequestBuilder) MultiValueExtendedProperties()(*MessagesItemMultiValueExtendedPropertiesRequestBuilder) {
@@ -166,10 +175,7 @@ func (m *MessagesMessageItemRequestBuilder) MultiValueExtendedPropertiesById(id 
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["multiValueLegacyExtendedProperty%2Did"] = id
-    }
-    return NewMessagesItemMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMessagesItemMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Patch update the navigation property messages in me
 func (m *MessagesMessageItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Messageable, requestConfiguration *MessagesMessageItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Messageable, error) {
@@ -190,18 +196,6 @@ func (m *MessagesMessageItemRequestBuilder) Patch(ctx context.Context, body iadc
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Messageable), nil
 }
-// Reply provides operations to call the reply method.
-func (m *MessagesMessageItemRequestBuilder) Reply()(*MessagesItemReplyRequestBuilder) {
-    return NewMessagesItemReplyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// ReplyAll provides operations to call the replyAll method.
-func (m *MessagesMessageItemRequestBuilder) ReplyAll()(*MessagesItemReplyAllRequestBuilder) {
-    return NewMessagesItemReplyAllRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Send provides operations to call the send method.
-func (m *MessagesMessageItemRequestBuilder) Send()(*MessagesItemSendRequestBuilder) {
-    return NewMessagesItemSendRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // SingleValueExtendedProperties provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.message entity.
 func (m *MessagesMessageItemRequestBuilder) SingleValueExtendedProperties()(*MessagesItemSingleValueExtendedPropertiesRequestBuilder) {
     return NewMessagesItemSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -212,10 +206,7 @@ func (m *MessagesMessageItemRequestBuilder) SingleValueExtendedPropertiesById(id
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["singleValueLegacyExtendedProperty%2Did"] = id
-    }
-    return NewMessagesItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMessagesItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // ToDeleteRequestInformation delete navigation property messages for me
 func (m *MessagesMessageItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *MessagesMessageItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -252,7 +243,10 @@ func (m *MessagesMessageItemRequestBuilder) ToPatchRequestInformation(ctx contex
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -56,10 +56,7 @@ func (m *MeRequestBuilder) AssignmentsById(id string)(*MeAssignmentsEducationAss
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["educationAssignment%2Did"] = id
-    }
-    return NewMeAssignmentsEducationAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMeAssignmentsEducationAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Classes provides operations to manage the classes property of the microsoft.graph.educationUser entity.
 func (m *MeRequestBuilder) Classes()(*MeClassesRequestBuilder) {
@@ -71,10 +68,7 @@ func (m *MeRequestBuilder) ClassesById(id string)(*MeClassesEducationClassItemRe
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["educationClass%2Did"] = id
-    }
-    return NewMeClassesEducationClassItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMeClassesEducationClassItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // NewMeRequestBuilderInternal instantiates a new MeRequestBuilder and sets the default values.
 func NewMeRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MeRequestBuilder) {
@@ -159,10 +153,7 @@ func (m *MeRequestBuilder) RubricsById(id string)(*MeRubricsEducationRubricItemR
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["educationRubric%2Did"] = id
-    }
-    return NewMeRubricsEducationRubricItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMeRubricsEducationRubricItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Schools provides operations to manage the schools property of the microsoft.graph.educationUser entity.
 func (m *MeRequestBuilder) Schools()(*MeSchoolsRequestBuilder) {
@@ -174,10 +165,7 @@ func (m *MeRequestBuilder) SchoolsById(id string)(*MeSchoolsEducationSchoolItemR
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["educationSchool%2Did"] = id
-    }
-    return NewMeSchoolsEducationSchoolItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMeSchoolsEducationSchoolItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // TaughtClasses provides operations to manage the taughtClasses property of the microsoft.graph.educationUser entity.
 func (m *MeRequestBuilder) TaughtClasses()(*MeTaughtClassesRequestBuilder) {
@@ -189,10 +177,7 @@ func (m *MeRequestBuilder) TaughtClassesById(id string)(*MeTaughtClassesEducatio
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["educationClass%2Did"] = id
-    }
-    return NewMeTaughtClassesEducationClassItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMeTaughtClassesEducationClassItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // ToDeleteRequestInformation delete navigation property me for education
 func (m *MeRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *MeRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -229,7 +214,10 @@ func (m *MeRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

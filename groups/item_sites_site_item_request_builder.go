@@ -53,19 +53,19 @@ func (m *ItemSitesSiteItemRequestBuilder) ColumnsById(id string)(*ItemSitesItemC
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["columnDefinition%2Did"] = id
-    }
-    return NewItemSitesItemColumnsColumnDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemSitesItemColumnsColumnDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // NewItemSitesSiteItemRequestBuilderInternal instantiates a new SiteItemRequestBuilder and sets the default values.
-func NewItemSitesSiteItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesSiteItemRequestBuilder) {
+func NewItemSitesSiteItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, siteId *string)(*ItemSitesSiteItemRequestBuilder) {
     m := &ItemSitesSiteItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if siteId != nil {
+        urlTplParams["site%2Did"] = *siteId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -75,7 +75,7 @@ func NewItemSitesSiteItemRequestBuilderInternal(pathParameters map[string]string
 func NewItemSitesSiteItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesSiteItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemSitesSiteItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemSitesSiteItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // ContentTypes provides operations to manage the contentTypes property of the microsoft.graph.site entity.
 func (m *ItemSitesSiteItemRequestBuilder) ContentTypes()(*ItemSitesItemContentTypesRequestBuilder) {
@@ -87,10 +87,7 @@ func (m *ItemSitesSiteItemRequestBuilder) ContentTypesById(id string)(*ItemSites
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["contentType%2Did"] = id
-    }
-    return NewItemSitesItemContentTypesContentTypeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemSitesItemContentTypesContentTypeItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Drive provides operations to manage the drive property of the microsoft.graph.site entity.
 func (m *ItemSitesSiteItemRequestBuilder) Drive()(*ItemSitesItemDriveRequestBuilder) {
@@ -106,10 +103,7 @@ func (m *ItemSitesSiteItemRequestBuilder) DrivesById(id string)(*ItemSitesItemDr
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["drive%2Did"] = id
-    }
-    return NewItemSitesItemDrivesDriveItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemSitesItemDrivesDriveItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // ExternalColumns provides operations to manage the externalColumns property of the microsoft.graph.site entity.
 func (m *ItemSitesSiteItemRequestBuilder) ExternalColumns()(*ItemSitesItemExternalColumnsRequestBuilder) {
@@ -121,10 +115,7 @@ func (m *ItemSitesSiteItemRequestBuilder) ExternalColumnsById(id string)(*ItemSi
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["columnDefinition%2Did"] = id
-    }
-    return NewItemSitesItemExternalColumnsColumnDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemSitesItemExternalColumnsColumnDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Get the list of SharePoint sites in this group. Access the default site with /sites/root.
 func (m *ItemSitesSiteItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesSiteItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Siteable, error) {
@@ -145,22 +136,6 @@ func (m *ItemSitesSiteItemRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Siteable), nil
 }
-// GetActivitiesByInterval provides operations to call the getActivitiesByInterval method.
-func (m *ItemSitesSiteItemRequestBuilder) GetActivitiesByInterval()(*ItemSitesItemGetActivitiesByIntervalRequestBuilder) {
-    return NewItemSitesItemGetActivitiesByIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval provides operations to call the getActivitiesByInterval method.
-func (m *ItemSitesSiteItemRequestBuilder) GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(endDateTime *string, interval *string, startDateTime *string)(*ItemSitesItemGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
-    return NewItemSitesItemGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter, endDateTime, interval, startDateTime);
-}
-// GetApplicableContentTypesForListWithListId provides operations to call the getApplicableContentTypesForList method.
-func (m *ItemSitesSiteItemRequestBuilder) GetApplicableContentTypesForListWithListId(listId *string)(*ItemSitesItemGetApplicableContentTypesForListWithListIdRequestBuilder) {
-    return NewItemSitesItemGetApplicableContentTypesForListWithListIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, listId);
-}
-// GetByPathWithPath provides operations to call the getByPath method.
-func (m *ItemSitesSiteItemRequestBuilder) GetByPathWithPath(path *string)(*ItemSitesItemGetByPathWithPathRequestBuilder) {
-    return NewItemSitesItemGetByPathWithPathRequestBuilderInternal(m.pathParameters, m.requestAdapter, path);
-}
 // Items provides operations to manage the items property of the microsoft.graph.site entity.
 func (m *ItemSitesSiteItemRequestBuilder) Items()(*ItemSitesItemItemsRequestBuilder) {
     return NewItemSitesItemItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -171,10 +146,7 @@ func (m *ItemSitesSiteItemRequestBuilder) ItemsById(id string)(*ItemSitesItemIte
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["baseItem%2Did"] = id
-    }
-    return NewItemSitesItemItemsBaseItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemSitesItemItemsBaseItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Lists provides operations to manage the lists property of the microsoft.graph.site entity.
 func (m *ItemSitesSiteItemRequestBuilder) Lists()(*ItemSitesItemListsRequestBuilder) {
@@ -186,10 +158,23 @@ func (m *ItemSitesSiteItemRequestBuilder) ListsById(id string)(*ItemSitesItemLis
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["list%2Did"] = id
-    }
-    return NewItemSitesItemListsListItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemSitesItemListsListItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
+}
+// MicrosoftGraphGetActivitiesByInterval provides operations to call the getActivitiesByInterval method.
+func (m *ItemSitesSiteItemRequestBuilder) MicrosoftGraphGetActivitiesByInterval()(*ItemSitesItemMicrosoftGraphGetActivitiesByIntervalGetActivitiesByIntervalRequestBuilder) {
+    return NewItemSitesItemMicrosoftGraphGetActivitiesByIntervalGetActivitiesByIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval provides operations to call the getActivitiesByInterval method.
+func (m *ItemSitesSiteItemRequestBuilder) MicrosoftGraphGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(endDateTime *string, interval *string, startDateTime *string)(*ItemSitesItemMicrosoftGraphGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
+    return NewItemSitesItemMicrosoftGraphGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter, endDateTime, interval, startDateTime);
+}
+// MicrosoftGraphGetApplicableContentTypesForListWithListId provides operations to call the getApplicableContentTypesForList method.
+func (m *ItemSitesSiteItemRequestBuilder) MicrosoftGraphGetApplicableContentTypesForListWithListId(listId *string)(*ItemSitesItemMicrosoftGraphGetApplicableContentTypesForListWithListIdGetApplicableContentTypesForListWithListIdRequestBuilder) {
+    return NewItemSitesItemMicrosoftGraphGetApplicableContentTypesForListWithListIdGetApplicableContentTypesForListWithListIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, listId);
+}
+// MicrosoftGraphGetByPathWithPath provides operations to call the getByPath method.
+func (m *ItemSitesSiteItemRequestBuilder) MicrosoftGraphGetByPathWithPath(path *string)(*ItemSitesItemMicrosoftGraphGetByPathWithPathGetByPathWithPathRequestBuilder) {
+    return NewItemSitesItemMicrosoftGraphGetByPathWithPathGetByPathWithPathRequestBuilderInternal(m.pathParameters, m.requestAdapter, path);
 }
 // Onenote provides operations to manage the onenote property of the microsoft.graph.site entity.
 func (m *ItemSitesSiteItemRequestBuilder) Onenote()(*ItemSitesItemOnenoteRequestBuilder) {
@@ -205,10 +190,7 @@ func (m *ItemSitesSiteItemRequestBuilder) OperationsById(id string)(*ItemSitesIt
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["richLongRunningOperation%2Did"] = id
-    }
-    return NewItemSitesItemOperationsRichLongRunningOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemSitesItemOperationsRichLongRunningOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Patch update the navigation property sites in groups
 func (m *ItemSitesSiteItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Siteable, requestConfiguration *ItemSitesSiteItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Siteable, error) {
@@ -239,10 +221,7 @@ func (m *ItemSitesSiteItemRequestBuilder) PermissionsById(id string)(*ItemSitesI
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["permission%2Did"] = id
-    }
-    return NewItemSitesItemPermissionsPermissionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemSitesItemPermissionsPermissionItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Sites provides operations to manage the sites property of the microsoft.graph.site entity.
 func (m *ItemSitesSiteItemRequestBuilder) Sites()(*ItemSitesItemSitesRequestBuilder) {
@@ -254,10 +233,7 @@ func (m *ItemSitesSiteItemRequestBuilder) SitesById(id string)(*ItemSitesItemSit
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["site%2Did1"] = id
-    }
-    return NewItemSitesItemSitesSiteItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemSitesItemSitesSiteItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // TermStore provides operations to manage the termStore property of the microsoft.graph.site entity.
 func (m *ItemSitesSiteItemRequestBuilder) TermStore()(*ItemSitesItemTermStoreRequestBuilder) {
@@ -273,10 +249,7 @@ func (m *ItemSitesSiteItemRequestBuilder) TermStoresById(id string)(*ItemSitesIt
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["store%2Did"] = id
-    }
-    return NewItemSitesItemTermStoresStoreItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemSitesItemTermStoresStoreItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // ToGetRequestInformation the list of SharePoint sites in this group. Access the default site with /sites/root.
 func (m *ItemSitesSiteItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesSiteItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -301,7 +274,10 @@ func (m *ItemSitesSiteItemRequestBuilder) ToPatchRequestInformation(ctx context.
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

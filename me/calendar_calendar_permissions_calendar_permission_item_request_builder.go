@@ -45,13 +45,16 @@ type CalendarCalendarPermissionsCalendarPermissionItemRequestBuilderPatchRequest
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewCalendarCalendarPermissionsCalendarPermissionItemRequestBuilderInternal instantiates a new CalendarPermissionItemRequestBuilder and sets the default values.
-func NewCalendarCalendarPermissionsCalendarPermissionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CalendarCalendarPermissionsCalendarPermissionItemRequestBuilder) {
+func NewCalendarCalendarPermissionsCalendarPermissionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, calendarPermissionId *string)(*CalendarCalendarPermissionsCalendarPermissionItemRequestBuilder) {
     m := &CalendarCalendarPermissionsCalendarPermissionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/calendar/calendarPermissions/{calendarPermission%2Did}{?%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if calendarPermissionId != nil {
+        urlTplParams["calendarPermission%2Did"] = *calendarPermissionId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -61,7 +64,7 @@ func NewCalendarCalendarPermissionsCalendarPermissionItemRequestBuilderInternal(
 func NewCalendarCalendarPermissionsCalendarPermissionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CalendarCalendarPermissionsCalendarPermissionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewCalendarCalendarPermissionsCalendarPermissionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewCalendarCalendarPermissionsCalendarPermissionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property calendarPermissions for me
 func (m *CalendarCalendarPermissionsCalendarPermissionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CalendarCalendarPermissionsCalendarPermissionItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -152,7 +155,10 @@ func (m *CalendarCalendarPermissionsCalendarPermissionItemRequestBuilder) ToPatc
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

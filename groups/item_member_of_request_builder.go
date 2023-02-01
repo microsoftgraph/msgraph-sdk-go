@@ -44,10 +44,6 @@ type ItemMemberOfRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemMemberOfRequestBuilderGetQueryParameters
 }
-// Application casts the previous resource to application.
-func (m *ItemMemberOfRequestBuilder) Application()(*ItemMemberOfApplicationRequestBuilder) {
-    return NewItemMemberOfApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewItemMemberOfRequestBuilderInternal instantiates a new MemberOfRequestBuilder and sets the default values.
 func NewItemMemberOfRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMemberOfRequestBuilder) {
     m := &ItemMemberOfRequestBuilder{
@@ -71,10 +67,6 @@ func NewItemMemberOfRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *ItemMemberOfRequestBuilder) Count()(*ItemMemberOfCountRequestBuilder) {
     return NewItemMemberOfCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Device casts the previous resource to device.
-func (m *ItemMemberOfRequestBuilder) Device()(*ItemMemberOfDeviceRequestBuilder) {
-    return NewItemMemberOfDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Get groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
 // [Find more info here]
 // 
@@ -97,17 +89,29 @@ func (m *ItemMemberOfRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
 }
-// Group casts the previous resource to group.
-func (m *ItemMemberOfRequestBuilder) Group()(*ItemMemberOfGroupRequestBuilder) {
-    return NewItemMemberOfGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphApplication casts the previous resource to application.
+func (m *ItemMemberOfRequestBuilder) MicrosoftGraphApplication()(*ItemMemberOfMicrosoftGraphApplicationApplicationRequestBuilder) {
+    return NewItemMemberOfMicrosoftGraphApplicationApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// OrgContact casts the previous resource to orgContact.
-func (m *ItemMemberOfRequestBuilder) OrgContact()(*ItemMemberOfOrgContactRequestBuilder) {
-    return NewItemMemberOfOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphDevice casts the previous resource to device.
+func (m *ItemMemberOfRequestBuilder) MicrosoftGraphDevice()(*ItemMemberOfMicrosoftGraphDeviceDeviceRequestBuilder) {
+    return NewItemMemberOfMicrosoftGraphDeviceDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ServicePrincipal casts the previous resource to servicePrincipal.
-func (m *ItemMemberOfRequestBuilder) ServicePrincipal()(*ItemMemberOfServicePrincipalRequestBuilder) {
-    return NewItemMemberOfServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGroup casts the previous resource to group.
+func (m *ItemMemberOfRequestBuilder) MicrosoftGraphGroup()(*ItemMemberOfMicrosoftGraphGroupGroupRequestBuilder) {
+    return NewItemMemberOfMicrosoftGraphGroupGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphOrgContact casts the previous resource to orgContact.
+func (m *ItemMemberOfRequestBuilder) MicrosoftGraphOrgContact()(*ItemMemberOfMicrosoftGraphOrgContactOrgContactRequestBuilder) {
+    return NewItemMemberOfMicrosoftGraphOrgContactOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphServicePrincipal casts the previous resource to servicePrincipal.
+func (m *ItemMemberOfRequestBuilder) MicrosoftGraphServicePrincipal()(*ItemMemberOfMicrosoftGraphServicePrincipalServicePrincipalRequestBuilder) {
+    return NewItemMemberOfMicrosoftGraphServicePrincipalServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphUser casts the previous resource to user.
+func (m *ItemMemberOfRequestBuilder) MicrosoftGraphUser()(*ItemMemberOfMicrosoftGraphUserUserRequestBuilder) {
+    return NewItemMemberOfMicrosoftGraphUserUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToGetRequestInformation groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
 func (m *ItemMemberOfRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMemberOfRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -124,8 +128,4 @@ func (m *ItemMemberOfRequestBuilder) ToGetRequestInformation(ctx context.Context
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// User casts the previous resource to user.
-func (m *ItemMemberOfRequestBuilder) User()(*ItemMemberOfUserRequestBuilder) {
-    return NewItemMemberOfUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

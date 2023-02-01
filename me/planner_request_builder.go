@@ -129,10 +129,7 @@ func (m *PlannerRequestBuilder) PlansById(id string)(*PlannerPlansPlannerPlanIte
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["plannerPlan%2Did"] = id
-    }
-    return NewPlannerPlansPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPlannerPlansPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Tasks provides operations to manage the tasks property of the microsoft.graph.plannerUser entity.
 func (m *PlannerRequestBuilder) Tasks()(*PlannerTasksRequestBuilder) {
@@ -144,10 +141,7 @@ func (m *PlannerRequestBuilder) TasksById(id string)(*PlannerTasksPlannerTaskIte
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["plannerTask%2Did"] = id
-    }
-    return NewPlannerTasksPlannerTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPlannerTasksPlannerTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // ToDeleteRequestInformation delete navigation property planner for me
 func (m *PlannerRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PlannerRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -184,7 +178,10 @@ func (m *PlannerRequestBuilder) ToPatchRequestInformation(ctx context.Context, b
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

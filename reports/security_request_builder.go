@@ -100,17 +100,17 @@ func (m *SecurityRequestBuilder) Get(ctx context.Context, requestConfiguration *
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SecurityReportsRootable), nil
 }
-// GetAttackSimulationRepeatOffenders provides operations to call the getAttackSimulationRepeatOffenders method.
-func (m *SecurityRequestBuilder) GetAttackSimulationRepeatOffenders()(*SecurityGetAttackSimulationRepeatOffendersRequestBuilder) {
-    return NewSecurityGetAttackSimulationRepeatOffendersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetAttackSimulationRepeatOffenders provides operations to call the getAttackSimulationRepeatOffenders method.
+func (m *SecurityRequestBuilder) MicrosoftGraphGetAttackSimulationRepeatOffenders()(*SecurityMicrosoftGraphGetAttackSimulationRepeatOffendersGetAttackSimulationRepeatOffendersRequestBuilder) {
+    return NewSecurityMicrosoftGraphGetAttackSimulationRepeatOffendersGetAttackSimulationRepeatOffendersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetAttackSimulationSimulationUserCoverage provides operations to call the getAttackSimulationSimulationUserCoverage method.
-func (m *SecurityRequestBuilder) GetAttackSimulationSimulationUserCoverage()(*SecurityGetAttackSimulationSimulationUserCoverageRequestBuilder) {
-    return NewSecurityGetAttackSimulationSimulationUserCoverageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetAttackSimulationSimulationUserCoverage provides operations to call the getAttackSimulationSimulationUserCoverage method.
+func (m *SecurityRequestBuilder) MicrosoftGraphGetAttackSimulationSimulationUserCoverage()(*SecurityMicrosoftGraphGetAttackSimulationSimulationUserCoverageGetAttackSimulationSimulationUserCoverageRequestBuilder) {
+    return NewSecurityMicrosoftGraphGetAttackSimulationSimulationUserCoverageGetAttackSimulationSimulationUserCoverageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetAttackSimulationTrainingUserCoverage provides operations to call the getAttackSimulationTrainingUserCoverage method.
-func (m *SecurityRequestBuilder) GetAttackSimulationTrainingUserCoverage()(*SecurityGetAttackSimulationTrainingUserCoverageRequestBuilder) {
-    return NewSecurityGetAttackSimulationTrainingUserCoverageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetAttackSimulationTrainingUserCoverage provides operations to call the getAttackSimulationTrainingUserCoverage method.
+func (m *SecurityRequestBuilder) MicrosoftGraphGetAttackSimulationTrainingUserCoverage()(*SecurityMicrosoftGraphGetAttackSimulationTrainingUserCoverageGetAttackSimulationTrainingUserCoverageRequestBuilder) {
+    return NewSecurityMicrosoftGraphGetAttackSimulationTrainingUserCoverageGetAttackSimulationTrainingUserCoverageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Patch update the navigation property security in reports
 func (m *SecurityRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SecurityReportsRootable, requestConfiguration *SecurityRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SecurityReportsRootable, error) {
@@ -166,7 +166,10 @@ func (m *SecurityRequestBuilder) ToPatchRequestInformation(ctx context.Context, 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

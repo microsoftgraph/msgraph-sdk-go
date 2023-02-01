@@ -42,10 +42,7 @@ func (m *ItemConversationsItemThreadsItemPostsItemInReplyToRequestBuilder) Attac
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["attachment%2Did"] = id
-    }
-    return NewItemConversationsItemThreadsItemPostsItemInReplyToAttachmentsAttachmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemConversationsItemThreadsItemPostsItemInReplyToAttachmentsAttachmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // NewItemConversationsItemThreadsItemPostsItemInReplyToRequestBuilderInternal instantiates a new InReplyToRequestBuilder and sets the default values.
 func NewItemConversationsItemThreadsItemPostsItemInReplyToRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConversationsItemThreadsItemPostsItemInReplyToRequestBuilder) {
@@ -76,14 +73,7 @@ func (m *ItemConversationsItemThreadsItemPostsItemInReplyToRequestBuilder) Exten
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["extension%2Did"] = id
-    }
-    return NewItemConversationsItemThreadsItemPostsItemInReplyToExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// Forward provides operations to call the forward method.
-func (m *ItemConversationsItemThreadsItemPostsItemInReplyToRequestBuilder) Forward()(*ItemConversationsItemThreadsItemPostsItemInReplyToForwardRequestBuilder) {
-    return NewItemConversationsItemThreadsItemPostsItemInReplyToForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemConversationsItemThreadsItemPostsItemInReplyToExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Get read-only. Supports $expand.
 func (m *ItemConversationsItemThreadsItemPostsItemInReplyToRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemConversationsItemThreadsItemPostsItemInReplyToRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Postable, error) {
@@ -104,6 +94,14 @@ func (m *ItemConversationsItemThreadsItemPostsItemInReplyToRequestBuilder) Get(c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Postable), nil
 }
+// MicrosoftGraphForward provides operations to call the forward method.
+func (m *ItemConversationsItemThreadsItemPostsItemInReplyToRequestBuilder) MicrosoftGraphForward()(*ItemConversationsItemThreadsItemPostsItemInReplyToMicrosoftGraphForwardForwardRequestBuilder) {
+    return NewItemConversationsItemThreadsItemPostsItemInReplyToMicrosoftGraphForwardForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphReply provides operations to call the reply method.
+func (m *ItemConversationsItemThreadsItemPostsItemInReplyToRequestBuilder) MicrosoftGraphReply()(*ItemConversationsItemThreadsItemPostsItemInReplyToMicrosoftGraphReplyReplyRequestBuilder) {
+    return NewItemConversationsItemThreadsItemPostsItemInReplyToMicrosoftGraphReplyReplyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.post entity.
 func (m *ItemConversationsItemThreadsItemPostsItemInReplyToRequestBuilder) MultiValueExtendedProperties()(*ItemConversationsItemThreadsItemPostsItemInReplyToMultiValueExtendedPropertiesRequestBuilder) {
     return NewItemConversationsItemThreadsItemPostsItemInReplyToMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -114,14 +112,7 @@ func (m *ItemConversationsItemThreadsItemPostsItemInReplyToRequestBuilder) Multi
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["multiValueLegacyExtendedProperty%2Did"] = id
-    }
-    return NewItemConversationsItemThreadsItemPostsItemInReplyToMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// Reply provides operations to call the reply method.
-func (m *ItemConversationsItemThreadsItemPostsItemInReplyToRequestBuilder) Reply()(*ItemConversationsItemThreadsItemPostsItemInReplyToReplyRequestBuilder) {
-    return NewItemConversationsItemThreadsItemPostsItemInReplyToReplyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemConversationsItemThreadsItemPostsItemInReplyToMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // SingleValueExtendedProperties provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.post entity.
 func (m *ItemConversationsItemThreadsItemPostsItemInReplyToRequestBuilder) SingleValueExtendedProperties()(*ItemConversationsItemThreadsItemPostsItemInReplyToSingleValueExtendedPropertiesRequestBuilder) {
@@ -133,10 +124,7 @@ func (m *ItemConversationsItemThreadsItemPostsItemInReplyToRequestBuilder) Singl
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["singleValueLegacyExtendedProperty%2Did"] = id
-    }
-    return NewItemConversationsItemThreadsItemPostsItemInReplyToSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemConversationsItemThreadsItemPostsItemInReplyToSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // ToGetRequestInformation read-only. Supports $expand.
 func (m *ItemConversationsItemThreadsItemPostsItemInReplyToRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemConversationsItemThreadsItemPostsItemInReplyToRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

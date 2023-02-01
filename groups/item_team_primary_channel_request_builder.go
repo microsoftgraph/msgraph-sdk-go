@@ -46,10 +46,6 @@ type ItemTeamPrimaryChannelRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CompleteMigration provides operations to call the completeMigration method.
-func (m *ItemTeamPrimaryChannelRequestBuilder) CompleteMigration()(*ItemTeamPrimaryChannelCompleteMigrationRequestBuilder) {
-    return NewItemTeamPrimaryChannelCompleteMigrationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewItemTeamPrimaryChannelRequestBuilderInternal instantiates a new PrimaryChannelRequestBuilder and sets the default values.
 func NewItemTeamPrimaryChannelRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamPrimaryChannelRequestBuilder) {
     m := &ItemTeamPrimaryChannelRequestBuilder{
@@ -84,10 +80,6 @@ func (m *ItemTeamPrimaryChannelRequestBuilder) Delete(ctx context.Context, reque
         return err
     }
     return nil
-}
-// DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName provides operations to call the doesUserHaveAccess method.
-func (m *ItemTeamPrimaryChannelRequestBuilder) DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName()(*ItemTeamPrimaryChannelDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder) {
-    return NewItemTeamPrimaryChannelDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // FilesFolder provides operations to manage the filesFolder property of the microsoft.graph.channel entity.
 func (m *ItemTeamPrimaryChannelRequestBuilder) FilesFolder()(*ItemTeamPrimaryChannelFilesFolderRequestBuilder) {
@@ -125,10 +117,7 @@ func (m *ItemTeamPrimaryChannelRequestBuilder) MembersById(id string)(*ItemTeamP
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["conversationMember%2Did"] = id
-    }
-    return NewItemTeamPrimaryChannelMembersConversationMemberItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemTeamPrimaryChannelMembersConversationMemberItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Messages provides operations to manage the messages property of the microsoft.graph.channel entity.
 func (m *ItemTeamPrimaryChannelRequestBuilder) Messages()(*ItemTeamPrimaryChannelMessagesRequestBuilder) {
@@ -140,10 +129,23 @@ func (m *ItemTeamPrimaryChannelRequestBuilder) MessagesById(id string)(*ItemTeam
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["chatMessage%2Did"] = id
-    }
-    return NewItemTeamPrimaryChannelMessagesChatMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemTeamPrimaryChannelMessagesChatMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
+}
+// MicrosoftGraphCompleteMigration provides operations to call the completeMigration method.
+func (m *ItemTeamPrimaryChannelRequestBuilder) MicrosoftGraphCompleteMigration()(*ItemTeamPrimaryChannelMicrosoftGraphCompleteMigrationCompleteMigrationRequestBuilder) {
+    return NewItemTeamPrimaryChannelMicrosoftGraphCompleteMigrationCompleteMigrationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName provides operations to call the doesUserHaveAccess method.
+func (m *ItemTeamPrimaryChannelRequestBuilder) MicrosoftGraphDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName()(*ItemTeamPrimaryChannelMicrosoftGraphDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder) {
+    return NewItemTeamPrimaryChannelMicrosoftGraphDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphProvisionEmail provides operations to call the provisionEmail method.
+func (m *ItemTeamPrimaryChannelRequestBuilder) MicrosoftGraphProvisionEmail()(*ItemTeamPrimaryChannelMicrosoftGraphProvisionEmailProvisionEmailRequestBuilder) {
+    return NewItemTeamPrimaryChannelMicrosoftGraphProvisionEmailProvisionEmailRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphRemoveEmail provides operations to call the removeEmail method.
+func (m *ItemTeamPrimaryChannelRequestBuilder) MicrosoftGraphRemoveEmail()(*ItemTeamPrimaryChannelMicrosoftGraphRemoveEmailRemoveEmailRequestBuilder) {
+    return NewItemTeamPrimaryChannelMicrosoftGraphRemoveEmailRemoveEmailRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Patch update the navigation property primaryChannel in groups
 func (m *ItemTeamPrimaryChannelRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Channelable, requestConfiguration *ItemTeamPrimaryChannelRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Channelable, error) {
@@ -164,14 +166,6 @@ func (m *ItemTeamPrimaryChannelRequestBuilder) Patch(ctx context.Context, body i
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Channelable), nil
 }
-// ProvisionEmail provides operations to call the provisionEmail method.
-func (m *ItemTeamPrimaryChannelRequestBuilder) ProvisionEmail()(*ItemTeamPrimaryChannelProvisionEmailRequestBuilder) {
-    return NewItemTeamPrimaryChannelProvisionEmailRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// RemoveEmail provides operations to call the removeEmail method.
-func (m *ItemTeamPrimaryChannelRequestBuilder) RemoveEmail()(*ItemTeamPrimaryChannelRemoveEmailRequestBuilder) {
-    return NewItemTeamPrimaryChannelRemoveEmailRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // SharedWithTeams provides operations to manage the sharedWithTeams property of the microsoft.graph.channel entity.
 func (m *ItemTeamPrimaryChannelRequestBuilder) SharedWithTeams()(*ItemTeamPrimaryChannelSharedWithTeamsRequestBuilder) {
     return NewItemTeamPrimaryChannelSharedWithTeamsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -182,10 +176,7 @@ func (m *ItemTeamPrimaryChannelRequestBuilder) SharedWithTeamsById(id string)(*I
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["sharedWithChannelTeamInfo%2Did"] = id
-    }
-    return NewItemTeamPrimaryChannelSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemTeamPrimaryChannelSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Tabs provides operations to manage the tabs property of the microsoft.graph.channel entity.
 func (m *ItemTeamPrimaryChannelRequestBuilder) Tabs()(*ItemTeamPrimaryChannelTabsRequestBuilder) {
@@ -197,10 +188,7 @@ func (m *ItemTeamPrimaryChannelRequestBuilder) TabsById(id string)(*ItemTeamPrim
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["teamsTab%2Did"] = id
-    }
-    return NewItemTeamPrimaryChannelTabsTeamsTabItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemTeamPrimaryChannelTabsTeamsTabItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // ToDeleteRequestInformation delete navigation property primaryChannel for groups
 func (m *ItemTeamPrimaryChannelRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTeamPrimaryChannelRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -237,7 +225,10 @@ func (m *ItemTeamPrimaryChannelRequestBuilder) ToPatchRequestInformation(ctx con
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

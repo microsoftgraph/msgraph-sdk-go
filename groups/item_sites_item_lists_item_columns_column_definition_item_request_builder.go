@@ -47,13 +47,16 @@ type ItemSitesItemListsItemColumnsColumnDefinitionItemRequestBuilderPatchRequest
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemSitesItemListsItemColumnsColumnDefinitionItemRequestBuilderInternal instantiates a new ColumnDefinitionItemRequestBuilder and sets the default values.
-func NewItemSitesItemListsItemColumnsColumnDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemListsItemColumnsColumnDefinitionItemRequestBuilder) {
+func NewItemSitesItemListsItemColumnsColumnDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, columnDefinitionId *string)(*ItemSitesItemListsItemColumnsColumnDefinitionItemRequestBuilder) {
     m := &ItemSitesItemListsItemColumnsColumnDefinitionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/lists/{list%2Did}/columns/{columnDefinition%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if columnDefinitionId != nil {
+        urlTplParams["columnDefinition%2Did"] = *columnDefinitionId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewItemSitesItemListsItemColumnsColumnDefinitionItemRequestBuilderInternal(
 func NewItemSitesItemListsItemColumnsColumnDefinitionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemListsItemColumnsColumnDefinitionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemSitesItemListsItemColumnsColumnDefinitionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemSitesItemListsItemColumnsColumnDefinitionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property columns for groups
 func (m *ItemSitesItemListsItemColumnsColumnDefinitionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSitesItemListsItemColumnsColumnDefinitionItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -158,7 +161,10 @@ func (m *ItemSitesItemListsItemColumnsColumnDefinitionItemRequestBuilder) ToPatc
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

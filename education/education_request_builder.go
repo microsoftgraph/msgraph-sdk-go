@@ -49,10 +49,7 @@ func (m *EducationRequestBuilder) ClassesById(id string)(*ClassesEducationClassI
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["educationClass%2Did"] = id
-    }
-    return NewClassesEducationClassItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewClassesEducationClassItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // NewEducationRequestBuilderInternal instantiates a new EducationRequestBuilder and sets the default values.
 func NewEducationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EducationRequestBuilder) {
@@ -125,10 +122,7 @@ func (m *EducationRequestBuilder) SchoolsById(id string)(*SchoolsEducationSchool
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["educationSchool%2Did"] = id
-    }
-    return NewSchoolsEducationSchoolItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSchoolsEducationSchoolItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // ToGetRequestInformation get education
 func (m *EducationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EducationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -153,7 +147,10 @@ func (m *EducationRequestBuilder) ToPatchRequestInformation(ctx context.Context,
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -170,8 +167,5 @@ func (m *EducationRequestBuilder) UsersById(id string)(*UsersEducationUserItemRe
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["educationUser%2Did"] = id
-    }
-    return NewUsersEducationUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUsersEducationUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }

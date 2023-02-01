@@ -56,10 +56,7 @@ func (m *EntitlementManagementRequestBuilder) AccessPackageAssignmentApprovalsBy
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["approval%2Did"] = id
-    }
-    return NewEntitlementManagementAccessPackageAssignmentApprovalsApprovalItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEntitlementManagementAccessPackageAssignmentApprovalsApprovalItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // AccessPackages provides operations to manage the accessPackages property of the microsoft.graph.entitlementManagement entity.
 func (m *EntitlementManagementRequestBuilder) AccessPackages()(*EntitlementManagementAccessPackagesRequestBuilder) {
@@ -71,10 +68,7 @@ func (m *EntitlementManagementRequestBuilder) AccessPackagesById(id string)(*Ent
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["accessPackage%2Did"] = id
-    }
-    return NewEntitlementManagementAccessPackagesAccessPackageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEntitlementManagementAccessPackagesAccessPackageItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // AssignmentPolicies provides operations to manage the assignmentPolicies property of the microsoft.graph.entitlementManagement entity.
 func (m *EntitlementManagementRequestBuilder) AssignmentPolicies()(*EntitlementManagementAssignmentPoliciesRequestBuilder) {
@@ -86,10 +80,7 @@ func (m *EntitlementManagementRequestBuilder) AssignmentPoliciesById(id string)(
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["accessPackageAssignmentPolicy%2Did"] = id
-    }
-    return NewEntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // AssignmentRequests provides operations to manage the assignmentRequests property of the microsoft.graph.entitlementManagement entity.
 func (m *EntitlementManagementRequestBuilder) AssignmentRequests()(*EntitlementManagementAssignmentRequestsRequestBuilder) {
@@ -101,10 +92,7 @@ func (m *EntitlementManagementRequestBuilder) AssignmentRequestsById(id string)(
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["accessPackageAssignmentRequest%2Did"] = id
-    }
-    return NewEntitlementManagementAssignmentRequestsAccessPackageAssignmentRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEntitlementManagementAssignmentRequestsAccessPackageAssignmentRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Assignments provides operations to manage the assignments property of the microsoft.graph.entitlementManagement entity.
 func (m *EntitlementManagementRequestBuilder) Assignments()(*EntitlementManagementAssignmentsRequestBuilder) {
@@ -116,10 +104,7 @@ func (m *EntitlementManagementRequestBuilder) AssignmentsById(id string)(*Entitl
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["accessPackageAssignment%2Did"] = id
-    }
-    return NewEntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Catalogs provides operations to manage the catalogs property of the microsoft.graph.entitlementManagement entity.
 func (m *EntitlementManagementRequestBuilder) Catalogs()(*EntitlementManagementCatalogsRequestBuilder) {
@@ -131,10 +116,7 @@ func (m *EntitlementManagementRequestBuilder) CatalogsById(id string)(*Entitleme
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["accessPackageCatalog%2Did"] = id
-    }
-    return NewEntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // ConnectedOrganizations provides operations to manage the connectedOrganizations property of the microsoft.graph.entitlementManagement entity.
 func (m *EntitlementManagementRequestBuilder) ConnectedOrganizations()(*EntitlementManagementConnectedOrganizationsRequestBuilder) {
@@ -146,10 +128,7 @@ func (m *EntitlementManagementRequestBuilder) ConnectedOrganizationsById(id stri
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["connectedOrganization%2Did"] = id
-    }
-    return NewEntitlementManagementConnectedOrganizationsConnectedOrganizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEntitlementManagementConnectedOrganizationsConnectedOrganizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // NewEntitlementManagementRequestBuilderInternal instantiates a new EntitlementManagementRequestBuilder and sets the default values.
 func NewEntitlementManagementRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementRequestBuilder) {
@@ -263,7 +242,10 @@ func (m *EntitlementManagementRequestBuilder) ToPatchRequestInformation(ctx cont
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -129,10 +129,7 @@ func (m *ItemPlannerRequestBuilder) PlansById(id string)(*ItemPlannerPlansPlanne
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["plannerPlan%2Did"] = id
-    }
-    return NewItemPlannerPlansPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemPlannerPlansPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // ToDeleteRequestInformation delete navigation property planner for groups
 func (m *ItemPlannerRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemPlannerRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +166,10 @@ func (m *ItemPlannerRequestBuilder) ToPatchRequestInformation(ctx context.Contex
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

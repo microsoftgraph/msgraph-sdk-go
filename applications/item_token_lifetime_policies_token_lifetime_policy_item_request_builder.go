@@ -14,13 +14,16 @@ type ItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder struct {
     urlTemplate string
 }
 // NewItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderInternal instantiates a new TokenLifetimePolicyItemRequestBuilder and sets the default values.
-func NewItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) {
+func NewItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, tokenLifetimePolicyId *string)(*ItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) {
     m := &ItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/applications/{application%2Did}/tokenLifetimePolicies/{tokenLifetimePolicy%2Did}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if tokenLifetimePolicyId != nil {
+        urlTplParams["tokenLifetimePolicy%2Did"] = *tokenLifetimePolicyId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -30,7 +33,7 @@ func NewItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderInternal(p
 func NewItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Ref provides operations to manage the collection of application entities.
 func (m *ItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) Ref()(*ItemTokenLifetimePoliciesItemRefRequestBuilder) {

@@ -56,19 +56,19 @@ func (m *ItemSitesItemListsListItemRequestBuilder) ColumnsById(id string)(*ItemS
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["columnDefinition%2Did"] = id
-    }
-    return NewItemSitesItemListsItemColumnsColumnDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemSitesItemListsItemColumnsColumnDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // NewItemSitesItemListsListItemRequestBuilderInternal instantiates a new ListItemRequestBuilder and sets the default values.
-func NewItemSitesItemListsListItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemListsListItemRequestBuilder) {
+func NewItemSitesItemListsListItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, listId *string)(*ItemSitesItemListsListItemRequestBuilder) {
     m := &ItemSitesItemListsListItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/lists/{list%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if listId != nil {
+        urlTplParams["list%2Did"] = *listId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -78,7 +78,7 @@ func NewItemSitesItemListsListItemRequestBuilderInternal(pathParameters map[stri
 func NewItemSitesItemListsListItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemListsListItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemSitesItemListsListItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemSitesItemListsListItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // ContentTypes provides operations to manage the contentTypes property of the microsoft.graph.list entity.
 func (m *ItemSitesItemListsListItemRequestBuilder) ContentTypes()(*ItemSitesItemListsItemContentTypesRequestBuilder) {
@@ -90,10 +90,7 @@ func (m *ItemSitesItemListsListItemRequestBuilder) ContentTypesById(id string)(*
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["contentType%2Did"] = id
-    }
-    return NewItemSitesItemListsItemContentTypesContentTypeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemSitesItemListsItemContentTypesContentTypeItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Delete delete navigation property lists for groups
 func (m *ItemSitesItemListsListItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSitesItemListsListItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -144,10 +141,7 @@ func (m *ItemSitesItemListsListItemRequestBuilder) ItemsById(id string)(*ItemSit
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["listItem%2Did"] = id
-    }
-    return NewItemSitesItemListsItemItemsListItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemSitesItemListsItemItemsListItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Operations provides operations to manage the operations property of the microsoft.graph.list entity.
 func (m *ItemSitesItemListsListItemRequestBuilder) Operations()(*ItemSitesItemListsItemOperationsRequestBuilder) {
@@ -159,10 +153,7 @@ func (m *ItemSitesItemListsListItemRequestBuilder) OperationsById(id string)(*It
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["richLongRunningOperation%2Did"] = id
-    }
-    return NewItemSitesItemListsItemOperationsRichLongRunningOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemSitesItemListsItemOperationsRichLongRunningOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Patch update the navigation property lists in groups
 func (m *ItemSitesItemListsListItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Listable, requestConfiguration *ItemSitesItemListsListItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Listable, error) {
@@ -193,10 +184,7 @@ func (m *ItemSitesItemListsListItemRequestBuilder) SubscriptionsById(id string)(
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["subscription%2Did"] = id
-    }
-    return NewItemSitesItemListsItemSubscriptionsSubscriptionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemSitesItemListsItemSubscriptionsSubscriptionItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // ToDeleteRequestInformation delete navigation property lists for groups
 func (m *ItemSitesItemListsListItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemListsListItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -233,7 +221,10 @@ func (m *ItemSitesItemListsListItemRequestBuilder) ToPatchRequestInformation(ctx
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

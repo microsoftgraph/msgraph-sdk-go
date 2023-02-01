@@ -56,19 +56,19 @@ func (m *PlansPlannerPlanItemRequestBuilder) BucketsById(id string)(*PlansItemBu
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["plannerBucket%2Did"] = id
-    }
-    return NewPlansItemBucketsPlannerBucketItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPlansItemBucketsPlannerBucketItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // NewPlansPlannerPlanItemRequestBuilderInternal instantiates a new PlannerPlanItemRequestBuilder and sets the default values.
-func NewPlansPlannerPlanItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PlansPlannerPlanItemRequestBuilder) {
+func NewPlansPlannerPlanItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, plannerPlanId *string)(*PlansPlannerPlanItemRequestBuilder) {
     m := &PlansPlannerPlanItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/planner/plans/{plannerPlan%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if plannerPlanId != nil {
+        urlTplParams["plannerPlan%2Did"] = *plannerPlanId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -78,7 +78,7 @@ func NewPlansPlannerPlanItemRequestBuilderInternal(pathParameters map[string]str
 func NewPlansPlannerPlanItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PlansPlannerPlanItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewPlansPlannerPlanItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewPlansPlannerPlanItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property plans for planner
 func (m *PlansPlannerPlanItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *PlansPlannerPlanItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -148,10 +148,7 @@ func (m *PlansPlannerPlanItemRequestBuilder) TasksById(id string)(*PlansItemTask
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["plannerTask%2Did"] = id
-    }
-    return NewPlansItemTasksPlannerTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPlansItemTasksPlannerTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // ToDeleteRequestInformation delete navigation property plans for planner
 func (m *PlansPlannerPlanItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PlansPlannerPlanItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -188,7 +185,10 @@ func (m *PlansPlannerPlanItemRequestBuilder) ToPatchRequestInformation(ctx conte
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

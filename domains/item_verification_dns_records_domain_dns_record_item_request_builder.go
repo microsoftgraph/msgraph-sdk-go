@@ -47,13 +47,16 @@ type ItemVerificationDnsRecordsDomainDnsRecordItemRequestBuilderPatchRequestConf
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemVerificationDnsRecordsDomainDnsRecordItemRequestBuilderInternal instantiates a new DomainDnsRecordItemRequestBuilder and sets the default values.
-func NewItemVerificationDnsRecordsDomainDnsRecordItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemVerificationDnsRecordsDomainDnsRecordItemRequestBuilder) {
+func NewItemVerificationDnsRecordsDomainDnsRecordItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, domainDnsRecordId *string)(*ItemVerificationDnsRecordsDomainDnsRecordItemRequestBuilder) {
     m := &ItemVerificationDnsRecordsDomainDnsRecordItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/domains/{domain%2Did}/verificationDnsRecords/{domainDnsRecord%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if domainDnsRecordId != nil {
+        urlTplParams["domainDnsRecord%2Did"] = *domainDnsRecordId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewItemVerificationDnsRecordsDomainDnsRecordItemRequestBuilderInternal(path
 func NewItemVerificationDnsRecordsDomainDnsRecordItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemVerificationDnsRecordsDomainDnsRecordItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemVerificationDnsRecordsDomainDnsRecordItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemVerificationDnsRecordsDomainDnsRecordItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property verificationDnsRecords for domains
 func (m *ItemVerificationDnsRecordsDomainDnsRecordItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemVerificationDnsRecordsDomainDnsRecordItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemVerificationDnsRecordsDomainDnsRecordItemRequestBuilder) ToPatchReq
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

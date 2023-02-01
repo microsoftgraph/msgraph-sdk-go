@@ -47,13 +47,16 @@ type CallsItemContentSharingSessionsContentSharingSessionItemRequestBuilderPatch
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewCallsItemContentSharingSessionsContentSharingSessionItemRequestBuilderInternal instantiates a new ContentSharingSessionItemRequestBuilder and sets the default values.
-func NewCallsItemContentSharingSessionsContentSharingSessionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallsItemContentSharingSessionsContentSharingSessionItemRequestBuilder) {
+func NewCallsItemContentSharingSessionsContentSharingSessionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, contentSharingSessionId *string)(*CallsItemContentSharingSessionsContentSharingSessionItemRequestBuilder) {
     m := &CallsItemContentSharingSessionsContentSharingSessionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/communications/calls/{call%2Did}/contentSharingSessions/{contentSharingSession%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if contentSharingSessionId != nil {
+        urlTplParams["contentSharingSession%2Did"] = *contentSharingSessionId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewCallsItemContentSharingSessionsContentSharingSessionItemRequestBuilderIn
 func NewCallsItemContentSharingSessionsContentSharingSessionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallsItemContentSharingSessionsContentSharingSessionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewCallsItemContentSharingSessionsContentSharingSessionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewCallsItemContentSharingSessionsContentSharingSessionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property contentSharingSessions for communications
 func (m *CallsItemContentSharingSessionsContentSharingSessionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CallsItemContentSharingSessionsContentSharingSessionItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *CallsItemContentSharingSessionsContentSharingSessionItemRequestBuilder)
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

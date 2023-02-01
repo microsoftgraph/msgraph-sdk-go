@@ -23,7 +23,7 @@ type ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderDelete
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderGetQueryParameters get attachments from users
+// ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderGetQueryParameters a collection of file attachments for the task.
 type ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
@@ -38,13 +38,16 @@ type ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderGetReq
     QueryParameters *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderGetQueryParameters
 }
 // NewItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderInternal instantiates a new AttachmentBaseItemRequestBuilder and sets the default values.
-func NewItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) {
+func NewItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, attachmentBaseId *string)(*ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) {
     m := &ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/todo/lists/{todoTaskList%2Did}/tasks/{todoTask%2Did}/attachments/{attachmentBase%2Did}{?%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if attachmentBaseId != nil {
+        urlTplParams["attachmentBase%2Did"] = *attachmentBaseId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -54,7 +57,7 @@ func NewItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderInt
 func NewItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Content provides operations to manage the media for the user entity.
 func (m *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) Content()(*ItemTodoListsItemTasksItemAttachmentsItemValueContentRequestBuilder) {
@@ -76,7 +79,7 @@ func (m *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) 
     }
     return nil
 }
-// Get get attachments from users
+// Get a collection of file attachments for the task.
 func (m *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentBaseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -107,7 +110,7 @@ func (m *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) 
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get attachments from users
+// ToGetRequestInformation a collection of file attachments for the task.
 func (m *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

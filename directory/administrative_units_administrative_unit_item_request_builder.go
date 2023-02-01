@@ -47,13 +47,16 @@ type AdministrativeUnitsAdministrativeUnitItemRequestBuilderPatchRequestConfigur
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewAdministrativeUnitsAdministrativeUnitItemRequestBuilderInternal instantiates a new AdministrativeUnitItemRequestBuilder and sets the default values.
-func NewAdministrativeUnitsAdministrativeUnitItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AdministrativeUnitsAdministrativeUnitItemRequestBuilder) {
+func NewAdministrativeUnitsAdministrativeUnitItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, administrativeUnitId *string)(*AdministrativeUnitsAdministrativeUnitItemRequestBuilder) {
     m := &AdministrativeUnitsAdministrativeUnitItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/directory/administrativeUnits/{administrativeUnit%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if administrativeUnitId != nil {
+        urlTplParams["administrativeUnit%2Did"] = *administrativeUnitId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewAdministrativeUnitsAdministrativeUnitItemRequestBuilderInternal(pathPara
 func NewAdministrativeUnitsAdministrativeUnitItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AdministrativeUnitsAdministrativeUnitItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewAdministrativeUnitsAdministrativeUnitItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewAdministrativeUnitsAdministrativeUnitItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property administrativeUnits for directory
 func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AdministrativeUnitsAdministrativeUnitItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -91,10 +94,7 @@ func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) ExtensionsById
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["extension%2Did"] = id
-    }
-    return NewAdministrativeUnitsItemExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAdministrativeUnitsItemExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Get conceptual container for user and group directory objects.
 func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AdministrativeUnitsAdministrativeUnitItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AdministrativeUnitable, error) {
@@ -125,10 +125,7 @@ func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) MembersById(id
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["directoryObject%2Did"] = id
-    }
-    return NewAdministrativeUnitsItemMembersDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAdministrativeUnitsItemMembersDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Patch update the navigation property administrativeUnits in directory
 func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AdministrativeUnitable, requestConfiguration *AdministrativeUnitsAdministrativeUnitItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AdministrativeUnitable, error) {
@@ -159,10 +156,7 @@ func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) ScopedRoleMemb
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["scopedRoleMembership%2Did"] = id
-    }
-    return NewAdministrativeUnitsItemScopedRoleMembersScopedRoleMembershipItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAdministrativeUnitsItemScopedRoleMembersScopedRoleMembershipItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // ToDeleteRequestInformation delete navigation property administrativeUnits for directory
 func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AdministrativeUnitsAdministrativeUnitItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -199,7 +193,10 @@ func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) ToPatchRequest
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

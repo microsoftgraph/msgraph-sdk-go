@@ -47,13 +47,16 @@ type SchemaExtensionItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewSchemaExtensionItemRequestBuilderInternal instantiates a new SchemaExtensionItemRequestBuilder and sets the default values.
-func NewSchemaExtensionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SchemaExtensionItemRequestBuilder) {
+func NewSchemaExtensionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, schemaExtensionId *string)(*SchemaExtensionItemRequestBuilder) {
     m := &SchemaExtensionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/schemaExtensions/{schemaExtension%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if schemaExtensionId != nil {
+        urlTplParams["schemaExtension%2Did"] = *schemaExtensionId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewSchemaExtensionItemRequestBuilderInternal(pathParameters map[string]stri
 func NewSchemaExtensionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SchemaExtensionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewSchemaExtensionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewSchemaExtensionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete the definition of a schema extension. Only the app that created the schema extension (owner app) can delete the schema extension definition, and only when the extension is in the `InDevelopment` state. Deleting a schema extension definition does not affect accessing custom data that has been added to resource instances based on that definition.
 // [Find more info here]
@@ -163,7 +166,10 @@ func (m *SchemaExtensionItemRequestBuilder) ToPatchRequestInformation(ctx contex
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

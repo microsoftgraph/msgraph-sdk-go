@@ -47,13 +47,16 @@ type ItemTeamPrimaryChannelMembersConversationMemberItemRequestBuilderPatchReque
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemTeamPrimaryChannelMembersConversationMemberItemRequestBuilderInternal instantiates a new ConversationMemberItemRequestBuilder and sets the default values.
-func NewItemTeamPrimaryChannelMembersConversationMemberItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamPrimaryChannelMembersConversationMemberItemRequestBuilder) {
+func NewItemTeamPrimaryChannelMembersConversationMemberItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, conversationMemberId *string)(*ItemTeamPrimaryChannelMembersConversationMemberItemRequestBuilder) {
     m := &ItemTeamPrimaryChannelMembersConversationMemberItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groups/{group%2Did}/team/primaryChannel/members/{conversationMember%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if conversationMemberId != nil {
+        urlTplParams["conversationMember%2Did"] = *conversationMemberId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewItemTeamPrimaryChannelMembersConversationMemberItemRequestBuilderInterna
 func NewItemTeamPrimaryChannelMembersConversationMemberItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamPrimaryChannelMembersConversationMemberItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemTeamPrimaryChannelMembersConversationMemberItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemTeamPrimaryChannelMembersConversationMemberItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property members for groups
 func (m *ItemTeamPrimaryChannelMembersConversationMemberItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTeamPrimaryChannelMembersConversationMemberItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemTeamPrimaryChannelMembersConversationMemberItemRequestBuilder) ToPa
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

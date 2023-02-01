@@ -33,13 +33,16 @@ type MeTaughtClassesEducationClassItemRequestBuilderGetRequestConfiguration stru
     QueryParameters *MeTaughtClassesEducationClassItemRequestBuilderGetQueryParameters
 }
 // NewMeTaughtClassesEducationClassItemRequestBuilderInternal instantiates a new EducationClassItemRequestBuilder and sets the default values.
-func NewMeTaughtClassesEducationClassItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MeTaughtClassesEducationClassItemRequestBuilder) {
+func NewMeTaughtClassesEducationClassItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, educationClassId *string)(*MeTaughtClassesEducationClassItemRequestBuilder) {
     m := &MeTaughtClassesEducationClassItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/education/me/taughtClasses/{educationClass%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if educationClassId != nil {
+        urlTplParams["educationClass%2Did"] = *educationClassId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -49,7 +52,7 @@ func NewMeTaughtClassesEducationClassItemRequestBuilderInternal(pathParameters m
 func NewMeTaughtClassesEducationClassItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MeTaughtClassesEducationClassItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewMeTaughtClassesEducationClassItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewMeTaughtClassesEducationClassItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get classes for which the user is a teacher.
 func (m *MeTaughtClassesEducationClassItemRequestBuilder) Get(ctx context.Context, requestConfiguration *MeTaughtClassesEducationClassItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationClassable, error) {

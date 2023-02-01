@@ -47,13 +47,16 @@ type ItemContactsItemExtensionsExtensionItemRequestBuilderPatchRequestConfigurat
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemContactsItemExtensionsExtensionItemRequestBuilderInternal instantiates a new ExtensionItemRequestBuilder and sets the default values.
-func NewItemContactsItemExtensionsExtensionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemContactsItemExtensionsExtensionItemRequestBuilder) {
+func NewItemContactsItemExtensionsExtensionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, extensionId *string)(*ItemContactsItemExtensionsExtensionItemRequestBuilder) {
     m := &ItemContactsItemExtensionsExtensionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/contacts/{contact%2Did}/extensions/{extension%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if extensionId != nil {
+        urlTplParams["extension%2Did"] = *extensionId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewItemContactsItemExtensionsExtensionItemRequestBuilderInternal(pathParame
 func NewItemContactsItemExtensionsExtensionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemContactsItemExtensionsExtensionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemContactsItemExtensionsExtensionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemContactsItemExtensionsExtensionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property extensions for users
 func (m *ItemContactsItemExtensionsExtensionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemContactsItemExtensionsExtensionItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemContactsItemExtensionsExtensionItemRequestBuilder) ToPatchRequestIn
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -47,13 +47,16 @@ type ItemDelegatedPermissionClassificationsDelegatedPermissionClassificationItem
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemDelegatedPermissionClassificationsDelegatedPermissionClassificationItemRequestBuilderInternal instantiates a new DelegatedPermissionClassificationItemRequestBuilder and sets the default values.
-func NewItemDelegatedPermissionClassificationsDelegatedPermissionClassificationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDelegatedPermissionClassificationsDelegatedPermissionClassificationItemRequestBuilder) {
+func NewItemDelegatedPermissionClassificationsDelegatedPermissionClassificationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, delegatedPermissionClassificationId *string)(*ItemDelegatedPermissionClassificationsDelegatedPermissionClassificationItemRequestBuilder) {
     m := &ItemDelegatedPermissionClassificationsDelegatedPermissionClassificationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/delegatedPermissionClassifications/{delegatedPermissionClassification%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if delegatedPermissionClassificationId != nil {
+        urlTplParams["delegatedPermissionClassification%2Did"] = *delegatedPermissionClassificationId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewItemDelegatedPermissionClassificationsDelegatedPermissionClassificationI
 func NewItemDelegatedPermissionClassificationsDelegatedPermissionClassificationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDelegatedPermissionClassificationsDelegatedPermissionClassificationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemDelegatedPermissionClassificationsDelegatedPermissionClassificationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemDelegatedPermissionClassificationsDelegatedPermissionClassificationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property delegatedPermissionClassifications for servicePrincipals
 func (m *ItemDelegatedPermissionClassificationsDelegatedPermissionClassificationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemDelegatedPermissionClassificationsDelegatedPermissionClassificationItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemDelegatedPermissionClassificationsDelegatedPermissionClassification
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

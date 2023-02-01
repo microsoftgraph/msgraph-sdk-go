@@ -47,13 +47,16 @@ type ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilderPatchReque
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilderInternal instantiates a new ServiceHealthItemRequestBuilder and sets the default values.
-func NewServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilder) {
+func NewServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, serviceHealthId *string)(*ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilder) {
     m := &ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/admin/serviceAnnouncement/healthOverviews/{serviceHealth%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if serviceHealthId != nil {
+        urlTplParams["serviceHealth%2Did"] = *serviceHealthId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilderInterna
 func NewServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property healthOverviews for admin
 func (m *ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -110,10 +113,7 @@ func (m *ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilder) Issu
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["serviceHealthIssue%2Did"] = id
-    }
-    return NewServiceAnnouncementHealthOverviewsItemIssuesServiceHealthIssueItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewServiceAnnouncementHealthOverviewsItemIssuesServiceHealthIssueItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Patch update the navigation property healthOverviews in admin
 func (m *ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceHealthable, requestConfiguration *ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceHealthable, error) {
@@ -169,7 +169,10 @@ func (m *ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilder) ToPa
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

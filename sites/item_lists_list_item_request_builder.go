@@ -56,19 +56,19 @@ func (m *ItemListsListItemRequestBuilder) ColumnsById(id string)(*ItemListsItemC
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["columnDefinition%2Did"] = id
-    }
-    return NewItemListsItemColumnsColumnDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemListsItemColumnsColumnDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // NewItemListsListItemRequestBuilderInternal instantiates a new ListItemRequestBuilder and sets the default values.
-func NewItemListsListItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListsListItemRequestBuilder) {
+func NewItemListsListItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, listId *string)(*ItemListsListItemRequestBuilder) {
     m := &ItemListsListItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if listId != nil {
+        urlTplParams["list%2Did"] = *listId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -78,7 +78,7 @@ func NewItemListsListItemRequestBuilderInternal(pathParameters map[string]string
 func NewItemListsListItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListsListItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemListsListItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemListsListItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // ContentTypes provides operations to manage the contentTypes property of the microsoft.graph.list entity.
 func (m *ItemListsListItemRequestBuilder) ContentTypes()(*ItemListsItemContentTypesRequestBuilder) {
@@ -90,10 +90,7 @@ func (m *ItemListsListItemRequestBuilder) ContentTypesById(id string)(*ItemLists
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["contentType%2Did"] = id
-    }
-    return NewItemListsItemContentTypesContentTypeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemListsItemContentTypesContentTypeItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Delete delete navigation property lists for sites
 func (m *ItemListsListItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemListsListItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -144,10 +141,7 @@ func (m *ItemListsListItemRequestBuilder) ItemsById(id string)(*ItemListsItemIte
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["listItem%2Did"] = id
-    }
-    return NewItemListsItemItemsListItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemListsItemItemsListItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Operations provides operations to manage the operations property of the microsoft.graph.list entity.
 func (m *ItemListsListItemRequestBuilder) Operations()(*ItemListsItemOperationsRequestBuilder) {
@@ -159,10 +153,7 @@ func (m *ItemListsListItemRequestBuilder) OperationsById(id string)(*ItemListsIt
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["richLongRunningOperation%2Did"] = id
-    }
-    return NewItemListsItemOperationsRichLongRunningOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemListsItemOperationsRichLongRunningOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Patch update the navigation property lists in sites
 func (m *ItemListsListItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Listable, requestConfiguration *ItemListsListItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Listable, error) {
@@ -193,10 +184,7 @@ func (m *ItemListsListItemRequestBuilder) SubscriptionsById(id string)(*ItemList
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["subscription%2Did"] = id
-    }
-    return NewItemListsItemSubscriptionsSubscriptionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemListsItemSubscriptionsSubscriptionItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // ToDeleteRequestInformation delete navigation property lists for sites
 func (m *ItemListsListItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemListsListItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -233,7 +221,10 @@ func (m *ItemListsListItemRequestBuilder) ToPatchRequestInformation(ctx context.
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

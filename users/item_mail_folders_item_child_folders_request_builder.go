@@ -72,10 +72,6 @@ func NewItemMailFoldersItemChildFoldersRequestBuilder(rawUrl string, requestAdap
 func (m *ItemMailFoldersItemChildFoldersRequestBuilder) Count()(*ItemMailFoldersItemChildFoldersCountRequestBuilder) {
     return NewItemMailFoldersItemChildFoldersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Delta provides operations to call the delta method.
-func (m *ItemMailFoldersItemChildFoldersRequestBuilder) Delta()(*ItemMailFoldersItemChildFoldersDeltaRequestBuilder) {
-    return NewItemMailFoldersItemChildFoldersDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Get get the folder collection under the specified folder. You can use the `.../me/mailFolders` shortcut to get the top-level folder collection and navigate to another folder. By default, this operation does not return hidden folders. Use a query parameter _includeHiddenFolders_ to include them in the response.
 // [Find more info here]
 // 
@@ -97,6 +93,10 @@ func (m *ItemMailFoldersItemChildFoldersRequestBuilder) Get(ctx context.Context,
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailFolderCollectionResponseable), nil
+}
+// MicrosoftGraphDelta provides operations to call the delta method.
+func (m *ItemMailFoldersItemChildFoldersRequestBuilder) MicrosoftGraphDelta()(*ItemMailFoldersItemChildFoldersMicrosoftGraphDeltaDeltaRequestBuilder) {
+    return NewItemMailFoldersItemChildFoldersMicrosoftGraphDeltaDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post use this API to create a new child mailFolder. If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.
 // [Find more info here]
@@ -143,7 +143,10 @@ func (m *ItemMailFoldersItemChildFoldersRequestBuilder) ToPostRequestInformation
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

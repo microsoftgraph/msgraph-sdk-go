@@ -56,19 +56,19 @@ func (m *ItemTermStoresItemSetsItemChildrenTermItemRequestBuilder) ChildrenById(
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["term%2Did1"] = id
-    }
-    return NewItemTermStoresItemSetsItemChildrenItemChildrenTermItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemTermStoresItemSetsItemChildrenItemChildrenTermItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // NewItemTermStoresItemSetsItemChildrenTermItemRequestBuilderInternal instantiates a new TermItemRequestBuilder and sets the default values.
-func NewItemTermStoresItemSetsItemChildrenTermItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTermStoresItemSetsItemChildrenTermItemRequestBuilder) {
+func NewItemTermStoresItemSetsItemChildrenTermItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, termId *string)(*ItemTermStoresItemSetsItemChildrenTermItemRequestBuilder) {
     m := &ItemTermStoresItemSetsItemChildrenTermItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/sites/{site%2Did}/termStores/{store%2Did}/sets/{set%2Did}/children/{term%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if termId != nil {
+        urlTplParams["term%2Did"] = *termId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -78,7 +78,7 @@ func NewItemTermStoresItemSetsItemChildrenTermItemRequestBuilderInternal(pathPar
 func NewItemTermStoresItemSetsItemChildrenTermItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTermStoresItemSetsItemChildrenTermItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemTermStoresItemSetsItemChildrenTermItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemTermStoresItemSetsItemChildrenTermItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property children for sites
 func (m *ItemTermStoresItemSetsItemChildrenTermItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTermStoresItemSetsItemChildrenTermItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -144,10 +144,7 @@ func (m *ItemTermStoresItemSetsItemChildrenTermItemRequestBuilder) RelationsById
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["relation%2Did"] = id
-    }
-    return NewItemTermStoresItemSetsItemChildrenItemRelationsRelationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemTermStoresItemSetsItemChildrenItemRelationsRelationItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Set provides operations to manage the set property of the microsoft.graph.termStore.term entity.
 func (m *ItemTermStoresItemSetsItemChildrenTermItemRequestBuilder) Set()(*ItemTermStoresItemSetsItemChildrenItemSetRequestBuilder) {
@@ -188,7 +185,10 @@ func (m *ItemTermStoresItemSetsItemChildrenTermItemRequestBuilder) ToPatchReques
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

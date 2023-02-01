@@ -47,13 +47,16 @@ type ConnectorsPrintConnectorItemRequestBuilderPatchRequestConfiguration struct 
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewConnectorsPrintConnectorItemRequestBuilderInternal instantiates a new PrintConnectorItemRequestBuilder and sets the default values.
-func NewConnectorsPrintConnectorItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConnectorsPrintConnectorItemRequestBuilder) {
+func NewConnectorsPrintConnectorItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, printConnectorId *string)(*ConnectorsPrintConnectorItemRequestBuilder) {
     m := &ConnectorsPrintConnectorItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/print/connectors/{printConnector%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if printConnectorId != nil {
+        urlTplParams["printConnector%2Did"] = *printConnectorId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewConnectorsPrintConnectorItemRequestBuilderInternal(pathParameters map[st
 func NewConnectorsPrintConnectorItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConnectorsPrintConnectorItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewConnectorsPrintConnectorItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewConnectorsPrintConnectorItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property connectors for print
 func (m *ConnectorsPrintConnectorItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConnectorsPrintConnectorItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ConnectorsPrintConnectorItemRequestBuilder) ToPatchRequestInformation(c
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

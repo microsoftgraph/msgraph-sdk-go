@@ -47,13 +47,16 @@ type ItemListItemsItemVersionsListItemVersionItemRequestBuilderPatchRequestConfi
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemListItemsItemVersionsListItemVersionItemRequestBuilderInternal instantiates a new ListItemVersionItemRequestBuilder and sets the default values.
-func NewItemListItemsItemVersionsListItemVersionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListItemsItemVersionsListItemVersionItemRequestBuilder) {
+func NewItemListItemsItemVersionsListItemVersionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, listItemVersionId *string)(*ItemListItemsItemVersionsListItemVersionItemRequestBuilder) {
     m := &ItemListItemsItemVersionsListItemVersionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/shares/{sharedDriveItem%2Did}/list/items/{listItem%2Did}/versions/{listItemVersion%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if listItemVersionId != nil {
+        urlTplParams["listItemVersion%2Did"] = *listItemVersionId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewItemListItemsItemVersionsListItemVersionItemRequestBuilderInternal(pathP
 func NewItemListItemsItemVersionsListItemVersionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListItemsItemVersionsListItemVersionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemListItemsItemVersionsListItemVersionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemListItemsItemVersionsListItemVersionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property versions for shares
 func (m *ItemListItemsItemVersionsListItemVersionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemListItemsItemVersionsListItemVersionItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -104,6 +107,10 @@ func (m *ItemListItemsItemVersionsListItemVersionItemRequestBuilder) Get(ctx con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemVersionable), nil
 }
+// MicrosoftGraphRestoreVersion provides operations to call the restoreVersion method.
+func (m *ItemListItemsItemVersionsListItemVersionItemRequestBuilder) MicrosoftGraphRestoreVersion()(*ItemListItemsItemVersionsItemMicrosoftGraphRestoreVersionRestoreVersionRequestBuilder) {
+    return NewItemListItemsItemVersionsItemMicrosoftGraphRestoreVersionRestoreVersionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Patch update the navigation property versions in shares
 func (m *ItemListItemsItemVersionsListItemVersionItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemVersionable, requestConfiguration *ItemListItemsItemVersionsListItemVersionItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemVersionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -122,10 +129,6 @@ func (m *ItemListItemsItemVersionsListItemVersionItemRequestBuilder) Patch(ctx c
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemVersionable), nil
-}
-// RestoreVersion provides operations to call the restoreVersion method.
-func (m *ItemListItemsItemVersionsListItemVersionItemRequestBuilder) RestoreVersion()(*ItemListItemsItemVersionsItemRestoreVersionRequestBuilder) {
-    return NewItemListItemsItemVersionsItemRestoreVersionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property versions for shares
 func (m *ItemListItemsItemVersionsListItemVersionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemListItemsItemVersionsListItemVersionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -162,7 +165,10 @@ func (m *ItemListItemsItemVersionsListItemVersionItemRequestBuilder) ToPatchRequ
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

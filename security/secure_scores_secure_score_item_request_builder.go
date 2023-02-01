@@ -47,13 +47,16 @@ type SecureScoresSecureScoreItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewSecureScoresSecureScoreItemRequestBuilderInternal instantiates a new SecureScoreItemRequestBuilder and sets the default values.
-func NewSecureScoresSecureScoreItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SecureScoresSecureScoreItemRequestBuilder) {
+func NewSecureScoresSecureScoreItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, secureScoreId *string)(*SecureScoresSecureScoreItemRequestBuilder) {
     m := &SecureScoresSecureScoreItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/security/secureScores/{secureScore%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if secureScoreId != nil {
+        urlTplParams["secureScore%2Did"] = *secureScoreId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewSecureScoresSecureScoreItemRequestBuilderInternal(pathParameters map[str
 func NewSecureScoresSecureScoreItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SecureScoresSecureScoreItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewSecureScoresSecureScoreItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewSecureScoresSecureScoreItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property secureScores for security
 func (m *SecureScoresSecureScoreItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *SecureScoresSecureScoreItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *SecureScoresSecureScoreItemRequestBuilder) ToPatchRequestInformation(ct
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

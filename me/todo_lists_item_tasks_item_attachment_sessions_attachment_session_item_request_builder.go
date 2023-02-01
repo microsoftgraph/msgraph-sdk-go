@@ -45,13 +45,16 @@ type TodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilder
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilderInternal instantiates a new AttachmentSessionItemRequestBuilder and sets the default values.
-func NewTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilder) {
+func NewTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, attachmentSessionId *string)(*TodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilder) {
     m := &TodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/todo/lists/{todoTaskList%2Did}/tasks/{todoTask%2Did}/attachmentSessions/{attachmentSession%2Did}{?%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if attachmentSessionId != nil {
+        urlTplParams["attachmentSession%2Did"] = *attachmentSessionId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -61,7 +64,7 @@ func NewTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuil
 func NewTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Content provides operations to manage the media for the user entity.
 func (m *TodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilder) Content()(*TodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilder) {
@@ -156,7 +159,10 @@ func (m *TodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBui
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

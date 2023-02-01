@@ -106,10 +106,7 @@ func (m *AppCatalogsRequestBuilder) TeamsAppsById(id string)(*TeamsAppsTeamsAppI
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["teamsApp%2Did"] = id
-    }
-    return NewTeamsAppsTeamsAppItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTeamsAppsTeamsAppItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // ToGetRequestInformation get appCatalogs
 func (m *AppCatalogsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AppCatalogsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -134,7 +131,10 @@ func (m *AppCatalogsRequestBuilder) ToPatchRequestInformation(ctx context.Contex
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

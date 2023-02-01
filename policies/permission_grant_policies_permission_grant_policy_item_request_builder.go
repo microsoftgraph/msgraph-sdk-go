@@ -47,13 +47,16 @@ type PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilderPatchRequestC
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewPermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilderInternal instantiates a new PermissionGrantPolicyItemRequestBuilder and sets the default values.
-func NewPermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) {
+func NewPermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, permissionGrantPolicyId *string)(*PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) {
     m := &PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/policies/permissionGrantPolicies/{permissionGrantPolicy%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if permissionGrantPolicyId != nil {
+        urlTplParams["permissionGrantPolicy%2Did"] = *permissionGrantPolicyId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewPermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilderInternal(p
 func NewPermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewPermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewPermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property permissionGrantPolicies for policies
 func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -91,10 +94,7 @@ func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) Exclude
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["permissionGrantConditionSet%2Did"] = id
-    }
-    return NewPermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Get the policy that specifies the conditions under which consent can be granted.
 func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PermissionGrantPolicyable, error) {
@@ -125,10 +125,7 @@ func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) Include
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["permissionGrantConditionSet%2Did"] = id
-    }
-    return NewPermissionGrantPoliciesItemIncludesPermissionGrantConditionSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPermissionGrantPoliciesItemIncludesPermissionGrantConditionSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Patch update the navigation property permissionGrantPolicies in policies
 func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PermissionGrantPolicyable, requestConfiguration *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PermissionGrantPolicyable, error) {
@@ -184,7 +181,10 @@ func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) ToPatch
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

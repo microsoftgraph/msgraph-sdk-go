@@ -47,13 +47,16 @@ type GroupSettingItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewGroupSettingItemRequestBuilderInternal instantiates a new GroupSettingItemRequestBuilder and sets the default values.
-func NewGroupSettingItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupSettingItemRequestBuilder) {
+func NewGroupSettingItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, groupSettingId *string)(*GroupSettingItemRequestBuilder) {
     m := &GroupSettingItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groupSettings/{groupSetting%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if groupSettingId != nil {
+        urlTplParams["groupSetting%2Did"] = *groupSettingId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewGroupSettingItemRequestBuilderInternal(pathParameters map[string]string,
 func NewGroupSettingItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupSettingItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewGroupSettingItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewGroupSettingItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete a tenant-level or group-specific groupSetting object.
 // [Find more info here]
@@ -163,7 +166,10 @@ func (m *GroupSettingItemRequestBuilder) ToPatchRequestInformation(ctx context.C
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

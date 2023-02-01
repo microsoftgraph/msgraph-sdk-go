@@ -47,13 +47,16 @@ type ConnectionsItemItemsExternalItemItemRequestBuilderPatchRequestConfiguration
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewConnectionsItemItemsExternalItemItemRequestBuilderInternal instantiates a new ExternalItemItemRequestBuilder and sets the default values.
-func NewConnectionsItemItemsExternalItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConnectionsItemItemsExternalItemItemRequestBuilder) {
+func NewConnectionsItemItemsExternalItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, externalItemId *string)(*ConnectionsItemItemsExternalItemItemRequestBuilder) {
     m := &ConnectionsItemItemsExternalItemItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/external/connections/{externalConnection%2Did}/items/{externalItem%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if externalItemId != nil {
+        urlTplParams["externalItem%2Did"] = *externalItemId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewConnectionsItemItemsExternalItemItemRequestBuilderInternal(pathParameter
 func NewConnectionsItemItemsExternalItemItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConnectionsItemItemsExternalItemItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewConnectionsItemItemsExternalItemItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewConnectionsItemItemsExternalItemItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property items for external
 func (m *ConnectionsItemItemsExternalItemItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConnectionsItemItemsExternalItemItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ConnectionsItemItemsExternalItemItemRequestBuilder) ToPatchRequestInfor
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

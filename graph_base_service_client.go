@@ -38,9 +38,9 @@ import (
     i79ca23a9ac0659e1330dd29e049fe157787d5af6695ead2ff8263396db68d027 "github.com/microsoftgraph/msgraph-sdk-go/identity"
     i7c9d1b36ac198368c1d8bed014b43e2a518b170ee45bf02c8bbe64544a50539a "github.com/microsoftgraph/msgraph-sdk-go/admin"
     i7d140130aac6882792a019b5ebe51fe8d69dfd63ec213c2e3cd98282ce2d0428 "github.com/microsoftgraph/msgraph-sdk-go/appcatalogs"
+    i80d5f91f6f8d9dc3428331303d1837675adde9653ceda73f120faa5f0545ac4b "github.com/microsoftgraph/msgraph-sdk-go/tenantrelationships"
     i86cada4d4a5f2f8a9d1e7a85eacd70a661ea7b20d2737008c0719e95b5be3e16 "github.com/microsoftgraph/msgraph-sdk-go/oauth2permissiongrants"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
-    i926bd489c52af20f44aacc8a450bb0a062290f1d1e44c2fe78d6cc1595c12524 "github.com/microsoftgraph/msgraph-sdk-go/drive"
     i93194122344a685a2f9264205dc6d89a5ba39afdcea57fd0ade8f54b6f137c02 "github.com/microsoftgraph/msgraph-sdk-go/applications"
     i9429d7aae2f5c1dabbecc9411e8ad2b733d29338bc0c0436eeccc94605c461b7 "github.com/microsoftgraph/msgraph-sdk-go/print"
     i957076b10ba162b23efec7b94dd26b84c6475d285449c1cbc9c5b85910d36a12 "github.com/microsoftgraph/msgraph-sdk-go/domains"
@@ -98,10 +98,7 @@ func (m *GraphBaseServiceClient) AgreementAcceptancesById(id string)(*i3e9b5129e
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["agreementAcceptance%2Did"] = id
-    }
-    return i3e9b5129e2bb8b32b0374f7afe2536be6674d73df6c41d7c529f5a5432c4e0aa.NewAgreementAcceptanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i3e9b5129e2bb8b32b0374f7afe2536be6674d73df6c41d7c529f5a5432c4e0aa.NewAgreementAcceptanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Agreements provides operations to manage the collection of agreement entities.
 func (m *GraphBaseServiceClient) Agreements()(*ieaa2790c8b7fa361674e69e4a385e279c8c641adf79d86e5b0ca566591a507e8.AgreementsRequestBuilder) {
@@ -113,10 +110,7 @@ func (m *GraphBaseServiceClient) AgreementsById(id string)(*ieaa2790c8b7fa361674
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["agreement%2Did"] = id
-    }
-    return ieaa2790c8b7fa361674e69e4a385e279c8c641adf79d86e5b0ca566591a507e8.NewAgreementItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ieaa2790c8b7fa361674e69e4a385e279c8c641adf79d86e5b0ca566591a507e8.NewAgreementItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // AppCatalogs provides operations to manage the appCatalogs singleton.
 func (m *GraphBaseServiceClient) AppCatalogs()(*i7d140130aac6882792a019b5ebe51fe8d69dfd63ec213c2e3cd98282ce2d0428.AppCatalogsRequestBuilder) {
@@ -132,10 +126,7 @@ func (m *GraphBaseServiceClient) ApplicationsById(id string)(*i93194122344a685a2
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["application%2Did"] = id
-    }
-    return i93194122344a685a2f9264205dc6d89a5ba39afdcea57fd0ade8f54b6f137c02.NewApplicationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i93194122344a685a2f9264205dc6d89a5ba39afdcea57fd0ade8f54b6f137c02.NewApplicationItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // ApplicationTemplates provides operations to manage the collection of applicationTemplate entities.
 func (m *GraphBaseServiceClient) ApplicationTemplates()(*i5310ba7d4cfddbf5de4c1be94a30f9ca8c747c30a87e76587ce88d1cbfff01b4.ApplicationTemplatesRequestBuilder) {
@@ -147,10 +138,7 @@ func (m *GraphBaseServiceClient) ApplicationTemplatesById(id string)(*i5310ba7d4
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["applicationTemplate%2Did"] = id
-    }
-    return i5310ba7d4cfddbf5de4c1be94a30f9ca8c747c30a87e76587ce88d1cbfff01b4.NewApplicationTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i5310ba7d4cfddbf5de4c1be94a30f9ca8c747c30a87e76587ce88d1cbfff01b4.NewApplicationTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // AuditLogs provides operations to manage the auditLogRoot singleton.
 func (m *GraphBaseServiceClient) AuditLogs()(*i20b08d3949f1191430a14a315e0758a1f131dc59bbdc93e654f1dd447a6af14c.AuditLogsRequestBuilder) {
@@ -166,10 +154,7 @@ func (m *GraphBaseServiceClient) AuthenticationMethodConfigurationsById(id strin
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["authenticationMethodConfiguration%2Did"] = id
-    }
-    return i1dc06c4b7f499cb445a6c55e466abd6d7466bb35a2683c675909db23c57898e7.NewAuthenticationMethodConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i1dc06c4b7f499cb445a6c55e466abd6d7466bb35a2683c675909db23c57898e7.NewAuthenticationMethodConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // AuthenticationMethodsPolicy provides operations to manage the authenticationMethodsPolicy singleton.
 func (m *GraphBaseServiceClient) AuthenticationMethodsPolicy()(*id81f15a01b3ceaefa8b1b55f4ee944912f2179aafc4d873f0a2eaf0853eeccd0.AuthenticationMethodsPolicyRequestBuilder) {
@@ -189,10 +174,7 @@ func (m *GraphBaseServiceClient) CertificateBasedAuthConfigurationById(id string
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["certificateBasedAuthConfiguration%2Did"] = id
-    }
-    return i535d6c02ba98f73ff3a8c1c12a035ba5de51606f93aa2c0babdfed56fe505550.NewCertificateBasedAuthConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i535d6c02ba98f73ff3a8c1c12a035ba5de51606f93aa2c0babdfed56fe505550.NewCertificateBasedAuthConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Chats provides operations to manage the collection of chat entities.
 func (m *GraphBaseServiceClient) Chats()(*ibaef614e7692eebc6aaa8080b8ac29169fdf539f24925bc1de4465a3fcdac177.ChatsRequestBuilder) {
@@ -204,10 +186,7 @@ func (m *GraphBaseServiceClient) ChatsById(id string)(*ibaef614e7692eebc6aaa8080
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["chat%2Did"] = id
-    }
-    return ibaef614e7692eebc6aaa8080b8ac29169fdf539f24925bc1de4465a3fcdac177.NewChatItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ibaef614e7692eebc6aaa8080b8ac29169fdf539f24925bc1de4465a3fcdac177.NewChatItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Communications provides operations to manage the cloudCommunications singleton.
 func (m *GraphBaseServiceClient) Communications()(*i51b9802eedc1a25686534d117657be902df58c07e90ac6ea84501100998084d9.CommunicationsRequestBuilder) {
@@ -227,10 +206,7 @@ func (m *GraphBaseServiceClient) ConnectionsById(id string)(*icabdee72951e77325f
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["externalConnection%2Did"] = id
-    }
-    return icabdee72951e77325f237b36d388a199c87e65f67652b6bb85723aba847d7e83.NewExternalConnectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return icabdee72951e77325f237b36d388a199c87e65f67652b6bb85723aba847d7e83.NewExternalConnectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // NewGraphBaseServiceClient instantiates a new GraphBaseServiceClient and sets the default values.
 func NewGraphBaseServiceClient(requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GraphBaseServiceClient) {
@@ -261,10 +237,7 @@ func (m *GraphBaseServiceClient) ContactsById(id string)(*if51cca2652371587dbc02
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["orgContact%2Did"] = id
-    }
-    return if51cca2652371587dbc02e65260e291435a6a8f7f2ffb419f26c3b9d2a033f57.NewOrgContactItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return if51cca2652371587dbc02e65260e291435a6a8f7f2ffb419f26c3b9d2a033f57.NewOrgContactItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Contracts provides operations to manage the collection of contract entities.
 func (m *GraphBaseServiceClient) Contracts()(*ie3631868038c44f490dbc03525ac7249d0523c29cc45cbb25b2aebcf470d6c0c.ContractsRequestBuilder) {
@@ -276,10 +249,7 @@ func (m *GraphBaseServiceClient) ContractsById(id string)(*ie3631868038c44f490db
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["contract%2Did"] = id
-    }
-    return ie3631868038c44f490dbc03525ac7249d0523c29cc45cbb25b2aebcf470d6c0c.NewContractItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ie3631868038c44f490dbc03525ac7249d0523c29cc45cbb25b2aebcf470d6c0c.NewContractItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // DataPolicyOperations provides operations to manage the collection of dataPolicyOperation entities.
 func (m *GraphBaseServiceClient) DataPolicyOperations()(*ib33fc5e9889e020c0c572578957f59819123a589c61fd7f3eb37eb7958b525ee.DataPolicyOperationsRequestBuilder) {
@@ -291,10 +261,7 @@ func (m *GraphBaseServiceClient) DataPolicyOperationsById(id string)(*ib33fc5e98
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["dataPolicyOperation%2Did"] = id
-    }
-    return ib33fc5e9889e020c0c572578957f59819123a589c61fd7f3eb37eb7958b525ee.NewDataPolicyOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ib33fc5e9889e020c0c572578957f59819123a589c61fd7f3eb37eb7958b525ee.NewDataPolicyOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // DeviceAppManagement provides operations to manage the deviceAppManagement singleton.
 func (m *GraphBaseServiceClient) DeviceAppManagement()(*i638650494f9db477daff56d31ff923f5c100f72df0257ed7fa5c222cb1a77a94.DeviceAppManagementRequestBuilder) {
@@ -314,10 +281,7 @@ func (m *GraphBaseServiceClient) DevicesById(id string)(*i4c91eeb51f03f9d59a3420
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["device%2Did"] = id
-    }
-    return i4c91eeb51f03f9d59a342065f7c6ee027ad1fe84ada6b1946b8162c5ae146cfb.NewDeviceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i4c91eeb51f03f9d59a342065f7c6ee027ad1fe84ada6b1946b8162c5ae146cfb.NewDeviceItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Directory provides operations to manage the directory singleton.
 func (m *GraphBaseServiceClient) Directory()(*ib14d748b564c787931c10f1c7ba6856eeddea29a5b9e5c5c27eb1224ff65e5c4.DirectoryRequestBuilder) {
@@ -333,10 +297,7 @@ func (m *GraphBaseServiceClient) DirectoryObjectsById(id string)(*i185698f71f630
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["directoryObject%2Did"] = id
-    }
-    return i185698f71f6301975f0627ee999e6e91920d8fa9c00bdef3487b9f349e2df04e.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i185698f71f6301975f0627ee999e6e91920d8fa9c00bdef3487b9f349e2df04e.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // DirectoryRoles provides operations to manage the collection of directoryRole entities.
 func (m *GraphBaseServiceClient) DirectoryRoles()(*id4615a956cb1e7edabf8f5a4bc131d1ceca9a13d0f79ae0e122997452a9a0a4e.DirectoryRolesRequestBuilder) {
@@ -348,10 +309,7 @@ func (m *GraphBaseServiceClient) DirectoryRolesById(id string)(*id4615a956cb1e7e
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["directoryRole%2Did"] = id
-    }
-    return id4615a956cb1e7edabf8f5a4bc131d1ceca9a13d0f79ae0e122997452a9a0a4e.NewDirectoryRoleItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return id4615a956cb1e7edabf8f5a4bc131d1ceca9a13d0f79ae0e122997452a9a0a4e.NewDirectoryRoleItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // DirectoryRoleTemplates provides operations to manage the collection of directoryRoleTemplate entities.
 func (m *GraphBaseServiceClient) DirectoryRoleTemplates()(*i2a252d42835bdab6d88bf938595da6cf029001f9ca970d6f599cecf0ca27f8e5.DirectoryRoleTemplatesRequestBuilder) {
@@ -363,10 +321,7 @@ func (m *GraphBaseServiceClient) DirectoryRoleTemplatesById(id string)(*i2a252d4
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["directoryRoleTemplate%2Did"] = id
-    }
-    return i2a252d42835bdab6d88bf938595da6cf029001f9ca970d6f599cecf0ca27f8e5.NewDirectoryRoleTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i2a252d42835bdab6d88bf938595da6cf029001f9ca970d6f599cecf0ca27f8e5.NewDirectoryRoleTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // DomainDnsRecords provides operations to manage the collection of domainDnsRecord entities.
 func (m *GraphBaseServiceClient) DomainDnsRecords()(*iaca6694a878291d0e4021155b406c19d3080cdfc382b456e43c71264d4d9e519.DomainDnsRecordsRequestBuilder) {
@@ -378,10 +333,7 @@ func (m *GraphBaseServiceClient) DomainDnsRecordsById(id string)(*iaca6694a87829
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["domainDnsRecord%2Did"] = id
-    }
-    return iaca6694a878291d0e4021155b406c19d3080cdfc382b456e43c71264d4d9e519.NewDomainDnsRecordItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return iaca6694a878291d0e4021155b406c19d3080cdfc382b456e43c71264d4d9e519.NewDomainDnsRecordItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Domains provides operations to manage the collection of domain entities.
 func (m *GraphBaseServiceClient) Domains()(*i957076b10ba162b23efec7b94dd26b84c6475d285449c1cbc9c5b85910d36a12.DomainsRequestBuilder) {
@@ -393,14 +345,7 @@ func (m *GraphBaseServiceClient) DomainsById(id string)(*i957076b10ba162b23efec7
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["domain%2Did"] = id
-    }
-    return i957076b10ba162b23efec7b94dd26b84c6475d285449c1cbc9c5b85910d36a12.NewDomainItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// Drive provides operations to manage the drive singleton.
-func (m *GraphBaseServiceClient) Drive()(*i926bd489c52af20f44aacc8a450bb0a062290f1d1e44c2fe78d6cc1595c12524.DriveRequestBuilder) {
-    return i926bd489c52af20f44aacc8a450bb0a062290f1d1e44c2fe78d6cc1595c12524.NewDriveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return i957076b10ba162b23efec7b94dd26b84c6475d285449c1cbc9c5b85910d36a12.NewDomainItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Drives provides operations to manage the collection of drive entities.
 func (m *GraphBaseServiceClient) Drives()(*iefc72d8a17962d4db125c50866617eaa15d662c6e3fb13735d477380dcc0dbe3.DrivesRequestBuilder) {
@@ -412,10 +357,7 @@ func (m *GraphBaseServiceClient) DrivesById(id string)(*iefc72d8a17962d4db125c50
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["drive%2Did"] = id
-    }
-    return iefc72d8a17962d4db125c50866617eaa15d662c6e3fb13735d477380dcc0dbe3.NewDriveItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return iefc72d8a17962d4db125c50866617eaa15d662c6e3fb13735d477380dcc0dbe3.NewDriveItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Education provides operations to manage the educationRoot singleton.
 func (m *GraphBaseServiceClient) Education()(*i1be0f1b1da466bc62355d411ef490acbd8dc0ec5ca4d3448c7eb73e5caffafc3.EducationRequestBuilder) {
@@ -435,10 +377,7 @@ func (m *GraphBaseServiceClient) GroupLifecyclePoliciesById(id string)(*i1d6652e
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["groupLifecyclePolicy%2Did"] = id
-    }
-    return i1d6652ecc686b20c37a9a3448b26db8187e284e1a4017cab8876b02b97557436.NewGroupLifecyclePolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i1d6652ecc686b20c37a9a3448b26db8187e284e1a4017cab8876b02b97557436.NewGroupLifecyclePolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Groups provides operations to manage the collection of group entities.
 func (m *GraphBaseServiceClient) Groups()(*ia6e876e3ed2d92c29c13dbc8c37513bc38d0d5f05ab9321e43a25ff336912a2d.GroupsRequestBuilder) {
@@ -450,10 +389,7 @@ func (m *GraphBaseServiceClient) GroupsById(id string)(*ia6e876e3ed2d92c29c13dbc
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["group%2Did"] = id
-    }
-    return ia6e876e3ed2d92c29c13dbc8c37513bc38d0d5f05ab9321e43a25ff336912a2d.NewGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ia6e876e3ed2d92c29c13dbc8c37513bc38d0d5f05ab9321e43a25ff336912a2d.NewGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // GroupSettings provides operations to manage the collection of groupSetting entities.
 func (m *GraphBaseServiceClient) GroupSettings()(*i4794c103c0d044c27a3ca3af0a0e498e93a9863420c1a4e7a29ef37590053c7b.GroupSettingsRequestBuilder) {
@@ -465,10 +401,7 @@ func (m *GraphBaseServiceClient) GroupSettingsById(id string)(*i4794c103c0d044c2
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["groupSetting%2Did"] = id
-    }
-    return i4794c103c0d044c27a3ca3af0a0e498e93a9863420c1a4e7a29ef37590053c7b.NewGroupSettingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i4794c103c0d044c27a3ca3af0a0e498e93a9863420c1a4e7a29ef37590053c7b.NewGroupSettingItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // GroupSettingTemplates provides operations to manage the collection of groupSettingTemplate entities.
 func (m *GraphBaseServiceClient) GroupSettingTemplates()(*id2ac823944414906187dbe4e6ca3b5e46886b9db738d2c1c27de6df8b1bebd61.GroupSettingTemplatesRequestBuilder) {
@@ -480,10 +413,7 @@ func (m *GraphBaseServiceClient) GroupSettingTemplatesById(id string)(*id2ac8239
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["groupSettingTemplate%2Did"] = id
-    }
-    return id2ac823944414906187dbe4e6ca3b5e46886b9db738d2c1c27de6df8b1bebd61.NewGroupSettingTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return id2ac823944414906187dbe4e6ca3b5e46886b9db738d2c1c27de6df8b1bebd61.NewGroupSettingTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Identity provides operations to manage the identityContainer singleton.
 func (m *GraphBaseServiceClient) Identity()(*i79ca23a9ac0659e1330dd29e049fe157787d5af6695ead2ff8263396db68d027.IdentityRequestBuilder) {
@@ -507,10 +437,7 @@ func (m *GraphBaseServiceClient) IdentityProvidersById(id string)(*i62c2771f3f3a
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["identityProvider%2Did"] = id
-    }
-    return i62c2771f3f3a1e5e085aedcde54473e9f043cc57b9ce4dd88980a77aca7a5a10.NewIdentityProviderItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i62c2771f3f3a1e5e085aedcde54473e9f043cc57b9ce4dd88980a77aca7a5a10.NewIdentityProviderItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // InformationProtection provides operations to manage the informationProtection singleton.
 func (m *GraphBaseServiceClient) InformationProtection()(*ib68fa8e66bda853b3a33c491e8a66ca665897dab129192b2c97289266c4a1415.InformationProtectionRequestBuilder) {
@@ -526,10 +453,7 @@ func (m *GraphBaseServiceClient) InvitationsById(id string)(*ic5e701d75e87f15ce1
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["invitation%2Did"] = id
-    }
-    return ic5e701d75e87f15ce153687b00984a314f7eeea8cfdc77cd9ad648e5ccbc7fbd.NewInvitationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ic5e701d75e87f15ce153687b00984a314f7eeea8cfdc77cd9ad648e5ccbc7fbd.NewInvitationItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Localizations provides operations to manage the collection of organizationalBrandingLocalization entities.
 func (m *GraphBaseServiceClient) Localizations()(*i61686672307beee899fe5a14188df42982da47730f55a14800b102cd10ab2d72.LocalizationsRequestBuilder) {
@@ -541,10 +465,7 @@ func (m *GraphBaseServiceClient) LocalizationsById(id string)(*i61686672307beee8
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["organizationalBrandingLocalization%2Did"] = id
-    }
-    return i61686672307beee899fe5a14188df42982da47730f55a14800b102cd10ab2d72.NewOrganizationalBrandingLocalizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i61686672307beee899fe5a14188df42982da47730f55a14800b102cd10ab2d72.NewOrganizationalBrandingLocalizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Me provides operations to manage the user singleton.
 func (m *GraphBaseServiceClient) Me()(*i71117da372286e863c042a526ec1361696ab14b838a5b77db5bc54386d436543.MeRequestBuilder) {
@@ -560,10 +481,7 @@ func (m *GraphBaseServiceClient) Oauth2PermissionGrantsById(id string)(*i86cada4
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["oAuth2PermissionGrant%2Did"] = id
-    }
-    return i86cada4d4a5f2f8a9d1e7a85eacd70a661ea7b20d2737008c0719e95b5be3e16.NewOAuth2PermissionGrantItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i86cada4d4a5f2f8a9d1e7a85eacd70a661ea7b20d2737008c0719e95b5be3e16.NewOAuth2PermissionGrantItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Organization provides operations to manage the collection of organization entities.
 func (m *GraphBaseServiceClient) Organization()(*ic949a0bb5066d68760e8502a7f9db83f571d9e01e38fad4aadf7268188e52df0.OrganizationRequestBuilder) {
@@ -575,10 +493,7 @@ func (m *GraphBaseServiceClient) OrganizationById(id string)(*ic949a0bb5066d6876
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["organization%2Did"] = id
-    }
-    return ic949a0bb5066d68760e8502a7f9db83f571d9e01e38fad4aadf7268188e52df0.NewOrganizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ic949a0bb5066d68760e8502a7f9db83f571d9e01e38fad4aadf7268188e52df0.NewOrganizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // PermissionGrants provides operations to manage the collection of resourceSpecificPermissionGrant entities.
 func (m *GraphBaseServiceClient) PermissionGrants()(*i1a1369b1521a8ac4885166fd68eae4247248a891006fea464d2eea2a271b2cdb.PermissionGrantsRequestBuilder) {
@@ -590,10 +505,7 @@ func (m *GraphBaseServiceClient) PermissionGrantsById(id string)(*i1a1369b1521a8
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["resourceSpecificPermissionGrant%2Did"] = id
-    }
-    return i1a1369b1521a8ac4885166fd68eae4247248a891006fea464d2eea2a271b2cdb.NewResourceSpecificPermissionGrantItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i1a1369b1521a8ac4885166fd68eae4247248a891006fea464d2eea2a271b2cdb.NewResourceSpecificPermissionGrantItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Places provides operations to manage the collection of place entities.
 func (m *GraphBaseServiceClient) Places()(*ia3e0f7c2d21d5c73ecb8a7552177d0fe444ae0522290dd1c4b5559e449b118af.PlacesRequestBuilder) {
@@ -605,10 +517,7 @@ func (m *GraphBaseServiceClient) PlacesById(id string)(*ia3e0f7c2d21d5c73ecb8a75
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["place%2Did"] = id
-    }
-    return ia3e0f7c2d21d5c73ecb8a7552177d0fe444ae0522290dd1c4b5559e449b118af.NewPlaceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ia3e0f7c2d21d5c73ecb8a7552177d0fe444ae0522290dd1c4b5559e449b118af.NewPlaceItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Planner provides operations to manage the planner singleton.
 func (m *GraphBaseServiceClient) Planner()(*ie66b913c1bc1c536bc8db5d185910e9318f621374e016f95e36e9d59b7127f63.PlannerRequestBuilder) {
@@ -644,10 +553,7 @@ func (m *GraphBaseServiceClient) SchemaExtensionsById(id string)(*i4a624e38d68c2
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["schemaExtension%2Did"] = id
-    }
-    return i4a624e38d68c2a9fc4db1ea915bcaffde116f967f58ec2c99e2ea8bbff3690e1.NewSchemaExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i4a624e38d68c2a9fc4db1ea915bcaffde116f967f58ec2c99e2ea8bbff3690e1.NewSchemaExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // ScopedRoleMemberships provides operations to manage the collection of scopedRoleMembership entities.
 func (m *GraphBaseServiceClient) ScopedRoleMemberships()(*ice10f31b9db59ba91184d2b882172edb754f885050cf0830aa2b7c8ff880556b.ScopedRoleMembershipsRequestBuilder) {
@@ -659,10 +565,7 @@ func (m *GraphBaseServiceClient) ScopedRoleMembershipsById(id string)(*ice10f31b
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["scopedRoleMembership%2Did"] = id
-    }
-    return ice10f31b9db59ba91184d2b882172edb754f885050cf0830aa2b7c8ff880556b.NewScopedRoleMembershipItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ice10f31b9db59ba91184d2b882172edb754f885050cf0830aa2b7c8ff880556b.NewScopedRoleMembershipItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Search provides operations to manage the searchEntity singleton.
 func (m *GraphBaseServiceClient) Search()(*i286f3babd79fe9ec3b0f52b6ed5910842c0adaeff02be1843d0e01c56d9ba6d9.SearchRequestBuilder) {
@@ -682,10 +585,7 @@ func (m *GraphBaseServiceClient) ServicePrincipalsById(id string)(*i009f47bbce65
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["servicePrincipal%2Did"] = id
-    }
-    return i009f47bbce65ccdb7303730eed71e6bab3ae2f8e4e918bc9e94341d28624af97.NewServicePrincipalItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i009f47bbce65ccdb7303730eed71e6bab3ae2f8e4e918bc9e94341d28624af97.NewServicePrincipalItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Shares provides operations to manage the collection of sharedDriveItem entities.
 func (m *GraphBaseServiceClient) Shares()(*i07d47a144340607d6d6dbd93575e531530e4f1cc6091c947ea0766f7951ffd34.SharesRequestBuilder) {
@@ -697,10 +597,7 @@ func (m *GraphBaseServiceClient) SharesById(id string)(*i07d47a144340607d6d6dbd9
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["sharedDriveItem%2Did"] = id
-    }
-    return i07d47a144340607d6d6dbd93575e531530e4f1cc6091c947ea0766f7951ffd34.NewSharedDriveItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i07d47a144340607d6d6dbd93575e531530e4f1cc6091c947ea0766f7951ffd34.NewSharedDriveItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Sites provides operations to manage the collection of site entities.
 func (m *GraphBaseServiceClient) Sites()(*if5372351befdb652f617b1ee71fbf092fa8dd2a161ba9c021bc265628b6ea82b.SitesRequestBuilder) {
@@ -712,10 +609,7 @@ func (m *GraphBaseServiceClient) SitesById(id string)(*if5372351befdb652f617b1ee
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["site%2Did"] = id
-    }
-    return if5372351befdb652f617b1ee71fbf092fa8dd2a161ba9c021bc265628b6ea82b.NewSiteItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return if5372351befdb652f617b1ee71fbf092fa8dd2a161ba9c021bc265628b6ea82b.NewSiteItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Solutions provides operations to manage the solutionsRoot singleton.
 func (m *GraphBaseServiceClient) Solutions()(*i0906e75d8a44bf92212e084e1d2f62d03887dcec6a5c8535e92ccc04c1e5fdec.SolutionsRequestBuilder) {
@@ -731,10 +625,7 @@ func (m *GraphBaseServiceClient) SubscribedSkusById(id string)(*id007bc768abbff1
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["subscribedSku%2Did"] = id
-    }
-    return id007bc768abbff1131aab64890cdcd0411159a946e9df27140c5f7cf8f249647.NewSubscribedSkuItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return id007bc768abbff1131aab64890cdcd0411159a946e9df27140c5f7cf8f249647.NewSubscribedSkuItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Subscriptions provides operations to manage the collection of subscription entities.
 func (m *GraphBaseServiceClient) Subscriptions()(*idb8230b65f4a369c23b4d9b41ebe568c657c92f8f77fe36d16d64528b3a317a3.SubscriptionsRequestBuilder) {
@@ -746,10 +637,7 @@ func (m *GraphBaseServiceClient) SubscriptionsById(id string)(*idb8230b65f4a369c
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["subscription%2Did"] = id
-    }
-    return idb8230b65f4a369c23b4d9b41ebe568c657c92f8f77fe36d16d64528b3a317a3.NewSubscriptionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return idb8230b65f4a369c23b4d9b41ebe568c657c92f8f77fe36d16d64528b3a317a3.NewSubscriptionItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Teams provides operations to manage the collection of team entities.
 func (m *GraphBaseServiceClient) Teams()(*if39bc788926a05e976b265ecfc616408ca12af399df9ce3a2bb348fe89708057.TeamsRequestBuilder) {
@@ -761,10 +649,7 @@ func (m *GraphBaseServiceClient) TeamsById(id string)(*if39bc788926a05e976b265ec
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["team%2Did"] = id
-    }
-    return if39bc788926a05e976b265ecfc616408ca12af399df9ce3a2bb348fe89708057.NewTeamItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return if39bc788926a05e976b265ecfc616408ca12af399df9ce3a2bb348fe89708057.NewTeamItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // TeamsTemplates provides operations to manage the collection of teamsTemplate entities.
 func (m *GraphBaseServiceClient) TeamsTemplates()(*i1b75be7b5675627960b4672ab148be21ff379d5cbc0e62f6bc5b97d54464f8b5.TeamsTemplatesRequestBuilder) {
@@ -776,14 +661,15 @@ func (m *GraphBaseServiceClient) TeamsTemplatesById(id string)(*i1b75be7b5675627
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["teamsTemplate%2Did"] = id
-    }
-    return i1b75be7b5675627960b4672ab148be21ff379d5cbc0e62f6bc5b97d54464f8b5.NewTeamsTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i1b75be7b5675627960b4672ab148be21ff379d5cbc0e62f6bc5b97d54464f8b5.NewTeamsTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }
 // Teamwork provides operations to manage the teamwork singleton.
 func (m *GraphBaseServiceClient) Teamwork()(*ie05ac24b652f7d895cca374316c093c4ca40dd2df0f1518c465233d6432b1ef9.TeamworkRequestBuilder) {
     return ie05ac24b652f7d895cca374316c093c4ca40dd2df0f1518c465233d6432b1ef9.NewTeamworkRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// TenantRelationships provides operations to manage the tenantRelationship singleton.
+func (m *GraphBaseServiceClient) TenantRelationships()(*i80d5f91f6f8d9dc3428331303d1837675adde9653ceda73f120faa5f0545ac4b.TenantRelationshipsRequestBuilder) {
+    return i80d5f91f6f8d9dc3428331303d1837675adde9653ceda73f120faa5f0545ac4b.NewTenantRelationshipsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Users provides operations to manage the collection of user entities.
 func (m *GraphBaseServiceClient) Users()(*if6ffd1464db2d9c22e351b03e4c00ebd24a5353cd70ffb7f56cfad1c3ceec329.UsersRequestBuilder) {
@@ -795,8 +681,5 @@ func (m *GraphBaseServiceClient) UsersById(id string)(*if6ffd1464db2d9c22e351b03
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["user%2Did"] = id
-    }
-    return if6ffd1464db2d9c22e351b03e4c00ebd24a5353cd70ffb7f56cfad1c3ceec329.NewUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return if6ffd1464db2d9c22e351b03e4c00ebd24a5353cd70ffb7f56cfad1c3ceec329.NewUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter, id);
 }

@@ -47,13 +47,16 @@ type ItemInsightsSharedSharedInsightItemRequestBuilderPatchRequestConfiguration 
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemInsightsSharedSharedInsightItemRequestBuilderInternal instantiates a new SharedInsightItemRequestBuilder and sets the default values.
-func NewItemInsightsSharedSharedInsightItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInsightsSharedSharedInsightItemRequestBuilder) {
+func NewItemInsightsSharedSharedInsightItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, sharedInsightId *string)(*ItemInsightsSharedSharedInsightItemRequestBuilder) {
     m := &ItemInsightsSharedSharedInsightItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/insights/shared/{sharedInsight%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if sharedInsightId != nil {
+        urlTplParams["sharedInsight%2Did"] = *sharedInsightId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewItemInsightsSharedSharedInsightItemRequestBuilderInternal(pathParameters
 func NewItemInsightsSharedSharedInsightItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInsightsSharedSharedInsightItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemInsightsSharedSharedInsightItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemInsightsSharedSharedInsightItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property shared for users
 func (m *ItemInsightsSharedSharedInsightItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemInsightsSharedSharedInsightItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -162,7 +165,10 @@ func (m *ItemInsightsSharedSharedInsightItemRequestBuilder) ToPatchRequestInform
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

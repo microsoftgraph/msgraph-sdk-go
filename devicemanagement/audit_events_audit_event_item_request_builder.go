@@ -47,13 +47,16 @@ type AuditEventsAuditEventItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewAuditEventsAuditEventItemRequestBuilderInternal instantiates a new AuditEventItemRequestBuilder and sets the default values.
-func NewAuditEventsAuditEventItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuditEventsAuditEventItemRequestBuilder) {
+func NewAuditEventsAuditEventItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, auditEventId *string)(*AuditEventsAuditEventItemRequestBuilder) {
     m := &AuditEventsAuditEventItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/auditEvents/{auditEvent%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if auditEventId != nil {
+        urlTplParams["auditEvent%2Did"] = *auditEventId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewAuditEventsAuditEventItemRequestBuilderInternal(pathParameters map[strin
 func NewAuditEventsAuditEventItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuditEventsAuditEventItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewAuditEventsAuditEventItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewAuditEventsAuditEventItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property auditEvents for deviceManagement
 func (m *AuditEventsAuditEventItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AuditEventsAuditEventItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *AuditEventsAuditEventItemRequestBuilder) ToPatchRequestInformation(ctx 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

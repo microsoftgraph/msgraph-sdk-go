@@ -44,10 +44,6 @@ type OwnedDevicesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *OwnedDevicesRequestBuilderGetQueryParameters
 }
-// AppRoleAssignment casts the previous resource to appRoleAssignment.
-func (m *OwnedDevicesRequestBuilder) AppRoleAssignment()(*OwnedDevicesAppRoleAssignmentRequestBuilder) {
-    return NewOwnedDevicesAppRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewOwnedDevicesRequestBuilderInternal instantiates a new OwnedDevicesRequestBuilder and sets the default values.
 func NewOwnedDevicesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OwnedDevicesRequestBuilder) {
     m := &OwnedDevicesRequestBuilder{
@@ -71,14 +67,6 @@ func NewOwnedDevicesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *OwnedDevicesRequestBuilder) Count()(*OwnedDevicesCountRequestBuilder) {
     return NewOwnedDevicesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Device casts the previous resource to device.
-func (m *OwnedDevicesRequestBuilder) Device()(*OwnedDevicesDeviceRequestBuilder) {
-    return NewOwnedDevicesDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Endpoint casts the previous resource to endpoint.
-func (m *OwnedDevicesRequestBuilder) Endpoint()(*OwnedDevicesEndpointRequestBuilder) {
-    return NewOwnedDevicesEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Get devices that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 // [Find more info here]
 // 
@@ -100,6 +88,18 @@ func (m *OwnedDevicesRequestBuilder) Get(ctx context.Context, requestConfigurati
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
+}
+// MicrosoftGraphAppRoleAssignment casts the previous resource to appRoleAssignment.
+func (m *OwnedDevicesRequestBuilder) MicrosoftGraphAppRoleAssignment()(*OwnedDevicesMicrosoftGraphAppRoleAssignmentAppRoleAssignmentRequestBuilder) {
+    return NewOwnedDevicesMicrosoftGraphAppRoleAssignmentAppRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphDevice casts the previous resource to device.
+func (m *OwnedDevicesRequestBuilder) MicrosoftGraphDevice()(*OwnedDevicesMicrosoftGraphDeviceDeviceRequestBuilder) {
+    return NewOwnedDevicesMicrosoftGraphDeviceDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphEndpoint casts the previous resource to endpoint.
+func (m *OwnedDevicesRequestBuilder) MicrosoftGraphEndpoint()(*OwnedDevicesMicrosoftGraphEndpointEndpointRequestBuilder) {
+    return NewOwnedDevicesMicrosoftGraphEndpointEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToGetRequestInformation devices that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 func (m *OwnedDevicesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OwnedDevicesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -47,13 +47,16 @@ type ConnectionsItemOperationsConnectionOperationItemRequestBuilderPatchRequestC
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewConnectionsItemOperationsConnectionOperationItemRequestBuilderInternal instantiates a new ConnectionOperationItemRequestBuilder and sets the default values.
-func NewConnectionsItemOperationsConnectionOperationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConnectionsItemOperationsConnectionOperationItemRequestBuilder) {
+func NewConnectionsItemOperationsConnectionOperationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, connectionOperationId *string)(*ConnectionsItemOperationsConnectionOperationItemRequestBuilder) {
     m := &ConnectionsItemOperationsConnectionOperationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/external/connections/{externalConnection%2Did}/operations/{connectionOperation%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if connectionOperationId != nil {
+        urlTplParams["connectionOperation%2Did"] = *connectionOperationId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewConnectionsItemOperationsConnectionOperationItemRequestBuilderInternal(p
 func NewConnectionsItemOperationsConnectionOperationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConnectionsItemOperationsConnectionOperationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewConnectionsItemOperationsConnectionOperationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewConnectionsItemOperationsConnectionOperationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property operations for external
 func (m *ConnectionsItemOperationsConnectionOperationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConnectionsItemOperationsConnectionOperationItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ConnectionsItemOperationsConnectionOperationItemRequestBuilder) ToPatch
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

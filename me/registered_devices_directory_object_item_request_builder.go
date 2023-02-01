@@ -32,18 +32,17 @@ type RegisteredDevicesDirectoryObjectItemRequestBuilderGetRequestConfiguration s
     // Request query parameters
     QueryParameters *RegisteredDevicesDirectoryObjectItemRequestBuilderGetQueryParameters
 }
-// AppRoleAssignment casts the previous resource to appRoleAssignment.
-func (m *RegisteredDevicesDirectoryObjectItemRequestBuilder) AppRoleAssignment()(*RegisteredDevicesItemAppRoleAssignmentRequestBuilder) {
-    return NewRegisteredDevicesItemAppRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewRegisteredDevicesDirectoryObjectItemRequestBuilderInternal instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
-func NewRegisteredDevicesDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RegisteredDevicesDirectoryObjectItemRequestBuilder) {
+func NewRegisteredDevicesDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, directoryObjectId *string)(*RegisteredDevicesDirectoryObjectItemRequestBuilder) {
     m := &RegisteredDevicesDirectoryObjectItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/registeredDevices/{directoryObject%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if directoryObjectId != nil {
+        urlTplParams["directoryObject%2Did"] = *directoryObjectId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -53,15 +52,7 @@ func NewRegisteredDevicesDirectoryObjectItemRequestBuilderInternal(pathParameter
 func NewRegisteredDevicesDirectoryObjectItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RegisteredDevicesDirectoryObjectItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewRegisteredDevicesDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
-}
-// Device casts the previous resource to device.
-func (m *RegisteredDevicesDirectoryObjectItemRequestBuilder) Device()(*RegisteredDevicesItemDeviceRequestBuilder) {
-    return NewRegisteredDevicesItemDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Endpoint casts the previous resource to endpoint.
-func (m *RegisteredDevicesDirectoryObjectItemRequestBuilder) Endpoint()(*RegisteredDevicesItemEndpointRequestBuilder) {
-    return NewRegisteredDevicesItemEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewRegisteredDevicesDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get devices that are registered for the user. Read-only. Nullable. Supports $expand.
 func (m *RegisteredDevicesDirectoryObjectItemRequestBuilder) Get(ctx context.Context, requestConfiguration *RegisteredDevicesDirectoryObjectItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, error) {
@@ -81,6 +72,18 @@ func (m *RegisteredDevicesDirectoryObjectItemRequestBuilder) Get(ctx context.Con
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable), nil
+}
+// MicrosoftGraphAppRoleAssignment casts the previous resource to appRoleAssignment.
+func (m *RegisteredDevicesDirectoryObjectItemRequestBuilder) MicrosoftGraphAppRoleAssignment()(*RegisteredDevicesItemMicrosoftGraphAppRoleAssignmentAppRoleAssignmentRequestBuilder) {
+    return NewRegisteredDevicesItemMicrosoftGraphAppRoleAssignmentAppRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphDevice casts the previous resource to device.
+func (m *RegisteredDevicesDirectoryObjectItemRequestBuilder) MicrosoftGraphDevice()(*RegisteredDevicesItemMicrosoftGraphDeviceDeviceRequestBuilder) {
+    return NewRegisteredDevicesItemMicrosoftGraphDeviceDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MicrosoftGraphEndpoint casts the previous resource to endpoint.
+func (m *RegisteredDevicesDirectoryObjectItemRequestBuilder) MicrosoftGraphEndpoint()(*RegisteredDevicesItemMicrosoftGraphEndpointEndpointRequestBuilder) {
+    return NewRegisteredDevicesItemMicrosoftGraphEndpointEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToGetRequestInformation devices that are registered for the user. Read-only. Nullable. Supports $expand.
 func (m *RegisteredDevicesDirectoryObjectItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RegisteredDevicesDirectoryObjectItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -47,13 +47,16 @@ type ConnectionsItemGroupsItemMembersIdentityItemRequestBuilderPatchRequestConfi
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewConnectionsItemGroupsItemMembersIdentityItemRequestBuilderInternal instantiates a new IdentityItemRequestBuilder and sets the default values.
-func NewConnectionsItemGroupsItemMembersIdentityItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConnectionsItemGroupsItemMembersIdentityItemRequestBuilder) {
+func NewConnectionsItemGroupsItemMembersIdentityItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, identityId *string)(*ConnectionsItemGroupsItemMembersIdentityItemRequestBuilder) {
     m := &ConnectionsItemGroupsItemMembersIdentityItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/external/connections/{externalConnection%2Did}/groups/{externalGroup%2Did}/members/{identity%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
+    }
+    if identityId != nil {
+        urlTplParams["identity%2Did"] = *identityId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -63,7 +66,7 @@ func NewConnectionsItemGroupsItemMembersIdentityItemRequestBuilderInternal(pathP
 func NewConnectionsItemGroupsItemMembersIdentityItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConnectionsItemGroupsItemMembersIdentityItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewConnectionsItemGroupsItemMembersIdentityItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewConnectionsItemGroupsItemMembersIdentityItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property members for external
 func (m *ConnectionsItemGroupsItemMembersIdentityItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConnectionsItemGroupsItemMembersIdentityItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ConnectionsItemGroupsItemMembersIdentityItemRequestBuilder) ToPatchRequ
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
