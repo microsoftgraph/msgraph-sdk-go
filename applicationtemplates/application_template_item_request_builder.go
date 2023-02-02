@@ -47,7 +47,7 @@ type ApplicationTemplateItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewApplicationTemplateItemRequestBuilderInternal instantiates a new ApplicationTemplateItemRequestBuilder and sets the default values.
-func NewApplicationTemplateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ApplicationTemplateItemRequestBuilder) {
+func NewApplicationTemplateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, applicationTemplateId *string)(*ApplicationTemplateItemRequestBuilder) {
     m := &ApplicationTemplateItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/applicationTemplates/{applicationTemplate%2Did}{?%24select,%24expand}";
@@ -55,17 +55,20 @@ func NewApplicationTemplateItemRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if applicationTemplateId != nil {
+        urlTplParams["applicationTemplate%2Did"] = *applicationTemplateId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewApplicationTemplateItemRequestBuilder instantiates a new ApplicationTemplateItemRequestBuilder and sets the default values.
 func NewApplicationTemplateItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ApplicationTemplateItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewApplicationTemplateItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewApplicationTemplateItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Delete delete entity from applicationTemplates by key (id)
+// Delete delete entity from applicationTemplates
 func (m *ApplicationTemplateItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ApplicationTemplateItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -103,11 +106,11 @@ func (m *ApplicationTemplateItemRequestBuilder) Get(ctx context.Context, request
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApplicationTemplateable), nil
 }
-// Instantiate provides operations to call the instantiate method.
-func (m *ApplicationTemplateItemRequestBuilder) Instantiate()(*ItemInstantiateRequestBuilder) {
-    return NewItemInstantiateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphInstantiate provides operations to call the instantiate method.
+func (m *ApplicationTemplateItemRequestBuilder) MicrosoftGraphInstantiate()(*ItemMicrosoftGraphInstantiateInstantiateRequestBuilder) {
+    return NewItemMicrosoftGraphInstantiateInstantiateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// Patch update entity in applicationTemplates by key (id)
+// Patch update entity in applicationTemplates
 func (m *ApplicationTemplateItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApplicationTemplateable, requestConfiguration *ApplicationTemplateItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApplicationTemplateable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -126,7 +129,7 @@ func (m *ApplicationTemplateItemRequestBuilder) Patch(ctx context.Context, body 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApplicationTemplateable), nil
 }
-// ToDeleteRequestInformation delete entity from applicationTemplates by key (id)
+// ToDeleteRequestInformation delete entity from applicationTemplates
 func (m *ApplicationTemplateItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ApplicationTemplateItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -154,14 +157,17 @@ func (m *ApplicationTemplateItemRequestBuilder) ToGetRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in applicationTemplates by key (id)
+// ToPatchRequestInformation update entity in applicationTemplates
 func (m *ApplicationTemplateItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApplicationTemplateable, requestConfiguration *ApplicationTemplateItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

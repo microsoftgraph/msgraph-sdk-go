@@ -47,7 +47,7 @@ type ItemServiceConfigurationRecordsDomainDnsRecordItemRequestBuilderPatchReques
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemServiceConfigurationRecordsDomainDnsRecordItemRequestBuilderInternal instantiates a new DomainDnsRecordItemRequestBuilder and sets the default values.
-func NewItemServiceConfigurationRecordsDomainDnsRecordItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemServiceConfigurationRecordsDomainDnsRecordItemRequestBuilder) {
+func NewItemServiceConfigurationRecordsDomainDnsRecordItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, domainDnsRecordId *string)(*ItemServiceConfigurationRecordsDomainDnsRecordItemRequestBuilder) {
     m := &ItemServiceConfigurationRecordsDomainDnsRecordItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/domains/{domain%2Did}/serviceConfigurationRecords/{domainDnsRecord%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemServiceConfigurationRecordsDomainDnsRecordItemRequestBuilderInternal
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if domainDnsRecordId != nil {
+        urlTplParams["domainDnsRecord%2Did"] = *domainDnsRecordId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemServiceConfigurationRecordsDomainDnsRecordItemRequestBuilder instantiates a new DomainDnsRecordItemRequestBuilder and sets the default values.
 func NewItemServiceConfigurationRecordsDomainDnsRecordItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemServiceConfigurationRecordsDomainDnsRecordItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemServiceConfigurationRecordsDomainDnsRecordItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemServiceConfigurationRecordsDomainDnsRecordItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property serviceConfigurationRecords for domains
 func (m *ItemServiceConfigurationRecordsDomainDnsRecordItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemServiceConfigurationRecordsDomainDnsRecordItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemServiceConfigurationRecordsDomainDnsRecordItemRequestBuilder) ToPat
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -14,7 +14,7 @@ type FeatureRolloutPoliciesItemAppliesToDirectoryObjectItemRequestBuilder struct
     urlTemplate string
 }
 // NewFeatureRolloutPoliciesItemAppliesToDirectoryObjectItemRequestBuilderInternal instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
-func NewFeatureRolloutPoliciesItemAppliesToDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FeatureRolloutPoliciesItemAppliesToDirectoryObjectItemRequestBuilder) {
+func NewFeatureRolloutPoliciesItemAppliesToDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, directoryObjectId *string)(*FeatureRolloutPoliciesItemAppliesToDirectoryObjectItemRequestBuilder) {
     m := &FeatureRolloutPoliciesItemAppliesToDirectoryObjectItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/policies/featureRolloutPolicies/{featureRolloutPolicy%2Did}/appliesTo/{directoryObject%2Did}";
@@ -22,17 +22,20 @@ func NewFeatureRolloutPoliciesItemAppliesToDirectoryObjectItemRequestBuilderInte
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if directoryObjectId != nil {
+        urlTplParams["directoryObject%2Did"] = *directoryObjectId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewFeatureRolloutPoliciesItemAppliesToDirectoryObjectItemRequestBuilder instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
 func NewFeatureRolloutPoliciesItemAppliesToDirectoryObjectItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FeatureRolloutPoliciesItemAppliesToDirectoryObjectItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewFeatureRolloutPoliciesItemAppliesToDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewFeatureRolloutPoliciesItemAppliesToDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Ref provides operations to manage the collection of policyRoot entities.
 func (m *FeatureRolloutPoliciesItemAppliesToDirectoryObjectItemRequestBuilder) Ref()(*FeatureRolloutPoliciesItemAppliesToItemRefRequestBuilder) {
-    return NewFeatureRolloutPoliciesItemAppliesToItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewFeatureRolloutPoliciesItemAppliesToItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

@@ -41,8 +41,8 @@ func NewRoleManagementPolicyAssignmentsItemPolicyRequestBuilderInternal(pathPara
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewRoleManagementPolicyAssignmentsItemPolicyRequestBuilder instantiates a new PolicyRequestBuilder and sets the default values.

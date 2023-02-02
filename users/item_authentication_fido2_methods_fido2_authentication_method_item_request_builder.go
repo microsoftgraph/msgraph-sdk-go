@@ -40,7 +40,7 @@ type ItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilderGe
     QueryParameters *ItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilderGetQueryParameters
 }
 // NewItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilderInternal instantiates a new Fido2AuthenticationMethodItemRequestBuilder and sets the default values.
-func NewItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilder) {
+func NewItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, fido2AuthenticationMethodId *string)(*ItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilder) {
     m := &ItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/authentication/fido2Methods/{fido2AuthenticationMethod%2Did}{?%24select,%24expand}";
@@ -48,15 +48,18 @@ func NewItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilde
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if fido2AuthenticationMethodId != nil {
+        urlTplParams["fido2AuthenticationMethod%2Did"] = *fido2AuthenticationMethodId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilder instantiates a new Fido2AuthenticationMethodItemRequestBuilder and sets the default values.
 func NewItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property fido2Methods for users
 func (m *ItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilderDeleteRequestConfiguration)(error) {

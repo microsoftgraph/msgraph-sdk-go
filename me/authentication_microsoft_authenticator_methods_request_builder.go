@@ -53,8 +53,8 @@ func NewAuthenticationMicrosoftAuthenticatorMethodsRequestBuilderInternal(pathPa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAuthenticationMicrosoftAuthenticatorMethodsRequestBuilder instantiates a new MicrosoftAuthenticatorMethodsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewAuthenticationMicrosoftAuthenticatorMethodsRequestBuilder(rawUrl string,
 }
 // Count provides operations to count the resources in the collection.
 func (m *AuthenticationMicrosoftAuthenticatorMethodsRequestBuilder) Count()(*AuthenticationMicrosoftAuthenticatorMethodsCountRequestBuilder) {
-    return NewAuthenticationMicrosoftAuthenticatorMethodsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAuthenticationMicrosoftAuthenticatorMethodsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of the microsoftAuthenticatorAuthenticationMethod objects and their properties.
 // [Find more info here]

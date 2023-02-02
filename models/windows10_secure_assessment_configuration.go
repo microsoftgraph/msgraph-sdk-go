@@ -23,8 +23,8 @@ func NewWindows10SecureAssessmentConfiguration()(*Windows10SecureAssessmentConfi
     m := &Windows10SecureAssessmentConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.windows10SecureAssessmentConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windows10SecureAssessmentConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindows10SecureAssessmentConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

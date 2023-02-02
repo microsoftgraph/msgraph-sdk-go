@@ -19,8 +19,8 @@ func NewStsPolicy()(*StsPolicy) {
     m := &StsPolicy{
         PolicyBase: *NewPolicyBase(),
     }
-    odataTypeValue := "#microsoft.graph.stsPolicy";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.stsPolicy"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateStsPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

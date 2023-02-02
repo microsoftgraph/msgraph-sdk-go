@@ -17,7 +17,7 @@ type AssignmentOrder struct {
 func NewAssignmentOrder()(*AssignmentOrder) {
     m := &AssignmentOrder{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAssignmentOrderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

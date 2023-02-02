@@ -33,7 +33,7 @@ type ItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderGetRequestCon
     QueryParameters *ItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderGetQueryParameters
 }
 // NewItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderInternal instantiates a new TokenLifetimePolicyItemRequestBuilder and sets the default values.
-func NewItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) {
+func NewItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, tokenLifetimePolicyId *string)(*ItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) {
     m := &ItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/tokenLifetimePolicies/{tokenLifetimePolicy%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderInternal(p
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if tokenLifetimePolicyId != nil {
+        urlTplParams["tokenLifetimePolicy%2Did"] = *tokenLifetimePolicyId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder instantiates a new TokenLifetimePolicyItemRequestBuilder and sets the default values.
 func NewItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get the tokenLifetimePolicies assigned to this service principal.
 func (m *ItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TokenLifetimePolicyable, error) {

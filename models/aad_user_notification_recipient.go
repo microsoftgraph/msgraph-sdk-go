@@ -15,8 +15,8 @@ func NewAadUserNotificationRecipient()(*AadUserNotificationRecipient) {
     m := &AadUserNotificationRecipient{
         TeamworkNotificationRecipient: *NewTeamworkNotificationRecipient(),
     }
-    odataTypeValue := "#microsoft.graph.aadUserNotificationRecipient";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.aadUserNotificationRecipient"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAadUserNotificationRecipientFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

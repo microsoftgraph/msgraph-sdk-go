@@ -25,7 +25,7 @@ type ScheduleInformation struct {
 func NewScheduleInformation()(*ScheduleInformation) {
     m := &ScheduleInformation{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateScheduleInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -33,7 +33,7 @@ type ItemItemsItemChildrenDriveItemItemRequestBuilderGetRequestConfiguration str
     QueryParameters *ItemItemsItemChildrenDriveItemItemRequestBuilderGetQueryParameters
 }
 // NewItemItemsItemChildrenDriveItemItemRequestBuilderInternal instantiates a new DriveItemItemRequestBuilder and sets the default values.
-func NewItemItemsItemChildrenDriveItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemChildrenDriveItemItemRequestBuilder) {
+func NewItemItemsItemChildrenDriveItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, driveItemId1 *string)(*ItemItemsItemChildrenDriveItemItemRequestBuilder) {
     m := &ItemItemsItemChildrenDriveItemItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/children/{driveItem%2Did1}{?%24select,%24expand}";
@@ -41,19 +41,22 @@ func NewItemItemsItemChildrenDriveItemItemRequestBuilderInternal(pathParameters 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if driveItemId1 != nil {
+        urlTplParams["driveItem%2Did1"] = *driveItemId1
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemItemsItemChildrenDriveItemItemRequestBuilder instantiates a new DriveItemItemRequestBuilder and sets the default values.
 func NewItemItemsItemChildrenDriveItemItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemChildrenDriveItemItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemItemsItemChildrenDriveItemItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemItemsItemChildrenDriveItemItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Content provides operations to manage the media for the drive entity.
 func (m *ItemItemsItemChildrenDriveItemItemRequestBuilder) Content()(*ItemItemsItemChildrenItemContentRequestBuilder) {
-    return NewItemItemsItemChildrenItemContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemItemsItemChildrenItemContentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
 func (m *ItemItemsItemChildrenDriveItemItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemChildrenDriveItemItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable, error) {

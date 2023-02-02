@@ -17,7 +17,7 @@ type Report struct {
 func NewReport()(*Report) {
     m := &Report{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateReportFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

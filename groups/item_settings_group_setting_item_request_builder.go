@@ -47,7 +47,7 @@ type ItemSettingsGroupSettingItemRequestBuilderPatchRequestConfiguration struct 
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemSettingsGroupSettingItemRequestBuilderInternal instantiates a new GroupSettingItemRequestBuilder and sets the default values.
-func NewItemSettingsGroupSettingItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSettingsGroupSettingItemRequestBuilder) {
+func NewItemSettingsGroupSettingItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, groupSettingId *string)(*ItemSettingsGroupSettingItemRequestBuilder) {
     m := &ItemSettingsGroupSettingItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groups/{group%2Did}/settings/{groupSetting%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemSettingsGroupSettingItemRequestBuilderInternal(pathParameters map[st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if groupSettingId != nil {
+        urlTplParams["groupSetting%2Did"] = *groupSettingId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSettingsGroupSettingItemRequestBuilder instantiates a new GroupSettingItemRequestBuilder and sets the default values.
 func NewItemSettingsGroupSettingItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSettingsGroupSettingItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemSettingsGroupSettingItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemSettingsGroupSettingItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property settings for groups
 func (m *ItemSettingsGroupSettingItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSettingsGroupSettingItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemSettingsGroupSettingItemRequestBuilder) ToPatchRequestInformation(c
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

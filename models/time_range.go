@@ -19,7 +19,7 @@ type TimeRange struct {
 func NewTimeRange()(*TimeRange) {
     m := &TimeRange{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTimeRangeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

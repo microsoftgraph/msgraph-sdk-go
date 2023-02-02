@@ -33,7 +33,7 @@ type ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemR
     QueryParameters *ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilderGetQueryParameters
 }
 // NewItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilderInternal instantiates a new CertificateBasedAuthConfigurationItemRequestBuilder and sets the default values.
-func NewItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilder) {
+func NewItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, certificateBasedAuthConfigurationId *string)(*ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilder) {
     m := &ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/organization/{organization%2Did}/certificateBasedAuthConfiguration/{certificateBasedAuthConfiguration%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationIt
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if certificateBasedAuthConfigurationId != nil {
+        urlTplParams["certificateBasedAuthConfiguration%2Did"] = *certificateBasedAuthConfigurationId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilder instantiates a new CertificateBasedAuthConfigurationItemRequestBuilder and sets the default values.
 func NewItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
 func (m *ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CertificateBasedAuthConfigurationable, error) {

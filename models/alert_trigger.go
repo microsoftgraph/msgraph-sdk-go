@@ -21,7 +21,7 @@ type AlertTrigger struct {
 func NewAlertTrigger()(*AlertTrigger) {
     m := &AlertTrigger{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAlertTriggerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

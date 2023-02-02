@@ -15,7 +15,7 @@ type FeedbackTokenSet struct {
 func NewFeedbackTokenSet()(*FeedbackTokenSet) {
     m := &FeedbackTokenSet{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateFeedbackTokenSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -47,7 +47,7 @@ type BucketsPlannerBucketItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewBucketsPlannerBucketItemRequestBuilderInternal instantiates a new PlannerBucketItemRequestBuilder and sets the default values.
-func NewBucketsPlannerBucketItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BucketsPlannerBucketItemRequestBuilder) {
+func NewBucketsPlannerBucketItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, plannerBucketId *string)(*BucketsPlannerBucketItemRequestBuilder) {
     m := &BucketsPlannerBucketItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/planner/buckets/{plannerBucket%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewBucketsPlannerBucketItemRequestBuilderInternal(pathParameters map[string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if plannerBucketId != nil {
+        urlTplParams["plannerBucket%2Did"] = *plannerBucketId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewBucketsPlannerBucketItemRequestBuilder instantiates a new PlannerBucketItemRequestBuilder and sets the default values.
 func NewBucketsPlannerBucketItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BucketsPlannerBucketItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewBucketsPlannerBucketItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewBucketsPlannerBucketItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property buckets for planner
 func (m *BucketsPlannerBucketItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *BucketsPlannerBucketItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -121,7 +124,7 @@ func (m *BucketsPlannerBucketItemRequestBuilder) Patch(ctx context.Context, body
 }
 // Tasks provides operations to manage the tasks property of the microsoft.graph.plannerBucket entity.
 func (m *BucketsPlannerBucketItemRequestBuilder) Tasks()(*BucketsItemTasksRequestBuilder) {
-    return NewBucketsItemTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewBucketsItemTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TasksById provides operations to manage the tasks property of the microsoft.graph.plannerBucket entity.
 func (m *BucketsPlannerBucketItemRequestBuilder) TasksById(id string)(*BucketsItemTasksPlannerTaskItemRequestBuilder) {
@@ -129,10 +132,8 @@ func (m *BucketsPlannerBucketItemRequestBuilder) TasksById(id string)(*BucketsIt
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["plannerTask%2Did"] = id
-    }
-    return NewBucketsItemTasksPlannerTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewBucketsItemTasksPlannerTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToDeleteRequestInformation delete navigation property buckets for planner
 func (m *BucketsPlannerBucketItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BucketsPlannerBucketItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +170,10 @@ func (m *BucketsPlannerBucketItemRequestBuilder) ToPatchRequestInformation(ctx c
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -17,8 +17,8 @@ func NewOmaSettingBase64()(*OmaSettingBase64) {
     m := &OmaSettingBase64{
         OmaSetting: *NewOmaSetting(),
     }
-    odataTypeValue := "#microsoft.graph.omaSettingBase64";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.omaSettingBase64"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateOmaSettingBase64FromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

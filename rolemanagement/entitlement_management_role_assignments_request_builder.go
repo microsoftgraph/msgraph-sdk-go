@@ -60,8 +60,8 @@ func NewEntitlementManagementRoleAssignmentsRequestBuilderInternal(pathParameter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEntitlementManagementRoleAssignmentsRequestBuilder instantiates a new RoleAssignmentsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewEntitlementManagementRoleAssignmentsRequestBuilder(rawUrl string, reques
 }
 // Count provides operations to count the resources in the collection.
 func (m *EntitlementManagementRoleAssignmentsRequestBuilder) Count()(*EntitlementManagementRoleAssignmentsCountRequestBuilder) {
-    return NewEntitlementManagementRoleAssignmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementRoleAssignmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of unifiedRoleAssignment objects for the RBAC provider. The following RBAC providers are currently supported:- directory (Azure AD)- entitlement management (Azure AD)
 // [Find more info here]
@@ -141,7 +141,10 @@ func (m *EntitlementManagementRoleAssignmentsRequestBuilder) ToPostRequestInform
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

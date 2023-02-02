@@ -25,7 +25,7 @@ type RecurrenceRange struct {
 func NewRecurrenceRange()(*RecurrenceRange) {
     m := &RecurrenceRange{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateRecurrenceRangeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

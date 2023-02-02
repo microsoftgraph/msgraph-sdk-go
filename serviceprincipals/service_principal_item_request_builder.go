@@ -46,21 +46,9 @@ type ServicePrincipalItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AddKey provides operations to call the addKey method.
-func (m *ServicePrincipalItemRequestBuilder) AddKey()(*ItemAddKeyRequestBuilder) {
-    return NewItemAddKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// AddPassword provides operations to call the addPassword method.
-func (m *ServicePrincipalItemRequestBuilder) AddPassword()(*ItemAddPasswordRequestBuilder) {
-    return NewItemAddPasswordRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// AddTokenSigningCertificate provides operations to call the addTokenSigningCertificate method.
-func (m *ServicePrincipalItemRequestBuilder) AddTokenSigningCertificate()(*ItemAddTokenSigningCertificateRequestBuilder) {
-    return NewItemAddTokenSigningCertificateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // AppRoleAssignedTo provides operations to manage the appRoleAssignedTo property of the microsoft.graph.servicePrincipal entity.
 func (m *ServicePrincipalItemRequestBuilder) AppRoleAssignedTo()(*ItemAppRoleAssignedToRequestBuilder) {
-    return NewItemAppRoleAssignedToRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemAppRoleAssignedToRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AppRoleAssignedToById provides operations to manage the appRoleAssignedTo property of the microsoft.graph.servicePrincipal entity.
 func (m *ServicePrincipalItemRequestBuilder) AppRoleAssignedToById(id string)(*ItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilder) {
@@ -68,14 +56,12 @@ func (m *ServicePrincipalItemRequestBuilder) AppRoleAssignedToById(id string)(*I
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["appRoleAssignment%2Did"] = id
-    }
-    return NewItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // AppRoleAssignments provides operations to manage the appRoleAssignments property of the microsoft.graph.servicePrincipal entity.
 func (m *ServicePrincipalItemRequestBuilder) AppRoleAssignments()(*ItemAppRoleAssignmentsRequestBuilder) {
-    return NewItemAppRoleAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemAppRoleAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AppRoleAssignmentsById provides operations to manage the appRoleAssignments property of the microsoft.graph.servicePrincipal entity.
 func (m *ServicePrincipalItemRequestBuilder) AppRoleAssignmentsById(id string)(*ItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilder) {
@@ -83,22 +69,12 @@ func (m *ServicePrincipalItemRequestBuilder) AppRoleAssignmentsById(id string)(*
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["appRoleAssignment%2Did"] = id
-    }
-    return NewItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// CheckMemberGroups provides operations to call the checkMemberGroups method.
-func (m *ServicePrincipalItemRequestBuilder) CheckMemberGroups()(*ItemCheckMemberGroupsRequestBuilder) {
-    return NewItemCheckMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// CheckMemberObjects provides operations to call the checkMemberObjects method.
-func (m *ServicePrincipalItemRequestBuilder) CheckMemberObjects()(*ItemCheckMemberObjectsRequestBuilder) {
-    return NewItemCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    idPtr := &id
+    return NewItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ClaimsMappingPolicies provides operations to manage the claimsMappingPolicies property of the microsoft.graph.servicePrincipal entity.
 func (m *ServicePrincipalItemRequestBuilder) ClaimsMappingPolicies()(*ItemClaimsMappingPoliciesRequestBuilder) {
-    return NewItemClaimsMappingPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemClaimsMappingPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ClaimsMappingPoliciesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.servicePrincipals.item.claimsMappingPolicies.item collection
 func (m *ServicePrincipalItemRequestBuilder) ClaimsMappingPoliciesById(id string)(*ItemClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) {
@@ -106,13 +82,11 @@ func (m *ServicePrincipalItemRequestBuilder) ClaimsMappingPoliciesById(id string
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["claimsMappingPolicy%2Did"] = id
-    }
-    return NewItemClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // NewServicePrincipalItemRequestBuilderInternal instantiates a new ServicePrincipalItemRequestBuilder and sets the default values.
-func NewServicePrincipalItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ServicePrincipalItemRequestBuilder) {
+func NewServicePrincipalItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, servicePrincipalId *string)(*ServicePrincipalItemRequestBuilder) {
     m := &ServicePrincipalItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}{?%24select,%24expand}";
@@ -120,19 +94,22 @@ func NewServicePrincipalItemRequestBuilderInternal(pathParameters map[string]str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if servicePrincipalId != nil {
+        urlTplParams["servicePrincipal%2Did"] = *servicePrincipalId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewServicePrincipalItemRequestBuilder instantiates a new ServicePrincipalItemRequestBuilder and sets the default values.
 func NewServicePrincipalItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ServicePrincipalItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewServicePrincipalItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewServicePrincipalItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // CreatedObjects provides operations to manage the createdObjects property of the microsoft.graph.servicePrincipal entity.
 func (m *ServicePrincipalItemRequestBuilder) CreatedObjects()(*ItemCreatedObjectsRequestBuilder) {
-    return NewItemCreatedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemCreatedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // CreatedObjectsById provides operations to manage the createdObjects property of the microsoft.graph.servicePrincipal entity.
 func (m *ServicePrincipalItemRequestBuilder) CreatedObjectsById(id string)(*ItemCreatedObjectsDirectoryObjectItemRequestBuilder) {
@@ -140,14 +117,12 @@ func (m *ServicePrincipalItemRequestBuilder) CreatedObjectsById(id string)(*Item
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["directoryObject%2Did"] = id
-    }
-    return NewItemCreatedObjectsDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemCreatedObjectsDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // DelegatedPermissionClassifications provides operations to manage the delegatedPermissionClassifications property of the microsoft.graph.servicePrincipal entity.
 func (m *ServicePrincipalItemRequestBuilder) DelegatedPermissionClassifications()(*ItemDelegatedPermissionClassificationsRequestBuilder) {
-    return NewItemDelegatedPermissionClassificationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemDelegatedPermissionClassificationsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DelegatedPermissionClassificationsById provides operations to manage the delegatedPermissionClassifications property of the microsoft.graph.servicePrincipal entity.
 func (m *ServicePrincipalItemRequestBuilder) DelegatedPermissionClassificationsById(id string)(*ItemDelegatedPermissionClassificationsDelegatedPermissionClassificationItemRequestBuilder) {
@@ -155,10 +130,8 @@ func (m *ServicePrincipalItemRequestBuilder) DelegatedPermissionClassificationsB
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["delegatedPermissionClassification%2Did"] = id
-    }
-    return NewItemDelegatedPermissionClassificationsDelegatedPermissionClassificationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemDelegatedPermissionClassificationsDelegatedPermissionClassificationItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Delete delete a servicePrincipal object.
 // [Find more info here]
@@ -181,7 +154,7 @@ func (m *ServicePrincipalItemRequestBuilder) Delete(ctx context.Context, request
 }
 // Endpoints provides operations to manage the endpoints property of the microsoft.graph.servicePrincipal entity.
 func (m *ServicePrincipalItemRequestBuilder) Endpoints()(*ItemEndpointsRequestBuilder) {
-    return NewItemEndpointsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemEndpointsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // EndpointsById provides operations to manage the endpoints property of the microsoft.graph.servicePrincipal entity.
 func (m *ServicePrincipalItemRequestBuilder) EndpointsById(id string)(*ItemEndpointsEndpointItemRequestBuilder) {
@@ -189,14 +162,12 @@ func (m *ServicePrincipalItemRequestBuilder) EndpointsById(id string)(*ItemEndpo
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["endpoint%2Did"] = id
-    }
-    return NewItemEndpointsEndpointItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemEndpointsEndpointItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // FederatedIdentityCredentials provides operations to manage the federatedIdentityCredentials property of the microsoft.graph.servicePrincipal entity.
 func (m *ServicePrincipalItemRequestBuilder) FederatedIdentityCredentials()(*ItemFederatedIdentityCredentialsRequestBuilder) {
-    return NewItemFederatedIdentityCredentialsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemFederatedIdentityCredentialsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // FederatedIdentityCredentialsById provides operations to manage the federatedIdentityCredentials property of the microsoft.graph.servicePrincipal entity.
 func (m *ServicePrincipalItemRequestBuilder) FederatedIdentityCredentialsById(id string)(*ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilder) {
@@ -204,10 +175,8 @@ func (m *ServicePrincipalItemRequestBuilder) FederatedIdentityCredentialsById(id
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["federatedIdentityCredential%2Did"] = id
-    }
-    return NewItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Get retrieve the properties and relationships of a servicePrincipal object.
 // [Find more info here]
@@ -231,17 +200,9 @@ func (m *ServicePrincipalItemRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServicePrincipalable), nil
 }
-// GetMemberGroups provides operations to call the getMemberGroups method.
-func (m *ServicePrincipalItemRequestBuilder) GetMemberGroups()(*ItemGetMemberGroupsRequestBuilder) {
-    return NewItemGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// GetMemberObjects provides operations to call the getMemberObjects method.
-func (m *ServicePrincipalItemRequestBuilder) GetMemberObjects()(*ItemGetMemberObjectsRequestBuilder) {
-    return NewItemGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // HomeRealmDiscoveryPolicies provides operations to manage the homeRealmDiscoveryPolicies property of the microsoft.graph.servicePrincipal entity.
 func (m *ServicePrincipalItemRequestBuilder) HomeRealmDiscoveryPolicies()(*ItemHomeRealmDiscoveryPoliciesRequestBuilder) {
-    return NewItemHomeRealmDiscoveryPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemHomeRealmDiscoveryPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // HomeRealmDiscoveryPoliciesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.servicePrincipals.item.homeRealmDiscoveryPolicies.item collection
 func (m *ServicePrincipalItemRequestBuilder) HomeRealmDiscoveryPoliciesById(id string)(*ItemHomeRealmDiscoveryPoliciesHomeRealmDiscoveryPolicyItemRequestBuilder) {
@@ -249,14 +210,12 @@ func (m *ServicePrincipalItemRequestBuilder) HomeRealmDiscoveryPoliciesById(id s
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["homeRealmDiscoveryPolicy%2Did"] = id
-    }
-    return NewItemHomeRealmDiscoveryPoliciesHomeRealmDiscoveryPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemHomeRealmDiscoveryPoliciesHomeRealmDiscoveryPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // MemberOf provides operations to manage the memberOf property of the microsoft.graph.servicePrincipal entity.
 func (m *ServicePrincipalItemRequestBuilder) MemberOf()(*ItemMemberOfRequestBuilder) {
-    return NewItemMemberOfRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemMemberOfRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MemberOfById provides operations to manage the memberOf property of the microsoft.graph.servicePrincipal entity.
 func (m *ServicePrincipalItemRequestBuilder) MemberOfById(id string)(*ItemMemberOfDirectoryObjectItemRequestBuilder) {
@@ -264,14 +223,52 @@ func (m *ServicePrincipalItemRequestBuilder) MemberOfById(id string)(*ItemMember
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["directoryObject%2Did"] = id
-    }
-    return NewItemMemberOfDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemMemberOfDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
+}
+// MicrosoftGraphAddKey provides operations to call the addKey method.
+func (m *ServicePrincipalItemRequestBuilder) MicrosoftGraphAddKey()(*ItemMicrosoftGraphAddKeyAddKeyRequestBuilder) {
+    return NewItemMicrosoftGraphAddKeyAddKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphAddPassword provides operations to call the addPassword method.
+func (m *ServicePrincipalItemRequestBuilder) MicrosoftGraphAddPassword()(*ItemMicrosoftGraphAddPasswordAddPasswordRequestBuilder) {
+    return NewItemMicrosoftGraphAddPasswordAddPasswordRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphAddTokenSigningCertificate provides operations to call the addTokenSigningCertificate method.
+func (m *ServicePrincipalItemRequestBuilder) MicrosoftGraphAddTokenSigningCertificate()(*ItemMicrosoftGraphAddTokenSigningCertificateAddTokenSigningCertificateRequestBuilder) {
+    return NewItemMicrosoftGraphAddTokenSigningCertificateAddTokenSigningCertificateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphCheckMemberGroups provides operations to call the checkMemberGroups method.
+func (m *ServicePrincipalItemRequestBuilder) MicrosoftGraphCheckMemberGroups()(*ItemMicrosoftGraphCheckMemberGroupsCheckMemberGroupsRequestBuilder) {
+    return NewItemMicrosoftGraphCheckMemberGroupsCheckMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphCheckMemberObjects provides operations to call the checkMemberObjects method.
+func (m *ServicePrincipalItemRequestBuilder) MicrosoftGraphCheckMemberObjects()(*ItemMicrosoftGraphCheckMemberObjectsCheckMemberObjectsRequestBuilder) {
+    return NewItemMicrosoftGraphCheckMemberObjectsCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphGetMemberGroups provides operations to call the getMemberGroups method.
+func (m *ServicePrincipalItemRequestBuilder) MicrosoftGraphGetMemberGroups()(*ItemMicrosoftGraphGetMemberGroupsGetMemberGroupsRequestBuilder) {
+    return NewItemMicrosoftGraphGetMemberGroupsGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphGetMemberObjects provides operations to call the getMemberObjects method.
+func (m *ServicePrincipalItemRequestBuilder) MicrosoftGraphGetMemberObjects()(*ItemMicrosoftGraphGetMemberObjectsGetMemberObjectsRequestBuilder) {
+    return NewItemMicrosoftGraphGetMemberObjectsGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphRemoveKey provides operations to call the removeKey method.
+func (m *ServicePrincipalItemRequestBuilder) MicrosoftGraphRemoveKey()(*ItemMicrosoftGraphRemoveKeyRemoveKeyRequestBuilder) {
+    return NewItemMicrosoftGraphRemoveKeyRemoveKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphRemovePassword provides operations to call the removePassword method.
+func (m *ServicePrincipalItemRequestBuilder) MicrosoftGraphRemovePassword()(*ItemMicrosoftGraphRemovePasswordRemovePasswordRequestBuilder) {
+    return NewItemMicrosoftGraphRemovePasswordRemovePasswordRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphRestore provides operations to call the restore method.
+func (m *ServicePrincipalItemRequestBuilder) MicrosoftGraphRestore()(*ItemMicrosoftGraphRestoreRestoreRequestBuilder) {
+    return NewItemMicrosoftGraphRestoreRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Oauth2PermissionGrants provides operations to manage the oauth2PermissionGrants property of the microsoft.graph.servicePrincipal entity.
 func (m *ServicePrincipalItemRequestBuilder) Oauth2PermissionGrants()(*ItemOauth2PermissionGrantsRequestBuilder) {
-    return NewItemOauth2PermissionGrantsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemOauth2PermissionGrantsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Oauth2PermissionGrantsById provides operations to manage the oauth2PermissionGrants property of the microsoft.graph.servicePrincipal entity.
 func (m *ServicePrincipalItemRequestBuilder) Oauth2PermissionGrantsById(id string)(*ItemOauth2PermissionGrantsOAuth2PermissionGrantItemRequestBuilder) {
@@ -279,14 +276,12 @@ func (m *ServicePrincipalItemRequestBuilder) Oauth2PermissionGrantsById(id strin
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["oAuth2PermissionGrant%2Did"] = id
-    }
-    return NewItemOauth2PermissionGrantsOAuth2PermissionGrantItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemOauth2PermissionGrantsOAuth2PermissionGrantItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // OwnedObjects provides operations to manage the ownedObjects property of the microsoft.graph.servicePrincipal entity.
 func (m *ServicePrincipalItemRequestBuilder) OwnedObjects()(*ItemOwnedObjectsRequestBuilder) {
-    return NewItemOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // OwnedObjectsById provides operations to manage the ownedObjects property of the microsoft.graph.servicePrincipal entity.
 func (m *ServicePrincipalItemRequestBuilder) OwnedObjectsById(id string)(*ItemOwnedObjectsDirectoryObjectItemRequestBuilder) {
@@ -294,14 +289,12 @@ func (m *ServicePrincipalItemRequestBuilder) OwnedObjectsById(id string)(*ItemOw
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["directoryObject%2Did"] = id
-    }
-    return NewItemOwnedObjectsDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemOwnedObjectsDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Owners provides operations to manage the owners property of the microsoft.graph.servicePrincipal entity.
 func (m *ServicePrincipalItemRequestBuilder) Owners()(*ItemOwnersRequestBuilder) {
-    return NewItemOwnersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemOwnersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // OwnersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.servicePrincipals.item.owners.item collection
 func (m *ServicePrincipalItemRequestBuilder) OwnersById(id string)(*ItemOwnersDirectoryObjectItemRequestBuilder) {
@@ -309,12 +302,10 @@ func (m *ServicePrincipalItemRequestBuilder) OwnersById(id string)(*ItemOwnersDi
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["directoryObject%2Did"] = id
-    }
-    return NewItemOwnersDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemOwnersDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
-// Patch update entity in servicePrincipals by key (id)
+// Patch update entity in servicePrincipals
 func (m *ServicePrincipalItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServicePrincipalable, requestConfiguration *ServicePrincipalItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServicePrincipalable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -332,18 +323,6 @@ func (m *ServicePrincipalItemRequestBuilder) Patch(ctx context.Context, body iad
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServicePrincipalable), nil
-}
-// RemoveKey provides operations to call the removeKey method.
-func (m *ServicePrincipalItemRequestBuilder) RemoveKey()(*ItemRemoveKeyRequestBuilder) {
-    return NewItemRemoveKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// RemovePassword provides operations to call the removePassword method.
-func (m *ServicePrincipalItemRequestBuilder) RemovePassword()(*ItemRemovePasswordRequestBuilder) {
-    return NewItemRemovePasswordRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Restore provides operations to call the restore method.
-func (m *ServicePrincipalItemRequestBuilder) Restore()(*ItemRestoreRequestBuilder) {
-    return NewItemRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete a servicePrincipal object.
 func (m *ServicePrincipalItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ServicePrincipalItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -375,7 +354,7 @@ func (m *ServicePrincipalItemRequestBuilder) ToGetRequestInformation(ctx context
 }
 // TokenIssuancePolicies provides operations to manage the tokenIssuancePolicies property of the microsoft.graph.servicePrincipal entity.
 func (m *ServicePrincipalItemRequestBuilder) TokenIssuancePolicies()(*ItemTokenIssuancePoliciesRequestBuilder) {
-    return NewItemTokenIssuancePoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTokenIssuancePoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TokenIssuancePoliciesById provides operations to manage the tokenIssuancePolicies property of the microsoft.graph.servicePrincipal entity.
 func (m *ServicePrincipalItemRequestBuilder) TokenIssuancePoliciesById(id string)(*ItemTokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilder) {
@@ -383,14 +362,12 @@ func (m *ServicePrincipalItemRequestBuilder) TokenIssuancePoliciesById(id string
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["tokenIssuancePolicy%2Did"] = id
-    }
-    return NewItemTokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemTokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // TokenLifetimePolicies provides operations to manage the tokenLifetimePolicies property of the microsoft.graph.servicePrincipal entity.
 func (m *ServicePrincipalItemRequestBuilder) TokenLifetimePolicies()(*ItemTokenLifetimePoliciesRequestBuilder) {
-    return NewItemTokenLifetimePoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTokenLifetimePoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TokenLifetimePoliciesById provides operations to manage the tokenLifetimePolicies property of the microsoft.graph.servicePrincipal entity.
 func (m *ServicePrincipalItemRequestBuilder) TokenLifetimePoliciesById(id string)(*ItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) {
@@ -398,19 +375,20 @@ func (m *ServicePrincipalItemRequestBuilder) TokenLifetimePoliciesById(id string
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["tokenLifetimePolicy%2Did"] = id
-    }
-    return NewItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
-// ToPatchRequestInformation update entity in servicePrincipals by key (id)
+// ToPatchRequestInformation update entity in servicePrincipals
 func (m *ServicePrincipalItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServicePrincipalable, requestConfiguration *ServicePrincipalItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -419,7 +397,7 @@ func (m *ServicePrincipalItemRequestBuilder) ToPatchRequestInformation(ctx conte
 }
 // TransitiveMemberOf provides operations to manage the transitiveMemberOf property of the microsoft.graph.servicePrincipal entity.
 func (m *ServicePrincipalItemRequestBuilder) TransitiveMemberOf()(*ItemTransitiveMemberOfRequestBuilder) {
-    return NewItemTransitiveMemberOfRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTransitiveMemberOfRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TransitiveMemberOfById provides operations to manage the transitiveMemberOf property of the microsoft.graph.servicePrincipal entity.
 func (m *ServicePrincipalItemRequestBuilder) TransitiveMemberOfById(id string)(*ItemTransitiveMemberOfDirectoryObjectItemRequestBuilder) {
@@ -427,8 +405,6 @@ func (m *ServicePrincipalItemRequestBuilder) TransitiveMemberOfById(id string)(*
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["directoryObject%2Did"] = id
-    }
-    return NewItemTransitiveMemberOfDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemTransitiveMemberOfDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }

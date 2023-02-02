@@ -19,7 +19,7 @@ type CallOptions struct {
 func NewCallOptions()(*CallOptions) {
     m := &CallOptions{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCallOptionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

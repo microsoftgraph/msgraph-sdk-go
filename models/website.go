@@ -21,7 +21,7 @@ type Website struct {
 func NewWebsite()(*Website) {
     m := &Website{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWebsiteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

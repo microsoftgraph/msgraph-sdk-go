@@ -48,7 +48,7 @@ type MailFoldersItemMessagesMessageItemRequestBuilderPatchRequestConfiguration s
 }
 // Attachments provides operations to manage the attachments property of the microsoft.graph.message entity.
 func (m *MailFoldersItemMessagesMessageItemRequestBuilder) Attachments()(*MailFoldersItemMessagesItemAttachmentsRequestBuilder) {
-    return NewMailFoldersItemMessagesItemAttachmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMailFoldersItemMessagesItemAttachmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AttachmentsById provides operations to manage the attachments property of the microsoft.graph.message entity.
 func (m *MailFoldersItemMessagesMessageItemRequestBuilder) AttachmentsById(id string)(*MailFoldersItemMessagesItemAttachmentsAttachmentItemRequestBuilder) {
@@ -56,13 +56,11 @@ func (m *MailFoldersItemMessagesMessageItemRequestBuilder) AttachmentsById(id st
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["attachment%2Did"] = id
-    }
-    return NewMailFoldersItemMessagesItemAttachmentsAttachmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewMailFoldersItemMessagesItemAttachmentsAttachmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // NewMailFoldersItemMessagesMessageItemRequestBuilderInternal instantiates a new MessageItemRequestBuilder and sets the default values.
-func NewMailFoldersItemMessagesMessageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MailFoldersItemMessagesMessageItemRequestBuilder) {
+func NewMailFoldersItemMessagesMessageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, messageId *string)(*MailFoldersItemMessagesMessageItemRequestBuilder) {
     m := &MailFoldersItemMessagesMessageItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/mailFolders/{mailFolder%2Did}/messages/{message%2Did}{?%24select,%24expand}";
@@ -70,35 +68,22 @@ func NewMailFoldersItemMessagesMessageItemRequestBuilderInternal(pathParameters 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if messageId != nil {
+        urlTplParams["message%2Did"] = *messageId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMailFoldersItemMessagesMessageItemRequestBuilder instantiates a new MessageItemRequestBuilder and sets the default values.
 func NewMailFoldersItemMessagesMessageItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MailFoldersItemMessagesMessageItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewMailFoldersItemMessagesMessageItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewMailFoldersItemMessagesMessageItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Content provides operations to manage the media for the user entity.
 func (m *MailFoldersItemMessagesMessageItemRequestBuilder) Content()(*MailFoldersItemMessagesItemValueContentRequestBuilder) {
-    return NewMailFoldersItemMessagesItemValueContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Copy provides operations to call the copy method.
-func (m *MailFoldersItemMessagesMessageItemRequestBuilder) Copy()(*MailFoldersItemMessagesItemCopyRequestBuilder) {
-    return NewMailFoldersItemMessagesItemCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// CreateForward provides operations to call the createForward method.
-func (m *MailFoldersItemMessagesMessageItemRequestBuilder) CreateForward()(*MailFoldersItemMessagesItemCreateForwardRequestBuilder) {
-    return NewMailFoldersItemMessagesItemCreateForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// CreateReply provides operations to call the createReply method.
-func (m *MailFoldersItemMessagesMessageItemRequestBuilder) CreateReply()(*MailFoldersItemMessagesItemCreateReplyRequestBuilder) {
-    return NewMailFoldersItemMessagesItemCreateReplyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// CreateReplyAll provides operations to call the createReplyAll method.
-func (m *MailFoldersItemMessagesMessageItemRequestBuilder) CreateReplyAll()(*MailFoldersItemMessagesItemCreateReplyAllRequestBuilder) {
-    return NewMailFoldersItemMessagesItemCreateReplyAllRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMailFoldersItemMessagesItemValueContentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete navigation property messages for me
 func (m *MailFoldersItemMessagesMessageItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *MailFoldersItemMessagesMessageItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -118,7 +103,7 @@ func (m *MailFoldersItemMessagesMessageItemRequestBuilder) Delete(ctx context.Co
 }
 // Extensions provides operations to manage the extensions property of the microsoft.graph.message entity.
 func (m *MailFoldersItemMessagesMessageItemRequestBuilder) Extensions()(*MailFoldersItemMessagesItemExtensionsRequestBuilder) {
-    return NewMailFoldersItemMessagesItemExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMailFoldersItemMessagesItemExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ExtensionsById provides operations to manage the extensions property of the microsoft.graph.message entity.
 func (m *MailFoldersItemMessagesMessageItemRequestBuilder) ExtensionsById(id string)(*MailFoldersItemMessagesItemExtensionsExtensionItemRequestBuilder) {
@@ -126,14 +111,8 @@ func (m *MailFoldersItemMessagesMessageItemRequestBuilder) ExtensionsById(id str
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["extension%2Did"] = id
-    }
-    return NewMailFoldersItemMessagesItemExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// Forward provides operations to call the forward method.
-func (m *MailFoldersItemMessagesMessageItemRequestBuilder) Forward()(*MailFoldersItemMessagesItemForwardRequestBuilder) {
-    return NewMailFoldersItemMessagesItemForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    idPtr := &id
+    return NewMailFoldersItemMessagesItemExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Get the collection of messages in the mailFolder.
 func (m *MailFoldersItemMessagesMessageItemRequestBuilder) Get(ctx context.Context, requestConfiguration *MailFoldersItemMessagesMessageItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Messageable, error) {
@@ -154,13 +133,45 @@ func (m *MailFoldersItemMessagesMessageItemRequestBuilder) Get(ctx context.Conte
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Messageable), nil
 }
-// Move provides operations to call the move method.
-func (m *MailFoldersItemMessagesMessageItemRequestBuilder) Move()(*MailFoldersItemMessagesItemMoveRequestBuilder) {
-    return NewMailFoldersItemMessagesItemMoveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphCopy provides operations to call the copy method.
+func (m *MailFoldersItemMessagesMessageItemRequestBuilder) MicrosoftGraphCopy()(*MailFoldersItemMessagesItemMicrosoftGraphCopyCopyRequestBuilder) {
+    return NewMailFoldersItemMessagesItemMicrosoftGraphCopyCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphCreateForward provides operations to call the createForward method.
+func (m *MailFoldersItemMessagesMessageItemRequestBuilder) MicrosoftGraphCreateForward()(*MailFoldersItemMessagesItemMicrosoftGraphCreateForwardCreateForwardRequestBuilder) {
+    return NewMailFoldersItemMessagesItemMicrosoftGraphCreateForwardCreateForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphCreateReply provides operations to call the createReply method.
+func (m *MailFoldersItemMessagesMessageItemRequestBuilder) MicrosoftGraphCreateReply()(*MailFoldersItemMessagesItemMicrosoftGraphCreateReplyCreateReplyRequestBuilder) {
+    return NewMailFoldersItemMessagesItemMicrosoftGraphCreateReplyCreateReplyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphCreateReplyAll provides operations to call the createReplyAll method.
+func (m *MailFoldersItemMessagesMessageItemRequestBuilder) MicrosoftGraphCreateReplyAll()(*MailFoldersItemMessagesItemMicrosoftGraphCreateReplyAllCreateReplyAllRequestBuilder) {
+    return NewMailFoldersItemMessagesItemMicrosoftGraphCreateReplyAllCreateReplyAllRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphForward provides operations to call the forward method.
+func (m *MailFoldersItemMessagesMessageItemRequestBuilder) MicrosoftGraphForward()(*MailFoldersItemMessagesItemMicrosoftGraphForwardForwardRequestBuilder) {
+    return NewMailFoldersItemMessagesItemMicrosoftGraphForwardForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphMove provides operations to call the move method.
+func (m *MailFoldersItemMessagesMessageItemRequestBuilder) MicrosoftGraphMove()(*MailFoldersItemMessagesItemMicrosoftGraphMoveMoveRequestBuilder) {
+    return NewMailFoldersItemMessagesItemMicrosoftGraphMoveMoveRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphReply provides operations to call the reply method.
+func (m *MailFoldersItemMessagesMessageItemRequestBuilder) MicrosoftGraphReply()(*MailFoldersItemMessagesItemMicrosoftGraphReplyReplyRequestBuilder) {
+    return NewMailFoldersItemMessagesItemMicrosoftGraphReplyReplyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphReplyAll provides operations to call the replyAll method.
+func (m *MailFoldersItemMessagesMessageItemRequestBuilder) MicrosoftGraphReplyAll()(*MailFoldersItemMessagesItemMicrosoftGraphReplyAllReplyAllRequestBuilder) {
+    return NewMailFoldersItemMessagesItemMicrosoftGraphReplyAllReplyAllRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphSend provides operations to call the send method.
+func (m *MailFoldersItemMessagesMessageItemRequestBuilder) MicrosoftGraphSend()(*MailFoldersItemMessagesItemMicrosoftGraphSendSendRequestBuilder) {
+    return NewMailFoldersItemMessagesItemMicrosoftGraphSendSendRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.message entity.
 func (m *MailFoldersItemMessagesMessageItemRequestBuilder) MultiValueExtendedProperties()(*MailFoldersItemMessagesItemMultiValueExtendedPropertiesRequestBuilder) {
-    return NewMailFoldersItemMessagesItemMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMailFoldersItemMessagesItemMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MultiValueExtendedPropertiesById provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.message entity.
 func (m *MailFoldersItemMessagesMessageItemRequestBuilder) MultiValueExtendedPropertiesById(id string)(*MailFoldersItemMessagesItemMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilder) {
@@ -168,10 +179,8 @@ func (m *MailFoldersItemMessagesMessageItemRequestBuilder) MultiValueExtendedPro
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["multiValueLegacyExtendedProperty%2Did"] = id
-    }
-    return NewMailFoldersItemMessagesItemMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewMailFoldersItemMessagesItemMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Patch update the navigation property messages in me
 func (m *MailFoldersItemMessagesMessageItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Messageable, requestConfiguration *MailFoldersItemMessagesMessageItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Messageable, error) {
@@ -192,21 +201,9 @@ func (m *MailFoldersItemMessagesMessageItemRequestBuilder) Patch(ctx context.Con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Messageable), nil
 }
-// Reply provides operations to call the reply method.
-func (m *MailFoldersItemMessagesMessageItemRequestBuilder) Reply()(*MailFoldersItemMessagesItemReplyRequestBuilder) {
-    return NewMailFoldersItemMessagesItemReplyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// ReplyAll provides operations to call the replyAll method.
-func (m *MailFoldersItemMessagesMessageItemRequestBuilder) ReplyAll()(*MailFoldersItemMessagesItemReplyAllRequestBuilder) {
-    return NewMailFoldersItemMessagesItemReplyAllRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Send provides operations to call the send method.
-func (m *MailFoldersItemMessagesMessageItemRequestBuilder) Send()(*MailFoldersItemMessagesItemSendRequestBuilder) {
-    return NewMailFoldersItemMessagesItemSendRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // SingleValueExtendedProperties provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.message entity.
 func (m *MailFoldersItemMessagesMessageItemRequestBuilder) SingleValueExtendedProperties()(*MailFoldersItemMessagesItemSingleValueExtendedPropertiesRequestBuilder) {
-    return NewMailFoldersItemMessagesItemSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMailFoldersItemMessagesItemSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SingleValueExtendedPropertiesById provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.message entity.
 func (m *MailFoldersItemMessagesMessageItemRequestBuilder) SingleValueExtendedPropertiesById(id string)(*MailFoldersItemMessagesItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilder) {
@@ -214,10 +211,8 @@ func (m *MailFoldersItemMessagesMessageItemRequestBuilder) SingleValueExtendedPr
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["singleValueLegacyExtendedProperty%2Did"] = id
-    }
-    return NewMailFoldersItemMessagesItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewMailFoldersItemMessagesItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToDeleteRequestInformation delete navigation property messages for me
 func (m *MailFoldersItemMessagesMessageItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *MailFoldersItemMessagesMessageItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -254,7 +249,10 @@ func (m *MailFoldersItemMessagesMessageItemRequestBuilder) ToPatchRequestInforma
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

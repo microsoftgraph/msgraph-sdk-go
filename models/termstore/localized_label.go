@@ -21,7 +21,7 @@ type LocalizedLabel struct {
 func NewLocalizedLabel()(*LocalizedLabel) {
     m := &LocalizedLabel{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateLocalizedLabelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

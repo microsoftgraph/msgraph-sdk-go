@@ -15,8 +15,8 @@ func NewSamlOrWsFedExternalDomainFederation()(*SamlOrWsFedExternalDomainFederati
     m := &SamlOrWsFedExternalDomainFederation{
         SamlOrWsFedProvider: *NewSamlOrWsFedProvider(),
     }
-    odataTypeValue := "#microsoft.graph.samlOrWsFedExternalDomainFederation";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.samlOrWsFedExternalDomainFederation"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateSamlOrWsFedExternalDomainFederationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

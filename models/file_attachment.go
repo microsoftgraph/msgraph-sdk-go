@@ -19,8 +19,8 @@ func NewFileAttachment()(*FileAttachment) {
     m := &FileAttachment{
         Attachment: *NewAttachment(),
     }
-    odataTypeValue := "#microsoft.graph.fileAttachment";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.fileAttachment"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateFileAttachmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

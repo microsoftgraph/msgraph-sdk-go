@@ -60,8 +60,8 @@ func NewItemPinnedMessagesRequestBuilderInternal(pathParameters map[string]strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemPinnedMessagesRequestBuilder instantiates a new PinnedMessagesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewItemPinnedMessagesRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemPinnedMessagesRequestBuilder) Count()(*ItemPinnedMessagesCountRequestBuilder) {
-    return NewItemPinnedMessagesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemPinnedMessagesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of pinnedChatMessages in a chat.
 // [Find more info here]
@@ -141,7 +141,10 @@ func (m *ItemPinnedMessagesRequestBuilder) ToPostRequestInformation(ctx context.
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -53,8 +53,8 @@ func NewItemTokenLifetimePoliciesRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTokenLifetimePoliciesRequestBuilder instantiates a new TokenLifetimePoliciesRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemTokenLifetimePoliciesRequestBuilder(rawUrl string, requestAdapter i2
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemTokenLifetimePoliciesRequestBuilder) Count()(*ItemTokenLifetimePoliciesCountRequestBuilder) {
-    return NewItemTokenLifetimePoliciesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTokenLifetimePoliciesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get list the tokenLifetimePolicy objects that are assigned to an application.
 // [Find more info here]
@@ -91,7 +91,7 @@ func (m *ItemTokenLifetimePoliciesRequestBuilder) Get(ctx context.Context, reque
 }
 // Ref provides operations to manage the collection of application entities.
 func (m *ItemTokenLifetimePoliciesRequestBuilder) Ref()(*ItemTokenLifetimePoliciesRefRequestBuilder) {
-    return NewItemTokenLifetimePoliciesRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTokenLifetimePoliciesRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation list the tokenLifetimePolicy objects that are assigned to an application.
 func (m *ItemTokenLifetimePoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTokenLifetimePoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

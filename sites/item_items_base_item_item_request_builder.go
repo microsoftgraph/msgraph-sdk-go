@@ -33,7 +33,7 @@ type ItemItemsBaseItemItemRequestBuilderGetRequestConfiguration struct {
     QueryParameters *ItemItemsBaseItemItemRequestBuilderGetQueryParameters
 }
 // NewItemItemsBaseItemItemRequestBuilderInternal instantiates a new BaseItemItemRequestBuilder and sets the default values.
-func NewItemItemsBaseItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsBaseItemItemRequestBuilder) {
+func NewItemItemsBaseItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, baseItemId *string)(*ItemItemsBaseItemItemRequestBuilder) {
     m := &ItemItemsBaseItemItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/sites/{site%2Did}/items/{baseItem%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewItemItemsBaseItemItemRequestBuilderInternal(pathParameters map[string]st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if baseItemId != nil {
+        urlTplParams["baseItem%2Did"] = *baseItemId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemItemsBaseItemItemRequestBuilder instantiates a new BaseItemItemRequestBuilder and sets the default values.
 func NewItemItemsBaseItemItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsBaseItemItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemItemsBaseItemItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemItemsBaseItemItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get used to address any item contained in this site. This collection can't be enumerated.
 func (m *ItemItemsBaseItemItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsBaseItemItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseItemable, error) {

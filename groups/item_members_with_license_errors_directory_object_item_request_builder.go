@@ -32,12 +32,8 @@ type ItemMembersWithLicenseErrorsDirectoryObjectItemRequestBuilderGetRequestConf
     // Request query parameters
     QueryParameters *ItemMembersWithLicenseErrorsDirectoryObjectItemRequestBuilderGetQueryParameters
 }
-// Application casts the previous resource to application.
-func (m *ItemMembersWithLicenseErrorsDirectoryObjectItemRequestBuilder) Application()(*ItemMembersWithLicenseErrorsItemApplicationRequestBuilder) {
-    return NewItemMembersWithLicenseErrorsItemApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewItemMembersWithLicenseErrorsDirectoryObjectItemRequestBuilderInternal instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
-func NewItemMembersWithLicenseErrorsDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMembersWithLicenseErrorsDirectoryObjectItemRequestBuilder) {
+func NewItemMembersWithLicenseErrorsDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, directoryObjectId *string)(*ItemMembersWithLicenseErrorsDirectoryObjectItemRequestBuilder) {
     m := &ItemMembersWithLicenseErrorsDirectoryObjectItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groups/{group%2Did}/membersWithLicenseErrors/{directoryObject%2Did}{?%24select,%24expand}";
@@ -45,19 +41,18 @@ func NewItemMembersWithLicenseErrorsDirectoryObjectItemRequestBuilderInternal(pa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if directoryObjectId != nil {
+        urlTplParams["directoryObject%2Did"] = *directoryObjectId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemMembersWithLicenseErrorsDirectoryObjectItemRequestBuilder instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
 func NewItemMembersWithLicenseErrorsDirectoryObjectItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMembersWithLicenseErrorsDirectoryObjectItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemMembersWithLicenseErrorsDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
-}
-// Device casts the previous resource to device.
-func (m *ItemMembersWithLicenseErrorsDirectoryObjectItemRequestBuilder) Device()(*ItemMembersWithLicenseErrorsItemDeviceRequestBuilder) {
-    return NewItemMembersWithLicenseErrorsItemDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemMembersWithLicenseErrorsDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get a list of group members with license errors from this group-based license assignment. Read-only.
 func (m *ItemMembersWithLicenseErrorsDirectoryObjectItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMembersWithLicenseErrorsDirectoryObjectItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, error) {
@@ -78,17 +73,29 @@ func (m *ItemMembersWithLicenseErrorsDirectoryObjectItemRequestBuilder) Get(ctx 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable), nil
 }
-// Group casts the previous resource to group.
-func (m *ItemMembersWithLicenseErrorsDirectoryObjectItemRequestBuilder) Group()(*ItemMembersWithLicenseErrorsItemGroupRequestBuilder) {
-    return NewItemMembersWithLicenseErrorsItemGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphApplication casts the previous resource to application.
+func (m *ItemMembersWithLicenseErrorsDirectoryObjectItemRequestBuilder) MicrosoftGraphApplication()(*ItemMembersWithLicenseErrorsItemMicrosoftGraphApplicationApplicationRequestBuilder) {
+    return NewItemMembersWithLicenseErrorsItemMicrosoftGraphApplicationApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// OrgContact casts the previous resource to orgContact.
-func (m *ItemMembersWithLicenseErrorsDirectoryObjectItemRequestBuilder) OrgContact()(*ItemMembersWithLicenseErrorsItemOrgContactRequestBuilder) {
-    return NewItemMembersWithLicenseErrorsItemOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphDevice casts the previous resource to device.
+func (m *ItemMembersWithLicenseErrorsDirectoryObjectItemRequestBuilder) MicrosoftGraphDevice()(*ItemMembersWithLicenseErrorsItemMicrosoftGraphDeviceDeviceRequestBuilder) {
+    return NewItemMembersWithLicenseErrorsItemMicrosoftGraphDeviceDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// ServicePrincipal casts the previous resource to servicePrincipal.
-func (m *ItemMembersWithLicenseErrorsDirectoryObjectItemRequestBuilder) ServicePrincipal()(*ItemMembersWithLicenseErrorsItemServicePrincipalRequestBuilder) {
-    return NewItemMembersWithLicenseErrorsItemServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGroup casts the previous resource to group.
+func (m *ItemMembersWithLicenseErrorsDirectoryObjectItemRequestBuilder) MicrosoftGraphGroup()(*ItemMembersWithLicenseErrorsItemMicrosoftGraphGroupGroupRequestBuilder) {
+    return NewItemMembersWithLicenseErrorsItemMicrosoftGraphGroupGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphOrgContact casts the previous resource to orgContact.
+func (m *ItemMembersWithLicenseErrorsDirectoryObjectItemRequestBuilder) MicrosoftGraphOrgContact()(*ItemMembersWithLicenseErrorsItemMicrosoftGraphOrgContactOrgContactRequestBuilder) {
+    return NewItemMembersWithLicenseErrorsItemMicrosoftGraphOrgContactOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphServicePrincipal casts the previous resource to servicePrincipal.
+func (m *ItemMembersWithLicenseErrorsDirectoryObjectItemRequestBuilder) MicrosoftGraphServicePrincipal()(*ItemMembersWithLicenseErrorsItemMicrosoftGraphServicePrincipalServicePrincipalRequestBuilder) {
+    return NewItemMembersWithLicenseErrorsItemMicrosoftGraphServicePrincipalServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphUser casts the previous resource to user.
+func (m *ItemMembersWithLicenseErrorsDirectoryObjectItemRequestBuilder) MicrosoftGraphUser()(*ItemMembersWithLicenseErrorsItemMicrosoftGraphUserUserRequestBuilder) {
+    return NewItemMembersWithLicenseErrorsItemMicrosoftGraphUserUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation a list of group members with license errors from this group-based license assignment. Read-only.
 func (m *ItemMembersWithLicenseErrorsDirectoryObjectItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMembersWithLicenseErrorsDirectoryObjectItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -105,8 +112,4 @@ func (m *ItemMembersWithLicenseErrorsDirectoryObjectItemRequestBuilder) ToGetReq
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// User casts the previous resource to user.
-func (m *ItemMembersWithLicenseErrorsDirectoryObjectItemRequestBuilder) User()(*ItemMembersWithLicenseErrorsItemUserRequestBuilder) {
-    return NewItemMembersWithLicenseErrorsItemUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

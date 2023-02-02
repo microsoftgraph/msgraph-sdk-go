@@ -15,8 +15,8 @@ func NewAnonymousGuestConversationMember()(*AnonymousGuestConversationMember) {
     m := &AnonymousGuestConversationMember{
         ConversationMember: *NewConversationMember(),
     }
-    odataTypeValue := "#microsoft.graph.anonymousGuestConversationMember";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.anonymousGuestConversationMember"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAnonymousGuestConversationMemberFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

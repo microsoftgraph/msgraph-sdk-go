@@ -47,7 +47,7 @@ type ItemListsItemContentTypesItemColumnLinksColumnLinkItemRequestBuilderPatchRe
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemListsItemContentTypesItemColumnLinksColumnLinkItemRequestBuilderInternal instantiates a new ColumnLinkItemRequestBuilder and sets the default values.
-func NewItemListsItemContentTypesItemColumnLinksColumnLinkItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListsItemContentTypesItemColumnLinksColumnLinkItemRequestBuilder) {
+func NewItemListsItemContentTypesItemColumnLinksColumnLinkItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, columnLinkId *string)(*ItemListsItemContentTypesItemColumnLinksColumnLinkItemRequestBuilder) {
     m := &ItemListsItemContentTypesItemColumnLinksColumnLinkItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/contentTypes/{contentType%2Did}/columnLinks/{columnLink%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemListsItemContentTypesItemColumnLinksColumnLinkItemRequestBuilderInte
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if columnLinkId != nil {
+        urlTplParams["columnLink%2Did"] = *columnLinkId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemListsItemContentTypesItemColumnLinksColumnLinkItemRequestBuilder instantiates a new ColumnLinkItemRequestBuilder and sets the default values.
 func NewItemListsItemContentTypesItemColumnLinksColumnLinkItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListsItemContentTypesItemColumnLinksColumnLinkItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemListsItemContentTypesItemColumnLinksColumnLinkItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemListsItemContentTypesItemColumnLinksColumnLinkItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property columnLinks for sites
 func (m *ItemListsItemContentTypesItemColumnLinksColumnLinkItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemListsItemContentTypesItemColumnLinksColumnLinkItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemListsItemContentTypesItemColumnLinksColumnLinkItemRequestBuilder) T
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

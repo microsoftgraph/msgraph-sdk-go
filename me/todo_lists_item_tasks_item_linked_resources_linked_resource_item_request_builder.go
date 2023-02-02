@@ -47,7 +47,7 @@ type TodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilderPatchR
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilderInternal instantiates a new LinkedResourceItemRequestBuilder and sets the default values.
-func NewTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilder) {
+func NewTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, linkedResourceId *string)(*TodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilder) {
     m := &TodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/todo/lists/{todoTaskList%2Did}/tasks/{todoTask%2Did}/linkedResources/{linkedResource%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilderInt
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if linkedResourceId != nil {
+        urlTplParams["linkedResource%2Did"] = *linkedResourceId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilder instantiates a new LinkedResourceItemRequestBuilder and sets the default values.
 func NewTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property linkedResources for me
 func (m *TodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *TodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilder) 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

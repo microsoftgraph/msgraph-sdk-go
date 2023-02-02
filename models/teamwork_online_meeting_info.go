@@ -21,7 +21,7 @@ type TeamworkOnlineMeetingInfo struct {
 func NewTeamworkOnlineMeetingInfo()(*TeamworkOnlineMeetingInfo) {
     m := &TeamworkOnlineMeetingInfo{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTeamworkOnlineMeetingInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

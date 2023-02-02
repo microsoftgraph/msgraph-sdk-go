@@ -44,13 +44,9 @@ type ItemEventsEventItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Accept provides operations to call the accept method.
-func (m *ItemEventsEventItemRequestBuilder) Accept()(*ItemEventsItemAcceptRequestBuilder) {
-    return NewItemEventsItemAcceptRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Attachments provides operations to manage the attachments property of the microsoft.graph.event entity.
 func (m *ItemEventsEventItemRequestBuilder) Attachments()(*ItemEventsItemAttachmentsRequestBuilder) {
-    return NewItemEventsItemAttachmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemEventsItemAttachmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AttachmentsById provides operations to manage the attachments property of the microsoft.graph.event entity.
 func (m *ItemEventsEventItemRequestBuilder) AttachmentsById(id string)(*ItemEventsItemAttachmentsAttachmentItemRequestBuilder) {
@@ -58,21 +54,15 @@ func (m *ItemEventsEventItemRequestBuilder) AttachmentsById(id string)(*ItemEven
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["attachment%2Did"] = id
-    }
-    return NewItemEventsItemAttachmentsAttachmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemEventsItemAttachmentsAttachmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Calendar provides operations to manage the calendar property of the microsoft.graph.event entity.
 func (m *ItemEventsEventItemRequestBuilder) Calendar()(*ItemEventsItemCalendarRequestBuilder) {
-    return NewItemEventsItemCalendarRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Cancel provides operations to call the cancel method.
-func (m *ItemEventsEventItemRequestBuilder) Cancel()(*ItemEventsItemCancelRequestBuilder) {
-    return NewItemEventsItemCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemEventsItemCalendarRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewItemEventsEventItemRequestBuilderInternal instantiates a new EventItemRequestBuilder and sets the default values.
-func NewItemEventsEventItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemEventsEventItemRequestBuilder) {
+func NewItemEventsEventItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, eventId *string)(*ItemEventsEventItemRequestBuilder) {
     m := &ItemEventsEventItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groups/{group%2Did}/events/{event%2Did}{?%24select}";
@@ -80,19 +70,18 @@ func NewItemEventsEventItemRequestBuilderInternal(pathParameters map[string]stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if eventId != nil {
+        urlTplParams["event%2Did"] = *eventId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemEventsEventItemRequestBuilder instantiates a new EventItemRequestBuilder and sets the default values.
 func NewItemEventsEventItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemEventsEventItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemEventsEventItemRequestBuilderInternal(urlParams, requestAdapter)
-}
-// Decline provides operations to call the decline method.
-func (m *ItemEventsEventItemRequestBuilder) Decline()(*ItemEventsItemDeclineRequestBuilder) {
-    return NewItemEventsItemDeclineRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemEventsEventItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property events for groups
 func (m *ItemEventsEventItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemEventsEventItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -110,13 +99,9 @@ func (m *ItemEventsEventItemRequestBuilder) Delete(ctx context.Context, requestC
     }
     return nil
 }
-// DismissReminder provides operations to call the dismissReminder method.
-func (m *ItemEventsEventItemRequestBuilder) DismissReminder()(*ItemEventsItemDismissReminderRequestBuilder) {
-    return NewItemEventsItemDismissReminderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Extensions provides operations to manage the extensions property of the microsoft.graph.event entity.
 func (m *ItemEventsEventItemRequestBuilder) Extensions()(*ItemEventsItemExtensionsRequestBuilder) {
-    return NewItemEventsItemExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemEventsItemExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ExtensionsById provides operations to manage the extensions property of the microsoft.graph.event entity.
 func (m *ItemEventsEventItemRequestBuilder) ExtensionsById(id string)(*ItemEventsItemExtensionsExtensionItemRequestBuilder) {
@@ -124,14 +109,8 @@ func (m *ItemEventsEventItemRequestBuilder) ExtensionsById(id string)(*ItemEvent
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["extension%2Did"] = id
-    }
-    return NewItemEventsItemExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// Forward provides operations to call the forward method.
-func (m *ItemEventsEventItemRequestBuilder) Forward()(*ItemEventsItemForwardRequestBuilder) {
-    return NewItemEventsItemForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    idPtr := &id
+    return NewItemEventsItemExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Get the group's calendar events.
 func (m *ItemEventsEventItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemEventsEventItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Eventable, error) {
@@ -154,7 +133,7 @@ func (m *ItemEventsEventItemRequestBuilder) Get(ctx context.Context, requestConf
 }
 // Instances provides operations to manage the instances property of the microsoft.graph.event entity.
 func (m *ItemEventsEventItemRequestBuilder) Instances()(*ItemEventsItemInstancesRequestBuilder) {
-    return NewItemEventsItemInstancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemEventsItemInstancesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // InstancesById provides operations to manage the instances property of the microsoft.graph.event entity.
 func (m *ItemEventsEventItemRequestBuilder) InstancesById(id string)(*ItemEventsItemInstancesEventItemRequestBuilder) {
@@ -162,14 +141,40 @@ func (m *ItemEventsEventItemRequestBuilder) InstancesById(id string)(*ItemEvents
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["event%2Did1"] = id
-    }
-    return NewItemEventsItemInstancesEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemEventsItemInstancesEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
+}
+// MicrosoftGraphAccept provides operations to call the accept method.
+func (m *ItemEventsEventItemRequestBuilder) MicrosoftGraphAccept()(*ItemEventsItemMicrosoftGraphAcceptAcceptRequestBuilder) {
+    return NewItemEventsItemMicrosoftGraphAcceptAcceptRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphCancel provides operations to call the cancel method.
+func (m *ItemEventsEventItemRequestBuilder) MicrosoftGraphCancel()(*ItemEventsItemMicrosoftGraphCancelCancelRequestBuilder) {
+    return NewItemEventsItemMicrosoftGraphCancelCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphDecline provides operations to call the decline method.
+func (m *ItemEventsEventItemRequestBuilder) MicrosoftGraphDecline()(*ItemEventsItemMicrosoftGraphDeclineDeclineRequestBuilder) {
+    return NewItemEventsItemMicrosoftGraphDeclineDeclineRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphDismissReminder provides operations to call the dismissReminder method.
+func (m *ItemEventsEventItemRequestBuilder) MicrosoftGraphDismissReminder()(*ItemEventsItemMicrosoftGraphDismissReminderDismissReminderRequestBuilder) {
+    return NewItemEventsItemMicrosoftGraphDismissReminderDismissReminderRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphForward provides operations to call the forward method.
+func (m *ItemEventsEventItemRequestBuilder) MicrosoftGraphForward()(*ItemEventsItemMicrosoftGraphForwardForwardRequestBuilder) {
+    return NewItemEventsItemMicrosoftGraphForwardForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphSnoozeReminder provides operations to call the snoozeReminder method.
+func (m *ItemEventsEventItemRequestBuilder) MicrosoftGraphSnoozeReminder()(*ItemEventsItemMicrosoftGraphSnoozeReminderSnoozeReminderRequestBuilder) {
+    return NewItemEventsItemMicrosoftGraphSnoozeReminderSnoozeReminderRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphTentativelyAccept provides operations to call the tentativelyAccept method.
+func (m *ItemEventsEventItemRequestBuilder) MicrosoftGraphTentativelyAccept()(*ItemEventsItemMicrosoftGraphTentativelyAcceptTentativelyAcceptRequestBuilder) {
+    return NewItemEventsItemMicrosoftGraphTentativelyAcceptTentativelyAcceptRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.event entity.
 func (m *ItemEventsEventItemRequestBuilder) MultiValueExtendedProperties()(*ItemEventsItemMultiValueExtendedPropertiesRequestBuilder) {
-    return NewItemEventsItemMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemEventsItemMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MultiValueExtendedPropertiesById provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.event entity.
 func (m *ItemEventsEventItemRequestBuilder) MultiValueExtendedPropertiesById(id string)(*ItemEventsItemMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilder) {
@@ -177,10 +182,8 @@ func (m *ItemEventsEventItemRequestBuilder) MultiValueExtendedPropertiesById(id 
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["multiValueLegacyExtendedProperty%2Did"] = id
-    }
-    return NewItemEventsItemMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemEventsItemMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Patch update the navigation property events in groups
 func (m *ItemEventsEventItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Eventable, requestConfiguration *ItemEventsEventItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Eventable, error) {
@@ -203,7 +206,7 @@ func (m *ItemEventsEventItemRequestBuilder) Patch(ctx context.Context, body iadc
 }
 // SingleValueExtendedProperties provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.event entity.
 func (m *ItemEventsEventItemRequestBuilder) SingleValueExtendedProperties()(*ItemEventsItemSingleValueExtendedPropertiesRequestBuilder) {
-    return NewItemEventsItemSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemEventsItemSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SingleValueExtendedPropertiesById provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.event entity.
 func (m *ItemEventsEventItemRequestBuilder) SingleValueExtendedPropertiesById(id string)(*ItemEventsItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilder) {
@@ -211,18 +214,8 @@ func (m *ItemEventsEventItemRequestBuilder) SingleValueExtendedPropertiesById(id
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["singleValueLegacyExtendedProperty%2Did"] = id
-    }
-    return NewItemEventsItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// SnoozeReminder provides operations to call the snoozeReminder method.
-func (m *ItemEventsEventItemRequestBuilder) SnoozeReminder()(*ItemEventsItemSnoozeReminderRequestBuilder) {
-    return NewItemEventsItemSnoozeReminderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// TentativelyAccept provides operations to call the tentativelyAccept method.
-func (m *ItemEventsEventItemRequestBuilder) TentativelyAccept()(*ItemEventsItemTentativelyAcceptRequestBuilder) {
-    return NewItemEventsItemTentativelyAcceptRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    idPtr := &id
+    return NewItemEventsItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToDeleteRequestInformation delete navigation property events for groups
 func (m *ItemEventsEventItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemEventsEventItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -259,7 +252,10 @@ func (m *ItemEventsEventItemRequestBuilder) ToPatchRequestInformation(ctx contex
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

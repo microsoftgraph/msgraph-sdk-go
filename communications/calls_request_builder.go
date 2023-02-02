@@ -60,8 +60,8 @@ func NewCallsRequestBuilderInternal(pathParameters map[string]string, requestAda
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCallsRequestBuilder instantiates a new CallsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewCallsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
 }
 // Count provides operations to count the resources in the collection.
 func (m *CallsRequestBuilder) Count()(*CallsCountRequestBuilder) {
-    return NewCallsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCallsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get calls from communications
 func (m *CallsRequestBuilder) Get(ctx context.Context, requestConfiguration *CallsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CallCollectionResponseable, error) {
@@ -93,9 +93,9 @@ func (m *CallsRequestBuilder) Get(ctx context.Context, requestConfiguration *Cal
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CallCollectionResponseable), nil
 }
-// LogTeleconferenceDeviceQuality provides operations to call the logTeleconferenceDeviceQuality method.
-func (m *CallsRequestBuilder) LogTeleconferenceDeviceQuality()(*CallsLogTeleconferenceDeviceQualityRequestBuilder) {
-    return NewCallsLogTeleconferenceDeviceQualityRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphLogTeleconferenceDeviceQuality provides operations to call the logTeleconferenceDeviceQuality method.
+func (m *CallsRequestBuilder) MicrosoftGraphLogTeleconferenceDeviceQuality()(*CallsMicrosoftGraphLogTeleconferenceDeviceQualityLogTeleconferenceDeviceQualityRequestBuilder) {
+    return NewCallsMicrosoftGraphLogTeleconferenceDeviceQualityLogTeleconferenceDeviceQualityRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting. You will need to register the calling bot and go through the list of permissions needed as mentioned below.
 // [Find more info here]
@@ -142,7 +142,10 @@ func (m *CallsRequestBuilder) ToPostRequestInformation(ctx context.Context, body
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

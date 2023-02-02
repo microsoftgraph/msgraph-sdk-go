@@ -48,10 +48,10 @@ type ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilderPat
 }
 // Chat provides operations to manage the chat property of the microsoft.graph.userScopeTeamsAppInstallation entity.
 func (m *ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilder) Chat()(*ItemTeamworkInstalledAppsItemChatRequestBuilder) {
-    return NewItemTeamworkInstalledAppsItemChatRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTeamworkInstalledAppsItemChatRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilderInternal instantiates a new UserScopeTeamsAppInstallationItemRequestBuilder and sets the default values.
-func NewItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilder) {
+func NewItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, userScopeTeamsAppInstallationId *string)(*ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilder) {
     m := &ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/teamwork/installedApps/{userScopeTeamsAppInstallation%2Did}{?%24select,%24expand}";
@@ -59,15 +59,18 @@ func NewItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilder
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if userScopeTeamsAppInstallationId != nil {
+        urlTplParams["userScopeTeamsAppInstallation%2Did"] = *userScopeTeamsAppInstallationId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilder instantiates a new UserScopeTeamsAppInstallationItemRequestBuilder and sets the default values.
 func NewItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property installedApps for users
 func (m *ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -158,7 +161,10 @@ func (m *ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilde
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

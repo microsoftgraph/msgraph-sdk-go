@@ -60,8 +60,8 @@ func NewItemSitesItemListsItemItemsItemVersionsRequestBuilderInternal(pathParame
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSitesItemListsItemItemsItemVersionsRequestBuilder instantiates a new VersionsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewItemSitesItemListsItemItemsItemVersionsRequestBuilder(rawUrl string, req
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemSitesItemListsItemItemsItemVersionsRequestBuilder) Count()(*ItemSitesItemListsItemItemsItemVersionsCountRequestBuilder) {
-    return NewItemSitesItemListsItemItemsItemVersionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesItemListsItemItemsItemVersionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get sharePoint can be configured to retain the history for list items. Previous versions may be retained for a finite period of time depending on admin settings which may be unique per user or location.
 // [Find more info here]
@@ -138,7 +138,10 @@ func (m *ItemSitesItemListsItemItemsItemVersionsRequestBuilder) ToPostRequestInf
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

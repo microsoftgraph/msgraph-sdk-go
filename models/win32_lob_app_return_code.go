@@ -19,7 +19,7 @@ type Win32LobAppReturnCode struct {
 func NewWin32LobAppReturnCode()(*Win32LobAppReturnCode) {
     m := &Win32LobAppReturnCode{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWin32LobAppReturnCodeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

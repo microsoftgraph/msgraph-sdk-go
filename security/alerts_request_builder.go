@@ -60,8 +60,8 @@ func NewAlertsRequestBuilderInternal(pathParameters map[string]string, requestAd
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAlertsRequestBuilder instantiates a new AlertsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewAlertsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
 }
 // Count provides operations to count the resources in the collection.
 func (m *AlertsRequestBuilder) Count()(*AlertsCountRequestBuilder) {
-    return NewAlertsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAlertsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of alert objects.
 // [Find more info here]
@@ -138,7 +138,10 @@ func (m *AlertsRequestBuilder) ToPostRequestInformation(ctx context.Context, bod
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

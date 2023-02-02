@@ -29,7 +29,7 @@ type DeviceDetail struct {
 func NewDeviceDetail()(*DeviceDetail) {
     m := &DeviceDetail{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeviceDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

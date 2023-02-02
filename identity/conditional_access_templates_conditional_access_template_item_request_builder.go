@@ -33,7 +33,7 @@ type ConditionalAccessTemplatesConditionalAccessTemplateItemRequestBuilderGetReq
     QueryParameters *ConditionalAccessTemplatesConditionalAccessTemplateItemRequestBuilderGetQueryParameters
 }
 // NewConditionalAccessTemplatesConditionalAccessTemplateItemRequestBuilderInternal instantiates a new ConditionalAccessTemplateItemRequestBuilder and sets the default values.
-func NewConditionalAccessTemplatesConditionalAccessTemplateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConditionalAccessTemplatesConditionalAccessTemplateItemRequestBuilder) {
+func NewConditionalAccessTemplatesConditionalAccessTemplateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, conditionalAccessTemplateId *string)(*ConditionalAccessTemplatesConditionalAccessTemplateItemRequestBuilder) {
     m := &ConditionalAccessTemplatesConditionalAccessTemplateItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/identity/conditionalAccess/templates/{conditionalAccessTemplate%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewConditionalAccessTemplatesConditionalAccessTemplateItemRequestBuilderInt
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if conditionalAccessTemplateId != nil {
+        urlTplParams["conditionalAccessTemplate%2Did"] = *conditionalAccessTemplateId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewConditionalAccessTemplatesConditionalAccessTemplateItemRequestBuilder instantiates a new ConditionalAccessTemplateItemRequestBuilder and sets the default values.
 func NewConditionalAccessTemplatesConditionalAccessTemplateItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConditionalAccessTemplatesConditionalAccessTemplateItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewConditionalAccessTemplatesConditionalAccessTemplateItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewConditionalAccessTemplatesConditionalAccessTemplateItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get read-only. Nullable. Returns a collection of the specified Conditional Access templates.
 func (m *ConditionalAccessTemplatesConditionalAccessTemplateItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConditionalAccessTemplatesConditionalAccessTemplateItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConditionalAccessTemplateable, error) {

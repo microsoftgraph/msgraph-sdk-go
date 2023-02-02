@@ -55,8 +55,8 @@ func NewServiceAnnouncementRequestBuilderInternal(pathParameters map[string]stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewServiceAnnouncementRequestBuilder instantiates a new ServiceAnnouncementRequestBuilder and sets the default values.
@@ -102,7 +102,7 @@ func (m *ServiceAnnouncementRequestBuilder) Get(ctx context.Context, requestConf
 }
 // HealthOverviews provides operations to manage the healthOverviews property of the microsoft.graph.serviceAnnouncement entity.
 func (m *ServiceAnnouncementRequestBuilder) HealthOverviews()(*ServiceAnnouncementHealthOverviewsRequestBuilder) {
-    return NewServiceAnnouncementHealthOverviewsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewServiceAnnouncementHealthOverviewsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // HealthOverviewsById provides operations to manage the healthOverviews property of the microsoft.graph.serviceAnnouncement entity.
 func (m *ServiceAnnouncementRequestBuilder) HealthOverviewsById(id string)(*ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilder) {
@@ -110,14 +110,12 @@ func (m *ServiceAnnouncementRequestBuilder) HealthOverviewsById(id string)(*Serv
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["serviceHealth%2Did"] = id
-    }
-    return NewServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Issues provides operations to manage the issues property of the microsoft.graph.serviceAnnouncement entity.
 func (m *ServiceAnnouncementRequestBuilder) Issues()(*ServiceAnnouncementIssuesRequestBuilder) {
-    return NewServiceAnnouncementIssuesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewServiceAnnouncementIssuesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // IssuesById provides operations to manage the issues property of the microsoft.graph.serviceAnnouncement entity.
 func (m *ServiceAnnouncementRequestBuilder) IssuesById(id string)(*ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilder) {
@@ -125,14 +123,12 @@ func (m *ServiceAnnouncementRequestBuilder) IssuesById(id string)(*ServiceAnnoun
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["serviceHealthIssue%2Did"] = id
-    }
-    return NewServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Messages provides operations to manage the messages property of the microsoft.graph.serviceAnnouncement entity.
 func (m *ServiceAnnouncementRequestBuilder) Messages()(*ServiceAnnouncementMessagesRequestBuilder) {
-    return NewServiceAnnouncementMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewServiceAnnouncementMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MessagesById provides operations to manage the messages property of the microsoft.graph.serviceAnnouncement entity.
 func (m *ServiceAnnouncementRequestBuilder) MessagesById(id string)(*ServiceAnnouncementMessagesServiceUpdateMessageItemRequestBuilder) {
@@ -140,10 +136,8 @@ func (m *ServiceAnnouncementRequestBuilder) MessagesById(id string)(*ServiceAnno
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["serviceUpdateMessage%2Did"] = id
-    }
-    return NewServiceAnnouncementMessagesServiceUpdateMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewServiceAnnouncementMessagesServiceUpdateMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Patch update the navigation property serviceAnnouncement in admin
 func (m *ServiceAnnouncementRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceAnnouncementable, requestConfiguration *ServiceAnnouncementRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceAnnouncementable, error) {
@@ -199,7 +193,10 @@ func (m *ServiceAnnouncementRequestBuilder) ToPatchRequestInformation(ctx contex
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

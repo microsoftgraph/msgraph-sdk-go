@@ -19,7 +19,7 @@ type OperationError struct {
 func NewOperationError()(*OperationError) {
     m := &OperationError{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateOperationErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

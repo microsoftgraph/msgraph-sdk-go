@@ -47,7 +47,7 @@ type ItemSitesItemPermissionsPermissionItemRequestBuilderPatchRequestConfigurati
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemSitesItemPermissionsPermissionItemRequestBuilderInternal instantiates a new PermissionItemRequestBuilder and sets the default values.
-func NewItemSitesItemPermissionsPermissionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemPermissionsPermissionItemRequestBuilder) {
+func NewItemSitesItemPermissionsPermissionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, permissionId *string)(*ItemSitesItemPermissionsPermissionItemRequestBuilder) {
     m := &ItemSitesItemPermissionsPermissionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/permissions/{permission%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemSitesItemPermissionsPermissionItemRequestBuilderInternal(pathParamet
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if permissionId != nil {
+        urlTplParams["permission%2Did"] = *permissionId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSitesItemPermissionsPermissionItemRequestBuilder instantiates a new PermissionItemRequestBuilder and sets the default values.
 func NewItemSitesItemPermissionsPermissionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemPermissionsPermissionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemSitesItemPermissionsPermissionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemSitesItemPermissionsPermissionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property permissions for groups
 func (m *ItemSitesItemPermissionsPermissionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSitesItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -100,9 +103,9 @@ func (m *ItemSitesItemPermissionsPermissionItemRequestBuilder) Get(ctx context.C
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable), nil
 }
-// Grant provides operations to call the grant method.
-func (m *ItemSitesItemPermissionsPermissionItemRequestBuilder) Grant()(*ItemSitesItemPermissionsItemGrantRequestBuilder) {
-    return NewItemSitesItemPermissionsItemGrantRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGrant provides operations to call the grant method.
+func (m *ItemSitesItemPermissionsPermissionItemRequestBuilder) MicrosoftGraphGrant()(*ItemSitesItemPermissionsItemMicrosoftGraphGrantGrantRequestBuilder) {
+    return NewItemSitesItemPermissionsItemMicrosoftGraphGrantGrantRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property permissions in groups
 func (m *ItemSitesItemPermissionsPermissionItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable, requestConfiguration *ItemSitesItemPermissionsPermissionItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable, error) {
@@ -158,7 +161,10 @@ func (m *ItemSitesItemPermissionsPermissionItemRequestBuilder) ToPatchRequestInf
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -19,7 +19,7 @@ type AccessReviewHistoryScheduleSettings struct {
 func NewAccessReviewHistoryScheduleSettings()(*AccessReviewHistoryScheduleSettings) {
     m := &AccessReviewHistoryScheduleSettings{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAccessReviewHistoryScheduleSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

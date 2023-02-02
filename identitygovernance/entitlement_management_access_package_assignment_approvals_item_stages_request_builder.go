@@ -60,8 +60,8 @@ func NewEntitlementManagementAccessPackageAssignmentApprovalsItemStagesRequestBu
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEntitlementManagementAccessPackageAssignmentApprovalsItemStagesRequestBuilder instantiates a new StagesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewEntitlementManagementAccessPackageAssignmentApprovalsItemStagesRequestBu
 }
 // Count provides operations to count the resources in the collection.
 func (m *EntitlementManagementAccessPackageAssignmentApprovalsItemStagesRequestBuilder) Count()(*EntitlementManagementAccessPackageAssignmentApprovalsItemStagesCountRequestBuilder) {
-    return NewEntitlementManagementAccessPackageAssignmentApprovalsItemStagesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementAccessPackageAssignmentApprovalsItemStagesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get in Azure AD entitlement management, list the approvalStage objects associated with an approval object. This call can be made by an approver, providing the identifier of the access package assignment request.
 // [Find more info here]
@@ -138,7 +138,10 @@ func (m *EntitlementManagementAccessPackageAssignmentApprovalsItemStagesRequestB
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

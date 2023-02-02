@@ -37,7 +37,7 @@ type WorkbookWorksheetProtectionOptions struct {
 func NewWorkbookWorksheetProtectionOptions()(*WorkbookWorksheetProtectionOptions) {
     m := &WorkbookWorksheetProtectionOptions{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWorkbookWorksheetProtectionOptionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

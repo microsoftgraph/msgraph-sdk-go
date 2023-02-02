@@ -41,7 +41,7 @@ type AuthenticationMethodsPolicyRequestBuilderPatchRequestConfiguration struct {
 }
 // AuthenticationMethodConfigurations provides operations to manage the authenticationMethodConfigurations property of the microsoft.graph.authenticationMethodsPolicy entity.
 func (m *AuthenticationMethodsPolicyRequestBuilder) AuthenticationMethodConfigurations()(*AuthenticationMethodConfigurationsRequestBuilder) {
-    return NewAuthenticationMethodConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAuthenticationMethodConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AuthenticationMethodConfigurationsById provides operations to manage the authenticationMethodConfigurations property of the microsoft.graph.authenticationMethodsPolicy entity.
 func (m *AuthenticationMethodsPolicyRequestBuilder) AuthenticationMethodConfigurationsById(id string)(*AuthenticationMethodConfigurationsAuthenticationMethodConfigurationItemRequestBuilder) {
@@ -49,10 +49,8 @@ func (m *AuthenticationMethodsPolicyRequestBuilder) AuthenticationMethodConfigur
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["authenticationMethodConfiguration%2Did"] = id
-    }
-    return NewAuthenticationMethodConfigurationsAuthenticationMethodConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewAuthenticationMethodConfigurationsAuthenticationMethodConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // NewAuthenticationMethodsPolicyRequestBuilderInternal instantiates a new AuthenticationMethodsPolicyRequestBuilder and sets the default values.
 func NewAuthenticationMethodsPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuthenticationMethodsPolicyRequestBuilder) {
@@ -63,8 +61,8 @@ func NewAuthenticationMethodsPolicyRequestBuilderInternal(pathParameters map[str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAuthenticationMethodsPolicyRequestBuilder instantiates a new AuthenticationMethodsPolicyRequestBuilder and sets the default values.
@@ -134,7 +132,10 @@ func (m *AuthenticationMethodsPolicyRequestBuilder) ToPatchRequestInformation(ct
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -19,7 +19,7 @@ type Bundle struct {
 func NewBundle()(*Bundle) {
     m := &Bundle{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateBundleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

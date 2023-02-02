@@ -13,8 +13,8 @@ func NewEdiscoveryReviewSetQuery()(*EdiscoveryReviewSetQuery) {
     m := &EdiscoveryReviewSetQuery{
         Search: *NewSearch(),
     }
-    odataTypeValue := "#microsoft.graph.security.ediscoveryReviewSetQuery";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.security.ediscoveryReviewSetQuery"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateEdiscoveryReviewSetQueryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

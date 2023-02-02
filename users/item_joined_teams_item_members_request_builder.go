@@ -51,10 +51,6 @@ type ItemJoinedTeamsItemMembersRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Add provides operations to call the add method.
-func (m *ItemJoinedTeamsItemMembersRequestBuilder) Add()(*ItemJoinedTeamsItemMembersAddRequestBuilder) {
-    return NewItemJoinedTeamsItemMembersAddRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewItemJoinedTeamsItemMembersRequestBuilderInternal instantiates a new MembersRequestBuilder and sets the default values.
 func NewItemJoinedTeamsItemMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemJoinedTeamsItemMembersRequestBuilder) {
     m := &ItemJoinedTeamsItemMembersRequestBuilder{
@@ -64,8 +60,8 @@ func NewItemJoinedTeamsItemMembersRequestBuilderInternal(pathParameters map[stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemJoinedTeamsItemMembersRequestBuilder instantiates a new MembersRequestBuilder and sets the default values.
@@ -76,7 +72,7 @@ func NewItemJoinedTeamsItemMembersRequestBuilder(rawUrl string, requestAdapter i
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemJoinedTeamsItemMembersRequestBuilder) Count()(*ItemJoinedTeamsItemMembersCountRequestBuilder) {
-    return NewItemJoinedTeamsItemMembersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemJoinedTeamsItemMembersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the conversationMember collection of a team.
 // [Find more info here]
@@ -99,6 +95,10 @@ func (m *ItemJoinedTeamsItemMembersRequestBuilder) Get(ctx context.Context, requ
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberCollectionResponseable), nil
+}
+// MicrosoftGraphAdd provides operations to call the add method.
+func (m *ItemJoinedTeamsItemMembersRequestBuilder) MicrosoftGraphAdd()(*ItemJoinedTeamsItemMembersMicrosoftGraphAddAddRequestBuilder) {
+    return NewItemJoinedTeamsItemMembersMicrosoftGraphAddAddRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post add a new conversationMember to a team.
 // [Find more info here]
@@ -145,7 +145,10 @@ func (m *ItemJoinedTeamsItemMembersRequestBuilder) ToPostRequestInformation(ctx 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

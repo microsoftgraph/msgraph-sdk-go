@@ -19,7 +19,7 @@ type TimeSlot struct {
 func NewTimeSlot()(*TimeSlot) {
     m := &TimeSlot{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTimeSlotFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

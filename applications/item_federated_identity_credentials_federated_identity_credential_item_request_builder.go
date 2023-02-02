@@ -47,7 +47,7 @@ type ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuild
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilderInternal instantiates a new FederatedIdentityCredentialItemRequestBuilder and sets the default values.
-func NewItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilder) {
+func NewItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, federatedIdentityCredentialId *string)(*ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilder) {
     m := &ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/applications/{application%2Did}/federatedIdentityCredentials/{federatedIdentityCredential%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBu
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if federatedIdentityCredentialId != nil {
+        urlTplParams["federatedIdentityCredential%2Did"] = *federatedIdentityCredentialId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilder instantiates a new FederatedIdentityCredentialItemRequestBuilder and sets the default values.
 func NewItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property federatedIdentityCredentials for applications
 func (m *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestB
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

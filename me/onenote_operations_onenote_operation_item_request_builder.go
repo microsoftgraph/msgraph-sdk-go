@@ -47,7 +47,7 @@ type OnenoteOperationsOnenoteOperationItemRequestBuilderPatchRequestConfiguratio
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewOnenoteOperationsOnenoteOperationItemRequestBuilderInternal instantiates a new OnenoteOperationItemRequestBuilder and sets the default values.
-func NewOnenoteOperationsOnenoteOperationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OnenoteOperationsOnenoteOperationItemRequestBuilder) {
+func NewOnenoteOperationsOnenoteOperationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, onenoteOperationId *string)(*OnenoteOperationsOnenoteOperationItemRequestBuilder) {
     m := &OnenoteOperationsOnenoteOperationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/onenote/operations/{onenoteOperation%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewOnenoteOperationsOnenoteOperationItemRequestBuilderInternal(pathParamete
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if onenoteOperationId != nil {
+        urlTplParams["onenoteOperation%2Did"] = *onenoteOperationId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewOnenoteOperationsOnenoteOperationItemRequestBuilder instantiates a new OnenoteOperationItemRequestBuilder and sets the default values.
 func NewOnenoteOperationsOnenoteOperationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OnenoteOperationsOnenoteOperationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewOnenoteOperationsOnenoteOperationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewOnenoteOperationsOnenoteOperationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property operations for me
 func (m *OnenoteOperationsOnenoteOperationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *OnenoteOperationsOnenoteOperationItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *OnenoteOperationsOnenoteOperationItemRequestBuilder) ToPatchRequestInfo
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

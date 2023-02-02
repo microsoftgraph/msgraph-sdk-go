@@ -48,7 +48,7 @@ type TermsOfUseRequestBuilderPatchRequestConfiguration struct {
 }
 // AgreementAcceptances provides operations to manage the agreementAcceptances property of the microsoft.graph.termsOfUseContainer entity.
 func (m *TermsOfUseRequestBuilder) AgreementAcceptances()(*TermsOfUseAgreementAcceptancesRequestBuilder) {
-    return NewTermsOfUseAgreementAcceptancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTermsOfUseAgreementAcceptancesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AgreementAcceptancesById provides operations to manage the agreementAcceptances property of the microsoft.graph.termsOfUseContainer entity.
 func (m *TermsOfUseRequestBuilder) AgreementAcceptancesById(id string)(*TermsOfUseAgreementAcceptancesAgreementAcceptanceItemRequestBuilder) {
@@ -56,14 +56,12 @@ func (m *TermsOfUseRequestBuilder) AgreementAcceptancesById(id string)(*TermsOfU
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["agreementAcceptance%2Did"] = id
-    }
-    return NewTermsOfUseAgreementAcceptancesAgreementAcceptanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewTermsOfUseAgreementAcceptancesAgreementAcceptanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Agreements provides operations to manage the agreements property of the microsoft.graph.termsOfUseContainer entity.
 func (m *TermsOfUseRequestBuilder) Agreements()(*TermsOfUseAgreementsRequestBuilder) {
-    return NewTermsOfUseAgreementsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTermsOfUseAgreementsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AgreementsById provides operations to manage the agreements property of the microsoft.graph.termsOfUseContainer entity.
 func (m *TermsOfUseRequestBuilder) AgreementsById(id string)(*TermsOfUseAgreementsAgreementItemRequestBuilder) {
@@ -71,10 +69,8 @@ func (m *TermsOfUseRequestBuilder) AgreementsById(id string)(*TermsOfUseAgreemen
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["agreement%2Did"] = id
-    }
-    return NewTermsOfUseAgreementsAgreementItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewTermsOfUseAgreementsAgreementItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // NewTermsOfUseRequestBuilderInternal instantiates a new TermsOfUseRequestBuilder and sets the default values.
 func NewTermsOfUseRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TermsOfUseRequestBuilder) {
@@ -85,8 +81,8 @@ func NewTermsOfUseRequestBuilderInternal(pathParameters map[string]string, reque
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTermsOfUseRequestBuilder instantiates a new TermsOfUseRequestBuilder and sets the default values.
@@ -184,7 +180,10 @@ func (m *TermsOfUseRequestBuilder) ToPatchRequestInformation(ctx context.Context
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

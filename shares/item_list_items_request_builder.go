@@ -60,8 +60,8 @@ func NewItemListItemsRequestBuilderInternal(pathParameters map[string]string, re
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemListItemsRequestBuilder instantiates a new ItemsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewItemListItemsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemListItemsRequestBuilder) Count()(*ItemListItemsCountRequestBuilder) {
-    return NewItemListItemsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemListItemsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the collection of [items][item] in a [list][].
 // [Find more info here]
@@ -141,7 +141,10 @@ func (m *ItemListItemsRequestBuilder) ToPostRequestInformation(ctx context.Conte
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

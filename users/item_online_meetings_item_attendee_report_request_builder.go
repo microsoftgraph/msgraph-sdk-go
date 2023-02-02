@@ -38,8 +38,8 @@ func NewItemOnlineMeetingsItemAttendeeReportRequestBuilderInternal(pathParameter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemOnlineMeetingsItemAttendeeReportRequestBuilder instantiates a new AttendeeReportRequestBuilder and sets the default values.

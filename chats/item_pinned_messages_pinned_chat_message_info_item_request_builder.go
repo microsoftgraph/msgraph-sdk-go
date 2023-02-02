@@ -47,7 +47,7 @@ type ItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilderPatchRequestConfig
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilderInternal instantiates a new PinnedChatMessageInfoItemRequestBuilder and sets the default values.
-func NewItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilder) {
+func NewItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, pinnedChatMessageInfoId *string)(*ItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilder) {
     m := &ItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/chats/{chat%2Did}/pinnedMessages/{pinnedChatMessageInfo%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilderInternal(pathPa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if pinnedChatMessageInfoId != nil {
+        urlTplParams["pinnedChatMessageInfo%2Did"] = *pinnedChatMessageInfoId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilder instantiates a new PinnedChatMessageInfoItemRequestBuilder and sets the default values.
 func NewItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property pinnedMessages for chats
 func (m *ItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -102,7 +105,7 @@ func (m *ItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilder) Get(ctx cont
 }
 // Message provides operations to manage the message property of the microsoft.graph.pinnedChatMessageInfo entity.
 func (m *ItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilder) Message()(*ItemPinnedMessagesItemMessageRequestBuilder) {
-    return NewItemPinnedMessagesItemMessageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemPinnedMessagesItemMessageRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property pinnedMessages in chats
 func (m *ItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PinnedChatMessageInfoable, requestConfiguration *ItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PinnedChatMessageInfoable, error) {
@@ -158,7 +161,10 @@ func (m *ItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilder) ToPatchReque
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

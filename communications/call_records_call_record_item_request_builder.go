@@ -47,7 +47,7 @@ type CallRecordsCallRecordItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewCallRecordsCallRecordItemRequestBuilderInternal instantiates a new CallRecordItemRequestBuilder and sets the default values.
-func NewCallRecordsCallRecordItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallRecordsCallRecordItemRequestBuilder) {
+func NewCallRecordsCallRecordItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, callRecordId *string)(*CallRecordsCallRecordItemRequestBuilder) {
     m := &CallRecordsCallRecordItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/communications/callRecords/{callRecord%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewCallRecordsCallRecordItemRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if callRecordId != nil {
+        urlTplParams["callRecord%2Did"] = *callRecordId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCallRecordsCallRecordItemRequestBuilder instantiates a new CallRecordItemRequestBuilder and sets the default values.
 func NewCallRecordsCallRecordItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallRecordsCallRecordItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewCallRecordsCallRecordItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewCallRecordsCallRecordItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property callRecords for communications
 func (m *CallRecordsCallRecordItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CallRecordsCallRecordItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -121,7 +124,7 @@ func (m *CallRecordsCallRecordItemRequestBuilder) Patch(ctx context.Context, bod
 }
 // Sessions provides operations to manage the sessions property of the microsoft.graph.callRecords.callRecord entity.
 func (m *CallRecordsCallRecordItemRequestBuilder) Sessions()(*CallRecordsItemSessionsRequestBuilder) {
-    return NewCallRecordsItemSessionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCallRecordsItemSessionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SessionsById provides operations to manage the sessions property of the microsoft.graph.callRecords.callRecord entity.
 func (m *CallRecordsCallRecordItemRequestBuilder) SessionsById(id string)(*CallRecordsItemSessionsSessionItemRequestBuilder) {
@@ -129,10 +132,8 @@ func (m *CallRecordsCallRecordItemRequestBuilder) SessionsById(id string)(*CallR
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["session%2Did"] = id
-    }
-    return NewCallRecordsItemSessionsSessionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewCallRecordsItemSessionsSessionItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToDeleteRequestInformation delete navigation property callRecords for communications
 func (m *CallRecordsCallRecordItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CallRecordsCallRecordItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +170,10 @@ func (m *CallRecordsCallRecordItemRequestBuilder) ToPatchRequestInformation(ctx 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

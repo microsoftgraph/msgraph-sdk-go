@@ -29,7 +29,7 @@ type LicenseAssignmentState struct {
 func NewLicenseAssignmentState()(*LicenseAssignmentState) {
     m := &LicenseAssignmentState{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateLicenseAssignmentStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

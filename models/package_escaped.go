@@ -17,7 +17,7 @@ type Package_escaped struct {
 func NewPackage_escaped()(*Package_escaped) {
     m := &Package_escaped{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePackage_escapedFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

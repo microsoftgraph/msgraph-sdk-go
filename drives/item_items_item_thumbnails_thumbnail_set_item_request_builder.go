@@ -47,7 +47,7 @@ type ItemItemsItemThumbnailsThumbnailSetItemRequestBuilderPatchRequestConfigurat
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemItemsItemThumbnailsThumbnailSetItemRequestBuilderInternal instantiates a new ThumbnailSetItemRequestBuilder and sets the default values.
-func NewItemItemsItemThumbnailsThumbnailSetItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemThumbnailsThumbnailSetItemRequestBuilder) {
+func NewItemItemsItemThumbnailsThumbnailSetItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, thumbnailSetId *string)(*ItemItemsItemThumbnailsThumbnailSetItemRequestBuilder) {
     m := &ItemItemsItemThumbnailsThumbnailSetItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/thumbnails/{thumbnailSet%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemItemsItemThumbnailsThumbnailSetItemRequestBuilderInternal(pathParame
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if thumbnailSetId != nil {
+        urlTplParams["thumbnailSet%2Did"] = *thumbnailSetId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemItemsItemThumbnailsThumbnailSetItemRequestBuilder instantiates a new ThumbnailSetItemRequestBuilder and sets the default values.
 func NewItemItemsItemThumbnailsThumbnailSetItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemThumbnailsThumbnailSetItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemItemsItemThumbnailsThumbnailSetItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemItemsItemThumbnailsThumbnailSetItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property thumbnails for drives
 func (m *ItemItemsItemThumbnailsThumbnailSetItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemItemsItemThumbnailsThumbnailSetItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemItemsItemThumbnailsThumbnailSetItemRequestBuilder) ToPatchRequestIn
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

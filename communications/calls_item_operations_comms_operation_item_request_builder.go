@@ -47,7 +47,7 @@ type CallsItemOperationsCommsOperationItemRequestBuilderPatchRequestConfiguratio
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewCallsItemOperationsCommsOperationItemRequestBuilderInternal instantiates a new CommsOperationItemRequestBuilder and sets the default values.
-func NewCallsItemOperationsCommsOperationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallsItemOperationsCommsOperationItemRequestBuilder) {
+func NewCallsItemOperationsCommsOperationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, commsOperationId *string)(*CallsItemOperationsCommsOperationItemRequestBuilder) {
     m := &CallsItemOperationsCommsOperationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/communications/calls/{call%2Did}/operations/{commsOperation%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewCallsItemOperationsCommsOperationItemRequestBuilderInternal(pathParamete
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if commsOperationId != nil {
+        urlTplParams["commsOperation%2Did"] = *commsOperationId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCallsItemOperationsCommsOperationItemRequestBuilder instantiates a new CommsOperationItemRequestBuilder and sets the default values.
 func NewCallsItemOperationsCommsOperationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallsItemOperationsCommsOperationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewCallsItemOperationsCommsOperationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewCallsItemOperationsCommsOperationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property operations for communications
 func (m *CallsItemOperationsCommsOperationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CallsItemOperationsCommsOperationItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *CallsItemOperationsCommsOperationItemRequestBuilder) ToPatchRequestInfo
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

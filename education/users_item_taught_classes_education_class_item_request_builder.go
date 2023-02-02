@@ -33,7 +33,7 @@ type UsersItemTaughtClassesEducationClassItemRequestBuilderGetRequestConfigurati
     QueryParameters *UsersItemTaughtClassesEducationClassItemRequestBuilderGetQueryParameters
 }
 // NewUsersItemTaughtClassesEducationClassItemRequestBuilderInternal instantiates a new EducationClassItemRequestBuilder and sets the default values.
-func NewUsersItemTaughtClassesEducationClassItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UsersItemTaughtClassesEducationClassItemRequestBuilder) {
+func NewUsersItemTaughtClassesEducationClassItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, educationClassId *string)(*UsersItemTaughtClassesEducationClassItemRequestBuilder) {
     m := &UsersItemTaughtClassesEducationClassItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/education/users/{educationUser%2Did}/taughtClasses/{educationClass%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewUsersItemTaughtClassesEducationClassItemRequestBuilderInternal(pathParam
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if educationClassId != nil {
+        urlTplParams["educationClass%2Did"] = *educationClassId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewUsersItemTaughtClassesEducationClassItemRequestBuilder instantiates a new EducationClassItemRequestBuilder and sets the default values.
 func NewUsersItemTaughtClassesEducationClassItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UsersItemTaughtClassesEducationClassItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewUsersItemTaughtClassesEducationClassItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewUsersItemTaughtClassesEducationClassItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get classes for which the user is a teacher.
 func (m *UsersItemTaughtClassesEducationClassItemRequestBuilder) Get(ctx context.Context, requestConfiguration *UsersItemTaughtClassesEducationClassItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationClassable, error) {

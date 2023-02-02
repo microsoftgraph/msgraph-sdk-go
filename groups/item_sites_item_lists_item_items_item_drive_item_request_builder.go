@@ -41,8 +41,8 @@ func NewItemSitesItemListsItemItemsItemDriveItemRequestBuilderInternal(pathParam
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSitesItemListsItemItemsItemDriveItemRequestBuilder instantiates a new DriveItemRequestBuilder and sets the default values.
@@ -53,7 +53,7 @@ func NewItemSitesItemListsItemItemsItemDriveItemRequestBuilder(rawUrl string, re
 }
 // Content provides operations to manage the media for the group entity.
 func (m *ItemSitesItemListsItemItemsItemDriveItemRequestBuilder) Content()(*ItemSitesItemListsItemItemsItemDriveItemContentRequestBuilder) {
-    return NewItemSitesItemListsItemItemsItemDriveItemContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesItemListsItemItemsItemDriveItemContentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get for document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 func (m *ItemSitesItemListsItemItemsItemDriveItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemListsItemItemsItemDriveItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable, error) {

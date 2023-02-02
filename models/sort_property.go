@@ -19,7 +19,7 @@ type SortProperty struct {
 func NewSortProperty()(*SortProperty) {
     m := &SortProperty{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSortPropertyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

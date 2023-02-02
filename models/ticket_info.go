@@ -19,7 +19,7 @@ type TicketInfo struct {
 func NewTicketInfo()(*TicketInfo) {
     m := &TicketInfo{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTicketInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

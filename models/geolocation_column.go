@@ -15,7 +15,7 @@ type GeolocationColumn struct {
 func NewGeolocationColumn()(*GeolocationColumn) {
     m := &GeolocationColumn{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateGeolocationColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

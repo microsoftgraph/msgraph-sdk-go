@@ -30,7 +30,7 @@ type AppRole struct {
 func NewAppRole()(*AppRole) {
     m := &AppRole{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAppRoleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

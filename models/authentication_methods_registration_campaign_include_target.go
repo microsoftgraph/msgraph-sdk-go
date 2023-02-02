@@ -21,7 +21,7 @@ type AuthenticationMethodsRegistrationCampaignIncludeTarget struct {
 func NewAuthenticationMethodsRegistrationCampaignIncludeTarget()(*AuthenticationMethodsRegistrationCampaignIncludeTarget) {
     m := &AuthenticationMethodsRegistrationCampaignIncludeTarget{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAuthenticationMethodsRegistrationCampaignIncludeTargetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

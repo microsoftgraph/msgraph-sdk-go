@@ -26,7 +26,7 @@ type Certification struct {
 func NewCertification()(*Certification) {
     m := &Certification{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCertificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

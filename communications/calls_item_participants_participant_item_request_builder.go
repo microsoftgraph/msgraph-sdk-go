@@ -47,7 +47,7 @@ type CallsItemParticipantsParticipantItemRequestBuilderPatchRequestConfiguration
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewCallsItemParticipantsParticipantItemRequestBuilderInternal instantiates a new ParticipantItemRequestBuilder and sets the default values.
-func NewCallsItemParticipantsParticipantItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallsItemParticipantsParticipantItemRequestBuilder) {
+func NewCallsItemParticipantsParticipantItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, participantId *string)(*CallsItemParticipantsParticipantItemRequestBuilder) {
     m := &CallsItemParticipantsParticipantItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/communications/calls/{call%2Did}/participants/{participant%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewCallsItemParticipantsParticipantItemRequestBuilderInternal(pathParameter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if participantId != nil {
+        urlTplParams["participant%2Did"] = *participantId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCallsItemParticipantsParticipantItemRequestBuilder instantiates a new ParticipantItemRequestBuilder and sets the default values.
 func NewCallsItemParticipantsParticipantItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallsItemParticipantsParticipantItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewCallsItemParticipantsParticipantItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewCallsItemParticipantsParticipantItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property participants for communications
 func (m *CallsItemParticipantsParticipantItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CallsItemParticipantsParticipantItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -100,9 +103,17 @@ func (m *CallsItemParticipantsParticipantItemRequestBuilder) Get(ctx context.Con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Participantable), nil
 }
-// Mute provides operations to call the mute method.
-func (m *CallsItemParticipantsParticipantItemRequestBuilder) Mute()(*CallsItemParticipantsItemMuteRequestBuilder) {
-    return NewCallsItemParticipantsItemMuteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphMute provides operations to call the mute method.
+func (m *CallsItemParticipantsParticipantItemRequestBuilder) MicrosoftGraphMute()(*CallsItemParticipantsItemMicrosoftGraphMuteMuteRequestBuilder) {
+    return NewCallsItemParticipantsItemMicrosoftGraphMuteMuteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphStartHoldMusic provides operations to call the startHoldMusic method.
+func (m *CallsItemParticipantsParticipantItemRequestBuilder) MicrosoftGraphStartHoldMusic()(*CallsItemParticipantsItemMicrosoftGraphStartHoldMusicStartHoldMusicRequestBuilder) {
+    return NewCallsItemParticipantsItemMicrosoftGraphStartHoldMusicStartHoldMusicRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphStopHoldMusic provides operations to call the stopHoldMusic method.
+func (m *CallsItemParticipantsParticipantItemRequestBuilder) MicrosoftGraphStopHoldMusic()(*CallsItemParticipantsItemMicrosoftGraphStopHoldMusicStopHoldMusicRequestBuilder) {
+    return NewCallsItemParticipantsItemMicrosoftGraphStopHoldMusicStopHoldMusicRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property participants in communications
 func (m *CallsItemParticipantsParticipantItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Participantable, requestConfiguration *CallsItemParticipantsParticipantItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Participantable, error) {
@@ -122,14 +133,6 @@ func (m *CallsItemParticipantsParticipantItemRequestBuilder) Patch(ctx context.C
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Participantable), nil
-}
-// StartHoldMusic provides operations to call the startHoldMusic method.
-func (m *CallsItemParticipantsParticipantItemRequestBuilder) StartHoldMusic()(*CallsItemParticipantsItemStartHoldMusicRequestBuilder) {
-    return NewCallsItemParticipantsItemStartHoldMusicRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// StopHoldMusic provides operations to call the stopHoldMusic method.
-func (m *CallsItemParticipantsParticipantItemRequestBuilder) StopHoldMusic()(*CallsItemParticipantsItemStopHoldMusicRequestBuilder) {
-    return NewCallsItemParticipantsItemStopHoldMusicRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property participants for communications
 func (m *CallsItemParticipantsParticipantItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CallsItemParticipantsParticipantItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -166,7 +169,10 @@ func (m *CallsItemParticipantsParticipantItemRequestBuilder) ToPatchRequestInfor
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

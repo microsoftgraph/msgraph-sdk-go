@@ -19,7 +19,7 @@ type AuditActivityInitiator struct {
 func NewAuditActivityInitiator()(*AuditActivityInitiator) {
     m := &AuditActivityInitiator{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAuditActivityInitiatorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

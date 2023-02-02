@@ -53,8 +53,8 @@ func NewWindows10TeamGeneralConfiguration()(*Windows10TeamGeneralConfiguration) 
     m := &Windows10TeamGeneralConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.windows10TeamGeneralConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windows10TeamGeneralConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindows10TeamGeneralConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

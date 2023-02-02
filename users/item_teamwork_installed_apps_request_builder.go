@@ -60,8 +60,8 @@ func NewItemTeamworkInstalledAppsRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTeamworkInstalledAppsRequestBuilder instantiates a new InstalledAppsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewItemTeamworkInstalledAppsRequestBuilder(rawUrl string, requestAdapter i2
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemTeamworkInstalledAppsRequestBuilder) Count()(*ItemTeamworkInstalledAppsCountRequestBuilder) {
-    return NewItemTeamworkInstalledAppsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTeamworkInstalledAppsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve the list of apps installed in the personal scope of the specified user.
 // [Find more info here]
@@ -141,7 +141,10 @@ func (m *ItemTeamworkInstalledAppsRequestBuilder) ToPostRequestInformation(ctx c
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

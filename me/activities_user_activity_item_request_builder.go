@@ -47,7 +47,7 @@ type ActivitiesUserActivityItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewActivitiesUserActivityItemRequestBuilderInternal instantiates a new UserActivityItemRequestBuilder and sets the default values.
-func NewActivitiesUserActivityItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ActivitiesUserActivityItemRequestBuilder) {
+func NewActivitiesUserActivityItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, userActivityId *string)(*ActivitiesUserActivityItemRequestBuilder) {
     m := &ActivitiesUserActivityItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/activities/{userActivity%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewActivitiesUserActivityItemRequestBuilderInternal(pathParameters map[stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if userActivityId != nil {
+        urlTplParams["userActivity%2Did"] = *userActivityId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewActivitiesUserActivityItemRequestBuilder instantiates a new UserActivityItemRequestBuilder and sets the default values.
 func NewActivitiesUserActivityItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ActivitiesUserActivityItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewActivitiesUserActivityItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewActivitiesUserActivityItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property activities for me
 func (m *ActivitiesUserActivityItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ActivitiesUserActivityItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -102,7 +105,7 @@ func (m *ActivitiesUserActivityItemRequestBuilder) Get(ctx context.Context, requ
 }
 // HistoryItems provides operations to manage the historyItems property of the microsoft.graph.userActivity entity.
 func (m *ActivitiesUserActivityItemRequestBuilder) HistoryItems()(*ActivitiesItemHistoryItemsRequestBuilder) {
-    return NewActivitiesItemHistoryItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewActivitiesItemHistoryItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // HistoryItemsById provides operations to manage the historyItems property of the microsoft.graph.userActivity entity.
 func (m *ActivitiesUserActivityItemRequestBuilder) HistoryItemsById(id string)(*ActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilder) {
@@ -110,10 +113,8 @@ func (m *ActivitiesUserActivityItemRequestBuilder) HistoryItemsById(id string)(*
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["activityHistoryItem%2Did"] = id
-    }
-    return NewActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Patch update the navigation property activities in me
 func (m *ActivitiesUserActivityItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserActivityable, requestConfiguration *ActivitiesUserActivityItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserActivityable, error) {
@@ -169,7 +170,10 @@ func (m *ActivitiesUserActivityItemRequestBuilder) ToPatchRequestInformation(ctx
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

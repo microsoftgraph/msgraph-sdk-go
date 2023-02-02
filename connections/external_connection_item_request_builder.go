@@ -23,7 +23,7 @@ type ExternalConnectionItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ExternalConnectionItemRequestBuilderGetQueryParameters get entity from connections by key (id)
+// ExternalConnectionItemRequestBuilderGetQueryParameters get entity from connections by key
 type ExternalConnectionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -47,7 +47,7 @@ type ExternalConnectionItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewExternalConnectionItemRequestBuilderInternal instantiates a new ExternalConnectionItemRequestBuilder and sets the default values.
-func NewExternalConnectionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ExternalConnectionItemRequestBuilder) {
+func NewExternalConnectionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, externalConnectionId *string)(*ExternalConnectionItemRequestBuilder) {
     m := &ExternalConnectionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/connections/{externalConnection%2Did}{?%24select,%24expand}";
@@ -55,17 +55,20 @@ func NewExternalConnectionItemRequestBuilderInternal(pathParameters map[string]s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if externalConnectionId != nil {
+        urlTplParams["externalConnection%2Did"] = *externalConnectionId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewExternalConnectionItemRequestBuilder instantiates a new ExternalConnectionItemRequestBuilder and sets the default values.
 func NewExternalConnectionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ExternalConnectionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewExternalConnectionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewExternalConnectionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Delete delete entity from connections by key (id)
+// Delete delete entity from connections
 func (m *ExternalConnectionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ExternalConnectionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,7 +84,7 @@ func (m *ExternalConnectionItemRequestBuilder) Delete(ctx context.Context, reque
     }
     return nil
 }
-// Get get entity from connections by key (id)
+// Get get entity from connections by key
 func (m *ExternalConnectionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ExternalConnectionItemRequestBuilderGetRequestConfiguration)(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalConnectionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -102,7 +105,7 @@ func (m *ExternalConnectionItemRequestBuilder) Get(ctx context.Context, requestC
 }
 // Groups provides operations to manage the groups property of the microsoft.graph.externalConnectors.externalConnection entity.
 func (m *ExternalConnectionItemRequestBuilder) Groups()(*ItemGroupsRequestBuilder) {
-    return NewItemGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // GroupsById provides operations to manage the groups property of the microsoft.graph.externalConnectors.externalConnection entity.
 func (m *ExternalConnectionItemRequestBuilder) GroupsById(id string)(*ItemGroupsExternalGroupItemRequestBuilder) {
@@ -110,14 +113,12 @@ func (m *ExternalConnectionItemRequestBuilder) GroupsById(id string)(*ItemGroups
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["externalGroup%2Did"] = id
-    }
-    return NewItemGroupsExternalGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemGroupsExternalGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Items provides operations to manage the items property of the microsoft.graph.externalConnectors.externalConnection entity.
 func (m *ExternalConnectionItemRequestBuilder) Items()(*ItemItemsRequestBuilder) {
-    return NewItemItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ItemsById provides operations to manage the items property of the microsoft.graph.externalConnectors.externalConnection entity.
 func (m *ExternalConnectionItemRequestBuilder) ItemsById(id string)(*ItemItemsExternalItemItemRequestBuilder) {
@@ -125,14 +126,12 @@ func (m *ExternalConnectionItemRequestBuilder) ItemsById(id string)(*ItemItemsEx
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["externalItem%2Did"] = id
-    }
-    return NewItemItemsExternalItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemItemsExternalItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Operations provides operations to manage the operations property of the microsoft.graph.externalConnectors.externalConnection entity.
 func (m *ExternalConnectionItemRequestBuilder) Operations()(*ItemOperationsRequestBuilder) {
-    return NewItemOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // OperationsById provides operations to manage the operations property of the microsoft.graph.externalConnectors.externalConnection entity.
 func (m *ExternalConnectionItemRequestBuilder) OperationsById(id string)(*ItemOperationsConnectionOperationItemRequestBuilder) {
@@ -140,12 +139,10 @@ func (m *ExternalConnectionItemRequestBuilder) OperationsById(id string)(*ItemOp
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["connectionOperation%2Did"] = id
-    }
-    return NewItemOperationsConnectionOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemOperationsConnectionOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
-// Patch update entity in connections by key (id)
+// Patch update entity in connections
 func (m *ExternalConnectionItemRequestBuilder) Patch(ctx context.Context, body i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalConnectionable, requestConfiguration *ExternalConnectionItemRequestBuilderPatchRequestConfiguration)(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalConnectionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -166,9 +163,9 @@ func (m *ExternalConnectionItemRequestBuilder) Patch(ctx context.Context, body i
 }
 // Schema provides operations to manage the schema property of the microsoft.graph.externalConnectors.externalConnection entity.
 func (m *ExternalConnectionItemRequestBuilder) Schema()(*ItemSchemaRequestBuilder) {
-    return NewItemSchemaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSchemaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// ToDeleteRequestInformation delete entity from connections by key (id)
+// ToDeleteRequestInformation delete entity from connections
 func (m *ExternalConnectionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ExternalConnectionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -180,7 +177,7 @@ func (m *ExternalConnectionItemRequestBuilder) ToDeleteRequestInformation(ctx co
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get entity from connections by key (id)
+// ToGetRequestInformation get entity from connections by key
 func (m *ExternalConnectionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ExternalConnectionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -196,14 +193,17 @@ func (m *ExternalConnectionItemRequestBuilder) ToGetRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in connections by key (id)
+// ToPatchRequestInformation update entity in connections
 func (m *ExternalConnectionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalConnectionable, requestConfiguration *ExternalConnectionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

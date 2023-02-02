@@ -33,7 +33,7 @@ type IosNotificationSettings struct {
 func NewIosNotificationSettings()(*IosNotificationSettings) {
     m := &IosNotificationSettings{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateIosNotificationSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

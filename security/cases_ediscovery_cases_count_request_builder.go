@@ -40,8 +40,8 @@ func NewCasesEdiscoveryCasesCountRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCasesEdiscoveryCasesCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.

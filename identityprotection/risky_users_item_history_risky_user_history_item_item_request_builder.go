@@ -47,7 +47,7 @@ type RiskyUsersItemHistoryRiskyUserHistoryItemItemRequestBuilderPatchRequestConf
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewRiskyUsersItemHistoryRiskyUserHistoryItemItemRequestBuilderInternal instantiates a new RiskyUserHistoryItemItemRequestBuilder and sets the default values.
-func NewRiskyUsersItemHistoryRiskyUserHistoryItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RiskyUsersItemHistoryRiskyUserHistoryItemItemRequestBuilder) {
+func NewRiskyUsersItemHistoryRiskyUserHistoryItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, riskyUserHistoryItemId *string)(*RiskyUsersItemHistoryRiskyUserHistoryItemItemRequestBuilder) {
     m := &RiskyUsersItemHistoryRiskyUserHistoryItemItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/identityProtection/riskyUsers/{riskyUser%2Did}/history/{riskyUserHistoryItem%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewRiskyUsersItemHistoryRiskyUserHistoryItemItemRequestBuilderInternal(path
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if riskyUserHistoryItemId != nil {
+        urlTplParams["riskyUserHistoryItem%2Did"] = *riskyUserHistoryItemId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewRiskyUsersItemHistoryRiskyUserHistoryItemItemRequestBuilder instantiates a new RiskyUserHistoryItemItemRequestBuilder and sets the default values.
 func NewRiskyUsersItemHistoryRiskyUserHistoryItemItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RiskyUsersItemHistoryRiskyUserHistoryItemItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewRiskyUsersItemHistoryRiskyUserHistoryItemItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewRiskyUsersItemHistoryRiskyUserHistoryItemItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property history for identityProtection
 func (m *RiskyUsersItemHistoryRiskyUserHistoryItemItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *RiskyUsersItemHistoryRiskyUserHistoryItemItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *RiskyUsersItemHistoryRiskyUserHistoryItemItemRequestBuilder) ToPatchReq
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

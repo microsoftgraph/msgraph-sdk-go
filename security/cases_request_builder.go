@@ -55,8 +55,8 @@ func NewCasesRequestBuilderInternal(pathParameters map[string]string, requestAda
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCasesRequestBuilder instantiates a new CasesRequestBuilder and sets the default values.
@@ -83,7 +83,7 @@ func (m *CasesRequestBuilder) Delete(ctx context.Context, requestConfiguration *
 }
 // EdiscoveryCases provides operations to manage the ediscoveryCases property of the microsoft.graph.security.casesRoot entity.
 func (m *CasesRequestBuilder) EdiscoveryCases()(*CasesEdiscoveryCasesRequestBuilder) {
-    return NewCasesEdiscoveryCasesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCasesEdiscoveryCasesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // EdiscoveryCasesById provides operations to manage the ediscoveryCases property of the microsoft.graph.security.casesRoot entity.
 func (m *CasesRequestBuilder) EdiscoveryCasesById(id string)(*CasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilder) {
@@ -91,10 +91,8 @@ func (m *CasesRequestBuilder) EdiscoveryCasesById(id string)(*CasesEdiscoveryCas
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["ediscoveryCase%2Did"] = id
-    }
-    return NewCasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewCasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Get get cases from security
 func (m *CasesRequestBuilder) Get(ctx context.Context, requestConfiguration *CasesRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.CasesRootable, error) {
@@ -169,7 +167,10 @@ func (m *CasesRequestBuilder) ToPatchRequestInformation(ctx context.Context, bod
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

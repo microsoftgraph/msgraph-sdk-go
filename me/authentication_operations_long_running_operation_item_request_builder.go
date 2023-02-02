@@ -47,7 +47,7 @@ type AuthenticationOperationsLongRunningOperationItemRequestBuilderPatchRequestC
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewAuthenticationOperationsLongRunningOperationItemRequestBuilderInternal instantiates a new LongRunningOperationItemRequestBuilder and sets the default values.
-func NewAuthenticationOperationsLongRunningOperationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuthenticationOperationsLongRunningOperationItemRequestBuilder) {
+func NewAuthenticationOperationsLongRunningOperationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, longRunningOperationId *string)(*AuthenticationOperationsLongRunningOperationItemRequestBuilder) {
     m := &AuthenticationOperationsLongRunningOperationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/authentication/operations/{longRunningOperation%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewAuthenticationOperationsLongRunningOperationItemRequestBuilderInternal(p
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if longRunningOperationId != nil {
+        urlTplParams["longRunningOperation%2Did"] = *longRunningOperationId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAuthenticationOperationsLongRunningOperationItemRequestBuilder instantiates a new LongRunningOperationItemRequestBuilder and sets the default values.
 func NewAuthenticationOperationsLongRunningOperationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuthenticationOperationsLongRunningOperationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewAuthenticationOperationsLongRunningOperationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewAuthenticationOperationsLongRunningOperationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property operations for me
 func (m *AuthenticationOperationsLongRunningOperationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AuthenticationOperationsLongRunningOperationItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *AuthenticationOperationsLongRunningOperationItemRequestBuilder) ToPatch
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

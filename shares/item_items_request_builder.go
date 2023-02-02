@@ -53,8 +53,8 @@ func NewItemItemsRequestBuilderInternal(pathParameters map[string]string, reques
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemItemsRequestBuilder instantiates a new ItemsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemItemsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemItemsRequestBuilder) Count()(*ItemItemsCountRequestBuilder) {
-    return NewItemItemsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemItemsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get all driveItems contained in the sharing root. This collection cannot be enumerated.
 func (m *ItemItemsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemCollectionResponseable, error) {

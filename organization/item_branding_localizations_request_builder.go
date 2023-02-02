@@ -60,8 +60,8 @@ func NewItemBrandingLocalizationsRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemBrandingLocalizationsRequestBuilder instantiates a new LocalizationsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewItemBrandingLocalizationsRequestBuilder(rawUrl string, requestAdapter i2
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemBrandingLocalizationsRequestBuilder) Count()(*ItemBrandingLocalizationsCountRequestBuilder) {
-    return NewItemBrandingLocalizationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemBrandingLocalizationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve all localization branding objects, including the default branding.
 // [Find more info here]
@@ -141,7 +141,10 @@ func (m *ItemBrandingLocalizationsRequestBuilder) ToPostRequestInformation(ctx c
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

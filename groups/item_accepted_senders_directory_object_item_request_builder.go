@@ -14,7 +14,7 @@ type ItemAcceptedSendersDirectoryObjectItemRequestBuilder struct {
     urlTemplate string
 }
 // NewItemAcceptedSendersDirectoryObjectItemRequestBuilderInternal instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
-func NewItemAcceptedSendersDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAcceptedSendersDirectoryObjectItemRequestBuilder) {
+func NewItemAcceptedSendersDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, directoryObjectId *string)(*ItemAcceptedSendersDirectoryObjectItemRequestBuilder) {
     m := &ItemAcceptedSendersDirectoryObjectItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groups/{group%2Did}/acceptedSenders/{directoryObject%2Did}";
@@ -22,17 +22,20 @@ func NewItemAcceptedSendersDirectoryObjectItemRequestBuilderInternal(pathParamet
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if directoryObjectId != nil {
+        urlTplParams["directoryObject%2Did"] = *directoryObjectId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemAcceptedSendersDirectoryObjectItemRequestBuilder instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
 func NewItemAcceptedSendersDirectoryObjectItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAcceptedSendersDirectoryObjectItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemAcceptedSendersDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemAcceptedSendersDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Ref provides operations to manage the collection of group entities.
 func (m *ItemAcceptedSendersDirectoryObjectItemRequestBuilder) Ref()(*ItemAcceptedSendersItemRefRequestBuilder) {
-    return NewItemAcceptedSendersItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemAcceptedSendersItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

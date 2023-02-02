@@ -55,8 +55,8 @@ func NewCrossTenantAccessPolicyRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCrossTenantAccessPolicyRequestBuilder instantiates a new CrossTenantAccessPolicyRequestBuilder and sets the default values.
@@ -67,7 +67,7 @@ func NewCrossTenantAccessPolicyRequestBuilder(rawUrl string, requestAdapter i2ae
 }
 // Default_escaped provides operations to manage the default property of the microsoft.graph.crossTenantAccessPolicy entity.
 func (m *CrossTenantAccessPolicyRequestBuilder) Default_escaped()(*CrossTenantAccessPolicyDefaultRequestBuilder) {
-    return NewCrossTenantAccessPolicyDefaultRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCrossTenantAccessPolicyDefaultRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete navigation property crossTenantAccessPolicy for policies
 func (m *CrossTenantAccessPolicyRequestBuilder) Delete(ctx context.Context, requestConfiguration *CrossTenantAccessPolicyRequestBuilderDeleteRequestConfiguration)(error) {
@@ -109,7 +109,7 @@ func (m *CrossTenantAccessPolicyRequestBuilder) Get(ctx context.Context, request
 }
 // Partners provides operations to manage the partners property of the microsoft.graph.crossTenantAccessPolicy entity.
 func (m *CrossTenantAccessPolicyRequestBuilder) Partners()(*CrossTenantAccessPolicyPartnersRequestBuilder) {
-    return NewCrossTenantAccessPolicyPartnersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCrossTenantAccessPolicyPartnersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // PartnersById provides operations to manage the partners property of the microsoft.graph.crossTenantAccessPolicy entity.
 func (m *CrossTenantAccessPolicyRequestBuilder) PartnersById(id string)(*CrossTenantAccessPolicyPartnersCrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilder) {
@@ -117,10 +117,8 @@ func (m *CrossTenantAccessPolicyRequestBuilder) PartnersById(id string)(*CrossTe
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["crossTenantAccessPolicyConfigurationPartner%2DtenantId"] = id
-    }
-    return NewCrossTenantAccessPolicyPartnersCrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewCrossTenantAccessPolicyPartnersCrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Patch update the properties of a cross-tenant access policy.
 // [Find more info here]
@@ -179,7 +177,10 @@ func (m *CrossTenantAccessPolicyRequestBuilder) ToPatchRequestInformation(ctx co
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

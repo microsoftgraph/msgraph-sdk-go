@@ -25,7 +25,7 @@ type VisualInfo struct {
 func NewVisualInfo()(*VisualInfo) {
     m := &VisualInfo{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateVisualInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

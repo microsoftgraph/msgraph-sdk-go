@@ -23,7 +23,7 @@ type IdentityGovernance struct {
 func NewIdentityGovernance()(*IdentityGovernance) {
     m := &IdentityGovernance{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateIdentityGovernanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

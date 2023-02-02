@@ -27,8 +27,8 @@ func NewInternalDomainFederation()(*InternalDomainFederation) {
     m := &InternalDomainFederation{
         SamlOrWsFedProvider: *NewSamlOrWsFedProvider(),
     }
-    odataTypeValue := "#microsoft.graph.internalDomainFederation";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.internalDomainFederation"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateInternalDomainFederationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

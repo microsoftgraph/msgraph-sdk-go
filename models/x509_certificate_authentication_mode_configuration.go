@@ -19,7 +19,7 @@ type X509CertificateAuthenticationModeConfiguration struct {
 func NewX509CertificateAuthenticationModeConfiguration()(*X509CertificateAuthenticationModeConfiguration) {
     m := &X509CertificateAuthenticationModeConfiguration{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateX509CertificateAuthenticationModeConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -60,8 +60,8 @@ func NewItemInsightsUsedRequestBuilderInternal(pathParameters map[string]string,
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemInsightsUsedRequestBuilder instantiates a new UsedRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewItemInsightsUsedRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemInsightsUsedRequestBuilder) Count()(*ItemInsightsUsedCountRequestBuilder) {
-    return NewItemInsightsUsedCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemInsightsUsedCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get calculate and list the documents that a user has viewed or modified.  For the signed-in user:- This method includes documents that the user has modified; see example 1. - Using an `$orderby` query parameter on the **lastAccessedDateTime** property returns the most recently viewed documents that the user might or might not not have modified; see example 2. For other users, this method includes only documents that the user has modified.
 // [Find more info here]
@@ -138,7 +138,10 @@ func (m *ItemInsightsUsedRequestBuilder) ToPostRequestInformation(ctx context.Co
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

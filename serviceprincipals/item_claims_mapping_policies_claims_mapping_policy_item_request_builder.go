@@ -14,7 +14,7 @@ type ItemClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder struct {
     urlTemplate string
 }
 // NewItemClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderInternal instantiates a new ClaimsMappingPolicyItemRequestBuilder and sets the default values.
-func NewItemClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) {
+func NewItemClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, claimsMappingPolicyId *string)(*ItemClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) {
     m := &ItemClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/claimsMappingPolicies/{claimsMappingPolicy%2Did}";
@@ -22,17 +22,20 @@ func NewItemClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderInternal(p
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if claimsMappingPolicyId != nil {
+        urlTplParams["claimsMappingPolicy%2Did"] = *claimsMappingPolicyId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder instantiates a new ClaimsMappingPolicyItemRequestBuilder and sets the default values.
 func NewItemClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Ref provides operations to manage the collection of servicePrincipal entities.
 func (m *ItemClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) Ref()(*ItemClaimsMappingPoliciesItemRefRequestBuilder) {
-    return NewItemClaimsMappingPoliciesItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemClaimsMappingPoliciesItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

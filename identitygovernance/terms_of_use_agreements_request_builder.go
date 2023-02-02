@@ -60,8 +60,8 @@ func NewTermsOfUseAgreementsRequestBuilderInternal(pathParameters map[string]str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTermsOfUseAgreementsRequestBuilder instantiates a new AgreementsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewTermsOfUseAgreementsRequestBuilder(rawUrl string, requestAdapter i2ae418
 }
 // Count provides operations to count the resources in the collection.
 func (m *TermsOfUseAgreementsRequestBuilder) Count()(*TermsOfUseAgreementsCountRequestBuilder) {
-    return NewTermsOfUseAgreementsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTermsOfUseAgreementsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of agreement objects.
 // [Find more info here]
@@ -141,7 +141,10 @@ func (m *TermsOfUseAgreementsRequestBuilder) ToPostRequestInformation(ctx contex
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

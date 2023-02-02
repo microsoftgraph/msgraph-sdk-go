@@ -47,7 +47,7 @@ type ItemFileLocalizationsItemVersionsAgreementFileVersionItemRequestBuilderPatc
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemFileLocalizationsItemVersionsAgreementFileVersionItemRequestBuilderInternal instantiates a new AgreementFileVersionItemRequestBuilder and sets the default values.
-func NewItemFileLocalizationsItemVersionsAgreementFileVersionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemFileLocalizationsItemVersionsAgreementFileVersionItemRequestBuilder) {
+func NewItemFileLocalizationsItemVersionsAgreementFileVersionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, agreementFileVersionId *string)(*ItemFileLocalizationsItemVersionsAgreementFileVersionItemRequestBuilder) {
     m := &ItemFileLocalizationsItemVersionsAgreementFileVersionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/agreements/{agreement%2Did}/file/localizations/{agreementFileLocalization%2Did}/versions/{agreementFileVersion%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemFileLocalizationsItemVersionsAgreementFileVersionItemRequestBuilderI
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if agreementFileVersionId != nil {
+        urlTplParams["agreementFileVersion%2Did"] = *agreementFileVersionId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemFileLocalizationsItemVersionsAgreementFileVersionItemRequestBuilder instantiates a new AgreementFileVersionItemRequestBuilder and sets the default values.
 func NewItemFileLocalizationsItemVersionsAgreementFileVersionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemFileLocalizationsItemVersionsAgreementFileVersionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemFileLocalizationsItemVersionsAgreementFileVersionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemFileLocalizationsItemVersionsAgreementFileVersionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property versions for agreements
 func (m *ItemFileLocalizationsItemVersionsAgreementFileVersionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemFileLocalizationsItemVersionsAgreementFileVersionItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemFileLocalizationsItemVersionsAgreementFileVersionItemRequestBuilder
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

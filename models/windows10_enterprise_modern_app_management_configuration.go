@@ -15,8 +15,8 @@ func NewWindows10EnterpriseModernAppManagementConfiguration()(*Windows10Enterpri
     m := &Windows10EnterpriseModernAppManagementConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.windows10EnterpriseModernAppManagementConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windows10EnterpriseModernAppManagementConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindows10EnterpriseModernAppManagementConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -60,8 +60,8 @@ func NewFeatureRolloutPoliciesItemAppliesToRequestBuilderInternal(pathParameters
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewFeatureRolloutPoliciesItemAppliesToRequestBuilder instantiates a new AppliesToRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewFeatureRolloutPoliciesItemAppliesToRequestBuilder(rawUrl string, request
 }
 // Count provides operations to count the resources in the collection.
 func (m *FeatureRolloutPoliciesItemAppliesToRequestBuilder) Count()(*FeatureRolloutPoliciesItemAppliesToCountRequestBuilder) {
-    return NewFeatureRolloutPoliciesItemAppliesToCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewFeatureRolloutPoliciesItemAppliesToCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get nullable. Specifies a list of directoryObjects that feature is enabled for.
 func (m *FeatureRolloutPoliciesItemAppliesToRequestBuilder) Get(ctx context.Context, requestConfiguration *FeatureRolloutPoliciesItemAppliesToRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
@@ -93,13 +93,17 @@ func (m *FeatureRolloutPoliciesItemAppliesToRequestBuilder) Get(ctx context.Cont
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
 }
-// GetAvailableExtensionProperties provides operations to call the getAvailableExtensionProperties method.
-func (m *FeatureRolloutPoliciesItemAppliesToRequestBuilder) GetAvailableExtensionProperties()(*FeatureRolloutPoliciesItemAppliesToGetAvailableExtensionPropertiesRequestBuilder) {
-    return NewFeatureRolloutPoliciesItemAppliesToGetAvailableExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetAvailableExtensionProperties provides operations to call the getAvailableExtensionProperties method.
+func (m *FeatureRolloutPoliciesItemAppliesToRequestBuilder) MicrosoftGraphGetAvailableExtensionProperties()(*FeatureRolloutPoliciesItemAppliesToMicrosoftGraphGetAvailableExtensionPropertiesGetAvailableExtensionPropertiesRequestBuilder) {
+    return NewFeatureRolloutPoliciesItemAppliesToMicrosoftGraphGetAvailableExtensionPropertiesGetAvailableExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetByIds provides operations to call the getByIds method.
-func (m *FeatureRolloutPoliciesItemAppliesToRequestBuilder) GetByIds()(*FeatureRolloutPoliciesItemAppliesToGetByIdsRequestBuilder) {
-    return NewFeatureRolloutPoliciesItemAppliesToGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetByIds provides operations to call the getByIds method.
+func (m *FeatureRolloutPoliciesItemAppliesToRequestBuilder) MicrosoftGraphGetByIds()(*FeatureRolloutPoliciesItemAppliesToMicrosoftGraphGetByIdsGetByIdsRequestBuilder) {
+    return NewFeatureRolloutPoliciesItemAppliesToMicrosoftGraphGetByIdsGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphValidateProperties provides operations to call the validateProperties method.
+func (m *FeatureRolloutPoliciesItemAppliesToRequestBuilder) MicrosoftGraphValidateProperties()(*FeatureRolloutPoliciesItemAppliesToMicrosoftGraphValidatePropertiesValidatePropertiesRequestBuilder) {
+    return NewFeatureRolloutPoliciesItemAppliesToMicrosoftGraphValidatePropertiesValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to appliesTo for policies
 func (m *FeatureRolloutPoliciesItemAppliesToRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, requestConfiguration *FeatureRolloutPoliciesItemAppliesToRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, error) {
@@ -122,7 +126,7 @@ func (m *FeatureRolloutPoliciesItemAppliesToRequestBuilder) Post(ctx context.Con
 }
 // Ref provides operations to manage the collection of policyRoot entities.
 func (m *FeatureRolloutPoliciesItemAppliesToRequestBuilder) Ref()(*FeatureRolloutPoliciesItemAppliesToRefRequestBuilder) {
-    return NewFeatureRolloutPoliciesItemAppliesToRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewFeatureRolloutPoliciesItemAppliesToRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation nullable. Specifies a list of directoryObjects that feature is enabled for.
 func (m *FeatureRolloutPoliciesItemAppliesToRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FeatureRolloutPoliciesItemAppliesToRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -147,14 +151,13 @@ func (m *FeatureRolloutPoliciesItemAppliesToRequestBuilder) ToPostRequestInforma
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// ValidateProperties provides operations to call the validateProperties method.
-func (m *FeatureRolloutPoliciesItemAppliesToRequestBuilder) ValidateProperties()(*FeatureRolloutPoliciesItemAppliesToValidatePropertiesRequestBuilder) {
-    return NewFeatureRolloutPoliciesItemAppliesToValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -47,7 +47,7 @@ type TargetedManagedAppConfigurationsItemAppsManagedMobileAppItemRequestBuilderP
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewTargetedManagedAppConfigurationsItemAppsManagedMobileAppItemRequestBuilderInternal instantiates a new ManagedMobileAppItemRequestBuilder and sets the default values.
-func NewTargetedManagedAppConfigurationsItemAppsManagedMobileAppItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TargetedManagedAppConfigurationsItemAppsManagedMobileAppItemRequestBuilder) {
+func NewTargetedManagedAppConfigurationsItemAppsManagedMobileAppItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, managedMobileAppId *string)(*TargetedManagedAppConfigurationsItemAppsManagedMobileAppItemRequestBuilder) {
     m := &TargetedManagedAppConfigurationsItemAppsManagedMobileAppItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceAppManagement/targetedManagedAppConfigurations/{targetedManagedAppConfiguration%2Did}/apps/{managedMobileApp%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewTargetedManagedAppConfigurationsItemAppsManagedMobileAppItemRequestBuild
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if managedMobileAppId != nil {
+        urlTplParams["managedMobileApp%2Did"] = *managedMobileAppId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTargetedManagedAppConfigurationsItemAppsManagedMobileAppItemRequestBuilder instantiates a new ManagedMobileAppItemRequestBuilder and sets the default values.
 func NewTargetedManagedAppConfigurationsItemAppsManagedMobileAppItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TargetedManagedAppConfigurationsItemAppsManagedMobileAppItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewTargetedManagedAppConfigurationsItemAppsManagedMobileAppItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewTargetedManagedAppConfigurationsItemAppsManagedMobileAppItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property apps for deviceAppManagement
 func (m *TargetedManagedAppConfigurationsItemAppsManagedMobileAppItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TargetedManagedAppConfigurationsItemAppsManagedMobileAppItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *TargetedManagedAppConfigurationsItemAppsManagedMobileAppItemRequestBuil
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -15,7 +15,7 @@ type TeamworkNotificationRecipient struct {
 func NewTeamworkNotificationRecipient()(*TeamworkNotificationRecipient) {
     m := &TeamworkNotificationRecipient{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTeamworkNotificationRecipientFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

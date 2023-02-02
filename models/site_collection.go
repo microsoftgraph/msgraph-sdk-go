@@ -21,7 +21,7 @@ type SiteCollection struct {
 func NewSiteCollection()(*SiteCollection) {
     m := &SiteCollection{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSiteCollectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

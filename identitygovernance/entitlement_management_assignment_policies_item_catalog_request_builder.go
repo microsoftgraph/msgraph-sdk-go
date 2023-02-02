@@ -41,8 +41,8 @@ func NewEntitlementManagementAssignmentPoliciesItemCatalogRequestBuilderInternal
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEntitlementManagementAssignmentPoliciesItemCatalogRequestBuilder instantiates a new CatalogRequestBuilder and sets the default values.

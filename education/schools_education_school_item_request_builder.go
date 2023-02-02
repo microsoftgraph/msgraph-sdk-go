@@ -48,11 +48,11 @@ type SchoolsEducationSchoolItemRequestBuilderPatchRequestConfiguration struct {
 }
 // AdministrativeUnit provides operations to manage the administrativeUnit property of the microsoft.graph.educationSchool entity.
 func (m *SchoolsEducationSchoolItemRequestBuilder) AdministrativeUnit()(*SchoolsItemAdministrativeUnitRequestBuilder) {
-    return NewSchoolsItemAdministrativeUnitRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSchoolsItemAdministrativeUnitRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Classes provides operations to manage the classes property of the microsoft.graph.educationSchool entity.
 func (m *SchoolsEducationSchoolItemRequestBuilder) Classes()(*SchoolsItemClassesRequestBuilder) {
-    return NewSchoolsItemClassesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSchoolsItemClassesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ClassesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.schools.item.classes.item collection
 func (m *SchoolsEducationSchoolItemRequestBuilder) ClassesById(id string)(*SchoolsItemClassesEducationClassItemRequestBuilder) {
@@ -60,13 +60,11 @@ func (m *SchoolsEducationSchoolItemRequestBuilder) ClassesById(id string)(*Schoo
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["educationClass%2Did"] = id
-    }
-    return NewSchoolsItemClassesEducationClassItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewSchoolsItemClassesEducationClassItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // NewSchoolsEducationSchoolItemRequestBuilderInternal instantiates a new EducationSchoolItemRequestBuilder and sets the default values.
-func NewSchoolsEducationSchoolItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SchoolsEducationSchoolItemRequestBuilder) {
+func NewSchoolsEducationSchoolItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, educationSchoolId *string)(*SchoolsEducationSchoolItemRequestBuilder) {
     m := &SchoolsEducationSchoolItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/education/schools/{educationSchool%2Did}{?%24select,%24expand}";
@@ -74,15 +72,18 @@ func NewSchoolsEducationSchoolItemRequestBuilderInternal(pathParameters map[stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if educationSchoolId != nil {
+        urlTplParams["educationSchool%2Did"] = *educationSchoolId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewSchoolsEducationSchoolItemRequestBuilder instantiates a new EducationSchoolItemRequestBuilder and sets the default values.
 func NewSchoolsEducationSchoolItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SchoolsEducationSchoolItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewSchoolsEducationSchoolItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewSchoolsEducationSchoolItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property schools for education
 func (m *SchoolsEducationSchoolItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *SchoolsEducationSchoolItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -173,7 +174,10 @@ func (m *SchoolsEducationSchoolItemRequestBuilder) ToPatchRequestInformation(ctx
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -182,7 +186,7 @@ func (m *SchoolsEducationSchoolItemRequestBuilder) ToPatchRequestInformation(ctx
 }
 // Users provides operations to manage the users property of the microsoft.graph.educationSchool entity.
 func (m *SchoolsEducationSchoolItemRequestBuilder) Users()(*SchoolsItemUsersRequestBuilder) {
-    return NewSchoolsItemUsersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSchoolsItemUsersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UsersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.schools.item.users.item collection
 func (m *SchoolsEducationSchoolItemRequestBuilder) UsersById(id string)(*SchoolsItemUsersEducationUserItemRequestBuilder) {
@@ -190,8 +194,6 @@ func (m *SchoolsEducationSchoolItemRequestBuilder) UsersById(id string)(*Schools
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["educationUser%2Did"] = id
-    }
-    return NewSchoolsItemUsersEducationUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewSchoolsItemUsersEducationUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }

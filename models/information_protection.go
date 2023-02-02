@@ -19,7 +19,7 @@ type InformationProtection struct {
 func NewInformationProtection()(*InformationProtection) {
     m := &InformationProtection{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateInformationProtectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

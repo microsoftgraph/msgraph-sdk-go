@@ -16,13 +16,6 @@ type ItemDrivesDriveItemRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ItemDrivesDriveItemRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemDrivesDriveItemRequestBuilderDeleteRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // ItemDrivesDriveItemRequestBuilderGetQueryParameters a collection of drives available for this user. Read-only.
 type ItemDrivesDriveItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
@@ -39,30 +32,8 @@ type ItemDrivesDriveItemRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemDrivesDriveItemRequestBuilderGetQueryParameters
 }
-// ItemDrivesDriveItemRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemDrivesDriveItemRequestBuilderPatchRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
-// Bundles provides operations to manage the bundles property of the microsoft.graph.drive entity.
-func (m *ItemDrivesDriveItemRequestBuilder) Bundles()(*ItemDrivesItemBundlesRequestBuilder) {
-    return NewItemDrivesItemBundlesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// BundlesById provides operations to manage the bundles property of the microsoft.graph.drive entity.
-func (m *ItemDrivesDriveItemRequestBuilder) BundlesById(id string)(*ItemDrivesItemBundlesDriveItemItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["driveItem%2Did"] = id
-    }
-    return NewItemDrivesItemBundlesDriveItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
 // NewItemDrivesDriveItemRequestBuilderInternal instantiates a new DriveItemRequestBuilder and sets the default values.
-func NewItemDrivesDriveItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDrivesDriveItemRequestBuilder) {
+func NewItemDrivesDriveItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, driveId *string)(*ItemDrivesDriveItemRequestBuilder) {
     m := &ItemDrivesDriveItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/drives/{drive%2Did}{?%24select,%24expand}";
@@ -70,46 +41,18 @@ func NewItemDrivesDriveItemRequestBuilderInternal(pathParameters map[string]stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if driveId != nil {
+        urlTplParams["drive%2Did"] = *driveId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemDrivesDriveItemRequestBuilder instantiates a new DriveItemRequestBuilder and sets the default values.
 func NewItemDrivesDriveItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDrivesDriveItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemDrivesDriveItemRequestBuilderInternal(urlParams, requestAdapter)
-}
-// Delete delete navigation property drives for users
-func (m *ItemDrivesDriveItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemDrivesDriveItemRequestBuilderDeleteRequestConfiguration)(error) {
-    requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
-    if err != nil {
-        return err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-    }
-    err = m.requestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
-    if err != nil {
-        return err
-    }
-    return nil
-}
-// Following provides operations to manage the following property of the microsoft.graph.drive entity.
-func (m *ItemDrivesDriveItemRequestBuilder) Following()(*ItemDrivesItemFollowingRequestBuilder) {
-    return NewItemDrivesItemFollowingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// FollowingById provides operations to manage the following property of the microsoft.graph.drive entity.
-func (m *ItemDrivesDriveItemRequestBuilder) FollowingById(id string)(*ItemDrivesItemFollowingDriveItemItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["driveItem%2Did"] = id
-    }
-    return NewItemDrivesItemFollowingDriveItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemDrivesDriveItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get a collection of drives available for this user. Read-only.
 func (m *ItemDrivesDriveItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemDrivesDriveItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Driveable, error) {
@@ -130,87 +73,6 @@ func (m *ItemDrivesDriveItemRequestBuilder) Get(ctx context.Context, requestConf
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Driveable), nil
 }
-// Items provides operations to manage the items property of the microsoft.graph.drive entity.
-func (m *ItemDrivesDriveItemRequestBuilder) Items()(*ItemDrivesItemItemsRequestBuilder) {
-    return NewItemDrivesItemItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// ItemsById provides operations to manage the items property of the microsoft.graph.drive entity.
-func (m *ItemDrivesDriveItemRequestBuilder) ItemsById(id string)(*ItemDrivesItemItemsDriveItemItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["driveItem%2Did"] = id
-    }
-    return NewItemDrivesItemItemsDriveItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// List provides operations to manage the list property of the microsoft.graph.drive entity.
-func (m *ItemDrivesDriveItemRequestBuilder) List()(*ItemDrivesItemListRequestBuilder) {
-    return NewItemDrivesItemListRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Patch update the navigation property drives in users
-func (m *ItemDrivesDriveItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Driveable, requestConfiguration *ItemDrivesDriveItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Driveable, error) {
-    requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-    }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateDriveFromDiscriminatorValue, errorMapping)
-    if err != nil {
-        return nil, err
-    }
-    if res == nil {
-        return nil, nil
-    }
-    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Driveable), nil
-}
-// Recent provides operations to call the recent method.
-func (m *ItemDrivesDriveItemRequestBuilder) Recent()(*ItemDrivesItemRecentRequestBuilder) {
-    return NewItemDrivesItemRecentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Root provides operations to manage the root property of the microsoft.graph.drive entity.
-func (m *ItemDrivesDriveItemRequestBuilder) Root()(*ItemDrivesItemRootRequestBuilder) {
-    return NewItemDrivesItemRootRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// SearchWithQ provides operations to call the search method.
-func (m *ItemDrivesDriveItemRequestBuilder) SearchWithQ(q *string)(*ItemDrivesItemSearchWithQRequestBuilder) {
-    return NewItemDrivesItemSearchWithQRequestBuilderInternal(m.pathParameters, m.requestAdapter, q);
-}
-// SharedWithMe provides operations to call the sharedWithMe method.
-func (m *ItemDrivesDriveItemRequestBuilder) SharedWithMe()(*ItemDrivesItemSharedWithMeRequestBuilder) {
-    return NewItemDrivesItemSharedWithMeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Special provides operations to manage the special property of the microsoft.graph.drive entity.
-func (m *ItemDrivesDriveItemRequestBuilder) Special()(*ItemDrivesItemSpecialRequestBuilder) {
-    return NewItemDrivesItemSpecialRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// SpecialById provides operations to manage the special property of the microsoft.graph.drive entity.
-func (m *ItemDrivesDriveItemRequestBuilder) SpecialById(id string)(*ItemDrivesItemSpecialDriveItemItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["driveItem%2Did"] = id
-    }
-    return NewItemDrivesItemSpecialDriveItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// ToDeleteRequestInformation delete navigation property drives for users
-func (m *ItemDrivesDriveItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemDrivesDriveItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // ToGetRequestInformation a collection of drives available for this user. Read-only.
 func (m *ItemDrivesDriveItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemDrivesDriveItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
@@ -222,20 +84,6 @@ func (m *ItemDrivesDriveItemRequestBuilder) ToGetRequestInformation(ctx context.
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
-// ToPatchRequestInformation update the navigation property drives in users
-func (m *ItemDrivesDriveItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Driveable, requestConfiguration *ItemDrivesDriveItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }

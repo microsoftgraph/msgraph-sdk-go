@@ -27,7 +27,7 @@ type ParticipantInfo struct {
 func NewParticipantInfo()(*ParticipantInfo) {
     m := &ParticipantInfo{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateParticipantInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

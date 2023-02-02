@@ -22,7 +22,7 @@ type MobileAppInstallTimeSettings struct {
 func NewMobileAppInstallTimeSettings()(*MobileAppInstallTimeSettings) {
     m := &MobileAppInstallTimeSettings{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateMobileAppInstallTimeSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

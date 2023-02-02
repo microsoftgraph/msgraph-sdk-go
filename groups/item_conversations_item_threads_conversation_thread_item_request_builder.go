@@ -47,7 +47,7 @@ type ItemConversationsItemThreadsConversationThreadItemRequestBuilderPatchReques
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemConversationsItemThreadsConversationThreadItemRequestBuilderInternal instantiates a new ConversationThreadItemRequestBuilder and sets the default values.
-func NewItemConversationsItemThreadsConversationThreadItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConversationsItemThreadsConversationThreadItemRequestBuilder) {
+func NewItemConversationsItemThreadsConversationThreadItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, conversationThreadId *string)(*ItemConversationsItemThreadsConversationThreadItemRequestBuilder) {
     m := &ItemConversationsItemThreadsConversationThreadItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groups/{group%2Did}/conversations/{conversation%2Did}/threads/{conversationThread%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemConversationsItemThreadsConversationThreadItemRequestBuilderInternal
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if conversationThreadId != nil {
+        urlTplParams["conversationThread%2Did"] = *conversationThreadId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemConversationsItemThreadsConversationThreadItemRequestBuilder instantiates a new ConversationThreadItemRequestBuilder and sets the default values.
 func NewItemConversationsItemThreadsConversationThreadItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConversationsItemThreadsConversationThreadItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemConversationsItemThreadsConversationThreadItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemConversationsItemThreadsConversationThreadItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property threads for groups
 func (m *ItemConversationsItemThreadsConversationThreadItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemConversationsItemThreadsConversationThreadItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -100,6 +103,10 @@ func (m *ItemConversationsItemThreadsConversationThreadItemRequestBuilder) Get(c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationThreadable), nil
 }
+// MicrosoftGraphReply provides operations to call the reply method.
+func (m *ItemConversationsItemThreadsConversationThreadItemRequestBuilder) MicrosoftGraphReply()(*ItemConversationsItemThreadsItemMicrosoftGraphReplyReplyRequestBuilder) {
+    return NewItemConversationsItemThreadsItemMicrosoftGraphReplyReplyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update the navigation property threads in groups
 func (m *ItemConversationsItemThreadsConversationThreadItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationThreadable, requestConfiguration *ItemConversationsItemThreadsConversationThreadItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationThreadable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -121,7 +128,7 @@ func (m *ItemConversationsItemThreadsConversationThreadItemRequestBuilder) Patch
 }
 // Posts provides operations to manage the posts property of the microsoft.graph.conversationThread entity.
 func (m *ItemConversationsItemThreadsConversationThreadItemRequestBuilder) Posts()(*ItemConversationsItemThreadsItemPostsRequestBuilder) {
-    return NewItemConversationsItemThreadsItemPostsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemConversationsItemThreadsItemPostsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // PostsById provides operations to manage the posts property of the microsoft.graph.conversationThread entity.
 func (m *ItemConversationsItemThreadsConversationThreadItemRequestBuilder) PostsById(id string)(*ItemConversationsItemThreadsItemPostsPostItemRequestBuilder) {
@@ -129,14 +136,8 @@ func (m *ItemConversationsItemThreadsConversationThreadItemRequestBuilder) Posts
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["post%2Did"] = id
-    }
-    return NewItemConversationsItemThreadsItemPostsPostItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// Reply provides operations to call the reply method.
-func (m *ItemConversationsItemThreadsConversationThreadItemRequestBuilder) Reply()(*ItemConversationsItemThreadsItemReplyRequestBuilder) {
-    return NewItemConversationsItemThreadsItemReplyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    idPtr := &id
+    return NewItemConversationsItemThreadsItemPostsPostItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToDeleteRequestInformation delete navigation property threads for groups
 func (m *ItemConversationsItemThreadsConversationThreadItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemConversationsItemThreadsConversationThreadItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -173,7 +174,10 @@ func (m *ItemConversationsItemThreadsConversationThreadItemRequestBuilder) ToPat
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

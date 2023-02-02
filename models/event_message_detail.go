@@ -15,7 +15,7 @@ type EventMessageDetail struct {
 func NewEventMessageDetail()(*EventMessageDetail) {
     m := &EventMessageDetail{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateEventMessageDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

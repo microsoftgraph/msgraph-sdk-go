@@ -55,8 +55,8 @@ func NewItemPlannerRequestBuilderInternal(pathParameters map[string]string, requ
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemPlannerRequestBuilder instantiates a new PlannerRequestBuilder and sets the default values.
@@ -121,7 +121,7 @@ func (m *ItemPlannerRequestBuilder) Patch(ctx context.Context, body iadcd8112441
 }
 // Plans provides operations to manage the plans property of the microsoft.graph.plannerGroup entity.
 func (m *ItemPlannerRequestBuilder) Plans()(*ItemPlannerPlansRequestBuilder) {
-    return NewItemPlannerPlansRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemPlannerPlansRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // PlansById provides operations to manage the plans property of the microsoft.graph.plannerGroup entity.
 func (m *ItemPlannerRequestBuilder) PlansById(id string)(*ItemPlannerPlansPlannerPlanItemRequestBuilder) {
@@ -129,10 +129,8 @@ func (m *ItemPlannerRequestBuilder) PlansById(id string)(*ItemPlannerPlansPlanne
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["plannerPlan%2Did"] = id
-    }
-    return NewItemPlannerPlansPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemPlannerPlansPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToDeleteRequestInformation delete navigation property planner for groups
 func (m *ItemPlannerRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemPlannerRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +167,10 @@ func (m *ItemPlannerRequestBuilder) ToPatchRequestInformation(ctx context.Contex
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

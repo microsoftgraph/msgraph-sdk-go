@@ -80,7 +80,7 @@ type DeviceHealthAttestationState struct {
 func NewDeviceHealthAttestationState()(*DeviceHealthAttestationState) {
     m := &DeviceHealthAttestationState{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeviceHealthAttestationStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

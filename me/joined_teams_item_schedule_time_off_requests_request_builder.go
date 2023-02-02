@@ -58,8 +58,8 @@ func NewJoinedTeamsItemScheduleTimeOffRequestsRequestBuilderInternal(pathParamet
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewJoinedTeamsItemScheduleTimeOffRequestsRequestBuilder instantiates a new TimeOffRequestsRequestBuilder and sets the default values.
@@ -70,7 +70,7 @@ func NewJoinedTeamsItemScheduleTimeOffRequestsRequestBuilder(rawUrl string, requ
 }
 // Count provides operations to count the resources in the collection.
 func (m *JoinedTeamsItemScheduleTimeOffRequestsRequestBuilder) Count()(*JoinedTeamsItemScheduleTimeOffRequestsCountRequestBuilder) {
-    return NewJoinedTeamsItemScheduleTimeOffRequestsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewJoinedTeamsItemScheduleTimeOffRequestsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of timeOffRequest objects in the team.
 // [Find more info here]
@@ -136,7 +136,10 @@ func (m *JoinedTeamsItemScheduleTimeOffRequestsRequestBuilder) ToPostRequestInfo
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

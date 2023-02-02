@@ -39,7 +39,7 @@ type WindowsFirewallNetworkProfile struct {
 func NewWindowsFirewallNetworkProfile()(*WindowsFirewallNetworkProfile) {
     m := &WindowsFirewallNetworkProfile{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWindowsFirewallNetworkProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -47,7 +47,7 @@ type RiskDetectionsRiskDetectionItemRequestBuilderPatchRequestConfiguration stru
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewRiskDetectionsRiskDetectionItemRequestBuilderInternal instantiates a new RiskDetectionItemRequestBuilder and sets the default values.
-func NewRiskDetectionsRiskDetectionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RiskDetectionsRiskDetectionItemRequestBuilder) {
+func NewRiskDetectionsRiskDetectionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, riskDetectionId *string)(*RiskDetectionsRiskDetectionItemRequestBuilder) {
     m := &RiskDetectionsRiskDetectionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/identityProtection/riskDetections/{riskDetection%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewRiskDetectionsRiskDetectionItemRequestBuilderInternal(pathParameters map
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if riskDetectionId != nil {
+        urlTplParams["riskDetection%2Did"] = *riskDetectionId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewRiskDetectionsRiskDetectionItemRequestBuilder instantiates a new RiskDetectionItemRequestBuilder and sets the default values.
 func NewRiskDetectionsRiskDetectionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RiskDetectionsRiskDetectionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewRiskDetectionsRiskDetectionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewRiskDetectionsRiskDetectionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property riskDetections for identityProtection
 func (m *RiskDetectionsRiskDetectionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *RiskDetectionsRiskDetectionItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *RiskDetectionsRiskDetectionItemRequestBuilder) ToPatchRequestInformatio
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

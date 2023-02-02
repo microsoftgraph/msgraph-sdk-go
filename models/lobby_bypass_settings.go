@@ -19,7 +19,7 @@ type LobbyBypassSettings struct {
 func NewLobbyBypassSettings()(*LobbyBypassSettings) {
     m := &LobbyBypassSettings{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateLobbyBypassSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -23,7 +23,7 @@ type PrintMargin struct {
 func NewPrintMargin()(*PrintMargin) {
     m := &PrintMargin{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePrintMarginFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

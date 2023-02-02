@@ -48,7 +48,7 @@ type TeamworkRequestBuilderPatchRequestConfiguration struct {
 }
 // AssociatedTeams provides operations to manage the associatedTeams property of the microsoft.graph.userTeamwork entity.
 func (m *TeamworkRequestBuilder) AssociatedTeams()(*TeamworkAssociatedTeamsRequestBuilder) {
-    return NewTeamworkAssociatedTeamsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTeamworkAssociatedTeamsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AssociatedTeamsById provides operations to manage the associatedTeams property of the microsoft.graph.userTeamwork entity.
 func (m *TeamworkRequestBuilder) AssociatedTeamsById(id string)(*TeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilder) {
@@ -56,10 +56,8 @@ func (m *TeamworkRequestBuilder) AssociatedTeamsById(id string)(*TeamworkAssocia
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["associatedTeamInfo%2Did"] = id
-    }
-    return NewTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // NewTeamworkRequestBuilderInternal instantiates a new TeamworkRequestBuilder and sets the default values.
 func NewTeamworkRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamworkRequestBuilder) {
@@ -70,8 +68,8 @@ func NewTeamworkRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTeamworkRequestBuilder instantiates a new TeamworkRequestBuilder and sets the default values.
@@ -117,7 +115,7 @@ func (m *TeamworkRequestBuilder) Get(ctx context.Context, requestConfiguration *
 }
 // InstalledApps provides operations to manage the installedApps property of the microsoft.graph.userTeamwork entity.
 func (m *TeamworkRequestBuilder) InstalledApps()(*TeamworkInstalledAppsRequestBuilder) {
-    return NewTeamworkInstalledAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTeamworkInstalledAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // InstalledAppsById provides operations to manage the installedApps property of the microsoft.graph.userTeamwork entity.
 func (m *TeamworkRequestBuilder) InstalledAppsById(id string)(*TeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilder) {
@@ -125,10 +123,12 @@ func (m *TeamworkRequestBuilder) InstalledAppsById(id string)(*TeamworkInstalled
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["userScopeTeamsAppInstallation%2Did"] = id
-    }
-    return NewTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
+}
+// MicrosoftGraphSendActivityNotification provides operations to call the sendActivityNotification method.
+func (m *TeamworkRequestBuilder) MicrosoftGraphSendActivityNotification()(*TeamworkMicrosoftGraphSendActivityNotificationSendActivityNotificationRequestBuilder) {
+    return NewTeamworkMicrosoftGraphSendActivityNotificationSendActivityNotificationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property teamwork in me
 func (m *TeamworkRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserTeamworkable, requestConfiguration *TeamworkRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserTeamworkable, error) {
@@ -148,10 +148,6 @@ func (m *TeamworkRequestBuilder) Patch(ctx context.Context, body iadcd81124412c6
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserTeamworkable), nil
-}
-// SendActivityNotification provides operations to call the sendActivityNotification method.
-func (m *TeamworkRequestBuilder) SendActivityNotification()(*TeamworkSendActivityNotificationRequestBuilder) {
-    return NewTeamworkSendActivityNotificationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property teamwork for me
 func (m *TeamworkRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TeamworkRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -188,7 +184,10 @@ func (m *TeamworkRequestBuilder) ToPatchRequestInformation(ctx context.Context, 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

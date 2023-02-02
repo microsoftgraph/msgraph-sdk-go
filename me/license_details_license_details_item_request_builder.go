@@ -47,7 +47,7 @@ type LicenseDetailsLicenseDetailsItemRequestBuilderPatchRequestConfiguration str
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewLicenseDetailsLicenseDetailsItemRequestBuilderInternal instantiates a new LicenseDetailsItemRequestBuilder and sets the default values.
-func NewLicenseDetailsLicenseDetailsItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LicenseDetailsLicenseDetailsItemRequestBuilder) {
+func NewLicenseDetailsLicenseDetailsItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, licenseDetailsId *string)(*LicenseDetailsLicenseDetailsItemRequestBuilder) {
     m := &LicenseDetailsLicenseDetailsItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/licenseDetails/{licenseDetails%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewLicenseDetailsLicenseDetailsItemRequestBuilderInternal(pathParameters ma
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if licenseDetailsId != nil {
+        urlTplParams["licenseDetails%2Did"] = *licenseDetailsId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewLicenseDetailsLicenseDetailsItemRequestBuilder instantiates a new LicenseDetailsItemRequestBuilder and sets the default values.
 func NewLicenseDetailsLicenseDetailsItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LicenseDetailsLicenseDetailsItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewLicenseDetailsLicenseDetailsItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewLicenseDetailsLicenseDetailsItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property licenseDetails for me
 func (m *LicenseDetailsLicenseDetailsItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *LicenseDetailsLicenseDetailsItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *LicenseDetailsLicenseDetailsItemRequestBuilder) ToPatchRequestInformati
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

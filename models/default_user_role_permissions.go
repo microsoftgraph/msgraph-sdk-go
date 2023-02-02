@@ -23,7 +23,7 @@ type DefaultUserRolePermissions struct {
 func NewDefaultUserRolePermissions()(*DefaultUserRolePermissions) {
     m := &DefaultUserRolePermissions{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDefaultUserRolePermissionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

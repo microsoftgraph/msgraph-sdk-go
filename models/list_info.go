@@ -21,7 +21,7 @@ type ListInfo struct {
 func NewListInfo()(*ListInfo) {
     m := &ListInfo{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateListInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

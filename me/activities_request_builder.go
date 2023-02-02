@@ -60,8 +60,8 @@ func NewActivitiesRequestBuilderInternal(pathParameters map[string]string, reque
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewActivitiesRequestBuilder instantiates a new ActivitiesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewActivitiesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 }
 // Count provides operations to count the resources in the collection.
 func (m *ActivitiesRequestBuilder) Count()(*ActivitiesCountRequestBuilder) {
-    return NewActivitiesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewActivitiesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the user's activities across devices. Read-only. Nullable.
 func (m *ActivitiesRequestBuilder) Get(ctx context.Context, requestConfiguration *ActivitiesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserActivityCollectionResponseable, error) {
@@ -93,6 +93,10 @@ func (m *ActivitiesRequestBuilder) Get(ctx context.Context, requestConfiguration
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserActivityCollectionResponseable), nil
 }
+// MicrosoftGraphRecent provides operations to call the recent method.
+func (m *ActivitiesRequestBuilder) MicrosoftGraphRecent()(*ActivitiesMicrosoftGraphRecentRecentRequestBuilder) {
+    return NewActivitiesMicrosoftGraphRecentRecentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Post create new navigation property to activities for me
 func (m *ActivitiesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserActivityable, requestConfiguration *ActivitiesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserActivityable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
@@ -111,10 +115,6 @@ func (m *ActivitiesRequestBuilder) Post(ctx context.Context, body iadcd81124412c
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserActivityable), nil
-}
-// Recent provides operations to call the recent method.
-func (m *ActivitiesRequestBuilder) Recent()(*ActivitiesRecentRequestBuilder) {
-    return NewActivitiesRecentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToGetRequestInformation the user's activities across devices. Read-only. Nullable.
 func (m *ActivitiesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ActivitiesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -139,7 +139,10 @@ func (m *ActivitiesRequestBuilder) ToPostRequestInformation(ctx context.Context,
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

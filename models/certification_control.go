@@ -19,7 +19,7 @@ type CertificationControl struct {
 func NewCertificationControl()(*CertificationControl) {
     m := &CertificationControl{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCertificationControlFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

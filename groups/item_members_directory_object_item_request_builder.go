@@ -13,12 +13,8 @@ type ItemMembersDirectoryObjectItemRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// Application casts the previous resource to application.
-func (m *ItemMembersDirectoryObjectItemRequestBuilder) Application()(*ItemMembersItemApplicationRequestBuilder) {
-    return NewItemMembersItemApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewItemMembersDirectoryObjectItemRequestBuilderInternal instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
-func NewItemMembersDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMembersDirectoryObjectItemRequestBuilder) {
+func NewItemMembersDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, directoryObjectId *string)(*ItemMembersDirectoryObjectItemRequestBuilder) {
     m := &ItemMembersDirectoryObjectItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groups/{group%2Did}/members/{directoryObject%2Did}";
@@ -26,37 +22,44 @@ func NewItemMembersDirectoryObjectItemRequestBuilderInternal(pathParameters map[
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if directoryObjectId != nil {
+        urlTplParams["directoryObject%2Did"] = *directoryObjectId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemMembersDirectoryObjectItemRequestBuilder instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
 func NewItemMembersDirectoryObjectItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMembersDirectoryObjectItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemMembersDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemMembersDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Device casts the previous resource to device.
-func (m *ItemMembersDirectoryObjectItemRequestBuilder) Device()(*ItemMembersItemDeviceRequestBuilder) {
-    return NewItemMembersItemDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphApplication casts the previous resource to application.
+func (m *ItemMembersDirectoryObjectItemRequestBuilder) MicrosoftGraphApplication()(*ItemMembersItemMicrosoftGraphApplicationApplicationRequestBuilder) {
+    return NewItemMembersItemMicrosoftGraphApplicationApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// Group casts the previous resource to group.
-func (m *ItemMembersDirectoryObjectItemRequestBuilder) Group()(*ItemMembersItemGroupRequestBuilder) {
-    return NewItemMembersItemGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphDevice casts the previous resource to device.
+func (m *ItemMembersDirectoryObjectItemRequestBuilder) MicrosoftGraphDevice()(*ItemMembersItemMicrosoftGraphDeviceDeviceRequestBuilder) {
+    return NewItemMembersItemMicrosoftGraphDeviceDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// OrgContact casts the previous resource to orgContact.
-func (m *ItemMembersDirectoryObjectItemRequestBuilder) OrgContact()(*ItemMembersItemOrgContactRequestBuilder) {
-    return NewItemMembersItemOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGroup casts the previous resource to group.
+func (m *ItemMembersDirectoryObjectItemRequestBuilder) MicrosoftGraphGroup()(*ItemMembersItemMicrosoftGraphGroupGroupRequestBuilder) {
+    return NewItemMembersItemMicrosoftGraphGroupGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphOrgContact casts the previous resource to orgContact.
+func (m *ItemMembersDirectoryObjectItemRequestBuilder) MicrosoftGraphOrgContact()(*ItemMembersItemMicrosoftGraphOrgContactOrgContactRequestBuilder) {
+    return NewItemMembersItemMicrosoftGraphOrgContactOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphServicePrincipal casts the previous resource to servicePrincipal.
+func (m *ItemMembersDirectoryObjectItemRequestBuilder) MicrosoftGraphServicePrincipal()(*ItemMembersItemMicrosoftGraphServicePrincipalServicePrincipalRequestBuilder) {
+    return NewItemMembersItemMicrosoftGraphServicePrincipalServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphUser casts the previous resource to user.
+func (m *ItemMembersDirectoryObjectItemRequestBuilder) MicrosoftGraphUser()(*ItemMembersItemMicrosoftGraphUserUserRequestBuilder) {
+    return NewItemMembersItemMicrosoftGraphUserUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Ref provides operations to manage the collection of group entities.
 func (m *ItemMembersDirectoryObjectItemRequestBuilder) Ref()(*ItemMembersItemRefRequestBuilder) {
-    return NewItemMembersItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// ServicePrincipal casts the previous resource to servicePrincipal.
-func (m *ItemMembersDirectoryObjectItemRequestBuilder) ServicePrincipal()(*ItemMembersItemServicePrincipalRequestBuilder) {
-    return NewItemMembersItemServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// User casts the previous resource to user.
-func (m *ItemMembersDirectoryObjectItemRequestBuilder) User()(*ItemMembersItemUserRequestBuilder) {
-    return NewItemMembersItemUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemMembersItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

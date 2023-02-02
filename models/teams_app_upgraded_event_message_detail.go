@@ -19,8 +19,8 @@ func NewTeamsAppUpgradedEventMessageDetail()(*TeamsAppUpgradedEventMessageDetail
     m := &TeamsAppUpgradedEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),
     }
-    odataTypeValue := "#microsoft.graph.teamsAppUpgradedEventMessageDetail";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.teamsAppUpgradedEventMessageDetail"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateTeamsAppUpgradedEventMessageDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

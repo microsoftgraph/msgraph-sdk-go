@@ -31,7 +31,7 @@ type ItemPhotosProfilePhotoItemRequestBuilderGetRequestConfiguration struct {
     QueryParameters *ItemPhotosProfilePhotoItemRequestBuilderGetQueryParameters
 }
 // NewItemPhotosProfilePhotoItemRequestBuilderInternal instantiates a new ProfilePhotoItemRequestBuilder and sets the default values.
-func NewItemPhotosProfilePhotoItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPhotosProfilePhotoItemRequestBuilder) {
+func NewItemPhotosProfilePhotoItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, profilePhotoId *string)(*ItemPhotosProfilePhotoItemRequestBuilder) {
     m := &ItemPhotosProfilePhotoItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groups/{group%2Did}/photos/{profilePhoto%2Did}{?%24select}";
@@ -39,19 +39,22 @@ func NewItemPhotosProfilePhotoItemRequestBuilderInternal(pathParameters map[stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if profilePhotoId != nil {
+        urlTplParams["profilePhoto%2Did"] = *profilePhotoId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemPhotosProfilePhotoItemRequestBuilder instantiates a new ProfilePhotoItemRequestBuilder and sets the default values.
 func NewItemPhotosProfilePhotoItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPhotosProfilePhotoItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemPhotosProfilePhotoItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemPhotosProfilePhotoItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Content provides operations to manage the media for the group entity.
 func (m *ItemPhotosProfilePhotoItemRequestBuilder) Content()(*ItemPhotosItemValueContentRequestBuilder) {
-    return NewItemPhotosItemValueContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemPhotosItemValueContentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the profile photos owned by the group. Read-only. Nullable.
 func (m *ItemPhotosProfilePhotoItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPhotosProfilePhotoItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ProfilePhotoable, error) {

@@ -21,7 +21,7 @@ type AuditProperty struct {
 func NewAuditProperty()(*AuditProperty) {
     m := &AuditProperty{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAuditPropertyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

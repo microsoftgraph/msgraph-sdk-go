@@ -23,7 +23,7 @@ type VmMetadata struct {
 func NewVmMetadata()(*VmMetadata) {
     m := &VmMetadata{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateVmMetadataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

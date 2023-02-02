@@ -51,8 +51,8 @@ func NewWindows10CompliancePolicy()(*Windows10CompliancePolicy) {
     m := &Windows10CompliancePolicy{
         DeviceCompliancePolicy: *NewDeviceCompliancePolicy(),
     }
-    odataTypeValue := "#microsoft.graph.windows10CompliancePolicy";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windows10CompliancePolicy"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindows10CompliancePolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

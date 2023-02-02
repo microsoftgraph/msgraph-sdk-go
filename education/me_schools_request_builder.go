@@ -53,8 +53,8 @@ func NewMeSchoolsRequestBuilderInternal(pathParameters map[string]string, reques
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMeSchoolsRequestBuilder instantiates a new SchoolsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewMeSchoolsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 }
 // Count provides operations to count the resources in the collection.
 func (m *MeSchoolsRequestBuilder) Count()(*MeSchoolsCountRequestBuilder) {
-    return NewMeSchoolsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMeSchoolsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of schools for a user.
 // [Find more info here]

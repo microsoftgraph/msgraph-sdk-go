@@ -47,7 +47,7 @@ type PrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilderPatchRequestConfi
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewPrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilderInternal instantiates a new PrintTaskTriggerItemRequestBuilder and sets the default values.
-func NewPrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilder) {
+func NewPrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, printTaskTriggerId *string)(*PrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilder) {
     m := &PrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/print/printers/{printer%2Did}/taskTriggers/{printTaskTrigger%2Did}{?%24select,%24expand}";
@@ -55,19 +55,22 @@ func NewPrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilderInternal(pathP
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if printTaskTriggerId != nil {
+        urlTplParams["printTaskTrigger%2Did"] = *printTaskTriggerId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewPrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilder instantiates a new PrintTaskTriggerItemRequestBuilder and sets the default values.
 func NewPrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewPrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewPrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Definition provides operations to manage the definition property of the microsoft.graph.printTaskTrigger entity.
 func (m *PrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilder) Definition()(*PrintersItemTaskTriggersItemDefinitionRequestBuilder) {
-    return NewPrintersItemTaskTriggersItemDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPrintersItemTaskTriggersItemDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete navigation property taskTriggers for print
 func (m *PrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *PrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -158,7 +161,10 @@ func (m *PrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilder) ToPatchRequ
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

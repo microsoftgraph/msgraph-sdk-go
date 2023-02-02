@@ -44,10 +44,6 @@ type ItemOwnersRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemOwnersRequestBuilderGetQueryParameters
 }
-// AppRoleAssignment casts the previous resource to appRoleAssignment.
-func (m *ItemOwnersRequestBuilder) AppRoleAssignment()(*ItemOwnersAppRoleAssignmentRequestBuilder) {
-    return NewItemOwnersAppRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewItemOwnersRequestBuilderInternal instantiates a new OwnersRequestBuilder and sets the default values.
 func NewItemOwnersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOwnersRequestBuilder) {
     m := &ItemOwnersRequestBuilder{
@@ -57,8 +53,8 @@ func NewItemOwnersRequestBuilderInternal(pathParameters map[string]string, reque
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemOwnersRequestBuilder instantiates a new OwnersRequestBuilder and sets the default values.
@@ -69,11 +65,7 @@ func NewItemOwnersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemOwnersRequestBuilder) Count()(*ItemOwnersCountRequestBuilder) {
-    return NewItemOwnersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Endpoint casts the previous resource to endpoint.
-func (m *ItemOwnersRequestBuilder) Endpoint()(*ItemOwnersEndpointRequestBuilder) {
-    return NewItemOwnersEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemOwnersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 // [Find more info here]
@@ -97,13 +89,25 @@ func (m *ItemOwnersRequestBuilder) Get(ctx context.Context, requestConfiguration
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
 }
+// MicrosoftGraphAppRoleAssignment casts the previous resource to appRoleAssignment.
+func (m *ItemOwnersRequestBuilder) MicrosoftGraphAppRoleAssignment()(*ItemOwnersMicrosoftGraphAppRoleAssignmentAppRoleAssignmentRequestBuilder) {
+    return NewItemOwnersMicrosoftGraphAppRoleAssignmentAppRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphEndpoint casts the previous resource to endpoint.
+func (m *ItemOwnersRequestBuilder) MicrosoftGraphEndpoint()(*ItemOwnersMicrosoftGraphEndpointEndpointRequestBuilder) {
+    return NewItemOwnersMicrosoftGraphEndpointEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphServicePrincipal casts the previous resource to servicePrincipal.
+func (m *ItemOwnersRequestBuilder) MicrosoftGraphServicePrincipal()(*ItemOwnersMicrosoftGraphServicePrincipalServicePrincipalRequestBuilder) {
+    return NewItemOwnersMicrosoftGraphServicePrincipalServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphUser casts the previous resource to user.
+func (m *ItemOwnersRequestBuilder) MicrosoftGraphUser()(*ItemOwnersMicrosoftGraphUserUserRequestBuilder) {
+    return NewItemOwnersMicrosoftGraphUserUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Ref provides operations to manage the collection of application entities.
 func (m *ItemOwnersRequestBuilder) Ref()(*ItemOwnersRefRequestBuilder) {
-    return NewItemOwnersRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// ServicePrincipal casts the previous resource to servicePrincipal.
-func (m *ItemOwnersRequestBuilder) ServicePrincipal()(*ItemOwnersServicePrincipalRequestBuilder) {
-    return NewItemOwnersServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemOwnersRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 func (m *ItemOwnersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOwnersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -120,8 +124,4 @@ func (m *ItemOwnersRequestBuilder) ToGetRequestInformation(ctx context.Context, 
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// User casts the previous resource to user.
-func (m *ItemOwnersRequestBuilder) User()(*ItemOwnersUserRequestBuilder) {
-    return NewItemOwnersUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

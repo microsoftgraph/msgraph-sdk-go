@@ -15,8 +15,8 @@ func NewChatMessageMentionedIdentitySet()(*ChatMessageMentionedIdentitySet) {
     m := &ChatMessageMentionedIdentitySet{
         IdentitySet: *NewIdentitySet(),
     }
-    odataTypeValue := "#microsoft.graph.chatMessageMentionedIdentitySet";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.chatMessageMentionedIdentitySet"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateChatMessageMentionedIdentitySetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -41,8 +41,8 @@ func NewItemRootRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemRootRequestBuilder instantiates a new RootRequestBuilder and sets the default values.
@@ -53,7 +53,7 @@ func NewItemRootRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 }
 // Content provides operations to manage the media for the sharedDriveItem entity.
 func (m *ItemRootRequestBuilder) Content()(*ItemRootContentRequestBuilder) {
-    return NewItemRootContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemRootContentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get used to access the underlying driveItem. Deprecated -- use driveItem instead.
 func (m *ItemRootRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemRootRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable, error) {

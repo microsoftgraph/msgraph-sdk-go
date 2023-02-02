@@ -53,8 +53,8 @@ func NewItemSitesItemItemsRequestBuilderInternal(pathParameters map[string]strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSitesItemItemsRequestBuilder instantiates a new ItemsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemSitesItemItemsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemSitesItemItemsRequestBuilder) Count()(*ItemSitesItemItemsCountRequestBuilder) {
-    return NewItemSitesItemItemsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesItemItemsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get used to address any item contained in this site. This collection can't be enumerated.
 func (m *ItemSitesItemItemsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemItemsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseItemCollectionResponseable, error) {

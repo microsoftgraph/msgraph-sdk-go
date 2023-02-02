@@ -48,7 +48,7 @@ type TeamsAppsTeamsAppItemRequestBuilderPatchRequestConfiguration struct {
 }
 // AppDefinitions provides operations to manage the appDefinitions property of the microsoft.graph.teamsApp entity.
 func (m *TeamsAppsTeamsAppItemRequestBuilder) AppDefinitions()(*TeamsAppsItemAppDefinitionsRequestBuilder) {
-    return NewTeamsAppsItemAppDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTeamsAppsItemAppDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AppDefinitionsById provides operations to manage the appDefinitions property of the microsoft.graph.teamsApp entity.
 func (m *TeamsAppsTeamsAppItemRequestBuilder) AppDefinitionsById(id string)(*TeamsAppsItemAppDefinitionsTeamsAppDefinitionItemRequestBuilder) {
@@ -56,13 +56,11 @@ func (m *TeamsAppsTeamsAppItemRequestBuilder) AppDefinitionsById(id string)(*Tea
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["teamsAppDefinition%2Did"] = id
-    }
-    return NewTeamsAppsItemAppDefinitionsTeamsAppDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewTeamsAppsItemAppDefinitionsTeamsAppDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // NewTeamsAppsTeamsAppItemRequestBuilderInternal instantiates a new TeamsAppItemRequestBuilder and sets the default values.
-func NewTeamsAppsTeamsAppItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamsAppsTeamsAppItemRequestBuilder) {
+func NewTeamsAppsTeamsAppItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, teamsAppId *string)(*TeamsAppsTeamsAppItemRequestBuilder) {
     m := &TeamsAppsTeamsAppItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/appCatalogs/teamsApps/{teamsApp%2Did}{?%24select,%24expand}";
@@ -70,15 +68,18 @@ func NewTeamsAppsTeamsAppItemRequestBuilderInternal(pathParameters map[string]st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if teamsAppId != nil {
+        urlTplParams["teamsApp%2Did"] = *teamsAppId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTeamsAppsTeamsAppItemRequestBuilder instantiates a new TeamsAppItemRequestBuilder and sets the default values.
 func NewTeamsAppsTeamsAppItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamsAppsTeamsAppItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewTeamsAppsTeamsAppItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewTeamsAppsTeamsAppItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property teamsApps for appCatalogs
 func (m *TeamsAppsTeamsAppItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TeamsAppsTeamsAppItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -169,7 +170,10 @@ func (m *TeamsAppsTeamsAppItemRequestBuilder) ToPatchRequestInformation(ctx cont
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

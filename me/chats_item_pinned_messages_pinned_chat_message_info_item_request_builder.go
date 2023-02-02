@@ -47,7 +47,7 @@ type ChatsItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilderPatchRequestC
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewChatsItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilderInternal instantiates a new PinnedChatMessageInfoItemRequestBuilder and sets the default values.
-func NewChatsItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ChatsItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilder) {
+func NewChatsItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, pinnedChatMessageInfoId *string)(*ChatsItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilder) {
     m := &ChatsItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/chats/{chat%2Did}/pinnedMessages/{pinnedChatMessageInfo%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewChatsItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilderInternal(p
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if pinnedChatMessageInfoId != nil {
+        urlTplParams["pinnedChatMessageInfo%2Did"] = *pinnedChatMessageInfoId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewChatsItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilder instantiates a new PinnedChatMessageInfoItemRequestBuilder and sets the default values.
 func NewChatsItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ChatsItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewChatsItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewChatsItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property pinnedMessages for me
 func (m *ChatsItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ChatsItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -102,7 +105,7 @@ func (m *ChatsItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilder) Get(ctx
 }
 // Message provides operations to manage the message property of the microsoft.graph.pinnedChatMessageInfo entity.
 func (m *ChatsItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilder) Message()(*ChatsItemPinnedMessagesItemMessageRequestBuilder) {
-    return NewChatsItemPinnedMessagesItemMessageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewChatsItemPinnedMessagesItemMessageRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property pinnedMessages in me
 func (m *ChatsItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PinnedChatMessageInfoable, requestConfiguration *ChatsItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PinnedChatMessageInfoable, error) {
@@ -158,7 +161,10 @@ func (m *ChatsItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilder) ToPatch
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

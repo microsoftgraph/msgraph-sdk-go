@@ -48,7 +48,7 @@ type FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilderPatchRequestCon
 }
 // AppliesTo provides operations to manage the appliesTo property of the microsoft.graph.featureRolloutPolicy entity.
 func (m *FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder) AppliesTo()(*FeatureRolloutPoliciesItemAppliesToRequestBuilder) {
-    return NewFeatureRolloutPoliciesItemAppliesToRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewFeatureRolloutPoliciesItemAppliesToRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AppliesToById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.policies.featureRolloutPolicies.item.appliesTo.item collection
 func (m *FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder) AppliesToById(id string)(*FeatureRolloutPoliciesItemAppliesToDirectoryObjectItemRequestBuilder) {
@@ -56,13 +56,11 @@ func (m *FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder) AppliesTo
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["directoryObject%2Did"] = id
-    }
-    return NewFeatureRolloutPoliciesItemAppliesToDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewFeatureRolloutPoliciesItemAppliesToDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // NewFeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilderInternal instantiates a new FeatureRolloutPolicyItemRequestBuilder and sets the default values.
-func NewFeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder) {
+func NewFeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, featureRolloutPolicyId *string)(*FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder) {
     m := &FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/policies/featureRolloutPolicies/{featureRolloutPolicy%2Did}{?%24select,%24expand}";
@@ -70,15 +68,18 @@ func NewFeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilderInternal(pat
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if featureRolloutPolicyId != nil {
+        urlTplParams["featureRolloutPolicy%2Did"] = *featureRolloutPolicyId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewFeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder instantiates a new FeatureRolloutPolicyItemRequestBuilder and sets the default values.
 func NewFeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewFeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewFeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property featureRolloutPolicies for policies
 func (m *FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -169,7 +170,10 @@ func (m *FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder) ToPatchRe
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -23,7 +23,7 @@ type AppIdentity struct {
 func NewAppIdentity()(*AppIdentity) {
     m := &AppIdentity{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAppIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

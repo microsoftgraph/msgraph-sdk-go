@@ -13,8 +13,8 @@ func NewClaimsMappingPolicy()(*ClaimsMappingPolicy) {
     m := &ClaimsMappingPolicy{
         StsPolicy: *NewStsPolicy(),
     }
-    odataTypeValue := "#microsoft.graph.claimsMappingPolicy";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.claimsMappingPolicy"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateClaimsMappingPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

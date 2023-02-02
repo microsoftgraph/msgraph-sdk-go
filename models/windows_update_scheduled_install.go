@@ -17,8 +17,8 @@ func NewWindowsUpdateScheduledInstall()(*WindowsUpdateScheduledInstall) {
     m := &WindowsUpdateScheduledInstall{
         WindowsUpdateInstallScheduleType: *NewWindowsUpdateInstallScheduleType(),
     }
-    odataTypeValue := "#microsoft.graph.windowsUpdateScheduledInstall";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsUpdateScheduledInstall"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsUpdateScheduledInstallFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

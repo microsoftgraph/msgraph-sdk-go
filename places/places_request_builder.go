@@ -60,8 +60,8 @@ func NewPlacesRequestBuilderInternal(pathParameters map[string]string, requestAd
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewPlacesRequestBuilder instantiates a new PlacesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewPlacesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
 }
 // Count provides operations to count the resources in the collection.
 func (m *PlacesRequestBuilder) Count()(*CountRequestBuilder) {
-    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the properties and relationships of a place object specified by either its ID or email address. The **place** object can be one of the following types: Both **room** and **roomList** are derived from the place object.
 func (m *PlacesRequestBuilder) Get(ctx context.Context, requestConfiguration *PlacesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlaceCollectionResponseable, error) {
@@ -93,6 +93,10 @@ func (m *PlacesRequestBuilder) Get(ctx context.Context, requestConfiguration *Pl
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlaceCollectionResponseable), nil
 }
+// MicrosoftGraphRoom casts the previous resource to room.
+func (m *PlacesRequestBuilder) MicrosoftGraphRoom()(*MicrosoftGraphRoomRoomRequestBuilder) {
+    return NewMicrosoftGraphRoomRoomRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Post add new entity to places
 func (m *PlacesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Placeable, requestConfiguration *PlacesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Placeable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
@@ -111,10 +115,6 @@ func (m *PlacesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e6
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Placeable), nil
-}
-// Room casts the previous resource to room.
-func (m *PlacesRequestBuilder) Room()(*RoomRequestBuilder) {
-    return NewRoomRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToGetRequestInformation get the properties and relationships of a place object specified by either its ID or email address. The **place** object can be one of the following types: Both **room** and **roomList** are derived from the place object.
 func (m *PlacesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PlacesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -139,7 +139,10 @@ func (m *PlacesRequestBuilder) ToPostRequestInformation(ctx context.Context, bod
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

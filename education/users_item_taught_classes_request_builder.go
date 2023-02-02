@@ -53,8 +53,8 @@ func NewUsersItemTaughtClassesRequestBuilderInternal(pathParameters map[string]s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewUsersItemTaughtClassesRequestBuilder instantiates a new TaughtClassesRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewUsersItemTaughtClassesRequestBuilder(rawUrl string, requestAdapter i2ae4
 }
 // Count provides operations to count the resources in the collection.
 func (m *UsersItemTaughtClassesRequestBuilder) Count()(*UsersItemTaughtClassesCountRequestBuilder) {
-    return NewUsersItemTaughtClassesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUsersItemTaughtClassesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the educationClass resources owned by an educationUser.
 // [Find more info here]

@@ -53,8 +53,8 @@ func NewItemAgreementAcceptancesRequestBuilderInternal(pathParameters map[string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemAgreementAcceptancesRequestBuilder instantiates a new AgreementAcceptancesRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemAgreementAcceptancesRequestBuilder(rawUrl string, requestAdapter i2a
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemAgreementAcceptancesRequestBuilder) Count()(*ItemAgreementAcceptancesCountRequestBuilder) {
-    return NewItemAgreementAcceptancesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemAgreementAcceptancesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve the signed-in user's agreementAcceptance objects.
 // [Find more info here]

@@ -18,8 +18,8 @@ func NewParticipantEndpoint()(*ParticipantEndpoint) {
     m := &ParticipantEndpoint{
         Endpoint: *NewEndpoint(),
     }
-    odataTypeValue := "#microsoft.graph.callRecords.participantEndpoint";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.callRecords.participantEndpoint"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateParticipantEndpointFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

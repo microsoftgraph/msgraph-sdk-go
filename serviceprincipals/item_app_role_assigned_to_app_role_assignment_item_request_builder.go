@@ -47,7 +47,7 @@ type ItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilderPatchRequestConfigu
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilderInternal instantiates a new AppRoleAssignmentItemRequestBuilder and sets the default values.
-func NewItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilder) {
+func NewItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, appRoleAssignmentId *string)(*ItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilder) {
     m := &ItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/appRoleAssignedTo/{appRoleAssignment%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilderInternal(pathPar
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if appRoleAssignmentId != nil {
+        urlTplParams["appRoleAssignment%2Did"] = *appRoleAssignmentId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilder instantiates a new AppRoleAssignmentItemRequestBuilder and sets the default values.
 func NewItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property appRoleAssignedTo for servicePrincipals
 func (m *ItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilder) ToPatchReques
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

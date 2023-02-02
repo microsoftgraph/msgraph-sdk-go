@@ -17,7 +17,7 @@ type Recipient struct {
 func NewRecipient()(*Recipient) {
     m := &Recipient{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateRecipientFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

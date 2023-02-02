@@ -27,7 +27,7 @@ type PhysicalOfficeAddress struct {
 func NewPhysicalOfficeAddress()(*PhysicalOfficeAddress) {
     m := &PhysicalOfficeAddress{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePhysicalOfficeAddressFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

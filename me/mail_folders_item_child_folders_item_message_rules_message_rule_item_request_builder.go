@@ -45,7 +45,7 @@ type MailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBuilderPat
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewMailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBuilderInternal instantiates a new MessageRuleItemRequestBuilder and sets the default values.
-func NewMailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBuilder) {
+func NewMailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, messageRuleId *string)(*MailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBuilder) {
     m := &MailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/mailFolders/{mailFolder%2Did}/childFolders/{mailFolder%2Did1}/messageRules/{messageRule%2Did}{?%24select}";
@@ -53,15 +53,18 @@ func NewMailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBuilder
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if messageRuleId != nil {
+        urlTplParams["messageRule%2Did"] = *messageRuleId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBuilder instantiates a new MessageRuleItemRequestBuilder and sets the default values.
 func NewMailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewMailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewMailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property messageRules for me
 func (m *MailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *MailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -152,7 +155,10 @@ func (m *MailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBuilde
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

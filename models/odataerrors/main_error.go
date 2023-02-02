@@ -23,7 +23,7 @@ type MainError struct {
 func NewMainError()(*MainError) {
     m := &MainError{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateMainErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -23,7 +23,7 @@ type OnenotePatchContentCommand struct {
 func NewOnenotePatchContentCommand()(*OnenotePatchContentCommand) {
     m := &OnenotePatchContentCommand{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateOnenotePatchContentCommandFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

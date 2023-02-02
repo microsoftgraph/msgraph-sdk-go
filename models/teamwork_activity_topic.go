@@ -21,7 +21,7 @@ type TeamworkActivityTopic struct {
 func NewTeamworkActivityTopic()(*TeamworkActivityTopic) {
     m := &TeamworkActivityTopic{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTeamworkActivityTopicFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -44,10 +44,6 @@ type AdministrativeUnitsItemMembersRequestBuilderGetRequestConfiguration struct 
     // Request query parameters
     QueryParameters *AdministrativeUnitsItemMembersRequestBuilderGetQueryParameters
 }
-// Application casts the previous resource to application.
-func (m *AdministrativeUnitsItemMembersRequestBuilder) Application()(*AdministrativeUnitsItemMembersApplicationRequestBuilder) {
-    return NewAdministrativeUnitsItemMembersApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewAdministrativeUnitsItemMembersRequestBuilderInternal instantiates a new MembersRequestBuilder and sets the default values.
 func NewAdministrativeUnitsItemMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AdministrativeUnitsItemMembersRequestBuilder) {
     m := &AdministrativeUnitsItemMembersRequestBuilder{
@@ -57,8 +53,8 @@ func NewAdministrativeUnitsItemMembersRequestBuilderInternal(pathParameters map[
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAdministrativeUnitsItemMembersRequestBuilder instantiates a new MembersRequestBuilder and sets the default values.
@@ -69,11 +65,7 @@ func NewAdministrativeUnitsItemMembersRequestBuilder(rawUrl string, requestAdapt
 }
 // Count provides operations to count the resources in the collection.
 func (m *AdministrativeUnitsItemMembersRequestBuilder) Count()(*AdministrativeUnitsItemMembersCountRequestBuilder) {
-    return NewAdministrativeUnitsItemMembersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Device casts the previous resource to device.
-func (m *AdministrativeUnitsItemMembersRequestBuilder) Device()(*AdministrativeUnitsItemMembersDeviceRequestBuilder) {
-    return NewAdministrativeUnitsItemMembersDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAdministrativeUnitsItemMembersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get users and groups that are members of this administrative unit. Supports $expand.
 // [Find more info here]
@@ -97,21 +89,33 @@ func (m *AdministrativeUnitsItemMembersRequestBuilder) Get(ctx context.Context, 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
 }
-// Group casts the previous resource to group.
-func (m *AdministrativeUnitsItemMembersRequestBuilder) Group()(*AdministrativeUnitsItemMembersGroupRequestBuilder) {
-    return NewAdministrativeUnitsItemMembersGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphApplication casts the previous resource to application.
+func (m *AdministrativeUnitsItemMembersRequestBuilder) MicrosoftGraphApplication()(*AdministrativeUnitsItemMembersMicrosoftGraphApplicationApplicationRequestBuilder) {
+    return NewAdministrativeUnitsItemMembersMicrosoftGraphApplicationApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// OrgContact casts the previous resource to orgContact.
-func (m *AdministrativeUnitsItemMembersRequestBuilder) OrgContact()(*AdministrativeUnitsItemMembersOrgContactRequestBuilder) {
-    return NewAdministrativeUnitsItemMembersOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphDevice casts the previous resource to device.
+func (m *AdministrativeUnitsItemMembersRequestBuilder) MicrosoftGraphDevice()(*AdministrativeUnitsItemMembersMicrosoftGraphDeviceDeviceRequestBuilder) {
+    return NewAdministrativeUnitsItemMembersMicrosoftGraphDeviceDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphGroup casts the previous resource to group.
+func (m *AdministrativeUnitsItemMembersRequestBuilder) MicrosoftGraphGroup()(*AdministrativeUnitsItemMembersMicrosoftGraphGroupGroupRequestBuilder) {
+    return NewAdministrativeUnitsItemMembersMicrosoftGraphGroupGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphOrgContact casts the previous resource to orgContact.
+func (m *AdministrativeUnitsItemMembersRequestBuilder) MicrosoftGraphOrgContact()(*AdministrativeUnitsItemMembersMicrosoftGraphOrgContactOrgContactRequestBuilder) {
+    return NewAdministrativeUnitsItemMembersMicrosoftGraphOrgContactOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphServicePrincipal casts the previous resource to servicePrincipal.
+func (m *AdministrativeUnitsItemMembersRequestBuilder) MicrosoftGraphServicePrincipal()(*AdministrativeUnitsItemMembersMicrosoftGraphServicePrincipalServicePrincipalRequestBuilder) {
+    return NewAdministrativeUnitsItemMembersMicrosoftGraphServicePrincipalServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphUser casts the previous resource to user.
+func (m *AdministrativeUnitsItemMembersRequestBuilder) MicrosoftGraphUser()(*AdministrativeUnitsItemMembersMicrosoftGraphUserUserRequestBuilder) {
+    return NewAdministrativeUnitsItemMembersMicrosoftGraphUserUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Ref provides operations to manage the collection of directory entities.
 func (m *AdministrativeUnitsItemMembersRequestBuilder) Ref()(*AdministrativeUnitsItemMembersRefRequestBuilder) {
-    return NewAdministrativeUnitsItemMembersRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// ServicePrincipal casts the previous resource to servicePrincipal.
-func (m *AdministrativeUnitsItemMembersRequestBuilder) ServicePrincipal()(*AdministrativeUnitsItemMembersServicePrincipalRequestBuilder) {
-    return NewAdministrativeUnitsItemMembersServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAdministrativeUnitsItemMembersRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation users and groups that are members of this administrative unit. Supports $expand.
 func (m *AdministrativeUnitsItemMembersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AdministrativeUnitsItemMembersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -128,8 +132,4 @@ func (m *AdministrativeUnitsItemMembersRequestBuilder) ToGetRequestInformation(c
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// User casts the previous resource to user.
-func (m *AdministrativeUnitsItemMembersRequestBuilder) User()(*AdministrativeUnitsItemMembersUserRequestBuilder) {
-    return NewAdministrativeUnitsItemMembersUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

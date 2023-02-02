@@ -47,7 +47,7 @@ type ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilderPatchRequestCo
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilderInternal instantiates a new ServiceHealthIssueItemRequestBuilder and sets the default values.
-func NewServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilder) {
+func NewServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, serviceHealthIssueId *string)(*ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilder) {
     m := &ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/admin/serviceAnnouncement/issues/{serviceHealthIssue%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilderInternal(pa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if serviceHealthIssueId != nil {
+        urlTplParams["serviceHealthIssue%2Did"] = *serviceHealthIssueId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilder instantiates a new ServiceHealthIssueItemRequestBuilder and sets the default values.
 func NewServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property issues for admin
 func (m *ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -100,9 +103,9 @@ func (m *ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilder) Get(ctx 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceHealthIssueable), nil
 }
-// IncidentReport provides operations to call the incidentReport method.
-func (m *ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilder) IncidentReport()(*ServiceAnnouncementIssuesItemIncidentReportRequestBuilder) {
-    return NewServiceAnnouncementIssuesItemIncidentReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphIncidentReport provides operations to call the incidentReport method.
+func (m *ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilder) MicrosoftGraphIncidentReport()(*ServiceAnnouncementIssuesItemMicrosoftGraphIncidentReportIncidentReportRequestBuilder) {
+    return NewServiceAnnouncementIssuesItemMicrosoftGraphIncidentReportIncidentReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property issues in admin
 func (m *ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceHealthIssueable, requestConfiguration *ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceHealthIssueable, error) {
@@ -158,7 +161,10 @@ func (m *ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilder) ToPatchR
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

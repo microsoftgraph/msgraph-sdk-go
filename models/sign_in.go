@@ -269,7 +269,7 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
             for i, v := range val {
                 res[i] = *(v.(*string))
             }
-            m.SetRiskEventTypes_v2(res)
+            m.SetRiskEventTypesV2(res)
         }
         return nil
     }
@@ -373,8 +373,8 @@ func (m *SignIn) GetRiskDetail()(*RiskDetail) {
 func (m *SignIn) GetRiskEventTypes()([]RiskEventType) {
     return m.riskEventTypes
 }
-// GetRiskEventTypes_v2 gets the riskEventTypes_v2 property value. The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue. Supports $filter (eq and startsWith operators only).
-func (m *SignIn) GetRiskEventTypes_v2()([]string) {
+// GetRiskEventTypesV2 gets the riskEventTypes_v2 property value. The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue. Supports $filter (eq and startsWith operators only).
+func (m *SignIn) GetRiskEventTypesV2()([]string) {
     return m.riskEventTypes_v2
 }
 // GetRiskLevelAggregated gets the riskLevelAggregated property value. Aggregated risk level. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection. Supports $filter (eq operator only).  Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers will be returned hidden.
@@ -507,8 +507,8 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
             return err
         }
     }
-    if m.GetRiskEventTypes_v2() != nil {
-        err = writer.WriteCollectionOfStringValues("riskEventTypes_v2", m.GetRiskEventTypes_v2())
+    if m.GetRiskEventTypesV2() != nil {
+        err = writer.WriteCollectionOfStringValues("riskEventTypes_v2", m.GetRiskEventTypesV2())
         if err != nil {
             return err
         }
@@ -620,8 +620,8 @@ func (m *SignIn) SetRiskDetail(value *RiskDetail)() {
 func (m *SignIn) SetRiskEventTypes(value []RiskEventType)() {
     m.riskEventTypes = value
 }
-// SetRiskEventTypes_v2 sets the riskEventTypes_v2 property value. The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue. Supports $filter (eq and startsWith operators only).
-func (m *SignIn) SetRiskEventTypes_v2(value []string)() {
+// SetRiskEventTypesV2 sets the riskEventTypes_v2 property value. The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue. Supports $filter (eq and startsWith operators only).
+func (m *SignIn) SetRiskEventTypesV2(value []string)() {
     m.riskEventTypes_v2 = value
 }
 // SetRiskLevelAggregated sets the riskLevelAggregated property value. Aggregated risk level. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection. Supports $filter (eq operator only).  Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers will be returned hidden.

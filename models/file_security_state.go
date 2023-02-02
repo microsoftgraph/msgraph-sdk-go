@@ -23,7 +23,7 @@ type FileSecurityState struct {
 func NewFileSecurityState()(*FileSecurityState) {
     m := &FileSecurityState{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateFileSecurityStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

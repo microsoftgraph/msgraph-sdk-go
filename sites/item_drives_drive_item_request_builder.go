@@ -33,7 +33,7 @@ type ItemDrivesDriveItemRequestBuilderGetRequestConfiguration struct {
     QueryParameters *ItemDrivesDriveItemRequestBuilderGetQueryParameters
 }
 // NewItemDrivesDriveItemRequestBuilderInternal instantiates a new DriveItemRequestBuilder and sets the default values.
-func NewItemDrivesDriveItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDrivesDriveItemRequestBuilder) {
+func NewItemDrivesDriveItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, driveId *string)(*ItemDrivesDriveItemRequestBuilder) {
     m := &ItemDrivesDriveItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/sites/{site%2Did}/drives/{drive%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewItemDrivesDriveItemRequestBuilderInternal(pathParameters map[string]stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if driveId != nil {
+        urlTplParams["drive%2Did"] = *driveId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemDrivesDriveItemRequestBuilder instantiates a new DriveItemRequestBuilder and sets the default values.
 func NewItemDrivesDriveItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDrivesDriveItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemDrivesDriveItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemDrivesDriveItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get the collection of drives (document libraries) under this site.
 func (m *ItemDrivesDriveItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemDrivesDriveItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Driveable, error) {

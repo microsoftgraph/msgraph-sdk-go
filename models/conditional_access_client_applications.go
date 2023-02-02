@@ -19,7 +19,7 @@ type ConditionalAccessClientApplications struct {
 func NewConditionalAccessClientApplications()(*ConditionalAccessClientApplications) {
     m := &ConditionalAccessClientApplications{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateConditionalAccessClientApplicationsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

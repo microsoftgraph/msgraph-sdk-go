@@ -46,24 +46,8 @@ type ApplicationItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AddKey provides operations to call the addKey method.
-func (m *ApplicationItemRequestBuilder) AddKey()(*ItemAddKeyRequestBuilder) {
-    return NewItemAddKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// AddPassword provides operations to call the addPassword method.
-func (m *ApplicationItemRequestBuilder) AddPassword()(*ItemAddPasswordRequestBuilder) {
-    return NewItemAddPasswordRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// CheckMemberGroups provides operations to call the checkMemberGroups method.
-func (m *ApplicationItemRequestBuilder) CheckMemberGroups()(*ItemCheckMemberGroupsRequestBuilder) {
-    return NewItemCheckMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// CheckMemberObjects provides operations to call the checkMemberObjects method.
-func (m *ApplicationItemRequestBuilder) CheckMemberObjects()(*ItemCheckMemberObjectsRequestBuilder) {
-    return NewItemCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewApplicationItemRequestBuilderInternal instantiates a new ApplicationItemRequestBuilder and sets the default values.
-func NewApplicationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ApplicationItemRequestBuilder) {
+func NewApplicationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, applicationId *string)(*ApplicationItemRequestBuilder) {
     m := &ApplicationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/applications/{application%2Did}{?%24select,%24expand}";
@@ -71,19 +55,22 @@ func NewApplicationItemRequestBuilderInternal(pathParameters map[string]string, 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if applicationId != nil {
+        urlTplParams["application%2Did"] = *applicationId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewApplicationItemRequestBuilder instantiates a new ApplicationItemRequestBuilder and sets the default values.
 func NewApplicationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ApplicationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewApplicationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewApplicationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // CreatedOnBehalfOf provides operations to manage the createdOnBehalfOf property of the microsoft.graph.application entity.
 func (m *ApplicationItemRequestBuilder) CreatedOnBehalfOf()(*ItemCreatedOnBehalfOfRequestBuilder) {
-    return NewItemCreatedOnBehalfOfRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemCreatedOnBehalfOfRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete an application object. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted.
 // [Find more info here]
@@ -106,7 +93,7 @@ func (m *ApplicationItemRequestBuilder) Delete(ctx context.Context, requestConfi
 }
 // ExtensionProperties provides operations to manage the extensionProperties property of the microsoft.graph.application entity.
 func (m *ApplicationItemRequestBuilder) ExtensionProperties()(*ItemExtensionPropertiesRequestBuilder) {
-    return NewItemExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ExtensionPropertiesById provides operations to manage the extensionProperties property of the microsoft.graph.application entity.
 func (m *ApplicationItemRequestBuilder) ExtensionPropertiesById(id string)(*ItemExtensionPropertiesExtensionPropertyItemRequestBuilder) {
@@ -114,14 +101,12 @@ func (m *ApplicationItemRequestBuilder) ExtensionPropertiesById(id string)(*Item
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["extensionProperty%2Did"] = id
-    }
-    return NewItemExtensionPropertiesExtensionPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemExtensionPropertiesExtensionPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // FederatedIdentityCredentials provides operations to manage the federatedIdentityCredentials property of the microsoft.graph.application entity.
 func (m *ApplicationItemRequestBuilder) FederatedIdentityCredentials()(*ItemFederatedIdentityCredentialsRequestBuilder) {
-    return NewItemFederatedIdentityCredentialsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemFederatedIdentityCredentialsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // FederatedIdentityCredentialsById provides operations to manage the federatedIdentityCredentials property of the microsoft.graph.application entity.
 func (m *ApplicationItemRequestBuilder) FederatedIdentityCredentialsById(id string)(*ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilder) {
@@ -129,10 +114,8 @@ func (m *ApplicationItemRequestBuilder) FederatedIdentityCredentialsById(id stri
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["federatedIdentityCredential%2Did"] = id
-    }
-    return NewItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Get get the properties and relationships of an application object.
 // [Find more info here]
@@ -156,17 +139,9 @@ func (m *ApplicationItemRequestBuilder) Get(ctx context.Context, requestConfigur
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Applicationable), nil
 }
-// GetMemberGroups provides operations to call the getMemberGroups method.
-func (m *ApplicationItemRequestBuilder) GetMemberGroups()(*ItemGetMemberGroupsRequestBuilder) {
-    return NewItemGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// GetMemberObjects provides operations to call the getMemberObjects method.
-func (m *ApplicationItemRequestBuilder) GetMemberObjects()(*ItemGetMemberObjectsRequestBuilder) {
-    return NewItemGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // HomeRealmDiscoveryPolicies provides operations to manage the homeRealmDiscoveryPolicies property of the microsoft.graph.application entity.
 func (m *ApplicationItemRequestBuilder) HomeRealmDiscoveryPolicies()(*ItemHomeRealmDiscoveryPoliciesRequestBuilder) {
-    return NewItemHomeRealmDiscoveryPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemHomeRealmDiscoveryPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // HomeRealmDiscoveryPoliciesById provides operations to manage the homeRealmDiscoveryPolicies property of the microsoft.graph.application entity.
 func (m *ApplicationItemRequestBuilder) HomeRealmDiscoveryPoliciesById(id string)(*ItemHomeRealmDiscoveryPoliciesHomeRealmDiscoveryPolicyItemRequestBuilder) {
@@ -174,18 +149,60 @@ func (m *ApplicationItemRequestBuilder) HomeRealmDiscoveryPoliciesById(id string
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["homeRealmDiscoveryPolicy%2Did"] = id
-    }
-    return NewItemHomeRealmDiscoveryPoliciesHomeRealmDiscoveryPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemHomeRealmDiscoveryPoliciesHomeRealmDiscoveryPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Logo provides operations to manage the media for the application entity.
 func (m *ApplicationItemRequestBuilder) Logo()(*ItemLogoRequestBuilder) {
-    return NewItemLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphAddKey provides operations to call the addKey method.
+func (m *ApplicationItemRequestBuilder) MicrosoftGraphAddKey()(*ItemMicrosoftGraphAddKeyAddKeyRequestBuilder) {
+    return NewItemMicrosoftGraphAddKeyAddKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphAddPassword provides operations to call the addPassword method.
+func (m *ApplicationItemRequestBuilder) MicrosoftGraphAddPassword()(*ItemMicrosoftGraphAddPasswordAddPasswordRequestBuilder) {
+    return NewItemMicrosoftGraphAddPasswordAddPasswordRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphCheckMemberGroups provides operations to call the checkMemberGroups method.
+func (m *ApplicationItemRequestBuilder) MicrosoftGraphCheckMemberGroups()(*ItemMicrosoftGraphCheckMemberGroupsCheckMemberGroupsRequestBuilder) {
+    return NewItemMicrosoftGraphCheckMemberGroupsCheckMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphCheckMemberObjects provides operations to call the checkMemberObjects method.
+func (m *ApplicationItemRequestBuilder) MicrosoftGraphCheckMemberObjects()(*ItemMicrosoftGraphCheckMemberObjectsCheckMemberObjectsRequestBuilder) {
+    return NewItemMicrosoftGraphCheckMemberObjectsCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphGetMemberGroups provides operations to call the getMemberGroups method.
+func (m *ApplicationItemRequestBuilder) MicrosoftGraphGetMemberGroups()(*ItemMicrosoftGraphGetMemberGroupsGetMemberGroupsRequestBuilder) {
+    return NewItemMicrosoftGraphGetMemberGroupsGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphGetMemberObjects provides operations to call the getMemberObjects method.
+func (m *ApplicationItemRequestBuilder) MicrosoftGraphGetMemberObjects()(*ItemMicrosoftGraphGetMemberObjectsGetMemberObjectsRequestBuilder) {
+    return NewItemMicrosoftGraphGetMemberObjectsGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphRemoveKey provides operations to call the removeKey method.
+func (m *ApplicationItemRequestBuilder) MicrosoftGraphRemoveKey()(*ItemMicrosoftGraphRemoveKeyRemoveKeyRequestBuilder) {
+    return NewItemMicrosoftGraphRemoveKeyRemoveKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphRemovePassword provides operations to call the removePassword method.
+func (m *ApplicationItemRequestBuilder) MicrosoftGraphRemovePassword()(*ItemMicrosoftGraphRemovePasswordRemovePasswordRequestBuilder) {
+    return NewItemMicrosoftGraphRemovePasswordRemovePasswordRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphRestore provides operations to call the restore method.
+func (m *ApplicationItemRequestBuilder) MicrosoftGraphRestore()(*ItemMicrosoftGraphRestoreRestoreRequestBuilder) {
+    return NewItemMicrosoftGraphRestoreRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphSetVerifiedPublisher provides operations to call the setVerifiedPublisher method.
+func (m *ApplicationItemRequestBuilder) MicrosoftGraphSetVerifiedPublisher()(*ItemMicrosoftGraphSetVerifiedPublisherSetVerifiedPublisherRequestBuilder) {
+    return NewItemMicrosoftGraphSetVerifiedPublisherSetVerifiedPublisherRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphUnsetVerifiedPublisher provides operations to call the unsetVerifiedPublisher method.
+func (m *ApplicationItemRequestBuilder) MicrosoftGraphUnsetVerifiedPublisher()(*ItemMicrosoftGraphUnsetVerifiedPublisherUnsetVerifiedPublisherRequestBuilder) {
+    return NewItemMicrosoftGraphUnsetVerifiedPublisherUnsetVerifiedPublisherRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Owners provides operations to manage the owners property of the microsoft.graph.application entity.
 func (m *ApplicationItemRequestBuilder) Owners()(*ItemOwnersRequestBuilder) {
-    return NewItemOwnersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemOwnersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // OwnersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.applications.item.owners.item collection
 func (m *ApplicationItemRequestBuilder) OwnersById(id string)(*ItemOwnersDirectoryObjectItemRequestBuilder) {
@@ -193,10 +210,8 @@ func (m *ApplicationItemRequestBuilder) OwnersById(id string)(*ItemOwnersDirecto
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["directoryObject%2Did"] = id
-    }
-    return NewItemOwnersDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemOwnersDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Patch update the properties of an application object.
 // [Find more info here]
@@ -219,22 +234,6 @@ func (m *ApplicationItemRequestBuilder) Patch(ctx context.Context, body iadcd811
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Applicationable), nil
-}
-// RemoveKey provides operations to call the removeKey method.
-func (m *ApplicationItemRequestBuilder) RemoveKey()(*ItemRemoveKeyRequestBuilder) {
-    return NewItemRemoveKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// RemovePassword provides operations to call the removePassword method.
-func (m *ApplicationItemRequestBuilder) RemovePassword()(*ItemRemovePasswordRequestBuilder) {
-    return NewItemRemovePasswordRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Restore provides operations to call the restore method.
-func (m *ApplicationItemRequestBuilder) Restore()(*ItemRestoreRequestBuilder) {
-    return NewItemRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// SetVerifiedPublisher provides operations to call the setVerifiedPublisher method.
-func (m *ApplicationItemRequestBuilder) SetVerifiedPublisher()(*ItemSetVerifiedPublisherRequestBuilder) {
-    return NewItemSetVerifiedPublisherRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete an application object. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted.
 func (m *ApplicationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ApplicationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -266,7 +265,7 @@ func (m *ApplicationItemRequestBuilder) ToGetRequestInformation(ctx context.Cont
 }
 // TokenIssuancePolicies provides operations to manage the tokenIssuancePolicies property of the microsoft.graph.application entity.
 func (m *ApplicationItemRequestBuilder) TokenIssuancePolicies()(*ItemTokenIssuancePoliciesRequestBuilder) {
-    return NewItemTokenIssuancePoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTokenIssuancePoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TokenIssuancePoliciesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.applications.item.tokenIssuancePolicies.item collection
 func (m *ApplicationItemRequestBuilder) TokenIssuancePoliciesById(id string)(*ItemTokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilder) {
@@ -274,14 +273,12 @@ func (m *ApplicationItemRequestBuilder) TokenIssuancePoliciesById(id string)(*It
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["tokenIssuancePolicy%2Did"] = id
-    }
-    return NewItemTokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemTokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // TokenLifetimePolicies provides operations to manage the tokenLifetimePolicies property of the microsoft.graph.application entity.
 func (m *ApplicationItemRequestBuilder) TokenLifetimePolicies()(*ItemTokenLifetimePoliciesRequestBuilder) {
-    return NewItemTokenLifetimePoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTokenLifetimePoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TokenLifetimePoliciesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.applications.item.tokenLifetimePolicies.item collection
 func (m *ApplicationItemRequestBuilder) TokenLifetimePoliciesById(id string)(*ItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) {
@@ -289,10 +286,8 @@ func (m *ApplicationItemRequestBuilder) TokenLifetimePoliciesById(id string)(*It
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["tokenLifetimePolicy%2Did"] = id
-    }
-    return NewItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToPatchRequestInformation update the properties of an application object.
 func (m *ApplicationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Applicationable, requestConfiguration *ApplicationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -301,14 +296,13 @@ func (m *ApplicationItemRequestBuilder) ToPatchRequestInformation(ctx context.Co
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// UnsetVerifiedPublisher provides operations to call the unsetVerifiedPublisher method.
-func (m *ApplicationItemRequestBuilder) UnsetVerifiedPublisher()(*ItemUnsetVerifiedPublisherRequestBuilder) {
-    return NewItemUnsetVerifiedPublisherRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

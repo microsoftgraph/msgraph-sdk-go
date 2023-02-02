@@ -48,7 +48,7 @@ type EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilderPatchReq
 }
 // AccessPackages provides operations to manage the accessPackages property of the microsoft.graph.accessPackageCatalog entity.
 func (m *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) AccessPackages()(*EntitlementManagementCatalogsItemAccessPackagesRequestBuilder) {
-    return NewEntitlementManagementCatalogsItemAccessPackagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementCatalogsItemAccessPackagesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AccessPackagesById provides operations to manage the accessPackages property of the microsoft.graph.accessPackageCatalog entity.
 func (m *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) AccessPackagesById(id string)(*EntitlementManagementCatalogsItemAccessPackagesAccessPackageItemRequestBuilder) {
@@ -56,13 +56,11 @@ func (m *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) Ac
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["accessPackage%2Did"] = id
-    }
-    return NewEntitlementManagementCatalogsItemAccessPackagesAccessPackageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewEntitlementManagementCatalogsItemAccessPackagesAccessPackageItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // NewEntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilderInternal instantiates a new AccessPackageCatalogItemRequestBuilder and sets the default values.
-func NewEntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) {
+func NewEntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, accessPackageCatalogId *string)(*EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) {
     m := &EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog%2Did}{?%24select,%24expand}";
@@ -70,15 +68,18 @@ func NewEntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilderInter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if accessPackageCatalogId != nil {
+        urlTplParams["accessPackageCatalog%2Did"] = *accessPackageCatalogId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder instantiates a new AccessPackageCatalogItemRequestBuilder and sets the default values.
 func NewEntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewEntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewEntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property catalogs for identityGovernance
 func (m *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -169,7 +170,10 @@ func (m *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) To
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

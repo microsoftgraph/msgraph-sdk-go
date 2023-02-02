@@ -19,7 +19,7 @@ type TermColumn struct {
 func NewTermColumn()(*TermColumn) {
     m := &TermColumn{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTermColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

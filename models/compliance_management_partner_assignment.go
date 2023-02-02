@@ -17,7 +17,7 @@ type ComplianceManagementPartnerAssignment struct {
 func NewComplianceManagementPartnerAssignment()(*ComplianceManagementPartnerAssignment) {
     m := &ComplianceManagementPartnerAssignment{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateComplianceManagementPartnerAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

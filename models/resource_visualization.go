@@ -31,7 +31,7 @@ type ResourceVisualization struct {
 func NewResourceVisualization()(*ResourceVisualization) {
     m := &ResourceVisualization{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateResourceVisualizationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

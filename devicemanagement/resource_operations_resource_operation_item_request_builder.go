@@ -47,7 +47,7 @@ type ResourceOperationsResourceOperationItemRequestBuilderPatchRequestConfigurat
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewResourceOperationsResourceOperationItemRequestBuilderInternal instantiates a new ResourceOperationItemRequestBuilder and sets the default values.
-func NewResourceOperationsResourceOperationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ResourceOperationsResourceOperationItemRequestBuilder) {
+func NewResourceOperationsResourceOperationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, resourceOperationId *string)(*ResourceOperationsResourceOperationItemRequestBuilder) {
     m := &ResourceOperationsResourceOperationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/resourceOperations/{resourceOperation%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewResourceOperationsResourceOperationItemRequestBuilderInternal(pathParame
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if resourceOperationId != nil {
+        urlTplParams["resourceOperation%2Did"] = *resourceOperationId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewResourceOperationsResourceOperationItemRequestBuilder instantiates a new ResourceOperationItemRequestBuilder and sets the default values.
 func NewResourceOperationsResourceOperationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ResourceOperationsResourceOperationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewResourceOperationsResourceOperationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewResourceOperationsResourceOperationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property resourceOperations for deviceManagement
 func (m *ResourceOperationsResourceOperationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ResourceOperationsResourceOperationItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ResourceOperationsResourceOperationItemRequestBuilder) ToPatchRequestIn
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

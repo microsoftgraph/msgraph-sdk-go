@@ -47,7 +47,7 @@ type CallRecordsItemSessionsSessionItemRequestBuilderPatchRequestConfiguration s
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewCallRecordsItemSessionsSessionItemRequestBuilderInternal instantiates a new SessionItemRequestBuilder and sets the default values.
-func NewCallRecordsItemSessionsSessionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallRecordsItemSessionsSessionItemRequestBuilder) {
+func NewCallRecordsItemSessionsSessionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, sessionId *string)(*CallRecordsItemSessionsSessionItemRequestBuilder) {
     m := &CallRecordsItemSessionsSessionItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/communications/callRecords/{callRecord%2Did}/sessions/{session%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewCallRecordsItemSessionsSessionItemRequestBuilderInternal(pathParameters 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if sessionId != nil {
+        urlTplParams["session%2Did"] = *sessionId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCallRecordsItemSessionsSessionItemRequestBuilder instantiates a new SessionItemRequestBuilder and sets the default values.
 func NewCallRecordsItemSessionsSessionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallRecordsItemSessionsSessionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewCallRecordsItemSessionsSessionItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewCallRecordsItemSessionsSessionItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property sessions for communications
 func (m *CallRecordsItemSessionsSessionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CallRecordsItemSessionsSessionItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -121,7 +124,7 @@ func (m *CallRecordsItemSessionsSessionItemRequestBuilder) Patch(ctx context.Con
 }
 // Segments provides operations to manage the segments property of the microsoft.graph.callRecords.session entity.
 func (m *CallRecordsItemSessionsSessionItemRequestBuilder) Segments()(*CallRecordsItemSessionsItemSegmentsRequestBuilder) {
-    return NewCallRecordsItemSessionsItemSegmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCallRecordsItemSessionsItemSegmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SegmentsById provides operations to manage the segments property of the microsoft.graph.callRecords.session entity.
 func (m *CallRecordsItemSessionsSessionItemRequestBuilder) SegmentsById(id string)(*CallRecordsItemSessionsItemSegmentsSegmentItemRequestBuilder) {
@@ -129,10 +132,8 @@ func (m *CallRecordsItemSessionsSessionItemRequestBuilder) SegmentsById(id strin
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["segment%2Did"] = id
-    }
-    return NewCallRecordsItemSessionsItemSegmentsSegmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewCallRecordsItemSessionsItemSegmentsSegmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToDeleteRequestInformation delete navigation property sessions for communications
 func (m *CallRecordsItemSessionsSessionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CallRecordsItemSessionsSessionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +170,10 @@ func (m *CallRecordsItemSessionsSessionItemRequestBuilder) ToPatchRequestInforma
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

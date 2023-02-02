@@ -48,8 +48,8 @@ func NewPrivacyRequestBuilderInternal(pathParameters map[string]string, requestA
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewPrivacyRequestBuilder instantiates a new PrivacyRequestBuilder and sets the default values.
@@ -98,7 +98,7 @@ func (m *PrivacyRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61
 }
 // SubjectRightsRequests provides operations to manage the subjectRightsRequests property of the microsoft.graph.privacy entity.
 func (m *PrivacyRequestBuilder) SubjectRightsRequests()(*SubjectRightsRequestsRequestBuilder) {
-    return NewSubjectRightsRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSubjectRightsRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SubjectRightsRequestsById provides operations to manage the subjectRightsRequests property of the microsoft.graph.privacy entity.
 func (m *PrivacyRequestBuilder) SubjectRightsRequestsById(id string)(*SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) {
@@ -106,10 +106,8 @@ func (m *PrivacyRequestBuilder) SubjectRightsRequestsById(id string)(*SubjectRig
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["subjectRightsRequest%2Did"] = id
-    }
-    return NewSubjectRightsRequestsSubjectRightsRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewSubjectRightsRequestsSubjectRightsRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToGetRequestInformation get privacy
 func (m *PrivacyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivacyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -134,7 +132,10 @@ func (m *PrivacyRequestBuilder) ToPatchRequestInformation(ctx context.Context, b
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

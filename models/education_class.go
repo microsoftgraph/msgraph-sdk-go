@@ -48,7 +48,7 @@ type EducationClass struct {
     // Term for this class.
     term EducationTermable
 }
-// NewEducationClass instantiates a new EducationClass and sets the default values.
+// NewEducationClass instantiates a new educationClass and sets the default values.
 func NewEducationClass()(*EducationClass) {
     m := &EducationClass{
         Entity: *NewEntity(),

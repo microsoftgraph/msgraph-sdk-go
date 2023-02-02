@@ -47,7 +47,7 @@ type ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderPatchRequ
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderInternal instantiates a new ConditionalAccessPolicyItemRequestBuilder and sets the default values.
-func NewConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) {
+func NewConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, conditionalAccessPolicyId *string)(*ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) {
     m := &ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/identity/conditionalAccess/policies/{conditionalAccessPolicy%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderIntern
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if conditionalAccessPolicyId != nil {
+        urlTplParams["conditionalAccessPolicy%2Did"] = *conditionalAccessPolicyId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder instantiates a new ConditionalAccessPolicyItemRequestBuilder and sets the default values.
 func NewConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property policies for identity
 func (m *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) ToP
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

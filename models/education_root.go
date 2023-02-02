@@ -23,7 +23,7 @@ type EducationRoot struct {
 func NewEducationRoot()(*EducationRoot) {
     m := &EducationRoot{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateEducationRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

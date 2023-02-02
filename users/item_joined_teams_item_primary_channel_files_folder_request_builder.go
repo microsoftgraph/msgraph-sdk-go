@@ -41,8 +41,8 @@ func NewItemJoinedTeamsItemPrimaryChannelFilesFolderRequestBuilderInternal(pathP
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemJoinedTeamsItemPrimaryChannelFilesFolderRequestBuilder instantiates a new FilesFolderRequestBuilder and sets the default values.
@@ -53,7 +53,7 @@ func NewItemJoinedTeamsItemPrimaryChannelFilesFolderRequestBuilder(rawUrl string
 }
 // Content provides operations to manage the media for the user entity.
 func (m *ItemJoinedTeamsItemPrimaryChannelFilesFolderRequestBuilder) Content()(*ItemJoinedTeamsItemPrimaryChannelFilesFolderContentRequestBuilder) {
-    return NewItemJoinedTeamsItemPrimaryChannelFilesFolderContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemJoinedTeamsItemPrimaryChannelFilesFolderContentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the metadata for the location where the files of a channel are stored. 
 // [Find more info here]

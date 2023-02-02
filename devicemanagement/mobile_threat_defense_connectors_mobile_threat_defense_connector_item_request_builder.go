@@ -47,7 +47,7 @@ type MobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBuilder
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewMobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBuilderInternal instantiates a new MobileThreatDefenseConnectorItemRequestBuilder and sets the default values.
-func NewMobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBuilder) {
+func NewMobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, mobileThreatDefenseConnectorId *string)(*MobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBuilder) {
     m := &MobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceManagement/mobileThreatDefenseConnectors/{mobileThreatDefenseConnector%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewMobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBuil
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if mobileThreatDefenseConnectorId != nil {
+        urlTplParams["mobileThreatDefenseConnector%2Did"] = *mobileThreatDefenseConnectorId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBuilder instantiates a new MobileThreatDefenseConnectorItemRequestBuilder and sets the default values.
 func NewMobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewMobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewMobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property mobileThreatDefenseConnectors for deviceManagement
 func (m *MobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *MobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *MobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBui
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

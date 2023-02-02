@@ -105,13 +105,13 @@ type ServicePrincipal struct {
     // Specifies the verified publisher of the application which this service principal represents.
     verifiedPublisher VerifiedPublisherable
 }
-// NewServicePrincipal instantiates a new ServicePrincipal and sets the default values.
+// NewServicePrincipal instantiates a new servicePrincipal and sets the default values.
 func NewServicePrincipal()(*ServicePrincipal) {
     m := &ServicePrincipal{
         DirectoryObject: *NewDirectoryObject(),
     }
-    odataTypeValue := "#microsoft.graph.servicePrincipal";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.servicePrincipal"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateServicePrincipalFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

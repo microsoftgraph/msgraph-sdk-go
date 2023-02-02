@@ -41,11 +41,11 @@ type SecurityRequestBuilderPatchRequestConfiguration struct {
 }
 // Alerts provides operations to manage the alerts property of the microsoft.graph.security entity.
 func (m *SecurityRequestBuilder) Alerts()(*AlertsRequestBuilder) {
-    return NewAlertsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAlertsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Alerts_v2 provides operations to manage the alerts_v2 property of the microsoft.graph.security entity.
 func (m *SecurityRequestBuilder) Alerts_v2()(*Alerts_v2RequestBuilder) {
-    return NewAlerts_v2RequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAlerts_v2RequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Alerts_v2ById provides operations to manage the alerts_v2 property of the microsoft.graph.security entity.
 func (m *SecurityRequestBuilder) Alerts_v2ById(id string)(*Alerts_v2AlertItemRequestBuilder) {
@@ -53,10 +53,8 @@ func (m *SecurityRequestBuilder) Alerts_v2ById(id string)(*Alerts_v2AlertItemReq
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["alert%2Did"] = id
-    }
-    return NewAlerts_v2AlertItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewAlerts_v2AlertItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // AlertsById provides operations to manage the alerts property of the microsoft.graph.security entity.
 func (m *SecurityRequestBuilder) AlertsById(id string)(*AlertsAlertItemRequestBuilder) {
@@ -64,18 +62,16 @@ func (m *SecurityRequestBuilder) AlertsById(id string)(*AlertsAlertItemRequestBu
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["alert%2Did"] = id
-    }
-    return NewAlertsAlertItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewAlertsAlertItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // AttackSimulation provides operations to manage the attackSimulation property of the microsoft.graph.security entity.
 func (m *SecurityRequestBuilder) AttackSimulation()(*AttackSimulationRequestBuilder) {
-    return NewAttackSimulationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAttackSimulationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Cases provides operations to manage the cases property of the microsoft.graph.security entity.
 func (m *SecurityRequestBuilder) Cases()(*CasesRequestBuilder) {
-    return NewCasesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCasesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewSecurityRequestBuilderInternal instantiates a new SecurityRequestBuilder and sets the default values.
 func NewSecurityRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SecurityRequestBuilder) {
@@ -86,8 +82,8 @@ func NewSecurityRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewSecurityRequestBuilder instantiates a new SecurityRequestBuilder and sets the default values.
@@ -117,7 +113,7 @@ func (m *SecurityRequestBuilder) Get(ctx context.Context, requestConfiguration *
 }
 // Incidents provides operations to manage the incidents property of the microsoft.graph.security entity.
 func (m *SecurityRequestBuilder) Incidents()(*IncidentsRequestBuilder) {
-    return NewIncidentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewIncidentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // IncidentsById provides operations to manage the incidents property of the microsoft.graph.security entity.
 func (m *SecurityRequestBuilder) IncidentsById(id string)(*IncidentsIncidentItemRequestBuilder) {
@@ -125,10 +121,12 @@ func (m *SecurityRequestBuilder) IncidentsById(id string)(*IncidentsIncidentItem
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["incident%2Did"] = id
-    }
-    return NewIncidentsIncidentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewIncidentsIncidentItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
+}
+// MicrosoftGraphSecurityRunHuntingQuery provides operations to call the runHuntingQuery method.
+func (m *SecurityRequestBuilder) MicrosoftGraphSecurityRunHuntingQuery()(*MicrosoftGraphSecurityRunHuntingQueryRunHuntingQueryRequestBuilder) {
+    return NewMicrosoftGraphSecurityRunHuntingQueryRunHuntingQueryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update security
 func (m *SecurityRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Securityable, requestConfiguration *SecurityRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Securityable, error) {
@@ -149,13 +147,9 @@ func (m *SecurityRequestBuilder) Patch(ctx context.Context, body iadcd81124412c6
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Securityable), nil
 }
-// RunHuntingQuery provides operations to call the runHuntingQuery method.
-func (m *SecurityRequestBuilder) RunHuntingQuery()(*RunHuntingQueryRequestBuilder) {
-    return NewRunHuntingQueryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // SecureScoreControlProfiles provides operations to manage the secureScoreControlProfiles property of the microsoft.graph.security entity.
 func (m *SecurityRequestBuilder) SecureScoreControlProfiles()(*SecureScoreControlProfilesRequestBuilder) {
-    return NewSecureScoreControlProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSecureScoreControlProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SecureScoreControlProfilesById provides operations to manage the secureScoreControlProfiles property of the microsoft.graph.security entity.
 func (m *SecurityRequestBuilder) SecureScoreControlProfilesById(id string)(*SecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilder) {
@@ -163,14 +157,12 @@ func (m *SecurityRequestBuilder) SecureScoreControlProfilesById(id string)(*Secu
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["secureScoreControlProfile%2Did"] = id
-    }
-    return NewSecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewSecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // SecureScores provides operations to manage the secureScores property of the microsoft.graph.security entity.
 func (m *SecurityRequestBuilder) SecureScores()(*SecureScoresRequestBuilder) {
-    return NewSecureScoresRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSecureScoresRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SecureScoresById provides operations to manage the secureScores property of the microsoft.graph.security entity.
 func (m *SecurityRequestBuilder) SecureScoresById(id string)(*SecureScoresSecureScoreItemRequestBuilder) {
@@ -178,10 +170,8 @@ func (m *SecurityRequestBuilder) SecureScoresById(id string)(*SecureScoresSecure
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["secureScore%2Did"] = id
-    }
-    return NewSecureScoresSecureScoreItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewSecureScoresSecureScoreItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToGetRequestInformation get security
 func (m *SecurityRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SecurityRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -206,7 +196,10 @@ func (m *SecurityRequestBuilder) ToPatchRequestInformation(ctx context.Context, 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

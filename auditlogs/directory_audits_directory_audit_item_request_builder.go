@@ -47,7 +47,7 @@ type DirectoryAuditsDirectoryAuditItemRequestBuilderPatchRequestConfiguration st
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewDirectoryAuditsDirectoryAuditItemRequestBuilderInternal instantiates a new DirectoryAuditItemRequestBuilder and sets the default values.
-func NewDirectoryAuditsDirectoryAuditItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryAuditsDirectoryAuditItemRequestBuilder) {
+func NewDirectoryAuditsDirectoryAuditItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, directoryAuditId *string)(*DirectoryAuditsDirectoryAuditItemRequestBuilder) {
     m := &DirectoryAuditsDirectoryAuditItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/auditLogs/directoryAudits/{directoryAudit%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewDirectoryAuditsDirectoryAuditItemRequestBuilderInternal(pathParameters m
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if directoryAuditId != nil {
+        urlTplParams["directoryAudit%2Did"] = *directoryAuditId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDirectoryAuditsDirectoryAuditItemRequestBuilder instantiates a new DirectoryAuditItemRequestBuilder and sets the default values.
 func NewDirectoryAuditsDirectoryAuditItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryAuditsDirectoryAuditItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewDirectoryAuditsDirectoryAuditItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewDirectoryAuditsDirectoryAuditItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property directoryAudits for auditLogs
 func (m *DirectoryAuditsDirectoryAuditItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DirectoryAuditsDirectoryAuditItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *DirectoryAuditsDirectoryAuditItemRequestBuilder) ToPatchRequestInformat
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

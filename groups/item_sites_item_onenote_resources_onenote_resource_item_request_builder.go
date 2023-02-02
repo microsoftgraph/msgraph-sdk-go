@@ -47,7 +47,7 @@ type ItemSitesItemOnenoteResourcesOnenoteResourceItemRequestBuilderPatchRequestC
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemSitesItemOnenoteResourcesOnenoteResourceItemRequestBuilderInternal instantiates a new OnenoteResourceItemRequestBuilder and sets the default values.
-func NewItemSitesItemOnenoteResourcesOnenoteResourceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemOnenoteResourcesOnenoteResourceItemRequestBuilder) {
+func NewItemSitesItemOnenoteResourcesOnenoteResourceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, onenoteResourceId *string)(*ItemSitesItemOnenoteResourcesOnenoteResourceItemRequestBuilder) {
     m := &ItemSitesItemOnenoteResourcesOnenoteResourceItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/onenote/resources/{onenoteResource%2Did}{?%24select,%24expand}";
@@ -55,19 +55,22 @@ func NewItemSitesItemOnenoteResourcesOnenoteResourceItemRequestBuilderInternal(p
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if onenoteResourceId != nil {
+        urlTplParams["onenoteResource%2Did"] = *onenoteResourceId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSitesItemOnenoteResourcesOnenoteResourceItemRequestBuilder instantiates a new OnenoteResourceItemRequestBuilder and sets the default values.
 func NewItemSitesItemOnenoteResourcesOnenoteResourceItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemOnenoteResourcesOnenoteResourceItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemSitesItemOnenoteResourcesOnenoteResourceItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemSitesItemOnenoteResourcesOnenoteResourceItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Content provides operations to manage the media for the group entity.
 func (m *ItemSitesItemOnenoteResourcesOnenoteResourceItemRequestBuilder) Content()(*ItemSitesItemOnenoteResourcesItemContentRequestBuilder) {
-    return NewItemSitesItemOnenoteResourcesItemContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesItemOnenoteResourcesItemContentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete navigation property resources for groups
 func (m *ItemSitesItemOnenoteResourcesOnenoteResourceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSitesItemOnenoteResourcesOnenoteResourceItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -158,7 +161,10 @@ func (m *ItemSitesItemOnenoteResourcesOnenoteResourceItemRequestBuilder) ToPatch
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

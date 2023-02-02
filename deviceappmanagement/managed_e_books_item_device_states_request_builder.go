@@ -60,8 +60,8 @@ func NewManagedEBooksItemDeviceStatesRequestBuilderInternal(pathParameters map[s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedEBooksItemDeviceStatesRequestBuilder instantiates a new DeviceStatesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewManagedEBooksItemDeviceStatesRequestBuilder(rawUrl string, requestAdapte
 }
 // Count provides operations to count the resources in the collection.
 func (m *ManagedEBooksItemDeviceStatesRequestBuilder) Count()(*ManagedEBooksItemDeviceStatesCountRequestBuilder) {
-    return NewManagedEBooksItemDeviceStatesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewManagedEBooksItemDeviceStatesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the list of installation states for this eBook.
 func (m *ManagedEBooksItemDeviceStatesRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedEBooksItemDeviceStatesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceInstallStateCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *ManagedEBooksItemDeviceStatesRequestBuilder) ToPostRequestInformation(c
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

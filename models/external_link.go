@@ -17,7 +17,7 @@ type ExternalLink struct {
 func NewExternalLink()(*ExternalLink) {
     m := &ExternalLink{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateExternalLinkFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

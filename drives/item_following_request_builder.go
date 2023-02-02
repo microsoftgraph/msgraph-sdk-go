@@ -53,8 +53,8 @@ func NewItemFollowingRequestBuilderInternal(pathParameters map[string]string, re
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemFollowingRequestBuilder instantiates a new FollowingRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemFollowingRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemFollowingRequestBuilder) Count()(*ItemFollowingCountRequestBuilder) {
-    return NewItemFollowingCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemFollowingCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get list the items that have been followed by the signed in user.This collection includes items that are in the user's drive as well as items they have access to from other drives.
 // [Find more info here]

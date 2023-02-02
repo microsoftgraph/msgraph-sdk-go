@@ -23,8 +23,8 @@ func NewResourceSpecificPermissionGrant()(*ResourceSpecificPermissionGrant) {
     m := &ResourceSpecificPermissionGrant{
         DirectoryObject: *NewDirectoryObject(),
     }
-    odataTypeValue := "#microsoft.graph.resourceSpecificPermissionGrant";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.resourceSpecificPermissionGrant"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateResourceSpecificPermissionGrantFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

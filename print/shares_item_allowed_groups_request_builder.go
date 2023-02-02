@@ -53,8 +53,8 @@ func NewSharesItemAllowedGroupsRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewSharesItemAllowedGroupsRequestBuilder instantiates a new AllowedGroupsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewSharesItemAllowedGroupsRequestBuilder(rawUrl string, requestAdapter i2ae
 }
 // Count provides operations to count the resources in the collection.
 func (m *SharesItemAllowedGroupsRequestBuilder) Count()(*SharesItemAllowedGroupsCountRequestBuilder) {
-    return NewSharesItemAllowedGroupsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSharesItemAllowedGroupsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
 // [Find more info here]
@@ -91,7 +91,7 @@ func (m *SharesItemAllowedGroupsRequestBuilder) Get(ctx context.Context, request
 }
 // Ref provides operations to manage the collection of print entities.
 func (m *SharesItemAllowedGroupsRequestBuilder) Ref()(*SharesItemAllowedGroupsRefRequestBuilder) {
-    return NewSharesItemAllowedGroupsRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSharesItemAllowedGroupsRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
 func (m *SharesItemAllowedGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SharesItemAllowedGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

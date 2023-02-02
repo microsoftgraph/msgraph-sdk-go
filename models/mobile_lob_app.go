@@ -21,8 +21,8 @@ func NewMobileLobApp()(*MobileLobApp) {
     m := &MobileLobApp{
         MobileApp: *NewMobileApp(),
     }
-    odataTypeValue := "#microsoft.graph.mobileLobApp";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.mobileLobApp"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateMobileLobAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

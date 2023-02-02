@@ -29,7 +29,7 @@ type Win32LobAppMsiInformation struct {
 func NewWin32LobAppMsiInformation()(*Win32LobAppMsiInformation) {
     m := &Win32LobAppMsiInformation{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWin32LobAppMsiInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -38,7 +38,7 @@ type ItemConversationsConversationItemRequestBuilderGetRequestConfiguration stru
     QueryParameters *ItemConversationsConversationItemRequestBuilderGetQueryParameters
 }
 // NewItemConversationsConversationItemRequestBuilderInternal instantiates a new ConversationItemRequestBuilder and sets the default values.
-func NewItemConversationsConversationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConversationsConversationItemRequestBuilder) {
+func NewItemConversationsConversationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, conversationId *string)(*ItemConversationsConversationItemRequestBuilder) {
     m := &ItemConversationsConversationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groups/{group%2Did}/conversations/{conversation%2Did}{?%24select}";
@@ -46,15 +46,18 @@ func NewItemConversationsConversationItemRequestBuilderInternal(pathParameters m
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if conversationId != nil {
+        urlTplParams["conversation%2Did"] = *conversationId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemConversationsConversationItemRequestBuilder instantiates a new ConversationItemRequestBuilder and sets the default values.
 func NewItemConversationsConversationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConversationsConversationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemConversationsConversationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemConversationsConversationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property conversations for groups
 func (m *ItemConversationsConversationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemConversationsConversationItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -93,7 +96,7 @@ func (m *ItemConversationsConversationItemRequestBuilder) Get(ctx context.Contex
 }
 // Threads provides operations to manage the threads property of the microsoft.graph.conversation entity.
 func (m *ItemConversationsConversationItemRequestBuilder) Threads()(*ItemConversationsItemThreadsRequestBuilder) {
-    return NewItemConversationsItemThreadsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemConversationsItemThreadsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ThreadsById provides operations to manage the threads property of the microsoft.graph.conversation entity.
 func (m *ItemConversationsConversationItemRequestBuilder) ThreadsById(id string)(*ItemConversationsItemThreadsConversationThreadItemRequestBuilder) {
@@ -101,10 +104,8 @@ func (m *ItemConversationsConversationItemRequestBuilder) ThreadsById(id string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["conversationThread%2Did"] = id
-    }
-    return NewItemConversationsItemThreadsConversationThreadItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemConversationsItemThreadsConversationThreadItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToDeleteRequestInformation delete navigation property conversations for groups
 func (m *ItemConversationsConversationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemConversationsConversationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

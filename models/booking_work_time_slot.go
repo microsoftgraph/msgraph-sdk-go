@@ -19,7 +19,7 @@ type BookingWorkTimeSlot struct {
 func NewBookingWorkTimeSlot()(*BookingWorkTimeSlot) {
     m := &BookingWorkTimeSlot{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateBookingWorkTimeSlotFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

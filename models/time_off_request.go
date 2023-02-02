@@ -20,8 +20,8 @@ func NewTimeOffRequest()(*TimeOffRequest) {
     m := &TimeOffRequest{
         ScheduleChangeRequest: *NewScheduleChangeRequest(),
     }
-    odataTypeValue := "#microsoft.graph.timeOffRequest";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.timeOffRequest"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateTimeOffRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

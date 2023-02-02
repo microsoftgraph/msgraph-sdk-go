@@ -14,7 +14,7 @@ type SharesItemAllowedUsersUserItemRequestBuilder struct {
     urlTemplate string
 }
 // NewSharesItemAllowedUsersUserItemRequestBuilderInternal instantiates a new UserItemRequestBuilder and sets the default values.
-func NewSharesItemAllowedUsersUserItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SharesItemAllowedUsersUserItemRequestBuilder) {
+func NewSharesItemAllowedUsersUserItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, userId *string)(*SharesItemAllowedUsersUserItemRequestBuilder) {
     m := &SharesItemAllowedUsersUserItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/print/shares/{printerShare%2Did}/allowedUsers/{user%2Did}";
@@ -22,17 +22,20 @@ func NewSharesItemAllowedUsersUserItemRequestBuilderInternal(pathParameters map[
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if userId != nil {
+        urlTplParams["user%2Did"] = *userId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewSharesItemAllowedUsersUserItemRequestBuilder instantiates a new UserItemRequestBuilder and sets the default values.
 func NewSharesItemAllowedUsersUserItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SharesItemAllowedUsersUserItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewSharesItemAllowedUsersUserItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewSharesItemAllowedUsersUserItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Ref provides operations to manage the collection of print entities.
 func (m *SharesItemAllowedUsersUserItemRequestBuilder) Ref()(*SharesItemAllowedUsersItemRefRequestBuilder) {
-    return NewSharesItemAllowedUsersItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSharesItemAllowedUsersItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

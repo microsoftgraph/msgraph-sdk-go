@@ -60,8 +60,8 @@ func NewItemJoinedTeamsRequestBuilderInternal(pathParameters map[string]string, 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemJoinedTeamsRequestBuilder instantiates a new JoinedTeamsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewItemJoinedTeamsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemJoinedTeamsRequestBuilder) Count()(*ItemJoinedTeamsCountRequestBuilder) {
-    return NewItemJoinedTeamsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemJoinedTeamsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the teams in Microsoft Teams that the user is a direct member of.
 // [Find more info here]
@@ -96,9 +96,9 @@ func (m *ItemJoinedTeamsRequestBuilder) Get(ctx context.Context, requestConfigur
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamCollectionResponseable), nil
 }
-// GetAllMessages provides operations to call the getAllMessages method.
-func (m *ItemJoinedTeamsRequestBuilder) GetAllMessages()(*ItemJoinedTeamsGetAllMessagesRequestBuilder) {
-    return NewItemJoinedTeamsGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetAllMessages provides operations to call the getAllMessages method.
+func (m *ItemJoinedTeamsRequestBuilder) MicrosoftGraphGetAllMessages()(*ItemJoinedTeamsMicrosoftGraphGetAllMessagesGetAllMessagesRequestBuilder) {
+    return NewItemJoinedTeamsMicrosoftGraphGetAllMessagesGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to joinedTeams for users
 func (m *ItemJoinedTeamsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamable, requestConfiguration *ItemJoinedTeamsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamable, error) {
@@ -142,7 +142,10 @@ func (m *ItemJoinedTeamsRequestBuilder) ToPostRequestInformation(ctx context.Con
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

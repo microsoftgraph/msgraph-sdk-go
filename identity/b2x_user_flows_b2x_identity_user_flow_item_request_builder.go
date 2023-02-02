@@ -47,7 +47,7 @@ type B2xUserFlowsB2xIdentityUserFlowItemRequestBuilderPatchRequestConfiguration 
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewB2xUserFlowsB2xIdentityUserFlowItemRequestBuilderInternal instantiates a new B2xIdentityUserFlowItemRequestBuilder and sets the default values.
-func NewB2xUserFlowsB2xIdentityUserFlowItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*B2xUserFlowsB2xIdentityUserFlowItemRequestBuilder) {
+func NewB2xUserFlowsB2xIdentityUserFlowItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, b2xIdentityUserFlowId *string)(*B2xUserFlowsB2xIdentityUserFlowItemRequestBuilder) {
     m := &B2xUserFlowsB2xIdentityUserFlowItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewB2xUserFlowsB2xIdentityUserFlowItemRequestBuilderInternal(pathParameters
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if b2xIdentityUserFlowId != nil {
+        urlTplParams["b2xIdentityUserFlow%2Did"] = *b2xIdentityUserFlowId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewB2xUserFlowsB2xIdentityUserFlowItemRequestBuilder instantiates a new B2xIdentityUserFlowItemRequestBuilder and sets the default values.
 func NewB2xUserFlowsB2xIdentityUserFlowItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*B2xUserFlowsB2xIdentityUserFlowItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewB2xUserFlowsB2xIdentityUserFlowItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewB2xUserFlowsB2xIdentityUserFlowItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property b2xUserFlows for identity
 func (m *B2xUserFlowsB2xIdentityUserFlowItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *B2xUserFlowsB2xIdentityUserFlowItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -102,7 +105,7 @@ func (m *B2xUserFlowsB2xIdentityUserFlowItemRequestBuilder) Get(ctx context.Cont
 }
 // IdentityProviders provides operations to manage the identityProviders property of the microsoft.graph.b2xIdentityUserFlow entity.
 func (m *B2xUserFlowsB2xIdentityUserFlowItemRequestBuilder) IdentityProviders()(*B2xUserFlowsItemIdentityProvidersRequestBuilder) {
-    return NewB2xUserFlowsItemIdentityProvidersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewB2xUserFlowsItemIdentityProvidersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // IdentityProvidersById provides operations to manage the identityProviders property of the microsoft.graph.b2xIdentityUserFlow entity.
 func (m *B2xUserFlowsB2xIdentityUserFlowItemRequestBuilder) IdentityProvidersById(id string)(*B2xUserFlowsItemIdentityProvidersIdentityProviderItemRequestBuilder) {
@@ -110,14 +113,12 @@ func (m *B2xUserFlowsB2xIdentityUserFlowItemRequestBuilder) IdentityProvidersByI
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["identityProvider%2Did"] = id
-    }
-    return NewB2xUserFlowsItemIdentityProvidersIdentityProviderItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewB2xUserFlowsItemIdentityProvidersIdentityProviderItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Languages provides operations to manage the languages property of the microsoft.graph.b2xIdentityUserFlow entity.
 func (m *B2xUserFlowsB2xIdentityUserFlowItemRequestBuilder) Languages()(*B2xUserFlowsItemLanguagesRequestBuilder) {
-    return NewB2xUserFlowsItemLanguagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewB2xUserFlowsItemLanguagesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // LanguagesById provides operations to manage the languages property of the microsoft.graph.b2xIdentityUserFlow entity.
 func (m *B2xUserFlowsB2xIdentityUserFlowItemRequestBuilder) LanguagesById(id string)(*B2xUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilder) {
@@ -125,10 +126,8 @@ func (m *B2xUserFlowsB2xIdentityUserFlowItemRequestBuilder) LanguagesById(id str
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["userFlowLanguageConfiguration%2Did"] = id
-    }
-    return NewB2xUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewB2xUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Patch update the navigation property b2xUserFlows in identity
 func (m *B2xUserFlowsB2xIdentityUserFlowItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.B2xIdentityUserFlowable, requestConfiguration *B2xUserFlowsB2xIdentityUserFlowItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.B2xIdentityUserFlowable, error) {
@@ -184,7 +183,10 @@ func (m *B2xUserFlowsB2xIdentityUserFlowItemRequestBuilder) ToPatchRequestInform
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -193,7 +195,7 @@ func (m *B2xUserFlowsB2xIdentityUserFlowItemRequestBuilder) ToPatchRequestInform
 }
 // UserAttributeAssignments provides operations to manage the userAttributeAssignments property of the microsoft.graph.b2xIdentityUserFlow entity.
 func (m *B2xUserFlowsB2xIdentityUserFlowItemRequestBuilder) UserAttributeAssignments()(*B2xUserFlowsItemUserAttributeAssignmentsRequestBuilder) {
-    return NewB2xUserFlowsItemUserAttributeAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewB2xUserFlowsItemUserAttributeAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserAttributeAssignmentsById provides operations to manage the userAttributeAssignments property of the microsoft.graph.b2xIdentityUserFlow entity.
 func (m *B2xUserFlowsB2xIdentityUserFlowItemRequestBuilder) UserAttributeAssignmentsById(id string)(*B2xUserFlowsItemUserAttributeAssignmentsIdentityUserFlowAttributeAssignmentItemRequestBuilder) {
@@ -201,14 +203,12 @@ func (m *B2xUserFlowsB2xIdentityUserFlowItemRequestBuilder) UserAttributeAssignm
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["identityUserFlowAttributeAssignment%2Did"] = id
-    }
-    return NewB2xUserFlowsItemUserAttributeAssignmentsIdentityUserFlowAttributeAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewB2xUserFlowsItemUserAttributeAssignmentsIdentityUserFlowAttributeAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // UserFlowIdentityProviders provides operations to manage the userFlowIdentityProviders property of the microsoft.graph.b2xIdentityUserFlow entity.
 func (m *B2xUserFlowsB2xIdentityUserFlowItemRequestBuilder) UserFlowIdentityProviders()(*B2xUserFlowsItemUserFlowIdentityProvidersRequestBuilder) {
-    return NewB2xUserFlowsItemUserFlowIdentityProvidersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewB2xUserFlowsItemUserFlowIdentityProvidersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserFlowIdentityProvidersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identity.b2xUserFlows.item.userFlowIdentityProviders.item collection
 func (m *B2xUserFlowsB2xIdentityUserFlowItemRequestBuilder) UserFlowIdentityProvidersById(id string)(*B2xUserFlowsItemUserFlowIdentityProvidersIdentityProviderBaseItemRequestBuilder) {
@@ -216,8 +216,6 @@ func (m *B2xUserFlowsB2xIdentityUserFlowItemRequestBuilder) UserFlowIdentityProv
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["identityProviderBase%2Did"] = id
-    }
-    return NewB2xUserFlowsItemUserFlowIdentityProvidersIdentityProviderBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewB2xUserFlowsItemUserFlowIdentityProvidersIdentityProviderBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }

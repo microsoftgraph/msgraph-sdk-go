@@ -60,8 +60,8 @@ func NewItemTermStoresRequestBuilderInternal(pathParameters map[string]string, r
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTermStoresRequestBuilder instantiates a new TermStoresRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewItemTermStoresRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemTermStoresRequestBuilder) Count()(*ItemTermStoresCountRequestBuilder) {
-    return NewItemTermStoresCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTermStoresCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the collection of termStores under this site.
 func (m *ItemTermStoresRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTermStoresRequestBuilderGetRequestConfiguration)(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.StoreCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *ItemTermStoresRequestBuilder) ToPostRequestInformation(ctx context.Cont
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

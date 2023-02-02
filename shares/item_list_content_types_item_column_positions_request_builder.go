@@ -53,8 +53,8 @@ func NewItemListContentTypesItemColumnPositionsRequestBuilderInternal(pathParame
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemListContentTypesItemColumnPositionsRequestBuilder instantiates a new ColumnPositionsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemListContentTypesItemColumnPositionsRequestBuilder(rawUrl string, req
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemListContentTypesItemColumnPositionsRequestBuilder) Count()(*ItemListContentTypesItemColumnPositionsCountRequestBuilder) {
-    return NewItemListContentTypesItemColumnPositionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemListContentTypesItemColumnPositionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get column order information in a content type.
 func (m *ItemListContentTypesItemColumnPositionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemListContentTypesItemColumnPositionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionCollectionResponseable, error) {

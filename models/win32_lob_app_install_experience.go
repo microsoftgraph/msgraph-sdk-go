@@ -19,7 +19,7 @@ type Win32LobAppInstallExperience struct {
 func NewWin32LobAppInstallExperience()(*Win32LobAppInstallExperience) {
     m := &Win32LobAppInstallExperience{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWin32LobAppInstallExperienceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

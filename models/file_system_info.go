@@ -22,7 +22,7 @@ type FileSystemInfo struct {
 func NewFileSystemInfo()(*FileSystemInfo) {
     m := &FileSystemInfo{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateFileSystemInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

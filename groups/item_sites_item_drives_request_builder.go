@@ -53,8 +53,8 @@ func NewItemSitesItemDrivesRequestBuilderInternal(pathParameters map[string]stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSitesItemDrivesRequestBuilder instantiates a new DrivesRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemSitesItemDrivesRequestBuilder(rawUrl string, requestAdapter i2ae4187
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemSitesItemDrivesRequestBuilder) Count()(*ItemSitesItemDrivesCountRequestBuilder) {
-    return NewItemSitesItemDrivesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesItemDrivesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve the list of Drive resources available for a target User, Group, or Site.
 // [Find more info here]

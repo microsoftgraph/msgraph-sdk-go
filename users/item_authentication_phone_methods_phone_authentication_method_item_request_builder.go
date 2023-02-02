@@ -47,7 +47,7 @@ type ItemAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilderPa
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilderInternal instantiates a new PhoneAuthenticationMethodItemRequestBuilder and sets the default values.
-func NewItemAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder) {
+func NewItemAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, phoneAuthenticationMethodId *string)(*ItemAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder) {
     m := &ItemAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/authentication/phoneMethods/{phoneAuthenticationMethod%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilde
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if phoneAuthenticationMethodId != nil {
+        urlTplParams["phoneAuthenticationMethod%2Did"] = *phoneAuthenticationMethodId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder instantiates a new PhoneAuthenticationMethodItemRequestBuilder and sets the default values.
 func NewItemAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property phoneMethods for users
 func (m *ItemAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -80,14 +83,6 @@ func (m *ItemAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuild
         return err
     }
     return nil
-}
-// DisableSmsSignIn provides operations to call the disableSmsSignIn method.
-func (m *ItemAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder) DisableSmsSignIn()(*ItemAuthenticationPhoneMethodsItemDisableSmsSignInRequestBuilder) {
-    return NewItemAuthenticationPhoneMethodsItemDisableSmsSignInRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// EnableSmsSignIn provides operations to call the enableSmsSignIn method.
-func (m *ItemAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder) EnableSmsSignIn()(*ItemAuthenticationPhoneMethodsItemEnableSmsSignInRequestBuilder) {
-    return NewItemAuthenticationPhoneMethodsItemEnableSmsSignInRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get the phone numbers registered to a user for authentication.
 func (m *ItemAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PhoneAuthenticationMethodable, error) {
@@ -107,6 +102,14 @@ func (m *ItemAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuild
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PhoneAuthenticationMethodable), nil
+}
+// MicrosoftGraphDisableSmsSignIn provides operations to call the disableSmsSignIn method.
+func (m *ItemAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder) MicrosoftGraphDisableSmsSignIn()(*ItemAuthenticationPhoneMethodsItemMicrosoftGraphDisableSmsSignInDisableSmsSignInRequestBuilder) {
+    return NewItemAuthenticationPhoneMethodsItemMicrosoftGraphDisableSmsSignInDisableSmsSignInRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphEnableSmsSignIn provides operations to call the enableSmsSignIn method.
+func (m *ItemAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder) MicrosoftGraphEnableSmsSignIn()(*ItemAuthenticationPhoneMethodsItemMicrosoftGraphEnableSmsSignInEnableSmsSignInRequestBuilder) {
+    return NewItemAuthenticationPhoneMethodsItemMicrosoftGraphEnableSmsSignInEnableSmsSignInRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property phoneMethods in users
 func (m *ItemAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PhoneAuthenticationMethodable, requestConfiguration *ItemAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PhoneAuthenticationMethodable, error) {
@@ -162,7 +165,10 @@ func (m *ItemAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuild
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

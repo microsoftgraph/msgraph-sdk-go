@@ -13,8 +13,8 @@ func NewTokenIssuancePolicy()(*TokenIssuancePolicy) {
     m := &TokenIssuancePolicy{
         StsPolicy: *NewStsPolicy(),
     }
-    odataTypeValue := "#microsoft.graph.tokenIssuancePolicy";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.tokenIssuancePolicy"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateTokenIssuancePolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

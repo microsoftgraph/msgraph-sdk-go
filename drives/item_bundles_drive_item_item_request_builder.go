@@ -33,7 +33,7 @@ type ItemBundlesDriveItemItemRequestBuilderGetRequestConfiguration struct {
     QueryParameters *ItemBundlesDriveItemItemRequestBuilderGetQueryParameters
 }
 // NewItemBundlesDriveItemItemRequestBuilderInternal instantiates a new DriveItemItemRequestBuilder and sets the default values.
-func NewItemBundlesDriveItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemBundlesDriveItemItemRequestBuilder) {
+func NewItemBundlesDriveItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, driveItemId *string)(*ItemBundlesDriveItemItemRequestBuilder) {
     m := &ItemBundlesDriveItemItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/drives/{drive%2Did}/bundles/{driveItem%2Did}{?%24select,%24expand}";
@@ -41,19 +41,22 @@ func NewItemBundlesDriveItemItemRequestBuilderInternal(pathParameters map[string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if driveItemId != nil {
+        urlTplParams["driveItem%2Did"] = *driveItemId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemBundlesDriveItemItemRequestBuilder instantiates a new DriveItemItemRequestBuilder and sets the default values.
 func NewItemBundlesDriveItemItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemBundlesDriveItemItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemBundlesDriveItemItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemBundlesDriveItemItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Content provides operations to manage the media for the drive entity.
 func (m *ItemBundlesDriveItemItemRequestBuilder) Content()(*ItemBundlesItemContentRequestBuilder) {
-    return NewItemBundlesItemContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemBundlesItemContentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
 func (m *ItemBundlesDriveItemItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemBundlesDriveItemItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable, error) {

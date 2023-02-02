@@ -47,7 +47,7 @@ type ItemEndpointsEndpointItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemEndpointsEndpointItemRequestBuilderInternal instantiates a new EndpointItemRequestBuilder and sets the default values.
-func NewItemEndpointsEndpointItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemEndpointsEndpointItemRequestBuilder) {
+func NewItemEndpointsEndpointItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, endpointId *string)(*ItemEndpointsEndpointItemRequestBuilder) {
     m := &ItemEndpointsEndpointItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/endpoints/{endpoint%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemEndpointsEndpointItemRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if endpointId != nil {
+        urlTplParams["endpoint%2Did"] = *endpointId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemEndpointsEndpointItemRequestBuilder instantiates a new EndpointItemRequestBuilder and sets the default values.
 func NewItemEndpointsEndpointItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemEndpointsEndpointItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemEndpointsEndpointItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemEndpointsEndpointItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property endpoints for servicePrincipals
 func (m *ItemEndpointsEndpointItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemEndpointsEndpointItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemEndpointsEndpointItemRequestBuilder) ToPatchRequestInformation(ctx 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

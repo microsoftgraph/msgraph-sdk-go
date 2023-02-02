@@ -46,7 +46,7 @@ type ItemCalendarGroupsCalendarGroupItemRequestBuilderPatchRequestConfiguration 
 }
 // Calendars provides operations to manage the calendars property of the microsoft.graph.calendarGroup entity.
 func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) Calendars()(*ItemCalendarGroupsItemCalendarsRequestBuilder) {
-    return NewItemCalendarGroupsItemCalendarsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemCalendarGroupsItemCalendarsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // CalendarsById provides operations to manage the calendars property of the microsoft.graph.calendarGroup entity.
 func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) CalendarsById(id string)(*ItemCalendarGroupsItemCalendarsCalendarItemRequestBuilder) {
@@ -54,13 +54,11 @@ func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) CalendarsById(id str
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["calendar%2Did"] = id
-    }
-    return NewItemCalendarGroupsItemCalendarsCalendarItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemCalendarGroupsItemCalendarsCalendarItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // NewItemCalendarGroupsCalendarGroupItemRequestBuilderInternal instantiates a new CalendarGroupItemRequestBuilder and sets the default values.
-func NewItemCalendarGroupsCalendarGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarGroupsCalendarGroupItemRequestBuilder) {
+func NewItemCalendarGroupsCalendarGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, calendarGroupId *string)(*ItemCalendarGroupsCalendarGroupItemRequestBuilder) {
     m := &ItemCalendarGroupsCalendarGroupItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/calendarGroups/{calendarGroup%2Did}{?%24select}";
@@ -68,15 +66,18 @@ func NewItemCalendarGroupsCalendarGroupItemRequestBuilderInternal(pathParameters
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if calendarGroupId != nil {
+        urlTplParams["calendarGroup%2Did"] = *calendarGroupId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemCalendarGroupsCalendarGroupItemRequestBuilder instantiates a new CalendarGroupItemRequestBuilder and sets the default values.
 func NewItemCalendarGroupsCalendarGroupItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarGroupsCalendarGroupItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemCalendarGroupsCalendarGroupItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemCalendarGroupsCalendarGroupItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property calendarGroups for users
 func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemCalendarGroupsCalendarGroupItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -167,7 +168,10 @@ func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) ToPatchRequestInform
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

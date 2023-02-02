@@ -27,7 +27,7 @@ type TargetResource struct {
 func NewTargetResource()(*TargetResource) {
     m := &TargetResource{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTargetResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

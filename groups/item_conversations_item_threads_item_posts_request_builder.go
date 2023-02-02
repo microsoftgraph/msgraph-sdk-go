@@ -51,8 +51,8 @@ func NewItemConversationsItemThreadsItemPostsRequestBuilderInternal(pathParamete
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemConversationsItemThreadsItemPostsRequestBuilder instantiates a new PostsRequestBuilder and sets the default values.
@@ -63,7 +63,7 @@ func NewItemConversationsItemThreadsItemPostsRequestBuilder(rawUrl string, reque
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemConversationsItemThreadsItemPostsRequestBuilder) Count()(*ItemConversationsItemThreadsItemPostsCountRequestBuilder) {
-    return NewItemConversationsItemThreadsItemPostsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemConversationsItemThreadsItemPostsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the posts of the specified thread. You can specify both the parent conversation and the thread, or, you can specify the thread without referencing the parent conversation.
 // [Find more info here]

@@ -47,7 +47,7 @@ type ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilderPatchRe
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilderInternal instantiates a new ManagedEBookAssignmentItemRequestBuilder and sets the default values.
-func NewManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) {
+func NewManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, managedEBookAssignmentId *string)(*ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) {
     m := &ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceAppManagement/managedEBooks/{managedEBook%2Did}/assignments/{managedEBookAssignment%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilderInte
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if managedEBookAssignmentId != nil {
+        urlTplParams["managedEBookAssignment%2Did"] = *managedEBookAssignmentId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder instantiates a new ManagedEBookAssignmentItemRequestBuilder and sets the default values.
 func NewManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property assignments for deviceAppManagement
 func (m *ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) T
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

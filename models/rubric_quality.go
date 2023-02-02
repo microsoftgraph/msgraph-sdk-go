@@ -25,7 +25,7 @@ type RubricQuality struct {
 func NewRubricQuality()(*RubricQuality) {
     m := &RubricQuality{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateRubricQualityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

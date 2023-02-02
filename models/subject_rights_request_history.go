@@ -26,7 +26,7 @@ type SubjectRightsRequestHistory struct {
 func NewSubjectRightsRequestHistory()(*SubjectRightsRequestHistory) {
     m := &SubjectRightsRequestHistory{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSubjectRightsRequestHistoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

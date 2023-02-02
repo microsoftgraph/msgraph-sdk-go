@@ -24,8 +24,8 @@ func NewPrinterShare()(*PrinterShare) {
     m := &PrinterShare{
         PrinterBase: *NewPrinterBase(),
     }
-    odataTypeValue := "#microsoft.graph.printerShare";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.printerShare"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreatePrinterShareFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

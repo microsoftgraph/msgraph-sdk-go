@@ -15,8 +15,8 @@ func NewBuiltInIdentityProvider()(*BuiltInIdentityProvider) {
     m := &BuiltInIdentityProvider{
         IdentityProviderBase: *NewIdentityProviderBase(),
     }
-    odataTypeValue := "#microsoft.graph.builtInIdentityProvider";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.builtInIdentityProvider"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateBuiltInIdentityProviderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

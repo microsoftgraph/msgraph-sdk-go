@@ -45,7 +45,7 @@ type ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilderPatchRequestCon
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilderInternal instantiates a new OutlookCategoryItemRequestBuilder and sets the default values.
-func NewItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilder) {
+func NewItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, outlookCategoryId *string)(*ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilder) {
     m := &ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/outlook/masterCategories/{outlookCategory%2Did}{?%24select}";
@@ -53,15 +53,18 @@ func NewItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilderInternal(pat
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if outlookCategoryId != nil {
+        urlTplParams["outlookCategory%2Did"] = *outlookCategoryId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilder instantiates a new OutlookCategoryItemRequestBuilder and sets the default values.
 func NewItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property masterCategories for users
 func (m *ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -152,7 +155,10 @@ func (m *ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilder) ToPatchRe
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

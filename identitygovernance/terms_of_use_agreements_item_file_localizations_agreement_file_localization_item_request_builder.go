@@ -47,7 +47,7 @@ type TermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemReque
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewTermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemRequestBuilderInternal instantiates a new AgreementFileLocalizationItemRequestBuilder and sets the default values.
-func NewTermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemRequestBuilder) {
+func NewTermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, agreementFileLocalizationId *string)(*TermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemRequestBuilder) {
     m := &TermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/identityGovernance/termsOfUse/agreements/{agreement%2Did}/file/localizations/{agreementFileLocalization%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewTermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemRe
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if agreementFileLocalizationId != nil {
+        urlTplParams["agreementFileLocalization%2Did"] = *agreementFileLocalizationId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemRequestBuilder instantiates a new AgreementFileLocalizationItemRequestBuilder and sets the default values.
 func NewTermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewTermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewTermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property localizations for identityGovernance
 func (m *TermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *TermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemR
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -163,7 +169,7 @@ func (m *TermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemR
 }
 // Versions provides operations to manage the versions property of the microsoft.graph.agreementFileLocalization entity.
 func (m *TermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemRequestBuilder) Versions()(*TermsOfUseAgreementsItemFileLocalizationsItemVersionsRequestBuilder) {
-    return NewTermsOfUseAgreementsItemFileLocalizationsItemVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTermsOfUseAgreementsItemFileLocalizationsItemVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // VersionsById provides operations to manage the versions property of the microsoft.graph.agreementFileLocalization entity.
 func (m *TermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemRequestBuilder) VersionsById(id string)(*TermsOfUseAgreementsItemFileLocalizationsItemVersionsAgreementFileVersionItemRequestBuilder) {
@@ -171,8 +177,6 @@ func (m *TermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemR
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["agreementFileVersion%2Did"] = id
-    }
-    return NewTermsOfUseAgreementsItemFileLocalizationsItemVersionsAgreementFileVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewTermsOfUseAgreementsItemFileLocalizationsItemVersionsAgreementFileVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }

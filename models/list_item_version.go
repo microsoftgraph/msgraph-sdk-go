@@ -15,8 +15,8 @@ func NewListItemVersion()(*ListItemVersion) {
     m := &ListItemVersion{
         BaseItemVersion: *NewBaseItemVersion(),
     }
-    odataTypeValue := "#microsoft.graph.listItemVersion";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.listItemVersion"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateListItemVersionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

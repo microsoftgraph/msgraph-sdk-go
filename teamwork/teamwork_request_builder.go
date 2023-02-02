@@ -48,8 +48,8 @@ func NewTeamworkRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTeamworkRequestBuilder instantiates a new TeamworkRequestBuilder and sets the default values.
@@ -77,6 +77,10 @@ func (m *TeamworkRequestBuilder) Get(ctx context.Context, requestConfiguration *
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamworkable), nil
 }
+// MicrosoftGraphSendActivityNotificationToRecipients provides operations to call the sendActivityNotificationToRecipients method.
+func (m *TeamworkRequestBuilder) MicrosoftGraphSendActivityNotificationToRecipients()(*MicrosoftGraphSendActivityNotificationToRecipientsSendActivityNotificationToRecipientsRequestBuilder) {
+    return NewMicrosoftGraphSendActivityNotificationToRecipientsSendActivityNotificationToRecipientsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update teamwork
 func (m *TeamworkRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamworkable, requestConfiguration *TeamworkRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamworkable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -95,10 +99,6 @@ func (m *TeamworkRequestBuilder) Patch(ctx context.Context, body iadcd81124412c6
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamworkable), nil
-}
-// SendActivityNotificationToRecipients provides operations to call the sendActivityNotificationToRecipients method.
-func (m *TeamworkRequestBuilder) SendActivityNotificationToRecipients()(*SendActivityNotificationToRecipientsRequestBuilder) {
-    return NewSendActivityNotificationToRecipientsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToGetRequestInformation get teamwork
 func (m *TeamworkRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamworkRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -123,7 +123,10 @@ func (m *TeamworkRequestBuilder) ToPatchRequestInformation(ctx context.Context, 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -132,7 +135,7 @@ func (m *TeamworkRequestBuilder) ToPatchRequestInformation(ctx context.Context, 
 }
 // WorkforceIntegrations provides operations to manage the workforceIntegrations property of the microsoft.graph.teamwork entity.
 func (m *TeamworkRequestBuilder) WorkforceIntegrations()(*WorkforceIntegrationsRequestBuilder) {
-    return NewWorkforceIntegrationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewWorkforceIntegrationsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // WorkforceIntegrationsById provides operations to manage the workforceIntegrations property of the microsoft.graph.teamwork entity.
 func (m *TeamworkRequestBuilder) WorkforceIntegrationsById(id string)(*WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) {
@@ -140,8 +143,6 @@ func (m *TeamworkRequestBuilder) WorkforceIntegrationsById(id string)(*Workforce
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["workforceIntegration%2Did"] = id
-    }
-    return NewWorkforceIntegrationsWorkforceIntegrationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewWorkforceIntegrationsWorkforceIntegrationItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }

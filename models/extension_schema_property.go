@@ -19,7 +19,7 @@ type ExtensionSchemaProperty struct {
 func NewExtensionSchemaProperty()(*ExtensionSchemaProperty) {
     m := &ExtensionSchemaProperty{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateExtensionSchemaPropertyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

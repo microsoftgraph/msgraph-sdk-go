@@ -48,7 +48,7 @@ type ClassesEducationClassItemRequestBuilderPatchRequestConfiguration struct {
 }
 // AssignmentCategories provides operations to manage the assignmentCategories property of the microsoft.graph.educationClass entity.
 func (m *ClassesEducationClassItemRequestBuilder) AssignmentCategories()(*ClassesItemAssignmentCategoriesRequestBuilder) {
-    return NewClassesItemAssignmentCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewClassesItemAssignmentCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AssignmentCategoriesById provides operations to manage the assignmentCategories property of the microsoft.graph.educationClass entity.
 func (m *ClassesEducationClassItemRequestBuilder) AssignmentCategoriesById(id string)(*ClassesItemAssignmentCategoriesEducationCategoryItemRequestBuilder) {
@@ -56,18 +56,16 @@ func (m *ClassesEducationClassItemRequestBuilder) AssignmentCategoriesById(id st
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["educationCategory%2Did"] = id
-    }
-    return NewClassesItemAssignmentCategoriesEducationCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewClassesItemAssignmentCategoriesEducationCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // AssignmentDefaults provides operations to manage the assignmentDefaults property of the microsoft.graph.educationClass entity.
 func (m *ClassesEducationClassItemRequestBuilder) AssignmentDefaults()(*ClassesItemAssignmentDefaultsRequestBuilder) {
-    return NewClassesItemAssignmentDefaultsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewClassesItemAssignmentDefaultsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Assignments provides operations to manage the assignments property of the microsoft.graph.educationClass entity.
 func (m *ClassesEducationClassItemRequestBuilder) Assignments()(*ClassesItemAssignmentsRequestBuilder) {
-    return NewClassesItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewClassesItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AssignmentsById provides operations to manage the assignments property of the microsoft.graph.educationClass entity.
 func (m *ClassesEducationClassItemRequestBuilder) AssignmentsById(id string)(*ClassesItemAssignmentsEducationAssignmentItemRequestBuilder) {
@@ -75,17 +73,15 @@ func (m *ClassesEducationClassItemRequestBuilder) AssignmentsById(id string)(*Cl
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["educationAssignment%2Did"] = id
-    }
-    return NewClassesItemAssignmentsEducationAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewClassesItemAssignmentsEducationAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // AssignmentSettings provides operations to manage the assignmentSettings property of the microsoft.graph.educationClass entity.
 func (m *ClassesEducationClassItemRequestBuilder) AssignmentSettings()(*ClassesItemAssignmentSettingsRequestBuilder) {
-    return NewClassesItemAssignmentSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewClassesItemAssignmentSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewClassesEducationClassItemRequestBuilderInternal instantiates a new EducationClassItemRequestBuilder and sets the default values.
-func NewClassesEducationClassItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ClassesEducationClassItemRequestBuilder) {
+func NewClassesEducationClassItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, educationClassId *string)(*ClassesEducationClassItemRequestBuilder) {
     m := &ClassesEducationClassItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/education/classes/{educationClass%2Did}{?%24select,%24expand}";
@@ -93,15 +89,18 @@ func NewClassesEducationClassItemRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if educationClassId != nil {
+        urlTplParams["educationClass%2Did"] = *educationClassId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewClassesEducationClassItemRequestBuilder instantiates a new EducationClassItemRequestBuilder and sets the default values.
 func NewClassesEducationClassItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ClassesEducationClassItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewClassesEducationClassItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewClassesEducationClassItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property classes for education
 func (m *ClassesEducationClassItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ClassesEducationClassItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -140,11 +139,11 @@ func (m *ClassesEducationClassItemRequestBuilder) Get(ctx context.Context, reque
 }
 // Group provides operations to manage the group property of the microsoft.graph.educationClass entity.
 func (m *ClassesEducationClassItemRequestBuilder) Group()(*ClassesItemGroupRequestBuilder) {
-    return NewClassesItemGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewClassesItemGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Members provides operations to manage the members property of the microsoft.graph.educationClass entity.
 func (m *ClassesEducationClassItemRequestBuilder) Members()(*ClassesItemMembersRequestBuilder) {
-    return NewClassesItemMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewClassesItemMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MembersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.classes.item.members.item collection
 func (m *ClassesEducationClassItemRequestBuilder) MembersById(id string)(*ClassesItemMembersEducationUserItemRequestBuilder) {
@@ -152,10 +151,8 @@ func (m *ClassesEducationClassItemRequestBuilder) MembersById(id string)(*Classe
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["educationUser%2Did"] = id
-    }
-    return NewClassesItemMembersEducationUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewClassesItemMembersEducationUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Patch update the navigation property classes in education
 func (m *ClassesEducationClassItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationClassable, requestConfiguration *ClassesEducationClassItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationClassable, error) {
@@ -178,7 +175,7 @@ func (m *ClassesEducationClassItemRequestBuilder) Patch(ctx context.Context, bod
 }
 // Schools provides operations to manage the schools property of the microsoft.graph.educationClass entity.
 func (m *ClassesEducationClassItemRequestBuilder) Schools()(*ClassesItemSchoolsRequestBuilder) {
-    return NewClassesItemSchoolsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewClassesItemSchoolsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SchoolsById provides operations to manage the schools property of the microsoft.graph.educationClass entity.
 func (m *ClassesEducationClassItemRequestBuilder) SchoolsById(id string)(*ClassesItemSchoolsEducationSchoolItemRequestBuilder) {
@@ -186,14 +183,12 @@ func (m *ClassesEducationClassItemRequestBuilder) SchoolsById(id string)(*Classe
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["educationSchool%2Did"] = id
-    }
-    return NewClassesItemSchoolsEducationSchoolItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewClassesItemSchoolsEducationSchoolItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Teachers provides operations to manage the teachers property of the microsoft.graph.educationClass entity.
 func (m *ClassesEducationClassItemRequestBuilder) Teachers()(*ClassesItemTeachersRequestBuilder) {
-    return NewClassesItemTeachersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewClassesItemTeachersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TeachersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.classes.item.teachers.item collection
 func (m *ClassesEducationClassItemRequestBuilder) TeachersById(id string)(*ClassesItemTeachersEducationUserItemRequestBuilder) {
@@ -201,10 +196,8 @@ func (m *ClassesEducationClassItemRequestBuilder) TeachersById(id string)(*Class
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["educationUser%2Did"] = id
-    }
-    return NewClassesItemTeachersEducationUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewClassesItemTeachersEducationUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToDeleteRequestInformation delete navigation property classes for education
 func (m *ClassesEducationClassItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ClassesEducationClassItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -241,7 +234,10 @@ func (m *ClassesEducationClassItemRequestBuilder) ToPatchRequestInformation(ctx 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

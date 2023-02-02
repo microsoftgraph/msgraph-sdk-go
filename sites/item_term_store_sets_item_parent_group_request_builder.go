@@ -55,8 +55,8 @@ func NewItemTermStoreSetsItemParentGroupRequestBuilderInternal(pathParameters ma
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTermStoreSetsItemParentGroupRequestBuilder instantiates a new ParentGroupRequestBuilder and sets the default values.
@@ -121,7 +121,7 @@ func (m *ItemTermStoreSetsItemParentGroupRequestBuilder) Patch(ctx context.Conte
 }
 // Sets provides operations to manage the sets property of the microsoft.graph.termStore.group entity.
 func (m *ItemTermStoreSetsItemParentGroupRequestBuilder) Sets()(*ItemTermStoreSetsItemParentGroupSetsRequestBuilder) {
-    return NewItemTermStoreSetsItemParentGroupSetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTermStoreSetsItemParentGroupSetsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SetsById provides operations to manage the sets property of the microsoft.graph.termStore.group entity.
 func (m *ItemTermStoreSetsItemParentGroupRequestBuilder) SetsById(id string)(*ItemTermStoreSetsItemParentGroupSetsSetItemRequestBuilder) {
@@ -129,10 +129,8 @@ func (m *ItemTermStoreSetsItemParentGroupRequestBuilder) SetsById(id string)(*It
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["set%2Did1"] = id
-    }
-    return NewItemTermStoreSetsItemParentGroupSetsSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemTermStoreSetsItemParentGroupSetsSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToDeleteRequestInformation delete navigation property parentGroup for sites
 func (m *ItemTermStoreSetsItemParentGroupRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTermStoreSetsItemParentGroupRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +167,10 @@ func (m *ItemTermStoreSetsItemParentGroupRequestBuilder) ToPatchRequestInformati
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

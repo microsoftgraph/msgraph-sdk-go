@@ -20,7 +20,7 @@ type EducationAssignmentGrade struct {
 func NewEducationAssignmentGrade()(*EducationAssignmentGrade) {
     m := &EducationAssignmentGrade{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateEducationAssignmentGradeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

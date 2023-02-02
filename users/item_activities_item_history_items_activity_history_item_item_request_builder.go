@@ -48,10 +48,10 @@ type ItemActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilderPatchReq
 }
 // Activity provides operations to manage the activity property of the microsoft.graph.activityHistoryItem entity.
 func (m *ItemActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilder) Activity()(*ItemActivitiesItemHistoryItemsItemActivityRequestBuilder) {
-    return NewItemActivitiesItemHistoryItemsItemActivityRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemActivitiesItemHistoryItemsItemActivityRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewItemActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilderInternal instantiates a new ActivityHistoryItemItemRequestBuilder and sets the default values.
-func NewItemActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilder) {
+func NewItemActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, activityHistoryItemId *string)(*ItemActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilder) {
     m := &ItemActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/activities/{userActivity%2Did}/historyItems/{activityHistoryItem%2Did}{?%24select,%24expand}";
@@ -59,15 +59,18 @@ func NewItemActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilderInter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if activityHistoryItemId != nil {
+        urlTplParams["activityHistoryItem%2Did"] = *activityHistoryItemId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilder instantiates a new ActivityHistoryItemItemRequestBuilder and sets the default values.
 func NewItemActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property historyItems for users
 func (m *ItemActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -158,7 +161,10 @@ func (m *ItemActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilder) To
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

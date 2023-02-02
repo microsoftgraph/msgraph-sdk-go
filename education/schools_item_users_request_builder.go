@@ -53,8 +53,8 @@ func NewSchoolsItemUsersRequestBuilderInternal(pathParameters map[string]string,
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewSchoolsItemUsersRequestBuilder instantiates a new UsersRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewSchoolsItemUsersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 }
 // Count provides operations to count the resources in the collection.
 func (m *SchoolsItemUsersRequestBuilder) Count()(*SchoolsItemUsersCountRequestBuilder) {
-    return NewSchoolsItemUsersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSchoolsItemUsersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the educationUser resources associated with an educationSchool.
 // [Find more info here]
@@ -91,7 +91,7 @@ func (m *SchoolsItemUsersRequestBuilder) Get(ctx context.Context, requestConfigu
 }
 // Ref provides operations to manage the collection of educationRoot entities.
 func (m *SchoolsItemUsersRequestBuilder) Ref()(*SchoolsItemUsersRefRequestBuilder) {
-    return NewSchoolsItemUsersRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSchoolsItemUsersRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation get the educationUser resources associated with an educationSchool.
 func (m *SchoolsItemUsersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SchoolsItemUsersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

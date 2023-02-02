@@ -47,7 +47,7 @@ type ItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilderPatchRequestCon
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilderInternal instantiates a new ScopedRoleMembershipItemRequestBuilder and sets the default values.
-func NewItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilder) {
+func NewItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, scopedRoleMembershipId *string)(*ItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilder) {
     m := &ItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/scopedRoleMemberOf/{scopedRoleMembership%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilderInternal(pat
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if scopedRoleMembershipId != nil {
+        urlTplParams["scopedRoleMembership%2Did"] = *scopedRoleMembershipId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilder instantiates a new ScopedRoleMembershipItemRequestBuilder and sets the default values.
 func NewItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property scopedRoleMemberOf for users
 func (m *ItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilder) ToPatchRe
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

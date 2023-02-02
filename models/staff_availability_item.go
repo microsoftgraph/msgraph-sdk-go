@@ -19,7 +19,7 @@ type StaffAvailabilityItem struct {
 func NewStaffAvailabilityItem()(*StaffAvailabilityItem) {
     m := &StaffAvailabilityItem{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateStaffAvailabilityItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -23,7 +23,7 @@ type SettingTemplateValue struct {
 func NewSettingTemplateValue()(*SettingTemplateValue) {
     m := &SettingTemplateValue{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSettingTemplateValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

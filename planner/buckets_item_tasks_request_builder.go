@@ -60,8 +60,8 @@ func NewBucketsItemTasksRequestBuilderInternal(pathParameters map[string]string,
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewBucketsItemTasksRequestBuilder instantiates a new TasksRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewBucketsItemTasksRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 }
 // Count provides operations to count the resources in the collection.
 func (m *BucketsItemTasksRequestBuilder) Count()(*BucketsItemTasksCountRequestBuilder) {
-    return NewBucketsItemTasksCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewBucketsItemTasksCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of plannerTask objects associated to a plannerBucket object.
 // [Find more info here]
@@ -138,7 +138,10 @@ func (m *BucketsItemTasksRequestBuilder) ToPostRequestInformation(ctx context.Co
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

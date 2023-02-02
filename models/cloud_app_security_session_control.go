@@ -15,8 +15,8 @@ func NewCloudAppSecuritySessionControl()(*CloudAppSecuritySessionControl) {
     m := &CloudAppSecuritySessionControl{
         ConditionalAccessSessionControl: *NewConditionalAccessSessionControl(),
     }
-    odataTypeValue := "#microsoft.graph.cloudAppSecuritySessionControl";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.cloudAppSecuritySessionControl"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateCloudAppSecuritySessionControlFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

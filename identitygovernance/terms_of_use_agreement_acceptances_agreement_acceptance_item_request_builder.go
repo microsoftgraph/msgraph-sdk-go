@@ -47,7 +47,7 @@ type TermsOfUseAgreementAcceptancesAgreementAcceptanceItemRequestBuilderPatchReq
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewTermsOfUseAgreementAcceptancesAgreementAcceptanceItemRequestBuilderInternal instantiates a new AgreementAcceptanceItemRequestBuilder and sets the default values.
-func NewTermsOfUseAgreementAcceptancesAgreementAcceptanceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TermsOfUseAgreementAcceptancesAgreementAcceptanceItemRequestBuilder) {
+func NewTermsOfUseAgreementAcceptancesAgreementAcceptanceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, agreementAcceptanceId *string)(*TermsOfUseAgreementAcceptancesAgreementAcceptanceItemRequestBuilder) {
     m := &TermsOfUseAgreementAcceptancesAgreementAcceptanceItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/identityGovernance/termsOfUse/agreementAcceptances/{agreementAcceptance%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewTermsOfUseAgreementAcceptancesAgreementAcceptanceItemRequestBuilderInter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if agreementAcceptanceId != nil {
+        urlTplParams["agreementAcceptance%2Did"] = *agreementAcceptanceId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTermsOfUseAgreementAcceptancesAgreementAcceptanceItemRequestBuilder instantiates a new AgreementAcceptanceItemRequestBuilder and sets the default values.
 func NewTermsOfUseAgreementAcceptancesAgreementAcceptanceItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TermsOfUseAgreementAcceptancesAgreementAcceptanceItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewTermsOfUseAgreementAcceptancesAgreementAcceptanceItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewTermsOfUseAgreementAcceptancesAgreementAcceptanceItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property agreementAcceptances for identityGovernance
 func (m *TermsOfUseAgreementAcceptancesAgreementAcceptanceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TermsOfUseAgreementAcceptancesAgreementAcceptanceItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *TermsOfUseAgreementAcceptancesAgreementAcceptanceItemRequestBuilder) To
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

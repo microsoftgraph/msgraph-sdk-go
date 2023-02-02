@@ -17,7 +17,7 @@ type HyperlinkOrPictureColumn struct {
 func NewHyperlinkOrPictureColumn()(*HyperlinkOrPictureColumn) {
     m := &HyperlinkOrPictureColumn{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateHyperlinkOrPictureColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

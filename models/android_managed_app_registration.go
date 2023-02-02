@@ -13,8 +13,8 @@ func NewAndroidManagedAppRegistration()(*AndroidManagedAppRegistration) {
     m := &AndroidManagedAppRegistration{
         ManagedAppRegistration: *NewManagedAppRegistration(),
     }
-    odataTypeValue := "#microsoft.graph.androidManagedAppRegistration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidManagedAppRegistration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidManagedAppRegistrationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

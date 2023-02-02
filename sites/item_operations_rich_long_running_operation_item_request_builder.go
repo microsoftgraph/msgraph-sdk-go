@@ -47,7 +47,7 @@ type ItemOperationsRichLongRunningOperationItemRequestBuilderPatchRequestConfigu
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemOperationsRichLongRunningOperationItemRequestBuilderInternal instantiates a new RichLongRunningOperationItemRequestBuilder and sets the default values.
-func NewItemOperationsRichLongRunningOperationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOperationsRichLongRunningOperationItemRequestBuilder) {
+func NewItemOperationsRichLongRunningOperationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, richLongRunningOperationId *string)(*ItemOperationsRichLongRunningOperationItemRequestBuilder) {
     m := &ItemOperationsRichLongRunningOperationItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/sites/{site%2Did}/operations/{richLongRunningOperation%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemOperationsRichLongRunningOperationItemRequestBuilderInternal(pathPar
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if richLongRunningOperationId != nil {
+        urlTplParams["richLongRunningOperation%2Did"] = *richLongRunningOperationId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemOperationsRichLongRunningOperationItemRequestBuilder instantiates a new RichLongRunningOperationItemRequestBuilder and sets the default values.
 func NewItemOperationsRichLongRunningOperationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOperationsRichLongRunningOperationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemOperationsRichLongRunningOperationItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemOperationsRichLongRunningOperationItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property operations for sites
 func (m *ItemOperationsRichLongRunningOperationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemOperationsRichLongRunningOperationItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemOperationsRichLongRunningOperationItemRequestBuilder) ToPatchReques
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

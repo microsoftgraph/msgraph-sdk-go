@@ -47,7 +47,7 @@ type ItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilderPatc
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilderInternal instantiates a new ChecklistItemItemRequestBuilder and sets the default values.
-func NewItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilder) {
+func NewItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, checklistItemId *string)(*ItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilder) {
     m := &ItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/users/{user%2Did}/todo/lists/{todoTaskList%2Did}/tasks/{todoTask%2Did}/checklistItems/{checklistItem%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilderI
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if checklistItemId != nil {
+        urlTplParams["checklistItem%2Did"] = *checklistItemId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilder instantiates a new ChecklistItemItemRequestBuilder and sets the default values.
 func NewItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property checklistItems for users
 func (m *ItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilder
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

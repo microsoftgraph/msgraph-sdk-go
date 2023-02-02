@@ -25,7 +25,7 @@ type AppliedConditionalAccessPolicy struct {
 func NewAppliedConditionalAccessPolicy()(*AppliedConditionalAccessPolicy) {
     m := &AppliedConditionalAccessPolicy{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAppliedConditionalAccessPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

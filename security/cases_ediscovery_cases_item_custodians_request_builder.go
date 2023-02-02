@@ -51,10 +51,6 @@ type CasesEdiscoveryCasesItemCustodiansRequestBuilderPostRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ApplyHold provides operations to call the applyHold method.
-func (m *CasesEdiscoveryCasesItemCustodiansRequestBuilder) ApplyHold()(*CasesEdiscoveryCasesItemCustodiansApplyHoldRequestBuilder) {
-    return NewCasesEdiscoveryCasesItemCustodiansApplyHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewCasesEdiscoveryCasesItemCustodiansRequestBuilderInternal instantiates a new CustodiansRequestBuilder and sets the default values.
 func NewCasesEdiscoveryCasesItemCustodiansRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CasesEdiscoveryCasesItemCustodiansRequestBuilder) {
     m := &CasesEdiscoveryCasesItemCustodiansRequestBuilder{
@@ -64,8 +60,8 @@ func NewCasesEdiscoveryCasesItemCustodiansRequestBuilderInternal(pathParameters 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCasesEdiscoveryCasesItemCustodiansRequestBuilder instantiates a new CustodiansRequestBuilder and sets the default values.
@@ -76,7 +72,7 @@ func NewCasesEdiscoveryCasesItemCustodiansRequestBuilder(rawUrl string, requestA
 }
 // Count provides operations to count the resources in the collection.
 func (m *CasesEdiscoveryCasesItemCustodiansRequestBuilder) Count()(*CasesEdiscoveryCasesItemCustodiansCountRequestBuilder) {
-    return NewCasesEdiscoveryCasesItemCustodiansCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCasesEdiscoveryCasesItemCustodiansCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of the custodian objects and their properties.
 // [Find more info here]
@@ -100,6 +96,14 @@ func (m *CasesEdiscoveryCasesItemCustodiansRequestBuilder) Get(ctx context.Conte
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryCustodianCollectionResponseable), nil
 }
+// MicrosoftGraphSecurityApplyHold provides operations to call the applyHold method.
+func (m *CasesEdiscoveryCasesItemCustodiansRequestBuilder) MicrosoftGraphSecurityApplyHold()(*CasesEdiscoveryCasesItemCustodiansMicrosoftGraphSecurityApplyHoldApplyHoldRequestBuilder) {
+    return NewCasesEdiscoveryCasesItemCustodiansMicrosoftGraphSecurityApplyHoldApplyHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphSecurityRemoveHold provides operations to call the removeHold method.
+func (m *CasesEdiscoveryCasesItemCustodiansRequestBuilder) MicrosoftGraphSecurityRemoveHold()(*CasesEdiscoveryCasesItemCustodiansMicrosoftGraphSecurityRemoveHoldRemoveHoldRequestBuilder) {
+    return NewCasesEdiscoveryCasesItemCustodiansMicrosoftGraphSecurityRemoveHoldRemoveHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Post create a new ediscoveryCustodian object.After the custodian object is created, you will need to create the custodian's userSource to reference their mailbox and OneDrive for Business site.
 // [Find more info here]
 // 
@@ -121,10 +125,6 @@ func (m *CasesEdiscoveryCasesItemCustodiansRequestBuilder) Post(ctx context.Cont
         return nil, nil
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryCustodianable), nil
-}
-// RemoveHold provides operations to call the removeHold method.
-func (m *CasesEdiscoveryCasesItemCustodiansRequestBuilder) RemoveHold()(*CasesEdiscoveryCasesItemCustodiansRemoveHoldRequestBuilder) {
-    return NewCasesEdiscoveryCasesItemCustodiansRemoveHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToGetRequestInformation get a list of the custodian objects and their properties.
 func (m *CasesEdiscoveryCasesItemCustodiansRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemCustodiansRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -149,7 +149,10 @@ func (m *CasesEdiscoveryCasesItemCustodiansRequestBuilder) ToPostRequestInformat
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

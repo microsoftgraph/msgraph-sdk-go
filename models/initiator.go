@@ -15,8 +15,8 @@ func NewInitiator()(*Initiator) {
     m := &Initiator{
         Identity: *NewIdentity(),
     }
-    odataTypeValue := "#microsoft.graph.initiator";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.initiator"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateInitiatorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

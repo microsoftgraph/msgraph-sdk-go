@@ -13,8 +13,8 @@ func NewHomeRealmDiscoveryPolicy()(*HomeRealmDiscoveryPolicy) {
     m := &HomeRealmDiscoveryPolicy{
         StsPolicy: *NewStsPolicy(),
     }
-    odataTypeValue := "#microsoft.graph.homeRealmDiscoveryPolicy";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.homeRealmDiscoveryPolicy"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateHomeRealmDiscoveryPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -47,7 +47,7 @@ type ManagedAppStatusesManagedAppStatusItemRequestBuilderPatchRequestConfigurati
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewManagedAppStatusesManagedAppStatusItemRequestBuilderInternal instantiates a new ManagedAppStatusItemRequestBuilder and sets the default values.
-func NewManagedAppStatusesManagedAppStatusItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedAppStatusesManagedAppStatusItemRequestBuilder) {
+func NewManagedAppStatusesManagedAppStatusItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, managedAppStatusId *string)(*ManagedAppStatusesManagedAppStatusItemRequestBuilder) {
     m := &ManagedAppStatusesManagedAppStatusItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/deviceAppManagement/managedAppStatuses/{managedAppStatus%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewManagedAppStatusesManagedAppStatusItemRequestBuilderInternal(pathParamet
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if managedAppStatusId != nil {
+        urlTplParams["managedAppStatus%2Did"] = *managedAppStatusId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedAppStatusesManagedAppStatusItemRequestBuilder instantiates a new ManagedAppStatusItemRequestBuilder and sets the default values.
 func NewManagedAppStatusesManagedAppStatusItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedAppStatusesManagedAppStatusItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewManagedAppStatusesManagedAppStatusItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewManagedAppStatusesManagedAppStatusItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property managedAppStatuses for deviceAppManagement
 func (m *ManagedAppStatusesManagedAppStatusItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ManagedAppStatusesManagedAppStatusItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *ManagedAppStatusesManagedAppStatusItemRequestBuilder) ToPatchRequestInf
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

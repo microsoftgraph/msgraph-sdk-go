@@ -67,7 +67,7 @@ type NetworkInfo struct {
 func NewNetworkInfo()(*NetworkInfo) {
     m := &NetworkInfo{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateNetworkInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

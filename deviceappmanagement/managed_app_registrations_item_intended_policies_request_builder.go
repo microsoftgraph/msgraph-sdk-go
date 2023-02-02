@@ -60,8 +60,8 @@ func NewManagedAppRegistrationsItemIntendedPoliciesRequestBuilderInternal(pathPa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedAppRegistrationsItemIntendedPoliciesRequestBuilder instantiates a new IntendedPoliciesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewManagedAppRegistrationsItemIntendedPoliciesRequestBuilder(rawUrl string,
 }
 // Count provides operations to count the resources in the collection.
 func (m *ManagedAppRegistrationsItemIntendedPoliciesRequestBuilder) Count()(*ManagedAppRegistrationsItemIntendedPoliciesCountRequestBuilder) {
-    return NewManagedAppRegistrationsItemIntendedPoliciesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewManagedAppRegistrationsItemIntendedPoliciesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get zero or more policies admin intended for the app as of now.
 func (m *ManagedAppRegistrationsItemIntendedPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedAppRegistrationsItemIntendedPoliciesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAppPolicyCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *ManagedAppRegistrationsItemIntendedPoliciesRequestBuilder) ToPostReques
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

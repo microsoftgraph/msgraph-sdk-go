@@ -47,7 +47,7 @@ type DeviceManagementTroubleshootingEventsDeviceManagementTroubleshootingEventIt
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewDeviceManagementTroubleshootingEventsDeviceManagementTroubleshootingEventItemRequestBuilderInternal instantiates a new DeviceManagementTroubleshootingEventItemRequestBuilder and sets the default values.
-func NewDeviceManagementTroubleshootingEventsDeviceManagementTroubleshootingEventItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceManagementTroubleshootingEventsDeviceManagementTroubleshootingEventItemRequestBuilder) {
+func NewDeviceManagementTroubleshootingEventsDeviceManagementTroubleshootingEventItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, deviceManagementTroubleshootingEventId *string)(*DeviceManagementTroubleshootingEventsDeviceManagementTroubleshootingEventItemRequestBuilder) {
     m := &DeviceManagementTroubleshootingEventsDeviceManagementTroubleshootingEventItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/deviceManagementTroubleshootingEvents/{deviceManagementTroubleshootingEvent%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewDeviceManagementTroubleshootingEventsDeviceManagementTroubleshootingEven
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if deviceManagementTroubleshootingEventId != nil {
+        urlTplParams["deviceManagementTroubleshootingEvent%2Did"] = *deviceManagementTroubleshootingEventId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeviceManagementTroubleshootingEventsDeviceManagementTroubleshootingEventItemRequestBuilder instantiates a new DeviceManagementTroubleshootingEventItemRequestBuilder and sets the default values.
 func NewDeviceManagementTroubleshootingEventsDeviceManagementTroubleshootingEventItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceManagementTroubleshootingEventsDeviceManagementTroubleshootingEventItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewDeviceManagementTroubleshootingEventsDeviceManagementTroubleshootingEventItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewDeviceManagementTroubleshootingEventsDeviceManagementTroubleshootingEventItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property deviceManagementTroubleshootingEvents for me
 func (m *DeviceManagementTroubleshootingEventsDeviceManagementTroubleshootingEventItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DeviceManagementTroubleshootingEventsDeviceManagementTroubleshootingEventItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *DeviceManagementTroubleshootingEventsDeviceManagementTroubleshootingEve
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

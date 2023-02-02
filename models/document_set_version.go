@@ -24,8 +24,8 @@ func NewDocumentSetVersion()(*DocumentSetVersion) {
     m := &DocumentSetVersion{
         ListItemVersion: *NewListItemVersion(),
     }
-    odataTypeValue := "#microsoft.graph.documentSetVersion";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.documentSetVersion"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDocumentSetVersionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

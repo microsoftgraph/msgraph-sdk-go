@@ -28,7 +28,7 @@ type ShiftActivity struct {
 func NewShiftActivity()(*ShiftActivity) {
     m := &ShiftActivity{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateShiftActivityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

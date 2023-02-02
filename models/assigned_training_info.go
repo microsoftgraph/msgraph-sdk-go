@@ -21,7 +21,7 @@ type AssignedTrainingInfo struct {
 func NewAssignedTrainingInfo()(*AssignedTrainingInfo) {
     m := &AssignedTrainingInfo{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAssignedTrainingInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

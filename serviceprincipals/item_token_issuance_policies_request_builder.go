@@ -53,8 +53,8 @@ func NewItemTokenIssuancePoliciesRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTokenIssuancePoliciesRequestBuilder instantiates a new TokenIssuancePoliciesRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemTokenIssuancePoliciesRequestBuilder(rawUrl string, requestAdapter i2
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemTokenIssuancePoliciesRequestBuilder) Count()(*ItemTokenIssuancePoliciesCountRequestBuilder) {
-    return NewItemTokenIssuancePoliciesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTokenIssuancePoliciesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the tokenIssuancePolicies assigned to this service principal.
 func (m *ItemTokenIssuancePoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTokenIssuancePoliciesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TokenIssuancePolicyCollectionResponseable, error) {

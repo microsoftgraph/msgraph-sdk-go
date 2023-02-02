@@ -29,7 +29,7 @@ type RecurrencePattern struct {
 func NewRecurrencePattern()(*RecurrencePattern) {
     m := &RecurrencePattern{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateRecurrencePatternFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

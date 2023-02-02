@@ -47,7 +47,7 @@ type JoinedTeamsItemScheduleOpenShiftsOpenShiftItemRequestBuilderPatchRequestCon
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewJoinedTeamsItemScheduleOpenShiftsOpenShiftItemRequestBuilderInternal instantiates a new OpenShiftItemRequestBuilder and sets the default values.
-func NewJoinedTeamsItemScheduleOpenShiftsOpenShiftItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*JoinedTeamsItemScheduleOpenShiftsOpenShiftItemRequestBuilder) {
+func NewJoinedTeamsItemScheduleOpenShiftsOpenShiftItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, openShiftId *string)(*JoinedTeamsItemScheduleOpenShiftsOpenShiftItemRequestBuilder) {
     m := &JoinedTeamsItemScheduleOpenShiftsOpenShiftItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/joinedTeams/{team%2Did}/schedule/openShifts/{openShift%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewJoinedTeamsItemScheduleOpenShiftsOpenShiftItemRequestBuilderInternal(pat
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if openShiftId != nil {
+        urlTplParams["openShift%2Did"] = *openShiftId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewJoinedTeamsItemScheduleOpenShiftsOpenShiftItemRequestBuilder instantiates a new OpenShiftItemRequestBuilder and sets the default values.
 func NewJoinedTeamsItemScheduleOpenShiftsOpenShiftItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*JoinedTeamsItemScheduleOpenShiftsOpenShiftItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewJoinedTeamsItemScheduleOpenShiftsOpenShiftItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewJoinedTeamsItemScheduleOpenShiftsOpenShiftItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property openShifts for me
 func (m *JoinedTeamsItemScheduleOpenShiftsOpenShiftItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *JoinedTeamsItemScheduleOpenShiftsOpenShiftItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -154,7 +157,10 @@ func (m *JoinedTeamsItemScheduleOpenShiftsOpenShiftItemRequestBuilder) ToPatchRe
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

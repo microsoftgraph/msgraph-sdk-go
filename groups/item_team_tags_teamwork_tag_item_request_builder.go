@@ -47,7 +47,7 @@ type ItemTeamTagsTeamworkTagItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewItemTeamTagsTeamworkTagItemRequestBuilderInternal instantiates a new TeamworkTagItemRequestBuilder and sets the default values.
-func NewItemTeamTagsTeamworkTagItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamTagsTeamworkTagItemRequestBuilder) {
+func NewItemTeamTagsTeamworkTagItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, teamworkTagId *string)(*ItemTeamTagsTeamworkTagItemRequestBuilder) {
     m := &ItemTeamTagsTeamworkTagItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/groups/{group%2Did}/team/tags/{teamworkTag%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewItemTeamTagsTeamworkTagItemRequestBuilderInternal(pathParameters map[str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if teamworkTagId != nil {
+        urlTplParams["teamworkTag%2Did"] = *teamworkTagId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTeamTagsTeamworkTagItemRequestBuilder instantiates a new TeamworkTagItemRequestBuilder and sets the default values.
 func NewItemTeamTagsTeamworkTagItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamTagsTeamworkTagItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemTeamTagsTeamworkTagItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemTeamTagsTeamworkTagItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property tags for groups
 func (m *ItemTeamTagsTeamworkTagItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTeamTagsTeamworkTagItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -102,7 +105,7 @@ func (m *ItemTeamTagsTeamworkTagItemRequestBuilder) Get(ctx context.Context, req
 }
 // Members provides operations to manage the members property of the microsoft.graph.teamworkTag entity.
 func (m *ItemTeamTagsTeamworkTagItemRequestBuilder) Members()(*ItemTeamTagsItemMembersRequestBuilder) {
-    return NewItemTeamTagsItemMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTeamTagsItemMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MembersById provides operations to manage the members property of the microsoft.graph.teamworkTag entity.
 func (m *ItemTeamTagsTeamworkTagItemRequestBuilder) MembersById(id string)(*ItemTeamTagsItemMembersTeamworkTagMemberItemRequestBuilder) {
@@ -110,10 +113,8 @@ func (m *ItemTeamTagsTeamworkTagItemRequestBuilder) MembersById(id string)(*Item
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["teamworkTagMember%2Did"] = id
-    }
-    return NewItemTeamTagsItemMembersTeamworkTagMemberItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemTeamTagsItemMembersTeamworkTagMemberItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Patch update the navigation property tags in groups
 func (m *ItemTeamTagsTeamworkTagItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagable, requestConfiguration *ItemTeamTagsTeamworkTagItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagable, error) {
@@ -169,7 +170,10 @@ func (m *ItemTeamTagsTeamworkTagItemRequestBuilder) ToPatchRequestInformation(ct
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

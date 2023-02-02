@@ -60,8 +60,8 @@ func NewEntitlementManagementAccessPackagesRequestBuilderInternal(pathParameters
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEntitlementManagementAccessPackagesRequestBuilder instantiates a new AccessPackagesRequestBuilder and sets the default values.
@@ -72,11 +72,7 @@ func NewEntitlementManagementAccessPackagesRequestBuilder(rawUrl string, request
 }
 // Count provides operations to count the resources in the collection.
 func (m *EntitlementManagementAccessPackagesRequestBuilder) Count()(*EntitlementManagementAccessPackagesCountRequestBuilder) {
-    return NewEntitlementManagementAccessPackagesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
-func (m *EntitlementManagementAccessPackagesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*EntitlementManagementAccessPackagesFilterByCurrentUserWithOnRequestBuilder) {
-    return NewEntitlementManagementAccessPackagesFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
+    return NewEntitlementManagementAccessPackagesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of accessPackage objects.  The resulting list includes all the access packages that the caller has access to read, across all catalogs.
 // [Find more info here]
@@ -99,6 +95,10 @@ func (m *EntitlementManagementAccessPackagesRequestBuilder) Get(ctx context.Cont
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageCollectionResponseable), nil
+}
+// MicrosoftGraphFilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
+func (m *EntitlementManagementAccessPackagesRequestBuilder) MicrosoftGraphFilterByCurrentUserWithOn(on *string)(*EntitlementManagementAccessPackagesMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnRequestBuilder) {
+    return NewEntitlementManagementAccessPackagesMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
 }
 // Post create a new accessPackage object. The access package will be added to an existing accessPackageCatalog.
 // [Find more info here]
@@ -145,7 +145,10 @@ func (m *EntitlementManagementAccessPackagesRequestBuilder) ToPostRequestInforma
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -21,7 +21,7 @@ type AccessReviewReviewerScope struct {
 func NewAccessReviewReviewerScope()(*AccessReviewReviewerScope) {
     m := &AccessReviewReviewerScope{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAccessReviewReviewerScopeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

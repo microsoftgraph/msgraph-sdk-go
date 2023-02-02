@@ -33,7 +33,7 @@ type PrintersItemSharesPrinterShareItemRequestBuilderGetRequestConfiguration str
     QueryParameters *PrintersItemSharesPrinterShareItemRequestBuilderGetQueryParameters
 }
 // NewPrintersItemSharesPrinterShareItemRequestBuilderInternal instantiates a new PrinterShareItemRequestBuilder and sets the default values.
-func NewPrintersItemSharesPrinterShareItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrintersItemSharesPrinterShareItemRequestBuilder) {
+func NewPrintersItemSharesPrinterShareItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, printerShareId *string)(*PrintersItemSharesPrinterShareItemRequestBuilder) {
     m := &PrintersItemSharesPrinterShareItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/print/printers/{printer%2Did}/shares/{printerShare%2Did}{?%24select,%24expand}";
@@ -41,15 +41,18 @@ func NewPrintersItemSharesPrinterShareItemRequestBuilderInternal(pathParameters 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if printerShareId != nil {
+        urlTplParams["printerShare%2Did"] = *printerShareId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewPrintersItemSharesPrinterShareItemRequestBuilder instantiates a new PrinterShareItemRequestBuilder and sets the default values.
 func NewPrintersItemSharesPrinterShareItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrintersItemSharesPrinterShareItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewPrintersItemSharesPrinterShareItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewPrintersItemSharesPrinterShareItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get the list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.
 func (m *PrintersItemSharesPrinterShareItemRequestBuilder) Get(ctx context.Context, requestConfiguration *PrintersItemSharesPrinterShareItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrinterShareable, error) {

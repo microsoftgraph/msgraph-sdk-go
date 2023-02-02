@@ -60,8 +60,8 @@ func NewConnectionsItemItemsRequestBuilderInternal(pathParameters map[string]str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewConnectionsItemItemsRequestBuilder instantiates a new ItemsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewConnectionsItemItemsRequestBuilder(rawUrl string, requestAdapter i2ae418
 }
 // Count provides operations to count the resources in the collection.
 func (m *ConnectionsItemItemsRequestBuilder) Count()(*ConnectionsItemItemsCountRequestBuilder) {
-    return NewConnectionsItemItemsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewConnectionsItemItemsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get items from external
 func (m *ConnectionsItemItemsRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectionsItemItemsRequestBuilderGetRequestConfiguration)(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalItemCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *ConnectionsItemItemsRequestBuilder) ToPostRequestInformation(ctx contex
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

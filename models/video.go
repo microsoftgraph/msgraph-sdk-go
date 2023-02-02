@@ -35,7 +35,7 @@ type Video struct {
 func NewVideo()(*Video) {
     m := &Video{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateVideoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -17,8 +17,8 @@ func NewTeamUnarchivedEventMessageDetail()(*TeamUnarchivedEventMessageDetail) {
     m := &TeamUnarchivedEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),
     }
-    odataTypeValue := "#microsoft.graph.teamUnarchivedEventMessageDetail";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.teamUnarchivedEventMessageDetail"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateTeamUnarchivedEventMessageDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

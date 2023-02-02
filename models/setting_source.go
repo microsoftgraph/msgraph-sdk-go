@@ -21,7 +21,7 @@ type SettingSource struct {
 func NewSettingSource()(*SettingSource) {
     m := &SettingSource{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSettingSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

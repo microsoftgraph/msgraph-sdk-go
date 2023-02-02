@@ -31,7 +31,7 @@ type FileDetails struct {
 func NewFileDetails()(*FileDetails) {
     m := &FileDetails{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateFileDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -18,7 +18,7 @@ func NewODataError()(*ODataError) {
     m := &ODataError{
         ApiError: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewApiError(),
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateODataErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -17,7 +17,7 @@ type LicenseProcessingState struct {
 func NewLicenseProcessingState()(*LicenseProcessingState) {
     m := &LicenseProcessingState{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateLicenseProcessingStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

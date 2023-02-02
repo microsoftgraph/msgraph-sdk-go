@@ -55,8 +55,8 @@ func NewMeAssignmentsItemRubricRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMeAssignmentsItemRubricRequestBuilder instantiates a new RubricRequestBuilder and sets the default values.
@@ -124,7 +124,7 @@ func (m *MeAssignmentsItemRubricRequestBuilder) Patch(ctx context.Context, body 
 }
 // Ref provides operations to manage the collection of educationRoot entities.
 func (m *MeAssignmentsItemRubricRequestBuilder) Ref()(*MeAssignmentsItemRubricRefRequestBuilder) {
-    return NewMeAssignmentsItemRubricRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMeAssignmentsItemRubricRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property rubric for education
 func (m *MeAssignmentsItemRubricRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *MeAssignmentsItemRubricRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -161,7 +161,10 @@ func (m *MeAssignmentsItemRubricRequestBuilder) ToPatchRequestInformation(ctx co
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

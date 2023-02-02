@@ -37,7 +37,7 @@ type ChangeNotification struct {
 func NewChangeNotification()(*ChangeNotification) {
     m := &ChangeNotification{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateChangeNotificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

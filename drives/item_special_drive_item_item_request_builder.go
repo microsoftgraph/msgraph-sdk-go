@@ -33,7 +33,7 @@ type ItemSpecialDriveItemItemRequestBuilderGetRequestConfiguration struct {
     QueryParameters *ItemSpecialDriveItemItemRequestBuilderGetQueryParameters
 }
 // NewItemSpecialDriveItemItemRequestBuilderInternal instantiates a new DriveItemItemRequestBuilder and sets the default values.
-func NewItemSpecialDriveItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSpecialDriveItemItemRequestBuilder) {
+func NewItemSpecialDriveItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, driveItemId *string)(*ItemSpecialDriveItemItemRequestBuilder) {
     m := &ItemSpecialDriveItemItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/drives/{drive%2Did}/special/{driveItem%2Did}{?%24select,%24expand}";
@@ -41,19 +41,22 @@ func NewItemSpecialDriveItemItemRequestBuilderInternal(pathParameters map[string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if driveItemId != nil {
+        urlTplParams["driveItem%2Did"] = *driveItemId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSpecialDriveItemItemRequestBuilder instantiates a new DriveItemItemRequestBuilder and sets the default values.
 func NewItemSpecialDriveItemItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSpecialDriveItemItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemSpecialDriveItemItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemSpecialDriveItemItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Content provides operations to manage the media for the drive entity.
 func (m *ItemSpecialDriveItemItemRequestBuilder) Content()(*ItemSpecialItemContentRequestBuilder) {
-    return NewItemSpecialItemContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSpecialItemContentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get collection of common folders available in OneDrive. Read-only. Nullable.
 func (m *ItemSpecialDriveItemItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSpecialDriveItemItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable, error) {

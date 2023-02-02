@@ -32,12 +32,8 @@ type OwnedDevicesDirectoryObjectItemRequestBuilderGetRequestConfiguration struct
     // Request query parameters
     QueryParameters *OwnedDevicesDirectoryObjectItemRequestBuilderGetQueryParameters
 }
-// AppRoleAssignment casts the previous resource to appRoleAssignment.
-func (m *OwnedDevicesDirectoryObjectItemRequestBuilder) AppRoleAssignment()(*OwnedDevicesItemAppRoleAssignmentRequestBuilder) {
-    return NewOwnedDevicesItemAppRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewOwnedDevicesDirectoryObjectItemRequestBuilderInternal instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
-func NewOwnedDevicesDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OwnedDevicesDirectoryObjectItemRequestBuilder) {
+func NewOwnedDevicesDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, directoryObjectId *string)(*OwnedDevicesDirectoryObjectItemRequestBuilder) {
     m := &OwnedDevicesDirectoryObjectItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/me/ownedDevices/{directoryObject%2Did}{?%24select,%24expand}";
@@ -45,23 +41,18 @@ func NewOwnedDevicesDirectoryObjectItemRequestBuilderInternal(pathParameters map
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if directoryObjectId != nil {
+        urlTplParams["directoryObject%2Did"] = *directoryObjectId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewOwnedDevicesDirectoryObjectItemRequestBuilder instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
 func NewOwnedDevicesDirectoryObjectItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OwnedDevicesDirectoryObjectItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewOwnedDevicesDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
-}
-// Device casts the previous resource to device.
-func (m *OwnedDevicesDirectoryObjectItemRequestBuilder) Device()(*OwnedDevicesItemDeviceRequestBuilder) {
-    return NewOwnedDevicesItemDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Endpoint casts the previous resource to endpoint.
-func (m *OwnedDevicesDirectoryObjectItemRequestBuilder) Endpoint()(*OwnedDevicesItemEndpointRequestBuilder) {
-    return NewOwnedDevicesItemEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewOwnedDevicesDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get devices that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 func (m *OwnedDevicesDirectoryObjectItemRequestBuilder) Get(ctx context.Context, requestConfiguration *OwnedDevicesDirectoryObjectItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, error) {
@@ -81,6 +72,18 @@ func (m *OwnedDevicesDirectoryObjectItemRequestBuilder) Get(ctx context.Context,
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable), nil
+}
+// MicrosoftGraphAppRoleAssignment casts the previous resource to appRoleAssignment.
+func (m *OwnedDevicesDirectoryObjectItemRequestBuilder) MicrosoftGraphAppRoleAssignment()(*OwnedDevicesItemMicrosoftGraphAppRoleAssignmentAppRoleAssignmentRequestBuilder) {
+    return NewOwnedDevicesItemMicrosoftGraphAppRoleAssignmentAppRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphDevice casts the previous resource to device.
+func (m *OwnedDevicesDirectoryObjectItemRequestBuilder) MicrosoftGraphDevice()(*OwnedDevicesItemMicrosoftGraphDeviceDeviceRequestBuilder) {
+    return NewOwnedDevicesItemMicrosoftGraphDeviceDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphEndpoint casts the previous resource to endpoint.
+func (m *OwnedDevicesDirectoryObjectItemRequestBuilder) MicrosoftGraphEndpoint()(*OwnedDevicesItemMicrosoftGraphEndpointEndpointRequestBuilder) {
+    return NewOwnedDevicesItemMicrosoftGraphEndpointEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation devices that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 func (m *OwnedDevicesDirectoryObjectItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OwnedDevicesDirectoryObjectItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -19,7 +19,7 @@ type OnenotePagePreview struct {
 func NewOnenotePagePreview()(*OnenotePagePreview) {
     m := &OnenotePagePreview{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateOnenotePagePreviewFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

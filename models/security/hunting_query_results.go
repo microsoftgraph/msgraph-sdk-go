@@ -19,7 +19,7 @@ type HuntingQueryResults struct {
 func NewHuntingQueryResults()(*HuntingQueryResults) {
     m := &HuntingQueryResults{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateHuntingQueryResultsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

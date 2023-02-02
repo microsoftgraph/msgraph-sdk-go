@@ -48,7 +48,7 @@ type TermsOfUseAgreementsAgreementItemRequestBuilderPatchRequestConfiguration st
 }
 // Acceptances provides operations to manage the acceptances property of the microsoft.graph.agreement entity.
 func (m *TermsOfUseAgreementsAgreementItemRequestBuilder) Acceptances()(*TermsOfUseAgreementsItemAcceptancesRequestBuilder) {
-    return NewTermsOfUseAgreementsItemAcceptancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTermsOfUseAgreementsItemAcceptancesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AcceptancesById provides operations to manage the acceptances property of the microsoft.graph.agreement entity.
 func (m *TermsOfUseAgreementsAgreementItemRequestBuilder) AcceptancesById(id string)(*TermsOfUseAgreementsItemAcceptancesAgreementAcceptanceItemRequestBuilder) {
@@ -56,13 +56,11 @@ func (m *TermsOfUseAgreementsAgreementItemRequestBuilder) AcceptancesById(id str
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["agreementAcceptance%2Did"] = id
-    }
-    return NewTermsOfUseAgreementsItemAcceptancesAgreementAcceptanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewTermsOfUseAgreementsItemAcceptancesAgreementAcceptanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // NewTermsOfUseAgreementsAgreementItemRequestBuilderInternal instantiates a new AgreementItemRequestBuilder and sets the default values.
-func NewTermsOfUseAgreementsAgreementItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TermsOfUseAgreementsAgreementItemRequestBuilder) {
+func NewTermsOfUseAgreementsAgreementItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, agreementId *string)(*TermsOfUseAgreementsAgreementItemRequestBuilder) {
     m := &TermsOfUseAgreementsAgreementItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/identityGovernance/termsOfUse/agreements/{agreement%2Did}{?%24select,%24expand}";
@@ -70,15 +68,18 @@ func NewTermsOfUseAgreementsAgreementItemRequestBuilderInternal(pathParameters m
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if agreementId != nil {
+        urlTplParams["agreement%2Did"] = *agreementId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTermsOfUseAgreementsAgreementItemRequestBuilder instantiates a new AgreementItemRequestBuilder and sets the default values.
 func NewTermsOfUseAgreementsAgreementItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TermsOfUseAgreementsAgreementItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewTermsOfUseAgreementsAgreementItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewTermsOfUseAgreementsAgreementItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property agreements for identityGovernance
 func (m *TermsOfUseAgreementsAgreementItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TermsOfUseAgreementsAgreementItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -98,11 +99,11 @@ func (m *TermsOfUseAgreementsAgreementItemRequestBuilder) Delete(ctx context.Con
 }
 // File provides operations to manage the file property of the microsoft.graph.agreement entity.
 func (m *TermsOfUseAgreementsAgreementItemRequestBuilder) File()(*TermsOfUseAgreementsItemFileRequestBuilder) {
-    return NewTermsOfUseAgreementsItemFileRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTermsOfUseAgreementsItemFileRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Files provides operations to manage the files property of the microsoft.graph.agreement entity.
 func (m *TermsOfUseAgreementsAgreementItemRequestBuilder) Files()(*TermsOfUseAgreementsItemFilesRequestBuilder) {
-    return NewTermsOfUseAgreementsItemFilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTermsOfUseAgreementsItemFilesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // FilesById provides operations to manage the files property of the microsoft.graph.agreement entity.
 func (m *TermsOfUseAgreementsAgreementItemRequestBuilder) FilesById(id string)(*TermsOfUseAgreementsItemFilesAgreementFileLocalizationItemRequestBuilder) {
@@ -110,10 +111,8 @@ func (m *TermsOfUseAgreementsAgreementItemRequestBuilder) FilesById(id string)(*
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["agreementFileLocalization%2Did"] = id
-    }
-    return NewTermsOfUseAgreementsItemFilesAgreementFileLocalizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewTermsOfUseAgreementsItemFilesAgreementFileLocalizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Get represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
 func (m *TermsOfUseAgreementsAgreementItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TermsOfUseAgreementsAgreementItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Agreementable, error) {
@@ -188,7 +187,10 @@ func (m *TermsOfUseAgreementsAgreementItemRequestBuilder) ToPatchRequestInformat
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

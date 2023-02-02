@@ -19,7 +19,7 @@ type EmployeeOrgData struct {
 func NewEmployeeOrgData()(*EmployeeOrgData) {
     m := &EmployeeOrgData{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateEmployeeOrgDataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

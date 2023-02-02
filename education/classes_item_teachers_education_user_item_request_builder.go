@@ -14,7 +14,7 @@ type ClassesItemTeachersEducationUserItemRequestBuilder struct {
     urlTemplate string
 }
 // NewClassesItemTeachersEducationUserItemRequestBuilderInternal instantiates a new EducationUserItemRequestBuilder and sets the default values.
-func NewClassesItemTeachersEducationUserItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ClassesItemTeachersEducationUserItemRequestBuilder) {
+func NewClassesItemTeachersEducationUserItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, educationUserId *string)(*ClassesItemTeachersEducationUserItemRequestBuilder) {
     m := &ClassesItemTeachersEducationUserItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/education/classes/{educationClass%2Did}/teachers/{educationUser%2Did}";
@@ -22,17 +22,20 @@ func NewClassesItemTeachersEducationUserItemRequestBuilderInternal(pathParameter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if educationUserId != nil {
+        urlTplParams["educationUser%2Did"] = *educationUserId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewClassesItemTeachersEducationUserItemRequestBuilder instantiates a new EducationUserItemRequestBuilder and sets the default values.
 func NewClassesItemTeachersEducationUserItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ClassesItemTeachersEducationUserItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewClassesItemTeachersEducationUserItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewClassesItemTeachersEducationUserItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Ref provides operations to manage the collection of educationRoot entities.
 func (m *ClassesItemTeachersEducationUserItemRequestBuilder) Ref()(*ClassesItemTeachersItemRefRequestBuilder) {
-    return NewClassesItemTeachersItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewClassesItemTeachersItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

@@ -47,7 +47,7 @@ type OAuth2PermissionGrantItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewOAuth2PermissionGrantItemRequestBuilderInternal instantiates a new OAuth2PermissionGrantItemRequestBuilder and sets the default values.
-func NewOAuth2PermissionGrantItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OAuth2PermissionGrantItemRequestBuilder) {
+func NewOAuth2PermissionGrantItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, oAuth2PermissionGrantId *string)(*OAuth2PermissionGrantItemRequestBuilder) {
     m := &OAuth2PermissionGrantItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/oauth2PermissionGrants/{oAuth2PermissionGrant%2Did}{?%24select,%24expand}";
@@ -55,15 +55,18 @@ func NewOAuth2PermissionGrantItemRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if oAuth2PermissionGrantId != nil {
+        urlTplParams["oAuth2PermissionGrant%2Did"] = *oAuth2PermissionGrantId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewOAuth2PermissionGrantItemRequestBuilder instantiates a new OAuth2PermissionGrantItemRequestBuilder and sets the default values.
 func NewOAuth2PermissionGrantItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OAuth2PermissionGrantItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewOAuth2PermissionGrantItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewOAuth2PermissionGrantItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete a delegated permission grant, represented by an oAuth2PermissionGrant object. When a delegated permission grant is deleted, the access it granted is revoked. Existing access tokens will continue to be valid for their lifetime, but new access tokens will not be granted for the delegated permissions identified in the deleted **oAuth2PermissionGrant**.
 // [Find more info here]
@@ -163,7 +166,10 @@ func (m *OAuth2PermissionGrantItemRequestBuilder) ToPatchRequestInformation(ctx 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

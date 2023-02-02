@@ -19,7 +19,7 @@ type ImplicitGrantSettings struct {
 func NewImplicitGrantSettings()(*ImplicitGrantSettings) {
     m := &ImplicitGrantSettings{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateImplicitGrantSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

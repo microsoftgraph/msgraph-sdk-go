@@ -64,8 +64,8 @@ func NewWindowsInformationProtection()(*WindowsInformationProtection) {
     m := &WindowsInformationProtection{
         ManagedAppPolicy: *NewManagedAppPolicy(),
     }
-    odataTypeValue := "#microsoft.graph.windowsInformationProtection";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsInformationProtection"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsInformationProtectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

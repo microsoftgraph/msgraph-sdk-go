@@ -46,12 +46,8 @@ type ItemChannelsChannelItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CompleteMigration provides operations to call the completeMigration method.
-func (m *ItemChannelsChannelItemRequestBuilder) CompleteMigration()(*ItemChannelsItemCompleteMigrationRequestBuilder) {
-    return NewItemChannelsItemCompleteMigrationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewItemChannelsChannelItemRequestBuilderInternal instantiates a new ChannelItemRequestBuilder and sets the default values.
-func NewItemChannelsChannelItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemChannelsChannelItemRequestBuilder) {
+func NewItemChannelsChannelItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, channelId *string)(*ItemChannelsChannelItemRequestBuilder) {
     m := &ItemChannelsChannelItemRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/teams/{team%2Did}/channels/{channel%2Did}{?%24select,%24expand}";
@@ -59,15 +55,18 @@ func NewItemChannelsChannelItemRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    if channelId != nil {
+        urlTplParams["channel%2Did"] = *channelId
+    }
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemChannelsChannelItemRequestBuilder instantiates a new ChannelItemRequestBuilder and sets the default values.
 func NewItemChannelsChannelItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemChannelsChannelItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemChannelsChannelItemRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemChannelsChannelItemRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property channels for teams
 func (m *ItemChannelsChannelItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemChannelsChannelItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -85,13 +84,9 @@ func (m *ItemChannelsChannelItemRequestBuilder) Delete(ctx context.Context, requ
     }
     return nil
 }
-// DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName provides operations to call the doesUserHaveAccess method.
-func (m *ItemChannelsChannelItemRequestBuilder) DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName()(*ItemChannelsItemDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder) {
-    return NewItemChannelsItemDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // FilesFolder provides operations to manage the filesFolder property of the microsoft.graph.channel entity.
 func (m *ItemChannelsChannelItemRequestBuilder) FilesFolder()(*ItemChannelsItemFilesFolderRequestBuilder) {
-    return NewItemChannelsItemFilesFolderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemChannelsItemFilesFolderRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the collection of channels and messages associated with the team.
 func (m *ItemChannelsChannelItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemChannelsChannelItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Channelable, error) {
@@ -114,7 +109,7 @@ func (m *ItemChannelsChannelItemRequestBuilder) Get(ctx context.Context, request
 }
 // Members provides operations to manage the members property of the microsoft.graph.channel entity.
 func (m *ItemChannelsChannelItemRequestBuilder) Members()(*ItemChannelsItemMembersRequestBuilder) {
-    return NewItemChannelsItemMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemChannelsItemMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MembersById provides operations to manage the members property of the microsoft.graph.channel entity.
 func (m *ItemChannelsChannelItemRequestBuilder) MembersById(id string)(*ItemChannelsItemMembersConversationMemberItemRequestBuilder) {
@@ -122,14 +117,12 @@ func (m *ItemChannelsChannelItemRequestBuilder) MembersById(id string)(*ItemChan
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["conversationMember%2Did"] = id
-    }
-    return NewItemChannelsItemMembersConversationMemberItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemChannelsItemMembersConversationMemberItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Messages provides operations to manage the messages property of the microsoft.graph.channel entity.
 func (m *ItemChannelsChannelItemRequestBuilder) Messages()(*ItemChannelsItemMessagesRequestBuilder) {
-    return NewItemChannelsItemMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemChannelsItemMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MessagesById provides operations to manage the messages property of the microsoft.graph.channel entity.
 func (m *ItemChannelsChannelItemRequestBuilder) MessagesById(id string)(*ItemChannelsItemMessagesChatMessageItemRequestBuilder) {
@@ -137,10 +130,24 @@ func (m *ItemChannelsChannelItemRequestBuilder) MessagesById(id string)(*ItemCha
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["chatMessage%2Did"] = id
-    }
-    return NewItemChannelsItemMessagesChatMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemChannelsItemMessagesChatMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
+}
+// MicrosoftGraphCompleteMigration provides operations to call the completeMigration method.
+func (m *ItemChannelsChannelItemRequestBuilder) MicrosoftGraphCompleteMigration()(*ItemChannelsItemMicrosoftGraphCompleteMigrationCompleteMigrationRequestBuilder) {
+    return NewItemChannelsItemMicrosoftGraphCompleteMigrationCompleteMigrationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName provides operations to call the doesUserHaveAccess method.
+func (m *ItemChannelsChannelItemRequestBuilder) MicrosoftGraphDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName()(*ItemChannelsItemMicrosoftGraphDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder) {
+    return NewItemChannelsItemMicrosoftGraphDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphProvisionEmail provides operations to call the provisionEmail method.
+func (m *ItemChannelsChannelItemRequestBuilder) MicrosoftGraphProvisionEmail()(*ItemChannelsItemMicrosoftGraphProvisionEmailProvisionEmailRequestBuilder) {
+    return NewItemChannelsItemMicrosoftGraphProvisionEmailProvisionEmailRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphRemoveEmail provides operations to call the removeEmail method.
+func (m *ItemChannelsChannelItemRequestBuilder) MicrosoftGraphRemoveEmail()(*ItemChannelsItemMicrosoftGraphRemoveEmailRemoveEmailRequestBuilder) {
+    return NewItemChannelsItemMicrosoftGraphRemoveEmailRemoveEmailRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property channels in teams
 func (m *ItemChannelsChannelItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Channelable, requestConfiguration *ItemChannelsChannelItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Channelable, error) {
@@ -161,17 +168,9 @@ func (m *ItemChannelsChannelItemRequestBuilder) Patch(ctx context.Context, body 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Channelable), nil
 }
-// ProvisionEmail provides operations to call the provisionEmail method.
-func (m *ItemChannelsChannelItemRequestBuilder) ProvisionEmail()(*ItemChannelsItemProvisionEmailRequestBuilder) {
-    return NewItemChannelsItemProvisionEmailRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// RemoveEmail provides operations to call the removeEmail method.
-func (m *ItemChannelsChannelItemRequestBuilder) RemoveEmail()(*ItemChannelsItemRemoveEmailRequestBuilder) {
-    return NewItemChannelsItemRemoveEmailRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // SharedWithTeams provides operations to manage the sharedWithTeams property of the microsoft.graph.channel entity.
 func (m *ItemChannelsChannelItemRequestBuilder) SharedWithTeams()(*ItemChannelsItemSharedWithTeamsRequestBuilder) {
-    return NewItemChannelsItemSharedWithTeamsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemChannelsItemSharedWithTeamsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SharedWithTeamsById provides operations to manage the sharedWithTeams property of the microsoft.graph.channel entity.
 func (m *ItemChannelsChannelItemRequestBuilder) SharedWithTeamsById(id string)(*ItemChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilder) {
@@ -179,14 +178,12 @@ func (m *ItemChannelsChannelItemRequestBuilder) SharedWithTeamsById(id string)(*
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["sharedWithChannelTeamInfo%2Did"] = id
-    }
-    return NewItemChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // Tabs provides operations to manage the tabs property of the microsoft.graph.channel entity.
 func (m *ItemChannelsChannelItemRequestBuilder) Tabs()(*ItemChannelsItemTabsRequestBuilder) {
-    return NewItemChannelsItemTabsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemChannelsItemTabsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TabsById provides operations to manage the tabs property of the microsoft.graph.channel entity.
 func (m *ItemChannelsChannelItemRequestBuilder) TabsById(id string)(*ItemChannelsItemTabsTeamsTabItemRequestBuilder) {
@@ -194,10 +191,8 @@ func (m *ItemChannelsChannelItemRequestBuilder) TabsById(id string)(*ItemChannel
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
-    if id != "" {
-        urlTplParams["teamsTab%2Did"] = id
-    }
-    return NewItemChannelsItemTabsTeamsTabItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    idPtr := &id
+    return NewItemChannelsItemTabsTeamsTabItemRequestBuilderInternal(urlTplParams, m.requestAdapter, idPtr)
 }
 // ToDeleteRequestInformation delete navigation property channels for teams
 func (m *ItemChannelsChannelItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemChannelsChannelItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -234,7 +229,10 @@ func (m *ItemChannelsChannelItemRequestBuilder) ToPatchRequestInformation(ctx co
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

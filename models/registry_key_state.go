@@ -35,7 +35,7 @@ type RegistryKeyState struct {
 func NewRegistryKeyState()(*RegistryKeyState) {
     m := &RegistryKeyState{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateRegistryKeyStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

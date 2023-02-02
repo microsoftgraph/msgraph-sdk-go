@@ -60,8 +60,8 @@ func NewRoleManagementPolicyAssignmentsRequestBuilderInternal(pathParameters map
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewRoleManagementPolicyAssignmentsRequestBuilder instantiates a new RoleManagementPolicyAssignmentsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewRoleManagementPolicyAssignmentsRequestBuilder(rawUrl string, requestAdap
 }
 // Count provides operations to count the resources in the collection.
 func (m *RoleManagementPolicyAssignmentsRequestBuilder) Count()(*RoleManagementPolicyAssignmentsCountRequestBuilder) {
-    return NewRoleManagementPolicyAssignmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewRoleManagementPolicyAssignmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the details of all role management policy assignments including the policies and rules associated with the Azure AD roles.
 // [Find more info here]
@@ -138,7 +138,10 @@ func (m *RoleManagementPolicyAssignmentsRequestBuilder) ToPostRequestInformation
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

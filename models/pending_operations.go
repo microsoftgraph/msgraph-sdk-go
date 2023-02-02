@@ -17,7 +17,7 @@ type PendingOperations struct {
 func NewPendingOperations()(*PendingOperations) {
     m := &PendingOperations{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePendingOperationsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

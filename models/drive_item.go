@@ -77,8 +77,8 @@ func NewDriveItem()(*DriveItem) {
     m := &DriveItem{
         BaseItem: *NewBaseItem(),
     }
-    odataTypeValue := "#microsoft.graph.driveItem";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.driveItem"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDriveItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

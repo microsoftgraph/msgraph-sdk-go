@@ -250,8 +250,8 @@ func NewUser()(*User) {
     m := &User{
         DirectoryObject: *NewDirectoryObject(),
     }
-    odataTypeValue := "#microsoft.graph.user";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.user"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateUserFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

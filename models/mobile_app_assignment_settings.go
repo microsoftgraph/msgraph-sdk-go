@@ -15,7 +15,7 @@ type MobileAppAssignmentSettings struct {
 func NewMobileAppAssignmentSettings()(*MobileAppAssignmentSettings) {
     m := &MobileAppAssignmentSettings{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateMobileAppAssignmentSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -46,6 +46,8 @@ func CreateMobileAppAssignmentSettingsFromDiscriminatorValue(parseNode i878a80d2
                         return NewWin32LobAppAssignmentSettings(), nil
                     case "#microsoft.graph.windowsAppXAppAssignmentSettings":
                         return NewWindowsAppXAppAssignmentSettings(), nil
+                    case "#microsoft.graph.windowsUniversalAppXAppAssignmentSettings":
+                        return NewWindowsUniversalAppXAppAssignmentSettings(), nil
                 }
             }
         }

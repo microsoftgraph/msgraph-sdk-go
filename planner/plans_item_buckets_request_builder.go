@@ -60,8 +60,8 @@ func NewPlansItemBucketsRequestBuilderInternal(pathParameters map[string]string,
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewPlansItemBucketsRequestBuilder instantiates a new BucketsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewPlansItemBucketsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 }
 // Count provides operations to count the resources in the collection.
 func (m *PlansItemBucketsRequestBuilder) Count()(*PlansItemBucketsCountRequestBuilder) {
-    return NewPlansItemBucketsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPlansItemBucketsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of plannerBucket objects contained by a plannerPlan object.
 // [Find more info here]
@@ -138,7 +138,10 @@ func (m *PlansItemBucketsRequestBuilder) ToPostRequestInformation(ctx context.Co
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
