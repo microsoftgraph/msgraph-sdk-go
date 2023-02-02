@@ -13,8 +13,8 @@ func NewAppleDeviceFeaturesConfigurationBase()(*AppleDeviceFeaturesConfiguration
     m := &AppleDeviceFeaturesConfigurationBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.appleDeviceFeaturesConfigurationBase";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.appleDeviceFeaturesConfigurationBase"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAppleDeviceFeaturesConfigurationBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -22,8 +22,8 @@ func NewSchoolsItemUsersEducationUserItemRequestBuilderInternal(pathParameters m
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewSchoolsItemUsersEducationUserItemRequestBuilder instantiates a new EducationUserItemRequestBuilder and sets the default values.
@@ -34,5 +34,5 @@ func NewSchoolsItemUsersEducationUserItemRequestBuilder(rawUrl string, requestAd
 }
 // Ref provides operations to manage the collection of educationRoot entities.
 func (m *SchoolsItemUsersEducationUserItemRequestBuilder) Ref()(*SchoolsItemUsersItemRefRequestBuilder) {
-    return NewSchoolsItemUsersItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSchoolsItemUsersItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

@@ -55,8 +55,8 @@ func NewPlaceItemRequestBuilderInternal(pathParameters map[string]string, reques
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewPlaceItemRequestBuilder instantiates a new PlaceItemRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewPlaceItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewPlaceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from places by key (id)
+// Delete delete entity from places
 func (m *PlaceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *PlaceItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -103,6 +103,10 @@ func (m *PlaceItemRequestBuilder) Get(ctx context.Context, requestConfiguration 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Placeable), nil
 }
+// MicrosoftGraphRoom casts the previous resource to room.
+func (m *PlaceItemRequestBuilder) MicrosoftGraphRoom()(*ItemMicrosoftGraphRoomRoomRequestBuilder) {
+    return NewItemMicrosoftGraphRoomRoomRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update the properties of place object, which can be a room or roomList. You can identify the **room** or **roomList** by specifying the **id** or **emailAddress** property.
 // [Find more info here]
 // 
@@ -125,11 +129,7 @@ func (m *PlaceItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Placeable), nil
 }
-// Room casts the previous resource to room.
-func (m *PlaceItemRequestBuilder) Room()(*ItemRoomRequestBuilder) {
-    return NewItemRoomRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// ToDeleteRequestInformation delete entity from places by key (id)
+// ToDeleteRequestInformation delete entity from places
 func (m *PlaceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PlaceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -164,7 +164,10 @@ func (m *PlaceItemRequestBuilder) ToPatchRequestInformation(ctx context.Context,
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

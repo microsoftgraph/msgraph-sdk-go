@@ -19,7 +19,7 @@ type RequiredResourceAccess struct {
 func NewRequiredResourceAccess()(*RequiredResourceAccess) {
     m := &RequiredResourceAccess{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateRequiredResourceAccessFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

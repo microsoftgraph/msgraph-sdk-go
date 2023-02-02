@@ -10,6 +10,8 @@ type DeviceManagementPartner struct {
     Entity
     // Partner display name
     displayName *string
+    // User groups that specifies whether enrollment is through partner.
+    groupsRequiringPartnerEnrollment []DeviceManagementPartnerAssignmentable
     // Whether device management partner is configured or not
     isConfigured *bool
     // Timestamp of last heartbeat after admin enabled option Connect to Device management Partner
@@ -50,6 +52,20 @@ func (m *DeviceManagementPartner) GetFieldDeserializers()(map[string]func(i878a8
         }
         if val != nil {
             m.SetDisplayName(val)
+        }
+        return nil
+    }
+    res["groupsRequiringPartnerEnrollment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementPartnerAssignmentFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DeviceManagementPartnerAssignmentable, len(val))
+            for i, v := range val {
+                res[i] = v.(DeviceManagementPartnerAssignmentable)
+            }
+            m.SetGroupsRequiringPartnerEnrollment(res)
         }
         return nil
     }
@@ -125,6 +141,10 @@ func (m *DeviceManagementPartner) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
+// GetGroupsRequiringPartnerEnrollment gets the groupsRequiringPartnerEnrollment property value. User groups that specifies whether enrollment is through partner.
+func (m *DeviceManagementPartner) GetGroupsRequiringPartnerEnrollment()([]DeviceManagementPartnerAssignmentable) {
+    return m.groupsRequiringPartnerEnrollment
+}
 // GetIsConfigured gets the isConfigured property value. Whether device management partner is configured or not
 func (m *DeviceManagementPartner) GetIsConfigured()(*bool) {
     return m.isConfigured
@@ -161,6 +181,16 @@ func (m *DeviceManagementPartner) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     {
         err = writer.WriteStringValue("displayName", m.GetDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetGroupsRequiringPartnerEnrollment() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetGroupsRequiringPartnerEnrollment()))
+        for i, v := range m.GetGroupsRequiringPartnerEnrollment() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("groupsRequiringPartnerEnrollment", cast)
         if err != nil {
             return err
         }
@@ -214,6 +244,10 @@ func (m *DeviceManagementPartner) Serialize(writer i878a80d2330e89d26896388a3f48
 // SetDisplayName sets the displayName property value. Partner display name
 func (m *DeviceManagementPartner) SetDisplayName(value *string)() {
     m.displayName = value
+}
+// SetGroupsRequiringPartnerEnrollment sets the groupsRequiringPartnerEnrollment property value. User groups that specifies whether enrollment is through partner.
+func (m *DeviceManagementPartner) SetGroupsRequiringPartnerEnrollment(value []DeviceManagementPartnerAssignmentable)() {
+    m.groupsRequiringPartnerEnrollment = value
 }
 // SetIsConfigured sets the isConfigured property value. Whether device management partner is configured or not
 func (m *DeviceManagementPartner) SetIsConfigured(value *bool)() {

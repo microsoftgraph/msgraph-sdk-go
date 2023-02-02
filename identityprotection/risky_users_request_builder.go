@@ -51,10 +51,6 @@ type RiskyUsersRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConfirmCompromised provides operations to call the confirmCompromised method.
-func (m *RiskyUsersRequestBuilder) ConfirmCompromised()(*RiskyUsersConfirmCompromisedRequestBuilder) {
-    return NewRiskyUsersConfirmCompromisedRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewRiskyUsersRequestBuilderInternal instantiates a new RiskyUsersRequestBuilder and sets the default values.
 func NewRiskyUsersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RiskyUsersRequestBuilder) {
     m := &RiskyUsersRequestBuilder{
@@ -64,8 +60,8 @@ func NewRiskyUsersRequestBuilderInternal(pathParameters map[string]string, reque
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewRiskyUsersRequestBuilder instantiates a new RiskyUsersRequestBuilder and sets the default values.
@@ -76,11 +72,7 @@ func NewRiskyUsersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 }
 // Count provides operations to count the resources in the collection.
 func (m *RiskyUsersRequestBuilder) Count()(*RiskyUsersCountRequestBuilder) {
-    return NewRiskyUsersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Dismiss provides operations to call the dismiss method.
-func (m *RiskyUsersRequestBuilder) Dismiss()(*RiskyUsersDismissRequestBuilder) {
-    return NewRiskyUsersDismissRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewRiskyUsersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of the riskyUser objects and their properties.
 // [Find more info here]
@@ -103,6 +95,14 @@ func (m *RiskyUsersRequestBuilder) Get(ctx context.Context, requestConfiguration
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RiskyUserCollectionResponseable), nil
+}
+// MicrosoftGraphConfirmCompromised provides operations to call the confirmCompromised method.
+func (m *RiskyUsersRequestBuilder) MicrosoftGraphConfirmCompromised()(*RiskyUsersMicrosoftGraphConfirmCompromisedConfirmCompromisedRequestBuilder) {
+    return NewRiskyUsersMicrosoftGraphConfirmCompromisedConfirmCompromisedRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphDismiss provides operations to call the dismiss method.
+func (m *RiskyUsersRequestBuilder) MicrosoftGraphDismiss()(*RiskyUsersMicrosoftGraphDismissDismissRequestBuilder) {
+    return NewRiskyUsersMicrosoftGraphDismissDismissRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to riskyUsers for identityProtection
 func (m *RiskyUsersRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RiskyUserable, requestConfiguration *RiskyUsersRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RiskyUserable, error) {
@@ -146,7 +146,10 @@ func (m *RiskyUsersRequestBuilder) ToPostRequestInformation(ctx context.Context,
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

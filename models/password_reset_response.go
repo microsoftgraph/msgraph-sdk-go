@@ -17,7 +17,7 @@ type PasswordResetResponse struct {
 func NewPasswordResetResponse()(*PasswordResetResponse) {
     m := &PasswordResetResponse{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePasswordResetResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

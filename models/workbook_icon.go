@@ -19,7 +19,7 @@ type WorkbookIcon struct {
 func NewWorkbookIcon()(*WorkbookIcon) {
     m := &WorkbookIcon{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWorkbookIconFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

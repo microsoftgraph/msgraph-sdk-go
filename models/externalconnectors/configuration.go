@@ -17,7 +17,7 @@ type Configuration struct {
 func NewConfiguration()(*Configuration) {
     m := &Configuration{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -17,7 +17,7 @@ type OnenotePagePreviewLinks struct {
 func NewOnenotePagePreviewLinks()(*OnenotePagePreviewLinks) {
     m := &OnenotePagePreviewLinks{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateOnenotePagePreviewLinksFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

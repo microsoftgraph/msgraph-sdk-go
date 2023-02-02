@@ -15,8 +15,8 @@ func NewServiceUserAgent()(*ServiceUserAgent) {
     m := &ServiceUserAgent{
         UserAgent: *NewUserAgent(),
     }
-    odataTypeValue := "#microsoft.graph.callRecords.serviceUserAgent";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.callRecords.serviceUserAgent"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateServiceUserAgentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

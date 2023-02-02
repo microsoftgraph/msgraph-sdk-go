@@ -48,7 +48,7 @@ type DefaultManagedAppProtectionsDefaultManagedAppProtectionItemRequestBuilderPa
 }
 // Apps provides operations to manage the apps property of the microsoft.graph.defaultManagedAppProtection entity.
 func (m *DefaultManagedAppProtectionsDefaultManagedAppProtectionItemRequestBuilder) Apps()(*DefaultManagedAppProtectionsItemAppsRequestBuilder) {
-    return NewDefaultManagedAppProtectionsItemAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDefaultManagedAppProtectionsItemAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AppsById provides operations to manage the apps property of the microsoft.graph.defaultManagedAppProtection entity.
 func (m *DefaultManagedAppProtectionsDefaultManagedAppProtectionItemRequestBuilder) AppsById(id string)(*DefaultManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder) {
@@ -59,7 +59,7 @@ func (m *DefaultManagedAppProtectionsDefaultManagedAppProtectionItemRequestBuild
     if id != "" {
         urlTplParams["managedMobileApp%2Did"] = id
     }
-    return NewDefaultManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDefaultManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewDefaultManagedAppProtectionsDefaultManagedAppProtectionItemRequestBuilderInternal instantiates a new DefaultManagedAppProtectionItemRequestBuilder and sets the default values.
 func NewDefaultManagedAppProtectionsDefaultManagedAppProtectionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DefaultManagedAppProtectionsDefaultManagedAppProtectionItemRequestBuilder) {
@@ -70,8 +70,8 @@ func NewDefaultManagedAppProtectionsDefaultManagedAppProtectionItemRequestBuilde
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDefaultManagedAppProtectionsDefaultManagedAppProtectionItemRequestBuilder instantiates a new DefaultManagedAppProtectionItemRequestBuilder and sets the default values.
@@ -98,7 +98,7 @@ func (m *DefaultManagedAppProtectionsDefaultManagedAppProtectionItemRequestBuild
 }
 // DeploymentSummary provides operations to manage the deploymentSummary property of the microsoft.graph.defaultManagedAppProtection entity.
 func (m *DefaultManagedAppProtectionsDefaultManagedAppProtectionItemRequestBuilder) DeploymentSummary()(*DefaultManagedAppProtectionsItemDeploymentSummaryRequestBuilder) {
-    return NewDefaultManagedAppProtectionsItemDeploymentSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDefaultManagedAppProtectionsItemDeploymentSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get default managed app policies.
 func (m *DefaultManagedAppProtectionsDefaultManagedAppProtectionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DefaultManagedAppProtectionsDefaultManagedAppProtectionItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DefaultManagedAppProtectionable, error) {
@@ -173,7 +173,10 @@ func (m *DefaultManagedAppProtectionsDefaultManagedAppProtectionItemRequestBuild
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

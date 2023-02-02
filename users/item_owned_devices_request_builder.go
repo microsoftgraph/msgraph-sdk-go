@@ -44,10 +44,6 @@ type ItemOwnedDevicesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemOwnedDevicesRequestBuilderGetQueryParameters
 }
-// AppRoleAssignment casts the previous resource to appRoleAssignment.
-func (m *ItemOwnedDevicesRequestBuilder) AppRoleAssignment()(*ItemOwnedDevicesAppRoleAssignmentRequestBuilder) {
-    return NewItemOwnedDevicesAppRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewItemOwnedDevicesRequestBuilderInternal instantiates a new OwnedDevicesRequestBuilder and sets the default values.
 func NewItemOwnedDevicesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOwnedDevicesRequestBuilder) {
     m := &ItemOwnedDevicesRequestBuilder{
@@ -57,8 +53,8 @@ func NewItemOwnedDevicesRequestBuilderInternal(pathParameters map[string]string,
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemOwnedDevicesRequestBuilder instantiates a new OwnedDevicesRequestBuilder and sets the default values.
@@ -69,15 +65,7 @@ func NewItemOwnedDevicesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemOwnedDevicesRequestBuilder) Count()(*ItemOwnedDevicesCountRequestBuilder) {
-    return NewItemOwnedDevicesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Device casts the previous resource to device.
-func (m *ItemOwnedDevicesRequestBuilder) Device()(*ItemOwnedDevicesDeviceRequestBuilder) {
-    return NewItemOwnedDevicesDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Endpoint casts the previous resource to endpoint.
-func (m *ItemOwnedDevicesRequestBuilder) Endpoint()(*ItemOwnedDevicesEndpointRequestBuilder) {
-    return NewItemOwnedDevicesEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemOwnedDevicesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get devices that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 // [Find more info here]
@@ -100,6 +88,18 @@ func (m *ItemOwnedDevicesRequestBuilder) Get(ctx context.Context, requestConfigu
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
+}
+// MicrosoftGraphAppRoleAssignment casts the previous resource to appRoleAssignment.
+func (m *ItemOwnedDevicesRequestBuilder) MicrosoftGraphAppRoleAssignment()(*ItemOwnedDevicesMicrosoftGraphAppRoleAssignmentAppRoleAssignmentRequestBuilder) {
+    return NewItemOwnedDevicesMicrosoftGraphAppRoleAssignmentAppRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphDevice casts the previous resource to device.
+func (m *ItemOwnedDevicesRequestBuilder) MicrosoftGraphDevice()(*ItemOwnedDevicesMicrosoftGraphDeviceDeviceRequestBuilder) {
+    return NewItemOwnedDevicesMicrosoftGraphDeviceDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphEndpoint casts the previous resource to endpoint.
+func (m *ItemOwnedDevicesRequestBuilder) MicrosoftGraphEndpoint()(*ItemOwnedDevicesMicrosoftGraphEndpointEndpointRequestBuilder) {
+    return NewItemOwnedDevicesMicrosoftGraphEndpointEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation devices that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 func (m *ItemOwnedDevicesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOwnedDevicesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

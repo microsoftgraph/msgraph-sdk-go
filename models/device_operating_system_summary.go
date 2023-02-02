@@ -39,7 +39,7 @@ type DeviceOperatingSystemSummary struct {
 func NewDeviceOperatingSystemSummary()(*DeviceOperatingSystemSummary) {
     m := &DeviceOperatingSystemSummary{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeviceOperatingSystemSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -15,8 +15,8 @@ func NewEdgeSearchEngineCustom()(*EdgeSearchEngineCustom) {
     m := &EdgeSearchEngineCustom{
         EdgeSearchEngineBase: *NewEdgeSearchEngineBase(),
     }
-    odataTypeValue := "#microsoft.graph.edgeSearchEngineCustom";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.edgeSearchEngineCustom"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateEdgeSearchEngineCustomFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

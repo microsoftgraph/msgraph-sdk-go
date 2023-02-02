@@ -19,7 +19,7 @@ type PrintOperationStatus struct {
 func NewPrintOperationStatus()(*PrintOperationStatus) {
     m := &PrintOperationStatus{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePrintOperationStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

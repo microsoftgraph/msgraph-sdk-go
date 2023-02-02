@@ -13,7 +13,7 @@ type ConnectionOperation struct {
     // Indicates the status of the asynchronous operation. Possible values are: unspecified, inprogress, completed, failed, unknownFutureValue.
     status *ConnectionOperationStatus
 }
-// NewConnectionOperation instantiates a new connectionOperation and sets the default values.
+// NewConnectionOperation instantiates a new ConnectionOperation and sets the default values.
 func NewConnectionOperation()(*ConnectionOperation) {
     m := &ConnectionOperation{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),

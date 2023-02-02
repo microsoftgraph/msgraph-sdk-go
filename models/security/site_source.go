@@ -16,8 +16,8 @@ func NewSiteSource()(*SiteSource) {
     m := &SiteSource{
         DataSource: *NewDataSource(),
     }
-    odataTypeValue := "#microsoft.graph.security.siteSource";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.security.siteSource"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateSiteSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

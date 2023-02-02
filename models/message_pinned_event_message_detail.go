@@ -18,8 +18,8 @@ func NewMessagePinnedEventMessageDetail()(*MessagePinnedEventMessageDetail) {
     m := &MessagePinnedEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),
     }
-    odataTypeValue := "#microsoft.graph.messagePinnedEventMessageDetail";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.messagePinnedEventMessageDetail"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateMessagePinnedEventMessageDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

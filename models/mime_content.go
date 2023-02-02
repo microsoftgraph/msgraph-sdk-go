@@ -19,7 +19,7 @@ type MimeContent struct {
 func NewMimeContent()(*MimeContent) {
     m := &MimeContent{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateMimeContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

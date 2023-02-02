@@ -21,7 +21,7 @@ type PlannerPlanContainer struct {
 func NewPlannerPlanContainer()(*PlannerPlanContainer) {
     m := &PlannerPlanContainer{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePlannerPlanContainerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

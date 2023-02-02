@@ -22,8 +22,8 @@ func NewWindowsHelloForBusinessAuthenticationMethod()(*WindowsHelloForBusinessAu
     m := &WindowsHelloForBusinessAuthenticationMethod{
         AuthenticationMethod: *NewAuthenticationMethod(),
     }
-    odataTypeValue := "#microsoft.graph.windowsHelloForBusinessAuthenticationMethod";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsHelloForBusinessAuthenticationMethod"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsHelloForBusinessAuthenticationMethodFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

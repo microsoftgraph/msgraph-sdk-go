@@ -21,7 +21,7 @@ type SearchBucket struct {
 func NewSearchBucket()(*SearchBucket) {
     m := &SearchBucket{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSearchBucketFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

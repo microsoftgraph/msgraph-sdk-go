@@ -51,10 +51,6 @@ type FederationConfigurationsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AvailableProviderTypes provides operations to call the availableProviderTypes method.
-func (m *FederationConfigurationsRequestBuilder) AvailableProviderTypes()(*FederationConfigurationsAvailableProviderTypesRequestBuilder) {
-    return NewFederationConfigurationsAvailableProviderTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewFederationConfigurationsRequestBuilderInternal instantiates a new FederationConfigurationsRequestBuilder and sets the default values.
 func NewFederationConfigurationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FederationConfigurationsRequestBuilder) {
     m := &FederationConfigurationsRequestBuilder{
@@ -64,8 +60,8 @@ func NewFederationConfigurationsRequestBuilderInternal(pathParameters map[string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewFederationConfigurationsRequestBuilder instantiates a new FederationConfigurationsRequestBuilder and sets the default values.
@@ -76,7 +72,7 @@ func NewFederationConfigurationsRequestBuilder(rawUrl string, requestAdapter i2a
 }
 // Count provides operations to count the resources in the collection.
 func (m *FederationConfigurationsRequestBuilder) Count()(*FederationConfigurationsCountRequestBuilder) {
-    return NewFederationConfigurationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewFederationConfigurationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
 func (m *FederationConfigurationsRequestBuilder) Get(ctx context.Context, requestConfiguration *FederationConfigurationsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProviderBaseCollectionResponseable, error) {
@@ -96,6 +92,10 @@ func (m *FederationConfigurationsRequestBuilder) Get(ctx context.Context, reques
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProviderBaseCollectionResponseable), nil
+}
+// MicrosoftGraphAvailableProviderTypes provides operations to call the availableProviderTypes method.
+func (m *FederationConfigurationsRequestBuilder) MicrosoftGraphAvailableProviderTypes()(*FederationConfigurationsMicrosoftGraphAvailableProviderTypesAvailableProviderTypesRequestBuilder) {
+    return NewFederationConfigurationsMicrosoftGraphAvailableProviderTypesAvailableProviderTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to federationConfigurations for directory
 func (m *FederationConfigurationsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProviderBaseable, requestConfiguration *FederationConfigurationsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProviderBaseable, error) {
@@ -139,7 +139,10 @@ func (m *FederationConfigurationsRequestBuilder) ToPostRequestInformation(ctx co
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

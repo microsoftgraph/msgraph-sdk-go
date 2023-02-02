@@ -41,8 +41,8 @@ func NewItemAnalyticsRequestBuilderInternal(pathParameters map[string]string, re
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemAnalyticsRequestBuilder instantiates a new AnalyticsRequestBuilder and sets the default values.

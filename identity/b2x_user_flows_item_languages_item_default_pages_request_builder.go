@@ -60,8 +60,8 @@ func NewB2xUserFlowsItemLanguagesItemDefaultPagesRequestBuilderInternal(pathPara
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewB2xUserFlowsItemLanguagesItemDefaultPagesRequestBuilder instantiates a new DefaultPagesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewB2xUserFlowsItemLanguagesItemDefaultPagesRequestBuilder(rawUrl string, r
 }
 // Count provides operations to count the resources in the collection.
 func (m *B2xUserFlowsItemLanguagesItemDefaultPagesRequestBuilder) Count()(*B2xUserFlowsItemLanguagesItemDefaultPagesCountRequestBuilder) {
-    return NewB2xUserFlowsItemLanguagesItemDefaultPagesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewB2xUserFlowsItemLanguagesItemDefaultPagesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
 func (m *B2xUserFlowsItemLanguagesItemDefaultPagesRequestBuilder) Get(ctx context.Context, requestConfiguration *B2xUserFlowsItemLanguagesItemDefaultPagesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserFlowLanguagePageCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *B2xUserFlowsItemLanguagesItemDefaultPagesRequestBuilder) ToPostRequestI
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

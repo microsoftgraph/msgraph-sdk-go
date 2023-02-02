@@ -41,8 +41,8 @@ func NewItemInsightsSharedItemLastSharedMethodRequestBuilderInternal(pathParamet
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemInsightsSharedItemLastSharedMethodRequestBuilder instantiates a new LastSharedMethodRequestBuilder and sets the default values.

@@ -26,7 +26,7 @@ type SharingDetail struct {
 func NewSharingDetail()(*SharingDetail) {
     m := &SharingDetail{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSharingDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

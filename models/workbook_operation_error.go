@@ -21,7 +21,7 @@ type WorkbookOperationError struct {
 func NewWorkbookOperationError()(*WorkbookOperationError) {
     m := &WorkbookOperationError{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWorkbookOperationErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

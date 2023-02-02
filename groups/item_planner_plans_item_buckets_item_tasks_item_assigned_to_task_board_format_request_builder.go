@@ -55,8 +55,8 @@ func NewItemPlannerPlansItemBucketsItemTasksItemAssignedToTaskBoardFormatRequest
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemPlannerPlansItemBucketsItemTasksItemAssignedToTaskBoardFormatRequestBuilder instantiates a new AssignedToTaskBoardFormatRequestBuilder and sets the default values.
@@ -103,7 +103,7 @@ func (m *ItemPlannerPlansItemBucketsItemTasksItemAssignedToTaskBoardFormatReques
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerAssignedToTaskBoardTaskFormatable), nil
 }
-// Patch update the properties of **plannerAssignedToTaskBoardTaskFormat** object.
+// Patch update the navigation property assignedToTaskBoardFormat in groups
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-update?view=graph-rest-1.0
@@ -153,14 +153,17 @@ func (m *ItemPlannerPlansItemBucketsItemTasksItemAssignedToTaskBoardFormatReques
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of **plannerAssignedToTaskBoardTaskFormat** object.
+// ToPatchRequestInformation update the navigation property assignedToTaskBoardFormat in groups
 func (m *ItemPlannerPlansItemBucketsItemTasksItemAssignedToTaskBoardFormatRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerAssignedToTaskBoardTaskFormatable, requestConfiguration *ItemPlannerPlansItemBucketsItemTasksItemAssignedToTaskBoardFormatRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

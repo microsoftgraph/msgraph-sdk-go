@@ -46,10 +46,6 @@ type GroupLifecyclePolicyItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AddGroup provides operations to call the addGroup method.
-func (m *GroupLifecyclePolicyItemRequestBuilder) AddGroup()(*ItemAddGroupRequestBuilder) {
-    return NewItemAddGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewGroupLifecyclePolicyItemRequestBuilderInternal instantiates a new GroupLifecyclePolicyItemRequestBuilder and sets the default values.
 func NewGroupLifecyclePolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupLifecyclePolicyItemRequestBuilder) {
     m := &GroupLifecyclePolicyItemRequestBuilder{
@@ -59,8 +55,8 @@ func NewGroupLifecyclePolicyItemRequestBuilderInternal(pathParameters map[string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewGroupLifecyclePolicyItemRequestBuilder instantiates a new GroupLifecyclePolicyItemRequestBuilder and sets the default values.
@@ -110,6 +106,14 @@ func (m *GroupLifecyclePolicyItemRequestBuilder) Get(ctx context.Context, reques
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupLifecyclePolicyable), nil
 }
+// MicrosoftGraphAddGroup provides operations to call the addGroup method.
+func (m *GroupLifecyclePolicyItemRequestBuilder) MicrosoftGraphAddGroup()(*ItemMicrosoftGraphAddGroupAddGroupRequestBuilder) {
+    return NewItemMicrosoftGraphAddGroupAddGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphRemoveGroup provides operations to call the removeGroup method.
+func (m *GroupLifecyclePolicyItemRequestBuilder) MicrosoftGraphRemoveGroup()(*ItemMicrosoftGraphRemoveGroupRemoveGroupRequestBuilder) {
+    return NewItemMicrosoftGraphRemoveGroupRemoveGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update the properties of a groupLifecyclePolicygroupLifecyclePolicy resource type object.
 // [Find more info here]
 // 
@@ -131,10 +135,6 @@ func (m *GroupLifecyclePolicyItemRequestBuilder) Patch(ctx context.Context, body
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupLifecyclePolicyable), nil
-}
-// RemoveGroup provides operations to call the removeGroup method.
-func (m *GroupLifecyclePolicyItemRequestBuilder) RemoveGroup()(*ItemRemoveGroupRequestBuilder) {
-    return NewItemRemoveGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete a groupLifecyclePolicy.
 func (m *GroupLifecyclePolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *GroupLifecyclePolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -171,7 +171,10 @@ func (m *GroupLifecyclePolicyItemRequestBuilder) ToPatchRequestInformation(ctx c
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

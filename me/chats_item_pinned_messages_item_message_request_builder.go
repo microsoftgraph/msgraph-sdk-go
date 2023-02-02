@@ -41,8 +41,8 @@ func NewChatsItemPinnedMessagesItemMessageRequestBuilderInternal(pathParameters 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewChatsItemPinnedMessagesItemMessageRequestBuilder instantiates a new MessageRequestBuilder and sets the default values.

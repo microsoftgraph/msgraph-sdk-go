@@ -38,8 +38,8 @@ func NewTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilderInterna
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilder instantiates a new ContentRequestBuilder and sets the default values.
@@ -48,7 +48,7 @@ func NewTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilder(rawUrl
     urlParams["request-raw-url"] = rawUrl
     return NewTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get content for the navigation property attachmentSessions from me
+// Get the content streams that are uploaded.
 func (m *TodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilder) Get(ctx context.Context, requestConfiguration *TodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -67,7 +67,7 @@ func (m *TodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilder) Get(
     }
     return res.([]byte), nil
 }
-// Put update content for the navigation property attachmentSessions in me
+// Put the content streams that are uploaded.
 func (m *TodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *TodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilderPutRequestConfiguration)(error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -83,7 +83,7 @@ func (m *TodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilder) Put(
     }
     return nil
 }
-// ToGetRequestInformation get content for the navigation property attachmentSessions from me
+// ToGetRequestInformation the content streams that are uploaded.
 func (m *TodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *TodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilder) ToGe
     }
     return requestInfo, nil
 }
-// ToPutRequestInformation update content for the navigation property attachmentSessions in me
+// ToPutRequestInformation the content streams that are uploaded.
 func (m *TodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *TodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

@@ -20,7 +20,7 @@ type CallTranscriptionInfo struct {
 func NewCallTranscriptionInfo()(*CallTranscriptionInfo) {
     m := &CallTranscriptionInfo{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCallTranscriptionInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

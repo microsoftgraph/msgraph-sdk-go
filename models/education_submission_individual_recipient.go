@@ -15,8 +15,8 @@ func NewEducationSubmissionIndividualRecipient()(*EducationSubmissionIndividualR
     m := &EducationSubmissionIndividualRecipient{
         EducationSubmissionRecipient: *NewEducationSubmissionRecipient(),
     }
-    odataTypeValue := "#microsoft.graph.educationSubmissionIndividualRecipient";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.educationSubmissionIndividualRecipient"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateEducationSubmissionIndividualRecipientFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

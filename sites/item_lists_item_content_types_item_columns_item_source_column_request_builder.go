@@ -41,8 +41,8 @@ func NewItemListsItemContentTypesItemColumnsItemSourceColumnRequestBuilderIntern
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemListsItemContentTypesItemColumnsItemSourceColumnRequestBuilder instantiates a new SourceColumnRequestBuilder and sets the default values.

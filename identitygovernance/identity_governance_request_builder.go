@@ -41,11 +41,11 @@ type IdentityGovernanceRequestBuilderPatchRequestConfiguration struct {
 }
 // AccessReviews provides operations to manage the accessReviews property of the microsoft.graph.identityGovernance entity.
 func (m *IdentityGovernanceRequestBuilder) AccessReviews()(*AccessReviewsRequestBuilder) {
-    return NewAccessReviewsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAccessReviewsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AppConsent provides operations to manage the appConsent property of the microsoft.graph.identityGovernance entity.
 func (m *IdentityGovernanceRequestBuilder) AppConsent()(*AppConsentRequestBuilder) {
-    return NewAppConsentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAppConsentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewIdentityGovernanceRequestBuilderInternal instantiates a new IdentityGovernanceRequestBuilder and sets the default values.
 func NewIdentityGovernanceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IdentityGovernanceRequestBuilder) {
@@ -56,8 +56,8 @@ func NewIdentityGovernanceRequestBuilderInternal(pathParameters map[string]strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewIdentityGovernanceRequestBuilder instantiates a new IdentityGovernanceRequestBuilder and sets the default values.
@@ -68,7 +68,7 @@ func NewIdentityGovernanceRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 }
 // EntitlementManagement provides operations to manage the entitlementManagement property of the microsoft.graph.identityGovernance entity.
 func (m *IdentityGovernanceRequestBuilder) EntitlementManagement()(*EntitlementManagementRequestBuilder) {
-    return NewEntitlementManagementRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get identityGovernance
 func (m *IdentityGovernanceRequestBuilder) Get(ctx context.Context, requestConfiguration *IdentityGovernanceRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityGovernanceable, error) {
@@ -110,7 +110,7 @@ func (m *IdentityGovernanceRequestBuilder) Patch(ctx context.Context, body iadcd
 }
 // TermsOfUse provides operations to manage the termsOfUse property of the microsoft.graph.identityGovernance entity.
 func (m *IdentityGovernanceRequestBuilder) TermsOfUse()(*TermsOfUseRequestBuilder) {
-    return NewTermsOfUseRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTermsOfUseRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation get identityGovernance
 func (m *IdentityGovernanceRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IdentityGovernanceRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -135,7 +135,10 @@ func (m *IdentityGovernanceRequestBuilder) ToPatchRequestInformation(ctx context
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

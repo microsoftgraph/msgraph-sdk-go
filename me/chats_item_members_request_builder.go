@@ -51,10 +51,6 @@ type ChatsItemMembersRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Add provides operations to call the add method.
-func (m *ChatsItemMembersRequestBuilder) Add()(*ChatsItemMembersAddRequestBuilder) {
-    return NewChatsItemMembersAddRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewChatsItemMembersRequestBuilderInternal instantiates a new MembersRequestBuilder and sets the default values.
 func NewChatsItemMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ChatsItemMembersRequestBuilder) {
     m := &ChatsItemMembersRequestBuilder{
@@ -64,8 +60,8 @@ func NewChatsItemMembersRequestBuilderInternal(pathParameters map[string]string,
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewChatsItemMembersRequestBuilder instantiates a new MembersRequestBuilder and sets the default values.
@@ -76,7 +72,7 @@ func NewChatsItemMembersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 }
 // Count provides operations to count the resources in the collection.
 func (m *ChatsItemMembersRequestBuilder) Count()(*ChatsItemMembersCountRequestBuilder) {
-    return NewChatsItemMembersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewChatsItemMembersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get list all conversation members in a chat. This method supports federation. For one-on-one chats, at least one chat member must belong to the tenant the request initiates from. For group chats, the chat must be initiated by a user in the tenant the request initiates from.
 // [Find more info here]
@@ -99,6 +95,10 @@ func (m *ChatsItemMembersRequestBuilder) Get(ctx context.Context, requestConfigu
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberCollectionResponseable), nil
+}
+// MicrosoftGraphAdd provides operations to call the add method.
+func (m *ChatsItemMembersRequestBuilder) MicrosoftGraphAdd()(*ChatsItemMembersMicrosoftGraphAddAddRequestBuilder) {
+    return NewChatsItemMembersMicrosoftGraphAddAddRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post add a conversationMember to a chat.
 // [Find more info here]
@@ -145,7 +145,10 @@ func (m *ChatsItemMembersRequestBuilder) ToPostRequestInformation(ctx context.Co
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

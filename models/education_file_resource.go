@@ -15,8 +15,8 @@ func NewEducationFileResource()(*EducationFileResource) {
     m := &EducationFileResource{
         EducationResource: *NewEducationResource(),
     }
-    odataTypeValue := "#microsoft.graph.educationFileResource";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.educationFileResource"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateEducationFileResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

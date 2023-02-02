@@ -55,8 +55,8 @@ func NewItemOnenotePagesOnenotePageItemRequestBuilderInternal(pathParameters map
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemOnenotePagesOnenotePageItemRequestBuilder instantiates a new OnenotePageItemRequestBuilder and sets the default values.
@@ -67,11 +67,7 @@ func NewItemOnenotePagesOnenotePageItemRequestBuilder(rawUrl string, requestAdap
 }
 // Content provides operations to manage the media for the user entity.
 func (m *ItemOnenotePagesOnenotePageItemRequestBuilder) Content()(*ItemOnenotePagesItemContentRequestBuilder) {
-    return NewItemOnenotePagesItemContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// CopyToSection provides operations to call the copyToSection method.
-func (m *ItemOnenotePagesOnenotePageItemRequestBuilder) CopyToSection()(*ItemOnenotePagesItemCopyToSectionRequestBuilder) {
-    return NewItemOnenotePagesItemCopyToSectionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemOnenotePagesItemContentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete navigation property pages for users
 func (m *ItemOnenotePagesOnenotePageItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemOnenotePagesOnenotePageItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -108,17 +104,25 @@ func (m *ItemOnenotePagesOnenotePageItemRequestBuilder) Get(ctx context.Context,
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenotePageable), nil
 }
-// OnenotePatchContent provides operations to call the onenotePatchContent method.
-func (m *ItemOnenotePagesOnenotePageItemRequestBuilder) OnenotePatchContent()(*ItemOnenotePagesItemOnenotePatchContentRequestBuilder) {
-    return NewItemOnenotePagesItemOnenotePatchContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphCopyToSection provides operations to call the copyToSection method.
+func (m *ItemOnenotePagesOnenotePageItemRequestBuilder) MicrosoftGraphCopyToSection()(*ItemOnenotePagesItemMicrosoftGraphCopyToSectionCopyToSectionRequestBuilder) {
+    return NewItemOnenotePagesItemMicrosoftGraphCopyToSectionCopyToSectionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphOnenotePatchContent provides operations to call the onenotePatchContent method.
+func (m *ItemOnenotePagesOnenotePageItemRequestBuilder) MicrosoftGraphOnenotePatchContent()(*ItemOnenotePagesItemMicrosoftGraphOnenotePatchContentOnenotePatchContentRequestBuilder) {
+    return NewItemOnenotePagesItemMicrosoftGraphOnenotePatchContentOnenotePatchContentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphPreview provides operations to call the preview method.
+func (m *ItemOnenotePagesOnenotePageItemRequestBuilder) MicrosoftGraphPreview()(*ItemOnenotePagesItemMicrosoftGraphPreviewPreviewRequestBuilder) {
+    return NewItemOnenotePagesItemMicrosoftGraphPreviewPreviewRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ParentNotebook provides operations to manage the parentNotebook property of the microsoft.graph.onenotePage entity.
 func (m *ItemOnenotePagesOnenotePageItemRequestBuilder) ParentNotebook()(*ItemOnenotePagesItemParentNotebookRequestBuilder) {
-    return NewItemOnenotePagesItemParentNotebookRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemOnenotePagesItemParentNotebookRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ParentSection provides operations to manage the parentSection property of the microsoft.graph.onenotePage entity.
 func (m *ItemOnenotePagesOnenotePageItemRequestBuilder) ParentSection()(*ItemOnenotePagesItemParentSectionRequestBuilder) {
-    return NewItemOnenotePagesItemParentSectionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemOnenotePagesItemParentSectionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property pages in users
 func (m *ItemOnenotePagesOnenotePageItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenotePageable, requestConfiguration *ItemOnenotePagesOnenotePageItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenotePageable, error) {
@@ -138,10 +142,6 @@ func (m *ItemOnenotePagesOnenotePageItemRequestBuilder) Patch(ctx context.Contex
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenotePageable), nil
-}
-// Preview provides operations to call the preview method.
-func (m *ItemOnenotePagesOnenotePageItemRequestBuilder) Preview()(*ItemOnenotePagesItemPreviewRequestBuilder) {
-    return NewItemOnenotePagesItemPreviewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property pages for users
 func (m *ItemOnenotePagesOnenotePageItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemOnenotePagesOnenotePageItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -178,7 +178,10 @@ func (m *ItemOnenotePagesOnenotePageItemRequestBuilder) ToPatchRequestInformatio
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -44,10 +44,6 @@ type SitesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *SitesRequestBuilderGetQueryParameters
 }
-// Add provides operations to call the add method.
-func (m *SitesRequestBuilder) Add()(*AddRequestBuilder) {
-    return NewAddRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewSitesRequestBuilderInternal instantiates a new SitesRequestBuilder and sets the default values.
 func NewSitesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SitesRequestBuilder) {
     m := &SitesRequestBuilder{
@@ -57,8 +53,8 @@ func NewSitesRequestBuilderInternal(pathParameters map[string]string, requestAda
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewSitesRequestBuilder instantiates a new SitesRequestBuilder and sets the default values.
@@ -69,7 +65,7 @@ func NewSitesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
 }
 // Count provides operations to count the resources in the collection.
 func (m *SitesRequestBuilder) Count()(*CountRequestBuilder) {
-    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get search across a SharePoint tenant for [sites][] that match keywords provided. The only property that works for sorting is **createdDateTime**. The search filter is a free text search that uses multiple properties when retrieving the search results.
 // [Find more info here]
@@ -93,9 +89,13 @@ func (m *SitesRequestBuilder) Get(ctx context.Context, requestConfiguration *Sit
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SiteCollectionResponseable), nil
 }
-// Remove provides operations to call the remove method.
-func (m *SitesRequestBuilder) Remove()(*RemoveRequestBuilder) {
-    return NewRemoveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphAdd provides operations to call the add method.
+func (m *SitesRequestBuilder) MicrosoftGraphAdd()(*MicrosoftGraphAddAddRequestBuilder) {
+    return NewMicrosoftGraphAddAddRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphRemove provides operations to call the remove method.
+func (m *SitesRequestBuilder) MicrosoftGraphRemove()(*MicrosoftGraphRemoveRemoveRequestBuilder) {
+    return NewMicrosoftGraphRemoveRemoveRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation search across a SharePoint tenant for [sites][] that match keywords provided. The only property that works for sorting is **createdDateTime**. The search filter is a free text search that uses multiple properties when retrieving the search results.
 func (m *SitesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SitesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

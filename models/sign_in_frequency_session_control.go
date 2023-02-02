@@ -21,8 +21,8 @@ func NewSignInFrequencySessionControl()(*SignInFrequencySessionControl) {
     m := &SignInFrequencySessionControl{
         ConditionalAccessSessionControl: *NewConditionalAccessSessionControl(),
     }
-    odataTypeValue := "#microsoft.graph.signInFrequencySessionControl";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.signInFrequencySessionControl"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateSignInFrequencySessionControlFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

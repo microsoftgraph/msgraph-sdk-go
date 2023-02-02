@@ -53,8 +53,8 @@ func NewItemListsItemContentTypesItemBaseTypesRequestBuilderInternal(pathParamet
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemListsItemContentTypesItemBaseTypesRequestBuilder instantiates a new BaseTypesRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemListsItemContentTypesItemBaseTypesRequestBuilder(rawUrl string, requ
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemListsItemContentTypesItemBaseTypesRequestBuilder) Count()(*ItemListsItemContentTypesItemBaseTypesCountRequestBuilder) {
-    return NewItemListsItemContentTypesItemBaseTypesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemListsItemContentTypesItemBaseTypesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the collection of content types that are ancestors of this content type.
 func (m *ItemListsItemContentTypesItemBaseTypesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemListsItemContentTypesItemBaseTypesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeCollectionResponseable, error) {

@@ -53,8 +53,8 @@ func NewMeClassesRequestBuilderInternal(pathParameters map[string]string, reques
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMeClassesRequestBuilder instantiates a new ClassesRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewMeClassesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 }
 // Count provides operations to count the resources in the collection.
 func (m *MeClassesRequestBuilder) Count()(*MeClassesCountRequestBuilder) {
-    return NewMeClassesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMeClassesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the educationClass resources an educationUser is a member of.
 // [Find more info here]

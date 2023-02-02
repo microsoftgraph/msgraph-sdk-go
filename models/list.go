@@ -33,8 +33,8 @@ func NewList()(*List) {
     m := &List{
         BaseItem: *NewBaseItem(),
     }
-    odataTypeValue := "#microsoft.graph.list";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.list"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateListFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

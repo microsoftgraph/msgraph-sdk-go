@@ -88,8 +88,8 @@ func NewContact()(*Contact) {
     m := &Contact{
         OutlookItem: *NewOutlookItem(),
     }
-    odataTypeValue := "#microsoft.graph.contact";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.contact"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateContactFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

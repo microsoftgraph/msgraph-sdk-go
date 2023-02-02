@@ -15,8 +15,8 @@ func NewEducationPowerPointResource()(*EducationPowerPointResource) {
     m := &EducationPowerPointResource{
         EducationResource: *NewEducationResource(),
     }
-    odataTypeValue := "#microsoft.graph.educationPowerPointResource";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.educationPowerPointResource"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateEducationPowerPointResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

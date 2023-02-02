@@ -21,7 +21,7 @@ type X509CertificateRule struct {
 func NewX509CertificateRule()(*X509CertificateRule) {
     m := &X509CertificateRule{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateX509CertificateRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

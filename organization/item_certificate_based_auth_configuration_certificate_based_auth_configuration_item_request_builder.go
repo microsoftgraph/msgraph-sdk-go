@@ -41,8 +41,8 @@ func NewItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationIt
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilder instantiates a new CertificateBasedAuthConfigurationItemRequestBuilder and sets the default values.

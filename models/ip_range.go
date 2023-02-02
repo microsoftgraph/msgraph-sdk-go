@@ -15,7 +15,7 @@ type IpRange struct {
 func NewIpRange()(*IpRange) {
     m := &IpRange{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateIpRangeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

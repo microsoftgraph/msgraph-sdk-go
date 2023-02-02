@@ -60,8 +60,8 @@ func NewItemTeamScheduleOfferShiftRequestsRequestBuilderInternal(pathParameters 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTeamScheduleOfferShiftRequestsRequestBuilder instantiates a new OfferShiftRequestsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewItemTeamScheduleOfferShiftRequestsRequestBuilder(rawUrl string, requestA
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemTeamScheduleOfferShiftRequestsRequestBuilder) Count()(*ItemTeamScheduleOfferShiftRequestsCountRequestBuilder) {
-    return NewItemTeamScheduleOfferShiftRequestsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTeamScheduleOfferShiftRequestsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve the properties and relationships of all offerShiftRequest objects in a team.
 // [Find more info here]
@@ -138,7 +138,10 @@ func (m *ItemTeamScheduleOfferShiftRequestsRequestBuilder) ToPostRequestInformat
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

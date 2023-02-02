@@ -34,7 +34,7 @@ type PermissionScope struct {
 func NewPermissionScope()(*PermissionScope) {
     m := &PermissionScope{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePermissionScopeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

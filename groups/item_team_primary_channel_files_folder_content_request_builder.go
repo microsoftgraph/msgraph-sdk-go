@@ -38,8 +38,8 @@ func NewItemTeamPrimaryChannelFilesFolderContentRequestBuilderInternal(pathParam
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTeamPrimaryChannelFilesFolderContentRequestBuilder instantiates a new ContentRequestBuilder and sets the default values.

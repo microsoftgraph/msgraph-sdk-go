@@ -37,8 +37,8 @@ func NewSharedPCConfiguration()(*SharedPCConfiguration) {
     m := &SharedPCConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.sharedPCConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.sharedPCConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateSharedPCConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

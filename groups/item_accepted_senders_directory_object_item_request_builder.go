@@ -22,8 +22,8 @@ func NewItemAcceptedSendersDirectoryObjectItemRequestBuilderInternal(pathParamet
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemAcceptedSendersDirectoryObjectItemRequestBuilder instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
@@ -34,5 +34,5 @@ func NewItemAcceptedSendersDirectoryObjectItemRequestBuilder(rawUrl string, requ
 }
 // Ref provides operations to manage the collection of group entities.
 func (m *ItemAcceptedSendersDirectoryObjectItemRequestBuilder) Ref()(*ItemAcceptedSendersItemRefRequestBuilder) {
-    return NewItemAcceptedSendersItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemAcceptedSendersItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

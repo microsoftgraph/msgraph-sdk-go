@@ -55,8 +55,8 @@ func NewItemFilesAgreementFileLocalizationItemRequestBuilderInternal(pathParamet
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemFilesAgreementFileLocalizationItemRequestBuilder instantiates a new AgreementFileLocalizationItemRequestBuilder and sets the default values.
@@ -154,7 +154,10 @@ func (m *ItemFilesAgreementFileLocalizationItemRequestBuilder) ToPatchRequestInf
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -163,7 +166,7 @@ func (m *ItemFilesAgreementFileLocalizationItemRequestBuilder) ToPatchRequestInf
 }
 // Versions provides operations to manage the versions property of the microsoft.graph.agreementFileLocalization entity.
 func (m *ItemFilesAgreementFileLocalizationItemRequestBuilder) Versions()(*ItemFilesItemVersionsRequestBuilder) {
-    return NewItemFilesItemVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemFilesItemVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // VersionsById provides operations to manage the versions property of the microsoft.graph.agreementFileLocalization entity.
 func (m *ItemFilesAgreementFileLocalizationItemRequestBuilder) VersionsById(id string)(*ItemFilesItemVersionsAgreementFileVersionItemRequestBuilder) {
@@ -174,5 +177,5 @@ func (m *ItemFilesAgreementFileLocalizationItemRequestBuilder) VersionsById(id s
     if id != "" {
         urlTplParams["agreementFileVersion%2Did"] = id
     }
-    return NewItemFilesItemVersionsAgreementFileVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemFilesItemVersionsAgreementFileVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }

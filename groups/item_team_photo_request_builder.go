@@ -55,8 +55,8 @@ func NewItemTeamPhotoRequestBuilderInternal(pathParameters map[string]string, re
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTeamPhotoRequestBuilder instantiates a new PhotoRequestBuilder and sets the default values.
@@ -67,7 +67,7 @@ func NewItemTeamPhotoRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 }
 // Content provides operations to manage the media for the group entity.
 func (m *ItemTeamPhotoRequestBuilder) Content()(*ItemTeamPhotoValueContentRequestBuilder) {
-    return NewItemTeamPhotoValueContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTeamPhotoValueContentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete navigation property photo for groups
 func (m *ItemTeamPhotoRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTeamPhotoRequestBuilderDeleteRequestConfiguration)(error) {
@@ -158,7 +158,10 @@ func (m *ItemTeamPhotoRequestBuilder) ToPatchRequestInformation(ctx context.Cont
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

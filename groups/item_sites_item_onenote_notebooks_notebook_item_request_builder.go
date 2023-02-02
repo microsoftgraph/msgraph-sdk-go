@@ -55,8 +55,8 @@ func NewItemSitesItemOnenoteNotebooksNotebookItemRequestBuilderInternal(pathPara
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSitesItemOnenoteNotebooksNotebookItemRequestBuilder instantiates a new NotebookItemRequestBuilder and sets the default values.
@@ -64,10 +64,6 @@ func NewItemSitesItemOnenoteNotebooksNotebookItemRequestBuilder(rawUrl string, r
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemOnenoteNotebooksNotebookItemRequestBuilderInternal(urlParams, requestAdapter)
-}
-// CopyNotebook provides operations to call the copyNotebook method.
-func (m *ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilder) CopyNotebook()(*ItemSitesItemOnenoteNotebooksItemCopyNotebookRequestBuilder) {
-    return NewItemSitesItemOnenoteNotebooksItemCopyNotebookRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Delete delete navigation property notebooks for groups
 func (m *ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -104,6 +100,10 @@ func (m *ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilder) Get(ctx contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Notebookable), nil
 }
+// MicrosoftGraphCopyNotebook provides operations to call the copyNotebook method.
+func (m *ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilder) MicrosoftGraphCopyNotebook()(*ItemSitesItemOnenoteNotebooksItemMicrosoftGraphCopyNotebookCopyNotebookRequestBuilder) {
+    return NewItemSitesItemOnenoteNotebooksItemMicrosoftGraphCopyNotebookCopyNotebookRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update the navigation property notebooks in groups
 func (m *ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Notebookable, requestConfiguration *ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Notebookable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -125,7 +125,7 @@ func (m *ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilder) Patch(ctx cont
 }
 // SectionGroups provides operations to manage the sectionGroups property of the microsoft.graph.notebook entity.
 func (m *ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilder) SectionGroups()(*ItemSitesItemOnenoteNotebooksItemSectionGroupsRequestBuilder) {
-    return NewItemSitesItemOnenoteNotebooksItemSectionGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesItemOnenoteNotebooksItemSectionGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SectionGroupsById provides operations to manage the sectionGroups property of the microsoft.graph.notebook entity.
 func (m *ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilder) SectionGroupsById(id string)(*ItemSitesItemOnenoteNotebooksItemSectionGroupsSectionGroupItemRequestBuilder) {
@@ -136,11 +136,11 @@ func (m *ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilder) SectionGroupsB
     if id != "" {
         urlTplParams["sectionGroup%2Did"] = id
     }
-    return NewItemSitesItemOnenoteNotebooksItemSectionGroupsSectionGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemSitesItemOnenoteNotebooksItemSectionGroupsSectionGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Sections provides operations to manage the sections property of the microsoft.graph.notebook entity.
 func (m *ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilder) Sections()(*ItemSitesItemOnenoteNotebooksItemSectionsRequestBuilder) {
-    return NewItemSitesItemOnenoteNotebooksItemSectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesItemOnenoteNotebooksItemSectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SectionsById provides operations to manage the sections property of the microsoft.graph.notebook entity.
 func (m *ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilder) SectionsById(id string)(*ItemSitesItemOnenoteNotebooksItemSectionsOnenoteSectionItemRequestBuilder) {
@@ -151,7 +151,7 @@ func (m *ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilder) SectionsById(i
     if id != "" {
         urlTplParams["onenoteSection%2Did"] = id
     }
-    return NewItemSitesItemOnenoteNotebooksItemSectionsOnenoteSectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemSitesItemOnenoteNotebooksItemSectionsOnenoteSectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property notebooks for groups
 func (m *ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -188,7 +188,10 @@ func (m *ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilder) ToPatchRequest
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

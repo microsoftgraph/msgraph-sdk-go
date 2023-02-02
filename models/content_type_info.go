@@ -19,7 +19,7 @@ type ContentTypeInfo struct {
 func NewContentTypeInfo()(*ContentTypeInfo) {
     m := &ContentTypeInfo{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateContentTypeInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

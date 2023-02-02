@@ -21,7 +21,7 @@ type AppConfigurationSettingItem struct {
 func NewAppConfigurationSettingItem()(*AppConfigurationSettingItem) {
     m := &AppConfigurationSettingItem{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAppConfigurationSettingItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

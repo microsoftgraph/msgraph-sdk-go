@@ -48,8 +48,8 @@ func NewAuthenticationMethodsAuthenticationMethodItemRequestBuilderInternal(path
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAuthenticationMethodsAuthenticationMethodItemRequestBuilder instantiates a new AuthenticationMethodItemRequestBuilder and sets the default values.
@@ -77,6 +77,10 @@ func (m *AuthenticationMethodsAuthenticationMethodItemRequestBuilder) Get(ctx co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationMethodable), nil
 }
+// MicrosoftGraphResetPassword provides operations to call the resetPassword method.
+func (m *AuthenticationMethodsAuthenticationMethodItemRequestBuilder) MicrosoftGraphResetPassword()(*AuthenticationMethodsItemMicrosoftGraphResetPasswordResetPasswordRequestBuilder) {
+    return NewAuthenticationMethodsItemMicrosoftGraphResetPasswordResetPasswordRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update the navigation property methods in me
 func (m *AuthenticationMethodsAuthenticationMethodItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationMethodable, requestConfiguration *AuthenticationMethodsAuthenticationMethodItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationMethodable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -95,10 +99,6 @@ func (m *AuthenticationMethodsAuthenticationMethodItemRequestBuilder) Patch(ctx 
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationMethodable), nil
-}
-// ResetPassword provides operations to call the resetPassword method.
-func (m *AuthenticationMethodsAuthenticationMethodItemRequestBuilder) ResetPassword()(*AuthenticationMethodsItemResetPasswordRequestBuilder) {
-    return NewAuthenticationMethodsItemResetPasswordRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToGetRequestInformation represents all authentication methods registered to a user.
 func (m *AuthenticationMethodsAuthenticationMethodItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuthenticationMethodsAuthenticationMethodItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -123,7 +123,10 @@ func (m *AuthenticationMethodsAuthenticationMethodItemRequestBuilder) ToPatchReq
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

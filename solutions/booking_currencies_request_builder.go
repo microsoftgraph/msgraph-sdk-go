@@ -60,8 +60,8 @@ func NewBookingCurrenciesRequestBuilderInternal(pathParameters map[string]string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewBookingCurrenciesRequestBuilder instantiates a new BookingCurrenciesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewBookingCurrenciesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 }
 // Count provides operations to count the resources in the collection.
 func (m *BookingCurrenciesRequestBuilder) Count()(*BookingCurrenciesCountRequestBuilder) {
-    return NewBookingCurrenciesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewBookingCurrenciesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of bookingCurrency objects available to a Microsoft Bookings business.
 // [Find more info here]
@@ -138,7 +138,10 @@ func (m *BookingCurrenciesRequestBuilder) ToPostRequestInformation(ctx context.C
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

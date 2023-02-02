@@ -19,7 +19,7 @@ type ItemActionStat struct {
 func NewItemActionStat()(*ItemActionStat) {
     m := &ItemActionStat{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateItemActionStatFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

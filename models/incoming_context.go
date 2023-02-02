@@ -23,7 +23,7 @@ type IncomingContext struct {
 func NewIncomingContext()(*IncomingContext) {
     m := &IncomingContext{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateIncomingContextFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

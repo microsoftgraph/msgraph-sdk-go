@@ -48,7 +48,7 @@ type ActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilderPatchRequest
 }
 // Activity provides operations to manage the activity property of the microsoft.graph.activityHistoryItem entity.
 func (m *ActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilder) Activity()(*ActivitiesItemHistoryItemsItemActivityRequestBuilder) {
-    return NewActivitiesItemHistoryItemsItemActivityRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewActivitiesItemHistoryItemsItemActivityRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilderInternal instantiates a new ActivityHistoryItemItemRequestBuilder and sets the default values.
 func NewActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilder) {
@@ -59,8 +59,8 @@ func NewActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilderInternal(
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilder instantiates a new ActivityHistoryItemItemRequestBuilder and sets the default values.
@@ -158,7 +158,10 @@ func (m *ActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilder) ToPatc
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

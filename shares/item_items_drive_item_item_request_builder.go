@@ -41,8 +41,8 @@ func NewItemItemsDriveItemItemRequestBuilderInternal(pathParameters map[string]s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemItemsDriveItemItemRequestBuilder instantiates a new DriveItemItemRequestBuilder and sets the default values.
@@ -53,7 +53,7 @@ func NewItemItemsDriveItemItemRequestBuilder(rawUrl string, requestAdapter i2ae4
 }
 // Content provides operations to manage the media for the sharedDriveItem entity.
 func (m *ItemItemsDriveItemItemRequestBuilder) Content()(*ItemItemsItemContentRequestBuilder) {
-    return NewItemItemsItemContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemItemsItemContentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get all driveItems contained in the sharing root. This collection cannot be enumerated.
 func (m *ItemItemsDriveItemItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsDriveItemItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable, error) {

@@ -15,7 +15,7 @@ type ReferenceCreate struct {
 func NewReferenceCreate()(*ReferenceCreate) {
     m := &ReferenceCreate{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateReferenceCreateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

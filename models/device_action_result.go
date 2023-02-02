@@ -24,7 +24,7 @@ type DeviceActionResult struct {
 func NewDeviceActionResult()(*DeviceActionResult) {
     m := &DeviceActionResult{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeviceActionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

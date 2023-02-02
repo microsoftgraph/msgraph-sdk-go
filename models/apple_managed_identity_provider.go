@@ -21,8 +21,8 @@ func NewAppleManagedIdentityProvider()(*AppleManagedIdentityProvider) {
     m := &AppleManagedIdentityProvider{
         IdentityProviderBase: *NewIdentityProviderBase(),
     }
-    odataTypeValue := "#microsoft.graph.appleManagedIdentityProvider";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.appleManagedIdentityProvider"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAppleManagedIdentityProviderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

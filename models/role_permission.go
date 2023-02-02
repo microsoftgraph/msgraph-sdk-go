@@ -17,7 +17,7 @@ type RolePermission struct {
 func NewRolePermission()(*RolePermission) {
     m := &RolePermission{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateRolePermissionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

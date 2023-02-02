@@ -60,8 +60,8 @@ func NewUsersRequestBuilderInternal(pathParameters map[string]string, requestAda
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewUsersRequestBuilder instantiates a new UsersRequestBuilder and sets the default values.
@@ -72,11 +72,7 @@ func NewUsersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
 }
 // Count provides operations to count the resources in the collection.
 func (m *UsersRequestBuilder) Count()(*UsersCountRequestBuilder) {
-    return NewUsersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Delta provides operations to call the delta method.
-func (m *UsersRequestBuilder) Delta()(*UsersDeltaRequestBuilder) {
-    return NewUsersDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUsersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of the educationUser objects and their properties.
 // [Find more info here]
@@ -99,6 +95,10 @@ func (m *UsersRequestBuilder) Get(ctx context.Context, requestConfiguration *Use
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationUserCollectionResponseable), nil
+}
+// MicrosoftGraphDelta provides operations to call the delta method.
+func (m *UsersRequestBuilder) MicrosoftGraphDelta()(*UsersMicrosoftGraphDeltaDeltaRequestBuilder) {
+    return NewUsersMicrosoftGraphDeltaDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create a new educationUser object.
 // [Find more info here]
@@ -145,7 +145,10 @@ func (m *UsersRequestBuilder) ToPostRequestInformation(ctx context.Context, body
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

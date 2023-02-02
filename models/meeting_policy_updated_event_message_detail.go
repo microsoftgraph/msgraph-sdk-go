@@ -19,8 +19,8 @@ func NewMeetingPolicyUpdatedEventMessageDetail()(*MeetingPolicyUpdatedEventMessa
     m := &MeetingPolicyUpdatedEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),
     }
-    odataTypeValue := "#microsoft.graph.meetingPolicyUpdatedEventMessageDetail";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.meetingPolicyUpdatedEventMessageDetail"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateMeetingPolicyUpdatedEventMessageDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

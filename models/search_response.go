@@ -23,7 +23,7 @@ type SearchResponse struct {
 func NewSearchResponse()(*SearchResponse) {
     m := &SearchResponse{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSearchResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

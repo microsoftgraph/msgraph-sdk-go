@@ -41,8 +41,8 @@ func NewChatsItemInstalledAppsItemTeamsAppRequestBuilderInternal(pathParameters 
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewChatsItemInstalledAppsItemTeamsAppRequestBuilder instantiates a new TeamsAppRequestBuilder and sets the default values.

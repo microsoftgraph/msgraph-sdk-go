@@ -15,8 +15,8 @@ func NewEmailIdentity()(*EmailIdentity) {
     m := &EmailIdentity{
         Identity: *NewIdentity(),
     }
-    odataTypeValue := "#microsoft.graph.emailIdentity";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.emailIdentity"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateEmailIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

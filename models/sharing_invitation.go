@@ -23,7 +23,7 @@ type SharingInvitation struct {
 func NewSharingInvitation()(*SharingInvitation) {
     m := &SharingInvitation{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSharingInvitationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

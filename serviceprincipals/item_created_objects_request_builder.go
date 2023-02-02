@@ -53,8 +53,8 @@ func NewItemCreatedObjectsRequestBuilderInternal(pathParameters map[string]strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemCreatedObjectsRequestBuilder instantiates a new CreatedObjectsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemCreatedObjectsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemCreatedObjectsRequestBuilder) Count()(*ItemCreatedObjectsCountRequestBuilder) {
-    return NewItemCreatedObjectsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemCreatedObjectsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get directory objects created by this service principal. Read-only. Nullable.
 func (m *ItemCreatedObjectsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCreatedObjectsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
@@ -86,9 +86,9 @@ func (m *ItemCreatedObjectsRequestBuilder) Get(ctx context.Context, requestConfi
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
 }
-// ServicePrincipal casts the previous resource to servicePrincipal.
-func (m *ItemCreatedObjectsRequestBuilder) ServicePrincipal()(*ItemCreatedObjectsServicePrincipalRequestBuilder) {
-    return NewItemCreatedObjectsServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphServicePrincipal casts the previous resource to servicePrincipal.
+func (m *ItemCreatedObjectsRequestBuilder) MicrosoftGraphServicePrincipal()(*ItemCreatedObjectsMicrosoftGraphServicePrincipalServicePrincipalRequestBuilder) {
+    return NewItemCreatedObjectsMicrosoftGraphServicePrincipalServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation directory objects created by this service principal. Read-only. Nullable.
 func (m *ItemCreatedObjectsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCreatedObjectsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

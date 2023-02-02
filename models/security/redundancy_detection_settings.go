@@ -23,7 +23,7 @@ type RedundancyDetectionSettings struct {
 func NewRedundancyDetectionSettings()(*RedundancyDetectionSettings) {
     m := &RedundancyDetectionSettings{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateRedundancyDetectionSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

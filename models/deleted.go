@@ -17,7 +17,7 @@ type Deleted struct {
 func NewDeleted()(*Deleted) {
     m := &Deleted{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeletedFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

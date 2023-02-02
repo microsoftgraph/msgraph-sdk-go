@@ -23,7 +23,7 @@ type PrintJobStatus struct {
 func NewPrintJobStatus()(*PrintJobStatus) {
     m := &PrintJobStatus{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePrintJobStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

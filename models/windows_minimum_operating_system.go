@@ -21,7 +21,7 @@ type WindowsMinimumOperatingSystem struct {
 func NewWindowsMinimumOperatingSystem()(*WindowsMinimumOperatingSystem) {
     m := &WindowsMinimumOperatingSystem{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWindowsMinimumOperatingSystemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -51,7 +51,7 @@ func (m *WindowsMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            m.SetV10_0(val)
+            m.SetV100(val)
         }
         return nil
     }
@@ -61,7 +61,7 @@ func (m *WindowsMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            m.SetV8_0(val)
+            m.SetV80(val)
         }
         return nil
     }
@@ -71,7 +71,7 @@ func (m *WindowsMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            m.SetV8_1(val)
+            m.SetV81(val)
         }
         return nil
     }
@@ -81,16 +81,16 @@ func (m *WindowsMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
 func (m *WindowsMinimumOperatingSystem) GetOdataType()(*string) {
     return m.odataType
 }
-// GetV10_0 gets the v10_0 property value. Windows version 10.0 or later.
-func (m *WindowsMinimumOperatingSystem) GetV10_0()(*bool) {
+// GetV100 gets the v10_0 property value. Windows version 10.0 or later.
+func (m *WindowsMinimumOperatingSystem) GetV100()(*bool) {
     return m.v10_0
 }
-// GetV8_0 gets the v8_0 property value. Windows version 8.0 or later.
-func (m *WindowsMinimumOperatingSystem) GetV8_0()(*bool) {
+// GetV80 gets the v8_0 property value. Windows version 8.0 or later.
+func (m *WindowsMinimumOperatingSystem) GetV80()(*bool) {
     return m.v8_0
 }
-// GetV8_1 gets the v8_1 property value. Windows version 8.1 or later.
-func (m *WindowsMinimumOperatingSystem) GetV8_1()(*bool) {
+// GetV81 gets the v8_1 property value. Windows version 8.1 or later.
+func (m *WindowsMinimumOperatingSystem) GetV81()(*bool) {
     return m.v8_1
 }
 // Serialize serializes information the current object
@@ -102,19 +102,19 @@ func (m *WindowsMinimumOperatingSystem) Serialize(writer i878a80d2330e89d2689638
         }
     }
     {
-        err := writer.WriteBoolValue("v10_0", m.GetV10_0())
+        err := writer.WriteBoolValue("v10_0", m.GetV100())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteBoolValue("v8_0", m.GetV8_0())
+        err := writer.WriteBoolValue("v8_0", m.GetV80())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteBoolValue("v8_1", m.GetV8_1())
+        err := writer.WriteBoolValue("v8_1", m.GetV81())
         if err != nil {
             return err
         }
@@ -135,15 +135,15 @@ func (m *WindowsMinimumOperatingSystem) SetAdditionalData(value map[string]any)(
 func (m *WindowsMinimumOperatingSystem) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetV10_0 sets the v10_0 property value. Windows version 10.0 or later.
-func (m *WindowsMinimumOperatingSystem) SetV10_0(value *bool)() {
+// SetV100 sets the v10_0 property value. Windows version 10.0 or later.
+func (m *WindowsMinimumOperatingSystem) SetV100(value *bool)() {
     m.v10_0 = value
 }
-// SetV8_0 sets the v8_0 property value. Windows version 8.0 or later.
-func (m *WindowsMinimumOperatingSystem) SetV8_0(value *bool)() {
+// SetV80 sets the v8_0 property value. Windows version 8.0 or later.
+func (m *WindowsMinimumOperatingSystem) SetV80(value *bool)() {
     m.v8_0 = value
 }
-// SetV8_1 sets the v8_1 property value. Windows version 8.1 or later.
-func (m *WindowsMinimumOperatingSystem) SetV8_1(value *bool)() {
+// SetV81 sets the v8_1 property value. Windows version 8.1 or later.
+func (m *WindowsMinimumOperatingSystem) SetV81(value *bool)() {
     m.v8_1 = value
 }

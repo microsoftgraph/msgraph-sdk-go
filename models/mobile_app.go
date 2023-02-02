@@ -64,6 +64,8 @@ func CreateMobileAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
                         return NewAndroidLobApp(), nil
                     case "#microsoft.graph.androidStoreApp":
                         return NewAndroidStoreApp(), nil
+                    case "#microsoft.graph.iosiPadOSWebClip":
+                        return NewIosiPadOSWebClip(), nil
                     case "#microsoft.graph.iosLobApp":
                         return NewIosLobApp(), nil
                     case "#microsoft.graph.iosStoreApp":
@@ -102,6 +104,8 @@ func CreateMobileAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
                         return NewWindowsMobileMSI(), nil
                     case "#microsoft.graph.windowsUniversalAppX":
                         return NewWindowsUniversalAppX(), nil
+                    case "#microsoft.graph.windowsWebApp":
+                        return NewWindowsWebApp(), nil
                 }
             }
         }

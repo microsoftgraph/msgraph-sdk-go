@@ -39,8 +39,8 @@ func NewItemCalendarsItemEventsItemInstancesItemCalendarRequestBuilderInternal(p
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemCalendarsItemEventsItemInstancesItemCalendarRequestBuilder instantiates a new CalendarRequestBuilder and sets the default values.

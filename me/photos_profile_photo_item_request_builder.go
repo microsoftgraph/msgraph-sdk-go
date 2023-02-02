@@ -39,8 +39,8 @@ func NewPhotosProfilePhotoItemRequestBuilderInternal(pathParameters map[string]s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewPhotosProfilePhotoItemRequestBuilder instantiates a new ProfilePhotoItemRequestBuilder and sets the default values.
@@ -51,7 +51,7 @@ func NewPhotosProfilePhotoItemRequestBuilder(rawUrl string, requestAdapter i2ae4
 }
 // Content provides operations to manage the media for the user entity.
 func (m *PhotosProfilePhotoItemRequestBuilder) Content()(*PhotosItemValueContentRequestBuilder) {
-    return NewPhotosItemValueContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPhotosItemValueContentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get photos from me
 func (m *PhotosProfilePhotoItemRequestBuilder) Get(ctx context.Context, requestConfiguration *PhotosProfilePhotoItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ProfilePhotoable, error) {

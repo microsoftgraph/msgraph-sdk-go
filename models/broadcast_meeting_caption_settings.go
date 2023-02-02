@@ -21,7 +21,7 @@ type BroadcastMeetingCaptionSettings struct {
 func NewBroadcastMeetingCaptionSettings()(*BroadcastMeetingCaptionSettings) {
     m := &BroadcastMeetingCaptionSettings{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateBroadcastMeetingCaptionSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

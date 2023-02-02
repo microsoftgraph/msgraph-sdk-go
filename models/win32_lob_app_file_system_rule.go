@@ -25,8 +25,8 @@ func NewWin32LobAppFileSystemRule()(*Win32LobAppFileSystemRule) {
     m := &Win32LobAppFileSystemRule{
         Win32LobAppRule: *NewWin32LobAppRule(),
     }
-    odataTypeValue := "#microsoft.graph.win32LobAppFileSystemRule";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.win32LobAppFileSystemRule"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWin32LobAppFileSystemRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

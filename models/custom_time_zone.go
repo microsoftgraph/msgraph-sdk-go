@@ -19,8 +19,8 @@ func NewCustomTimeZone()(*CustomTimeZone) {
     m := &CustomTimeZone{
         TimeZoneBase: *NewTimeZoneBase(),
     }
-    odataTypeValue := "#microsoft.graph.customTimeZone";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.customTimeZone"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateCustomTimeZoneFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

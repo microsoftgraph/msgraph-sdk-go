@@ -24,7 +24,7 @@ type OnPremisesProvisioningError struct {
 func NewOnPremisesProvisioningError()(*OnPremisesProvisioningError) {
     m := &OnPremisesProvisioningError{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateOnPremisesProvisioningErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -29,7 +29,7 @@ type AccessReviewStageSettings struct {
 func NewAccessReviewStageSettings()(*AccessReviewStageSettings) {
     m := &AccessReviewStageSettings{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAccessReviewStageSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

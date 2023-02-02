@@ -27,7 +27,7 @@ type WorkbookSortField struct {
 func NewWorkbookSortField()(*WorkbookSortField) {
     m := &WorkbookSortField{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWorkbookSortFieldFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -19,7 +19,7 @@ type ParentalControlSettings struct {
 func NewParentalControlSettings()(*ParentalControlSettings) {
     m := &ParentalControlSettings{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateParentalControlSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -46,17 +46,13 @@ type ItemSitesItemContentTypesContentTypeItemRequestBuilderPatchRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AssociateWithHubSites provides operations to call the associateWithHubSites method.
-func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) AssociateWithHubSites()(*ItemSitesItemContentTypesItemAssociateWithHubSitesRequestBuilder) {
-    return NewItemSitesItemContentTypesItemAssociateWithHubSitesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Base provides operations to manage the base property of the microsoft.graph.contentType entity.
 func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) Base()(*ItemSitesItemContentTypesItemBaseRequestBuilder) {
-    return NewItemSitesItemContentTypesItemBaseRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesItemContentTypesItemBaseRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // BaseTypes provides operations to manage the baseTypes property of the microsoft.graph.contentType entity.
 func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) BaseTypes()(*ItemSitesItemContentTypesItemBaseTypesRequestBuilder) {
-    return NewItemSitesItemContentTypesItemBaseTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesItemContentTypesItemBaseTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // BaseTypesById provides operations to manage the baseTypes property of the microsoft.graph.contentType entity.
 func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) BaseTypesById(id string)(*ItemSitesItemContentTypesItemBaseTypesContentTypeItemRequestBuilder) {
@@ -67,11 +63,11 @@ func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) BaseTypesById(i
     if id != "" {
         urlTplParams["contentType%2Did1"] = id
     }
-    return NewItemSitesItemContentTypesItemBaseTypesContentTypeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemSitesItemContentTypesItemBaseTypesContentTypeItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ColumnLinks provides operations to manage the columnLinks property of the microsoft.graph.contentType entity.
 func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) ColumnLinks()(*ItemSitesItemContentTypesItemColumnLinksRequestBuilder) {
-    return NewItemSitesItemContentTypesItemColumnLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesItemContentTypesItemColumnLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ColumnLinksById provides operations to manage the columnLinks property of the microsoft.graph.contentType entity.
 func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) ColumnLinksById(id string)(*ItemSitesItemContentTypesItemColumnLinksColumnLinkItemRequestBuilder) {
@@ -82,11 +78,11 @@ func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) ColumnLinksById
     if id != "" {
         urlTplParams["columnLink%2Did"] = id
     }
-    return NewItemSitesItemContentTypesItemColumnLinksColumnLinkItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemSitesItemContentTypesItemColumnLinksColumnLinkItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ColumnPositions provides operations to manage the columnPositions property of the microsoft.graph.contentType entity.
 func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) ColumnPositions()(*ItemSitesItemContentTypesItemColumnPositionsRequestBuilder) {
-    return NewItemSitesItemContentTypesItemColumnPositionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesItemContentTypesItemColumnPositionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ColumnPositionsById provides operations to manage the columnPositions property of the microsoft.graph.contentType entity.
 func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) ColumnPositionsById(id string)(*ItemSitesItemContentTypesItemColumnPositionsColumnDefinitionItemRequestBuilder) {
@@ -97,11 +93,11 @@ func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) ColumnPositions
     if id != "" {
         urlTplParams["columnDefinition%2Did"] = id
     }
-    return NewItemSitesItemContentTypesItemColumnPositionsColumnDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemSitesItemContentTypesItemColumnPositionsColumnDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Columns provides operations to manage the columns property of the microsoft.graph.contentType entity.
 func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) Columns()(*ItemSitesItemContentTypesItemColumnsRequestBuilder) {
-    return NewItemSitesItemContentTypesItemColumnsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesItemContentTypesItemColumnsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ColumnsById provides operations to manage the columns property of the microsoft.graph.contentType entity.
 func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) ColumnsById(id string)(*ItemSitesItemContentTypesItemColumnsColumnDefinitionItemRequestBuilder) {
@@ -112,7 +108,7 @@ func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) ColumnsById(id 
     if id != "" {
         urlTplParams["columnDefinition%2Did"] = id
     }
-    return NewItemSitesItemContentTypesItemColumnsColumnDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemSitesItemContentTypesItemColumnsColumnDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewItemSitesItemContentTypesContentTypeItemRequestBuilderInternal instantiates a new ContentTypeItemRequestBuilder and sets the default values.
 func NewItemSitesItemContentTypesContentTypeItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemContentTypesContentTypeItemRequestBuilder) {
@@ -123,8 +119,8 @@ func NewItemSitesItemContentTypesContentTypeItemRequestBuilderInternal(pathParam
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSitesItemContentTypesContentTypeItemRequestBuilder instantiates a new ContentTypeItemRequestBuilder and sets the default values.
@@ -132,10 +128,6 @@ func NewItemSitesItemContentTypesContentTypeItemRequestBuilder(rawUrl string, re
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemContentTypesContentTypeItemRequestBuilderInternal(urlParams, requestAdapter)
-}
-// CopyToDefaultContentLocation provides operations to call the copyToDefaultContentLocation method.
-func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) CopyToDefaultContentLocation()(*ItemSitesItemContentTypesItemCopyToDefaultContentLocationRequestBuilder) {
-    return NewItemSitesItemContentTypesItemCopyToDefaultContentLocationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Delete delete navigation property contentTypes for groups
 func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSitesItemContentTypesContentTypeItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -172,9 +164,25 @@ func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) Get(ctx context
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeable), nil
 }
-// IsPublished provides operations to call the isPublished method.
-func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) IsPublished()(*ItemSitesItemContentTypesItemIsPublishedRequestBuilder) {
-    return NewItemSitesItemContentTypesItemIsPublishedRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphAssociateWithHubSites provides operations to call the associateWithHubSites method.
+func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) MicrosoftGraphAssociateWithHubSites()(*ItemSitesItemContentTypesItemMicrosoftGraphAssociateWithHubSitesAssociateWithHubSitesRequestBuilder) {
+    return NewItemSitesItemContentTypesItemMicrosoftGraphAssociateWithHubSitesAssociateWithHubSitesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphCopyToDefaultContentLocation provides operations to call the copyToDefaultContentLocation method.
+func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) MicrosoftGraphCopyToDefaultContentLocation()(*ItemSitesItemContentTypesItemMicrosoftGraphCopyToDefaultContentLocationCopyToDefaultContentLocationRequestBuilder) {
+    return NewItemSitesItemContentTypesItemMicrosoftGraphCopyToDefaultContentLocationCopyToDefaultContentLocationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphIsPublished provides operations to call the isPublished method.
+func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) MicrosoftGraphIsPublished()(*ItemSitesItemContentTypesItemMicrosoftGraphIsPublishedIsPublishedRequestBuilder) {
+    return NewItemSitesItemContentTypesItemMicrosoftGraphIsPublishedIsPublishedRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphPublish provides operations to call the publish method.
+func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) MicrosoftGraphPublish()(*ItemSitesItemContentTypesItemMicrosoftGraphPublishPublishRequestBuilder) {
+    return NewItemSitesItemContentTypesItemMicrosoftGraphPublishPublishRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphUnpublish provides operations to call the unpublish method.
+func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) MicrosoftGraphUnpublish()(*ItemSitesItemContentTypesItemMicrosoftGraphUnpublishUnpublishRequestBuilder) {
+    return NewItemSitesItemContentTypesItemMicrosoftGraphUnpublishUnpublishRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property contentTypes in groups
 func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeable, requestConfiguration *ItemSitesItemContentTypesContentTypeItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeable, error) {
@@ -194,10 +202,6 @@ func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) Patch(ctx conte
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeable), nil
-}
-// Publish provides operations to call the publish method.
-func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) Publish()(*ItemSitesItemContentTypesItemPublishRequestBuilder) {
-    return NewItemSitesItemContentTypesItemPublishRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property contentTypes for groups
 func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemContentTypesContentTypeItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -234,14 +238,13 @@ func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) ToPatchRequestI
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// Unpublish provides operations to call the unpublish method.
-func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) Unpublish()(*ItemSitesItemContentTypesItemUnpublishRequestBuilder) {
-    return NewItemSitesItemContentTypesItemUnpublishRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -41,8 +41,8 @@ func NewItemDrivesDriveItemRequestBuilderInternal(pathParameters map[string]stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemDrivesDriveItemRequestBuilder instantiates a new DriveItemRequestBuilder and sets the default values.

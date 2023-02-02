@@ -21,7 +21,7 @@ type Win32LobAppRestartSettings struct {
 func NewWin32LobAppRestartSettings()(*Win32LobAppRestartSettings) {
     m := &Win32LobAppRestartSettings{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWin32LobAppRestartSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

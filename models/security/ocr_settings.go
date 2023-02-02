@@ -21,7 +21,7 @@ type OcrSettings struct {
 func NewOcrSettings()(*OcrSettings) {
     m := &OcrSettings{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateOcrSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

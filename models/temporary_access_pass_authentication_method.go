@@ -28,8 +28,8 @@ func NewTemporaryAccessPassAuthenticationMethod()(*TemporaryAccessPassAuthentica
     m := &TemporaryAccessPassAuthenticationMethod{
         AuthenticationMethod: *NewAuthenticationMethod(),
     }
-    odataTypeValue := "#microsoft.graph.temporaryAccessPassAuthenticationMethod";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.temporaryAccessPassAuthenticationMethod"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateTemporaryAccessPassAuthenticationMethodFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

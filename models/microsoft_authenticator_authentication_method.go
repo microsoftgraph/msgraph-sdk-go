@@ -24,8 +24,8 @@ func NewMicrosoftAuthenticatorAuthenticationMethod()(*MicrosoftAuthenticatorAuth
     m := &MicrosoftAuthenticatorAuthenticationMethod{
         AuthenticationMethod: *NewAuthenticationMethod(),
     }
-    odataTypeValue := "#microsoft.graph.microsoftAuthenticatorAuthenticationMethod";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.microsoftAuthenticatorAuthenticationMethod"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateMicrosoftAuthenticatorAuthenticationMethodFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

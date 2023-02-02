@@ -15,8 +15,8 @@ func NewTeamMembersNotificationRecipient()(*TeamMembersNotificationRecipient) {
     m := &TeamMembersNotificationRecipient{
         TeamworkNotificationRecipient: *NewTeamworkNotificationRecipient(),
     }
-    odataTypeValue := "#microsoft.graph.teamMembersNotificationRecipient";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.teamMembersNotificationRecipient"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateTeamMembersNotificationRecipientFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

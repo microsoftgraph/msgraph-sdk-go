@@ -21,8 +21,8 @@ func NewCalendarSharingMessage()(*CalendarSharingMessage) {
     m := &CalendarSharingMessage{
         Message: *NewMessage(),
     }
-    odataTypeValue := "#microsoft.graph.calendarSharingMessage";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.calendarSharingMessage"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateCalendarSharingMessageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

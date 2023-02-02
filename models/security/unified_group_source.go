@@ -18,8 +18,8 @@ func NewUnifiedGroupSource()(*UnifiedGroupSource) {
     m := &UnifiedGroupSource{
         DataSource: *NewDataSource(),
     }
-    odataTypeValue := "#microsoft.graph.security.unifiedGroupSource";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.security.unifiedGroupSource"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateUnifiedGroupSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

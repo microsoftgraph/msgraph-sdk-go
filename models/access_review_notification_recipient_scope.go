@@ -15,7 +15,7 @@ type AccessReviewNotificationRecipientScope struct {
 func NewAccessReviewNotificationRecipientScope()(*AccessReviewNotificationRecipientScope) {
     m := &AccessReviewNotificationRecipientScope{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAccessReviewNotificationRecipientScopeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

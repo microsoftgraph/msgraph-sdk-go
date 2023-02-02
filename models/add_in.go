@@ -22,7 +22,7 @@ type AddIn struct {
 func NewAddIn()(*AddIn) {
     m := &AddIn{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAddInFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

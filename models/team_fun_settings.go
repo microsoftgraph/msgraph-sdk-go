@@ -23,7 +23,7 @@ type TeamFunSettings struct {
 func NewTeamFunSettings()(*TeamFunSettings) {
     m := &TeamFunSettings{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTeamFunSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

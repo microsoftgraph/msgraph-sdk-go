@@ -55,8 +55,8 @@ func NewServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilderInterna
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilder instantiates a new ServiceHealthItemRequestBuilder and sets the default values.
@@ -102,7 +102,7 @@ func (m *ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilder) Get(
 }
 // Issues provides operations to manage the issues property of the microsoft.graph.serviceHealth entity.
 func (m *ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilder) Issues()(*ServiceAnnouncementHealthOverviewsItemIssuesRequestBuilder) {
-    return NewServiceAnnouncementHealthOverviewsItemIssuesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewServiceAnnouncementHealthOverviewsItemIssuesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // IssuesById provides operations to manage the issues property of the microsoft.graph.serviceHealth entity.
 func (m *ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilder) IssuesById(id string)(*ServiceAnnouncementHealthOverviewsItemIssuesServiceHealthIssueItemRequestBuilder) {
@@ -113,7 +113,7 @@ func (m *ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilder) Issu
     if id != "" {
         urlTplParams["serviceHealthIssue%2Did"] = id
     }
-    return NewServiceAnnouncementHealthOverviewsItemIssuesServiceHealthIssueItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewServiceAnnouncementHealthOverviewsItemIssuesServiceHealthIssueItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Patch update the navigation property healthOverviews in admin
 func (m *ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceHealthable, requestConfiguration *ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceHealthable, error) {
@@ -169,7 +169,10 @@ func (m *ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilder) ToPa
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

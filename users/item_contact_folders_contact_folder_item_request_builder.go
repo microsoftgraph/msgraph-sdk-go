@@ -46,7 +46,7 @@ type ItemContactFoldersContactFolderItemRequestBuilderPatchRequestConfiguration 
 }
 // ChildFolders provides operations to manage the childFolders property of the microsoft.graph.contactFolder entity.
 func (m *ItemContactFoldersContactFolderItemRequestBuilder) ChildFolders()(*ItemContactFoldersItemChildFoldersRequestBuilder) {
-    return NewItemContactFoldersItemChildFoldersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemContactFoldersItemChildFoldersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ChildFoldersById provides operations to manage the childFolders property of the microsoft.graph.contactFolder entity.
 func (m *ItemContactFoldersContactFolderItemRequestBuilder) ChildFoldersById(id string)(*ItemContactFoldersItemChildFoldersContactFolderItemRequestBuilder) {
@@ -57,7 +57,7 @@ func (m *ItemContactFoldersContactFolderItemRequestBuilder) ChildFoldersById(id 
     if id != "" {
         urlTplParams["contactFolder%2Did1"] = id
     }
-    return NewItemContactFoldersItemChildFoldersContactFolderItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemContactFoldersItemChildFoldersContactFolderItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewItemContactFoldersContactFolderItemRequestBuilderInternal instantiates a new ContactFolderItemRequestBuilder and sets the default values.
 func NewItemContactFoldersContactFolderItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemContactFoldersContactFolderItemRequestBuilder) {
@@ -68,8 +68,8 @@ func NewItemContactFoldersContactFolderItemRequestBuilderInternal(pathParameters
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemContactFoldersContactFolderItemRequestBuilder instantiates a new ContactFolderItemRequestBuilder and sets the default values.
@@ -80,7 +80,7 @@ func NewItemContactFoldersContactFolderItemRequestBuilder(rawUrl string, request
 }
 // Contacts provides operations to manage the contacts property of the microsoft.graph.contactFolder entity.
 func (m *ItemContactFoldersContactFolderItemRequestBuilder) Contacts()(*ItemContactFoldersItemContactsRequestBuilder) {
-    return NewItemContactFoldersItemContactsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemContactFoldersItemContactsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ContactsById provides operations to manage the contacts property of the microsoft.graph.contactFolder entity.
 func (m *ItemContactFoldersContactFolderItemRequestBuilder) ContactsById(id string)(*ItemContactFoldersItemContactsContactItemRequestBuilder) {
@@ -91,7 +91,7 @@ func (m *ItemContactFoldersContactFolderItemRequestBuilder) ContactsById(id stri
     if id != "" {
         urlTplParams["contact%2Did"] = id
     }
-    return NewItemContactFoldersItemContactsContactItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemContactFoldersItemContactsContactItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Delete delete navigation property contactFolders for users
 func (m *ItemContactFoldersContactFolderItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemContactFoldersContactFolderItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -130,7 +130,7 @@ func (m *ItemContactFoldersContactFolderItemRequestBuilder) Get(ctx context.Cont
 }
 // MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.contactFolder entity.
 func (m *ItemContactFoldersContactFolderItemRequestBuilder) MultiValueExtendedProperties()(*ItemContactFoldersItemMultiValueExtendedPropertiesRequestBuilder) {
-    return NewItemContactFoldersItemMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemContactFoldersItemMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MultiValueExtendedPropertiesById provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.contactFolder entity.
 func (m *ItemContactFoldersContactFolderItemRequestBuilder) MultiValueExtendedPropertiesById(id string)(*ItemContactFoldersItemMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilder) {
@@ -141,7 +141,7 @@ func (m *ItemContactFoldersContactFolderItemRequestBuilder) MultiValueExtendedPr
     if id != "" {
         urlTplParams["multiValueLegacyExtendedProperty%2Did"] = id
     }
-    return NewItemContactFoldersItemMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemContactFoldersItemMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Patch update the navigation property contactFolders in users
 func (m *ItemContactFoldersContactFolderItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContactFolderable, requestConfiguration *ItemContactFoldersContactFolderItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContactFolderable, error) {
@@ -164,7 +164,7 @@ func (m *ItemContactFoldersContactFolderItemRequestBuilder) Patch(ctx context.Co
 }
 // SingleValueExtendedProperties provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.contactFolder entity.
 func (m *ItemContactFoldersContactFolderItemRequestBuilder) SingleValueExtendedProperties()(*ItemContactFoldersItemSingleValueExtendedPropertiesRequestBuilder) {
-    return NewItemContactFoldersItemSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemContactFoldersItemSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SingleValueExtendedPropertiesById provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.contactFolder entity.
 func (m *ItemContactFoldersContactFolderItemRequestBuilder) SingleValueExtendedPropertiesById(id string)(*ItemContactFoldersItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilder) {
@@ -175,7 +175,7 @@ func (m *ItemContactFoldersContactFolderItemRequestBuilder) SingleValueExtendedP
     if id != "" {
         urlTplParams["singleValueLegacyExtendedProperty%2Did"] = id
     }
-    return NewItemContactFoldersItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemContactFoldersItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property contactFolders for users
 func (m *ItemContactFoldersContactFolderItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemContactFoldersContactFolderItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -212,7 +212,10 @@ func (m *ItemContactFoldersContactFolderItemRequestBuilder) ToPatchRequestInform
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

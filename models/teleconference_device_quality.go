@@ -36,7 +36,7 @@ type TeleconferenceDeviceQuality struct {
 func NewTeleconferenceDeviceQuality()(*TeleconferenceDeviceQuality) {
     m := &TeleconferenceDeviceQuality{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTeleconferenceDeviceQualityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

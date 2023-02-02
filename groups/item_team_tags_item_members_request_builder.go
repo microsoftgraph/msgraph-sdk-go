@@ -60,8 +60,8 @@ func NewItemTeamTagsItemMembersRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTeamTagsItemMembersRequestBuilder instantiates a new MembersRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewItemTeamTagsItemMembersRequestBuilder(rawUrl string, requestAdapter i2ae
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemTeamTagsItemMembersRequestBuilder) Count()(*ItemTeamTagsItemMembersCountRequestBuilder) {
-    return NewItemTeamTagsItemMembersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTeamTagsItemMembersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of the members of a standard tag in a team and their properties.
 // [Find more info here]
@@ -141,7 +141,10 @@ func (m *ItemTeamTagsItemMembersRequestBuilder) ToPostRequestInformation(ctx con
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

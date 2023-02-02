@@ -25,7 +25,7 @@ type MediaStream struct {
 func NewMediaStream()(*MediaStream) {
     m := &MediaStream{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateMediaStreamFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

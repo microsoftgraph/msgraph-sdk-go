@@ -15,7 +15,7 @@ type Dictionary struct {
 func NewDictionary()(*Dictionary) {
     m := &Dictionary{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDictionaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

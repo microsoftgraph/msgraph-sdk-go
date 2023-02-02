@@ -60,8 +60,8 @@ func NewItemExtensionPropertiesRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemExtensionPropertiesRequestBuilder instantiates a new ExtensionPropertiesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewItemExtensionPropertiesRequestBuilder(rawUrl string, requestAdapter i2ae
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemExtensionPropertiesRequestBuilder) Count()(*ItemExtensionPropertiesCountRequestBuilder) {
-    return NewItemExtensionPropertiesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemExtensionPropertiesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve the list of directory extension definitions, represented by extensionProperty objects on an application.
 // [Find more info here]
@@ -141,7 +141,10 @@ func (m *ItemExtensionPropertiesRequestBuilder) ToPostRequestInformation(ctx con
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

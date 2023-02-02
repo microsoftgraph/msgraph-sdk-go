@@ -15,8 +15,8 @@ func NewIosHomeScreenFolder()(*IosHomeScreenFolder) {
     m := &IosHomeScreenFolder{
         IosHomeScreenItem: *NewIosHomeScreenItem(),
     }
-    odataTypeValue := "#microsoft.graph.iosHomeScreenFolder";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.iosHomeScreenFolder"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateIosHomeScreenFolderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

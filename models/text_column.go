@@ -25,7 +25,7 @@ type TextColumn struct {
 func NewTextColumn()(*TextColumn) {
     m := &TextColumn{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTextColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

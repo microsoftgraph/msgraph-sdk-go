@@ -15,8 +15,8 @@ func NewEducationWordResource()(*EducationWordResource) {
     m := &EducationWordResource{
         EducationResource: *NewEducationResource(),
     }
-    odataTypeValue := "#microsoft.graph.educationWordResource";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.educationWordResource"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateEducationWordResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

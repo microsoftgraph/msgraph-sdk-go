@@ -25,7 +25,7 @@ type BucketAggregationDefinition struct {
 func NewBucketAggregationDefinition()(*BucketAggregationDefinition) {
     m := &BucketAggregationDefinition{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateBucketAggregationDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

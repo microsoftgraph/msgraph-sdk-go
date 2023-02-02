@@ -21,7 +21,7 @@ type PrinterStatus struct {
 func NewPrinterStatus()(*PrinterStatus) {
     m := &PrinterStatus{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePrinterStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

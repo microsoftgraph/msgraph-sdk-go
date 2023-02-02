@@ -48,8 +48,8 @@ func NewIdentityProtectionRequestBuilderInternal(pathParameters map[string]strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewIdentityProtectionRequestBuilder instantiates a new IdentityProtectionRequestBuilder and sets the default values.
@@ -98,7 +98,7 @@ func (m *IdentityProtectionRequestBuilder) Patch(ctx context.Context, body iadcd
 }
 // RiskDetections provides operations to manage the riskDetections property of the microsoft.graph.identityProtectionRoot entity.
 func (m *IdentityProtectionRequestBuilder) RiskDetections()(*RiskDetectionsRequestBuilder) {
-    return NewRiskDetectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewRiskDetectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // RiskDetectionsById provides operations to manage the riskDetections property of the microsoft.graph.identityProtectionRoot entity.
 func (m *IdentityProtectionRequestBuilder) RiskDetectionsById(id string)(*RiskDetectionsRiskDetectionItemRequestBuilder) {
@@ -109,11 +109,11 @@ func (m *IdentityProtectionRequestBuilder) RiskDetectionsById(id string)(*RiskDe
     if id != "" {
         urlTplParams["riskDetection%2Did"] = id
     }
-    return NewRiskDetectionsRiskDetectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewRiskDetectionsRiskDetectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // RiskyServicePrincipals provides operations to manage the riskyServicePrincipals property of the microsoft.graph.identityProtectionRoot entity.
 func (m *IdentityProtectionRequestBuilder) RiskyServicePrincipals()(*RiskyServicePrincipalsRequestBuilder) {
-    return NewRiskyServicePrincipalsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewRiskyServicePrincipalsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // RiskyServicePrincipalsById provides operations to manage the riskyServicePrincipals property of the microsoft.graph.identityProtectionRoot entity.
 func (m *IdentityProtectionRequestBuilder) RiskyServicePrincipalsById(id string)(*RiskyServicePrincipalsRiskyServicePrincipalItemRequestBuilder) {
@@ -124,11 +124,11 @@ func (m *IdentityProtectionRequestBuilder) RiskyServicePrincipalsById(id string)
     if id != "" {
         urlTplParams["riskyServicePrincipal%2Did"] = id
     }
-    return NewRiskyServicePrincipalsRiskyServicePrincipalItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewRiskyServicePrincipalsRiskyServicePrincipalItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // RiskyUsers provides operations to manage the riskyUsers property of the microsoft.graph.identityProtectionRoot entity.
 func (m *IdentityProtectionRequestBuilder) RiskyUsers()(*RiskyUsersRequestBuilder) {
-    return NewRiskyUsersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewRiskyUsersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // RiskyUsersById provides operations to manage the riskyUsers property of the microsoft.graph.identityProtectionRoot entity.
 func (m *IdentityProtectionRequestBuilder) RiskyUsersById(id string)(*RiskyUsersRiskyUserItemRequestBuilder) {
@@ -139,11 +139,11 @@ func (m *IdentityProtectionRequestBuilder) RiskyUsersById(id string)(*RiskyUsers
     if id != "" {
         urlTplParams["riskyUser%2Did"] = id
     }
-    return NewRiskyUsersRiskyUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewRiskyUsersRiskyUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ServicePrincipalRiskDetections provides operations to manage the servicePrincipalRiskDetections property of the microsoft.graph.identityProtectionRoot entity.
 func (m *IdentityProtectionRequestBuilder) ServicePrincipalRiskDetections()(*ServicePrincipalRiskDetectionsRequestBuilder) {
-    return NewServicePrincipalRiskDetectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewServicePrincipalRiskDetectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ServicePrincipalRiskDetectionsById provides operations to manage the servicePrincipalRiskDetections property of the microsoft.graph.identityProtectionRoot entity.
 func (m *IdentityProtectionRequestBuilder) ServicePrincipalRiskDetectionsById(id string)(*ServicePrincipalRiskDetectionsServicePrincipalRiskDetectionItemRequestBuilder) {
@@ -154,7 +154,7 @@ func (m *IdentityProtectionRequestBuilder) ServicePrincipalRiskDetectionsById(id
     if id != "" {
         urlTplParams["servicePrincipalRiskDetection%2Did"] = id
     }
-    return NewServicePrincipalRiskDetectionsServicePrincipalRiskDetectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewServicePrincipalRiskDetectionsServicePrincipalRiskDetectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToGetRequestInformation get identityProtection
 func (m *IdentityProtectionRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IdentityProtectionRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -179,7 +179,10 @@ func (m *IdentityProtectionRequestBuilder) ToPatchRequestInformation(ctx context
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

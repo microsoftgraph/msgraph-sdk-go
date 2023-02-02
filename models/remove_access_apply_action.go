@@ -13,8 +13,8 @@ func NewRemoveAccessApplyAction()(*RemoveAccessApplyAction) {
     m := &RemoveAccessApplyAction{
         AccessReviewApplyAction: *NewAccessReviewApplyAction(),
     }
-    odataTypeValue := "#microsoft.graph.removeAccessApplyAction";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.removeAccessApplyAction"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateRemoveAccessApplyActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

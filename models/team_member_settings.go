@@ -27,7 +27,7 @@ type TeamMemberSettings struct {
 func NewTeamMemberSettings()(*TeamMemberSettings) {
     m := &TeamMemberSettings{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTeamMemberSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

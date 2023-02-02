@@ -53,8 +53,8 @@ func NewCasesEdiscoveryCasesItemSearchesItemCustodianSourcesRequestBuilderIntern
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCasesEdiscoveryCasesItemSearchesItemCustodianSourcesRequestBuilder instantiates a new CustodianSourcesRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewCasesEdiscoveryCasesItemSearchesItemCustodianSourcesRequestBuilder(rawUr
 }
 // Count provides operations to count the resources in the collection.
 func (m *CasesEdiscoveryCasesItemSearchesItemCustodianSourcesRequestBuilder) Count()(*CasesEdiscoveryCasesItemSearchesItemCustodianSourcesCountRequestBuilder) {
-    return NewCasesEdiscoveryCasesItemSearchesItemCustodianSourcesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCasesEdiscoveryCasesItemSearchesItemCustodianSourcesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the list of custodial data sources associated with an eDiscovery search.
 // [Find more info here]

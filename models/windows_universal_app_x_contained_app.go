@@ -15,8 +15,8 @@ func NewWindowsUniversalAppXContainedApp()(*WindowsUniversalAppXContainedApp) {
     m := &WindowsUniversalAppXContainedApp{
         MobileContainedApp: *NewMobileContainedApp(),
     }
-    odataTypeValue := "#microsoft.graph.windowsUniversalAppXContainedApp";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsUniversalAppXContainedApp"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsUniversalAppXContainedAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

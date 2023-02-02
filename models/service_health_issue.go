@@ -31,8 +31,8 @@ func NewServiceHealthIssue()(*ServiceHealthIssue) {
     m := &ServiceHealthIssue{
         ServiceAnnouncementBase: *NewServiceAnnouncementBase(),
     }
-    odataTypeValue := "#microsoft.graph.serviceHealthIssue";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.serviceHealthIssue"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateServiceHealthIssueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

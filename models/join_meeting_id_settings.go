@@ -21,7 +21,7 @@ type JoinMeetingIdSettings struct {
 func NewJoinMeetingIdSettings()(*JoinMeetingIdSettings) {
     m := &JoinMeetingIdSettings{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateJoinMeetingIdSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

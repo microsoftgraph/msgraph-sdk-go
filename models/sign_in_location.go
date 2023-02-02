@@ -23,7 +23,7 @@ type SignInLocation struct {
 func NewSignInLocation()(*SignInLocation) {
     m := &SignInLocation{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSignInLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

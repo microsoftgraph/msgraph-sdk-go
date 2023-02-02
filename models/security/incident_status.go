@@ -8,12 +8,13 @@ type IncidentStatus int
 const (
     ACTIVE_INCIDENTSTATUS IncidentStatus = iota
     RESOLVED_INCIDENTSTATUS
+    INPROGRESS_INCIDENTSTATUS
     REDIRECTED_INCIDENTSTATUS
     UNKNOWNFUTUREVALUE_INCIDENTSTATUS
 )
 
 func (i IncidentStatus) String() string {
-    return []string{"active", "resolved", "redirected", "unknownFutureValue"}[i]
+    return []string{"active", "resolved", "inProgress", "redirected", "unknownFutureValue"}[i]
 }
 func ParseIncidentStatus(v string) (any, error) {
     result := ACTIVE_INCIDENTSTATUS
@@ -22,6 +23,8 @@ func ParseIncidentStatus(v string) (any, error) {
             result = ACTIVE_INCIDENTSTATUS
         case "resolved":
             result = RESOLVED_INCIDENTSTATUS
+        case "inProgress":
+            result = INPROGRESS_INCIDENTSTATUS
         case "redirected":
             result = REDIRECTED_INCIDENTSTATUS
         case "unknownFutureValue":

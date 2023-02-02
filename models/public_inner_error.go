@@ -23,7 +23,7 @@ type PublicInnerError struct {
 func NewPublicInnerError()(*PublicInnerError) {
     m := &PublicInnerError{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePublicInnerErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

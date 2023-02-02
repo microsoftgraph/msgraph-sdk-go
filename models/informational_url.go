@@ -25,7 +25,7 @@ type InformationalUrl struct {
 func NewInformationalUrl()(*InformationalUrl) {
     m := &InformationalUrl{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateInformationalUrlFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -15,8 +15,8 @@ func NewOmaSettingInteger()(*OmaSettingInteger) {
     m := &OmaSettingInteger{
         OmaSetting: *NewOmaSetting(),
     }
-    odataTypeValue := "#microsoft.graph.omaSettingInteger";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.omaSettingInteger"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateOmaSettingIntegerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

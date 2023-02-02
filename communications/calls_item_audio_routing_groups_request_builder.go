@@ -60,8 +60,8 @@ func NewCallsItemAudioRoutingGroupsRequestBuilderInternal(pathParameters map[str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCallsItemAudioRoutingGroupsRequestBuilder instantiates a new AudioRoutingGroupsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewCallsItemAudioRoutingGroupsRequestBuilder(rawUrl string, requestAdapter 
 }
 // Count provides operations to count the resources in the collection.
 func (m *CallsItemAudioRoutingGroupsRequestBuilder) Count()(*CallsItemAudioRoutingGroupsCountRequestBuilder) {
-    return NewCallsItemAudioRoutingGroupsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCallsItemAudioRoutingGroupsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get audioRoutingGroups from communications
 func (m *CallsItemAudioRoutingGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *CallsItemAudioRoutingGroupsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AudioRoutingGroupCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *CallsItemAudioRoutingGroupsRequestBuilder) ToPostRequestInformation(ctx
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

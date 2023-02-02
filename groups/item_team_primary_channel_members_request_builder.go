@@ -51,10 +51,6 @@ type ItemTeamPrimaryChannelMembersRequestBuilderPostRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Add provides operations to call the add method.
-func (m *ItemTeamPrimaryChannelMembersRequestBuilder) Add()(*ItemTeamPrimaryChannelMembersAddRequestBuilder) {
-    return NewItemTeamPrimaryChannelMembersAddRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewItemTeamPrimaryChannelMembersRequestBuilderInternal instantiates a new MembersRequestBuilder and sets the default values.
 func NewItemTeamPrimaryChannelMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamPrimaryChannelMembersRequestBuilder) {
     m := &ItemTeamPrimaryChannelMembersRequestBuilder{
@@ -64,8 +60,8 @@ func NewItemTeamPrimaryChannelMembersRequestBuilderInternal(pathParameters map[s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTeamPrimaryChannelMembersRequestBuilder instantiates a new MembersRequestBuilder and sets the default values.
@@ -76,7 +72,7 @@ func NewItemTeamPrimaryChannelMembersRequestBuilder(rawUrl string, requestAdapte
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemTeamPrimaryChannelMembersRequestBuilder) Count()(*ItemTeamPrimaryChannelMembersCountRequestBuilder) {
-    return NewItemTeamPrimaryChannelMembersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTeamPrimaryChannelMembersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
 // [Find more info here]
@@ -99,6 +95,10 @@ func (m *ItemTeamPrimaryChannelMembersRequestBuilder) Get(ctx context.Context, r
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberCollectionResponseable), nil
+}
+// MicrosoftGraphAdd provides operations to call the add method.
+func (m *ItemTeamPrimaryChannelMembersRequestBuilder) MicrosoftGraphAdd()(*ItemTeamPrimaryChannelMembersMicrosoftGraphAddAddRequestBuilder) {
+    return NewItemTeamPrimaryChannelMembersMicrosoftGraphAddAddRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post add a conversationMember to a channel.
 // [Find more info here]
@@ -145,7 +145,10 @@ func (m *ItemTeamPrimaryChannelMembersRequestBuilder) ToPostRequestInformation(c
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

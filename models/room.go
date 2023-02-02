@@ -39,8 +39,8 @@ func NewRoom()(*Room) {
     m := &Room{
         Place: *NewPlace(),
     }
-    odataTypeValue := "#microsoft.graph.room";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.room"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateRoomFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

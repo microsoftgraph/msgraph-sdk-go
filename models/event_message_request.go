@@ -25,8 +25,8 @@ func NewEventMessageRequest()(*EventMessageRequest) {
     m := &EventMessageRequest{
         EventMessage: *NewEventMessage(),
     }
-    odataTypeValue := "#microsoft.graph.eventMessageRequest";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.eventMessageRequest"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateEventMessageRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

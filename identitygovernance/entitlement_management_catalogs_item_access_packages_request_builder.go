@@ -60,8 +60,8 @@ func NewEntitlementManagementCatalogsItemAccessPackagesRequestBuilderInternal(pa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEntitlementManagementCatalogsItemAccessPackagesRequestBuilder instantiates a new AccessPackagesRequestBuilder and sets the default values.
@@ -72,11 +72,7 @@ func NewEntitlementManagementCatalogsItemAccessPackagesRequestBuilder(rawUrl str
 }
 // Count provides operations to count the resources in the collection.
 func (m *EntitlementManagementCatalogsItemAccessPackagesRequestBuilder) Count()(*EntitlementManagementCatalogsItemAccessPackagesCountRequestBuilder) {
-    return NewEntitlementManagementCatalogsItemAccessPackagesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
-func (m *EntitlementManagementCatalogsItemAccessPackagesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*EntitlementManagementCatalogsItemAccessPackagesFilterByCurrentUserWithOnRequestBuilder) {
-    return NewEntitlementManagementCatalogsItemAccessPackagesFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
+    return NewEntitlementManagementCatalogsItemAccessPackagesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the access packages in this catalog. Read-only. Nullable.
 func (m *EntitlementManagementCatalogsItemAccessPackagesRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementCatalogsItemAccessPackagesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageCollectionResponseable, error) {
@@ -96,6 +92,10 @@ func (m *EntitlementManagementCatalogsItemAccessPackagesRequestBuilder) Get(ctx 
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageCollectionResponseable), nil
+}
+// MicrosoftGraphFilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
+func (m *EntitlementManagementCatalogsItemAccessPackagesRequestBuilder) MicrosoftGraphFilterByCurrentUserWithOn(on *string)(*EntitlementManagementCatalogsItemAccessPackagesMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnRequestBuilder) {
+    return NewEntitlementManagementCatalogsItemAccessPackagesMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
 }
 // Post create new navigation property to accessPackages for identityGovernance
 func (m *EntitlementManagementCatalogsItemAccessPackagesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable, requestConfiguration *EntitlementManagementCatalogsItemAccessPackagesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable, error) {
@@ -139,7 +139,10 @@ func (m *EntitlementManagementCatalogsItemAccessPackagesRequestBuilder) ToPostRe
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

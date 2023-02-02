@@ -53,8 +53,8 @@ func NewItemCalendarCalendarViewRequestBuilderInternal(pathParameters map[string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemCalendarCalendarViewRequestBuilder instantiates a new CalendarViewRequestBuilder and sets the default values.
@@ -65,11 +65,7 @@ func NewItemCalendarCalendarViewRequestBuilder(rawUrl string, requestAdapter i2a
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemCalendarCalendarViewRequestBuilder) Count()(*ItemCalendarCalendarViewCountRequestBuilder) {
-    return NewItemCalendarCalendarViewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Delta provides operations to call the delta method.
-func (m *ItemCalendarCalendarViewRequestBuilder) Delta()(*ItemCalendarCalendarViewDeltaRequestBuilder) {
-    return NewItemCalendarCalendarViewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemCalendarCalendarViewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the calendar view for the calendar. Navigation property. Read-only.
 // [Find more info here]
@@ -92,6 +88,10 @@ func (m *ItemCalendarCalendarViewRequestBuilder) Get(ctx context.Context, reques
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EventCollectionResponseable), nil
+}
+// MicrosoftGraphDelta provides operations to call the delta method.
+func (m *ItemCalendarCalendarViewRequestBuilder) MicrosoftGraphDelta()(*ItemCalendarCalendarViewMicrosoftGraphDeltaDeltaRequestBuilder) {
+    return NewItemCalendarCalendarViewMicrosoftGraphDeltaDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation the calendar view for the calendar. Navigation property. Read-only.
 func (m *ItemCalendarCalendarViewRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarCalendarViewRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

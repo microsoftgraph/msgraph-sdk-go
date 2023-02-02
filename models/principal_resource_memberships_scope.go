@@ -17,8 +17,8 @@ func NewPrincipalResourceMembershipsScope()(*PrincipalResourceMembershipsScope) 
     m := &PrincipalResourceMembershipsScope{
         AccessReviewScope: *NewAccessReviewScope(),
     }
-    odataTypeValue := "#microsoft.graph.principalResourceMembershipsScope";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.principalResourceMembershipsScope"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreatePrincipalResourceMembershipsScopeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

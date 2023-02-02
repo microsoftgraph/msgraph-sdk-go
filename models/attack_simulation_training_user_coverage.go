@@ -19,7 +19,7 @@ type AttackSimulationTrainingUserCoverage struct {
 func NewAttackSimulationTrainingUserCoverage()(*AttackSimulationTrainingUserCoverage) {
     m := &AttackSimulationTrainingUserCoverage{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAttackSimulationTrainingUserCoverageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -23,7 +23,7 @@ type SecurityVendorInformation struct {
 func NewSecurityVendorInformation()(*SecurityVendorInformation) {
     m := &SecurityVendorInformation{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSecurityVendorInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

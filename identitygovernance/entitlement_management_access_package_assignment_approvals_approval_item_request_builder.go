@@ -55,8 +55,8 @@ func NewEntitlementManagementAccessPackageAssignmentApprovalsApprovalItemRequest
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEntitlementManagementAccessPackageAssignmentApprovalsApprovalItemRequestBuilder instantiates a new ApprovalItemRequestBuilder and sets the default values.
@@ -121,7 +121,7 @@ func (m *EntitlementManagementAccessPackageAssignmentApprovalsApprovalItemReques
 }
 // Stages provides operations to manage the stages property of the microsoft.graph.approval entity.
 func (m *EntitlementManagementAccessPackageAssignmentApprovalsApprovalItemRequestBuilder) Stages()(*EntitlementManagementAccessPackageAssignmentApprovalsItemStagesRequestBuilder) {
-    return NewEntitlementManagementAccessPackageAssignmentApprovalsItemStagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementAccessPackageAssignmentApprovalsItemStagesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // StagesById provides operations to manage the stages property of the microsoft.graph.approval entity.
 func (m *EntitlementManagementAccessPackageAssignmentApprovalsApprovalItemRequestBuilder) StagesById(id string)(*EntitlementManagementAccessPackageAssignmentApprovalsItemStagesApprovalStageItemRequestBuilder) {
@@ -132,7 +132,7 @@ func (m *EntitlementManagementAccessPackageAssignmentApprovalsApprovalItemReques
     if id != "" {
         urlTplParams["approvalStage%2Did"] = id
     }
-    return NewEntitlementManagementAccessPackageAssignmentApprovalsItemStagesApprovalStageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEntitlementManagementAccessPackageAssignmentApprovalsItemStagesApprovalStageItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property accessPackageAssignmentApprovals for identityGovernance
 func (m *EntitlementManagementAccessPackageAssignmentApprovalsApprovalItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentApprovalsApprovalItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +169,10 @@ func (m *EntitlementManagementAccessPackageAssignmentApprovalsApprovalItemReques
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

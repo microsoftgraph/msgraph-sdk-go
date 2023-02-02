@@ -19,8 +19,8 @@ func NewEmailFileAssessmentRequest()(*EmailFileAssessmentRequest) {
     m := &EmailFileAssessmentRequest{
         ThreatAssessmentRequest: *NewThreatAssessmentRequest(),
     }
-    odataTypeValue := "#microsoft.graph.emailFileAssessmentRequest";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.emailFileAssessmentRequest"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateEmailFileAssessmentRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

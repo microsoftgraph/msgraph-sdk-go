@@ -53,8 +53,8 @@ func NewAuthenticationSoftwareOathMethodsRequestBuilderInternal(pathParameters m
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAuthenticationSoftwareOathMethodsRequestBuilder instantiates a new SoftwareOathMethodsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewAuthenticationSoftwareOathMethodsRequestBuilder(rawUrl string, requestAd
 }
 // Count provides operations to count the resources in the collection.
 func (m *AuthenticationSoftwareOathMethodsRequestBuilder) Count()(*AuthenticationSoftwareOathMethodsCountRequestBuilder) {
-    return NewAuthenticationSoftwareOathMethodsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAuthenticationSoftwareOathMethodsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of a user's software OATH token authentication method objects and their properties.
 // [Find more info here]

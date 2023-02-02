@@ -48,7 +48,7 @@ type IosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilderPatchReque
 }
 // Apps provides operations to manage the apps property of the microsoft.graph.iosManagedAppProtection entity.
 func (m *IosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilder) Apps()(*IosManagedAppProtectionsItemAppsRequestBuilder) {
-    return NewIosManagedAppProtectionsItemAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewIosManagedAppProtectionsItemAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AppsById provides operations to manage the apps property of the microsoft.graph.iosManagedAppProtection entity.
 func (m *IosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilder) AppsById(id string)(*IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder) {
@@ -59,7 +59,7 @@ func (m *IosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilder) Apps
     if id != "" {
         urlTplParams["managedMobileApp%2Did"] = id
     }
-    return NewIosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewIosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewIosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilderInternal instantiates a new IosManagedAppProtectionItemRequestBuilder and sets the default values.
 func NewIosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilder) {
@@ -70,8 +70,8 @@ func NewIosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilderInterna
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewIosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilder instantiates a new IosManagedAppProtectionItemRequestBuilder and sets the default values.
@@ -98,7 +98,7 @@ func (m *IosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilder) Dele
 }
 // DeploymentSummary provides operations to manage the deploymentSummary property of the microsoft.graph.iosManagedAppProtection entity.
 func (m *IosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilder) DeploymentSummary()(*IosManagedAppProtectionsItemDeploymentSummaryRequestBuilder) {
-    return NewIosManagedAppProtectionsItemDeploymentSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewIosManagedAppProtectionsItemDeploymentSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get iOS managed app policies.
 func (m *IosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *IosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IosManagedAppProtectionable, error) {
@@ -173,7 +173,10 @@ func (m *IosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilder) ToPa
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -44,7 +44,7 @@ type UserSecurityState struct {
 func NewUserSecurityState()(*UserSecurityState) {
     m := &UserSecurityState{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateUserSecurityStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

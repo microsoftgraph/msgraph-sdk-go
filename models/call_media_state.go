@@ -17,7 +17,7 @@ type CallMediaState struct {
 func NewCallMediaState()(*CallMediaState) {
     m := &CallMediaState{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCallMediaStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

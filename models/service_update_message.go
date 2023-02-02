@@ -36,8 +36,8 @@ func NewServiceUpdateMessage()(*ServiceUpdateMessage) {
     m := &ServiceUpdateMessage{
         ServiceAnnouncementBase: *NewServiceAnnouncementBase(),
     }
-    odataTypeValue := "#microsoft.graph.serviceUpdateMessage";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.serviceUpdateMessage"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateServiceUpdateMessageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

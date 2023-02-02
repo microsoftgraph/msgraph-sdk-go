@@ -60,8 +60,8 @@ func NewItemChannelsItemMessagesItemRepliesRequestBuilderInternal(pathParameters
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemChannelsItemMessagesItemRepliesRequestBuilder instantiates a new RepliesRequestBuilder and sets the default values.
@@ -72,11 +72,7 @@ func NewItemChannelsItemMessagesItemRepliesRequestBuilder(rawUrl string, request
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemChannelsItemMessagesItemRepliesRequestBuilder) Count()(*ItemChannelsItemMessagesItemRepliesCountRequestBuilder) {
-    return NewItemChannelsItemMessagesItemRepliesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Delta provides operations to call the delta method.
-func (m *ItemChannelsItemMessagesItemRepliesRequestBuilder) Delta()(*ItemChannelsItemMessagesItemRepliesDeltaRequestBuilder) {
-    return NewItemChannelsItemMessagesItemRepliesDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemChannelsItemMessagesItemRepliesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get list all the replies to a message in a channel of a team. This method lists only the replies of the specified message, if any. To get the message itself, simply call get channel message.
 // [Find more info here]
@@ -99,6 +95,10 @@ func (m *ItemChannelsItemMessagesItemRepliesRequestBuilder) Get(ctx context.Cont
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageCollectionResponseable), nil
+}
+// MicrosoftGraphDelta provides operations to call the delta method.
+func (m *ItemChannelsItemMessagesItemRepliesRequestBuilder) MicrosoftGraphDelta()(*ItemChannelsItemMessagesItemRepliesMicrosoftGraphDeltaDeltaRequestBuilder) {
+    return NewItemChannelsItemMessagesItemRepliesMicrosoftGraphDeltaDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create a new reply to a chatMessage in a specified channel.
 // [Find more info here]
@@ -145,7 +145,10 @@ func (m *ItemChannelsItemMessagesItemRepliesRequestBuilder) ToPostRequestInforma
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

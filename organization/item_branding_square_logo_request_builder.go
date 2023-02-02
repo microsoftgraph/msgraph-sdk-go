@@ -38,8 +38,8 @@ func NewItemBrandingSquareLogoRequestBuilderInternal(pathParameters map[string]s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemBrandingSquareLogoRequestBuilder instantiates a new SquareLogoRequestBuilder and sets the default values.

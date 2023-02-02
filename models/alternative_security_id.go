@@ -21,7 +21,7 @@ type AlternativeSecurityId struct {
 func NewAlternativeSecurityId()(*AlternativeSecurityId) {
     m := &AlternativeSecurityId{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAlternativeSecurityIdFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

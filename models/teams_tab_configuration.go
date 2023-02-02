@@ -23,7 +23,7 @@ type TeamsTabConfiguration struct {
 func NewTeamsTabConfiguration()(*TeamsTabConfiguration) {
     m := &TeamsTabConfiguration{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTeamsTabConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

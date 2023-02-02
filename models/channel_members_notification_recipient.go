@@ -17,8 +17,8 @@ func NewChannelMembersNotificationRecipient()(*ChannelMembersNotificationRecipie
     m := &ChannelMembersNotificationRecipient{
         TeamworkNotificationRecipient: *NewTeamworkNotificationRecipient(),
     }
-    odataTypeValue := "#microsoft.graph.channelMembersNotificationRecipient";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.channelMembersNotificationRecipient"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateChannelMembersNotificationRecipientFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

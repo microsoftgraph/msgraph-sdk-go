@@ -19,7 +19,7 @@ type PageLinks struct {
 func NewPageLinks()(*PageLinks) {
     m := &PageLinks{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePageLinksFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

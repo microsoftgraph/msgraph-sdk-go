@@ -19,7 +19,7 @@ type CommsNotification struct {
 func NewCommsNotification()(*CommsNotification) {
     m := &CommsNotification{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCommsNotificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

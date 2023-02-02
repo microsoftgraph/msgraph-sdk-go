@@ -48,11 +48,11 @@ type LocalizationsOrganizationalBrandingLocalizationItemRequestBuilderPatchReque
 }
 // BackgroundImage provides operations to manage the media for the organizationalBranding entity.
 func (m *LocalizationsOrganizationalBrandingLocalizationItemRequestBuilder) BackgroundImage()(*LocalizationsItemBackgroundImageRequestBuilder) {
-    return NewLocalizationsItemBackgroundImageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewLocalizationsItemBackgroundImageRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // BannerLogo provides operations to manage the media for the organizationalBranding entity.
 func (m *LocalizationsOrganizationalBrandingLocalizationItemRequestBuilder) BannerLogo()(*LocalizationsItemBannerLogoRequestBuilder) {
-    return NewLocalizationsItemBannerLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewLocalizationsItemBannerLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewLocalizationsOrganizationalBrandingLocalizationItemRequestBuilderInternal instantiates a new OrganizationalBrandingLocalizationItemRequestBuilder and sets the default values.
 func NewLocalizationsOrganizationalBrandingLocalizationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LocalizationsOrganizationalBrandingLocalizationItemRequestBuilder) {
@@ -63,8 +63,8 @@ func NewLocalizationsOrganizationalBrandingLocalizationItemRequestBuilderInterna
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewLocalizationsOrganizationalBrandingLocalizationItemRequestBuilder instantiates a new OrganizationalBrandingLocalizationItemRequestBuilder and sets the default values.
@@ -129,7 +129,7 @@ func (m *LocalizationsOrganizationalBrandingLocalizationItemRequestBuilder) Patc
 }
 // SquareLogo provides operations to manage the media for the organizationalBranding entity.
 func (m *LocalizationsOrganizationalBrandingLocalizationItemRequestBuilder) SquareLogo()(*LocalizationsItemSquareLogoRequestBuilder) {
-    return NewLocalizationsItemSquareLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewLocalizationsItemSquareLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property localizations for branding
 func (m *LocalizationsOrganizationalBrandingLocalizationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *LocalizationsOrganizationalBrandingLocalizationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -166,7 +166,10 @@ func (m *LocalizationsOrganizationalBrandingLocalizationItemRequestBuilder) ToPa
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

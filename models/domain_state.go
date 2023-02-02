@@ -22,7 +22,7 @@ type DomainState struct {
 func NewDomainState()(*DomainState) {
     m := &DomainState{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDomainStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

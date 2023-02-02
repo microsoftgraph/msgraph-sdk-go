@@ -13,8 +13,8 @@ func NewAllLicensedUsersAssignmentTarget()(*AllLicensedUsersAssignmentTarget) {
     m := &AllLicensedUsersAssignmentTarget{
         DeviceAndAppManagementAssignmentTarget: *NewDeviceAndAppManagementAssignmentTarget(),
     }
-    odataTypeValue := "#microsoft.graph.allLicensedUsersAssignmentTarget";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.allLicensedUsersAssignmentTarget"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAllLicensedUsersAssignmentTargetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

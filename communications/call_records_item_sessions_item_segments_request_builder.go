@@ -60,8 +60,8 @@ func NewCallRecordsItemSessionsItemSegmentsRequestBuilderInternal(pathParameters
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCallRecordsItemSessionsItemSegmentsRequestBuilder instantiates a new SegmentsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewCallRecordsItemSessionsItemSegmentsRequestBuilder(rawUrl string, request
 }
 // Count provides operations to count the resources in the collection.
 func (m *CallRecordsItemSessionsItemSegmentsRequestBuilder) Count()(*CallRecordsItemSessionsItemSegmentsCountRequestBuilder) {
-    return NewCallRecordsItemSessionsItemSegmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCallRecordsItemSessionsItemSegmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the list of segments involved in the session. Read-only. Nullable.
 func (m *CallRecordsItemSessionsItemSegmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *CallRecordsItemSessionsItemSegmentsRequestBuilderGetRequestConfiguration)(iaf7085b34cf3df74d75420043707a37fee7e9a355a2db4b4b46244736f7f1d19.SegmentCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *CallRecordsItemSessionsItemSegmentsRequestBuilder) ToPostRequestInforma
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

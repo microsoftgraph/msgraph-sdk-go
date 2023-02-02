@@ -21,7 +21,7 @@ type IosNetworkUsageRule struct {
 func NewIosNetworkUsageRule()(*IosNetworkUsageRule) {
     m := &IosNetworkUsageRule{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateIosNetworkUsageRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

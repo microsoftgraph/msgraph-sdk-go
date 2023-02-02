@@ -19,7 +19,7 @@ type ProvisioningStatusInfo struct {
 func NewProvisioningStatusInfo()(*ProvisioningStatusInfo) {
     m := &ProvisioningStatusInfo{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateProvisioningStatusInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

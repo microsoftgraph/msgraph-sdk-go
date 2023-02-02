@@ -48,7 +48,7 @@ type TermsAndConditionsTermsAndConditionsItemRequestBuilderPatchRequestConfigura
 }
 // AcceptanceStatuses provides operations to manage the acceptanceStatuses property of the microsoft.graph.termsAndConditions entity.
 func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) AcceptanceStatuses()(*TermsAndConditionsItemAcceptanceStatusesRequestBuilder) {
-    return NewTermsAndConditionsItemAcceptanceStatusesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTermsAndConditionsItemAcceptanceStatusesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AcceptanceStatusesById provides operations to manage the acceptanceStatuses property of the microsoft.graph.termsAndConditions entity.
 func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) AcceptanceStatusesById(id string)(*TermsAndConditionsItemAcceptanceStatusesTermsAndConditionsAcceptanceStatusItemRequestBuilder) {
@@ -59,11 +59,11 @@ func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) AcceptanceStatu
     if id != "" {
         urlTplParams["termsAndConditionsAcceptanceStatus%2Did"] = id
     }
-    return NewTermsAndConditionsItemAcceptanceStatusesTermsAndConditionsAcceptanceStatusItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTermsAndConditionsItemAcceptanceStatusesTermsAndConditionsAcceptanceStatusItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Assignments provides operations to manage the assignments property of the microsoft.graph.termsAndConditions entity.
 func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) Assignments()(*TermsAndConditionsItemAssignmentsRequestBuilder) {
-    return NewTermsAndConditionsItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTermsAndConditionsItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AssignmentsById provides operations to manage the assignments property of the microsoft.graph.termsAndConditions entity.
 func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) AssignmentsById(id string)(*TermsAndConditionsItemAssignmentsTermsAndConditionsAssignmentItemRequestBuilder) {
@@ -74,7 +74,7 @@ func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) AssignmentsById
     if id != "" {
         urlTplParams["termsAndConditionsAssignment%2Did"] = id
     }
-    return NewTermsAndConditionsItemAssignmentsTermsAndConditionsAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTermsAndConditionsItemAssignmentsTermsAndConditionsAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewTermsAndConditionsTermsAndConditionsItemRequestBuilderInternal instantiates a new TermsAndConditionsItemRequestBuilder and sets the default values.
 func NewTermsAndConditionsTermsAndConditionsItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TermsAndConditionsTermsAndConditionsItemRequestBuilder) {
@@ -85,8 +85,8 @@ func NewTermsAndConditionsTermsAndConditionsItemRequestBuilderInternal(pathParam
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTermsAndConditionsTermsAndConditionsItemRequestBuilder instantiates a new TermsAndConditionsItemRequestBuilder and sets the default values.
@@ -184,7 +184,10 @@ func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) ToPatchRequestI
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

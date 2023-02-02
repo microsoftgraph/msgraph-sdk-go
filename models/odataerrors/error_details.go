@@ -19,7 +19,7 @@ type ErrorDetails struct {
 func NewErrorDetails()(*ErrorDetails) {
     m := &ErrorDetails{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateErrorDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

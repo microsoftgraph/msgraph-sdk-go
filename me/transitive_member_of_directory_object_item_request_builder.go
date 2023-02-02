@@ -32,10 +32,6 @@ type TransitiveMemberOfDirectoryObjectItemRequestBuilderGetRequestConfiguration 
     // Request query parameters
     QueryParameters *TransitiveMemberOfDirectoryObjectItemRequestBuilderGetQueryParameters
 }
-// Application casts the previous resource to application.
-func (m *TransitiveMemberOfDirectoryObjectItemRequestBuilder) Application()(*TransitiveMemberOfItemApplicationRequestBuilder) {
-    return NewTransitiveMemberOfItemApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewTransitiveMemberOfDirectoryObjectItemRequestBuilderInternal instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
 func NewTransitiveMemberOfDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TransitiveMemberOfDirectoryObjectItemRequestBuilder) {
     m := &TransitiveMemberOfDirectoryObjectItemRequestBuilder{
@@ -45,8 +41,8 @@ func NewTransitiveMemberOfDirectoryObjectItemRequestBuilderInternal(pathParamete
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTransitiveMemberOfDirectoryObjectItemRequestBuilder instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
@@ -54,10 +50,6 @@ func NewTransitiveMemberOfDirectoryObjectItemRequestBuilder(rawUrl string, reque
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTransitiveMemberOfDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
-}
-// Device casts the previous resource to device.
-func (m *TransitiveMemberOfDirectoryObjectItemRequestBuilder) Device()(*TransitiveMemberOfItemDeviceRequestBuilder) {
-    return NewTransitiveMemberOfItemDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get the groups, including nested groups, and directory roles that a user is a member of. Nullable.
 func (m *TransitiveMemberOfDirectoryObjectItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TransitiveMemberOfDirectoryObjectItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, error) {
@@ -78,17 +70,29 @@ func (m *TransitiveMemberOfDirectoryObjectItemRequestBuilder) Get(ctx context.Co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable), nil
 }
-// Group casts the previous resource to group.
-func (m *TransitiveMemberOfDirectoryObjectItemRequestBuilder) Group()(*TransitiveMemberOfItemGroupRequestBuilder) {
-    return NewTransitiveMemberOfItemGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphApplication casts the previous resource to application.
+func (m *TransitiveMemberOfDirectoryObjectItemRequestBuilder) MicrosoftGraphApplication()(*TransitiveMemberOfItemMicrosoftGraphApplicationApplicationRequestBuilder) {
+    return NewTransitiveMemberOfItemMicrosoftGraphApplicationApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// OrgContact casts the previous resource to orgContact.
-func (m *TransitiveMemberOfDirectoryObjectItemRequestBuilder) OrgContact()(*TransitiveMemberOfItemOrgContactRequestBuilder) {
-    return NewTransitiveMemberOfItemOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphDevice casts the previous resource to device.
+func (m *TransitiveMemberOfDirectoryObjectItemRequestBuilder) MicrosoftGraphDevice()(*TransitiveMemberOfItemMicrosoftGraphDeviceDeviceRequestBuilder) {
+    return NewTransitiveMemberOfItemMicrosoftGraphDeviceDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// ServicePrincipal casts the previous resource to servicePrincipal.
-func (m *TransitiveMemberOfDirectoryObjectItemRequestBuilder) ServicePrincipal()(*TransitiveMemberOfItemServicePrincipalRequestBuilder) {
-    return NewTransitiveMemberOfItemServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGroup casts the previous resource to group.
+func (m *TransitiveMemberOfDirectoryObjectItemRequestBuilder) MicrosoftGraphGroup()(*TransitiveMemberOfItemMicrosoftGraphGroupGroupRequestBuilder) {
+    return NewTransitiveMemberOfItemMicrosoftGraphGroupGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphOrgContact casts the previous resource to orgContact.
+func (m *TransitiveMemberOfDirectoryObjectItemRequestBuilder) MicrosoftGraphOrgContact()(*TransitiveMemberOfItemMicrosoftGraphOrgContactOrgContactRequestBuilder) {
+    return NewTransitiveMemberOfItemMicrosoftGraphOrgContactOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphServicePrincipal casts the previous resource to servicePrincipal.
+func (m *TransitiveMemberOfDirectoryObjectItemRequestBuilder) MicrosoftGraphServicePrincipal()(*TransitiveMemberOfItemMicrosoftGraphServicePrincipalServicePrincipalRequestBuilder) {
+    return NewTransitiveMemberOfItemMicrosoftGraphServicePrincipalServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphUser casts the previous resource to user.
+func (m *TransitiveMemberOfDirectoryObjectItemRequestBuilder) MicrosoftGraphUser()(*TransitiveMemberOfItemMicrosoftGraphUserUserRequestBuilder) {
+    return NewTransitiveMemberOfItemMicrosoftGraphUserUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation the groups, including nested groups, and directory roles that a user is a member of. Nullable.
 func (m *TransitiveMemberOfDirectoryObjectItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TransitiveMemberOfDirectoryObjectItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -105,8 +109,4 @@ func (m *TransitiveMemberOfDirectoryObjectItemRequestBuilder) ToGetRequestInform
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// User casts the previous resource to user.
-func (m *TransitiveMemberOfDirectoryObjectItemRequestBuilder) User()(*TransitiveMemberOfItemUserRequestBuilder) {
-    return NewTransitiveMemberOfItemUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

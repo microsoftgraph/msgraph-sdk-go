@@ -19,7 +19,7 @@ type PublicationFacet struct {
 func NewPublicationFacet()(*PublicationFacet) {
     m := &PublicationFacet{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePublicationFacetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

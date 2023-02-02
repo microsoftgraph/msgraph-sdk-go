@@ -21,7 +21,7 @@ type Acl struct {
 func NewAcl()(*Acl) {
     m := &Acl{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAclFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

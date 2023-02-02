@@ -19,7 +19,7 @@ type ExternalItemContent struct {
 func NewExternalItemContent()(*ExternalItemContent) {
     m := &ExternalItemContent{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateExternalItemContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

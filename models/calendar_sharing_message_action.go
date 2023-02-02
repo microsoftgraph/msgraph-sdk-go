@@ -21,7 +21,7 @@ type CalendarSharingMessageAction struct {
 func NewCalendarSharingMessageAction()(*CalendarSharingMessageAction) {
     m := &CalendarSharingMessageAction{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCalendarSharingMessageActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

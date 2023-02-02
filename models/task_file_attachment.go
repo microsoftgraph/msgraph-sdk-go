@@ -7,7 +7,7 @@ import (
 // TaskFileAttachment 
 type TaskFileAttachment struct {
     AttachmentBase
-    // The contentBytes property
+    // The base64-encoded contents of the file.
     contentBytes []byte
 }
 // NewTaskFileAttachment instantiates a new TaskFileAttachment and sets the default values.
@@ -15,15 +15,15 @@ func NewTaskFileAttachment()(*TaskFileAttachment) {
     m := &TaskFileAttachment{
         AttachmentBase: *NewAttachmentBase(),
     }
-    odataTypeValue := "#microsoft.graph.taskFileAttachment";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.taskFileAttachment"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateTaskFileAttachmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateTaskFileAttachmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTaskFileAttachment(), nil
 }
-// GetContentBytes gets the contentBytes property value. The contentBytes property
+// GetContentBytes gets the contentBytes property value. The base64-encoded contents of the file.
 func (m *TaskFileAttachment) GetContentBytes()([]byte) {
     return m.contentBytes
 }
@@ -56,7 +56,7 @@ func (m *TaskFileAttachment) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetContentBytes sets the contentBytes property value. The contentBytes property
+// SetContentBytes sets the contentBytes property value. The base64-encoded contents of the file.
 func (m *TaskFileAttachment) SetContentBytes(value []byte)() {
     m.contentBytes = value
 }

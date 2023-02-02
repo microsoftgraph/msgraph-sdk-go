@@ -48,7 +48,7 @@ type PlansPlannerPlanItemRequestBuilderPatchRequestConfiguration struct {
 }
 // Buckets provides operations to manage the buckets property of the microsoft.graph.plannerPlan entity.
 func (m *PlansPlannerPlanItemRequestBuilder) Buckets()(*PlansItemBucketsRequestBuilder) {
-    return NewPlansItemBucketsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPlansItemBucketsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // BucketsById provides operations to manage the buckets property of the microsoft.graph.plannerPlan entity.
 func (m *PlansPlannerPlanItemRequestBuilder) BucketsById(id string)(*PlansItemBucketsPlannerBucketItemRequestBuilder) {
@@ -59,7 +59,7 @@ func (m *PlansPlannerPlanItemRequestBuilder) BucketsById(id string)(*PlansItemBu
     if id != "" {
         urlTplParams["plannerBucket%2Did"] = id
     }
-    return NewPlansItemBucketsPlannerBucketItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPlansItemBucketsPlannerBucketItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewPlansPlannerPlanItemRequestBuilderInternal instantiates a new PlannerPlanItemRequestBuilder and sets the default values.
 func NewPlansPlannerPlanItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PlansPlannerPlanItemRequestBuilder) {
@@ -70,8 +70,8 @@ func NewPlansPlannerPlanItemRequestBuilderInternal(pathParameters map[string]str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewPlansPlannerPlanItemRequestBuilder instantiates a new PlannerPlanItemRequestBuilder and sets the default values.
@@ -98,7 +98,7 @@ func (m *PlansPlannerPlanItemRequestBuilder) Delete(ctx context.Context, request
 }
 // Details provides operations to manage the details property of the microsoft.graph.plannerPlan entity.
 func (m *PlansPlannerPlanItemRequestBuilder) Details()(*PlansItemDetailsRequestBuilder) {
-    return NewPlansItemDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPlansItemDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get read-only. Nullable. Returns a collection of the specified plans
 func (m *PlansPlannerPlanItemRequestBuilder) Get(ctx context.Context, requestConfiguration *PlansPlannerPlanItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerPlanable, error) {
@@ -140,7 +140,7 @@ func (m *PlansPlannerPlanItemRequestBuilder) Patch(ctx context.Context, body iad
 }
 // Tasks provides operations to manage the tasks property of the microsoft.graph.plannerPlan entity.
 func (m *PlansPlannerPlanItemRequestBuilder) Tasks()(*PlansItemTasksRequestBuilder) {
-    return NewPlansItemTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPlansItemTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TasksById provides operations to manage the tasks property of the microsoft.graph.plannerPlan entity.
 func (m *PlansPlannerPlanItemRequestBuilder) TasksById(id string)(*PlansItemTasksPlannerTaskItemRequestBuilder) {
@@ -151,7 +151,7 @@ func (m *PlansPlannerPlanItemRequestBuilder) TasksById(id string)(*PlansItemTask
     if id != "" {
         urlTplParams["plannerTask%2Did"] = id
     }
-    return NewPlansItemTasksPlannerTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPlansItemTasksPlannerTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property plans for planner
 func (m *PlansPlannerPlanItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PlansPlannerPlanItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -188,7 +188,10 @@ func (m *PlansPlannerPlanItemRequestBuilder) ToPatchRequestInformation(ctx conte
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
