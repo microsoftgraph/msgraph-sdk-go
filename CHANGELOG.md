@@ -11,6 +11,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+## [0.54.0] - 2023-02-07
+
+### Changed
+
+- Weekly generation.
+- BREAKING: OData Functions/Actions now use their full name e.g. GetEffectivePermissions is now MicrosoftGraphGetEffectivePermissions.
+
 ## [0.53.0] - 2023-01-24
 
 ### Changed
