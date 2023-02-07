@@ -17,7 +17,7 @@ type SearchQuery struct {
 func NewSearchQuery()(*SearchQuery) {
     m := &SearchQuery{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSearchQueryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

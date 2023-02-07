@@ -48,8 +48,8 @@ func NewAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilderInt
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilder instantiates a new Fido2AuthenticationMethodItemRequestBuilder and sets the default values.

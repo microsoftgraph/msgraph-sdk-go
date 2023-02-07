@@ -32,7 +32,7 @@ type DeviceGeoLocation struct {
 func NewDeviceGeoLocation()(*DeviceGeoLocation) {
     m := &DeviceGeoLocation{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeviceGeoLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

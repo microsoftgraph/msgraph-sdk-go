@@ -46,10 +46,6 @@ type RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilderPatchReque
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BeginOnboarding provides operations to call the beginOnboarding method.
-func (m *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) BeginOnboarding()(*RemoteAssistancePartnersItemBeginOnboardingRequestBuilder) {
-    return NewRemoteAssistancePartnersItemBeginOnboardingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewRemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilderInternal instantiates a new RemoteAssistancePartnerItemRequestBuilder and sets the default values.
 func NewRemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) {
     m := &RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder{
@@ -59,8 +55,8 @@ func NewRemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilderInterna
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewRemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder instantiates a new RemoteAssistancePartnerItemRequestBuilder and sets the default values.
@@ -85,10 +81,6 @@ func (m *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) Dele
     }
     return nil
 }
-// Disconnect provides operations to call the disconnect method.
-func (m *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) Disconnect()(*RemoteAssistancePartnersItemDisconnectRequestBuilder) {
-    return NewRemoteAssistancePartnersItemDisconnectRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Get the remote assist partners.
 func (m *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) Get(ctx context.Context, requestConfiguration *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RemoteAssistancePartnerable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -107,6 +99,14 @@ func (m *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) Get(
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RemoteAssistancePartnerable), nil
+}
+// MicrosoftGraphBeginOnboarding provides operations to call the beginOnboarding method.
+func (m *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) MicrosoftGraphBeginOnboarding()(*RemoteAssistancePartnersItemMicrosoftGraphBeginOnboardingRequestBuilder) {
+    return NewRemoteAssistancePartnersItemMicrosoftGraphBeginOnboardingRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphDisconnect provides operations to call the disconnect method.
+func (m *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) MicrosoftGraphDisconnect()(*RemoteAssistancePartnersItemMicrosoftGraphDisconnectRequestBuilder) {
+    return NewRemoteAssistancePartnersItemMicrosoftGraphDisconnectRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property remoteAssistancePartners in deviceManagement
 func (m *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RemoteAssistancePartnerable, requestConfiguration *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RemoteAssistancePartnerable, error) {
@@ -162,7 +162,10 @@ func (m *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) ToPa
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -48,7 +48,7 @@ type TeamsAppsTeamsAppItemRequestBuilderPatchRequestConfiguration struct {
 }
 // AppDefinitions provides operations to manage the appDefinitions property of the microsoft.graph.teamsApp entity.
 func (m *TeamsAppsTeamsAppItemRequestBuilder) AppDefinitions()(*TeamsAppsItemAppDefinitionsRequestBuilder) {
-    return NewTeamsAppsItemAppDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTeamsAppsItemAppDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AppDefinitionsById provides operations to manage the appDefinitions property of the microsoft.graph.teamsApp entity.
 func (m *TeamsAppsTeamsAppItemRequestBuilder) AppDefinitionsById(id string)(*TeamsAppsItemAppDefinitionsTeamsAppDefinitionItemRequestBuilder) {
@@ -59,7 +59,7 @@ func (m *TeamsAppsTeamsAppItemRequestBuilder) AppDefinitionsById(id string)(*Tea
     if id != "" {
         urlTplParams["teamsAppDefinition%2Did"] = id
     }
-    return NewTeamsAppsItemAppDefinitionsTeamsAppDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTeamsAppsItemAppDefinitionsTeamsAppDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewTeamsAppsTeamsAppItemRequestBuilderInternal instantiates a new TeamsAppItemRequestBuilder and sets the default values.
 func NewTeamsAppsTeamsAppItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamsAppsTeamsAppItemRequestBuilder) {
@@ -70,8 +70,8 @@ func NewTeamsAppsTeamsAppItemRequestBuilderInternal(pathParameters map[string]st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTeamsAppsTeamsAppItemRequestBuilder instantiates a new TeamsAppItemRequestBuilder and sets the default values.
@@ -169,7 +169,10 @@ func (m *TeamsAppsTeamsAppItemRequestBuilder) ToPatchRequestInformation(ctx cont
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

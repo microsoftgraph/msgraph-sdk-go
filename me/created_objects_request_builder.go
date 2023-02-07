@@ -53,8 +53,8 @@ func NewCreatedObjectsRequestBuilderInternal(pathParameters map[string]string, r
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCreatedObjectsRequestBuilder instantiates a new CreatedObjectsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewCreatedObjectsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 }
 // Count provides operations to count the resources in the collection.
 func (m *CreatedObjectsRequestBuilder) Count()(*CreatedObjectsCountRequestBuilder) {
-    return NewCreatedObjectsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCreatedObjectsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of directory objects that were created by the user. This API returns only those directory objects that were created by a user who isn't in any administrator role; otherwise, it returns an empty object.
 // [Find more info here]
@@ -89,9 +89,9 @@ func (m *CreatedObjectsRequestBuilder) Get(ctx context.Context, requestConfigura
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
 }
-// ServicePrincipal casts the previous resource to servicePrincipal.
-func (m *CreatedObjectsRequestBuilder) ServicePrincipal()(*CreatedObjectsServicePrincipalRequestBuilder) {
-    return NewCreatedObjectsServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphServicePrincipal casts the previous resource to servicePrincipal.
+func (m *CreatedObjectsRequestBuilder) MicrosoftGraphServicePrincipal()(*CreatedObjectsMicrosoftGraphServicePrincipalRequestBuilder) {
+    return NewCreatedObjectsMicrosoftGraphServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation get a list of directory objects that were created by the user. This API returns only those directory objects that were created by a user who isn't in any administrator role; otherwise, it returns an empty object.
 func (m *CreatedObjectsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CreatedObjectsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

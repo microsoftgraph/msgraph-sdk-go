@@ -55,8 +55,8 @@ func NewCallRecordsCallRecordItemRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCallRecordsCallRecordItemRequestBuilder instantiates a new CallRecordItemRequestBuilder and sets the default values.
@@ -121,7 +121,7 @@ func (m *CallRecordsCallRecordItemRequestBuilder) Patch(ctx context.Context, bod
 }
 // Sessions provides operations to manage the sessions property of the microsoft.graph.callRecords.callRecord entity.
 func (m *CallRecordsCallRecordItemRequestBuilder) Sessions()(*CallRecordsItemSessionsRequestBuilder) {
-    return NewCallRecordsItemSessionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCallRecordsItemSessionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SessionsById provides operations to manage the sessions property of the microsoft.graph.callRecords.callRecord entity.
 func (m *CallRecordsCallRecordItemRequestBuilder) SessionsById(id string)(*CallRecordsItemSessionsSessionItemRequestBuilder) {
@@ -132,7 +132,7 @@ func (m *CallRecordsCallRecordItemRequestBuilder) SessionsById(id string)(*CallR
     if id != "" {
         urlTplParams["session%2Did"] = id
     }
-    return NewCallRecordsItemSessionsSessionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCallRecordsItemSessionsSessionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property callRecords for communications
 func (m *CallRecordsCallRecordItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CallRecordsCallRecordItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +169,10 @@ func (m *CallRecordsCallRecordItemRequestBuilder) ToPatchRequestInformation(ctx 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

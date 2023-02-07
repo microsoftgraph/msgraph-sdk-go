@@ -13,8 +13,8 @@ func NewTokenLifetimePolicy()(*TokenLifetimePolicy) {
     m := &TokenLifetimePolicy{
         StsPolicy: *NewStsPolicy(),
     }
-    odataTypeValue := "#microsoft.graph.tokenLifetimePolicy";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.tokenLifetimePolicy"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateTokenLifetimePolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

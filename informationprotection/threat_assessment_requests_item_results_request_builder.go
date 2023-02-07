@@ -60,8 +60,8 @@ func NewThreatAssessmentRequestsItemResultsRequestBuilderInternal(pathParameters
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewThreatAssessmentRequestsItemResultsRequestBuilder instantiates a new ResultsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewThreatAssessmentRequestsItemResultsRequestBuilder(rawUrl string, request
 }
 // Count provides operations to count the resources in the collection.
 func (m *ThreatAssessmentRequestsItemResultsRequestBuilder) Count()(*ThreatAssessmentRequestsItemResultsCountRequestBuilder) {
-    return NewThreatAssessmentRequestsItemResultsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewThreatAssessmentRequestsItemResultsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get a collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.
 func (m *ThreatAssessmentRequestsItemResultsRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatAssessmentRequestsItemResultsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ThreatAssessmentResultCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *ThreatAssessmentRequestsItemResultsRequestBuilder) ToPostRequestInforma
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

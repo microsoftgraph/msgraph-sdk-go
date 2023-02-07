@@ -21,7 +21,7 @@ type Windows10NetworkProxyServer struct {
 func NewWindows10NetworkProxyServer()(*Windows10NetworkProxyServer) {
     m := &Windows10NetworkProxyServer{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWindows10NetworkProxyServerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

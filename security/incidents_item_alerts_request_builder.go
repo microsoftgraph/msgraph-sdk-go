@@ -53,8 +53,8 @@ func NewIncidentsItemAlertsRequestBuilderInternal(pathParameters map[string]stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewIncidentsItemAlertsRequestBuilder instantiates a new AlertsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewIncidentsItemAlertsRequestBuilder(rawUrl string, requestAdapter i2ae4187
 }
 // Count provides operations to count the resources in the collection.
 func (m *IncidentsItemAlertsRequestBuilder) Count()(*IncidentsItemAlertsCountRequestBuilder) {
-    return NewIncidentsItemAlertsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewIncidentsItemAlertsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the list of related alerts. Supports $expand.
 func (m *IncidentsItemAlertsRequestBuilder) Get(ctx context.Context, requestConfiguration *IncidentsItemAlertsRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.AlertCollectionResponseable, error) {

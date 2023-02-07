@@ -16,7 +16,7 @@ type MailFoldersItemMessagesItemAttachmentsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// MailFoldersItemMessagesItemAttachmentsRequestBuilderGetQueryParameters retrieve a list of attachment objects.
+// MailFoldersItemMessagesItemAttachmentsRequestBuilderGetQueryParameters retrieve a list of attachment objects attached to a message.
 type MailFoldersItemMessagesItemAttachmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -58,8 +58,8 @@ func NewMailFoldersItemMessagesItemAttachmentsRequestBuilderInternal(pathParamet
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMailFoldersItemMessagesItemAttachmentsRequestBuilder instantiates a new AttachmentsRequestBuilder and sets the default values.
@@ -70,16 +70,12 @@ func NewMailFoldersItemMessagesItemAttachmentsRequestBuilder(rawUrl string, requ
 }
 // Count provides operations to count the resources in the collection.
 func (m *MailFoldersItemMessagesItemAttachmentsRequestBuilder) Count()(*MailFoldersItemMessagesItemAttachmentsCountRequestBuilder) {
-    return NewMailFoldersItemMessagesItemAttachmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMailFoldersItemMessagesItemAttachmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// CreateUploadSession provides operations to call the createUploadSession method.
-func (m *MailFoldersItemMessagesItemAttachmentsRequestBuilder) CreateUploadSession()(*MailFoldersItemMessagesItemAttachmentsCreateUploadSessionRequestBuilder) {
-    return NewMailFoldersItemMessagesItemAttachmentsCreateUploadSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Get retrieve a list of attachment objects.
+// Get retrieve a list of attachment objects attached to a message.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/eventmessage-list-attachments?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/message-list-attachments?view=graph-rest-1.0
 func (m *MailFoldersItemMessagesItemAttachmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *MailFoldersItemMessagesItemAttachmentsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -97,6 +93,10 @@ func (m *MailFoldersItemMessagesItemAttachmentsRequestBuilder) Get(ctx context.C
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentCollectionResponseable), nil
+}
+// MicrosoftGraphCreateUploadSession provides operations to call the createUploadSession method.
+func (m *MailFoldersItemMessagesItemAttachmentsRequestBuilder) MicrosoftGraphCreateUploadSession()(*MailFoldersItemMessagesItemAttachmentsMicrosoftGraphCreateUploadSessionRequestBuilder) {
+    return NewMailFoldersItemMessagesItemAttachmentsMicrosoftGraphCreateUploadSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource. 
 // [Find more info here]
@@ -120,7 +120,7 @@ func (m *MailFoldersItemMessagesItemAttachmentsRequestBuilder) Post(ctx context.
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Attachmentable), nil
 }
-// ToGetRequestInformation retrieve a list of attachment objects.
+// ToGetRequestInformation retrieve a list of attachment objects attached to a message.
 func (m *MailFoldersItemMessagesItemAttachmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MailFoldersItemMessagesItemAttachmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,7 +143,10 @@ func (m *MailFoldersItemMessagesItemAttachmentsRequestBuilder) ToPostRequestInfo
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

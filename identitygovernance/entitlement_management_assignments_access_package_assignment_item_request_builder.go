@@ -48,11 +48,11 @@ type EntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuilderPa
 }
 // AccessPackage provides operations to manage the accessPackage property of the microsoft.graph.accessPackageAssignment entity.
 func (m *EntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuilder) AccessPackage()(*EntitlementManagementAssignmentsItemAccessPackageRequestBuilder) {
-    return NewEntitlementManagementAssignmentsItemAccessPackageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementAssignmentsItemAccessPackageRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AssignmentPolicy provides operations to manage the assignmentPolicy property of the microsoft.graph.accessPackageAssignment entity.
 func (m *EntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuilder) AssignmentPolicy()(*EntitlementManagementAssignmentsItemAssignmentPolicyRequestBuilder) {
-    return NewEntitlementManagementAssignmentsItemAssignmentPolicyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementAssignmentsItemAssignmentPolicyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewEntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuilderInternal instantiates a new AccessPackageAssignmentItemRequestBuilder and sets the default values.
 func NewEntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuilder) {
@@ -63,8 +63,8 @@ func NewEntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuilde
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuilder instantiates a new AccessPackageAssignmentItemRequestBuilder and sets the default values.
@@ -108,6 +108,10 @@ func (m *EntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuild
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageAssignmentable), nil
 }
+// MicrosoftGraphReprocess provides operations to call the reprocess method.
+func (m *EntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuilder) MicrosoftGraphReprocess()(*EntitlementManagementAssignmentsItemMicrosoftGraphReprocessRequestBuilder) {
+    return NewEntitlementManagementAssignmentsItemMicrosoftGraphReprocessRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update the navigation property assignments in identityGovernance
 func (m *EntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageAssignmentable, requestConfiguration *EntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageAssignmentable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -127,13 +131,9 @@ func (m *EntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuild
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageAssignmentable), nil
 }
-// Reprocess provides operations to call the reprocess method.
-func (m *EntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuilder) Reprocess()(*EntitlementManagementAssignmentsItemReprocessRequestBuilder) {
-    return NewEntitlementManagementAssignmentsItemReprocessRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Target provides operations to manage the target property of the microsoft.graph.accessPackageAssignment entity.
 func (m *EntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuilder) Target()(*EntitlementManagementAssignmentsItemTargetRequestBuilder) {
-    return NewEntitlementManagementAssignmentsItemTargetRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementAssignmentsItemTargetRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property assignments for identityGovernance
 func (m *EntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -170,7 +170,10 @@ func (m *EntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuild
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -23,13 +23,13 @@ type RecurrencePattern struct {
     // The OdataType property
     odataType *string
     // The recurrence pattern type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly. Required. For more information, see values of type property.
-    type_escaped *RecurrencePatternType
+    typeEscaped *RecurrencePatternType
 }
 // NewRecurrencePattern instantiates a new recurrencePattern and sets the default values.
 func NewRecurrencePattern()(*RecurrencePattern) {
     m := &RecurrencePattern{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateRecurrencePatternFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -159,7 +159,7 @@ func (m *RecurrencePattern) GetOdataType()(*string) {
 }
 // GetType gets the type property value. The recurrence pattern type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly. Required. For more information, see values of type property.
 func (m *RecurrencePattern) GetType()(*RecurrencePatternType) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // Serialize serializes information the current object
 func (m *RecurrencePattern) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -256,5 +256,5 @@ func (m *RecurrencePattern) SetOdataType(value *string)() {
 }
 // SetType sets the type property value. The recurrence pattern type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly. Required. For more information, see values of type property.
 func (m *RecurrencePattern) SetType(value *RecurrencePatternType)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }

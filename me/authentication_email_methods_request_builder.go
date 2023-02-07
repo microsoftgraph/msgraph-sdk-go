@@ -60,8 +60,8 @@ func NewAuthenticationEmailMethodsRequestBuilderInternal(pathParameters map[stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAuthenticationEmailMethodsRequestBuilder instantiates a new EmailMethodsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewAuthenticationEmailMethodsRequestBuilder(rawUrl string, requestAdapter i
 }
 // Count provides operations to count the resources in the collection.
 func (m *AuthenticationEmailMethodsRequestBuilder) Count()(*AuthenticationEmailMethodsCountRequestBuilder) {
-    return NewAuthenticationEmailMethodsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAuthenticationEmailMethodsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of a user's emailAuthenticationMethod objects and their properties. This API will return only a single object in the collection as only one email method can be set for a user.
 // [Find more info here]
@@ -141,7 +141,10 @@ func (m *AuthenticationEmailMethodsRequestBuilder) ToPostRequestInformation(ctx 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

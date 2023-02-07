@@ -27,7 +27,7 @@ type RiskyUser struct {
     // Risky user principal name.
     userPrincipalName *string
 }
-// NewRiskyUser instantiates a new RiskyUser and sets the default values.
+// NewRiskyUser instantiates a new riskyUser and sets the default values.
 func NewRiskyUser()(*RiskyUser) {
     m := &RiskyUser{
         Entity: *NewEntity(),

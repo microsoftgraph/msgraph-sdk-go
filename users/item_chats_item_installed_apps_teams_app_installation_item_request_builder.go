@@ -55,8 +55,8 @@ func NewItemChatsItemInstalledAppsTeamsAppInstallationItemRequestBuilderInternal
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemChatsItemInstalledAppsTeamsAppInstallationItemRequestBuilder instantiates a new TeamsAppInstallationItemRequestBuilder and sets the default values.
@@ -100,6 +100,10 @@ func (m *ItemChatsItemInstalledAppsTeamsAppInstallationItemRequestBuilder) Get(c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsAppInstallationable), nil
 }
+// MicrosoftGraphUpgrade provides operations to call the upgrade method.
+func (m *ItemChatsItemInstalledAppsTeamsAppInstallationItemRequestBuilder) MicrosoftGraphUpgrade()(*ItemChatsItemInstalledAppsItemMicrosoftGraphUpgradeRequestBuilder) {
+    return NewItemChatsItemInstalledAppsItemMicrosoftGraphUpgradeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update the navigation property installedApps in users
 func (m *ItemChatsItemInstalledAppsTeamsAppInstallationItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsAppInstallationable, requestConfiguration *ItemChatsItemInstalledAppsTeamsAppInstallationItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsAppInstallationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -121,11 +125,11 @@ func (m *ItemChatsItemInstalledAppsTeamsAppInstallationItemRequestBuilder) Patch
 }
 // TeamsApp provides operations to manage the teamsApp property of the microsoft.graph.teamsAppInstallation entity.
 func (m *ItemChatsItemInstalledAppsTeamsAppInstallationItemRequestBuilder) TeamsApp()(*ItemChatsItemInstalledAppsItemTeamsAppRequestBuilder) {
-    return NewItemChatsItemInstalledAppsItemTeamsAppRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemChatsItemInstalledAppsItemTeamsAppRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TeamsAppDefinition provides operations to manage the teamsAppDefinition property of the microsoft.graph.teamsAppInstallation entity.
 func (m *ItemChatsItemInstalledAppsTeamsAppInstallationItemRequestBuilder) TeamsAppDefinition()(*ItemChatsItemInstalledAppsItemTeamsAppDefinitionRequestBuilder) {
-    return NewItemChatsItemInstalledAppsItemTeamsAppDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemChatsItemInstalledAppsItemTeamsAppDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property installedApps for users
 func (m *ItemChatsItemInstalledAppsTeamsAppInstallationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemChatsItemInstalledAppsTeamsAppInstallationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -162,14 +166,13 @@ func (m *ItemChatsItemInstalledAppsTeamsAppInstallationItemRequestBuilder) ToPat
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// Upgrade provides operations to call the upgrade method.
-func (m *ItemChatsItemInstalledAppsTeamsAppInstallationItemRequestBuilder) Upgrade()(*ItemChatsItemInstalledAppsItemUpgradeRequestBuilder) {
-    return NewItemChatsItemInstalledAppsItemUpgradeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

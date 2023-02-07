@@ -17,8 +17,8 @@ func NewWindowsMicrosoftEdgeApp()(*WindowsMicrosoftEdgeApp) {
     m := &WindowsMicrosoftEdgeApp{
         MobileApp: *NewMobileApp(),
     }
-    odataTypeValue := "#microsoft.graph.windowsMicrosoftEdgeApp";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsMicrosoftEdgeApp"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsMicrosoftEdgeAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -27,7 +27,7 @@ type AudioConferencing struct {
 func NewAudioConferencing()(*AudioConferencing) {
     m := &AudioConferencing{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAudioConferencingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

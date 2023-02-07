@@ -47,7 +47,7 @@ type Audio struct {
 func NewAudio()(*Audio) {
     m := &Audio{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAudioFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -41,8 +41,8 @@ func NewIncidentsItemAlertsAlertItemRequestBuilderInternal(pathParameters map[st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewIncidentsItemAlertsAlertItemRequestBuilder instantiates a new AlertItemRequestBuilder and sets the default values.

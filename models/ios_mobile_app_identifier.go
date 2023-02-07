@@ -15,8 +15,8 @@ func NewIosMobileAppIdentifier()(*IosMobileAppIdentifier) {
     m := &IosMobileAppIdentifier{
         MobileAppIdentifier: *NewMobileAppIdentifier(),
     }
-    odataTypeValue := "#microsoft.graph.iosMobileAppIdentifier";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.iosMobileAppIdentifier"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateIosMobileAppIdentifierFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

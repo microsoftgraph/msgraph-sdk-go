@@ -41,8 +41,8 @@ func NewItemManagerRequestBuilderInternal(pathParameters map[string]string, requ
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemManagerRequestBuilder instantiates a new ManagerRequestBuilder and sets the default values.
@@ -75,7 +75,7 @@ func (m *ItemManagerRequestBuilder) Get(ctx context.Context, requestConfiguratio
 }
 // Ref provides operations to manage the collection of user entities.
 func (m *ItemManagerRequestBuilder) Ref()(*ItemManagerRefRequestBuilder) {
-    return NewItemManagerRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemManagerRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation returns the user or organizational contact assigned as the user's manager. Optionally, you can expand the manager's chain up to the root node.
 func (m *ItemManagerRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemManagerRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -1,6 +1,6 @@
 {
-  "descriptionHash": "1E098EC68470753AFCAD34CC4D985778ABB027BC61274C9081F9DA51DC7D7AB00AF932D4CD7C950475909E8505C490C278D42D21F27D630DC8343577DE10C2E7",
-  "descriptionLocation": "/home/vsts/work/1/s/msgraph-metadata/clean_v10_openapi/openapi.yaml",
+  "descriptionHash": "3FA324F0C125D7CF09D607C3882485458512EF23CA38974C7D92B35A438BD8726297D273D72E7ADFE76123297CB914E4E077E72122BE8995347DCDB85E6785D0",
+  "descriptionLocation": "/mnt/vss/_work/1/s/msgraph-metadata/clean_v10_openapi/openapi.yaml",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "0.10.0-preview",
   "clientClassName": "GraphBaseServiceClient",

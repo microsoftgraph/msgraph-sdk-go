@@ -51,10 +51,6 @@ type CasesEdiscoveryCasesItemTagsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AsHierarchy provides operations to call the asHierarchy method.
-func (m *CasesEdiscoveryCasesItemTagsRequestBuilder) AsHierarchy()(*CasesEdiscoveryCasesItemTagsAsHierarchyRequestBuilder) {
-    return NewCasesEdiscoveryCasesItemTagsAsHierarchyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewCasesEdiscoveryCasesItemTagsRequestBuilderInternal instantiates a new TagsRequestBuilder and sets the default values.
 func NewCasesEdiscoveryCasesItemTagsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CasesEdiscoveryCasesItemTagsRequestBuilder) {
     m := &CasesEdiscoveryCasesItemTagsRequestBuilder{
@@ -64,8 +60,8 @@ func NewCasesEdiscoveryCasesItemTagsRequestBuilderInternal(pathParameters map[st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCasesEdiscoveryCasesItemTagsRequestBuilder instantiates a new TagsRequestBuilder and sets the default values.
@@ -76,7 +72,7 @@ func NewCasesEdiscoveryCasesItemTagsRequestBuilder(rawUrl string, requestAdapter
 }
 // Count provides operations to count the resources in the collection.
 func (m *CasesEdiscoveryCasesItemTagsRequestBuilder) Count()(*CasesEdiscoveryCasesItemTagsCountRequestBuilder) {
-    return NewCasesEdiscoveryCasesItemTagsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCasesEdiscoveryCasesItemTagsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of eDiscoveryReviewTag objects and their properties.
 // [Find more info here]
@@ -99,6 +95,10 @@ func (m *CasesEdiscoveryCasesItemTagsRequestBuilder) Get(ctx context.Context, re
         return nil, nil
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewTagCollectionResponseable), nil
+}
+// MicrosoftGraphSecurityAsHierarchy provides operations to call the asHierarchy method.
+func (m *CasesEdiscoveryCasesItemTagsRequestBuilder) MicrosoftGraphSecurityAsHierarchy()(*CasesEdiscoveryCasesItemTagsMicrosoftGraphSecurityAsHierarchyRequestBuilder) {
+    return NewCasesEdiscoveryCasesItemTagsMicrosoftGraphSecurityAsHierarchyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create a new ediscoveryReviewTag object.
 // [Find more info here]
@@ -145,7 +145,10 @@ func (m *CasesEdiscoveryCasesItemTagsRequestBuilder) ToPostRequestInformation(ct
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

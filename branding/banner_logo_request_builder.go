@@ -38,8 +38,8 @@ func NewBannerLogoRequestBuilderInternal(pathParameters map[string]string, reque
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewBannerLogoRequestBuilder instantiates a new BannerLogoRequestBuilder and sets the default values.

@@ -6,8 +6,8 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// Case_escaped 
-type Case_escaped struct {
+// CaseEscaped 
+type CaseEscaped struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
     // The createdDateTime property
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -22,15 +22,15 @@ type Case_escaped struct {
     // The status property
     status *CaseStatus
 }
-// NewCase_escaped instantiates a new case_escaped and sets the default values.
-func NewCase_escaped()(*Case_escaped) {
-    m := &Case_escaped{
+// NewCaseEscaped instantiates a new caseEscaped and sets the default values.
+func NewCaseEscaped()(*CaseEscaped) {
+    m := &CaseEscaped{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
     }
     return m
 }
-// CreateCase_escapedFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateCase_escapedFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+// CreateCaseEscapedFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCaseEscapedFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
         if err != nil {
@@ -49,22 +49,22 @@ func CreateCase_escapedFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
             }
         }
     }
-    return NewCase_escaped(), nil
+    return NewCaseEscaped(), nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
-func (m *Case_escaped) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+func (m *CaseEscaped) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.createdDateTime
 }
 // GetDescription gets the description property value. The description property
-func (m *Case_escaped) GetDescription()(*string) {
+func (m *CaseEscaped) GetDescription()(*string) {
     return m.description
 }
 // GetDisplayName gets the displayName property value. The displayName property
-func (m *Case_escaped) GetDisplayName()(*string) {
+func (m *CaseEscaped) GetDisplayName()(*string) {
     return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Case_escaped) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *CaseEscaped) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
@@ -129,19 +129,19 @@ func (m *Case_escaped) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
-func (m *Case_escaped) GetLastModifiedBy()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable) {
+func (m *CaseEscaped) GetLastModifiedBy()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable) {
     return m.lastModifiedBy
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
-func (m *Case_escaped) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+func (m *CaseEscaped) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.lastModifiedDateTime
 }
 // GetStatus gets the status property value. The status property
-func (m *Case_escaped) GetStatus()(*CaseStatus) {
+func (m *CaseEscaped) GetStatus()(*CaseStatus) {
     return m.status
 }
 // Serialize serializes information the current object
-func (m *Case_escaped) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+func (m *CaseEscaped) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
         return err
@@ -186,26 +186,26 @@ func (m *Case_escaped) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     return nil
 }
 // SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
-func (m *Case_escaped) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+func (m *CaseEscaped) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
 // SetDescription sets the description property value. The description property
-func (m *Case_escaped) SetDescription(value *string)() {
+func (m *CaseEscaped) SetDescription(value *string)() {
     m.description = value
 }
 // SetDisplayName sets the displayName property value. The displayName property
-func (m *Case_escaped) SetDisplayName(value *string)() {
+func (m *CaseEscaped) SetDisplayName(value *string)() {
     m.displayName = value
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. The lastModifiedBy property
-func (m *Case_escaped) SetLastModifiedBy(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable)() {
+func (m *CaseEscaped) SetLastModifiedBy(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable)() {
     m.lastModifiedBy = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
-func (m *Case_escaped) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+func (m *CaseEscaped) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
 // SetStatus sets the status property value. The status property
-func (m *Case_escaped) SetStatus(value *CaseStatus)() {
+func (m *CaseEscaped) SetStatus(value *CaseStatus)() {
     m.status = value
 }

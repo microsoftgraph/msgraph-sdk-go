@@ -55,8 +55,8 @@ func NewSubjectRightsRequestsSubjectRightsRequestItemRequestBuilderInternal(path
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewSubjectRightsRequestsSubjectRightsRequestItemRequestBuilder instantiates a new SubjectRightsRequestItemRequestBuilder and sets the default values.
@@ -100,17 +100,17 @@ func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) Get(ctx co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubjectRightsRequestable), nil
 }
-// GetFinalAttachment provides operations to call the getFinalAttachment method.
-func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) GetFinalAttachment()(*SubjectRightsRequestsItemGetFinalAttachmentRequestBuilder) {
-    return NewSubjectRightsRequestsItemGetFinalAttachmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetFinalAttachment provides operations to call the getFinalAttachment method.
+func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) MicrosoftGraphGetFinalAttachment()(*SubjectRightsRequestsItemMicrosoftGraphGetFinalAttachmentRequestBuilder) {
+    return NewSubjectRightsRequestsItemMicrosoftGraphGetFinalAttachmentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetFinalReport provides operations to call the getFinalReport method.
-func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) GetFinalReport()(*SubjectRightsRequestsItemGetFinalReportRequestBuilder) {
-    return NewSubjectRightsRequestsItemGetFinalReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetFinalReport provides operations to call the getFinalReport method.
+func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) MicrosoftGraphGetFinalReport()(*SubjectRightsRequestsItemMicrosoftGraphGetFinalReportRequestBuilder) {
+    return NewSubjectRightsRequestsItemMicrosoftGraphGetFinalReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Notes provides operations to manage the notes property of the microsoft.graph.subjectRightsRequest entity.
 func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) Notes()(*SubjectRightsRequestsItemNotesRequestBuilder) {
-    return NewSubjectRightsRequestsItemNotesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSubjectRightsRequestsItemNotesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NotesById provides operations to manage the notes property of the microsoft.graph.subjectRightsRequest entity.
 func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) NotesById(id string)(*SubjectRightsRequestsItemNotesAuthoredNoteItemRequestBuilder) {
@@ -121,7 +121,7 @@ func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) NotesById(
     if id != "" {
         urlTplParams["authoredNote%2Did"] = id
     }
-    return NewSubjectRightsRequestsItemNotesAuthoredNoteItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSubjectRightsRequestsItemNotesAuthoredNoteItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Patch update the navigation property subjectRightsRequests in privacy
 func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubjectRightsRequestable, requestConfiguration *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubjectRightsRequestable, error) {
@@ -144,7 +144,7 @@ func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) Patch(ctx 
 }
 // Team provides operations to manage the team property of the microsoft.graph.subjectRightsRequest entity.
 func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) Team()(*SubjectRightsRequestsItemTeamRequestBuilder) {
-    return NewSubjectRightsRequestsItemTeamRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSubjectRightsRequestsItemTeamRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property subjectRightsRequests for privacy
 func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -181,7 +181,10 @@ func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) ToPatchReq
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

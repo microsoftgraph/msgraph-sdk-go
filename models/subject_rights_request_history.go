@@ -20,13 +20,13 @@ type SubjectRightsRequestHistory struct {
     // The status of the stage when the entity was changed. Possible values are: notStarted, current, completed, failed, unknownFutureValue.
     stageStatus *SubjectRightsRequestStageStatus
     // Type of history.
-    type_escaped *string
+    typeEscaped *string
 }
 // NewSubjectRightsRequestHistory instantiates a new subjectRightsRequestHistory and sets the default values.
 func NewSubjectRightsRequestHistory()(*SubjectRightsRequestHistory) {
     m := &SubjectRightsRequestHistory{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSubjectRightsRequestHistoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -124,7 +124,7 @@ func (m *SubjectRightsRequestHistory) GetStageStatus()(*SubjectRightsRequestStag
 }
 // GetType gets the type property value. Type of history.
 func (m *SubjectRightsRequestHistory) GetType()(*string) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // Serialize serializes information the current object
 func (m *SubjectRightsRequestHistory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -200,5 +200,5 @@ func (m *SubjectRightsRequestHistory) SetStageStatus(value *SubjectRightsRequest
 }
 // SetType sets the type property value. Type of history.
 func (m *SubjectRightsRequestHistory) SetType(value *string)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }

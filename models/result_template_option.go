@@ -17,7 +17,7 @@ type ResultTemplateOption struct {
 func NewResultTemplateOption()(*ResultTemplateOption) {
     m := &ResultTemplateOption{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateResultTemplateOptionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

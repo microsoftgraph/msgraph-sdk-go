@@ -58,8 +58,8 @@ func NewItemContactFoldersItemContactsRequestBuilderInternal(pathParameters map[
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemContactFoldersItemContactsRequestBuilder instantiates a new ContactsRequestBuilder and sets the default values.
@@ -70,11 +70,7 @@ func NewItemContactFoldersItemContactsRequestBuilder(rawUrl string, requestAdapt
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemContactFoldersItemContactsRequestBuilder) Count()(*ItemContactFoldersItemContactsCountRequestBuilder) {
-    return NewItemContactFoldersItemContactsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Delta provides operations to call the delta method.
-func (m *ItemContactFoldersItemContactsRequestBuilder) Delta()(*ItemContactFoldersItemContactsDeltaRequestBuilder) {
-    return NewItemContactFoldersItemContactsDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemContactFoldersItemContactsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a contact collection from the default Contacts folder of the signed-in user (`.../me/contacts`), or from the specified contact folder.
 // [Find more info here]
@@ -97,6 +93,10 @@ func (m *ItemContactFoldersItemContactsRequestBuilder) Get(ctx context.Context, 
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContactCollectionResponseable), nil
+}
+// MicrosoftGraphDelta provides operations to call the delta method.
+func (m *ItemContactFoldersItemContactsRequestBuilder) MicrosoftGraphDelta()(*ItemContactFoldersItemContactsMicrosoftGraphDeltaRequestBuilder) {
+    return NewItemContactFoldersItemContactsMicrosoftGraphDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post add a contact to the root Contacts folder or to the `contacts` endpoint of another contact folder.
 // [Find more info here]
@@ -143,7 +143,10 @@ func (m *ItemContactFoldersItemContactsRequestBuilder) ToPostRequestInformation(
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

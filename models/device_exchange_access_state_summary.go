@@ -25,7 +25,7 @@ type DeviceExchangeAccessStateSummary struct {
 func NewDeviceExchangeAccessStateSummary()(*DeviceExchangeAccessStateSummary) {
     m := &DeviceExchangeAccessStateSummary{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeviceExchangeAccessStateSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

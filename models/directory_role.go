@@ -23,8 +23,8 @@ func NewDirectoryRole()(*DirectoryRole) {
     m := &DirectoryRole{
         DirectoryObject: *NewDirectoryObject(),
     }
-    odataTypeValue := "#microsoft.graph.directoryRole";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.directoryRole"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDirectoryRoleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

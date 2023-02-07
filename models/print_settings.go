@@ -17,7 +17,7 @@ type PrintSettings struct {
 func NewPrintSettings()(*PrintSettings) {
     m := &PrintSettings{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePrintSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

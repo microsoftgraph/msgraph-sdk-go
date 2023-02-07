@@ -15,8 +15,8 @@ func NewServicePrincipalIdentity()(*ServicePrincipalIdentity) {
     m := &ServicePrincipalIdentity{
         Identity: *NewIdentity(),
     }
-    odataTypeValue := "#microsoft.graph.servicePrincipalIdentity";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.servicePrincipalIdentity"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateServicePrincipalIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

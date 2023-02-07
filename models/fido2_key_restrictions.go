@@ -21,7 +21,7 @@ type Fido2KeyRestrictions struct {
 func NewFido2KeyRestrictions()(*Fido2KeyRestrictions) {
     m := &Fido2KeyRestrictions{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateFido2KeyRestrictionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

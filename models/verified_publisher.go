@@ -22,7 +22,7 @@ type VerifiedPublisher struct {
 func NewVerifiedPublisher()(*VerifiedPublisher) {
     m := &VerifiedPublisher{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateVerifiedPublisherFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

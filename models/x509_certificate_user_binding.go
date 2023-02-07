@@ -21,7 +21,7 @@ type X509CertificateUserBinding struct {
 func NewX509CertificateUserBinding()(*X509CertificateUserBinding) {
     m := &X509CertificateUserBinding{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateX509CertificateUserBindingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

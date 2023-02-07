@@ -19,7 +19,7 @@ type SimulationEventsContent struct {
 func NewSimulationEventsContent()(*SimulationEventsContent) {
     m := &SimulationEventsContent{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSimulationEventsContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

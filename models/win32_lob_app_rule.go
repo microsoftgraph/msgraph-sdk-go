@@ -17,7 +17,7 @@ type Win32LobAppRule struct {
 func NewWin32LobAppRule()(*Win32LobAppRule) {
     m := &Win32LobAppRule{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWin32LobAppRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

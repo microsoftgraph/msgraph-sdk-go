@@ -23,7 +23,7 @@ type ScoredEmailAddress struct {
 func NewScoredEmailAddress()(*ScoredEmailAddress) {
     m := &ScoredEmailAddress{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateScoredEmailAddressFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

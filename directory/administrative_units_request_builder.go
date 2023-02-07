@@ -60,8 +60,8 @@ func NewAdministrativeUnitsRequestBuilderInternal(pathParameters map[string]stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAdministrativeUnitsRequestBuilder instantiates a new AdministrativeUnitsRequestBuilder and sets the default values.
@@ -72,11 +72,7 @@ func NewAdministrativeUnitsRequestBuilder(rawUrl string, requestAdapter i2ae4187
 }
 // Count provides operations to count the resources in the collection.
 func (m *AdministrativeUnitsRequestBuilder) Count()(*AdministrativeUnitsCountRequestBuilder) {
-    return NewAdministrativeUnitsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Delta provides operations to call the delta method.
-func (m *AdministrativeUnitsRequestBuilder) Delta()(*AdministrativeUnitsDeltaRequestBuilder) {
-    return NewAdministrativeUnitsDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAdministrativeUnitsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of administrativeUnit objects.
 // [Find more info here]
@@ -99,6 +95,10 @@ func (m *AdministrativeUnitsRequestBuilder) Get(ctx context.Context, requestConf
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AdministrativeUnitCollectionResponseable), nil
+}
+// MicrosoftGraphDelta provides operations to call the delta method.
+func (m *AdministrativeUnitsRequestBuilder) MicrosoftGraphDelta()(*AdministrativeUnitsMicrosoftGraphDeltaRequestBuilder) {
+    return NewAdministrativeUnitsMicrosoftGraphDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post use this API to create a new administrativeUnit.
 // [Find more info here]
@@ -145,7 +145,10 @@ func (m *AdministrativeUnitsRequestBuilder) ToPostRequestInformation(ctx context
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

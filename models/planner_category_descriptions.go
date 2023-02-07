@@ -65,7 +65,7 @@ type PlannerCategoryDescriptions struct {
 func NewPlannerCategoryDescriptions()(*PlannerCategoryDescriptions) {
     m := &PlannerCategoryDescriptions{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePlannerCategoryDescriptionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -48,11 +48,11 @@ type ItemPlannerTasksPlannerTaskItemRequestBuilderPatchRequestConfiguration stru
 }
 // AssignedToTaskBoardFormat provides operations to manage the assignedToTaskBoardFormat property of the microsoft.graph.plannerTask entity.
 func (m *ItemPlannerTasksPlannerTaskItemRequestBuilder) AssignedToTaskBoardFormat()(*ItemPlannerTasksItemAssignedToTaskBoardFormatRequestBuilder) {
-    return NewItemPlannerTasksItemAssignedToTaskBoardFormatRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemPlannerTasksItemAssignedToTaskBoardFormatRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // BucketTaskBoardFormat provides operations to manage the bucketTaskBoardFormat property of the microsoft.graph.plannerTask entity.
 func (m *ItemPlannerTasksPlannerTaskItemRequestBuilder) BucketTaskBoardFormat()(*ItemPlannerTasksItemBucketTaskBoardFormatRequestBuilder) {
-    return NewItemPlannerTasksItemBucketTaskBoardFormatRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemPlannerTasksItemBucketTaskBoardFormatRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewItemPlannerTasksPlannerTaskItemRequestBuilderInternal instantiates a new PlannerTaskItemRequestBuilder and sets the default values.
 func NewItemPlannerTasksPlannerTaskItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPlannerTasksPlannerTaskItemRequestBuilder) {
@@ -63,8 +63,8 @@ func NewItemPlannerTasksPlannerTaskItemRequestBuilderInternal(pathParameters map
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemPlannerTasksPlannerTaskItemRequestBuilder instantiates a new PlannerTaskItemRequestBuilder and sets the default values.
@@ -91,7 +91,7 @@ func (m *ItemPlannerTasksPlannerTaskItemRequestBuilder) Delete(ctx context.Conte
 }
 // Details provides operations to manage the details property of the microsoft.graph.plannerTask entity.
 func (m *ItemPlannerTasksPlannerTaskItemRequestBuilder) Details()(*ItemPlannerTasksItemDetailsRequestBuilder) {
-    return NewItemPlannerTasksItemDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemPlannerTasksItemDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get read-only. Nullable. Returns the plannerPlans shared with the user.
 func (m *ItemPlannerTasksPlannerTaskItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPlannerTasksPlannerTaskItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerTaskable, error) {
@@ -133,7 +133,7 @@ func (m *ItemPlannerTasksPlannerTaskItemRequestBuilder) Patch(ctx context.Contex
 }
 // ProgressTaskBoardFormat provides operations to manage the progressTaskBoardFormat property of the microsoft.graph.plannerTask entity.
 func (m *ItemPlannerTasksPlannerTaskItemRequestBuilder) ProgressTaskBoardFormat()(*ItemPlannerTasksItemProgressTaskBoardFormatRequestBuilder) {
-    return NewItemPlannerTasksItemProgressTaskBoardFormatRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemPlannerTasksItemProgressTaskBoardFormatRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property tasks for users
 func (m *ItemPlannerTasksPlannerTaskItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemPlannerTasksPlannerTaskItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -170,7 +170,10 @@ func (m *ItemPlannerTasksPlannerTaskItemRequestBuilder) ToPatchRequestInformatio
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

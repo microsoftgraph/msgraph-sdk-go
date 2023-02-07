@@ -60,8 +60,8 @@ func NewItemSitesItemOnenoteNotebooksRequestBuilderInternal(pathParameters map[s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSitesItemOnenoteNotebooksRequestBuilder instantiates a new NotebooksRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewItemSitesItemOnenoteNotebooksRequestBuilder(rawUrl string, requestAdapte
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemSitesItemOnenoteNotebooksRequestBuilder) Count()(*ItemSitesItemOnenoteNotebooksCountRequestBuilder) {
-    return NewItemSitesItemOnenoteNotebooksCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesItemOnenoteNotebooksCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of notebook objects.
 // [Find more info here]
@@ -96,13 +96,13 @@ func (m *ItemSitesItemOnenoteNotebooksRequestBuilder) Get(ctx context.Context, r
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NotebookCollectionResponseable), nil
 }
-// GetNotebookFromWebUrl provides operations to call the getNotebookFromWebUrl method.
-func (m *ItemSitesItemOnenoteNotebooksRequestBuilder) GetNotebookFromWebUrl()(*ItemSitesItemOnenoteNotebooksGetNotebookFromWebUrlRequestBuilder) {
-    return NewItemSitesItemOnenoteNotebooksGetNotebookFromWebUrlRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetNotebookFromWebUrl provides operations to call the getNotebookFromWebUrl method.
+func (m *ItemSitesItemOnenoteNotebooksRequestBuilder) MicrosoftGraphGetNotebookFromWebUrl()(*ItemSitesItemOnenoteNotebooksMicrosoftGraphGetNotebookFromWebUrlRequestBuilder) {
+    return NewItemSitesItemOnenoteNotebooksMicrosoftGraphGetNotebookFromWebUrlRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetRecentNotebooksWithIncludePersonalNotebooks provides operations to call the getRecentNotebooks method.
-func (m *ItemSitesItemOnenoteNotebooksRequestBuilder) GetRecentNotebooksWithIncludePersonalNotebooks(includePersonalNotebooks *bool)(*ItemSitesItemOnenoteNotebooksGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder) {
-    return NewItemSitesItemOnenoteNotebooksGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderInternal(m.pathParameters, m.requestAdapter, includePersonalNotebooks);
+// MicrosoftGraphGetRecentNotebooksWithIncludePersonalNotebooks provides operations to call the getRecentNotebooks method.
+func (m *ItemSitesItemOnenoteNotebooksRequestBuilder) MicrosoftGraphGetRecentNotebooksWithIncludePersonalNotebooks(includePersonalNotebooks *bool)(*ItemSitesItemOnenoteNotebooksMicrosoftGraphGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder) {
+    return NewItemSitesItemOnenoteNotebooksMicrosoftGraphGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderInternal(m.pathParameters, m.requestAdapter, includePersonalNotebooks)
 }
 // Post create a new OneNote notebook.
 // [Find more info here]
@@ -149,7 +149,10 @@ func (m *ItemSitesItemOnenoteNotebooksRequestBuilder) ToPostRequestInformation(c
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

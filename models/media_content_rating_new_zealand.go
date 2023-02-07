@@ -19,7 +19,7 @@ type MediaContentRatingNewZealand struct {
 func NewMediaContentRatingNewZealand()(*MediaContentRatingNewZealand) {
     m := &MediaContentRatingNewZealand{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateMediaContentRatingNewZealandFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

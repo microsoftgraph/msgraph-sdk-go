@@ -19,7 +19,7 @@ type DefaultColumnValue struct {
 func NewDefaultColumnValue()(*DefaultColumnValue) {
     m := &DefaultColumnValue{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDefaultColumnValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

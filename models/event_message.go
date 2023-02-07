@@ -26,15 +26,15 @@ type EventMessage struct {
     // The startDateTime property
     startDateTime DateTimeTimeZoneable
     // The type property
-    type_escaped *EventType
+    typeEscaped *EventType
 }
 // NewEventMessage instantiates a new EventMessage and sets the default values.
 func NewEventMessage()(*EventMessage) {
     m := &EventMessage{
         Message: *NewMessage(),
     }
-    odataTypeValue := "#microsoft.graph.eventMessage";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.eventMessage"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateEventMessageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -204,7 +204,7 @@ func (m *EventMessage) GetStartDateTime()(DateTimeTimeZoneable) {
 }
 // GetType gets the type property value. The type property
 func (m *EventMessage) GetType()(*EventType) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // Serialize serializes information the current object
 func (m *EventMessage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -314,5 +314,5 @@ func (m *EventMessage) SetStartDateTime(value DateTimeTimeZoneable)() {
 }
 // SetType sets the type property value. The type property
 func (m *EventMessage) SetType(value *EventType)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }

@@ -48,7 +48,7 @@ type TeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilderPatchRe
 }
 // Chat provides operations to manage the chat property of the microsoft.graph.userScopeTeamsAppInstallation entity.
 func (m *TeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilder) Chat()(*TeamworkInstalledAppsItemChatRequestBuilder) {
-    return NewTeamworkInstalledAppsItemChatRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTeamworkInstalledAppsItemChatRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilderInternal instantiates a new UserScopeTeamsAppInstallationItemRequestBuilder and sets the default values.
 func NewTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilder) {
@@ -59,8 +59,8 @@ func NewTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilderInte
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilder instantiates a new UserScopeTeamsAppInstallationItemRequestBuilder and sets the default values.
@@ -158,7 +158,10 @@ func (m *TeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilder) T
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

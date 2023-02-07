@@ -16,13 +16,13 @@ type ExpirationPattern struct {
     // The OdataType property
     odataType *string
     // The requestor's desired expiration pattern type. The possible values are: notSpecified, noExpiration, afterDateTime, afterDuration.
-    type_escaped *ExpirationPatternType
+    typeEscaped *ExpirationPatternType
 }
 // NewExpirationPattern instantiates a new expirationPattern and sets the default values.
 func NewExpirationPattern()(*ExpirationPattern) {
     m := &ExpirationPattern{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateExpirationPatternFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -92,7 +92,7 @@ func (m *ExpirationPattern) GetOdataType()(*string) {
 }
 // GetType gets the type property value. The requestor's desired expiration pattern type. The possible values are: notSpecified, noExpiration, afterDateTime, afterDuration.
 func (m *ExpirationPattern) GetType()(*ExpirationPatternType) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // Serialize serializes information the current object
 func (m *ExpirationPattern) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -147,5 +147,5 @@ func (m *ExpirationPattern) SetOdataType(value *string)() {
 }
 // SetType sets the type property value. The requestor's desired expiration pattern type. The possible values are: notSpecified, noExpiration, afterDateTime, afterDuration.
 func (m *ExpirationPattern) SetType(value *ExpirationPatternType)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }

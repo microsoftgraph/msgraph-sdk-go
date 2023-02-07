@@ -37,8 +37,8 @@ func NewDefaultManagedAppProtection()(*DefaultManagedAppProtection) {
     m := &DefaultManagedAppProtection{
         ManagedAppProtection: *NewManagedAppProtection(),
     }
-    odataTypeValue := "#microsoft.graph.defaultManagedAppProtection";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.defaultManagedAppProtection"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDefaultManagedAppProtectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -13,8 +13,8 @@ func NewIncomingCallOptions()(*IncomingCallOptions) {
     m := &IncomingCallOptions{
         CallOptions: *NewCallOptions(),
     }
-    odataTypeValue := "#microsoft.graph.incomingCallOptions";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.incomingCallOptions"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateIncomingCallOptionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

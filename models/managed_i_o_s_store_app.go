@@ -21,8 +21,8 @@ func NewManagedIOSStoreApp()(*ManagedIOSStoreApp) {
     m := &ManagedIOSStoreApp{
         ManagedApp: *NewManagedApp(),
     }
-    odataTypeValue := "#microsoft.graph.managedIOSStoreApp";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.managedIOSStoreApp"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateManagedIOSStoreAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

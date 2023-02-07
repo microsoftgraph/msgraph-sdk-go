@@ -55,8 +55,8 @@ func NewItemSitesItemListsItemItemsItemVersionsListItemVersionItemRequestBuilder
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSitesItemListsItemItemsItemVersionsListItemVersionItemRequestBuilder instantiates a new ListItemVersionItemRequestBuilder and sets the default values.
@@ -83,7 +83,7 @@ func (m *ItemSitesItemListsItemItemsItemVersionsListItemVersionItemRequestBuilde
 }
 // Fields provides operations to manage the fields property of the microsoft.graph.listItemVersion entity.
 func (m *ItemSitesItemListsItemItemsItemVersionsListItemVersionItemRequestBuilder) Fields()(*ItemSitesItemListsItemItemsItemVersionsItemFieldsRequestBuilder) {
-    return NewItemSitesItemListsItemItemsItemVersionsItemFieldsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesItemListsItemItemsItemVersionsItemFieldsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the list of previous versions of the list item.
 func (m *ItemSitesItemListsItemItemsItemVersionsListItemVersionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemListsItemItemsItemVersionsListItemVersionItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemVersionable, error) {
@@ -104,6 +104,10 @@ func (m *ItemSitesItemListsItemItemsItemVersionsListItemVersionItemRequestBuilde
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemVersionable), nil
 }
+// MicrosoftGraphRestoreVersion provides operations to call the restoreVersion method.
+func (m *ItemSitesItemListsItemItemsItemVersionsListItemVersionItemRequestBuilder) MicrosoftGraphRestoreVersion()(*ItemSitesItemListsItemItemsItemVersionsItemMicrosoftGraphRestoreVersionRequestBuilder) {
+    return NewItemSitesItemListsItemItemsItemVersionsItemMicrosoftGraphRestoreVersionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update the navigation property versions in groups
 func (m *ItemSitesItemListsItemItemsItemVersionsListItemVersionItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemVersionable, requestConfiguration *ItemSitesItemListsItemItemsItemVersionsListItemVersionItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemVersionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -122,10 +126,6 @@ func (m *ItemSitesItemListsItemItemsItemVersionsListItemVersionItemRequestBuilde
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemVersionable), nil
-}
-// RestoreVersion provides operations to call the restoreVersion method.
-func (m *ItemSitesItemListsItemItemsItemVersionsListItemVersionItemRequestBuilder) RestoreVersion()(*ItemSitesItemListsItemItemsItemVersionsItemRestoreVersionRequestBuilder) {
-    return NewItemSitesItemListsItemItemsItemVersionsItemRestoreVersionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property versions for groups
 func (m *ItemSitesItemListsItemItemsItemVersionsListItemVersionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemListsItemItemsItemVersionsListItemVersionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -162,7 +162,10 @@ func (m *ItemSitesItemListsItemItemsItemVersionsListItemVersionItemRequestBuilde
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

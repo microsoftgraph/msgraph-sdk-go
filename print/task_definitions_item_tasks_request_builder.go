@@ -60,8 +60,8 @@ func NewTaskDefinitionsItemTasksRequestBuilderInternal(pathParameters map[string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTaskDefinitionsItemTasksRequestBuilder instantiates a new TasksRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewTaskDefinitionsItemTasksRequestBuilder(rawUrl string, requestAdapter i2a
 }
 // Count provides operations to count the resources in the collection.
 func (m *TaskDefinitionsItemTasksRequestBuilder) Count()(*TaskDefinitionsItemTasksCountRequestBuilder) {
-    return NewTaskDefinitionsItemTasksCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTaskDefinitionsItemTasksCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of tasks associated with a task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
 // [Find more info here]
@@ -138,7 +138,10 @@ func (m *TaskDefinitionsItemTasksRequestBuilder) ToPostRequestInformation(ctx co
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

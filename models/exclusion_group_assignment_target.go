@@ -13,8 +13,8 @@ func NewExclusionGroupAssignmentTarget()(*ExclusionGroupAssignmentTarget) {
     m := &ExclusionGroupAssignmentTarget{
         GroupAssignmentTarget: *NewGroupAssignmentTarget(),
     }
-    odataTypeValue := "#microsoft.graph.exclusionGroupAssignmentTarget";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.exclusionGroupAssignmentTarget"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateExclusionGroupAssignmentTargetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

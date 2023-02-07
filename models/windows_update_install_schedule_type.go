@@ -15,7 +15,7 @@ type WindowsUpdateInstallScheduleType struct {
 func NewWindowsUpdateInstallScheduleType()(*WindowsUpdateInstallScheduleType) {
     m := &WindowsUpdateInstallScheduleType{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWindowsUpdateInstallScheduleTypeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

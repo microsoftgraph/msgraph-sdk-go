@@ -32,7 +32,7 @@ type RemoteItem struct {
     // The OdataType property
     odataType *string
     // If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
-    package_escaped Package_escapedable
+    packageEscaped PackageEscapedable
     // Properties of the parent of the remote item. Read-only.
     parentReference ItemReferenceable
     // Indicates that the item has been shared with others and provides information about the shared state of the item. Read-only.
@@ -54,7 +54,7 @@ type RemoteItem struct {
 func NewRemoteItem()(*RemoteItem) {
     m := &RemoteItem{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateRemoteItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -187,12 +187,12 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         return nil
     }
     res["package"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreatePackage_escapedFromDiscriminatorValue)
+        val, err := n.GetObjectValue(CreatePackageEscapedFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPackage(val.(Package_escapedable))
+            m.SetPackage(val.(PackageEscapedable))
         }
         return nil
     }
@@ -315,8 +315,8 @@ func (m *RemoteItem) GetOdataType()(*string) {
     return m.odataType
 }
 // GetPackage gets the package property value. If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
-func (m *RemoteItem) GetPackage()(Package_escapedable) {
-    return m.package_escaped
+func (m *RemoteItem) GetPackage()(PackageEscapedable) {
+    return m.packageEscaped
 }
 // GetParentReference gets the parentReference property value. Properties of the parent of the remote item. Read-only.
 func (m *RemoteItem) GetParentReference()(ItemReferenceable) {
@@ -529,8 +529,8 @@ func (m *RemoteItem) SetOdataType(value *string)() {
     m.odataType = value
 }
 // SetPackage sets the package property value. If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
-func (m *RemoteItem) SetPackage(value Package_escapedable)() {
-    m.package_escaped = value
+func (m *RemoteItem) SetPackage(value PackageEscapedable)() {
+    m.packageEscaped = value
 }
 // SetParentReference sets the parentReference property value. Properties of the parent of the remote item. Read-only.
 func (m *RemoteItem) SetParentReference(value ItemReferenceable)() {

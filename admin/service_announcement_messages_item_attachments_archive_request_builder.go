@@ -38,8 +38,8 @@ func NewServiceAnnouncementMessagesItemAttachmentsArchiveRequestBuilderInternal(
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewServiceAnnouncementMessagesItemAttachmentsArchiveRequestBuilder instantiates a new AttachmentsArchiveRequestBuilder and sets the default values.

@@ -19,7 +19,7 @@ type RubricQualitySelectedColumnModel struct {
 func NewRubricQualitySelectedColumnModel()(*RubricQualitySelectedColumnModel) {
     m := &RubricQualitySelectedColumnModel{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateRubricQualitySelectedColumnModelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

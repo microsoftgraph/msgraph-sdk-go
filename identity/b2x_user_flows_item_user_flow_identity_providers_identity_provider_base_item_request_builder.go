@@ -22,8 +22,8 @@ func NewB2xUserFlowsItemUserFlowIdentityProvidersIdentityProviderBaseItemRequest
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewB2xUserFlowsItemUserFlowIdentityProvidersIdentityProviderBaseItemRequestBuilder instantiates a new IdentityProviderBaseItemRequestBuilder and sets the default values.
@@ -34,5 +34,5 @@ func NewB2xUserFlowsItemUserFlowIdentityProvidersIdentityProviderBaseItemRequest
 }
 // Ref provides operations to manage the collection of identityContainer entities.
 func (m *B2xUserFlowsItemUserFlowIdentityProvidersIdentityProviderBaseItemRequestBuilder) Ref()(*B2xUserFlowsItemUserFlowIdentityProvidersItemRefRequestBuilder) {
-    return NewB2xUserFlowsItemUserFlowIdentityProvidersItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewB2xUserFlowsItemUserFlowIdentityProvidersItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

@@ -17,8 +17,8 @@ func NewConnectedOrganizationMembers()(*ConnectedOrganizationMembers) {
     m := &ConnectedOrganizationMembers{
         SubjectSet: *NewSubjectSet(),
     }
-    odataTypeValue := "#microsoft.graph.connectedOrganizationMembers";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.connectedOrganizationMembers"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateConnectedOrganizationMembersFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

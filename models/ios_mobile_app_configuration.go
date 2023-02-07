@@ -17,8 +17,8 @@ func NewIosMobileAppConfiguration()(*IosMobileAppConfiguration) {
     m := &IosMobileAppConfiguration{
         ManagedDeviceMobileAppConfiguration: *NewManagedDeviceMobileAppConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.iosMobileAppConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.iosMobileAppConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateIosMobileAppConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -38,8 +38,8 @@ func NewLocalizationsItemSquareLogoRequestBuilderInternal(pathParameters map[str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewLocalizationsItemSquareLogoRequestBuilder instantiates a new SquareLogoRequestBuilder and sets the default values.

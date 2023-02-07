@@ -23,7 +23,7 @@ type Hashes struct {
 func NewHashes()(*Hashes) {
     m := &Hashes{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateHashesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

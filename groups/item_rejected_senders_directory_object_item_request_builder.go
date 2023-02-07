@@ -22,8 +22,8 @@ func NewItemRejectedSendersDirectoryObjectItemRequestBuilderInternal(pathParamet
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemRejectedSendersDirectoryObjectItemRequestBuilder instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
@@ -34,5 +34,5 @@ func NewItemRejectedSendersDirectoryObjectItemRequestBuilder(rawUrl string, requ
 }
 // Ref provides operations to manage the collection of group entities.
 func (m *ItemRejectedSendersDirectoryObjectItemRequestBuilder) Ref()(*ItemRejectedSendersItemRefRequestBuilder) {
-    return NewItemRejectedSendersItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemRejectedSendersItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

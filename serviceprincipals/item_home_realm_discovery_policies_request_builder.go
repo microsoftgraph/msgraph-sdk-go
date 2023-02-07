@@ -53,8 +53,8 @@ func NewItemHomeRealmDiscoveryPoliciesRequestBuilderInternal(pathParameters map[
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemHomeRealmDiscoveryPoliciesRequestBuilder instantiates a new HomeRealmDiscoveryPoliciesRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemHomeRealmDiscoveryPoliciesRequestBuilder(rawUrl string, requestAdapt
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemHomeRealmDiscoveryPoliciesRequestBuilder) Count()(*ItemHomeRealmDiscoveryPoliciesCountRequestBuilder) {
-    return NewItemHomeRealmDiscoveryPoliciesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemHomeRealmDiscoveryPoliciesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get list the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
 // [Find more info here]
@@ -91,7 +91,7 @@ func (m *ItemHomeRealmDiscoveryPoliciesRequestBuilder) Get(ctx context.Context, 
 }
 // Ref provides operations to manage the collection of servicePrincipal entities.
 func (m *ItemHomeRealmDiscoveryPoliciesRequestBuilder) Ref()(*ItemHomeRealmDiscoveryPoliciesRefRequestBuilder) {
-    return NewItemHomeRealmDiscoveryPoliciesRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemHomeRealmDiscoveryPoliciesRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation list the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
 func (m *ItemHomeRealmDiscoveryPoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemHomeRealmDiscoveryPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

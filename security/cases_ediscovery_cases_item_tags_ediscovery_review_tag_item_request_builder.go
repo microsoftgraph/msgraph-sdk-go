@@ -48,7 +48,7 @@ type CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilderPatchReque
 }
 // ChildTags provides operations to manage the childTags property of the microsoft.graph.security.ediscoveryReviewTag entity.
 func (m *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilder) ChildTags()(*CasesEdiscoveryCasesItemTagsItemChildTagsRequestBuilder) {
-    return NewCasesEdiscoveryCasesItemTagsItemChildTagsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCasesEdiscoveryCasesItemTagsItemChildTagsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ChildTagsById provides operations to manage the childTags property of the microsoft.graph.security.ediscoveryReviewTag entity.
 func (m *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilder) ChildTagsById(id string)(*CasesEdiscoveryCasesItemTagsItemChildTagsEdiscoveryReviewTagItemRequestBuilder) {
@@ -59,7 +59,7 @@ func (m *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilder) Chil
     if id != "" {
         urlTplParams["ediscoveryReviewTag%2Did1"] = id
     }
-    return NewCasesEdiscoveryCasesItemTagsItemChildTagsEdiscoveryReviewTagItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCasesEdiscoveryCasesItemTagsItemChildTagsEdiscoveryReviewTagItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewCasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilderInternal instantiates a new EdiscoveryReviewTagItemRequestBuilder and sets the default values.
 func NewCasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilder) {
@@ -70,8 +70,8 @@ func NewCasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilderInterna
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilder instantiates a new EdiscoveryReviewTagItemRequestBuilder and sets the default values.
@@ -117,7 +117,7 @@ func (m *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilder) Get(
 }
 // Parent provides operations to manage the parent property of the microsoft.graph.security.ediscoveryReviewTag entity.
 func (m *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilder) Parent()(*CasesEdiscoveryCasesItemTagsItemParentRequestBuilder) {
-    return NewCasesEdiscoveryCasesItemTagsItemParentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCasesEdiscoveryCasesItemTagsItemParentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property tags in security
 func (m *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilder) Patch(ctx context.Context, body idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewTagable, requestConfiguration *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilderPatchRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewTagable, error) {
@@ -173,7 +173,10 @@ func (m *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilder) ToPa
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

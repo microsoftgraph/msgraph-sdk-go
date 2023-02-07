@@ -22,8 +22,8 @@ func NewSharesItemAllowedGroupsGroupItemRequestBuilderInternal(pathParameters ma
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewSharesItemAllowedGroupsGroupItemRequestBuilder instantiates a new GroupItemRequestBuilder and sets the default values.
@@ -34,5 +34,5 @@ func NewSharesItemAllowedGroupsGroupItemRequestBuilder(rawUrl string, requestAda
 }
 // Ref provides operations to manage the collection of print entities.
 func (m *SharesItemAllowedGroupsGroupItemRequestBuilder) Ref()(*SharesItemAllowedGroupsItemRefRequestBuilder) {
-    return NewSharesItemAllowedGroupsItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSharesItemAllowedGroupsItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

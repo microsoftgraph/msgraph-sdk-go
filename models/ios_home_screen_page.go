@@ -19,7 +19,7 @@ type IosHomeScreenPage struct {
 func NewIosHomeScreenPage()(*IosHomeScreenPage) {
     m := &IosHomeScreenPage{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateIosHomeScreenPageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

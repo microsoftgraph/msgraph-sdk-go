@@ -53,8 +53,8 @@ func NewItemJoinedTeamsItemPrimaryChannelSharedWithTeamsItemAllowedMembersReques
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemJoinedTeamsItemPrimaryChannelSharedWithTeamsItemAllowedMembersRequestBuilder instantiates a new AllowedMembersRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemJoinedTeamsItemPrimaryChannelSharedWithTeamsItemAllowedMembersReques
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemJoinedTeamsItemPrimaryChannelSharedWithTeamsItemAllowedMembersRequestBuilder) Count()(*ItemJoinedTeamsItemPrimaryChannelSharedWithTeamsItemAllowedMembersCountRequestBuilder) {
-    return NewItemJoinedTeamsItemPrimaryChannelSharedWithTeamsItemAllowedMembersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemJoinedTeamsItemPrimaryChannelSharedWithTeamsItemAllowedMembersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the list of conversationMembers who can access a shared channel. This method does not return the following conversationMembers from the team:- Users with `Guest` role- Users who are externally authenticated in the tenant
 // [Find more info here]

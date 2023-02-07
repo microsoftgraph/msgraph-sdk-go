@@ -8,7 +8,7 @@ import (
 type UpdateRecordingStatusOperation struct {
     CommsOperation
 }
-// NewUpdateRecordingStatusOperation instantiates a new UpdateRecordingStatusOperation and sets the default values.
+// NewUpdateRecordingStatusOperation instantiates a new updateRecordingStatusOperation and sets the default values.
 func NewUpdateRecordingStatusOperation()(*UpdateRecordingStatusOperation) {
     m := &UpdateRecordingStatusOperation{
         CommsOperation: *NewCommsOperation(),

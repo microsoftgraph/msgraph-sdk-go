@@ -25,7 +25,7 @@ type WindowsInformationProtectionApp struct {
 func NewWindowsInformationProtectionApp()(*WindowsInformationProtectionApp) {
     m := &WindowsInformationProtectionApp{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWindowsInformationProtectionAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

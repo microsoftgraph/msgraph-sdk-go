@@ -25,8 +25,8 @@ func NewSectionGroup()(*SectionGroup) {
     m := &SectionGroup{
         OnenoteEntityHierarchyModel: *NewOnenoteEntityHierarchyModel(),
     }
-    odataTypeValue := "#microsoft.graph.sectionGroup";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.sectionGroup"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateSectionGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -19,8 +19,8 @@ func NewTeamRenamedEventMessageDetail()(*TeamRenamedEventMessageDetail) {
     m := &TeamRenamedEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),
     }
-    odataTypeValue := "#microsoft.graph.teamRenamedEventMessageDetail";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.teamRenamedEventMessageDetail"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateTeamRenamedEventMessageDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

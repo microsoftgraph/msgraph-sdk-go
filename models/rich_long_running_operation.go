@@ -14,7 +14,7 @@ type RichLongRunningOperation struct {
     // The unique identifier for the result.
     resourceId *string
     // The type of the operation.
-    type_escaped *string
+    typeEscaped *string
 }
 // NewRichLongRunningOperation instantiates a new RichLongRunningOperation and sets the default values.
 func NewRichLongRunningOperation()(*RichLongRunningOperation) {
@@ -86,7 +86,7 @@ func (m *RichLongRunningOperation) GetResourceId()(*string) {
 }
 // GetType gets the type property value. The type of the operation.
 func (m *RichLongRunningOperation) GetType()(*string) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // Serialize serializes information the current object
 func (m *RichLongRunningOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -134,5 +134,5 @@ func (m *RichLongRunningOperation) SetResourceId(value *string)() {
 }
 // SetType sets the type property value. The type of the operation.
 func (m *RichLongRunningOperation) SetType(value *string)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }

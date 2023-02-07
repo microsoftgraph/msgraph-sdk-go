@@ -41,8 +41,8 @@ func NewFollowedSitesSiteItemRequestBuilderInternal(pathParameters map[string]st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewFollowedSitesSiteItemRequestBuilder instantiates a new SiteItemRequestBuilder and sets the default values.

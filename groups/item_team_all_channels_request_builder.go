@@ -53,8 +53,8 @@ func NewItemTeamAllChannelsRequestBuilderInternal(pathParameters map[string]stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTeamAllChannelsRequestBuilder instantiates a new AllChannelsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemTeamAllChannelsRequestBuilder(rawUrl string, requestAdapter i2ae4187
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemTeamAllChannelsRequestBuilder) Count()(*ItemTeamAllChannelsCountRequestBuilder) {
-    return NewItemTeamAllChannelsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTeamAllChannelsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the list of channels either in this team or shared with this team (incoming channels).
 // [Find more info here]

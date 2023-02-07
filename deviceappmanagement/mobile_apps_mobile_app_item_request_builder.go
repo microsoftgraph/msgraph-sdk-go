@@ -46,13 +46,9 @@ type MobileAppsMobileAppItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Assign provides operations to call the assign method.
-func (m *MobileAppsMobileAppItemRequestBuilder) Assign()(*MobileAppsItemAssignRequestBuilder) {
-    return NewMobileAppsItemAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Assignments provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.
 func (m *MobileAppsMobileAppItemRequestBuilder) Assignments()(*MobileAppsItemAssignmentsRequestBuilder) {
-    return NewMobileAppsItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMobileAppsItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AssignmentsById provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.
 func (m *MobileAppsMobileAppItemRequestBuilder) AssignmentsById(id string)(*MobileAppsItemAssignmentsMobileAppAssignmentItemRequestBuilder) {
@@ -63,11 +59,11 @@ func (m *MobileAppsMobileAppItemRequestBuilder) AssignmentsById(id string)(*Mobi
     if id != "" {
         urlTplParams["mobileAppAssignment%2Did"] = id
     }
-    return NewMobileAppsItemAssignmentsMobileAppAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMobileAppsItemAssignmentsMobileAppAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Categories provides operations to manage the categories property of the microsoft.graph.mobileApp entity.
 func (m *MobileAppsMobileAppItemRequestBuilder) Categories()(*MobileAppsItemCategoriesRequestBuilder) {
-    return NewMobileAppsItemCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMobileAppsItemCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // CategoriesById provides operations to manage the categories property of the microsoft.graph.mobileApp entity.
 func (m *MobileAppsMobileAppItemRequestBuilder) CategoriesById(id string)(*MobileAppsItemCategoriesMobileAppCategoryItemRequestBuilder) {
@@ -78,7 +74,7 @@ func (m *MobileAppsMobileAppItemRequestBuilder) CategoriesById(id string)(*Mobil
     if id != "" {
         urlTplParams["mobileAppCategory%2Did"] = id
     }
-    return NewMobileAppsItemCategoriesMobileAppCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMobileAppsItemCategoriesMobileAppCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewMobileAppsMobileAppItemRequestBuilderInternal instantiates a new MobileAppItemRequestBuilder and sets the default values.
 func NewMobileAppsMobileAppItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsMobileAppItemRequestBuilder) {
@@ -89,8 +85,8 @@ func NewMobileAppsMobileAppItemRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMobileAppsMobileAppItemRequestBuilder instantiates a new MobileAppItemRequestBuilder and sets the default values.
@@ -134,13 +130,17 @@ func (m *MobileAppsMobileAppItemRequestBuilder) Get(ctx context.Context, request
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppable), nil
 }
-// ManagedMobileLobApp casts the previous resource to managedMobileLobApp.
-func (m *MobileAppsMobileAppItemRequestBuilder) ManagedMobileLobApp()(*MobileAppsItemManagedMobileLobAppRequestBuilder) {
-    return NewMobileAppsItemManagedMobileLobAppRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphAssign provides operations to call the assign method.
+func (m *MobileAppsMobileAppItemRequestBuilder) MicrosoftGraphAssign()(*MobileAppsItemMicrosoftGraphAssignRequestBuilder) {
+    return NewMobileAppsItemMicrosoftGraphAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MobileLobApp casts the previous resource to mobileLobApp.
-func (m *MobileAppsMobileAppItemRequestBuilder) MobileLobApp()(*MobileAppsItemMobileLobAppRequestBuilder) {
-    return NewMobileAppsItemMobileLobAppRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphManagedMobileLobApp casts the previous resource to managedMobileLobApp.
+func (m *MobileAppsMobileAppItemRequestBuilder) MicrosoftGraphManagedMobileLobApp()(*MobileAppsItemMicrosoftGraphManagedMobileLobAppRequestBuilder) {
+    return NewMobileAppsItemMicrosoftGraphManagedMobileLobAppRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphMobileLobApp casts the previous resource to mobileLobApp.
+func (m *MobileAppsMobileAppItemRequestBuilder) MicrosoftGraphMobileLobApp()(*MobileAppsItemMicrosoftGraphMobileLobAppRequestBuilder) {
+    return NewMobileAppsItemMicrosoftGraphMobileLobAppRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property mobileApps in deviceAppManagement
 func (m *MobileAppsMobileAppItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppable, requestConfiguration *MobileAppsMobileAppItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppable, error) {
@@ -196,7 +196,10 @@ func (m *MobileAppsMobileAppItemRequestBuilder) ToPatchRequestInformation(ctx co
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

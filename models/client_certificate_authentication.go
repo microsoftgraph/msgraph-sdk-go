@@ -15,8 +15,8 @@ func NewClientCertificateAuthentication()(*ClientCertificateAuthentication) {
     m := &ClientCertificateAuthentication{
         ApiAuthenticationConfigurationBase: *NewApiAuthenticationConfigurationBase(),
     }
-    odataTypeValue := "#microsoft.graph.clientCertificateAuthentication";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.clientCertificateAuthentication"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateClientCertificateAuthenticationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

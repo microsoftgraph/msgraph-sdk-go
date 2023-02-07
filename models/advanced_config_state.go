@@ -6,7 +6,7 @@ import (
 type AdvancedConfigState int
 
 const (
-    DEFAULT_ESCAPED_ADVANCEDCONFIGSTATE AdvancedConfigState = iota
+    DEFAULTESCAPED_ADVANCEDCONFIGSTATE AdvancedConfigState = iota
     ENABLED_ADVANCEDCONFIGSTATE
     DISABLED_ADVANCEDCONFIGSTATE
     UNKNOWNFUTUREVALUE_ADVANCEDCONFIGSTATE
@@ -16,10 +16,10 @@ func (i AdvancedConfigState) String() string {
     return []string{"default", "enabled", "disabled", "unknownFutureValue"}[i]
 }
 func ParseAdvancedConfigState(v string) (any, error) {
-    result := DEFAULT_ESCAPED_ADVANCEDCONFIGSTATE
+    result := DEFAULTESCAPED_ADVANCEDCONFIGSTATE
     switch v {
         case "default":
-            result = DEFAULT_ESCAPED_ADVANCEDCONFIGSTATE
+            result = DEFAULTESCAPED_ADVANCEDCONFIGSTATE
         case "enabled":
             result = ENABLED_ADVANCEDCONFIGSTATE
         case "disabled":

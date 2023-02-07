@@ -48,7 +48,7 @@ type TeamsAppsItemAppDefinitionsTeamsAppDefinitionItemRequestBuilderPatchRequest
 }
 // Bot provides operations to manage the bot property of the microsoft.graph.teamsAppDefinition entity.
 func (m *TeamsAppsItemAppDefinitionsTeamsAppDefinitionItemRequestBuilder) Bot()(*TeamsAppsItemAppDefinitionsItemBotRequestBuilder) {
-    return NewTeamsAppsItemAppDefinitionsItemBotRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTeamsAppsItemAppDefinitionsItemBotRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewTeamsAppsItemAppDefinitionsTeamsAppDefinitionItemRequestBuilderInternal instantiates a new TeamsAppDefinitionItemRequestBuilder and sets the default values.
 func NewTeamsAppsItemAppDefinitionsTeamsAppDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamsAppsItemAppDefinitionsTeamsAppDefinitionItemRequestBuilder) {
@@ -59,8 +59,8 @@ func NewTeamsAppsItemAppDefinitionsTeamsAppDefinitionItemRequestBuilderInternal(
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTeamsAppsItemAppDefinitionsTeamsAppDefinitionItemRequestBuilder instantiates a new TeamsAppDefinitionItemRequestBuilder and sets the default values.
@@ -158,7 +158,10 @@ func (m *TeamsAppsItemAppDefinitionsTeamsAppDefinitionItemRequestBuilder) ToPatc
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

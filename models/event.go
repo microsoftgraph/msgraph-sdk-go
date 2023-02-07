@@ -89,7 +89,7 @@ type Event struct {
     // The transactionId property
     transactionId *string
     // The type property
-    type_escaped *EventType
+    typeEscaped *EventType
     // The webLink property
     webLink *string
 }
@@ -98,8 +98,8 @@ func NewEvent()(*Event) {
     m := &Event{
         OutlookItem: *NewOutlookItem(),
     }
-    odataTypeValue := "#microsoft.graph.event";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.event"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -721,7 +721,7 @@ func (m *Event) GetTransactionId()(*string) {
 }
 // GetType gets the type property value. The type property
 func (m *Event) GetType()(*EventType) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // GetWebLink gets the webLink property value. The webLink property
 func (m *Event) GetWebLink()(*string) {
@@ -1182,7 +1182,7 @@ func (m *Event) SetTransactionId(value *string)() {
 }
 // SetType sets the type property value. The type property
 func (m *Event) SetType(value *EventType)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }
 // SetWebLink sets the webLink property value. The webLink property
 func (m *Event) SetWebLink(value *string)() {

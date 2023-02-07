@@ -42,13 +42,13 @@ type Site struct {
     // The collection of the sub-sites under this site.
     sites []Siteable
 }
-// NewSite instantiates a new Site and sets the default values.
+// NewSite instantiates a new site and sets the default values.
 func NewSite()(*Site) {
     m := &Site{
         BaseItem: *NewBaseItem(),
     }
-    odataTypeValue := "#microsoft.graph.site";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.site"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateSiteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

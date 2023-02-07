@@ -55,8 +55,8 @@ func NewAndroidWorkProfileCompliancePolicy()(*AndroidWorkProfileCompliancePolicy
     m := &AndroidWorkProfileCompliancePolicy{
         DeviceCompliancePolicy: *NewDeviceCompliancePolicy(),
     }
-    odataTypeValue := "#microsoft.graph.androidWorkProfileCompliancePolicy";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.androidWorkProfileCompliancePolicy"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAndroidWorkProfileCompliancePolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

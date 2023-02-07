@@ -55,8 +55,8 @@ func NewItemInsightsSharedSharedInsightItemRequestBuilderInternal(pathParameters
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemInsightsSharedSharedInsightItemRequestBuilder instantiates a new SharedInsightItemRequestBuilder and sets the default values.
@@ -102,7 +102,7 @@ func (m *ItemInsightsSharedSharedInsightItemRequestBuilder) Get(ctx context.Cont
 }
 // LastSharedMethod provides operations to manage the lastSharedMethod property of the microsoft.graph.sharedInsight entity.
 func (m *ItemInsightsSharedSharedInsightItemRequestBuilder) LastSharedMethod()(*ItemInsightsSharedItemLastSharedMethodRequestBuilder) {
-    return NewItemInsightsSharedItemLastSharedMethodRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemInsightsSharedItemLastSharedMethodRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property shared in users
 func (m *ItemInsightsSharedSharedInsightItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SharedInsightable, requestConfiguration *ItemInsightsSharedSharedInsightItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SharedInsightable, error) {
@@ -125,7 +125,7 @@ func (m *ItemInsightsSharedSharedInsightItemRequestBuilder) Patch(ctx context.Co
 }
 // Resource provides operations to manage the resource property of the microsoft.graph.sharedInsight entity.
 func (m *ItemInsightsSharedSharedInsightItemRequestBuilder) Resource()(*ItemInsightsSharedItemResourceRequestBuilder) {
-    return NewItemInsightsSharedItemResourceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemInsightsSharedItemResourceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property shared for users
 func (m *ItemInsightsSharedSharedInsightItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemInsightsSharedSharedInsightItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -162,7 +162,10 @@ func (m *ItemInsightsSharedSharedInsightItemRequestBuilder) ToPatchRequestInform
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

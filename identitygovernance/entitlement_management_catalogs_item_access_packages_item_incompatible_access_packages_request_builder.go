@@ -53,8 +53,8 @@ func NewEntitlementManagementCatalogsItemAccessPackagesItemIncompatibleAccessPac
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEntitlementManagementCatalogsItemAccessPackagesItemIncompatibleAccessPackagesRequestBuilder instantiates a new IncompatibleAccessPackagesRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewEntitlementManagementCatalogsItemAccessPackagesItemIncompatibleAccessPac
 }
 // Count provides operations to count the resources in the collection.
 func (m *EntitlementManagementCatalogsItemAccessPackagesItemIncompatibleAccessPackagesRequestBuilder) Count()(*EntitlementManagementCatalogsItemAccessPackagesItemIncompatibleAccessPackagesCountRequestBuilder) {
-    return NewEntitlementManagementCatalogsItemAccessPackagesItemIncompatibleAccessPackagesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementCatalogsItemAccessPackagesItemIncompatibleAccessPackagesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.  
 // [Find more info here]
@@ -91,7 +91,7 @@ func (m *EntitlementManagementCatalogsItemAccessPackagesItemIncompatibleAccessPa
 }
 // Ref provides operations to manage the collection of identityGovernance entities.
 func (m *EntitlementManagementCatalogsItemAccessPackagesItemIncompatibleAccessPackagesRequestBuilder) Ref()(*EntitlementManagementCatalogsItemAccessPackagesItemIncompatibleAccessPackagesRefRequestBuilder) {
-    return NewEntitlementManagementCatalogsItemAccessPackagesItemIncompatibleAccessPackagesRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementCatalogsItemAccessPackagesItemIncompatibleAccessPackagesRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.  
 func (m *EntitlementManagementCatalogsItemAccessPackagesItemIncompatibleAccessPackagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementCatalogsItemAccessPackagesItemIncompatibleAccessPackagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

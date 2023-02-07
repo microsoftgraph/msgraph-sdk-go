@@ -61,7 +61,7 @@ type EducationAssignment struct {
     // The deep link URL for the given assignment.
     webUrl *string
 }
-// NewEducationAssignment instantiates a new EducationAssignment and sets the default values.
+// NewEducationAssignment instantiates a new educationAssignment and sets the default values.
 func NewEducationAssignment()(*EducationAssignment) {
     m := &EducationAssignment{
         Entity: *NewEntity(),

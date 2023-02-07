@@ -19,7 +19,7 @@ type AttackSimulationRepeatOffender struct {
 func NewAttackSimulationRepeatOffender()(*AttackSimulationRepeatOffender) {
     m := &AttackSimulationRepeatOffender{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAttackSimulationRepeatOffenderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

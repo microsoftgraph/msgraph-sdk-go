@@ -15,13 +15,13 @@ type AccessReviewInstanceDecisionItemResource struct {
     // The OdataType property
     odataType *string
     // Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy.
-    type_escaped *string
+    typeEscaped *string
 }
 // NewAccessReviewInstanceDecisionItemResource instantiates a new accessReviewInstanceDecisionItemResource and sets the default values.
 func NewAccessReviewInstanceDecisionItemResource()(*AccessReviewInstanceDecisionItemResource) {
     m := &AccessReviewInstanceDecisionItemResource{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAccessReviewInstanceDecisionItemResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -113,7 +113,7 @@ func (m *AccessReviewInstanceDecisionItemResource) GetOdataType()(*string) {
 }
 // GetType gets the type property value. Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy.
 func (m *AccessReviewInstanceDecisionItemResource) GetType()(*string) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // Serialize serializes information the current object
 func (m *AccessReviewInstanceDecisionItemResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -167,5 +167,5 @@ func (m *AccessReviewInstanceDecisionItemResource) SetOdataType(value *string)()
 }
 // SetType sets the type property value. Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy.
 func (m *AccessReviewInstanceDecisionItemResource) SetType(value *string)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }

@@ -60,8 +60,8 @@ func NewRoleManagementPoliciesItemEffectiveRulesRequestBuilderInternal(pathParam
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewRoleManagementPoliciesItemEffectiveRulesRequestBuilder instantiates a new EffectiveRulesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewRoleManagementPoliciesItemEffectiveRulesRequestBuilder(rawUrl string, re
 }
 // Count provides operations to count the resources in the collection.
 func (m *RoleManagementPoliciesItemEffectiveRulesRequestBuilder) Count()(*RoleManagementPoliciesItemEffectiveRulesCountRequestBuilder) {
-    return NewRoleManagementPoliciesItemEffectiveRulesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewRoleManagementPoliciesItemEffectiveRulesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules. For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval. Supports $expand.
 func (m *RoleManagementPoliciesItemEffectiveRulesRequestBuilder) Get(ctx context.Context, requestConfiguration *RoleManagementPoliciesItemEffectiveRulesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleManagementPolicyRuleCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *RoleManagementPoliciesItemEffectiveRulesRequestBuilder) ToPostRequestIn
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

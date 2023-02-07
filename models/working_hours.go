@@ -23,7 +23,7 @@ type WorkingHours struct {
 func NewWorkingHours()(*WorkingHours) {
     m := &WorkingHours{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWorkingHoursFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

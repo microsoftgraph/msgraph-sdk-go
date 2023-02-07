@@ -32,10 +32,6 @@ type MemberOfDirectoryObjectItemRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *MemberOfDirectoryObjectItemRequestBuilderGetQueryParameters
 }
-// Application casts the previous resource to application.
-func (m *MemberOfDirectoryObjectItemRequestBuilder) Application()(*MemberOfItemApplicationRequestBuilder) {
-    return NewMemberOfItemApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewMemberOfDirectoryObjectItemRequestBuilderInternal instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
 func NewMemberOfDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MemberOfDirectoryObjectItemRequestBuilder) {
     m := &MemberOfDirectoryObjectItemRequestBuilder{
@@ -45,8 +41,8 @@ func NewMemberOfDirectoryObjectItemRequestBuilderInternal(pathParameters map[str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMemberOfDirectoryObjectItemRequestBuilder instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
@@ -54,10 +50,6 @@ func NewMemberOfDirectoryObjectItemRequestBuilder(rawUrl string, requestAdapter 
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMemberOfDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
-}
-// Device casts the previous resource to device.
-func (m *MemberOfDirectoryObjectItemRequestBuilder) Device()(*MemberOfItemDeviceRequestBuilder) {
-    return NewMemberOfItemDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get the groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.
 func (m *MemberOfDirectoryObjectItemRequestBuilder) Get(ctx context.Context, requestConfiguration *MemberOfDirectoryObjectItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, error) {
@@ -78,17 +70,29 @@ func (m *MemberOfDirectoryObjectItemRequestBuilder) Get(ctx context.Context, req
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable), nil
 }
-// Group casts the previous resource to group.
-func (m *MemberOfDirectoryObjectItemRequestBuilder) Group()(*MemberOfItemGroupRequestBuilder) {
-    return NewMemberOfItemGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphApplication casts the previous resource to application.
+func (m *MemberOfDirectoryObjectItemRequestBuilder) MicrosoftGraphApplication()(*MemberOfItemMicrosoftGraphApplicationRequestBuilder) {
+    return NewMemberOfItemMicrosoftGraphApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// OrgContact casts the previous resource to orgContact.
-func (m *MemberOfDirectoryObjectItemRequestBuilder) OrgContact()(*MemberOfItemOrgContactRequestBuilder) {
-    return NewMemberOfItemOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphDevice casts the previous resource to device.
+func (m *MemberOfDirectoryObjectItemRequestBuilder) MicrosoftGraphDevice()(*MemberOfItemMicrosoftGraphDeviceRequestBuilder) {
+    return NewMemberOfItemMicrosoftGraphDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// ServicePrincipal casts the previous resource to servicePrincipal.
-func (m *MemberOfDirectoryObjectItemRequestBuilder) ServicePrincipal()(*MemberOfItemServicePrincipalRequestBuilder) {
-    return NewMemberOfItemServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGroup casts the previous resource to group.
+func (m *MemberOfDirectoryObjectItemRequestBuilder) MicrosoftGraphGroup()(*MemberOfItemMicrosoftGraphGroupRequestBuilder) {
+    return NewMemberOfItemMicrosoftGraphGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphOrgContact casts the previous resource to orgContact.
+func (m *MemberOfDirectoryObjectItemRequestBuilder) MicrosoftGraphOrgContact()(*MemberOfItemMicrosoftGraphOrgContactRequestBuilder) {
+    return NewMemberOfItemMicrosoftGraphOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphServicePrincipal casts the previous resource to servicePrincipal.
+func (m *MemberOfDirectoryObjectItemRequestBuilder) MicrosoftGraphServicePrincipal()(*MemberOfItemMicrosoftGraphServicePrincipalRequestBuilder) {
+    return NewMemberOfItemMicrosoftGraphServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphUser casts the previous resource to user.
+func (m *MemberOfDirectoryObjectItemRequestBuilder) MicrosoftGraphUser()(*MemberOfItemMicrosoftGraphUserRequestBuilder) {
+    return NewMemberOfItemMicrosoftGraphUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation the groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.
 func (m *MemberOfDirectoryObjectItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MemberOfDirectoryObjectItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -105,8 +109,4 @@ func (m *MemberOfDirectoryObjectItemRequestBuilder) ToGetRequestInformation(ctx 
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// User casts the previous resource to user.
-func (m *MemberOfDirectoryObjectItemRequestBuilder) User()(*MemberOfItemUserRequestBuilder) {
-    return NewMemberOfItemUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

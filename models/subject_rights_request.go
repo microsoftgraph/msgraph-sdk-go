@@ -45,7 +45,7 @@ type SubjectRightsRequest struct {
     // Information about the Microsoft Teams team that was created for the request.
     team Teamable
     // The type of the request. Possible values are: export, delete,  access, tagForAction, unknownFutureValue.
-    type_escaped *SubjectRightsRequestType
+    typeEscaped *SubjectRightsRequestType
 }
 // NewSubjectRightsRequest instantiates a new SubjectRightsRequest and sets the default values.
 func NewSubjectRightsRequest()(*SubjectRightsRequest) {
@@ -343,7 +343,7 @@ func (m *SubjectRightsRequest) GetTeam()(Teamable) {
 }
 // GetType gets the type property value. The type of the request. Possible values are: export, delete,  access, tagForAction, unknownFutureValue.
 func (m *SubjectRightsRequest) GetType()(*SubjectRightsRequestType) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // Serialize serializes information the current object
 func (m *SubjectRightsRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -556,5 +556,5 @@ func (m *SubjectRightsRequest) SetTeam(value Teamable)() {
 }
 // SetType sets the type property value. The type of the request. Possible values are: export, delete,  access, tagForAction, unknownFutureValue.
 func (m *SubjectRightsRequest) SetType(value *SubjectRightsRequestType)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }

@@ -15,8 +15,8 @@ func NewWindows10CustomConfiguration()(*Windows10CustomConfiguration) {
     m := &Windows10CustomConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.windows10CustomConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windows10CustomConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindows10CustomConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -19,8 +19,8 @@ func NewCallStartedEventMessageDetail()(*CallStartedEventMessageDetail) {
     m := &CallStartedEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),
     }
-    odataTypeValue := "#microsoft.graph.callStartedEventMessageDetail";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.callStartedEventMessageDetail"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateCallStartedEventMessageDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

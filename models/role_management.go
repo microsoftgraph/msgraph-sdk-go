@@ -19,7 +19,7 @@ type RoleManagement struct {
 func NewRoleManagement()(*RoleManagement) {
     m := &RoleManagement{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateRoleManagementFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

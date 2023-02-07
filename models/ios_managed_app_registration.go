@@ -13,8 +13,8 @@ func NewIosManagedAppRegistration()(*IosManagedAppRegistration) {
     m := &IosManagedAppRegistration{
         ManagedAppRegistration: *NewManagedAppRegistration(),
     }
-    odataTypeValue := "#microsoft.graph.iosManagedAppRegistration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.iosManagedAppRegistration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateIosManagedAppRegistrationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

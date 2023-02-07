@@ -29,7 +29,7 @@ type AccessReviewHistoryDefinition struct {
     // Represents the status of the review history data collection. The possible values are: done, inProgress, error, requested, unknownFutureValue.
     status *AccessReviewHistoryStatus
 }
-// NewAccessReviewHistoryDefinition instantiates a new AccessReviewHistoryDefinition and sets the default values.
+// NewAccessReviewHistoryDefinition instantiates a new accessReviewHistoryDefinition and sets the default values.
 func NewAccessReviewHistoryDefinition()(*AccessReviewHistoryDefinition) {
     m := &AccessReviewHistoryDefinition{
         Entity: *NewEntity(),

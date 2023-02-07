@@ -17,7 +17,7 @@ type ConditionalAccessSessionControl struct {
 func NewConditionalAccessSessionControl()(*ConditionalAccessSessionControl) {
     m := &ConditionalAccessSessionControl{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateConditionalAccessSessionControlFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

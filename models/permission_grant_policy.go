@@ -17,8 +17,8 @@ func NewPermissionGrantPolicy()(*PermissionGrantPolicy) {
     m := &PermissionGrantPolicy{
         PolicyBase: *NewPolicyBase(),
     }
-    odataTypeValue := "#microsoft.graph.permissionGrantPolicy";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.permissionGrantPolicy"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreatePermissionGrantPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

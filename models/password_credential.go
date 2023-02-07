@@ -31,7 +31,7 @@ type PasswordCredential struct {
 func NewPasswordCredential()(*PasswordCredential) {
     m := &PasswordCredential{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePasswordCredentialFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

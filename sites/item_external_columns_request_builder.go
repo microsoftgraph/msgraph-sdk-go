@@ -53,8 +53,8 @@ func NewItemExternalColumnsRequestBuilderInternal(pathParameters map[string]stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemExternalColumnsRequestBuilder instantiates a new ExternalColumnsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemExternalColumnsRequestBuilder(rawUrl string, requestAdapter i2ae4187
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemExternalColumnsRequestBuilder) Count()(*ItemExternalColumnsCountRequestBuilder) {
-    return NewItemExternalColumnsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemExternalColumnsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get externalColumns from sites
 func (m *ItemExternalColumnsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemExternalColumnsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionCollectionResponseable, error) {

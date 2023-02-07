@@ -33,7 +33,7 @@ type MailboxSettings struct {
 func NewMailboxSettings()(*MailboxSettings) {
     m := &MailboxSettings{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateMailboxSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

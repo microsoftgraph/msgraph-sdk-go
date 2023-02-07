@@ -19,7 +19,7 @@ type RubricQualityFeedbackModel struct {
 func NewRubricQualityFeedbackModel()(*RubricQualityFeedbackModel) {
     m := &RubricQualityFeedbackModel{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateRubricQualityFeedbackModelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

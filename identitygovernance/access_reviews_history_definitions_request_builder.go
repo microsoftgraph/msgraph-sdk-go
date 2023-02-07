@@ -60,8 +60,8 @@ func NewAccessReviewsHistoryDefinitionsRequestBuilderInternal(pathParameters map
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAccessReviewsHistoryDefinitionsRequestBuilder instantiates a new HistoryDefinitionsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewAccessReviewsHistoryDefinitionsRequestBuilder(rawUrl string, requestAdap
 }
 // Count provides operations to count the resources in the collection.
 func (m *AccessReviewsHistoryDefinitionsRequestBuilder) Count()(*AccessReviewsHistoryDefinitionsCountRequestBuilder) {
-    return NewAccessReviewsHistoryDefinitionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAccessReviewsHistoryDefinitionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve the accessReviewHistoryDefinition objects created in the last 30 days, including all nested properties.
 // [Find more info here]
@@ -141,7 +141,10 @@ func (m *AccessReviewsHistoryDefinitionsRequestBuilder) ToPostRequestInformation
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

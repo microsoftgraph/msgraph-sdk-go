@@ -31,7 +31,7 @@ type Reminder struct {
 func NewReminder()(*Reminder) {
     m := &Reminder{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateReminderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

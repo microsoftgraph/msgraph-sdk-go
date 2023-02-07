@@ -15,7 +15,7 @@ type Properties struct {
 func NewProperties()(*Properties) {
     m := &Properties{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePropertiesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

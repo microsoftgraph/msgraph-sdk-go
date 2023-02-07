@@ -17,8 +17,8 @@ func NewOmaSettingStringXml()(*OmaSettingStringXml) {
     m := &OmaSettingStringXml{
         OmaSetting: *NewOmaSetting(),
     }
-    odataTypeValue := "#microsoft.graph.omaSettingStringXml";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.omaSettingStringXml"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateOmaSettingStringXmlFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

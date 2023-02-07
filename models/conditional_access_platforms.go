@@ -19,7 +19,7 @@ type ConditionalAccessPlatforms struct {
 func NewConditionalAccessPlatforms()(*ConditionalAccessPlatforms) {
     m := &ConditionalAccessPlatforms{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateConditionalAccessPlatformsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

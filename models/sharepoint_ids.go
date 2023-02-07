@@ -29,7 +29,7 @@ type SharepointIds struct {
 func NewSharepointIds()(*SharepointIds) {
     m := &SharepointIds{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSharepointIdsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

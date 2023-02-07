@@ -53,8 +53,8 @@ func NewItemTokenIssuancePoliciesRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTokenIssuancePoliciesRequestBuilder instantiates a new TokenIssuancePoliciesRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemTokenIssuancePoliciesRequestBuilder(rawUrl string, requestAdapter i2
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemTokenIssuancePoliciesRequestBuilder) Count()(*ItemTokenIssuancePoliciesCountRequestBuilder) {
-    return NewItemTokenIssuancePoliciesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTokenIssuancePoliciesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get list the tokenIssuancePolicy objects that are assigned to an application.
 // [Find more info here]
@@ -91,7 +91,7 @@ func (m *ItemTokenIssuancePoliciesRequestBuilder) Get(ctx context.Context, reque
 }
 // Ref provides operations to manage the collection of application entities.
 func (m *ItemTokenIssuancePoliciesRequestBuilder) Ref()(*ItemTokenIssuancePoliciesRefRequestBuilder) {
-    return NewItemTokenIssuancePoliciesRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTokenIssuancePoliciesRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation list the tokenIssuancePolicy objects that are assigned to an application.
 func (m *ItemTokenIssuancePoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTokenIssuancePoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -29,7 +29,7 @@ type DocumentSet struct {
 func NewDocumentSet()(*DocumentSet) {
     m := &DocumentSet{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDocumentSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -17,8 +17,8 @@ func NewEducationFeedbackResourceOutcome()(*EducationFeedbackResourceOutcome) {
     m := &EducationFeedbackResourceOutcome{
         EducationOutcome: *NewEducationOutcome(),
     }
-    odataTypeValue := "#microsoft.graph.educationFeedbackResourceOutcome";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.educationFeedbackResourceOutcome"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateEducationFeedbackResourceOutcomeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -15,8 +15,8 @@ func NewOpenShiftChangeRequest()(*OpenShiftChangeRequest) {
     m := &OpenShiftChangeRequest{
         ScheduleChangeRequest: *NewScheduleChangeRequest(),
     }
-    odataTypeValue := "#microsoft.graph.openShiftChangeRequest";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.openShiftChangeRequest"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateOpenShiftChangeRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

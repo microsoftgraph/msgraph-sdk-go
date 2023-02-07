@@ -15,8 +15,8 @@ func NewGroupAssignmentTarget()(*GroupAssignmentTarget) {
     m := &GroupAssignmentTarget{
         DeviceAndAppManagementAssignmentTarget: *NewDeviceAndAppManagementAssignmentTarget(),
     }
-    odataTypeValue := "#microsoft.graph.groupAssignmentTarget";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.groupAssignmentTarget"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateGroupAssignmentTargetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

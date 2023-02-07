@@ -17,13 +17,13 @@ type Phone struct {
     // The region property
     region *string
     // The type of phone number. The possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
-    type_escaped *PhoneType
+    typeEscaped *PhoneType
 }
 // NewPhone instantiates a new phone and sets the default values.
 func NewPhone()(*Phone) {
     m := &Phone{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePhoneFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -107,7 +107,7 @@ func (m *Phone) GetRegion()(*string) {
 }
 // GetType gets the type property value. The type of phone number. The possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
 func (m *Phone) GetType()(*PhoneType) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // Serialize serializes information the current object
 func (m *Phone) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -172,5 +172,5 @@ func (m *Phone) SetRegion(value *string)() {
 }
 // SetType sets the type property value. The type of phone number. The possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
 func (m *Phone) SetType(value *PhoneType)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }

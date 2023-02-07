@@ -21,8 +21,8 @@ func NewEditionUpgradeConfiguration()(*EditionUpgradeConfiguration) {
     m := &EditionUpgradeConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.editionUpgradeConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.editionUpgradeConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateEditionUpgradeConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

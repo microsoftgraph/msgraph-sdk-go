@@ -25,7 +25,7 @@ type AssignedPlan struct {
 func NewAssignedPlan()(*AssignedPlan) {
     m := &AssignedPlan{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAssignedPlanFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

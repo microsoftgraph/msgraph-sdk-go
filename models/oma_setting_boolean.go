@@ -15,8 +15,8 @@ func NewOmaSettingBoolean()(*OmaSettingBoolean) {
     m := &OmaSettingBoolean{
         OmaSetting: *NewOmaSetting(),
     }
-    odataTypeValue := "#microsoft.graph.omaSettingBoolean";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.omaSettingBoolean"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateOmaSettingBooleanFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

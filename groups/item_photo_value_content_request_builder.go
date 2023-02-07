@@ -38,8 +38,8 @@ func NewItemPhotoValueContentRequestBuilderInternal(pathParameters map[string]st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemPhotoValueContentRequestBuilder instantiates a new ContentRequestBuilder and sets the default values.

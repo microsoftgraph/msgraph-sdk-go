@@ -60,8 +60,8 @@ func NewMeAssignmentsItemSubmissionsItemSubmittedResourcesRequestBuilderInternal
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMeAssignmentsItemSubmissionsItemSubmittedResourcesRequestBuilder instantiates a new SubmittedResourcesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewMeAssignmentsItemSubmissionsItemSubmittedResourcesRequestBuilder(rawUrl 
 }
 // Count provides operations to count the resources in the collection.
 func (m *MeAssignmentsItemSubmissionsItemSubmittedResourcesRequestBuilder) Count()(*MeAssignmentsItemSubmissionsItemSubmittedResourcesCountRequestBuilder) {
-    return NewMeAssignmentsItemSubmissionsItemSubmittedResourcesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMeAssignmentsItemSubmissionsItemSubmittedResourcesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get list the educationSubmissionResource objects that have officially been submitted for grading. Only teachers, students, and applications with application permissions can perform this operation. The student who owns the submission cannot change the submitted list without resubmitting the assignment. This is a wrapper around the real resource and can contain a pointer back to the actual assignment resource if this resource was copied from the assignment.
 // [Find more info here]
@@ -138,7 +138,10 @@ func (m *MeAssignmentsItemSubmissionsItemSubmittedResourcesRequestBuilder) ToPos
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -25,13 +25,13 @@ type ScheduleChangeRequest struct {
     // The state property
     state *ScheduleChangeState
 }
-// NewScheduleChangeRequest instantiates a new ScheduleChangeRequest and sets the default values.
+// NewScheduleChangeRequest instantiates a new scheduleChangeRequest and sets the default values.
 func NewScheduleChangeRequest()(*ScheduleChangeRequest) {
     m := &ScheduleChangeRequest{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),
     }
-    odataTypeValue := "#microsoft.graph.scheduleChangeRequest";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.scheduleChangeRequest"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateScheduleChangeRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

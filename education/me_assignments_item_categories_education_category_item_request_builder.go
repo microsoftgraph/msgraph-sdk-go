@@ -22,8 +22,8 @@ func NewMeAssignmentsItemCategoriesEducationCategoryItemRequestBuilderInternal(p
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMeAssignmentsItemCategoriesEducationCategoryItemRequestBuilder instantiates a new EducationCategoryItemRequestBuilder and sets the default values.
@@ -34,5 +34,5 @@ func NewMeAssignmentsItemCategoriesEducationCategoryItemRequestBuilder(rawUrl st
 }
 // Ref provides operations to manage the collection of educationRoot entities.
 func (m *MeAssignmentsItemCategoriesEducationCategoryItemRequestBuilder) Ref()(*MeAssignmentsItemCategoriesItemRefRequestBuilder) {
-    return NewMeAssignmentsItemCategoriesItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMeAssignmentsItemCategoriesItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

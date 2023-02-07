@@ -15,7 +15,7 @@ type EducationAssignmentRecipient struct {
 func NewEducationAssignmentRecipient()(*EducationAssignmentRecipient) {
     m := &EducationAssignmentRecipient{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateEducationAssignmentRecipientFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

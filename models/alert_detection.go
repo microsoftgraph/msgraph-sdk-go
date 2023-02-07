@@ -21,7 +21,7 @@ type AlertDetection struct {
 func NewAlertDetection()(*AlertDetection) {
     m := &AlertDetection{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAlertDetectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

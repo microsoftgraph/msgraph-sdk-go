@@ -46,7 +46,7 @@ type CalendarGroupsCalendarGroupItemRequestBuilderPatchRequestConfiguration stru
 }
 // Calendars provides operations to manage the calendars property of the microsoft.graph.calendarGroup entity.
 func (m *CalendarGroupsCalendarGroupItemRequestBuilder) Calendars()(*CalendarGroupsItemCalendarsRequestBuilder) {
-    return NewCalendarGroupsItemCalendarsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCalendarGroupsItemCalendarsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // CalendarsById provides operations to manage the calendars property of the microsoft.graph.calendarGroup entity.
 func (m *CalendarGroupsCalendarGroupItemRequestBuilder) CalendarsById(id string)(*CalendarGroupsItemCalendarsCalendarItemRequestBuilder) {
@@ -57,7 +57,7 @@ func (m *CalendarGroupsCalendarGroupItemRequestBuilder) CalendarsById(id string)
     if id != "" {
         urlTplParams["calendar%2Did"] = id
     }
-    return NewCalendarGroupsItemCalendarsCalendarItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCalendarGroupsItemCalendarsCalendarItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewCalendarGroupsCalendarGroupItemRequestBuilderInternal instantiates a new CalendarGroupItemRequestBuilder and sets the default values.
 func NewCalendarGroupsCalendarGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CalendarGroupsCalendarGroupItemRequestBuilder) {
@@ -68,8 +68,8 @@ func NewCalendarGroupsCalendarGroupItemRequestBuilderInternal(pathParameters map
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCalendarGroupsCalendarGroupItemRequestBuilder instantiates a new CalendarGroupItemRequestBuilder and sets the default values.
@@ -167,7 +167,10 @@ func (m *CalendarGroupsCalendarGroupItemRequestBuilder) ToPatchRequestInformatio
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

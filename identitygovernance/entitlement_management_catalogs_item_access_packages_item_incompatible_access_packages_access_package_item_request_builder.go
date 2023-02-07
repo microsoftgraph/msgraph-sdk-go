@@ -22,8 +22,8 @@ func NewEntitlementManagementCatalogsItemAccessPackagesItemIncompatibleAccessPac
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEntitlementManagementCatalogsItemAccessPackagesItemIncompatibleAccessPackagesAccessPackageItemRequestBuilder instantiates a new AccessPackageItemRequestBuilder and sets the default values.
@@ -34,5 +34,5 @@ func NewEntitlementManagementCatalogsItemAccessPackagesItemIncompatibleAccessPac
 }
 // Ref provides operations to manage the collection of identityGovernance entities.
 func (m *EntitlementManagementCatalogsItemAccessPackagesItemIncompatibleAccessPackagesAccessPackageItemRequestBuilder) Ref()(*EntitlementManagementCatalogsItemAccessPackagesItemIncompatibleAccessPackagesItemRefRequestBuilder) {
-    return NewEntitlementManagementCatalogsItemAccessPackagesItemIncompatibleAccessPackagesItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementCatalogsItemAccessPackagesItemIncompatibleAccessPackagesItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

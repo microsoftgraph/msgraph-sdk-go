@@ -41,8 +41,8 @@ func NewItemFollowingDriveItemItemRequestBuilderInternal(pathParameters map[stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemFollowingDriveItemItemRequestBuilder instantiates a new DriveItemItemRequestBuilder and sets the default values.
@@ -53,7 +53,7 @@ func NewItemFollowingDriveItemItemRequestBuilder(rawUrl string, requestAdapter i
 }
 // Content provides operations to manage the media for the drive entity.
 func (m *ItemFollowingDriveItemItemRequestBuilder) Content()(*ItemFollowingItemContentRequestBuilder) {
-    return NewItemFollowingItemContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemFollowingItemContentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the list of items the user is following. Only in OneDrive for Business.
 func (m *ItemFollowingDriveItemItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemFollowingDriveItemItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable, error) {

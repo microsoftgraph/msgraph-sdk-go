@@ -15,8 +15,8 @@ func NewUserScopeTeamsAppInstallation()(*UserScopeTeamsAppInstallation) {
     m := &UserScopeTeamsAppInstallation{
         TeamsAppInstallation: *NewTeamsAppInstallation(),
     }
-    odataTypeValue := "#microsoft.graph.userScopeTeamsAppInstallation";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.userScopeTeamsAppInstallation"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateUserScopeTeamsAppInstallationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

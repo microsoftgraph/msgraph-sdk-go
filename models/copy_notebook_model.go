@@ -46,7 +46,7 @@ type CopyNotebookModel struct {
 func NewCopyNotebookModel()(*CopyNotebookModel) {
     m := &CopyNotebookModel{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCopyNotebookModelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

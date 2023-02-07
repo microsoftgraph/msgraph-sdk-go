@@ -23,7 +23,7 @@ type AppListItem struct {
 func NewAppListItem()(*AppListItem) {
     m := &AppListItem{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAppListItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

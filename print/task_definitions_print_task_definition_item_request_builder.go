@@ -55,8 +55,8 @@ func NewTaskDefinitionsPrintTaskDefinitionItemRequestBuilderInternal(pathParamet
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTaskDefinitionsPrintTaskDefinitionItemRequestBuilder instantiates a new PrintTaskDefinitionItemRequestBuilder and sets the default values.
@@ -121,7 +121,7 @@ func (m *TaskDefinitionsPrintTaskDefinitionItemRequestBuilder) Patch(ctx context
 }
 // Tasks provides operations to manage the tasks property of the microsoft.graph.printTaskDefinition entity.
 func (m *TaskDefinitionsPrintTaskDefinitionItemRequestBuilder) Tasks()(*TaskDefinitionsItemTasksRequestBuilder) {
-    return NewTaskDefinitionsItemTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTaskDefinitionsItemTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TasksById provides operations to manage the tasks property of the microsoft.graph.printTaskDefinition entity.
 func (m *TaskDefinitionsPrintTaskDefinitionItemRequestBuilder) TasksById(id string)(*TaskDefinitionsItemTasksPrintTaskItemRequestBuilder) {
@@ -132,7 +132,7 @@ func (m *TaskDefinitionsPrintTaskDefinitionItemRequestBuilder) TasksById(id stri
     if id != "" {
         urlTplParams["printTask%2Did"] = id
     }
-    return NewTaskDefinitionsItemTasksPrintTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTaskDefinitionsItemTasksPrintTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property taskDefinitions for print
 func (m *TaskDefinitionsPrintTaskDefinitionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TaskDefinitionsPrintTaskDefinitionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +169,10 @@ func (m *TaskDefinitionsPrintTaskDefinitionItemRequestBuilder) ToPatchRequestInf
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

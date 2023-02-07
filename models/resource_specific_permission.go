@@ -26,7 +26,7 @@ type ResourceSpecificPermission struct {
 func NewResourceSpecificPermission()(*ResourceSpecificPermission) {
     m := &ResourceSpecificPermission{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateResourceSpecificPermissionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

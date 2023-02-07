@@ -41,7 +41,7 @@ type IdentityRequestBuilderPatchRequestConfiguration struct {
 }
 // ApiConnectors provides operations to manage the apiConnectors property of the microsoft.graph.identityContainer entity.
 func (m *IdentityRequestBuilder) ApiConnectors()(*ApiConnectorsRequestBuilder) {
-    return NewApiConnectorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewApiConnectorsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ApiConnectorsById provides operations to manage the apiConnectors property of the microsoft.graph.identityContainer entity.
 func (m *IdentityRequestBuilder) ApiConnectorsById(id string)(*ApiConnectorsIdentityApiConnectorItemRequestBuilder) {
@@ -52,11 +52,11 @@ func (m *IdentityRequestBuilder) ApiConnectorsById(id string)(*ApiConnectorsIden
     if id != "" {
         urlTplParams["identityApiConnector%2Did"] = id
     }
-    return NewApiConnectorsIdentityApiConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewApiConnectorsIdentityApiConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // B2xUserFlows provides operations to manage the b2xUserFlows property of the microsoft.graph.identityContainer entity.
 func (m *IdentityRequestBuilder) B2xUserFlows()(*B2xUserFlowsRequestBuilder) {
-    return NewB2xUserFlowsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewB2xUserFlowsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // B2xUserFlowsById provides operations to manage the b2xUserFlows property of the microsoft.graph.identityContainer entity.
 func (m *IdentityRequestBuilder) B2xUserFlowsById(id string)(*B2xUserFlowsB2xIdentityUserFlowItemRequestBuilder) {
@@ -67,11 +67,11 @@ func (m *IdentityRequestBuilder) B2xUserFlowsById(id string)(*B2xUserFlowsB2xIde
     if id != "" {
         urlTplParams["b2xIdentityUserFlow%2Did"] = id
     }
-    return NewB2xUserFlowsB2xIdentityUserFlowItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewB2xUserFlowsB2xIdentityUserFlowItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ConditionalAccess provides operations to manage the conditionalAccess property of the microsoft.graph.identityContainer entity.
 func (m *IdentityRequestBuilder) ConditionalAccess()(*ConditionalAccessRequestBuilder) {
-    return NewConditionalAccessRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewConditionalAccessRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewIdentityRequestBuilderInternal instantiates a new IdentityRequestBuilder and sets the default values.
 func NewIdentityRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IdentityRequestBuilder) {
@@ -82,8 +82,8 @@ func NewIdentityRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewIdentityRequestBuilder instantiates a new IdentityRequestBuilder and sets the default values.
@@ -113,7 +113,7 @@ func (m *IdentityRequestBuilder) Get(ctx context.Context, requestConfiguration *
 }
 // IdentityProviders provides operations to manage the identityProviders property of the microsoft.graph.identityContainer entity.
 func (m *IdentityRequestBuilder) IdentityProviders()(*IdentityProvidersRequestBuilder) {
-    return NewIdentityProvidersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewIdentityProvidersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // IdentityProvidersById provides operations to manage the identityProviders property of the microsoft.graph.identityContainer entity.
 func (m *IdentityRequestBuilder) IdentityProvidersById(id string)(*IdentityProvidersIdentityProviderBaseItemRequestBuilder) {
@@ -124,7 +124,7 @@ func (m *IdentityRequestBuilder) IdentityProvidersById(id string)(*IdentityProvi
     if id != "" {
         urlTplParams["identityProviderBase%2Did"] = id
     }
-    return NewIdentityProvidersIdentityProviderBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewIdentityProvidersIdentityProviderBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Patch update identity
 func (m *IdentityRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityContainerable, requestConfiguration *IdentityRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityContainerable, error) {
@@ -168,7 +168,10 @@ func (m *IdentityRequestBuilder) ToPatchRequestInformation(ctx context.Context, 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -177,7 +180,7 @@ func (m *IdentityRequestBuilder) ToPatchRequestInformation(ctx context.Context, 
 }
 // UserFlowAttributes provides operations to manage the userFlowAttributes property of the microsoft.graph.identityContainer entity.
 func (m *IdentityRequestBuilder) UserFlowAttributes()(*UserFlowAttributesRequestBuilder) {
-    return NewUserFlowAttributesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUserFlowAttributesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserFlowAttributesById provides operations to manage the userFlowAttributes property of the microsoft.graph.identityContainer entity.
 func (m *IdentityRequestBuilder) UserFlowAttributesById(id string)(*UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) {
@@ -188,5 +191,5 @@ func (m *IdentityRequestBuilder) UserFlowAttributesById(id string)(*UserFlowAttr
     if id != "" {
         urlTplParams["identityUserFlowAttribute%2Did"] = id
     }
-    return NewUserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }

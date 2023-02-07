@@ -41,8 +41,8 @@ func NewItemDriveItemRequestBuilderInternal(pathParameters map[string]string, re
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemDriveItemRequestBuilder instantiates a new DriveItemRequestBuilder and sets the default values.
@@ -53,7 +53,7 @@ func NewItemDriveItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 }
 // Content provides operations to manage the media for the sharedDriveItem entity.
 func (m *ItemDriveItemRequestBuilder) Content()(*ItemDriveItemContentRequestBuilder) {
-    return NewItemDriveItemContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemDriveItemContentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get access a shared DriveItem or a collection of shared items by using a **shareId** or sharing URL. To use a sharing URL with this API, your app needs to transform the URL into a sharing token.
 // [Find more info here]

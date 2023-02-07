@@ -17,13 +17,13 @@ type SecurityVendorInformation struct {
     // Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.
     subProvider *string
     // Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
-    vendor_escaped *string
+    vendorEscaped *string
 }
 // NewSecurityVendorInformation instantiates a new securityVendorInformation and sets the default values.
 func NewSecurityVendorInformation()(*SecurityVendorInformation) {
     m := &SecurityVendorInformation{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSecurityVendorInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -107,7 +107,7 @@ func (m *SecurityVendorInformation) GetSubProvider()(*string) {
 }
 // GetVendor gets the vendor property value. Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
 func (m *SecurityVendorInformation) GetVendor()(*string) {
-    return m.vendor_escaped
+    return m.vendorEscaped
 }
 // Serialize serializes information the current object
 func (m *SecurityVendorInformation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -171,5 +171,5 @@ func (m *SecurityVendorInformation) SetSubProvider(value *string)() {
 }
 // SetVendor sets the vendor property value. Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
 func (m *SecurityVendorInformation) SetVendor(value *string)() {
-    m.vendor_escaped = value
+    m.vendorEscaped = value
 }

@@ -15,8 +15,8 @@ func NewShiftPreferences()(*ShiftPreferences) {
     m := &ShiftPreferences{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),
     }
-    odataTypeValue := "#microsoft.graph.shiftPreferences";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.shiftPreferences"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateShiftPreferencesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

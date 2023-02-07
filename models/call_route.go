@@ -21,7 +21,7 @@ type CallRoute struct {
 func NewCallRoute()(*CallRoute) {
     m := &CallRoute{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCallRouteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -11,7 +11,7 @@ type ExternalItemContent struct {
     // The OdataType property
     odataType *string
     // The type property
-    type_escaped *ExternalItemContentType
+    typeEscaped *ExternalItemContentType
     // The content for the externalItem. Required.
     value *string
 }
@@ -19,7 +19,7 @@ type ExternalItemContent struct {
 func NewExternalItemContent()(*ExternalItemContent) {
     m := &ExternalItemContent{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateExternalItemContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -71,7 +71,7 @@ func (m *ExternalItemContent) GetOdataType()(*string) {
 }
 // GetType gets the type property value. The type property
 func (m *ExternalItemContent) GetType()(*ExternalItemContentType) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // GetValue gets the value property value. The content for the externalItem. Required.
 func (m *ExternalItemContent) GetValue()(*string) {
@@ -116,7 +116,7 @@ func (m *ExternalItemContent) SetOdataType(value *string)() {
 }
 // SetType sets the type property value. The type property
 func (m *ExternalItemContent) SetType(value *ExternalItemContentType)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }
 // SetValue sets the value property value. The content for the externalItem. Required.
 func (m *ExternalItemContent) SetValue(value *string)() {

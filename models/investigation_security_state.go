@@ -19,7 +19,7 @@ type InvestigationSecurityState struct {
 func NewInvestigationSecurityState()(*InvestigationSecurityState) {
     m := &InvestigationSecurityState{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateInvestigationSecurityStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

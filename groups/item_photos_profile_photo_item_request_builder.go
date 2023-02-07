@@ -39,8 +39,8 @@ func NewItemPhotosProfilePhotoItemRequestBuilderInternal(pathParameters map[stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemPhotosProfilePhotoItemRequestBuilder instantiates a new ProfilePhotoItemRequestBuilder and sets the default values.
@@ -51,7 +51,7 @@ func NewItemPhotosProfilePhotoItemRequestBuilder(rawUrl string, requestAdapter i
 }
 // Content provides operations to manage the media for the group entity.
 func (m *ItemPhotosProfilePhotoItemRequestBuilder) Content()(*ItemPhotosItemValueContentRequestBuilder) {
-    return NewItemPhotosItemValueContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemPhotosItemValueContentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the profile photos owned by the group. Read-only. Nullable.
 func (m *ItemPhotosProfilePhotoItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPhotosProfilePhotoItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ProfilePhotoable, error) {

@@ -60,8 +60,8 @@ func NewAccessReviewsDefinitionsItemInstancesItemContactedReviewersRequestBuilde
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAccessReviewsDefinitionsItemInstancesItemContactedReviewersRequestBuilder instantiates a new ContactedReviewersRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewAccessReviewsDefinitionsItemInstancesItemContactedReviewersRequestBuilde
 }
 // Count provides operations to count the resources in the collection.
 func (m *AccessReviewsDefinitionsItemInstancesItemContactedReviewersRequestBuilder) Count()(*AccessReviewsDefinitionsItemInstancesItemContactedReviewersCountRequestBuilder) {
-    return NewAccessReviewsDefinitionsItemInstancesItemContactedReviewersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAccessReviewsDefinitionsItemInstancesItemContactedReviewersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the reviewers for an access review instance, irrespective of whether or not they have received a notification. The reviewers are represented by an accessReviewReviewer object. A list of zero or more objects are returned, including all of their nested properties.
 // [Find more info here]
@@ -138,7 +138,10 @@ func (m *AccessReviewsDefinitionsItemInstancesItemContactedReviewersRequestBuild
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

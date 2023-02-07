@@ -13,7 +13,7 @@ type AlertTrigger struct {
     // The OdataType property
     odataType *string
     // Type of the property in the key:value pair for interpretation. For example, String, Boolean etc.
-    type_escaped *string
+    typeEscaped *string
     // Value of the property serving as a detection trigger.
     value *string
 }
@@ -21,7 +21,7 @@ type AlertTrigger struct {
 func NewAlertTrigger()(*AlertTrigger) {
     m := &AlertTrigger{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAlertTriggerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -87,7 +87,7 @@ func (m *AlertTrigger) GetOdataType()(*string) {
 }
 // GetType gets the type property value. Type of the property in the key:value pair for interpretation. For example, String, Boolean etc.
 func (m *AlertTrigger) GetType()(*string) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // GetValue gets the value property value. Value of the property serving as a detection trigger.
 func (m *AlertTrigger) GetValue()(*string) {
@@ -141,7 +141,7 @@ func (m *AlertTrigger) SetOdataType(value *string)() {
 }
 // SetType sets the type property value. Type of the property in the key:value pair for interpretation. For example, String, Boolean etc.
 func (m *AlertTrigger) SetType(value *string)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }
 // SetValue sets the value property value. Value of the property serving as a detection trigger.
 func (m *AlertTrigger) SetValue(value *string)() {

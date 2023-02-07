@@ -15,8 +15,8 @@ func NewEmailAuthenticationMethod()(*EmailAuthenticationMethod) {
     m := &EmailAuthenticationMethod{
         AuthenticationMethod: *NewAuthenticationMethod(),
     }
-    odataTypeValue := "#microsoft.graph.emailAuthenticationMethod";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.emailAuthenticationMethod"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateEmailAuthenticationMethodFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

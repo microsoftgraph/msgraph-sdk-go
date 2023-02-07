@@ -12,7 +12,7 @@ type MeetingParticipantInfo struct {
     identity IdentitySetable
     // The OdataType property
     odataType *string
-    // Specifies the participant's role in the meeting.  Possible values are attendee, presenter, producer, and unknownFutureValue.
+    // Specifies the participant's role in the meeting.
     role *OnlineMeetingRole
     // User principal name of the participant.
     upn *string
@@ -21,7 +21,7 @@ type MeetingParticipantInfo struct {
 func NewMeetingParticipantInfo()(*MeetingParticipantInfo) {
     m := &MeetingParticipantInfo{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateMeetingParticipantInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -85,7 +85,7 @@ func (m *MeetingParticipantInfo) GetIdentity()(IdentitySetable) {
 func (m *MeetingParticipantInfo) GetOdataType()(*string) {
     return m.odataType
 }
-// GetRole gets the role property value. Specifies the participant's role in the meeting.  Possible values are attendee, presenter, producer, and unknownFutureValue.
+// GetRole gets the role property value. Specifies the participant's role in the meeting.
 func (m *MeetingParticipantInfo) GetRole()(*OnlineMeetingRole) {
     return m.role
 }
@@ -140,7 +140,7 @@ func (m *MeetingParticipantInfo) SetIdentity(value IdentitySetable)() {
 func (m *MeetingParticipantInfo) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetRole sets the role property value. Specifies the participant's role in the meeting.  Possible values are attendee, presenter, producer, and unknownFutureValue.
+// SetRole sets the role property value. Specifies the participant's role in the meeting.
 func (m *MeetingParticipantInfo) SetRole(value *OnlineMeetingRole)() {
     m.role = value
 }

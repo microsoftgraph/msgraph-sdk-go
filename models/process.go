@@ -40,7 +40,7 @@ type Process struct {
 func NewProcess()(*Process) {
     m := &Process{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateProcessFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

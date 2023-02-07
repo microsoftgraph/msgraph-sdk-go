@@ -23,7 +23,7 @@ type NumberColumn struct {
 func NewNumberColumn()(*NumberColumn) {
     m := &NumberColumn{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateNumberColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

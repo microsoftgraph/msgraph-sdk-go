@@ -17,7 +17,7 @@ type SpaApplication struct {
 func NewSpaApplication()(*SpaApplication) {
     m := &SpaApplication{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSpaApplicationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

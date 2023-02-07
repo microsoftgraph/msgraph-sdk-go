@@ -17,7 +17,7 @@ type AuthorizationInfo struct {
 func NewAuthorizationInfo()(*AuthorizationInfo) {
     m := &AuthorizationInfo{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAuthorizationInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

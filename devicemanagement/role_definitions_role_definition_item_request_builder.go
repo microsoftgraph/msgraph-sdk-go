@@ -55,8 +55,8 @@ func NewRoleDefinitionsRoleDefinitionItemRequestBuilderInternal(pathParameters m
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewRoleDefinitionsRoleDefinitionItemRequestBuilder instantiates a new RoleDefinitionItemRequestBuilder and sets the default values.
@@ -121,7 +121,7 @@ func (m *RoleDefinitionsRoleDefinitionItemRequestBuilder) Patch(ctx context.Cont
 }
 // RoleAssignments provides operations to manage the roleAssignments property of the microsoft.graph.roleDefinition entity.
 func (m *RoleDefinitionsRoleDefinitionItemRequestBuilder) RoleAssignments()(*RoleDefinitionsItemRoleAssignmentsRequestBuilder) {
-    return NewRoleDefinitionsItemRoleAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewRoleDefinitionsItemRoleAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // RoleAssignmentsById provides operations to manage the roleAssignments property of the microsoft.graph.roleDefinition entity.
 func (m *RoleDefinitionsRoleDefinitionItemRequestBuilder) RoleAssignmentsById(id string)(*RoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilder) {
@@ -132,7 +132,7 @@ func (m *RoleDefinitionsRoleDefinitionItemRequestBuilder) RoleAssignmentsById(id
     if id != "" {
         urlTplParams["roleAssignment%2Did"] = id
     }
-    return NewRoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewRoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property roleDefinitions for deviceManagement
 func (m *RoleDefinitionsRoleDefinitionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *RoleDefinitionsRoleDefinitionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +169,10 @@ func (m *RoleDefinitionsRoleDefinitionItemRequestBuilder) ToPatchRequestInformat
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

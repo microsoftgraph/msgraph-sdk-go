@@ -19,8 +19,8 @@ func NewConversationMemberRoleUpdatedEventMessageDetail()(*ConversationMemberRol
     m := &ConversationMemberRoleUpdatedEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),
     }
-    odataTypeValue := "#microsoft.graph.conversationMemberRoleUpdatedEventMessageDetail";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.conversationMemberRoleUpdatedEventMessageDetail"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateConversationMemberRoleUpdatedEventMessageDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

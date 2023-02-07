@@ -48,7 +48,7 @@ type AppConsentRequestBuilderPatchRequestConfiguration struct {
 }
 // AppConsentRequests provides operations to manage the appConsentRequests property of the microsoft.graph.appConsentApprovalRoute entity.
 func (m *AppConsentRequestBuilder) AppConsentRequests()(*AppConsentAppConsentRequestsRequestBuilder) {
-    return NewAppConsentAppConsentRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAppConsentAppConsentRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AppConsentRequestsById provides operations to manage the appConsentRequests property of the microsoft.graph.appConsentApprovalRoute entity.
 func (m *AppConsentRequestBuilder) AppConsentRequestsById(id string)(*AppConsentAppConsentRequestsAppConsentRequestItemRequestBuilder) {
@@ -59,7 +59,7 @@ func (m *AppConsentRequestBuilder) AppConsentRequestsById(id string)(*AppConsent
     if id != "" {
         urlTplParams["appConsentRequest%2Did"] = id
     }
-    return NewAppConsentAppConsentRequestsAppConsentRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAppConsentAppConsentRequestsAppConsentRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewAppConsentRequestBuilderInternal instantiates a new AppConsentRequestBuilder and sets the default values.
 func NewAppConsentRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AppConsentRequestBuilder) {
@@ -70,8 +70,8 @@ func NewAppConsentRequestBuilderInternal(pathParameters map[string]string, reque
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAppConsentRequestBuilder instantiates a new AppConsentRequestBuilder and sets the default values.
@@ -169,7 +169,10 @@ func (m *AppConsentRequestBuilder) ToPatchRequestInformation(ctx context.Context
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -37,8 +37,8 @@ func NewDeviceEnrollmentWindowsHelloForBusinessConfiguration()(*DeviceEnrollment
     m := &DeviceEnrollmentWindowsHelloForBusinessConfiguration{
         DeviceEnrollmentConfiguration: *NewDeviceEnrollmentConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.deviceEnrollmentWindowsHelloForBusinessConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.deviceEnrollmentWindowsHelloForBusinessConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceEnrollmentWindowsHelloForBusinessConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

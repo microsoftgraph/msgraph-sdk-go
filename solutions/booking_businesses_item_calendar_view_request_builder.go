@@ -60,8 +60,8 @@ func NewBookingBusinessesItemCalendarViewRequestBuilderInternal(pathParameters m
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewBookingBusinessesItemCalendarViewRequestBuilder instantiates a new CalendarViewRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewBookingBusinessesItemCalendarViewRequestBuilder(rawUrl string, requestAd
 }
 // Count provides operations to count the resources in the collection.
 func (m *BookingBusinessesItemCalendarViewRequestBuilder) Count()(*BookingBusinessesItemCalendarViewCountRequestBuilder) {
-    return NewBookingBusinessesItemCalendarViewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewBookingBusinessesItemCalendarViewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the collection of bookingAppointment objects for a bookingBusiness that occurs in the specified date range.
 // [Find more info here]
@@ -138,7 +138,10 @@ func (m *BookingBusinessesItemCalendarViewRequestBuilder) ToPostRequestInformati
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

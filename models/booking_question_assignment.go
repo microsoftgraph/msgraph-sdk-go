@@ -19,7 +19,7 @@ type BookingQuestionAssignment struct {
 func NewBookingQuestionAssignment()(*BookingQuestionAssignment) {
     m := &BookingQuestionAssignment{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateBookingQuestionAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

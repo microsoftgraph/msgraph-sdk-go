@@ -53,8 +53,8 @@ func NewItemSitesRequestBuilderInternal(pathParameters map[string]string, reques
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSitesRequestBuilder instantiates a new SitesRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemSitesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemSitesRequestBuilder) Count()(*ItemSitesCountRequestBuilder) {
-    return NewItemSitesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a collection of subsites defined for a [site][].
 // [Find more info here]

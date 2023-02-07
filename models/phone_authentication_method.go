@@ -19,8 +19,8 @@ func NewPhoneAuthenticationMethod()(*PhoneAuthenticationMethod) {
     m := &PhoneAuthenticationMethod{
         AuthenticationMethod: *NewAuthenticationMethod(),
     }
-    odataTypeValue := "#microsoft.graph.phoneAuthenticationMethod";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.phoneAuthenticationMethod"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreatePhoneAuthenticationMethodFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

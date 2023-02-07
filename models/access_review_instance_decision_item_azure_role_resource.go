@@ -15,8 +15,8 @@ func NewAccessReviewInstanceDecisionItemAzureRoleResource()(*AccessReviewInstanc
     m := &AccessReviewInstanceDecisionItemAzureRoleResource{
         AccessReviewInstanceDecisionItemResource: *NewAccessReviewInstanceDecisionItemResource(),
     }
-    odataTypeValue := "#microsoft.graph.accessReviewInstanceDecisionItemAzureRoleResource";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.accessReviewInstanceDecisionItemAzureRoleResource"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAccessReviewInstanceDecisionItemAzureRoleResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

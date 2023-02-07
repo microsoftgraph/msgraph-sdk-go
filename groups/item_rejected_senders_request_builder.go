@@ -49,8 +49,8 @@ func NewItemRejectedSendersRequestBuilderInternal(pathParameters map[string]stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemRejectedSendersRequestBuilder instantiates a new RejectedSendersRequestBuilder and sets the default values.
@@ -61,7 +61,7 @@ func NewItemRejectedSendersRequestBuilder(rawUrl string, requestAdapter i2ae4187
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemRejectedSendersRequestBuilder) Count()(*ItemRejectedSendersCountRequestBuilder) {
-    return NewItemRejectedSendersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemRejectedSendersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get users in the rejected senders list cannot post to conversations of the group (identified in the GET request URL). Make sure you do not specify the same user or group in the rejected senders and accepted senders lists, otherwise you will get an error.
 // [Find more info here]
@@ -87,7 +87,7 @@ func (m *ItemRejectedSendersRequestBuilder) Get(ctx context.Context, requestConf
 }
 // Ref provides operations to manage the collection of group entities.
 func (m *ItemRejectedSendersRequestBuilder) Ref()(*ItemRejectedSendersRefRequestBuilder) {
-    return NewItemRejectedSendersRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemRejectedSendersRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation users in the rejected senders list cannot post to conversations of the group (identified in the GET request URL). Make sure you do not specify the same user or group in the rejected senders and accepted senders lists, otherwise you will get an error.
 func (m *ItemRejectedSendersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemRejectedSendersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -17,7 +17,7 @@ type WindowsDeviceAccount struct {
 func NewWindowsDeviceAccount()(*WindowsDeviceAccount) {
     m := &WindowsDeviceAccount{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWindowsDeviceAccountFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

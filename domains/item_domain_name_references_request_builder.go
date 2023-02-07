@@ -53,8 +53,8 @@ func NewItemDomainNameReferencesRequestBuilderInternal(pathParameters map[string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemDomainNameReferencesRequestBuilder instantiates a new DomainNameReferencesRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemDomainNameReferencesRequestBuilder(rawUrl string, requestAdapter i2a
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemDomainNameReferencesRequestBuilder) Count()(*ItemDomainNameReferencesCountRequestBuilder) {
-    return NewItemDomainNameReferencesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemDomainNameReferencesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of directoryObject with a reference to the domain. The returned list will contain all directory objects that have a dependency on the domain.
 // [Find more info here]

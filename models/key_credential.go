@@ -25,7 +25,7 @@ type KeyCredential struct {
     // The date and time at which the credential becomes valid.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The type of key credential; for example, Symmetric, AsymmetricX509Cert.
-    type_escaped *string
+    typeEscaped *string
     // A string that describes the purpose for which the key can be used; for example, Verify.
     usage *string
 }
@@ -33,7 +33,7 @@ type KeyCredential struct {
 func NewKeyCredential()(*KeyCredential) {
     m := &KeyCredential{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateKeyCredentialFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -169,7 +169,7 @@ func (m *KeyCredential) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
 }
 // GetType gets the type property value. The type of key credential; for example, Symmetric, AsymmetricX509Cert.
 func (m *KeyCredential) GetType()(*string) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // GetUsage gets the usage property value. A string that describes the purpose for which the key can be used; for example, Verify.
 func (m *KeyCredential) GetUsage()(*string) {
@@ -273,7 +273,7 @@ func (m *KeyCredential) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a
 }
 // SetType sets the type property value. The type of key credential; for example, Symmetric, AsymmetricX509Cert.
 func (m *KeyCredential) SetType(value *string)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }
 // SetUsage sets the usage property value. A string that describes the purpose for which the key can be used; for example, Verify.
 func (m *KeyCredential) SetUsage(value *string)() {

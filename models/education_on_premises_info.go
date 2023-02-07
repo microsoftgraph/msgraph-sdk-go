@@ -17,7 +17,7 @@ type EducationOnPremisesInfo struct {
 func NewEducationOnPremisesInfo()(*EducationOnPremisesInfo) {
     m := &EducationOnPremisesInfo{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateEducationOnPremisesInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -13,13 +13,13 @@ type SinglePropertySchema struct {
     // The OdataType property
     odataType *string
     // The type of the property.
-    type_escaped *string
+    typeEscaped *string
 }
 // NewSinglePropertySchema instantiates a new singlePropertySchema and sets the default values.
 func NewSinglePropertySchema()(*SinglePropertySchema) {
     m := &SinglePropertySchema{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSinglePropertySchemaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -75,7 +75,7 @@ func (m *SinglePropertySchema) GetOdataType()(*string) {
 }
 // GetType gets the type property value. The type of the property.
 func (m *SinglePropertySchema) GetType()(*string) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // Serialize serializes information the current object
 func (m *SinglePropertySchema) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -119,5 +119,5 @@ func (m *SinglePropertySchema) SetOdataType(value *string)() {
 }
 // SetType sets the type property value. The type of the property.
 func (m *SinglePropertySchema) SetType(value *string)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }

@@ -53,8 +53,8 @@ func NewConditionalAccessTemplatesRequestBuilderInternal(pathParameters map[stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewConditionalAccessTemplatesRequestBuilder instantiates a new TemplatesRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewConditionalAccessTemplatesRequestBuilder(rawUrl string, requestAdapter i
 }
 // Count provides operations to count the resources in the collection.
 func (m *ConditionalAccessTemplatesRequestBuilder) Count()(*ConditionalAccessTemplatesCountRequestBuilder) {
-    return NewConditionalAccessTemplatesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewConditionalAccessTemplatesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of the conditionalAccessTemplate objects and their properties.
 // [Find more info here]
