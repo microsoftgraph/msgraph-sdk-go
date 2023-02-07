@@ -60,8 +60,8 @@ func NewAccessReviewsDefinitionsItemInstancesItemStagesRequestBuilderInternal(pa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder instantiates a new StagesRequestBuilder and sets the default values.
@@ -72,11 +72,7 @@ func NewAccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder(rawUrl str
 }
 // Count provides operations to count the resources in the collection.
 func (m *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder) Count()(*AccessReviewsDefinitionsItemInstancesItemStagesCountRequestBuilder) {
-    return NewAccessReviewsDefinitionsItemInstancesItemStagesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
-func (m *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*AccessReviewsDefinitionsItemInstancesItemStagesFilterByCurrentUserWithOnRequestBuilder) {
-    return NewAccessReviewsDefinitionsItemInstancesItemStagesFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
+    return NewAccessReviewsDefinitionsItemInstancesItemStagesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve the stages in a multi-stage access review instance.
 // [Find more info here]
@@ -99,6 +95,10 @@ func (m *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder) Get(ctx 
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewStageCollectionResponseable), nil
+}
+// MicrosoftGraphFilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
+func (m *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder) MicrosoftGraphFilterByCurrentUserWithOn(on *string)(*AccessReviewsDefinitionsItemInstancesItemStagesMicrosoftGraphFilterByCurrentUserWithOnRequestBuilder) {
+    return NewAccessReviewsDefinitionsItemInstancesItemStagesMicrosoftGraphFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
 }
 // Post create new navigation property to stages for identityGovernance
 func (m *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewStageable, requestConfiguration *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewStageable, error) {
@@ -142,7 +142,10 @@ func (m *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder) ToPostRe
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

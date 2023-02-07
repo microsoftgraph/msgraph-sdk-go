@@ -12,7 +12,7 @@ type SignInFrequencySessionControl struct {
     // The possible values are timeBased, everyTime, unknownFutureValue.
     frequencyInterval *SignInFrequencyInterval
     // Possible values are: days, hours.
-    type_escaped *SigninFrequencyType
+    typeEscaped *SigninFrequencyType
     // The number of days or hours.
     value *int32
 }
@@ -21,8 +21,8 @@ func NewSignInFrequencySessionControl()(*SignInFrequencySessionControl) {
     m := &SignInFrequencySessionControl{
         ConditionalAccessSessionControl: *NewConditionalAccessSessionControl(),
     }
-    odataTypeValue := "#microsoft.graph.signInFrequencySessionControl";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.signInFrequencySessionControl"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateSignInFrequencySessionControlFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -84,7 +84,7 @@ func (m *SignInFrequencySessionControl) GetFrequencyInterval()(*SignInFrequencyI
 }
 // GetType gets the type property value. Possible values are: days, hours.
 func (m *SignInFrequencySessionControl) GetType()(*SigninFrequencyType) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // GetValue gets the value property value. The number of days or hours.
 func (m *SignInFrequencySessionControl) GetValue()(*int32) {
@@ -135,7 +135,7 @@ func (m *SignInFrequencySessionControl) SetFrequencyInterval(value *SignInFreque
 }
 // SetType sets the type property value. Possible values are: days, hours.
 func (m *SignInFrequencySessionControl) SetType(value *SigninFrequencyType)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }
 // SetValue sets the value property value. The number of days or hours.
 func (m *SignInFrequencySessionControl) SetValue(value *int32)() {

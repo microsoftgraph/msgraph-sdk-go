@@ -21,7 +21,7 @@ type BookingReminder struct {
 func NewBookingReminder()(*BookingReminder) {
     m := &BookingReminder{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateBookingReminderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

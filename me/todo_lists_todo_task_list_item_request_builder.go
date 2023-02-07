@@ -55,8 +55,8 @@ func NewTodoListsTodoTaskListItemRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTodoListsTodoTaskListItemRequestBuilder instantiates a new TodoTaskListItemRequestBuilder and sets the default values.
@@ -83,7 +83,7 @@ func (m *TodoListsTodoTaskListItemRequestBuilder) Delete(ctx context.Context, re
 }
 // Extensions provides operations to manage the extensions property of the microsoft.graph.todoTaskList entity.
 func (m *TodoListsTodoTaskListItemRequestBuilder) Extensions()(*TodoListsItemExtensionsRequestBuilder) {
-    return NewTodoListsItemExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTodoListsItemExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ExtensionsById provides operations to manage the extensions property of the microsoft.graph.todoTaskList entity.
 func (m *TodoListsTodoTaskListItemRequestBuilder) ExtensionsById(id string)(*TodoListsItemExtensionsExtensionItemRequestBuilder) {
@@ -94,7 +94,7 @@ func (m *TodoListsTodoTaskListItemRequestBuilder) ExtensionsById(id string)(*Tod
     if id != "" {
         urlTplParams["extension%2Did"] = id
     }
-    return NewTodoListsItemExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTodoListsItemExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Get the task lists in the users mailbox.
 func (m *TodoListsTodoTaskListItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TodoListsTodoTaskListItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TodoTaskListable, error) {
@@ -136,7 +136,7 @@ func (m *TodoListsTodoTaskListItemRequestBuilder) Patch(ctx context.Context, bod
 }
 // Tasks provides operations to manage the tasks property of the microsoft.graph.todoTaskList entity.
 func (m *TodoListsTodoTaskListItemRequestBuilder) Tasks()(*TodoListsItemTasksRequestBuilder) {
-    return NewTodoListsItemTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTodoListsItemTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TasksById provides operations to manage the tasks property of the microsoft.graph.todoTaskList entity.
 func (m *TodoListsTodoTaskListItemRequestBuilder) TasksById(id string)(*TodoListsItemTasksTodoTaskItemRequestBuilder) {
@@ -147,7 +147,7 @@ func (m *TodoListsTodoTaskListItemRequestBuilder) TasksById(id string)(*TodoList
     if id != "" {
         urlTplParams["todoTask%2Did"] = id
     }
-    return NewTodoListsItemTasksTodoTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTodoListsItemTasksTodoTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property lists for me
 func (m *TodoListsTodoTaskListItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TodoListsTodoTaskListItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -184,7 +184,10 @@ func (m *TodoListsTodoTaskListItemRequestBuilder) ToPatchRequestInformation(ctx 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

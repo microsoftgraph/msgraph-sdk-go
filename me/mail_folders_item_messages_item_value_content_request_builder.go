@@ -38,8 +38,8 @@ func NewMailFoldersItemMessagesItemValueContentRequestBuilderInternal(pathParame
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMailFoldersItemMessagesItemValueContentRequestBuilder instantiates a new ContentRequestBuilder and sets the default values.

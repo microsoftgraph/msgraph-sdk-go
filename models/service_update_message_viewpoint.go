@@ -21,7 +21,7 @@ type ServiceUpdateMessageViewpoint struct {
 func NewServiceUpdateMessageViewpoint()(*ServiceUpdateMessageViewpoint) {
     m := &ServiceUpdateMessageViewpoint{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateServiceUpdateMessageViewpointFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

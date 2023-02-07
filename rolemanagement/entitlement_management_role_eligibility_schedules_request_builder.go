@@ -60,8 +60,8 @@ func NewEntitlementManagementRoleEligibilitySchedulesRequestBuilderInternal(path
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEntitlementManagementRoleEligibilitySchedulesRequestBuilder instantiates a new RoleEligibilitySchedulesRequestBuilder and sets the default values.
@@ -72,11 +72,7 @@ func NewEntitlementManagementRoleEligibilitySchedulesRequestBuilder(rawUrl strin
 }
 // Count provides operations to count the resources in the collection.
 func (m *EntitlementManagementRoleEligibilitySchedulesRequestBuilder) Count()(*EntitlementManagementRoleEligibilitySchedulesCountRequestBuilder) {
-    return NewEntitlementManagementRoleEligibilitySchedulesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
-func (m *EntitlementManagementRoleEligibilitySchedulesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*EntitlementManagementRoleEligibilitySchedulesFilterByCurrentUserWithOnRequestBuilder) {
-    return NewEntitlementManagementRoleEligibilitySchedulesFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
+    return NewEntitlementManagementRoleEligibilitySchedulesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the unifiedRoleEligibilitySchedule resources from the roleEligibilitySchedules navigation property.
 // [Find more info here]
@@ -99,6 +95,10 @@ func (m *EntitlementManagementRoleEligibilitySchedulesRequestBuilder) Get(ctx co
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleEligibilityScheduleCollectionResponseable), nil
+}
+// MicrosoftGraphFilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
+func (m *EntitlementManagementRoleEligibilitySchedulesRequestBuilder) MicrosoftGraphFilterByCurrentUserWithOn(on *string)(*EntitlementManagementRoleEligibilitySchedulesMicrosoftGraphFilterByCurrentUserWithOnRequestBuilder) {
+    return NewEntitlementManagementRoleEligibilitySchedulesMicrosoftGraphFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
 }
 // Post create new navigation property to roleEligibilitySchedules for roleManagement
 func (m *EntitlementManagementRoleEligibilitySchedulesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleEligibilityScheduleable, requestConfiguration *EntitlementManagementRoleEligibilitySchedulesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleEligibilityScheduleable, error) {
@@ -142,7 +142,10 @@ func (m *EntitlementManagementRoleEligibilitySchedulesRequestBuilder) ToPostRequ
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

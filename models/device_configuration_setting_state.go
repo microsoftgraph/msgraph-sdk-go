@@ -39,7 +39,7 @@ type DeviceConfigurationSettingState struct {
 func NewDeviceConfigurationSettingState()(*DeviceConfigurationSettingState) {
     m := &DeviceConfigurationSettingState{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeviceConfigurationSettingStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -53,8 +53,8 @@ func NewPrintersItemConnectorsRequestBuilderInternal(pathParameters map[string]s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewPrintersItemConnectorsRequestBuilder instantiates a new ConnectorsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewPrintersItemConnectorsRequestBuilder(rawUrl string, requestAdapter i2ae4
 }
 // Count provides operations to count the resources in the collection.
 func (m *PrintersItemConnectorsRequestBuilder) Count()(*PrintersItemConnectorsCountRequestBuilder) {
-    return NewPrintersItemConnectorsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPrintersItemConnectorsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of printConnectors associated with the printer.
 // [Find more info here]

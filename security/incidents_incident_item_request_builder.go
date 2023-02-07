@@ -48,7 +48,7 @@ type IncidentsIncidentItemRequestBuilderPatchRequestConfiguration struct {
 }
 // Alerts provides operations to manage the alerts property of the microsoft.graph.security.incident entity.
 func (m *IncidentsIncidentItemRequestBuilder) Alerts()(*IncidentsItemAlertsRequestBuilder) {
-    return NewIncidentsItemAlertsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewIncidentsItemAlertsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AlertsById provides operations to manage the alerts property of the microsoft.graph.security.incident entity.
 func (m *IncidentsIncidentItemRequestBuilder) AlertsById(id string)(*IncidentsItemAlertsAlertItemRequestBuilder) {
@@ -59,7 +59,7 @@ func (m *IncidentsIncidentItemRequestBuilder) AlertsById(id string)(*IncidentsIt
     if id != "" {
         urlTplParams["alert%2Did"] = id
     }
-    return NewIncidentsItemAlertsAlertItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewIncidentsItemAlertsAlertItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewIncidentsIncidentItemRequestBuilderInternal instantiates a new IncidentItemRequestBuilder and sets the default values.
 func NewIncidentsIncidentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IncidentsIncidentItemRequestBuilder) {
@@ -70,8 +70,8 @@ func NewIncidentsIncidentItemRequestBuilderInternal(pathParameters map[string]st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewIncidentsIncidentItemRequestBuilder instantiates a new IncidentItemRequestBuilder and sets the default values.
@@ -169,7 +169,10 @@ func (m *IncidentsIncidentItemRequestBuilder) ToPatchRequestInformation(ctx cont
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -55,8 +55,8 @@ func NewItemPlannerPlansItemBucketsPlannerBucketItemRequestBuilderInternal(pathP
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemPlannerPlansItemBucketsPlannerBucketItemRequestBuilder instantiates a new PlannerBucketItemRequestBuilder and sets the default values.
@@ -121,7 +121,7 @@ func (m *ItemPlannerPlansItemBucketsPlannerBucketItemRequestBuilder) Patch(ctx c
 }
 // Tasks provides operations to manage the tasks property of the microsoft.graph.plannerBucket entity.
 func (m *ItemPlannerPlansItemBucketsPlannerBucketItemRequestBuilder) Tasks()(*ItemPlannerPlansItemBucketsItemTasksRequestBuilder) {
-    return NewItemPlannerPlansItemBucketsItemTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemPlannerPlansItemBucketsItemTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TasksById provides operations to manage the tasks property of the microsoft.graph.plannerBucket entity.
 func (m *ItemPlannerPlansItemBucketsPlannerBucketItemRequestBuilder) TasksById(id string)(*ItemPlannerPlansItemBucketsItemTasksPlannerTaskItemRequestBuilder) {
@@ -132,7 +132,7 @@ func (m *ItemPlannerPlansItemBucketsPlannerBucketItemRequestBuilder) TasksById(i
     if id != "" {
         urlTplParams["plannerTask%2Did"] = id
     }
-    return NewItemPlannerPlansItemBucketsItemTasksPlannerTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemPlannerPlansItemBucketsItemTasksPlannerTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property buckets for groups
 func (m *ItemPlannerPlansItemBucketsPlannerBucketItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemPlannerPlansItemBucketsPlannerBucketItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -169,7 +169,10 @@ func (m *ItemPlannerPlansItemBucketsPlannerBucketItemRequestBuilder) ToPatchRequ
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

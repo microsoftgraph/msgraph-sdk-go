@@ -22,7 +22,7 @@ type PermissionScope struct {
     // The origin property
     origin *string
     // The possible values are: User and Admin. Specifies whether this delegated permission should be considered safe for non-admin users to consent to on behalf of themselves, or whether an administrator consent should always be required. While Microsoft Graph defines the default consent requirement for each permission, the tenant administrator may override the behavior in their organization (by allowing, restricting, or limiting user consent to this delegated permission). For more information, see Configure how users consent to applications.
-    type_escaped *string
+    typeEscaped *string
     // A description of the delegated permissions, intended to be read by a user granting the permission on their own behalf. This text appears in consent experiences where the user is consenting only on behalf of themselves.
     userConsentDescription *string
     // A title for the permission, intended to be read by a user granting the permission on their own behalf. This text appears in consent experiences where the user is consenting only on behalf of themselves.
@@ -34,7 +34,7 @@ type PermissionScope struct {
 func NewPermissionScope()(*PermissionScope) {
     m := &PermissionScope{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePermissionScopeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -176,7 +176,7 @@ func (m *PermissionScope) GetOrigin()(*string) {
 }
 // GetType gets the type property value. The possible values are: User and Admin. Specifies whether this delegated permission should be considered safe for non-admin users to consent to on behalf of themselves, or whether an administrator consent should always be required. While Microsoft Graph defines the default consent requirement for each permission, the tenant administrator may override the behavior in their organization (by allowing, restricting, or limiting user consent to this delegated permission). For more information, see Configure how users consent to applications.
 func (m *PermissionScope) GetType()(*string) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // GetUserConsentDescription gets the userConsentDescription property value. A description of the delegated permissions, intended to be read by a user granting the permission on their own behalf. This text appears in consent experiences where the user is consenting only on behalf of themselves.
 func (m *PermissionScope) GetUserConsentDescription()(*string) {
@@ -290,7 +290,7 @@ func (m *PermissionScope) SetOrigin(value *string)() {
 }
 // SetType sets the type property value. The possible values are: User and Admin. Specifies whether this delegated permission should be considered safe for non-admin users to consent to on behalf of themselves, or whether an administrator consent should always be required. While Microsoft Graph defines the default consent requirement for each permission, the tenant administrator may override the behavior in their organization (by allowing, restricting, or limiting user consent to this delegated permission). For more information, see Configure how users consent to applications.
 func (m *PermissionScope) SetType(value *string)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }
 // SetUserConsentDescription sets the userConsentDescription property value. A description of the delegated permissions, intended to be read by a user granting the permission on their own behalf. This text appears in consent experiences where the user is consenting only on behalf of themselves.
 func (m *PermissionScope) SetUserConsentDescription(value *string)() {

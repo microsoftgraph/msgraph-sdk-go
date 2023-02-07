@@ -17,8 +17,8 @@ func NewSkypeForBusinessUserConversationMember()(*SkypeForBusinessUserConversati
     m := &SkypeForBusinessUserConversationMember{
         ConversationMember: *NewConversationMember(),
     }
-    odataTypeValue := "#microsoft.graph.skypeForBusinessUserConversationMember";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.skypeForBusinessUserConversationMember"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateSkypeForBusinessUserConversationMemberFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

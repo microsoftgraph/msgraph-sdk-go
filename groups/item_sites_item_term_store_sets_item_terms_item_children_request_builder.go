@@ -60,8 +60,8 @@ func NewItemSitesItemTermStoreSetsItemTermsItemChildrenRequestBuilderInternal(pa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSitesItemTermStoreSetsItemTermsItemChildrenRequestBuilder instantiates a new ChildrenRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewItemSitesItemTermStoreSetsItemTermsItemChildrenRequestBuilder(rawUrl str
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemSitesItemTermStoreSetsItemTermsItemChildrenRequestBuilder) Count()(*ItemSitesItemTermStoreSetsItemTermsItemChildrenCountRequestBuilder) {
-    return NewItemSitesItemTermStoreSetsItemTermsItemChildrenCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesItemTermStoreSetsItemTermsItemChildrenCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get children of current term.
 func (m *ItemSitesItemTermStoreSetsItemTermsItemChildrenRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemTermStoreSetsItemTermsItemChildrenRequestBuilderGetRequestConfiguration)(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.TermCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *ItemSitesItemTermStoreSetsItemTermsItemChildrenRequestBuilder) ToPostRe
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

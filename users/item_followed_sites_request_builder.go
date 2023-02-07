@@ -53,8 +53,8 @@ func NewItemFollowedSitesRequestBuilderInternal(pathParameters map[string]string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemFollowedSitesRequestBuilder instantiates a new FollowedSitesRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemFollowedSitesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemFollowedSitesRequestBuilder) Count()(*ItemFollowedSitesCountRequestBuilder) {
-    return NewItemFollowedSitesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemFollowedSitesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get list the sites that have been followed by the signed in user.
 // [Find more info here]

@@ -17,7 +17,7 @@ type BaseCollectionPaginationCountResponse struct {
 func NewBaseCollectionPaginationCountResponse()(*BaseCollectionPaginationCountResponse) {
     m := &BaseCollectionPaginationCountResponse{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateBaseCollectionPaginationCountResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

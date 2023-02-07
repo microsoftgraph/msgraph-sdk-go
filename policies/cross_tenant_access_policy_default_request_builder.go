@@ -55,8 +55,8 @@ func NewCrossTenantAccessPolicyDefaultRequestBuilderInternal(pathParameters map[
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCrossTenantAccessPolicyDefaultRequestBuilder instantiates a new DefaultRequestBuilder and sets the default values.
@@ -103,6 +103,10 @@ func (m *CrossTenantAccessPolicyDefaultRequestBuilder) Get(ctx context.Context, 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CrossTenantAccessPolicyConfigurationDefaultable), nil
 }
+// MicrosoftGraphResetToSystemDefault provides operations to call the resetToSystemDefault method.
+func (m *CrossTenantAccessPolicyDefaultRequestBuilder) MicrosoftGraphResetToSystemDefault()(*CrossTenantAccessPolicyDefaultMicrosoftGraphResetToSystemDefaultRequestBuilder) {
+    return NewCrossTenantAccessPolicyDefaultMicrosoftGraphResetToSystemDefaultRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update the default configuration of a cross-tenant access policy.
 // [Find more info here]
 // 
@@ -124,10 +128,6 @@ func (m *CrossTenantAccessPolicyDefaultRequestBuilder) Patch(ctx context.Context
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CrossTenantAccessPolicyConfigurationDefaultable), nil
-}
-// ResetToSystemDefault provides operations to call the resetToSystemDefault method.
-func (m *CrossTenantAccessPolicyDefaultRequestBuilder) ResetToSystemDefault()(*CrossTenantAccessPolicyDefaultResetToSystemDefaultRequestBuilder) {
-    return NewCrossTenantAccessPolicyDefaultResetToSystemDefaultRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property default for policies
 func (m *CrossTenantAccessPolicyDefaultRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CrossTenantAccessPolicyDefaultRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -164,7 +164,10 @@ func (m *CrossTenantAccessPolicyDefaultRequestBuilder) ToPatchRequestInformation
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

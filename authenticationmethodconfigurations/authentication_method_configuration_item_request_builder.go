@@ -23,7 +23,7 @@ type AuthenticationMethodConfigurationItemRequestBuilderDeleteRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AuthenticationMethodConfigurationItemRequestBuilderGetQueryParameters get entity from authenticationMethodConfigurations by key (id)
+// AuthenticationMethodConfigurationItemRequestBuilderGetQueryParameters get entity from authenticationMethodConfigurations by key
 type AuthenticationMethodConfigurationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -55,8 +55,8 @@ func NewAuthenticationMethodConfigurationItemRequestBuilderInternal(pathParamete
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAuthenticationMethodConfigurationItemRequestBuilder instantiates a new AuthenticationMethodConfigurationItemRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewAuthenticationMethodConfigurationItemRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewAuthenticationMethodConfigurationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from authenticationMethodConfigurations by key (id)
+// Delete delete entity from authenticationMethodConfigurations
 func (m *AuthenticationMethodConfigurationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AuthenticationMethodConfigurationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,7 +81,7 @@ func (m *AuthenticationMethodConfigurationItemRequestBuilder) Delete(ctx context
     }
     return nil
 }
-// Get get entity from authenticationMethodConfigurations by key (id)
+// Get get entity from authenticationMethodConfigurations by key
 func (m *AuthenticationMethodConfigurationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AuthenticationMethodConfigurationItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationMethodConfigurationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -100,7 +100,7 @@ func (m *AuthenticationMethodConfigurationItemRequestBuilder) Get(ctx context.Co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationMethodConfigurationable), nil
 }
-// Patch update entity in authenticationMethodConfigurations by key (id)
+// Patch update entity in authenticationMethodConfigurations
 func (m *AuthenticationMethodConfigurationItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationMethodConfigurationable, requestConfiguration *AuthenticationMethodConfigurationItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationMethodConfigurationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +119,7 @@ func (m *AuthenticationMethodConfigurationItemRequestBuilder) Patch(ctx context.
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationMethodConfigurationable), nil
 }
-// ToDeleteRequestInformation delete entity from authenticationMethodConfigurations by key (id)
+// ToDeleteRequestInformation delete entity from authenticationMethodConfigurations
 func (m *AuthenticationMethodConfigurationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AuthenticationMethodConfigurationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,7 +131,7 @@ func (m *AuthenticationMethodConfigurationItemRequestBuilder) ToDeleteRequestInf
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get entity from authenticationMethodConfigurations by key (id)
+// ToGetRequestInformation get entity from authenticationMethodConfigurations by key
 func (m *AuthenticationMethodConfigurationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuthenticationMethodConfigurationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -147,14 +147,17 @@ func (m *AuthenticationMethodConfigurationItemRequestBuilder) ToGetRequestInform
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in authenticationMethodConfigurations by key (id)
+// ToPatchRequestInformation update entity in authenticationMethodConfigurations
 func (m *AuthenticationMethodConfigurationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationMethodConfigurationable, requestConfiguration *AuthenticationMethodConfigurationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

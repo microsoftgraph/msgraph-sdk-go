@@ -49,8 +49,8 @@ func NewPhotosRequestBuilderInternal(pathParameters map[string]string, requestAd
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewPhotosRequestBuilder instantiates a new PhotosRequestBuilder and sets the default values.
@@ -61,7 +61,7 @@ func NewPhotosRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
 }
 // Count provides operations to count the resources in the collection.
 func (m *PhotosRequestBuilder) Count()(*PhotosCountRequestBuilder) {
-    return NewPhotosCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPhotosCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get photos from me
 func (m *PhotosRequestBuilder) Get(ctx context.Context, requestConfiguration *PhotosRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ProfilePhotoCollectionResponseable, error) {

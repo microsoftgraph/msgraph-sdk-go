@@ -10,7 +10,7 @@ type CrossTenantAccessPolicy struct {
     // The allowedCloudEndpoints property
     allowedCloudEndpoints []string
     // Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
-    default_escaped CrossTenantAccessPolicyConfigurationDefaultable
+    defaultEscaped CrossTenantAccessPolicyConfigurationDefaultable
     // Defines partner-specific configurations for external Azure Active Directory organizations.
     partners []CrossTenantAccessPolicyConfigurationPartnerable
 }
@@ -19,8 +19,8 @@ func NewCrossTenantAccessPolicy()(*CrossTenantAccessPolicy) {
     m := &CrossTenantAccessPolicy{
         PolicyBase: *NewPolicyBase(),
     }
-    odataTypeValue := "#microsoft.graph.crossTenantAccessPolicy";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.crossTenantAccessPolicy"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateCrossTenantAccessPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func (m *CrossTenantAccessPolicy) GetAllowedCloudEndpoints()([]string) {
 }
 // GetDefault gets the default property value. Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
 func (m *CrossTenantAccessPolicy) GetDefault()(CrossTenantAccessPolicyConfigurationDefaultable) {
-    return m.default_escaped
+    return m.defaultEscaped
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CrossTenantAccessPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -118,7 +118,7 @@ func (m *CrossTenantAccessPolicy) SetAllowedCloudEndpoints(value []string)() {
 }
 // SetDefault sets the default property value. Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
 func (m *CrossTenantAccessPolicy) SetDefault(value CrossTenantAccessPolicyConfigurationDefaultable)() {
-    m.default_escaped = value
+    m.defaultEscaped = value
 }
 // SetPartners sets the partners property value. Defines partner-specific configurations for external Azure Active Directory organizations.
 func (m *CrossTenantAccessPolicy) SetPartners(value []CrossTenantAccessPolicyConfigurationPartnerable)() {

@@ -16,13 +16,13 @@ type AddIn struct {
     // The properties property
     properties []KeyValueable
     // The type property
-    type_escaped *string
+    typeEscaped *string
 }
 // NewAddIn instantiates a new addIn and sets the default values.
 func NewAddIn()(*AddIn) {
     m := &AddIn{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAddInFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -96,7 +96,7 @@ func (m *AddIn) GetProperties()([]KeyValueable) {
 }
 // GetType gets the type property value. The type property
 func (m *AddIn) GetType()(*string) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // Serialize serializes information the current object
 func (m *AddIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -154,5 +154,5 @@ func (m *AddIn) SetProperties(value []KeyValueable)() {
 }
 // SetType sets the type property value. The type property
 func (m *AddIn) SetType(value *string)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }

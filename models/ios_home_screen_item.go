@@ -17,7 +17,7 @@ type IosHomeScreenItem struct {
 func NewIosHomeScreenItem()(*IosHomeScreenItem) {
     m := &IosHomeScreenItem{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateIosHomeScreenItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

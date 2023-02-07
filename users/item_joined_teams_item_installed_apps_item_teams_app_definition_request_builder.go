@@ -41,8 +41,8 @@ func NewItemJoinedTeamsItemInstalledAppsItemTeamsAppDefinitionRequestBuilderInte
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemJoinedTeamsItemInstalledAppsItemTeamsAppDefinitionRequestBuilder instantiates a new TeamsAppDefinitionRequestBuilder and sets the default values.

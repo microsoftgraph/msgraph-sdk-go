@@ -23,7 +23,7 @@ type TopicModelingSettings struct {
 func NewTopicModelingSettings()(*TopicModelingSettings) {
     m := &TopicModelingSettings{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTopicModelingSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

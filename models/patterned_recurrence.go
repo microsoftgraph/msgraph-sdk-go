@@ -13,13 +13,13 @@ type PatternedRecurrence struct {
     // The frequency of an event.  For access reviews: Do not specify this property for a one-time access review.  Only interval, dayOfMonth, and type (weekly, absoluteMonthly) properties of recurrencePattern are supported.
     pattern RecurrencePatternable
     // The duration of an event.
-    range_escaped RecurrenceRangeable
+    rangeEscaped RecurrenceRangeable
 }
 // NewPatternedRecurrence instantiates a new patternedRecurrence and sets the default values.
 func NewPatternedRecurrence()(*PatternedRecurrence) {
     m := &PatternedRecurrence{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePatternedRecurrenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -75,7 +75,7 @@ func (m *PatternedRecurrence) GetPattern()(RecurrencePatternable) {
 }
 // GetRange gets the range property value. The duration of an event.
 func (m *PatternedRecurrence) GetRange()(RecurrenceRangeable) {
-    return m.range_escaped
+    return m.rangeEscaped
 }
 // Serialize serializes information the current object
 func (m *PatternedRecurrence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -119,5 +119,5 @@ func (m *PatternedRecurrence) SetPattern(value RecurrencePatternable)() {
 }
 // SetRange sets the range property value. The duration of an event.
 func (m *PatternedRecurrence) SetRange(value RecurrenceRangeable)() {
-    m.range_escaped = value
+    m.rangeEscaped = value
 }

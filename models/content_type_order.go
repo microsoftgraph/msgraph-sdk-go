@@ -9,7 +9,7 @@ type ContentTypeOrder struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
     // Whether this is the default Content Type
-    default_escaped *bool
+    defaultEscaped *bool
     // The OdataType property
     odataType *string
     // Specifies the position in which the Content Type appears in the selection UI.
@@ -19,7 +19,7 @@ type ContentTypeOrder struct {
 func NewContentTypeOrder()(*ContentTypeOrder) {
     m := &ContentTypeOrder{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateContentTypeOrderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -32,7 +32,7 @@ func (m *ContentTypeOrder) GetAdditionalData()(map[string]any) {
 }
 // GetDefault gets the default property value. Whether this is the default Content Type
 func (m *ContentTypeOrder) GetDefault()(*bool) {
-    return m.default_escaped
+    return m.defaultEscaped
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ContentTypeOrder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -111,7 +111,7 @@ func (m *ContentTypeOrder) SetAdditionalData(value map[string]any)() {
 }
 // SetDefault sets the default property value. Whether this is the default Content Type
 func (m *ContentTypeOrder) SetDefault(value *bool)() {
-    m.default_escaped = value
+    m.defaultEscaped = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ContentTypeOrder) SetOdataType(value *string)() {

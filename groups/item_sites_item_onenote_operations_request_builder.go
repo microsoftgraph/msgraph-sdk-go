@@ -60,8 +60,8 @@ func NewItemSitesItemOnenoteOperationsRequestBuilderInternal(pathParameters map[
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSitesItemOnenoteOperationsRequestBuilder instantiates a new OperationsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewItemSitesItemOnenoteOperationsRequestBuilder(rawUrl string, requestAdapt
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemSitesItemOnenoteOperationsRequestBuilder) Count()(*ItemSitesItemOnenoteOperationsCountRequestBuilder) {
-    return NewItemSitesItemOnenoteOperationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesItemOnenoteOperationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the status of OneNote operations. Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.
 func (m *ItemSitesItemOnenoteOperationsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemOnenoteOperationsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenoteOperationCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *ItemSitesItemOnenoteOperationsRequestBuilder) ToPostRequestInformation(
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

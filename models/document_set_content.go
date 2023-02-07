@@ -21,7 +21,7 @@ type DocumentSetContent struct {
 func NewDocumentSetContent()(*DocumentSetContent) {
     m := &DocumentSetContent{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDocumentSetContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

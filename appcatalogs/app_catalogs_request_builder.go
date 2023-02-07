@@ -48,8 +48,8 @@ func NewAppCatalogsRequestBuilderInternal(pathParameters map[string]string, requ
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAppCatalogsRequestBuilder instantiates a new AppCatalogsRequestBuilder and sets the default values.
@@ -98,7 +98,7 @@ func (m *AppCatalogsRequestBuilder) Patch(ctx context.Context, body iadcd8112441
 }
 // TeamsApps provides operations to manage the teamsApps property of the microsoft.graph.appCatalogs entity.
 func (m *AppCatalogsRequestBuilder) TeamsApps()(*TeamsAppsRequestBuilder) {
-    return NewTeamsAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTeamsAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TeamsAppsById provides operations to manage the teamsApps property of the microsoft.graph.appCatalogs entity.
 func (m *AppCatalogsRequestBuilder) TeamsAppsById(id string)(*TeamsAppsTeamsAppItemRequestBuilder) {
@@ -109,7 +109,7 @@ func (m *AppCatalogsRequestBuilder) TeamsAppsById(id string)(*TeamsAppsTeamsAppI
     if id != "" {
         urlTplParams["teamsApp%2Did"] = id
     }
-    return NewTeamsAppsTeamsAppItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTeamsAppsTeamsAppItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToGetRequestInformation get appCatalogs
 func (m *AppCatalogsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AppCatalogsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -134,7 +134,10 @@ func (m *AppCatalogsRequestBuilder) ToPatchRequestInformation(ctx context.Contex
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

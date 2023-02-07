@@ -60,8 +60,8 @@ func NewJoinedTeamsItemPrimaryChannelMessagesItemRepliesRequestBuilderInternal(p
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewJoinedTeamsItemPrimaryChannelMessagesItemRepliesRequestBuilder instantiates a new RepliesRequestBuilder and sets the default values.
@@ -72,11 +72,7 @@ func NewJoinedTeamsItemPrimaryChannelMessagesItemRepliesRequestBuilder(rawUrl st
 }
 // Count provides operations to count the resources in the collection.
 func (m *JoinedTeamsItemPrimaryChannelMessagesItemRepliesRequestBuilder) Count()(*JoinedTeamsItemPrimaryChannelMessagesItemRepliesCountRequestBuilder) {
-    return NewJoinedTeamsItemPrimaryChannelMessagesItemRepliesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Delta provides operations to call the delta method.
-func (m *JoinedTeamsItemPrimaryChannelMessagesItemRepliesRequestBuilder) Delta()(*JoinedTeamsItemPrimaryChannelMessagesItemRepliesDeltaRequestBuilder) {
-    return NewJoinedTeamsItemPrimaryChannelMessagesItemRepliesDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewJoinedTeamsItemPrimaryChannelMessagesItemRepliesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get list all the replies to a message in a channel of a team. This method lists only the replies of the specified message, if any. To get the message itself, simply call get channel message.
 // [Find more info here]
@@ -100,10 +96,14 @@ func (m *JoinedTeamsItemPrimaryChannelMessagesItemRepliesRequestBuilder) Get(ctx
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageCollectionResponseable), nil
 }
-// Post create a new reply to a chatMessage in a specified channel.
+// MicrosoftGraphDelta provides operations to call the delta method.
+func (m *JoinedTeamsItemPrimaryChannelMessagesItemRepliesRequestBuilder) MicrosoftGraphDelta()(*JoinedTeamsItemPrimaryChannelMessagesItemRepliesMicrosoftGraphDeltaRequestBuilder) {
+    return NewJoinedTeamsItemPrimaryChannelMessagesItemRepliesMicrosoftGraphDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// Post send a new reply to a chatMessage in a specified channel.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
 func (m *JoinedTeamsItemPrimaryChannelMessagesItemRepliesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable, requestConfiguration *JoinedTeamsItemPrimaryChannelMessagesItemRepliesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -138,14 +138,17 @@ func (m *JoinedTeamsItemPrimaryChannelMessagesItemRepliesRequestBuilder) ToGetRe
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new reply to a chatMessage in a specified channel.
+// ToPostRequestInformation send a new reply to a chatMessage in a specified channel.
 func (m *JoinedTeamsItemPrimaryChannelMessagesItemRepliesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable, requestConfiguration *JoinedTeamsItemPrimaryChannelMessagesItemRepliesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

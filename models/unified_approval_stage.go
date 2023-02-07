@@ -27,7 +27,7 @@ type UnifiedApprovalStage struct {
 func NewUnifiedApprovalStage()(*UnifiedApprovalStage) {
     m := &UnifiedApprovalStage{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateUnifiedApprovalStageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

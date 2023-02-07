@@ -41,8 +41,8 @@ func NewTermsAndConditionsItemAcceptanceStatusesItemTermsAndConditionsRequestBui
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTermsAndConditionsItemAcceptanceStatusesItemTermsAndConditionsRequestBuilder instantiates a new TermsAndConditionsRequestBuilder and sets the default values.

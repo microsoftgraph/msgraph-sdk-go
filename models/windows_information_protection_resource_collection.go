@@ -19,7 +19,7 @@ type WindowsInformationProtectionResourceCollection struct {
 func NewWindowsInformationProtectionResourceCollection()(*WindowsInformationProtectionResourceCollection) {
     m := &WindowsInformationProtectionResourceCollection{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWindowsInformationProtectionResourceCollectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

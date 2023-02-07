@@ -48,11 +48,11 @@ type EntitlementManagementCatalogsItemAccessPackagesItemAssignmentPoliciesAccess
 }
 // AccessPackage provides operations to manage the accessPackage property of the microsoft.graph.accessPackageAssignmentPolicy entity.
 func (m *EntitlementManagementCatalogsItemAccessPackagesItemAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilder) AccessPackage()(*EntitlementManagementCatalogsItemAccessPackagesItemAssignmentPoliciesItemAccessPackageRequestBuilder) {
-    return NewEntitlementManagementCatalogsItemAccessPackagesItemAssignmentPoliciesItemAccessPackageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementCatalogsItemAccessPackagesItemAssignmentPoliciesItemAccessPackageRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Catalog provides operations to manage the catalog property of the microsoft.graph.accessPackageAssignmentPolicy entity.
 func (m *EntitlementManagementCatalogsItemAccessPackagesItemAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilder) Catalog()(*EntitlementManagementCatalogsItemAccessPackagesItemAssignmentPoliciesItemCatalogRequestBuilder) {
-    return NewEntitlementManagementCatalogsItemAccessPackagesItemAssignmentPoliciesItemCatalogRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementCatalogsItemAccessPackagesItemAssignmentPoliciesItemCatalogRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewEntitlementManagementCatalogsItemAccessPackagesItemAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilderInternal instantiates a new AccessPackageAssignmentPolicyItemRequestBuilder and sets the default values.
 func NewEntitlementManagementCatalogsItemAccessPackagesItemAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementCatalogsItemAccessPackagesItemAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilder) {
@@ -63,8 +63,8 @@ func NewEntitlementManagementCatalogsItemAccessPackagesItemAssignmentPoliciesAcc
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEntitlementManagementCatalogsItemAccessPackagesItemAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilder instantiates a new AccessPackageAssignmentPolicyItemRequestBuilder and sets the default values.
@@ -162,7 +162,10 @@ func (m *EntitlementManagementCatalogsItemAccessPackagesItemAssignmentPoliciesAc
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

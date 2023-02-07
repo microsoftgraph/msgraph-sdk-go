@@ -49,7 +49,7 @@ type PrinterLocation struct {
 func NewPrinterLocation()(*PrinterLocation) {
     m := &PrinterLocation{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePrinterLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

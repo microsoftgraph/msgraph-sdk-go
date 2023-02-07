@@ -6,7 +6,7 @@ import (
 type ExternalEmailOtpState int
 
 const (
-    DEFAULT_ESCAPED_EXTERNALEMAILOTPSTATE ExternalEmailOtpState = iota
+    DEFAULTESCAPED_EXTERNALEMAILOTPSTATE ExternalEmailOtpState = iota
     ENABLED_EXTERNALEMAILOTPSTATE
     DISABLED_EXTERNALEMAILOTPSTATE
     UNKNOWNFUTUREVALUE_EXTERNALEMAILOTPSTATE
@@ -16,10 +16,10 @@ func (i ExternalEmailOtpState) String() string {
     return []string{"default", "enabled", "disabled", "unknownFutureValue"}[i]
 }
 func ParseExternalEmailOtpState(v string) (any, error) {
-    result := DEFAULT_ESCAPED_EXTERNALEMAILOTPSTATE
+    result := DEFAULTESCAPED_EXTERNALEMAILOTPSTATE
     switch v {
         case "default":
-            result = DEFAULT_ESCAPED_EXTERNALEMAILOTPSTATE
+            result = DEFAULTESCAPED_EXTERNALEMAILOTPSTATE
         case "enabled":
             result = ENABLED_EXTERNALEMAILOTPSTATE
         case "disabled":

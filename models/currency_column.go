@@ -17,7 +17,7 @@ type CurrencyColumn struct {
 func NewCurrencyColumn()(*CurrencyColumn) {
     m := &CurrencyColumn{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCurrencyColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

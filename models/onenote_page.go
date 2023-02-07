@@ -36,8 +36,8 @@ func NewOnenotePage()(*OnenotePage) {
     m := &OnenotePage{
         OnenoteEntitySchemaObjectModel: *NewOnenoteEntitySchemaObjectModel(),
     }
-    odataTypeValue := "#microsoft.graph.onenotePage";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.onenotePage"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateOnenotePageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

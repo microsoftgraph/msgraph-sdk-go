@@ -15,7 +15,7 @@ type PlannerChecklistItems struct {
 func NewPlannerChecklistItems()(*PlannerChecklistItems) {
     m := &PlannerChecklistItems{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePlannerChecklistItemsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -21,7 +21,7 @@ type DocumentSetVersionItem struct {
 func NewDocumentSetVersionItem()(*DocumentSetVersionItem) {
     m := &DocumentSetVersionItem{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDocumentSetVersionItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -55,8 +55,8 @@ func NewPlannerRequestBuilderInternal(pathParameters map[string]string, requestA
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewPlannerRequestBuilder instantiates a new PlannerRequestBuilder and sets the default values.
@@ -121,7 +121,7 @@ func (m *PlannerRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61
 }
 // Plans provides operations to manage the plans property of the microsoft.graph.plannerUser entity.
 func (m *PlannerRequestBuilder) Plans()(*PlannerPlansRequestBuilder) {
-    return NewPlannerPlansRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPlannerPlansRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // PlansById provides operations to manage the plans property of the microsoft.graph.plannerUser entity.
 func (m *PlannerRequestBuilder) PlansById(id string)(*PlannerPlansPlannerPlanItemRequestBuilder) {
@@ -132,11 +132,11 @@ func (m *PlannerRequestBuilder) PlansById(id string)(*PlannerPlansPlannerPlanIte
     if id != "" {
         urlTplParams["plannerPlan%2Did"] = id
     }
-    return NewPlannerPlansPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPlannerPlansPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Tasks provides operations to manage the tasks property of the microsoft.graph.plannerUser entity.
 func (m *PlannerRequestBuilder) Tasks()(*PlannerTasksRequestBuilder) {
-    return NewPlannerTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPlannerTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TasksById provides operations to manage the tasks property of the microsoft.graph.plannerUser entity.
 func (m *PlannerRequestBuilder) TasksById(id string)(*PlannerTasksPlannerTaskItemRequestBuilder) {
@@ -147,7 +147,7 @@ func (m *PlannerRequestBuilder) TasksById(id string)(*PlannerTasksPlannerTaskIte
     if id != "" {
         urlTplParams["plannerTask%2Did"] = id
     }
-    return NewPlannerTasksPlannerTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPlannerTasksPlannerTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property planner for me
 func (m *PlannerRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PlannerRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -184,7 +184,10 @@ func (m *PlannerRequestBuilder) ToPatchRequestInformation(ctx context.Context, b
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

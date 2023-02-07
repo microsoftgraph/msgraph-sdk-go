@@ -17,7 +17,7 @@ type AppConsentRequestScope struct {
 func NewAppConsentRequestScope()(*AppConsentRequestScope) {
     m := &AppConsentRequestScope{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAppConsentRequestScopeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

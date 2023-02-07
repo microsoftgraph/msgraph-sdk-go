@@ -53,8 +53,8 @@ func NewItemOnenoteNotebooksItemSectionGroupsItemSectionGroupsRequestBuilderInte
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemOnenoteNotebooksItemSectionGroupsItemSectionGroupsRequestBuilder instantiates a new SectionGroupsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemOnenoteNotebooksItemSectionGroupsItemSectionGroupsRequestBuilder(raw
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemOnenoteNotebooksItemSectionGroupsItemSectionGroupsRequestBuilder) Count()(*ItemOnenoteNotebooksItemSectionGroupsItemSectionGroupsCountRequestBuilder) {
-    return NewItemOnenoteNotebooksItemSectionGroupsItemSectionGroupsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemOnenoteNotebooksItemSectionGroupsItemSectionGroupsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of section groups from the specified section group.
 // [Find more info here]

@@ -28,7 +28,7 @@ type UriClickSecurityState struct {
 func NewUriClickSecurityState()(*UriClickSecurityState) {
     m := &UriClickSecurityState{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateUriClickSecurityStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

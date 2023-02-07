@@ -55,8 +55,8 @@ func NewItemInstalledAppsTeamsAppInstallationItemRequestBuilderInternal(pathPara
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemInstalledAppsTeamsAppInstallationItemRequestBuilder instantiates a new TeamsAppInstallationItemRequestBuilder and sets the default values.
@@ -100,6 +100,10 @@ func (m *ItemInstalledAppsTeamsAppInstallationItemRequestBuilder) Get(ctx contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsAppInstallationable), nil
 }
+// MicrosoftGraphUpgrade provides operations to call the upgrade method.
+func (m *ItemInstalledAppsTeamsAppInstallationItemRequestBuilder) MicrosoftGraphUpgrade()(*ItemInstalledAppsItemMicrosoftGraphUpgradeRequestBuilder) {
+    return NewItemInstalledAppsItemMicrosoftGraphUpgradeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update the navigation property installedApps in chats
 func (m *ItemInstalledAppsTeamsAppInstallationItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsAppInstallationable, requestConfiguration *ItemInstalledAppsTeamsAppInstallationItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsAppInstallationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -121,11 +125,11 @@ func (m *ItemInstalledAppsTeamsAppInstallationItemRequestBuilder) Patch(ctx cont
 }
 // TeamsApp provides operations to manage the teamsApp property of the microsoft.graph.teamsAppInstallation entity.
 func (m *ItemInstalledAppsTeamsAppInstallationItemRequestBuilder) TeamsApp()(*ItemInstalledAppsItemTeamsAppRequestBuilder) {
-    return NewItemInstalledAppsItemTeamsAppRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemInstalledAppsItemTeamsAppRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TeamsAppDefinition provides operations to manage the teamsAppDefinition property of the microsoft.graph.teamsAppInstallation entity.
 func (m *ItemInstalledAppsTeamsAppInstallationItemRequestBuilder) TeamsAppDefinition()(*ItemInstalledAppsItemTeamsAppDefinitionRequestBuilder) {
-    return NewItemInstalledAppsItemTeamsAppDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemInstalledAppsItemTeamsAppDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property installedApps for chats
 func (m *ItemInstalledAppsTeamsAppInstallationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemInstalledAppsTeamsAppInstallationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -162,14 +166,13 @@ func (m *ItemInstalledAppsTeamsAppInstallationItemRequestBuilder) ToPatchRequest
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// Upgrade provides operations to call the upgrade method.
-func (m *ItemInstalledAppsTeamsAppInstallationItemRequestBuilder) Upgrade()(*ItemInstalledAppsItemUpgradeRequestBuilder) {
-    return NewItemInstalledAppsItemUpgradeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

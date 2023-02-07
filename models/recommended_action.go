@@ -21,7 +21,7 @@ type RecommendedAction struct {
 func NewRecommendedAction()(*RecommendedAction) {
     m := &RecommendedAction{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateRecommendedActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

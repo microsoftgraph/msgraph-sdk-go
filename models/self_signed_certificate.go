@@ -27,7 +27,7 @@ type SelfSignedCertificate struct {
     // The thumbprint property
     thumbprint *string
     // The type property
-    type_escaped *string
+    typeEscaped *string
     // The usage property
     usage *string
 }
@@ -35,7 +35,7 @@ type SelfSignedCertificate struct {
 func NewSelfSignedCertificate()(*SelfSignedCertificate) {
     m := &SelfSignedCertificate{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSelfSignedCertificateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -185,7 +185,7 @@ func (m *SelfSignedCertificate) GetThumbprint()(*string) {
 }
 // GetType gets the type property value. The type property
 func (m *SelfSignedCertificate) GetType()(*string) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // GetUsage gets the usage property value. The usage property
 func (m *SelfSignedCertificate) GetUsage()(*string) {
@@ -299,7 +299,7 @@ func (m *SelfSignedCertificate) SetThumbprint(value *string)() {
 }
 // SetType sets the type property value. The type property
 func (m *SelfSignedCertificate) SetType(value *string)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }
 // SetUsage sets the usage property value. The usage property
 func (m *SelfSignedCertificate) SetUsage(value *string)() {

@@ -23,7 +23,7 @@ type DriveItemUploadableProperties struct {
 func NewDriveItemUploadableProperties()(*DriveItemUploadableProperties) {
     m := &DriveItemUploadableProperties{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDriveItemUploadablePropertiesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

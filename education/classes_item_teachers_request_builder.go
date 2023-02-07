@@ -53,8 +53,8 @@ func NewClassesItemTeachersRequestBuilderInternal(pathParameters map[string]stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewClassesItemTeachersRequestBuilder instantiates a new TeachersRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewClassesItemTeachersRequestBuilder(rawUrl string, requestAdapter i2ae4187
 }
 // Count provides operations to count the resources in the collection.
 func (m *ClassesItemTeachersRequestBuilder) Count()(*ClassesItemTeachersCountRequestBuilder) {
-    return NewClassesItemTeachersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewClassesItemTeachersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list teachers for a class. Delegated tokens must be members of the class to get the teacher list.
 // [Find more info here]
@@ -91,7 +91,7 @@ func (m *ClassesItemTeachersRequestBuilder) Get(ctx context.Context, requestConf
 }
 // Ref provides operations to manage the collection of educationRoot entities.
 func (m *ClassesItemTeachersRequestBuilder) Ref()(*ClassesItemTeachersRefRequestBuilder) {
-    return NewClassesItemTeachersRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewClassesItemTeachersRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation retrieve a list teachers for a class. Delegated tokens must be members of the class to get the teacher list.
 func (m *ClassesItemTeachersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClassesItemTeachersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

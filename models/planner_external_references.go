@@ -15,7 +15,7 @@ type PlannerExternalReferences struct {
 func NewPlannerExternalReferences()(*PlannerExternalReferences) {
     m := &PlannerExternalReferences{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePlannerExternalReferencesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

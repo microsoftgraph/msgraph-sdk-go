@@ -42,7 +42,7 @@ type Domain struct {
     // DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable. Supports $expand.
     verificationDnsRecords []DomainDnsRecordable
 }
-// NewDomain instantiates a new Domain and sets the default values.
+// NewDomain instantiates a new domain and sets the default values.
 func NewDomain()(*Domain) {
     m := &Domain{
         Entity: *NewEntity(),

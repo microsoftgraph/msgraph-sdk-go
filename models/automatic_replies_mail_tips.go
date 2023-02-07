@@ -23,7 +23,7 @@ type AutomaticRepliesMailTips struct {
 func NewAutomaticRepliesMailTips()(*AutomaticRepliesMailTips) {
     m := &AutomaticRepliesMailTips{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAutomaticRepliesMailTipsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

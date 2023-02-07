@@ -34,8 +34,8 @@ func NewIosVppApp()(*IosVppApp) {
     m := &IosVppApp{
         MobileApp: *NewMobileApp(),
     }
-    odataTypeValue := "#microsoft.graph.iosVppApp";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.iosVppApp"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateIosVppAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

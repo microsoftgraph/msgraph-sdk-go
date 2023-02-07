@@ -48,7 +48,7 @@ type EntitlementManagementRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder
 }
 // AppScope provides operations to manage the appScope property of the microsoft.graph.unifiedRoleAssignment entity.
 func (m *EntitlementManagementRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) AppScope()(*EntitlementManagementRoleAssignmentsItemAppScopeRequestBuilder) {
-    return NewEntitlementManagementRoleAssignmentsItemAppScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementRoleAssignmentsItemAppScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewEntitlementManagementRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderInternal instantiates a new UnifiedRoleAssignmentItemRequestBuilder and sets the default values.
 func NewEntitlementManagementRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) {
@@ -59,8 +59,8 @@ func NewEntitlementManagementRoleAssignmentsUnifiedRoleAssignmentItemRequestBuil
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEntitlementManagementRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder instantiates a new UnifiedRoleAssignmentItemRequestBuilder and sets the default values.
@@ -87,7 +87,7 @@ func (m *EntitlementManagementRoleAssignmentsUnifiedRoleAssignmentItemRequestBui
 }
 // DirectoryScope provides operations to manage the directoryScope property of the microsoft.graph.unifiedRoleAssignment entity.
 func (m *EntitlementManagementRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) DirectoryScope()(*EntitlementManagementRoleAssignmentsItemDirectoryScopeRequestBuilder) {
-    return NewEntitlementManagementRoleAssignmentsItemDirectoryScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementRoleAssignmentsItemDirectoryScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get resource to grant access to users or groups.
 func (m *EntitlementManagementRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleAssignmentable, error) {
@@ -129,11 +129,11 @@ func (m *EntitlementManagementRoleAssignmentsUnifiedRoleAssignmentItemRequestBui
 }
 // Principal provides operations to manage the principal property of the microsoft.graph.unifiedRoleAssignment entity.
 func (m *EntitlementManagementRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) Principal()(*EntitlementManagementRoleAssignmentsItemPrincipalRequestBuilder) {
-    return NewEntitlementManagementRoleAssignmentsItemPrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementRoleAssignmentsItemPrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // RoleDefinition provides operations to manage the roleDefinition property of the microsoft.graph.unifiedRoleAssignment entity.
 func (m *EntitlementManagementRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) RoleDefinition()(*EntitlementManagementRoleAssignmentsItemRoleDefinitionRequestBuilder) {
-    return NewEntitlementManagementRoleAssignmentsItemRoleDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementRoleAssignmentsItemRoleDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property roleAssignments for roleManagement
 func (m *EntitlementManagementRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -170,7 +170,10 @@ func (m *EntitlementManagementRoleAssignmentsUnifiedRoleAssignmentItemRequestBui
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

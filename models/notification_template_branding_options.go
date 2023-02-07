@@ -6,22 +6,24 @@ import (
 type NotificationTemplateBrandingOptions int
 
 const (
-    // No Branding.
+    // Indicates that no branding options are set in the message template.
     NONE_NOTIFICATIONTEMPLATEBRANDINGOPTIONS NotificationTemplateBrandingOptions = iota
-    // Include Company Logo.
+    // Indicates to include company logo in the message template.
     INCLUDECOMPANYLOGO_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
-    // Include Company Name.
+    // Indicates to include company name in the message template.
     INCLUDECOMPANYNAME_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
-    // Include Contact Info.
+    // Indicates to include contact information in the message template.
     INCLUDECONTACTINFORMATION_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
-    // Include Company Portal Link.
+    // Indicates to include company portal website link in the message template.
     INCLUDECOMPANYPORTALLINK_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
-    // Include Device Details.
+    // Indicates to include device details in the message template.
     INCLUDEDEVICEDETAILS_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
+    // Evolvable enumeration sentinel value. Do not use.
+    UNKNOWNFUTUREVALUE_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
 )
 
 func (i NotificationTemplateBrandingOptions) String() string {
-    return []string{"none", "includeCompanyLogo", "includeCompanyName", "includeContactInformation", "includeCompanyPortalLink", "includeDeviceDetails"}[i]
+    return []string{"none", "includeCompanyLogo", "includeCompanyName", "includeContactInformation", "includeCompanyPortalLink", "includeDeviceDetails", "unknownFutureValue"}[i]
 }
 func ParseNotificationTemplateBrandingOptions(v string) (any, error) {
     result := NONE_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
@@ -38,6 +40,8 @@ func ParseNotificationTemplateBrandingOptions(v string) (any, error) {
             result = INCLUDECOMPANYPORTALLINK_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
         case "includeDeviceDetails":
             result = INCLUDEDEVICEDETAILS_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
         default:
             return 0, errors.New("Unknown NotificationTemplateBrandingOptions value: " + v)
     }

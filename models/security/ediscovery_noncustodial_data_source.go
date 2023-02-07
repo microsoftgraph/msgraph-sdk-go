@@ -12,13 +12,13 @@ type EdiscoveryNoncustodialDataSource struct {
     // Operation entity that represents the latest indexing for the non-custodial data source.
     lastIndexOperation EdiscoveryIndexOperationable
 }
-// NewEdiscoveryNoncustodialDataSource instantiates a new ediscoveryNoncustodialDataSource and sets the default values.
+// NewEdiscoveryNoncustodialDataSource instantiates a new EdiscoveryNoncustodialDataSource and sets the default values.
 func NewEdiscoveryNoncustodialDataSource()(*EdiscoveryNoncustodialDataSource) {
     m := &EdiscoveryNoncustodialDataSource{
         DataSourceContainer: *NewDataSourceContainer(),
     }
-    odataTypeValue := "#microsoft.graph.security.ediscoveryNoncustodialDataSource";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.security.ediscoveryNoncustodialDataSource"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateEdiscoveryNoncustodialDataSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

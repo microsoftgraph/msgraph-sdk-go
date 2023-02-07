@@ -60,8 +60,8 @@ func NewItemOnlineMeetingsItemAttendanceReportsRequestBuilderInternal(pathParame
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemOnlineMeetingsItemAttendanceReportsRequestBuilder instantiates a new AttendanceReportsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewItemOnlineMeetingsItemAttendanceReportsRequestBuilder(rawUrl string, req
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemOnlineMeetingsItemAttendanceReportsRequestBuilder) Count()(*ItemOnlineMeetingsItemAttendanceReportsCountRequestBuilder) {
-    return NewItemOnlineMeetingsItemAttendanceReportsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemOnlineMeetingsItemAttendanceReportsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of meetingAttendanceReport objects for an onlineMeeting. Each time an online meeting ends, an attendance report is generated for that session.
 // [Find more info here]
@@ -138,7 +138,10 @@ func (m *ItemOnlineMeetingsItemAttendanceReportsRequestBuilder) ToPostRequestInf
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

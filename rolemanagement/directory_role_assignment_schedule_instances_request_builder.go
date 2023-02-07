@@ -60,8 +60,8 @@ func NewDirectoryRoleAssignmentScheduleInstancesRequestBuilderInternal(pathParam
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDirectoryRoleAssignmentScheduleInstancesRequestBuilder instantiates a new RoleAssignmentScheduleInstancesRequestBuilder and sets the default values.
@@ -72,11 +72,7 @@ func NewDirectoryRoleAssignmentScheduleInstancesRequestBuilder(rawUrl string, re
 }
 // Count provides operations to count the resources in the collection.
 func (m *DirectoryRoleAssignmentScheduleInstancesRequestBuilder) Count()(*DirectoryRoleAssignmentScheduleInstancesCountRequestBuilder) {
-    return NewDirectoryRoleAssignmentScheduleInstancesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
-func (m *DirectoryRoleAssignmentScheduleInstancesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*DirectoryRoleAssignmentScheduleInstancesFilterByCurrentUserWithOnRequestBuilder) {
-    return NewDirectoryRoleAssignmentScheduleInstancesFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
+    return NewDirectoryRoleAssignmentScheduleInstancesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the instances of active role assignments in your tenant. The active assignments include those made through assignments and activation requests, and directly through the role assignments API.
 // [Find more info here]
@@ -99,6 +95,10 @@ func (m *DirectoryRoleAssignmentScheduleInstancesRequestBuilder) Get(ctx context
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleAssignmentScheduleInstanceCollectionResponseable), nil
+}
+// MicrosoftGraphFilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
+func (m *DirectoryRoleAssignmentScheduleInstancesRequestBuilder) MicrosoftGraphFilterByCurrentUserWithOn(on *string)(*DirectoryRoleAssignmentScheduleInstancesMicrosoftGraphFilterByCurrentUserWithOnRequestBuilder) {
+    return NewDirectoryRoleAssignmentScheduleInstancesMicrosoftGraphFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
 }
 // Post create new navigation property to roleAssignmentScheduleInstances for roleManagement
 func (m *DirectoryRoleAssignmentScheduleInstancesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleAssignmentScheduleInstanceable, requestConfiguration *DirectoryRoleAssignmentScheduleInstancesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleAssignmentScheduleInstanceable, error) {
@@ -142,7 +142,10 @@ func (m *DirectoryRoleAssignmentScheduleInstancesRequestBuilder) ToPostRequestIn
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

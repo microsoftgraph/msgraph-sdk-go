@@ -15,7 +15,7 @@ type DetailsInfo struct {
 func NewDetailsInfo()(*DetailsInfo) {
     m := &DetailsInfo{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDetailsInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -15,7 +15,7 @@ type MobileAppIdentifier struct {
 func NewMobileAppIdentifier()(*MobileAppIdentifier) {
     m := &MobileAppIdentifier{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateMobileAppIdentifierFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

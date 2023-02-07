@@ -55,8 +55,8 @@ func NewItemSitesItemTermStoresItemSetsItemChildrenItemRelationsRelationItemRequ
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSitesItemTermStoresItemSetsItemChildrenItemRelationsRelationItemRequestBuilder instantiates a new RelationItemRequestBuilder and sets the default values.
@@ -83,7 +83,7 @@ func (m *ItemSitesItemTermStoresItemSetsItemChildrenItemRelationsRelationItemReq
 }
 // FromTerm provides operations to manage the fromTerm property of the microsoft.graph.termStore.relation entity.
 func (m *ItemSitesItemTermStoresItemSetsItemChildrenItemRelationsRelationItemRequestBuilder) FromTerm()(*ItemSitesItemTermStoresItemSetsItemChildrenItemRelationsItemFromTermRequestBuilder) {
-    return NewItemSitesItemTermStoresItemSetsItemChildrenItemRelationsItemFromTermRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesItemTermStoresItemSetsItemChildrenItemRelationsItemFromTermRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get to indicate which terms are related to the current term as either pinned or reused.
 func (m *ItemSitesItemTermStoresItemSetsItemChildrenItemRelationsRelationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemTermStoresItemSetsItemChildrenItemRelationsRelationItemRequestBuilderGetRequestConfiguration)(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Relationable, error) {
@@ -125,7 +125,7 @@ func (m *ItemSitesItemTermStoresItemSetsItemChildrenItemRelationsRelationItemReq
 }
 // Set provides operations to manage the set property of the microsoft.graph.termStore.relation entity.
 func (m *ItemSitesItemTermStoresItemSetsItemChildrenItemRelationsRelationItemRequestBuilder) Set()(*ItemSitesItemTermStoresItemSetsItemChildrenItemRelationsItemSetRequestBuilder) {
-    return NewItemSitesItemTermStoresItemSetsItemChildrenItemRelationsItemSetRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesItemTermStoresItemSetsItemChildrenItemRelationsItemSetRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property relations for groups
 func (m *ItemSitesItemTermStoresItemSetsItemChildrenItemRelationsRelationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemTermStoresItemSetsItemChildrenItemRelationsRelationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -162,7 +162,10 @@ func (m *ItemSitesItemTermStoresItemSetsItemChildrenItemRelationsRelationItemReq
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -171,5 +174,5 @@ func (m *ItemSitesItemTermStoresItemSetsItemChildrenItemRelationsRelationItemReq
 }
 // ToTerm provides operations to manage the toTerm property of the microsoft.graph.termStore.relation entity.
 func (m *ItemSitesItemTermStoresItemSetsItemChildrenItemRelationsRelationItemRequestBuilder) ToTerm()(*ItemSitesItemTermStoresItemSetsItemChildrenItemRelationsItemToTermRequestBuilder) {
-    return NewItemSitesItemTermStoresItemSetsItemChildrenItemRelationsItemToTermRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesItemTermStoresItemSetsItemChildrenItemRelationsItemToTermRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

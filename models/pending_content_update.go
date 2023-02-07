@@ -18,7 +18,7 @@ type PendingContentUpdate struct {
 func NewPendingContentUpdate()(*PendingContentUpdate) {
     m := &PendingContentUpdate{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePendingContentUpdateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

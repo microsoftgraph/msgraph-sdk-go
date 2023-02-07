@@ -39,8 +39,8 @@ func NewItemOutlookRequestBuilderInternal(pathParameters map[string]string, requ
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemOutlookRequestBuilder instantiates a new OutlookRequestBuilder and sets the default values.
@@ -70,7 +70,7 @@ func (m *ItemOutlookRequestBuilder) Get(ctx context.Context, requestConfiguratio
 }
 // MasterCategories provides operations to manage the masterCategories property of the microsoft.graph.outlookUser entity.
 func (m *ItemOutlookRequestBuilder) MasterCategories()(*ItemOutlookMasterCategoriesRequestBuilder) {
-    return NewItemOutlookMasterCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemOutlookMasterCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MasterCategoriesById provides operations to manage the masterCategories property of the microsoft.graph.outlookUser entity.
 func (m *ItemOutlookRequestBuilder) MasterCategoriesById(id string)(*ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilder) {
@@ -81,19 +81,19 @@ func (m *ItemOutlookRequestBuilder) MasterCategoriesById(id string)(*ItemOutlook
     if id != "" {
         urlTplParams["outlookCategory%2Did"] = id
     }
-    return NewItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
-// SupportedLanguages provides operations to call the supportedLanguages method.
-func (m *ItemOutlookRequestBuilder) SupportedLanguages()(*ItemOutlookSupportedLanguagesRequestBuilder) {
-    return NewItemOutlookSupportedLanguagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphSupportedLanguages provides operations to call the supportedLanguages method.
+func (m *ItemOutlookRequestBuilder) MicrosoftGraphSupportedLanguages()(*ItemOutlookMicrosoftGraphSupportedLanguagesRequestBuilder) {
+    return NewItemOutlookMicrosoftGraphSupportedLanguagesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// SupportedTimeZones provides operations to call the supportedTimeZones method.
-func (m *ItemOutlookRequestBuilder) SupportedTimeZones()(*ItemOutlookSupportedTimeZonesRequestBuilder) {
-    return NewItemOutlookSupportedTimeZonesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphSupportedTimeZones provides operations to call the supportedTimeZones method.
+func (m *ItemOutlookRequestBuilder) MicrosoftGraphSupportedTimeZones()(*ItemOutlookMicrosoftGraphSupportedTimeZonesRequestBuilder) {
+    return NewItemOutlookMicrosoftGraphSupportedTimeZonesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// SupportedTimeZonesWithTimeZoneStandard provides operations to call the supportedTimeZones method.
-func (m *ItemOutlookRequestBuilder) SupportedTimeZonesWithTimeZoneStandard(timeZoneStandard *string)(*ItemOutlookSupportedTimeZonesWithTimeZoneStandardRequestBuilder) {
-    return NewItemOutlookSupportedTimeZonesWithTimeZoneStandardRequestBuilderInternal(m.pathParameters, m.requestAdapter, timeZoneStandard);
+// MicrosoftGraphSupportedTimeZonesWithTimeZoneStandard provides operations to call the supportedTimeZones method.
+func (m *ItemOutlookRequestBuilder) MicrosoftGraphSupportedTimeZonesWithTimeZoneStandard(timeZoneStandard *string)(*ItemOutlookMicrosoftGraphSupportedTimeZonesWithTimeZoneStandardRequestBuilder) {
+    return NewItemOutlookMicrosoftGraphSupportedTimeZonesWithTimeZoneStandardRequestBuilderInternal(m.pathParameters, m.requestAdapter, timeZoneStandard)
 }
 // ToGetRequestInformation get outlook from users
 func (m *ItemOutlookRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOutlookRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

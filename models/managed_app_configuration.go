@@ -15,8 +15,8 @@ func NewManagedAppConfiguration()(*ManagedAppConfiguration) {
     m := &ManagedAppConfiguration{
         ManagedAppPolicy: *NewManagedAppPolicy(),
     }
-    odataTypeValue := "#microsoft.graph.managedAppConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.managedAppConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateManagedAppConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

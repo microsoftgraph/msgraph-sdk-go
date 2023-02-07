@@ -19,7 +19,7 @@ type LocaleInfo struct {
 func NewLocaleInfo()(*LocaleInfo) {
     m := &LocaleInfo{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateLocaleInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

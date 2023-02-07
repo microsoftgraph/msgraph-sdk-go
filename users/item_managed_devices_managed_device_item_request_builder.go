@@ -46,14 +46,6 @@ type ItemManagedDevicesManagedDeviceItemRequestBuilderPatchRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BypassActivationLock provides operations to call the bypassActivationLock method.
-func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) BypassActivationLock()(*ItemManagedDevicesItemBypassActivationLockRequestBuilder) {
-    return NewItemManagedDevicesItemBypassActivationLockRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// CleanWindowsDevice provides operations to call the cleanWindowsDevice method.
-func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) CleanWindowsDevice()(*ItemManagedDevicesItemCleanWindowsDeviceRequestBuilder) {
-    return NewItemManagedDevicesItemCleanWindowsDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewItemManagedDevicesManagedDeviceItemRequestBuilderInternal instantiates a new ManagedDeviceItemRequestBuilder and sets the default values.
 func NewItemManagedDevicesManagedDeviceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemManagedDevicesManagedDeviceItemRequestBuilder) {
     m := &ItemManagedDevicesManagedDeviceItemRequestBuilder{
@@ -63,8 +55,8 @@ func NewItemManagedDevicesManagedDeviceItemRequestBuilderInternal(pathParameters
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemManagedDevicesManagedDeviceItemRequestBuilder instantiates a new ManagedDeviceItemRequestBuilder and sets the default values.
@@ -89,17 +81,13 @@ func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) Delete(ctx context.C
     }
     return nil
 }
-// DeleteUserFromSharedAppleDevice provides operations to call the deleteUserFromSharedAppleDevice method.
-func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) DeleteUserFromSharedAppleDevice()(*ItemManagedDevicesItemDeleteUserFromSharedAppleDeviceRequestBuilder) {
-    return NewItemManagedDevicesItemDeleteUserFromSharedAppleDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // DeviceCategory provides operations to manage the deviceCategory property of the microsoft.graph.managedDevice entity.
 func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) DeviceCategory()(*ItemManagedDevicesItemDeviceCategoryRequestBuilder) {
-    return NewItemManagedDevicesItemDeviceCategoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemManagedDevicesItemDeviceCategoryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DeviceCompliancePolicyStates provides operations to manage the deviceCompliancePolicyStates property of the microsoft.graph.managedDevice entity.
 func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) DeviceCompliancePolicyStates()(*ItemManagedDevicesItemDeviceCompliancePolicyStatesRequestBuilder) {
-    return NewItemManagedDevicesItemDeviceCompliancePolicyStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemManagedDevicesItemDeviceCompliancePolicyStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DeviceCompliancePolicyStatesById provides operations to manage the deviceCompliancePolicyStates property of the microsoft.graph.managedDevice entity.
 func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) DeviceCompliancePolicyStatesById(id string)(*ItemManagedDevicesItemDeviceCompliancePolicyStatesDeviceCompliancePolicyStateItemRequestBuilder) {
@@ -110,11 +98,11 @@ func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) DeviceCompliancePoli
     if id != "" {
         urlTplParams["deviceCompliancePolicyState%2Did"] = id
     }
-    return NewItemManagedDevicesItemDeviceCompliancePolicyStatesDeviceCompliancePolicyStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemManagedDevicesItemDeviceCompliancePolicyStatesDeviceCompliancePolicyStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // DeviceConfigurationStates provides operations to manage the deviceConfigurationStates property of the microsoft.graph.managedDevice entity.
 func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) DeviceConfigurationStates()(*ItemManagedDevicesItemDeviceConfigurationStatesRequestBuilder) {
-    return NewItemManagedDevicesItemDeviceConfigurationStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemManagedDevicesItemDeviceConfigurationStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DeviceConfigurationStatesById provides operations to manage the deviceConfigurationStates property of the microsoft.graph.managedDevice entity.
 func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) DeviceConfigurationStatesById(id string)(*ItemManagedDevicesItemDeviceConfigurationStatesDeviceConfigurationStateItemRequestBuilder) {
@@ -125,11 +113,7 @@ func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) DeviceConfigurationS
     if id != "" {
         urlTplParams["deviceConfigurationState%2Did"] = id
     }
-    return NewItemManagedDevicesItemDeviceConfigurationStatesDeviceConfigurationStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// DisableLostMode provides operations to call the disableLostMode method.
-func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) DisableLostMode()(*ItemManagedDevicesItemDisableLostModeRequestBuilder) {
-    return NewItemManagedDevicesItemDisableLostModeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemManagedDevicesItemDeviceConfigurationStatesDeviceConfigurationStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Get the managed devices associated with the user.
 func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemManagedDevicesManagedDeviceItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedDeviceable, error) {
@@ -150,13 +134,77 @@ func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) Get(ctx context.Cont
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedDeviceable), nil
 }
-// LocateDevice provides operations to call the locateDevice method.
-func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) LocateDevice()(*ItemManagedDevicesItemLocateDeviceRequestBuilder) {
-    return NewItemManagedDevicesItemLocateDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphBypassActivationLock provides operations to call the bypassActivationLock method.
+func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) MicrosoftGraphBypassActivationLock()(*ItemManagedDevicesItemMicrosoftGraphBypassActivationLockRequestBuilder) {
+    return NewItemManagedDevicesItemMicrosoftGraphBypassActivationLockRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// LogoutSharedAppleDeviceActiveUser provides operations to call the logoutSharedAppleDeviceActiveUser method.
-func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) LogoutSharedAppleDeviceActiveUser()(*ItemManagedDevicesItemLogoutSharedAppleDeviceActiveUserRequestBuilder) {
-    return NewItemManagedDevicesItemLogoutSharedAppleDeviceActiveUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphCleanWindowsDevice provides operations to call the cleanWindowsDevice method.
+func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) MicrosoftGraphCleanWindowsDevice()(*ItemManagedDevicesItemMicrosoftGraphCleanWindowsDeviceRequestBuilder) {
+    return NewItemManagedDevicesItemMicrosoftGraphCleanWindowsDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphDeleteUserFromSharedAppleDevice provides operations to call the deleteUserFromSharedAppleDevice method.
+func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) MicrosoftGraphDeleteUserFromSharedAppleDevice()(*ItemManagedDevicesItemMicrosoftGraphDeleteUserFromSharedAppleDeviceRequestBuilder) {
+    return NewItemManagedDevicesItemMicrosoftGraphDeleteUserFromSharedAppleDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphDisableLostMode provides operations to call the disableLostMode method.
+func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) MicrosoftGraphDisableLostMode()(*ItemManagedDevicesItemMicrosoftGraphDisableLostModeRequestBuilder) {
+    return NewItemManagedDevicesItemMicrosoftGraphDisableLostModeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphLocateDevice provides operations to call the locateDevice method.
+func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) MicrosoftGraphLocateDevice()(*ItemManagedDevicesItemMicrosoftGraphLocateDeviceRequestBuilder) {
+    return NewItemManagedDevicesItemMicrosoftGraphLocateDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphLogoutSharedAppleDeviceActiveUser provides operations to call the logoutSharedAppleDeviceActiveUser method.
+func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) MicrosoftGraphLogoutSharedAppleDeviceActiveUser()(*ItemManagedDevicesItemMicrosoftGraphLogoutSharedAppleDeviceActiveUserRequestBuilder) {
+    return NewItemManagedDevicesItemMicrosoftGraphLogoutSharedAppleDeviceActiveUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphRebootNow provides operations to call the rebootNow method.
+func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) MicrosoftGraphRebootNow()(*ItemManagedDevicesItemMicrosoftGraphRebootNowRequestBuilder) {
+    return NewItemManagedDevicesItemMicrosoftGraphRebootNowRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphRecoverPasscode provides operations to call the recoverPasscode method.
+func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) MicrosoftGraphRecoverPasscode()(*ItemManagedDevicesItemMicrosoftGraphRecoverPasscodeRequestBuilder) {
+    return NewItemManagedDevicesItemMicrosoftGraphRecoverPasscodeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphRemoteLock provides operations to call the remoteLock method.
+func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) MicrosoftGraphRemoteLock()(*ItemManagedDevicesItemMicrosoftGraphRemoteLockRequestBuilder) {
+    return NewItemManagedDevicesItemMicrosoftGraphRemoteLockRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphRequestRemoteAssistance provides operations to call the requestRemoteAssistance method.
+func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) MicrosoftGraphRequestRemoteAssistance()(*ItemManagedDevicesItemMicrosoftGraphRequestRemoteAssistanceRequestBuilder) {
+    return NewItemManagedDevicesItemMicrosoftGraphRequestRemoteAssistanceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphResetPasscode provides operations to call the resetPasscode method.
+func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) MicrosoftGraphResetPasscode()(*ItemManagedDevicesItemMicrosoftGraphResetPasscodeRequestBuilder) {
+    return NewItemManagedDevicesItemMicrosoftGraphResetPasscodeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphRetire provides operations to call the retire method.
+func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) MicrosoftGraphRetire()(*ItemManagedDevicesItemMicrosoftGraphRetireRequestBuilder) {
+    return NewItemManagedDevicesItemMicrosoftGraphRetireRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphShutDown provides operations to call the shutDown method.
+func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) MicrosoftGraphShutDown()(*ItemManagedDevicesItemMicrosoftGraphShutDownRequestBuilder) {
+    return NewItemManagedDevicesItemMicrosoftGraphShutDownRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphSyncDevice provides operations to call the syncDevice method.
+func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) MicrosoftGraphSyncDevice()(*ItemManagedDevicesItemMicrosoftGraphSyncDeviceRequestBuilder) {
+    return NewItemManagedDevicesItemMicrosoftGraphSyncDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphUpdateWindowsDeviceAccount provides operations to call the updateWindowsDeviceAccount method.
+func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) MicrosoftGraphUpdateWindowsDeviceAccount()(*ItemManagedDevicesItemMicrosoftGraphUpdateWindowsDeviceAccountRequestBuilder) {
+    return NewItemManagedDevicesItemMicrosoftGraphUpdateWindowsDeviceAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphWindowsDefenderScan provides operations to call the windowsDefenderScan method.
+func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) MicrosoftGraphWindowsDefenderScan()(*ItemManagedDevicesItemMicrosoftGraphWindowsDefenderScanRequestBuilder) {
+    return NewItemManagedDevicesItemMicrosoftGraphWindowsDefenderScanRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphWindowsDefenderUpdateSignatures provides operations to call the windowsDefenderUpdateSignatures method.
+func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) MicrosoftGraphWindowsDefenderUpdateSignatures()(*ItemManagedDevicesItemMicrosoftGraphWindowsDefenderUpdateSignaturesRequestBuilder) {
+    return NewItemManagedDevicesItemMicrosoftGraphWindowsDefenderUpdateSignaturesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphWipe provides operations to call the wipe method.
+func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) MicrosoftGraphWipe()(*ItemManagedDevicesItemMicrosoftGraphWipeRequestBuilder) {
+    return NewItemManagedDevicesItemMicrosoftGraphWipeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property managedDevices in users
 func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedDeviceable, requestConfiguration *ItemManagedDevicesManagedDeviceItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedDeviceable, error) {
@@ -176,38 +224,6 @@ func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) Patch(ctx context.Co
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedDeviceable), nil
-}
-// RebootNow provides operations to call the rebootNow method.
-func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) RebootNow()(*ItemManagedDevicesItemRebootNowRequestBuilder) {
-    return NewItemManagedDevicesItemRebootNowRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// RecoverPasscode provides operations to call the recoverPasscode method.
-func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) RecoverPasscode()(*ItemManagedDevicesItemRecoverPasscodeRequestBuilder) {
-    return NewItemManagedDevicesItemRecoverPasscodeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// RemoteLock provides operations to call the remoteLock method.
-func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) RemoteLock()(*ItemManagedDevicesItemRemoteLockRequestBuilder) {
-    return NewItemManagedDevicesItemRemoteLockRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// RequestRemoteAssistance provides operations to call the requestRemoteAssistance method.
-func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) RequestRemoteAssistance()(*ItemManagedDevicesItemRequestRemoteAssistanceRequestBuilder) {
-    return NewItemManagedDevicesItemRequestRemoteAssistanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// ResetPasscode provides operations to call the resetPasscode method.
-func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) ResetPasscode()(*ItemManagedDevicesItemResetPasscodeRequestBuilder) {
-    return NewItemManagedDevicesItemResetPasscodeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Retire provides operations to call the retire method.
-func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) Retire()(*ItemManagedDevicesItemRetireRequestBuilder) {
-    return NewItemManagedDevicesItemRetireRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// ShutDown provides operations to call the shutDown method.
-func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) ShutDown()(*ItemManagedDevicesItemShutDownRequestBuilder) {
-    return NewItemManagedDevicesItemShutDownRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// SyncDevice provides operations to call the syncDevice method.
-func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) SyncDevice()(*ItemManagedDevicesItemSyncDeviceRequestBuilder) {
-    return NewItemManagedDevicesItemSyncDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property managedDevices for users
 func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemManagedDevicesManagedDeviceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -244,30 +260,17 @@ func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) ToPatchRequestInform
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
-// UpdateWindowsDeviceAccount provides operations to call the updateWindowsDeviceAccount method.
-func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) UpdateWindowsDeviceAccount()(*ItemManagedDevicesItemUpdateWindowsDeviceAccountRequestBuilder) {
-    return NewItemManagedDevicesItemUpdateWindowsDeviceAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Users provides operations to manage the users property of the microsoft.graph.managedDevice entity.
 func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) Users()(*ItemManagedDevicesItemUsersRequestBuilder) {
-    return NewItemManagedDevicesItemUsersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// WindowsDefenderScan provides operations to call the windowsDefenderScan method.
-func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) WindowsDefenderScan()(*ItemManagedDevicesItemWindowsDefenderScanRequestBuilder) {
-    return NewItemManagedDevicesItemWindowsDefenderScanRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// WindowsDefenderUpdateSignatures provides operations to call the windowsDefenderUpdateSignatures method.
-func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) WindowsDefenderUpdateSignatures()(*ItemManagedDevicesItemWindowsDefenderUpdateSignaturesRequestBuilder) {
-    return NewItemManagedDevicesItemWindowsDefenderUpdateSignaturesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Wipe provides operations to call the wipe method.
-func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) Wipe()(*ItemManagedDevicesItemWipeRequestBuilder) {
-    return NewItemManagedDevicesItemWipeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemManagedDevicesItemUsersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

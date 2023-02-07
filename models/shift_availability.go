@@ -21,7 +21,7 @@ type ShiftAvailability struct {
 func NewShiftAvailability()(*ShiftAvailability) {
     m := &ShiftAvailability{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateShiftAvailabilityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

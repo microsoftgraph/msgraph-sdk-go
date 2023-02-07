@@ -53,8 +53,8 @@ func NewEntitlementManagementCatalogsItemAccessPackagesItemAccessPackagesIncompa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEntitlementManagementCatalogsItemAccessPackagesItemAccessPackagesIncompatibleWithRequestBuilder instantiates a new AccessPackagesIncompatibleWithRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewEntitlementManagementCatalogsItemAccessPackagesItemAccessPackagesIncompa
 }
 // Count provides operations to count the resources in the collection.
 func (m *EntitlementManagementCatalogsItemAccessPackagesItemAccessPackagesIncompatibleWithRequestBuilder) Count()(*EntitlementManagementCatalogsItemAccessPackagesItemAccessPackagesIncompatibleWithCountRequestBuilder) {
-    return NewEntitlementManagementCatalogsItemAccessPackagesItemAccessPackagesIncompatibleWithCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementCatalogsItemAccessPackagesItemAccessPackagesIncompatibleWithCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of the accessPackage objects that have marked a specified accessPackage as incompatible.
 // [Find more info here]

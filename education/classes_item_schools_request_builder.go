@@ -53,8 +53,8 @@ func NewClassesItemSchoolsRequestBuilderInternal(pathParameters map[string]strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewClassesItemSchoolsRequestBuilder instantiates a new SchoolsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewClassesItemSchoolsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 }
 // Count provides operations to count the resources in the collection.
 func (m *ClassesItemSchoolsRequestBuilder) Count()(*ClassesItemSchoolsCountRequestBuilder) {
-    return NewClassesItemSchoolsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewClassesItemSchoolsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of schools in which the class is taught.
 // [Find more info here]

@@ -27,7 +27,7 @@ type EducationStudent struct {
 func NewEducationStudent()(*EducationStudent) {
     m := &EducationStudent{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateEducationStudentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

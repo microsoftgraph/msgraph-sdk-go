@@ -19,7 +19,7 @@ type EmailAddress struct {
 func NewEmailAddress()(*EmailAddress) {
     m := &EmailAddress{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateEmailAddressFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

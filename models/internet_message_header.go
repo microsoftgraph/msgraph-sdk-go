@@ -19,7 +19,7 @@ type InternetMessageHeader struct {
 func NewInternetMessageHeader()(*InternetMessageHeader) {
     m := &InternetMessageHeader{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateInternetMessageHeaderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

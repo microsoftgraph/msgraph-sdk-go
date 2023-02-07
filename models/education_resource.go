@@ -26,7 +26,7 @@ type EducationResource struct {
 func NewEducationResource()(*EducationResource) {
     m := &EducationResource{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateEducationResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

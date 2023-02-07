@@ -69,6 +69,8 @@ type Application struct {
     publicClient PublicClientApplicationable
     // The verified publisher domain for the application. Read-only. For more information, see How to: Configure an application's publisher domain. Supports $filter (eq, ne, ge, le, startsWith).
     publisherDomain *string
+    // The requestSignatureVerification property
+    requestSignatureVerification RequestSignatureVerificationable
     // Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. For more information, see Limits on requested permissions per app. Not nullable. Supports $filter (eq, not, ge, le).
     requiredResourceAccess []RequiredResourceAccessable
     // The URL where the service exposes SAML metadata for federation. This property is valid only for single-tenant applications. Nullable.
@@ -97,8 +99,8 @@ func NewApplication()(*Application) {
     m := &Application{
         DirectoryObject: *NewDirectoryObject(),
     }
-    odataTypeValue := "#microsoft.graph.application";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.application"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateApplicationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -500,6 +502,16 @@ func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["requestSignatureVerification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateRequestSignatureVerificationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRequestSignatureVerification(val.(RequestSignatureVerificationable))
+        }
+        return nil
+    }
     res["requiredResourceAccess"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRequiredResourceAccessFromDiscriminatorValue)
         if err != nil {
@@ -691,6 +703,10 @@ func (m *Application) GetPublicClient()(PublicClientApplicationable) {
 // GetPublisherDomain gets the publisherDomain property value. The verified publisher domain for the application. Read-only. For more information, see How to: Configure an application's publisher domain. Supports $filter (eq, ne, ge, le, startsWith).
 func (m *Application) GetPublisherDomain()(*string) {
     return m.publisherDomain
+}
+// GetRequestSignatureVerification gets the requestSignatureVerification property value. The requestSignatureVerification property
+func (m *Application) GetRequestSignatureVerification()(RequestSignatureVerificationable) {
+    return m.requestSignatureVerification
 }
 // GetRequiredResourceAccess gets the requiredResourceAccess property value. Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. For more information, see Limits on requested permissions per app. Not nullable. Supports $filter (eq, not, ge, le).
 func (m *Application) GetRequiredResourceAccess()([]RequiredResourceAccessable) {
@@ -954,6 +970,12 @@ func (m *Application) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("requestSignatureVerification", m.GetRequestSignatureVerification())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRequiredResourceAccess() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRequiredResourceAccess()))
         for i, v := range m.GetRequiredResourceAccess() {
@@ -1153,6 +1175,10 @@ func (m *Application) SetPublicClient(value PublicClientApplicationable)() {
 // SetPublisherDomain sets the publisherDomain property value. The verified publisher domain for the application. Read-only. For more information, see How to: Configure an application's publisher domain. Supports $filter (eq, ne, ge, le, startsWith).
 func (m *Application) SetPublisherDomain(value *string)() {
     m.publisherDomain = value
+}
+// SetRequestSignatureVerification sets the requestSignatureVerification property value. The requestSignatureVerification property
+func (m *Application) SetRequestSignatureVerification(value RequestSignatureVerificationable)() {
+    m.requestSignatureVerification = value
 }
 // SetRequiredResourceAccess sets the requiredResourceAccess property value. Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. For more information, see Limits on requested permissions per app. Not nullable. Supports $filter (eq, not, ge, le).
 func (m *Application) SetRequiredResourceAccess(value []RequiredResourceAccessable)() {

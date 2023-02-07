@@ -60,8 +60,8 @@ func NewTeamworkAssociatedTeamsRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTeamworkAssociatedTeamsRequestBuilder instantiates a new AssociatedTeamsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewTeamworkAssociatedTeamsRequestBuilder(rawUrl string, requestAdapter i2ae
 }
 // Count provides operations to count the resources in the collection.
 func (m *TeamworkAssociatedTeamsRequestBuilder) Count()(*TeamworkAssociatedTeamsCountRequestBuilder) {
-    return NewTeamworkAssociatedTeamsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTeamworkAssociatedTeamsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the list of teams in Microsoft Teams that a user is associated with.Currently, a user can be associated with a team in two different ways:* A user can be a direct member of a team.* A user can be a member of a shared channel that is hosted inside a team.
 // [Find more info here]
@@ -138,7 +138,10 @@ func (m *TeamworkAssociatedTeamsRequestBuilder) ToPostRequestInformation(ctx con
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

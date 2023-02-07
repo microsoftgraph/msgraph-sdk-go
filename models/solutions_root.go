@@ -19,7 +19,7 @@ type SolutionsRoot struct {
 func NewSolutionsRoot()(*SolutionsRoot) {
     m := &SolutionsRoot{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSolutionsRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -23,7 +23,7 @@ type DeviceEnrollmentPlatformRestriction struct {
 func NewDeviceEnrollmentPlatformRestriction()(*DeviceEnrollmentPlatformRestriction) {
     m := &DeviceEnrollmentPlatformRestriction{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeviceEnrollmentPlatformRestrictionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -55,8 +55,8 @@ func NewServicesPrintServiceItemRequestBuilderInternal(pathParameters map[string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewServicesPrintServiceItemRequestBuilder instantiates a new PrintServiceItemRequestBuilder and sets the default values.
@@ -83,7 +83,7 @@ func (m *ServicesPrintServiceItemRequestBuilder) Delete(ctx context.Context, req
 }
 // Endpoints provides operations to manage the endpoints property of the microsoft.graph.printService entity.
 func (m *ServicesPrintServiceItemRequestBuilder) Endpoints()(*ServicesItemEndpointsRequestBuilder) {
-    return NewServicesItemEndpointsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewServicesItemEndpointsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // EndpointsById provides operations to manage the endpoints property of the microsoft.graph.printService entity.
 func (m *ServicesPrintServiceItemRequestBuilder) EndpointsById(id string)(*ServicesItemEndpointsPrintServiceEndpointItemRequestBuilder) {
@@ -94,7 +94,7 @@ func (m *ServicesPrintServiceItemRequestBuilder) EndpointsById(id string)(*Servi
     if id != "" {
         urlTplParams["printServiceEndpoint%2Did"] = id
     }
-    return NewServicesItemEndpointsPrintServiceEndpointItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewServicesItemEndpointsPrintServiceEndpointItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Get the list of available Universal Print service endpoints.
 func (m *ServicesPrintServiceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ServicesPrintServiceItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintServiceable, error) {
@@ -169,7 +169,10 @@ func (m *ServicesPrintServiceItemRequestBuilder) ToPatchRequestInformation(ctx c
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

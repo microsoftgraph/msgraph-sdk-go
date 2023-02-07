@@ -27,8 +27,8 @@ func NewListItem()(*ListItem) {
     m := &ListItem{
         BaseItem: *NewBaseItem(),
     }
-    odataTypeValue := "#microsoft.graph.listItem";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.listItem"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateListItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

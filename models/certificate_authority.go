@@ -27,7 +27,7 @@ type CertificateAuthority struct {
 func NewCertificateAuthority()(*CertificateAuthority) {
     m := &CertificateAuthority{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCertificateAuthorityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

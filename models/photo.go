@@ -34,7 +34,7 @@ type Photo struct {
 func NewPhoto()(*Photo) {
     m := &Photo{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePhotoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

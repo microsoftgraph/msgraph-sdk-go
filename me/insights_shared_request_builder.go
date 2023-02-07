@@ -60,8 +60,8 @@ func NewInsightsSharedRequestBuilderInternal(pathParameters map[string]string, r
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewInsightsSharedRequestBuilder instantiates a new SharedRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewInsightsSharedRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 }
 // Count provides operations to count the resources in the collection.
 func (m *InsightsSharedRequestBuilder) Count()(*InsightsSharedCountRequestBuilder) {
-    return NewInsightsSharedCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewInsightsSharedCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.
 func (m *InsightsSharedRequestBuilder) Get(ctx context.Context, requestConfiguration *InsightsSharedRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SharedInsightCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *InsightsSharedRequestBuilder) ToPostRequestInformation(ctx context.Cont
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

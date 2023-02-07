@@ -16,13 +16,6 @@ type ApplicationTemplateItemRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ApplicationTemplateItemRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ApplicationTemplateItemRequestBuilderDeleteRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // ApplicationTemplateItemRequestBuilderGetQueryParameters retrieve the properties of an applicationTemplate object.
 type ApplicationTemplateItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
@@ -39,13 +32,6 @@ type ApplicationTemplateItemRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ApplicationTemplateItemRequestBuilderGetQueryParameters
 }
-// ApplicationTemplateItemRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ApplicationTemplateItemRequestBuilderPatchRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // NewApplicationTemplateItemRequestBuilderInternal instantiates a new ApplicationTemplateItemRequestBuilder and sets the default values.
 func NewApplicationTemplateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ApplicationTemplateItemRequestBuilder) {
     m := &ApplicationTemplateItemRequestBuilder{
@@ -55,8 +41,8 @@ func NewApplicationTemplateItemRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewApplicationTemplateItemRequestBuilder instantiates a new ApplicationTemplateItemRequestBuilder and sets the default values.
@@ -64,22 +50,6 @@ func NewApplicationTemplateItemRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewApplicationTemplateItemRequestBuilderInternal(urlParams, requestAdapter)
-}
-// Delete delete entity from applicationTemplates by key (id)
-func (m *ApplicationTemplateItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ApplicationTemplateItemRequestBuilderDeleteRequestConfiguration)(error) {
-    requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
-    if err != nil {
-        return err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-    }
-    err = m.requestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
-    if err != nil {
-        return err
-    }
-    return nil
 }
 // Get retrieve the properties of an applicationTemplate object.
 // [Find more info here]
@@ -103,40 +73,9 @@ func (m *ApplicationTemplateItemRequestBuilder) Get(ctx context.Context, request
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApplicationTemplateable), nil
 }
-// Instantiate provides operations to call the instantiate method.
-func (m *ApplicationTemplateItemRequestBuilder) Instantiate()(*ItemInstantiateRequestBuilder) {
-    return NewItemInstantiateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Patch update entity in applicationTemplates by key (id)
-func (m *ApplicationTemplateItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApplicationTemplateable, requestConfiguration *ApplicationTemplateItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApplicationTemplateable, error) {
-    requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-    }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateApplicationTemplateFromDiscriminatorValue, errorMapping)
-    if err != nil {
-        return nil, err
-    }
-    if res == nil {
-        return nil, nil
-    }
-    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApplicationTemplateable), nil
-}
-// ToDeleteRequestInformation delete entity from applicationTemplates by key (id)
-func (m *ApplicationTemplateItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ApplicationTemplateItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
+// MicrosoftGraphInstantiate provides operations to call the instantiate method.
+func (m *ApplicationTemplateItemRequestBuilder) MicrosoftGraphInstantiate()(*ItemMicrosoftGraphInstantiateRequestBuilder) {
+    return NewItemMicrosoftGraphInstantiateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation retrieve the properties of an applicationTemplate object.
 func (m *ApplicationTemplateItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ApplicationTemplateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -149,20 +88,6 @@ func (m *ApplicationTemplateItemRequestBuilder) ToGetRequestInformation(ctx cont
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
-// ToPatchRequestInformation update entity in applicationTemplates by key (id)
-func (m *ApplicationTemplateItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApplicationTemplateable, requestConfiguration *ApplicationTemplateItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }

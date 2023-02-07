@@ -8,7 +8,7 @@ import (
 
 // EdiscoveryCase 
 type EdiscoveryCase struct {
-    Case_escaped
+    CaseEscaped
     // The user who closed the case.
     closedBy iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable
     // The date and time when the case was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -33,10 +33,10 @@ type EdiscoveryCase struct {
 // NewEdiscoveryCase instantiates a new EdiscoveryCase and sets the default values.
 func NewEdiscoveryCase()(*EdiscoveryCase) {
     m := &EdiscoveryCase{
-        Case_escaped: *NewCase_escaped(),
+        CaseEscaped: *NewCaseEscaped(),
     }
-    odataTypeValue := "#microsoft.graph.security.ediscoveryCase";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.security.ediscoveryCase"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateEdiscoveryCaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -61,7 +61,7 @@ func (m *EdiscoveryCase) GetExternalId()(*string) {
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EdiscoveryCase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.Case_escaped.GetFieldDeserializers()
+    res := m.CaseEscaped.GetFieldDeserializers()
     res["closedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
@@ -214,7 +214,7 @@ func (m *EdiscoveryCase) GetTags()([]EdiscoveryReviewTagable) {
 }
 // Serialize serializes information the current object
 func (m *EdiscoveryCase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.Case_escaped.Serialize(writer)
+    err := m.CaseEscaped.Serialize(writer)
     if err != nil {
         return err
     }

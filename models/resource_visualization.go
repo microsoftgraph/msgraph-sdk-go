@@ -25,13 +25,13 @@ type ResourceVisualization struct {
     // The item's title text.
     title *string
     // The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
-    type_escaped *string
+    typeEscaped *string
 }
 // NewResourceVisualization instantiates a new resourceVisualization and sets the default values.
 func NewResourceVisualization()(*ResourceVisualization) {
     m := &ResourceVisualization{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateResourceVisualizationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -171,7 +171,7 @@ func (m *ResourceVisualization) GetTitle()(*string) {
 }
 // GetType gets the type property value. The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
 func (m *ResourceVisualization) GetType()(*string) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // Serialize serializes information the current object
 func (m *ResourceVisualization) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -275,5 +275,5 @@ func (m *ResourceVisualization) SetTitle(value *string)() {
 }
 // SetType sets the type property value. The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
 func (m *ResourceVisualization) SetType(value *string)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }

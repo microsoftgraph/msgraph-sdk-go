@@ -60,8 +60,8 @@ func NewJoinedTeamsItemPrimaryChannelSharedWithTeamsRequestBuilderInternal(pathP
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewJoinedTeamsItemPrimaryChannelSharedWithTeamsRequestBuilder instantiates a new SharedWithTeamsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewJoinedTeamsItemPrimaryChannelSharedWithTeamsRequestBuilder(rawUrl string
 }
 // Count provides operations to count the resources in the collection.
 func (m *JoinedTeamsItemPrimaryChannelSharedWithTeamsRequestBuilder) Count()(*JoinedTeamsItemPrimaryChannelSharedWithTeamsCountRequestBuilder) {
-    return NewJoinedTeamsItemPrimaryChannelSharedWithTeamsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewJoinedTeamsItemPrimaryChannelSharedWithTeamsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the list of teams that has been shared a specified channel. This operation is allowed only for channels with a **membershipType** value of `shared`.
 // [Find more info here]
@@ -138,7 +138,10 @@ func (m *JoinedTeamsItemPrimaryChannelSharedWithTeamsRequestBuilder) ToPostReque
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

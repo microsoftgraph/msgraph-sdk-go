@@ -14,7 +14,7 @@ type IdentityProvider struct {
     // The display name of the identity provider. Not nullable.
     name *string
     // The identity provider type is a required field. For B2B scenario: Google, Facebook. For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo, QQ, WeChat, OpenIDConnect. Not nullable.
-    type_escaped *string
+    typeEscaped *string
 }
 // NewIdentityProvider instantiates a new identityProvider and sets the default values.
 func NewIdentityProvider()(*IdentityProvider) {
@@ -86,7 +86,7 @@ func (m *IdentityProvider) GetName()(*string) {
 }
 // GetType gets the type property value. The identity provider type is a required field. For B2B scenario: Google, Facebook. For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo, QQ, WeChat, OpenIDConnect. Not nullable.
 func (m *IdentityProvider) GetType()(*string) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // Serialize serializes information the current object
 func (m *IdentityProvider) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -134,5 +134,5 @@ func (m *IdentityProvider) SetName(value *string)() {
 }
 // SetType sets the type property value. The identity provider type is a required field. For B2B scenario: Google, Facebook. For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo, QQ, WeChat, OpenIDConnect. Not nullable.
 func (m *IdentityProvider) SetType(value *string)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }

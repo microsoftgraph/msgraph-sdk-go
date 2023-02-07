@@ -17,7 +17,7 @@ type ProvisionChannelEmailResult struct {
 func NewProvisionChannelEmailResult()(*ProvisionChannelEmailResult) {
     m := &ProvisionChannelEmailResult{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateProvisionChannelEmailResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

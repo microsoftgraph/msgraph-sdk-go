@@ -24,7 +24,7 @@ type UserTrainingStatusInfo struct {
 func NewUserTrainingStatusInfo()(*UserTrainingStatusInfo) {
     m := &UserTrainingStatusInfo{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateUserTrainingStatusInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

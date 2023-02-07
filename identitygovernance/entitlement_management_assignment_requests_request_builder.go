@@ -60,8 +60,8 @@ func NewEntitlementManagementAssignmentRequestsRequestBuilderInternal(pathParame
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEntitlementManagementAssignmentRequestsRequestBuilder instantiates a new AssignmentRequestsRequestBuilder and sets the default values.
@@ -72,11 +72,7 @@ func NewEntitlementManagementAssignmentRequestsRequestBuilder(rawUrl string, req
 }
 // Count provides operations to count the resources in the collection.
 func (m *EntitlementManagementAssignmentRequestsRequestBuilder) Count()(*EntitlementManagementAssignmentRequestsCountRequestBuilder) {
-    return NewEntitlementManagementAssignmentRequestsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
-func (m *EntitlementManagementAssignmentRequestsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnRequestBuilder) {
-    return NewEntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
+    return NewEntitlementManagementAssignmentRequestsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get in Azure AD entitlement management, retrieve a list of accessPackageAssignmentRequest objects.  The resulting list includes all the assignment requests, current and well as expired, that the caller has access to read, across all catalogs and access packages.
 // [Find more info here]
@@ -100,7 +96,11 @@ func (m *EntitlementManagementAssignmentRequestsRequestBuilder) Get(ctx context.
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageAssignmentRequestCollectionResponseable), nil
 }
-// Post in Azure AD Entitlement Management, create a new accessPackageAssignmentRequest object.  This operation is used to assign a user to an access package, or to remove an access package assignment.
+// MicrosoftGraphFilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
+func (m *EntitlementManagementAssignmentRequestsRequestBuilder) MicrosoftGraphFilterByCurrentUserWithOn(on *string)(*EntitlementManagementAssignmentRequestsMicrosoftGraphFilterByCurrentUserWithOnRequestBuilder) {
+    return NewEntitlementManagementAssignmentRequestsMicrosoftGraphFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
+}
+// Post in Azure AD Entitlement Management, create a new accessPackageAssignmentRequest object.  This operation is used to assign a user to an access package, update the assignment, or to remove an access package assignment.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/entitlementmanagement-post-assignmentrequests?view=graph-rest-1.0
@@ -138,14 +138,17 @@ func (m *EntitlementManagementAssignmentRequestsRequestBuilder) ToGetRequestInfo
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation in Azure AD Entitlement Management, create a new accessPackageAssignmentRequest object.  This operation is used to assign a user to an access package, or to remove an access package assignment.
+// ToPostRequestInformation in Azure AD Entitlement Management, create a new accessPackageAssignmentRequest object.  This operation is used to assign a user to an access package, update the assignment, or to remove an access package assignment.
 func (m *EntitlementManagementAssignmentRequestsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageAssignmentRequestable, requestConfiguration *EntitlementManagementAssignmentRequestsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

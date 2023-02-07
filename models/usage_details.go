@@ -20,7 +20,7 @@ type UsageDetails struct {
 func NewUsageDetails()(*UsageDetails) {
     m := &UsageDetails{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateUsageDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -19,7 +19,7 @@ type PersonType struct {
 func NewPersonType()(*PersonType) {
     m := &PersonType{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePersonTypeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

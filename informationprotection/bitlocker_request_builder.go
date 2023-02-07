@@ -41,8 +41,8 @@ func NewBitlockerRequestBuilderInternal(pathParameters map[string]string, reques
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewBitlockerRequestBuilder instantiates a new BitlockerRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func (m *BitlockerRequestBuilder) Get(ctx context.Context, requestConfiguration 
 }
 // RecoveryKeys provides operations to manage the recoveryKeys property of the microsoft.graph.bitlocker entity.
 func (m *BitlockerRequestBuilder) RecoveryKeys()(*BitlockerRecoveryKeysRequestBuilder) {
-    return NewBitlockerRecoveryKeysRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewBitlockerRecoveryKeysRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // RecoveryKeysById provides operations to manage the recoveryKeys property of the microsoft.graph.bitlocker entity.
 func (m *BitlockerRequestBuilder) RecoveryKeysById(id string)(*BitlockerRecoveryKeysBitlockerRecoveryKeyItemRequestBuilder) {
@@ -83,7 +83,7 @@ func (m *BitlockerRequestBuilder) RecoveryKeysById(id string)(*BitlockerRecovery
     if id != "" {
         urlTplParams["bitlockerRecoveryKey%2Did"] = id
     }
-    return NewBitlockerRecoveryKeysBitlockerRecoveryKeyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewBitlockerRecoveryKeysBitlockerRecoveryKeyItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToGetRequestInformation get bitlocker from informationProtection
 func (m *BitlockerRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BitlockerRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

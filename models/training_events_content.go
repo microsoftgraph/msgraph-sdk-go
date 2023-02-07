@@ -19,7 +19,7 @@ type TrainingEventsContent struct {
 func NewTrainingEventsContent()(*TrainingEventsContent) {
     m := &TrainingEventsContent{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTrainingEventsContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

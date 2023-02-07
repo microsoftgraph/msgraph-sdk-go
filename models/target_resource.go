@@ -19,7 +19,7 @@ type TargetResource struct {
     // The OdataType property
     odataType *string
     // Describes the resource type.  Example values include Application, Group, ServicePrincipal, and User.
-    type_escaped *string
+    typeEscaped *string
     // When type is set to User, this includes the user name that initiated the action; null for other types.
     userPrincipalName *string
 }
@@ -27,7 +27,7 @@ type TargetResource struct {
 func NewTargetResource()(*TargetResource) {
     m := &TargetResource{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTargetResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -139,7 +139,7 @@ func (m *TargetResource) GetOdataType()(*string) {
 }
 // GetType gets the type property value. Describes the resource type.  Example values include Application, Group, ServicePrincipal, and User.
 func (m *TargetResource) GetType()(*string) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // GetUserPrincipalName gets the userPrincipalName property value. When type is set to User, this includes the user name that initiated the action; null for other types.
 func (m *TargetResource) GetUserPrincipalName()(*string) {
@@ -228,7 +228,7 @@ func (m *TargetResource) SetOdataType(value *string)() {
 }
 // SetType sets the type property value. Describes the resource type.  Example values include Application, Group, ServicePrincipal, and User.
 func (m *TargetResource) SetType(value *string)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }
 // SetUserPrincipalName sets the userPrincipalName property value. When type is set to User, this includes the user name that initiated the action; null for other types.
 func (m *TargetResource) SetUserPrincipalName(value *string)() {

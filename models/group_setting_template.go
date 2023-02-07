@@ -19,8 +19,8 @@ func NewGroupSettingTemplate()(*GroupSettingTemplate) {
     m := &GroupSettingTemplate{
         DirectoryObject: *NewDirectoryObject(),
     }
-    odataTypeValue := "#microsoft.graph.groupSettingTemplate";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.groupSettingTemplate"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateGroupSettingTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

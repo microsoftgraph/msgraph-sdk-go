@@ -85,8 +85,8 @@ func NewWindows10EndpointProtectionConfiguration()(*Windows10EndpointProtectionC
     m := &Windows10EndpointProtectionConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.windows10EndpointProtectionConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windows10EndpointProtectionConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindows10EndpointProtectionConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

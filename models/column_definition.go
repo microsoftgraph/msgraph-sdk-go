@@ -68,7 +68,7 @@ type ColumnDefinition struct {
     // This column stores thumbnail values.
     thumbnail ThumbnailColumnable
     // For site columns, the type of column. Read-only.
-    type_escaped *ColumnTypes
+    typeEscaped *ColumnTypes
     // This column stores validation formula and message for the column.
     validation ColumnValidationable
 }
@@ -530,7 +530,7 @@ func (m *ColumnDefinition) GetThumbnail()(ThumbnailColumnable) {
 }
 // GetType gets the type property value. For site columns, the type of column. Read-only.
 func (m *ColumnDefinition) GetType()(*ColumnTypes) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // GetValidation gets the validation property value. This column stores validation formula and message for the column.
 func (m *ColumnDefinition) GetValidation()(ColumnValidationable) {
@@ -859,7 +859,7 @@ func (m *ColumnDefinition) SetThumbnail(value ThumbnailColumnable)() {
 }
 // SetType sets the type property value. For site columns, the type of column. Read-only.
 func (m *ColumnDefinition) SetType(value *ColumnTypes)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }
 // SetValidation sets the validation property value. This column stores validation formula and message for the column.
 func (m *ColumnDefinition) SetValidation(value ColumnValidationable)() {

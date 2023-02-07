@@ -22,8 +22,8 @@ func NewFeatureRolloutPoliciesItemAppliesToDirectoryObjectItemRequestBuilderInte
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewFeatureRolloutPoliciesItemAppliesToDirectoryObjectItemRequestBuilder instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
@@ -34,5 +34,5 @@ func NewFeatureRolloutPoliciesItemAppliesToDirectoryObjectItemRequestBuilder(raw
 }
 // Ref provides operations to manage the collection of policyRoot entities.
 func (m *FeatureRolloutPoliciesItemAppliesToDirectoryObjectItemRequestBuilder) Ref()(*FeatureRolloutPoliciesItemAppliesToItemRefRequestBuilder) {
-    return NewFeatureRolloutPoliciesItemAppliesToItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewFeatureRolloutPoliciesItemAppliesToItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

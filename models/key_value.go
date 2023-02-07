@@ -19,7 +19,7 @@ type KeyValue struct {
 func NewKeyValue()(*KeyValue) {
     m := &KeyValue{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateKeyValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -19,7 +19,7 @@ type FreeBusyError struct {
 func NewFreeBusyError()(*FreeBusyError) {
     m := &FreeBusyError{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateFreeBusyErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

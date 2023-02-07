@@ -29,8 +29,8 @@ func NewBookingCustomerInformation()(*BookingCustomerInformation) {
     m := &BookingCustomerInformation{
         BookingCustomerInformationBase: *NewBookingCustomerInformationBase(),
     }
-    odataTypeValue := "#microsoft.graph.bookingCustomerInformation";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.bookingCustomerInformation"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateBookingCustomerInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

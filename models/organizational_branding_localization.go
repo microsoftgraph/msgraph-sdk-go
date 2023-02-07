@@ -13,8 +13,8 @@ func NewOrganizationalBrandingLocalization()(*OrganizationalBrandingLocalization
     m := &OrganizationalBrandingLocalization{
         OrganizationalBrandingProperties: *NewOrganizationalBrandingProperties(),
     }
-    odataTypeValue := "#microsoft.graph.organizationalBrandingLocalization";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.organizationalBrandingLocalization"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateOrganizationalBrandingLocalizationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

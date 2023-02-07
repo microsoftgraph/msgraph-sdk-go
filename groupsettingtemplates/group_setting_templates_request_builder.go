@@ -60,8 +60,8 @@ func NewGroupSettingTemplatesRequestBuilderInternal(pathParameters map[string]st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewGroupSettingTemplatesRequestBuilder instantiates a new GroupSettingTemplatesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewGroupSettingTemplatesRequestBuilder(rawUrl string, requestAdapter i2ae41
 }
 // Count provides operations to count the resources in the collection.
 func (m *GroupSettingTemplatesRequestBuilder) Count()(*CountRequestBuilder) {
-    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get group setting templates represents a set of templates from which group settings may be created and used within a tenant. This operation retrieves the list of available groupSettingTemplates objects.
 // [Find more info here]
@@ -96,13 +96,17 @@ func (m *GroupSettingTemplatesRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupSettingTemplateCollectionResponseable), nil
 }
-// GetAvailableExtensionProperties provides operations to call the getAvailableExtensionProperties method.
-func (m *GroupSettingTemplatesRequestBuilder) GetAvailableExtensionProperties()(*GetAvailableExtensionPropertiesRequestBuilder) {
-    return NewGetAvailableExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetAvailableExtensionProperties provides operations to call the getAvailableExtensionProperties method.
+func (m *GroupSettingTemplatesRequestBuilder) MicrosoftGraphGetAvailableExtensionProperties()(*MicrosoftGraphGetAvailableExtensionPropertiesRequestBuilder) {
+    return NewMicrosoftGraphGetAvailableExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetByIds provides operations to call the getByIds method.
-func (m *GroupSettingTemplatesRequestBuilder) GetByIds()(*GetByIdsRequestBuilder) {
-    return NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetByIds provides operations to call the getByIds method.
+func (m *GroupSettingTemplatesRequestBuilder) MicrosoftGraphGetByIds()(*MicrosoftGraphGetByIdsRequestBuilder) {
+    return NewMicrosoftGraphGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphValidateProperties provides operations to call the validateProperties method.
+func (m *GroupSettingTemplatesRequestBuilder) MicrosoftGraphValidateProperties()(*MicrosoftGraphValidatePropertiesRequestBuilder) {
+    return NewMicrosoftGraphValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post add new entity to groupSettingTemplates
 func (m *GroupSettingTemplatesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupSettingTemplateable, requestConfiguration *GroupSettingTemplatesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupSettingTemplateable, error) {
@@ -146,14 +150,13 @@ func (m *GroupSettingTemplatesRequestBuilder) ToPostRequestInformation(ctx conte
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// ValidateProperties provides operations to call the validateProperties method.
-func (m *GroupSettingTemplatesRequestBuilder) ValidateProperties()(*ValidatePropertiesRequestBuilder) {
-    return NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

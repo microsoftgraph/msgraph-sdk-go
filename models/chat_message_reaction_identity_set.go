@@ -13,8 +13,8 @@ func NewChatMessageReactionIdentitySet()(*ChatMessageReactionIdentitySet) {
     m := &ChatMessageReactionIdentitySet{
         IdentitySet: *NewIdentitySet(),
     }
-    odataTypeValue := "#microsoft.graph.chatMessageReactionIdentitySet";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.chatMessageReactionIdentitySet"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateChatMessageReactionIdentitySetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

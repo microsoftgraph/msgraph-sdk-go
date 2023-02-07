@@ -22,8 +22,8 @@ func NewOnenoteEntityHierarchyModel()(*OnenoteEntityHierarchyModel) {
     m := &OnenoteEntityHierarchyModel{
         OnenoteEntitySchemaObjectModel: *NewOnenoteEntitySchemaObjectModel(),
     }
-    odataTypeValue := "#microsoft.graph.onenoteEntityHierarchyModel";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.onenoteEntityHierarchyModel"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateOnenoteEntityHierarchyModelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

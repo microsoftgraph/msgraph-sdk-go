@@ -53,8 +53,8 @@ func NewItemCertificateBasedAuthConfigurationRequestBuilderInternal(pathParamete
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemCertificateBasedAuthConfigurationRequestBuilder instantiates a new CertificateBasedAuthConfigurationRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemCertificateBasedAuthConfigurationRequestBuilder(rawUrl string, reque
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemCertificateBasedAuthConfigurationRequestBuilder) Count()(*ItemCertificateBasedAuthConfigurationCountRequestBuilder) {
-    return NewItemCertificateBasedAuthConfigurationCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemCertificateBasedAuthConfigurationCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of certificateBasedAuthConfiguration objects.
 // [Find more info here]

@@ -21,7 +21,7 @@ type PasswordProfile struct {
 func NewPasswordProfile()(*PasswordProfile) {
     m := &PasswordProfile{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePasswordProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

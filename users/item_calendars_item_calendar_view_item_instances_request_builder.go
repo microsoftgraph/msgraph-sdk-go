@@ -49,8 +49,8 @@ func NewItemCalendarsItemCalendarViewItemInstancesRequestBuilderInternal(pathPar
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemCalendarsItemCalendarViewItemInstancesRequestBuilder instantiates a new InstancesRequestBuilder and sets the default values.
@@ -61,11 +61,7 @@ func NewItemCalendarsItemCalendarViewItemInstancesRequestBuilder(rawUrl string, 
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemCalendarsItemCalendarViewItemInstancesRequestBuilder) Count()(*ItemCalendarsItemCalendarViewItemInstancesCountRequestBuilder) {
-    return NewItemCalendarsItemCalendarViewItemInstancesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Delta provides operations to call the delta method.
-func (m *ItemCalendarsItemCalendarViewItemInstancesRequestBuilder) Delta()(*ItemCalendarsItemCalendarViewItemInstancesDeltaRequestBuilder) {
-    return NewItemCalendarsItemCalendarViewItemInstancesDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemCalendarsItemCalendarViewItemInstancesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the instances (occurrences) of an event for a specified time range.  If the event is a `seriesMaster` type, this returns the occurrences and exceptions of the event in the specified time range.
 // [Find more info here]
@@ -88,6 +84,10 @@ func (m *ItemCalendarsItemCalendarViewItemInstancesRequestBuilder) Get(ctx conte
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EventCollectionResponseable), nil
+}
+// MicrosoftGraphDelta provides operations to call the delta method.
+func (m *ItemCalendarsItemCalendarViewItemInstancesRequestBuilder) MicrosoftGraphDelta()(*ItemCalendarsItemCalendarViewItemInstancesMicrosoftGraphDeltaRequestBuilder) {
+    return NewItemCalendarsItemCalendarViewItemInstancesMicrosoftGraphDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation get the instances (occurrences) of an event for a specified time range.  If the event is a `seriesMaster` type, this returns the occurrences and exceptions of the event in the specified time range.
 func (m *ItemCalendarsItemCalendarViewItemInstancesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarsItemCalendarViewItemInstancesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -17,8 +17,8 @@ func NewEventMessageResponse()(*EventMessageResponse) {
     m := &EventMessageResponse{
         EventMessage: *NewEventMessage(),
     }
-    odataTypeValue := "#microsoft.graph.eventMessageResponse";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.eventMessageResponse"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateEventMessageResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

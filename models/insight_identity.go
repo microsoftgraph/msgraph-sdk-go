@@ -21,7 +21,7 @@ type InsightIdentity struct {
 func NewInsightIdentity()(*InsightIdentity) {
     m := &InsightIdentity{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateInsightIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

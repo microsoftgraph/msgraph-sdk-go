@@ -22,8 +22,8 @@ func NewEntitlementManagementConnectedOrganizationsItemInternalSponsorsDirectory
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewEntitlementManagementConnectedOrganizationsItemInternalSponsorsDirectoryObjectItemRequestBuilder instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
@@ -34,5 +34,5 @@ func NewEntitlementManagementConnectedOrganizationsItemInternalSponsorsDirectory
 }
 // Ref provides operations to manage the collection of identityGovernance entities.
 func (m *EntitlementManagementConnectedOrganizationsItemInternalSponsorsDirectoryObjectItemRequestBuilder) Ref()(*EntitlementManagementConnectedOrganizationsItemInternalSponsorsItemRefRequestBuilder) {
-    return NewEntitlementManagementConnectedOrganizationsItemInternalSponsorsItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewEntitlementManagementConnectedOrganizationsItemInternalSponsorsItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

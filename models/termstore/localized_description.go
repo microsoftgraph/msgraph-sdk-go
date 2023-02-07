@@ -19,7 +19,7 @@ type LocalizedDescription struct {
 func NewLocalizedDescription()(*LocalizedDescription) {
     m := &LocalizedDescription{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateLocalizedDescriptionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

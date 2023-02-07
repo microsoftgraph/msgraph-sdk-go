@@ -19,7 +19,7 @@ type ProxiedDomain struct {
 func NewProxiedDomain()(*ProxiedDomain) {
     m := &ProxiedDomain{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateProxiedDomainFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

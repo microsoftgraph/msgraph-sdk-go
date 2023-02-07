@@ -55,8 +55,8 @@ func NewItemSitesItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilderIntern
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemSitesItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilder instantiates a new OnenotePageItemRequestBuilder and sets the default values.
@@ -67,11 +67,7 @@ func NewItemSitesItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilder(rawUr
 }
 // Content provides operations to manage the media for the group entity.
 func (m *ItemSitesItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilder) Content()(*ItemSitesItemOnenoteSectionsItemPagesItemContentRequestBuilder) {
-    return NewItemSitesItemOnenoteSectionsItemPagesItemContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// CopyToSection provides operations to call the copyToSection method.
-func (m *ItemSitesItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilder) CopyToSection()(*ItemSitesItemOnenoteSectionsItemPagesItemCopyToSectionRequestBuilder) {
-    return NewItemSitesItemOnenoteSectionsItemPagesItemCopyToSectionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesItemOnenoteSectionsItemPagesItemContentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete navigation property pages for groups
 func (m *ItemSitesItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSitesItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -108,17 +104,25 @@ func (m *ItemSitesItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilder) Get
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenotePageable), nil
 }
-// OnenotePatchContent provides operations to call the onenotePatchContent method.
-func (m *ItemSitesItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilder) OnenotePatchContent()(*ItemSitesItemOnenoteSectionsItemPagesItemOnenotePatchContentRequestBuilder) {
-    return NewItemSitesItemOnenoteSectionsItemPagesItemOnenotePatchContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphCopyToSection provides operations to call the copyToSection method.
+func (m *ItemSitesItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilder) MicrosoftGraphCopyToSection()(*ItemSitesItemOnenoteSectionsItemPagesItemMicrosoftGraphCopyToSectionRequestBuilder) {
+    return NewItemSitesItemOnenoteSectionsItemPagesItemMicrosoftGraphCopyToSectionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphOnenotePatchContent provides operations to call the onenotePatchContent method.
+func (m *ItemSitesItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilder) MicrosoftGraphOnenotePatchContent()(*ItemSitesItemOnenoteSectionsItemPagesItemMicrosoftGraphOnenotePatchContentRequestBuilder) {
+    return NewItemSitesItemOnenoteSectionsItemPagesItemMicrosoftGraphOnenotePatchContentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphPreview provides operations to call the preview method.
+func (m *ItemSitesItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilder) MicrosoftGraphPreview()(*ItemSitesItemOnenoteSectionsItemPagesItemMicrosoftGraphPreviewRequestBuilder) {
+    return NewItemSitesItemOnenoteSectionsItemPagesItemMicrosoftGraphPreviewRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ParentNotebook provides operations to manage the parentNotebook property of the microsoft.graph.onenotePage entity.
 func (m *ItemSitesItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilder) ParentNotebook()(*ItemSitesItemOnenoteSectionsItemPagesItemParentNotebookRequestBuilder) {
-    return NewItemSitesItemOnenoteSectionsItemPagesItemParentNotebookRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesItemOnenoteSectionsItemPagesItemParentNotebookRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ParentSection provides operations to manage the parentSection property of the microsoft.graph.onenotePage entity.
 func (m *ItemSitesItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilder) ParentSection()(*ItemSitesItemOnenoteSectionsItemPagesItemParentSectionRequestBuilder) {
-    return NewItemSitesItemOnenoteSectionsItemPagesItemParentSectionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemSitesItemOnenoteSectionsItemPagesItemParentSectionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property pages in groups
 func (m *ItemSitesItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenotePageable, requestConfiguration *ItemSitesItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenotePageable, error) {
@@ -138,10 +142,6 @@ func (m *ItemSitesItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilder) Pat
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenotePageable), nil
-}
-// Preview provides operations to call the preview method.
-func (m *ItemSitesItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilder) Preview()(*ItemSitesItemOnenoteSectionsItemPagesItemPreviewRequestBuilder) {
-    return NewItemSitesItemOnenoteSectionsItemPagesItemPreviewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property pages for groups
 func (m *ItemSitesItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -178,7 +178,10 @@ func (m *ItemSitesItemOnenoteSectionsItemPagesOnenotePageItemRequestBuilder) ToP
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

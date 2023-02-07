@@ -21,7 +21,7 @@ type ColumnValidation struct {
 func NewColumnValidation()(*ColumnValidation) {
     m := &ColumnValidation{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateColumnValidationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -19,7 +19,7 @@ type SearchAlterationOptions struct {
 func NewSearchAlterationOptions()(*SearchAlterationOptions) {
     m := &SearchAlterationOptions{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSearchAlterationOptionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

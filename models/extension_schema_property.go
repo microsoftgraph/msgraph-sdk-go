@@ -13,13 +13,13 @@ type ExtensionSchemaProperty struct {
     // The OdataType property
     odataType *string
     // The type of the property that is defined as part of a schema extension.  Allowed values are Binary, Boolean, DateTime, Integer or String. See the table below for more details.
-    type_escaped *string
+    typeEscaped *string
 }
 // NewExtensionSchemaProperty instantiates a new extensionSchemaProperty and sets the default values.
 func NewExtensionSchemaProperty()(*ExtensionSchemaProperty) {
     m := &ExtensionSchemaProperty{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateExtensionSchemaPropertyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -75,7 +75,7 @@ func (m *ExtensionSchemaProperty) GetOdataType()(*string) {
 }
 // GetType gets the type property value. The type of the property that is defined as part of a schema extension.  Allowed values are Binary, Boolean, DateTime, Integer or String. See the table below for more details.
 func (m *ExtensionSchemaProperty) GetType()(*string) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // Serialize serializes information the current object
 func (m *ExtensionSchemaProperty) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -119,5 +119,5 @@ func (m *ExtensionSchemaProperty) SetOdataType(value *string)() {
 }
 // SetType sets the type property value. The type of the property that is defined as part of a schema extension.  Allowed values are Binary, Boolean, DateTime, Integer or String. See the table below for more details.
 func (m *ExtensionSchemaProperty) SetType(value *string)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }

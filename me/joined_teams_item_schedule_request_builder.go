@@ -55,8 +55,8 @@ func NewJoinedTeamsItemScheduleRequestBuilderInternal(pathParameters map[string]
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewJoinedTeamsItemScheduleRequestBuilder instantiates a new ScheduleRequestBuilder and sets the default values.
@@ -103,9 +103,13 @@ func (m *JoinedTeamsItemScheduleRequestBuilder) Get(ctx context.Context, request
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Scheduleable), nil
 }
+// MicrosoftGraphShare provides operations to call the share method.
+func (m *JoinedTeamsItemScheduleRequestBuilder) MicrosoftGraphShare()(*JoinedTeamsItemScheduleMicrosoftGraphShareRequestBuilder) {
+    return NewJoinedTeamsItemScheduleMicrosoftGraphShareRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // OfferShiftRequests provides operations to manage the offerShiftRequests property of the microsoft.graph.schedule entity.
 func (m *JoinedTeamsItemScheduleRequestBuilder) OfferShiftRequests()(*JoinedTeamsItemScheduleOfferShiftRequestsRequestBuilder) {
-    return NewJoinedTeamsItemScheduleOfferShiftRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewJoinedTeamsItemScheduleOfferShiftRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // OfferShiftRequestsById provides operations to manage the offerShiftRequests property of the microsoft.graph.schedule entity.
 func (m *JoinedTeamsItemScheduleRequestBuilder) OfferShiftRequestsById(id string)(*JoinedTeamsItemScheduleOfferShiftRequestsOfferShiftRequestItemRequestBuilder) {
@@ -116,11 +120,11 @@ func (m *JoinedTeamsItemScheduleRequestBuilder) OfferShiftRequestsById(id string
     if id != "" {
         urlTplParams["offerShiftRequest%2Did"] = id
     }
-    return NewJoinedTeamsItemScheduleOfferShiftRequestsOfferShiftRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewJoinedTeamsItemScheduleOfferShiftRequestsOfferShiftRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // OpenShiftChangeRequests provides operations to manage the openShiftChangeRequests property of the microsoft.graph.schedule entity.
 func (m *JoinedTeamsItemScheduleRequestBuilder) OpenShiftChangeRequests()(*JoinedTeamsItemScheduleOpenShiftChangeRequestsRequestBuilder) {
-    return NewJoinedTeamsItemScheduleOpenShiftChangeRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewJoinedTeamsItemScheduleOpenShiftChangeRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // OpenShiftChangeRequestsById provides operations to manage the openShiftChangeRequests property of the microsoft.graph.schedule entity.
 func (m *JoinedTeamsItemScheduleRequestBuilder) OpenShiftChangeRequestsById(id string)(*JoinedTeamsItemScheduleOpenShiftChangeRequestsOpenShiftChangeRequestItemRequestBuilder) {
@@ -131,11 +135,11 @@ func (m *JoinedTeamsItemScheduleRequestBuilder) OpenShiftChangeRequestsById(id s
     if id != "" {
         urlTplParams["openShiftChangeRequest%2Did"] = id
     }
-    return NewJoinedTeamsItemScheduleOpenShiftChangeRequestsOpenShiftChangeRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewJoinedTeamsItemScheduleOpenShiftChangeRequestsOpenShiftChangeRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // OpenShifts provides operations to manage the openShifts property of the microsoft.graph.schedule entity.
 func (m *JoinedTeamsItemScheduleRequestBuilder) OpenShifts()(*JoinedTeamsItemScheduleOpenShiftsRequestBuilder) {
-    return NewJoinedTeamsItemScheduleOpenShiftsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewJoinedTeamsItemScheduleOpenShiftsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // OpenShiftsById provides operations to manage the openShifts property of the microsoft.graph.schedule entity.
 func (m *JoinedTeamsItemScheduleRequestBuilder) OpenShiftsById(id string)(*JoinedTeamsItemScheduleOpenShiftsOpenShiftItemRequestBuilder) {
@@ -146,7 +150,7 @@ func (m *JoinedTeamsItemScheduleRequestBuilder) OpenShiftsById(id string)(*Joine
     if id != "" {
         urlTplParams["openShift%2Did"] = id
     }
-    return NewJoinedTeamsItemScheduleOpenShiftsOpenShiftItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewJoinedTeamsItemScheduleOpenShiftsOpenShiftItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Put update the navigation property schedule in me
 func (m *JoinedTeamsItemScheduleRequestBuilder) Put(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Scheduleable, requestConfiguration *JoinedTeamsItemScheduleRequestBuilderPutRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Scheduleable, error) {
@@ -169,7 +173,7 @@ func (m *JoinedTeamsItemScheduleRequestBuilder) Put(ctx context.Context, body ia
 }
 // SchedulingGroups provides operations to manage the schedulingGroups property of the microsoft.graph.schedule entity.
 func (m *JoinedTeamsItemScheduleRequestBuilder) SchedulingGroups()(*JoinedTeamsItemScheduleSchedulingGroupsRequestBuilder) {
-    return NewJoinedTeamsItemScheduleSchedulingGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewJoinedTeamsItemScheduleSchedulingGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SchedulingGroupsById provides operations to manage the schedulingGroups property of the microsoft.graph.schedule entity.
 func (m *JoinedTeamsItemScheduleRequestBuilder) SchedulingGroupsById(id string)(*JoinedTeamsItemScheduleSchedulingGroupsSchedulingGroupItemRequestBuilder) {
@@ -180,15 +184,11 @@ func (m *JoinedTeamsItemScheduleRequestBuilder) SchedulingGroupsById(id string)(
     if id != "" {
         urlTplParams["schedulingGroup%2Did"] = id
     }
-    return NewJoinedTeamsItemScheduleSchedulingGroupsSchedulingGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// Share provides operations to call the share method.
-func (m *JoinedTeamsItemScheduleRequestBuilder) Share()(*JoinedTeamsItemScheduleShareRequestBuilder) {
-    return NewJoinedTeamsItemScheduleShareRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewJoinedTeamsItemScheduleSchedulingGroupsSchedulingGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Shifts provides operations to manage the shifts property of the microsoft.graph.schedule entity.
 func (m *JoinedTeamsItemScheduleRequestBuilder) Shifts()(*JoinedTeamsItemScheduleShiftsRequestBuilder) {
-    return NewJoinedTeamsItemScheduleShiftsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewJoinedTeamsItemScheduleShiftsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ShiftsById provides operations to manage the shifts property of the microsoft.graph.schedule entity.
 func (m *JoinedTeamsItemScheduleRequestBuilder) ShiftsById(id string)(*JoinedTeamsItemScheduleShiftsShiftItemRequestBuilder) {
@@ -199,11 +199,11 @@ func (m *JoinedTeamsItemScheduleRequestBuilder) ShiftsById(id string)(*JoinedTea
     if id != "" {
         urlTplParams["shift%2Did"] = id
     }
-    return NewJoinedTeamsItemScheduleShiftsShiftItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewJoinedTeamsItemScheduleShiftsShiftItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // SwapShiftsChangeRequests provides operations to manage the swapShiftsChangeRequests property of the microsoft.graph.schedule entity.
 func (m *JoinedTeamsItemScheduleRequestBuilder) SwapShiftsChangeRequests()(*JoinedTeamsItemScheduleSwapShiftsChangeRequestsRequestBuilder) {
-    return NewJoinedTeamsItemScheduleSwapShiftsChangeRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewJoinedTeamsItemScheduleSwapShiftsChangeRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SwapShiftsChangeRequestsById provides operations to manage the swapShiftsChangeRequests property of the microsoft.graph.schedule entity.
 func (m *JoinedTeamsItemScheduleRequestBuilder) SwapShiftsChangeRequestsById(id string)(*JoinedTeamsItemScheduleSwapShiftsChangeRequestsSwapShiftsChangeRequestItemRequestBuilder) {
@@ -214,11 +214,11 @@ func (m *JoinedTeamsItemScheduleRequestBuilder) SwapShiftsChangeRequestsById(id 
     if id != "" {
         urlTplParams["swapShiftsChangeRequest%2Did"] = id
     }
-    return NewJoinedTeamsItemScheduleSwapShiftsChangeRequestsSwapShiftsChangeRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewJoinedTeamsItemScheduleSwapShiftsChangeRequestsSwapShiftsChangeRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // TimeOffReasons provides operations to manage the timeOffReasons property of the microsoft.graph.schedule entity.
 func (m *JoinedTeamsItemScheduleRequestBuilder) TimeOffReasons()(*JoinedTeamsItemScheduleTimeOffReasonsRequestBuilder) {
-    return NewJoinedTeamsItemScheduleTimeOffReasonsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewJoinedTeamsItemScheduleTimeOffReasonsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TimeOffReasonsById provides operations to manage the timeOffReasons property of the microsoft.graph.schedule entity.
 func (m *JoinedTeamsItemScheduleRequestBuilder) TimeOffReasonsById(id string)(*JoinedTeamsItemScheduleTimeOffReasonsTimeOffReasonItemRequestBuilder) {
@@ -229,11 +229,11 @@ func (m *JoinedTeamsItemScheduleRequestBuilder) TimeOffReasonsById(id string)(*J
     if id != "" {
         urlTplParams["timeOffReason%2Did"] = id
     }
-    return NewJoinedTeamsItemScheduleTimeOffReasonsTimeOffReasonItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewJoinedTeamsItemScheduleTimeOffReasonsTimeOffReasonItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // TimeOffRequests provides operations to manage the timeOffRequests property of the microsoft.graph.schedule entity.
 func (m *JoinedTeamsItemScheduleRequestBuilder) TimeOffRequests()(*JoinedTeamsItemScheduleTimeOffRequestsRequestBuilder) {
-    return NewJoinedTeamsItemScheduleTimeOffRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewJoinedTeamsItemScheduleTimeOffRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TimeOffRequestsById provides operations to manage the timeOffRequests property of the microsoft.graph.schedule entity.
 func (m *JoinedTeamsItemScheduleRequestBuilder) TimeOffRequestsById(id string)(*JoinedTeamsItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuilder) {
@@ -244,11 +244,11 @@ func (m *JoinedTeamsItemScheduleRequestBuilder) TimeOffRequestsById(id string)(*
     if id != "" {
         urlTplParams["timeOffRequest%2Did"] = id
     }
-    return NewJoinedTeamsItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewJoinedTeamsItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // TimesOff provides operations to manage the timesOff property of the microsoft.graph.schedule entity.
 func (m *JoinedTeamsItemScheduleRequestBuilder) TimesOff()(*JoinedTeamsItemScheduleTimesOffRequestBuilder) {
-    return NewJoinedTeamsItemScheduleTimesOffRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewJoinedTeamsItemScheduleTimesOffRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TimesOffById provides operations to manage the timesOff property of the microsoft.graph.schedule entity.
 func (m *JoinedTeamsItemScheduleRequestBuilder) TimesOffById(id string)(*JoinedTeamsItemScheduleTimesOffTimeOffItemRequestBuilder) {
@@ -259,7 +259,7 @@ func (m *JoinedTeamsItemScheduleRequestBuilder) TimesOffById(id string)(*JoinedT
     if id != "" {
         urlTplParams["timeOff%2Did"] = id
     }
-    return NewJoinedTeamsItemScheduleTimesOffTimeOffItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewJoinedTeamsItemScheduleTimesOffTimeOffItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property schedule for me
 func (m *JoinedTeamsItemScheduleRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *JoinedTeamsItemScheduleRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -296,7 +296,10 @@ func (m *JoinedTeamsItemScheduleRequestBuilder) ToPutRequestInformation(ctx cont
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

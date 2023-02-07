@@ -55,8 +55,8 @@ func NewDeviceCompliancePolicySettingStateSummariesDeviceCompliancePolicySetting
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeviceCompliancePolicySettingStateSummariesDeviceCompliancePolicySettingStateSummaryItemRequestBuilder instantiates a new DeviceCompliancePolicySettingStateSummaryItemRequestBuilder and sets the default values.
@@ -83,7 +83,7 @@ func (m *DeviceCompliancePolicySettingStateSummariesDeviceCompliancePolicySettin
 }
 // DeviceComplianceSettingStates provides operations to manage the deviceComplianceSettingStates property of the microsoft.graph.deviceCompliancePolicySettingStateSummary entity.
 func (m *DeviceCompliancePolicySettingStateSummariesDeviceCompliancePolicySettingStateSummaryItemRequestBuilder) DeviceComplianceSettingStates()(*DeviceCompliancePolicySettingStateSummariesItemDeviceComplianceSettingStatesRequestBuilder) {
-    return NewDeviceCompliancePolicySettingStateSummariesItemDeviceComplianceSettingStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDeviceCompliancePolicySettingStateSummariesItemDeviceComplianceSettingStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // DeviceComplianceSettingStatesById provides operations to manage the deviceComplianceSettingStates property of the microsoft.graph.deviceCompliancePolicySettingStateSummary entity.
 func (m *DeviceCompliancePolicySettingStateSummariesDeviceCompliancePolicySettingStateSummaryItemRequestBuilder) DeviceComplianceSettingStatesById(id string)(*DeviceCompliancePolicySettingStateSummariesItemDeviceComplianceSettingStatesDeviceComplianceSettingStateItemRequestBuilder) {
@@ -94,7 +94,7 @@ func (m *DeviceCompliancePolicySettingStateSummariesDeviceCompliancePolicySettin
     if id != "" {
         urlTplParams["deviceComplianceSettingState%2Did"] = id
     }
-    return NewDeviceCompliancePolicySettingStateSummariesItemDeviceComplianceSettingStatesDeviceComplianceSettingStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDeviceCompliancePolicySettingStateSummariesItemDeviceComplianceSettingStatesDeviceComplianceSettingStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Get the summary states of compliance policy settings for this account.
 func (m *DeviceCompliancePolicySettingStateSummariesDeviceCompliancePolicySettingStateSummaryItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceCompliancePolicySettingStateSummariesDeviceCompliancePolicySettingStateSummaryItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCompliancePolicySettingStateSummaryable, error) {
@@ -169,7 +169,10 @@ func (m *DeviceCompliancePolicySettingStateSummariesDeviceCompliancePolicySettin
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

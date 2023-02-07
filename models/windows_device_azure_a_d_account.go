@@ -15,8 +15,8 @@ func NewWindowsDeviceAzureADAccount()(*WindowsDeviceAzureADAccount) {
     m := &WindowsDeviceAzureADAccount{
         WindowsDeviceAccount: *NewWindowsDeviceAccount(),
     }
-    odataTypeValue := "#microsoft.graph.windowsDeviceAzureADAccount";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsDeviceAzureADAccount"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsDeviceAzureADAccountFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

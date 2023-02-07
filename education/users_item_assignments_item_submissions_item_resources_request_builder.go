@@ -60,8 +60,8 @@ func NewUsersItemAssignmentsItemSubmissionsItemResourcesRequestBuilderInternal(p
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewUsersItemAssignmentsItemSubmissionsItemResourcesRequestBuilder instantiates a new ResourcesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewUsersItemAssignmentsItemSubmissionsItemResourcesRequestBuilder(rawUrl st
 }
 // Count provides operations to count the resources in the collection.
 func (m *UsersItemAssignmentsItemSubmissionsItemResourcesRequestBuilder) Count()(*UsersItemAssignmentsItemSubmissionsItemResourcesCountRequestBuilder) {
-    return NewUsersItemAssignmentsItemSubmissionsItemResourcesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewUsersItemAssignmentsItemSubmissionsItemResourcesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get list the resources associated with a submission. Only teachers, students, and applications with application permissions can perform this operation. The educationSubmissionResource object is a wrapper around the actual resource object the student is working on. The wrapper also includes a pointer to the resources on the assignment if this was copied from the assignment during the assign process. These resources are the working copy of the assignment. The **submittedResources** are the resources that have officially been submitted to be graded.
 // [Find more info here]
@@ -141,7 +141,10 @@ func (m *UsersItemAssignmentsItemSubmissionsItemResourcesRequestBuilder) ToPostR
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

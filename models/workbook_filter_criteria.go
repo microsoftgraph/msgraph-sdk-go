@@ -31,7 +31,7 @@ type WorkbookFilterCriteria struct {
 func NewWorkbookFilterCriteria()(*WorkbookFilterCriteria) {
     m := &WorkbookFilterCriteria{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateWorkbookFilterCriteriaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

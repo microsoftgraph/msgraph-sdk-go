@@ -53,8 +53,8 @@ func NewItemClaimsMappingPoliciesRequestBuilderInternal(pathParameters map[strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemClaimsMappingPoliciesRequestBuilder instantiates a new ClaimsMappingPoliciesRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemClaimsMappingPoliciesRequestBuilder(rawUrl string, requestAdapter i2
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemClaimsMappingPoliciesRequestBuilder) Count()(*ItemClaimsMappingPoliciesCountRequestBuilder) {
-    return NewItemClaimsMappingPoliciesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemClaimsMappingPoliciesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get list the claimsMappingPolicy objects that are assigned to a servicePrincipal.
 // [Find more info here]
@@ -91,7 +91,7 @@ func (m *ItemClaimsMappingPoliciesRequestBuilder) Get(ctx context.Context, reque
 }
 // Ref provides operations to manage the collection of servicePrincipal entities.
 func (m *ItemClaimsMappingPoliciesRequestBuilder) Ref()(*ItemClaimsMappingPoliciesRefRequestBuilder) {
-    return NewItemClaimsMappingPoliciesRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemClaimsMappingPoliciesRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation list the claimsMappingPolicy objects that are assigned to a servicePrincipal.
 func (m *ItemClaimsMappingPoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemClaimsMappingPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -19,7 +19,7 @@ type FeatureTarget struct {
 func NewFeatureTarget()(*FeatureTarget) {
     m := &FeatureTarget{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateFeatureTargetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

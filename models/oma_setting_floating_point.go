@@ -15,8 +15,8 @@ func NewOmaSettingFloatingPoint()(*OmaSettingFloatingPoint) {
     m := &OmaSettingFloatingPoint{
         OmaSetting: *NewOmaSetting(),
     }
-    odataTypeValue := "#microsoft.graph.omaSettingFloatingPoint";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.omaSettingFloatingPoint"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateOmaSettingFloatingPointFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -34,13 +34,9 @@ type CalendarViewEventItemRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *CalendarViewEventItemRequestBuilderGetQueryParameters
 }
-// Accept provides operations to call the accept method.
-func (m *CalendarViewEventItemRequestBuilder) Accept()(*CalendarViewItemAcceptRequestBuilder) {
-    return NewCalendarViewItemAcceptRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Attachments provides operations to manage the attachments property of the microsoft.graph.event entity.
 func (m *CalendarViewEventItemRequestBuilder) Attachments()(*CalendarViewItemAttachmentsRequestBuilder) {
-    return NewCalendarViewItemAttachmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCalendarViewItemAttachmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AttachmentsById provides operations to manage the attachments property of the microsoft.graph.event entity.
 func (m *CalendarViewEventItemRequestBuilder) AttachmentsById(id string)(*CalendarViewItemAttachmentsAttachmentItemRequestBuilder) {
@@ -51,15 +47,11 @@ func (m *CalendarViewEventItemRequestBuilder) AttachmentsById(id string)(*Calend
     if id != "" {
         urlTplParams["attachment%2Did"] = id
     }
-    return NewCalendarViewItemAttachmentsAttachmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCalendarViewItemAttachmentsAttachmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Calendar provides operations to manage the calendar property of the microsoft.graph.event entity.
 func (m *CalendarViewEventItemRequestBuilder) Calendar()(*CalendarViewItemCalendarRequestBuilder) {
-    return NewCalendarViewItemCalendarRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Cancel provides operations to call the cancel method.
-func (m *CalendarViewEventItemRequestBuilder) Cancel()(*CalendarViewItemCancelRequestBuilder) {
-    return NewCalendarViewItemCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCalendarViewItemCalendarRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewCalendarViewEventItemRequestBuilderInternal instantiates a new EventItemRequestBuilder and sets the default values.
 func NewCalendarViewEventItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CalendarViewEventItemRequestBuilder) {
@@ -70,8 +62,8 @@ func NewCalendarViewEventItemRequestBuilderInternal(pathParameters map[string]st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewCalendarViewEventItemRequestBuilder instantiates a new EventItemRequestBuilder and sets the default values.
@@ -80,17 +72,9 @@ func NewCalendarViewEventItemRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewCalendarViewEventItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Decline provides operations to call the decline method.
-func (m *CalendarViewEventItemRequestBuilder) Decline()(*CalendarViewItemDeclineRequestBuilder) {
-    return NewCalendarViewItemDeclineRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// DismissReminder provides operations to call the dismissReminder method.
-func (m *CalendarViewEventItemRequestBuilder) DismissReminder()(*CalendarViewItemDismissReminderRequestBuilder) {
-    return NewCalendarViewItemDismissReminderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Extensions provides operations to manage the extensions property of the microsoft.graph.event entity.
 func (m *CalendarViewEventItemRequestBuilder) Extensions()(*CalendarViewItemExtensionsRequestBuilder) {
-    return NewCalendarViewItemExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCalendarViewItemExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ExtensionsById provides operations to manage the extensions property of the microsoft.graph.event entity.
 func (m *CalendarViewEventItemRequestBuilder) ExtensionsById(id string)(*CalendarViewItemExtensionsExtensionItemRequestBuilder) {
@@ -101,11 +85,7 @@ func (m *CalendarViewEventItemRequestBuilder) ExtensionsById(id string)(*Calenda
     if id != "" {
         urlTplParams["extension%2Did"] = id
     }
-    return NewCalendarViewItemExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// Forward provides operations to call the forward method.
-func (m *CalendarViewEventItemRequestBuilder) Forward()(*CalendarViewItemForwardRequestBuilder) {
-    return NewCalendarViewItemForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCalendarViewItemExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Get the calendar view for the calendar. Read-only. Nullable.
 func (m *CalendarViewEventItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CalendarViewEventItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Eventable, error) {
@@ -128,7 +108,7 @@ func (m *CalendarViewEventItemRequestBuilder) Get(ctx context.Context, requestCo
 }
 // Instances provides operations to manage the instances property of the microsoft.graph.event entity.
 func (m *CalendarViewEventItemRequestBuilder) Instances()(*CalendarViewItemInstancesRequestBuilder) {
-    return NewCalendarViewItemInstancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCalendarViewItemInstancesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // InstancesById provides operations to manage the instances property of the microsoft.graph.event entity.
 func (m *CalendarViewEventItemRequestBuilder) InstancesById(id string)(*CalendarViewItemInstancesEventItemRequestBuilder) {
@@ -139,11 +119,39 @@ func (m *CalendarViewEventItemRequestBuilder) InstancesById(id string)(*Calendar
     if id != "" {
         urlTplParams["event%2Did1"] = id
     }
-    return NewCalendarViewItemInstancesEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCalendarViewItemInstancesEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+}
+// MicrosoftGraphAccept provides operations to call the accept method.
+func (m *CalendarViewEventItemRequestBuilder) MicrosoftGraphAccept()(*CalendarViewItemMicrosoftGraphAcceptRequestBuilder) {
+    return NewCalendarViewItemMicrosoftGraphAcceptRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphCancel provides operations to call the cancel method.
+func (m *CalendarViewEventItemRequestBuilder) MicrosoftGraphCancel()(*CalendarViewItemMicrosoftGraphCancelRequestBuilder) {
+    return NewCalendarViewItemMicrosoftGraphCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphDecline provides operations to call the decline method.
+func (m *CalendarViewEventItemRequestBuilder) MicrosoftGraphDecline()(*CalendarViewItemMicrosoftGraphDeclineRequestBuilder) {
+    return NewCalendarViewItemMicrosoftGraphDeclineRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphDismissReminder provides operations to call the dismissReminder method.
+func (m *CalendarViewEventItemRequestBuilder) MicrosoftGraphDismissReminder()(*CalendarViewItemMicrosoftGraphDismissReminderRequestBuilder) {
+    return NewCalendarViewItemMicrosoftGraphDismissReminderRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphForward provides operations to call the forward method.
+func (m *CalendarViewEventItemRequestBuilder) MicrosoftGraphForward()(*CalendarViewItemMicrosoftGraphForwardRequestBuilder) {
+    return NewCalendarViewItemMicrosoftGraphForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphSnoozeReminder provides operations to call the snoozeReminder method.
+func (m *CalendarViewEventItemRequestBuilder) MicrosoftGraphSnoozeReminder()(*CalendarViewItemMicrosoftGraphSnoozeReminderRequestBuilder) {
+    return NewCalendarViewItemMicrosoftGraphSnoozeReminderRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphTentativelyAccept provides operations to call the tentativelyAccept method.
+func (m *CalendarViewEventItemRequestBuilder) MicrosoftGraphTentativelyAccept()(*CalendarViewItemMicrosoftGraphTentativelyAcceptRequestBuilder) {
+    return NewCalendarViewItemMicrosoftGraphTentativelyAcceptRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.event entity.
 func (m *CalendarViewEventItemRequestBuilder) MultiValueExtendedProperties()(*CalendarViewItemMultiValueExtendedPropertiesRequestBuilder) {
-    return NewCalendarViewItemMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCalendarViewItemMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MultiValueExtendedPropertiesById provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.event entity.
 func (m *CalendarViewEventItemRequestBuilder) MultiValueExtendedPropertiesById(id string)(*CalendarViewItemMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilder) {
@@ -154,11 +162,11 @@ func (m *CalendarViewEventItemRequestBuilder) MultiValueExtendedPropertiesById(i
     if id != "" {
         urlTplParams["multiValueLegacyExtendedProperty%2Did"] = id
     }
-    return NewCalendarViewItemMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCalendarViewItemMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // SingleValueExtendedProperties provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.event entity.
 func (m *CalendarViewEventItemRequestBuilder) SingleValueExtendedProperties()(*CalendarViewItemSingleValueExtendedPropertiesRequestBuilder) {
-    return NewCalendarViewItemSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCalendarViewItemSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SingleValueExtendedPropertiesById provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.event entity.
 func (m *CalendarViewEventItemRequestBuilder) SingleValueExtendedPropertiesById(id string)(*CalendarViewItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilder) {
@@ -169,15 +177,7 @@ func (m *CalendarViewEventItemRequestBuilder) SingleValueExtendedPropertiesById(
     if id != "" {
         urlTplParams["singleValueLegacyExtendedProperty%2Did"] = id
     }
-    return NewCalendarViewItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// SnoozeReminder provides operations to call the snoozeReminder method.
-func (m *CalendarViewEventItemRequestBuilder) SnoozeReminder()(*CalendarViewItemSnoozeReminderRequestBuilder) {
-    return NewCalendarViewItemSnoozeReminderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// TentativelyAccept provides operations to call the tentativelyAccept method.
-func (m *CalendarViewEventItemRequestBuilder) TentativelyAccept()(*CalendarViewItemTentativelyAcceptRequestBuilder) {
-    return NewCalendarViewItemTentativelyAcceptRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCalendarViewItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToGetRequestInformation the calendar view for the calendar. Read-only. Nullable.
 func (m *CalendarViewEventItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CalendarViewEventItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

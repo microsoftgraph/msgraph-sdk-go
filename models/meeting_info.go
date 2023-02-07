@@ -15,7 +15,7 @@ type MeetingInfo struct {
 func NewMeetingInfo()(*MeetingInfo) {
     m := &MeetingInfo{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateMeetingInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

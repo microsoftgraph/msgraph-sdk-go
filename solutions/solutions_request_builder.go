@@ -41,7 +41,7 @@ type SolutionsRequestBuilderPatchRequestConfiguration struct {
 }
 // BookingBusinesses provides operations to manage the bookingBusinesses property of the microsoft.graph.solutionsRoot entity.
 func (m *SolutionsRequestBuilder) BookingBusinesses()(*BookingBusinessesRequestBuilder) {
-    return NewBookingBusinessesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewBookingBusinessesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // BookingBusinessesById provides operations to manage the bookingBusinesses property of the microsoft.graph.solutionsRoot entity.
 func (m *SolutionsRequestBuilder) BookingBusinessesById(id string)(*BookingBusinessesBookingBusinessItemRequestBuilder) {
@@ -52,11 +52,11 @@ func (m *SolutionsRequestBuilder) BookingBusinessesById(id string)(*BookingBusin
     if id != "" {
         urlTplParams["bookingBusiness%2Did"] = id
     }
-    return NewBookingBusinessesBookingBusinessItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewBookingBusinessesBookingBusinessItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // BookingCurrencies provides operations to manage the bookingCurrencies property of the microsoft.graph.solutionsRoot entity.
 func (m *SolutionsRequestBuilder) BookingCurrencies()(*BookingCurrenciesRequestBuilder) {
-    return NewBookingCurrenciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewBookingCurrenciesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // BookingCurrenciesById provides operations to manage the bookingCurrencies property of the microsoft.graph.solutionsRoot entity.
 func (m *SolutionsRequestBuilder) BookingCurrenciesById(id string)(*BookingCurrenciesBookingCurrencyItemRequestBuilder) {
@@ -67,7 +67,7 @@ func (m *SolutionsRequestBuilder) BookingCurrenciesById(id string)(*BookingCurre
     if id != "" {
         urlTplParams["bookingCurrency%2Did"] = id
     }
-    return NewBookingCurrenciesBookingCurrencyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewBookingCurrenciesBookingCurrencyItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewSolutionsRequestBuilderInternal instantiates a new SolutionsRequestBuilder and sets the default values.
 func NewSolutionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SolutionsRequestBuilder) {
@@ -78,8 +78,8 @@ func NewSolutionsRequestBuilderInternal(pathParameters map[string]string, reques
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewSolutionsRequestBuilder instantiates a new SolutionsRequestBuilder and sets the default values.
@@ -149,7 +149,10 @@ func (m *SolutionsRequestBuilder) ToPatchRequestInformation(ctx context.Context,
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

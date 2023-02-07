@@ -15,7 +15,7 @@ type DeviceAndAppManagementAssignmentTarget struct {
 func NewDeviceAndAppManagementAssignmentTarget()(*DeviceAndAppManagementAssignmentTarget) {
     m := &DeviceAndAppManagementAssignmentTarget{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeviceAndAppManagementAssignmentTargetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

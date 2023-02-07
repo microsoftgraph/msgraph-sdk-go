@@ -27,7 +27,7 @@ type AttachmentItem struct {
 func NewAttachmentItem()(*AttachmentItem) {
     m := &AttachmentItem{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAttachmentItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

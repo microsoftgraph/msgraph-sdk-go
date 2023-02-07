@@ -55,8 +55,8 @@ func NewItemOnenoteNotebooksItemSectionGroupsSectionGroupItemRequestBuilderInter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemOnenoteNotebooksItemSectionGroupsSectionGroupItemRequestBuilder instantiates a new SectionGroupItemRequestBuilder and sets the default values.
@@ -102,11 +102,11 @@ func (m *ItemOnenoteNotebooksItemSectionGroupsSectionGroupItemRequestBuilder) Ge
 }
 // ParentNotebook provides operations to manage the parentNotebook property of the microsoft.graph.sectionGroup entity.
 func (m *ItemOnenoteNotebooksItemSectionGroupsSectionGroupItemRequestBuilder) ParentNotebook()(*ItemOnenoteNotebooksItemSectionGroupsItemParentNotebookRequestBuilder) {
-    return NewItemOnenoteNotebooksItemSectionGroupsItemParentNotebookRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemOnenoteNotebooksItemSectionGroupsItemParentNotebookRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ParentSectionGroup provides operations to manage the parentSectionGroup property of the microsoft.graph.sectionGroup entity.
 func (m *ItemOnenoteNotebooksItemSectionGroupsSectionGroupItemRequestBuilder) ParentSectionGroup()(*ItemOnenoteNotebooksItemSectionGroupsItemParentSectionGroupRequestBuilder) {
-    return NewItemOnenoteNotebooksItemSectionGroupsItemParentSectionGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemOnenoteNotebooksItemSectionGroupsItemParentSectionGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property sectionGroups in groups
 func (m *ItemOnenoteNotebooksItemSectionGroupsSectionGroupItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SectionGroupable, requestConfiguration *ItemOnenoteNotebooksItemSectionGroupsSectionGroupItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SectionGroupable, error) {
@@ -129,7 +129,7 @@ func (m *ItemOnenoteNotebooksItemSectionGroupsSectionGroupItemRequestBuilder) Pa
 }
 // SectionGroups provides operations to manage the sectionGroups property of the microsoft.graph.sectionGroup entity.
 func (m *ItemOnenoteNotebooksItemSectionGroupsSectionGroupItemRequestBuilder) SectionGroups()(*ItemOnenoteNotebooksItemSectionGroupsItemSectionGroupsRequestBuilder) {
-    return NewItemOnenoteNotebooksItemSectionGroupsItemSectionGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemOnenoteNotebooksItemSectionGroupsItemSectionGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SectionGroupsById provides operations to manage the sectionGroups property of the microsoft.graph.sectionGroup entity.
 func (m *ItemOnenoteNotebooksItemSectionGroupsSectionGroupItemRequestBuilder) SectionGroupsById(id string)(*ItemOnenoteNotebooksItemSectionGroupsItemSectionGroupsSectionGroupItemRequestBuilder) {
@@ -140,11 +140,11 @@ func (m *ItemOnenoteNotebooksItemSectionGroupsSectionGroupItemRequestBuilder) Se
     if id != "" {
         urlTplParams["sectionGroup%2Did1"] = id
     }
-    return NewItemOnenoteNotebooksItemSectionGroupsItemSectionGroupsSectionGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemOnenoteNotebooksItemSectionGroupsItemSectionGroupsSectionGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Sections provides operations to manage the sections property of the microsoft.graph.sectionGroup entity.
 func (m *ItemOnenoteNotebooksItemSectionGroupsSectionGroupItemRequestBuilder) Sections()(*ItemOnenoteNotebooksItemSectionGroupsItemSectionsRequestBuilder) {
-    return NewItemOnenoteNotebooksItemSectionGroupsItemSectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemOnenoteNotebooksItemSectionGroupsItemSectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SectionsById provides operations to manage the sections property of the microsoft.graph.sectionGroup entity.
 func (m *ItemOnenoteNotebooksItemSectionGroupsSectionGroupItemRequestBuilder) SectionsById(id string)(*ItemOnenoteNotebooksItemSectionGroupsItemSectionsOnenoteSectionItemRequestBuilder) {
@@ -155,7 +155,7 @@ func (m *ItemOnenoteNotebooksItemSectionGroupsSectionGroupItemRequestBuilder) Se
     if id != "" {
         urlTplParams["onenoteSection%2Did"] = id
     }
-    return NewItemOnenoteNotebooksItemSectionGroupsItemSectionsOnenoteSectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemOnenoteNotebooksItemSectionGroupsItemSectionsOnenoteSectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property sectionGroups for groups
 func (m *ItemOnenoteNotebooksItemSectionGroupsSectionGroupItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemOnenoteNotebooksItemSectionGroupsSectionGroupItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -192,7 +192,10 @@ func (m *ItemOnenoteNotebooksItemSectionGroupsSectionGroupItemRequestBuilder) To
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

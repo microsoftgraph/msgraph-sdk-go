@@ -53,8 +53,8 @@ func NewItemIncomingChannelsRequestBuilderInternal(pathParameters map[string]str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemIncomingChannelsRequestBuilder instantiates a new IncomingChannelsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemIncomingChannelsRequestBuilder(rawUrl string, requestAdapter i2ae418
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemIncomingChannelsRequestBuilder) Count()(*ItemIncomingChannelsCountRequestBuilder) {
-    return NewItemIncomingChannelsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemIncomingChannelsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the list of incoming channels (channels shared with a team).
 // [Find more info here]

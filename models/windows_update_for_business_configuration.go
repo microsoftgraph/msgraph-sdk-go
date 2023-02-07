@@ -86,8 +86,8 @@ func NewWindowsUpdateForBusinessConfiguration()(*WindowsUpdateForBusinessConfigu
     m := &WindowsUpdateForBusinessConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.windowsUpdateForBusinessConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windowsUpdateForBusinessConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindowsUpdateForBusinessConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

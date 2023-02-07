@@ -60,8 +60,8 @@ func NewGroupSettingsRequestBuilderInternal(pathParameters map[string]string, re
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewGroupSettingsRequestBuilder instantiates a new GroupSettingsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewGroupSettingsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 }
 // Count provides operations to count the resources in the collection.
 func (m *GroupSettingsRequestBuilder) Count()(*CountRequestBuilder) {
-    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of tenant-level or group-specific group settings objects.
 // [Find more info here]
@@ -141,7 +141,10 @@ func (m *GroupSettingsRequestBuilder) ToPostRequestInformation(ctx context.Conte
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

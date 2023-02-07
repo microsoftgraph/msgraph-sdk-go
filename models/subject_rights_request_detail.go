@@ -29,7 +29,7 @@ type SubjectRightsRequestDetail struct {
 func NewSubjectRightsRequestDetail()(*SubjectRightsRequestDetail) {
     m := &SubjectRightsRequestDetail{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSubjectRightsRequestDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

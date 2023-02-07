@@ -15,8 +15,8 @@ func NewSoftwareOathAuthenticationMethod()(*SoftwareOathAuthenticationMethod) {
     m := &SoftwareOathAuthenticationMethod{
         AuthenticationMethod: *NewAuthenticationMethod(),
     }
-    odataTypeValue := "#microsoft.graph.softwareOathAuthenticationMethod";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.softwareOathAuthenticationMethod"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateSoftwareOathAuthenticationMethodFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -13,7 +13,7 @@ type ResourceReference struct {
     // The OdataType property
     odataType *string
     // A string value that can be used to classify the item, such as 'microsoft.graph.driveItem'
-    type_escaped *string
+    typeEscaped *string
     // A URL leading to the referenced item.
     webUrl *string
 }
@@ -21,7 +21,7 @@ type ResourceReference struct {
 func NewResourceReference()(*ResourceReference) {
     m := &ResourceReference{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateResourceReferenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -87,7 +87,7 @@ func (m *ResourceReference) GetOdataType()(*string) {
 }
 // GetType gets the type property value. A string value that can be used to classify the item, such as 'microsoft.graph.driveItem'
 func (m *ResourceReference) GetType()(*string) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // GetWebUrl gets the webUrl property value. A URL leading to the referenced item.
 func (m *ResourceReference) GetWebUrl()(*string) {
@@ -141,7 +141,7 @@ func (m *ResourceReference) SetOdataType(value *string)() {
 }
 // SetType sets the type property value. A string value that can be used to classify the item, such as 'microsoft.graph.driveItem'
 func (m *ResourceReference) SetType(value *string)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }
 // SetWebUrl sets the webUrl property value. A URL leading to the referenced item.
 func (m *ResourceReference) SetWebUrl(value *string)() {

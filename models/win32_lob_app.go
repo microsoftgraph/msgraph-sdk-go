@@ -39,8 +39,8 @@ func NewWin32LobApp()(*Win32LobApp) {
     m := &Win32LobApp{
         MobileLobApp: *NewMobileLobApp(),
     }
-    odataTypeValue := "#microsoft.graph.win32LobApp";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.win32LobApp"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWin32LobAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

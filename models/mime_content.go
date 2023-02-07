@@ -11,7 +11,7 @@ type MimeContent struct {
     // The OdataType property
     odataType *string
     // Indicates the content mime type.
-    type_escaped *string
+    typeEscaped *string
     // The byte array that contains the actual content.
     value []byte
 }
@@ -19,7 +19,7 @@ type MimeContent struct {
 func NewMimeContent()(*MimeContent) {
     m := &MimeContent{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateMimeContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -71,7 +71,7 @@ func (m *MimeContent) GetOdataType()(*string) {
 }
 // GetType gets the type property value. Indicates the content mime type.
 func (m *MimeContent) GetType()(*string) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // GetValue gets the value property value. The byte array that contains the actual content.
 func (m *MimeContent) GetValue()([]byte) {
@@ -115,7 +115,7 @@ func (m *MimeContent) SetOdataType(value *string)() {
 }
 // SetType sets the type property value. Indicates the content mime type.
 func (m *MimeContent) SetType(value *string)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }
 // SetValue sets the value property value. The byte array that contains the actual content.
 func (m *MimeContent) SetValue(value []byte)() {

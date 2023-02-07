@@ -55,8 +55,8 @@ func NewPermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilderInternal(p
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewPermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder instantiates a new PermissionGrantPolicyItemRequestBuilder and sets the default values.
@@ -83,7 +83,7 @@ func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) Delete(
 }
 // Excludes provides operations to manage the excludes property of the microsoft.graph.permissionGrantPolicy entity.
 func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) Excludes()(*PermissionGrantPoliciesItemExcludesRequestBuilder) {
-    return NewPermissionGrantPoliciesItemExcludesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPermissionGrantPoliciesItemExcludesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ExcludesById provides operations to manage the excludes property of the microsoft.graph.permissionGrantPolicy entity.
 func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) ExcludesById(id string)(*PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilder) {
@@ -94,7 +94,7 @@ func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) Exclude
     if id != "" {
         urlTplParams["permissionGrantConditionSet%2Did"] = id
     }
-    return NewPermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Get the policy that specifies the conditions under which consent can be granted.
 func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PermissionGrantPolicyable, error) {
@@ -117,7 +117,7 @@ func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) Get(ctx
 }
 // Includes provides operations to manage the includes property of the microsoft.graph.permissionGrantPolicy entity.
 func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) Includes()(*PermissionGrantPoliciesItemIncludesRequestBuilder) {
-    return NewPermissionGrantPoliciesItemIncludesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPermissionGrantPoliciesItemIncludesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // IncludesById provides operations to manage the includes property of the microsoft.graph.permissionGrantPolicy entity.
 func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) IncludesById(id string)(*PermissionGrantPoliciesItemIncludesPermissionGrantConditionSetItemRequestBuilder) {
@@ -128,7 +128,7 @@ func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) Include
     if id != "" {
         urlTplParams["permissionGrantConditionSet%2Did"] = id
     }
-    return NewPermissionGrantPoliciesItemIncludesPermissionGrantConditionSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPermissionGrantPoliciesItemIncludesPermissionGrantConditionSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Patch update the navigation property permissionGrantPolicies in policies
 func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PermissionGrantPolicyable, requestConfiguration *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PermissionGrantPolicyable, error) {
@@ -184,7 +184,10 @@ func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) ToPatch
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

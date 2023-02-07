@@ -14,13 +14,13 @@ type ResourceAccess struct {
     // The OdataType property
     odataType *string
     // Specifies whether the id property references a delegated permission or an app role (application permission). The possible values are: Scope (for delegated permissions) or Role (for app roles).
-    type_escaped *string
+    typeEscaped *string
 }
 // NewResourceAccess instantiates a new resourceAccess and sets the default values.
 func NewResourceAccess()(*ResourceAccess) {
     m := &ResourceAccess{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateResourceAccessFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -76,7 +76,7 @@ func (m *ResourceAccess) GetOdataType()(*string) {
 }
 // GetType gets the type property value. Specifies whether the id property references a delegated permission or an app role (application permission). The possible values are: Scope (for delegated permissions) or Role (for app roles).
 func (m *ResourceAccess) GetType()(*string) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // Serialize serializes information the current object
 func (m *ResourceAccess) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -120,5 +120,5 @@ func (m *ResourceAccess) SetOdataType(value *string)() {
 }
 // SetType sets the type property value. Specifies whether the id property references a delegated permission or an app role (application permission). The possible values are: Scope (for delegated permissions) or Role (for app roles).
 func (m *ResourceAccess) SetType(value *string)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }

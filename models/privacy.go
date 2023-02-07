@@ -17,7 +17,7 @@ type Privacy struct {
 func NewPrivacy()(*Privacy) {
     m := &Privacy{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePrivacyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

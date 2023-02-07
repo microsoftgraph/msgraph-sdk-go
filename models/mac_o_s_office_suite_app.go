@@ -13,8 +13,8 @@ func NewMacOSOfficeSuiteApp()(*MacOSOfficeSuiteApp) {
     m := &MacOSOfficeSuiteApp{
         MobileApp: *NewMobileApp(),
     }
-    odataTypeValue := "#microsoft.graph.macOSOfficeSuiteApp";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.macOSOfficeSuiteApp"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateMacOSOfficeSuiteAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

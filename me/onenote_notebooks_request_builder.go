@@ -60,8 +60,8 @@ func NewOnenoteNotebooksRequestBuilderInternal(pathParameters map[string]string,
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewOnenoteNotebooksRequestBuilder instantiates a new NotebooksRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewOnenoteNotebooksRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 }
 // Count provides operations to count the resources in the collection.
 func (m *OnenoteNotebooksRequestBuilder) Count()(*OnenoteNotebooksCountRequestBuilder) {
-    return NewOnenoteNotebooksCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewOnenoteNotebooksCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of notebook objects.
 // [Find more info here]
@@ -96,13 +96,13 @@ func (m *OnenoteNotebooksRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NotebookCollectionResponseable), nil
 }
-// GetNotebookFromWebUrl provides operations to call the getNotebookFromWebUrl method.
-func (m *OnenoteNotebooksRequestBuilder) GetNotebookFromWebUrl()(*OnenoteNotebooksGetNotebookFromWebUrlRequestBuilder) {
-    return NewOnenoteNotebooksGetNotebookFromWebUrlRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetNotebookFromWebUrl provides operations to call the getNotebookFromWebUrl method.
+func (m *OnenoteNotebooksRequestBuilder) MicrosoftGraphGetNotebookFromWebUrl()(*OnenoteNotebooksMicrosoftGraphGetNotebookFromWebUrlRequestBuilder) {
+    return NewOnenoteNotebooksMicrosoftGraphGetNotebookFromWebUrlRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetRecentNotebooksWithIncludePersonalNotebooks provides operations to call the getRecentNotebooks method.
-func (m *OnenoteNotebooksRequestBuilder) GetRecentNotebooksWithIncludePersonalNotebooks(includePersonalNotebooks *bool)(*OnenoteNotebooksGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder) {
-    return NewOnenoteNotebooksGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderInternal(m.pathParameters, m.requestAdapter, includePersonalNotebooks);
+// MicrosoftGraphGetRecentNotebooksWithIncludePersonalNotebooks provides operations to call the getRecentNotebooks method.
+func (m *OnenoteNotebooksRequestBuilder) MicrosoftGraphGetRecentNotebooksWithIncludePersonalNotebooks(includePersonalNotebooks *bool)(*OnenoteNotebooksMicrosoftGraphGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder) {
+    return NewOnenoteNotebooksMicrosoftGraphGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderInternal(m.pathParameters, m.requestAdapter, includePersonalNotebooks)
 }
 // Post create a new OneNote notebook.
 // [Find more info here]
@@ -149,7 +149,10 @@ func (m *OnenoteNotebooksRequestBuilder) ToPostRequestInformation(ctx context.Co
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

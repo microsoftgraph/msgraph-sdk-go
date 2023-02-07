@@ -55,8 +55,8 @@ func NewRoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilderIntern
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewRoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilder instantiates a new RoleAssignmentItemRequestBuilder and sets the default values.
@@ -121,7 +121,7 @@ func (m *RoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilder) Pat
 }
 // RoleDefinition provides operations to manage the roleDefinition property of the microsoft.graph.roleAssignment entity.
 func (m *RoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilder) RoleDefinition()(*RoleDefinitionsItemRoleAssignmentsItemRoleDefinitionRequestBuilder) {
-    return NewRoleDefinitionsItemRoleAssignmentsItemRoleDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewRoleDefinitionsItemRoleAssignmentsItemRoleDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property roleAssignments for deviceManagement
 func (m *RoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *RoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -158,7 +158,10 @@ func (m *RoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilder) ToP
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -53,8 +53,8 @@ func NewAuthenticationFido2MethodsRequestBuilderInternal(pathParameters map[stri
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAuthenticationFido2MethodsRequestBuilder instantiates a new Fido2MethodsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewAuthenticationFido2MethodsRequestBuilder(rawUrl string, requestAdapter i
 }
 // Count provides operations to count the resources in the collection.
 func (m *AuthenticationFido2MethodsRequestBuilder) Count()(*AuthenticationFido2MethodsCountRequestBuilder) {
-    return NewAuthenticationFido2MethodsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAuthenticationFido2MethodsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get represents the FIDO2 security keys registered to a user for authentication.
 func (m *AuthenticationFido2MethodsRequestBuilder) Get(ctx context.Context, requestConfiguration *AuthenticationFido2MethodsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Fido2AuthenticationMethodCollectionResponseable, error) {

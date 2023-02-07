@@ -60,8 +60,8 @@ func NewPrintersRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewPrintersRequestBuilder instantiates a new PrintersRequestBuilder and sets the default values.
@@ -72,11 +72,7 @@ func NewPrintersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 }
 // Count provides operations to count the resources in the collection.
 func (m *PrintersRequestBuilder) Count()(*PrintersCountRequestBuilder) {
-    return NewPrintersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Create provides operations to call the create method.
-func (m *PrintersRequestBuilder) Create()(*PrintersCreateRequestBuilder) {
-    return NewPrintersCreateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewPrintersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve the list of **printers** that are registered in the tenant.
 // [Find more info here]
@@ -99,6 +95,10 @@ func (m *PrintersRequestBuilder) Get(ctx context.Context, requestConfiguration *
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrinterCollectionResponseable), nil
+}
+// MicrosoftGraphCreate provides operations to call the create method.
+func (m *PrintersRequestBuilder) MicrosoftGraphCreate()(*PrintersMicrosoftGraphCreateRequestBuilder) {
+    return NewPrintersMicrosoftGraphCreateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to printers for print
 func (m *PrintersRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Printerable, requestConfiguration *PrintersRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Printerable, error) {
@@ -142,7 +142,10 @@ func (m *PrintersRequestBuilder) ToPostRequestInformation(ctx context.Context, b
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

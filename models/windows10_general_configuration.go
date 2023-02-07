@@ -415,8 +415,8 @@ func NewWindows10GeneralConfiguration()(*Windows10GeneralConfiguration) {
     m := &Windows10GeneralConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.windows10GeneralConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.windows10GeneralConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWindows10GeneralConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

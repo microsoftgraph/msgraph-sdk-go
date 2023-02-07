@@ -23,7 +23,7 @@ type AuditResource struct {
 func NewAuditResource()(*AuditResource) {
     m := &AuditResource{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAuditResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

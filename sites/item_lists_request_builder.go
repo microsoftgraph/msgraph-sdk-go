@@ -60,8 +60,8 @@ func NewItemListsRequestBuilderInternal(pathParameters map[string]string, reques
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemListsRequestBuilder instantiates a new ListsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewItemListsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemListsRequestBuilder) Count()(*ItemListsCountRequestBuilder) {
-    return NewItemListsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemListsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the collection of [lists][] for a [site][]. Lists with the [system][] facet are hidden by default.To list them, include `system` in your `$select` statement.
 // [Find more info here]
@@ -141,7 +141,10 @@ func (m *ItemListsRequestBuilder) ToPostRequestInformation(ctx context.Context, 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

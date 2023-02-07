@@ -36,7 +36,7 @@ type DriveItem struct {
     // Malware metadata, if the item was detected to contain malware. Read-only.
     malware Malwareable
     // If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
-    package_escaped Package_escapedable
+    packageEscaped PackageEscapedable
     // If present, indicates that one or more operations that might affect the state of the driveItem are pending completion. Read-only.
     pendingOperations PendingOperationsable
     // The set of permissions for the item. Read-only. Nullable.
@@ -77,8 +77,8 @@ func NewDriveItem()(*DriveItem) {
     m := &DriveItem{
         BaseItem: *NewBaseItem(),
     }
-    odataTypeValue := "#microsoft.graph.driveItem";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.driveItem"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDriveItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -261,12 +261,12 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         return nil
     }
     res["package"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreatePackage_escapedFromDiscriminatorValue)
+        val, err := n.GetObjectValue(CreatePackageEscapedFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPackage(val.(Package_escapedable))
+            m.SetPackage(val.(PackageEscapedable))
         }
         return nil
     }
@@ -487,8 +487,8 @@ func (m *DriveItem) GetMalware()(Malwareable) {
     return m.malware
 }
 // GetPackage gets the package property value. If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
-func (m *DriveItem) GetPackage()(Package_escapedable) {
-    return m.package_escaped
+func (m *DriveItem) GetPackage()(PackageEscapedable) {
+    return m.packageEscaped
 }
 // GetPendingOperations gets the pendingOperations property value. If present, indicates that one or more operations that might affect the state of the driveItem are pending completion. Read-only.
 func (m *DriveItem) GetPendingOperations()(PendingOperationsable) {
@@ -835,8 +835,8 @@ func (m *DriveItem) SetMalware(value Malwareable)() {
     m.malware = value
 }
 // SetPackage sets the package property value. If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
-func (m *DriveItem) SetPackage(value Package_escapedable)() {
-    m.package_escaped = value
+func (m *DriveItem) SetPackage(value PackageEscapedable)() {
+    m.packageEscaped = value
 }
 // SetPendingOperations sets the pendingOperations property value. If present, indicates that one or more operations that might affect the state of the driveItem are pending completion. Read-only.
 func (m *DriveItem) SetPendingOperations(value PendingOperationsable)() {

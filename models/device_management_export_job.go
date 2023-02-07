@@ -21,7 +21,7 @@ type DeviceManagementExportJob struct {
     // Time that the exported report was requested
     requestDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Columns selected from the report
-    select_escaped []string
+    selectEscaped []string
     // A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id.
     snapshotId *string
     // Possible statuses associated with a generated report
@@ -175,7 +175,7 @@ func (m *DeviceManagementExportJob) GetRequestDateTime()(*i336074805fc853987abe6
 }
 // GetSelect gets the select property value. Columns selected from the report
 func (m *DeviceManagementExportJob) GetSelect()([]string) {
-    return m.select_escaped
+    return m.selectEscaped
 }
 // GetSnapshotId gets the snapshotId property value. A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id.
 func (m *DeviceManagementExportJob) GetSnapshotId()(*string) {
@@ -286,7 +286,7 @@ func (m *DeviceManagementExportJob) SetRequestDateTime(value *i336074805fc853987
 }
 // SetSelect sets the select property value. Columns selected from the report
 func (m *DeviceManagementExportJob) SetSelect(value []string)() {
-    m.select_escaped = value
+    m.selectEscaped = value
 }
 // SetSnapshotId sets the snapshotId property value. A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id.
 func (m *DeviceManagementExportJob) SetSnapshotId(value *string)() {

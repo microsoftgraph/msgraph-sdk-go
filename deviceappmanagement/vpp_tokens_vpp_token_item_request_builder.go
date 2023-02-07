@@ -55,8 +55,8 @@ func NewVppTokensVppTokenItemRequestBuilderInternal(pathParameters map[string]st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewVppTokensVppTokenItemRequestBuilder instantiates a new VppTokenItemRequestBuilder and sets the default values.
@@ -100,6 +100,10 @@ func (m *VppTokensVppTokenItemRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VppTokenable), nil
 }
+// MicrosoftGraphSyncLicenses provides operations to call the syncLicenses method.
+func (m *VppTokensVppTokenItemRequestBuilder) MicrosoftGraphSyncLicenses()(*VppTokensItemMicrosoftGraphSyncLicensesRequestBuilder) {
+    return NewVppTokensItemMicrosoftGraphSyncLicensesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update the navigation property vppTokens in deviceAppManagement
 func (m *VppTokensVppTokenItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VppTokenable, requestConfiguration *VppTokensVppTokenItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VppTokenable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -118,10 +122,6 @@ func (m *VppTokensVppTokenItemRequestBuilder) Patch(ctx context.Context, body ia
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VppTokenable), nil
-}
-// SyncLicenses provides operations to call the syncLicenses method.
-func (m *VppTokensVppTokenItemRequestBuilder) SyncLicenses()(*VppTokensItemSyncLicensesRequestBuilder) {
-    return NewVppTokensItemSyncLicensesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property vppTokens for deviceAppManagement
 func (m *VppTokensVppTokenItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VppTokensVppTokenItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -158,7 +158,10 @@ func (m *VppTokensVppTokenItemRequestBuilder) ToPatchRequestInformation(ctx cont
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

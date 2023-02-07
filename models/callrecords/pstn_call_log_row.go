@@ -62,7 +62,7 @@ type PstnCallLogRow struct {
 func NewPstnCallLogRow()(*PstnCallLogRow) {
     m := &PstnCallLogRow{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePstnCallLogRowFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

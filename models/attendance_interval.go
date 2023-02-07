@@ -22,7 +22,7 @@ type AttendanceInterval struct {
 func NewAttendanceInterval()(*AttendanceInterval) {
     m := &AttendanceInterval{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAttendanceIntervalFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

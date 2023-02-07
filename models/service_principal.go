@@ -110,8 +110,8 @@ func NewServicePrincipal()(*ServicePrincipal) {
     m := &ServicePrincipal{
         DirectoryObject: *NewDirectoryObject(),
     }
-    odataTypeValue := "#microsoft.graph.servicePrincipal";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.servicePrincipal"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateServicePrincipalFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

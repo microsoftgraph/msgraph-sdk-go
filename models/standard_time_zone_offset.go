@@ -25,7 +25,7 @@ type StandardTimeZoneOffset struct {
 func NewStandardTimeZoneOffset()(*StandardTimeZoneOffset) {
     m := &StandardTimeZoneOffset{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateStandardTimeZoneOffsetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

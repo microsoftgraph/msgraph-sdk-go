@@ -19,8 +19,8 @@ func NewCallTranscriptEventMessageDetail()(*CallTranscriptEventMessageDetail) {
     m := &CallTranscriptEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),
     }
-    odataTypeValue := "#microsoft.graph.callTranscriptEventMessageDetail";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.callTranscriptEventMessageDetail"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateCallTranscriptEventMessageDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

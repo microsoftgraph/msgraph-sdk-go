@@ -11,7 +11,7 @@ type ResourcePermission struct {
     // The OdataType property
     odataType *string
     // The type property
-    type_escaped *string
+    typeEscaped *string
     // The value property
     value *string
 }
@@ -19,7 +19,7 @@ type ResourcePermission struct {
 func NewResourcePermission()(*ResourcePermission) {
     m := &ResourcePermission{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateResourcePermissionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -71,7 +71,7 @@ func (m *ResourcePermission) GetOdataType()(*string) {
 }
 // GetType gets the type property value. The type property
 func (m *ResourcePermission) GetType()(*string) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // GetValue gets the value property value. The value property
 func (m *ResourcePermission) GetValue()(*string) {
@@ -115,7 +115,7 @@ func (m *ResourcePermission) SetOdataType(value *string)() {
 }
 // SetType sets the type property value. The type property
 func (m *ResourcePermission) SetType(value *string)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }
 // SetValue sets the value property value. The value property
 func (m *ResourcePermission) SetValue(value *string)() {

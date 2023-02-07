@@ -21,7 +21,7 @@ type ItemPreviewInfo struct {
 func NewItemPreviewInfo()(*ItemPreviewInfo) {
     m := &ItemPreviewInfo{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateItemPreviewInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

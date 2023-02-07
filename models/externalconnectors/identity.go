@@ -9,7 +9,7 @@ import (
 type Identity struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
     // The type of identity. Possible values are: user or group for Azure AD identities and externalgroup for groups in an external system.
-    type_escaped *IdentityType
+    typeEscaped *IdentityType
 }
 // NewIdentity instantiates a new identity and sets the default values.
 func NewIdentity()(*Identity) {
@@ -39,7 +39,7 @@ func (m *Identity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetType gets the type property value. The type of identity. Possible values are: user or group for Azure AD identities and externalgroup for groups in an external system.
 func (m *Identity) GetType()(*IdentityType) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // Serialize serializes information the current object
 func (m *Identity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +58,5 @@ func (m *Identity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetType sets the type property value. The type of identity. Possible values are: user or group for Azure AD identities and externalgroup for groups in an external system.
 func (m *Identity) SetType(value *IdentityType)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }

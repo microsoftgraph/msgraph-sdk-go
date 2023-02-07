@@ -46,8 +46,8 @@ func NewItemContactFoldersItemContactsItemPhotoRequestBuilderInternal(pathParame
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemContactFoldersItemContactsItemPhotoRequestBuilder instantiates a new PhotoRequestBuilder and sets the default values.
@@ -58,7 +58,7 @@ func NewItemContactFoldersItemContactsItemPhotoRequestBuilder(rawUrl string, req
 }
 // Content provides operations to manage the media for the user entity.
 func (m *ItemContactFoldersItemContactsItemPhotoRequestBuilder) Content()(*ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilder) {
-    return NewItemContactFoldersItemContactsItemPhotoValueContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemContactFoldersItemContactsItemPhotoValueContentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get optional contact picture. You can get or set a photo for a contact.
 func (m *ItemContactFoldersItemContactsItemPhotoRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemContactFoldersItemContactsItemPhotoRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ProfilePhotoable, error) {
@@ -121,7 +121,10 @@ func (m *ItemContactFoldersItemContactsItemPhotoRequestBuilder) ToPatchRequestIn
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

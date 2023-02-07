@@ -19,8 +19,8 @@ func NewMailAssessmentRequest()(*MailAssessmentRequest) {
     m := &MailAssessmentRequest{
         ThreatAssessmentRequest: *NewThreatAssessmentRequest(),
     }
-    odataTypeValue := "#microsoft.graph.mailAssessmentRequest";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.mailAssessmentRequest"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateMailAssessmentRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

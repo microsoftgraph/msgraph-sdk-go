@@ -7,7 +7,7 @@ import (
 // IpNamedLocation 
 type IpNamedLocation struct {
     NamedLocation
-    // List of IP address ranges in IPv4 CIDR format (e.g. 1.2.3.4/32) or any allowable IPv6 format from IETF RFC596. Required.
+    // List of IP address ranges in IPv4 CIDR format (e.g. 1.2.3.4/32) or any allowable IPv6 format from IETF RFC5969. Required.
     ipRanges []IpRangeable
     // true if this location is explicitly trusted. Optional. Default value is false.
     isTrusted *bool
@@ -52,7 +52,7 @@ func (m *IpNamedLocation) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetIpRanges gets the ipRanges property value. List of IP address ranges in IPv4 CIDR format (e.g. 1.2.3.4/32) or any allowable IPv6 format from IETF RFC596. Required.
+// GetIpRanges gets the ipRanges property value. List of IP address ranges in IPv4 CIDR format (e.g. 1.2.3.4/32) or any allowable IPv6 format from IETF RFC5969. Required.
 func (m *IpNamedLocation) GetIpRanges()([]IpRangeable) {
     return m.ipRanges
 }
@@ -84,7 +84,7 @@ func (m *IpNamedLocation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// SetIpRanges sets the ipRanges property value. List of IP address ranges in IPv4 CIDR format (e.g. 1.2.3.4/32) or any allowable IPv6 format from IETF RFC596. Required.
+// SetIpRanges sets the ipRanges property value. List of IP address ranges in IPv4 CIDR format (e.g. 1.2.3.4/32) or any allowable IPv6 format from IETF RFC5969. Required.
 func (m *IpNamedLocation) SetIpRanges(value []IpRangeable)() {
     m.ipRanges = value
 }

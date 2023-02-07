@@ -16,7 +16,7 @@ type TodoListsItemTasksItemAttachmentsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// TodoListsItemTasksItemAttachmentsRequestBuilderGetQueryParameters get attachments from me
+// TodoListsItemTasksItemAttachmentsRequestBuilderGetQueryParameters get a list of the taskFileAttachment objects and their properties. The **contentBytes** property will not be returned in the response. Use the Get attachment API to view the **contentBytes**.
 type TodoListsItemTasksItemAttachmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,8 +56,8 @@ func NewTodoListsItemTasksItemAttachmentsRequestBuilderInternal(pathParameters m
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTodoListsItemTasksItemAttachmentsRequestBuilder instantiates a new AttachmentsRequestBuilder and sets the default values.
@@ -68,13 +68,12 @@ func NewTodoListsItemTasksItemAttachmentsRequestBuilder(rawUrl string, requestAd
 }
 // Count provides operations to count the resources in the collection.
 func (m *TodoListsItemTasksItemAttachmentsRequestBuilder) Count()(*TodoListsItemTasksItemAttachmentsCountRequestBuilder) {
-    return NewTodoListsItemTasksItemAttachmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTodoListsItemTasksItemAttachmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// CreateUploadSession provides operations to call the createUploadSession method.
-func (m *TodoListsItemTasksItemAttachmentsRequestBuilder) CreateUploadSession()(*TodoListsItemTasksItemAttachmentsCreateUploadSessionRequestBuilder) {
-    return NewTodoListsItemTasksItemAttachmentsCreateUploadSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Get get attachments from me
+// Get get a list of the taskFileAttachment objects and their properties. The **contentBytes** property will not be returned in the response. Use the Get attachment API to view the **contentBytes**.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/todotask-list-attachments?view=graph-rest-1.0
 func (m *TodoListsItemTasksItemAttachmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *TodoListsItemTasksItemAttachmentsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentBaseCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +92,14 @@ func (m *TodoListsItemTasksItemAttachmentsRequestBuilder) Get(ctx context.Contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentBaseCollectionResponseable), nil
 }
-// Post create new navigation property to attachments for me
+// MicrosoftGraphCreateUploadSession provides operations to call the createUploadSession method.
+func (m *TodoListsItemTasksItemAttachmentsRequestBuilder) MicrosoftGraphCreateUploadSession()(*TodoListsItemTasksItemAttachmentsMicrosoftGraphCreateUploadSessionRequestBuilder) {
+    return NewTodoListsItemTasksItemAttachmentsMicrosoftGraphCreateUploadSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// Post add a new taskFileAttachment object to a todoTask. This operation limits the size of the attachment you can add to under 3 MB. If the size of the file attachments is more than 3 MB, create an upload session to upload the attachments.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/todotask-post-attachments?view=graph-rest-1.0
 func (m *TodoListsItemTasksItemAttachmentsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentBaseable, requestConfiguration *TodoListsItemTasksItemAttachmentsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentBaseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *TodoListsItemTasksItemAttachmentsRequestBuilder) Post(ctx context.Conte
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentBaseable), nil
 }
-// ToGetRequestInformation get attachments from me
+// ToGetRequestInformation get a list of the taskFileAttachment objects and their properties. The **contentBytes** property will not be returned in the response. Use the Get attachment API to view the **contentBytes**.
 func (m *TodoListsItemTasksItemAttachmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TodoListsItemTasksItemAttachmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -128,14 +134,17 @@ func (m *TodoListsItemTasksItemAttachmentsRequestBuilder) ToGetRequestInformatio
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to attachments for me
+// ToPostRequestInformation add a new taskFileAttachment object to a todoTask. This operation limits the size of the attachment you can add to under 3 MB. If the size of the file attachments is more than 3 MB, create an upload session to upload the attachments.
 func (m *TodoListsItemTasksItemAttachmentsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentBaseable, requestConfiguration *TodoListsItemTasksItemAttachmentsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

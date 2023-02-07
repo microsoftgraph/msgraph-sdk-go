@@ -17,7 +17,7 @@ type ReferenceUpdate struct {
 func NewReferenceUpdate()(*ReferenceUpdate) {
     m := &ReferenceUpdate{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateReferenceUpdateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

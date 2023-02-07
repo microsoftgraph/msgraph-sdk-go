@@ -19,7 +19,7 @@ type UserAgent struct {
 func NewUserAgent()(*UserAgent) {
     m := &UserAgent{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateUserAgentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

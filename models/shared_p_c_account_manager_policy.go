@@ -23,7 +23,7 @@ type SharedPCAccountManagerPolicy struct {
 func NewSharedPCAccountManagerPolicy()(*SharedPCAccountManagerPolicy) {
     m := &SharedPCAccountManagerPolicy{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSharedPCAccountManagerPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -25,7 +25,7 @@ type OutlookGeoCoordinates struct {
 func NewOutlookGeoCoordinates()(*OutlookGeoCoordinates) {
     m := &OutlookGeoCoordinates{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateOutlookGeoCoordinatesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

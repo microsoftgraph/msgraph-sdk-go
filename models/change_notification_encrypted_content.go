@@ -25,7 +25,7 @@ type ChangeNotificationEncryptedContent struct {
 func NewChangeNotificationEncryptedContent()(*ChangeNotificationEncryptedContent) {
     m := &ChangeNotificationEncryptedContent{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateChangeNotificationEncryptedContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

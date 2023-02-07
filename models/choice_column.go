@@ -21,7 +21,7 @@ type ChoiceColumn struct {
 func NewChoiceColumn()(*ChoiceColumn) {
     m := &ChoiceColumn{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateChoiceColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

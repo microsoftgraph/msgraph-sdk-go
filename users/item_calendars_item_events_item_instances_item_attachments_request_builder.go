@@ -58,8 +58,8 @@ func NewItemCalendarsItemEventsItemInstancesItemAttachmentsRequestBuilderInterna
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemCalendarsItemEventsItemInstancesItemAttachmentsRequestBuilder instantiates a new AttachmentsRequestBuilder and sets the default values.
@@ -70,11 +70,7 @@ func NewItemCalendarsItemEventsItemInstancesItemAttachmentsRequestBuilder(rawUrl
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemCalendarsItemEventsItemInstancesItemAttachmentsRequestBuilder) Count()(*ItemCalendarsItemEventsItemInstancesItemAttachmentsCountRequestBuilder) {
-    return NewItemCalendarsItemEventsItemInstancesItemAttachmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// CreateUploadSession provides operations to call the createUploadSession method.
-func (m *ItemCalendarsItemEventsItemInstancesItemAttachmentsRequestBuilder) CreateUploadSession()(*ItemCalendarsItemEventsItemInstancesItemAttachmentsCreateUploadSessionRequestBuilder) {
-    return NewItemCalendarsItemEventsItemInstancesItemAttachmentsCreateUploadSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemCalendarsItemEventsItemInstancesItemAttachmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of attachment objects attached to an event.
 // [Find more info here]
@@ -97,6 +93,10 @@ func (m *ItemCalendarsItemEventsItemInstancesItemAttachmentsRequestBuilder) Get(
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentCollectionResponseable), nil
+}
+// MicrosoftGraphCreateUploadSession provides operations to call the createUploadSession method.
+func (m *ItemCalendarsItemEventsItemInstancesItemAttachmentsRequestBuilder) MicrosoftGraphCreateUploadSession()(*ItemCalendarsItemEventsItemInstancesItemAttachmentsMicrosoftGraphCreateUploadSessionRequestBuilder) {
+    return NewItemCalendarsItemEventsItemInstancesItemAttachmentsMicrosoftGraphCreateUploadSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource. 
 // [Find more info here]
@@ -143,7 +143,10 @@ func (m *ItemCalendarsItemEventsItemInstancesItemAttachmentsRequestBuilder) ToPo
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

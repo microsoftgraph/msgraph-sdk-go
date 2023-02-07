@@ -15,7 +15,7 @@ type SystemFacet struct {
 func NewSystemFacet()(*SystemFacet) {
     m := &SystemFacet{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSystemFacetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

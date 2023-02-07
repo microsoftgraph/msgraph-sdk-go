@@ -17,8 +17,8 @@ func NewUnifiedRoleManagementPolicyAuthenticationContextRule()(*UnifiedRoleManag
     m := &UnifiedRoleManagementPolicyAuthenticationContextRule{
         UnifiedRoleManagementPolicyRule: *NewUnifiedRoleManagementPolicyRule(),
     }
-    odataTypeValue := "#microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateUnifiedRoleManagementPolicyAuthenticationContextRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

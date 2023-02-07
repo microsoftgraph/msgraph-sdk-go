@@ -21,7 +21,7 @@ type SubjectRightsRequestStageDetail struct {
 func NewSubjectRightsRequestStageDetail()(*SubjectRightsRequestStageDetail) {
     m := &SubjectRightsRequestStageDetail{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSubjectRightsRequestStageDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

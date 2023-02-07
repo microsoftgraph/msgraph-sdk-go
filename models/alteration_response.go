@@ -21,7 +21,7 @@ type AlterationResponse struct {
 func NewAlterationResponse()(*AlterationResponse) {
     m := &AlterationResponse{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAlterationResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

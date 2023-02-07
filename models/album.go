@@ -17,7 +17,7 @@ type Album struct {
 func NewAlbum()(*Album) {
     m := &Album{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAlbumFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

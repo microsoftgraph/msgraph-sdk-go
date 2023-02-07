@@ -55,8 +55,8 @@ func NewClassesItemAssignmentsItemRubricRequestBuilderInternal(pathParameters ma
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewClassesItemAssignmentsItemRubricRequestBuilder instantiates a new RubricRequestBuilder and sets the default values.
@@ -124,7 +124,7 @@ func (m *ClassesItemAssignmentsItemRubricRequestBuilder) Patch(ctx context.Conte
 }
 // Ref provides operations to manage the collection of educationRoot entities.
 func (m *ClassesItemAssignmentsItemRubricRequestBuilder) Ref()(*ClassesItemAssignmentsItemRubricRefRequestBuilder) {
-    return NewClassesItemAssignmentsItemRubricRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewClassesItemAssignmentsItemRubricRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property rubric for education
 func (m *ClassesItemAssignmentsItemRubricRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ClassesItemAssignmentsItemRubricRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -161,7 +161,10 @@ func (m *ClassesItemAssignmentsItemRubricRequestBuilder) ToPatchRequestInformati
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -17,8 +17,8 @@ func NewAccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource()(
     m := &AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource{
         AccessReviewInstanceDecisionItemResource: *NewAccessReviewInstanceDecisionItemResource(),
     }
-    odataTypeValue := "#microsoft.graph.accessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.accessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

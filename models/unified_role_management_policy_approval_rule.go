@@ -15,8 +15,8 @@ func NewUnifiedRoleManagementPolicyApprovalRule()(*UnifiedRoleManagementPolicyAp
     m := &UnifiedRoleManagementPolicyApprovalRule{
         UnifiedRoleManagementPolicyRule: *NewUnifiedRoleManagementPolicyRule(),
     }
-    odataTypeValue := "#microsoft.graph.unifiedRoleManagementPolicyApprovalRule";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.unifiedRoleManagementPolicyApprovalRule"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateUnifiedRoleManagementPolicyApprovalRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

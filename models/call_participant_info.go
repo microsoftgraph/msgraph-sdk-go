@@ -17,7 +17,7 @@ type CallParticipantInfo struct {
 func NewCallParticipantInfo()(*CallParticipantInfo) {
     m := &CallParticipantInfo{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCallParticipantInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

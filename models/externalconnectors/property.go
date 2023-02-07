@@ -25,13 +25,13 @@ type Property struct {
     // The OdataType property
     odataType *string
     // The type property
-    type_escaped *PropertyType
+    typeEscaped *PropertyType
 }
 // NewProperty instantiates a new property and sets the default values.
 func NewProperty()(*Property) {
     m := &Property{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePropertyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -179,7 +179,7 @@ func (m *Property) GetOdataType()(*string) {
 }
 // GetType gets the type property value. The type property
 func (m *Property) GetType()(*PropertyType) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // Serialize serializes information the current object
 func (m *Property) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -284,5 +284,5 @@ func (m *Property) SetOdataType(value *string)() {
 }
 // SetType sets the type property value. The type property
 func (m *Property) SetType(value *PropertyType)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }

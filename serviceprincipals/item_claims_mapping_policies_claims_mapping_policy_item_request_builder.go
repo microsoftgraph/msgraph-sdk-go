@@ -22,8 +22,8 @@ func NewItemClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderInternal(p
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder instantiates a new ClaimsMappingPolicyItemRequestBuilder and sets the default values.
@@ -34,5 +34,5 @@ func NewItemClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder(rawUrl st
 }
 // Ref provides operations to manage the collection of servicePrincipal entities.
 func (m *ItemClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) Ref()(*ItemClaimsMappingPoliciesItemRefRequestBuilder) {
-    return NewItemClaimsMappingPoliciesItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemClaimsMappingPoliciesItemRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

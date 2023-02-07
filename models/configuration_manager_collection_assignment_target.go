@@ -15,8 +15,8 @@ func NewConfigurationManagerCollectionAssignmentTarget()(*ConfigurationManagerCo
     m := &ConfigurationManagerCollectionAssignmentTarget{
         DeviceAndAppManagementAssignmentTarget: *NewDeviceAndAppManagementAssignmentTarget(),
     }
-    odataTypeValue := "#microsoft.graph.configurationManagerCollectionAssignmentTarget";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.configurationManagerCollectionAssignmentTarget"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateConfigurationManagerCollectionAssignmentTargetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

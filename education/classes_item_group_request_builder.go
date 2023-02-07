@@ -41,8 +41,8 @@ func NewClassesItemGroupRequestBuilderInternal(pathParameters map[string]string,
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewClassesItemGroupRequestBuilder instantiates a new GroupRequestBuilder and sets the default values.

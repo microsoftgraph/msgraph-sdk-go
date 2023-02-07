@@ -53,8 +53,8 @@ func NewItemDirectReportsRequestBuilderInternal(pathParameters map[string]string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemDirectReportsRequestBuilder instantiates a new DirectReportsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemDirectReportsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemDirectReportsRequestBuilder) Count()(*ItemDirectReportsCountRequestBuilder) {
-    return NewItemDirectReportsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemDirectReportsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
 // [Find more info here]
@@ -89,9 +89,13 @@ func (m *ItemDirectReportsRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
 }
-// OrgContact casts the previous resource to orgContact.
-func (m *ItemDirectReportsRequestBuilder) OrgContact()(*ItemDirectReportsOrgContactRequestBuilder) {
-    return NewItemDirectReportsOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphOrgContact casts the previous resource to orgContact.
+func (m *ItemDirectReportsRequestBuilder) MicrosoftGraphOrgContact()(*ItemDirectReportsMicrosoftGraphOrgContactRequestBuilder) {
+    return NewItemDirectReportsMicrosoftGraphOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphUser casts the previous resource to user.
+func (m *ItemDirectReportsRequestBuilder) MicrosoftGraphUser()(*ItemDirectReportsMicrosoftGraphUserRequestBuilder) {
+    return NewItemDirectReportsMicrosoftGraphUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation the users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
 func (m *ItemDirectReportsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemDirectReportsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -108,8 +112,4 @@ func (m *ItemDirectReportsRequestBuilder) ToGetRequestInformation(ctx context.Co
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// User casts the previous resource to user.
-func (m *ItemDirectReportsRequestBuilder) User()(*ItemDirectReportsUserRequestBuilder) {
-    return NewItemDirectReportsUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

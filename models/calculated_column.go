@@ -21,7 +21,7 @@ type CalculatedColumn struct {
 func NewCalculatedColumn()(*CalculatedColumn) {
     m := &CalculatedColumn{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCalculatedColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

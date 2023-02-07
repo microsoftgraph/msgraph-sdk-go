@@ -16,7 +16,7 @@ type UsersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// UsersRequestBuilderGetQueryParameters retrieve a list of user objects.
+// UsersRequestBuilderGetQueryParameters retrieve the properties and relationships of user object.
 type UsersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -60,8 +60,8 @@ func NewUsersRequestBuilderInternal(pathParameters map[string]string, requestAda
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewUsersRequestBuilder instantiates a new UsersRequestBuilder and sets the default values.
@@ -72,16 +72,12 @@ func NewUsersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
 }
 // Count provides operations to count the resources in the collection.
 func (m *UsersRequestBuilder) Count()(*CountRequestBuilder) {
-    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// Delta provides operations to call the delta method.
-func (m *UsersRequestBuilder) Delta()(*DeltaRequestBuilder) {
-    return NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Get retrieve a list of user objects.
+// Get retrieve the properties and relationships of user object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/user-list?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/user-get?view=graph-rest-1.0
 func (m *UsersRequestBuilder) Get(ctx context.Context, requestConfiguration *UsersRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -100,13 +96,21 @@ func (m *UsersRequestBuilder) Get(ctx context.Context, requestConfiguration *Use
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserCollectionResponseable), nil
 }
-// GetAvailableExtensionProperties provides operations to call the getAvailableExtensionProperties method.
-func (m *UsersRequestBuilder) GetAvailableExtensionProperties()(*GetAvailableExtensionPropertiesRequestBuilder) {
-    return NewGetAvailableExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphDelta provides operations to call the delta method.
+func (m *UsersRequestBuilder) MicrosoftGraphDelta()(*MicrosoftGraphDeltaRequestBuilder) {
+    return NewMicrosoftGraphDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// GetByIds provides operations to call the getByIds method.
-func (m *UsersRequestBuilder) GetByIds()(*GetByIdsRequestBuilder) {
-    return NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphGetAvailableExtensionProperties provides operations to call the getAvailableExtensionProperties method.
+func (m *UsersRequestBuilder) MicrosoftGraphGetAvailableExtensionProperties()(*MicrosoftGraphGetAvailableExtensionPropertiesRequestBuilder) {
+    return NewMicrosoftGraphGetAvailableExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphGetByIds provides operations to call the getByIds method.
+func (m *UsersRequestBuilder) MicrosoftGraphGetByIds()(*MicrosoftGraphGetByIdsRequestBuilder) {
+    return NewMicrosoftGraphGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphValidateProperties provides operations to call the validateProperties method.
+func (m *UsersRequestBuilder) MicrosoftGraphValidateProperties()(*MicrosoftGraphValidatePropertiesRequestBuilder) {
+    return NewMicrosoftGraphValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create a new user.The request body contains the user to create. At a minimum, you must specify the required properties for the user. You can optionally specify any other writable properties.
 // [Find more info here]
@@ -130,7 +134,7 @@ func (m *UsersRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e64
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable), nil
 }
-// ToGetRequestInformation retrieve a list of user objects.
+// ToGetRequestInformation retrieve the properties and relationships of user object.
 func (m *UsersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UsersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -153,14 +157,13 @@ func (m *UsersRequestBuilder) ToPostRequestInformation(ctx context.Context, body
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// ValidateProperties provides operations to call the validateProperties method.
-func (m *UsersRequestBuilder) ValidateProperties()(*ValidatePropertiesRequestBuilder) {
-    return NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

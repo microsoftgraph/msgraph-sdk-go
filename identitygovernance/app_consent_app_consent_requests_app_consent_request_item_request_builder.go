@@ -55,8 +55,8 @@ func NewAppConsentAppConsentRequestsAppConsentRequestItemRequestBuilderInternal(
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAppConsentAppConsentRequestsAppConsentRequestItemRequestBuilder instantiates a new AppConsentRequestItemRequestBuilder and sets the default values.
@@ -154,7 +154,10 @@ func (m *AppConsentAppConsentRequestsAppConsentRequestItemRequestBuilder) ToPatc
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -163,7 +166,7 @@ func (m *AppConsentAppConsentRequestsAppConsentRequestItemRequestBuilder) ToPatc
 }
 // UserConsentRequests provides operations to manage the userConsentRequests property of the microsoft.graph.appConsentRequest entity.
 func (m *AppConsentAppConsentRequestsAppConsentRequestItemRequestBuilder) UserConsentRequests()(*AppConsentAppConsentRequestsItemUserConsentRequestsRequestBuilder) {
-    return NewAppConsentAppConsentRequestsItemUserConsentRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewAppConsentAppConsentRequestsItemUserConsentRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // UserConsentRequestsById provides operations to manage the userConsentRequests property of the microsoft.graph.appConsentRequest entity.
 func (m *AppConsentAppConsentRequestsAppConsentRequestItemRequestBuilder) UserConsentRequestsById(id string)(*AppConsentAppConsentRequestsItemUserConsentRequestsUserConsentRequestItemRequestBuilder) {
@@ -174,5 +177,5 @@ func (m *AppConsentAppConsentRequestsAppConsentRequestItemRequestBuilder) UserCo
     if id != "" {
         urlTplParams["userConsentRequest%2Did"] = id
     }
-    return NewAppConsentAppConsentRequestsItemUserConsentRequestsUserConsentRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAppConsentAppConsentRequestsItemUserConsentRequestsUserConsentRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }

@@ -17,7 +17,7 @@ type SharingLink struct {
     // The scope of the link represented by this permission. Value anonymous indicates the link is usable by anyone, organization indicates the link is only usable for users signed into the same tenant.
     scope *string
     // The type of the link created.
-    type_escaped *string
+    typeEscaped *string
     // For embed links, this property contains the HTML code for an <iframe> element that will embed the item in a webpage.
     webHtml *string
     // A URL that opens the item in the browser on the OneDrive website.
@@ -27,7 +27,7 @@ type SharingLink struct {
 func NewSharingLink()(*SharingLink) {
     m := &SharingLink{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSharingLinkFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -131,7 +131,7 @@ func (m *SharingLink) GetScope()(*string) {
 }
 // GetType gets the type property value. The type of the link created.
 func (m *SharingLink) GetType()(*string) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // GetWebHtml gets the webHtml property value. For embed links, this property contains the HTML code for an <iframe> element that will embed the item in a webpage.
 func (m *SharingLink) GetWebHtml()(*string) {
@@ -215,7 +215,7 @@ func (m *SharingLink) SetScope(value *string)() {
 }
 // SetType sets the type property value. The type of the link created.
 func (m *SharingLink) SetType(value *string)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }
 // SetWebHtml sets the webHtml property value. For embed links, this property contains the HTML code for an <iframe> element that will embed the item in a webpage.
 func (m *SharingLink) SetWebHtml(value *string)() {

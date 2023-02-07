@@ -41,8 +41,8 @@ func NewIosCompliancePolicy()(*IosCompliancePolicy) {
     m := &IosCompliancePolicy{
         DeviceCompliancePolicy: *NewDeviceCompliancePolicy(),
     }
-    odataTypeValue := "#microsoft.graph.iosCompliancePolicy";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.iosCompliancePolicy"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateIosCompliancePolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

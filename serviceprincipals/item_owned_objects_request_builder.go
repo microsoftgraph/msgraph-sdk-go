@@ -44,14 +44,6 @@ type ItemOwnedObjectsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemOwnedObjectsRequestBuilderGetQueryParameters
 }
-// Application casts the previous resource to application.
-func (m *ItemOwnedObjectsRequestBuilder) Application()(*ItemOwnedObjectsApplicationRequestBuilder) {
-    return NewItemOwnedObjectsApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// AppRoleAssignment casts the previous resource to appRoleAssignment.
-func (m *ItemOwnedObjectsRequestBuilder) AppRoleAssignment()(*ItemOwnedObjectsAppRoleAssignmentRequestBuilder) {
-    return NewItemOwnedObjectsAppRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // NewItemOwnedObjectsRequestBuilderInternal instantiates a new OwnedObjectsRequestBuilder and sets the default values.
 func NewItemOwnedObjectsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOwnedObjectsRequestBuilder) {
     m := &ItemOwnedObjectsRequestBuilder{
@@ -61,8 +53,8 @@ func NewItemOwnedObjectsRequestBuilderInternal(pathParameters map[string]string,
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemOwnedObjectsRequestBuilder instantiates a new OwnedObjectsRequestBuilder and sets the default values.
@@ -73,11 +65,7 @@ func NewItemOwnedObjectsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemOwnedObjectsRequestBuilder) Count()(*ItemOwnedObjectsCountRequestBuilder) {
-    return NewItemOwnedObjectsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Endpoint casts the previous resource to endpoint.
-func (m *ItemOwnedObjectsRequestBuilder) Endpoint()(*ItemOwnedObjectsEndpointRequestBuilder) {
-    return NewItemOwnedObjectsEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemOwnedObjectsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 func (m *ItemOwnedObjectsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOwnedObjectsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
@@ -98,13 +86,25 @@ func (m *ItemOwnedObjectsRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
 }
-// Group casts the previous resource to group.
-func (m *ItemOwnedObjectsRequestBuilder) Group()(*ItemOwnedObjectsGroupRequestBuilder) {
-    return NewItemOwnedObjectsGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphApplication casts the previous resource to application.
+func (m *ItemOwnedObjectsRequestBuilder) MicrosoftGraphApplication()(*ItemOwnedObjectsMicrosoftGraphApplicationRequestBuilder) {
+    return NewItemOwnedObjectsMicrosoftGraphApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// ServicePrincipal casts the previous resource to servicePrincipal.
-func (m *ItemOwnedObjectsRequestBuilder) ServicePrincipal()(*ItemOwnedObjectsServicePrincipalRequestBuilder) {
-    return NewItemOwnedObjectsServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// MicrosoftGraphAppRoleAssignment casts the previous resource to appRoleAssignment.
+func (m *ItemOwnedObjectsRequestBuilder) MicrosoftGraphAppRoleAssignment()(*ItemOwnedObjectsMicrosoftGraphAppRoleAssignmentRequestBuilder) {
+    return NewItemOwnedObjectsMicrosoftGraphAppRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphEndpoint casts the previous resource to endpoint.
+func (m *ItemOwnedObjectsRequestBuilder) MicrosoftGraphEndpoint()(*ItemOwnedObjectsMicrosoftGraphEndpointRequestBuilder) {
+    return NewItemOwnedObjectsMicrosoftGraphEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphGroup casts the previous resource to group.
+func (m *ItemOwnedObjectsRequestBuilder) MicrosoftGraphGroup()(*ItemOwnedObjectsMicrosoftGraphGroupRequestBuilder) {
+    return NewItemOwnedObjectsMicrosoftGraphGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MicrosoftGraphServicePrincipal casts the previous resource to servicePrincipal.
+func (m *ItemOwnedObjectsRequestBuilder) MicrosoftGraphServicePrincipal()(*ItemOwnedObjectsMicrosoftGraphServicePrincipalRequestBuilder) {
+    return NewItemOwnedObjectsMicrosoftGraphServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 func (m *ItemOwnedObjectsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOwnedObjectsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -55,8 +55,8 @@ func NewItemTodoRequestBuilderInternal(pathParameters map[string]string, request
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTodoRequestBuilder instantiates a new TodoRequestBuilder and sets the default values.
@@ -102,7 +102,7 @@ func (m *ItemTodoRequestBuilder) Get(ctx context.Context, requestConfiguration *
 }
 // Lists provides operations to manage the lists property of the microsoft.graph.todo entity.
 func (m *ItemTodoRequestBuilder) Lists()(*ItemTodoListsRequestBuilder) {
-    return NewItemTodoListsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTodoListsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ListsById provides operations to manage the lists property of the microsoft.graph.todo entity.
 func (m *ItemTodoRequestBuilder) ListsById(id string)(*ItemTodoListsTodoTaskListItemRequestBuilder) {
@@ -113,7 +113,7 @@ func (m *ItemTodoRequestBuilder) ListsById(id string)(*ItemTodoListsTodoTaskList
     if id != "" {
         urlTplParams["todoTaskList%2Did"] = id
     }
-    return NewItemTodoListsTodoTaskListItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemTodoListsTodoTaskListItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // Patch update the navigation property todo in users
 func (m *ItemTodoRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Todoable, requestConfiguration *ItemTodoRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Todoable, error) {
@@ -169,7 +169,10 @@ func (m *ItemTodoRequestBuilder) ToPatchRequestInformation(ctx context.Context, 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

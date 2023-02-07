@@ -60,8 +60,8 @@ func NewItemInsightsTrendingRequestBuilderInternal(pathParameters map[string]str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemInsightsTrendingRequestBuilder instantiates a new TrendingRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewItemInsightsTrendingRequestBuilder(rawUrl string, requestAdapter i2ae418
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemInsightsTrendingRequestBuilder) Count()(*ItemInsightsTrendingCountRequestBuilder) {
-    return NewItemInsightsTrendingCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemInsightsTrendingCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user's closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
 func (m *ItemInsightsTrendingRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemInsightsTrendingRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TrendingCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *ItemInsightsTrendingRequestBuilder) ToPostRequestInformation(ctx contex
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

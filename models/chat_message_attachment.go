@@ -20,7 +20,7 @@ type ChatMessageAttachment struct {
     name *string
     // The OdataType property
     odataType *string
-    // The teamsAppId property
+    // The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
     teamsAppId *string
     // URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
     thumbnailUrl *string
@@ -29,7 +29,7 @@ type ChatMessageAttachment struct {
 func NewChatMessageAttachment()(*ChatMessageAttachment) {
     m := &ChatMessageAttachment{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateChatMessageAttachmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -149,7 +149,7 @@ func (m *ChatMessageAttachment) GetName()(*string) {
 func (m *ChatMessageAttachment) GetOdataType()(*string) {
     return m.odataType
 }
-// GetTeamsAppId gets the teamsAppId property value. The teamsAppId property
+// GetTeamsAppId gets the teamsAppId property value. The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
 func (m *ChatMessageAttachment) GetTeamsAppId()(*string) {
     return m.teamsAppId
 }
@@ -243,7 +243,7 @@ func (m *ChatMessageAttachment) SetName(value *string)() {
 func (m *ChatMessageAttachment) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetTeamsAppId sets the teamsAppId property value. The teamsAppId property
+// SetTeamsAppId sets the teamsAppId property value. The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
 func (m *ChatMessageAttachment) SetTeamsAppId(value *string)() {
     m.teamsAppId = value
 }

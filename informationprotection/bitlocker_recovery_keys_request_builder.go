@@ -53,8 +53,8 @@ func NewBitlockerRecoveryKeysRequestBuilderInternal(pathParameters map[string]st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewBitlockerRecoveryKeysRequestBuilder instantiates a new RecoveryKeysRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewBitlockerRecoveryKeysRequestBuilder(rawUrl string, requestAdapter i2ae41
 }
 // Count provides operations to count the resources in the collection.
 func (m *BitlockerRecoveryKeysRequestBuilder) Count()(*BitlockerRecoveryKeysCountRequestBuilder) {
-    return NewBitlockerRecoveryKeysCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewBitlockerRecoveryKeysCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of the bitlockerRecoveryKey objects and their properties.  This operation does not return the **key** property. For information about how to read the **key** property, see Get bitlockerRecoveryKey.
 // [Find more info here]

@@ -55,8 +55,8 @@ func NewTaskDefinitionsItemTasksPrintTaskItemRequestBuilderInternal(pathParamete
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewTaskDefinitionsItemTasksPrintTaskItemRequestBuilder instantiates a new PrintTaskItemRequestBuilder and sets the default values.
@@ -67,7 +67,7 @@ func NewTaskDefinitionsItemTasksPrintTaskItemRequestBuilder(rawUrl string, reque
 }
 // Definition provides operations to manage the definition property of the microsoft.graph.printTask entity.
 func (m *TaskDefinitionsItemTasksPrintTaskItemRequestBuilder) Definition()(*TaskDefinitionsItemTasksItemDefinitionRequestBuilder) {
-    return NewTaskDefinitionsItemTasksItemDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTaskDefinitionsItemTasksItemDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete navigation property tasks for print
 func (m *TaskDefinitionsItemTasksPrintTaskItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TaskDefinitionsItemTasksPrintTaskItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -158,7 +158,10 @@ func (m *TaskDefinitionsItemTasksPrintTaskItemRequestBuilder) ToPatchRequestInfo
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -167,5 +170,5 @@ func (m *TaskDefinitionsItemTasksPrintTaskItemRequestBuilder) ToPatchRequestInfo
 }
 // Trigger provides operations to manage the trigger property of the microsoft.graph.printTask entity.
 func (m *TaskDefinitionsItemTasksPrintTaskItemRequestBuilder) Trigger()(*TaskDefinitionsItemTasksItemTriggerRequestBuilder) {
-    return NewTaskDefinitionsItemTasksItemTriggerRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewTaskDefinitionsItemTasksItemTriggerRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

@@ -14,10 +14,12 @@ const (
     SERVICETOSERVICE_DEVICEMANAGEMENTEXCHANGECONNECTORTYPE
     // Connects to O365 Dedicated Exchange environment.
     DEDICATED_DEVICEMANAGEMENTEXCHANGECONNECTORTYPE
+    // Evolvable enumeration sentinel value. Do not use.
+    UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTEXCHANGECONNECTORTYPE
 )
 
 func (i DeviceManagementExchangeConnectorType) String() string {
-    return []string{"onPremises", "hosted", "serviceToService", "dedicated"}[i]
+    return []string{"onPremises", "hosted", "serviceToService", "dedicated", "unknownFutureValue"}[i]
 }
 func ParseDeviceManagementExchangeConnectorType(v string) (any, error) {
     result := ONPREMISES_DEVICEMANAGEMENTEXCHANGECONNECTORTYPE
@@ -30,6 +32,8 @@ func ParseDeviceManagementExchangeConnectorType(v string) (any, error) {
             result = SERVICETOSERVICE_DEVICEMANAGEMENTEXCHANGECONNECTORTYPE
         case "dedicated":
             result = DEDICATED_DEVICEMANAGEMENTEXCHANGECONNECTORTYPE
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTEXCHANGECONNECTORTYPE
         default:
             return 0, errors.New("Unknown DeviceManagementExchangeConnectorType value: " + v)
     }

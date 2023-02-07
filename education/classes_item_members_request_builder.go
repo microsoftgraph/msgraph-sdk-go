@@ -53,8 +53,8 @@ func NewClassesItemMembersRequestBuilderInternal(pathParameters map[string]strin
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewClassesItemMembersRequestBuilder instantiates a new MembersRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewClassesItemMembersRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 }
 // Count provides operations to count the resources in the collection.
 func (m *ClassesItemMembersRequestBuilder) Count()(*ClassesItemMembersCountRequestBuilder) {
-    return NewClassesItemMembersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewClassesItemMembersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieves the educationUser members of an educationClass.
 // [Find more info here]
@@ -91,7 +91,7 @@ func (m *ClassesItemMembersRequestBuilder) Get(ctx context.Context, requestConfi
 }
 // Ref provides operations to manage the collection of educationRoot entities.
 func (m *ClassesItemMembersRequestBuilder) Ref()(*ClassesItemMembersRefRequestBuilder) {
-    return NewClassesItemMembersRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewClassesItemMembersRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation retrieves the educationUser members of an educationClass.
 func (m *ClassesItemMembersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClassesItemMembersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

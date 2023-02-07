@@ -28,8 +28,8 @@ func NewPrinter()(*Printer) {
     m := &Printer{
         PrinterBase: *NewPrinterBase(),
     }
-    odataTypeValue := "#microsoft.graph.printer";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.printer"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreatePrinterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

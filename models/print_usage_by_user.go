@@ -15,8 +15,8 @@ func NewPrintUsageByUser()(*PrintUsageByUser) {
     m := &PrintUsageByUser{
         PrintUsage: *NewPrintUsage(),
     }
-    odataTypeValue := "#microsoft.graph.printUsageByUser";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.printUsageByUser"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreatePrintUsageByUserFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

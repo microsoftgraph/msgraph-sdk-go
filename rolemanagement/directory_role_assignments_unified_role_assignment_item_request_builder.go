@@ -48,7 +48,7 @@ type DirectoryRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderPatchRequest
 }
 // AppScope provides operations to manage the appScope property of the microsoft.graph.unifiedRoleAssignment entity.
 func (m *DirectoryRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) AppScope()(*DirectoryRoleAssignmentsItemAppScopeRequestBuilder) {
-    return NewDirectoryRoleAssignmentsItemAppScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDirectoryRoleAssignmentsItemAppScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewDirectoryRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderInternal instantiates a new UnifiedRoleAssignmentItemRequestBuilder and sets the default values.
 func NewDirectoryRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) {
@@ -59,8 +59,8 @@ func NewDirectoryRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderInternal(
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewDirectoryRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder instantiates a new UnifiedRoleAssignmentItemRequestBuilder and sets the default values.
@@ -87,7 +87,7 @@ func (m *DirectoryRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) Delete
 }
 // DirectoryScope provides operations to manage the directoryScope property of the microsoft.graph.unifiedRoleAssignment entity.
 func (m *DirectoryRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) DirectoryScope()(*DirectoryRoleAssignmentsItemDirectoryScopeRequestBuilder) {
-    return NewDirectoryRoleAssignmentsItemDirectoryScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDirectoryRoleAssignmentsItemDirectoryScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get resource to grant access to users or groups.
 func (m *DirectoryRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DirectoryRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleAssignmentable, error) {
@@ -129,11 +129,11 @@ func (m *DirectoryRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) Patch(
 }
 // Principal provides operations to manage the principal property of the microsoft.graph.unifiedRoleAssignment entity.
 func (m *DirectoryRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) Principal()(*DirectoryRoleAssignmentsItemPrincipalRequestBuilder) {
-    return NewDirectoryRoleAssignmentsItemPrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDirectoryRoleAssignmentsItemPrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // RoleDefinition provides operations to manage the roleDefinition property of the microsoft.graph.unifiedRoleAssignment entity.
 func (m *DirectoryRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) RoleDefinition()(*DirectoryRoleAssignmentsItemRoleDefinitionRequestBuilder) {
-    return NewDirectoryRoleAssignmentsItemRoleDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewDirectoryRoleAssignmentsItemRoleDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property roleAssignments for roleManagement
 func (m *DirectoryRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DirectoryRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -170,7 +170,10 @@ func (m *DirectoryRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) ToPatc
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -21,7 +21,7 @@ type ProvisionedPlan struct {
 func NewProvisionedPlan()(*ProvisionedPlan) {
     m := &ProvisionedPlan{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateProvisionedPlanFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

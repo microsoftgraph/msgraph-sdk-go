@@ -25,8 +25,8 @@ func NewWorkforceIntegration()(*WorkforceIntegration) {
     m := &WorkforceIntegration{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),
     }
-    odataTypeValue := "#microsoft.graph.workforceIntegration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.workforceIntegration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWorkforceIntegrationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

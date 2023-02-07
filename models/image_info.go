@@ -23,7 +23,7 @@ type ImageInfo struct {
 func NewImageInfo()(*ImageInfo) {
     m := &ImageInfo{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateImageInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

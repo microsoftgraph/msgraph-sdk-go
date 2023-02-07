@@ -60,8 +60,8 @@ func NewItemOnenoteResourcesRequestBuilderInternal(pathParameters map[string]str
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemOnenoteResourcesRequestBuilder instantiates a new ResourcesRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewItemOnenoteResourcesRequestBuilder(rawUrl string, requestAdapter i2ae418
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemOnenoteResourcesRequestBuilder) Count()(*ItemOnenoteResourcesCountRequestBuilder) {
-    return NewItemOnenoteResourcesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemOnenoteResourcesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.
 func (m *ItemOnenoteResourcesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnenoteResourcesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenoteResourceCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *ItemOnenoteResourcesRequestBuilder) ToPostRequestInformation(ctx contex
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

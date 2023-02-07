@@ -55,8 +55,8 @@ func NewExchangeConnectorsDeviceManagementExchangeConnectorItemRequestBuilderInt
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewExchangeConnectorsDeviceManagementExchangeConnectorItemRequestBuilder instantiates a new DeviceManagementExchangeConnectorItemRequestBuilder and sets the default values.
@@ -100,6 +100,10 @@ func (m *ExchangeConnectorsDeviceManagementExchangeConnectorItemRequestBuilder) 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementExchangeConnectorable), nil
 }
+// MicrosoftGraphSync provides operations to call the sync method.
+func (m *ExchangeConnectorsDeviceManagementExchangeConnectorItemRequestBuilder) MicrosoftGraphSync()(*ExchangeConnectorsItemMicrosoftGraphSyncRequestBuilder) {
+    return NewExchangeConnectorsItemMicrosoftGraphSyncRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Patch update the navigation property exchangeConnectors in deviceManagement
 func (m *ExchangeConnectorsDeviceManagementExchangeConnectorItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementExchangeConnectorable, requestConfiguration *ExchangeConnectorsDeviceManagementExchangeConnectorItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementExchangeConnectorable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -118,10 +122,6 @@ func (m *ExchangeConnectorsDeviceManagementExchangeConnectorItemRequestBuilder) 
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementExchangeConnectorable), nil
-}
-// Sync provides operations to call the sync method.
-func (m *ExchangeConnectorsDeviceManagementExchangeConnectorItemRequestBuilder) Sync()(*ExchangeConnectorsItemSyncRequestBuilder) {
-    return NewExchangeConnectorsItemSyncRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ToDeleteRequestInformation delete navigation property exchangeConnectors for deviceManagement
 func (m *ExchangeConnectorsDeviceManagementExchangeConnectorItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ExchangeConnectorsDeviceManagementExchangeConnectorItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -158,7 +158,10 @@ func (m *ExchangeConnectorsDeviceManagementExchangeConnectorItemRequestBuilder) 
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

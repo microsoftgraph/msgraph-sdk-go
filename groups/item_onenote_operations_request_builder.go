@@ -60,8 +60,8 @@ func NewItemOnenoteOperationsRequestBuilderInternal(pathParameters map[string]st
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemOnenoteOperationsRequestBuilder instantiates a new OperationsRequestBuilder and sets the default values.
@@ -72,7 +72,7 @@ func NewItemOnenoteOperationsRequestBuilder(rawUrl string, requestAdapter i2ae41
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemOnenoteOperationsRequestBuilder) Count()(*ItemOnenoteOperationsCountRequestBuilder) {
-    return NewItemOnenoteOperationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemOnenoteOperationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the status of OneNote operations. Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.
 func (m *ItemOnenoteOperationsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnenoteOperationsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenoteOperationCollectionResponseable, error) {
@@ -135,7 +135,10 @@ func (m *ItemOnenoteOperationsRequestBuilder) ToPostRequestInformation(ctx conte
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

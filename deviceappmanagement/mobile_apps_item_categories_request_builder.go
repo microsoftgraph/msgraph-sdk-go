@@ -53,8 +53,8 @@ func NewMobileAppsItemCategoriesRequestBuilderInternal(pathParameters map[string
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewMobileAppsItemCategoriesRequestBuilder instantiates a new CategoriesRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewMobileAppsItemCategoriesRequestBuilder(rawUrl string, requestAdapter i2a
 }
 // Count provides operations to count the resources in the collection.
 func (m *MobileAppsItemCategoriesRequestBuilder) Count()(*MobileAppsItemCategoriesCountRequestBuilder) {
-    return NewMobileAppsItemCategoriesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewMobileAppsItemCategoriesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the list of categories for this app.
 func (m *MobileAppsItemCategoriesRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsItemCategoriesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppCategoryCollectionResponseable, error) {

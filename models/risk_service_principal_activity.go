@@ -19,7 +19,7 @@ type RiskServicePrincipalActivity struct {
 func NewRiskServicePrincipalActivity()(*RiskServicePrincipalActivity) {
     m := &RiskServicePrincipalActivity{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateRiskServicePrincipalActivityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

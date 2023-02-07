@@ -53,8 +53,8 @@ func NewItemAuthenticationWindowsHelloForBusinessMethodsRequestBuilderInternal(p
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemAuthenticationWindowsHelloForBusinessMethodsRequestBuilder instantiates a new WindowsHelloForBusinessMethodsRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewItemAuthenticationWindowsHelloForBusinessMethodsRequestBuilder(rawUrl st
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemAuthenticationWindowsHelloForBusinessMethodsRequestBuilder) Count()(*ItemAuthenticationWindowsHelloForBusinessMethodsCountRequestBuilder) {
-    return NewItemAuthenticationWindowsHelloForBusinessMethodsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemAuthenticationWindowsHelloForBusinessMethodsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get a list of the windowsHelloForBusinessAuthenticationMethod objects and their properties.
 // [Find more info here]

@@ -21,7 +21,7 @@ type IdentitySet struct {
 func NewIdentitySet()(*IdentitySet) {
     m := &IdentitySet{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateIdentitySetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

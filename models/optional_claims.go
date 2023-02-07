@@ -21,7 +21,7 @@ type OptionalClaims struct {
 func NewOptionalClaims()(*OptionalClaims) {
     m := &OptionalClaims{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateOptionalClaimsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

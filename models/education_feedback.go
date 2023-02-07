@@ -22,7 +22,7 @@ type EducationFeedback struct {
 func NewEducationFeedback()(*EducationFeedback) {
     m := &EducationFeedback{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateEducationFeedbackFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

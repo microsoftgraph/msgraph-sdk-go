@@ -60,8 +60,8 @@ func NewAccessReviewsDefinitionsItemInstancesItemDecisionsRequestBuilderInternal
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewAccessReviewsDefinitionsItemInstancesItemDecisionsRequestBuilder instantiates a new DecisionsRequestBuilder and sets the default values.
@@ -72,11 +72,7 @@ func NewAccessReviewsDefinitionsItemInstancesItemDecisionsRequestBuilder(rawUrl 
 }
 // Count provides operations to count the resources in the collection.
 func (m *AccessReviewsDefinitionsItemInstancesItemDecisionsRequestBuilder) Count()(*AccessReviewsDefinitionsItemInstancesItemDecisionsCountRequestBuilder) {
-    return NewAccessReviewsDefinitionsItemInstancesItemDecisionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
-func (m *AccessReviewsDefinitionsItemInstancesItemDecisionsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*AccessReviewsDefinitionsItemInstancesItemDecisionsFilterByCurrentUserWithOnRequestBuilder) {
-    return NewAccessReviewsDefinitionsItemInstancesItemDecisionsFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
+    return NewAccessReviewsDefinitionsItemInstancesItemDecisionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get get the accessReviewInstanceDecisionItem resources from the decisions navigation property on a given accessReviewInstance. A list of zero or more accessReviewInstanceDecisionItem objects are returned, including all of their nested properties.
 // [Find more info here]
@@ -99,6 +95,10 @@ func (m *AccessReviewsDefinitionsItemInstancesItemDecisionsRequestBuilder) Get(c
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewInstanceDecisionItemCollectionResponseable), nil
+}
+// MicrosoftGraphFilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
+func (m *AccessReviewsDefinitionsItemInstancesItemDecisionsRequestBuilder) MicrosoftGraphFilterByCurrentUserWithOn(on *string)(*AccessReviewsDefinitionsItemInstancesItemDecisionsMicrosoftGraphFilterByCurrentUserWithOnRequestBuilder) {
+    return NewAccessReviewsDefinitionsItemInstancesItemDecisionsMicrosoftGraphFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
 }
 // Post create new navigation property to decisions for identityGovernance
 func (m *AccessReviewsDefinitionsItemInstancesItemDecisionsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewInstanceDecisionItemable, requestConfiguration *AccessReviewsDefinitionsItemInstancesItemDecisionsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewInstanceDecisionItemable, error) {
@@ -142,7 +142,10 @@ func (m *AccessReviewsDefinitionsItemInstancesItemDecisionsRequestBuilder) ToPos
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

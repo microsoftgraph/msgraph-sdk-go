@@ -58,7 +58,7 @@ type DirectRoutingLogRow struct {
 func NewDirectRoutingLogRow()(*DirectRoutingLogRow) {
     m := &DirectRoutingLogRow{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDirectRoutingLogRowFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -23,7 +23,7 @@ type InvitationItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// InvitationItemRequestBuilderGetQueryParameters get entity from invitations by key (id)
+// InvitationItemRequestBuilderGetQueryParameters get entity from invitations by key
 type InvitationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -55,8 +55,8 @@ func NewInvitationItemRequestBuilderInternal(pathParameters map[string]string, r
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewInvitationItemRequestBuilder instantiates a new InvitationItemRequestBuilder and sets the default values.
@@ -65,7 +65,7 @@ func NewInvitationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewInvitationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete entity from invitations by key (id)
+// Delete delete entity from invitations
 func (m *InvitationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *InvitationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,7 +81,7 @@ func (m *InvitationItemRequestBuilder) Delete(ctx context.Context, requestConfig
     }
     return nil
 }
-// Get get entity from invitations by key (id)
+// Get get entity from invitations by key
 func (m *InvitationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *InvitationItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Invitationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -102,9 +102,9 @@ func (m *InvitationItemRequestBuilder) Get(ctx context.Context, requestConfigura
 }
 // InvitedUser provides operations to manage the invitedUser property of the microsoft.graph.invitation entity.
 func (m *InvitationItemRequestBuilder) InvitedUser()(*ItemInvitedUserRequestBuilder) {
-    return NewItemInvitedUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemInvitedUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// Patch update entity in invitations by key (id)
+// Patch update entity in invitations
 func (m *InvitationItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Invitationable, requestConfiguration *InvitationItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Invitationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -123,7 +123,7 @@ func (m *InvitationItemRequestBuilder) Patch(ctx context.Context, body iadcd8112
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Invitationable), nil
 }
-// ToDeleteRequestInformation delete entity from invitations by key (id)
+// ToDeleteRequestInformation delete entity from invitations
 func (m *InvitationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *InvitationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -135,7 +135,7 @@ func (m *InvitationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Co
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get entity from invitations by key (id)
+// ToGetRequestInformation get entity from invitations by key
 func (m *InvitationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *InvitationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -151,14 +151,17 @@ func (m *InvitationItemRequestBuilder) ToGetRequestInformation(ctx context.Conte
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update entity in invitations by key (id)
+// ToPatchRequestInformation update entity in invitations
 func (m *InvitationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Invitationable, requestConfiguration *InvitationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

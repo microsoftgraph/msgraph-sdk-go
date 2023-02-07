@@ -37,8 +37,8 @@ func NewMacOSGeneralDeviceConfiguration()(*MacOSGeneralDeviceConfiguration) {
     m := &MacOSGeneralDeviceConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.macOSGeneralDeviceConfiguration";
-    m.SetOdataType(&odataTypeValue);
+    odataTypeValue := "#microsoft.graph.macOSGeneralDeviceConfiguration"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateMacOSGeneralDeviceConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -55,8 +55,8 @@ func NewItemTeamChannelsItemTabsTeamsTabItemRequestBuilderInternal(pathParameter
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTeamChannelsItemTabsTeamsTabItemRequestBuilder instantiates a new TeamsTabItemRequestBuilder and sets the default values.
@@ -121,7 +121,7 @@ func (m *ItemTeamChannelsItemTabsTeamsTabItemRequestBuilder) Patch(ctx context.C
 }
 // TeamsApp provides operations to manage the teamsApp property of the microsoft.graph.teamsTab entity.
 func (m *ItemTeamChannelsItemTabsTeamsTabItemRequestBuilder) TeamsApp()(*ItemTeamChannelsItemTabsItemTeamsAppRequestBuilder) {
-    return NewItemTeamChannelsItemTabsItemTeamsAppRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemTeamChannelsItemTabsItemTeamsAppRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property tabs for groups
 func (m *ItemTeamChannelsItemTabsTeamsTabItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTeamChannelsItemTabsTeamsTabItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -158,7 +158,10 @@ func (m *ItemTeamChannelsItemTabsTeamsTabItemRequestBuilder) ToPatchRequestInfor
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

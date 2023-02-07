@@ -48,7 +48,7 @@ type SharesPrinterShareItemRequestBuilderPatchRequestConfiguration struct {
 }
 // AllowedGroups provides operations to manage the allowedGroups property of the microsoft.graph.printerShare entity.
 func (m *SharesPrinterShareItemRequestBuilder) AllowedGroups()(*SharesItemAllowedGroupsRequestBuilder) {
-    return NewSharesItemAllowedGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSharesItemAllowedGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AllowedGroupsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.print.shares.item.allowedGroups.item collection
 func (m *SharesPrinterShareItemRequestBuilder) AllowedGroupsById(id string)(*SharesItemAllowedGroupsGroupItemRequestBuilder) {
@@ -59,11 +59,11 @@ func (m *SharesPrinterShareItemRequestBuilder) AllowedGroupsById(id string)(*Sha
     if id != "" {
         urlTplParams["group%2Did"] = id
     }
-    return NewSharesItemAllowedGroupsGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSharesItemAllowedGroupsGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // AllowedUsers provides operations to manage the allowedUsers property of the microsoft.graph.printerShare entity.
 func (m *SharesPrinterShareItemRequestBuilder) AllowedUsers()(*SharesItemAllowedUsersRequestBuilder) {
-    return NewSharesItemAllowedUsersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSharesItemAllowedUsersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // AllowedUsersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.print.shares.item.allowedUsers.item collection
 func (m *SharesPrinterShareItemRequestBuilder) AllowedUsersById(id string)(*SharesItemAllowedUsersUserItemRequestBuilder) {
@@ -74,7 +74,7 @@ func (m *SharesPrinterShareItemRequestBuilder) AllowedUsersById(id string)(*Shar
     if id != "" {
         urlTplParams["user%2Did"] = id
     }
-    return NewSharesItemAllowedUsersUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSharesItemAllowedUsersUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewSharesPrinterShareItemRequestBuilderInternal instantiates a new PrinterShareItemRequestBuilder and sets the default values.
 func NewSharesPrinterShareItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SharesPrinterShareItemRequestBuilder) {
@@ -85,8 +85,8 @@ func NewSharesPrinterShareItemRequestBuilderInternal(pathParameters map[string]s
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewSharesPrinterShareItemRequestBuilder instantiates a new PrinterShareItemRequestBuilder and sets the default values.
@@ -151,7 +151,7 @@ func (m *SharesPrinterShareItemRequestBuilder) Patch(ctx context.Context, body i
 }
 // Printer provides operations to manage the printer property of the microsoft.graph.printerShare entity.
 func (m *SharesPrinterShareItemRequestBuilder) Printer()(*SharesItemPrinterRequestBuilder) {
-    return NewSharesItemPrinterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewSharesItemPrinterRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property shares for print
 func (m *SharesPrinterShareItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *SharesPrinterShareItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -188,7 +188,10 @@ func (m *SharesPrinterShareItemRequestBuilder) ToPatchRequestInformation(ctx con
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -21,7 +21,7 @@ type TraceRouteHop struct {
 func NewTraceRouteHop()(*TraceRouteHop) {
     m := &TraceRouteHop{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateTraceRouteHopFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -20,7 +20,7 @@ type SigningCertificateUpdateStatus struct {
 func NewSigningCertificateUpdateStatus()(*SigningCertificateUpdateStatus) {
     m := &SigningCertificateUpdateStatus{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSigningCertificateUpdateStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -6,7 +6,7 @@ import (
 type LocationType int
 
 const (
-    DEFAULT_ESCAPED_LOCATIONTYPE LocationType = iota
+    DEFAULTESCAPED_LOCATIONTYPE LocationType = iota
     CONFERENCEROOM_LOCATIONTYPE
     HOMEADDRESS_LOCATIONTYPE
     BUSINESSADDRESS_LOCATIONTYPE
@@ -22,10 +22,10 @@ func (i LocationType) String() string {
     return []string{"default", "conferenceRoom", "homeAddress", "businessAddress", "geoCoordinates", "streetAddress", "hotel", "restaurant", "localBusiness", "postalAddress"}[i]
 }
 func ParseLocationType(v string) (any, error) {
-    result := DEFAULT_ESCAPED_LOCATIONTYPE
+    result := DEFAULTESCAPED_LOCATIONTYPE
     switch v {
         case "default":
-            result = DEFAULT_ESCAPED_LOCATIONTYPE
+            result = DEFAULTESCAPED_LOCATIONTYPE
         case "conferenceRoom":
             result = CONFERENCEROOM_LOCATIONTYPE
         case "homeAddress":

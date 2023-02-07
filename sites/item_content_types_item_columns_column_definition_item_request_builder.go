@@ -55,8 +55,8 @@ func NewItemContentTypesItemColumnsColumnDefinitionItemRequestBuilderInternal(pa
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemContentTypesItemColumnsColumnDefinitionItemRequestBuilder instantiates a new ColumnDefinitionItemRequestBuilder and sets the default values.
@@ -121,7 +121,7 @@ func (m *ItemContentTypesItemColumnsColumnDefinitionItemRequestBuilder) Patch(ct
 }
 // SourceColumn provides operations to manage the sourceColumn property of the microsoft.graph.columnDefinition entity.
 func (m *ItemContentTypesItemColumnsColumnDefinitionItemRequestBuilder) SourceColumn()(*ItemContentTypesItemColumnsItemSourceColumnRequestBuilder) {
-    return NewItemContentTypesItemColumnsItemSourceColumnRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewItemContentTypesItemColumnsItemSourceColumnRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property columns for sites
 func (m *ItemContentTypesItemColumnsColumnDefinitionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemContentTypesItemColumnsColumnDefinitionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -158,7 +158,10 @@ func (m *ItemContentTypesItemColumnsColumnDefinitionItemRequestBuilder) ToPatchR
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

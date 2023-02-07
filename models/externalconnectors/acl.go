@@ -13,7 +13,7 @@ type Acl struct {
     // The OdataType property
     odataType *string
     // The type property
-    type_escaped *AclType
+    typeEscaped *AclType
     // The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup
     value *string
 }
@@ -21,7 +21,7 @@ type Acl struct {
 func NewAcl()(*Acl) {
     m := &Acl{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateAclFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -87,7 +87,7 @@ func (m *Acl) GetOdataType()(*string) {
 }
 // GetType gets the type property value. The type property
 func (m *Acl) GetType()(*AclType) {
-    return m.type_escaped
+    return m.typeEscaped
 }
 // GetValue gets the value property value. The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup
 func (m *Acl) GetValue()(*string) {
@@ -143,7 +143,7 @@ func (m *Acl) SetOdataType(value *string)() {
 }
 // SetType sets the type property value. The type property
 func (m *Acl) SetType(value *AclType)() {
-    m.type_escaped = value
+    m.typeEscaped = value
 }
 // SetValue sets the value property value. The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup
 func (m *Acl) SetValue(value *string)() {

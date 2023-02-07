@@ -55,8 +55,8 @@ func NewOnenoteResourcesOnenoteResourceItemRequestBuilderInternal(pathParameters
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    m.pathParameters = urlTplParams;
-    m.requestAdapter = requestAdapter;
+    m.pathParameters = urlTplParams
+    m.requestAdapter = requestAdapter
     return m
 }
 // NewOnenoteResourcesOnenoteResourceItemRequestBuilder instantiates a new OnenoteResourceItemRequestBuilder and sets the default values.
@@ -67,7 +67,7 @@ func NewOnenoteResourcesOnenoteResourceItemRequestBuilder(rawUrl string, request
 }
 // Content provides operations to manage the media for the user entity.
 func (m *OnenoteResourcesOnenoteResourceItemRequestBuilder) Content()(*OnenoteResourcesItemContentRequestBuilder) {
-    return NewOnenoteResourcesItemContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+    return NewOnenoteResourcesItemContentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete navigation property resources for me
 func (m *OnenoteResourcesOnenoteResourceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *OnenoteResourcesOnenoteResourceItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -158,7 +158,10 @@ func (m *OnenoteResourcesOnenoteResourceItemRequestBuilder) ToPatchRequestInform
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

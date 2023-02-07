@@ -29,7 +29,7 @@ type MeetingTimeSuggestion struct {
 func NewMeetingTimeSuggestion()(*MeetingTimeSuggestion) {
     m := &MeetingTimeSuggestion{
     }
-    m.SetAdditionalData(make(map[string]any));
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateMeetingTimeSuggestionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
