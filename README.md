@@ -29,6 +29,8 @@ For an example of how to get an authentication provider, see [choose a Microsoft
 
 > Note: we are working to add the getting started information for Go to our public documentation, in the meantime the following sample should help you getting started.
 
+This example uses the `DeviceCodeCredential` class, which uses the [device code flow](https://learn.microsoft.com/azure/active-directory/develop/v2-oauth2-device-code) to authenticate the user and acquire an access token. This authentication method is not enabled on app registrations by default. In order to use this example, you must enable public client flows on the app registation in the Azure portal by selecting **Authentication** under **Manage**, and setting the **Allow public client flows** toggle to **Yes**.
+
 ```Golang
 import (
     azidentity "github.com/Azure/azure-sdk-for-go/sdk/azidentity"
