@@ -7,9 +7,9 @@ import (
 // SkypeForBusinessUserConversationMember 
 type SkypeForBusinessUserConversationMember struct {
     ConversationMember
-    // The tenantId property
+    // ID of the tenant that the user belongs to.
     tenantId *string
-    // The userId property
+    // Azure Active Directory ID of the user.
     userId *string
 }
 // NewSkypeForBusinessUserConversationMember instantiates a new SkypeForBusinessUserConversationMember and sets the default values.
@@ -50,11 +50,11 @@ func (m *SkypeForBusinessUserConversationMember) GetFieldDeserializers()(map[str
     }
     return res
 }
-// GetTenantId gets the tenantId property value. The tenantId property
+// GetTenantId gets the tenantId property value. ID of the tenant that the user belongs to.
 func (m *SkypeForBusinessUserConversationMember) GetTenantId()(*string) {
     return m.tenantId
 }
-// GetUserId gets the userId property value. The userId property
+// GetUserId gets the userId property value. Azure Active Directory ID of the user.
 func (m *SkypeForBusinessUserConversationMember) GetUserId()(*string) {
     return m.userId
 }
@@ -78,11 +78,11 @@ func (m *SkypeForBusinessUserConversationMember) Serialize(writer i878a80d2330e8
     }
     return nil
 }
-// SetTenantId sets the tenantId property value. The tenantId property
+// SetTenantId sets the tenantId property value. ID of the tenant that the user belongs to.
 func (m *SkypeForBusinessUserConversationMember) SetTenantId(value *string)() {
     m.tenantId = value
 }
-// SetUserId sets the userId property value. The userId property
+// SetUserId sets the userId property value. Azure Active Directory ID of the user.
 func (m *SkypeForBusinessUserConversationMember) SetUserId(value *string)() {
     m.userId = value
 }

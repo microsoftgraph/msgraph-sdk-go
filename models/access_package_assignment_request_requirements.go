@@ -22,6 +22,8 @@ type AccessPackageAssignmentRequestRequirements struct {
     policyDisplayName *string
     // The identifier of the policy that these requirements are associated with. This identifier can be used when creating a new assignment request.
     policyId *string
+    // The questions property
+    questions []AccessPackageQuestionable
     // Schedule restrictions enforced, if any.
     schedule EntitlementManagementScheduleable
 }
@@ -117,6 +119,20 @@ func (m *AccessPackageAssignmentRequestRequirements) GetFieldDeserializers()(map
         }
         return nil
     }
+    res["questions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageQuestionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AccessPackageQuestionable, len(val))
+            for i, v := range val {
+                res[i] = v.(AccessPackageQuestionable)
+            }
+            m.SetQuestions(res)
+        }
+        return nil
+    }
     res["schedule"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateEntitlementManagementScheduleFromDiscriminatorValue)
         if err != nil {
@@ -152,6 +168,10 @@ func (m *AccessPackageAssignmentRequestRequirements) GetPolicyDisplayName()(*str
 // GetPolicyId gets the policyId property value. The identifier of the policy that these requirements are associated with. This identifier can be used when creating a new assignment request.
 func (m *AccessPackageAssignmentRequestRequirements) GetPolicyId()(*string) {
     return m.policyId
+}
+// GetQuestions gets the questions property value. The questions property
+func (m *AccessPackageAssignmentRequestRequirements) GetQuestions()([]AccessPackageQuestionable) {
+    return m.questions
 }
 // GetSchedule gets the schedule property value. Schedule restrictions enforced, if any.
 func (m *AccessPackageAssignmentRequestRequirements) GetSchedule()(EntitlementManagementScheduleable) {
@@ -201,6 +221,16 @@ func (m *AccessPackageAssignmentRequestRequirements) Serialize(writer i878a80d23
             return err
         }
     }
+    if m.GetQuestions() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetQuestions()))
+        for i, v := range m.GetQuestions() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err := writer.WriteCollectionOfObjectValues("questions", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteObjectValue("schedule", m.GetSchedule())
         if err != nil {
@@ -246,6 +276,10 @@ func (m *AccessPackageAssignmentRequestRequirements) SetPolicyDisplayName(value 
 // SetPolicyId sets the policyId property value. The identifier of the policy that these requirements are associated with. This identifier can be used when creating a new assignment request.
 func (m *AccessPackageAssignmentRequestRequirements) SetPolicyId(value *string)() {
     m.policyId = value
+}
+// SetQuestions sets the questions property value. The questions property
+func (m *AccessPackageAssignmentRequestRequirements) SetQuestions(value []AccessPackageQuestionable)() {
+    m.questions = value
 }
 // SetSchedule sets the schedule property value. Schedule restrictions enforced, if any.
 func (m *AccessPackageAssignmentRequestRequirements) SetSchedule(value EntitlementManagementScheduleable)() {

@@ -14,7 +14,7 @@ type TimeOffReason struct {
     // Indicates whether the timeOffReason can be used when creating new entities or updating existing ones. Required.
     isActive *bool
 }
-// NewTimeOffReason instantiates a new timeOffReason and sets the default values.
+// NewTimeOffReason instantiates a new TimeOffReason and sets the default values.
 func NewTimeOffReason()(*TimeOffReason) {
     m := &TimeOffReason{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),

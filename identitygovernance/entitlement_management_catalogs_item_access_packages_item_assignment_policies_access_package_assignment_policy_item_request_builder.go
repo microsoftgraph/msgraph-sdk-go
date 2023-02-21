@@ -127,6 +127,21 @@ func (m *EntitlementManagementCatalogsItemAccessPackagesItemAssignmentPoliciesAc
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageAssignmentPolicyable), nil
 }
+// Questions provides operations to manage the questions property of the microsoft.graph.accessPackageAssignmentPolicy entity.
+func (m *EntitlementManagementCatalogsItemAccessPackagesItemAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilder) Questions()(*EntitlementManagementCatalogsItemAccessPackagesItemAssignmentPoliciesItemQuestionsRequestBuilder) {
+    return NewEntitlementManagementCatalogsItemAccessPackagesItemAssignmentPoliciesItemQuestionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// QuestionsById provides operations to manage the questions property of the microsoft.graph.accessPackageAssignmentPolicy entity.
+func (m *EntitlementManagementCatalogsItemAccessPackagesItemAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilder) QuestionsById(id string)(*EntitlementManagementCatalogsItemAccessPackagesItemAssignmentPoliciesItemQuestionsAccessPackageQuestionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["accessPackageQuestion%2Did"] = id
+    }
+    return NewEntitlementManagementCatalogsItemAccessPackagesItemAssignmentPoliciesItemQuestionsAccessPackageQuestionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property assignmentPolicies for identityGovernance
 func (m *EntitlementManagementCatalogsItemAccessPackagesItemAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementCatalogsItemAccessPackagesItemAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

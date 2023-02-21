@@ -26,6 +26,8 @@ type AccessPackageAssignmentPolicy struct {
     expiration ExpirationPatternable
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The questions property
+    questions []AccessPackageQuestionable
     // Specifies the settings for approval of requests for an access package assignment through this policy. For example, if approval is required for new requests.
     requestApprovalSettings AccessPackageAssignmentApprovalSettingsable
     // Provides additional settings to select who can create a request for an access package assignment through this policy, and what they can include in their request.
@@ -171,6 +173,20 @@ func (m *AccessPackageAssignmentPolicy) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["questions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageQuestionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AccessPackageQuestionable, len(val))
+            for i, v := range val {
+                res[i] = v.(AccessPackageQuestionable)
+            }
+            m.SetQuestions(res)
+        }
+        return nil
+    }
     res["requestApprovalSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAccessPackageAssignmentApprovalSettingsFromDiscriminatorValue)
         if err != nil {
@@ -220,6 +236,10 @@ func (m *AccessPackageAssignmentPolicy) GetFieldDeserializers()(map[string]func(
 // GetModifiedDateTime gets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *AccessPackageAssignmentPolicy) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.modifiedDateTime
+}
+// GetQuestions gets the questions property value. The questions property
+func (m *AccessPackageAssignmentPolicy) GetQuestions()([]AccessPackageQuestionable) {
+    return m.questions
 }
 // GetRequestApprovalSettings gets the requestApprovalSettings property value. Specifies the settings for approval of requests for an access package assignment through this policy. For example, if approval is required for new requests.
 func (m *AccessPackageAssignmentPolicy) GetRequestApprovalSettings()(AccessPackageAssignmentApprovalSettingsable) {
@@ -298,6 +318,16 @@ func (m *AccessPackageAssignmentPolicy) Serialize(writer i878a80d2330e89d2689638
             return err
         }
     }
+    if m.GetQuestions() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetQuestions()))
+        for i, v := range m.GetQuestions() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("questions", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("requestApprovalSettings", m.GetRequestApprovalSettings())
         if err != nil {
@@ -363,6 +393,10 @@ func (m *AccessPackageAssignmentPolicy) SetExpiration(value ExpirationPatternabl
 // SetModifiedDateTime sets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *AccessPackageAssignmentPolicy) SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.modifiedDateTime = value
+}
+// SetQuestions sets the questions property value. The questions property
+func (m *AccessPackageAssignmentPolicy) SetQuestions(value []AccessPackageQuestionable)() {
+    m.questions = value
 }
 // SetRequestApprovalSettings sets the requestApprovalSettings property value. Specifies the settings for approval of requests for an access package assignment through this policy. For example, if approval is required for new requests.
 func (m *AccessPackageAssignmentPolicy) SetRequestApprovalSettings(value AccessPackageAssignmentApprovalSettingsable)() {

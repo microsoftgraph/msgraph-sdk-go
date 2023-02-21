@@ -11,8 +11,6 @@ type OnlineMeetingable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAllowAttendeeToEnableCamera()(*bool)
     GetAllowAttendeeToEnableMic()(*bool)
-    GetAllowedPresenters()(*OnlineMeetingPresenters)
-    GetAllowMeetingChat()(*MeetingChatMode)
     GetAllowTeamworkReactions()(*bool)
     GetAttendanceReports()([]MeetingAttendanceReportable)
     GetAttendeeReport()([]byte)
@@ -35,8 +33,6 @@ type OnlineMeetingable interface {
     GetVideoTeleconferenceId()(*string)
     SetAllowAttendeeToEnableCamera(value *bool)()
     SetAllowAttendeeToEnableMic(value *bool)()
-    SetAllowedPresenters(value *OnlineMeetingPresenters)()
-    SetAllowMeetingChat(value *MeetingChatMode)()
     SetAllowTeamworkReactions(value *bool)()
     SetAttendanceReports(value []MeetingAttendanceReportable)()
     SetAttendeeReport(value []byte)()

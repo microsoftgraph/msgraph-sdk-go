@@ -19,7 +19,7 @@ type DelegatedAdminAccessAssignment struct {
     // The status of the access assignment. Read-only. The possible values are: pending, active, deleting, deleted, error, unknownFutureValue.
     status *DelegatedAdminAccessAssignmentStatus
 }
-// NewDelegatedAdminAccessAssignment instantiates a new delegatedAdminAccessAssignment and sets the default values.
+// NewDelegatedAdminAccessAssignment instantiates a new DelegatedAdminAccessAssignment and sets the default values.
 func NewDelegatedAdminAccessAssignment()(*DelegatedAdminAccessAssignment) {
     m := &DelegatedAdminAccessAssignment{
         Entity: *NewEntity(),

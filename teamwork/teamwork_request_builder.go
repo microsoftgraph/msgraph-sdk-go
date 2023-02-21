@@ -58,6 +58,21 @@ func NewTeamworkRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewTeamworkRequestBuilderInternal(urlParams, requestAdapter)
 }
+// DeletedTeams provides operations to manage the deletedTeams property of the microsoft.graph.teamwork entity.
+func (m *TeamworkRequestBuilder) DeletedTeams()(*DeletedTeamsRequestBuilder) {
+    return NewDeletedTeamsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// DeletedTeamsById provides operations to manage the deletedTeams property of the microsoft.graph.teamwork entity.
+func (m *TeamworkRequestBuilder) DeletedTeamsById(id string)(*DeletedTeamsDeletedTeamItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["deletedTeam%2Did"] = id
+    }
+    return NewDeletedTeamsDeletedTeamItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+}
 // Get get teamwork
 func (m *TeamworkRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamworkRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamworkable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);

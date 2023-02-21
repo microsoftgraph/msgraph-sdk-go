@@ -7,7 +7,7 @@ import (
 // MicrosoftAccountUserConversationMember 
 type MicrosoftAccountUserConversationMember struct {
     ConversationMember
-    // The userId property
+    // Microsoft Account ID of the user.
     userId *string
 }
 // NewMicrosoftAccountUserConversationMember instantiates a new MicrosoftAccountUserConversationMember and sets the default values.
@@ -38,7 +38,7 @@ func (m *MicrosoftAccountUserConversationMember) GetFieldDeserializers()(map[str
     }
     return res
 }
-// GetUserId gets the userId property value. The userId property
+// GetUserId gets the userId property value. Microsoft Account ID of the user.
 func (m *MicrosoftAccountUserConversationMember) GetUserId()(*string) {
     return m.userId
 }
@@ -56,7 +56,7 @@ func (m *MicrosoftAccountUserConversationMember) Serialize(writer i878a80d2330e8
     }
     return nil
 }
-// SetUserId sets the userId property value. The userId property
+// SetUserId sets the userId property value. Microsoft Account ID of the user.
 func (m *MicrosoftAccountUserConversationMember) SetUserId(value *string)() {
     m.userId = value
 }

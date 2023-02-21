@@ -35,7 +35,7 @@ type Post struct {
     // The collection of single-value extended properties defined for the post. Read-only. Nullable.
     singleValueExtendedProperties []SingleValueLegacyExtendedPropertyable
 }
-// NewPost instantiates a new Post and sets the default values.
+// NewPost instantiates a new post and sets the default values.
 func NewPost()(*Post) {
     m := &Post{
         OutlookItem: *NewOutlookItem(),
