@@ -15,6 +15,7 @@ type AccessPackageAssignmentRequestRequirementsable interface {
     GetPolicyDescription()(*string)
     GetPolicyDisplayName()(*string)
     GetPolicyId()(*string)
+    GetQuestions()([]AccessPackageQuestionable)
     GetSchedule()(EntitlementManagementScheduleable)
     SetAllowCustomAssignmentSchedule(value *bool)()
     SetIsApprovalRequiredForAdd(value *bool)()
@@ -23,5 +24,6 @@ type AccessPackageAssignmentRequestRequirementsable interface {
     SetPolicyDescription(value *string)()
     SetPolicyDisplayName(value *string)()
     SetPolicyId(value *string)()
+    SetQuestions(value []AccessPackageQuestionable)()
     SetSchedule(value EntitlementManagementScheduleable)()
 }

@@ -14,7 +14,7 @@ type SchedulingGroup struct {
     // The list of user IDs that are a member of the schedulingGroup. Required.
     userIds []string
 }
-// NewSchedulingGroup instantiates a new schedulingGroup and sets the default values.
+// NewSchedulingGroup instantiates a new SchedulingGroup and sets the default values.
 func NewSchedulingGroup()(*SchedulingGroup) {
     m := &SchedulingGroup{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),

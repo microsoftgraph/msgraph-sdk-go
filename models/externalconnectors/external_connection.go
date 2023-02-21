@@ -25,7 +25,7 @@ type ExternalConnection struct {
     // Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.
     state *ConnectionState
 }
-// NewExternalConnection instantiates a new externalConnection and sets the default values.
+// NewExternalConnection instantiates a new ExternalConnection and sets the default values.
 func NewExternalConnection()(*ExternalConnection) {
     m := &ExternalConnection{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),

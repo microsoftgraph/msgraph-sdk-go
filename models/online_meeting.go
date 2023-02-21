@@ -12,10 +12,6 @@ type OnlineMeeting struct {
     allowAttendeeToEnableCamera *bool
     // Indicates whether attendees can turn on their microphone.
     allowAttendeeToEnableMic *bool
-    // Specifies who can be a presenter in a meeting. Possible values are listed in the following table.
-    allowedPresenters *OnlineMeetingPresenters
-    // Specifies the mode of meeting chat.
-    allowMeetingChat *MeetingChatMode
     // Indicates whether Teams reactions are enabled for the meeting.
     allowTeamworkReactions *bool
     // The attendance reports of an online meeting. Read-only.
@@ -76,14 +72,6 @@ func (m *OnlineMeeting) GetAllowAttendeeToEnableCamera()(*bool) {
 func (m *OnlineMeeting) GetAllowAttendeeToEnableMic()(*bool) {
     return m.allowAttendeeToEnableMic
 }
-// GetAllowedPresenters gets the allowedPresenters property value. Specifies who can be a presenter in a meeting. Possible values are listed in the following table.
-func (m *OnlineMeeting) GetAllowedPresenters()(*OnlineMeetingPresenters) {
-    return m.allowedPresenters
-}
-// GetAllowMeetingChat gets the allowMeetingChat property value. Specifies the mode of meeting chat.
-func (m *OnlineMeeting) GetAllowMeetingChat()(*MeetingChatMode) {
-    return m.allowMeetingChat
-}
 // GetAllowTeamworkReactions gets the allowTeamworkReactions property value. Indicates whether Teams reactions are enabled for the meeting.
 func (m *OnlineMeeting) GetAllowTeamworkReactions()(*bool) {
     return m.allowTeamworkReactions
@@ -140,26 +128,6 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         if val != nil {
             m.SetAllowAttendeeToEnableMic(val)
-        }
-        return nil
-    }
-    res["allowedPresenters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseOnlineMeetingPresenters)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAllowedPresenters(val.(*OnlineMeetingPresenters))
-        }
-        return nil
-    }
-    res["allowMeetingChat"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMeetingChatMode)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAllowMeetingChat(val.(*MeetingChatMode))
         }
         return nil
     }
@@ -431,20 +399,6 @@ func (m *OnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
-    if m.GetAllowedPresenters() != nil {
-        cast := (*m.GetAllowedPresenters()).String()
-        err = writer.WriteStringValue("allowedPresenters", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetAllowMeetingChat() != nil {
-        cast := (*m.GetAllowMeetingChat()).String()
-        err = writer.WriteStringValue("allowMeetingChat", &cast)
-        if err != nil {
-            return err
-        }
-    }
     {
         err = writer.WriteBoolValue("allowTeamworkReactions", m.GetAllowTeamworkReactions())
         if err != nil {
@@ -578,14 +532,6 @@ func (m *OnlineMeeting) SetAllowAttendeeToEnableCamera(value *bool)() {
 // SetAllowAttendeeToEnableMic sets the allowAttendeeToEnableMic property value. Indicates whether attendees can turn on their microphone.
 func (m *OnlineMeeting) SetAllowAttendeeToEnableMic(value *bool)() {
     m.allowAttendeeToEnableMic = value
-}
-// SetAllowedPresenters sets the allowedPresenters property value. Specifies who can be a presenter in a meeting. Possible values are listed in the following table.
-func (m *OnlineMeeting) SetAllowedPresenters(value *OnlineMeetingPresenters)() {
-    m.allowedPresenters = value
-}
-// SetAllowMeetingChat sets the allowMeetingChat property value. Specifies the mode of meeting chat.
-func (m *OnlineMeeting) SetAllowMeetingChat(value *MeetingChatMode)() {
-    m.allowMeetingChat = value
 }
 // SetAllowTeamworkReactions sets the allowTeamworkReactions property value. Indicates whether Teams reactions are enabled for the meeting.
 func (m *OnlineMeeting) SetAllowTeamworkReactions(value *bool)() {

@@ -30,7 +30,7 @@ type Drive struct {
     // If present, indicates that this is a system-managed drive. Read-only.
     system SystemFacetable
 }
-// NewDrive instantiates a new Drive and sets the default values.
+// NewDrive instantiates a new drive and sets the default values.
 func NewDrive()(*Drive) {
     m := &Drive{
         BaseItem: *NewBaseItem(),

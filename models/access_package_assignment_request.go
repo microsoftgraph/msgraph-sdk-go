@@ -10,6 +10,8 @@ type AccessPackageAssignmentRequest struct {
     Entity
     // The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable.  Supports $expand.
     accessPackage AccessPackageable
+    // Answers provided by the requestor to accessPackageQuestions asked of them at the time of request.
+    answers []AccessPackageAnswerable
     // For a requestType of userAdd or adminAdd, this is an access package assignment requested to be created.  For a requestType of userRemove, adminRemove or systemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.
     assignment AccessPackageAssignmentable
     // The date of the end of processing, either successful or failure, of a request. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
@@ -42,6 +44,10 @@ func CreateAccessPackageAssignmentRequestFromDiscriminatorValue(parseNode i878a8
 func (m *AccessPackageAssignmentRequest) GetAccessPackage()(AccessPackageable) {
     return m.accessPackage
 }
+// GetAnswers gets the answers property value. Answers provided by the requestor to accessPackageQuestions asked of them at the time of request.
+func (m *AccessPackageAssignmentRequest) GetAnswers()([]AccessPackageAnswerable) {
+    return m.answers
+}
 // GetAssignment gets the assignment property value. For a requestType of userAdd or adminAdd, this is an access package assignment requested to be created.  For a requestType of userRemove, adminRemove or systemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.
 func (m *AccessPackageAssignmentRequest) GetAssignment()(AccessPackageAssignmentable) {
     return m.assignment
@@ -64,6 +70,20 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         }
         if val != nil {
             m.SetAccessPackage(val.(AccessPackageable))
+        }
+        return nil
+    }
+    res["answers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageAnswerFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AccessPackageAnswerable, len(val))
+            for i, v := range val {
+                res[i] = v.(AccessPackageAnswerable)
+            }
+            m.SetAnswers(res)
         }
         return nil
     }
@@ -181,6 +201,16 @@ func (m *AccessPackageAssignmentRequest) Serialize(writer i878a80d2330e89d268963
             return err
         }
     }
+    if m.GetAnswers() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAnswers()))
+        for i, v := range m.GetAnswers() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("answers", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("assignment", m.GetAssignment())
         if err != nil {
@@ -236,6 +266,10 @@ func (m *AccessPackageAssignmentRequest) Serialize(writer i878a80d2330e89d268963
 // SetAccessPackage sets the accessPackage property value. The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable.  Supports $expand.
 func (m *AccessPackageAssignmentRequest) SetAccessPackage(value AccessPackageable)() {
     m.accessPackage = value
+}
+// SetAnswers sets the answers property value. Answers provided by the requestor to accessPackageQuestions asked of them at the time of request.
+func (m *AccessPackageAssignmentRequest) SetAnswers(value []AccessPackageAnswerable)() {
+    m.answers = value
 }
 // SetAssignment sets the assignment property value. For a requestType of userAdd or adminAdd, this is an access package assignment requested to be created.  For a requestType of userRemove, adminRemove or systemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.
 func (m *AccessPackageAssignmentRequest) SetAssignment(value AccessPackageAssignmentable)() {

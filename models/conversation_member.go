@@ -40,6 +40,8 @@ func CreateConversationMemberFromDiscriminatorValue(parseNode i878a80d2330e89d26
                         return NewAadUserConversationMember(), nil
                     case "#microsoft.graph.anonymousGuestConversationMember":
                         return NewAnonymousGuestConversationMember(), nil
+                    case "#microsoft.graph.azureCommunicationServicesUserConversationMember":
+                        return NewAzureCommunicationServicesUserConversationMember(), nil
                     case "#microsoft.graph.microsoftAccountUserConversationMember":
                         return NewMicrosoftAccountUserConversationMember(), nil
                     case "#microsoft.graph.skypeForBusinessUserConversationMember":

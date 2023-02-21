@@ -25,7 +25,7 @@ type PstnCallLogRow struct {
     conferenceId *string
     // Connection fee price.
     connectionCharge *float64
-    // Type of currency used to calculate the cost of the call (ISO 4217).
+    // Type of currency used to calculate the cost of the call. For details, see (ISO 4217.
     currency *string
     // Whether the call was domestic (within a country or region) or international (outside a country or region) based on the user's location.
     destinationContext *string
@@ -47,15 +47,15 @@ type PstnCallLogRow struct {
     operator *string
     // Call start time.
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Country code of the tenant, ISO 3166-1 alpha-2.
+    // Country code of the tenant. For details, see ISO 3166-1 alpha-2.
     tenantCountryCode *string
-    // Country code of the user, ISO 3166-1 alpha-2.
+    // Country code of the user. For details, see ISO 3166-1 alpha-2.
     usageCountryCode *string
     // Display name of the user.
     userDisplayName *string
     // Calling user's ID in Graph. GUID. This and other user info will be null/empty for bot call types (ucap_in, ucap_out).
     userId *string
-    // UserPrincipalName (sign-in name) in Azure Active Directory. This is usually the same as user's SIP Address, and can be same as user's e-mail address.
+    // The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
     userPrincipalName *string
 }
 // NewPstnCallLogRow instantiates a new pstnCallLogRow and sets the default values.
@@ -105,7 +105,7 @@ func (m *PstnCallLogRow) GetConferenceId()(*string) {
 func (m *PstnCallLogRow) GetConnectionCharge()(*float64) {
     return m.connectionCharge
 }
-// GetCurrency gets the currency property value. Type of currency used to calculate the cost of the call (ISO 4217).
+// GetCurrency gets the currency property value. Type of currency used to calculate the cost of the call. For details, see (ISO 4217.
 func (m *PstnCallLogRow) GetCurrency()(*string) {
     return m.currency
 }
@@ -394,11 +394,11 @@ func (m *PstnCallLogRow) GetOperator()(*string) {
 func (m *PstnCallLogRow) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.startDateTime
 }
-// GetTenantCountryCode gets the tenantCountryCode property value. Country code of the tenant, ISO 3166-1 alpha-2.
+// GetTenantCountryCode gets the tenantCountryCode property value. Country code of the tenant. For details, see ISO 3166-1 alpha-2.
 func (m *PstnCallLogRow) GetTenantCountryCode()(*string) {
     return m.tenantCountryCode
 }
-// GetUsageCountryCode gets the usageCountryCode property value. Country code of the user, ISO 3166-1 alpha-2.
+// GetUsageCountryCode gets the usageCountryCode property value. Country code of the user. For details, see ISO 3166-1 alpha-2.
 func (m *PstnCallLogRow) GetUsageCountryCode()(*string) {
     return m.usageCountryCode
 }
@@ -410,7 +410,7 @@ func (m *PstnCallLogRow) GetUserDisplayName()(*string) {
 func (m *PstnCallLogRow) GetUserId()(*string) {
     return m.userId
 }
-// GetUserPrincipalName gets the userPrincipalName property value. UserPrincipalName (sign-in name) in Azure Active Directory. This is usually the same as user's SIP Address, and can be same as user's e-mail address.
+// GetUserPrincipalName gets the userPrincipalName property value. The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
 func (m *PstnCallLogRow) GetUserPrincipalName()(*string) {
     return m.userPrincipalName
 }
@@ -605,7 +605,7 @@ func (m *PstnCallLogRow) SetConferenceId(value *string)() {
 func (m *PstnCallLogRow) SetConnectionCharge(value *float64)() {
     m.connectionCharge = value
 }
-// SetCurrency sets the currency property value. Type of currency used to calculate the cost of the call (ISO 4217).
+// SetCurrency sets the currency property value. Type of currency used to calculate the cost of the call. For details, see (ISO 4217.
 func (m *PstnCallLogRow) SetCurrency(value *string)() {
     m.currency = value
 }
@@ -649,11 +649,11 @@ func (m *PstnCallLogRow) SetOperator(value *string)() {
 func (m *PstnCallLogRow) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.startDateTime = value
 }
-// SetTenantCountryCode sets the tenantCountryCode property value. Country code of the tenant, ISO 3166-1 alpha-2.
+// SetTenantCountryCode sets the tenantCountryCode property value. Country code of the tenant. For details, see ISO 3166-1 alpha-2.
 func (m *PstnCallLogRow) SetTenantCountryCode(value *string)() {
     m.tenantCountryCode = value
 }
-// SetUsageCountryCode sets the usageCountryCode property value. Country code of the user, ISO 3166-1 alpha-2.
+// SetUsageCountryCode sets the usageCountryCode property value. Country code of the user. For details, see ISO 3166-1 alpha-2.
 func (m *PstnCallLogRow) SetUsageCountryCode(value *string)() {
     m.usageCountryCode = value
 }
@@ -665,7 +665,7 @@ func (m *PstnCallLogRow) SetUserDisplayName(value *string)() {
 func (m *PstnCallLogRow) SetUserId(value *string)() {
     m.userId = value
 }
-// SetUserPrincipalName sets the userPrincipalName property value. UserPrincipalName (sign-in name) in Azure Active Directory. This is usually the same as user's SIP Address, and can be same as user's e-mail address.
+// SetUserPrincipalName sets the userPrincipalName property value. The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
 func (m *PstnCallLogRow) SetUserPrincipalName(value *string)() {
     m.userPrincipalName = value
 }

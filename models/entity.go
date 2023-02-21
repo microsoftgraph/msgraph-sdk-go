@@ -46,8 +46,14 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewAccessPackageAssignmentRequest(), nil
                     case "#microsoft.graph.accessPackageCatalog":
                         return NewAccessPackageCatalog(), nil
+                    case "#microsoft.graph.accessPackageMultipleChoiceQuestion":
+                        return NewAccessPackageMultipleChoiceQuestion(), nil
+                    case "#microsoft.graph.accessPackageQuestion":
+                        return NewAccessPackageQuestion(), nil
                     case "#microsoft.graph.accessPackageSubject":
                         return NewAccessPackageSubject(), nil
+                    case "#microsoft.graph.accessPackageTextInputQuestion":
+                        return NewAccessPackageTextInputQuestion(), nil
                     case "#microsoft.graph.accessReviewHistoryDefinition":
                         return NewAccessReviewHistoryDefinition(), nil
                     case "#microsoft.graph.accessReviewHistoryInstance":
@@ -170,6 +176,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewAuthoredNote(), nil
                     case "#microsoft.graph.authorizationPolicy":
                         return NewAuthorizationPolicy(), nil
+                    case "#microsoft.graph.azureCommunicationServicesUserConversationMember":
+                        return NewAzureCommunicationServicesUserConversationMember(), nil
                     case "#microsoft.graph.b2xIdentityUserFlow":
                         return NewB2xIdentityUserFlow(), nil
                     case "#microsoft.graph.baseItem":
@@ -288,6 +296,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewDelegatedAdminServiceManagementDetail(), nil
                     case "#microsoft.graph.delegatedPermissionClassification":
                         return NewDelegatedPermissionClassification(), nil
+                    case "#microsoft.graph.deletedTeam":
+                        return NewDeletedTeam(), nil
                     case "#microsoft.graph.detectedApp":
                         return NewDetectedApp(), nil
                     case "#microsoft.graph.device":

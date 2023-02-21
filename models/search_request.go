@@ -28,8 +28,12 @@ type SearchRequest struct {
     query SearchQueryable
     // The queryAlterationOptions property
     queryAlterationOptions SearchAlterationOptionsable
+    // The region property
+    region *string
     // The resultTemplateOptions property
     resultTemplateOptions ResultTemplateOptionable
+    // The sharePointOneDriveOptions property
+    sharePointOneDriveOptions SharePointOneDriveOptionsable
     // The size property
     size *int32
     // The sortProperties property
@@ -193,6 +197,16 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["region"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRegion(val)
+        }
+        return nil
+    }
     res["resultTemplateOptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateResultTemplateOptionFromDiscriminatorValue)
         if err != nil {
@@ -200,6 +214,16 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         if val != nil {
             m.SetResultTemplateOptions(val.(ResultTemplateOptionable))
+        }
+        return nil
+    }
+    res["sharePointOneDriveOptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateSharePointOneDriveOptionsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSharePointOneDriveOptions(val.(SharePointOneDriveOptionsable))
         }
         return nil
     }
@@ -249,9 +273,17 @@ func (m *SearchRequest) GetQuery()(SearchQueryable) {
 func (m *SearchRequest) GetQueryAlterationOptions()(SearchAlterationOptionsable) {
     return m.queryAlterationOptions
 }
+// GetRegion gets the region property value. The region property
+func (m *SearchRequest) GetRegion()(*string) {
+    return m.region
+}
 // GetResultTemplateOptions gets the resultTemplateOptions property value. The resultTemplateOptions property
 func (m *SearchRequest) GetResultTemplateOptions()(ResultTemplateOptionable) {
     return m.resultTemplateOptions
+}
+// GetSharePointOneDriveOptions gets the sharePointOneDriveOptions property value. The sharePointOneDriveOptions property
+func (m *SearchRequest) GetSharePointOneDriveOptions()(SharePointOneDriveOptionsable) {
+    return m.sharePointOneDriveOptions
 }
 // GetSize gets the size property value. The size property
 func (m *SearchRequest) GetSize()(*int32) {
@@ -328,7 +360,19 @@ func (m *SearchRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
+        err := writer.WriteStringValue("region", m.GetRegion())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteObjectValue("resultTemplateOptions", m.GetResultTemplateOptions())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("sharePointOneDriveOptions", m.GetSharePointOneDriveOptions())
         if err != nil {
             return err
         }
@@ -401,9 +445,17 @@ func (m *SearchRequest) SetQuery(value SearchQueryable)() {
 func (m *SearchRequest) SetQueryAlterationOptions(value SearchAlterationOptionsable)() {
     m.queryAlterationOptions = value
 }
+// SetRegion sets the region property value. The region property
+func (m *SearchRequest) SetRegion(value *string)() {
+    m.region = value
+}
 // SetResultTemplateOptions sets the resultTemplateOptions property value. The resultTemplateOptions property
 func (m *SearchRequest) SetResultTemplateOptions(value ResultTemplateOptionable)() {
     m.resultTemplateOptions = value
+}
+// SetSharePointOneDriveOptions sets the sharePointOneDriveOptions property value. The sharePointOneDriveOptions property
+func (m *SearchRequest) SetSharePointOneDriveOptions(value SharePointOneDriveOptionsable)() {
+    m.sharePointOneDriveOptions = value
 }
 // SetSize sets the size property value. The size property
 func (m *SearchRequest) SetSize(value *int32)() {

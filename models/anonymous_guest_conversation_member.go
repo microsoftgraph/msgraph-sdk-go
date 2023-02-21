@@ -7,7 +7,7 @@ import (
 // AnonymousGuestConversationMember 
 type AnonymousGuestConversationMember struct {
     ConversationMember
-    // The anonymousGuestId property
+    // Unique ID that represents the user. Note: This ID can change if the user leaves and rejoins the meeting, or joins from a different device.
     anonymousGuestId *string
 }
 // NewAnonymousGuestConversationMember instantiates a new AnonymousGuestConversationMember and sets the default values.
@@ -23,7 +23,7 @@ func NewAnonymousGuestConversationMember()(*AnonymousGuestConversationMember) {
 func CreateAnonymousGuestConversationMemberFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAnonymousGuestConversationMember(), nil
 }
-// GetAnonymousGuestId gets the anonymousGuestId property value. The anonymousGuestId property
+// GetAnonymousGuestId gets the anonymousGuestId property value. Unique ID that represents the user. Note: This ID can change if the user leaves and rejoins the meeting, or joins from a different device.
 func (m *AnonymousGuestConversationMember) GetAnonymousGuestId()(*string) {
     return m.anonymousGuestId
 }
@@ -56,7 +56,7 @@ func (m *AnonymousGuestConversationMember) Serialize(writer i878a80d2330e89d2689
     }
     return nil
 }
-// SetAnonymousGuestId sets the anonymousGuestId property value. The anonymousGuestId property
+// SetAnonymousGuestId sets the anonymousGuestId property value. Unique ID that represents the user. Note: This ID can change if the user leaves and rejoins the meeting, or joins from a different device.
 func (m *AnonymousGuestConversationMember) SetAnonymousGuestId(value *string)() {
     m.anonymousGuestId = value
 }
