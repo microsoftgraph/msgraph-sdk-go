@@ -4,6 +4,7 @@ import (
 	"errors"
 	"github.com/Azure/azure-sdk-for-go/sdk/azcore"
 	abstractions "github.com/microsoft/kiota-abstractions-go"
+	"github.com/microsoft/kiota-abstractions-go/store"
 	az "github.com/microsoftgraph/msgraph-sdk-go-core/authentication"
 )
 
@@ -12,7 +13,7 @@ type GraphServiceClient struct {
 }
 
 func NewGraphServiceClient(adapter abstractions.RequestAdapter) *GraphServiceClient {
-	client := NewGraphBaseServiceClient(adapter)
+	client := NewGraphBaseServiceClient(adapter, store.BackingStoreFactoryInstance)
 	return &GraphServiceClient{
 		*client,
 	}
