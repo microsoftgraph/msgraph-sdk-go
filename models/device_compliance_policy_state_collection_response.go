@@ -7,8 +7,6 @@ import (
 // DeviceCompliancePolicyStateCollectionResponse 
 type DeviceCompliancePolicyStateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceCompliancePolicyStateable
 }
 // NewDeviceCompliancePolicyStateCollectionResponse instantiates a new DeviceCompliancePolicyStateCollectionResponse and sets the default values.
 func NewDeviceCompliancePolicyStateCollectionResponse()(*DeviceCompliancePolicyStateCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceCompliancePolicyStateCollectionResponse) GetFieldDeserializers()(
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceCompliancePolicyStateCollectionResponse) GetValue()([]DeviceCompliancePolicyStateable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceCompliancePolicyStateable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceCompliancePolicyStateCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceCompliancePolicyStateCollectionResponse) Serialize(writer i878a80
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceCompliancePolicyStateCollectionResponse) SetValue(value []DeviceCompliancePolicyStateable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceCompliancePolicyStateCollectionResponseable 
+type DeviceCompliancePolicyStateCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceCompliancePolicyStateable)
+    SetValue(value []DeviceCompliancePolicyStateable)()
 }

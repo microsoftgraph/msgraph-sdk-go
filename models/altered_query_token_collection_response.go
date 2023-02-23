@@ -7,8 +7,6 @@ import (
 // AlteredQueryTokenCollectionResponse 
 type AlteredQueryTokenCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AlteredQueryTokenable
 }
 // NewAlteredQueryTokenCollectionResponse instantiates a new AlteredQueryTokenCollectionResponse and sets the default values.
 func NewAlteredQueryTokenCollectionResponse()(*AlteredQueryTokenCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AlteredQueryTokenCollectionResponse) GetFieldDeserializers()(map[string
 }
 // GetValue gets the value property value. The value property
 func (m *AlteredQueryTokenCollectionResponse) GetValue()([]AlteredQueryTokenable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AlteredQueryTokenable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AlteredQueryTokenCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AlteredQueryTokenCollectionResponse) Serialize(writer i878a80d2330e89d2
 }
 // SetValue sets the value property value. The value property
 func (m *AlteredQueryTokenCollectionResponse) SetValue(value []AlteredQueryTokenable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AlteredQueryTokenCollectionResponseable 
+type AlteredQueryTokenCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AlteredQueryTokenable)
+    SetValue(value []AlteredQueryTokenable)()
 }

@@ -7,8 +7,6 @@ import (
 // AlertHistoryStateCollectionResponse 
 type AlertHistoryStateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AlertHistoryStateable
 }
 // NewAlertHistoryStateCollectionResponse instantiates a new AlertHistoryStateCollectionResponse and sets the default values.
 func NewAlertHistoryStateCollectionResponse()(*AlertHistoryStateCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AlertHistoryStateCollectionResponse) GetFieldDeserializers()(map[string
 }
 // GetValue gets the value property value. The value property
 func (m *AlertHistoryStateCollectionResponse) GetValue()([]AlertHistoryStateable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AlertHistoryStateable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AlertHistoryStateCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AlertHistoryStateCollectionResponse) Serialize(writer i878a80d2330e89d2
 }
 // SetValue sets the value property value. The value property
 func (m *AlertHistoryStateCollectionResponse) SetValue(value []AlertHistoryStateable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AlertHistoryStateCollectionResponseable 
+type AlertHistoryStateCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AlertHistoryStateable)
+    SetValue(value []AlertHistoryStateable)()
 }

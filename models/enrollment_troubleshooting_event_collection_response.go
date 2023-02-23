@@ -7,8 +7,6 @@ import (
 // EnrollmentTroubleshootingEventCollectionResponse 
 type EnrollmentTroubleshootingEventCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []EnrollmentTroubleshootingEventable
 }
 // NewEnrollmentTroubleshootingEventCollectionResponse instantiates a new EnrollmentTroubleshootingEventCollectionResponse and sets the default values.
 func NewEnrollmentTroubleshootingEventCollectionResponse()(*EnrollmentTroubleshootingEventCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *EnrollmentTroubleshootingEventCollectionResponse) GetFieldDeserializers
 }
 // GetValue gets the value property value. The value property
 func (m *EnrollmentTroubleshootingEventCollectionResponse) GetValue()([]EnrollmentTroubleshootingEventable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EnrollmentTroubleshootingEventable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EnrollmentTroubleshootingEventCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *EnrollmentTroubleshootingEventCollectionResponse) Serialize(writer i878
 }
 // SetValue sets the value property value. The value property
 func (m *EnrollmentTroubleshootingEventCollectionResponse) SetValue(value []EnrollmentTroubleshootingEventable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EnrollmentTroubleshootingEventCollectionResponseable 
+type EnrollmentTroubleshootingEventCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]EnrollmentTroubleshootingEventable)
+    SetValue(value []EnrollmentTroubleshootingEventable)()
 }

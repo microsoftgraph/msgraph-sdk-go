@@ -7,8 +7,6 @@ import (
 // OpenTypeExtension 
 type OpenTypeExtension struct {
     Extension
-    // A unique text identifier for an open type data extension. Optional.
-    extensionName *string
 }
 // NewOpenTypeExtension instantiates a new OpenTypeExtension and sets the default values.
 func NewOpenTypeExtension()(*OpenTypeExtension) {
@@ -25,7 +23,14 @@ func CreateOpenTypeExtensionFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetExtensionName gets the extensionName property value. A unique text identifier for an open type data extension. Optional.
 func (m *OpenTypeExtension) GetExtensionName()(*string) {
-    return m.extensionName
+    val, err := m.GetBackingStore().Get("extensionName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OpenTypeExtension) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -58,5 +63,15 @@ func (m *OpenTypeExtension) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetExtensionName sets the extensionName property value. A unique text identifier for an open type data extension. Optional.
 func (m *OpenTypeExtension) SetExtensionName(value *string)() {
-    m.extensionName = value
+    err := m.GetBackingStore().Set("extensionName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OpenTypeExtensionable 
+type OpenTypeExtensionable interface {
+    Extensionable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetExtensionName()(*string)
+    SetExtensionName(value *string)()
 }

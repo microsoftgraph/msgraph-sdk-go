@@ -7,10 +7,6 @@ import (
 // SkypeForBusinessUserConversationMember 
 type SkypeForBusinessUserConversationMember struct {
     ConversationMember
-    // ID of the tenant that the user belongs to.
-    tenantId *string
-    // Azure Active Directory ID of the user.
-    userId *string
 }
 // NewSkypeForBusinessUserConversationMember instantiates a new SkypeForBusinessUserConversationMember and sets the default values.
 func NewSkypeForBusinessUserConversationMember()(*SkypeForBusinessUserConversationMember) {
@@ -52,11 +48,25 @@ func (m *SkypeForBusinessUserConversationMember) GetFieldDeserializers()(map[str
 }
 // GetTenantId gets the tenantId property value. ID of the tenant that the user belongs to.
 func (m *SkypeForBusinessUserConversationMember) GetTenantId()(*string) {
-    return m.tenantId
+    val, err := m.GetBackingStore().Get("tenantId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUserId gets the userId property value. Azure Active Directory ID of the user.
 func (m *SkypeForBusinessUserConversationMember) GetUserId()(*string) {
-    return m.userId
+    val, err := m.GetBackingStore().Get("userId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SkypeForBusinessUserConversationMember) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -80,9 +90,24 @@ func (m *SkypeForBusinessUserConversationMember) Serialize(writer i878a80d2330e8
 }
 // SetTenantId sets the tenantId property value. ID of the tenant that the user belongs to.
 func (m *SkypeForBusinessUserConversationMember) SetTenantId(value *string)() {
-    m.tenantId = value
+    err := m.GetBackingStore().Set("tenantId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserId sets the userId property value. Azure Active Directory ID of the user.
 func (m *SkypeForBusinessUserConversationMember) SetUserId(value *string)() {
-    m.userId = value
+    err := m.GetBackingStore().Set("userId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SkypeForBusinessUserConversationMemberable 
+type SkypeForBusinessUserConversationMemberable interface {
+    ConversationMemberable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetTenantId()(*string)
+    GetUserId()(*string)
+    SetTenantId(value *string)()
+    SetUserId(value *string)()
 }

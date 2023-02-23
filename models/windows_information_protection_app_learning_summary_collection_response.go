@@ -7,8 +7,6 @@ import (
 // WindowsInformationProtectionAppLearningSummaryCollectionResponse 
 type WindowsInformationProtectionAppLearningSummaryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []WindowsInformationProtectionAppLearningSummaryable
 }
 // NewWindowsInformationProtectionAppLearningSummaryCollectionResponse instantiates a new WindowsInformationProtectionAppLearningSummaryCollectionResponse and sets the default values.
 func NewWindowsInformationProtectionAppLearningSummaryCollectionResponse()(*WindowsInformationProtectionAppLearningSummaryCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *WindowsInformationProtectionAppLearningSummaryCollectionResponse) GetFi
 }
 // GetValue gets the value property value. The value property
 func (m *WindowsInformationProtectionAppLearningSummaryCollectionResponse) GetValue()([]WindowsInformationProtectionAppLearningSummaryable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsInformationProtectionAppLearningSummaryable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsInformationProtectionAppLearningSummaryCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *WindowsInformationProtectionAppLearningSummaryCollectionResponse) Seria
 }
 // SetValue sets the value property value. The value property
 func (m *WindowsInformationProtectionAppLearningSummaryCollectionResponse) SetValue(value []WindowsInformationProtectionAppLearningSummaryable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsInformationProtectionAppLearningSummaryCollectionResponseable 
+type WindowsInformationProtectionAppLearningSummaryCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]WindowsInformationProtectionAppLearningSummaryable)
+    SetValue(value []WindowsInformationProtectionAppLearningSummaryable)()
 }

@@ -7,10 +7,6 @@ import (
 // IPv4Range 
 type IPv4Range struct {
     IpRange
-    // Lower address.
-    lowerAddress *string
-    // Upper address.
-    upperAddress *string
 }
 // NewIPv4Range instantiates a new IPv4Range and sets the default values.
 func NewIPv4Range()(*IPv4Range) {
@@ -52,11 +48,25 @@ func (m *IPv4Range) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 }
 // GetLowerAddress gets the lowerAddress property value. Lower address.
 func (m *IPv4Range) GetLowerAddress()(*string) {
-    return m.lowerAddress
+    val, err := m.GetBackingStore().Get("lowerAddress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUpperAddress gets the upperAddress property value. Upper address.
 func (m *IPv4Range) GetUpperAddress()(*string) {
-    return m.upperAddress
+    val, err := m.GetBackingStore().Get("upperAddress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IPv4Range) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -80,9 +90,24 @@ func (m *IPv4Range) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetLowerAddress sets the lowerAddress property value. Lower address.
 func (m *IPv4Range) SetLowerAddress(value *string)() {
-    m.lowerAddress = value
+    err := m.GetBackingStore().Set("lowerAddress", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUpperAddress sets the upperAddress property value. Upper address.
 func (m *IPv4Range) SetUpperAddress(value *string)() {
-    m.upperAddress = value
+    err := m.GetBackingStore().Set("upperAddress", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IPv4Rangeable 
+type IPv4Rangeable interface {
+    IpRangeable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetLowerAddress()(*string)
+    GetUpperAddress()(*string)
+    SetLowerAddress(value *string)()
+    SetUpperAddress(value *string)()
 }

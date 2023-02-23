@@ -32,3 +32,8 @@ func (m *AgreementFileVersion) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
+// AgreementFileVersionable 
+type AgreementFileVersionable interface {
+    AgreementFilePropertiesable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+}

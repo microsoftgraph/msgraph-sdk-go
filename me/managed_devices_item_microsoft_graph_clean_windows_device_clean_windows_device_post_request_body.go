@@ -2,19 +2,19 @@ package me
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ManagedDevicesItemMicrosoftGraphCleanWindowsDeviceCleanWindowsDevicePostRequestBody 
 type ManagedDevicesItemMicrosoftGraphCleanWindowsDeviceCleanWindowsDevicePostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The keepUserData property
-    keepUserData *bool
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewManagedDevicesItemMicrosoftGraphCleanWindowsDeviceCleanWindowsDevicePostRequestBody instantiates a new ManagedDevicesItemMicrosoftGraphCleanWindowsDeviceCleanWindowsDevicePostRequestBody and sets the default values.
 func NewManagedDevicesItemMicrosoftGraphCleanWindowsDeviceCleanWindowsDevicePostRequestBody()(*ManagedDevicesItemMicrosoftGraphCleanWindowsDeviceCleanWindowsDevicePostRequestBody) {
     m := &ManagedDevicesItemMicrosoftGraphCleanWindowsDeviceCleanWindowsDevicePostRequestBody{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -24,7 +24,19 @@ func CreateManagedDevicesItemMicrosoftGraphCleanWindowsDeviceCleanWindowsDeviceP
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagedDevicesItemMicrosoftGraphCleanWindowsDeviceCleanWindowsDevicePostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ManagedDevicesItemMicrosoftGraphCleanWindowsDeviceCleanWindowsDevicePostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedDevicesItemMicrosoftGraphCleanWindowsDeviceCleanWindowsDevicePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -43,7 +55,14 @@ func (m *ManagedDevicesItemMicrosoftGraphCleanWindowsDeviceCleanWindowsDevicePos
 }
 // GetKeepUserData gets the keepUserData property value. The keepUserData property
 func (m *ManagedDevicesItemMicrosoftGraphCleanWindowsDeviceCleanWindowsDevicePostRequestBody) GetKeepUserData()(*bool) {
-    return m.keepUserData
+    val, err := m.GetBackingStore().Get("keepUserData")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ManagedDevicesItemMicrosoftGraphCleanWindowsDeviceCleanWindowsDevicePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -63,9 +82,29 @@ func (m *ManagedDevicesItemMicrosoftGraphCleanWindowsDeviceCleanWindowsDevicePos
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagedDevicesItemMicrosoftGraphCleanWindowsDeviceCleanWindowsDevicePostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ManagedDevicesItemMicrosoftGraphCleanWindowsDeviceCleanWindowsDevicePostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetKeepUserData sets the keepUserData property value. The keepUserData property
 func (m *ManagedDevicesItemMicrosoftGraphCleanWindowsDeviceCleanWindowsDevicePostRequestBody) SetKeepUserData(value *bool)() {
-    m.keepUserData = value
+    err := m.GetBackingStore().Set("keepUserData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ManagedDevicesItemMicrosoftGraphCleanWindowsDeviceCleanWindowsDevicePostRequestBodyable 
+type ManagedDevicesItemMicrosoftGraphCleanWindowsDeviceCleanWindowsDevicePostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetKeepUserData()(*bool)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetKeepUserData(value *bool)()
 }

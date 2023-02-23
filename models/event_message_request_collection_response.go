@@ -7,8 +7,6 @@ import (
 // EventMessageRequestCollectionResponse 
 type EventMessageRequestCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []EventMessageRequestable
 }
 // NewEventMessageRequestCollectionResponse instantiates a new EventMessageRequestCollectionResponse and sets the default values.
 func NewEventMessageRequestCollectionResponse()(*EventMessageRequestCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *EventMessageRequestCollectionResponse) GetFieldDeserializers()(map[stri
 }
 // GetValue gets the value property value. The value property
 func (m *EventMessageRequestCollectionResponse) GetValue()([]EventMessageRequestable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EventMessageRequestable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EventMessageRequestCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *EventMessageRequestCollectionResponse) Serialize(writer i878a80d2330e89
 }
 // SetValue sets the value property value. The value property
 func (m *EventMessageRequestCollectionResponse) SetValue(value []EventMessageRequestable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EventMessageRequestCollectionResponseable 
+type EventMessageRequestCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]EventMessageRequestable)
+    SetValue(value []EventMessageRequestable)()
 }

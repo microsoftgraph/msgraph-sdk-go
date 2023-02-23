@@ -7,8 +7,6 @@ import (
 // TeamsTemplateCollectionResponse 
 type TeamsTemplateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []TeamsTemplateable
 }
 // NewTeamsTemplateCollectionResponse instantiates a new TeamsTemplateCollectionResponse and sets the default values.
 func NewTeamsTemplateCollectionResponse()(*TeamsTemplateCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *TeamsTemplateCollectionResponse) GetFieldDeserializers()(map[string]fun
 }
 // GetValue gets the value property value. The value property
 func (m *TeamsTemplateCollectionResponse) GetValue()([]TeamsTemplateable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TeamsTemplateable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TeamsTemplateCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *TeamsTemplateCollectionResponse) Serialize(writer i878a80d2330e89d26896
 }
 // SetValue sets the value property value. The value property
 func (m *TeamsTemplateCollectionResponse) SetValue(value []TeamsTemplateable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TeamsTemplateCollectionResponseable 
+type TeamsTemplateCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]TeamsTemplateable)
+    SetValue(value []TeamsTemplateable)()
 }

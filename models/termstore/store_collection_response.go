@@ -8,8 +8,6 @@ import (
 // StoreCollectionResponse 
 type StoreCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
-    // The value property
-    value []Storeable
 }
 // NewStoreCollectionResponse instantiates a new StoreCollectionResponse and sets the default values.
 func NewStoreCollectionResponse()(*StoreCollectionResponse) {
@@ -43,7 +41,14 @@ func (m *StoreCollectionResponse) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetValue gets the value property value. The value property
 func (m *StoreCollectionResponse) GetValue()([]Storeable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Storeable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *StoreCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *StoreCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetValue sets the value property value. The value property
 func (m *StoreCollectionResponse) SetValue(value []Storeable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// StoreCollectionResponseable 
+type StoreCollectionResponseable interface {
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Storeable)
+    SetValue(value []Storeable)()
 }

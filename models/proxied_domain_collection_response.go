@@ -7,8 +7,6 @@ import (
 // ProxiedDomainCollectionResponse 
 type ProxiedDomainCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ProxiedDomainable
 }
 // NewProxiedDomainCollectionResponse instantiates a new ProxiedDomainCollectionResponse and sets the default values.
 func NewProxiedDomainCollectionResponse()(*ProxiedDomainCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ProxiedDomainCollectionResponse) GetFieldDeserializers()(map[string]fun
 }
 // GetValue gets the value property value. The value property
 func (m *ProxiedDomainCollectionResponse) GetValue()([]ProxiedDomainable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ProxiedDomainable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ProxiedDomainCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ProxiedDomainCollectionResponse) Serialize(writer i878a80d2330e89d26896
 }
 // SetValue sets the value property value. The value property
 func (m *ProxiedDomainCollectionResponse) SetValue(value []ProxiedDomainable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ProxiedDomainCollectionResponseable 
+type ProxiedDomainCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ProxiedDomainable)
+    SetValue(value []ProxiedDomainable)()
 }

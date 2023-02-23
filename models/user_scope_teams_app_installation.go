@@ -7,8 +7,6 @@ import (
 // UserScopeTeamsAppInstallation 
 type UserScopeTeamsAppInstallation struct {
     TeamsAppInstallation
-    // The chat between the user and Teams app.
-    chat Chatable
 }
 // NewUserScopeTeamsAppInstallation instantiates a new UserScopeTeamsAppInstallation and sets the default values.
 func NewUserScopeTeamsAppInstallation()(*UserScopeTeamsAppInstallation) {
@@ -25,7 +23,14 @@ func CreateUserScopeTeamsAppInstallationFromDiscriminatorValue(parseNode i878a80
 }
 // GetChat gets the chat property value. The chat between the user and Teams app.
 func (m *UserScopeTeamsAppInstallation) GetChat()(Chatable) {
-    return m.chat
+    val, err := m.GetBackingStore().Get("chat")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Chatable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserScopeTeamsAppInstallation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -58,5 +63,15 @@ func (m *UserScopeTeamsAppInstallation) Serialize(writer i878a80d2330e89d2689638
 }
 // SetChat sets the chat property value. The chat between the user and Teams app.
 func (m *UserScopeTeamsAppInstallation) SetChat(value Chatable)() {
-    m.chat = value
+    err := m.GetBackingStore().Set("chat", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserScopeTeamsAppInstallationable 
+type UserScopeTeamsAppInstallationable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    TeamsAppInstallationable
+    GetChat()(Chatable)
+    SetChat(value Chatable)()
 }

@@ -7,8 +7,6 @@ import (
 // ResourceOperationCollectionResponse 
 type ResourceOperationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ResourceOperationable
 }
 // NewResourceOperationCollectionResponse instantiates a new ResourceOperationCollectionResponse and sets the default values.
 func NewResourceOperationCollectionResponse()(*ResourceOperationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ResourceOperationCollectionResponse) GetFieldDeserializers()(map[string
 }
 // GetValue gets the value property value. The value property
 func (m *ResourceOperationCollectionResponse) GetValue()([]ResourceOperationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ResourceOperationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ResourceOperationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ResourceOperationCollectionResponse) Serialize(writer i878a80d2330e89d2
 }
 // SetValue sets the value property value. The value property
 func (m *ResourceOperationCollectionResponse) SetValue(value []ResourceOperationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ResourceOperationCollectionResponseable 
+type ResourceOperationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ResourceOperationable)
+    SetValue(value []ResourceOperationable)()
 }

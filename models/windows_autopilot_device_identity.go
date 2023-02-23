@@ -8,38 +8,6 @@ import (
 // WindowsAutopilotDeviceIdentity the windowsAutopilotDeviceIdentity resource represents a Windows Autopilot Device.
 type WindowsAutopilotDeviceIdentity struct {
     Entity
-    // Addressable user name.
-    addressableUserName *string
-    // AAD Device ID - to be deprecated
-    azureActiveDirectoryDeviceId *string
-    // Display Name
-    displayName *string
-    // The enrollmentState property
-    enrollmentState *EnrollmentState
-    // Group Tag of the Windows autopilot device.
-    groupTag *string
-    // Intune Last Contacted Date Time of the Windows autopilot device.
-    lastContactedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Managed Device ID
-    managedDeviceId *string
-    // Oem manufacturer of the Windows autopilot device.
-    manufacturer *string
-    // Model name of the Windows autopilot device.
-    model *string
-    // Product Key of the Windows autopilot device.
-    productKey *string
-    // Purchase Order Identifier of the Windows autopilot device.
-    purchaseOrderIdentifier *string
-    // Resource Name.
-    resourceName *string
-    // Serial number of the Windows autopilot device.
-    serialNumber *string
-    // SKU Number
-    skuNumber *string
-    // System Family
-    systemFamily *string
-    // User Principal Name.
-    userPrincipalName *string
 }
 // NewWindowsAutopilotDeviceIdentity instantiates a new windowsAutopilotDeviceIdentity and sets the default values.
 func NewWindowsAutopilotDeviceIdentity()(*WindowsAutopilotDeviceIdentity) {
@@ -54,19 +22,47 @@ func CreateWindowsAutopilotDeviceIdentityFromDiscriminatorValue(parseNode i878a8
 }
 // GetAddressableUserName gets the addressableUserName property value. Addressable user name.
 func (m *WindowsAutopilotDeviceIdentity) GetAddressableUserName()(*string) {
-    return m.addressableUserName
+    val, err := m.GetBackingStore().Get("addressableUserName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAzureActiveDirectoryDeviceId gets the azureActiveDirectoryDeviceId property value. AAD Device ID - to be deprecated
 func (m *WindowsAutopilotDeviceIdentity) GetAzureActiveDirectoryDeviceId()(*string) {
-    return m.azureActiveDirectoryDeviceId
+    val, err := m.GetBackingStore().Get("azureActiveDirectoryDeviceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. Display Name
 func (m *WindowsAutopilotDeviceIdentity) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetEnrollmentState gets the enrollmentState property value. The enrollmentState property
 func (m *WindowsAutopilotDeviceIdentity) GetEnrollmentState()(*EnrollmentState) {
-    return m.enrollmentState
+    val, err := m.GetBackingStore().Get("enrollmentState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*EnrollmentState)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsAutopilotDeviceIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -235,51 +231,135 @@ func (m *WindowsAutopilotDeviceIdentity) GetFieldDeserializers()(map[string]func
 }
 // GetGroupTag gets the groupTag property value. Group Tag of the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) GetGroupTag()(*string) {
-    return m.groupTag
+    val, err := m.GetBackingStore().Get("groupTag")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetLastContactedDateTime gets the lastContactedDateTime property value. Intune Last Contacted Date Time of the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) GetLastContactedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastContactedDateTime
+    val, err := m.GetBackingStore().Get("lastContactedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetManagedDeviceId gets the managedDeviceId property value. Managed Device ID
 func (m *WindowsAutopilotDeviceIdentity) GetManagedDeviceId()(*string) {
-    return m.managedDeviceId
+    val, err := m.GetBackingStore().Get("managedDeviceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetManufacturer gets the manufacturer property value. Oem manufacturer of the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) GetManufacturer()(*string) {
-    return m.manufacturer
+    val, err := m.GetBackingStore().Get("manufacturer")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetModel gets the model property value. Model name of the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) GetModel()(*string) {
-    return m.model
+    val, err := m.GetBackingStore().Get("model")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetProductKey gets the productKey property value. Product Key of the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) GetProductKey()(*string) {
-    return m.productKey
+    val, err := m.GetBackingStore().Get("productKey")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPurchaseOrderIdentifier gets the purchaseOrderIdentifier property value. Purchase Order Identifier of the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) GetPurchaseOrderIdentifier()(*string) {
-    return m.purchaseOrderIdentifier
+    val, err := m.GetBackingStore().Get("purchaseOrderIdentifier")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetResourceName gets the resourceName property value. Resource Name.
 func (m *WindowsAutopilotDeviceIdentity) GetResourceName()(*string) {
-    return m.resourceName
+    val, err := m.GetBackingStore().Get("resourceName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSerialNumber gets the serialNumber property value. Serial number of the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) GetSerialNumber()(*string) {
-    return m.serialNumber
+    val, err := m.GetBackingStore().Get("serialNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSkuNumber gets the skuNumber property value. SKU Number
 func (m *WindowsAutopilotDeviceIdentity) GetSkuNumber()(*string) {
-    return m.skuNumber
+    val, err := m.GetBackingStore().Get("skuNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSystemFamily gets the systemFamily property value. System Family
 func (m *WindowsAutopilotDeviceIdentity) GetSystemFamily()(*string) {
-    return m.systemFamily
+    val, err := m.GetBackingStore().Get("systemFamily")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. User Principal Name.
 func (m *WindowsAutopilotDeviceIdentity) GetUserPrincipalName()(*string) {
-    return m.userPrincipalName
+    val, err := m.GetBackingStore().Get("userPrincipalName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsAutopilotDeviceIdentity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -388,65 +468,150 @@ func (m *WindowsAutopilotDeviceIdentity) Serialize(writer i878a80d2330e89d268963
 }
 // SetAddressableUserName sets the addressableUserName property value. Addressable user name.
 func (m *WindowsAutopilotDeviceIdentity) SetAddressableUserName(value *string)() {
-    m.addressableUserName = value
+    err := m.GetBackingStore().Set("addressableUserName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAzureActiveDirectoryDeviceId sets the azureActiveDirectoryDeviceId property value. AAD Device ID - to be deprecated
 func (m *WindowsAutopilotDeviceIdentity) SetAzureActiveDirectoryDeviceId(value *string)() {
-    m.azureActiveDirectoryDeviceId = value
+    err := m.GetBackingStore().Set("azureActiveDirectoryDeviceId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. Display Name
 func (m *WindowsAutopilotDeviceIdentity) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEnrollmentState sets the enrollmentState property value. The enrollmentState property
 func (m *WindowsAutopilotDeviceIdentity) SetEnrollmentState(value *EnrollmentState)() {
-    m.enrollmentState = value
+    err := m.GetBackingStore().Set("enrollmentState", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetGroupTag sets the groupTag property value. Group Tag of the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) SetGroupTag(value *string)() {
-    m.groupTag = value
+    err := m.GetBackingStore().Set("groupTag", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastContactedDateTime sets the lastContactedDateTime property value. Intune Last Contacted Date Time of the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) SetLastContactedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastContactedDateTime = value
+    err := m.GetBackingStore().Set("lastContactedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagedDeviceId sets the managedDeviceId property value. Managed Device ID
 func (m *WindowsAutopilotDeviceIdentity) SetManagedDeviceId(value *string)() {
-    m.managedDeviceId = value
+    err := m.GetBackingStore().Set("managedDeviceId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManufacturer sets the manufacturer property value. Oem manufacturer of the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) SetManufacturer(value *string)() {
-    m.manufacturer = value
+    err := m.GetBackingStore().Set("manufacturer", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetModel sets the model property value. Model name of the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) SetModel(value *string)() {
-    m.model = value
+    err := m.GetBackingStore().Set("model", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProductKey sets the productKey property value. Product Key of the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) SetProductKey(value *string)() {
-    m.productKey = value
+    err := m.GetBackingStore().Set("productKey", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPurchaseOrderIdentifier sets the purchaseOrderIdentifier property value. Purchase Order Identifier of the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) SetPurchaseOrderIdentifier(value *string)() {
-    m.purchaseOrderIdentifier = value
+    err := m.GetBackingStore().Set("purchaseOrderIdentifier", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetResourceName sets the resourceName property value. Resource Name.
 func (m *WindowsAutopilotDeviceIdentity) SetResourceName(value *string)() {
-    m.resourceName = value
+    err := m.GetBackingStore().Set("resourceName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSerialNumber sets the serialNumber property value. Serial number of the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) SetSerialNumber(value *string)() {
-    m.serialNumber = value
+    err := m.GetBackingStore().Set("serialNumber", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSkuNumber sets the skuNumber property value. SKU Number
 func (m *WindowsAutopilotDeviceIdentity) SetSkuNumber(value *string)() {
-    m.skuNumber = value
+    err := m.GetBackingStore().Set("skuNumber", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSystemFamily sets the systemFamily property value. System Family
 func (m *WindowsAutopilotDeviceIdentity) SetSystemFamily(value *string)() {
-    m.systemFamily = value
+    err := m.GetBackingStore().Set("systemFamily", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. User Principal Name.
 func (m *WindowsAutopilotDeviceIdentity) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    err := m.GetBackingStore().Set("userPrincipalName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsAutopilotDeviceIdentityable 
+type WindowsAutopilotDeviceIdentityable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAddressableUserName()(*string)
+    GetAzureActiveDirectoryDeviceId()(*string)
+    GetDisplayName()(*string)
+    GetEnrollmentState()(*EnrollmentState)
+    GetGroupTag()(*string)
+    GetLastContactedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetManagedDeviceId()(*string)
+    GetManufacturer()(*string)
+    GetModel()(*string)
+    GetProductKey()(*string)
+    GetPurchaseOrderIdentifier()(*string)
+    GetResourceName()(*string)
+    GetSerialNumber()(*string)
+    GetSkuNumber()(*string)
+    GetSystemFamily()(*string)
+    GetUserPrincipalName()(*string)
+    SetAddressableUserName(value *string)()
+    SetAzureActiveDirectoryDeviceId(value *string)()
+    SetDisplayName(value *string)()
+    SetEnrollmentState(value *EnrollmentState)()
+    SetGroupTag(value *string)()
+    SetLastContactedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetManagedDeviceId(value *string)()
+    SetManufacturer(value *string)()
+    SetModel(value *string)()
+    SetProductKey(value *string)()
+    SetPurchaseOrderIdentifier(value *string)()
+    SetResourceName(value *string)()
+    SetSerialNumber(value *string)()
+    SetSkuNumber(value *string)()
+    SetSystemFamily(value *string)()
+    SetUserPrincipalName(value *string)()
 }

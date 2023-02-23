@@ -7,8 +7,6 @@ import (
 // IdentitySecurityDefaultsEnforcementPolicyCollectionResponse 
 type IdentitySecurityDefaultsEnforcementPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []IdentitySecurityDefaultsEnforcementPolicyable
 }
 // NewIdentitySecurityDefaultsEnforcementPolicyCollectionResponse instantiates a new IdentitySecurityDefaultsEnforcementPolicyCollectionResponse and sets the default values.
 func NewIdentitySecurityDefaultsEnforcementPolicyCollectionResponse()(*IdentitySecurityDefaultsEnforcementPolicyCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *IdentitySecurityDefaultsEnforcementPolicyCollectionResponse) GetFieldDe
 }
 // GetValue gets the value property value. The value property
 func (m *IdentitySecurityDefaultsEnforcementPolicyCollectionResponse) GetValue()([]IdentitySecurityDefaultsEnforcementPolicyable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IdentitySecurityDefaultsEnforcementPolicyable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IdentitySecurityDefaultsEnforcementPolicyCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *IdentitySecurityDefaultsEnforcementPolicyCollectionResponse) Serialize(
 }
 // SetValue sets the value property value. The value property
 func (m *IdentitySecurityDefaultsEnforcementPolicyCollectionResponse) SetValue(value []IdentitySecurityDefaultsEnforcementPolicyable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IdentitySecurityDefaultsEnforcementPolicyCollectionResponseable 
+type IdentitySecurityDefaultsEnforcementPolicyCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]IdentitySecurityDefaultsEnforcementPolicyable)
+    SetValue(value []IdentitySecurityDefaultsEnforcementPolicyable)()
 }

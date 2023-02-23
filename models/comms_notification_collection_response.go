@@ -7,8 +7,6 @@ import (
 // CommsNotificationCollectionResponse 
 type CommsNotificationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []CommsNotificationable
 }
 // NewCommsNotificationCollectionResponse instantiates a new CommsNotificationCollectionResponse and sets the default values.
 func NewCommsNotificationCollectionResponse()(*CommsNotificationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *CommsNotificationCollectionResponse) GetFieldDeserializers()(map[string
 }
 // GetValue gets the value property value. The value property
 func (m *CommsNotificationCollectionResponse) GetValue()([]CommsNotificationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CommsNotificationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CommsNotificationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *CommsNotificationCollectionResponse) Serialize(writer i878a80d2330e89d2
 }
 // SetValue sets the value property value. The value property
 func (m *CommsNotificationCollectionResponse) SetValue(value []CommsNotificationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CommsNotificationCollectionResponseable 
+type CommsNotificationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]CommsNotificationable)
+    SetValue(value []CommsNotificationable)()
 }

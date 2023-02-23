@@ -7,8 +7,6 @@ import (
 // ChatMessageAttachmentCollectionResponse 
 type ChatMessageAttachmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ChatMessageAttachmentable
 }
 // NewChatMessageAttachmentCollectionResponse instantiates a new ChatMessageAttachmentCollectionResponse and sets the default values.
 func NewChatMessageAttachmentCollectionResponse()(*ChatMessageAttachmentCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ChatMessageAttachmentCollectionResponse) GetFieldDeserializers()(map[st
 }
 // GetValue gets the value property value. The value property
 func (m *ChatMessageAttachmentCollectionResponse) GetValue()([]ChatMessageAttachmentable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ChatMessageAttachmentable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ChatMessageAttachmentCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ChatMessageAttachmentCollectionResponse) Serialize(writer i878a80d2330e
 }
 // SetValue sets the value property value. The value property
 func (m *ChatMessageAttachmentCollectionResponse) SetValue(value []ChatMessageAttachmentable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ChatMessageAttachmentCollectionResponseable 
+type ChatMessageAttachmentCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ChatMessageAttachmentable)
+    SetValue(value []ChatMessageAttachmentable)()
 }

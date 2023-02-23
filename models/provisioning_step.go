@@ -2,29 +2,19 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ProvisioningStep 
 type ProvisioningStep struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Summary of what occurred during the step.
-    description *string
-    // Details of what occurred during the step.
-    details DetailsInfoable
-    // Name of the step.
-    name *string
-    // The OdataType property
-    odataType *string
-    // Type of step. Possible values are: import, scoping, matching, processing, referenceResolution, export, unknownFutureValue.
-    provisioningStepType *ProvisioningStepType
-    // Status of the step. Possible values are: success, warning,  failure, skipped, unknownFutureValue.
-    status *ProvisioningResult
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewProvisioningStep instantiates a new provisioningStep and sets the default values.
 func NewProvisioningStep()(*ProvisioningStep) {
     m := &ProvisioningStep{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -34,15 +24,41 @@ func CreateProvisioningStepFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ProvisioningStep) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ProvisioningStep) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetDescription gets the description property value. Summary of what occurred during the step.
 func (m *ProvisioningStep) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDetails gets the details property value. Details of what occurred during the step.
 func (m *ProvisioningStep) GetDetails()(DetailsInfoable) {
-    return m.details
+    val, err := m.GetBackingStore().Get("details")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DetailsInfoable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ProvisioningStep) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -111,19 +127,47 @@ func (m *ProvisioningStep) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetName gets the name property value. Name of the step.
 func (m *ProvisioningStep) GetName()(*string) {
-    return m.name
+    val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ProvisioningStep) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetProvisioningStepType gets the provisioningStepType property value. Type of step. Possible values are: import, scoping, matching, processing, referenceResolution, export, unknownFutureValue.
 func (m *ProvisioningStep) GetProvisioningStepType()(*ProvisioningStepType) {
-    return m.provisioningStepType
+    val, err := m.GetBackingStore().Get("provisioningStepType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ProvisioningStepType)
+    }
+    return nil
 }
 // GetStatus gets the status property value. Status of the step. Possible values are: success, warning,  failure, skipped, unknownFutureValue.
 func (m *ProvisioningStep) GetStatus()(*ProvisioningResult) {
-    return m.status
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ProvisioningResult)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ProvisioningStep) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -175,29 +219,74 @@ func (m *ProvisioningStep) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ProvisioningStep) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ProvisioningStep) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetDescription sets the description property value. Summary of what occurred during the step.
 func (m *ProvisioningStep) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDetails sets the details property value. Details of what occurred during the step.
 func (m *ProvisioningStep) SetDetails(value DetailsInfoable)() {
-    m.details = value
+    err := m.GetBackingStore().Set("details", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetName sets the name property value. Name of the step.
 func (m *ProvisioningStep) SetName(value *string)() {
-    m.name = value
+    err := m.GetBackingStore().Set("name", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ProvisioningStep) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProvisioningStepType sets the provisioningStepType property value. Type of step. Possible values are: import, scoping, matching, processing, referenceResolution, export, unknownFutureValue.
 func (m *ProvisioningStep) SetProvisioningStepType(value *ProvisioningStepType)() {
-    m.provisioningStepType = value
+    err := m.GetBackingStore().Set("provisioningStepType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStatus sets the status property value. Status of the step. Possible values are: success, warning,  failure, skipped, unknownFutureValue.
 func (m *ProvisioningStep) SetStatus(value *ProvisioningResult)() {
-    m.status = value
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ProvisioningStepable 
+type ProvisioningStepable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDescription()(*string)
+    GetDetails()(DetailsInfoable)
+    GetName()(*string)
+    GetOdataType()(*string)
+    GetProvisioningStepType()(*ProvisioningStepType)
+    GetStatus()(*ProvisioningResult)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDescription(value *string)()
+    SetDetails(value DetailsInfoable)()
+    SetName(value *string)()
+    SetOdataType(value *string)()
+    SetProvisioningStepType(value *ProvisioningStepType)()
+    SetStatus(value *ProvisioningResult)()
 }

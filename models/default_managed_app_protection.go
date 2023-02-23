@@ -7,30 +7,6 @@ import (
 // DefaultManagedAppProtection 
 type DefaultManagedAppProtection struct {
     ManagedAppProtection
-    // Represents the level to which app data is encrypted for managed apps
-    appDataEncryptionType *ManagedAppDataEncryptionType
-    // List of apps to which the policy is deployed.
-    apps []ManagedMobileAppable
-    // A set of string key and string value pairs to be sent to the affected users, unalterned by this service
-    customSettings []KeyValuePairable
-    // Count of apps to which the current policy is deployed.
-    deployedAppCount *int32
-    // Navigation property to deployment summary of the configuration.
-    deploymentSummary ManagedAppPolicyDeploymentSummaryable
-    // When this setting is enabled, app level encryption is disabled if device level encryption is enabled. (Android only)
-    disableAppEncryptionIfDeviceEncryptionIsEnabled *bool
-    // Indicates whether managed-app data should be encrypted. (Android only)
-    encryptAppData *bool
-    // Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True. (iOS Only)
-    faceIdBlocked *bool
-    // Define the oldest required Android security patch level a user can have to gain secure access to the app. (Android only)
-    minimumRequiredPatchVersion *string
-    // Versions less than the specified version will block the managed app from accessing company data. (iOS Only)
-    minimumRequiredSdkVersion *string
-    // Define the oldest recommended Android security patch level a user can have for secure access to the app. (Android only)
-    minimumWarningPatchVersion *string
-    // Indicates whether screen capture is blocked. (Android only)
-    screenCaptureBlocked *bool
 }
 // NewDefaultManagedAppProtection instantiates a new DefaultManagedAppProtection and sets the default values.
 func NewDefaultManagedAppProtection()(*DefaultManagedAppProtection) {
@@ -47,35 +23,91 @@ func CreateDefaultManagedAppProtectionFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAppDataEncryptionType gets the appDataEncryptionType property value. Represents the level to which app data is encrypted for managed apps
 func (m *DefaultManagedAppProtection) GetAppDataEncryptionType()(*ManagedAppDataEncryptionType) {
-    return m.appDataEncryptionType
+    val, err := m.GetBackingStore().Get("appDataEncryptionType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ManagedAppDataEncryptionType)
+    }
+    return nil
 }
 // GetApps gets the apps property value. List of apps to which the policy is deployed.
 func (m *DefaultManagedAppProtection) GetApps()([]ManagedMobileAppable) {
-    return m.apps
+    val, err := m.GetBackingStore().Get("apps")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagedMobileAppable)
+    }
+    return nil
 }
 // GetCustomSettings gets the customSettings property value. A set of string key and string value pairs to be sent to the affected users, unalterned by this service
 func (m *DefaultManagedAppProtection) GetCustomSettings()([]KeyValuePairable) {
-    return m.customSettings
+    val, err := m.GetBackingStore().Get("customSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]KeyValuePairable)
+    }
+    return nil
 }
 // GetDeployedAppCount gets the deployedAppCount property value. Count of apps to which the current policy is deployed.
 func (m *DefaultManagedAppProtection) GetDeployedAppCount()(*int32) {
-    return m.deployedAppCount
+    val, err := m.GetBackingStore().Get("deployedAppCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetDeploymentSummary gets the deploymentSummary property value. Navigation property to deployment summary of the configuration.
 func (m *DefaultManagedAppProtection) GetDeploymentSummary()(ManagedAppPolicyDeploymentSummaryable) {
-    return m.deploymentSummary
+    val, err := m.GetBackingStore().Get("deploymentSummary")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ManagedAppPolicyDeploymentSummaryable)
+    }
+    return nil
 }
 // GetDisableAppEncryptionIfDeviceEncryptionIsEnabled gets the disableAppEncryptionIfDeviceEncryptionIsEnabled property value. When this setting is enabled, app level encryption is disabled if device level encryption is enabled. (Android only)
 func (m *DefaultManagedAppProtection) GetDisableAppEncryptionIfDeviceEncryptionIsEnabled()(*bool) {
-    return m.disableAppEncryptionIfDeviceEncryptionIsEnabled
+    val, err := m.GetBackingStore().Get("disableAppEncryptionIfDeviceEncryptionIsEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEncryptAppData gets the encryptAppData property value. Indicates whether managed-app data should be encrypted. (Android only)
 func (m *DefaultManagedAppProtection) GetEncryptAppData()(*bool) {
-    return m.encryptAppData
+    val, err := m.GetBackingStore().Get("encryptAppData")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFaceIdBlocked gets the faceIdBlocked property value. Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True. (iOS Only)
 func (m *DefaultManagedAppProtection) GetFaceIdBlocked()(*bool) {
-    return m.faceIdBlocked
+    val, err := m.GetBackingStore().Get("faceIdBlocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DefaultManagedAppProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -212,19 +244,47 @@ func (m *DefaultManagedAppProtection) GetFieldDeserializers()(map[string]func(i8
 }
 // GetMinimumRequiredPatchVersion gets the minimumRequiredPatchVersion property value. Define the oldest required Android security patch level a user can have to gain secure access to the app. (Android only)
 func (m *DefaultManagedAppProtection) GetMinimumRequiredPatchVersion()(*string) {
-    return m.minimumRequiredPatchVersion
+    val, err := m.GetBackingStore().Get("minimumRequiredPatchVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetMinimumRequiredSdkVersion gets the minimumRequiredSdkVersion property value. Versions less than the specified version will block the managed app from accessing company data. (iOS Only)
 func (m *DefaultManagedAppProtection) GetMinimumRequiredSdkVersion()(*string) {
-    return m.minimumRequiredSdkVersion
+    val, err := m.GetBackingStore().Get("minimumRequiredSdkVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetMinimumWarningPatchVersion gets the minimumWarningPatchVersion property value. Define the oldest recommended Android security patch level a user can have for secure access to the app. (Android only)
 func (m *DefaultManagedAppProtection) GetMinimumWarningPatchVersion()(*string) {
-    return m.minimumWarningPatchVersion
+    val, err := m.GetBackingStore().Get("minimumWarningPatchVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetScreenCaptureBlocked gets the screenCaptureBlocked property value. Indicates whether screen capture is blocked. (Android only)
 func (m *DefaultManagedAppProtection) GetScreenCaptureBlocked()(*bool) {
-    return m.screenCaptureBlocked
+    val, err := m.GetBackingStore().Get("screenCaptureBlocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DefaultManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -317,49 +377,114 @@ func (m *DefaultManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAppDataEncryptionType sets the appDataEncryptionType property value. Represents the level to which app data is encrypted for managed apps
 func (m *DefaultManagedAppProtection) SetAppDataEncryptionType(value *ManagedAppDataEncryptionType)() {
-    m.appDataEncryptionType = value
+    err := m.GetBackingStore().Set("appDataEncryptionType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApps sets the apps property value. List of apps to which the policy is deployed.
 func (m *DefaultManagedAppProtection) SetApps(value []ManagedMobileAppable)() {
-    m.apps = value
+    err := m.GetBackingStore().Set("apps", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCustomSettings sets the customSettings property value. A set of string key and string value pairs to be sent to the affected users, unalterned by this service
 func (m *DefaultManagedAppProtection) SetCustomSettings(value []KeyValuePairable)() {
-    m.customSettings = value
+    err := m.GetBackingStore().Set("customSettings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeployedAppCount sets the deployedAppCount property value. Count of apps to which the current policy is deployed.
 func (m *DefaultManagedAppProtection) SetDeployedAppCount(value *int32)() {
-    m.deployedAppCount = value
+    err := m.GetBackingStore().Set("deployedAppCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeploymentSummary sets the deploymentSummary property value. Navigation property to deployment summary of the configuration.
 func (m *DefaultManagedAppProtection) SetDeploymentSummary(value ManagedAppPolicyDeploymentSummaryable)() {
-    m.deploymentSummary = value
+    err := m.GetBackingStore().Set("deploymentSummary", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisableAppEncryptionIfDeviceEncryptionIsEnabled sets the disableAppEncryptionIfDeviceEncryptionIsEnabled property value. When this setting is enabled, app level encryption is disabled if device level encryption is enabled. (Android only)
 func (m *DefaultManagedAppProtection) SetDisableAppEncryptionIfDeviceEncryptionIsEnabled(value *bool)() {
-    m.disableAppEncryptionIfDeviceEncryptionIsEnabled = value
+    err := m.GetBackingStore().Set("disableAppEncryptionIfDeviceEncryptionIsEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEncryptAppData sets the encryptAppData property value. Indicates whether managed-app data should be encrypted. (Android only)
 func (m *DefaultManagedAppProtection) SetEncryptAppData(value *bool)() {
-    m.encryptAppData = value
+    err := m.GetBackingStore().Set("encryptAppData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFaceIdBlocked sets the faceIdBlocked property value. Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True. (iOS Only)
 func (m *DefaultManagedAppProtection) SetFaceIdBlocked(value *bool)() {
-    m.faceIdBlocked = value
+    err := m.GetBackingStore().Set("faceIdBlocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMinimumRequiredPatchVersion sets the minimumRequiredPatchVersion property value. Define the oldest required Android security patch level a user can have to gain secure access to the app. (Android only)
 func (m *DefaultManagedAppProtection) SetMinimumRequiredPatchVersion(value *string)() {
-    m.minimumRequiredPatchVersion = value
+    err := m.GetBackingStore().Set("minimumRequiredPatchVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMinimumRequiredSdkVersion sets the minimumRequiredSdkVersion property value. Versions less than the specified version will block the managed app from accessing company data. (iOS Only)
 func (m *DefaultManagedAppProtection) SetMinimumRequiredSdkVersion(value *string)() {
-    m.minimumRequiredSdkVersion = value
+    err := m.GetBackingStore().Set("minimumRequiredSdkVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMinimumWarningPatchVersion sets the minimumWarningPatchVersion property value. Define the oldest recommended Android security patch level a user can have for secure access to the app. (Android only)
 func (m *DefaultManagedAppProtection) SetMinimumWarningPatchVersion(value *string)() {
-    m.minimumWarningPatchVersion = value
+    err := m.GetBackingStore().Set("minimumWarningPatchVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetScreenCaptureBlocked sets the screenCaptureBlocked property value. Indicates whether screen capture is blocked. (Android only)
 func (m *DefaultManagedAppProtection) SetScreenCaptureBlocked(value *bool)() {
-    m.screenCaptureBlocked = value
+    err := m.GetBackingStore().Set("screenCaptureBlocked", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DefaultManagedAppProtectionable 
+type DefaultManagedAppProtectionable interface {
+    ManagedAppProtectionable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAppDataEncryptionType()(*ManagedAppDataEncryptionType)
+    GetApps()([]ManagedMobileAppable)
+    GetCustomSettings()([]KeyValuePairable)
+    GetDeployedAppCount()(*int32)
+    GetDeploymentSummary()(ManagedAppPolicyDeploymentSummaryable)
+    GetDisableAppEncryptionIfDeviceEncryptionIsEnabled()(*bool)
+    GetEncryptAppData()(*bool)
+    GetFaceIdBlocked()(*bool)
+    GetMinimumRequiredPatchVersion()(*string)
+    GetMinimumRequiredSdkVersion()(*string)
+    GetMinimumWarningPatchVersion()(*string)
+    GetScreenCaptureBlocked()(*bool)
+    SetAppDataEncryptionType(value *ManagedAppDataEncryptionType)()
+    SetApps(value []ManagedMobileAppable)()
+    SetCustomSettings(value []KeyValuePairable)()
+    SetDeployedAppCount(value *int32)()
+    SetDeploymentSummary(value ManagedAppPolicyDeploymentSummaryable)()
+    SetDisableAppEncryptionIfDeviceEncryptionIsEnabled(value *bool)()
+    SetEncryptAppData(value *bool)()
+    SetFaceIdBlocked(value *bool)()
+    SetMinimumRequiredPatchVersion(value *string)()
+    SetMinimumRequiredSdkVersion(value *string)()
+    SetMinimumWarningPatchVersion(value *string)()
+    SetScreenCaptureBlocked(value *bool)()
 }

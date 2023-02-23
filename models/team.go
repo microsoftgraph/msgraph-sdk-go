@@ -8,60 +8,6 @@ import (
 // Team 
 type Team struct {
     Entity
-    // List of channels either hosted in or shared with the team (incoming channels).
-    allChannels []Channelable
-    // The collection of channels and messages associated with the team.
-    channels []Channelable
-    // An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
-    classification *string
-    // Timestamp at which the team was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // An optional description for the team. Maximum length: 1024 characters.
-    description *string
-    // The name of the team.
-    displayName *string
-    // Settings to configure use of Giphy, memes, and stickers in the team.
-    funSettings TeamFunSettingsable
-    // The group property
-    group Groupable
-    // Settings to configure whether guests can create, update, or delete channels in the team.
-    guestSettings TeamGuestSettingsable
-    // List of channels shared with the team.
-    incomingChannels []Channelable
-    // The apps installed in this team.
-    installedApps []TeamsAppInstallationable
-    // A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
-    internalId *string
-    // Whether this team is in read-only mode.
-    isArchived *bool
-    // Members and owners of the team.
-    members []ConversationMemberable
-    // Settings to configure whether members can perform certain actions, for example, create channels and add bots, in the team.
-    memberSettings TeamMemberSettingsable
-    // Settings to configure messaging and mentions in the team.
-    messagingSettings TeamMessagingSettingsable
-    // The async operations that ran or are running on this team.
-    operations []TeamsAsyncOperationable
-    // The profile photo for the team.
-    photo ProfilePhotoable
-    // The general channel for the team.
-    primaryChannel Channelable
-    // The schedule of shifts for this team.
-    schedule Scheduleable
-    // Optional. Indicates whether the team is intended for a particular use case.  Each team specialization has access to unique behaviors and experiences targeted to its use case.
-    specialization *TeamSpecialization
-    // Contains summary information about the team, including number of owners, members, and guests.
-    summary TeamSummaryable
-    // The tags associated with the team.
-    tags []TeamworkTagable
-    // The template this team was created from. See available templates.
-    template TeamsTemplateable
-    // The ID of the Azure Active Directory tenant.
-    tenantId *string
-    // The visibility of the group and team. Defaults to Public.
-    visibility *TeamVisibilityType
-    // A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
-    webUrl *string
 }
 // NewTeam instantiates a new team and sets the default values.
 func NewTeam()(*Team) {
@@ -76,27 +22,69 @@ func CreateTeamFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487ee
 }
 // GetAllChannels gets the allChannels property value. List of channels either hosted in or shared with the team (incoming channels).
 func (m *Team) GetAllChannels()([]Channelable) {
-    return m.allChannels
+    val, err := m.GetBackingStore().Get("allChannels")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Channelable)
+    }
+    return nil
 }
 // GetChannels gets the channels property value. The collection of channels and messages associated with the team.
 func (m *Team) GetChannels()([]Channelable) {
-    return m.channels
+    val, err := m.GetBackingStore().Get("channels")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Channelable)
+    }
+    return nil
 }
 // GetClassification gets the classification property value. An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
 func (m *Team) GetClassification()(*string) {
-    return m.classification
+    val, err := m.GetBackingStore().Get("classification")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Timestamp at which the team was created.
 func (m *Team) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetDescription gets the description property value. An optional description for the team. Maximum length: 1024 characters.
 func (m *Team) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The name of the team.
 func (m *Team) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Team) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -403,87 +391,234 @@ func (m *Team) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
 }
 // GetFunSettings gets the funSettings property value. Settings to configure use of Giphy, memes, and stickers in the team.
 func (m *Team) GetFunSettings()(TeamFunSettingsable) {
-    return m.funSettings
+    val, err := m.GetBackingStore().Get("funSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TeamFunSettingsable)
+    }
+    return nil
 }
 // GetGroup gets the group property value. The group property
 func (m *Team) GetGroup()(Groupable) {
-    return m.group
+    val, err := m.GetBackingStore().Get("group")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Groupable)
+    }
+    return nil
 }
 // GetGuestSettings gets the guestSettings property value. Settings to configure whether guests can create, update, or delete channels in the team.
 func (m *Team) GetGuestSettings()(TeamGuestSettingsable) {
-    return m.guestSettings
+    val, err := m.GetBackingStore().Get("guestSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TeamGuestSettingsable)
+    }
+    return nil
 }
 // GetIncomingChannels gets the incomingChannels property value. List of channels shared with the team.
 func (m *Team) GetIncomingChannels()([]Channelable) {
-    return m.incomingChannels
+    val, err := m.GetBackingStore().Get("incomingChannels")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Channelable)
+    }
+    return nil
 }
 // GetInstalledApps gets the installedApps property value. The apps installed in this team.
 func (m *Team) GetInstalledApps()([]TeamsAppInstallationable) {
-    return m.installedApps
+    val, err := m.GetBackingStore().Get("installedApps")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TeamsAppInstallationable)
+    }
+    return nil
 }
 // GetInternalId gets the internalId property value. A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
 func (m *Team) GetInternalId()(*string) {
-    return m.internalId
+    val, err := m.GetBackingStore().Get("internalId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetIsArchived gets the isArchived property value. Whether this team is in read-only mode.
 func (m *Team) GetIsArchived()(*bool) {
-    return m.isArchived
+    val, err := m.GetBackingStore().Get("isArchived")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetMembers gets the members property value. Members and owners of the team.
 func (m *Team) GetMembers()([]ConversationMemberable) {
-    return m.members
+    val, err := m.GetBackingStore().Get("members")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ConversationMemberable)
+    }
+    return nil
 }
 // GetMemberSettings gets the memberSettings property value. Settings to configure whether members can perform certain actions, for example, create channels and add bots, in the team.
 func (m *Team) GetMemberSettings()(TeamMemberSettingsable) {
-    return m.memberSettings
+    val, err := m.GetBackingStore().Get("memberSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TeamMemberSettingsable)
+    }
+    return nil
 }
 // GetMessagingSettings gets the messagingSettings property value. Settings to configure messaging and mentions in the team.
 func (m *Team) GetMessagingSettings()(TeamMessagingSettingsable) {
-    return m.messagingSettings
+    val, err := m.GetBackingStore().Get("messagingSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TeamMessagingSettingsable)
+    }
+    return nil
 }
 // GetOperations gets the operations property value. The async operations that ran or are running on this team.
 func (m *Team) GetOperations()([]TeamsAsyncOperationable) {
-    return m.operations
+    val, err := m.GetBackingStore().Get("operations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TeamsAsyncOperationable)
+    }
+    return nil
 }
 // GetPhoto gets the photo property value. The profile photo for the team.
 func (m *Team) GetPhoto()(ProfilePhotoable) {
-    return m.photo
+    val, err := m.GetBackingStore().Get("photo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ProfilePhotoable)
+    }
+    return nil
 }
 // GetPrimaryChannel gets the primaryChannel property value. The general channel for the team.
 func (m *Team) GetPrimaryChannel()(Channelable) {
-    return m.primaryChannel
+    val, err := m.GetBackingStore().Get("primaryChannel")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Channelable)
+    }
+    return nil
 }
 // GetSchedule gets the schedule property value. The schedule of shifts for this team.
 func (m *Team) GetSchedule()(Scheduleable) {
-    return m.schedule
+    val, err := m.GetBackingStore().Get("schedule")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Scheduleable)
+    }
+    return nil
 }
 // GetSpecialization gets the specialization property value. Optional. Indicates whether the team is intended for a particular use case.  Each team specialization has access to unique behaviors and experiences targeted to its use case.
 func (m *Team) GetSpecialization()(*TeamSpecialization) {
-    return m.specialization
+    val, err := m.GetBackingStore().Get("specialization")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*TeamSpecialization)
+    }
+    return nil
 }
 // GetSummary gets the summary property value. Contains summary information about the team, including number of owners, members, and guests.
 func (m *Team) GetSummary()(TeamSummaryable) {
-    return m.summary
+    val, err := m.GetBackingStore().Get("summary")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TeamSummaryable)
+    }
+    return nil
 }
 // GetTags gets the tags property value. The tags associated with the team.
 func (m *Team) GetTags()([]TeamworkTagable) {
-    return m.tags
+    val, err := m.GetBackingStore().Get("tags")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TeamworkTagable)
+    }
+    return nil
 }
 // GetTemplate gets the template property value. The template this team was created from. See available templates.
 func (m *Team) GetTemplate()(TeamsTemplateable) {
-    return m.template
+    val, err := m.GetBackingStore().Get("template")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TeamsTemplateable)
+    }
+    return nil
 }
 // GetTenantId gets the tenantId property value. The ID of the Azure Active Directory tenant.
 func (m *Team) GetTenantId()(*string) {
-    return m.tenantId
+    val, err := m.GetBackingStore().Get("tenantId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetVisibility gets the visibility property value. The visibility of the group and team. Defaults to Public.
 func (m *Team) GetVisibility()(*TeamVisibilityType) {
-    return m.visibility
+    val, err := m.GetBackingStore().Get("visibility")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*TeamVisibilityType)
+    }
+    return nil
 }
 // GetWebUrl gets the webUrl property value. A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
 func (m *Team) GetWebUrl()(*string) {
-    return m.webUrl
+    val, err := m.GetBackingStore().Get("webUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Team) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -687,109 +822,249 @@ func (m *Team) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
 }
 // SetAllChannels sets the allChannels property value. List of channels either hosted in or shared with the team (incoming channels).
 func (m *Team) SetAllChannels(value []Channelable)() {
-    m.allChannels = value
+    err := m.GetBackingStore().Set("allChannels", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetChannels sets the channels property value. The collection of channels and messages associated with the team.
 func (m *Team) SetChannels(value []Channelable)() {
-    m.channels = value
+    err := m.GetBackingStore().Set("channels", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetClassification sets the classification property value. An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
 func (m *Team) SetClassification(value *string)() {
-    m.classification = value
+    err := m.GetBackingStore().Set("classification", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. Timestamp at which the team was created.
 func (m *Team) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. An optional description for the team. Maximum length: 1024 characters.
 func (m *Team) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The name of the team.
 func (m *Team) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFunSettings sets the funSettings property value. Settings to configure use of Giphy, memes, and stickers in the team.
 func (m *Team) SetFunSettings(value TeamFunSettingsable)() {
-    m.funSettings = value
+    err := m.GetBackingStore().Set("funSettings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetGroup sets the group property value. The group property
 func (m *Team) SetGroup(value Groupable)() {
-    m.group = value
+    err := m.GetBackingStore().Set("group", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetGuestSettings sets the guestSettings property value. Settings to configure whether guests can create, update, or delete channels in the team.
 func (m *Team) SetGuestSettings(value TeamGuestSettingsable)() {
-    m.guestSettings = value
+    err := m.GetBackingStore().Set("guestSettings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIncomingChannels sets the incomingChannels property value. List of channels shared with the team.
 func (m *Team) SetIncomingChannels(value []Channelable)() {
-    m.incomingChannels = value
+    err := m.GetBackingStore().Set("incomingChannels", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInstalledApps sets the installedApps property value. The apps installed in this team.
 func (m *Team) SetInstalledApps(value []TeamsAppInstallationable)() {
-    m.installedApps = value
+    err := m.GetBackingStore().Set("installedApps", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInternalId sets the internalId property value. A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
 func (m *Team) SetInternalId(value *string)() {
-    m.internalId = value
+    err := m.GetBackingStore().Set("internalId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsArchived sets the isArchived property value. Whether this team is in read-only mode.
 func (m *Team) SetIsArchived(value *bool)() {
-    m.isArchived = value
+    err := m.GetBackingStore().Set("isArchived", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMembers sets the members property value. Members and owners of the team.
 func (m *Team) SetMembers(value []ConversationMemberable)() {
-    m.members = value
+    err := m.GetBackingStore().Set("members", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMemberSettings sets the memberSettings property value. Settings to configure whether members can perform certain actions, for example, create channels and add bots, in the team.
 func (m *Team) SetMemberSettings(value TeamMemberSettingsable)() {
-    m.memberSettings = value
+    err := m.GetBackingStore().Set("memberSettings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMessagingSettings sets the messagingSettings property value. Settings to configure messaging and mentions in the team.
 func (m *Team) SetMessagingSettings(value TeamMessagingSettingsable)() {
-    m.messagingSettings = value
+    err := m.GetBackingStore().Set("messagingSettings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOperations sets the operations property value. The async operations that ran or are running on this team.
 func (m *Team) SetOperations(value []TeamsAsyncOperationable)() {
-    m.operations = value
+    err := m.GetBackingStore().Set("operations", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPhoto sets the photo property value. The profile photo for the team.
 func (m *Team) SetPhoto(value ProfilePhotoable)() {
-    m.photo = value
+    err := m.GetBackingStore().Set("photo", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPrimaryChannel sets the primaryChannel property value. The general channel for the team.
 func (m *Team) SetPrimaryChannel(value Channelable)() {
-    m.primaryChannel = value
+    err := m.GetBackingStore().Set("primaryChannel", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSchedule sets the schedule property value. The schedule of shifts for this team.
 func (m *Team) SetSchedule(value Scheduleable)() {
-    m.schedule = value
+    err := m.GetBackingStore().Set("schedule", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSpecialization sets the specialization property value. Optional. Indicates whether the team is intended for a particular use case.  Each team specialization has access to unique behaviors and experiences targeted to its use case.
 func (m *Team) SetSpecialization(value *TeamSpecialization)() {
-    m.specialization = value
+    err := m.GetBackingStore().Set("specialization", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSummary sets the summary property value. Contains summary information about the team, including number of owners, members, and guests.
 func (m *Team) SetSummary(value TeamSummaryable)() {
-    m.summary = value
+    err := m.GetBackingStore().Set("summary", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTags sets the tags property value. The tags associated with the team.
 func (m *Team) SetTags(value []TeamworkTagable)() {
-    m.tags = value
+    err := m.GetBackingStore().Set("tags", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTemplate sets the template property value. The template this team was created from. See available templates.
 func (m *Team) SetTemplate(value TeamsTemplateable)() {
-    m.template = value
+    err := m.GetBackingStore().Set("template", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTenantId sets the tenantId property value. The ID of the Azure Active Directory tenant.
 func (m *Team) SetTenantId(value *string)() {
-    m.tenantId = value
+    err := m.GetBackingStore().Set("tenantId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVisibility sets the visibility property value. The visibility of the group and team. Defaults to Public.
 func (m *Team) SetVisibility(value *TeamVisibilityType)() {
-    m.visibility = value
+    err := m.GetBackingStore().Set("visibility", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWebUrl sets the webUrl property value. A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
 func (m *Team) SetWebUrl(value *string)() {
-    m.webUrl = value
+    err := m.GetBackingStore().Set("webUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Teamable 
+type Teamable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAllChannels()([]Channelable)
+    GetChannels()([]Channelable)
+    GetClassification()(*string)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetFunSettings()(TeamFunSettingsable)
+    GetGroup()(Groupable)
+    GetGuestSettings()(TeamGuestSettingsable)
+    GetIncomingChannels()([]Channelable)
+    GetInstalledApps()([]TeamsAppInstallationable)
+    GetInternalId()(*string)
+    GetIsArchived()(*bool)
+    GetMembers()([]ConversationMemberable)
+    GetMemberSettings()(TeamMemberSettingsable)
+    GetMessagingSettings()(TeamMessagingSettingsable)
+    GetOperations()([]TeamsAsyncOperationable)
+    GetPhoto()(ProfilePhotoable)
+    GetPrimaryChannel()(Channelable)
+    GetSchedule()(Scheduleable)
+    GetSpecialization()(*TeamSpecialization)
+    GetSummary()(TeamSummaryable)
+    GetTags()([]TeamworkTagable)
+    GetTemplate()(TeamsTemplateable)
+    GetTenantId()(*string)
+    GetVisibility()(*TeamVisibilityType)
+    GetWebUrl()(*string)
+    SetAllChannels(value []Channelable)()
+    SetChannels(value []Channelable)()
+    SetClassification(value *string)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetFunSettings(value TeamFunSettingsable)()
+    SetGroup(value Groupable)()
+    SetGuestSettings(value TeamGuestSettingsable)()
+    SetIncomingChannels(value []Channelable)()
+    SetInstalledApps(value []TeamsAppInstallationable)()
+    SetInternalId(value *string)()
+    SetIsArchived(value *bool)()
+    SetMembers(value []ConversationMemberable)()
+    SetMemberSettings(value TeamMemberSettingsable)()
+    SetMessagingSettings(value TeamMessagingSettingsable)()
+    SetOperations(value []TeamsAsyncOperationable)()
+    SetPhoto(value ProfilePhotoable)()
+    SetPrimaryChannel(value Channelable)()
+    SetSchedule(value Scheduleable)()
+    SetSpecialization(value *TeamSpecialization)()
+    SetSummary(value TeamSummaryable)()
+    SetTags(value []TeamworkTagable)()
+    SetTemplate(value TeamsTemplateable)()
+    SetTenantId(value *string)()
+    SetVisibility(value *TeamVisibilityType)()
+    SetWebUrl(value *string)()
 }

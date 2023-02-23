@@ -7,8 +7,6 @@ import (
 // UserTrainingStatusInfoCollectionResponse 
 type UserTrainingStatusInfoCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []UserTrainingStatusInfoable
 }
 // NewUserTrainingStatusInfoCollectionResponse instantiates a new UserTrainingStatusInfoCollectionResponse and sets the default values.
 func NewUserTrainingStatusInfoCollectionResponse()(*UserTrainingStatusInfoCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *UserTrainingStatusInfoCollectionResponse) GetFieldDeserializers()(map[s
 }
 // GetValue gets the value property value. The value property
 func (m *UserTrainingStatusInfoCollectionResponse) GetValue()([]UserTrainingStatusInfoable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserTrainingStatusInfoable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserTrainingStatusInfoCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *UserTrainingStatusInfoCollectionResponse) Serialize(writer i878a80d2330
 }
 // SetValue sets the value property value. The value property
 func (m *UserTrainingStatusInfoCollectionResponse) SetValue(value []UserTrainingStatusInfoable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserTrainingStatusInfoCollectionResponseable 
+type UserTrainingStatusInfoCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]UserTrainingStatusInfoable)
+    SetValue(value []UserTrainingStatusInfoable)()
 }

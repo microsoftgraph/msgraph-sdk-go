@@ -7,10 +7,6 @@ import (
 // WorkbookTableRow 
 type WorkbookTableRow struct {
     Entity
-    // Returns the index number of the row within the rows collection of the table. Zero-indexed. Read-only.
-    index *int32
-    // Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
-    values Jsonable
 }
 // NewWorkbookTableRow instantiates a new workbookTableRow and sets the default values.
 func NewWorkbookTableRow()(*WorkbookTableRow) {
@@ -50,11 +46,25 @@ func (m *WorkbookTableRow) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetIndex gets the index property value. Returns the index number of the row within the rows collection of the table. Zero-indexed. Read-only.
 func (m *WorkbookTableRow) GetIndex()(*int32) {
-    return m.index
+    val, err := m.GetBackingStore().Get("index")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetValues gets the values property value. Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
 func (m *WorkbookTableRow) GetValues()(Jsonable) {
-    return m.values
+    val, err := m.GetBackingStore().Get("values")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Jsonable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WorkbookTableRow) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -78,9 +88,24 @@ func (m *WorkbookTableRow) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetIndex sets the index property value. Returns the index number of the row within the rows collection of the table. Zero-indexed. Read-only.
 func (m *WorkbookTableRow) SetIndex(value *int32)() {
-    m.index = value
+    err := m.GetBackingStore().Set("index", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetValues sets the values property value. Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
 func (m *WorkbookTableRow) SetValues(value Jsonable)() {
-    m.values = value
+    err := m.GetBackingStore().Set("values", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WorkbookTableRowable 
+type WorkbookTableRowable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetIndex()(*int32)
+    GetValues()(Jsonable)
+    SetIndex(value *int32)()
+    SetValues(value Jsonable)()
 }

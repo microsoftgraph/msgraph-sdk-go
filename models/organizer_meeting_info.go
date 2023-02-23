@@ -7,8 +7,6 @@ import (
 // OrganizerMeetingInfo 
 type OrganizerMeetingInfo struct {
     MeetingInfo
-    // The organizer property
-    organizer IdentitySetable
 }
 // NewOrganizerMeetingInfo instantiates a new OrganizerMeetingInfo and sets the default values.
 func NewOrganizerMeetingInfo()(*OrganizerMeetingInfo) {
@@ -40,7 +38,14 @@ func (m *OrganizerMeetingInfo) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetOrganizer gets the organizer property value. The organizer property
 func (m *OrganizerMeetingInfo) GetOrganizer()(IdentitySetable) {
-    return m.organizer
+    val, err := m.GetBackingStore().Get("organizer")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentitySetable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OrganizerMeetingInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *OrganizerMeetingInfo) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetOrganizer sets the organizer property value. The organizer property
 func (m *OrganizerMeetingInfo) SetOrganizer(value IdentitySetable)() {
-    m.organizer = value
+    err := m.GetBackingStore().Set("organizer", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OrganizerMeetingInfoable 
+type OrganizerMeetingInfoable interface {
+    MeetingInfoable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOrganizer()(IdentitySetable)
+    SetOrganizer(value IdentitySetable)()
 }

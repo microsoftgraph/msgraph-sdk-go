@@ -8,8 +8,6 @@ import (
 // UsersItemAssignmentsItemCategoriesMicrosoftGraphDeltaDeltaResponse 
 type UsersItemAssignmentsItemCategoriesMicrosoftGraphDeltaDeltaResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseDeltaFunctionResponse
-    // The value property
-    value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationCategoryable
 }
 // NewUsersItemAssignmentsItemCategoriesMicrosoftGraphDeltaDeltaResponse instantiates a new UsersItemAssignmentsItemCategoriesMicrosoftGraphDeltaDeltaResponse and sets the default values.
 func NewUsersItemAssignmentsItemCategoriesMicrosoftGraphDeltaDeltaResponse()(*UsersItemAssignmentsItemCategoriesMicrosoftGraphDeltaDeltaResponse) {
@@ -43,7 +41,14 @@ func (m *UsersItemAssignmentsItemCategoriesMicrosoftGraphDeltaDeltaResponse) Get
 }
 // GetValue gets the value property value. The value property
 func (m *UsersItemAssignmentsItemCategoriesMicrosoftGraphDeltaDeltaResponse) GetValue()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationCategoryable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationCategoryable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UsersItemAssignmentsItemCategoriesMicrosoftGraphDeltaDeltaResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *UsersItemAssignmentsItemCategoriesMicrosoftGraphDeltaDeltaResponse) Ser
 }
 // SetValue sets the value property value. The value property
 func (m *UsersItemAssignmentsItemCategoriesMicrosoftGraphDeltaDeltaResponse) SetValue(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationCategoryable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UsersItemAssignmentsItemCategoriesMicrosoftGraphDeltaDeltaResponseable 
+type UsersItemAssignmentsItemCategoriesMicrosoftGraphDeltaDeltaResponseable interface {
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseDeltaFunctionResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationCategoryable)
+    SetValue(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationCategoryable)()
 }

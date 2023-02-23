@@ -7,8 +7,6 @@ import (
 // SecurityResourceCollectionResponse 
 type SecurityResourceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []SecurityResourceable
 }
 // NewSecurityResourceCollectionResponse instantiates a new SecurityResourceCollectionResponse and sets the default values.
 func NewSecurityResourceCollectionResponse()(*SecurityResourceCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *SecurityResourceCollectionResponse) GetFieldDeserializers()(map[string]
 }
 // GetValue gets the value property value. The value property
 func (m *SecurityResourceCollectionResponse) GetValue()([]SecurityResourceable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SecurityResourceable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SecurityResourceCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *SecurityResourceCollectionResponse) Serialize(writer i878a80d2330e89d26
 }
 // SetValue sets the value property value. The value property
 func (m *SecurityResourceCollectionResponse) SetValue(value []SecurityResourceable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SecurityResourceCollectionResponseable 
+type SecurityResourceCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]SecurityResourceable)
+    SetValue(value []SecurityResourceable)()
 }

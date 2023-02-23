@@ -3,23 +3,19 @@ package drives
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ItemItemsItemWorkbookFunctionsMicrosoftGraphLogNorm_InvLogNorm_InvPostRequestBody 
 type ItemItemsItemWorkbookFunctionsMicrosoftGraphLogNorm_InvLogNorm_InvPostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The mean property
-    mean iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable
-    // The probability property
-    probability iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable
-    // The standardDev property
-    standardDev iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewItemItemsItemWorkbookFunctionsMicrosoftGraphLogNorm_InvLogNorm_InvPostRequestBody instantiates a new ItemItemsItemWorkbookFunctionsMicrosoftGraphLogNorm_InvLogNorm_InvPostRequestBody and sets the default values.
 func NewItemItemsItemWorkbookFunctionsMicrosoftGraphLogNorm_InvLogNorm_InvPostRequestBody()(*ItemItemsItemWorkbookFunctionsMicrosoftGraphLogNorm_InvLogNorm_InvPostRequestBody) {
     m := &ItemItemsItemWorkbookFunctionsMicrosoftGraphLogNorm_InvLogNorm_InvPostRequestBody{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -29,7 +25,19 @@ func CreateItemItemsItemWorkbookFunctionsMicrosoftGraphLogNorm_InvLogNorm_InvPos
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphLogNorm_InvLogNorm_InvPostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphLogNorm_InvLogNorm_InvPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphLogNorm_InvLogNorm_InvPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -68,15 +76,36 @@ func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphLogNorm_InvLogNorm_InvPostR
 }
 // GetMean gets the mean property value. The mean property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphLogNorm_InvLogNorm_InvPostRequestBody) GetMean()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
-    return m.mean
+    val, err := m.GetBackingStore().Get("mean")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    }
+    return nil
 }
 // GetProbability gets the probability property value. The probability property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphLogNorm_InvLogNorm_InvPostRequestBody) GetProbability()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
-    return m.probability
+    val, err := m.GetBackingStore().Get("probability")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    }
+    return nil
 }
 // GetStandardDev gets the standardDev property value. The standardDev property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphLogNorm_InvLogNorm_InvPostRequestBody) GetStandardDev()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
-    return m.standardDev
+    val, err := m.GetBackingStore().Get("standardDev")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphLogNorm_InvLogNorm_InvPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -108,17 +137,47 @@ func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphLogNorm_InvLogNorm_InvPostR
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphLogNorm_InvLogNorm_InvPostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphLogNorm_InvLogNorm_InvPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetMean sets the mean property value. The mean property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphLogNorm_InvLogNorm_InvPostRequestBody) SetMean(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
-    m.mean = value
+    err := m.GetBackingStore().Set("mean", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProbability sets the probability property value. The probability property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphLogNorm_InvLogNorm_InvPostRequestBody) SetProbability(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
-    m.probability = value
+    err := m.GetBackingStore().Set("probability", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStandardDev sets the standardDev property value. The standardDev property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphLogNorm_InvLogNorm_InvPostRequestBody) SetStandardDev(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
-    m.standardDev = value
+    err := m.GetBackingStore().Set("standardDev", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemItemsItemWorkbookFunctionsMicrosoftGraphLogNorm_InvLogNorm_InvPostRequestBodyable 
+type ItemItemsItemWorkbookFunctionsMicrosoftGraphLogNorm_InvLogNorm_InvPostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetMean()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    GetProbability()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    GetStandardDev()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetMean(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
+    SetProbability(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
+    SetStandardDev(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
 }

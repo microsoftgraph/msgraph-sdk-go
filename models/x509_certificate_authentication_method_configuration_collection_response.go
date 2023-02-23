@@ -7,8 +7,6 @@ import (
 // X509CertificateAuthenticationMethodConfigurationCollectionResponse 
 type X509CertificateAuthenticationMethodConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []X509CertificateAuthenticationMethodConfigurationable
 }
 // NewX509CertificateAuthenticationMethodConfigurationCollectionResponse instantiates a new X509CertificateAuthenticationMethodConfigurationCollectionResponse and sets the default values.
 func NewX509CertificateAuthenticationMethodConfigurationCollectionResponse()(*X509CertificateAuthenticationMethodConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *X509CertificateAuthenticationMethodConfigurationCollectionResponse) Get
 }
 // GetValue gets the value property value. The value property
 func (m *X509CertificateAuthenticationMethodConfigurationCollectionResponse) GetValue()([]X509CertificateAuthenticationMethodConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]X509CertificateAuthenticationMethodConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *X509CertificateAuthenticationMethodConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *X509CertificateAuthenticationMethodConfigurationCollectionResponse) Ser
 }
 // SetValue sets the value property value. The value property
 func (m *X509CertificateAuthenticationMethodConfigurationCollectionResponse) SetValue(value []X509CertificateAuthenticationMethodConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// X509CertificateAuthenticationMethodConfigurationCollectionResponseable 
+type X509CertificateAuthenticationMethodConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]X509CertificateAuthenticationMethodConfigurationable)
+    SetValue(value []X509CertificateAuthenticationMethodConfigurationable)()
 }

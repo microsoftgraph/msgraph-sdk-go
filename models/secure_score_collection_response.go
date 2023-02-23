@@ -7,8 +7,6 @@ import (
 // SecureScoreCollectionResponse 
 type SecureScoreCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []SecureScoreable
 }
 // NewSecureScoreCollectionResponse instantiates a new SecureScoreCollectionResponse and sets the default values.
 func NewSecureScoreCollectionResponse()(*SecureScoreCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *SecureScoreCollectionResponse) GetFieldDeserializers()(map[string]func(
 }
 // GetValue gets the value property value. The value property
 func (m *SecureScoreCollectionResponse) GetValue()([]SecureScoreable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SecureScoreable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SecureScoreCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *SecureScoreCollectionResponse) Serialize(writer i878a80d2330e89d2689638
 }
 // SetValue sets the value property value. The value property
 func (m *SecureScoreCollectionResponse) SetValue(value []SecureScoreable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SecureScoreCollectionResponseable 
+type SecureScoreCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]SecureScoreable)
+    SetValue(value []SecureScoreable)()
 }

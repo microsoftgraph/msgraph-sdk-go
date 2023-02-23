@@ -3,23 +3,21 @@ package drives
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ItemItemsItemWorkbookWorksheetsItemChartsMicrosoftGraphAddAddPostRequestBody 
 type ItemItemsItemWorkbookWorksheetsItemChartsMicrosoftGraphAddAddPostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The seriesBy property
-    seriesBy *string
-    // The sourceData property
-    sourceData iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
     // The type property
-    typeEscaped *string
+    TypeEscaped *string
 }
 // NewItemItemsItemWorkbookWorksheetsItemChartsMicrosoftGraphAddAddPostRequestBody instantiates a new ItemItemsItemWorkbookWorksheetsItemChartsMicrosoftGraphAddAddPostRequestBody and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsItemChartsMicrosoftGraphAddAddPostRequestBody()(*ItemItemsItemWorkbookWorksheetsItemChartsMicrosoftGraphAddAddPostRequestBody) {
     m := &ItemItemsItemWorkbookWorksheetsItemChartsMicrosoftGraphAddAddPostRequestBody{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -29,7 +27,19 @@ func CreateItemItemsItemWorkbookWorksheetsItemChartsMicrosoftGraphAddAddPostRequ
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsMicrosoftGraphAddAddPostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsMicrosoftGraphAddAddPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsMicrosoftGraphAddAddPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -68,15 +78,36 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsMicrosoftGraphAddAddPostReques
 }
 // GetSeriesBy gets the seriesBy property value. The seriesBy property
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsMicrosoftGraphAddAddPostRequestBody) GetSeriesBy()(*string) {
-    return m.seriesBy
+    val, err := m.GetBackingStore().Get("seriesBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSourceData gets the sourceData property value. The sourceData property
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsMicrosoftGraphAddAddPostRequestBody) GetSourceData()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
-    return m.sourceData
+    val, err := m.GetBackingStore().Get("sourceData")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    }
+    return nil
 }
 // GetType gets the type property value. The type property
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsMicrosoftGraphAddAddPostRequestBody) GetType()(*string) {
-    return m.typeEscaped
+    val, err := m.GetBackingStore().Get("typeEscaped")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsMicrosoftGraphAddAddPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -108,17 +139,47 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsMicrosoftGraphAddAddPostReques
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsMicrosoftGraphAddAddPostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsMicrosoftGraphAddAddPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetSeriesBy sets the seriesBy property value. The seriesBy property
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsMicrosoftGraphAddAddPostRequestBody) SetSeriesBy(value *string)() {
-    m.seriesBy = value
+    err := m.GetBackingStore().Set("seriesBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSourceData sets the sourceData property value. The sourceData property
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsMicrosoftGraphAddAddPostRequestBody) SetSourceData(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
-    m.sourceData = value
+    err := m.GetBackingStore().Set("sourceData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetType sets the type property value. The type property
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsMicrosoftGraphAddAddPostRequestBody) SetType(value *string)() {
-    m.typeEscaped = value
+    err := m.GetBackingStore().Set("typeEscaped", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemItemsItemWorkbookWorksheetsItemChartsMicrosoftGraphAddAddPostRequestBodyable 
+type ItemItemsItemWorkbookWorksheetsItemChartsMicrosoftGraphAddAddPostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetSeriesBy()(*string)
+    GetSourceData()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    GetType()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetSeriesBy(value *string)()
+    SetSourceData(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
+    SetType(value *string)()
 }

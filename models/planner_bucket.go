@@ -7,14 +7,6 @@ import (
 // PlannerBucket 
 type PlannerBucket struct {
     Entity
-    // Name of the bucket.
-    name *string
-    // Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
-    orderHint *string
-    // Plan ID to which the bucket belongs.
-    planId *string
-    // Read-only. Nullable. The collection of tasks in the bucket.
-    tasks []PlannerTaskable
 }
 // NewPlannerBucket instantiates a new plannerBucket and sets the default values.
 func NewPlannerBucket()(*PlannerBucket) {
@@ -78,19 +70,47 @@ func (m *PlannerBucket) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetName gets the name property value. Name of the bucket.
 func (m *PlannerBucket) GetName()(*string) {
-    return m.name
+    val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOrderHint gets the orderHint property value. Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
 func (m *PlannerBucket) GetOrderHint()(*string) {
-    return m.orderHint
+    val, err := m.GetBackingStore().Get("orderHint")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPlanId gets the planId property value. Plan ID to which the bucket belongs.
 func (m *PlannerBucket) GetPlanId()(*string) {
-    return m.planId
+    val, err := m.GetBackingStore().Get("planId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTasks gets the tasks property value. Read-only. Nullable. The collection of tasks in the bucket.
 func (m *PlannerBucket) GetTasks()([]PlannerTaskable) {
-    return m.tasks
+    val, err := m.GetBackingStore().Get("tasks")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PlannerTaskable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PlannerBucket) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -130,17 +150,42 @@ func (m *PlannerBucket) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetName sets the name property value. Name of the bucket.
 func (m *PlannerBucket) SetName(value *string)() {
-    m.name = value
+    err := m.GetBackingStore().Set("name", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOrderHint sets the orderHint property value. Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
 func (m *PlannerBucket) SetOrderHint(value *string)() {
-    m.orderHint = value
+    err := m.GetBackingStore().Set("orderHint", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPlanId sets the planId property value. Plan ID to which the bucket belongs.
 func (m *PlannerBucket) SetPlanId(value *string)() {
-    m.planId = value
+    err := m.GetBackingStore().Set("planId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTasks sets the tasks property value. Read-only. Nullable. The collection of tasks in the bucket.
 func (m *PlannerBucket) SetTasks(value []PlannerTaskable)() {
-    m.tasks = value
+    err := m.GetBackingStore().Set("tasks", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PlannerBucketable 
+type PlannerBucketable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetName()(*string)
+    GetOrderHint()(*string)
+    GetPlanId()(*string)
+    GetTasks()([]PlannerTaskable)
+    SetName(value *string)()
+    SetOrderHint(value *string)()
+    SetPlanId(value *string)()
+    SetTasks(value []PlannerTaskable)()
 }

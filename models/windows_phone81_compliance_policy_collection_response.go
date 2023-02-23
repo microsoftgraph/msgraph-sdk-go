@@ -7,8 +7,6 @@ import (
 // WindowsPhone81CompliancePolicyCollectionResponse 
 type WindowsPhone81CompliancePolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []WindowsPhone81CompliancePolicyable
 }
 // NewWindowsPhone81CompliancePolicyCollectionResponse instantiates a new WindowsPhone81CompliancePolicyCollectionResponse and sets the default values.
 func NewWindowsPhone81CompliancePolicyCollectionResponse()(*WindowsPhone81CompliancePolicyCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *WindowsPhone81CompliancePolicyCollectionResponse) GetFieldDeserializers
 }
 // GetValue gets the value property value. The value property
 func (m *WindowsPhone81CompliancePolicyCollectionResponse) GetValue()([]WindowsPhone81CompliancePolicyable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsPhone81CompliancePolicyable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsPhone81CompliancePolicyCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *WindowsPhone81CompliancePolicyCollectionResponse) Serialize(writer i878
 }
 // SetValue sets the value property value. The value property
 func (m *WindowsPhone81CompliancePolicyCollectionResponse) SetValue(value []WindowsPhone81CompliancePolicyable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsPhone81CompliancePolicyCollectionResponseable 
+type WindowsPhone81CompliancePolicyCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]WindowsPhone81CompliancePolicyable)
+    SetValue(value []WindowsPhone81CompliancePolicyable)()
 }

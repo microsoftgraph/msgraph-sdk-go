@@ -2,31 +2,19 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // AutomaticRepliesSetting 
 type AutomaticRepliesSetting struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The set of audience external to the signed-in user's organization who will receive the ExternalReplyMessage, if Status is AlwaysEnabled or Scheduled. The possible values are: none, contactsOnly, all.
-    externalAudience *ExternalAudienceScope
-    // The automatic reply to send to the specified external audience, if Status is AlwaysEnabled or Scheduled.
-    externalReplyMessage *string
-    // The automatic reply to send to the audience internal to the signed-in user's organization, if Status is AlwaysEnabled or Scheduled.
-    internalReplyMessage *string
-    // The OdataType property
-    odataType *string
-    // The date and time that automatic replies are set to end, if Status is set to Scheduled.
-    scheduledEndDateTime DateTimeTimeZoneable
-    // The date and time that automatic replies are set to begin, if Status is set to Scheduled.
-    scheduledStartDateTime DateTimeTimeZoneable
-    // Configurations status for automatic replies. The possible values are: disabled, alwaysEnabled, scheduled.
-    status *AutomaticRepliesStatus
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewAutomaticRepliesSetting instantiates a new automaticRepliesSetting and sets the default values.
 func NewAutomaticRepliesSetting()(*AutomaticRepliesSetting) {
     m := &AutomaticRepliesSetting{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -36,15 +24,41 @@ func CreateAutomaticRepliesSettingFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AutomaticRepliesSetting) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *AutomaticRepliesSetting) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetExternalAudience gets the externalAudience property value. The set of audience external to the signed-in user's organization who will receive the ExternalReplyMessage, if Status is AlwaysEnabled or Scheduled. The possible values are: none, contactsOnly, all.
 func (m *AutomaticRepliesSetting) GetExternalAudience()(*ExternalAudienceScope) {
-    return m.externalAudience
+    val, err := m.GetBackingStore().Get("externalAudience")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ExternalAudienceScope)
+    }
+    return nil
 }
 // GetExternalReplyMessage gets the externalReplyMessage property value. The automatic reply to send to the specified external audience, if Status is AlwaysEnabled or Scheduled.
 func (m *AutomaticRepliesSetting) GetExternalReplyMessage()(*string) {
-    return m.externalReplyMessage
+    val, err := m.GetBackingStore().Get("externalReplyMessage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AutomaticRepliesSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -123,23 +137,58 @@ func (m *AutomaticRepliesSetting) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetInternalReplyMessage gets the internalReplyMessage property value. The automatic reply to send to the audience internal to the signed-in user's organization, if Status is AlwaysEnabled or Scheduled.
 func (m *AutomaticRepliesSetting) GetInternalReplyMessage()(*string) {
-    return m.internalReplyMessage
+    val, err := m.GetBackingStore().Get("internalReplyMessage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AutomaticRepliesSetting) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetScheduledEndDateTime gets the scheduledEndDateTime property value. The date and time that automatic replies are set to end, if Status is set to Scheduled.
 func (m *AutomaticRepliesSetting) GetScheduledEndDateTime()(DateTimeTimeZoneable) {
-    return m.scheduledEndDateTime
+    val, err := m.GetBackingStore().Get("scheduledEndDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DateTimeTimeZoneable)
+    }
+    return nil
 }
 // GetScheduledStartDateTime gets the scheduledStartDateTime property value. The date and time that automatic replies are set to begin, if Status is set to Scheduled.
 func (m *AutomaticRepliesSetting) GetScheduledStartDateTime()(DateTimeTimeZoneable) {
-    return m.scheduledStartDateTime
+    val, err := m.GetBackingStore().Get("scheduledStartDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DateTimeTimeZoneable)
+    }
+    return nil
 }
 // GetStatus gets the status property value. Configurations status for automatic replies. The possible values are: disabled, alwaysEnabled, scheduled.
 func (m *AutomaticRepliesSetting) GetStatus()(*AutomaticRepliesStatus) {
-    return m.status
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AutomaticRepliesStatus)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AutomaticRepliesSetting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -197,33 +246,83 @@ func (m *AutomaticRepliesSetting) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AutomaticRepliesSetting) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *AutomaticRepliesSetting) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetExternalAudience sets the externalAudience property value. The set of audience external to the signed-in user's organization who will receive the ExternalReplyMessage, if Status is AlwaysEnabled or Scheduled. The possible values are: none, contactsOnly, all.
 func (m *AutomaticRepliesSetting) SetExternalAudience(value *ExternalAudienceScope)() {
-    m.externalAudience = value
+    err := m.GetBackingStore().Set("externalAudience", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExternalReplyMessage sets the externalReplyMessage property value. The automatic reply to send to the specified external audience, if Status is AlwaysEnabled or Scheduled.
 func (m *AutomaticRepliesSetting) SetExternalReplyMessage(value *string)() {
-    m.externalReplyMessage = value
+    err := m.GetBackingStore().Set("externalReplyMessage", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInternalReplyMessage sets the internalReplyMessage property value. The automatic reply to send to the audience internal to the signed-in user's organization, if Status is AlwaysEnabled or Scheduled.
 func (m *AutomaticRepliesSetting) SetInternalReplyMessage(value *string)() {
-    m.internalReplyMessage = value
+    err := m.GetBackingStore().Set("internalReplyMessage", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AutomaticRepliesSetting) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetScheduledEndDateTime sets the scheduledEndDateTime property value. The date and time that automatic replies are set to end, if Status is set to Scheduled.
 func (m *AutomaticRepliesSetting) SetScheduledEndDateTime(value DateTimeTimeZoneable)() {
-    m.scheduledEndDateTime = value
+    err := m.GetBackingStore().Set("scheduledEndDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetScheduledStartDateTime sets the scheduledStartDateTime property value. The date and time that automatic replies are set to begin, if Status is set to Scheduled.
 func (m *AutomaticRepliesSetting) SetScheduledStartDateTime(value DateTimeTimeZoneable)() {
-    m.scheduledStartDateTime = value
+    err := m.GetBackingStore().Set("scheduledStartDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStatus sets the status property value. Configurations status for automatic replies. The possible values are: disabled, alwaysEnabled, scheduled.
 func (m *AutomaticRepliesSetting) SetStatus(value *AutomaticRepliesStatus)() {
-    m.status = value
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AutomaticRepliesSettingable 
+type AutomaticRepliesSettingable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetExternalAudience()(*ExternalAudienceScope)
+    GetExternalReplyMessage()(*string)
+    GetInternalReplyMessage()(*string)
+    GetOdataType()(*string)
+    GetScheduledEndDateTime()(DateTimeTimeZoneable)
+    GetScheduledStartDateTime()(DateTimeTimeZoneable)
+    GetStatus()(*AutomaticRepliesStatus)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetExternalAudience(value *ExternalAudienceScope)()
+    SetExternalReplyMessage(value *string)()
+    SetInternalReplyMessage(value *string)()
+    SetOdataType(value *string)()
+    SetScheduledEndDateTime(value DateTimeTimeZoneable)()
+    SetScheduledStartDateTime(value DateTimeTimeZoneable)()
+    SetStatus(value *AutomaticRepliesStatus)()
 }

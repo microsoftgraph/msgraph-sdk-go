@@ -7,12 +7,6 @@ import (
 // GroupSetting 
 type GroupSetting struct {
     Entity
-    // Display name of this group of settings, which comes from the associated template.
-    displayName *string
-    // Unique identifier for the tenant-level groupSettingTemplates object that's been customized for this group-level settings object. Read-only.
-    templateId *string
-    // Collection of name-value pairs corresponding to the name and defaultValue properties in the referenced groupSettingTemplates object.
-    values []SettingValueable
 }
 // NewGroupSetting instantiates a new groupSetting and sets the default values.
 func NewGroupSetting()(*GroupSetting) {
@@ -27,7 +21,14 @@ func CreateGroupSettingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetDisplayName gets the displayName property value. Display name of this group of settings, which comes from the associated template.
 func (m *GroupSetting) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GroupSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -70,11 +71,25 @@ func (m *GroupSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetTemplateId gets the templateId property value. Unique identifier for the tenant-level groupSettingTemplates object that's been customized for this group-level settings object. Read-only.
 func (m *GroupSetting) GetTemplateId()(*string) {
-    return m.templateId
+    val, err := m.GetBackingStore().Get("templateId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetValues gets the values property value. Collection of name-value pairs corresponding to the name and defaultValue properties in the referenced groupSettingTemplates object.
 func (m *GroupSetting) GetValues()([]SettingValueable) {
-    return m.values
+    val, err := m.GetBackingStore().Get("values")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SettingValueable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *GroupSetting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -108,13 +123,33 @@ func (m *GroupSetting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetDisplayName sets the displayName property value. Display name of this group of settings, which comes from the associated template.
 func (m *GroupSetting) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTemplateId sets the templateId property value. Unique identifier for the tenant-level groupSettingTemplates object that's been customized for this group-level settings object. Read-only.
 func (m *GroupSetting) SetTemplateId(value *string)() {
-    m.templateId = value
+    err := m.GetBackingStore().Set("templateId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetValues sets the values property value. Collection of name-value pairs corresponding to the name and defaultValue properties in the referenced groupSettingTemplates object.
 func (m *GroupSetting) SetValues(value []SettingValueable)() {
-    m.values = value
+    err := m.GetBackingStore().Set("values", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// GroupSettingable 
+type GroupSettingable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDisplayName()(*string)
+    GetTemplateId()(*string)
+    GetValues()([]SettingValueable)
+    SetDisplayName(value *string)()
+    SetTemplateId(value *string)()
+    SetValues(value []SettingValueable)()
 }

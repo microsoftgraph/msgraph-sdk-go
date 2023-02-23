@@ -3,21 +3,19 @@ package users
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ItemMicrosoftGraphSendMailSendMailPostRequestBody 
 type ItemMicrosoftGraphSendMailSendMailPostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The Message property
-    message iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Messageable
-    // The SaveToSentItems property
-    saveToSentItems *bool
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewItemMicrosoftGraphSendMailSendMailPostRequestBody instantiates a new ItemMicrosoftGraphSendMailSendMailPostRequestBody and sets the default values.
 func NewItemMicrosoftGraphSendMailSendMailPostRequestBody()(*ItemMicrosoftGraphSendMailSendMailPostRequestBody) {
     m := &ItemMicrosoftGraphSendMailSendMailPostRequestBody{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -27,7 +25,19 @@ func CreateItemMicrosoftGraphSendMailSendMailPostRequestBodyFromDiscriminatorVal
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemMicrosoftGraphSendMailSendMailPostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ItemMicrosoftGraphSendMailSendMailPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemMicrosoftGraphSendMailSendMailPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -56,11 +66,25 @@ func (m *ItemMicrosoftGraphSendMailSendMailPostRequestBody) GetFieldDeserializer
 }
 // GetMessage gets the message property value. The Message property
 func (m *ItemMicrosoftGraphSendMailSendMailPostRequestBody) GetMessage()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Messageable) {
-    return m.message
+    val, err := m.GetBackingStore().Get("message")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Messageable)
+    }
+    return nil
 }
 // GetSaveToSentItems gets the saveToSentItems property value. The SaveToSentItems property
 func (m *ItemMicrosoftGraphSendMailSendMailPostRequestBody) GetSaveToSentItems()(*bool) {
-    return m.saveToSentItems
+    val, err := m.GetBackingStore().Get("saveToSentItems")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemMicrosoftGraphSendMailSendMailPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -86,13 +110,38 @@ func (m *ItemMicrosoftGraphSendMailSendMailPostRequestBody) Serialize(writer i87
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemMicrosoftGraphSendMailSendMailPostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ItemMicrosoftGraphSendMailSendMailPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetMessage sets the message property value. The Message property
 func (m *ItemMicrosoftGraphSendMailSendMailPostRequestBody) SetMessage(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Messageable)() {
-    m.message = value
+    err := m.GetBackingStore().Set("message", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSaveToSentItems sets the saveToSentItems property value. The SaveToSentItems property
 func (m *ItemMicrosoftGraphSendMailSendMailPostRequestBody) SetSaveToSentItems(value *bool)() {
-    m.saveToSentItems = value
+    err := m.GetBackingStore().Set("saveToSentItems", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemMicrosoftGraphSendMailSendMailPostRequestBodyable 
+type ItemMicrosoftGraphSendMailSendMailPostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetMessage()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Messageable)
+    GetSaveToSentItems()(*bool)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetMessage(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Messageable)()
+    SetSaveToSentItems(value *bool)()
 }

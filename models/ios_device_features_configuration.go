@@ -7,16 +7,6 @@ import (
 // IosDeviceFeaturesConfiguration 
 type IosDeviceFeaturesConfiguration struct {
     AppleDeviceFeaturesConfigurationBase
-    // Asset tag information for the device, displayed on the login window and lock screen.
-    assetTagTemplate *string
-    // A list of app and folders to appear on the Home Screen Dock. This collection can contain a maximum of 500 elements.
-    homeScreenDockIcons []IosHomeScreenItemable
-    // A list of pages on the Home Screen. This collection can contain a maximum of 500 elements.
-    homeScreenPages []IosHomeScreenPageable
-    // A footnote displayed on the login window and lock screen. Available in iOS 9.3.1 and later.
-    lockScreenFootnote *string
-    // Notification settings for each bundle id. Applicable to devices in supervised mode only (iOS 9.3 and later). This collection can contain a maximum of 500 elements.
-    notificationSettings []IosNotificationSettingsable
 }
 // NewIosDeviceFeaturesConfiguration instantiates a new IosDeviceFeaturesConfiguration and sets the default values.
 func NewIosDeviceFeaturesConfiguration()(*IosDeviceFeaturesConfiguration) {
@@ -33,7 +23,14 @@ func CreateIosDeviceFeaturesConfigurationFromDiscriminatorValue(parseNode i878a8
 }
 // GetAssetTagTemplate gets the assetTagTemplate property value. Asset tag information for the device, displayed on the login window and lock screen.
 func (m *IosDeviceFeaturesConfiguration) GetAssetTagTemplate()(*string) {
-    return m.assetTagTemplate
+    val, err := m.GetBackingStore().Get("assetTagTemplate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosDeviceFeaturesConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -104,19 +101,47 @@ func (m *IosDeviceFeaturesConfiguration) GetFieldDeserializers()(map[string]func
 }
 // GetHomeScreenDockIcons gets the homeScreenDockIcons property value. A list of app and folders to appear on the Home Screen Dock. This collection can contain a maximum of 500 elements.
 func (m *IosDeviceFeaturesConfiguration) GetHomeScreenDockIcons()([]IosHomeScreenItemable) {
-    return m.homeScreenDockIcons
+    val, err := m.GetBackingStore().Get("homeScreenDockIcons")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IosHomeScreenItemable)
+    }
+    return nil
 }
 // GetHomeScreenPages gets the homeScreenPages property value. A list of pages on the Home Screen. This collection can contain a maximum of 500 elements.
 func (m *IosDeviceFeaturesConfiguration) GetHomeScreenPages()([]IosHomeScreenPageable) {
-    return m.homeScreenPages
+    val, err := m.GetBackingStore().Get("homeScreenPages")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IosHomeScreenPageable)
+    }
+    return nil
 }
 // GetLockScreenFootnote gets the lockScreenFootnote property value. A footnote displayed on the login window and lock screen. Available in iOS 9.3.1 and later.
 func (m *IosDeviceFeaturesConfiguration) GetLockScreenFootnote()(*string) {
-    return m.lockScreenFootnote
+    val, err := m.GetBackingStore().Get("lockScreenFootnote")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetNotificationSettings gets the notificationSettings property value. Notification settings for each bundle id. Applicable to devices in supervised mode only (iOS 9.3 and later). This collection can contain a maximum of 500 elements.
 func (m *IosDeviceFeaturesConfiguration) GetNotificationSettings()([]IosNotificationSettingsable) {
-    return m.notificationSettings
+    val, err := m.GetBackingStore().Get("notificationSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IosNotificationSettingsable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IosDeviceFeaturesConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -170,21 +195,51 @@ func (m *IosDeviceFeaturesConfiguration) Serialize(writer i878a80d2330e89d268963
 }
 // SetAssetTagTemplate sets the assetTagTemplate property value. Asset tag information for the device, displayed on the login window and lock screen.
 func (m *IosDeviceFeaturesConfiguration) SetAssetTagTemplate(value *string)() {
-    m.assetTagTemplate = value
+    err := m.GetBackingStore().Set("assetTagTemplate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHomeScreenDockIcons sets the homeScreenDockIcons property value. A list of app and folders to appear on the Home Screen Dock. This collection can contain a maximum of 500 elements.
 func (m *IosDeviceFeaturesConfiguration) SetHomeScreenDockIcons(value []IosHomeScreenItemable)() {
-    m.homeScreenDockIcons = value
+    err := m.GetBackingStore().Set("homeScreenDockIcons", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHomeScreenPages sets the homeScreenPages property value. A list of pages on the Home Screen. This collection can contain a maximum of 500 elements.
 func (m *IosDeviceFeaturesConfiguration) SetHomeScreenPages(value []IosHomeScreenPageable)() {
-    m.homeScreenPages = value
+    err := m.GetBackingStore().Set("homeScreenPages", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLockScreenFootnote sets the lockScreenFootnote property value. A footnote displayed on the login window and lock screen. Available in iOS 9.3.1 and later.
 func (m *IosDeviceFeaturesConfiguration) SetLockScreenFootnote(value *string)() {
-    m.lockScreenFootnote = value
+    err := m.GetBackingStore().Set("lockScreenFootnote", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNotificationSettings sets the notificationSettings property value. Notification settings for each bundle id. Applicable to devices in supervised mode only (iOS 9.3 and later). This collection can contain a maximum of 500 elements.
 func (m *IosDeviceFeaturesConfiguration) SetNotificationSettings(value []IosNotificationSettingsable)() {
-    m.notificationSettings = value
+    err := m.GetBackingStore().Set("notificationSettings", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IosDeviceFeaturesConfigurationable 
+type IosDeviceFeaturesConfigurationable interface {
+    AppleDeviceFeaturesConfigurationBaseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAssetTagTemplate()(*string)
+    GetHomeScreenDockIcons()([]IosHomeScreenItemable)
+    GetHomeScreenPages()([]IosHomeScreenPageable)
+    GetLockScreenFootnote()(*string)
+    GetNotificationSettings()([]IosNotificationSettingsable)
+    SetAssetTagTemplate(value *string)()
+    SetHomeScreenDockIcons(value []IosHomeScreenItemable)()
+    SetHomeScreenPages(value []IosHomeScreenPageable)()
+    SetLockScreenFootnote(value *string)()
+    SetNotificationSettings(value []IosNotificationSettingsable)()
 }

@@ -8,14 +8,6 @@ import (
 // CalendarGroup 
 type CalendarGroup struct {
     Entity
-    // The calendars in the calendar group. Navigation property. Read-only. Nullable.
-    calendars []Calendarable
-    // Identifies the version of the calendar group. Every time the calendar group is changed, ChangeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
-    changeKey *string
-    // The class identifier. Read-only.
-    classId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
-    // The group name.
-    name *string
 }
 // NewCalendarGroup instantiates a new calendarGroup and sets the default values.
 func NewCalendarGroup()(*CalendarGroup) {
@@ -30,15 +22,36 @@ func CreateCalendarGroupFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetCalendars gets the calendars property value. The calendars in the calendar group. Navigation property. Read-only. Nullable.
 func (m *CalendarGroup) GetCalendars()([]Calendarable) {
-    return m.calendars
+    val, err := m.GetBackingStore().Get("calendars")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Calendarable)
+    }
+    return nil
 }
 // GetChangeKey gets the changeKey property value. Identifies the version of the calendar group. Every time the calendar group is changed, ChangeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
 func (m *CalendarGroup) GetChangeKey()(*string) {
-    return m.changeKey
+    val, err := m.GetBackingStore().Get("changeKey")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetClassId gets the classId property value. The class identifier. Read-only.
 func (m *CalendarGroup) GetClassId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
-    return m.classId
+    val, err := m.GetBackingStore().Get("classId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CalendarGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -91,7 +104,14 @@ func (m *CalendarGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetName gets the name property value. The group name.
 func (m *CalendarGroup) GetName()(*string) {
-    return m.name
+    val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CalendarGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -131,17 +151,42 @@ func (m *CalendarGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetCalendars sets the calendars property value. The calendars in the calendar group. Navigation property. Read-only. Nullable.
 func (m *CalendarGroup) SetCalendars(value []Calendarable)() {
-    m.calendars = value
+    err := m.GetBackingStore().Set("calendars", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetChangeKey sets the changeKey property value. Identifies the version of the calendar group. Every time the calendar group is changed, ChangeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
 func (m *CalendarGroup) SetChangeKey(value *string)() {
-    m.changeKey = value
+    err := m.GetBackingStore().Set("changeKey", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetClassId sets the classId property value. The class identifier. Read-only.
 func (m *CalendarGroup) SetClassId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
-    m.classId = value
+    err := m.GetBackingStore().Set("classId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetName sets the name property value. The group name.
 func (m *CalendarGroup) SetName(value *string)() {
-    m.name = value
+    err := m.GetBackingStore().Set("name", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CalendarGroupable 
+type CalendarGroupable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCalendars()([]Calendarable)
+    GetChangeKey()(*string)
+    GetClassId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    GetName()(*string)
+    SetCalendars(value []Calendarable)()
+    SetChangeKey(value *string)()
+    SetClassId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
+    SetName(value *string)()
 }

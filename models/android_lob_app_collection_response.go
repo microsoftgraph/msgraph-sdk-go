@@ -7,8 +7,6 @@ import (
 // AndroidLobAppCollectionResponse 
 type AndroidLobAppCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AndroidLobAppable
 }
 // NewAndroidLobAppCollectionResponse instantiates a new AndroidLobAppCollectionResponse and sets the default values.
 func NewAndroidLobAppCollectionResponse()(*AndroidLobAppCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AndroidLobAppCollectionResponse) GetFieldDeserializers()(map[string]fun
 }
 // GetValue gets the value property value. The value property
 func (m *AndroidLobAppCollectionResponse) GetValue()([]AndroidLobAppable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidLobAppable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidLobAppCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AndroidLobAppCollectionResponse) Serialize(writer i878a80d2330e89d26896
 }
 // SetValue sets the value property value. The value property
 func (m *AndroidLobAppCollectionResponse) SetValue(value []AndroidLobAppable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidLobAppCollectionResponseable 
+type AndroidLobAppCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AndroidLobAppable)
+    SetValue(value []AndroidLobAppable)()
 }

@@ -7,8 +7,6 @@ import (
 // ComplianceInformationCollectionResponse 
 type ComplianceInformationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ComplianceInformationable
 }
 // NewComplianceInformationCollectionResponse instantiates a new ComplianceInformationCollectionResponse and sets the default values.
 func NewComplianceInformationCollectionResponse()(*ComplianceInformationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ComplianceInformationCollectionResponse) GetFieldDeserializers()(map[st
 }
 // GetValue gets the value property value. The value property
 func (m *ComplianceInformationCollectionResponse) GetValue()([]ComplianceInformationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ComplianceInformationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ComplianceInformationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ComplianceInformationCollectionResponse) Serialize(writer i878a80d2330e
 }
 // SetValue sets the value property value. The value property
 func (m *ComplianceInformationCollectionResponse) SetValue(value []ComplianceInformationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ComplianceInformationCollectionResponseable 
+type ComplianceInformationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ComplianceInformationable)
+    SetValue(value []ComplianceInformationable)()
 }

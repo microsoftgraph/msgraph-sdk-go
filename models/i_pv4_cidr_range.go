@@ -7,8 +7,6 @@ import (
 // IPv4CidrRange 
 type IPv4CidrRange struct {
     IpRange
-    // IPv4 address in CIDR notation. Not nullable.
-    cidrAddress *string
 }
 // NewIPv4CidrRange instantiates a new IPv4CidrRange and sets the default values.
 func NewIPv4CidrRange()(*IPv4CidrRange) {
@@ -25,7 +23,14 @@ func CreateIPv4CidrRangeFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetCidrAddress gets the cidrAddress property value. IPv4 address in CIDR notation. Not nullable.
 func (m *IPv4CidrRange) GetCidrAddress()(*string) {
-    return m.cidrAddress
+    val, err := m.GetBackingStore().Get("cidrAddress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IPv4CidrRange) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -58,5 +63,15 @@ func (m *IPv4CidrRange) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetCidrAddress sets the cidrAddress property value. IPv4 address in CIDR notation. Not nullable.
 func (m *IPv4CidrRange) SetCidrAddress(value *string)() {
-    m.cidrAddress = value
+    err := m.GetBackingStore().Set("cidrAddress", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IPv4CidrRangeable 
+type IPv4CidrRangeable interface {
+    IpRangeable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCidrAddress()(*string)
+    SetCidrAddress(value *string)()
 }

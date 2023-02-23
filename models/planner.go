@@ -7,12 +7,6 @@ import (
 // Planner 
 type Planner struct {
     Entity
-    // Read-only. Nullable. Returns a collection of the specified buckets
-    buckets []PlannerBucketable
-    // Read-only. Nullable. Returns a collection of the specified plans
-    plans []PlannerPlanable
-    // Read-only. Nullable. Returns a collection of the specified tasks
-    tasks []PlannerTaskable
 }
 // NewPlanner instantiates a new Planner and sets the default values.
 func NewPlanner()(*Planner) {
@@ -27,7 +21,14 @@ func CreatePlannerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
 }
 // GetBuckets gets the buckets property value. Read-only. Nullable. Returns a collection of the specified buckets
 func (m *Planner) GetBuckets()([]PlannerBucketable) {
-    return m.buckets
+    val, err := m.GetBackingStore().Get("buckets")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PlannerBucketable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Planner) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -78,11 +79,25 @@ func (m *Planner) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
 }
 // GetPlans gets the plans property value. Read-only. Nullable. Returns a collection of the specified plans
 func (m *Planner) GetPlans()([]PlannerPlanable) {
-    return m.plans
+    val, err := m.GetBackingStore().Get("plans")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PlannerPlanable)
+    }
+    return nil
 }
 // GetTasks gets the tasks property value. Read-only. Nullable. Returns a collection of the specified tasks
 func (m *Planner) GetTasks()([]PlannerTaskable) {
-    return m.tasks
+    val, err := m.GetBackingStore().Get("tasks")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PlannerTaskable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Planner) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -124,13 +139,33 @@ func (m *Planner) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
 }
 // SetBuckets sets the buckets property value. Read-only. Nullable. Returns a collection of the specified buckets
 func (m *Planner) SetBuckets(value []PlannerBucketable)() {
-    m.buckets = value
+    err := m.GetBackingStore().Set("buckets", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPlans sets the plans property value. Read-only. Nullable. Returns a collection of the specified plans
 func (m *Planner) SetPlans(value []PlannerPlanable)() {
-    m.plans = value
+    err := m.GetBackingStore().Set("plans", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTasks sets the tasks property value. Read-only. Nullable. Returns a collection of the specified tasks
 func (m *Planner) SetTasks(value []PlannerTaskable)() {
-    m.tasks = value
+    err := m.GetBackingStore().Set("tasks", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Plannerable 
+type Plannerable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBuckets()([]PlannerBucketable)
+    GetPlans()([]PlannerPlanable)
+    GetTasks()([]PlannerTaskable)
+    SetBuckets(value []PlannerBucketable)()
+    SetPlans(value []PlannerPlanable)()
+    SetTasks(value []PlannerTaskable)()
 }

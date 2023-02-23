@@ -9,34 +9,6 @@ import (
 // Incident 
 type Incident struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
-    // The list of related alerts. Supports $expand.
-    alerts []Alertable
-    // Owner of the incident, or null if no owner is assigned. Free editable text.
-    assignedTo *string
-    // The specification for the incident. Possible values are: unknown, falsePositive, truePositive, informationalExpectedActivity, unknownFutureValue.
-    classification *AlertClassification
-    // Array of comments created by the Security Operations (SecOps) team when the incident is managed.
-    comments []AlertCommentable
-    // Time when the incident was first created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Array of custom tags associated with an incident.
-    customTags []string
-    // Specifies the determination of the incident. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.
-    determination *AlertDetermination
-    // The incident name.
-    displayName *string
-    // The URL for the incident page in the Microsoft 365 Defender portal.
-    incidentWebUrl *string
-    // Time when the incident was last updated.
-    lastUpdateDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Only populated in case an incident is grouped together with another incident, as part of the logic that processes incidents. In such a case, the status property is redirected.
-    redirectIncidentId *string
-    // The severity property
-    severity *AlertSeverity
-    // The status property
-    status *IncidentStatus
-    // The Azure Active Directory tenant in which the alert was created.
-    tenantId *string
 }
 // NewIncident instantiates a new incident and sets the default values.
 func NewIncident()(*Incident) {
@@ -51,35 +23,91 @@ func CreateIncidentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 }
 // GetAlerts gets the alerts property value. The list of related alerts. Supports $expand.
 func (m *Incident) GetAlerts()([]Alertable) {
-    return m.alerts
+    val, err := m.GetBackingStore().Get("alerts")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Alertable)
+    }
+    return nil
 }
 // GetAssignedTo gets the assignedTo property value. Owner of the incident, or null if no owner is assigned. Free editable text.
 func (m *Incident) GetAssignedTo()(*string) {
-    return m.assignedTo
+    val, err := m.GetBackingStore().Get("assignedTo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetClassification gets the classification property value. The specification for the incident. Possible values are: unknown, falsePositive, truePositive, informationalExpectedActivity, unknownFutureValue.
 func (m *Incident) GetClassification()(*AlertClassification) {
-    return m.classification
+    val, err := m.GetBackingStore().Get("classification")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AlertClassification)
+    }
+    return nil
 }
 // GetComments gets the comments property value. Array of comments created by the Security Operations (SecOps) team when the incident is managed.
 func (m *Incident) GetComments()([]AlertCommentable) {
-    return m.comments
+    val, err := m.GetBackingStore().Get("comments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AlertCommentable)
+    }
+    return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Time when the incident was first created.
 func (m *Incident) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetCustomTags gets the customTags property value. Array of custom tags associated with an incident.
 func (m *Incident) GetCustomTags()([]string) {
-    return m.customTags
+    val, err := m.GetBackingStore().Get("customTags")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetDetermination gets the determination property value. Specifies the determination of the incident. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.
 func (m *Incident) GetDetermination()(*AlertDetermination) {
-    return m.determination
+    val, err := m.GetBackingStore().Get("determination")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AlertDetermination)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The incident name.
 func (m *Incident) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Incident) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -240,27 +268,69 @@ func (m *Incident) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetIncidentWebUrl gets the incidentWebUrl property value. The URL for the incident page in the Microsoft 365 Defender portal.
 func (m *Incident) GetIncidentWebUrl()(*string) {
-    return m.incidentWebUrl
+    val, err := m.GetBackingStore().Get("incidentWebUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetLastUpdateDateTime gets the lastUpdateDateTime property value. Time when the incident was last updated.
 func (m *Incident) GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastUpdateDateTime
+    val, err := m.GetBackingStore().Get("lastUpdateDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetRedirectIncidentId gets the redirectIncidentId property value. Only populated in case an incident is grouped together with another incident, as part of the logic that processes incidents. In such a case, the status property is redirected.
 func (m *Incident) GetRedirectIncidentId()(*string) {
-    return m.redirectIncidentId
+    val, err := m.GetBackingStore().Get("redirectIncidentId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSeverity gets the severity property value. The severity property
 func (m *Incident) GetSeverity()(*AlertSeverity) {
-    return m.severity
+    val, err := m.GetBackingStore().Get("severity")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AlertSeverity)
+    }
+    return nil
 }
 // GetStatus gets the status property value. The status property
 func (m *Incident) GetStatus()(*IncidentStatus) {
-    return m.status
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*IncidentStatus)
+    }
+    return nil
 }
 // GetTenantId gets the tenantId property value. The Azure Active Directory tenant in which the alert was created.
 func (m *Incident) GetTenantId()(*string) {
-    return m.tenantId
+    val, err := m.GetBackingStore().Get("tenantId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Incident) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -368,57 +438,132 @@ func (m *Incident) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetAlerts sets the alerts property value. The list of related alerts. Supports $expand.
 func (m *Incident) SetAlerts(value []Alertable)() {
-    m.alerts = value
+    err := m.GetBackingStore().Set("alerts", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAssignedTo sets the assignedTo property value. Owner of the incident, or null if no owner is assigned. Free editable text.
 func (m *Incident) SetAssignedTo(value *string)() {
-    m.assignedTo = value
+    err := m.GetBackingStore().Set("assignedTo", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetClassification sets the classification property value. The specification for the incident. Possible values are: unknown, falsePositive, truePositive, informationalExpectedActivity, unknownFutureValue.
 func (m *Incident) SetClassification(value *AlertClassification)() {
-    m.classification = value
+    err := m.GetBackingStore().Set("classification", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetComments sets the comments property value. Array of comments created by the Security Operations (SecOps) team when the incident is managed.
 func (m *Incident) SetComments(value []AlertCommentable)() {
-    m.comments = value
+    err := m.GetBackingStore().Set("comments", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. Time when the incident was first created.
 func (m *Incident) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCustomTags sets the customTags property value. Array of custom tags associated with an incident.
 func (m *Incident) SetCustomTags(value []string)() {
-    m.customTags = value
+    err := m.GetBackingStore().Set("customTags", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDetermination sets the determination property value. Specifies the determination of the incident. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.
 func (m *Incident) SetDetermination(value *AlertDetermination)() {
-    m.determination = value
+    err := m.GetBackingStore().Set("determination", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The incident name.
 func (m *Incident) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIncidentWebUrl sets the incidentWebUrl property value. The URL for the incident page in the Microsoft 365 Defender portal.
 func (m *Incident) SetIncidentWebUrl(value *string)() {
-    m.incidentWebUrl = value
+    err := m.GetBackingStore().Set("incidentWebUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastUpdateDateTime sets the lastUpdateDateTime property value. Time when the incident was last updated.
 func (m *Incident) SetLastUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastUpdateDateTime = value
+    err := m.GetBackingStore().Set("lastUpdateDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRedirectIncidentId sets the redirectIncidentId property value. Only populated in case an incident is grouped together with another incident, as part of the logic that processes incidents. In such a case, the status property is redirected.
 func (m *Incident) SetRedirectIncidentId(value *string)() {
-    m.redirectIncidentId = value
+    err := m.GetBackingStore().Set("redirectIncidentId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSeverity sets the severity property value. The severity property
 func (m *Incident) SetSeverity(value *AlertSeverity)() {
-    m.severity = value
+    err := m.GetBackingStore().Set("severity", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStatus sets the status property value. The status property
 func (m *Incident) SetStatus(value *IncidentStatus)() {
-    m.status = value
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTenantId sets the tenantId property value. The Azure Active Directory tenant in which the alert was created.
 func (m *Incident) SetTenantId(value *string)() {
-    m.tenantId = value
+    err := m.GetBackingStore().Set("tenantId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Incidentable 
+type Incidentable interface {
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAlerts()([]Alertable)
+    GetAssignedTo()(*string)
+    GetClassification()(*AlertClassification)
+    GetComments()([]AlertCommentable)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetCustomTags()([]string)
+    GetDetermination()(*AlertDetermination)
+    GetDisplayName()(*string)
+    GetIncidentWebUrl()(*string)
+    GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetRedirectIncidentId()(*string)
+    GetSeverity()(*AlertSeverity)
+    GetStatus()(*IncidentStatus)
+    GetTenantId()(*string)
+    SetAlerts(value []Alertable)()
+    SetAssignedTo(value *string)()
+    SetClassification(value *AlertClassification)()
+    SetComments(value []AlertCommentable)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetCustomTags(value []string)()
+    SetDetermination(value *AlertDetermination)()
+    SetDisplayName(value *string)()
+    SetIncidentWebUrl(value *string)()
+    SetLastUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetRedirectIncidentId(value *string)()
+    SetSeverity(value *AlertSeverity)()
+    SetStatus(value *IncidentStatus)()
+    SetTenantId(value *string)()
 }

@@ -2,23 +2,19 @@ package drives
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ItemItemsItemWorkbookNamesMicrosoftGraphAddFormulaLocalAddFormulaLocalPostRequestBody 
 type ItemItemsItemWorkbookNamesMicrosoftGraphAddFormulaLocalAddFormulaLocalPostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The comment property
-    comment *string
-    // The formula property
-    formula *string
-    // The name property
-    name *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewItemItemsItemWorkbookNamesMicrosoftGraphAddFormulaLocalAddFormulaLocalPostRequestBody instantiates a new ItemItemsItemWorkbookNamesMicrosoftGraphAddFormulaLocalAddFormulaLocalPostRequestBody and sets the default values.
 func NewItemItemsItemWorkbookNamesMicrosoftGraphAddFormulaLocalAddFormulaLocalPostRequestBody()(*ItemItemsItemWorkbookNamesMicrosoftGraphAddFormulaLocalAddFormulaLocalPostRequestBody) {
     m := &ItemItemsItemWorkbookNamesMicrosoftGraphAddFormulaLocalAddFormulaLocalPostRequestBody{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -28,11 +24,30 @@ func CreateItemItemsItemWorkbookNamesMicrosoftGraphAddFormulaLocalAddFormulaLoca
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemItemsItemWorkbookNamesMicrosoftGraphAddFormulaLocalAddFormulaLocalPostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ItemItemsItemWorkbookNamesMicrosoftGraphAddFormulaLocalAddFormulaLocalPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetComment gets the comment property value. The comment property
 func (m *ItemItemsItemWorkbookNamesMicrosoftGraphAddFormulaLocalAddFormulaLocalPostRequestBody) GetComment()(*string) {
-    return m.comment
+    val, err := m.GetBackingStore().Get("comment")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemItemsItemWorkbookNamesMicrosoftGraphAddFormulaLocalAddFormulaLocalPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -71,11 +86,25 @@ func (m *ItemItemsItemWorkbookNamesMicrosoftGraphAddFormulaLocalAddFormulaLocalP
 }
 // GetFormula gets the formula property value. The formula property
 func (m *ItemItemsItemWorkbookNamesMicrosoftGraphAddFormulaLocalAddFormulaLocalPostRequestBody) GetFormula()(*string) {
-    return m.formula
+    val, err := m.GetBackingStore().Get("formula")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetName gets the name property value. The name property
 func (m *ItemItemsItemWorkbookNamesMicrosoftGraphAddFormulaLocalAddFormulaLocalPostRequestBody) GetName()(*string) {
-    return m.name
+    val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemItemsItemWorkbookNamesMicrosoftGraphAddFormulaLocalAddFormulaLocalPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -107,17 +136,47 @@ func (m *ItemItemsItemWorkbookNamesMicrosoftGraphAddFormulaLocalAddFormulaLocalP
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemItemsItemWorkbookNamesMicrosoftGraphAddFormulaLocalAddFormulaLocalPostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ItemItemsItemWorkbookNamesMicrosoftGraphAddFormulaLocalAddFormulaLocalPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetComment sets the comment property value. The comment property
 func (m *ItemItemsItemWorkbookNamesMicrosoftGraphAddFormulaLocalAddFormulaLocalPostRequestBody) SetComment(value *string)() {
-    m.comment = value
+    err := m.GetBackingStore().Set("comment", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFormula sets the formula property value. The formula property
 func (m *ItemItemsItemWorkbookNamesMicrosoftGraphAddFormulaLocalAddFormulaLocalPostRequestBody) SetFormula(value *string)() {
-    m.formula = value
+    err := m.GetBackingStore().Set("formula", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetName sets the name property value. The name property
 func (m *ItemItemsItemWorkbookNamesMicrosoftGraphAddFormulaLocalAddFormulaLocalPostRequestBody) SetName(value *string)() {
-    m.name = value
+    err := m.GetBackingStore().Set("name", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemItemsItemWorkbookNamesMicrosoftGraphAddFormulaLocalAddFormulaLocalPostRequestBodyable 
+type ItemItemsItemWorkbookNamesMicrosoftGraphAddFormulaLocalAddFormulaLocalPostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetComment()(*string)
+    GetFormula()(*string)
+    GetName()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetComment(value *string)()
+    SetFormula(value *string)()
+    SetName(value *string)()
 }

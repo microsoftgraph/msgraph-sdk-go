@@ -2,25 +2,19 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // CloudAppSecurityState 
 type CloudAppSecurityState struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Destination IP Address of the connection to the cloud application/service.
-    destinationServiceIp *string
-    // Cloud application/service name (for example 'Salesforce', 'DropBox', etc.).
-    destinationServiceName *string
-    // The OdataType property
-    odataType *string
-    // Provider-generated/calculated risk score of the Cloud Application/Service. Recommended value range of 0-1, which equates to a percentage.
-    riskScore *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewCloudAppSecurityState instantiates a new cloudAppSecurityState and sets the default values.
 func NewCloudAppSecurityState()(*CloudAppSecurityState) {
     m := &CloudAppSecurityState{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -30,15 +24,41 @@ func CreateCloudAppSecurityStateFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudAppSecurityState) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *CloudAppSecurityState) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetDestinationServiceIp gets the destinationServiceIp property value. Destination IP Address of the connection to the cloud application/service.
 func (m *CloudAppSecurityState) GetDestinationServiceIp()(*string) {
-    return m.destinationServiceIp
+    val, err := m.GetBackingStore().Get("destinationServiceIp")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDestinationServiceName gets the destinationServiceName property value. Cloud application/service name (for example 'Salesforce', 'DropBox', etc.).
 func (m *CloudAppSecurityState) GetDestinationServiceName()(*string) {
-    return m.destinationServiceName
+    val, err := m.GetBackingStore().Get("destinationServiceName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudAppSecurityState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -87,11 +107,25 @@ func (m *CloudAppSecurityState) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *CloudAppSecurityState) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRiskScore gets the riskScore property value. Provider-generated/calculated risk score of the Cloud Application/Service. Recommended value range of 0-1, which equates to a percentage.
 func (m *CloudAppSecurityState) GetRiskScore()(*string) {
-    return m.riskScore
+    val, err := m.GetBackingStore().Get("riskScore")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CloudAppSecurityState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -129,21 +163,56 @@ func (m *CloudAppSecurityState) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudAppSecurityState) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *CloudAppSecurityState) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetDestinationServiceIp sets the destinationServiceIp property value. Destination IP Address of the connection to the cloud application/service.
 func (m *CloudAppSecurityState) SetDestinationServiceIp(value *string)() {
-    m.destinationServiceIp = value
+    err := m.GetBackingStore().Set("destinationServiceIp", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDestinationServiceName sets the destinationServiceName property value. Cloud application/service name (for example 'Salesforce', 'DropBox', etc.).
 func (m *CloudAppSecurityState) SetDestinationServiceName(value *string)() {
-    m.destinationServiceName = value
+    err := m.GetBackingStore().Set("destinationServiceName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *CloudAppSecurityState) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRiskScore sets the riskScore property value. Provider-generated/calculated risk score of the Cloud Application/Service. Recommended value range of 0-1, which equates to a percentage.
 func (m *CloudAppSecurityState) SetRiskScore(value *string)() {
-    m.riskScore = value
+    err := m.GetBackingStore().Set("riskScore", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CloudAppSecurityStateable 
+type CloudAppSecurityStateable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDestinationServiceIp()(*string)
+    GetDestinationServiceName()(*string)
+    GetOdataType()(*string)
+    GetRiskScore()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDestinationServiceIp(value *string)()
+    SetDestinationServiceName(value *string)()
+    SetOdataType(value *string)()
+    SetRiskScore(value *string)()
 }

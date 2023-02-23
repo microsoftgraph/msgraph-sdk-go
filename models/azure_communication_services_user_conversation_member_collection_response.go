@@ -7,8 +7,6 @@ import (
 // AzureCommunicationServicesUserConversationMemberCollectionResponse 
 type AzureCommunicationServicesUserConversationMemberCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AzureCommunicationServicesUserConversationMemberable
 }
 // NewAzureCommunicationServicesUserConversationMemberCollectionResponse instantiates a new AzureCommunicationServicesUserConversationMemberCollectionResponse and sets the default values.
 func NewAzureCommunicationServicesUserConversationMemberCollectionResponse()(*AzureCommunicationServicesUserConversationMemberCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AzureCommunicationServicesUserConversationMemberCollectionResponse) Get
 }
 // GetValue gets the value property value. The value property
 func (m *AzureCommunicationServicesUserConversationMemberCollectionResponse) GetValue()([]AzureCommunicationServicesUserConversationMemberable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AzureCommunicationServicesUserConversationMemberable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AzureCommunicationServicesUserConversationMemberCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AzureCommunicationServicesUserConversationMemberCollectionResponse) Ser
 }
 // SetValue sets the value property value. The value property
 func (m *AzureCommunicationServicesUserConversationMemberCollectionResponse) SetValue(value []AzureCommunicationServicesUserConversationMemberable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AzureCommunicationServicesUserConversationMemberCollectionResponseable 
+type AzureCommunicationServicesUserConversationMemberCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AzureCommunicationServicesUserConversationMemberable)
+    SetValue(value []AzureCommunicationServicesUserConversationMemberable)()
 }

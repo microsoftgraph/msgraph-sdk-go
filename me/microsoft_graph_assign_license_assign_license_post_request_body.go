@@ -4,21 +4,19 @@ import (
     i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // MicrosoftGraphAssignLicenseAssignLicensePostRequestBody 
 type MicrosoftGraphAssignLicenseAssignLicensePostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The addLicenses property
-    addLicenses []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AssignedLicenseable
-    // The removeLicenses property
-    removeLicenses []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewMicrosoftGraphAssignLicenseAssignLicensePostRequestBody instantiates a new MicrosoftGraphAssignLicenseAssignLicensePostRequestBody and sets the default values.
 func NewMicrosoftGraphAssignLicenseAssignLicensePostRequestBody()(*MicrosoftGraphAssignLicenseAssignLicensePostRequestBody) {
     m := &MicrosoftGraphAssignLicenseAssignLicensePostRequestBody{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -28,11 +26,30 @@ func CreateMicrosoftGraphAssignLicenseAssignLicensePostRequestBodyFromDiscrimina
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MicrosoftGraphAssignLicenseAssignLicensePostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetAddLicenses gets the addLicenses property value. The addLicenses property
 func (m *MicrosoftGraphAssignLicenseAssignLicensePostRequestBody) GetAddLicenses()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AssignedLicenseable) {
-    return m.addLicenses
+    val, err := m.GetBackingStore().Get("addLicenses")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AssignedLicenseable)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *MicrosoftGraphAssignLicenseAssignLicensePostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MicrosoftGraphAssignLicenseAssignLicensePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -69,7 +86,14 @@ func (m *MicrosoftGraphAssignLicenseAssignLicensePostRequestBody) GetFieldDeseri
 }
 // GetRemoveLicenses gets the removeLicenses property value. The removeLicenses property
 func (m *MicrosoftGraphAssignLicenseAssignLicensePostRequestBody) GetRemoveLicenses()([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
-    return m.removeLicenses
+    val, err := m.GetBackingStore().Get("removeLicenses")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MicrosoftGraphAssignLicenseAssignLicensePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -99,13 +123,38 @@ func (m *MicrosoftGraphAssignLicenseAssignLicensePostRequestBody) Serialize(writ
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MicrosoftGraphAssignLicenseAssignLicensePostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAddLicenses sets the addLicenses property value. The addLicenses property
 func (m *MicrosoftGraphAssignLicenseAssignLicensePostRequestBody) SetAddLicenses(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AssignedLicenseable)() {
-    m.addLicenses = value
+    err := m.GetBackingStore().Set("addLicenses", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *MicrosoftGraphAssignLicenseAssignLicensePostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetRemoveLicenses sets the removeLicenses property value. The removeLicenses property
 func (m *MicrosoftGraphAssignLicenseAssignLicensePostRequestBody) SetRemoveLicenses(value []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
-    m.removeLicenses = value
+    err := m.GetBackingStore().Set("removeLicenses", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MicrosoftGraphAssignLicenseAssignLicensePostRequestBodyable 
+type MicrosoftGraphAssignLicenseAssignLicensePostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAddLicenses()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AssignedLicenseable)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetRemoveLicenses()([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    SetAddLicenses(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AssignedLicenseable)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetRemoveLicenses(value []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
 }

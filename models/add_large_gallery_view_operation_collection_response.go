@@ -7,8 +7,6 @@ import (
 // AddLargeGalleryViewOperationCollectionResponse 
 type AddLargeGalleryViewOperationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AddLargeGalleryViewOperationable
 }
 // NewAddLargeGalleryViewOperationCollectionResponse instantiates a new AddLargeGalleryViewOperationCollectionResponse and sets the default values.
 func NewAddLargeGalleryViewOperationCollectionResponse()(*AddLargeGalleryViewOperationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AddLargeGalleryViewOperationCollectionResponse) GetFieldDeserializers()
 }
 // GetValue gets the value property value. The value property
 func (m *AddLargeGalleryViewOperationCollectionResponse) GetValue()([]AddLargeGalleryViewOperationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AddLargeGalleryViewOperationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AddLargeGalleryViewOperationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AddLargeGalleryViewOperationCollectionResponse) Serialize(writer i878a8
 }
 // SetValue sets the value property value. The value property
 func (m *AddLargeGalleryViewOperationCollectionResponse) SetValue(value []AddLargeGalleryViewOperationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AddLargeGalleryViewOperationCollectionResponseable 
+type AddLargeGalleryViewOperationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AddLargeGalleryViewOperationable)
+    SetValue(value []AddLargeGalleryViewOperationable)()
 }

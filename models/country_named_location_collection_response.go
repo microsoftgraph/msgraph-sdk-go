@@ -7,8 +7,6 @@ import (
 // CountryNamedLocationCollectionResponse 
 type CountryNamedLocationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []CountryNamedLocationable
 }
 // NewCountryNamedLocationCollectionResponse instantiates a new CountryNamedLocationCollectionResponse and sets the default values.
 func NewCountryNamedLocationCollectionResponse()(*CountryNamedLocationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *CountryNamedLocationCollectionResponse) GetFieldDeserializers()(map[str
 }
 // GetValue gets the value property value. The value property
 func (m *CountryNamedLocationCollectionResponse) GetValue()([]CountryNamedLocationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CountryNamedLocationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CountryNamedLocationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *CountryNamedLocationCollectionResponse) Serialize(writer i878a80d2330e8
 }
 // SetValue sets the value property value. The value property
 func (m *CountryNamedLocationCollectionResponse) SetValue(value []CountryNamedLocationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CountryNamedLocationCollectionResponseable 
+type CountryNamedLocationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]CountryNamedLocationable)
+    SetValue(value []CountryNamedLocationable)()
 }

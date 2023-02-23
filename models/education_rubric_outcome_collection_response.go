@@ -7,8 +7,6 @@ import (
 // EducationRubricOutcomeCollectionResponse 
 type EducationRubricOutcomeCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []EducationRubricOutcomeable
 }
 // NewEducationRubricOutcomeCollectionResponse instantiates a new EducationRubricOutcomeCollectionResponse and sets the default values.
 func NewEducationRubricOutcomeCollectionResponse()(*EducationRubricOutcomeCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *EducationRubricOutcomeCollectionResponse) GetFieldDeserializers()(map[s
 }
 // GetValue gets the value property value. The value property
 func (m *EducationRubricOutcomeCollectionResponse) GetValue()([]EducationRubricOutcomeable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EducationRubricOutcomeable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EducationRubricOutcomeCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *EducationRubricOutcomeCollectionResponse) Serialize(writer i878a80d2330
 }
 // SetValue sets the value property value. The value property
 func (m *EducationRubricOutcomeCollectionResponse) SetValue(value []EducationRubricOutcomeable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EducationRubricOutcomeCollectionResponseable 
+type EducationRubricOutcomeCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]EducationRubricOutcomeable)
+    SetValue(value []EducationRubricOutcomeable)()
 }

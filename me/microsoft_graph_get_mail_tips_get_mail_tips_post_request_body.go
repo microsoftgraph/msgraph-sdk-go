@@ -3,21 +3,19 @@ package me
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // MicrosoftGraphGetMailTipsGetMailTipsPostRequestBody 
 type MicrosoftGraphGetMailTipsGetMailTipsPostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The EmailAddresses property
-    emailAddresses []string
-    // The MailTipsOptions property
-    mailTipsOptions *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailTipsType
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewMicrosoftGraphGetMailTipsGetMailTipsPostRequestBody instantiates a new MicrosoftGraphGetMailTipsGetMailTipsPostRequestBody and sets the default values.
 func NewMicrosoftGraphGetMailTipsGetMailTipsPostRequestBody()(*MicrosoftGraphGetMailTipsGetMailTipsPostRequestBody) {
     m := &MicrosoftGraphGetMailTipsGetMailTipsPostRequestBody{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -27,11 +25,30 @@ func CreateMicrosoftGraphGetMailTipsGetMailTipsPostRequestBodyFromDiscriminatorV
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MicrosoftGraphGetMailTipsGetMailTipsPostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *MicrosoftGraphGetMailTipsGetMailTipsPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetEmailAddresses gets the emailAddresses property value. The EmailAddresses property
 func (m *MicrosoftGraphGetMailTipsGetMailTipsPostRequestBody) GetEmailAddresses()([]string) {
-    return m.emailAddresses
+    val, err := m.GetBackingStore().Get("emailAddresses")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MicrosoftGraphGetMailTipsGetMailTipsPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -64,7 +81,14 @@ func (m *MicrosoftGraphGetMailTipsGetMailTipsPostRequestBody) GetFieldDeserializ
 }
 // GetMailTipsOptions gets the mailTipsOptions property value. The MailTipsOptions property
 func (m *MicrosoftGraphGetMailTipsGetMailTipsPostRequestBody) GetMailTipsOptions()(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailTipsType) {
-    return m.mailTipsOptions
+    val, err := m.GetBackingStore().Get("mailTipsOptions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailTipsType)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MicrosoftGraphGetMailTipsGetMailTipsPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -91,13 +115,38 @@ func (m *MicrosoftGraphGetMailTipsGetMailTipsPostRequestBody) Serialize(writer i
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MicrosoftGraphGetMailTipsGetMailTipsPostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *MicrosoftGraphGetMailTipsGetMailTipsPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetEmailAddresses sets the emailAddresses property value. The EmailAddresses property
 func (m *MicrosoftGraphGetMailTipsGetMailTipsPostRequestBody) SetEmailAddresses(value []string)() {
-    m.emailAddresses = value
+    err := m.GetBackingStore().Set("emailAddresses", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMailTipsOptions sets the mailTipsOptions property value. The MailTipsOptions property
 func (m *MicrosoftGraphGetMailTipsGetMailTipsPostRequestBody) SetMailTipsOptions(value *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailTipsType)() {
-    m.mailTipsOptions = value
+    err := m.GetBackingStore().Set("mailTipsOptions", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MicrosoftGraphGetMailTipsGetMailTipsPostRequestBodyable 
+type MicrosoftGraphGetMailTipsGetMailTipsPostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetEmailAddresses()([]string)
+    GetMailTipsOptions()(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailTipsType)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetEmailAddresses(value []string)()
+    SetMailTipsOptions(value *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailTipsType)()
 }

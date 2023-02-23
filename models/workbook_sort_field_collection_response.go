@@ -7,8 +7,6 @@ import (
 // WorkbookSortFieldCollectionResponse 
 type WorkbookSortFieldCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []WorkbookSortFieldable
 }
 // NewWorkbookSortFieldCollectionResponse instantiates a new WorkbookSortFieldCollectionResponse and sets the default values.
 func NewWorkbookSortFieldCollectionResponse()(*WorkbookSortFieldCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *WorkbookSortFieldCollectionResponse) GetFieldDeserializers()(map[string
 }
 // GetValue gets the value property value. The value property
 func (m *WorkbookSortFieldCollectionResponse) GetValue()([]WorkbookSortFieldable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WorkbookSortFieldable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WorkbookSortFieldCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *WorkbookSortFieldCollectionResponse) Serialize(writer i878a80d2330e89d2
 }
 // SetValue sets the value property value. The value property
 func (m *WorkbookSortFieldCollectionResponse) SetValue(value []WorkbookSortFieldable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WorkbookSortFieldCollectionResponseable 
+type WorkbookSortFieldCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]WorkbookSortFieldable)
+    SetValue(value []WorkbookSortFieldable)()
 }

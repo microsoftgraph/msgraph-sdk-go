@@ -7,8 +7,6 @@ import (
 // TeamworkUserIdentity 
 type TeamworkUserIdentity struct {
     Identity
-    // Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, unknownFutureValue and emailUser.
-    userIdentityType *TeamworkUserIdentityType
 }
 // NewTeamworkUserIdentity instantiates a new TeamworkUserIdentity and sets the default values.
 func NewTeamworkUserIdentity()(*TeamworkUserIdentity) {
@@ -40,7 +38,14 @@ func (m *TeamworkUserIdentity) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetUserIdentityType gets the userIdentityType property value. Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, unknownFutureValue and emailUser.
 func (m *TeamworkUserIdentity) GetUserIdentityType()(*TeamworkUserIdentityType) {
-    return m.userIdentityType
+    val, err := m.GetBackingStore().Get("userIdentityType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*TeamworkUserIdentityType)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TeamworkUserIdentity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -59,5 +64,15 @@ func (m *TeamworkUserIdentity) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetUserIdentityType sets the userIdentityType property value. Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, unknownFutureValue and emailUser.
 func (m *TeamworkUserIdentity) SetUserIdentityType(value *TeamworkUserIdentityType)() {
-    m.userIdentityType = value
+    err := m.GetBackingStore().Set("userIdentityType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TeamworkUserIdentityable 
+type TeamworkUserIdentityable interface {
+    Identityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetUserIdentityType()(*TeamworkUserIdentityType)
+    SetUserIdentityType(value *TeamworkUserIdentityType)()
 }

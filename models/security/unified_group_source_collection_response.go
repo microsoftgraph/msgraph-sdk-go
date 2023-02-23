@@ -8,8 +8,6 @@ import (
 // UnifiedGroupSourceCollectionResponse 
 type UnifiedGroupSourceCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
-    // The value property
-    value []UnifiedGroupSourceable
 }
 // NewUnifiedGroupSourceCollectionResponse instantiates a new UnifiedGroupSourceCollectionResponse and sets the default values.
 func NewUnifiedGroupSourceCollectionResponse()(*UnifiedGroupSourceCollectionResponse) {
@@ -43,7 +41,14 @@ func (m *UnifiedGroupSourceCollectionResponse) GetFieldDeserializers()(map[strin
 }
 // GetValue gets the value property value. The value property
 func (m *UnifiedGroupSourceCollectionResponse) GetValue()([]UnifiedGroupSourceable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UnifiedGroupSourceable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UnifiedGroupSourceCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *UnifiedGroupSourceCollectionResponse) Serialize(writer i878a80d2330e89d
 }
 // SetValue sets the value property value. The value property
 func (m *UnifiedGroupSourceCollectionResponse) SetValue(value []UnifiedGroupSourceable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UnifiedGroupSourceCollectionResponseable 
+type UnifiedGroupSourceCollectionResponseable interface {
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]UnifiedGroupSourceable)
+    SetValue(value []UnifiedGroupSourceable)()
 }

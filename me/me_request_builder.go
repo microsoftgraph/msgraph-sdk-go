@@ -16,7 +16,7 @@ type MeRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// MeRequestBuilderGetQueryParameters retrieve the properties and relationships of user object.
+// MeRequestBuilderGetQueryParameters returns the user or organizational contact assigned as the user's manager. Optionally, you can expand the manager's chain up to the root node.
 type MeRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -310,10 +310,10 @@ func (m *MeRequestBuilder) FollowedSitesById(id string)(*FollowedSitesSiteItemRe
     }
     return NewFollowedSitesSiteItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
-// Get retrieve the properties and relationships of user object.
+// Get returns the user or organizational contact assigned as the user's manager. Optionally, you can expand the manager's chain up to the root node.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/user-get?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0
 func (m *MeRequestBuilder) Get(ctx context.Context, requestConfiguration *MeRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -711,7 +711,7 @@ func (m *MeRequestBuilder) Teamwork()(*TeamworkRequestBuilder) {
 func (m *MeRequestBuilder) Todo()(*TodoRequestBuilder) {
     return NewTodoRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// ToGetRequestInformation retrieve the properties and relationships of user object.
+// ToGetRequestInformation returns the user or organizational contact assigned as the user's manager. Optionally, you can expand the manager's chain up to the root node.
 func (m *MeRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

@@ -8,22 +8,6 @@ import (
 // DeviceInstallState contains properties for the installation state for a device.
 type DeviceInstallState struct {
     Entity
-    // Device Id.
-    deviceId *string
-    // Device name.
-    deviceName *string
-    // The error code for install failures.
-    errorCode *string
-    // Possible values for install state.
-    installState *InstallState
-    // Last sync date and time.
-    lastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // OS Description.
-    osDescription *string
-    // OS Version.
-    osVersion *string
-    // Device User Name.
-    userName *string
 }
 // NewDeviceInstallState instantiates a new deviceInstallState and sets the default values.
 func NewDeviceInstallState()(*DeviceInstallState) {
@@ -38,15 +22,36 @@ func CreateDeviceInstallStateFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetDeviceId gets the deviceId property value. Device Id.
 func (m *DeviceInstallState) GetDeviceId()(*string) {
-    return m.deviceId
+    val, err := m.GetBackingStore().Get("deviceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDeviceName gets the deviceName property value. Device name.
 func (m *DeviceInstallState) GetDeviceName()(*string) {
-    return m.deviceName
+    val, err := m.GetBackingStore().Get("deviceName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetErrorCode gets the errorCode property value. The error code for install failures.
 func (m *DeviceInstallState) GetErrorCode()(*string) {
-    return m.errorCode
+    val, err := m.GetBackingStore().Get("errorCode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceInstallState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -135,23 +140,58 @@ func (m *DeviceInstallState) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetInstallState gets the installState property value. Possible values for install state.
 func (m *DeviceInstallState) GetInstallState()(*InstallState) {
-    return m.installState
+    val, err := m.GetBackingStore().Get("installState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*InstallState)
+    }
+    return nil
 }
 // GetLastSyncDateTime gets the lastSyncDateTime property value. Last sync date and time.
 func (m *DeviceInstallState) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastSyncDateTime
+    val, err := m.GetBackingStore().Get("lastSyncDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetOsDescription gets the osDescription property value. OS Description.
 func (m *DeviceInstallState) GetOsDescription()(*string) {
-    return m.osDescription
+    val, err := m.GetBackingStore().Get("osDescription")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOsVersion gets the osVersion property value. OS Version.
 func (m *DeviceInstallState) GetOsVersion()(*string) {
-    return m.osVersion
+    val, err := m.GetBackingStore().Get("osVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUserName gets the userName property value. Device User Name.
 func (m *DeviceInstallState) GetUserName()(*string) {
-    return m.userName
+    val, err := m.GetBackingStore().Get("userName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceInstallState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -212,33 +252,78 @@ func (m *DeviceInstallState) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetDeviceId sets the deviceId property value. Device Id.
 func (m *DeviceInstallState) SetDeviceId(value *string)() {
-    m.deviceId = value
+    err := m.GetBackingStore().Set("deviceId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceName sets the deviceName property value. Device name.
 func (m *DeviceInstallState) SetDeviceName(value *string)() {
-    m.deviceName = value
+    err := m.GetBackingStore().Set("deviceName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetErrorCode sets the errorCode property value. The error code for install failures.
 func (m *DeviceInstallState) SetErrorCode(value *string)() {
-    m.errorCode = value
+    err := m.GetBackingStore().Set("errorCode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInstallState sets the installState property value. Possible values for install state.
 func (m *DeviceInstallState) SetInstallState(value *InstallState)() {
-    m.installState = value
+    err := m.GetBackingStore().Set("installState", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastSyncDateTime sets the lastSyncDateTime property value. Last sync date and time.
 func (m *DeviceInstallState) SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastSyncDateTime = value
+    err := m.GetBackingStore().Set("lastSyncDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOsDescription sets the osDescription property value. OS Description.
 func (m *DeviceInstallState) SetOsDescription(value *string)() {
-    m.osDescription = value
+    err := m.GetBackingStore().Set("osDescription", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOsVersion sets the osVersion property value. OS Version.
 func (m *DeviceInstallState) SetOsVersion(value *string)() {
-    m.osVersion = value
+    err := m.GetBackingStore().Set("osVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserName sets the userName property value. Device User Name.
 func (m *DeviceInstallState) SetUserName(value *string)() {
-    m.userName = value
+    err := m.GetBackingStore().Set("userName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceInstallStateable 
+type DeviceInstallStateable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDeviceId()(*string)
+    GetDeviceName()(*string)
+    GetErrorCode()(*string)
+    GetInstallState()(*InstallState)
+    GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOsDescription()(*string)
+    GetOsVersion()(*string)
+    GetUserName()(*string)
+    SetDeviceId(value *string)()
+    SetDeviceName(value *string)()
+    SetErrorCode(value *string)()
+    SetInstallState(value *InstallState)()
+    SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOsDescription(value *string)()
+    SetOsVersion(value *string)()
+    SetUserName(value *string)()
 }

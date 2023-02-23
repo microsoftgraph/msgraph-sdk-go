@@ -3,33 +3,19 @@ package drives
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ItemItemsItemWorkbookFunctionsMicrosoftGraphAccrIntAccrIntPostRequestBody 
 type ItemItemsItemWorkbookFunctionsMicrosoftGraphAccrIntAccrIntPostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The basis property
-    basis iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable
-    // The calcMethod property
-    calcMethod iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable
-    // The firstInterest property
-    firstInterest iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable
-    // The frequency property
-    frequency iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable
-    // The issue property
-    issue iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable
-    // The par property
-    par iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable
-    // The rate property
-    rate iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable
-    // The settlement property
-    settlement iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewItemItemsItemWorkbookFunctionsMicrosoftGraphAccrIntAccrIntPostRequestBody instantiates a new ItemItemsItemWorkbookFunctionsMicrosoftGraphAccrIntAccrIntPostRequestBody and sets the default values.
 func NewItemItemsItemWorkbookFunctionsMicrosoftGraphAccrIntAccrIntPostRequestBody()(*ItemItemsItemWorkbookFunctionsMicrosoftGraphAccrIntAccrIntPostRequestBody) {
     m := &ItemItemsItemWorkbookFunctionsMicrosoftGraphAccrIntAccrIntPostRequestBody{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -39,15 +25,41 @@ func CreateItemItemsItemWorkbookFunctionsMicrosoftGraphAccrIntAccrIntPostRequest
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAccrIntAccrIntPostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAccrIntAccrIntPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetBasis gets the basis property value. The basis property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAccrIntAccrIntPostRequestBody) GetBasis()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
-    return m.basis
+    val, err := m.GetBackingStore().Get("basis")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    }
+    return nil
 }
 // GetCalcMethod gets the calcMethod property value. The calcMethod property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAccrIntAccrIntPostRequestBody) GetCalcMethod()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
-    return m.calcMethod
+    val, err := m.GetBackingStore().Get("calcMethod")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAccrIntAccrIntPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -136,27 +148,69 @@ func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAccrIntAccrIntPostRequestBo
 }
 // GetFirstInterest gets the firstInterest property value. The firstInterest property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAccrIntAccrIntPostRequestBody) GetFirstInterest()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
-    return m.firstInterest
+    val, err := m.GetBackingStore().Get("firstInterest")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    }
+    return nil
 }
 // GetFrequency gets the frequency property value. The frequency property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAccrIntAccrIntPostRequestBody) GetFrequency()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
-    return m.frequency
+    val, err := m.GetBackingStore().Get("frequency")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    }
+    return nil
 }
 // GetIssue gets the issue property value. The issue property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAccrIntAccrIntPostRequestBody) GetIssue()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
-    return m.issue
+    val, err := m.GetBackingStore().Get("issue")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    }
+    return nil
 }
 // GetPar gets the par property value. The par property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAccrIntAccrIntPostRequestBody) GetPar()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
-    return m.par
+    val, err := m.GetBackingStore().Get("par")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    }
+    return nil
 }
 // GetRate gets the rate property value. The rate property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAccrIntAccrIntPostRequestBody) GetRate()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
-    return m.rate
+    val, err := m.GetBackingStore().Get("rate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    }
+    return nil
 }
 // GetSettlement gets the settlement property value. The settlement property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAccrIntAccrIntPostRequestBody) GetSettlement()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
-    return m.settlement
+    val, err := m.GetBackingStore().Get("settlement")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAccrIntAccrIntPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -218,37 +272,92 @@ func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAccrIntAccrIntPostRequestBo
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAccrIntAccrIntPostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAccrIntAccrIntPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetBasis sets the basis property value. The basis property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAccrIntAccrIntPostRequestBody) SetBasis(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
-    m.basis = value
+    err := m.GetBackingStore().Set("basis", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCalcMethod sets the calcMethod property value. The calcMethod property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAccrIntAccrIntPostRequestBody) SetCalcMethod(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
-    m.calcMethod = value
+    err := m.GetBackingStore().Set("calcMethod", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFirstInterest sets the firstInterest property value. The firstInterest property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAccrIntAccrIntPostRequestBody) SetFirstInterest(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
-    m.firstInterest = value
+    err := m.GetBackingStore().Set("firstInterest", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFrequency sets the frequency property value. The frequency property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAccrIntAccrIntPostRequestBody) SetFrequency(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
-    m.frequency = value
+    err := m.GetBackingStore().Set("frequency", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIssue sets the issue property value. The issue property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAccrIntAccrIntPostRequestBody) SetIssue(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
-    m.issue = value
+    err := m.GetBackingStore().Set("issue", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPar sets the par property value. The par property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAccrIntAccrIntPostRequestBody) SetPar(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
-    m.par = value
+    err := m.GetBackingStore().Set("par", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRate sets the rate property value. The rate property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAccrIntAccrIntPostRequestBody) SetRate(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
-    m.rate = value
+    err := m.GetBackingStore().Set("rate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettlement sets the settlement property value. The settlement property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAccrIntAccrIntPostRequestBody) SetSettlement(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
-    m.settlement = value
+    err := m.GetBackingStore().Set("settlement", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemItemsItemWorkbookFunctionsMicrosoftGraphAccrIntAccrIntPostRequestBodyable 
+type ItemItemsItemWorkbookFunctionsMicrosoftGraphAccrIntAccrIntPostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetBasis()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    GetCalcMethod()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    GetFirstInterest()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    GetFrequency()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    GetIssue()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    GetPar()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    GetRate()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    GetSettlement()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetBasis(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
+    SetCalcMethod(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
+    SetFirstInterest(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
+    SetFrequency(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
+    SetIssue(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
+    SetPar(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
+    SetRate(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
+    SetSettlement(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
 }

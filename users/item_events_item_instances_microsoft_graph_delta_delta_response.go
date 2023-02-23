@@ -8,8 +8,6 @@ import (
 // ItemEventsItemInstancesMicrosoftGraphDeltaDeltaResponse 
 type ItemEventsItemInstancesMicrosoftGraphDeltaDeltaResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseDeltaFunctionResponse
-    // The value property
-    value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Eventable
 }
 // NewItemEventsItemInstancesMicrosoftGraphDeltaDeltaResponse instantiates a new ItemEventsItemInstancesMicrosoftGraphDeltaDeltaResponse and sets the default values.
 func NewItemEventsItemInstancesMicrosoftGraphDeltaDeltaResponse()(*ItemEventsItemInstancesMicrosoftGraphDeltaDeltaResponse) {
@@ -43,7 +41,14 @@ func (m *ItemEventsItemInstancesMicrosoftGraphDeltaDeltaResponse) GetFieldDeseri
 }
 // GetValue gets the value property value. The value property
 func (m *ItemEventsItemInstancesMicrosoftGraphDeltaDeltaResponse) GetValue()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Eventable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Eventable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemEventsItemInstancesMicrosoftGraphDeltaDeltaResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *ItemEventsItemInstancesMicrosoftGraphDeltaDeltaResponse) Serialize(writ
 }
 // SetValue sets the value property value. The value property
 func (m *ItemEventsItemInstancesMicrosoftGraphDeltaDeltaResponse) SetValue(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Eventable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemEventsItemInstancesMicrosoftGraphDeltaDeltaResponseable 
+type ItemEventsItemInstancesMicrosoftGraphDeltaDeltaResponseable interface {
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseDeltaFunctionResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Eventable)
+    SetValue(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Eventable)()
 }

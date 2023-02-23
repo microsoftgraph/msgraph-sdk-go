@@ -7,8 +7,6 @@ import (
 // AndroidCompliancePolicyCollectionResponse 
 type AndroidCompliancePolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AndroidCompliancePolicyable
 }
 // NewAndroidCompliancePolicyCollectionResponse instantiates a new AndroidCompliancePolicyCollectionResponse and sets the default values.
 func NewAndroidCompliancePolicyCollectionResponse()(*AndroidCompliancePolicyCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AndroidCompliancePolicyCollectionResponse) GetFieldDeserializers()(map[
 }
 // GetValue gets the value property value. The value property
 func (m *AndroidCompliancePolicyCollectionResponse) GetValue()([]AndroidCompliancePolicyable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidCompliancePolicyable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidCompliancePolicyCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AndroidCompliancePolicyCollectionResponse) Serialize(writer i878a80d233
 }
 // SetValue sets the value property value. The value property
 func (m *AndroidCompliancePolicyCollectionResponse) SetValue(value []AndroidCompliancePolicyable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidCompliancePolicyCollectionResponseable 
+type AndroidCompliancePolicyCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AndroidCompliancePolicyable)
+    SetValue(value []AndroidCompliancePolicyable)()
 }

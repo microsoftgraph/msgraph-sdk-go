@@ -8,8 +8,6 @@ import (
 // ItemChannelsItemMembersMicrosoftGraphAddAddResponse 
 type ItemChannelsItemMembersMicrosoftGraphAddAddResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
-    // The value property
-    value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ActionResultPartable
 }
 // NewItemChannelsItemMembersMicrosoftGraphAddAddResponse instantiates a new ItemChannelsItemMembersMicrosoftGraphAddAddResponse and sets the default values.
 func NewItemChannelsItemMembersMicrosoftGraphAddAddResponse()(*ItemChannelsItemMembersMicrosoftGraphAddAddResponse) {
@@ -43,7 +41,14 @@ func (m *ItemChannelsItemMembersMicrosoftGraphAddAddResponse) GetFieldDeserializ
 }
 // GetValue gets the value property value. The value property
 func (m *ItemChannelsItemMembersMicrosoftGraphAddAddResponse) GetValue()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ActionResultPartable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ActionResultPartable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemChannelsItemMembersMicrosoftGraphAddAddResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *ItemChannelsItemMembersMicrosoftGraphAddAddResponse) Serialize(writer i
 }
 // SetValue sets the value property value. The value property
 func (m *ItemChannelsItemMembersMicrosoftGraphAddAddResponse) SetValue(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ActionResultPartable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemChannelsItemMembersMicrosoftGraphAddAddResponseable 
+type ItemChannelsItemMembersMicrosoftGraphAddAddResponseable interface {
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ActionResultPartable)
+    SetValue(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ActionResultPartable)()
 }

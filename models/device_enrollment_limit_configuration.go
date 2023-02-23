@@ -7,8 +7,6 @@ import (
 // DeviceEnrollmentLimitConfiguration 
 type DeviceEnrollmentLimitConfiguration struct {
     DeviceEnrollmentConfiguration
-    // The maximum number of devices that a user can enroll
-    limit *int32
 }
 // NewDeviceEnrollmentLimitConfiguration instantiates a new DeviceEnrollmentLimitConfiguration and sets the default values.
 func NewDeviceEnrollmentLimitConfiguration()(*DeviceEnrollmentLimitConfiguration) {
@@ -40,7 +38,14 @@ func (m *DeviceEnrollmentLimitConfiguration) GetFieldDeserializers()(map[string]
 }
 // GetLimit gets the limit property value. The maximum number of devices that a user can enroll
 func (m *DeviceEnrollmentLimitConfiguration) GetLimit()(*int32) {
-    return m.limit
+    val, err := m.GetBackingStore().Get("limit")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceEnrollmentLimitConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *DeviceEnrollmentLimitConfiguration) Serialize(writer i878a80d2330e89d26
 }
 // SetLimit sets the limit property value. The maximum number of devices that a user can enroll
 func (m *DeviceEnrollmentLimitConfiguration) SetLimit(value *int32)() {
-    m.limit = value
+    err := m.GetBackingStore().Set("limit", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceEnrollmentLimitConfigurationable 
+type DeviceEnrollmentLimitConfigurationable interface {
+    DeviceEnrollmentConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetLimit()(*int32)
+    SetLimit(value *int32)()
 }

@@ -7,12 +7,6 @@ import (
 // UserSettings 
 type UserSettings struct {
     Entity
-    // The contributionToContentDiscoveryAsOrganizationDisabled property
-    contributionToContentDiscoveryAsOrganizationDisabled *bool
-    // The contributionToContentDiscoveryDisabled property
-    contributionToContentDiscoveryDisabled *bool
-    // The shiftPreferences property
-    shiftPreferences ShiftPreferencesable
 }
 // NewUserSettings instantiates a new userSettings and sets the default values.
 func NewUserSettings()(*UserSettings) {
@@ -27,11 +21,25 @@ func CreateUserSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetContributionToContentDiscoveryAsOrganizationDisabled gets the contributionToContentDiscoveryAsOrganizationDisabled property value. The contributionToContentDiscoveryAsOrganizationDisabled property
 func (m *UserSettings) GetContributionToContentDiscoveryAsOrganizationDisabled()(*bool) {
-    return m.contributionToContentDiscoveryAsOrganizationDisabled
+    val, err := m.GetBackingStore().Get("contributionToContentDiscoveryAsOrganizationDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetContributionToContentDiscoveryDisabled gets the contributionToContentDiscoveryDisabled property value. The contributionToContentDiscoveryDisabled property
 func (m *UserSettings) GetContributionToContentDiscoveryDisabled()(*bool) {
-    return m.contributionToContentDiscoveryDisabled
+    val, err := m.GetBackingStore().Get("contributionToContentDiscoveryDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -70,7 +78,14 @@ func (m *UserSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetShiftPreferences gets the shiftPreferences property value. The shiftPreferences property
 func (m *UserSettings) GetShiftPreferences()(ShiftPreferencesable) {
-    return m.shiftPreferences
+    val, err := m.GetBackingStore().Get("shiftPreferences")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ShiftPreferencesable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -100,13 +115,33 @@ func (m *UserSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetContributionToContentDiscoveryAsOrganizationDisabled sets the contributionToContentDiscoveryAsOrganizationDisabled property value. The contributionToContentDiscoveryAsOrganizationDisabled property
 func (m *UserSettings) SetContributionToContentDiscoveryAsOrganizationDisabled(value *bool)() {
-    m.contributionToContentDiscoveryAsOrganizationDisabled = value
+    err := m.GetBackingStore().Set("contributionToContentDiscoveryAsOrganizationDisabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetContributionToContentDiscoveryDisabled sets the contributionToContentDiscoveryDisabled property value. The contributionToContentDiscoveryDisabled property
 func (m *UserSettings) SetContributionToContentDiscoveryDisabled(value *bool)() {
-    m.contributionToContentDiscoveryDisabled = value
+    err := m.GetBackingStore().Set("contributionToContentDiscoveryDisabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetShiftPreferences sets the shiftPreferences property value. The shiftPreferences property
 func (m *UserSettings) SetShiftPreferences(value ShiftPreferencesable)() {
-    m.shiftPreferences = value
+    err := m.GetBackingStore().Set("shiftPreferences", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserSettingsable 
+type UserSettingsable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetContributionToContentDiscoveryAsOrganizationDisabled()(*bool)
+    GetContributionToContentDiscoveryDisabled()(*bool)
+    GetShiftPreferences()(ShiftPreferencesable)
+    SetContributionToContentDiscoveryAsOrganizationDisabled(value *bool)()
+    SetContributionToContentDiscoveryDisabled(value *bool)()
+    SetShiftPreferences(value ShiftPreferencesable)()
 }

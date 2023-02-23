@@ -8,14 +8,6 @@ import (
 // RemoteAssistancePartner remoteAssistPartner resources represent the metadata and status of a given Remote Assistance partner service.
 type RemoteAssistancePartner struct {
     Entity
-    // Display name of the partner.
-    displayName *string
-    // Timestamp of the last request sent to Intune by the TEM partner.
-    lastConnectionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The current TeamViewer connector status
-    onboardingStatus *RemoteAssistanceOnboardingStatus
-    // URL of the partner's onboarding portal, where an administrator can configure their Remote Assistance service.
-    onboardingUrl *string
 }
 // NewRemoteAssistancePartner instantiates a new remoteAssistancePartner and sets the default values.
 func NewRemoteAssistancePartner()(*RemoteAssistancePartner) {
@@ -30,7 +22,14 @@ func CreateRemoteAssistancePartnerFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetDisplayName gets the displayName property value. Display name of the partner.
 func (m *RemoteAssistancePartner) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RemoteAssistancePartner) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -79,15 +78,36 @@ func (m *RemoteAssistancePartner) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetLastConnectionDateTime gets the lastConnectionDateTime property value. Timestamp of the last request sent to Intune by the TEM partner.
 func (m *RemoteAssistancePartner) GetLastConnectionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastConnectionDateTime
+    val, err := m.GetBackingStore().Get("lastConnectionDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetOnboardingStatus gets the onboardingStatus property value. The current TeamViewer connector status
 func (m *RemoteAssistancePartner) GetOnboardingStatus()(*RemoteAssistanceOnboardingStatus) {
-    return m.onboardingStatus
+    val, err := m.GetBackingStore().Get("onboardingStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*RemoteAssistanceOnboardingStatus)
+    }
+    return nil
 }
 // GetOnboardingUrl gets the onboardingUrl property value. URL of the partner's onboarding portal, where an administrator can configure their Remote Assistance service.
 func (m *RemoteAssistancePartner) GetOnboardingUrl()(*string) {
-    return m.onboardingUrl
+    val, err := m.GetBackingStore().Get("onboardingUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *RemoteAssistancePartner) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -124,17 +144,42 @@ func (m *RemoteAssistancePartner) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetDisplayName sets the displayName property value. Display name of the partner.
 func (m *RemoteAssistancePartner) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastConnectionDateTime sets the lastConnectionDateTime property value. Timestamp of the last request sent to Intune by the TEM partner.
 func (m *RemoteAssistancePartner) SetLastConnectionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastConnectionDateTime = value
+    err := m.GetBackingStore().Set("lastConnectionDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOnboardingStatus sets the onboardingStatus property value. The current TeamViewer connector status
 func (m *RemoteAssistancePartner) SetOnboardingStatus(value *RemoteAssistanceOnboardingStatus)() {
-    m.onboardingStatus = value
+    err := m.GetBackingStore().Set("onboardingStatus", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOnboardingUrl sets the onboardingUrl property value. URL of the partner's onboarding portal, where an administrator can configure their Remote Assistance service.
 func (m *RemoteAssistancePartner) SetOnboardingUrl(value *string)() {
-    m.onboardingUrl = value
+    err := m.GetBackingStore().Set("onboardingUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// RemoteAssistancePartnerable 
+type RemoteAssistancePartnerable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDisplayName()(*string)
+    GetLastConnectionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOnboardingStatus()(*RemoteAssistanceOnboardingStatus)
+    GetOnboardingUrl()(*string)
+    SetDisplayName(value *string)()
+    SetLastConnectionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOnboardingStatus(value *RemoteAssistanceOnboardingStatus)()
+    SetOnboardingUrl(value *string)()
 }

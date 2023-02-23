@@ -7,20 +7,6 @@ import (
 // DeviceConfigurationDeviceStateSummary 
 type DeviceConfigurationDeviceStateSummary struct {
     Entity
-    // Number of compliant devices
-    compliantDeviceCount *int32
-    // Number of conflict devices
-    conflictDeviceCount *int32
-    // Number of error devices
-    errorDeviceCount *int32
-    // Number of NonCompliant devices
-    nonCompliantDeviceCount *int32
-    // Number of not applicable devices
-    notApplicableDeviceCount *int32
-    // Number of remediated devices
-    remediatedDeviceCount *int32
-    // Number of unknown devices
-    unknownDeviceCount *int32
 }
 // NewDeviceConfigurationDeviceStateSummary instantiates a new deviceConfigurationDeviceStateSummary and sets the default values.
 func NewDeviceConfigurationDeviceStateSummary()(*DeviceConfigurationDeviceStateSummary) {
@@ -35,15 +21,36 @@ func CreateDeviceConfigurationDeviceStateSummaryFromDiscriminatorValue(parseNode
 }
 // GetCompliantDeviceCount gets the compliantDeviceCount property value. Number of compliant devices
 func (m *DeviceConfigurationDeviceStateSummary) GetCompliantDeviceCount()(*int32) {
-    return m.compliantDeviceCount
+    val, err := m.GetBackingStore().Get("compliantDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetConflictDeviceCount gets the conflictDeviceCount property value. Number of conflict devices
 func (m *DeviceConfigurationDeviceStateSummary) GetConflictDeviceCount()(*int32) {
-    return m.conflictDeviceCount
+    val, err := m.GetBackingStore().Get("conflictDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetErrorDeviceCount gets the errorDeviceCount property value. Number of error devices
 func (m *DeviceConfigurationDeviceStateSummary) GetErrorDeviceCount()(*int32) {
-    return m.errorDeviceCount
+    val, err := m.GetBackingStore().Get("errorDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceConfigurationDeviceStateSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -122,19 +129,47 @@ func (m *DeviceConfigurationDeviceStateSummary) GetFieldDeserializers()(map[stri
 }
 // GetNonCompliantDeviceCount gets the nonCompliantDeviceCount property value. Number of NonCompliant devices
 func (m *DeviceConfigurationDeviceStateSummary) GetNonCompliantDeviceCount()(*int32) {
-    return m.nonCompliantDeviceCount
+    val, err := m.GetBackingStore().Get("nonCompliantDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetNotApplicableDeviceCount gets the notApplicableDeviceCount property value. Number of not applicable devices
 func (m *DeviceConfigurationDeviceStateSummary) GetNotApplicableDeviceCount()(*int32) {
-    return m.notApplicableDeviceCount
+    val, err := m.GetBackingStore().Get("notApplicableDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetRemediatedDeviceCount gets the remediatedDeviceCount property value. Number of remediated devices
 func (m *DeviceConfigurationDeviceStateSummary) GetRemediatedDeviceCount()(*int32) {
-    return m.remediatedDeviceCount
+    val, err := m.GetBackingStore().Get("remediatedDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetUnknownDeviceCount gets the unknownDeviceCount property value. Number of unknown devices
 func (m *DeviceConfigurationDeviceStateSummary) GetUnknownDeviceCount()(*int32) {
-    return m.unknownDeviceCount
+    val, err := m.GetBackingStore().Get("unknownDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceConfigurationDeviceStateSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -188,29 +223,69 @@ func (m *DeviceConfigurationDeviceStateSummary) Serialize(writer i878a80d2330e89
 }
 // SetCompliantDeviceCount sets the compliantDeviceCount property value. Number of compliant devices
 func (m *DeviceConfigurationDeviceStateSummary) SetCompliantDeviceCount(value *int32)() {
-    m.compliantDeviceCount = value
+    err := m.GetBackingStore().Set("compliantDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConflictDeviceCount sets the conflictDeviceCount property value. Number of conflict devices
 func (m *DeviceConfigurationDeviceStateSummary) SetConflictDeviceCount(value *int32)() {
-    m.conflictDeviceCount = value
+    err := m.GetBackingStore().Set("conflictDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetErrorDeviceCount sets the errorDeviceCount property value. Number of error devices
 func (m *DeviceConfigurationDeviceStateSummary) SetErrorDeviceCount(value *int32)() {
-    m.errorDeviceCount = value
+    err := m.GetBackingStore().Set("errorDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNonCompliantDeviceCount sets the nonCompliantDeviceCount property value. Number of NonCompliant devices
 func (m *DeviceConfigurationDeviceStateSummary) SetNonCompliantDeviceCount(value *int32)() {
-    m.nonCompliantDeviceCount = value
+    err := m.GetBackingStore().Set("nonCompliantDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNotApplicableDeviceCount sets the notApplicableDeviceCount property value. Number of not applicable devices
 func (m *DeviceConfigurationDeviceStateSummary) SetNotApplicableDeviceCount(value *int32)() {
-    m.notApplicableDeviceCount = value
+    err := m.GetBackingStore().Set("notApplicableDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRemediatedDeviceCount sets the remediatedDeviceCount property value. Number of remediated devices
 func (m *DeviceConfigurationDeviceStateSummary) SetRemediatedDeviceCount(value *int32)() {
-    m.remediatedDeviceCount = value
+    err := m.GetBackingStore().Set("remediatedDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUnknownDeviceCount sets the unknownDeviceCount property value. Number of unknown devices
 func (m *DeviceConfigurationDeviceStateSummary) SetUnknownDeviceCount(value *int32)() {
-    m.unknownDeviceCount = value
+    err := m.GetBackingStore().Set("unknownDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceConfigurationDeviceStateSummaryable 
+type DeviceConfigurationDeviceStateSummaryable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCompliantDeviceCount()(*int32)
+    GetConflictDeviceCount()(*int32)
+    GetErrorDeviceCount()(*int32)
+    GetNonCompliantDeviceCount()(*int32)
+    GetNotApplicableDeviceCount()(*int32)
+    GetRemediatedDeviceCount()(*int32)
+    GetUnknownDeviceCount()(*int32)
+    SetCompliantDeviceCount(value *int32)()
+    SetConflictDeviceCount(value *int32)()
+    SetErrorDeviceCount(value *int32)()
+    SetNonCompliantDeviceCount(value *int32)()
+    SetNotApplicableDeviceCount(value *int32)()
+    SetRemediatedDeviceCount(value *int32)()
+    SetUnknownDeviceCount(value *int32)()
 }

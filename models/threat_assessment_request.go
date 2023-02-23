@@ -8,22 +8,6 @@ import (
 // ThreatAssessmentRequest 
 type ThreatAssessmentRequest struct {
     Entity
-    // The category property
-    category *ThreatCategory
-    // The content type of threat assessment. Possible values are: mail, url, file.
-    contentType *ThreatAssessmentContentType
-    // The threat assessment request creator.
-    createdBy IdentitySetable
-    // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The expectedAssessment property
-    expectedAssessment *ThreatExpectedAssessment
-    // The source of the threat assessment request. Possible values are: administrator.
-    requestSource *ThreatAssessmentRequestSource
-    // A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.
-    results []ThreatAssessmentResultable
-    // The assessment process status. Possible values are: pending, completed.
-    status *ThreatAssessmentStatus
 }
 // NewThreatAssessmentRequest instantiates a new ThreatAssessmentRequest and sets the default values.
 func NewThreatAssessmentRequest()(*ThreatAssessmentRequest) {
@@ -62,23 +46,58 @@ func CreateThreatAssessmentRequestFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetCategory gets the category property value. The category property
 func (m *ThreatAssessmentRequest) GetCategory()(*ThreatCategory) {
-    return m.category
+    val, err := m.GetBackingStore().Get("category")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ThreatCategory)
+    }
+    return nil
 }
 // GetContentType gets the contentType property value. The content type of threat assessment. Possible values are: mail, url, file.
 func (m *ThreatAssessmentRequest) GetContentType()(*ThreatAssessmentContentType) {
-    return m.contentType
+    val, err := m.GetBackingStore().Get("contentType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ThreatAssessmentContentType)
+    }
+    return nil
 }
 // GetCreatedBy gets the createdBy property value. The threat assessment request creator.
 func (m *ThreatAssessmentRequest) GetCreatedBy()(IdentitySetable) {
-    return m.createdBy
+    val, err := m.GetBackingStore().Get("createdBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentitySetable)
+    }
+    return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *ThreatAssessmentRequest) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetExpectedAssessment gets the expectedAssessment property value. The expectedAssessment property
 func (m *ThreatAssessmentRequest) GetExpectedAssessment()(*ThreatExpectedAssessment) {
-    return m.expectedAssessment
+    val, err := m.GetBackingStore().Get("expectedAssessment")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ThreatExpectedAssessment)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ThreatAssessmentRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -171,15 +190,36 @@ func (m *ThreatAssessmentRequest) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetRequestSource gets the requestSource property value. The source of the threat assessment request. Possible values are: administrator.
 func (m *ThreatAssessmentRequest) GetRequestSource()(*ThreatAssessmentRequestSource) {
-    return m.requestSource
+    val, err := m.GetBackingStore().Get("requestSource")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ThreatAssessmentRequestSource)
+    }
+    return nil
 }
 // GetResults gets the results property value. A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.
 func (m *ThreatAssessmentRequest) GetResults()([]ThreatAssessmentResultable) {
-    return m.results
+    val, err := m.GetBackingStore().Get("results")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ThreatAssessmentResultable)
+    }
+    return nil
 }
 // GetStatus gets the status property value. The assessment process status. Possible values are: pending, completed.
 func (m *ThreatAssessmentRequest) GetStatus()(*ThreatAssessmentStatus) {
-    return m.status
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ThreatAssessmentStatus)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ThreatAssessmentRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -248,33 +288,78 @@ func (m *ThreatAssessmentRequest) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetCategory sets the category property value. The category property
 func (m *ThreatAssessmentRequest) SetCategory(value *ThreatCategory)() {
-    m.category = value
+    err := m.GetBackingStore().Set("category", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetContentType sets the contentType property value. The content type of threat assessment. Possible values are: mail, url, file.
 func (m *ThreatAssessmentRequest) SetContentType(value *ThreatAssessmentContentType)() {
-    m.contentType = value
+    err := m.GetBackingStore().Set("contentType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedBy sets the createdBy property value. The threat assessment request creator.
 func (m *ThreatAssessmentRequest) SetCreatedBy(value IdentitySetable)() {
-    m.createdBy = value
+    err := m.GetBackingStore().Set("createdBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *ThreatAssessmentRequest) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExpectedAssessment sets the expectedAssessment property value. The expectedAssessment property
 func (m *ThreatAssessmentRequest) SetExpectedAssessment(value *ThreatExpectedAssessment)() {
-    m.expectedAssessment = value
+    err := m.GetBackingStore().Set("expectedAssessment", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRequestSource sets the requestSource property value. The source of the threat assessment request. Possible values are: administrator.
 func (m *ThreatAssessmentRequest) SetRequestSource(value *ThreatAssessmentRequestSource)() {
-    m.requestSource = value
+    err := m.GetBackingStore().Set("requestSource", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetResults sets the results property value. A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.
 func (m *ThreatAssessmentRequest) SetResults(value []ThreatAssessmentResultable)() {
-    m.results = value
+    err := m.GetBackingStore().Set("results", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStatus sets the status property value. The assessment process status. Possible values are: pending, completed.
 func (m *ThreatAssessmentRequest) SetStatus(value *ThreatAssessmentStatus)() {
-    m.status = value
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ThreatAssessmentRequestable 
+type ThreatAssessmentRequestable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCategory()(*ThreatCategory)
+    GetContentType()(*ThreatAssessmentContentType)
+    GetCreatedBy()(IdentitySetable)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetExpectedAssessment()(*ThreatExpectedAssessment)
+    GetRequestSource()(*ThreatAssessmentRequestSource)
+    GetResults()([]ThreatAssessmentResultable)
+    GetStatus()(*ThreatAssessmentStatus)
+    SetCategory(value *ThreatCategory)()
+    SetContentType(value *ThreatAssessmentContentType)()
+    SetCreatedBy(value IdentitySetable)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetExpectedAssessment(value *ThreatExpectedAssessment)()
+    SetRequestSource(value *ThreatAssessmentRequestSource)()
+    SetResults(value []ThreatAssessmentResultable)()
+    SetStatus(value *ThreatAssessmentStatus)()
 }

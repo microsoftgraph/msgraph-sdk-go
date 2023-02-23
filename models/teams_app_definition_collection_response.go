@@ -7,8 +7,6 @@ import (
 // TeamsAppDefinitionCollectionResponse 
 type TeamsAppDefinitionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []TeamsAppDefinitionable
 }
 // NewTeamsAppDefinitionCollectionResponse instantiates a new TeamsAppDefinitionCollectionResponse and sets the default values.
 func NewTeamsAppDefinitionCollectionResponse()(*TeamsAppDefinitionCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *TeamsAppDefinitionCollectionResponse) GetFieldDeserializers()(map[strin
 }
 // GetValue gets the value property value. The value property
 func (m *TeamsAppDefinitionCollectionResponse) GetValue()([]TeamsAppDefinitionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TeamsAppDefinitionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TeamsAppDefinitionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *TeamsAppDefinitionCollectionResponse) Serialize(writer i878a80d2330e89d
 }
 // SetValue sets the value property value. The value property
 func (m *TeamsAppDefinitionCollectionResponse) SetValue(value []TeamsAppDefinitionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TeamsAppDefinitionCollectionResponseable 
+type TeamsAppDefinitionCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]TeamsAppDefinitionable)
+    SetValue(value []TeamsAppDefinitionable)()
 }

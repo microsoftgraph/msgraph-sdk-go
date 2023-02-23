@@ -7,8 +7,6 @@ import (
 // RequestorManager 
 type RequestorManager struct {
     SubjectSet
-    // The hierarchical level of the manager with respect to the requestor. For example, the direct manager of a requestor would have a managerLevel of 1, while the manager of the requestor's manager would have a managerLevel of 2. Default value for managerLevel is 1. Possible values for this property range from 1 to 2.
-    managerLevel *int32
 }
 // NewRequestorManager instantiates a new RequestorManager and sets the default values.
 func NewRequestorManager()(*RequestorManager) {
@@ -40,7 +38,14 @@ func (m *RequestorManager) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetManagerLevel gets the managerLevel property value. The hierarchical level of the manager with respect to the requestor. For example, the direct manager of a requestor would have a managerLevel of 1, while the manager of the requestor's manager would have a managerLevel of 2. Default value for managerLevel is 1. Possible values for this property range from 1 to 2.
 func (m *RequestorManager) GetManagerLevel()(*int32) {
-    return m.managerLevel
+    val, err := m.GetBackingStore().Get("managerLevel")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *RequestorManager) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *RequestorManager) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetManagerLevel sets the managerLevel property value. The hierarchical level of the manager with respect to the requestor. For example, the direct manager of a requestor would have a managerLevel of 1, while the manager of the requestor's manager would have a managerLevel of 2. Default value for managerLevel is 1. Possible values for this property range from 1 to 2.
 func (m *RequestorManager) SetManagerLevel(value *int32)() {
-    m.managerLevel = value
+    err := m.GetBackingStore().Set("managerLevel", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// RequestorManagerable 
+type RequestorManagerable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    SubjectSetable
+    GetManagerLevel()(*int32)
+    SetManagerLevel(value *int32)()
 }

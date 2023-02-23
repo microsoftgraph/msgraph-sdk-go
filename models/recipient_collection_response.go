@@ -7,8 +7,6 @@ import (
 // RecipientCollectionResponse 
 type RecipientCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Recipientable
 }
 // NewRecipientCollectionResponse instantiates a new RecipientCollectionResponse and sets the default values.
 func NewRecipientCollectionResponse()(*RecipientCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *RecipientCollectionResponse) GetFieldDeserializers()(map[string]func(i8
 }
 // GetValue gets the value property value. The value property
 func (m *RecipientCollectionResponse) GetValue()([]Recipientable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Recipientable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *RecipientCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *RecipientCollectionResponse) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetValue sets the value property value. The value property
 func (m *RecipientCollectionResponse) SetValue(value []Recipientable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// RecipientCollectionResponseable 
+type RecipientCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Recipientable)
+    SetValue(value []Recipientable)()
 }

@@ -7,14 +7,6 @@ import (
 // ManagedAndroidLobApp 
 type ManagedAndroidLobApp struct {
     ManagedMobileLobApp
-    // The value for the minimum applicable operating system.
-    minimumSupportedOperatingSystem AndroidMinimumOperatingSystemable
-    // The package identifier.
-    packageId *string
-    // The version code of managed Android Line of Business (LoB) app.
-    versionCode *string
-    // The version name of managed Android Line of Business (LoB) app.
-    versionName *string
 }
 // NewManagedAndroidLobApp instantiates a new ManagedAndroidLobApp and sets the default values.
 func NewManagedAndroidLobApp()(*ManagedAndroidLobApp) {
@@ -76,19 +68,47 @@ func (m *ManagedAndroidLobApp) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetMinimumSupportedOperatingSystem gets the minimumSupportedOperatingSystem property value. The value for the minimum applicable operating system.
 func (m *ManagedAndroidLobApp) GetMinimumSupportedOperatingSystem()(AndroidMinimumOperatingSystemable) {
-    return m.minimumSupportedOperatingSystem
+    val, err := m.GetBackingStore().Get("minimumSupportedOperatingSystem")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AndroidMinimumOperatingSystemable)
+    }
+    return nil
 }
 // GetPackageId gets the packageId property value. The package identifier.
 func (m *ManagedAndroidLobApp) GetPackageId()(*string) {
-    return m.packageId
+    val, err := m.GetBackingStore().Get("packageId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetVersionCode gets the versionCode property value. The version code of managed Android Line of Business (LoB) app.
 func (m *ManagedAndroidLobApp) GetVersionCode()(*string) {
-    return m.versionCode
+    val, err := m.GetBackingStore().Get("versionCode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetVersionName gets the versionName property value. The version name of managed Android Line of Business (LoB) app.
 func (m *ManagedAndroidLobApp) GetVersionName()(*string) {
-    return m.versionName
+    val, err := m.GetBackingStore().Get("versionName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ManagedAndroidLobApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -124,17 +144,42 @@ func (m *ManagedAndroidLobApp) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetMinimumSupportedOperatingSystem sets the minimumSupportedOperatingSystem property value. The value for the minimum applicable operating system.
 func (m *ManagedAndroidLobApp) SetMinimumSupportedOperatingSystem(value AndroidMinimumOperatingSystemable)() {
-    m.minimumSupportedOperatingSystem = value
+    err := m.GetBackingStore().Set("minimumSupportedOperatingSystem", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPackageId sets the packageId property value. The package identifier.
 func (m *ManagedAndroidLobApp) SetPackageId(value *string)() {
-    m.packageId = value
+    err := m.GetBackingStore().Set("packageId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVersionCode sets the versionCode property value. The version code of managed Android Line of Business (LoB) app.
 func (m *ManagedAndroidLobApp) SetVersionCode(value *string)() {
-    m.versionCode = value
+    err := m.GetBackingStore().Set("versionCode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVersionName sets the versionName property value. The version name of managed Android Line of Business (LoB) app.
 func (m *ManagedAndroidLobApp) SetVersionName(value *string)() {
-    m.versionName = value
+    err := m.GetBackingStore().Set("versionName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ManagedAndroidLobAppable 
+type ManagedAndroidLobAppable interface {
+    ManagedMobileLobAppable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetMinimumSupportedOperatingSystem()(AndroidMinimumOperatingSystemable)
+    GetPackageId()(*string)
+    GetVersionCode()(*string)
+    GetVersionName()(*string)
+    SetMinimumSupportedOperatingSystem(value AndroidMinimumOperatingSystemable)()
+    SetPackageId(value *string)()
+    SetVersionCode(value *string)()
+    SetVersionName(value *string)()
 }

@@ -7,8 +7,6 @@ import (
 // PrintTaskTriggerCollectionResponse 
 type PrintTaskTriggerCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []PrintTaskTriggerable
 }
 // NewPrintTaskTriggerCollectionResponse instantiates a new PrintTaskTriggerCollectionResponse and sets the default values.
 func NewPrintTaskTriggerCollectionResponse()(*PrintTaskTriggerCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *PrintTaskTriggerCollectionResponse) GetFieldDeserializers()(map[string]
 }
 // GetValue gets the value property value. The value property
 func (m *PrintTaskTriggerCollectionResponse) GetValue()([]PrintTaskTriggerable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrintTaskTriggerable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PrintTaskTriggerCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *PrintTaskTriggerCollectionResponse) Serialize(writer i878a80d2330e89d26
 }
 // SetValue sets the value property value. The value property
 func (m *PrintTaskTriggerCollectionResponse) SetValue(value []PrintTaskTriggerable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PrintTaskTriggerCollectionResponseable 
+type PrintTaskTriggerCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]PrintTaskTriggerable)
+    SetValue(value []PrintTaskTriggerable)()
 }

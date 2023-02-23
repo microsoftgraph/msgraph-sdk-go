@@ -7,8 +7,6 @@ import (
 // EducationOutcomeCollectionResponse 
 type EducationOutcomeCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []EducationOutcomeable
 }
 // NewEducationOutcomeCollectionResponse instantiates a new EducationOutcomeCollectionResponse and sets the default values.
 func NewEducationOutcomeCollectionResponse()(*EducationOutcomeCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *EducationOutcomeCollectionResponse) GetFieldDeserializers()(map[string]
 }
 // GetValue gets the value property value. The value property
 func (m *EducationOutcomeCollectionResponse) GetValue()([]EducationOutcomeable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EducationOutcomeable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EducationOutcomeCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *EducationOutcomeCollectionResponse) Serialize(writer i878a80d2330e89d26
 }
 // SetValue sets the value property value. The value property
 func (m *EducationOutcomeCollectionResponse) SetValue(value []EducationOutcomeable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EducationOutcomeCollectionResponseable 
+type EducationOutcomeCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]EducationOutcomeable)
+    SetValue(value []EducationOutcomeable)()
 }

@@ -7,12 +7,6 @@ import (
 // TeamInfo 
 type TeamInfo struct {
     Entity
-    // The name of the team.
-    displayName *string
-    // The team property
-    team Teamable
-    // The ID of the Azure Active Directory tenant.
-    tenantId *string
 }
 // NewTeamInfo instantiates a new teamInfo and sets the default values.
 func NewTeamInfo()(*TeamInfo) {
@@ -47,7 +41,14 @@ func CreateTeamInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 }
 // GetDisplayName gets the displayName property value. The name of the team.
 func (m *TeamInfo) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -86,11 +87,25 @@ func (m *TeamInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetTeam gets the team property value. The team property
 func (m *TeamInfo) GetTeam()(Teamable) {
-    return m.team
+    val, err := m.GetBackingStore().Get("team")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Teamable)
+    }
+    return nil
 }
 // GetTenantId gets the tenantId property value. The ID of the Azure Active Directory tenant.
 func (m *TeamInfo) GetTenantId()(*string) {
-    return m.tenantId
+    val, err := m.GetBackingStore().Get("tenantId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TeamInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -120,13 +135,33 @@ func (m *TeamInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetDisplayName sets the displayName property value. The name of the team.
 func (m *TeamInfo) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTeam sets the team property value. The team property
 func (m *TeamInfo) SetTeam(value Teamable)() {
-    m.team = value
+    err := m.GetBackingStore().Set("team", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTenantId sets the tenantId property value. The ID of the Azure Active Directory tenant.
 func (m *TeamInfo) SetTenantId(value *string)() {
-    m.tenantId = value
+    err := m.GetBackingStore().Set("tenantId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TeamInfoable 
+type TeamInfoable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDisplayName()(*string)
+    GetTeam()(Teamable)
+    GetTenantId()(*string)
+    SetDisplayName(value *string)()
+    SetTeam(value Teamable)()
+    SetTenantId(value *string)()
 }

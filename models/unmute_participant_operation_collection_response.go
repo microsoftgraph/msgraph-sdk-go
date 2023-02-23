@@ -7,8 +7,6 @@ import (
 // UnmuteParticipantOperationCollectionResponse 
 type UnmuteParticipantOperationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []UnmuteParticipantOperationable
 }
 // NewUnmuteParticipantOperationCollectionResponse instantiates a new UnmuteParticipantOperationCollectionResponse and sets the default values.
 func NewUnmuteParticipantOperationCollectionResponse()(*UnmuteParticipantOperationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *UnmuteParticipantOperationCollectionResponse) GetFieldDeserializers()(m
 }
 // GetValue gets the value property value. The value property
 func (m *UnmuteParticipantOperationCollectionResponse) GetValue()([]UnmuteParticipantOperationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UnmuteParticipantOperationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UnmuteParticipantOperationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *UnmuteParticipantOperationCollectionResponse) Serialize(writer i878a80d
 }
 // SetValue sets the value property value. The value property
 func (m *UnmuteParticipantOperationCollectionResponse) SetValue(value []UnmuteParticipantOperationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UnmuteParticipantOperationCollectionResponseable 
+type UnmuteParticipantOperationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]UnmuteParticipantOperationable)
+    SetValue(value []UnmuteParticipantOperationable)()
 }

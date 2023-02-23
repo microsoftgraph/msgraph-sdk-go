@@ -2,25 +2,19 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // OptionalClaims 
 type OptionalClaims struct {
-    // The optional claims returned in the JWT access token.
-    accessToken []OptionalClaimable
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The optional claims returned in the JWT ID token.
-    idToken []OptionalClaimable
-    // The OdataType property
-    odataType *string
-    // The optional claims returned in the SAML token.
-    saml2Token []OptionalClaimable
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewOptionalClaims instantiates a new optionalClaims and sets the default values.
 func NewOptionalClaims()(*OptionalClaims) {
     m := &OptionalClaims{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -30,11 +24,30 @@ func CreateOptionalClaimsFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetAccessToken gets the accessToken property value. The optional claims returned in the JWT access token.
 func (m *OptionalClaims) GetAccessToken()([]OptionalClaimable) {
-    return m.accessToken
+    val, err := m.GetBackingStore().Get("accessToken")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OptionalClaimable)
+    }
+    return nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OptionalClaims) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *OptionalClaims) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OptionalClaims) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -95,15 +108,36 @@ func (m *OptionalClaims) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetIdToken gets the idToken property value. The optional claims returned in the JWT ID token.
 func (m *OptionalClaims) GetIdToken()([]OptionalClaimable) {
-    return m.idToken
+    val, err := m.GetBackingStore().Get("idToken")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OptionalClaimable)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *OptionalClaims) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSaml2Token gets the saml2Token property value. The optional claims returned in the SAML token.
 func (m *OptionalClaims) GetSaml2Token()([]OptionalClaimable) {
-    return m.saml2Token
+    val, err := m.GetBackingStore().Get("saml2Token")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OptionalClaimable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OptionalClaims) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -153,21 +187,56 @@ func (m *OptionalClaims) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetAccessToken sets the accessToken property value. The optional claims returned in the JWT access token.
 func (m *OptionalClaims) SetAccessToken(value []OptionalClaimable)() {
-    m.accessToken = value
+    err := m.GetBackingStore().Set("accessToken", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OptionalClaims) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *OptionalClaims) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetIdToken sets the idToken property value. The optional claims returned in the JWT ID token.
 func (m *OptionalClaims) SetIdToken(value []OptionalClaimable)() {
-    m.idToken = value
+    err := m.GetBackingStore().Set("idToken", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *OptionalClaims) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSaml2Token sets the saml2Token property value. The optional claims returned in the SAML token.
 func (m *OptionalClaims) SetSaml2Token(value []OptionalClaimable)() {
-    m.saml2Token = value
+    err := m.GetBackingStore().Set("saml2Token", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OptionalClaimsable 
+type OptionalClaimsable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAccessToken()([]OptionalClaimable)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetIdToken()([]OptionalClaimable)
+    GetOdataType()(*string)
+    GetSaml2Token()([]OptionalClaimable)
+    SetAccessToken(value []OptionalClaimable)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetIdToken(value []OptionalClaimable)()
+    SetOdataType(value *string)()
+    SetSaml2Token(value []OptionalClaimable)()
 }

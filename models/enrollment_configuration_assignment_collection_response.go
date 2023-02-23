@@ -7,8 +7,6 @@ import (
 // EnrollmentConfigurationAssignmentCollectionResponse 
 type EnrollmentConfigurationAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []EnrollmentConfigurationAssignmentable
 }
 // NewEnrollmentConfigurationAssignmentCollectionResponse instantiates a new EnrollmentConfigurationAssignmentCollectionResponse and sets the default values.
 func NewEnrollmentConfigurationAssignmentCollectionResponse()(*EnrollmentConfigurationAssignmentCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *EnrollmentConfigurationAssignmentCollectionResponse) GetFieldDeserializ
 }
 // GetValue gets the value property value. The value property
 func (m *EnrollmentConfigurationAssignmentCollectionResponse) GetValue()([]EnrollmentConfigurationAssignmentable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EnrollmentConfigurationAssignmentable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EnrollmentConfigurationAssignmentCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *EnrollmentConfigurationAssignmentCollectionResponse) Serialize(writer i
 }
 // SetValue sets the value property value. The value property
 func (m *EnrollmentConfigurationAssignmentCollectionResponse) SetValue(value []EnrollmentConfigurationAssignmentable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EnrollmentConfigurationAssignmentCollectionResponseable 
+type EnrollmentConfigurationAssignmentCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]EnrollmentConfigurationAssignmentable)
+    SetValue(value []EnrollmentConfigurationAssignmentable)()
 }

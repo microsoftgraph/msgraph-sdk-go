@@ -7,8 +7,6 @@ import (
 // ComplianceManagementPartnerAssignmentCollectionResponse 
 type ComplianceManagementPartnerAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ComplianceManagementPartnerAssignmentable
 }
 // NewComplianceManagementPartnerAssignmentCollectionResponse instantiates a new ComplianceManagementPartnerAssignmentCollectionResponse and sets the default values.
 func NewComplianceManagementPartnerAssignmentCollectionResponse()(*ComplianceManagementPartnerAssignmentCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ComplianceManagementPartnerAssignmentCollectionResponse) GetFieldDeseri
 }
 // GetValue gets the value property value. The value property
 func (m *ComplianceManagementPartnerAssignmentCollectionResponse) GetValue()([]ComplianceManagementPartnerAssignmentable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ComplianceManagementPartnerAssignmentable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ComplianceManagementPartnerAssignmentCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ComplianceManagementPartnerAssignmentCollectionResponse) Serialize(writ
 }
 // SetValue sets the value property value. The value property
 func (m *ComplianceManagementPartnerAssignmentCollectionResponse) SetValue(value []ComplianceManagementPartnerAssignmentable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ComplianceManagementPartnerAssignmentCollectionResponseable 
+type ComplianceManagementPartnerAssignmentCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ComplianceManagementPartnerAssignmentable)
+    SetValue(value []ComplianceManagementPartnerAssignmentable)()
 }

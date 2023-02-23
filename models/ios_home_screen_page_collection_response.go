@@ -7,8 +7,6 @@ import (
 // IosHomeScreenPageCollectionResponse 
 type IosHomeScreenPageCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []IosHomeScreenPageable
 }
 // NewIosHomeScreenPageCollectionResponse instantiates a new IosHomeScreenPageCollectionResponse and sets the default values.
 func NewIosHomeScreenPageCollectionResponse()(*IosHomeScreenPageCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *IosHomeScreenPageCollectionResponse) GetFieldDeserializers()(map[string
 }
 // GetValue gets the value property value. The value property
 func (m *IosHomeScreenPageCollectionResponse) GetValue()([]IosHomeScreenPageable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IosHomeScreenPageable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IosHomeScreenPageCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *IosHomeScreenPageCollectionResponse) Serialize(writer i878a80d2330e89d2
 }
 // SetValue sets the value property value. The value property
 func (m *IosHomeScreenPageCollectionResponse) SetValue(value []IosHomeScreenPageable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IosHomeScreenPageCollectionResponseable 
+type IosHomeScreenPageCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]IosHomeScreenPageable)
+    SetValue(value []IosHomeScreenPageable)()
 }

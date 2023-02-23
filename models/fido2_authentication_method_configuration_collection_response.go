@@ -7,8 +7,6 @@ import (
 // Fido2AuthenticationMethodConfigurationCollectionResponse 
 type Fido2AuthenticationMethodConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Fido2AuthenticationMethodConfigurationable
 }
 // NewFido2AuthenticationMethodConfigurationCollectionResponse instantiates a new Fido2AuthenticationMethodConfigurationCollectionResponse and sets the default values.
 func NewFido2AuthenticationMethodConfigurationCollectionResponse()(*Fido2AuthenticationMethodConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *Fido2AuthenticationMethodConfigurationCollectionResponse) GetFieldDeser
 }
 // GetValue gets the value property value. The value property
 func (m *Fido2AuthenticationMethodConfigurationCollectionResponse) GetValue()([]Fido2AuthenticationMethodConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Fido2AuthenticationMethodConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Fido2AuthenticationMethodConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *Fido2AuthenticationMethodConfigurationCollectionResponse) Serialize(wri
 }
 // SetValue sets the value property value. The value property
 func (m *Fido2AuthenticationMethodConfigurationCollectionResponse) SetValue(value []Fido2AuthenticationMethodConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Fido2AuthenticationMethodConfigurationCollectionResponseable 
+type Fido2AuthenticationMethodConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Fido2AuthenticationMethodConfigurationable)
+    SetValue(value []Fido2AuthenticationMethodConfigurationable)()
 }

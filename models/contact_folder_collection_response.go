@@ -7,8 +7,6 @@ import (
 // ContactFolderCollectionResponse 
 type ContactFolderCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ContactFolderable
 }
 // NewContactFolderCollectionResponse instantiates a new ContactFolderCollectionResponse and sets the default values.
 func NewContactFolderCollectionResponse()(*ContactFolderCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ContactFolderCollectionResponse) GetFieldDeserializers()(map[string]fun
 }
 // GetValue gets the value property value. The value property
 func (m *ContactFolderCollectionResponse) GetValue()([]ContactFolderable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ContactFolderable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ContactFolderCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ContactFolderCollectionResponse) Serialize(writer i878a80d2330e89d26896
 }
 // SetValue sets the value property value. The value property
 func (m *ContactFolderCollectionResponse) SetValue(value []ContactFolderable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ContactFolderCollectionResponseable 
+type ContactFolderCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ContactFolderable)
+    SetValue(value []ContactFolderable)()
 }

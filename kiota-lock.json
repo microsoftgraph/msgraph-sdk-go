@@ -1,12 +1,12 @@
 {
-  "descriptionHash": "81C26A4735DE40A5AD0D1495BC283F6D9F922DD22B8614E2408DB27D235DF7C344F80C23054F7E5742D604D4D8A2FFFC9530EB2E06306E6F36784BD298E2320B",
+  "descriptionHash": "9B3ED33EE3C87845D5CF2E2763943C9738C9012E2881D951A8368808F1BC7BDEB9EDFBB494DD3AC30B9CAB378AB6D3ADFE540BC37094BFAE410DDEEF0F1E1548",
   "descriptionLocation": "/mnt/vss/_work/1/s/msgraph-metadata/clean_v10_openapi/openapi.yaml",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "0.11.1-preview",
   "clientClassName": "GraphBaseServiceClient",
   "clientNamespaceName": "github.com/microsoftgraph/msgraph-sdk-go/",
   "language": "Go",
-  "usesBackingStore": false,
+  "usesBackingStore": true,
   "includeAdditionalData": true,
   "serializers": [
     "Microsoft.Kiota.Serialization.Json.JsonSerializationWriterFactory",

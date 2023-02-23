@@ -7,8 +7,6 @@ import (
 // CalendarSharingMessageCollectionResponse 
 type CalendarSharingMessageCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []CalendarSharingMessageable
 }
 // NewCalendarSharingMessageCollectionResponse instantiates a new CalendarSharingMessageCollectionResponse and sets the default values.
 func NewCalendarSharingMessageCollectionResponse()(*CalendarSharingMessageCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *CalendarSharingMessageCollectionResponse) GetFieldDeserializers()(map[s
 }
 // GetValue gets the value property value. The value property
 func (m *CalendarSharingMessageCollectionResponse) GetValue()([]CalendarSharingMessageable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CalendarSharingMessageable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CalendarSharingMessageCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *CalendarSharingMessageCollectionResponse) Serialize(writer i878a80d2330
 }
 // SetValue sets the value property value. The value property
 func (m *CalendarSharingMessageCollectionResponse) SetValue(value []CalendarSharingMessageable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CalendarSharingMessageCollectionResponseable 
+type CalendarSharingMessageCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]CalendarSharingMessageable)
+    SetValue(value []CalendarSharingMessageable)()
 }

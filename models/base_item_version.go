@@ -8,12 +8,6 @@ import (
 // BaseItemVersion 
 type BaseItemVersion struct {
     Entity
-    // Identity of the user which last modified the version. Read-only.
-    lastModifiedBy IdentitySetable
-    // Date and time the version was last modified. Read-only.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Indicates the publication status of this particular version. Read-only.
-    publication PublicationFacetable
 }
 // NewBaseItemVersion instantiates a new baseItemVersion and sets the default values.
 func NewBaseItemVersion()(*BaseItemVersion) {
@@ -85,15 +79,36 @@ func (m *BaseItemVersion) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user which last modified the version. Read-only.
 func (m *BaseItemVersion) GetLastModifiedBy()(IdentitySetable) {
-    return m.lastModifiedBy
+    val, err := m.GetBackingStore().Get("lastModifiedBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentitySetable)
+    }
+    return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date and time the version was last modified. Read-only.
 func (m *BaseItemVersion) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastModifiedDateTime
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetPublication gets the publication property value. Indicates the publication status of this particular version. Read-only.
 func (m *BaseItemVersion) GetPublication()(PublicationFacetable) {
-    return m.publication
+    val, err := m.GetBackingStore().Get("publication")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PublicationFacetable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *BaseItemVersion) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -123,13 +138,33 @@ func (m *BaseItemVersion) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. Identity of the user which last modified the version. Read-only.
 func (m *BaseItemVersion) SetLastModifiedBy(value IdentitySetable)() {
-    m.lastModifiedBy = value
+    err := m.GetBackingStore().Set("lastModifiedBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. Date and time the version was last modified. Read-only.
 func (m *BaseItemVersion) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPublication sets the publication property value. Indicates the publication status of this particular version. Read-only.
 func (m *BaseItemVersion) SetPublication(value PublicationFacetable)() {
-    m.publication = value
+    err := m.GetBackingStore().Set("publication", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// BaseItemVersionable 
+type BaseItemVersionable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetLastModifiedBy()(IdentitySetable)
+    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetPublication()(PublicationFacetable)
+    SetLastModifiedBy(value IdentitySetable)()
+    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetPublication(value PublicationFacetable)()
 }

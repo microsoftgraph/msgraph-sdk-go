@@ -7,8 +7,6 @@ import (
 // OrganizationalBrandingLocalizationCollectionResponse 
 type OrganizationalBrandingLocalizationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []OrganizationalBrandingLocalizationable
 }
 // NewOrganizationalBrandingLocalizationCollectionResponse instantiates a new OrganizationalBrandingLocalizationCollectionResponse and sets the default values.
 func NewOrganizationalBrandingLocalizationCollectionResponse()(*OrganizationalBrandingLocalizationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *OrganizationalBrandingLocalizationCollectionResponse) GetFieldDeseriali
 }
 // GetValue gets the value property value. The value property
 func (m *OrganizationalBrandingLocalizationCollectionResponse) GetValue()([]OrganizationalBrandingLocalizationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OrganizationalBrandingLocalizationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OrganizationalBrandingLocalizationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *OrganizationalBrandingLocalizationCollectionResponse) Serialize(writer 
 }
 // SetValue sets the value property value. The value property
 func (m *OrganizationalBrandingLocalizationCollectionResponse) SetValue(value []OrganizationalBrandingLocalizationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OrganizationalBrandingLocalizationCollectionResponseable 
+type OrganizationalBrandingLocalizationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]OrganizationalBrandingLocalizationable)
+    SetValue(value []OrganizationalBrandingLocalizationable)()
 }

@@ -2,23 +2,19 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // StaffAvailabilityItem 
 type StaffAvailabilityItem struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Each item in this collection indicates a slot and the status of the staff member.
-    availabilityItems []AvailabilityItemable
-    // The OdataType property
-    odataType *string
-    // The ID of the staff member.
-    staffId *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewStaffAvailabilityItem instantiates a new staffAvailabilityItem and sets the default values.
 func NewStaffAvailabilityItem()(*StaffAvailabilityItem) {
     m := &StaffAvailabilityItem{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -28,11 +24,30 @@ func CreateStaffAvailabilityItemFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *StaffAvailabilityItem) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetAvailabilityItems gets the availabilityItems property value. Each item in this collection indicates a slot and the status of the staff member.
 func (m *StaffAvailabilityItem) GetAvailabilityItems()([]AvailabilityItemable) {
-    return m.availabilityItems
+    val, err := m.GetBackingStore().Get("availabilityItems")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AvailabilityItemable)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *StaffAvailabilityItem) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *StaffAvailabilityItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -75,11 +90,25 @@ func (m *StaffAvailabilityItem) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *StaffAvailabilityItem) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetStaffId gets the staffId property value. The ID of the staff member.
 func (m *StaffAvailabilityItem) GetStaffId()(*string) {
-    return m.staffId
+    val, err := m.GetBackingStore().Get("staffId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *StaffAvailabilityItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -115,17 +144,47 @@ func (m *StaffAvailabilityItem) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *StaffAvailabilityItem) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAvailabilityItems sets the availabilityItems property value. Each item in this collection indicates a slot and the status of the staff member.
 func (m *StaffAvailabilityItem) SetAvailabilityItems(value []AvailabilityItemable)() {
-    m.availabilityItems = value
+    err := m.GetBackingStore().Set("availabilityItems", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *StaffAvailabilityItem) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *StaffAvailabilityItem) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStaffId sets the staffId property value. The ID of the staff member.
 func (m *StaffAvailabilityItem) SetStaffId(value *string)() {
-    m.staffId = value
+    err := m.GetBackingStore().Set("staffId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// StaffAvailabilityItemable 
+type StaffAvailabilityItemable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAvailabilityItems()([]AvailabilityItemable)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetOdataType()(*string)
+    GetStaffId()(*string)
+    SetAvailabilityItems(value []AvailabilityItemable)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetOdataType(value *string)()
+    SetStaffId(value *string)()
 }

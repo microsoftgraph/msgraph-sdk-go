@@ -7,10 +7,6 @@ import (
 // PrintTaskTrigger 
 type PrintTaskTrigger struct {
     Entity
-    // The definition property
-    definition PrintTaskDefinitionable
-    // The event property
-    event *PrintEvent
 }
 // NewPrintTaskTrigger instantiates a new printTaskTrigger and sets the default values.
 func NewPrintTaskTrigger()(*PrintTaskTrigger) {
@@ -25,11 +21,25 @@ func CreatePrintTaskTriggerFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetDefinition gets the definition property value. The definition property
 func (m *PrintTaskTrigger) GetDefinition()(PrintTaskDefinitionable) {
-    return m.definition
+    val, err := m.GetBackingStore().Get("definition")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PrintTaskDefinitionable)
+    }
+    return nil
 }
 // GetEvent gets the event property value. The event property
 func (m *PrintTaskTrigger) GetEvent()(*PrintEvent) {
-    return m.event
+    val, err := m.GetBackingStore().Get("event")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*PrintEvent)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrintTaskTrigger) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -79,9 +89,24 @@ func (m *PrintTaskTrigger) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetDefinition sets the definition property value. The definition property
 func (m *PrintTaskTrigger) SetDefinition(value PrintTaskDefinitionable)() {
-    m.definition = value
+    err := m.GetBackingStore().Set("definition", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEvent sets the event property value. The event property
 func (m *PrintTaskTrigger) SetEvent(value *PrintEvent)() {
-    m.event = value
+    err := m.GetBackingStore().Set("event", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PrintTaskTriggerable 
+type PrintTaskTriggerable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDefinition()(PrintTaskDefinitionable)
+    GetEvent()(*PrintEvent)
+    SetDefinition(value PrintTaskDefinitionable)()
+    SetEvent(value *PrintEvent)()
 }

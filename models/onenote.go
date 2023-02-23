@@ -7,18 +7,6 @@ import (
 // Onenote 
 type Onenote struct {
     Entity
-    // The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
-    notebooks []Notebookable
-    // The status of OneNote operations. Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.
-    operations []OnenoteOperationable
-    // The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-    pages []OnenotePageable
-    // The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.
-    resources []OnenoteResourceable
-    // The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-    sectionGroups []SectionGroupable
-    // The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-    sections []OnenoteSectionable
 }
 // NewOnenote instantiates a new onenote and sets the default values.
 func NewOnenote()(*Onenote) {
@@ -122,27 +110,69 @@ func (m *Onenote) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
 }
 // GetNotebooks gets the notebooks property value. The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
 func (m *Onenote) GetNotebooks()([]Notebookable) {
-    return m.notebooks
+    val, err := m.GetBackingStore().Get("notebooks")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Notebookable)
+    }
+    return nil
 }
 // GetOperations gets the operations property value. The status of OneNote operations. Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.
 func (m *Onenote) GetOperations()([]OnenoteOperationable) {
-    return m.operations
+    val, err := m.GetBackingStore().Get("operations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OnenoteOperationable)
+    }
+    return nil
 }
 // GetPages gets the pages property value. The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
 func (m *Onenote) GetPages()([]OnenotePageable) {
-    return m.pages
+    val, err := m.GetBackingStore().Get("pages")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OnenotePageable)
+    }
+    return nil
 }
 // GetResources gets the resources property value. The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.
 func (m *Onenote) GetResources()([]OnenoteResourceable) {
-    return m.resources
+    val, err := m.GetBackingStore().Get("resources")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OnenoteResourceable)
+    }
+    return nil
 }
 // GetSectionGroups gets the sectionGroups property value. The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
 func (m *Onenote) GetSectionGroups()([]SectionGroupable) {
-    return m.sectionGroups
+    val, err := m.GetBackingStore().Get("sectionGroups")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SectionGroupable)
+    }
+    return nil
 }
 // GetSections gets the sections property value. The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
 func (m *Onenote) GetSections()([]OnenoteSectionable) {
-    return m.sections
+    val, err := m.GetBackingStore().Get("sections")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OnenoteSectionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Onenote) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -214,25 +244,60 @@ func (m *Onenote) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
 }
 // SetNotebooks sets the notebooks property value. The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
 func (m *Onenote) SetNotebooks(value []Notebookable)() {
-    m.notebooks = value
+    err := m.GetBackingStore().Set("notebooks", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOperations sets the operations property value. The status of OneNote operations. Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.
 func (m *Onenote) SetOperations(value []OnenoteOperationable)() {
-    m.operations = value
+    err := m.GetBackingStore().Set("operations", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPages sets the pages property value. The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
 func (m *Onenote) SetPages(value []OnenotePageable)() {
-    m.pages = value
+    err := m.GetBackingStore().Set("pages", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetResources sets the resources property value. The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.
 func (m *Onenote) SetResources(value []OnenoteResourceable)() {
-    m.resources = value
+    err := m.GetBackingStore().Set("resources", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSectionGroups sets the sectionGroups property value. The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
 func (m *Onenote) SetSectionGroups(value []SectionGroupable)() {
-    m.sectionGroups = value
+    err := m.GetBackingStore().Set("sectionGroups", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSections sets the sections property value. The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
 func (m *Onenote) SetSections(value []OnenoteSectionable)() {
-    m.sections = value
+    err := m.GetBackingStore().Set("sections", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Onenoteable 
+type Onenoteable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetNotebooks()([]Notebookable)
+    GetOperations()([]OnenoteOperationable)
+    GetPages()([]OnenotePageable)
+    GetResources()([]OnenoteResourceable)
+    GetSectionGroups()([]SectionGroupable)
+    GetSections()([]OnenoteSectionable)
+    SetNotebooks(value []Notebookable)()
+    SetOperations(value []OnenoteOperationable)()
+    SetPages(value []OnenotePageable)()
+    SetResources(value []OnenoteResourceable)()
+    SetSectionGroups(value []SectionGroupable)()
+    SetSections(value []OnenoteSectionable)()
 }

@@ -7,8 +7,6 @@ import (
 // UnifiedRoleManagementPolicyExpirationRuleCollectionResponse 
 type UnifiedRoleManagementPolicyExpirationRuleCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []UnifiedRoleManagementPolicyExpirationRuleable
 }
 // NewUnifiedRoleManagementPolicyExpirationRuleCollectionResponse instantiates a new UnifiedRoleManagementPolicyExpirationRuleCollectionResponse and sets the default values.
 func NewUnifiedRoleManagementPolicyExpirationRuleCollectionResponse()(*UnifiedRoleManagementPolicyExpirationRuleCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *UnifiedRoleManagementPolicyExpirationRuleCollectionResponse) GetFieldDe
 }
 // GetValue gets the value property value. The value property
 func (m *UnifiedRoleManagementPolicyExpirationRuleCollectionResponse) GetValue()([]UnifiedRoleManagementPolicyExpirationRuleable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UnifiedRoleManagementPolicyExpirationRuleable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UnifiedRoleManagementPolicyExpirationRuleCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *UnifiedRoleManagementPolicyExpirationRuleCollectionResponse) Serialize(
 }
 // SetValue sets the value property value. The value property
 func (m *UnifiedRoleManagementPolicyExpirationRuleCollectionResponse) SetValue(value []UnifiedRoleManagementPolicyExpirationRuleable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UnifiedRoleManagementPolicyExpirationRuleCollectionResponseable 
+type UnifiedRoleManagementPolicyExpirationRuleCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]UnifiedRoleManagementPolicyExpirationRuleable)
+    SetValue(value []UnifiedRoleManagementPolicyExpirationRuleable)()
 }

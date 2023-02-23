@@ -9,22 +9,6 @@ import (
 // Set 
 type Set struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
-    // Children terms of set in term [store].
-    children []Termable
-    // Date and time of set creation. Read-only.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Description that gives details on the term usage.
-    description *string
-    // Name of the set for each languageTag.
-    localizedNames []LocalizedNameable
-    // The parentGroup property
-    parentGroup Groupable
-    // Custom properties for the set.
-    properties []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.KeyValueable
-    // Indicates which terms have been pinned or reused directly under the set.
-    relations []Relationable
-    // All the terms under the set.
-    terms []Termable
 }
 // NewSet instantiates a new set and sets the default values.
 func NewSet()(*Set) {
@@ -39,15 +23,36 @@ func CreateSetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef
 }
 // GetChildren gets the children property value. Children terms of set in term [store].
 func (m *Set) GetChildren()([]Termable) {
-    return m.children
+    val, err := m.GetBackingStore().Get("children")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Termable)
+    }
+    return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Date and time of set creation. Read-only.
 func (m *Set) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetDescription gets the description property value. Description that gives details on the term usage.
 func (m *Set) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Set) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -156,23 +161,58 @@ func (m *Set) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3
 }
 // GetLocalizedNames gets the localizedNames property value. Name of the set for each languageTag.
 func (m *Set) GetLocalizedNames()([]LocalizedNameable) {
-    return m.localizedNames
+    val, err := m.GetBackingStore().Get("localizedNames")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]LocalizedNameable)
+    }
+    return nil
 }
 // GetParentGroup gets the parentGroup property value. The parentGroup property
 func (m *Set) GetParentGroup()(Groupable) {
-    return m.parentGroup
+    val, err := m.GetBackingStore().Get("parentGroup")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Groupable)
+    }
+    return nil
 }
 // GetProperties gets the properties property value. Custom properties for the set.
 func (m *Set) GetProperties()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.KeyValueable) {
-    return m.properties
+    val, err := m.GetBackingStore().Get("properties")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.KeyValueable)
+    }
+    return nil
 }
 // GetRelations gets the relations property value. Indicates which terms have been pinned or reused directly under the set.
 func (m *Set) GetRelations()([]Relationable) {
-    return m.relations
+    val, err := m.GetBackingStore().Get("relations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Relationable)
+    }
+    return nil
 }
 // GetTerms gets the terms property value. All the terms under the set.
 func (m *Set) GetTerms()([]Termable) {
-    return m.terms
+    val, err := m.GetBackingStore().Get("terms")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Termable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Set) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -252,33 +292,78 @@ func (m *Set) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493
 }
 // SetChildren sets the children property value. Children terms of set in term [store].
 func (m *Set) SetChildren(value []Termable)() {
-    m.children = value
+    err := m.GetBackingStore().Set("children", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. Date and time of set creation. Read-only.
 func (m *Set) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. Description that gives details on the term usage.
 func (m *Set) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalizedNames sets the localizedNames property value. Name of the set for each languageTag.
 func (m *Set) SetLocalizedNames(value []LocalizedNameable)() {
-    m.localizedNames = value
+    err := m.GetBackingStore().Set("localizedNames", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetParentGroup sets the parentGroup property value. The parentGroup property
 func (m *Set) SetParentGroup(value Groupable)() {
-    m.parentGroup = value
+    err := m.GetBackingStore().Set("parentGroup", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProperties sets the properties property value. Custom properties for the set.
 func (m *Set) SetProperties(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.KeyValueable)() {
-    m.properties = value
+    err := m.GetBackingStore().Set("properties", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRelations sets the relations property value. Indicates which terms have been pinned or reused directly under the set.
 func (m *Set) SetRelations(value []Relationable)() {
-    m.relations = value
+    err := m.GetBackingStore().Set("relations", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTerms sets the terms property value. All the terms under the set.
 func (m *Set) SetTerms(value []Termable)() {
-    m.terms = value
+    err := m.GetBackingStore().Set("terms", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Setable 
+type Setable interface {
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetChildren()([]Termable)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDescription()(*string)
+    GetLocalizedNames()([]LocalizedNameable)
+    GetParentGroup()(Groupable)
+    GetProperties()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.KeyValueable)
+    GetRelations()([]Relationable)
+    GetTerms()([]Termable)
+    SetChildren(value []Termable)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDescription(value *string)()
+    SetLocalizedNames(value []LocalizedNameable)()
+    SetParentGroup(value Groupable)()
+    SetProperties(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.KeyValueable)()
+    SetRelations(value []Relationable)()
+    SetTerms(value []Termable)()
 }

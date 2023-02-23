@@ -7,8 +7,6 @@ import (
 // TaskFileAttachmentCollectionResponse 
 type TaskFileAttachmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []TaskFileAttachmentable
 }
 // NewTaskFileAttachmentCollectionResponse instantiates a new TaskFileAttachmentCollectionResponse and sets the default values.
 func NewTaskFileAttachmentCollectionResponse()(*TaskFileAttachmentCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *TaskFileAttachmentCollectionResponse) GetFieldDeserializers()(map[strin
 }
 // GetValue gets the value property value. The value property
 func (m *TaskFileAttachmentCollectionResponse) GetValue()([]TaskFileAttachmentable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TaskFileAttachmentable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TaskFileAttachmentCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *TaskFileAttachmentCollectionResponse) Serialize(writer i878a80d2330e89d
 }
 // SetValue sets the value property value. The value property
 func (m *TaskFileAttachmentCollectionResponse) SetValue(value []TaskFileAttachmentable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TaskFileAttachmentCollectionResponseable 
+type TaskFileAttachmentCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]TaskFileAttachmentable)
+    SetValue(value []TaskFileAttachmentable)()
 }

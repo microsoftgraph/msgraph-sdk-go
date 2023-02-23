@@ -7,8 +7,6 @@ import (
 // SamlOrWsFedExternalDomainFederationCollectionResponse 
 type SamlOrWsFedExternalDomainFederationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []SamlOrWsFedExternalDomainFederationable
 }
 // NewSamlOrWsFedExternalDomainFederationCollectionResponse instantiates a new SamlOrWsFedExternalDomainFederationCollectionResponse and sets the default values.
 func NewSamlOrWsFedExternalDomainFederationCollectionResponse()(*SamlOrWsFedExternalDomainFederationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *SamlOrWsFedExternalDomainFederationCollectionResponse) GetFieldDeserial
 }
 // GetValue gets the value property value. The value property
 func (m *SamlOrWsFedExternalDomainFederationCollectionResponse) GetValue()([]SamlOrWsFedExternalDomainFederationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SamlOrWsFedExternalDomainFederationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SamlOrWsFedExternalDomainFederationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *SamlOrWsFedExternalDomainFederationCollectionResponse) Serialize(writer
 }
 // SetValue sets the value property value. The value property
 func (m *SamlOrWsFedExternalDomainFederationCollectionResponse) SetValue(value []SamlOrWsFedExternalDomainFederationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SamlOrWsFedExternalDomainFederationCollectionResponseable 
+type SamlOrWsFedExternalDomainFederationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]SamlOrWsFedExternalDomainFederationable)
+    SetValue(value []SamlOrWsFedExternalDomainFederationable)()
 }

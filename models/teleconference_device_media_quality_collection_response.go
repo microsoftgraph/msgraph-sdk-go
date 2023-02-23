@@ -7,8 +7,6 @@ import (
 // TeleconferenceDeviceMediaQualityCollectionResponse 
 type TeleconferenceDeviceMediaQualityCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []TeleconferenceDeviceMediaQualityable
 }
 // NewTeleconferenceDeviceMediaQualityCollectionResponse instantiates a new TeleconferenceDeviceMediaQualityCollectionResponse and sets the default values.
 func NewTeleconferenceDeviceMediaQualityCollectionResponse()(*TeleconferenceDeviceMediaQualityCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *TeleconferenceDeviceMediaQualityCollectionResponse) GetFieldDeserialize
 }
 // GetValue gets the value property value. The value property
 func (m *TeleconferenceDeviceMediaQualityCollectionResponse) GetValue()([]TeleconferenceDeviceMediaQualityable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TeleconferenceDeviceMediaQualityable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TeleconferenceDeviceMediaQualityCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *TeleconferenceDeviceMediaQualityCollectionResponse) Serialize(writer i8
 }
 // SetValue sets the value property value. The value property
 func (m *TeleconferenceDeviceMediaQualityCollectionResponse) SetValue(value []TeleconferenceDeviceMediaQualityable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TeleconferenceDeviceMediaQualityCollectionResponseable 
+type TeleconferenceDeviceMediaQualityCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]TeleconferenceDeviceMediaQualityable)
+    SetValue(value []TeleconferenceDeviceMediaQualityable)()
 }

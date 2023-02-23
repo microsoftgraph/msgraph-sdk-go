@@ -7,8 +7,6 @@ import (
 // IdentitySecurityDefaultsEnforcementPolicy 
 type IdentitySecurityDefaultsEnforcementPolicy struct {
     PolicyBase
-    // If set to true, Azure Active Directory security defaults is enabled for the tenant.
-    isEnabled *bool
 }
 // NewIdentitySecurityDefaultsEnforcementPolicy instantiates a new IdentitySecurityDefaultsEnforcementPolicy and sets the default values.
 func NewIdentitySecurityDefaultsEnforcementPolicy()(*IdentitySecurityDefaultsEnforcementPolicy) {
@@ -40,7 +38,14 @@ func (m *IdentitySecurityDefaultsEnforcementPolicy) GetFieldDeserializers()(map[
 }
 // GetIsEnabled gets the isEnabled property value. If set to true, Azure Active Directory security defaults is enabled for the tenant.
 func (m *IdentitySecurityDefaultsEnforcementPolicy) GetIsEnabled()(*bool) {
-    return m.isEnabled
+    val, err := m.GetBackingStore().Get("isEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IdentitySecurityDefaultsEnforcementPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *IdentitySecurityDefaultsEnforcementPolicy) Serialize(writer i878a80d233
 }
 // SetIsEnabled sets the isEnabled property value. If set to true, Azure Active Directory security defaults is enabled for the tenant.
 func (m *IdentitySecurityDefaultsEnforcementPolicy) SetIsEnabled(value *bool)() {
-    m.isEnabled = value
+    err := m.GetBackingStore().Set("isEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IdentitySecurityDefaultsEnforcementPolicyable 
+type IdentitySecurityDefaultsEnforcementPolicyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    PolicyBaseable
+    GetIsEnabled()(*bool)
+    SetIsEnabled(value *bool)()
 }

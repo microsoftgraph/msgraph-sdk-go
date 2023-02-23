@@ -7,8 +7,6 @@ import (
 // NetworkConnectionCollectionResponse 
 type NetworkConnectionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []NetworkConnectionable
 }
 // NewNetworkConnectionCollectionResponse instantiates a new NetworkConnectionCollectionResponse and sets the default values.
 func NewNetworkConnectionCollectionResponse()(*NetworkConnectionCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *NetworkConnectionCollectionResponse) GetFieldDeserializers()(map[string
 }
 // GetValue gets the value property value. The value property
 func (m *NetworkConnectionCollectionResponse) GetValue()([]NetworkConnectionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]NetworkConnectionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *NetworkConnectionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *NetworkConnectionCollectionResponse) Serialize(writer i878a80d2330e89d2
 }
 // SetValue sets the value property value. The value property
 func (m *NetworkConnectionCollectionResponse) SetValue(value []NetworkConnectionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// NetworkConnectionCollectionResponseable 
+type NetworkConnectionCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]NetworkConnectionable)
+    SetValue(value []NetworkConnectionable)()
 }

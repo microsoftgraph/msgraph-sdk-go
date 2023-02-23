@@ -7,8 +7,6 @@ import (
 // AverageComparativeScoreCollectionResponse 
 type AverageComparativeScoreCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AverageComparativeScoreable
 }
 // NewAverageComparativeScoreCollectionResponse instantiates a new AverageComparativeScoreCollectionResponse and sets the default values.
 func NewAverageComparativeScoreCollectionResponse()(*AverageComparativeScoreCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AverageComparativeScoreCollectionResponse) GetFieldDeserializers()(map[
 }
 // GetValue gets the value property value. The value property
 func (m *AverageComparativeScoreCollectionResponse) GetValue()([]AverageComparativeScoreable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AverageComparativeScoreable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AverageComparativeScoreCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AverageComparativeScoreCollectionResponse) Serialize(writer i878a80d233
 }
 // SetValue sets the value property value. The value property
 func (m *AverageComparativeScoreCollectionResponse) SetValue(value []AverageComparativeScoreable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AverageComparativeScoreCollectionResponseable 
+type AverageComparativeScoreCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AverageComparativeScoreable)
+    SetValue(value []AverageComparativeScoreable)()
 }

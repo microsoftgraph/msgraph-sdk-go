@@ -7,8 +7,6 @@ import (
 // MultiValueLegacyExtendedProperty 
 type MultiValueLegacyExtendedProperty struct {
     Entity
-    // A collection of property values.
-    value []string
 }
 // NewMultiValueLegacyExtendedProperty instantiates a new multiValueLegacyExtendedProperty and sets the default values.
 func NewMultiValueLegacyExtendedProperty()(*MultiValueLegacyExtendedProperty) {
@@ -42,7 +40,14 @@ func (m *MultiValueLegacyExtendedProperty) GetFieldDeserializers()(map[string]fu
 }
 // GetValue gets the value property value. A collection of property values.
 func (m *MultiValueLegacyExtendedProperty) GetValue()([]string) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MultiValueLegacyExtendedProperty) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -60,5 +65,15 @@ func (m *MultiValueLegacyExtendedProperty) Serialize(writer i878a80d2330e89d2689
 }
 // SetValue sets the value property value. A collection of property values.
 func (m *MultiValueLegacyExtendedProperty) SetValue(value []string)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MultiValueLegacyExtendedPropertyable 
+type MultiValueLegacyExtendedPropertyable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]string)
+    SetValue(value []string)()
 }

@@ -7,8 +7,6 @@ import (
 // AndroidWorkProfileCompliancePolicyCollectionResponse 
 type AndroidWorkProfileCompliancePolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AndroidWorkProfileCompliancePolicyable
 }
 // NewAndroidWorkProfileCompliancePolicyCollectionResponse instantiates a new AndroidWorkProfileCompliancePolicyCollectionResponse and sets the default values.
 func NewAndroidWorkProfileCompliancePolicyCollectionResponse()(*AndroidWorkProfileCompliancePolicyCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AndroidWorkProfileCompliancePolicyCollectionResponse) GetFieldDeseriali
 }
 // GetValue gets the value property value. The value property
 func (m *AndroidWorkProfileCompliancePolicyCollectionResponse) GetValue()([]AndroidWorkProfileCompliancePolicyable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidWorkProfileCompliancePolicyable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidWorkProfileCompliancePolicyCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AndroidWorkProfileCompliancePolicyCollectionResponse) Serialize(writer 
 }
 // SetValue sets the value property value. The value property
 func (m *AndroidWorkProfileCompliancePolicyCollectionResponse) SetValue(value []AndroidWorkProfileCompliancePolicyable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidWorkProfileCompliancePolicyCollectionResponseable 
+type AndroidWorkProfileCompliancePolicyCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AndroidWorkProfileCompliancePolicyable)
+    SetValue(value []AndroidWorkProfileCompliancePolicyable)()
 }

@@ -2,25 +2,19 @@ package me
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ManagedDevicesItemMicrosoftGraphWipeWipePostRequestBody 
 type ManagedDevicesItemMicrosoftGraphWipeWipePostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The keepEnrollmentData property
-    keepEnrollmentData *bool
-    // The keepUserData property
-    keepUserData *bool
-    // The macOsUnlockCode property
-    macOsUnlockCode *string
-    // The persistEsimDataPlan property
-    persistEsimDataPlan *bool
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewManagedDevicesItemMicrosoftGraphWipeWipePostRequestBody instantiates a new ManagedDevicesItemMicrosoftGraphWipeWipePostRequestBody and sets the default values.
 func NewManagedDevicesItemMicrosoftGraphWipeWipePostRequestBody()(*ManagedDevicesItemMicrosoftGraphWipeWipePostRequestBody) {
     m := &ManagedDevicesItemMicrosoftGraphWipeWipePostRequestBody{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -30,7 +24,19 @@ func CreateManagedDevicesItemMicrosoftGraphWipeWipePostRequestBodyFromDiscrimina
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagedDevicesItemMicrosoftGraphWipeWipePostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ManagedDevicesItemMicrosoftGraphWipeWipePostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedDevicesItemMicrosoftGraphWipeWipePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -79,19 +85,47 @@ func (m *ManagedDevicesItemMicrosoftGraphWipeWipePostRequestBody) GetFieldDeseri
 }
 // GetKeepEnrollmentData gets the keepEnrollmentData property value. The keepEnrollmentData property
 func (m *ManagedDevicesItemMicrosoftGraphWipeWipePostRequestBody) GetKeepEnrollmentData()(*bool) {
-    return m.keepEnrollmentData
+    val, err := m.GetBackingStore().Get("keepEnrollmentData")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetKeepUserData gets the keepUserData property value. The keepUserData property
 func (m *ManagedDevicesItemMicrosoftGraphWipeWipePostRequestBody) GetKeepUserData()(*bool) {
-    return m.keepUserData
+    val, err := m.GetBackingStore().Get("keepUserData")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetMacOsUnlockCode gets the macOsUnlockCode property value. The macOsUnlockCode property
 func (m *ManagedDevicesItemMicrosoftGraphWipeWipePostRequestBody) GetMacOsUnlockCode()(*string) {
-    return m.macOsUnlockCode
+    val, err := m.GetBackingStore().Get("macOsUnlockCode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPersistEsimDataPlan gets the persistEsimDataPlan property value. The persistEsimDataPlan property
 func (m *ManagedDevicesItemMicrosoftGraphWipeWipePostRequestBody) GetPersistEsimDataPlan()(*bool) {
-    return m.persistEsimDataPlan
+    val, err := m.GetBackingStore().Get("persistEsimDataPlan")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ManagedDevicesItemMicrosoftGraphWipeWipePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -129,21 +163,56 @@ func (m *ManagedDevicesItemMicrosoftGraphWipeWipePostRequestBody) Serialize(writ
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagedDevicesItemMicrosoftGraphWipeWipePostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ManagedDevicesItemMicrosoftGraphWipeWipePostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetKeepEnrollmentData sets the keepEnrollmentData property value. The keepEnrollmentData property
 func (m *ManagedDevicesItemMicrosoftGraphWipeWipePostRequestBody) SetKeepEnrollmentData(value *bool)() {
-    m.keepEnrollmentData = value
+    err := m.GetBackingStore().Set("keepEnrollmentData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetKeepUserData sets the keepUserData property value. The keepUserData property
 func (m *ManagedDevicesItemMicrosoftGraphWipeWipePostRequestBody) SetKeepUserData(value *bool)() {
-    m.keepUserData = value
+    err := m.GetBackingStore().Set("keepUserData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMacOsUnlockCode sets the macOsUnlockCode property value. The macOsUnlockCode property
 func (m *ManagedDevicesItemMicrosoftGraphWipeWipePostRequestBody) SetMacOsUnlockCode(value *string)() {
-    m.macOsUnlockCode = value
+    err := m.GetBackingStore().Set("macOsUnlockCode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPersistEsimDataPlan sets the persistEsimDataPlan property value. The persistEsimDataPlan property
 func (m *ManagedDevicesItemMicrosoftGraphWipeWipePostRequestBody) SetPersistEsimDataPlan(value *bool)() {
-    m.persistEsimDataPlan = value
+    err := m.GetBackingStore().Set("persistEsimDataPlan", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ManagedDevicesItemMicrosoftGraphWipeWipePostRequestBodyable 
+type ManagedDevicesItemMicrosoftGraphWipeWipePostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetKeepEnrollmentData()(*bool)
+    GetKeepUserData()(*bool)
+    GetMacOsUnlockCode()(*string)
+    GetPersistEsimDataPlan()(*bool)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetKeepEnrollmentData(value *bool)()
+    SetKeepUserData(value *bool)()
+    SetMacOsUnlockCode(value *string)()
+    SetPersistEsimDataPlan(value *bool)()
 }

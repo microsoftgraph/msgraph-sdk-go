@@ -7,8 +7,6 @@ import (
 // ManagedAndroidStoreAppCollectionResponse 
 type ManagedAndroidStoreAppCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ManagedAndroidStoreAppable
 }
 // NewManagedAndroidStoreAppCollectionResponse instantiates a new ManagedAndroidStoreAppCollectionResponse and sets the default values.
 func NewManagedAndroidStoreAppCollectionResponse()(*ManagedAndroidStoreAppCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ManagedAndroidStoreAppCollectionResponse) GetFieldDeserializers()(map[s
 }
 // GetValue gets the value property value. The value property
 func (m *ManagedAndroidStoreAppCollectionResponse) GetValue()([]ManagedAndroidStoreAppable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagedAndroidStoreAppable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ManagedAndroidStoreAppCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ManagedAndroidStoreAppCollectionResponse) Serialize(writer i878a80d2330
 }
 // SetValue sets the value property value. The value property
 func (m *ManagedAndroidStoreAppCollectionResponse) SetValue(value []ManagedAndroidStoreAppable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ManagedAndroidStoreAppCollectionResponseable 
+type ManagedAndroidStoreAppCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ManagedAndroidStoreAppable)
+    SetValue(value []ManagedAndroidStoreAppable)()
 }

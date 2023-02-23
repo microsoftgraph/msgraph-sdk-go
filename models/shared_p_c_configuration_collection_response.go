@@ -7,8 +7,6 @@ import (
 // SharedPCConfigurationCollectionResponse 
 type SharedPCConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []SharedPCConfigurationable
 }
 // NewSharedPCConfigurationCollectionResponse instantiates a new SharedPCConfigurationCollectionResponse and sets the default values.
 func NewSharedPCConfigurationCollectionResponse()(*SharedPCConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *SharedPCConfigurationCollectionResponse) GetFieldDeserializers()(map[st
 }
 // GetValue gets the value property value. The value property
 func (m *SharedPCConfigurationCollectionResponse) GetValue()([]SharedPCConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SharedPCConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SharedPCConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *SharedPCConfigurationCollectionResponse) Serialize(writer i878a80d2330e
 }
 // SetValue sets the value property value. The value property
 func (m *SharedPCConfigurationCollectionResponse) SetValue(value []SharedPCConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SharedPCConfigurationCollectionResponseable 
+type SharedPCConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]SharedPCConfigurationable)
+    SetValue(value []SharedPCConfigurationable)()
 }

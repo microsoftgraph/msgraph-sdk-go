@@ -7,8 +7,6 @@ import (
 // AppConsentRequestCollectionResponse 
 type AppConsentRequestCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AppConsentRequestable
 }
 // NewAppConsentRequestCollectionResponse instantiates a new AppConsentRequestCollectionResponse and sets the default values.
 func NewAppConsentRequestCollectionResponse()(*AppConsentRequestCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AppConsentRequestCollectionResponse) GetFieldDeserializers()(map[string
 }
 // GetValue gets the value property value. The value property
 func (m *AppConsentRequestCollectionResponse) GetValue()([]AppConsentRequestable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AppConsentRequestable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AppConsentRequestCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AppConsentRequestCollectionResponse) Serialize(writer i878a80d2330e89d2
 }
 // SetValue sets the value property value. The value property
 func (m *AppConsentRequestCollectionResponse) SetValue(value []AppConsentRequestable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AppConsentRequestCollectionResponseable 
+type AppConsentRequestCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AppConsentRequestable)
+    SetValue(value []AppConsentRequestable)()
 }

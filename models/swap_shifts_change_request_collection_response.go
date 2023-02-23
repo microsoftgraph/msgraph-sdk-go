@@ -7,8 +7,6 @@ import (
 // SwapShiftsChangeRequestCollectionResponse 
 type SwapShiftsChangeRequestCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []SwapShiftsChangeRequestable
 }
 // NewSwapShiftsChangeRequestCollectionResponse instantiates a new SwapShiftsChangeRequestCollectionResponse and sets the default values.
 func NewSwapShiftsChangeRequestCollectionResponse()(*SwapShiftsChangeRequestCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *SwapShiftsChangeRequestCollectionResponse) GetFieldDeserializers()(map[
 }
 // GetValue gets the value property value. The value property
 func (m *SwapShiftsChangeRequestCollectionResponse) GetValue()([]SwapShiftsChangeRequestable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SwapShiftsChangeRequestable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SwapShiftsChangeRequestCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *SwapShiftsChangeRequestCollectionResponse) Serialize(writer i878a80d233
 }
 // SetValue sets the value property value. The value property
 func (m *SwapShiftsChangeRequestCollectionResponse) SetValue(value []SwapShiftsChangeRequestable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SwapShiftsChangeRequestCollectionResponseable 
+type SwapShiftsChangeRequestCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]SwapShiftsChangeRequestable)
+    SetValue(value []SwapShiftsChangeRequestable)()
 }

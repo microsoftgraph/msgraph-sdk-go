@@ -7,8 +7,6 @@ import (
 // ManagedAndroidLobAppCollectionResponse 
 type ManagedAndroidLobAppCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ManagedAndroidLobAppable
 }
 // NewManagedAndroidLobAppCollectionResponse instantiates a new ManagedAndroidLobAppCollectionResponse and sets the default values.
 func NewManagedAndroidLobAppCollectionResponse()(*ManagedAndroidLobAppCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ManagedAndroidLobAppCollectionResponse) GetFieldDeserializers()(map[str
 }
 // GetValue gets the value property value. The value property
 func (m *ManagedAndroidLobAppCollectionResponse) GetValue()([]ManagedAndroidLobAppable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagedAndroidLobAppable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ManagedAndroidLobAppCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ManagedAndroidLobAppCollectionResponse) Serialize(writer i878a80d2330e8
 }
 // SetValue sets the value property value. The value property
 func (m *ManagedAndroidLobAppCollectionResponse) SetValue(value []ManagedAndroidLobAppable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ManagedAndroidLobAppCollectionResponseable 
+type ManagedAndroidLobAppCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ManagedAndroidLobAppable)
+    SetValue(value []ManagedAndroidLobAppable)()
 }

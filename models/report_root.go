@@ -2,29 +2,19 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ReportRoot 
 type ReportRoot struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The dailyPrintUsageByPrinter property
-    dailyPrintUsageByPrinter []PrintUsageByPrinterable
-    // The dailyPrintUsageByUser property
-    dailyPrintUsageByUser []PrintUsageByUserable
-    // The monthlyPrintUsageByPrinter property
-    monthlyPrintUsageByPrinter []PrintUsageByPrinterable
-    // The monthlyPrintUsageByUser property
-    monthlyPrintUsageByUser []PrintUsageByUserable
-    // The OdataType property
-    odataType *string
-    // The security property
-    security SecurityReportsRootable
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewReportRoot instantiates a new ReportRoot and sets the default values.
 func NewReportRoot()(*ReportRoot) {
     m := &ReportRoot{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -34,15 +24,41 @@ func CreateReportRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ReportRoot) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ReportRoot) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetDailyPrintUsageByPrinter gets the dailyPrintUsageByPrinter property value. The dailyPrintUsageByPrinter property
 func (m *ReportRoot) GetDailyPrintUsageByPrinter()([]PrintUsageByPrinterable) {
-    return m.dailyPrintUsageByPrinter
+    val, err := m.GetBackingStore().Get("dailyPrintUsageByPrinter")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrintUsageByPrinterable)
+    }
+    return nil
 }
 // GetDailyPrintUsageByUser gets the dailyPrintUsageByUser property value. The dailyPrintUsageByUser property
 func (m *ReportRoot) GetDailyPrintUsageByUser()([]PrintUsageByUserable) {
-    return m.dailyPrintUsageByUser
+    val, err := m.GetBackingStore().Get("dailyPrintUsageByUser")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrintUsageByUserable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ReportRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -127,19 +143,47 @@ func (m *ReportRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetMonthlyPrintUsageByPrinter gets the monthlyPrintUsageByPrinter property value. The monthlyPrintUsageByPrinter property
 func (m *ReportRoot) GetMonthlyPrintUsageByPrinter()([]PrintUsageByPrinterable) {
-    return m.monthlyPrintUsageByPrinter
+    val, err := m.GetBackingStore().Get("monthlyPrintUsageByPrinter")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrintUsageByPrinterable)
+    }
+    return nil
 }
 // GetMonthlyPrintUsageByUser gets the monthlyPrintUsageByUser property value. The monthlyPrintUsageByUser property
 func (m *ReportRoot) GetMonthlyPrintUsageByUser()([]PrintUsageByUserable) {
-    return m.monthlyPrintUsageByUser
+    val, err := m.GetBackingStore().Get("monthlyPrintUsageByUser")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrintUsageByUserable)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ReportRoot) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSecurity gets the security property value. The security property
 func (m *ReportRoot) GetSecurity()(SecurityReportsRootable) {
-    return m.security
+    val, err := m.GetBackingStore().Get("security")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SecurityReportsRootable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ReportRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -205,29 +249,74 @@ func (m *ReportRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ReportRoot) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ReportRoot) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetDailyPrintUsageByPrinter sets the dailyPrintUsageByPrinter property value. The dailyPrintUsageByPrinter property
 func (m *ReportRoot) SetDailyPrintUsageByPrinter(value []PrintUsageByPrinterable)() {
-    m.dailyPrintUsageByPrinter = value
+    err := m.GetBackingStore().Set("dailyPrintUsageByPrinter", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDailyPrintUsageByUser sets the dailyPrintUsageByUser property value. The dailyPrintUsageByUser property
 func (m *ReportRoot) SetDailyPrintUsageByUser(value []PrintUsageByUserable)() {
-    m.dailyPrintUsageByUser = value
+    err := m.GetBackingStore().Set("dailyPrintUsageByUser", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMonthlyPrintUsageByPrinter sets the monthlyPrintUsageByPrinter property value. The monthlyPrintUsageByPrinter property
 func (m *ReportRoot) SetMonthlyPrintUsageByPrinter(value []PrintUsageByPrinterable)() {
-    m.monthlyPrintUsageByPrinter = value
+    err := m.GetBackingStore().Set("monthlyPrintUsageByPrinter", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMonthlyPrintUsageByUser sets the monthlyPrintUsageByUser property value. The monthlyPrintUsageByUser property
 func (m *ReportRoot) SetMonthlyPrintUsageByUser(value []PrintUsageByUserable)() {
-    m.monthlyPrintUsageByUser = value
+    err := m.GetBackingStore().Set("monthlyPrintUsageByUser", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ReportRoot) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSecurity sets the security property value. The security property
 func (m *ReportRoot) SetSecurity(value SecurityReportsRootable)() {
-    m.security = value
+    err := m.GetBackingStore().Set("security", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ReportRootable 
+type ReportRootable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDailyPrintUsageByPrinter()([]PrintUsageByPrinterable)
+    GetDailyPrintUsageByUser()([]PrintUsageByUserable)
+    GetMonthlyPrintUsageByPrinter()([]PrintUsageByPrinterable)
+    GetMonthlyPrintUsageByUser()([]PrintUsageByUserable)
+    GetOdataType()(*string)
+    GetSecurity()(SecurityReportsRootable)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDailyPrintUsageByPrinter(value []PrintUsageByPrinterable)()
+    SetDailyPrintUsageByUser(value []PrintUsageByUserable)()
+    SetMonthlyPrintUsageByPrinter(value []PrintUsageByPrinterable)()
+    SetMonthlyPrintUsageByUser(value []PrintUsageByUserable)()
+    SetOdataType(value *string)()
+    SetSecurity(value SecurityReportsRootable)()
 }

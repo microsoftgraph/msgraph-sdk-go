@@ -7,10 +7,8 @@ import (
 // DeletedTeam 
 type DeletedTeam struct {
     Entity
-    // The channels property
-    channels []Channelable
 }
-// NewDeletedTeam instantiates a new deletedTeam and sets the default values.
+// NewDeletedTeam instantiates a new DeletedTeam and sets the default values.
 func NewDeletedTeam()(*DeletedTeam) {
     m := &DeletedTeam{
         Entity: *NewEntity(),
@@ -23,7 +21,14 @@ func CreateDeletedTeamFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetChannels gets the channels property value. The channels property
 func (m *DeletedTeam) GetChannels()([]Channelable) {
-    return m.channels
+    val, err := m.GetBackingStore().Get("channels")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Channelable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeletedTeam) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -64,5 +69,15 @@ func (m *DeletedTeam) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetChannels sets the channels property value. The channels property
 func (m *DeletedTeam) SetChannels(value []Channelable)() {
-    m.channels = value
+    err := m.GetBackingStore().Set("channels", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeletedTeamable 
+type DeletedTeamable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetChannels()([]Channelable)
+    SetChannels(value []Channelable)()
 }

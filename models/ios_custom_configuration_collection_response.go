@@ -7,8 +7,6 @@ import (
 // IosCustomConfigurationCollectionResponse 
 type IosCustomConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []IosCustomConfigurationable
 }
 // NewIosCustomConfigurationCollectionResponse instantiates a new IosCustomConfigurationCollectionResponse and sets the default values.
 func NewIosCustomConfigurationCollectionResponse()(*IosCustomConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *IosCustomConfigurationCollectionResponse) GetFieldDeserializers()(map[s
 }
 // GetValue gets the value property value. The value property
 func (m *IosCustomConfigurationCollectionResponse) GetValue()([]IosCustomConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IosCustomConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IosCustomConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *IosCustomConfigurationCollectionResponse) Serialize(writer i878a80d2330
 }
 // SetValue sets the value property value. The value property
 func (m *IosCustomConfigurationCollectionResponse) SetValue(value []IosCustomConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IosCustomConfigurationCollectionResponseable 
+type IosCustomConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]IosCustomConfigurationable)
+    SetValue(value []IosCustomConfigurationable)()
 }

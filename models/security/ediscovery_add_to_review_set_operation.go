@@ -7,10 +7,6 @@ import (
 // EdiscoveryAddToReviewSetOperation 
 type EdiscoveryAddToReviewSetOperation struct {
     CaseOperation
-    // eDiscovery review set to which items matching source collection query gets added.
-    reviewSet EdiscoveryReviewSetable
-    // eDiscovery search that gets added to review set.
-    search EdiscoverySearchable
 }
 // NewEdiscoveryAddToReviewSetOperation instantiates a new EdiscoveryAddToReviewSetOperation and sets the default values.
 func NewEdiscoveryAddToReviewSetOperation()(*EdiscoveryAddToReviewSetOperation) {
@@ -50,11 +46,25 @@ func (m *EdiscoveryAddToReviewSetOperation) GetFieldDeserializers()(map[string]f
 }
 // GetReviewSet gets the reviewSet property value. eDiscovery review set to which items matching source collection query gets added.
 func (m *EdiscoveryAddToReviewSetOperation) GetReviewSet()(EdiscoveryReviewSetable) {
-    return m.reviewSet
+    val, err := m.GetBackingStore().Get("reviewSet")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(EdiscoveryReviewSetable)
+    }
+    return nil
 }
 // GetSearch gets the search property value. eDiscovery search that gets added to review set.
 func (m *EdiscoveryAddToReviewSetOperation) GetSearch()(EdiscoverySearchable) {
-    return m.search
+    val, err := m.GetBackingStore().Get("search")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(EdiscoverySearchable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EdiscoveryAddToReviewSetOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -78,9 +88,24 @@ func (m *EdiscoveryAddToReviewSetOperation) Serialize(writer i878a80d2330e89d268
 }
 // SetReviewSet sets the reviewSet property value. eDiscovery review set to which items matching source collection query gets added.
 func (m *EdiscoveryAddToReviewSetOperation) SetReviewSet(value EdiscoveryReviewSetable)() {
-    m.reviewSet = value
+    err := m.GetBackingStore().Set("reviewSet", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSearch sets the search property value. eDiscovery search that gets added to review set.
 func (m *EdiscoveryAddToReviewSetOperation) SetSearch(value EdiscoverySearchable)() {
-    m.search = value
+    err := m.GetBackingStore().Set("search", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EdiscoveryAddToReviewSetOperationable 
+type EdiscoveryAddToReviewSetOperationable interface {
+    CaseOperationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetReviewSet()(EdiscoveryReviewSetable)
+    GetSearch()(EdiscoverySearchable)
+    SetReviewSet(value EdiscoveryReviewSetable)()
+    SetSearch(value EdiscoverySearchable)()
 }

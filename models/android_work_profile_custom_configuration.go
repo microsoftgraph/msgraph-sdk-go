@@ -7,8 +7,6 @@ import (
 // AndroidWorkProfileCustomConfiguration 
 type AndroidWorkProfileCustomConfiguration struct {
     DeviceConfiguration
-    // OMA settings. This collection can contain a maximum of 500 elements.
-    omaSettings []OmaSettingable
 }
 // NewAndroidWorkProfileCustomConfiguration instantiates a new AndroidWorkProfileCustomConfiguration and sets the default values.
 func NewAndroidWorkProfileCustomConfiguration()(*AndroidWorkProfileCustomConfiguration) {
@@ -44,7 +42,14 @@ func (m *AndroidWorkProfileCustomConfiguration) GetFieldDeserializers()(map[stri
 }
 // GetOmaSettings gets the omaSettings property value. OMA settings. This collection can contain a maximum of 500 elements.
 func (m *AndroidWorkProfileCustomConfiguration) GetOmaSettings()([]OmaSettingable) {
-    return m.omaSettings
+    val, err := m.GetBackingStore().Get("omaSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OmaSettingable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidWorkProfileCustomConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -66,5 +71,15 @@ func (m *AndroidWorkProfileCustomConfiguration) Serialize(writer i878a80d2330e89
 }
 // SetOmaSettings sets the omaSettings property value. OMA settings. This collection can contain a maximum of 500 elements.
 func (m *AndroidWorkProfileCustomConfiguration) SetOmaSettings(value []OmaSettingable)() {
-    m.omaSettings = value
+    err := m.GetBackingStore().Set("omaSettings", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidWorkProfileCustomConfigurationable 
+type AndroidWorkProfileCustomConfigurationable interface {
+    DeviceConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOmaSettings()([]OmaSettingable)
+    SetOmaSettings(value []OmaSettingable)()
 }

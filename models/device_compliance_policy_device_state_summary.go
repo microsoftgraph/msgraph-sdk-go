@@ -7,24 +7,6 @@ import (
 // DeviceCompliancePolicyDeviceStateSummary 
 type DeviceCompliancePolicyDeviceStateSummary struct {
     Entity
-    // Number of compliant devices
-    compliantDeviceCount *int32
-    // Number of devices that have compliance managed by System Center Configuration Manager
-    configManagerCount *int32
-    // Number of conflict devices
-    conflictDeviceCount *int32
-    // Number of error devices
-    errorDeviceCount *int32
-    // Number of devices that are in grace period
-    inGracePeriodCount *int32
-    // Number of NonCompliant devices
-    nonCompliantDeviceCount *int32
-    // Number of not applicable devices
-    notApplicableDeviceCount *int32
-    // Number of remediated devices
-    remediatedDeviceCount *int32
-    // Number of unknown devices
-    unknownDeviceCount *int32
 }
 // NewDeviceCompliancePolicyDeviceStateSummary instantiates a new deviceCompliancePolicyDeviceStateSummary and sets the default values.
 func NewDeviceCompliancePolicyDeviceStateSummary()(*DeviceCompliancePolicyDeviceStateSummary) {
@@ -39,19 +21,47 @@ func CreateDeviceCompliancePolicyDeviceStateSummaryFromDiscriminatorValue(parseN
 }
 // GetCompliantDeviceCount gets the compliantDeviceCount property value. Number of compliant devices
 func (m *DeviceCompliancePolicyDeviceStateSummary) GetCompliantDeviceCount()(*int32) {
-    return m.compliantDeviceCount
+    val, err := m.GetBackingStore().Get("compliantDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetConfigManagerCount gets the configManagerCount property value. Number of devices that have compliance managed by System Center Configuration Manager
 func (m *DeviceCompliancePolicyDeviceStateSummary) GetConfigManagerCount()(*int32) {
-    return m.configManagerCount
+    val, err := m.GetBackingStore().Get("configManagerCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetConflictDeviceCount gets the conflictDeviceCount property value. Number of conflict devices
 func (m *DeviceCompliancePolicyDeviceStateSummary) GetConflictDeviceCount()(*int32) {
-    return m.conflictDeviceCount
+    val, err := m.GetBackingStore().Get("conflictDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetErrorDeviceCount gets the errorDeviceCount property value. Number of error devices
 func (m *DeviceCompliancePolicyDeviceStateSummary) GetErrorDeviceCount()(*int32) {
-    return m.errorDeviceCount
+    val, err := m.GetBackingStore().Get("errorDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceCompliancePolicyDeviceStateSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -150,23 +160,58 @@ func (m *DeviceCompliancePolicyDeviceStateSummary) GetFieldDeserializers()(map[s
 }
 // GetInGracePeriodCount gets the inGracePeriodCount property value. Number of devices that are in grace period
 func (m *DeviceCompliancePolicyDeviceStateSummary) GetInGracePeriodCount()(*int32) {
-    return m.inGracePeriodCount
+    val, err := m.GetBackingStore().Get("inGracePeriodCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetNonCompliantDeviceCount gets the nonCompliantDeviceCount property value. Number of NonCompliant devices
 func (m *DeviceCompliancePolicyDeviceStateSummary) GetNonCompliantDeviceCount()(*int32) {
-    return m.nonCompliantDeviceCount
+    val, err := m.GetBackingStore().Get("nonCompliantDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetNotApplicableDeviceCount gets the notApplicableDeviceCount property value. Number of not applicable devices
 func (m *DeviceCompliancePolicyDeviceStateSummary) GetNotApplicableDeviceCount()(*int32) {
-    return m.notApplicableDeviceCount
+    val, err := m.GetBackingStore().Get("notApplicableDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetRemediatedDeviceCount gets the remediatedDeviceCount property value. Number of remediated devices
 func (m *DeviceCompliancePolicyDeviceStateSummary) GetRemediatedDeviceCount()(*int32) {
-    return m.remediatedDeviceCount
+    val, err := m.GetBackingStore().Get("remediatedDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetUnknownDeviceCount gets the unknownDeviceCount property value. Number of unknown devices
 func (m *DeviceCompliancePolicyDeviceStateSummary) GetUnknownDeviceCount()(*int32) {
-    return m.unknownDeviceCount
+    val, err := m.GetBackingStore().Get("unknownDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceCompliancePolicyDeviceStateSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -232,37 +277,87 @@ func (m *DeviceCompliancePolicyDeviceStateSummary) Serialize(writer i878a80d2330
 }
 // SetCompliantDeviceCount sets the compliantDeviceCount property value. Number of compliant devices
 func (m *DeviceCompliancePolicyDeviceStateSummary) SetCompliantDeviceCount(value *int32)() {
-    m.compliantDeviceCount = value
+    err := m.GetBackingStore().Set("compliantDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConfigManagerCount sets the configManagerCount property value. Number of devices that have compliance managed by System Center Configuration Manager
 func (m *DeviceCompliancePolicyDeviceStateSummary) SetConfigManagerCount(value *int32)() {
-    m.configManagerCount = value
+    err := m.GetBackingStore().Set("configManagerCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConflictDeviceCount sets the conflictDeviceCount property value. Number of conflict devices
 func (m *DeviceCompliancePolicyDeviceStateSummary) SetConflictDeviceCount(value *int32)() {
-    m.conflictDeviceCount = value
+    err := m.GetBackingStore().Set("conflictDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetErrorDeviceCount sets the errorDeviceCount property value. Number of error devices
 func (m *DeviceCompliancePolicyDeviceStateSummary) SetErrorDeviceCount(value *int32)() {
-    m.errorDeviceCount = value
+    err := m.GetBackingStore().Set("errorDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInGracePeriodCount sets the inGracePeriodCount property value. Number of devices that are in grace period
 func (m *DeviceCompliancePolicyDeviceStateSummary) SetInGracePeriodCount(value *int32)() {
-    m.inGracePeriodCount = value
+    err := m.GetBackingStore().Set("inGracePeriodCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNonCompliantDeviceCount sets the nonCompliantDeviceCount property value. Number of NonCompliant devices
 func (m *DeviceCompliancePolicyDeviceStateSummary) SetNonCompliantDeviceCount(value *int32)() {
-    m.nonCompliantDeviceCount = value
+    err := m.GetBackingStore().Set("nonCompliantDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNotApplicableDeviceCount sets the notApplicableDeviceCount property value. Number of not applicable devices
 func (m *DeviceCompliancePolicyDeviceStateSummary) SetNotApplicableDeviceCount(value *int32)() {
-    m.notApplicableDeviceCount = value
+    err := m.GetBackingStore().Set("notApplicableDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRemediatedDeviceCount sets the remediatedDeviceCount property value. Number of remediated devices
 func (m *DeviceCompliancePolicyDeviceStateSummary) SetRemediatedDeviceCount(value *int32)() {
-    m.remediatedDeviceCount = value
+    err := m.GetBackingStore().Set("remediatedDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUnknownDeviceCount sets the unknownDeviceCount property value. Number of unknown devices
 func (m *DeviceCompliancePolicyDeviceStateSummary) SetUnknownDeviceCount(value *int32)() {
-    m.unknownDeviceCount = value
+    err := m.GetBackingStore().Set("unknownDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceCompliancePolicyDeviceStateSummaryable 
+type DeviceCompliancePolicyDeviceStateSummaryable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCompliantDeviceCount()(*int32)
+    GetConfigManagerCount()(*int32)
+    GetConflictDeviceCount()(*int32)
+    GetErrorDeviceCount()(*int32)
+    GetInGracePeriodCount()(*int32)
+    GetNonCompliantDeviceCount()(*int32)
+    GetNotApplicableDeviceCount()(*int32)
+    GetRemediatedDeviceCount()(*int32)
+    GetUnknownDeviceCount()(*int32)
+    SetCompliantDeviceCount(value *int32)()
+    SetConfigManagerCount(value *int32)()
+    SetConflictDeviceCount(value *int32)()
+    SetErrorDeviceCount(value *int32)()
+    SetInGracePeriodCount(value *int32)()
+    SetNonCompliantDeviceCount(value *int32)()
+    SetNotApplicableDeviceCount(value *int32)()
+    SetRemediatedDeviceCount(value *int32)()
+    SetUnknownDeviceCount(value *int32)()
 }

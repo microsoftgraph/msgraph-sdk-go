@@ -3,19 +3,19 @@ package groups
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ItemConversationsItemThreadsItemPostsItemInReplyToAttachmentsMicrosoftGraphCreateUploadSessionCreateUploadSessionPostRequestBody 
 type ItemConversationsItemThreadsItemPostsItemInReplyToAttachmentsMicrosoftGraphCreateUploadSessionCreateUploadSessionPostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The AttachmentItem property
-    attachmentItem iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentItemable
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewItemConversationsItemThreadsItemPostsItemInReplyToAttachmentsMicrosoftGraphCreateUploadSessionCreateUploadSessionPostRequestBody instantiates a new ItemConversationsItemThreadsItemPostsItemInReplyToAttachmentsMicrosoftGraphCreateUploadSessionCreateUploadSessionPostRequestBody and sets the default values.
 func NewItemConversationsItemThreadsItemPostsItemInReplyToAttachmentsMicrosoftGraphCreateUploadSessionCreateUploadSessionPostRequestBody()(*ItemConversationsItemThreadsItemPostsItemInReplyToAttachmentsMicrosoftGraphCreateUploadSessionCreateUploadSessionPostRequestBody) {
     m := &ItemConversationsItemThreadsItemPostsItemInReplyToAttachmentsMicrosoftGraphCreateUploadSessionCreateUploadSessionPostRequestBody{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -25,11 +25,30 @@ func CreateItemConversationsItemThreadsItemPostsItemInReplyToAttachmentsMicrosof
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemConversationsItemThreadsItemPostsItemInReplyToAttachmentsMicrosoftGraphCreateUploadSessionCreateUploadSessionPostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetAttachmentItem gets the attachmentItem property value. The AttachmentItem property
 func (m *ItemConversationsItemThreadsItemPostsItemInReplyToAttachmentsMicrosoftGraphCreateUploadSessionCreateUploadSessionPostRequestBody) GetAttachmentItem()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentItemable) {
-    return m.attachmentItem
+    val, err := m.GetBackingStore().Get("attachmentItem")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentItemable)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ItemConversationsItemThreadsItemPostsItemInReplyToAttachmentsMicrosoftGraphCreateUploadSessionCreateUploadSessionPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemConversationsItemThreadsItemPostsItemInReplyToAttachmentsMicrosoftGraphCreateUploadSessionCreateUploadSessionPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -64,9 +83,29 @@ func (m *ItemConversationsItemThreadsItemPostsItemInReplyToAttachmentsMicrosoftG
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemConversationsItemThreadsItemPostsItemInReplyToAttachmentsMicrosoftGraphCreateUploadSessionCreateUploadSessionPostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAttachmentItem sets the attachmentItem property value. The AttachmentItem property
 func (m *ItemConversationsItemThreadsItemPostsItemInReplyToAttachmentsMicrosoftGraphCreateUploadSessionCreateUploadSessionPostRequestBody) SetAttachmentItem(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentItemable)() {
-    m.attachmentItem = value
+    err := m.GetBackingStore().Set("attachmentItem", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ItemConversationsItemThreadsItemPostsItemInReplyToAttachmentsMicrosoftGraphCreateUploadSessionCreateUploadSessionPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
+}
+// ItemConversationsItemThreadsItemPostsItemInReplyToAttachmentsMicrosoftGraphCreateUploadSessionCreateUploadSessionPostRequestBodyable 
+type ItemConversationsItemThreadsItemPostsItemInReplyToAttachmentsMicrosoftGraphCreateUploadSessionCreateUploadSessionPostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAttachmentItem()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentItemable)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    SetAttachmentItem(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentItemable)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
 }

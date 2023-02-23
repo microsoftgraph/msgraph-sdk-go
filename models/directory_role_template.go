@@ -7,10 +7,6 @@ import (
 // DirectoryRoleTemplate 
 type DirectoryRoleTemplate struct {
     DirectoryObject
-    // The description to set for the directory role. Read-only.
-    description *string
-    // The display name to set for the directory role. Read-only.
-    displayName *string
 }
 // NewDirectoryRoleTemplate instantiates a new DirectoryRoleTemplate and sets the default values.
 func NewDirectoryRoleTemplate()(*DirectoryRoleTemplate) {
@@ -27,11 +23,25 @@ func CreateDirectoryRoleTemplateFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetDescription gets the description property value. The description to set for the directory role. Read-only.
 func (m *DirectoryRoleTemplate) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The display name to set for the directory role. Read-only.
 func (m *DirectoryRoleTemplate) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DirectoryRoleTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -80,9 +90,24 @@ func (m *DirectoryRoleTemplate) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetDescription sets the description property value. The description to set for the directory role. Read-only.
 func (m *DirectoryRoleTemplate) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The display name to set for the directory role. Read-only.
 func (m *DirectoryRoleTemplate) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DirectoryRoleTemplateable 
+type DirectoryRoleTemplateable interface {
+    DirectoryObjectable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
 }

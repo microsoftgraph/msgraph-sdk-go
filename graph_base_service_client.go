@@ -65,6 +65,7 @@ import (
     ie05ac24b652f7d895cca374316c093c4ca40dd2df0f1518c465233d6432b1ef9 "github.com/microsoftgraph/msgraph-sdk-go/teamwork"
     ie3631868038c44f490dbc03525ac7249d0523c29cc45cbb25b2aebcf470d6c0c "github.com/microsoftgraph/msgraph-sdk-go/contracts"
     ie66b913c1bc1c536bc8db5d185910e9318f621374e016f95e36e9d59b7127f63 "github.com/microsoftgraph/msgraph-sdk-go/planner"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
     ieaa2790c8b7fa361674e69e4a385e279c8c641adf79d86e5b0ca566591a507e8 "github.com/microsoftgraph/msgraph-sdk-go/agreements"
     iefc72d8a17962d4db125c50866617eaa15d662c6e3fb13735d477380dcc0dbe3 "github.com/microsoftgraph/msgraph-sdk-go/drives"
     if398f5c2f1cb53106e045240edd469d82f1854899fd95cfdf8f559b19375750c "github.com/microsoftgraph/msgraph-sdk-go/branding"
@@ -233,7 +234,7 @@ func (m *GraphBaseServiceClient) ConnectionsById(id string)(*icabdee72951e77325f
     return icabdee72951e77325f237b36d388a199c87e65f67652b6bb85723aba847d7e83.NewExternalConnectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewGraphBaseServiceClient instantiates a new GraphBaseServiceClient and sets the default values.
-func NewGraphBaseServiceClient(requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GraphBaseServiceClient) {
+func NewGraphBaseServiceClient(requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactory)(*GraphBaseServiceClient) {
     m := &GraphBaseServiceClient{
     }
     m.pathParameters = make(map[string]string);
@@ -249,6 +250,7 @@ func NewGraphBaseServiceClient(requestAdapter i2ae4187f7daee263371cb1c977df63981
         m.requestAdapter.SetBaseUrl("https://graph.microsoft.com/v1.0")
     }
     m.pathParameters["baseurl"] = m.requestAdapter.GetBaseUrl()
+    m.requestAdapter.EnableBackingStore(backingStore);
     return m
 }
 // Contacts provides operations to manage the collection of orgContact entities.

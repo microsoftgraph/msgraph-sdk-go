@@ -7,10 +7,6 @@ import (
 // FileAssessmentRequest 
 type FileAssessmentRequest struct {
     ThreatAssessmentRequest
-    // Base64 encoded file content. The file content cannot fetch back because it isn't stored.
-    contentData *string
-    // The file name.
-    fileName *string
 }
 // NewFileAssessmentRequest instantiates a new FileAssessmentRequest and sets the default values.
 func NewFileAssessmentRequest()(*FileAssessmentRequest) {
@@ -27,7 +23,14 @@ func CreateFileAssessmentRequestFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetContentData gets the contentData property value. Base64 encoded file content. The file content cannot fetch back because it isn't stored.
 func (m *FileAssessmentRequest) GetContentData()(*string) {
-    return m.contentData
+    val, err := m.GetBackingStore().Get("contentData")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *FileAssessmentRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -56,7 +59,14 @@ func (m *FileAssessmentRequest) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetFileName gets the fileName property value. The file name.
 func (m *FileAssessmentRequest) GetFileName()(*string) {
-    return m.fileName
+    val, err := m.GetBackingStore().Get("fileName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *FileAssessmentRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -80,9 +90,24 @@ func (m *FileAssessmentRequest) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetContentData sets the contentData property value. Base64 encoded file content. The file content cannot fetch back because it isn't stored.
 func (m *FileAssessmentRequest) SetContentData(value *string)() {
-    m.contentData = value
+    err := m.GetBackingStore().Set("contentData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFileName sets the fileName property value. The file name.
 func (m *FileAssessmentRequest) SetFileName(value *string)() {
-    m.fileName = value
+    err := m.GetBackingStore().Set("fileName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// FileAssessmentRequestable 
+type FileAssessmentRequestable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    ThreatAssessmentRequestable
+    GetContentData()(*string)
+    GetFileName()(*string)
+    SetContentData(value *string)()
+    SetFileName(value *string)()
 }

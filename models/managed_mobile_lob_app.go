@@ -7,14 +7,6 @@ import (
 // ManagedMobileLobApp 
 type ManagedMobileLobApp struct {
     ManagedApp
-    // The internal committed content version.
-    committedContentVersion *string
-    // The list of content versions for this app.
-    contentVersions []MobileAppContentable
-    // The name of the main Lob application file.
-    fileName *string
-    // The total size, including all uploaded files.
-    size *int64
 }
 // NewManagedMobileLobApp instantiates a new ManagedMobileLobApp and sets the default values.
 func NewManagedMobileLobApp()(*ManagedMobileLobApp) {
@@ -51,11 +43,25 @@ func CreateManagedMobileLobAppFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetCommittedContentVersion gets the committedContentVersion property value. The internal committed content version.
 func (m *ManagedMobileLobApp) GetCommittedContentVersion()(*string) {
-    return m.committedContentVersion
+    val, err := m.GetBackingStore().Get("committedContentVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetContentVersions gets the contentVersions property value. The list of content versions for this app.
 func (m *ManagedMobileLobApp) GetContentVersions()([]MobileAppContentable) {
-    return m.contentVersions
+    val, err := m.GetBackingStore().Get("contentVersions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MobileAppContentable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedMobileLobApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -108,11 +114,25 @@ func (m *ManagedMobileLobApp) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetFileName gets the fileName property value. The name of the main Lob application file.
 func (m *ManagedMobileLobApp) GetFileName()(*string) {
-    return m.fileName
+    val, err := m.GetBackingStore().Get("fileName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSize gets the size property value. The total size, including all uploaded files.
 func (m *ManagedMobileLobApp) GetSize()(*int64) {
-    return m.size
+    val, err := m.GetBackingStore().Get("size")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ManagedMobileLobApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -152,17 +172,42 @@ func (m *ManagedMobileLobApp) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetCommittedContentVersion sets the committedContentVersion property value. The internal committed content version.
 func (m *ManagedMobileLobApp) SetCommittedContentVersion(value *string)() {
-    m.committedContentVersion = value
+    err := m.GetBackingStore().Set("committedContentVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetContentVersions sets the contentVersions property value. The list of content versions for this app.
 func (m *ManagedMobileLobApp) SetContentVersions(value []MobileAppContentable)() {
-    m.contentVersions = value
+    err := m.GetBackingStore().Set("contentVersions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFileName sets the fileName property value. The name of the main Lob application file.
 func (m *ManagedMobileLobApp) SetFileName(value *string)() {
-    m.fileName = value
+    err := m.GetBackingStore().Set("fileName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSize sets the size property value. The total size, including all uploaded files.
 func (m *ManagedMobileLobApp) SetSize(value *int64)() {
-    m.size = value
+    err := m.GetBackingStore().Set("size", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ManagedMobileLobAppable 
+type ManagedMobileLobAppable interface {
+    ManagedAppable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCommittedContentVersion()(*string)
+    GetContentVersions()([]MobileAppContentable)
+    GetFileName()(*string)
+    GetSize()(*int64)
+    SetCommittedContentVersion(value *string)()
+    SetContentVersions(value []MobileAppContentable)()
+    SetFileName(value *string)()
+    SetSize(value *int64)()
 }

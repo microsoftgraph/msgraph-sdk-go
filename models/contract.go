@@ -8,16 +8,8 @@ import (
 // Contract 
 type Contract struct {
     DirectoryObject
-    // Type of contract. Possible values are:  SyndicationPartner, BreadthPartner, ResellerPartner. See more in the table below.
-    contractType *string
-    // The unique identifier for the customer tenant referenced by this partnership. Corresponds to the id property of the customer tenant's organization resource.
-    customerId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
-    // A copy of the customer tenant's default domain name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant's default domain name changes.
-    defaultDomainName *string
-    // A copy of the customer tenant's display name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant's display name changes.
-    displayName *string
 }
-// NewContract instantiates a new Contract and sets the default values.
+// NewContract instantiates a new contract and sets the default values.
 func NewContract()(*Contract) {
     m := &Contract{
         DirectoryObject: *NewDirectoryObject(),
@@ -32,19 +24,47 @@ func CreateContractFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 }
 // GetContractType gets the contractType property value. Type of contract. Possible values are:  SyndicationPartner, BreadthPartner, ResellerPartner. See more in the table below.
 func (m *Contract) GetContractType()(*string) {
-    return m.contractType
+    val, err := m.GetBackingStore().Get("contractType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCustomerId gets the customerId property value. The unique identifier for the customer tenant referenced by this partnership. Corresponds to the id property of the customer tenant's organization resource.
 func (m *Contract) GetCustomerId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
-    return m.customerId
+    val, err := m.GetBackingStore().Get("customerId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    }
+    return nil
 }
 // GetDefaultDomainName gets the defaultDomainName property value. A copy of the customer tenant's default domain name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant's default domain name changes.
 func (m *Contract) GetDefaultDomainName()(*string) {
-    return m.defaultDomainName
+    val, err := m.GetBackingStore().Get("defaultDomainName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. A copy of the customer tenant's display name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant's display name changes.
 func (m *Contract) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Contract) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -125,17 +145,42 @@ func (m *Contract) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetContractType sets the contractType property value. Type of contract. Possible values are:  SyndicationPartner, BreadthPartner, ResellerPartner. See more in the table below.
 func (m *Contract) SetContractType(value *string)() {
-    m.contractType = value
+    err := m.GetBackingStore().Set("contractType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCustomerId sets the customerId property value. The unique identifier for the customer tenant referenced by this partnership. Corresponds to the id property of the customer tenant's organization resource.
 func (m *Contract) SetCustomerId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
-    m.customerId = value
+    err := m.GetBackingStore().Set("customerId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefaultDomainName sets the defaultDomainName property value. A copy of the customer tenant's default domain name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant's default domain name changes.
 func (m *Contract) SetDefaultDomainName(value *string)() {
-    m.defaultDomainName = value
+    err := m.GetBackingStore().Set("defaultDomainName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. A copy of the customer tenant's display name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant's display name changes.
 func (m *Contract) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Contractable 
+type Contractable interface {
+    DirectoryObjectable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetContractType()(*string)
+    GetCustomerId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    GetDefaultDomainName()(*string)
+    GetDisplayName()(*string)
+    SetContractType(value *string)()
+    SetCustomerId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
+    SetDefaultDomainName(value *string)()
+    SetDisplayName(value *string)()
 }

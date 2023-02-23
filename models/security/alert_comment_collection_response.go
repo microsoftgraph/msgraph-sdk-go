@@ -8,8 +8,6 @@ import (
 // AlertCommentCollectionResponse 
 type AlertCommentCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
-    // The value property
-    value []AlertCommentable
 }
 // NewAlertCommentCollectionResponse instantiates a new AlertCommentCollectionResponse and sets the default values.
 func NewAlertCommentCollectionResponse()(*AlertCommentCollectionResponse) {
@@ -43,7 +41,14 @@ func (m *AlertCommentCollectionResponse) GetFieldDeserializers()(map[string]func
 }
 // GetValue gets the value property value. The value property
 func (m *AlertCommentCollectionResponse) GetValue()([]AlertCommentable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AlertCommentable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AlertCommentCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *AlertCommentCollectionResponse) Serialize(writer i878a80d2330e89d268963
 }
 // SetValue sets the value property value. The value property
 func (m *AlertCommentCollectionResponse) SetValue(value []AlertCommentable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AlertCommentCollectionResponseable 
+type AlertCommentCollectionResponseable interface {
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AlertCommentable)
+    SetValue(value []AlertCommentable)()
 }

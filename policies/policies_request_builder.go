@@ -58,6 +58,21 @@ func (m *PoliciesRequestBuilder) ActivityBasedTimeoutPoliciesById(id string)(*Ac
 func (m *PoliciesRequestBuilder) AdminConsentRequestPolicy()(*AdminConsentRequestPolicyRequestBuilder) {
     return NewAdminConsentRequestPolicyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// AppManagementPolicies provides operations to manage the appManagementPolicies property of the microsoft.graph.policyRoot entity.
+func (m *PoliciesRequestBuilder) AppManagementPolicies()(*AppManagementPoliciesRequestBuilder) {
+    return NewAppManagementPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// AppManagementPoliciesById provides operations to manage the appManagementPolicies property of the microsoft.graph.policyRoot entity.
+func (m *PoliciesRequestBuilder) AppManagementPoliciesById(id string)(*AppManagementPoliciesAppManagementPolicyItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["appManagementPolicy%2Did"] = id
+    }
+    return NewAppManagementPoliciesAppManagementPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+}
 // AuthenticationFlowsPolicy provides operations to manage the authenticationFlowsPolicy property of the microsoft.graph.policyRoot entity.
 func (m *PoliciesRequestBuilder) AuthenticationFlowsPolicy()(*AuthenticationFlowsPolicyRequestBuilder) {
     return NewAuthenticationFlowsPolicyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
@@ -122,6 +137,10 @@ func NewPoliciesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 // CrossTenantAccessPolicy provides operations to manage the crossTenantAccessPolicy property of the microsoft.graph.policyRoot entity.
 func (m *PoliciesRequestBuilder) CrossTenantAccessPolicy()(*CrossTenantAccessPolicyRequestBuilder) {
     return NewCrossTenantAccessPolicyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// DefaultAppManagementPolicy provides operations to manage the defaultAppManagementPolicy property of the microsoft.graph.policyRoot entity.
+func (m *PoliciesRequestBuilder) DefaultAppManagementPolicy()(*DefaultAppManagementPolicyRequestBuilder) {
+    return NewDefaultAppManagementPolicyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // FeatureRolloutPolicies provides operations to manage the featureRolloutPolicies property of the microsoft.graph.policyRoot entity.
 func (m *PoliciesRequestBuilder) FeatureRolloutPolicies()(*FeatureRolloutPoliciesRequestBuilder) {

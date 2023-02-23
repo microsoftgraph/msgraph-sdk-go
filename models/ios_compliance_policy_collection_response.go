@@ -7,8 +7,6 @@ import (
 // IosCompliancePolicyCollectionResponse 
 type IosCompliancePolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []IosCompliancePolicyable
 }
 // NewIosCompliancePolicyCollectionResponse instantiates a new IosCompliancePolicyCollectionResponse and sets the default values.
 func NewIosCompliancePolicyCollectionResponse()(*IosCompliancePolicyCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *IosCompliancePolicyCollectionResponse) GetFieldDeserializers()(map[stri
 }
 // GetValue gets the value property value. The value property
 func (m *IosCompliancePolicyCollectionResponse) GetValue()([]IosCompliancePolicyable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IosCompliancePolicyable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IosCompliancePolicyCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *IosCompliancePolicyCollectionResponse) Serialize(writer i878a80d2330e89
 }
 // SetValue sets the value property value. The value property
 func (m *IosCompliancePolicyCollectionResponse) SetValue(value []IosCompliancePolicyable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IosCompliancePolicyCollectionResponseable 
+type IosCompliancePolicyCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]IosCompliancePolicyable)
+    SetValue(value []IosCompliancePolicyable)()
 }

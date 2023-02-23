@@ -3,31 +3,19 @@ package print
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // PrintersMicrosoftGraphCreateCreatePostRequestBody 
 type PrintersMicrosoftGraphCreateCreatePostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The certificateSigningRequest property
-    certificateSigningRequest iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintCertificateSigningRequestable
-    // The connectorId property
-    connectorId *string
-    // The displayName property
-    displayName *string
-    // The hasPhysicalDevice property
-    hasPhysicalDevice *bool
-    // The manufacturer property
-    manufacturer *string
-    // The model property
-    model *string
-    // The physicalDeviceId property
-    physicalDeviceId *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewPrintersMicrosoftGraphCreateCreatePostRequestBody instantiates a new PrintersMicrosoftGraphCreateCreatePostRequestBody and sets the default values.
 func NewPrintersMicrosoftGraphCreateCreatePostRequestBody()(*PrintersMicrosoftGraphCreateCreatePostRequestBody) {
     m := &PrintersMicrosoftGraphCreateCreatePostRequestBody{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -37,19 +25,52 @@ func CreatePrintersMicrosoftGraphCreateCreatePostRequestBodyFromDiscriminatorVal
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrintersMicrosoftGraphCreateCreatePostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *PrintersMicrosoftGraphCreateCreatePostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetCertificateSigningRequest gets the certificateSigningRequest property value. The certificateSigningRequest property
 func (m *PrintersMicrosoftGraphCreateCreatePostRequestBody) GetCertificateSigningRequest()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintCertificateSigningRequestable) {
-    return m.certificateSigningRequest
+    val, err := m.GetBackingStore().Get("certificateSigningRequest")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintCertificateSigningRequestable)
+    }
+    return nil
 }
 // GetConnectorId gets the connectorId property value. The connectorId property
 func (m *PrintersMicrosoftGraphCreateCreatePostRequestBody) GetConnectorId()(*string) {
-    return m.connectorId
+    val, err := m.GetBackingStore().Get("connectorId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *PrintersMicrosoftGraphCreateCreatePostRequestBody) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrintersMicrosoftGraphCreateCreatePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -128,19 +149,47 @@ func (m *PrintersMicrosoftGraphCreateCreatePostRequestBody) GetFieldDeserializer
 }
 // GetHasPhysicalDevice gets the hasPhysicalDevice property value. The hasPhysicalDevice property
 func (m *PrintersMicrosoftGraphCreateCreatePostRequestBody) GetHasPhysicalDevice()(*bool) {
-    return m.hasPhysicalDevice
+    val, err := m.GetBackingStore().Get("hasPhysicalDevice")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetManufacturer gets the manufacturer property value. The manufacturer property
 func (m *PrintersMicrosoftGraphCreateCreatePostRequestBody) GetManufacturer()(*string) {
-    return m.manufacturer
+    val, err := m.GetBackingStore().Get("manufacturer")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetModel gets the model property value. The model property
 func (m *PrintersMicrosoftGraphCreateCreatePostRequestBody) GetModel()(*string) {
-    return m.model
+    val, err := m.GetBackingStore().Get("model")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPhysicalDeviceId gets the physicalDeviceId property value. The physicalDeviceId property
 func (m *PrintersMicrosoftGraphCreateCreatePostRequestBody) GetPhysicalDeviceId()(*string) {
-    return m.physicalDeviceId
+    val, err := m.GetBackingStore().Get("physicalDeviceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PrintersMicrosoftGraphCreateCreatePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -196,33 +245,83 @@ func (m *PrintersMicrosoftGraphCreateCreatePostRequestBody) Serialize(writer i87
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrintersMicrosoftGraphCreateCreatePostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *PrintersMicrosoftGraphCreateCreatePostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetCertificateSigningRequest sets the certificateSigningRequest property value. The certificateSigningRequest property
 func (m *PrintersMicrosoftGraphCreateCreatePostRequestBody) SetCertificateSigningRequest(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintCertificateSigningRequestable)() {
-    m.certificateSigningRequest = value
+    err := m.GetBackingStore().Set("certificateSigningRequest", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConnectorId sets the connectorId property value. The connectorId property
 func (m *PrintersMicrosoftGraphCreateCreatePostRequestBody) SetConnectorId(value *string)() {
-    m.connectorId = value
+    err := m.GetBackingStore().Set("connectorId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *PrintersMicrosoftGraphCreateCreatePostRequestBody) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHasPhysicalDevice sets the hasPhysicalDevice property value. The hasPhysicalDevice property
 func (m *PrintersMicrosoftGraphCreateCreatePostRequestBody) SetHasPhysicalDevice(value *bool)() {
-    m.hasPhysicalDevice = value
+    err := m.GetBackingStore().Set("hasPhysicalDevice", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManufacturer sets the manufacturer property value. The manufacturer property
 func (m *PrintersMicrosoftGraphCreateCreatePostRequestBody) SetManufacturer(value *string)() {
-    m.manufacturer = value
+    err := m.GetBackingStore().Set("manufacturer", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetModel sets the model property value. The model property
 func (m *PrintersMicrosoftGraphCreateCreatePostRequestBody) SetModel(value *string)() {
-    m.model = value
+    err := m.GetBackingStore().Set("model", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPhysicalDeviceId sets the physicalDeviceId property value. The physicalDeviceId property
 func (m *PrintersMicrosoftGraphCreateCreatePostRequestBody) SetPhysicalDeviceId(value *string)() {
-    m.physicalDeviceId = value
+    err := m.GetBackingStore().Set("physicalDeviceId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PrintersMicrosoftGraphCreateCreatePostRequestBodyable 
+type PrintersMicrosoftGraphCreateCreatePostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetCertificateSigningRequest()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintCertificateSigningRequestable)
+    GetConnectorId()(*string)
+    GetDisplayName()(*string)
+    GetHasPhysicalDevice()(*bool)
+    GetManufacturer()(*string)
+    GetModel()(*string)
+    GetPhysicalDeviceId()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetCertificateSigningRequest(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintCertificateSigningRequestable)()
+    SetConnectorId(value *string)()
+    SetDisplayName(value *string)()
+    SetHasPhysicalDevice(value *bool)()
+    SetManufacturer(value *string)()
+    SetModel(value *string)()
+    SetPhysicalDeviceId(value *string)()
 }

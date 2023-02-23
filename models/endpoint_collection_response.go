@@ -7,8 +7,6 @@ import (
 // EndpointCollectionResponse 
 type EndpointCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Endpointable
 }
 // NewEndpointCollectionResponse instantiates a new EndpointCollectionResponse and sets the default values.
 func NewEndpointCollectionResponse()(*EndpointCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *EndpointCollectionResponse) GetFieldDeserializers()(map[string]func(i87
 }
 // GetValue gets the value property value. The value property
 func (m *EndpointCollectionResponse) GetValue()([]Endpointable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Endpointable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EndpointCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *EndpointCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetValue sets the value property value. The value property
 func (m *EndpointCollectionResponse) SetValue(value []Endpointable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EndpointCollectionResponseable 
+type EndpointCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Endpointable)
+    SetValue(value []Endpointable)()
 }

@@ -7,8 +7,6 @@ import (
 // ManagedDeviceMobileAppConfigurationCollectionResponse 
 type ManagedDeviceMobileAppConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ManagedDeviceMobileAppConfigurationable
 }
 // NewManagedDeviceMobileAppConfigurationCollectionResponse instantiates a new ManagedDeviceMobileAppConfigurationCollectionResponse and sets the default values.
 func NewManagedDeviceMobileAppConfigurationCollectionResponse()(*ManagedDeviceMobileAppConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ManagedDeviceMobileAppConfigurationCollectionResponse) GetFieldDeserial
 }
 // GetValue gets the value property value. The value property
 func (m *ManagedDeviceMobileAppConfigurationCollectionResponse) GetValue()([]ManagedDeviceMobileAppConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagedDeviceMobileAppConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ManagedDeviceMobileAppConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ManagedDeviceMobileAppConfigurationCollectionResponse) Serialize(writer
 }
 // SetValue sets the value property value. The value property
 func (m *ManagedDeviceMobileAppConfigurationCollectionResponse) SetValue(value []ManagedDeviceMobileAppConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ManagedDeviceMobileAppConfigurationCollectionResponseable 
+type ManagedDeviceMobileAppConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ManagedDeviceMobileAppConfigurationable)
+    SetValue(value []ManagedDeviceMobileAppConfigurationable)()
 }

@@ -7,8 +7,6 @@ import (
 // ChatMembersNotificationRecipient 
 type ChatMembersNotificationRecipient struct {
     TeamworkNotificationRecipient
-    // The unique identifier for the chat whose members should receive the notifications.
-    chatId *string
 }
 // NewChatMembersNotificationRecipient instantiates a new ChatMembersNotificationRecipient and sets the default values.
 func NewChatMembersNotificationRecipient()(*ChatMembersNotificationRecipient) {
@@ -25,7 +23,14 @@ func CreateChatMembersNotificationRecipientFromDiscriminatorValue(parseNode i878
 }
 // GetChatId gets the chatId property value. The unique identifier for the chat whose members should receive the notifications.
 func (m *ChatMembersNotificationRecipient) GetChatId()(*string) {
-    return m.chatId
+    val, err := m.GetBackingStore().Get("chatId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ChatMembersNotificationRecipient) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -58,5 +63,15 @@ func (m *ChatMembersNotificationRecipient) Serialize(writer i878a80d2330e89d2689
 }
 // SetChatId sets the chatId property value. The unique identifier for the chat whose members should receive the notifications.
 func (m *ChatMembersNotificationRecipient) SetChatId(value *string)() {
-    m.chatId = value
+    err := m.GetBackingStore().Set("chatId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ChatMembersNotificationRecipientable 
+type ChatMembersNotificationRecipientable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    TeamworkNotificationRecipientable
+    GetChatId()(*string)
+    SetChatId(value *string)()
 }

@@ -8,12 +8,6 @@ import (
 // ImportedWindowsAutopilotDeviceIdentityUpload 
 type ImportedWindowsAutopilotDeviceIdentityUpload struct {
     Entity
-    // DateTime when the entity is created.
-    createdDateTimeUtc *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Collection of all Autopilot devices as a part of this upload.
-    deviceIdentities []ImportedWindowsAutopilotDeviceIdentityable
-    // The status property
-    status *ImportedWindowsAutopilotDeviceIdentityUploadStatus
 }
 // NewImportedWindowsAutopilotDeviceIdentityUpload instantiates a new ImportedWindowsAutopilotDeviceIdentityUpload and sets the default values.
 func NewImportedWindowsAutopilotDeviceIdentityUpload()(*ImportedWindowsAutopilotDeviceIdentityUpload) {
@@ -28,11 +22,25 @@ func CreateImportedWindowsAutopilotDeviceIdentityUploadFromDiscriminatorValue(pa
 }
 // GetCreatedDateTimeUtc gets the createdDateTimeUtc property value. DateTime when the entity is created.
 func (m *ImportedWindowsAutopilotDeviceIdentityUpload) GetCreatedDateTimeUtc()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTimeUtc
+    val, err := m.GetBackingStore().Get("createdDateTimeUtc")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetDeviceIdentities gets the deviceIdentities property value. Collection of all Autopilot devices as a part of this upload.
 func (m *ImportedWindowsAutopilotDeviceIdentityUpload) GetDeviceIdentities()([]ImportedWindowsAutopilotDeviceIdentityable) {
-    return m.deviceIdentities
+    val, err := m.GetBackingStore().Get("deviceIdentities")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ImportedWindowsAutopilotDeviceIdentityable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ImportedWindowsAutopilotDeviceIdentityUpload) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -75,7 +83,14 @@ func (m *ImportedWindowsAutopilotDeviceIdentityUpload) GetFieldDeserializers()(m
 }
 // GetStatus gets the status property value. The status property
 func (m *ImportedWindowsAutopilotDeviceIdentityUpload) GetStatus()(*ImportedWindowsAutopilotDeviceIdentityUploadStatus) {
-    return m.status
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ImportedWindowsAutopilotDeviceIdentityUploadStatus)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ImportedWindowsAutopilotDeviceIdentityUpload) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -110,13 +125,33 @@ func (m *ImportedWindowsAutopilotDeviceIdentityUpload) Serialize(writer i878a80d
 }
 // SetCreatedDateTimeUtc sets the createdDateTimeUtc property value. DateTime when the entity is created.
 func (m *ImportedWindowsAutopilotDeviceIdentityUpload) SetCreatedDateTimeUtc(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTimeUtc = value
+    err := m.GetBackingStore().Set("createdDateTimeUtc", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceIdentities sets the deviceIdentities property value. Collection of all Autopilot devices as a part of this upload.
 func (m *ImportedWindowsAutopilotDeviceIdentityUpload) SetDeviceIdentities(value []ImportedWindowsAutopilotDeviceIdentityable)() {
-    m.deviceIdentities = value
+    err := m.GetBackingStore().Set("deviceIdentities", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStatus sets the status property value. The status property
 func (m *ImportedWindowsAutopilotDeviceIdentityUpload) SetStatus(value *ImportedWindowsAutopilotDeviceIdentityUploadStatus)() {
-    m.status = value
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ImportedWindowsAutopilotDeviceIdentityUploadable 
+type ImportedWindowsAutopilotDeviceIdentityUploadable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCreatedDateTimeUtc()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDeviceIdentities()([]ImportedWindowsAutopilotDeviceIdentityable)
+    GetStatus()(*ImportedWindowsAutopilotDeviceIdentityUploadStatus)
+    SetCreatedDateTimeUtc(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDeviceIdentities(value []ImportedWindowsAutopilotDeviceIdentityable)()
+    SetStatus(value *ImportedWindowsAutopilotDeviceIdentityUploadStatus)()
 }

@@ -7,10 +7,6 @@ import (
 // PrincipalResourceMembershipsScope 
 type PrincipalResourceMembershipsScope struct {
     AccessReviewScope
-    // Defines the scopes of the principals whose access to resources are reviewed in the access review.
-    principalScopes []AccessReviewScopeable
-    // Defines the scopes of the resources for which access is reviewed.
-    resourceScopes []AccessReviewScopeable
 }
 // NewPrincipalResourceMembershipsScope instantiates a new PrincipalResourceMembershipsScope and sets the default values.
 func NewPrincipalResourceMembershipsScope()(*PrincipalResourceMembershipsScope) {
@@ -60,11 +56,25 @@ func (m *PrincipalResourceMembershipsScope) GetFieldDeserializers()(map[string]f
 }
 // GetPrincipalScopes gets the principalScopes property value. Defines the scopes of the principals whose access to resources are reviewed in the access review.
 func (m *PrincipalResourceMembershipsScope) GetPrincipalScopes()([]AccessReviewScopeable) {
-    return m.principalScopes
+    val, err := m.GetBackingStore().Get("principalScopes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AccessReviewScopeable)
+    }
+    return nil
 }
 // GetResourceScopes gets the resourceScopes property value. Defines the scopes of the resources for which access is reviewed.
 func (m *PrincipalResourceMembershipsScope) GetResourceScopes()([]AccessReviewScopeable) {
-    return m.resourceScopes
+    val, err := m.GetBackingStore().Get("resourceScopes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AccessReviewScopeable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PrincipalResourceMembershipsScope) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -96,9 +106,24 @@ func (m *PrincipalResourceMembershipsScope) Serialize(writer i878a80d2330e89d268
 }
 // SetPrincipalScopes sets the principalScopes property value. Defines the scopes of the principals whose access to resources are reviewed in the access review.
 func (m *PrincipalResourceMembershipsScope) SetPrincipalScopes(value []AccessReviewScopeable)() {
-    m.principalScopes = value
+    err := m.GetBackingStore().Set("principalScopes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetResourceScopes sets the resourceScopes property value. Defines the scopes of the resources for which access is reviewed.
 func (m *PrincipalResourceMembershipsScope) SetResourceScopes(value []AccessReviewScopeable)() {
-    m.resourceScopes = value
+    err := m.GetBackingStore().Set("resourceScopes", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PrincipalResourceMembershipsScopeable 
+type PrincipalResourceMembershipsScopeable interface {
+    AccessReviewScopeable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetPrincipalScopes()([]AccessReviewScopeable)
+    GetResourceScopes()([]AccessReviewScopeable)
+    SetPrincipalScopes(value []AccessReviewScopeable)()
+    SetResourceScopes(value []AccessReviewScopeable)()
 }

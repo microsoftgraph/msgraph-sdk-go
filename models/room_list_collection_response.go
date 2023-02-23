@@ -7,8 +7,6 @@ import (
 // RoomListCollectionResponse 
 type RoomListCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []RoomListable
 }
 // NewRoomListCollectionResponse instantiates a new RoomListCollectionResponse and sets the default values.
 func NewRoomListCollectionResponse()(*RoomListCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *RoomListCollectionResponse) GetFieldDeserializers()(map[string]func(i87
 }
 // GetValue gets the value property value. The value property
 func (m *RoomListCollectionResponse) GetValue()([]RoomListable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]RoomListable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *RoomListCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *RoomListCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetValue sets the value property value. The value property
 func (m *RoomListCollectionResponse) SetValue(value []RoomListable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// RoomListCollectionResponseable 
+type RoomListCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]RoomListable)
+    SetValue(value []RoomListable)()
 }

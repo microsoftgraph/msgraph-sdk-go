@@ -7,8 +7,6 @@ import (
 // ObjectIdentityCollectionResponse 
 type ObjectIdentityCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ObjectIdentityable
 }
 // NewObjectIdentityCollectionResponse instantiates a new ObjectIdentityCollectionResponse and sets the default values.
 func NewObjectIdentityCollectionResponse()(*ObjectIdentityCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ObjectIdentityCollectionResponse) GetFieldDeserializers()(map[string]fu
 }
 // GetValue gets the value property value. The value property
 func (m *ObjectIdentityCollectionResponse) GetValue()([]ObjectIdentityable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ObjectIdentityable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ObjectIdentityCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ObjectIdentityCollectionResponse) Serialize(writer i878a80d2330e89d2689
 }
 // SetValue sets the value property value. The value property
 func (m *ObjectIdentityCollectionResponse) SetValue(value []ObjectIdentityable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ObjectIdentityCollectionResponseable 
+type ObjectIdentityCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ObjectIdentityable)
+    SetValue(value []ObjectIdentityable)()
 }

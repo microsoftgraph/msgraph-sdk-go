@@ -7,12 +7,6 @@ import (
 // ChannelRenamedEventMessageDetail 
 type ChannelRenamedEventMessageDetail struct {
     EventMessageDetail
-    // The updated name of the channel.
-    channelDisplayName *string
-    // Unique identifier of the channel.
-    channelId *string
-    // Initiator of the event.
-    initiator IdentitySetable
 }
 // NewChannelRenamedEventMessageDetail instantiates a new ChannelRenamedEventMessageDetail and sets the default values.
 func NewChannelRenamedEventMessageDetail()(*ChannelRenamedEventMessageDetail) {
@@ -29,11 +23,25 @@ func CreateChannelRenamedEventMessageDetailFromDiscriminatorValue(parseNode i878
 }
 // GetChannelDisplayName gets the channelDisplayName property value. The updated name of the channel.
 func (m *ChannelRenamedEventMessageDetail) GetChannelDisplayName()(*string) {
-    return m.channelDisplayName
+    val, err := m.GetBackingStore().Get("channelDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetChannelId gets the channelId property value. Unique identifier of the channel.
 func (m *ChannelRenamedEventMessageDetail) GetChannelId()(*string) {
-    return m.channelId
+    val, err := m.GetBackingStore().Get("channelId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ChannelRenamedEventMessageDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,7 +80,14 @@ func (m *ChannelRenamedEventMessageDetail) GetFieldDeserializers()(map[string]fu
 }
 // GetInitiator gets the initiator property value. Initiator of the event.
 func (m *ChannelRenamedEventMessageDetail) GetInitiator()(IdentitySetable) {
-    return m.initiator
+    val, err := m.GetBackingStore().Get("initiator")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentitySetable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ChannelRenamedEventMessageDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -102,13 +117,33 @@ func (m *ChannelRenamedEventMessageDetail) Serialize(writer i878a80d2330e89d2689
 }
 // SetChannelDisplayName sets the channelDisplayName property value. The updated name of the channel.
 func (m *ChannelRenamedEventMessageDetail) SetChannelDisplayName(value *string)() {
-    m.channelDisplayName = value
+    err := m.GetBackingStore().Set("channelDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetChannelId sets the channelId property value. Unique identifier of the channel.
 func (m *ChannelRenamedEventMessageDetail) SetChannelId(value *string)() {
-    m.channelId = value
+    err := m.GetBackingStore().Set("channelId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInitiator sets the initiator property value. Initiator of the event.
 func (m *ChannelRenamedEventMessageDetail) SetInitiator(value IdentitySetable)() {
-    m.initiator = value
+    err := m.GetBackingStore().Set("initiator", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ChannelRenamedEventMessageDetailable 
+type ChannelRenamedEventMessageDetailable interface {
+    EventMessageDetailable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetChannelDisplayName()(*string)
+    GetChannelId()(*string)
+    GetInitiator()(IdentitySetable)
+    SetChannelDisplayName(value *string)()
+    SetChannelId(value *string)()
+    SetInitiator(value IdentitySetable)()
 }

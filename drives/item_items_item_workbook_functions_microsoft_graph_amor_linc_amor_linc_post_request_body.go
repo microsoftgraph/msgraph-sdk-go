@@ -3,31 +3,19 @@ package drives
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ItemItemsItemWorkbookFunctionsMicrosoftGraphAmorLincAmorLincPostRequestBody 
 type ItemItemsItemWorkbookFunctionsMicrosoftGraphAmorLincAmorLincPostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The basis property
-    basis iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable
-    // The cost property
-    cost iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable
-    // The datePurchased property
-    datePurchased iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable
-    // The firstPeriod property
-    firstPeriod iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable
-    // The period property
-    period iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable
-    // The rate property
-    rate iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable
-    // The salvage property
-    salvage iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewItemItemsItemWorkbookFunctionsMicrosoftGraphAmorLincAmorLincPostRequestBody instantiates a new ItemItemsItemWorkbookFunctionsMicrosoftGraphAmorLincAmorLincPostRequestBody and sets the default values.
 func NewItemItemsItemWorkbookFunctionsMicrosoftGraphAmorLincAmorLincPostRequestBody()(*ItemItemsItemWorkbookFunctionsMicrosoftGraphAmorLincAmorLincPostRequestBody) {
     m := &ItemItemsItemWorkbookFunctionsMicrosoftGraphAmorLincAmorLincPostRequestBody{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -37,19 +25,52 @@ func CreateItemItemsItemWorkbookFunctionsMicrosoftGraphAmorLincAmorLincPostReque
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAmorLincAmorLincPostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAmorLincAmorLincPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetBasis gets the basis property value. The basis property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAmorLincAmorLincPostRequestBody) GetBasis()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
-    return m.basis
+    val, err := m.GetBackingStore().Get("basis")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    }
+    return nil
 }
 // GetCost gets the cost property value. The cost property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAmorLincAmorLincPostRequestBody) GetCost()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
-    return m.cost
+    val, err := m.GetBackingStore().Get("cost")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    }
+    return nil
 }
 // GetDatePurchased gets the datePurchased property value. The datePurchased property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAmorLincAmorLincPostRequestBody) GetDatePurchased()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
-    return m.datePurchased
+    val, err := m.GetBackingStore().Get("datePurchased")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAmorLincAmorLincPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -128,19 +149,47 @@ func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAmorLincAmorLincPostRequest
 }
 // GetFirstPeriod gets the firstPeriod property value. The firstPeriod property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAmorLincAmorLincPostRequestBody) GetFirstPeriod()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
-    return m.firstPeriod
+    val, err := m.GetBackingStore().Get("firstPeriod")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    }
+    return nil
 }
 // GetPeriod gets the period property value. The period property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAmorLincAmorLincPostRequestBody) GetPeriod()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
-    return m.period
+    val, err := m.GetBackingStore().Get("period")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    }
+    return nil
 }
 // GetRate gets the rate property value. The rate property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAmorLincAmorLincPostRequestBody) GetRate()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
-    return m.rate
+    val, err := m.GetBackingStore().Get("rate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    }
+    return nil
 }
 // GetSalvage gets the salvage property value. The salvage property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAmorLincAmorLincPostRequestBody) GetSalvage()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
-    return m.salvage
+    val, err := m.GetBackingStore().Get("salvage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAmorLincAmorLincPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -196,33 +245,83 @@ func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAmorLincAmorLincPostRequest
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAmorLincAmorLincPostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAmorLincAmorLincPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetBasis sets the basis property value. The basis property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAmorLincAmorLincPostRequestBody) SetBasis(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
-    m.basis = value
+    err := m.GetBackingStore().Set("basis", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCost sets the cost property value. The cost property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAmorLincAmorLincPostRequestBody) SetCost(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
-    m.cost = value
+    err := m.GetBackingStore().Set("cost", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDatePurchased sets the datePurchased property value. The datePurchased property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAmorLincAmorLincPostRequestBody) SetDatePurchased(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
-    m.datePurchased = value
+    err := m.GetBackingStore().Set("datePurchased", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFirstPeriod sets the firstPeriod property value. The firstPeriod property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAmorLincAmorLincPostRequestBody) SetFirstPeriod(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
-    m.firstPeriod = value
+    err := m.GetBackingStore().Set("firstPeriod", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPeriod sets the period property value. The period property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAmorLincAmorLincPostRequestBody) SetPeriod(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
-    m.period = value
+    err := m.GetBackingStore().Set("period", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRate sets the rate property value. The rate property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAmorLincAmorLincPostRequestBody) SetRate(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
-    m.rate = value
+    err := m.GetBackingStore().Set("rate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSalvage sets the salvage property value. The salvage property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphAmorLincAmorLincPostRequestBody) SetSalvage(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
-    m.salvage = value
+    err := m.GetBackingStore().Set("salvage", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemItemsItemWorkbookFunctionsMicrosoftGraphAmorLincAmorLincPostRequestBodyable 
+type ItemItemsItemWorkbookFunctionsMicrosoftGraphAmorLincAmorLincPostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetBasis()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    GetCost()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    GetDatePurchased()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    GetFirstPeriod()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    GetPeriod()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    GetRate()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    GetSalvage()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetBasis(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
+    SetCost(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
+    SetDatePurchased(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
+    SetFirstPeriod(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
+    SetPeriod(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
+    SetRate(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
+    SetSalvage(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
 }

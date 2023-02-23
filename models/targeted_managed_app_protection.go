@@ -7,10 +7,6 @@ import (
 // TargetedManagedAppProtection 
 type TargetedManagedAppProtection struct {
     ManagedAppProtection
-    // Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
-    assignments []TargetedManagedAppPolicyAssignmentable
-    // Indicates if the policy is deployed to any inclusion groups or not.
-    isAssigned *bool
 }
 // NewTargetedManagedAppProtection instantiates a new TargetedManagedAppProtection and sets the default values.
 func NewTargetedManagedAppProtection()(*TargetedManagedAppProtection) {
@@ -47,7 +43,14 @@ func CreateTargetedManagedAppProtectionFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAssignments gets the assignments property value. Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
 func (m *TargetedManagedAppProtection) GetAssignments()([]TargetedManagedAppPolicyAssignmentable) {
-    return m.assignments
+    val, err := m.GetBackingStore().Get("assignments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TargetedManagedAppPolicyAssignmentable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TargetedManagedAppProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -80,7 +83,14 @@ func (m *TargetedManagedAppProtection) GetFieldDeserializers()(map[string]func(i
 }
 // GetIsAssigned gets the isAssigned property value. Indicates if the policy is deployed to any inclusion groups or not.
 func (m *TargetedManagedAppProtection) GetIsAssigned()(*bool) {
-    return m.isAssigned
+    val, err := m.GetBackingStore().Get("isAssigned")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TargetedManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -108,9 +118,24 @@ func (m *TargetedManagedAppProtection) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAssignments sets the assignments property value. Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
 func (m *TargetedManagedAppProtection) SetAssignments(value []TargetedManagedAppPolicyAssignmentable)() {
-    m.assignments = value
+    err := m.GetBackingStore().Set("assignments", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsAssigned sets the isAssigned property value. Indicates if the policy is deployed to any inclusion groups or not.
 func (m *TargetedManagedAppProtection) SetIsAssigned(value *bool)() {
-    m.isAssigned = value
+    err := m.GetBackingStore().Set("isAssigned", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TargetedManagedAppProtectionable 
+type TargetedManagedAppProtectionable interface {
+    ManagedAppProtectionable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAssignments()([]TargetedManagedAppPolicyAssignmentable)
+    GetIsAssigned()(*bool)
+    SetAssignments(value []TargetedManagedAppPolicyAssignmentable)()
+    SetIsAssigned(value *bool)()
 }

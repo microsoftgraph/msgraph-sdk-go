@@ -7,8 +7,6 @@ import (
 // EdiscoveryReviewSet 
 type EdiscoveryReviewSet struct {
     DataSet
-    // Represents queries within the review set.
-    queries []EdiscoveryReviewSetQueryable
 }
 // NewEdiscoveryReviewSet instantiates a new EdiscoveryReviewSet and sets the default values.
 func NewEdiscoveryReviewSet()(*EdiscoveryReviewSet) {
@@ -44,7 +42,14 @@ func (m *EdiscoveryReviewSet) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetQueries gets the queries property value. Represents queries within the review set.
 func (m *EdiscoveryReviewSet) GetQueries()([]EdiscoveryReviewSetQueryable) {
-    return m.queries
+    val, err := m.GetBackingStore().Get("queries")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EdiscoveryReviewSetQueryable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EdiscoveryReviewSet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -66,5 +71,15 @@ func (m *EdiscoveryReviewSet) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetQueries sets the queries property value. Represents queries within the review set.
 func (m *EdiscoveryReviewSet) SetQueries(value []EdiscoveryReviewSetQueryable)() {
-    m.queries = value
+    err := m.GetBackingStore().Set("queries", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EdiscoveryReviewSetable 
+type EdiscoveryReviewSetable interface {
+    DataSetable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetQueries()([]EdiscoveryReviewSetQueryable)
+    SetQueries(value []EdiscoveryReviewSetQueryable)()
 }

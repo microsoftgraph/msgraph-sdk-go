@@ -7,8 +7,6 @@ import (
 // MailSearchFolderCollectionResponse 
 type MailSearchFolderCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []MailSearchFolderable
 }
 // NewMailSearchFolderCollectionResponse instantiates a new MailSearchFolderCollectionResponse and sets the default values.
 func NewMailSearchFolderCollectionResponse()(*MailSearchFolderCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *MailSearchFolderCollectionResponse) GetFieldDeserializers()(map[string]
 }
 // GetValue gets the value property value. The value property
 func (m *MailSearchFolderCollectionResponse) GetValue()([]MailSearchFolderable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MailSearchFolderable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MailSearchFolderCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *MailSearchFolderCollectionResponse) Serialize(writer i878a80d2330e89d26
 }
 // SetValue sets the value property value. The value property
 func (m *MailSearchFolderCollectionResponse) SetValue(value []MailSearchFolderable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MailSearchFolderCollectionResponseable 
+type MailSearchFolderCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]MailSearchFolderable)
+    SetValue(value []MailSearchFolderable)()
 }

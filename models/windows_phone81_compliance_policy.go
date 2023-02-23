@@ -7,28 +7,6 @@ import (
 // WindowsPhone81CompliancePolicy 
 type WindowsPhone81CompliancePolicy struct {
     DeviceCompliancePolicy
-    // Maximum Windows Phone version.
-    osMaximumVersion *string
-    // Minimum Windows Phone version.
-    osMinimumVersion *string
-    // Whether or not to block syncing the calendar.
-    passwordBlockSimple *bool
-    // Number of days before the password expires.
-    passwordExpirationDays *int32
-    // The number of character sets required in the password.
-    passwordMinimumCharacterSetCount *int32
-    // Minimum length of passwords.
-    passwordMinimumLength *int32
-    // Minutes of inactivity before a password is required.
-    passwordMinutesOfInactivityBeforeLock *int32
-    // Number of previous passwords to block. Valid values 0 to 24
-    passwordPreviousPasswordBlockCount *int32
-    // Whether or not to require a password.
-    passwordRequired *bool
-    // Possible values of required passwords.
-    passwordRequiredType *RequiredPasswordType
-    // Require encryption on windows phone devices.
-    storageRequireEncryption *bool
 }
 // NewWindowsPhone81CompliancePolicy instantiates a new WindowsPhone81CompliancePolicy and sets the default values.
 func NewWindowsPhone81CompliancePolicy()(*WindowsPhone81CompliancePolicy) {
@@ -160,47 +138,124 @@ func (m *WindowsPhone81CompliancePolicy) GetFieldDeserializers()(map[string]func
 }
 // GetOsMaximumVersion gets the osMaximumVersion property value. Maximum Windows Phone version.
 func (m *WindowsPhone81CompliancePolicy) GetOsMaximumVersion()(*string) {
-    return m.osMaximumVersion
+    val, err := m.GetBackingStore().Get("osMaximumVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOsMinimumVersion gets the osMinimumVersion property value. Minimum Windows Phone version.
 func (m *WindowsPhone81CompliancePolicy) GetOsMinimumVersion()(*string) {
-    return m.osMinimumVersion
+    val, err := m.GetBackingStore().Get("osMinimumVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPasswordBlockSimple gets the passwordBlockSimple property value. Whether or not to block syncing the calendar.
 func (m *WindowsPhone81CompliancePolicy) GetPasswordBlockSimple()(*bool) {
-    return m.passwordBlockSimple
+    val, err := m.GetBackingStore().Get("passwordBlockSimple")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPasswordExpirationDays gets the passwordExpirationDays property value. Number of days before the password expires.
 func (m *WindowsPhone81CompliancePolicy) GetPasswordExpirationDays()(*int32) {
-    return m.passwordExpirationDays
+    val, err := m.GetBackingStore().Get("passwordExpirationDays")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetPasswordMinimumCharacterSetCount gets the passwordMinimumCharacterSetCount property value. The number of character sets required in the password.
 func (m *WindowsPhone81CompliancePolicy) GetPasswordMinimumCharacterSetCount()(*int32) {
-    return m.passwordMinimumCharacterSetCount
+    val, err := m.GetBackingStore().Get("passwordMinimumCharacterSetCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetPasswordMinimumLength gets the passwordMinimumLength property value. Minimum length of passwords.
 func (m *WindowsPhone81CompliancePolicy) GetPasswordMinimumLength()(*int32) {
-    return m.passwordMinimumLength
+    val, err := m.GetBackingStore().Get("passwordMinimumLength")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetPasswordMinutesOfInactivityBeforeLock gets the passwordMinutesOfInactivityBeforeLock property value. Minutes of inactivity before a password is required.
 func (m *WindowsPhone81CompliancePolicy) GetPasswordMinutesOfInactivityBeforeLock()(*int32) {
-    return m.passwordMinutesOfInactivityBeforeLock
+    val, err := m.GetBackingStore().Get("passwordMinutesOfInactivityBeforeLock")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetPasswordPreviousPasswordBlockCount gets the passwordPreviousPasswordBlockCount property value. Number of previous passwords to block. Valid values 0 to 24
 func (m *WindowsPhone81CompliancePolicy) GetPasswordPreviousPasswordBlockCount()(*int32) {
-    return m.passwordPreviousPasswordBlockCount
+    val, err := m.GetBackingStore().Get("passwordPreviousPasswordBlockCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetPasswordRequired gets the passwordRequired property value. Whether or not to require a password.
 func (m *WindowsPhone81CompliancePolicy) GetPasswordRequired()(*bool) {
-    return m.passwordRequired
+    val, err := m.GetBackingStore().Get("passwordRequired")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPasswordRequiredType gets the passwordRequiredType property value. Possible values of required passwords.
 func (m *WindowsPhone81CompliancePolicy) GetPasswordRequiredType()(*RequiredPasswordType) {
-    return m.passwordRequiredType
+    val, err := m.GetBackingStore().Get("passwordRequiredType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*RequiredPasswordType)
+    }
+    return nil
 }
 // GetStorageRequireEncryption gets the storageRequireEncryption property value. Require encryption on windows phone devices.
 func (m *WindowsPhone81CompliancePolicy) GetStorageRequireEncryption()(*bool) {
-    return m.storageRequireEncryption
+    val, err := m.GetBackingStore().Get("storageRequireEncryption")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsPhone81CompliancePolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -279,45 +334,105 @@ func (m *WindowsPhone81CompliancePolicy) Serialize(writer i878a80d2330e89d268963
 }
 // SetOsMaximumVersion sets the osMaximumVersion property value. Maximum Windows Phone version.
 func (m *WindowsPhone81CompliancePolicy) SetOsMaximumVersion(value *string)() {
-    m.osMaximumVersion = value
+    err := m.GetBackingStore().Set("osMaximumVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOsMinimumVersion sets the osMinimumVersion property value. Minimum Windows Phone version.
 func (m *WindowsPhone81CompliancePolicy) SetOsMinimumVersion(value *string)() {
-    m.osMinimumVersion = value
+    err := m.GetBackingStore().Set("osMinimumVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordBlockSimple sets the passwordBlockSimple property value. Whether or not to block syncing the calendar.
 func (m *WindowsPhone81CompliancePolicy) SetPasswordBlockSimple(value *bool)() {
-    m.passwordBlockSimple = value
+    err := m.GetBackingStore().Set("passwordBlockSimple", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordExpirationDays sets the passwordExpirationDays property value. Number of days before the password expires.
 func (m *WindowsPhone81CompliancePolicy) SetPasswordExpirationDays(value *int32)() {
-    m.passwordExpirationDays = value
+    err := m.GetBackingStore().Set("passwordExpirationDays", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordMinimumCharacterSetCount sets the passwordMinimumCharacterSetCount property value. The number of character sets required in the password.
 func (m *WindowsPhone81CompliancePolicy) SetPasswordMinimumCharacterSetCount(value *int32)() {
-    m.passwordMinimumCharacterSetCount = value
+    err := m.GetBackingStore().Set("passwordMinimumCharacterSetCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordMinimumLength sets the passwordMinimumLength property value. Minimum length of passwords.
 func (m *WindowsPhone81CompliancePolicy) SetPasswordMinimumLength(value *int32)() {
-    m.passwordMinimumLength = value
+    err := m.GetBackingStore().Set("passwordMinimumLength", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordMinutesOfInactivityBeforeLock sets the passwordMinutesOfInactivityBeforeLock property value. Minutes of inactivity before a password is required.
 func (m *WindowsPhone81CompliancePolicy) SetPasswordMinutesOfInactivityBeforeLock(value *int32)() {
-    m.passwordMinutesOfInactivityBeforeLock = value
+    err := m.GetBackingStore().Set("passwordMinutesOfInactivityBeforeLock", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordPreviousPasswordBlockCount sets the passwordPreviousPasswordBlockCount property value. Number of previous passwords to block. Valid values 0 to 24
 func (m *WindowsPhone81CompliancePolicy) SetPasswordPreviousPasswordBlockCount(value *int32)() {
-    m.passwordPreviousPasswordBlockCount = value
+    err := m.GetBackingStore().Set("passwordPreviousPasswordBlockCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordRequired sets the passwordRequired property value. Whether or not to require a password.
 func (m *WindowsPhone81CompliancePolicy) SetPasswordRequired(value *bool)() {
-    m.passwordRequired = value
+    err := m.GetBackingStore().Set("passwordRequired", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordRequiredType sets the passwordRequiredType property value. Possible values of required passwords.
 func (m *WindowsPhone81CompliancePolicy) SetPasswordRequiredType(value *RequiredPasswordType)() {
-    m.passwordRequiredType = value
+    err := m.GetBackingStore().Set("passwordRequiredType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStorageRequireEncryption sets the storageRequireEncryption property value. Require encryption on windows phone devices.
 func (m *WindowsPhone81CompliancePolicy) SetStorageRequireEncryption(value *bool)() {
-    m.storageRequireEncryption = value
+    err := m.GetBackingStore().Set("storageRequireEncryption", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsPhone81CompliancePolicyable 
+type WindowsPhone81CompliancePolicyable interface {
+    DeviceCompliancePolicyable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOsMaximumVersion()(*string)
+    GetOsMinimumVersion()(*string)
+    GetPasswordBlockSimple()(*bool)
+    GetPasswordExpirationDays()(*int32)
+    GetPasswordMinimumCharacterSetCount()(*int32)
+    GetPasswordMinimumLength()(*int32)
+    GetPasswordMinutesOfInactivityBeforeLock()(*int32)
+    GetPasswordPreviousPasswordBlockCount()(*int32)
+    GetPasswordRequired()(*bool)
+    GetPasswordRequiredType()(*RequiredPasswordType)
+    GetStorageRequireEncryption()(*bool)
+    SetOsMaximumVersion(value *string)()
+    SetOsMinimumVersion(value *string)()
+    SetPasswordBlockSimple(value *bool)()
+    SetPasswordExpirationDays(value *int32)()
+    SetPasswordMinimumCharacterSetCount(value *int32)()
+    SetPasswordMinimumLength(value *int32)()
+    SetPasswordMinutesOfInactivityBeforeLock(value *int32)()
+    SetPasswordPreviousPasswordBlockCount(value *int32)()
+    SetPasswordRequired(value *bool)()
+    SetPasswordRequiredType(value *RequiredPasswordType)()
+    SetStorageRequireEncryption(value *bool)()
 }

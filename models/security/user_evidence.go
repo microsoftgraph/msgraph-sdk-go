@@ -7,8 +7,6 @@ import (
 // UserEvidence 
 type UserEvidence struct {
     AlertEvidence
-    // The user account details.
-    userAccount UserAccountable
 }
 // NewUserEvidence instantiates a new UserEvidence and sets the default values.
 func NewUserEvidence()(*UserEvidence) {
@@ -38,7 +36,14 @@ func (m *UserEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetUserAccount gets the userAccount property value. The user account details.
 func (m *UserEvidence) GetUserAccount()(UserAccountable) {
-    return m.userAccount
+    val, err := m.GetBackingStore().Get("userAccount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(UserAccountable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,5 +61,15 @@ func (m *UserEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetUserAccount sets the userAccount property value. The user account details.
 func (m *UserEvidence) SetUserAccount(value UserAccountable)() {
-    m.userAccount = value
+    err := m.GetBackingStore().Set("userAccount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserEvidenceable 
+type UserEvidenceable interface {
+    AlertEvidenceable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetUserAccount()(UserAccountable)
+    SetUserAccount(value UserAccountable)()
 }

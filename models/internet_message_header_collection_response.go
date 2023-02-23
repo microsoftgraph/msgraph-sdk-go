@@ -7,8 +7,6 @@ import (
 // InternetMessageHeaderCollectionResponse 
 type InternetMessageHeaderCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []InternetMessageHeaderable
 }
 // NewInternetMessageHeaderCollectionResponse instantiates a new InternetMessageHeaderCollectionResponse and sets the default values.
 func NewInternetMessageHeaderCollectionResponse()(*InternetMessageHeaderCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *InternetMessageHeaderCollectionResponse) GetFieldDeserializers()(map[st
 }
 // GetValue gets the value property value. The value property
 func (m *InternetMessageHeaderCollectionResponse) GetValue()([]InternetMessageHeaderable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]InternetMessageHeaderable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *InternetMessageHeaderCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *InternetMessageHeaderCollectionResponse) Serialize(writer i878a80d2330e
 }
 // SetValue sets the value property value. The value property
 func (m *InternetMessageHeaderCollectionResponse) SetValue(value []InternetMessageHeaderable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// InternetMessageHeaderCollectionResponseable 
+type InternetMessageHeaderCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]InternetMessageHeaderable)
+    SetValue(value []InternetMessageHeaderable)()
 }

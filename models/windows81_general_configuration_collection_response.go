@@ -7,8 +7,6 @@ import (
 // Windows81GeneralConfigurationCollectionResponse 
 type Windows81GeneralConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Windows81GeneralConfigurationable
 }
 // NewWindows81GeneralConfigurationCollectionResponse instantiates a new Windows81GeneralConfigurationCollectionResponse and sets the default values.
 func NewWindows81GeneralConfigurationCollectionResponse()(*Windows81GeneralConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *Windows81GeneralConfigurationCollectionResponse) GetFieldDeserializers(
 }
 // GetValue gets the value property value. The value property
 func (m *Windows81GeneralConfigurationCollectionResponse) GetValue()([]Windows81GeneralConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Windows81GeneralConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Windows81GeneralConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *Windows81GeneralConfigurationCollectionResponse) Serialize(writer i878a
 }
 // SetValue sets the value property value. The value property
 func (m *Windows81GeneralConfigurationCollectionResponse) SetValue(value []Windows81GeneralConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Windows81GeneralConfigurationCollectionResponseable 
+type Windows81GeneralConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Windows81GeneralConfigurationable)
+    SetValue(value []Windows81GeneralConfigurationable)()
 }

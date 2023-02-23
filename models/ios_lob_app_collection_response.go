@@ -7,8 +7,6 @@ import (
 // IosLobAppCollectionResponse 
 type IosLobAppCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []IosLobAppable
 }
 // NewIosLobAppCollectionResponse instantiates a new IosLobAppCollectionResponse and sets the default values.
 func NewIosLobAppCollectionResponse()(*IosLobAppCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *IosLobAppCollectionResponse) GetFieldDeserializers()(map[string]func(i8
 }
 // GetValue gets the value property value. The value property
 func (m *IosLobAppCollectionResponse) GetValue()([]IosLobAppable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IosLobAppable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IosLobAppCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *IosLobAppCollectionResponse) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetValue sets the value property value. The value property
 func (m *IosLobAppCollectionResponse) SetValue(value []IosLobAppable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IosLobAppCollectionResponseable 
+type IosLobAppCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]IosLobAppable)
+    SetValue(value []IosLobAppable)()
 }

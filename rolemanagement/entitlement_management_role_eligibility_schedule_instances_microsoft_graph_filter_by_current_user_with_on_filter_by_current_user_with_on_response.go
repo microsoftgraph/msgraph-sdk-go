@@ -8,8 +8,6 @@ import (
 // EntitlementManagementRoleEligibilityScheduleInstancesMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnResponse 
 type EntitlementManagementRoleEligibilityScheduleInstancesMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
-    // The value property
-    value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleEligibilityScheduleInstanceable
 }
 // NewEntitlementManagementRoleEligibilityScheduleInstancesMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnResponse instantiates a new EntitlementManagementRoleEligibilityScheduleInstancesMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnResponse and sets the default values.
 func NewEntitlementManagementRoleEligibilityScheduleInstancesMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnResponse()(*EntitlementManagementRoleEligibilityScheduleInstancesMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnResponse) {
@@ -43,7 +41,14 @@ func (m *EntitlementManagementRoleEligibilityScheduleInstancesMicrosoftGraphFilt
 }
 // GetValue gets the value property value. The value property
 func (m *EntitlementManagementRoleEligibilityScheduleInstancesMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnResponse) GetValue()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleEligibilityScheduleInstanceable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleEligibilityScheduleInstanceable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EntitlementManagementRoleEligibilityScheduleInstancesMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *EntitlementManagementRoleEligibilityScheduleInstancesMicrosoftGraphFilt
 }
 // SetValue sets the value property value. The value property
 func (m *EntitlementManagementRoleEligibilityScheduleInstancesMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnResponse) SetValue(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleEligibilityScheduleInstanceable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EntitlementManagementRoleEligibilityScheduleInstancesMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnResponseable 
+type EntitlementManagementRoleEligibilityScheduleInstancesMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnResponseable interface {
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleEligibilityScheduleInstanceable)
+    SetValue(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleEligibilityScheduleInstanceable)()
 }

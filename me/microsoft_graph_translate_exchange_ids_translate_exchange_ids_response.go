@@ -8,8 +8,6 @@ import (
 // MicrosoftGraphTranslateExchangeIdsTranslateExchangeIdsResponse 
 type MicrosoftGraphTranslateExchangeIdsTranslateExchangeIdsResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
-    // The value property
-    value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConvertIdResultable
 }
 // NewMicrosoftGraphTranslateExchangeIdsTranslateExchangeIdsResponse instantiates a new MicrosoftGraphTranslateExchangeIdsTranslateExchangeIdsResponse and sets the default values.
 func NewMicrosoftGraphTranslateExchangeIdsTranslateExchangeIdsResponse()(*MicrosoftGraphTranslateExchangeIdsTranslateExchangeIdsResponse) {
@@ -43,7 +41,14 @@ func (m *MicrosoftGraphTranslateExchangeIdsTranslateExchangeIdsResponse) GetFiel
 }
 // GetValue gets the value property value. The value property
 func (m *MicrosoftGraphTranslateExchangeIdsTranslateExchangeIdsResponse) GetValue()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConvertIdResultable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConvertIdResultable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MicrosoftGraphTranslateExchangeIdsTranslateExchangeIdsResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *MicrosoftGraphTranslateExchangeIdsTranslateExchangeIdsResponse) Seriali
 }
 // SetValue sets the value property value. The value property
 func (m *MicrosoftGraphTranslateExchangeIdsTranslateExchangeIdsResponse) SetValue(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConvertIdResultable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MicrosoftGraphTranslateExchangeIdsTranslateExchangeIdsResponseable 
+type MicrosoftGraphTranslateExchangeIdsTranslateExchangeIdsResponseable interface {
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConvertIdResultable)
+    SetValue(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConvertIdResultable)()
 }
