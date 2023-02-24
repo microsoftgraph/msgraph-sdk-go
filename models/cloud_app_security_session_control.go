@@ -7,8 +7,6 @@ import (
 // CloudAppSecuritySessionControl 
 type CloudAppSecuritySessionControl struct {
     ConditionalAccessSessionControl
-    // Possible values are: mcasConfigured, monitorOnly, blockDownloads, unknownFutureValue. For more information, see Deploy Conditional Access App Control for featured apps.
-    cloudAppSecurityType *CloudAppSecuritySessionControlType
 }
 // NewCloudAppSecuritySessionControl instantiates a new CloudAppSecuritySessionControl and sets the default values.
 func NewCloudAppSecuritySessionControl()(*CloudAppSecuritySessionControl) {
@@ -25,7 +23,14 @@ func CreateCloudAppSecuritySessionControlFromDiscriminatorValue(parseNode i878a8
 }
 // GetCloudAppSecurityType gets the cloudAppSecurityType property value. Possible values are: mcasConfigured, monitorOnly, blockDownloads, unknownFutureValue. For more information, see Deploy Conditional Access App Control for featured apps.
 func (m *CloudAppSecuritySessionControl) GetCloudAppSecurityType()(*CloudAppSecuritySessionControlType) {
-    return m.cloudAppSecurityType
+    val, err := m.GetBackingStore().Get("cloudAppSecurityType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CloudAppSecuritySessionControlType)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudAppSecuritySessionControl) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -59,5 +64,15 @@ func (m *CloudAppSecuritySessionControl) Serialize(writer i878a80d2330e89d268963
 }
 // SetCloudAppSecurityType sets the cloudAppSecurityType property value. Possible values are: mcasConfigured, monitorOnly, blockDownloads, unknownFutureValue. For more information, see Deploy Conditional Access App Control for featured apps.
 func (m *CloudAppSecuritySessionControl) SetCloudAppSecurityType(value *CloudAppSecuritySessionControlType)() {
-    m.cloudAppSecurityType = value
+    err := m.GetBackingStore().Set("cloudAppSecurityType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CloudAppSecuritySessionControlable 
+type CloudAppSecuritySessionControlable interface {
+    ConditionalAccessSessionControlable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCloudAppSecurityType()(*CloudAppSecuritySessionControlType)
+    SetCloudAppSecurityType(value *CloudAppSecuritySessionControlType)()
 }

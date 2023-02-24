@@ -7,8 +7,6 @@ import (
 // MacOSMicrosoftEdgeApp 
 type MacOSMicrosoftEdgeApp struct {
     MobileApp
-    // The enum to specify the channels for Microsoft Edge apps.
-    channel *MicrosoftEdgeChannel
 }
 // NewMacOSMicrosoftEdgeApp instantiates a new MacOSMicrosoftEdgeApp and sets the default values.
 func NewMacOSMicrosoftEdgeApp()(*MacOSMicrosoftEdgeApp) {
@@ -25,7 +23,14 @@ func CreateMacOSMicrosoftEdgeAppFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetChannel gets the channel property value. The enum to specify the channels for Microsoft Edge apps.
 func (m *MacOSMicrosoftEdgeApp) GetChannel()(*MicrosoftEdgeChannel) {
-    return m.channel
+    val, err := m.GetBackingStore().Get("channel")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*MicrosoftEdgeChannel)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacOSMicrosoftEdgeApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -59,5 +64,15 @@ func (m *MacOSMicrosoftEdgeApp) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetChannel sets the channel property value. The enum to specify the channels for Microsoft Edge apps.
 func (m *MacOSMicrosoftEdgeApp) SetChannel(value *MicrosoftEdgeChannel)() {
-    m.channel = value
+    err := m.GetBackingStore().Set("channel", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MacOSMicrosoftEdgeAppable 
+type MacOSMicrosoftEdgeAppable interface {
+    MobileAppable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetChannel()(*MicrosoftEdgeChannel)
+    SetChannel(value *MicrosoftEdgeChannel)()
 }

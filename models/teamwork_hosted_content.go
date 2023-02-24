@@ -7,10 +7,6 @@ import (
 // TeamworkHostedContent 
 type TeamworkHostedContent struct {
     Entity
-    // Write only. Bytes for the hosted content (such as images).
-    contentBytes []byte
-    // Write only. Content type. sicj as image/png, image/jpg.
-    contentType *string
 }
 // NewTeamworkHostedContent instantiates a new teamworkHostedContent and sets the default values.
 func NewTeamworkHostedContent()(*TeamworkHostedContent) {
@@ -43,11 +39,25 @@ func CreateTeamworkHostedContentFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetContentBytes gets the contentBytes property value. Write only. Bytes for the hosted content (such as images).
 func (m *TeamworkHostedContent) GetContentBytes()([]byte) {
-    return m.contentBytes
+    val, err := m.GetBackingStore().Get("contentBytes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]byte)
+    }
+    return nil
 }
 // GetContentType gets the contentType property value. Write only. Content type. sicj as image/png, image/jpg.
 func (m *TeamworkHostedContent) GetContentType()(*string) {
-    return m.contentType
+    val, err := m.GetBackingStore().Get("contentType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkHostedContent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -96,9 +106,24 @@ func (m *TeamworkHostedContent) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetContentBytes sets the contentBytes property value. Write only. Bytes for the hosted content (such as images).
 func (m *TeamworkHostedContent) SetContentBytes(value []byte)() {
-    m.contentBytes = value
+    err := m.GetBackingStore().Set("contentBytes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetContentType sets the contentType property value. Write only. Content type. sicj as image/png, image/jpg.
 func (m *TeamworkHostedContent) SetContentType(value *string)() {
-    m.contentType = value
+    err := m.GetBackingStore().Set("contentType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TeamworkHostedContentable 
+type TeamworkHostedContentable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetContentBytes()([]byte)
+    GetContentType()(*string)
+    SetContentBytes(value []byte)()
+    SetContentType(value *string)()
 }

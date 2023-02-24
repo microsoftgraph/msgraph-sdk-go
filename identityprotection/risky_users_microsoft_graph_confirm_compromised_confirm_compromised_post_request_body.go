@@ -2,19 +2,19 @@ package identityprotection
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // RiskyUsersMicrosoftGraphConfirmCompromisedConfirmCompromisedPostRequestBody 
 type RiskyUsersMicrosoftGraphConfirmCompromisedConfirmCompromisedPostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The userIds property
-    userIds []string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewRiskyUsersMicrosoftGraphConfirmCompromisedConfirmCompromisedPostRequestBody instantiates a new RiskyUsersMicrosoftGraphConfirmCompromisedConfirmCompromisedPostRequestBody and sets the default values.
 func NewRiskyUsersMicrosoftGraphConfirmCompromisedConfirmCompromisedPostRequestBody()(*RiskyUsersMicrosoftGraphConfirmCompromisedConfirmCompromisedPostRequestBody) {
     m := &RiskyUsersMicrosoftGraphConfirmCompromisedConfirmCompromisedPostRequestBody{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -24,7 +24,19 @@ func CreateRiskyUsersMicrosoftGraphConfirmCompromisedConfirmCompromisedPostReque
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RiskyUsersMicrosoftGraphConfirmCompromisedConfirmCompromisedPostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *RiskyUsersMicrosoftGraphConfirmCompromisedConfirmCompromisedPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RiskyUsersMicrosoftGraphConfirmCompromisedConfirmCompromisedPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -47,7 +59,14 @@ func (m *RiskyUsersMicrosoftGraphConfirmCompromisedConfirmCompromisedPostRequest
 }
 // GetUserIds gets the userIds property value. The userIds property
 func (m *RiskyUsersMicrosoftGraphConfirmCompromisedConfirmCompromisedPostRequestBody) GetUserIds()([]string) {
-    return m.userIds
+    val, err := m.GetBackingStore().Get("userIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *RiskyUsersMicrosoftGraphConfirmCompromisedConfirmCompromisedPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -67,9 +86,29 @@ func (m *RiskyUsersMicrosoftGraphConfirmCompromisedConfirmCompromisedPostRequest
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RiskyUsersMicrosoftGraphConfirmCompromisedConfirmCompromisedPostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *RiskyUsersMicrosoftGraphConfirmCompromisedConfirmCompromisedPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetUserIds sets the userIds property value. The userIds property
 func (m *RiskyUsersMicrosoftGraphConfirmCompromisedConfirmCompromisedPostRequestBody) SetUserIds(value []string)() {
-    m.userIds = value
+    err := m.GetBackingStore().Set("userIds", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// RiskyUsersMicrosoftGraphConfirmCompromisedConfirmCompromisedPostRequestBodyable 
+type RiskyUsersMicrosoftGraphConfirmCompromisedConfirmCompromisedPostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetUserIds()([]string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetUserIds(value []string)()
 }

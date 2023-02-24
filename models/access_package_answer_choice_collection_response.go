@@ -7,8 +7,6 @@ import (
 // AccessPackageAnswerChoiceCollectionResponse 
 type AccessPackageAnswerChoiceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AccessPackageAnswerChoiceable
 }
 // NewAccessPackageAnswerChoiceCollectionResponse instantiates a new AccessPackageAnswerChoiceCollectionResponse and sets the default values.
 func NewAccessPackageAnswerChoiceCollectionResponse()(*AccessPackageAnswerChoiceCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AccessPackageAnswerChoiceCollectionResponse) GetFieldDeserializers()(ma
 }
 // GetValue gets the value property value. The value property
 func (m *AccessPackageAnswerChoiceCollectionResponse) GetValue()([]AccessPackageAnswerChoiceable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AccessPackageAnswerChoiceable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AccessPackageAnswerChoiceCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AccessPackageAnswerChoiceCollectionResponse) Serialize(writer i878a80d2
 }
 // SetValue sets the value property value. The value property
 func (m *AccessPackageAnswerChoiceCollectionResponse) SetValue(value []AccessPackageAnswerChoiceable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AccessPackageAnswerChoiceCollectionResponseable 
+type AccessPackageAnswerChoiceCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AccessPackageAnswerChoiceable)
+    SetValue(value []AccessPackageAnswerChoiceable)()
 }

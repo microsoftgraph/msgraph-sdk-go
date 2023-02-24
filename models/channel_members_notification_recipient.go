@@ -7,10 +7,6 @@ import (
 // ChannelMembersNotificationRecipient 
 type ChannelMembersNotificationRecipient struct {
     TeamworkNotificationRecipient
-    // The unique identifier for the channel whose members should receive the notification.
-    channelId *string
-    // The unique identifier for the team under which the channel resides.
-    teamId *string
 }
 // NewChannelMembersNotificationRecipient instantiates a new ChannelMembersNotificationRecipient and sets the default values.
 func NewChannelMembersNotificationRecipient()(*ChannelMembersNotificationRecipient) {
@@ -27,7 +23,14 @@ func CreateChannelMembersNotificationRecipientFromDiscriminatorValue(parseNode i
 }
 // GetChannelId gets the channelId property value. The unique identifier for the channel whose members should receive the notification.
 func (m *ChannelMembersNotificationRecipient) GetChannelId()(*string) {
-    return m.channelId
+    val, err := m.GetBackingStore().Get("channelId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ChannelMembersNotificationRecipient) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -56,7 +59,14 @@ func (m *ChannelMembersNotificationRecipient) GetFieldDeserializers()(map[string
 }
 // GetTeamId gets the teamId property value. The unique identifier for the team under which the channel resides.
 func (m *ChannelMembersNotificationRecipient) GetTeamId()(*string) {
-    return m.teamId
+    val, err := m.GetBackingStore().Get("teamId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ChannelMembersNotificationRecipient) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -80,9 +90,24 @@ func (m *ChannelMembersNotificationRecipient) Serialize(writer i878a80d2330e89d2
 }
 // SetChannelId sets the channelId property value. The unique identifier for the channel whose members should receive the notification.
 func (m *ChannelMembersNotificationRecipient) SetChannelId(value *string)() {
-    m.channelId = value
+    err := m.GetBackingStore().Set("channelId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTeamId sets the teamId property value. The unique identifier for the team under which the channel resides.
 func (m *ChannelMembersNotificationRecipient) SetTeamId(value *string)() {
-    m.teamId = value
+    err := m.GetBackingStore().Set("teamId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ChannelMembersNotificationRecipientable 
+type ChannelMembersNotificationRecipientable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    TeamworkNotificationRecipientable
+    GetChannelId()(*string)
+    GetTeamId()(*string)
+    SetChannelId(value *string)()
+    SetTeamId(value *string)()
 }

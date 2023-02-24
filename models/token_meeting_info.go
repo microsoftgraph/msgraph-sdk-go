@@ -7,8 +7,6 @@ import (
 // TokenMeetingInfo 
 type TokenMeetingInfo struct {
     MeetingInfo
-    // The token used to join the call.
-    token *string
 }
 // NewTokenMeetingInfo instantiates a new TokenMeetingInfo and sets the default values.
 func NewTokenMeetingInfo()(*TokenMeetingInfo) {
@@ -40,7 +38,14 @@ func (m *TokenMeetingInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetToken gets the token property value. The token used to join the call.
 func (m *TokenMeetingInfo) GetToken()(*string) {
-    return m.token
+    val, err := m.GetBackingStore().Get("token")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TokenMeetingInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *TokenMeetingInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetToken sets the token property value. The token used to join the call.
 func (m *TokenMeetingInfo) SetToken(value *string)() {
-    m.token = value
+    err := m.GetBackingStore().Set("token", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TokenMeetingInfoable 
+type TokenMeetingInfoable interface {
+    MeetingInfoable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetToken()(*string)
+    SetToken(value *string)()
 }

@@ -8,12 +8,6 @@ import (
 // MembersAddedEventMessageDetail 
 type MembersAddedEventMessageDetail struct {
     EventMessageDetail
-    // Initiator of the event.
-    initiator IdentitySetable
-    // List of members added.
-    members []TeamworkUserIdentityable
-    // The timestamp that denotes how far back a conversation's history is shared with the conversation members.
-    visibleHistoryStartDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewMembersAddedEventMessageDetail instantiates a new MembersAddedEventMessageDetail and sets the default values.
 func NewMembersAddedEventMessageDetail()(*MembersAddedEventMessageDetail) {
@@ -69,15 +63,36 @@ func (m *MembersAddedEventMessageDetail) GetFieldDeserializers()(map[string]func
 }
 // GetInitiator gets the initiator property value. Initiator of the event.
 func (m *MembersAddedEventMessageDetail) GetInitiator()(IdentitySetable) {
-    return m.initiator
+    val, err := m.GetBackingStore().Get("initiator")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentitySetable)
+    }
+    return nil
 }
 // GetMembers gets the members property value. List of members added.
 func (m *MembersAddedEventMessageDetail) GetMembers()([]TeamworkUserIdentityable) {
-    return m.members
+    val, err := m.GetBackingStore().Get("members")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TeamworkUserIdentityable)
+    }
+    return nil
 }
 // GetVisibleHistoryStartDateTime gets the visibleHistoryStartDateTime property value. The timestamp that denotes how far back a conversation's history is shared with the conversation members.
 func (m *MembersAddedEventMessageDetail) GetVisibleHistoryStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.visibleHistoryStartDateTime
+    val, err := m.GetBackingStore().Get("visibleHistoryStartDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MembersAddedEventMessageDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -111,13 +126,33 @@ func (m *MembersAddedEventMessageDetail) Serialize(writer i878a80d2330e89d268963
 }
 // SetInitiator sets the initiator property value. Initiator of the event.
 func (m *MembersAddedEventMessageDetail) SetInitiator(value IdentitySetable)() {
-    m.initiator = value
+    err := m.GetBackingStore().Set("initiator", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMembers sets the members property value. List of members added.
 func (m *MembersAddedEventMessageDetail) SetMembers(value []TeamworkUserIdentityable)() {
-    m.members = value
+    err := m.GetBackingStore().Set("members", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVisibleHistoryStartDateTime sets the visibleHistoryStartDateTime property value. The timestamp that denotes how far back a conversation's history is shared with the conversation members.
 func (m *MembersAddedEventMessageDetail) SetVisibleHistoryStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.visibleHistoryStartDateTime = value
+    err := m.GetBackingStore().Set("visibleHistoryStartDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MembersAddedEventMessageDetailable 
+type MembersAddedEventMessageDetailable interface {
+    EventMessageDetailable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetInitiator()(IdentitySetable)
+    GetMembers()([]TeamworkUserIdentityable)
+    GetVisibleHistoryStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    SetInitiator(value IdentitySetable)()
+    SetMembers(value []TeamworkUserIdentityable)()
+    SetVisibleHistoryStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
 }

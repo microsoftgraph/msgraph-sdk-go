@@ -16,7 +16,7 @@ type ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsRequestBuilder st
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsRequestBuilderGetQueryParameters retrieve a list of attachment objects.
+// ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsRequestBuilderGetQueryParameters retrieve a list of attachment objects attached to a message.
 type ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -72,10 +72,10 @@ func NewItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsRequestBuilder
 func (m *ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsRequestBuilder) Count()(*ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsCountRequestBuilder) {
     return NewItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// Get retrieve a list of attachment objects.
+// Get retrieve a list of attachment objects attached to a message.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/eventmessage-list-attachments?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/message-list-attachments?view=graph-rest-1.0
 func (m *ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,10 +98,10 @@ func (m *ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsRequestBuilde
 func (m *ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsRequestBuilder) MicrosoftGraphCreateUploadSession()(*ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsMicrosoftGraphCreateUploadSessionRequestBuilder) {
     return NewItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsMicrosoftGraphCreateUploadSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// Post use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource. 
+// Post use this API to add an attachment to a message.  An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource.  You can add an attachment to an existing message by posting to its attachments collection, or you can add an attachment to a message that is being created and sent on the fly. This operation limits the size of the attachment you can add to under 3 MB.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/message-post-attachments?view=graph-rest-1.0
 func (m *ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Attachmentable, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Attachmentable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -120,7 +120,7 @@ func (m *ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsRequestBuilde
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Attachmentable), nil
 }
-// ToGetRequestInformation retrieve a list of attachment objects.
+// ToGetRequestInformation retrieve a list of attachment objects attached to a message.
 func (m *ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -136,7 +136,7 @@ func (m *ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsRequestBuilde
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource. 
+// ToPostRequestInformation use this API to add an attachment to a message.  An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource.  You can add an attachment to an existing message by posting to its attachments collection, or you can add an attachment to a message that is being created and sent on the fly. This operation limits the size of the attachment you can add to under 3 MB.
 func (m *ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Attachmentable, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

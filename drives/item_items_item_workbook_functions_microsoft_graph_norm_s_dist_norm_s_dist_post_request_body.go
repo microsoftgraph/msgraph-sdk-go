@@ -3,21 +3,19 @@ package drives
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ItemItemsItemWorkbookFunctionsMicrosoftGraphNorm_S_DistNorm_S_DistPostRequestBody 
 type ItemItemsItemWorkbookFunctionsMicrosoftGraphNorm_S_DistNorm_S_DistPostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The cumulative property
-    cumulative iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable
-    // The z property
-    z iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewItemItemsItemWorkbookFunctionsMicrosoftGraphNorm_S_DistNorm_S_DistPostRequestBody instantiates a new ItemItemsItemWorkbookFunctionsMicrosoftGraphNorm_S_DistNorm_S_DistPostRequestBody and sets the default values.
 func NewItemItemsItemWorkbookFunctionsMicrosoftGraphNorm_S_DistNorm_S_DistPostRequestBody()(*ItemItemsItemWorkbookFunctionsMicrosoftGraphNorm_S_DistNorm_S_DistPostRequestBody) {
     m := &ItemItemsItemWorkbookFunctionsMicrosoftGraphNorm_S_DistNorm_S_DistPostRequestBody{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -27,11 +25,30 @@ func CreateItemItemsItemWorkbookFunctionsMicrosoftGraphNorm_S_DistNorm_S_DistPos
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphNorm_S_DistNorm_S_DistPostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphNorm_S_DistNorm_S_DistPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetCumulative gets the cumulative property value. The cumulative property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphNorm_S_DistNorm_S_DistPostRequestBody) GetCumulative()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
-    return m.cumulative
+    val, err := m.GetBackingStore().Get("cumulative")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphNorm_S_DistNorm_S_DistPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,7 +77,14 @@ func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphNorm_S_DistNorm_S_DistPostR
 }
 // GetZ gets the z property value. The z property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphNorm_S_DistNorm_S_DistPostRequestBody) GetZ()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
-    return m.z
+    val, err := m.GetBackingStore().Get("z")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphNorm_S_DistNorm_S_DistPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -86,13 +110,38 @@ func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphNorm_S_DistNorm_S_DistPostR
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphNorm_S_DistNorm_S_DistPostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphNorm_S_DistNorm_S_DistPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetCumulative sets the cumulative property value. The cumulative property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphNorm_S_DistNorm_S_DistPostRequestBody) SetCumulative(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
-    m.cumulative = value
+    err := m.GetBackingStore().Set("cumulative", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetZ sets the z property value. The z property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphNorm_S_DistNorm_S_DistPostRequestBody) SetZ(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
-    m.z = value
+    err := m.GetBackingStore().Set("z", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemItemsItemWorkbookFunctionsMicrosoftGraphNorm_S_DistNorm_S_DistPostRequestBodyable 
+type ItemItemsItemWorkbookFunctionsMicrosoftGraphNorm_S_DistNorm_S_DistPostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetCumulative()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    GetZ()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetCumulative(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
+    SetZ(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
 }

@@ -8,36 +8,6 @@ import (
 // DeviceEvidence 
 type DeviceEvidence struct {
     AlertEvidence
-    // A unique identifier assigned to a device by Azure Active Directory (Azure AD) when device is Azure AD-joined.
-    azureAdDeviceId *string
-    // State of the Defender AntiMalware engine. The possible values are: notReporting, disabled, notUpdated, updated, unknown, notSupported, unknownFutureValue.
-    defenderAvStatus *DefenderAvStatus
-    // The fully qualified domain name (FQDN) for the device.
-    deviceDnsName *string
-    // The date and time when the device was first seen.
-    firstSeenDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The health state of the device.The possible values are: active, inactive, impairedCommunication, noSensorData, noSensorDataImpairedCommunication, unknown, unknownFutureValue.
-    healthStatus *DeviceHealthStatus
-    // Users that were logged on the machine during the time of the alert.
-    loggedOnUsers []LoggedOnUserable
-    // A unique identifier assigned to a device by Microsoft Defender for Endpoint.
-    mdeDeviceId *string
-    // The status of the machine onboarding to Microsoft Defender for Endpoint.The possible values are: insufficientInfo, onboarded, canBeOnboarded, unsupported, unknownFutureValue.
-    onboardingStatus *OnboardingStatus
-    // The build version for the operating system the device is running.
-    osBuild *int64
-    // The operating system platform the device is running.
-    osPlatform *string
-    // The ID of the role-based access control (RBAC) device group.
-    rbacGroupId *int32
-    // The name of the RBAC device group.
-    rbacGroupName *string
-    // Risk score as evaluated by Microsoft Defender for Endpoint. The possible values are: none, informational, low, medium, high, unknownFutureValue.
-    riskScore *DeviceRiskScore
-    // The version of the operating system platform.
-    version *string
-    // Metadata of the virtual machine (VM) on which Microsoft Defender for Endpoint is running.
-    vmMetadata VmMetadataable
 }
 // NewDeviceEvidence instantiates a new DeviceEvidence and sets the default values.
 func NewDeviceEvidence()(*DeviceEvidence) {
@@ -52,15 +22,36 @@ func CreateDeviceEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetAzureAdDeviceId gets the azureAdDeviceId property value. A unique identifier assigned to a device by Azure Active Directory (Azure AD) when device is Azure AD-joined.
 func (m *DeviceEvidence) GetAzureAdDeviceId()(*string) {
-    return m.azureAdDeviceId
+    val, err := m.GetBackingStore().Get("azureAdDeviceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDefenderAvStatus gets the defenderAvStatus property value. State of the Defender AntiMalware engine. The possible values are: notReporting, disabled, notUpdated, updated, unknown, notSupported, unknownFutureValue.
 func (m *DeviceEvidence) GetDefenderAvStatus()(*DefenderAvStatus) {
-    return m.defenderAvStatus
+    val, err := m.GetBackingStore().Get("defenderAvStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DefenderAvStatus)
+    }
+    return nil
 }
 // GetDeviceDnsName gets the deviceDnsName property value. The fully qualified domain name (FQDN) for the device.
 func (m *DeviceEvidence) GetDeviceDnsName()(*string) {
-    return m.deviceDnsName
+    val, err := m.GetBackingStore().Get("deviceDnsName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -223,51 +214,135 @@ func (m *DeviceEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetFirstSeenDateTime gets the firstSeenDateTime property value. The date and time when the device was first seen.
 func (m *DeviceEvidence) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.firstSeenDateTime
+    val, err := m.GetBackingStore().Get("firstSeenDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetHealthStatus gets the healthStatus property value. The health state of the device.The possible values are: active, inactive, impairedCommunication, noSensorData, noSensorDataImpairedCommunication, unknown, unknownFutureValue.
 func (m *DeviceEvidence) GetHealthStatus()(*DeviceHealthStatus) {
-    return m.healthStatus
+    val, err := m.GetBackingStore().Get("healthStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DeviceHealthStatus)
+    }
+    return nil
 }
 // GetLoggedOnUsers gets the loggedOnUsers property value. Users that were logged on the machine during the time of the alert.
 func (m *DeviceEvidence) GetLoggedOnUsers()([]LoggedOnUserable) {
-    return m.loggedOnUsers
+    val, err := m.GetBackingStore().Get("loggedOnUsers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]LoggedOnUserable)
+    }
+    return nil
 }
 // GetMdeDeviceId gets the mdeDeviceId property value. A unique identifier assigned to a device by Microsoft Defender for Endpoint.
 func (m *DeviceEvidence) GetMdeDeviceId()(*string) {
-    return m.mdeDeviceId
+    val, err := m.GetBackingStore().Get("mdeDeviceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOnboardingStatus gets the onboardingStatus property value. The status of the machine onboarding to Microsoft Defender for Endpoint.The possible values are: insufficientInfo, onboarded, canBeOnboarded, unsupported, unknownFutureValue.
 func (m *DeviceEvidence) GetOnboardingStatus()(*OnboardingStatus) {
-    return m.onboardingStatus
+    val, err := m.GetBackingStore().Get("onboardingStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*OnboardingStatus)
+    }
+    return nil
 }
 // GetOsBuild gets the osBuild property value. The build version for the operating system the device is running.
 func (m *DeviceEvidence) GetOsBuild()(*int64) {
-    return m.osBuild
+    val, err := m.GetBackingStore().Get("osBuild")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetOsPlatform gets the osPlatform property value. The operating system platform the device is running.
 func (m *DeviceEvidence) GetOsPlatform()(*string) {
-    return m.osPlatform
+    val, err := m.GetBackingStore().Get("osPlatform")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRbacGroupId gets the rbacGroupId property value. The ID of the role-based access control (RBAC) device group.
 func (m *DeviceEvidence) GetRbacGroupId()(*int32) {
-    return m.rbacGroupId
+    val, err := m.GetBackingStore().Get("rbacGroupId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetRbacGroupName gets the rbacGroupName property value. The name of the RBAC device group.
 func (m *DeviceEvidence) GetRbacGroupName()(*string) {
-    return m.rbacGroupName
+    val, err := m.GetBackingStore().Get("rbacGroupName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRiskScore gets the riskScore property value. Risk score as evaluated by Microsoft Defender for Endpoint. The possible values are: none, informational, low, medium, high, unknownFutureValue.
 func (m *DeviceEvidence) GetRiskScore()(*DeviceRiskScore) {
-    return m.riskScore
+    val, err := m.GetBackingStore().Get("riskScore")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DeviceRiskScore)
+    }
+    return nil
 }
 // GetVersion gets the version property value. The version of the operating system platform.
 func (m *DeviceEvidence) GetVersion()(*string) {
-    return m.version
+    val, err := m.GetBackingStore().Get("version")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetVmMetadata gets the vmMetadata property value. Metadata of the virtual machine (VM) on which Microsoft Defender for Endpoint is running.
 func (m *DeviceEvidence) GetVmMetadata()(VmMetadataable) {
-    return m.vmMetadata
+    val, err := m.GetBackingStore().Get("vmMetadata")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(VmMetadataable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -377,61 +452,141 @@ func (m *DeviceEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetAzureAdDeviceId sets the azureAdDeviceId property value. A unique identifier assigned to a device by Azure Active Directory (Azure AD) when device is Azure AD-joined.
 func (m *DeviceEvidence) SetAzureAdDeviceId(value *string)() {
-    m.azureAdDeviceId = value
+    err := m.GetBackingStore().Set("azureAdDeviceId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefenderAvStatus sets the defenderAvStatus property value. State of the Defender AntiMalware engine. The possible values are: notReporting, disabled, notUpdated, updated, unknown, notSupported, unknownFutureValue.
 func (m *DeviceEvidence) SetDefenderAvStatus(value *DefenderAvStatus)() {
-    m.defenderAvStatus = value
+    err := m.GetBackingStore().Set("defenderAvStatus", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceDnsName sets the deviceDnsName property value. The fully qualified domain name (FQDN) for the device.
 func (m *DeviceEvidence) SetDeviceDnsName(value *string)() {
-    m.deviceDnsName = value
+    err := m.GetBackingStore().Set("deviceDnsName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFirstSeenDateTime sets the firstSeenDateTime property value. The date and time when the device was first seen.
 func (m *DeviceEvidence) SetFirstSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.firstSeenDateTime = value
+    err := m.GetBackingStore().Set("firstSeenDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHealthStatus sets the healthStatus property value. The health state of the device.The possible values are: active, inactive, impairedCommunication, noSensorData, noSensorDataImpairedCommunication, unknown, unknownFutureValue.
 func (m *DeviceEvidence) SetHealthStatus(value *DeviceHealthStatus)() {
-    m.healthStatus = value
+    err := m.GetBackingStore().Set("healthStatus", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLoggedOnUsers sets the loggedOnUsers property value. Users that were logged on the machine during the time of the alert.
 func (m *DeviceEvidence) SetLoggedOnUsers(value []LoggedOnUserable)() {
-    m.loggedOnUsers = value
+    err := m.GetBackingStore().Set("loggedOnUsers", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMdeDeviceId sets the mdeDeviceId property value. A unique identifier assigned to a device by Microsoft Defender for Endpoint.
 func (m *DeviceEvidence) SetMdeDeviceId(value *string)() {
-    m.mdeDeviceId = value
+    err := m.GetBackingStore().Set("mdeDeviceId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOnboardingStatus sets the onboardingStatus property value. The status of the machine onboarding to Microsoft Defender for Endpoint.The possible values are: insufficientInfo, onboarded, canBeOnboarded, unsupported, unknownFutureValue.
 func (m *DeviceEvidence) SetOnboardingStatus(value *OnboardingStatus)() {
-    m.onboardingStatus = value
+    err := m.GetBackingStore().Set("onboardingStatus", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOsBuild sets the osBuild property value. The build version for the operating system the device is running.
 func (m *DeviceEvidence) SetOsBuild(value *int64)() {
-    m.osBuild = value
+    err := m.GetBackingStore().Set("osBuild", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOsPlatform sets the osPlatform property value. The operating system platform the device is running.
 func (m *DeviceEvidence) SetOsPlatform(value *string)() {
-    m.osPlatform = value
+    err := m.GetBackingStore().Set("osPlatform", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRbacGroupId sets the rbacGroupId property value. The ID of the role-based access control (RBAC) device group.
 func (m *DeviceEvidence) SetRbacGroupId(value *int32)() {
-    m.rbacGroupId = value
+    err := m.GetBackingStore().Set("rbacGroupId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRbacGroupName sets the rbacGroupName property value. The name of the RBAC device group.
 func (m *DeviceEvidence) SetRbacGroupName(value *string)() {
-    m.rbacGroupName = value
+    err := m.GetBackingStore().Set("rbacGroupName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRiskScore sets the riskScore property value. Risk score as evaluated by Microsoft Defender for Endpoint. The possible values are: none, informational, low, medium, high, unknownFutureValue.
 func (m *DeviceEvidence) SetRiskScore(value *DeviceRiskScore)() {
-    m.riskScore = value
+    err := m.GetBackingStore().Set("riskScore", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVersion sets the version property value. The version of the operating system platform.
 func (m *DeviceEvidence) SetVersion(value *string)() {
-    m.version = value
+    err := m.GetBackingStore().Set("version", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVmMetadata sets the vmMetadata property value. Metadata of the virtual machine (VM) on which Microsoft Defender for Endpoint is running.
 func (m *DeviceEvidence) SetVmMetadata(value VmMetadataable)() {
-    m.vmMetadata = value
+    err := m.GetBackingStore().Set("vmMetadata", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceEvidenceable 
+type DeviceEvidenceable interface {
+    AlertEvidenceable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAzureAdDeviceId()(*string)
+    GetDefenderAvStatus()(*DefenderAvStatus)
+    GetDeviceDnsName()(*string)
+    GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetHealthStatus()(*DeviceHealthStatus)
+    GetLoggedOnUsers()([]LoggedOnUserable)
+    GetMdeDeviceId()(*string)
+    GetOnboardingStatus()(*OnboardingStatus)
+    GetOsBuild()(*int64)
+    GetOsPlatform()(*string)
+    GetRbacGroupId()(*int32)
+    GetRbacGroupName()(*string)
+    GetRiskScore()(*DeviceRiskScore)
+    GetVersion()(*string)
+    GetVmMetadata()(VmMetadataable)
+    SetAzureAdDeviceId(value *string)()
+    SetDefenderAvStatus(value *DefenderAvStatus)()
+    SetDeviceDnsName(value *string)()
+    SetFirstSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetHealthStatus(value *DeviceHealthStatus)()
+    SetLoggedOnUsers(value []LoggedOnUserable)()
+    SetMdeDeviceId(value *string)()
+    SetOnboardingStatus(value *OnboardingStatus)()
+    SetOsBuild(value *int64)()
+    SetOsPlatform(value *string)()
+    SetRbacGroupId(value *int32)()
+    SetRbacGroupName(value *string)()
+    SetRiskScore(value *DeviceRiskScore)()
+    SetVersion(value *string)()
+    SetVmMetadata(value VmMetadataable)()
 }

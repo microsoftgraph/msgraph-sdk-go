@@ -8,8 +8,6 @@ import (
 // ItemContactFoldersItemContactsMicrosoftGraphDeltaDeltaResponse 
 type ItemContactFoldersItemContactsMicrosoftGraphDeltaDeltaResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseDeltaFunctionResponse
-    // The value property
-    value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Contactable
 }
 // NewItemContactFoldersItemContactsMicrosoftGraphDeltaDeltaResponse instantiates a new ItemContactFoldersItemContactsMicrosoftGraphDeltaDeltaResponse and sets the default values.
 func NewItemContactFoldersItemContactsMicrosoftGraphDeltaDeltaResponse()(*ItemContactFoldersItemContactsMicrosoftGraphDeltaDeltaResponse) {
@@ -43,7 +41,14 @@ func (m *ItemContactFoldersItemContactsMicrosoftGraphDeltaDeltaResponse) GetFiel
 }
 // GetValue gets the value property value. The value property
 func (m *ItemContactFoldersItemContactsMicrosoftGraphDeltaDeltaResponse) GetValue()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Contactable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Contactable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemContactFoldersItemContactsMicrosoftGraphDeltaDeltaResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *ItemContactFoldersItemContactsMicrosoftGraphDeltaDeltaResponse) Seriali
 }
 // SetValue sets the value property value. The value property
 func (m *ItemContactFoldersItemContactsMicrosoftGraphDeltaDeltaResponse) SetValue(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Contactable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemContactFoldersItemContactsMicrosoftGraphDeltaDeltaResponseable 
+type ItemContactFoldersItemContactsMicrosoftGraphDeltaDeltaResponseable interface {
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseDeltaFunctionResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Contactable)
+    SetValue(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Contactable)()
 }

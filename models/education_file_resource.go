@@ -7,8 +7,6 @@ import (
 // EducationFileResource 
 type EducationFileResource struct {
     EducationResource
-    // Location on disk of the file resource.
-    fileUrl *string
 }
 // NewEducationFileResource instantiates a new EducationFileResource and sets the default values.
 func NewEducationFileResource()(*EducationFileResource) {
@@ -40,7 +38,14 @@ func (m *EducationFileResource) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetFileUrl gets the fileUrl property value. Location on disk of the file resource.
 func (m *EducationFileResource) GetFileUrl()(*string) {
-    return m.fileUrl
+    val, err := m.GetBackingStore().Get("fileUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EducationFileResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *EducationFileResource) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetFileUrl sets the fileUrl property value. Location on disk of the file resource.
 func (m *EducationFileResource) SetFileUrl(value *string)() {
-    m.fileUrl = value
+    err := m.GetBackingStore().Set("fileUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EducationFileResourceable 
+type EducationFileResourceable interface {
+    EducationResourceable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetFileUrl()(*string)
+    SetFileUrl(value *string)()
 }

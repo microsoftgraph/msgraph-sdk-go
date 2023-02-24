@@ -8,8 +8,6 @@ import (
 // MicrosoftGraphGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeResponse 
 type MicrosoftGraphGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
-    // The value property
-    value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ArchivedPrintJobable
 }
 // NewMicrosoftGraphGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeResponse instantiates a new MicrosoftGraphGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeResponse and sets the default values.
 func NewMicrosoftGraphGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeResponse()(*MicrosoftGraphGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeResponse) {
@@ -43,7 +41,14 @@ func (m *MicrosoftGraphGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEn
 }
 // GetValue gets the value property value. The value property
 func (m *MicrosoftGraphGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeResponse) GetValue()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ArchivedPrintJobable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ArchivedPrintJobable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MicrosoftGraphGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *MicrosoftGraphGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEn
 }
 // SetValue sets the value property value. The value property
 func (m *MicrosoftGraphGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeResponse) SetValue(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ArchivedPrintJobable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MicrosoftGraphGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeResponseable 
+type MicrosoftGraphGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeResponseable interface {
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ArchivedPrintJobable)
+    SetValue(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ArchivedPrintJobable)()
 }

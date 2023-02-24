@@ -7,8 +7,6 @@ import (
 // EducationMediaResource 
 type EducationMediaResource struct {
     EducationResource
-    // Location of the file on shared point folder. Required
-    fileUrl *string
 }
 // NewEducationMediaResource instantiates a new EducationMediaResource and sets the default values.
 func NewEducationMediaResource()(*EducationMediaResource) {
@@ -40,7 +38,14 @@ func (m *EducationMediaResource) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetFileUrl gets the fileUrl property value. Location of the file on shared point folder. Required
 func (m *EducationMediaResource) GetFileUrl()(*string) {
-    return m.fileUrl
+    val, err := m.GetBackingStore().Get("fileUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EducationMediaResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *EducationMediaResource) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetFileUrl sets the fileUrl property value. Location of the file on shared point folder. Required
 func (m *EducationMediaResource) SetFileUrl(value *string)() {
-    m.fileUrl = value
+    err := m.GetBackingStore().Set("fileUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EducationMediaResourceable 
+type EducationMediaResourceable interface {
+    EducationResourceable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetFileUrl()(*string)
+    SetFileUrl(value *string)()
 }

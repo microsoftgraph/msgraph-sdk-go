@@ -3,23 +3,19 @@ package drives
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ItemItemsItemWorkbookFunctionsMicrosoftGraphDateDatePostRequestBody 
 type ItemItemsItemWorkbookFunctionsMicrosoftGraphDateDatePostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The day property
-    day iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable
-    // The month property
-    month iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable
-    // The year property
-    year iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewItemItemsItemWorkbookFunctionsMicrosoftGraphDateDatePostRequestBody instantiates a new ItemItemsItemWorkbookFunctionsMicrosoftGraphDateDatePostRequestBody and sets the default values.
 func NewItemItemsItemWorkbookFunctionsMicrosoftGraphDateDatePostRequestBody()(*ItemItemsItemWorkbookFunctionsMicrosoftGraphDateDatePostRequestBody) {
     m := &ItemItemsItemWorkbookFunctionsMicrosoftGraphDateDatePostRequestBody{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -29,11 +25,30 @@ func CreateItemItemsItemWorkbookFunctionsMicrosoftGraphDateDatePostRequestBodyFr
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphDateDatePostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphDateDatePostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetDay gets the day property value. The day property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphDateDatePostRequestBody) GetDay()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
-    return m.day
+    val, err := m.GetBackingStore().Get("day")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphDateDatePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,11 +87,25 @@ func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphDateDatePostRequestBody) Ge
 }
 // GetMonth gets the month property value. The month property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphDateDatePostRequestBody) GetMonth()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
-    return m.month
+    val, err := m.GetBackingStore().Get("month")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    }
+    return nil
 }
 // GetYear gets the year property value. The year property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphDateDatePostRequestBody) GetYear()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
-    return m.year
+    val, err := m.GetBackingStore().Get("year")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphDateDatePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -108,17 +137,47 @@ func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphDateDatePostRequestBody) Se
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphDateDatePostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphDateDatePostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetDay sets the day property value. The day property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphDateDatePostRequestBody) SetDay(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
-    m.day = value
+    err := m.GetBackingStore().Set("day", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMonth sets the month property value. The month property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphDateDatePostRequestBody) SetMonth(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
-    m.month = value
+    err := m.GetBackingStore().Set("month", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetYear sets the year property value. The year property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphDateDatePostRequestBody) SetYear(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
-    m.year = value
+    err := m.GetBackingStore().Set("year", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemItemsItemWorkbookFunctionsMicrosoftGraphDateDatePostRequestBodyable 
+type ItemItemsItemWorkbookFunctionsMicrosoftGraphDateDatePostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDay()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    GetMonth()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    GetYear()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDay(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
+    SetMonth(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
+    SetYear(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
 }

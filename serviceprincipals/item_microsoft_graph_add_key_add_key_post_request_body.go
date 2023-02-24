@@ -3,23 +3,19 @@ package serviceprincipals
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ItemMicrosoftGraphAddKeyAddKeyPostRequestBody 
 type ItemMicrosoftGraphAddKeyAddKeyPostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The keyCredential property
-    keyCredential iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.KeyCredentialable
-    // The passwordCredential property
-    passwordCredential iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PasswordCredentialable
-    // The proof property
-    proof *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewItemMicrosoftGraphAddKeyAddKeyPostRequestBody instantiates a new ItemMicrosoftGraphAddKeyAddKeyPostRequestBody and sets the default values.
 func NewItemMicrosoftGraphAddKeyAddKeyPostRequestBody()(*ItemMicrosoftGraphAddKeyAddKeyPostRequestBody) {
     m := &ItemMicrosoftGraphAddKeyAddKeyPostRequestBody{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -29,7 +25,19 @@ func CreateItemMicrosoftGraphAddKeyAddKeyPostRequestBodyFromDiscriminatorValue(p
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemMicrosoftGraphAddKeyAddKeyPostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ItemMicrosoftGraphAddKeyAddKeyPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemMicrosoftGraphAddKeyAddKeyPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -68,15 +76,36 @@ func (m *ItemMicrosoftGraphAddKeyAddKeyPostRequestBody) GetFieldDeserializers()(
 }
 // GetKeyCredential gets the keyCredential property value. The keyCredential property
 func (m *ItemMicrosoftGraphAddKeyAddKeyPostRequestBody) GetKeyCredential()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.KeyCredentialable) {
-    return m.keyCredential
+    val, err := m.GetBackingStore().Get("keyCredential")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.KeyCredentialable)
+    }
+    return nil
 }
 // GetPasswordCredential gets the passwordCredential property value. The passwordCredential property
 func (m *ItemMicrosoftGraphAddKeyAddKeyPostRequestBody) GetPasswordCredential()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PasswordCredentialable) {
-    return m.passwordCredential
+    val, err := m.GetBackingStore().Get("passwordCredential")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PasswordCredentialable)
+    }
+    return nil
 }
 // GetProof gets the proof property value. The proof property
 func (m *ItemMicrosoftGraphAddKeyAddKeyPostRequestBody) GetProof()(*string) {
-    return m.proof
+    val, err := m.GetBackingStore().Get("proof")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemMicrosoftGraphAddKeyAddKeyPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -108,17 +137,47 @@ func (m *ItemMicrosoftGraphAddKeyAddKeyPostRequestBody) Serialize(writer i878a80
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemMicrosoftGraphAddKeyAddKeyPostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ItemMicrosoftGraphAddKeyAddKeyPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetKeyCredential sets the keyCredential property value. The keyCredential property
 func (m *ItemMicrosoftGraphAddKeyAddKeyPostRequestBody) SetKeyCredential(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.KeyCredentialable)() {
-    m.keyCredential = value
+    err := m.GetBackingStore().Set("keyCredential", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasswordCredential sets the passwordCredential property value. The passwordCredential property
 func (m *ItemMicrosoftGraphAddKeyAddKeyPostRequestBody) SetPasswordCredential(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PasswordCredentialable)() {
-    m.passwordCredential = value
+    err := m.GetBackingStore().Set("passwordCredential", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProof sets the proof property value. The proof property
 func (m *ItemMicrosoftGraphAddKeyAddKeyPostRequestBody) SetProof(value *string)() {
-    m.proof = value
+    err := m.GetBackingStore().Set("proof", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemMicrosoftGraphAddKeyAddKeyPostRequestBodyable 
+type ItemMicrosoftGraphAddKeyAddKeyPostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetKeyCredential()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.KeyCredentialable)
+    GetPasswordCredential()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PasswordCredentialable)
+    GetProof()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetKeyCredential(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.KeyCredentialable)()
+    SetPasswordCredential(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PasswordCredentialable)()
+    SetProof(value *string)()
 }

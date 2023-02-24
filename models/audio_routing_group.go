@@ -7,12 +7,6 @@ import (
 // AudioRoutingGroup 
 type AudioRoutingGroup struct {
     Entity
-    // The receivers property
-    receivers []string
-    // The routingMode property
-    routingMode *RoutingMode
-    // The sources property
-    sources []string
 }
 // NewAudioRoutingGroup instantiates a new audioRoutingGroup and sets the default values.
 func NewAudioRoutingGroup()(*AudioRoutingGroup) {
@@ -70,15 +64,36 @@ func (m *AudioRoutingGroup) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetReceivers gets the receivers property value. The receivers property
 func (m *AudioRoutingGroup) GetReceivers()([]string) {
-    return m.receivers
+    val, err := m.GetBackingStore().Get("receivers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetRoutingMode gets the routingMode property value. The routingMode property
 func (m *AudioRoutingGroup) GetRoutingMode()(*RoutingMode) {
-    return m.routingMode
+    val, err := m.GetBackingStore().Get("routingMode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*RoutingMode)
+    }
+    return nil
 }
 // GetSources gets the sources property value. The sources property
 func (m *AudioRoutingGroup) GetSources()([]string) {
-    return m.sources
+    val, err := m.GetBackingStore().Get("sources")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AudioRoutingGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -109,13 +124,33 @@ func (m *AudioRoutingGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetReceivers sets the receivers property value. The receivers property
 func (m *AudioRoutingGroup) SetReceivers(value []string)() {
-    m.receivers = value
+    err := m.GetBackingStore().Set("receivers", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRoutingMode sets the routingMode property value. The routingMode property
 func (m *AudioRoutingGroup) SetRoutingMode(value *RoutingMode)() {
-    m.routingMode = value
+    err := m.GetBackingStore().Set("routingMode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSources sets the sources property value. The sources property
 func (m *AudioRoutingGroup) SetSources(value []string)() {
-    m.sources = value
+    err := m.GetBackingStore().Set("sources", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AudioRoutingGroupable 
+type AudioRoutingGroupable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetReceivers()([]string)
+    GetRoutingMode()(*RoutingMode)
+    GetSources()([]string)
+    SetReceivers(value []string)()
+    SetRoutingMode(value *RoutingMode)()
+    SetSources(value []string)()
 }

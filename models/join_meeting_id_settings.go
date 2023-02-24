@@ -2,25 +2,19 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // JoinMeetingIdSettings 
 type JoinMeetingIdSettings struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Indicates whether a passcode is required to join a meeting when using joinMeetingId. Optional.
-    isPasscodeRequired *bool
-    // The meeting ID to be used to join a meeting. Optional. Read-only.
-    joinMeetingId *string
-    // The OdataType property
-    odataType *string
-    // The passcode to join a meeting.  Optional. Read-only.
-    passcode *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewJoinMeetingIdSettings instantiates a new joinMeetingIdSettings and sets the default values.
 func NewJoinMeetingIdSettings()(*JoinMeetingIdSettings) {
     m := &JoinMeetingIdSettings{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -30,7 +24,19 @@ func CreateJoinMeetingIdSettingsFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *JoinMeetingIdSettings) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *JoinMeetingIdSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *JoinMeetingIdSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -79,19 +85,47 @@ func (m *JoinMeetingIdSettings) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetIsPasscodeRequired gets the isPasscodeRequired property value. Indicates whether a passcode is required to join a meeting when using joinMeetingId. Optional.
 func (m *JoinMeetingIdSettings) GetIsPasscodeRequired()(*bool) {
-    return m.isPasscodeRequired
+    val, err := m.GetBackingStore().Get("isPasscodeRequired")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetJoinMeetingId gets the joinMeetingId property value. The meeting ID to be used to join a meeting. Optional. Read-only.
 func (m *JoinMeetingIdSettings) GetJoinMeetingId()(*string) {
-    return m.joinMeetingId
+    val, err := m.GetBackingStore().Get("joinMeetingId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *JoinMeetingIdSettings) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPasscode gets the passcode property value. The passcode to join a meeting.  Optional. Read-only.
 func (m *JoinMeetingIdSettings) GetPasscode()(*string) {
-    return m.passcode
+    val, err := m.GetBackingStore().Get("passcode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *JoinMeetingIdSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -129,21 +163,56 @@ func (m *JoinMeetingIdSettings) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *JoinMeetingIdSettings) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *JoinMeetingIdSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetIsPasscodeRequired sets the isPasscodeRequired property value. Indicates whether a passcode is required to join a meeting when using joinMeetingId. Optional.
 func (m *JoinMeetingIdSettings) SetIsPasscodeRequired(value *bool)() {
-    m.isPasscodeRequired = value
+    err := m.GetBackingStore().Set("isPasscodeRequired", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetJoinMeetingId sets the joinMeetingId property value. The meeting ID to be used to join a meeting. Optional. Read-only.
 func (m *JoinMeetingIdSettings) SetJoinMeetingId(value *string)() {
-    m.joinMeetingId = value
+    err := m.GetBackingStore().Set("joinMeetingId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *JoinMeetingIdSettings) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasscode sets the passcode property value. The passcode to join a meeting.  Optional. Read-only.
 func (m *JoinMeetingIdSettings) SetPasscode(value *string)() {
-    m.passcode = value
+    err := m.GetBackingStore().Set("passcode", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// JoinMeetingIdSettingsable 
+type JoinMeetingIdSettingsable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetIsPasscodeRequired()(*bool)
+    GetJoinMeetingId()(*string)
+    GetOdataType()(*string)
+    GetPasscode()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetIsPasscodeRequired(value *bool)()
+    SetJoinMeetingId(value *string)()
+    SetOdataType(value *string)()
+    SetPasscode(value *string)()
 }

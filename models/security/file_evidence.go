@@ -7,12 +7,6 @@ import (
 // FileEvidence 
 type FileEvidence struct {
     AlertEvidence
-    // The status of the detection.The possible values are: detected, blocked, prevented, unknownFutureValue.
-    detectionStatus *DetectionStatus
-    // The file details.
-    fileDetails FileDetailsable
-    // A unique identifier assigned to a device by Microsoft Defender for Endpoint.
-    mdeDeviceId *string
 }
 // NewFileEvidence instantiates a new FileEvidence and sets the default values.
 func NewFileEvidence()(*FileEvidence) {
@@ -27,7 +21,14 @@ func CreateFileEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetDetectionStatus gets the detectionStatus property value. The status of the detection.The possible values are: detected, blocked, prevented, unknownFutureValue.
 func (m *FileEvidence) GetDetectionStatus()(*DetectionStatus) {
-    return m.detectionStatus
+    val, err := m.GetBackingStore().Get("detectionStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DetectionStatus)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *FileEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -66,11 +67,25 @@ func (m *FileEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetFileDetails gets the fileDetails property value. The file details.
 func (m *FileEvidence) GetFileDetails()(FileDetailsable) {
-    return m.fileDetails
+    val, err := m.GetBackingStore().Get("fileDetails")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(FileDetailsable)
+    }
+    return nil
 }
 // GetMdeDeviceId gets the mdeDeviceId property value. A unique identifier assigned to a device by Microsoft Defender for Endpoint.
 func (m *FileEvidence) GetMdeDeviceId()(*string) {
-    return m.mdeDeviceId
+    val, err := m.GetBackingStore().Get("mdeDeviceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *FileEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -101,13 +116,33 @@ func (m *FileEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetDetectionStatus sets the detectionStatus property value. The status of the detection.The possible values are: detected, blocked, prevented, unknownFutureValue.
 func (m *FileEvidence) SetDetectionStatus(value *DetectionStatus)() {
-    m.detectionStatus = value
+    err := m.GetBackingStore().Set("detectionStatus", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFileDetails sets the fileDetails property value. The file details.
 func (m *FileEvidence) SetFileDetails(value FileDetailsable)() {
-    m.fileDetails = value
+    err := m.GetBackingStore().Set("fileDetails", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMdeDeviceId sets the mdeDeviceId property value. A unique identifier assigned to a device by Microsoft Defender for Endpoint.
 func (m *FileEvidence) SetMdeDeviceId(value *string)() {
-    m.mdeDeviceId = value
+    err := m.GetBackingStore().Set("mdeDeviceId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// FileEvidenceable 
+type FileEvidenceable interface {
+    AlertEvidenceable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDetectionStatus()(*DetectionStatus)
+    GetFileDetails()(FileDetailsable)
+    GetMdeDeviceId()(*string)
+    SetDetectionStatus(value *DetectionStatus)()
+    SetFileDetails(value FileDetailsable)()
+    SetMdeDeviceId(value *string)()
 }

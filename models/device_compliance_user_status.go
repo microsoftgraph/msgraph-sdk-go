@@ -8,16 +8,6 @@ import (
 // DeviceComplianceUserStatus 
 type DeviceComplianceUserStatus struct {
     Entity
-    // Devices count for that user.
-    devicesCount *int32
-    // Last modified date time of the policy report.
-    lastReportedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The status property
-    status *ComplianceStatus
-    // User name of the DevicePolicyStatus.
-    userDisplayName *string
-    // UserPrincipalName.
-    userPrincipalName *string
 }
 // NewDeviceComplianceUserStatus instantiates a new deviceComplianceUserStatus and sets the default values.
 func NewDeviceComplianceUserStatus()(*DeviceComplianceUserStatus) {
@@ -32,7 +22,14 @@ func CreateDeviceComplianceUserStatusFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetDevicesCount gets the devicesCount property value. Devices count for that user.
 func (m *DeviceComplianceUserStatus) GetDevicesCount()(*int32) {
-    return m.devicesCount
+    val, err := m.GetBackingStore().Get("devicesCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceComplianceUserStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -91,19 +88,47 @@ func (m *DeviceComplianceUserStatus) GetFieldDeserializers()(map[string]func(i87
 }
 // GetLastReportedDateTime gets the lastReportedDateTime property value. Last modified date time of the policy report.
 func (m *DeviceComplianceUserStatus) GetLastReportedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastReportedDateTime
+    val, err := m.GetBackingStore().Get("lastReportedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetStatus gets the status property value. The status property
 func (m *DeviceComplianceUserStatus) GetStatus()(*ComplianceStatus) {
-    return m.status
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ComplianceStatus)
+    }
+    return nil
 }
 // GetUserDisplayName gets the userDisplayName property value. User name of the DevicePolicyStatus.
 func (m *DeviceComplianceUserStatus) GetUserDisplayName()(*string) {
-    return m.userDisplayName
+    val, err := m.GetBackingStore().Get("userDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. UserPrincipalName.
 func (m *DeviceComplianceUserStatus) GetUserPrincipalName()(*string) {
-    return m.userPrincipalName
+    val, err := m.GetBackingStore().Get("userPrincipalName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceComplianceUserStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -146,21 +171,51 @@ func (m *DeviceComplianceUserStatus) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetDevicesCount sets the devicesCount property value. Devices count for that user.
 func (m *DeviceComplianceUserStatus) SetDevicesCount(value *int32)() {
-    m.devicesCount = value
+    err := m.GetBackingStore().Set("devicesCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastReportedDateTime sets the lastReportedDateTime property value. Last modified date time of the policy report.
 func (m *DeviceComplianceUserStatus) SetLastReportedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastReportedDateTime = value
+    err := m.GetBackingStore().Set("lastReportedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStatus sets the status property value. The status property
 func (m *DeviceComplianceUserStatus) SetStatus(value *ComplianceStatus)() {
-    m.status = value
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserDisplayName sets the userDisplayName property value. User name of the DevicePolicyStatus.
 func (m *DeviceComplianceUserStatus) SetUserDisplayName(value *string)() {
-    m.userDisplayName = value
+    err := m.GetBackingStore().Set("userDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. UserPrincipalName.
 func (m *DeviceComplianceUserStatus) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    err := m.GetBackingStore().Set("userPrincipalName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceComplianceUserStatusable 
+type DeviceComplianceUserStatusable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDevicesCount()(*int32)
+    GetLastReportedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetStatus()(*ComplianceStatus)
+    GetUserDisplayName()(*string)
+    GetUserPrincipalName()(*string)
+    SetDevicesCount(value *int32)()
+    SetLastReportedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetStatus(value *ComplianceStatus)()
+    SetUserDisplayName(value *string)()
+    SetUserPrincipalName(value *string)()
 }

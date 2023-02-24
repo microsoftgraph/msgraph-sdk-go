@@ -7,8 +7,6 @@ import (
 // ShiftActivityCollectionResponse 
 type ShiftActivityCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ShiftActivityable
 }
 // NewShiftActivityCollectionResponse instantiates a new ShiftActivityCollectionResponse and sets the default values.
 func NewShiftActivityCollectionResponse()(*ShiftActivityCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ShiftActivityCollectionResponse) GetFieldDeserializers()(map[string]fun
 }
 // GetValue gets the value property value. The value property
 func (m *ShiftActivityCollectionResponse) GetValue()([]ShiftActivityable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ShiftActivityable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ShiftActivityCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ShiftActivityCollectionResponse) Serialize(writer i878a80d2330e89d26896
 }
 // SetValue sets the value property value. The value property
 func (m *ShiftActivityCollectionResponse) SetValue(value []ShiftActivityable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ShiftActivityCollectionResponseable 
+type ShiftActivityCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ShiftActivityable)
+    SetValue(value []ShiftActivityable)()
 }

@@ -7,8 +7,6 @@ import (
 // DeviceAndAppManagementRoleDefinitionCollectionResponse 
 type DeviceAndAppManagementRoleDefinitionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceAndAppManagementRoleDefinitionable
 }
 // NewDeviceAndAppManagementRoleDefinitionCollectionResponse instantiates a new DeviceAndAppManagementRoleDefinitionCollectionResponse and sets the default values.
 func NewDeviceAndAppManagementRoleDefinitionCollectionResponse()(*DeviceAndAppManagementRoleDefinitionCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceAndAppManagementRoleDefinitionCollectionResponse) GetFieldDeseria
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceAndAppManagementRoleDefinitionCollectionResponse) GetValue()([]DeviceAndAppManagementRoleDefinitionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceAndAppManagementRoleDefinitionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceAndAppManagementRoleDefinitionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceAndAppManagementRoleDefinitionCollectionResponse) Serialize(write
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceAndAppManagementRoleDefinitionCollectionResponse) SetValue(value []DeviceAndAppManagementRoleDefinitionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceAndAppManagementRoleDefinitionCollectionResponseable 
+type DeviceAndAppManagementRoleDefinitionCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceAndAppManagementRoleDefinitionable)
+    SetValue(value []DeviceAndAppManagementRoleDefinitionable)()
 }

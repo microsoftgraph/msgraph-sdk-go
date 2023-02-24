@@ -7,8 +7,6 @@ import (
 // DocumentSetContentCollectionResponse 
 type DocumentSetContentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DocumentSetContentable
 }
 // NewDocumentSetContentCollectionResponse instantiates a new DocumentSetContentCollectionResponse and sets the default values.
 func NewDocumentSetContentCollectionResponse()(*DocumentSetContentCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DocumentSetContentCollectionResponse) GetFieldDeserializers()(map[strin
 }
 // GetValue gets the value property value. The value property
 func (m *DocumentSetContentCollectionResponse) GetValue()([]DocumentSetContentable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DocumentSetContentable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DocumentSetContentCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DocumentSetContentCollectionResponse) Serialize(writer i878a80d2330e89d
 }
 // SetValue sets the value property value. The value property
 func (m *DocumentSetContentCollectionResponse) SetValue(value []DocumentSetContentable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DocumentSetContentCollectionResponseable 
+type DocumentSetContentCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DocumentSetContentable)
+    SetValue(value []DocumentSetContentable)()
 }

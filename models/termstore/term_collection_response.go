@@ -8,8 +8,6 @@ import (
 // TermCollectionResponse 
 type TermCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
-    // The value property
-    value []Termable
 }
 // NewTermCollectionResponse instantiates a new TermCollectionResponse and sets the default values.
 func NewTermCollectionResponse()(*TermCollectionResponse) {
@@ -43,7 +41,14 @@ func (m *TermCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetValue gets the value property value. The value property
 func (m *TermCollectionResponse) GetValue()([]Termable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Termable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TermCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *TermCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetValue sets the value property value. The value property
 func (m *TermCollectionResponse) SetValue(value []Termable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TermCollectionResponseable 
+type TermCollectionResponseable interface {
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Termable)
+    SetValue(value []Termable)()
 }

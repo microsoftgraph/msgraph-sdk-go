@@ -7,8 +7,6 @@ import (
 // DriveCollectionResponse 
 type DriveCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Driveable
 }
 // NewDriveCollectionResponse instantiates a new DriveCollectionResponse and sets the default values.
 func NewDriveCollectionResponse()(*DriveCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DriveCollectionResponse) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetValue gets the value property value. The value property
 func (m *DriveCollectionResponse) GetValue()([]Driveable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Driveable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DriveCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DriveCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetValue sets the value property value. The value property
 func (m *DriveCollectionResponse) SetValue(value []Driveable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DriveCollectionResponseable 
+type DriveCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Driveable)
+    SetValue(value []Driveable)()
 }

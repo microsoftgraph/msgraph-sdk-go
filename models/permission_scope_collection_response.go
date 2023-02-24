@@ -7,8 +7,6 @@ import (
 // PermissionScopeCollectionResponse 
 type PermissionScopeCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []PermissionScopeable
 }
 // NewPermissionScopeCollectionResponse instantiates a new PermissionScopeCollectionResponse and sets the default values.
 func NewPermissionScopeCollectionResponse()(*PermissionScopeCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *PermissionScopeCollectionResponse) GetFieldDeserializers()(map[string]f
 }
 // GetValue gets the value property value. The value property
 func (m *PermissionScopeCollectionResponse) GetValue()([]PermissionScopeable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PermissionScopeable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PermissionScopeCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *PermissionScopeCollectionResponse) Serialize(writer i878a80d2330e89d268
 }
 // SetValue sets the value property value. The value property
 func (m *PermissionScopeCollectionResponse) SetValue(value []PermissionScopeable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PermissionScopeCollectionResponseable 
+type PermissionScopeCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]PermissionScopeable)
+    SetValue(value []PermissionScopeable)()
 }

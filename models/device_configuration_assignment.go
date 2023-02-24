@@ -7,8 +7,6 @@ import (
 // DeviceConfigurationAssignment the device configuration assignment entity assigns an AAD group to a specific device configuration.
 type DeviceConfigurationAssignment struct {
     Entity
-    // The assignment target for the device configuration.
-    target DeviceAndAppManagementAssignmentTargetable
 }
 // NewDeviceConfigurationAssignment instantiates a new deviceConfigurationAssignment and sets the default values.
 func NewDeviceConfigurationAssignment()(*DeviceConfigurationAssignment) {
@@ -38,7 +36,14 @@ func (m *DeviceConfigurationAssignment) GetFieldDeserializers()(map[string]func(
 }
 // GetTarget gets the target property value. The assignment target for the device configuration.
 func (m *DeviceConfigurationAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
-    return m.target
+    val, err := m.GetBackingStore().Get("target")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceAndAppManagementAssignmentTargetable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceConfigurationAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,5 +61,15 @@ func (m *DeviceConfigurationAssignment) Serialize(writer i878a80d2330e89d2689638
 }
 // SetTarget sets the target property value. The assignment target for the device configuration.
 func (m *DeviceConfigurationAssignment) SetTarget(value DeviceAndAppManagementAssignmentTargetable)() {
-    m.target = value
+    err := m.GetBackingStore().Set("target", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceConfigurationAssignmentable 
+type DeviceConfigurationAssignmentable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetTarget()(DeviceAndAppManagementAssignmentTargetable)
+    SetTarget(value DeviceAndAppManagementAssignmentTargetable)()
 }

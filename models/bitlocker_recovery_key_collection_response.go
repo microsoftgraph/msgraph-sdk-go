@@ -7,8 +7,6 @@ import (
 // BitlockerRecoveryKeyCollectionResponse 
 type BitlockerRecoveryKeyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []BitlockerRecoveryKeyable
 }
 // NewBitlockerRecoveryKeyCollectionResponse instantiates a new BitlockerRecoveryKeyCollectionResponse and sets the default values.
 func NewBitlockerRecoveryKeyCollectionResponse()(*BitlockerRecoveryKeyCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *BitlockerRecoveryKeyCollectionResponse) GetFieldDeserializers()(map[str
 }
 // GetValue gets the value property value. The value property
 func (m *BitlockerRecoveryKeyCollectionResponse) GetValue()([]BitlockerRecoveryKeyable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]BitlockerRecoveryKeyable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *BitlockerRecoveryKeyCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *BitlockerRecoveryKeyCollectionResponse) Serialize(writer i878a80d2330e8
 }
 // SetValue sets the value property value. The value property
 func (m *BitlockerRecoveryKeyCollectionResponse) SetValue(value []BitlockerRecoveryKeyable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// BitlockerRecoveryKeyCollectionResponseable 
+type BitlockerRecoveryKeyCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]BitlockerRecoveryKeyable)
+    SetValue(value []BitlockerRecoveryKeyable)()
 }

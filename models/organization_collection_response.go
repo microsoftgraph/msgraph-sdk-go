@@ -7,8 +7,6 @@ import (
 // OrganizationCollectionResponse 
 type OrganizationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Organizationable
 }
 // NewOrganizationCollectionResponse instantiates a new OrganizationCollectionResponse and sets the default values.
 func NewOrganizationCollectionResponse()(*OrganizationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *OrganizationCollectionResponse) GetFieldDeserializers()(map[string]func
 }
 // GetValue gets the value property value. The value property
 func (m *OrganizationCollectionResponse) GetValue()([]Organizationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Organizationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OrganizationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *OrganizationCollectionResponse) Serialize(writer i878a80d2330e89d268963
 }
 // SetValue sets the value property value. The value property
 func (m *OrganizationCollectionResponse) SetValue(value []Organizationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OrganizationCollectionResponseable 
+type OrganizationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Organizationable)
+    SetValue(value []Organizationable)()
 }

@@ -2,23 +2,21 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ContentTypeOrder 
 type ContentTypeOrder struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
     // Whether this is the default Content Type
-    defaultEscaped *bool
-    // The OdataType property
-    odataType *string
-    // Specifies the position in which the Content Type appears in the selection UI.
-    position *int32
+    DefaultEscaped *bool
 }
 // NewContentTypeOrder instantiates a new contentTypeOrder and sets the default values.
 func NewContentTypeOrder()(*ContentTypeOrder) {
     m := &ContentTypeOrder{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -28,11 +26,30 @@ func CreateContentTypeOrderFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ContentTypeOrder) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ContentTypeOrder) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetDefault gets the default property value. Whether this is the default Content Type
 func (m *ContentTypeOrder) GetDefault()(*bool) {
-    return m.defaultEscaped
+    val, err := m.GetBackingStore().Get("defaultEscaped")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ContentTypeOrder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -71,11 +88,25 @@ func (m *ContentTypeOrder) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ContentTypeOrder) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPosition gets the position property value. Specifies the position in which the Content Type appears in the selection UI.
 func (m *ContentTypeOrder) GetPosition()(*int32) {
-    return m.position
+    val, err := m.GetBackingStore().Get("position")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ContentTypeOrder) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -107,17 +138,47 @@ func (m *ContentTypeOrder) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ContentTypeOrder) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ContentTypeOrder) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetDefault sets the default property value. Whether this is the default Content Type
 func (m *ContentTypeOrder) SetDefault(value *bool)() {
-    m.defaultEscaped = value
+    err := m.GetBackingStore().Set("defaultEscaped", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ContentTypeOrder) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPosition sets the position property value. Specifies the position in which the Content Type appears in the selection UI.
 func (m *ContentTypeOrder) SetPosition(value *int32)() {
-    m.position = value
+    err := m.GetBackingStore().Set("position", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ContentTypeOrderable 
+type ContentTypeOrderable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDefault()(*bool)
+    GetOdataType()(*string)
+    GetPosition()(*int32)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDefault(value *bool)()
+    SetOdataType(value *string)()
+    SetPosition(value *int32)()
 }

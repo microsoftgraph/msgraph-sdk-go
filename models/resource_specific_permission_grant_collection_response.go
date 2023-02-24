@@ -7,8 +7,6 @@ import (
 // ResourceSpecificPermissionGrantCollectionResponse 
 type ResourceSpecificPermissionGrantCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ResourceSpecificPermissionGrantable
 }
 // NewResourceSpecificPermissionGrantCollectionResponse instantiates a new ResourceSpecificPermissionGrantCollectionResponse and sets the default values.
 func NewResourceSpecificPermissionGrantCollectionResponse()(*ResourceSpecificPermissionGrantCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ResourceSpecificPermissionGrantCollectionResponse) GetFieldDeserializer
 }
 // GetValue gets the value property value. The value property
 func (m *ResourceSpecificPermissionGrantCollectionResponse) GetValue()([]ResourceSpecificPermissionGrantable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ResourceSpecificPermissionGrantable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ResourceSpecificPermissionGrantCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ResourceSpecificPermissionGrantCollectionResponse) Serialize(writer i87
 }
 // SetValue sets the value property value. The value property
 func (m *ResourceSpecificPermissionGrantCollectionResponse) SetValue(value []ResourceSpecificPermissionGrantable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ResourceSpecificPermissionGrantCollectionResponseable 
+type ResourceSpecificPermissionGrantCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ResourceSpecificPermissionGrantable)
+    SetValue(value []ResourceSpecificPermissionGrantable)()
 }

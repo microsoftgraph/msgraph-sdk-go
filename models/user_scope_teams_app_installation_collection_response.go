@@ -7,8 +7,6 @@ import (
 // UserScopeTeamsAppInstallationCollectionResponse 
 type UserScopeTeamsAppInstallationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []UserScopeTeamsAppInstallationable
 }
 // NewUserScopeTeamsAppInstallationCollectionResponse instantiates a new UserScopeTeamsAppInstallationCollectionResponse and sets the default values.
 func NewUserScopeTeamsAppInstallationCollectionResponse()(*UserScopeTeamsAppInstallationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *UserScopeTeamsAppInstallationCollectionResponse) GetFieldDeserializers(
 }
 // GetValue gets the value property value. The value property
 func (m *UserScopeTeamsAppInstallationCollectionResponse) GetValue()([]UserScopeTeamsAppInstallationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserScopeTeamsAppInstallationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserScopeTeamsAppInstallationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *UserScopeTeamsAppInstallationCollectionResponse) Serialize(writer i878a
 }
 // SetValue sets the value property value. The value property
 func (m *UserScopeTeamsAppInstallationCollectionResponse) SetValue(value []UserScopeTeamsAppInstallationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserScopeTeamsAppInstallationCollectionResponseable 
+type UserScopeTeamsAppInstallationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]UserScopeTeamsAppInstallationable)
+    SetValue(value []UserScopeTeamsAppInstallationable)()
 }

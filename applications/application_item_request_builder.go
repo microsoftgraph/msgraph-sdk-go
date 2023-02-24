@@ -46,6 +46,21 @@ type ApplicationItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// AppManagementPolicies provides operations to manage the appManagementPolicies property of the microsoft.graph.application entity.
+func (m *ApplicationItemRequestBuilder) AppManagementPolicies()(*ItemAppManagementPoliciesRequestBuilder) {
+    return NewItemAppManagementPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// AppManagementPoliciesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.applications.item.appManagementPolicies.item collection
+func (m *ApplicationItemRequestBuilder) AppManagementPoliciesById(id string)(*ItemAppManagementPoliciesAppManagementPolicyItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["appManagementPolicy%2Did"] = id
+    }
+    return NewItemAppManagementPoliciesAppManagementPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+}
 // NewApplicationItemRequestBuilderInternal instantiates a new ApplicationItemRequestBuilder and sets the default values.
 func NewApplicationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ApplicationItemRequestBuilder) {
     m := &ApplicationItemRequestBuilder{

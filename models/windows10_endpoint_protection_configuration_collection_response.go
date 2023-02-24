@@ -7,8 +7,6 @@ import (
 // Windows10EndpointProtectionConfigurationCollectionResponse 
 type Windows10EndpointProtectionConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Windows10EndpointProtectionConfigurationable
 }
 // NewWindows10EndpointProtectionConfigurationCollectionResponse instantiates a new Windows10EndpointProtectionConfigurationCollectionResponse and sets the default values.
 func NewWindows10EndpointProtectionConfigurationCollectionResponse()(*Windows10EndpointProtectionConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *Windows10EndpointProtectionConfigurationCollectionResponse) GetFieldDes
 }
 // GetValue gets the value property value. The value property
 func (m *Windows10EndpointProtectionConfigurationCollectionResponse) GetValue()([]Windows10EndpointProtectionConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Windows10EndpointProtectionConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Windows10EndpointProtectionConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *Windows10EndpointProtectionConfigurationCollectionResponse) Serialize(w
 }
 // SetValue sets the value property value. The value property
 func (m *Windows10EndpointProtectionConfigurationCollectionResponse) SetValue(value []Windows10EndpointProtectionConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Windows10EndpointProtectionConfigurationCollectionResponseable 
+type Windows10EndpointProtectionConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Windows10EndpointProtectionConfigurationable)
+    SetValue(value []Windows10EndpointProtectionConfigurationable)()
 }

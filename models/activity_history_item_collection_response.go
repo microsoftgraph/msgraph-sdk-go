@@ -7,8 +7,6 @@ import (
 // ActivityHistoryItemCollectionResponse 
 type ActivityHistoryItemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ActivityHistoryItemable
 }
 // NewActivityHistoryItemCollectionResponse instantiates a new ActivityHistoryItemCollectionResponse and sets the default values.
 func NewActivityHistoryItemCollectionResponse()(*ActivityHistoryItemCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ActivityHistoryItemCollectionResponse) GetFieldDeserializers()(map[stri
 }
 // GetValue gets the value property value. The value property
 func (m *ActivityHistoryItemCollectionResponse) GetValue()([]ActivityHistoryItemable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ActivityHistoryItemable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ActivityHistoryItemCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ActivityHistoryItemCollectionResponse) Serialize(writer i878a80d2330e89
 }
 // SetValue sets the value property value. The value property
 func (m *ActivityHistoryItemCollectionResponse) SetValue(value []ActivityHistoryItemable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ActivityHistoryItemCollectionResponseable 
+type ActivityHistoryItemCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ActivityHistoryItemable)
+    SetValue(value []ActivityHistoryItemable)()
 }

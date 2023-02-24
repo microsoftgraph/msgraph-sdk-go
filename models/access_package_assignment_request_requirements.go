@@ -2,35 +2,19 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // AccessPackageAssignmentRequestRequirements 
 type AccessPackageAssignmentRequestRequirements struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Indicates whether the requestor is allowed to set a custom schedule.
-    allowCustomAssignmentSchedule *bool
-    // Indicates whether a request to add must be approved by an approver.
-    isApprovalRequiredForAdd *bool
-    // Indicates whether a request to update must be approved by an approver.
-    isApprovalRequiredForUpdate *bool
-    // The OdataType property
-    odataType *string
-    // The description of the policy that the user is trying to request access using.
-    policyDescription *string
-    // The display name of the policy that the user is trying to request access using.
-    policyDisplayName *string
-    // The identifier of the policy that these requirements are associated with. This identifier can be used when creating a new assignment request.
-    policyId *string
-    // The questions property
-    questions []AccessPackageQuestionable
-    // Schedule restrictions enforced, if any.
-    schedule EntitlementManagementScheduleable
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewAccessPackageAssignmentRequestRequirements instantiates a new accessPackageAssignmentRequestRequirements and sets the default values.
 func NewAccessPackageAssignmentRequestRequirements()(*AccessPackageAssignmentRequestRequirements) {
     m := &AccessPackageAssignmentRequestRequirements{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -40,11 +24,30 @@ func CreateAccessPackageAssignmentRequestRequirementsFromDiscriminatorValue(pars
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessPackageAssignmentRequestRequirements) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetAllowCustomAssignmentSchedule gets the allowCustomAssignmentSchedule property value. Indicates whether the requestor is allowed to set a custom schedule.
 func (m *AccessPackageAssignmentRequestRequirements) GetAllowCustomAssignmentSchedule()(*bool) {
-    return m.allowCustomAssignmentSchedule
+    val, err := m.GetBackingStore().Get("allowCustomAssignmentSchedule")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *AccessPackageAssignmentRequestRequirements) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackageAssignmentRequestRequirements) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -147,35 +150,91 @@ func (m *AccessPackageAssignmentRequestRequirements) GetFieldDeserializers()(map
 }
 // GetIsApprovalRequiredForAdd gets the isApprovalRequiredForAdd property value. Indicates whether a request to add must be approved by an approver.
 func (m *AccessPackageAssignmentRequestRequirements) GetIsApprovalRequiredForAdd()(*bool) {
-    return m.isApprovalRequiredForAdd
+    val, err := m.GetBackingStore().Get("isApprovalRequiredForAdd")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsApprovalRequiredForUpdate gets the isApprovalRequiredForUpdate property value. Indicates whether a request to update must be approved by an approver.
 func (m *AccessPackageAssignmentRequestRequirements) GetIsApprovalRequiredForUpdate()(*bool) {
-    return m.isApprovalRequiredForUpdate
+    val, err := m.GetBackingStore().Get("isApprovalRequiredForUpdate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AccessPackageAssignmentRequestRequirements) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPolicyDescription gets the policyDescription property value. The description of the policy that the user is trying to request access using.
 func (m *AccessPackageAssignmentRequestRequirements) GetPolicyDescription()(*string) {
-    return m.policyDescription
+    val, err := m.GetBackingStore().Get("policyDescription")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPolicyDisplayName gets the policyDisplayName property value. The display name of the policy that the user is trying to request access using.
 func (m *AccessPackageAssignmentRequestRequirements) GetPolicyDisplayName()(*string) {
-    return m.policyDisplayName
+    val, err := m.GetBackingStore().Get("policyDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPolicyId gets the policyId property value. The identifier of the policy that these requirements are associated with. This identifier can be used when creating a new assignment request.
 func (m *AccessPackageAssignmentRequestRequirements) GetPolicyId()(*string) {
-    return m.policyId
+    val, err := m.GetBackingStore().Get("policyId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetQuestions gets the questions property value. The questions property
 func (m *AccessPackageAssignmentRequestRequirements) GetQuestions()([]AccessPackageQuestionable) {
-    return m.questions
+    val, err := m.GetBackingStore().Get("questions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AccessPackageQuestionable)
+    }
+    return nil
 }
 // GetSchedule gets the schedule property value. Schedule restrictions enforced, if any.
 func (m *AccessPackageAssignmentRequestRequirements) GetSchedule()(EntitlementManagementScheduleable) {
-    return m.schedule
+    val, err := m.GetBackingStore().Get("schedule")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(EntitlementManagementScheduleable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AccessPackageAssignmentRequestRequirements) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -247,41 +306,101 @@ func (m *AccessPackageAssignmentRequestRequirements) Serialize(writer i878a80d23
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessPackageAssignmentRequestRequirements) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAllowCustomAssignmentSchedule sets the allowCustomAssignmentSchedule property value. Indicates whether the requestor is allowed to set a custom schedule.
 func (m *AccessPackageAssignmentRequestRequirements) SetAllowCustomAssignmentSchedule(value *bool)() {
-    m.allowCustomAssignmentSchedule = value
+    err := m.GetBackingStore().Set("allowCustomAssignmentSchedule", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *AccessPackageAssignmentRequestRequirements) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetIsApprovalRequiredForAdd sets the isApprovalRequiredForAdd property value. Indicates whether a request to add must be approved by an approver.
 func (m *AccessPackageAssignmentRequestRequirements) SetIsApprovalRequiredForAdd(value *bool)() {
-    m.isApprovalRequiredForAdd = value
+    err := m.GetBackingStore().Set("isApprovalRequiredForAdd", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsApprovalRequiredForUpdate sets the isApprovalRequiredForUpdate property value. Indicates whether a request to update must be approved by an approver.
 func (m *AccessPackageAssignmentRequestRequirements) SetIsApprovalRequiredForUpdate(value *bool)() {
-    m.isApprovalRequiredForUpdate = value
+    err := m.GetBackingStore().Set("isApprovalRequiredForUpdate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AccessPackageAssignmentRequestRequirements) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPolicyDescription sets the policyDescription property value. The description of the policy that the user is trying to request access using.
 func (m *AccessPackageAssignmentRequestRequirements) SetPolicyDescription(value *string)() {
-    m.policyDescription = value
+    err := m.GetBackingStore().Set("policyDescription", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPolicyDisplayName sets the policyDisplayName property value. The display name of the policy that the user is trying to request access using.
 func (m *AccessPackageAssignmentRequestRequirements) SetPolicyDisplayName(value *string)() {
-    m.policyDisplayName = value
+    err := m.GetBackingStore().Set("policyDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPolicyId sets the policyId property value. The identifier of the policy that these requirements are associated with. This identifier can be used when creating a new assignment request.
 func (m *AccessPackageAssignmentRequestRequirements) SetPolicyId(value *string)() {
-    m.policyId = value
+    err := m.GetBackingStore().Set("policyId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetQuestions sets the questions property value. The questions property
 func (m *AccessPackageAssignmentRequestRequirements) SetQuestions(value []AccessPackageQuestionable)() {
-    m.questions = value
+    err := m.GetBackingStore().Set("questions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSchedule sets the schedule property value. Schedule restrictions enforced, if any.
 func (m *AccessPackageAssignmentRequestRequirements) SetSchedule(value EntitlementManagementScheduleable)() {
-    m.schedule = value
+    err := m.GetBackingStore().Set("schedule", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AccessPackageAssignmentRequestRequirementsable 
+type AccessPackageAssignmentRequestRequirementsable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAllowCustomAssignmentSchedule()(*bool)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetIsApprovalRequiredForAdd()(*bool)
+    GetIsApprovalRequiredForUpdate()(*bool)
+    GetOdataType()(*string)
+    GetPolicyDescription()(*string)
+    GetPolicyDisplayName()(*string)
+    GetPolicyId()(*string)
+    GetQuestions()([]AccessPackageQuestionable)
+    GetSchedule()(EntitlementManagementScheduleable)
+    SetAllowCustomAssignmentSchedule(value *bool)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetIsApprovalRequiredForAdd(value *bool)()
+    SetIsApprovalRequiredForUpdate(value *bool)()
+    SetOdataType(value *string)()
+    SetPolicyDescription(value *string)()
+    SetPolicyDisplayName(value *string)()
+    SetPolicyId(value *string)()
+    SetQuestions(value []AccessPackageQuestionable)()
+    SetSchedule(value EntitlementManagementScheduleable)()
 }

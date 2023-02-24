@@ -7,8 +7,6 @@ import (
 // AppleDeviceFeaturesConfigurationBaseCollectionResponse 
 type AppleDeviceFeaturesConfigurationBaseCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AppleDeviceFeaturesConfigurationBaseable
 }
 // NewAppleDeviceFeaturesConfigurationBaseCollectionResponse instantiates a new AppleDeviceFeaturesConfigurationBaseCollectionResponse and sets the default values.
 func NewAppleDeviceFeaturesConfigurationBaseCollectionResponse()(*AppleDeviceFeaturesConfigurationBaseCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AppleDeviceFeaturesConfigurationBaseCollectionResponse) GetFieldDeseria
 }
 // GetValue gets the value property value. The value property
 func (m *AppleDeviceFeaturesConfigurationBaseCollectionResponse) GetValue()([]AppleDeviceFeaturesConfigurationBaseable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AppleDeviceFeaturesConfigurationBaseable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AppleDeviceFeaturesConfigurationBaseCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AppleDeviceFeaturesConfigurationBaseCollectionResponse) Serialize(write
 }
 // SetValue sets the value property value. The value property
 func (m *AppleDeviceFeaturesConfigurationBaseCollectionResponse) SetValue(value []AppleDeviceFeaturesConfigurationBaseable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AppleDeviceFeaturesConfigurationBaseCollectionResponseable 
+type AppleDeviceFeaturesConfigurationBaseCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AppleDeviceFeaturesConfigurationBaseable)
+    SetValue(value []AppleDeviceFeaturesConfigurationBaseable)()
 }

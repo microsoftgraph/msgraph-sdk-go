@@ -7,8 +7,6 @@ import (
 // SamlOrWsFedProviderCollectionResponse 
 type SamlOrWsFedProviderCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []SamlOrWsFedProviderable
 }
 // NewSamlOrWsFedProviderCollectionResponse instantiates a new SamlOrWsFedProviderCollectionResponse and sets the default values.
 func NewSamlOrWsFedProviderCollectionResponse()(*SamlOrWsFedProviderCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *SamlOrWsFedProviderCollectionResponse) GetFieldDeserializers()(map[stri
 }
 // GetValue gets the value property value. The value property
 func (m *SamlOrWsFedProviderCollectionResponse) GetValue()([]SamlOrWsFedProviderable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SamlOrWsFedProviderable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SamlOrWsFedProviderCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *SamlOrWsFedProviderCollectionResponse) Serialize(writer i878a80d2330e89
 }
 // SetValue sets the value property value. The value property
 func (m *SamlOrWsFedProviderCollectionResponse) SetValue(value []SamlOrWsFedProviderable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SamlOrWsFedProviderCollectionResponseable 
+type SamlOrWsFedProviderCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]SamlOrWsFedProviderable)
+    SetValue(value []SamlOrWsFedProviderable)()
 }

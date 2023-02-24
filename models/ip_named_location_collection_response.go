@@ -7,8 +7,6 @@ import (
 // IpNamedLocationCollectionResponse 
 type IpNamedLocationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []IpNamedLocationable
 }
 // NewIpNamedLocationCollectionResponse instantiates a new IpNamedLocationCollectionResponse and sets the default values.
 func NewIpNamedLocationCollectionResponse()(*IpNamedLocationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *IpNamedLocationCollectionResponse) GetFieldDeserializers()(map[string]f
 }
 // GetValue gets the value property value. The value property
 func (m *IpNamedLocationCollectionResponse) GetValue()([]IpNamedLocationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IpNamedLocationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IpNamedLocationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *IpNamedLocationCollectionResponse) Serialize(writer i878a80d2330e89d268
 }
 // SetValue sets the value property value. The value property
 func (m *IpNamedLocationCollectionResponse) SetValue(value []IpNamedLocationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IpNamedLocationCollectionResponseable 
+type IpNamedLocationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]IpNamedLocationable)
+    SetValue(value []IpNamedLocationable)()
 }

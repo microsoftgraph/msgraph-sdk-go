@@ -7,12 +7,6 @@ import (
 // TeamRenamedEventMessageDetail 
 type TeamRenamedEventMessageDetail struct {
     EventMessageDetail
-    // Initiator of the event.
-    initiator IdentitySetable
-    // The updated name of the team.
-    teamDisplayName *string
-    // Unique identifier of the team.
-    teamId *string
 }
 // NewTeamRenamedEventMessageDetail instantiates a new TeamRenamedEventMessageDetail and sets the default values.
 func NewTeamRenamedEventMessageDetail()(*TeamRenamedEventMessageDetail) {
@@ -64,15 +58,36 @@ func (m *TeamRenamedEventMessageDetail) GetFieldDeserializers()(map[string]func(
 }
 // GetInitiator gets the initiator property value. Initiator of the event.
 func (m *TeamRenamedEventMessageDetail) GetInitiator()(IdentitySetable) {
-    return m.initiator
+    val, err := m.GetBackingStore().Get("initiator")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentitySetable)
+    }
+    return nil
 }
 // GetTeamDisplayName gets the teamDisplayName property value. The updated name of the team.
 func (m *TeamRenamedEventMessageDetail) GetTeamDisplayName()(*string) {
-    return m.teamDisplayName
+    val, err := m.GetBackingStore().Get("teamDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTeamId gets the teamId property value. Unique identifier of the team.
 func (m *TeamRenamedEventMessageDetail) GetTeamId()(*string) {
-    return m.teamId
+    val, err := m.GetBackingStore().Get("teamId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TeamRenamedEventMessageDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -102,13 +117,33 @@ func (m *TeamRenamedEventMessageDetail) Serialize(writer i878a80d2330e89d2689638
 }
 // SetInitiator sets the initiator property value. Initiator of the event.
 func (m *TeamRenamedEventMessageDetail) SetInitiator(value IdentitySetable)() {
-    m.initiator = value
+    err := m.GetBackingStore().Set("initiator", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTeamDisplayName sets the teamDisplayName property value. The updated name of the team.
 func (m *TeamRenamedEventMessageDetail) SetTeamDisplayName(value *string)() {
-    m.teamDisplayName = value
+    err := m.GetBackingStore().Set("teamDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTeamId sets the teamId property value. Unique identifier of the team.
 func (m *TeamRenamedEventMessageDetail) SetTeamId(value *string)() {
-    m.teamId = value
+    err := m.GetBackingStore().Set("teamId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TeamRenamedEventMessageDetailable 
+type TeamRenamedEventMessageDetailable interface {
+    EventMessageDetailable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetInitiator()(IdentitySetable)
+    GetTeamDisplayName()(*string)
+    GetTeamId()(*string)
+    SetInitiator(value IdentitySetable)()
+    SetTeamDisplayName(value *string)()
+    SetTeamId(value *string)()
 }

@@ -7,8 +7,6 @@ import (
 // AgreementFileVersionCollectionResponse 
 type AgreementFileVersionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AgreementFileVersionable
 }
 // NewAgreementFileVersionCollectionResponse instantiates a new AgreementFileVersionCollectionResponse and sets the default values.
 func NewAgreementFileVersionCollectionResponse()(*AgreementFileVersionCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AgreementFileVersionCollectionResponse) GetFieldDeserializers()(map[str
 }
 // GetValue gets the value property value. The value property
 func (m *AgreementFileVersionCollectionResponse) GetValue()([]AgreementFileVersionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AgreementFileVersionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AgreementFileVersionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AgreementFileVersionCollectionResponse) Serialize(writer i878a80d2330e8
 }
 // SetValue sets the value property value. The value property
 func (m *AgreementFileVersionCollectionResponse) SetValue(value []AgreementFileVersionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AgreementFileVersionCollectionResponseable 
+type AgreementFileVersionCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AgreementFileVersionable)
+    SetValue(value []AgreementFileVersionable)()
 }

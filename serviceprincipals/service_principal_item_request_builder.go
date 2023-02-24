@@ -46,6 +46,21 @@ type ServicePrincipalItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// AppManagementPolicies provides operations to manage the appManagementPolicies property of the microsoft.graph.servicePrincipal entity.
+func (m *ServicePrincipalItemRequestBuilder) AppManagementPolicies()(*ItemAppManagementPoliciesRequestBuilder) {
+    return NewItemAppManagementPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// AppManagementPoliciesById provides operations to manage the appManagementPolicies property of the microsoft.graph.servicePrincipal entity.
+func (m *ServicePrincipalItemRequestBuilder) AppManagementPoliciesById(id string)(*ItemAppManagementPoliciesAppManagementPolicyItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["appManagementPolicy%2Did"] = id
+    }
+    return NewItemAppManagementPoliciesAppManagementPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+}
 // AppRoleAssignedTo provides operations to manage the appRoleAssignedTo property of the microsoft.graph.servicePrincipal entity.
 func (m *ServicePrincipalItemRequestBuilder) AppRoleAssignedTo()(*ItemAppRoleAssignedToRequestBuilder) {
     return NewItemAppRoleAssignedToRequestBuilderInternal(m.pathParameters, m.requestAdapter)

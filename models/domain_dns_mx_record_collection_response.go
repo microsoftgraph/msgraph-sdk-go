@@ -7,8 +7,6 @@ import (
 // DomainDnsMxRecordCollectionResponse 
 type DomainDnsMxRecordCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DomainDnsMxRecordable
 }
 // NewDomainDnsMxRecordCollectionResponse instantiates a new DomainDnsMxRecordCollectionResponse and sets the default values.
 func NewDomainDnsMxRecordCollectionResponse()(*DomainDnsMxRecordCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DomainDnsMxRecordCollectionResponse) GetFieldDeserializers()(map[string
 }
 // GetValue gets the value property value. The value property
 func (m *DomainDnsMxRecordCollectionResponse) GetValue()([]DomainDnsMxRecordable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DomainDnsMxRecordable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DomainDnsMxRecordCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DomainDnsMxRecordCollectionResponse) Serialize(writer i878a80d2330e89d2
 }
 // SetValue sets the value property value. The value property
 func (m *DomainDnsMxRecordCollectionResponse) SetValue(value []DomainDnsMxRecordable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DomainDnsMxRecordCollectionResponseable 
+type DomainDnsMxRecordCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DomainDnsMxRecordable)
+    SetValue(value []DomainDnsMxRecordable)()
 }

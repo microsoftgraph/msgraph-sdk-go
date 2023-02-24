@@ -7,8 +7,6 @@ import (
 // ImportedWindowsAutopilotDeviceIdentityCollectionResponse 
 type ImportedWindowsAutopilotDeviceIdentityCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ImportedWindowsAutopilotDeviceIdentityable
 }
 // NewImportedWindowsAutopilotDeviceIdentityCollectionResponse instantiates a new ImportedWindowsAutopilotDeviceIdentityCollectionResponse and sets the default values.
 func NewImportedWindowsAutopilotDeviceIdentityCollectionResponse()(*ImportedWindowsAutopilotDeviceIdentityCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ImportedWindowsAutopilotDeviceIdentityCollectionResponse) GetFieldDeser
 }
 // GetValue gets the value property value. The value property
 func (m *ImportedWindowsAutopilotDeviceIdentityCollectionResponse) GetValue()([]ImportedWindowsAutopilotDeviceIdentityable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ImportedWindowsAutopilotDeviceIdentityable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ImportedWindowsAutopilotDeviceIdentityCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ImportedWindowsAutopilotDeviceIdentityCollectionResponse) Serialize(wri
 }
 // SetValue sets the value property value. The value property
 func (m *ImportedWindowsAutopilotDeviceIdentityCollectionResponse) SetValue(value []ImportedWindowsAutopilotDeviceIdentityable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ImportedWindowsAutopilotDeviceIdentityCollectionResponseable 
+type ImportedWindowsAutopilotDeviceIdentityCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ImportedWindowsAutopilotDeviceIdentityable)
+    SetValue(value []ImportedWindowsAutopilotDeviceIdentityable)()
 }

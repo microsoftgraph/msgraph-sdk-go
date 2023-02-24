@@ -7,8 +7,6 @@ import (
 // TelecomExpenseManagementPartnerCollectionResponse 
 type TelecomExpenseManagementPartnerCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []TelecomExpenseManagementPartnerable
 }
 // NewTelecomExpenseManagementPartnerCollectionResponse instantiates a new TelecomExpenseManagementPartnerCollectionResponse and sets the default values.
 func NewTelecomExpenseManagementPartnerCollectionResponse()(*TelecomExpenseManagementPartnerCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *TelecomExpenseManagementPartnerCollectionResponse) GetFieldDeserializer
 }
 // GetValue gets the value property value. The value property
 func (m *TelecomExpenseManagementPartnerCollectionResponse) GetValue()([]TelecomExpenseManagementPartnerable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TelecomExpenseManagementPartnerable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TelecomExpenseManagementPartnerCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *TelecomExpenseManagementPartnerCollectionResponse) Serialize(writer i87
 }
 // SetValue sets the value property value. The value property
 func (m *TelecomExpenseManagementPartnerCollectionResponse) SetValue(value []TelecomExpenseManagementPartnerable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TelecomExpenseManagementPartnerCollectionResponseable 
+type TelecomExpenseManagementPartnerCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]TelecomExpenseManagementPartnerable)
+    SetValue(value []TelecomExpenseManagementPartnerable)()
 }

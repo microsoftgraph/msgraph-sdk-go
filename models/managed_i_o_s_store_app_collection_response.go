@@ -7,8 +7,6 @@ import (
 // ManagedIOSStoreAppCollectionResponse 
 type ManagedIOSStoreAppCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ManagedIOSStoreAppable
 }
 // NewManagedIOSStoreAppCollectionResponse instantiates a new ManagedIOSStoreAppCollectionResponse and sets the default values.
 func NewManagedIOSStoreAppCollectionResponse()(*ManagedIOSStoreAppCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ManagedIOSStoreAppCollectionResponse) GetFieldDeserializers()(map[strin
 }
 // GetValue gets the value property value. The value property
 func (m *ManagedIOSStoreAppCollectionResponse) GetValue()([]ManagedIOSStoreAppable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagedIOSStoreAppable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ManagedIOSStoreAppCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ManagedIOSStoreAppCollectionResponse) Serialize(writer i878a80d2330e89d
 }
 // SetValue sets the value property value. The value property
 func (m *ManagedIOSStoreAppCollectionResponse) SetValue(value []ManagedIOSStoreAppable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ManagedIOSStoreAppCollectionResponseable 
+type ManagedIOSStoreAppCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ManagedIOSStoreAppable)
+    SetValue(value []ManagedIOSStoreAppable)()
 }

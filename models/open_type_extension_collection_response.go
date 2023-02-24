@@ -7,8 +7,6 @@ import (
 // OpenTypeExtensionCollectionResponse 
 type OpenTypeExtensionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []OpenTypeExtensionable
 }
 // NewOpenTypeExtensionCollectionResponse instantiates a new OpenTypeExtensionCollectionResponse and sets the default values.
 func NewOpenTypeExtensionCollectionResponse()(*OpenTypeExtensionCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *OpenTypeExtensionCollectionResponse) GetFieldDeserializers()(map[string
 }
 // GetValue gets the value property value. The value property
 func (m *OpenTypeExtensionCollectionResponse) GetValue()([]OpenTypeExtensionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OpenTypeExtensionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OpenTypeExtensionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *OpenTypeExtensionCollectionResponse) Serialize(writer i878a80d2330e89d2
 }
 // SetValue sets the value property value. The value property
 func (m *OpenTypeExtensionCollectionResponse) SetValue(value []OpenTypeExtensionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OpenTypeExtensionCollectionResponseable 
+type OpenTypeExtensionCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]OpenTypeExtensionable)
+    SetValue(value []OpenTypeExtensionable)()
 }

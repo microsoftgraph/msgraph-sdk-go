@@ -7,14 +7,6 @@ import (
 // WindowsMobileMSI 
 type WindowsMobileMSI struct {
     MobileLobApp
-    // The command line.
-    commandLine *string
-    // A boolean to control whether the app's version will be used to detect the app after it is installed on a device. Set this to true for Windows Mobile MSI Line of Business (LoB) apps that use a self update feature.
-    ignoreVersionDetection *bool
-    // The product code.
-    productCode *string
-    // The product version of Windows Mobile MSI Line of Business (LoB) app.
-    productVersion *string
 }
 // NewWindowsMobileMSI instantiates a new WindowsMobileMSI and sets the default values.
 func NewWindowsMobileMSI()(*WindowsMobileMSI) {
@@ -31,7 +23,14 @@ func CreateWindowsMobileMSIFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetCommandLine gets the commandLine property value. The command line.
 func (m *WindowsMobileMSI) GetCommandLine()(*string) {
-    return m.commandLine
+    val, err := m.GetBackingStore().Get("commandLine")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsMobileMSI) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -80,15 +79,36 @@ func (m *WindowsMobileMSI) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetIgnoreVersionDetection gets the ignoreVersionDetection property value. A boolean to control whether the app's version will be used to detect the app after it is installed on a device. Set this to true for Windows Mobile MSI Line of Business (LoB) apps that use a self update feature.
 func (m *WindowsMobileMSI) GetIgnoreVersionDetection()(*bool) {
-    return m.ignoreVersionDetection
+    val, err := m.GetBackingStore().Get("ignoreVersionDetection")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetProductCode gets the productCode property value. The product code.
 func (m *WindowsMobileMSI) GetProductCode()(*string) {
-    return m.productCode
+    val, err := m.GetBackingStore().Get("productCode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetProductVersion gets the productVersion property value. The product version of Windows Mobile MSI Line of Business (LoB) app.
 func (m *WindowsMobileMSI) GetProductVersion()(*string) {
-    return m.productVersion
+    val, err := m.GetBackingStore().Get("productVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsMobileMSI) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -124,17 +144,42 @@ func (m *WindowsMobileMSI) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetCommandLine sets the commandLine property value. The command line.
 func (m *WindowsMobileMSI) SetCommandLine(value *string)() {
-    m.commandLine = value
+    err := m.GetBackingStore().Set("commandLine", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIgnoreVersionDetection sets the ignoreVersionDetection property value. A boolean to control whether the app's version will be used to detect the app after it is installed on a device. Set this to true for Windows Mobile MSI Line of Business (LoB) apps that use a self update feature.
 func (m *WindowsMobileMSI) SetIgnoreVersionDetection(value *bool)() {
-    m.ignoreVersionDetection = value
+    err := m.GetBackingStore().Set("ignoreVersionDetection", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProductCode sets the productCode property value. The product code.
 func (m *WindowsMobileMSI) SetProductCode(value *string)() {
-    m.productCode = value
+    err := m.GetBackingStore().Set("productCode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProductVersion sets the productVersion property value. The product version of Windows Mobile MSI Line of Business (LoB) app.
 func (m *WindowsMobileMSI) SetProductVersion(value *string)() {
-    m.productVersion = value
+    err := m.GetBackingStore().Set("productVersion", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsMobileMSIable 
+type WindowsMobileMSIable interface {
+    MobileLobAppable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCommandLine()(*string)
+    GetIgnoreVersionDetection()(*bool)
+    GetProductCode()(*string)
+    GetProductVersion()(*string)
+    SetCommandLine(value *string)()
+    SetIgnoreVersionDetection(value *bool)()
+    SetProductCode(value *string)()
+    SetProductVersion(value *string)()
 }

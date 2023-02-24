@@ -7,8 +7,6 @@ import (
 // DeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionResponse 
 type DeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceEnrollmentWindowsHelloForBusinessConfigurationable
 }
 // NewDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionResponse instantiates a new DeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionResponse and sets the default values.
 func NewDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionResponse()(*DeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionResponse)
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionResponse) GetValue()([]DeviceEnrollmentWindowsHelloForBusinessConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceEnrollmentWindowsHelloForBusinessConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionResponse)
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionResponse) SetValue(value []DeviceEnrollmentWindowsHelloForBusinessConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionResponseable 
+type DeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceEnrollmentWindowsHelloForBusinessConfigurationable)
+    SetValue(value []DeviceEnrollmentWindowsHelloForBusinessConfigurationable)()
 }

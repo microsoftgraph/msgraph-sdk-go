@@ -2,29 +2,21 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // VerifiedDomain 
 type VerifiedDomain struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // For example, Email, OfficeCommunicationsOnline.
-    capabilities *string
-    // true if this is the default domain associated with the tenant; otherwise, false.
-    isDefault *bool
-    // true if this is the initial domain associated with the tenant; otherwise, false.
-    isInitial *bool
-    // The domain name; for example, contoso.onmicrosoft.com.
-    name *string
-    // The OdataType property
-    odataType *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
     // For example, Managed.
-    typeEscaped *string
+    TypeEscaped *string
 }
 // NewVerifiedDomain instantiates a new verifiedDomain and sets the default values.
 func NewVerifiedDomain()(*VerifiedDomain) {
     m := &VerifiedDomain{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -34,11 +26,30 @@ func CreateVerifiedDomainFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VerifiedDomain) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *VerifiedDomain) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetCapabilities gets the capabilities property value. For example, Email, OfficeCommunicationsOnline.
 func (m *VerifiedDomain) GetCapabilities()(*string) {
-    return m.capabilities
+    val, err := m.GetBackingStore().Get("capabilities")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *VerifiedDomain) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -107,23 +118,58 @@ func (m *VerifiedDomain) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetIsDefault gets the isDefault property value. true if this is the default domain associated with the tenant; otherwise, false.
 func (m *VerifiedDomain) GetIsDefault()(*bool) {
-    return m.isDefault
+    val, err := m.GetBackingStore().Get("isDefault")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsInitial gets the isInitial property value. true if this is the initial domain associated with the tenant; otherwise, false.
 func (m *VerifiedDomain) GetIsInitial()(*bool) {
-    return m.isInitial
+    val, err := m.GetBackingStore().Get("isInitial")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetName gets the name property value. The domain name; for example, contoso.onmicrosoft.com.
 func (m *VerifiedDomain) GetName()(*string) {
-    return m.name
+    val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *VerifiedDomain) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetType gets the type property value. For example, Managed.
 func (m *VerifiedDomain) GetType()(*string) {
-    return m.typeEscaped
+    val, err := m.GetBackingStore().Get("typeEscaped")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *VerifiedDomain) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -173,29 +219,74 @@ func (m *VerifiedDomain) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VerifiedDomain) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *VerifiedDomain) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetCapabilities sets the capabilities property value. For example, Email, OfficeCommunicationsOnline.
 func (m *VerifiedDomain) SetCapabilities(value *string)() {
-    m.capabilities = value
+    err := m.GetBackingStore().Set("capabilities", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsDefault sets the isDefault property value. true if this is the default domain associated with the tenant; otherwise, false.
 func (m *VerifiedDomain) SetIsDefault(value *bool)() {
-    m.isDefault = value
+    err := m.GetBackingStore().Set("isDefault", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsInitial sets the isInitial property value. true if this is the initial domain associated with the tenant; otherwise, false.
 func (m *VerifiedDomain) SetIsInitial(value *bool)() {
-    m.isInitial = value
+    err := m.GetBackingStore().Set("isInitial", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetName sets the name property value. The domain name; for example, contoso.onmicrosoft.com.
 func (m *VerifiedDomain) SetName(value *string)() {
-    m.name = value
+    err := m.GetBackingStore().Set("name", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *VerifiedDomain) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetType sets the type property value. For example, Managed.
 func (m *VerifiedDomain) SetType(value *string)() {
-    m.typeEscaped = value
+    err := m.GetBackingStore().Set("typeEscaped", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// VerifiedDomainable 
+type VerifiedDomainable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetCapabilities()(*string)
+    GetIsDefault()(*bool)
+    GetIsInitial()(*bool)
+    GetName()(*string)
+    GetOdataType()(*string)
+    GetType()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetCapabilities(value *string)()
+    SetIsDefault(value *bool)()
+    SetIsInitial(value *bool)()
+    SetName(value *string)()
+    SetOdataType(value *string)()
+    SetType(value *string)()
 }

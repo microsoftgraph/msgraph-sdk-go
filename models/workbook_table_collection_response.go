@@ -7,8 +7,6 @@ import (
 // WorkbookTableCollectionResponse 
 type WorkbookTableCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []WorkbookTableable
 }
 // NewWorkbookTableCollectionResponse instantiates a new WorkbookTableCollectionResponse and sets the default values.
 func NewWorkbookTableCollectionResponse()(*WorkbookTableCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *WorkbookTableCollectionResponse) GetFieldDeserializers()(map[string]fun
 }
 // GetValue gets the value property value. The value property
 func (m *WorkbookTableCollectionResponse) GetValue()([]WorkbookTableable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WorkbookTableable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WorkbookTableCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *WorkbookTableCollectionResponse) Serialize(writer i878a80d2330e89d26896
 }
 // SetValue sets the value property value. The value property
 func (m *WorkbookTableCollectionResponse) SetValue(value []WorkbookTableable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WorkbookTableCollectionResponseable 
+type WorkbookTableCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]WorkbookTableable)
+    SetValue(value []WorkbookTableable)()
 }

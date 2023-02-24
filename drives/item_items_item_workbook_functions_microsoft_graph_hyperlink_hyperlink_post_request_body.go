@@ -3,21 +3,19 @@ package drives
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ItemItemsItemWorkbookFunctionsMicrosoftGraphHyperlinkHyperlinkPostRequestBody 
 type ItemItemsItemWorkbookFunctionsMicrosoftGraphHyperlinkHyperlinkPostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The friendlyName property
-    friendlyName iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable
-    // The linkLocation property
-    linkLocation iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewItemItemsItemWorkbookFunctionsMicrosoftGraphHyperlinkHyperlinkPostRequestBody instantiates a new ItemItemsItemWorkbookFunctionsMicrosoftGraphHyperlinkHyperlinkPostRequestBody and sets the default values.
 func NewItemItemsItemWorkbookFunctionsMicrosoftGraphHyperlinkHyperlinkPostRequestBody()(*ItemItemsItemWorkbookFunctionsMicrosoftGraphHyperlinkHyperlinkPostRequestBody) {
     m := &ItemItemsItemWorkbookFunctionsMicrosoftGraphHyperlinkHyperlinkPostRequestBody{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -27,7 +25,19 @@ func CreateItemItemsItemWorkbookFunctionsMicrosoftGraphHyperlinkHyperlinkPostReq
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphHyperlinkHyperlinkPostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphHyperlinkHyperlinkPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphHyperlinkHyperlinkPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -56,11 +66,25 @@ func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphHyperlinkHyperlinkPostReque
 }
 // GetFriendlyName gets the friendlyName property value. The friendlyName property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphHyperlinkHyperlinkPostRequestBody) GetFriendlyName()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
-    return m.friendlyName
+    val, err := m.GetBackingStore().Get("friendlyName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    }
+    return nil
 }
 // GetLinkLocation gets the linkLocation property value. The linkLocation property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphHyperlinkHyperlinkPostRequestBody) GetLinkLocation()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
-    return m.linkLocation
+    val, err := m.GetBackingStore().Get("linkLocation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphHyperlinkHyperlinkPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -86,13 +110,38 @@ func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphHyperlinkHyperlinkPostReque
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphHyperlinkHyperlinkPostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphHyperlinkHyperlinkPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetFriendlyName sets the friendlyName property value. The friendlyName property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphHyperlinkHyperlinkPostRequestBody) SetFriendlyName(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
-    m.friendlyName = value
+    err := m.GetBackingStore().Set("friendlyName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLinkLocation sets the linkLocation property value. The linkLocation property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphHyperlinkHyperlinkPostRequestBody) SetLinkLocation(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
-    m.linkLocation = value
+    err := m.GetBackingStore().Set("linkLocation", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemItemsItemWorkbookFunctionsMicrosoftGraphHyperlinkHyperlinkPostRequestBodyable 
+type ItemItemsItemWorkbookFunctionsMicrosoftGraphHyperlinkHyperlinkPostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetFriendlyName()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    GetLinkLocation()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetFriendlyName(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
+    SetLinkLocation(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
 }

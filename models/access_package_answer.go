@@ -2,23 +2,19 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // AccessPackageAnswer 
 type AccessPackageAnswer struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The answeredQuestion property
-    answeredQuestion AccessPackageQuestionable
-    // The localized display value shown to the requestor and approvers.
-    displayValue *string
-    // The OdataType property
-    odataType *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewAccessPackageAnswer instantiates a new accessPackageAnswer and sets the default values.
 func NewAccessPackageAnswer()(*AccessPackageAnswer) {
     m := &AccessPackageAnswer{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -46,15 +42,41 @@ func CreateAccessPackageAnswerFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessPackageAnswer) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetAnsweredQuestion gets the answeredQuestion property value. The answeredQuestion property
 func (m *AccessPackageAnswer) GetAnsweredQuestion()(AccessPackageQuestionable) {
-    return m.answeredQuestion
+    val, err := m.GetBackingStore().Get("answeredQuestion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AccessPackageQuestionable)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *AccessPackageAnswer) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetDisplayValue gets the displayValue property value. The localized display value shown to the requestor and approvers.
 func (m *AccessPackageAnswer) GetDisplayValue()(*string) {
-    return m.displayValue
+    val, err := m.GetBackingStore().Get("displayValue")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackageAnswer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -93,7 +115,14 @@ func (m *AccessPackageAnswer) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AccessPackageAnswer) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AccessPackageAnswer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,17 +154,47 @@ func (m *AccessPackageAnswer) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessPackageAnswer) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAnsweredQuestion sets the answeredQuestion property value. The answeredQuestion property
 func (m *AccessPackageAnswer) SetAnsweredQuestion(value AccessPackageQuestionable)() {
-    m.answeredQuestion = value
+    err := m.GetBackingStore().Set("answeredQuestion", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *AccessPackageAnswer) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetDisplayValue sets the displayValue property value. The localized display value shown to the requestor and approvers.
 func (m *AccessPackageAnswer) SetDisplayValue(value *string)() {
-    m.displayValue = value
+    err := m.GetBackingStore().Set("displayValue", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AccessPackageAnswer) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AccessPackageAnswerable 
+type AccessPackageAnswerable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAnsweredQuestion()(AccessPackageQuestionable)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDisplayValue()(*string)
+    GetOdataType()(*string)
+    SetAnsweredQuestion(value AccessPackageQuestionable)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDisplayValue(value *string)()
+    SetOdataType(value *string)()
 }

@@ -7,8 +7,6 @@ import (
 // RolePermissionCollectionResponse 
 type RolePermissionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []RolePermissionable
 }
 // NewRolePermissionCollectionResponse instantiates a new RolePermissionCollectionResponse and sets the default values.
 func NewRolePermissionCollectionResponse()(*RolePermissionCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *RolePermissionCollectionResponse) GetFieldDeserializers()(map[string]fu
 }
 // GetValue gets the value property value. The value property
 func (m *RolePermissionCollectionResponse) GetValue()([]RolePermissionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]RolePermissionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *RolePermissionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *RolePermissionCollectionResponse) Serialize(writer i878a80d2330e89d2689
 }
 // SetValue sets the value property value. The value property
 func (m *RolePermissionCollectionResponse) SetValue(value []RolePermissionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// RolePermissionCollectionResponseable 
+type RolePermissionCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]RolePermissionable)
+    SetValue(value []RolePermissionable)()
 }

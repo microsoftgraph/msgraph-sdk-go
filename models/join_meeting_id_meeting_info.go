@@ -7,10 +7,6 @@ import (
 // JoinMeetingIdMeetingInfo 
 type JoinMeetingIdMeetingInfo struct {
     MeetingInfo
-    // The ID used to join the meeting.
-    joinMeetingId *string
-    // The passcode used to join the meeting. Optional.
-    passcode *string
 }
 // NewJoinMeetingIdMeetingInfo instantiates a new JoinMeetingIdMeetingInfo and sets the default values.
 func NewJoinMeetingIdMeetingInfo()(*JoinMeetingIdMeetingInfo) {
@@ -52,11 +48,25 @@ func (m *JoinMeetingIdMeetingInfo) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetJoinMeetingId gets the joinMeetingId property value. The ID used to join the meeting.
 func (m *JoinMeetingIdMeetingInfo) GetJoinMeetingId()(*string) {
-    return m.joinMeetingId
+    val, err := m.GetBackingStore().Get("joinMeetingId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPasscode gets the passcode property value. The passcode used to join the meeting. Optional.
 func (m *JoinMeetingIdMeetingInfo) GetPasscode()(*string) {
-    return m.passcode
+    val, err := m.GetBackingStore().Get("passcode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *JoinMeetingIdMeetingInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -80,9 +90,24 @@ func (m *JoinMeetingIdMeetingInfo) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetJoinMeetingId sets the joinMeetingId property value. The ID used to join the meeting.
 func (m *JoinMeetingIdMeetingInfo) SetJoinMeetingId(value *string)() {
-    m.joinMeetingId = value
+    err := m.GetBackingStore().Set("joinMeetingId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPasscode sets the passcode property value. The passcode used to join the meeting. Optional.
 func (m *JoinMeetingIdMeetingInfo) SetPasscode(value *string)() {
-    m.passcode = value
+    err := m.GetBackingStore().Set("passcode", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// JoinMeetingIdMeetingInfoable 
+type JoinMeetingIdMeetingInfoable interface {
+    MeetingInfoable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetJoinMeetingId()(*string)
+    GetPasscode()(*string)
+    SetJoinMeetingId(value *string)()
+    SetPasscode(value *string)()
 }

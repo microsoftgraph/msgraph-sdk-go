@@ -8,24 +8,6 @@ import (
 // ComplianceManagementPartner compliance management partner for all platforms
 type ComplianceManagementPartner struct {
     Entity
-    // User groups which enroll Android devices through partner.
-    androidEnrollmentAssignments []ComplianceManagementPartnerAssignmentable
-    // Partner onboarded for Android devices.
-    androidOnboarded *bool
-    // Partner display name
-    displayName *string
-    // User groups which enroll ios devices through partner.
-    iosEnrollmentAssignments []ComplianceManagementPartnerAssignmentable
-    // Partner onboarded for ios devices.
-    iosOnboarded *bool
-    // Timestamp of last heartbeat after admin onboarded to the compliance management partner
-    lastHeartbeatDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // User groups which enroll Mac devices through partner.
-    macOsEnrollmentAssignments []ComplianceManagementPartnerAssignmentable
-    // Partner onboarded for Mac devices.
-    macOsOnboarded *bool
-    // Partner state of this tenant.
-    partnerState *DeviceManagementPartnerTenantState
 }
 // NewComplianceManagementPartner instantiates a new complianceManagementPartner and sets the default values.
 func NewComplianceManagementPartner()(*ComplianceManagementPartner) {
@@ -40,15 +22,36 @@ func CreateComplianceManagementPartnerFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAndroidEnrollmentAssignments gets the androidEnrollmentAssignments property value. User groups which enroll Android devices through partner.
 func (m *ComplianceManagementPartner) GetAndroidEnrollmentAssignments()([]ComplianceManagementPartnerAssignmentable) {
-    return m.androidEnrollmentAssignments
+    val, err := m.GetBackingStore().Get("androidEnrollmentAssignments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ComplianceManagementPartnerAssignmentable)
+    }
+    return nil
 }
 // GetAndroidOnboarded gets the androidOnboarded property value. Partner onboarded for Android devices.
 func (m *ComplianceManagementPartner) GetAndroidOnboarded()(*bool) {
-    return m.androidOnboarded
+    val, err := m.GetBackingStore().Get("androidOnboarded")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. Partner display name
 func (m *ComplianceManagementPartner) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ComplianceManagementPartner) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -159,27 +162,69 @@ func (m *ComplianceManagementPartner) GetFieldDeserializers()(map[string]func(i8
 }
 // GetIosEnrollmentAssignments gets the iosEnrollmentAssignments property value. User groups which enroll ios devices through partner.
 func (m *ComplianceManagementPartner) GetIosEnrollmentAssignments()([]ComplianceManagementPartnerAssignmentable) {
-    return m.iosEnrollmentAssignments
+    val, err := m.GetBackingStore().Get("iosEnrollmentAssignments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ComplianceManagementPartnerAssignmentable)
+    }
+    return nil
 }
 // GetIosOnboarded gets the iosOnboarded property value. Partner onboarded for ios devices.
 func (m *ComplianceManagementPartner) GetIosOnboarded()(*bool) {
-    return m.iosOnboarded
+    val, err := m.GetBackingStore().Get("iosOnboarded")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLastHeartbeatDateTime gets the lastHeartbeatDateTime property value. Timestamp of last heartbeat after admin onboarded to the compliance management partner
 func (m *ComplianceManagementPartner) GetLastHeartbeatDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastHeartbeatDateTime
+    val, err := m.GetBackingStore().Get("lastHeartbeatDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetMacOsEnrollmentAssignments gets the macOsEnrollmentAssignments property value. User groups which enroll Mac devices through partner.
 func (m *ComplianceManagementPartner) GetMacOsEnrollmentAssignments()([]ComplianceManagementPartnerAssignmentable) {
-    return m.macOsEnrollmentAssignments
+    val, err := m.GetBackingStore().Get("macOsEnrollmentAssignments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ComplianceManagementPartnerAssignmentable)
+    }
+    return nil
 }
 // GetMacOsOnboarded gets the macOsOnboarded property value. Partner onboarded for Mac devices.
 func (m *ComplianceManagementPartner) GetMacOsOnboarded()(*bool) {
-    return m.macOsOnboarded
+    val, err := m.GetBackingStore().Get("macOsOnboarded")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPartnerState gets the partnerState property value. Partner state of this tenant.
 func (m *ComplianceManagementPartner) GetPartnerState()(*DeviceManagementPartnerTenantState) {
-    return m.partnerState
+    val, err := m.GetBackingStore().Get("partnerState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DeviceManagementPartnerTenantState)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ComplianceManagementPartner) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -258,37 +303,87 @@ func (m *ComplianceManagementPartner) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAndroidEnrollmentAssignments sets the androidEnrollmentAssignments property value. User groups which enroll Android devices through partner.
 func (m *ComplianceManagementPartner) SetAndroidEnrollmentAssignments(value []ComplianceManagementPartnerAssignmentable)() {
-    m.androidEnrollmentAssignments = value
+    err := m.GetBackingStore().Set("androidEnrollmentAssignments", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAndroidOnboarded sets the androidOnboarded property value. Partner onboarded for Android devices.
 func (m *ComplianceManagementPartner) SetAndroidOnboarded(value *bool)() {
-    m.androidOnboarded = value
+    err := m.GetBackingStore().Set("androidOnboarded", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. Partner display name
 func (m *ComplianceManagementPartner) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIosEnrollmentAssignments sets the iosEnrollmentAssignments property value. User groups which enroll ios devices through partner.
 func (m *ComplianceManagementPartner) SetIosEnrollmentAssignments(value []ComplianceManagementPartnerAssignmentable)() {
-    m.iosEnrollmentAssignments = value
+    err := m.GetBackingStore().Set("iosEnrollmentAssignments", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIosOnboarded sets the iosOnboarded property value. Partner onboarded for ios devices.
 func (m *ComplianceManagementPartner) SetIosOnboarded(value *bool)() {
-    m.iosOnboarded = value
+    err := m.GetBackingStore().Set("iosOnboarded", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastHeartbeatDateTime sets the lastHeartbeatDateTime property value. Timestamp of last heartbeat after admin onboarded to the compliance management partner
 func (m *ComplianceManagementPartner) SetLastHeartbeatDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastHeartbeatDateTime = value
+    err := m.GetBackingStore().Set("lastHeartbeatDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMacOsEnrollmentAssignments sets the macOsEnrollmentAssignments property value. User groups which enroll Mac devices through partner.
 func (m *ComplianceManagementPartner) SetMacOsEnrollmentAssignments(value []ComplianceManagementPartnerAssignmentable)() {
-    m.macOsEnrollmentAssignments = value
+    err := m.GetBackingStore().Set("macOsEnrollmentAssignments", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMacOsOnboarded sets the macOsOnboarded property value. Partner onboarded for Mac devices.
 func (m *ComplianceManagementPartner) SetMacOsOnboarded(value *bool)() {
-    m.macOsOnboarded = value
+    err := m.GetBackingStore().Set("macOsOnboarded", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPartnerState sets the partnerState property value. Partner state of this tenant.
 func (m *ComplianceManagementPartner) SetPartnerState(value *DeviceManagementPartnerTenantState)() {
-    m.partnerState = value
+    err := m.GetBackingStore().Set("partnerState", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ComplianceManagementPartnerable 
+type ComplianceManagementPartnerable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAndroidEnrollmentAssignments()([]ComplianceManagementPartnerAssignmentable)
+    GetAndroidOnboarded()(*bool)
+    GetDisplayName()(*string)
+    GetIosEnrollmentAssignments()([]ComplianceManagementPartnerAssignmentable)
+    GetIosOnboarded()(*bool)
+    GetLastHeartbeatDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetMacOsEnrollmentAssignments()([]ComplianceManagementPartnerAssignmentable)
+    GetMacOsOnboarded()(*bool)
+    GetPartnerState()(*DeviceManagementPartnerTenantState)
+    SetAndroidEnrollmentAssignments(value []ComplianceManagementPartnerAssignmentable)()
+    SetAndroidOnboarded(value *bool)()
+    SetDisplayName(value *string)()
+    SetIosEnrollmentAssignments(value []ComplianceManagementPartnerAssignmentable)()
+    SetIosOnboarded(value *bool)()
+    SetLastHeartbeatDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetMacOsEnrollmentAssignments(value []ComplianceManagementPartnerAssignmentable)()
+    SetMacOsOnboarded(value *bool)()
+    SetPartnerState(value *DeviceManagementPartnerTenantState)()
 }

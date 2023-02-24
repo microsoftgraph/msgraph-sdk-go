@@ -7,8 +7,6 @@ import (
 // UnifiedRoleManagementPolicyApprovalRule 
 type UnifiedRoleManagementPolicyApprovalRule struct {
     UnifiedRoleManagementPolicyRule
-    // The settings for approval of the role assignment.
-    setting ApprovalSettingsable
 }
 // NewUnifiedRoleManagementPolicyApprovalRule instantiates a new UnifiedRoleManagementPolicyApprovalRule and sets the default values.
 func NewUnifiedRoleManagementPolicyApprovalRule()(*UnifiedRoleManagementPolicyApprovalRule) {
@@ -40,7 +38,14 @@ func (m *UnifiedRoleManagementPolicyApprovalRule) GetFieldDeserializers()(map[st
 }
 // GetSetting gets the setting property value. The settings for approval of the role assignment.
 func (m *UnifiedRoleManagementPolicyApprovalRule) GetSetting()(ApprovalSettingsable) {
-    return m.setting
+    val, err := m.GetBackingStore().Get("setting")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ApprovalSettingsable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UnifiedRoleManagementPolicyApprovalRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *UnifiedRoleManagementPolicyApprovalRule) Serialize(writer i878a80d2330e
 }
 // SetSetting sets the setting property value. The settings for approval of the role assignment.
 func (m *UnifiedRoleManagementPolicyApprovalRule) SetSetting(value ApprovalSettingsable)() {
-    m.setting = value
+    err := m.GetBackingStore().Set("setting", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UnifiedRoleManagementPolicyApprovalRuleable 
+type UnifiedRoleManagementPolicyApprovalRuleable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    UnifiedRoleManagementPolicyRuleable
+    GetSetting()(ApprovalSettingsable)
+    SetSetting(value ApprovalSettingsable)()
 }

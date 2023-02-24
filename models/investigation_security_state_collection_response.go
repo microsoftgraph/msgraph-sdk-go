@@ -7,8 +7,6 @@ import (
 // InvestigationSecurityStateCollectionResponse 
 type InvestigationSecurityStateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []InvestigationSecurityStateable
 }
 // NewInvestigationSecurityStateCollectionResponse instantiates a new InvestigationSecurityStateCollectionResponse and sets the default values.
 func NewInvestigationSecurityStateCollectionResponse()(*InvestigationSecurityStateCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *InvestigationSecurityStateCollectionResponse) GetFieldDeserializers()(m
 }
 // GetValue gets the value property value. The value property
 func (m *InvestigationSecurityStateCollectionResponse) GetValue()([]InvestigationSecurityStateable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]InvestigationSecurityStateable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *InvestigationSecurityStateCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *InvestigationSecurityStateCollectionResponse) Serialize(writer i878a80d
 }
 // SetValue sets the value property value. The value property
 func (m *InvestigationSecurityStateCollectionResponse) SetValue(value []InvestigationSecurityStateable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// InvestigationSecurityStateCollectionResponseable 
+type InvestigationSecurityStateCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]InvestigationSecurityStateable)
+    SetValue(value []InvestigationSecurityStateable)()
 }

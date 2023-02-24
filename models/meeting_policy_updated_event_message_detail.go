@@ -7,12 +7,6 @@ import (
 // MeetingPolicyUpdatedEventMessageDetail 
 type MeetingPolicyUpdatedEventMessageDetail struct {
     EventMessageDetail
-    // Initiator of the event.
-    initiator IdentitySetable
-    // Represents whether the meeting chat is enabled or not.
-    meetingChatEnabled *bool
-    // Unique identifier of the meeting chat.
-    meetingChatId *string
 }
 // NewMeetingPolicyUpdatedEventMessageDetail instantiates a new MeetingPolicyUpdatedEventMessageDetail and sets the default values.
 func NewMeetingPolicyUpdatedEventMessageDetail()(*MeetingPolicyUpdatedEventMessageDetail) {
@@ -64,15 +58,36 @@ func (m *MeetingPolicyUpdatedEventMessageDetail) GetFieldDeserializers()(map[str
 }
 // GetInitiator gets the initiator property value. Initiator of the event.
 func (m *MeetingPolicyUpdatedEventMessageDetail) GetInitiator()(IdentitySetable) {
-    return m.initiator
+    val, err := m.GetBackingStore().Get("initiator")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentitySetable)
+    }
+    return nil
 }
 // GetMeetingChatEnabled gets the meetingChatEnabled property value. Represents whether the meeting chat is enabled or not.
 func (m *MeetingPolicyUpdatedEventMessageDetail) GetMeetingChatEnabled()(*bool) {
-    return m.meetingChatEnabled
+    val, err := m.GetBackingStore().Get("meetingChatEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetMeetingChatId gets the meetingChatId property value. Unique identifier of the meeting chat.
 func (m *MeetingPolicyUpdatedEventMessageDetail) GetMeetingChatId()(*string) {
-    return m.meetingChatId
+    val, err := m.GetBackingStore().Get("meetingChatId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MeetingPolicyUpdatedEventMessageDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -102,13 +117,33 @@ func (m *MeetingPolicyUpdatedEventMessageDetail) Serialize(writer i878a80d2330e8
 }
 // SetInitiator sets the initiator property value. Initiator of the event.
 func (m *MeetingPolicyUpdatedEventMessageDetail) SetInitiator(value IdentitySetable)() {
-    m.initiator = value
+    err := m.GetBackingStore().Set("initiator", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMeetingChatEnabled sets the meetingChatEnabled property value. Represents whether the meeting chat is enabled or not.
 func (m *MeetingPolicyUpdatedEventMessageDetail) SetMeetingChatEnabled(value *bool)() {
-    m.meetingChatEnabled = value
+    err := m.GetBackingStore().Set("meetingChatEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMeetingChatId sets the meetingChatId property value. Unique identifier of the meeting chat.
 func (m *MeetingPolicyUpdatedEventMessageDetail) SetMeetingChatId(value *string)() {
-    m.meetingChatId = value
+    err := m.GetBackingStore().Set("meetingChatId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MeetingPolicyUpdatedEventMessageDetailable 
+type MeetingPolicyUpdatedEventMessageDetailable interface {
+    EventMessageDetailable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetInitiator()(IdentitySetable)
+    GetMeetingChatEnabled()(*bool)
+    GetMeetingChatId()(*string)
+    SetInitiator(value IdentitySetable)()
+    SetMeetingChatEnabled(value *bool)()
+    SetMeetingChatId(value *string)()
 }

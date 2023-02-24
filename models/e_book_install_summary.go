@@ -7,18 +7,6 @@ import (
 // EBookInstallSummary 
 type EBookInstallSummary struct {
     Entity
-    // Number of Devices that have failed to install this book.
-    failedDeviceCount *int32
-    // Number of Users that have 1 or more device that failed to install this book.
-    failedUserCount *int32
-    // Number of Devices that have successfully installed this book.
-    installedDeviceCount *int32
-    // Number of Users whose devices have all succeeded to install this book.
-    installedUserCount *int32
-    // Number of Devices that does not have this book installed.
-    notInstalledDeviceCount *int32
-    // Number of Users that did not install this book.
-    notInstalledUserCount *int32
 }
 // NewEBookInstallSummary instantiates a new eBookInstallSummary and sets the default values.
 func NewEBookInstallSummary()(*EBookInstallSummary) {
@@ -33,11 +21,25 @@ func CreateEBookInstallSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetFailedDeviceCount gets the failedDeviceCount property value. Number of Devices that have failed to install this book.
 func (m *EBookInstallSummary) GetFailedDeviceCount()(*int32) {
-    return m.failedDeviceCount
+    val, err := m.GetBackingStore().Get("failedDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFailedUserCount gets the failedUserCount property value. Number of Users that have 1 or more device that failed to install this book.
 func (m *EBookInstallSummary) GetFailedUserCount()(*int32) {
-    return m.failedUserCount
+    val, err := m.GetBackingStore().Get("failedUserCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EBookInstallSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -106,19 +108,47 @@ func (m *EBookInstallSummary) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetInstalledDeviceCount gets the installedDeviceCount property value. Number of Devices that have successfully installed this book.
 func (m *EBookInstallSummary) GetInstalledDeviceCount()(*int32) {
-    return m.installedDeviceCount
+    val, err := m.GetBackingStore().Get("installedDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetInstalledUserCount gets the installedUserCount property value. Number of Users whose devices have all succeeded to install this book.
 func (m *EBookInstallSummary) GetInstalledUserCount()(*int32) {
-    return m.installedUserCount
+    val, err := m.GetBackingStore().Get("installedUserCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetNotInstalledDeviceCount gets the notInstalledDeviceCount property value. Number of Devices that does not have this book installed.
 func (m *EBookInstallSummary) GetNotInstalledDeviceCount()(*int32) {
-    return m.notInstalledDeviceCount
+    val, err := m.GetBackingStore().Get("notInstalledDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetNotInstalledUserCount gets the notInstalledUserCount property value. Number of Users that did not install this book.
 func (m *EBookInstallSummary) GetNotInstalledUserCount()(*int32) {
-    return m.notInstalledUserCount
+    val, err := m.GetBackingStore().Get("notInstalledUserCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EBookInstallSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -166,25 +196,60 @@ func (m *EBookInstallSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetFailedDeviceCount sets the failedDeviceCount property value. Number of Devices that have failed to install this book.
 func (m *EBookInstallSummary) SetFailedDeviceCount(value *int32)() {
-    m.failedDeviceCount = value
+    err := m.GetBackingStore().Set("failedDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFailedUserCount sets the failedUserCount property value. Number of Users that have 1 or more device that failed to install this book.
 func (m *EBookInstallSummary) SetFailedUserCount(value *int32)() {
-    m.failedUserCount = value
+    err := m.GetBackingStore().Set("failedUserCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInstalledDeviceCount sets the installedDeviceCount property value. Number of Devices that have successfully installed this book.
 func (m *EBookInstallSummary) SetInstalledDeviceCount(value *int32)() {
-    m.installedDeviceCount = value
+    err := m.GetBackingStore().Set("installedDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInstalledUserCount sets the installedUserCount property value. Number of Users whose devices have all succeeded to install this book.
 func (m *EBookInstallSummary) SetInstalledUserCount(value *int32)() {
-    m.installedUserCount = value
+    err := m.GetBackingStore().Set("installedUserCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNotInstalledDeviceCount sets the notInstalledDeviceCount property value. Number of Devices that does not have this book installed.
 func (m *EBookInstallSummary) SetNotInstalledDeviceCount(value *int32)() {
-    m.notInstalledDeviceCount = value
+    err := m.GetBackingStore().Set("notInstalledDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNotInstalledUserCount sets the notInstalledUserCount property value. Number of Users that did not install this book.
 func (m *EBookInstallSummary) SetNotInstalledUserCount(value *int32)() {
-    m.notInstalledUserCount = value
+    err := m.GetBackingStore().Set("notInstalledUserCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EBookInstallSummaryable 
+type EBookInstallSummaryable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetFailedDeviceCount()(*int32)
+    GetFailedUserCount()(*int32)
+    GetInstalledDeviceCount()(*int32)
+    GetInstalledUserCount()(*int32)
+    GetNotInstalledDeviceCount()(*int32)
+    GetNotInstalledUserCount()(*int32)
+    SetFailedDeviceCount(value *int32)()
+    SetFailedUserCount(value *int32)()
+    SetInstalledDeviceCount(value *int32)()
+    SetInstalledUserCount(value *int32)()
+    SetNotInstalledDeviceCount(value *int32)()
+    SetNotInstalledUserCount(value *int32)()
 }

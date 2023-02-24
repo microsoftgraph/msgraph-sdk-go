@@ -3,25 +3,19 @@ package drives
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ItemItemsItemWorkbookFunctionsMicrosoftGraphBinom_Dist_RangeBinom_Dist_RangePostRequestBody 
 type ItemItemsItemWorkbookFunctionsMicrosoftGraphBinom_Dist_RangeBinom_Dist_RangePostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The numberS property
-    numberS iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable
-    // The numberS2 property
-    numberS2 iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable
-    // The probabilityS property
-    probabilityS iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable
-    // The trials property
-    trials iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewItemItemsItemWorkbookFunctionsMicrosoftGraphBinom_Dist_RangeBinom_Dist_RangePostRequestBody instantiates a new ItemItemsItemWorkbookFunctionsMicrosoftGraphBinom_Dist_RangeBinom_Dist_RangePostRequestBody and sets the default values.
 func NewItemItemsItemWorkbookFunctionsMicrosoftGraphBinom_Dist_RangeBinom_Dist_RangePostRequestBody()(*ItemItemsItemWorkbookFunctionsMicrosoftGraphBinom_Dist_RangeBinom_Dist_RangePostRequestBody) {
     m := &ItemItemsItemWorkbookFunctionsMicrosoftGraphBinom_Dist_RangeBinom_Dist_RangePostRequestBody{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -31,7 +25,19 @@ func CreateItemItemsItemWorkbookFunctionsMicrosoftGraphBinom_Dist_RangeBinom_Dis
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphBinom_Dist_RangeBinom_Dist_RangePostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphBinom_Dist_RangeBinom_Dist_RangePostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphBinom_Dist_RangeBinom_Dist_RangePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -80,19 +86,47 @@ func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphBinom_Dist_RangeBinom_Dist_
 }
 // GetNumberS gets the numberS property value. The numberS property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphBinom_Dist_RangeBinom_Dist_RangePostRequestBody) GetNumberS()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
-    return m.numberS
+    val, err := m.GetBackingStore().Get("numberS")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    }
+    return nil
 }
 // GetNumberS2 gets the numberS2 property value. The numberS2 property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphBinom_Dist_RangeBinom_Dist_RangePostRequestBody) GetNumberS2()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
-    return m.numberS2
+    val, err := m.GetBackingStore().Get("numberS2")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    }
+    return nil
 }
 // GetProbabilityS gets the probabilityS property value. The probabilityS property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphBinom_Dist_RangeBinom_Dist_RangePostRequestBody) GetProbabilityS()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
-    return m.probabilityS
+    val, err := m.GetBackingStore().Get("probabilityS")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    }
+    return nil
 }
 // GetTrials gets the trials property value. The trials property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphBinom_Dist_RangeBinom_Dist_RangePostRequestBody) GetTrials()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
-    return m.trials
+    val, err := m.GetBackingStore().Get("trials")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphBinom_Dist_RangeBinom_Dist_RangePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -130,21 +164,56 @@ func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphBinom_Dist_RangeBinom_Dist_
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphBinom_Dist_RangeBinom_Dist_RangePostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphBinom_Dist_RangeBinom_Dist_RangePostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetNumberS sets the numberS property value. The numberS property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphBinom_Dist_RangeBinom_Dist_RangePostRequestBody) SetNumberS(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
-    m.numberS = value
+    err := m.GetBackingStore().Set("numberS", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNumberS2 sets the numberS2 property value. The numberS2 property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphBinom_Dist_RangeBinom_Dist_RangePostRequestBody) SetNumberS2(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
-    m.numberS2 = value
+    err := m.GetBackingStore().Set("numberS2", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProbabilityS sets the probabilityS property value. The probabilityS property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphBinom_Dist_RangeBinom_Dist_RangePostRequestBody) SetProbabilityS(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
-    m.probabilityS = value
+    err := m.GetBackingStore().Set("probabilityS", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTrials sets the trials property value. The trials property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphBinom_Dist_RangeBinom_Dist_RangePostRequestBody) SetTrials(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
-    m.trials = value
+    err := m.GetBackingStore().Set("trials", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemItemsItemWorkbookFunctionsMicrosoftGraphBinom_Dist_RangeBinom_Dist_RangePostRequestBodyable 
+type ItemItemsItemWorkbookFunctionsMicrosoftGraphBinom_Dist_RangeBinom_Dist_RangePostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetNumberS()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    GetNumberS2()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    GetProbabilityS()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    GetTrials()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetNumberS(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
+    SetNumberS2(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
+    SetProbabilityS(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
+    SetTrials(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
 }

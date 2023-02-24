@@ -7,8 +7,6 @@ import (
 // DelegatedAdminServiceManagementDetailCollectionResponse 
 type DelegatedAdminServiceManagementDetailCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DelegatedAdminServiceManagementDetailable
 }
 // NewDelegatedAdminServiceManagementDetailCollectionResponse instantiates a new DelegatedAdminServiceManagementDetailCollectionResponse and sets the default values.
 func NewDelegatedAdminServiceManagementDetailCollectionResponse()(*DelegatedAdminServiceManagementDetailCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DelegatedAdminServiceManagementDetailCollectionResponse) GetFieldDeseri
 }
 // GetValue gets the value property value. The value property
 func (m *DelegatedAdminServiceManagementDetailCollectionResponse) GetValue()([]DelegatedAdminServiceManagementDetailable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DelegatedAdminServiceManagementDetailable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DelegatedAdminServiceManagementDetailCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DelegatedAdminServiceManagementDetailCollectionResponse) Serialize(writ
 }
 // SetValue sets the value property value. The value property
 func (m *DelegatedAdminServiceManagementDetailCollectionResponse) SetValue(value []DelegatedAdminServiceManagementDetailable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DelegatedAdminServiceManagementDetailCollectionResponseable 
+type DelegatedAdminServiceManagementDetailCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DelegatedAdminServiceManagementDetailable)
+    SetValue(value []DelegatedAdminServiceManagementDetailable)()
 }

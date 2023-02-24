@@ -7,8 +7,6 @@ import (
 // UnifiedRoleManagementPolicyEnablementRule 
 type UnifiedRoleManagementPolicyEnablementRule struct {
     UnifiedRoleManagementPolicyRule
-    // The collection of rules that are enabled for this policy rule. For example, MultiFactorAuthentication, Ticketing, and Justification.
-    enabledRules []string
 }
 // NewUnifiedRoleManagementPolicyEnablementRule instantiates a new UnifiedRoleManagementPolicyEnablementRule and sets the default values.
 func NewUnifiedRoleManagementPolicyEnablementRule()(*UnifiedRoleManagementPolicyEnablementRule) {
@@ -25,7 +23,14 @@ func CreateUnifiedRoleManagementPolicyEnablementRuleFromDiscriminatorValue(parse
 }
 // GetEnabledRules gets the enabledRules property value. The collection of rules that are enabled for this policy rule. For example, MultiFactorAuthentication, Ticketing, and Justification.
 func (m *UnifiedRoleManagementPolicyEnablementRule) GetEnabledRules()([]string) {
-    return m.enabledRules
+    val, err := m.GetBackingStore().Get("enabledRules")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UnifiedRoleManagementPolicyEnablementRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,5 +67,15 @@ func (m *UnifiedRoleManagementPolicyEnablementRule) Serialize(writer i878a80d233
 }
 // SetEnabledRules sets the enabledRules property value. The collection of rules that are enabled for this policy rule. For example, MultiFactorAuthentication, Ticketing, and Justification.
 func (m *UnifiedRoleManagementPolicyEnablementRule) SetEnabledRules(value []string)() {
-    m.enabledRules = value
+    err := m.GetBackingStore().Set("enabledRules", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UnifiedRoleManagementPolicyEnablementRuleable 
+type UnifiedRoleManagementPolicyEnablementRuleable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    UnifiedRoleManagementPolicyRuleable
+    GetEnabledRules()([]string)
+    SetEnabledRules(value []string)()
 }

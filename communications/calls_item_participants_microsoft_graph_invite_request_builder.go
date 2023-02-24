@@ -42,10 +42,10 @@ func NewCallsItemParticipantsMicrosoftGraphInviteRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewCallsItemParticipantsMicrosoftGraphInviteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled. 
+// Post invite participants to the active call. For more information about how to handle operations, see commsOperation.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/participant-delete?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/participant-invite?view=graph-rest-1.0
 func (m *CallsItemParticipantsMicrosoftGraphInviteRequestBuilder) Post(ctx context.Context, body CallsItemParticipantsMicrosoftGraphInviteInvitePostRequestBodyable, requestConfiguration *CallsItemParticipantsMicrosoftGraphInviteRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InviteParticipantsOperationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -64,7 +64,7 @@ func (m *CallsItemParticipantsMicrosoftGraphInviteRequestBuilder) Post(ctx conte
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InviteParticipantsOperationable), nil
 }
-// ToPostRequestInformation delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled. 
+// ToPostRequestInformation invite participants to the active call. For more information about how to handle operations, see commsOperation.
 func (m *CallsItemParticipantsMicrosoftGraphInviteRequestBuilder) ToPostRequestInformation(ctx context.Context, body CallsItemParticipantsMicrosoftGraphInviteInvitePostRequestBodyable, requestConfiguration *CallsItemParticipantsMicrosoftGraphInviteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

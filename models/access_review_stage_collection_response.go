@@ -7,8 +7,6 @@ import (
 // AccessReviewStageCollectionResponse 
 type AccessReviewStageCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AccessReviewStageable
 }
 // NewAccessReviewStageCollectionResponse instantiates a new AccessReviewStageCollectionResponse and sets the default values.
 func NewAccessReviewStageCollectionResponse()(*AccessReviewStageCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AccessReviewStageCollectionResponse) GetFieldDeserializers()(map[string
 }
 // GetValue gets the value property value. The value property
 func (m *AccessReviewStageCollectionResponse) GetValue()([]AccessReviewStageable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AccessReviewStageable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AccessReviewStageCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AccessReviewStageCollectionResponse) Serialize(writer i878a80d2330e89d2
 }
 // SetValue sets the value property value. The value property
 func (m *AccessReviewStageCollectionResponse) SetValue(value []AccessReviewStageable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AccessReviewStageCollectionResponseable 
+type AccessReviewStageCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AccessReviewStageable)
+    SetValue(value []AccessReviewStageable)()
 }

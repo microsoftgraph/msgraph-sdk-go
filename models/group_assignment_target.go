@@ -7,8 +7,6 @@ import (
 // GroupAssignmentTarget 
 type GroupAssignmentTarget struct {
     DeviceAndAppManagementAssignmentTarget
-    // The group Id that is the target of the assignment.
-    groupId *string
 }
 // NewGroupAssignmentTarget instantiates a new GroupAssignmentTarget and sets the default values.
 func NewGroupAssignmentTarget()(*GroupAssignmentTarget) {
@@ -58,7 +56,14 @@ func (m *GroupAssignmentTarget) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetGroupId gets the groupId property value. The group Id that is the target of the assignment.
 func (m *GroupAssignmentTarget) GetGroupId()(*string) {
-    return m.groupId
+    val, err := m.GetBackingStore().Get("groupId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *GroupAssignmentTarget) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -76,5 +81,15 @@ func (m *GroupAssignmentTarget) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetGroupId sets the groupId property value. The group Id that is the target of the assignment.
 func (m *GroupAssignmentTarget) SetGroupId(value *string)() {
-    m.groupId = value
+    err := m.GetBackingStore().Set("groupId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// GroupAssignmentTargetable 
+type GroupAssignmentTargetable interface {
+    DeviceAndAppManagementAssignmentTargetable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetGroupId()(*string)
+    SetGroupId(value *string)()
 }

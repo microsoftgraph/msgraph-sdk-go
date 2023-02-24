@@ -7,10 +7,6 @@ import (
 // Teamwork 
 type Teamwork struct {
     Entity
-    // The deletedTeams property
-    deletedTeams []DeletedTeamable
-    // The workforceIntegrations property
-    workforceIntegrations []WorkforceIntegrationable
 }
 // NewTeamwork instantiates a new Teamwork and sets the default values.
 func NewTeamwork()(*Teamwork) {
@@ -25,7 +21,14 @@ func CreateTeamworkFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 }
 // GetDeletedTeams gets the deletedTeams property value. The deletedTeams property
 func (m *Teamwork) GetDeletedTeams()([]DeletedTeamable) {
-    return m.deletedTeams
+    val, err := m.GetBackingStore().Get("deletedTeams")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeletedTeamable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Teamwork) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +65,14 @@ func (m *Teamwork) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetWorkforceIntegrations gets the workforceIntegrations property value. The workforceIntegrations property
 func (m *Teamwork) GetWorkforceIntegrations()([]WorkforceIntegrationable) {
-    return m.workforceIntegrations
+    val, err := m.GetBackingStore().Get("workforceIntegrations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WorkforceIntegrationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Teamwork) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -94,9 +104,24 @@ func (m *Teamwork) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetDeletedTeams sets the deletedTeams property value. The deletedTeams property
 func (m *Teamwork) SetDeletedTeams(value []DeletedTeamable)() {
-    m.deletedTeams = value
+    err := m.GetBackingStore().Set("deletedTeams", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWorkforceIntegrations sets the workforceIntegrations property value. The workforceIntegrations property
 func (m *Teamwork) SetWorkforceIntegrations(value []WorkforceIntegrationable)() {
-    m.workforceIntegrations = value
+    err := m.GetBackingStore().Set("workforceIntegrations", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Teamworkable 
+type Teamworkable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDeletedTeams()([]DeletedTeamable)
+    GetWorkforceIntegrations()([]WorkforceIntegrationable)
+    SetDeletedTeams(value []DeletedTeamable)()
+    SetWorkforceIntegrations(value []WorkforceIntegrationable)()
 }

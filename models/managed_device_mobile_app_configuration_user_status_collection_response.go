@@ -7,8 +7,6 @@ import (
 // ManagedDeviceMobileAppConfigurationUserStatusCollectionResponse 
 type ManagedDeviceMobileAppConfigurationUserStatusCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ManagedDeviceMobileAppConfigurationUserStatusable
 }
 // NewManagedDeviceMobileAppConfigurationUserStatusCollectionResponse instantiates a new ManagedDeviceMobileAppConfigurationUserStatusCollectionResponse and sets the default values.
 func NewManagedDeviceMobileAppConfigurationUserStatusCollectionResponse()(*ManagedDeviceMobileAppConfigurationUserStatusCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ManagedDeviceMobileAppConfigurationUserStatusCollectionResponse) GetFie
 }
 // GetValue gets the value property value. The value property
 func (m *ManagedDeviceMobileAppConfigurationUserStatusCollectionResponse) GetValue()([]ManagedDeviceMobileAppConfigurationUserStatusable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagedDeviceMobileAppConfigurationUserStatusable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ManagedDeviceMobileAppConfigurationUserStatusCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ManagedDeviceMobileAppConfigurationUserStatusCollectionResponse) Serial
 }
 // SetValue sets the value property value. The value property
 func (m *ManagedDeviceMobileAppConfigurationUserStatusCollectionResponse) SetValue(value []ManagedDeviceMobileAppConfigurationUserStatusable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ManagedDeviceMobileAppConfigurationUserStatusCollectionResponseable 
+type ManagedDeviceMobileAppConfigurationUserStatusCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ManagedDeviceMobileAppConfigurationUserStatusable)
+    SetValue(value []ManagedDeviceMobileAppConfigurationUserStatusable)()
 }

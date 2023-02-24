@@ -7,8 +7,6 @@ import (
 // Pkcs12CertificateInformationCollectionResponse 
 type Pkcs12CertificateInformationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Pkcs12CertificateInformationable
 }
 // NewPkcs12CertificateInformationCollectionResponse instantiates a new Pkcs12CertificateInformationCollectionResponse and sets the default values.
 func NewPkcs12CertificateInformationCollectionResponse()(*Pkcs12CertificateInformationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *Pkcs12CertificateInformationCollectionResponse) GetFieldDeserializers()
 }
 // GetValue gets the value property value. The value property
 func (m *Pkcs12CertificateInformationCollectionResponse) GetValue()([]Pkcs12CertificateInformationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Pkcs12CertificateInformationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Pkcs12CertificateInformationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *Pkcs12CertificateInformationCollectionResponse) Serialize(writer i878a8
 }
 // SetValue sets the value property value. The value property
 func (m *Pkcs12CertificateInformationCollectionResponse) SetValue(value []Pkcs12CertificateInformationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Pkcs12CertificateInformationCollectionResponseable 
+type Pkcs12CertificateInformationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Pkcs12CertificateInformationable)
+    SetValue(value []Pkcs12CertificateInformationable)()
 }

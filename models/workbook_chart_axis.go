@@ -7,22 +7,6 @@ import (
 // WorkbookChartAxis 
 type WorkbookChartAxis struct {
     Entity
-    // Represents the formatting of a chart object, which includes line and font formatting. Read-only.
-    format WorkbookChartAxisFormatable
-    // Returns a gridlines object that represents the major gridlines for the specified axis. Read-only.
-    majorGridlines WorkbookChartGridlinesable
-    // Represents the interval between two major tick marks. Can be set to a numeric value or an empty string.  The returned value is always a number.
-    majorUnit Jsonable
-    // Represents the maximum value on the value axis.  Can be set to a numeric value or an empty string (for automatic axis values).  The returned value is always a number.
-    maximum Jsonable
-    // Represents the minimum value on the value axis. Can be set to a numeric value or an empty string (for automatic axis values).  The returned value is always a number.
-    minimum Jsonable
-    // Returns a Gridlines object that represents the minor gridlines for the specified axis. Read-only.
-    minorGridlines WorkbookChartGridlinesable
-    // Represents the interval between two minor tick marks. 'Can be set to a numeric value or an empty string (for automatic axis values). The returned value is always a number.
-    minorUnit Jsonable
-    // Represents the axis title. Read-only.
-    title WorkbookChartAxisTitleable
 }
 // NewWorkbookChartAxis instantiates a new workbookChartAxis and sets the default values.
 func NewWorkbookChartAxis()(*WorkbookChartAxis) {
@@ -122,35 +106,91 @@ func (m *WorkbookChartAxis) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetFormat gets the format property value. Represents the formatting of a chart object, which includes line and font formatting. Read-only.
 func (m *WorkbookChartAxis) GetFormat()(WorkbookChartAxisFormatable) {
-    return m.format
+    val, err := m.GetBackingStore().Get("format")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WorkbookChartAxisFormatable)
+    }
+    return nil
 }
 // GetMajorGridlines gets the majorGridlines property value. Returns a gridlines object that represents the major gridlines for the specified axis. Read-only.
 func (m *WorkbookChartAxis) GetMajorGridlines()(WorkbookChartGridlinesable) {
-    return m.majorGridlines
+    val, err := m.GetBackingStore().Get("majorGridlines")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WorkbookChartGridlinesable)
+    }
+    return nil
 }
 // GetMajorUnit gets the majorUnit property value. Represents the interval between two major tick marks. Can be set to a numeric value or an empty string.  The returned value is always a number.
 func (m *WorkbookChartAxis) GetMajorUnit()(Jsonable) {
-    return m.majorUnit
+    val, err := m.GetBackingStore().Get("majorUnit")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Jsonable)
+    }
+    return nil
 }
 // GetMaximum gets the maximum property value. Represents the maximum value on the value axis.  Can be set to a numeric value or an empty string (for automatic axis values).  The returned value is always a number.
 func (m *WorkbookChartAxis) GetMaximum()(Jsonable) {
-    return m.maximum
+    val, err := m.GetBackingStore().Get("maximum")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Jsonable)
+    }
+    return nil
 }
 // GetMinimum gets the minimum property value. Represents the minimum value on the value axis. Can be set to a numeric value or an empty string (for automatic axis values).  The returned value is always a number.
 func (m *WorkbookChartAxis) GetMinimum()(Jsonable) {
-    return m.minimum
+    val, err := m.GetBackingStore().Get("minimum")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Jsonable)
+    }
+    return nil
 }
 // GetMinorGridlines gets the minorGridlines property value. Returns a Gridlines object that represents the minor gridlines for the specified axis. Read-only.
 func (m *WorkbookChartAxis) GetMinorGridlines()(WorkbookChartGridlinesable) {
-    return m.minorGridlines
+    val, err := m.GetBackingStore().Get("minorGridlines")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WorkbookChartGridlinesable)
+    }
+    return nil
 }
 // GetMinorUnit gets the minorUnit property value. Represents the interval between two minor tick marks. 'Can be set to a numeric value or an empty string (for automatic axis values). The returned value is always a number.
 func (m *WorkbookChartAxis) GetMinorUnit()(Jsonable) {
-    return m.minorUnit
+    val, err := m.GetBackingStore().Get("minorUnit")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Jsonable)
+    }
+    return nil
 }
 // GetTitle gets the title property value. Represents the axis title. Read-only.
 func (m *WorkbookChartAxis) GetTitle()(WorkbookChartAxisTitleable) {
-    return m.title
+    val, err := m.GetBackingStore().Get("title")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WorkbookChartAxisTitleable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WorkbookChartAxis) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -210,33 +250,78 @@ func (m *WorkbookChartAxis) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetFormat sets the format property value. Represents the formatting of a chart object, which includes line and font formatting. Read-only.
 func (m *WorkbookChartAxis) SetFormat(value WorkbookChartAxisFormatable)() {
-    m.format = value
+    err := m.GetBackingStore().Set("format", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMajorGridlines sets the majorGridlines property value. Returns a gridlines object that represents the major gridlines for the specified axis. Read-only.
 func (m *WorkbookChartAxis) SetMajorGridlines(value WorkbookChartGridlinesable)() {
-    m.majorGridlines = value
+    err := m.GetBackingStore().Set("majorGridlines", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMajorUnit sets the majorUnit property value. Represents the interval between two major tick marks. Can be set to a numeric value or an empty string.  The returned value is always a number.
 func (m *WorkbookChartAxis) SetMajorUnit(value Jsonable)() {
-    m.majorUnit = value
+    err := m.GetBackingStore().Set("majorUnit", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMaximum sets the maximum property value. Represents the maximum value on the value axis.  Can be set to a numeric value or an empty string (for automatic axis values).  The returned value is always a number.
 func (m *WorkbookChartAxis) SetMaximum(value Jsonable)() {
-    m.maximum = value
+    err := m.GetBackingStore().Set("maximum", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMinimum sets the minimum property value. Represents the minimum value on the value axis. Can be set to a numeric value or an empty string (for automatic axis values).  The returned value is always a number.
 func (m *WorkbookChartAxis) SetMinimum(value Jsonable)() {
-    m.minimum = value
+    err := m.GetBackingStore().Set("minimum", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMinorGridlines sets the minorGridlines property value. Returns a Gridlines object that represents the minor gridlines for the specified axis. Read-only.
 func (m *WorkbookChartAxis) SetMinorGridlines(value WorkbookChartGridlinesable)() {
-    m.minorGridlines = value
+    err := m.GetBackingStore().Set("minorGridlines", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMinorUnit sets the minorUnit property value. Represents the interval between two minor tick marks. 'Can be set to a numeric value or an empty string (for automatic axis values). The returned value is always a number.
 func (m *WorkbookChartAxis) SetMinorUnit(value Jsonable)() {
-    m.minorUnit = value
+    err := m.GetBackingStore().Set("minorUnit", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTitle sets the title property value. Represents the axis title. Read-only.
 func (m *WorkbookChartAxis) SetTitle(value WorkbookChartAxisTitleable)() {
-    m.title = value
+    err := m.GetBackingStore().Set("title", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WorkbookChartAxisable 
+type WorkbookChartAxisable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetFormat()(WorkbookChartAxisFormatable)
+    GetMajorGridlines()(WorkbookChartGridlinesable)
+    GetMajorUnit()(Jsonable)
+    GetMaximum()(Jsonable)
+    GetMinimum()(Jsonable)
+    GetMinorGridlines()(WorkbookChartGridlinesable)
+    GetMinorUnit()(Jsonable)
+    GetTitle()(WorkbookChartAxisTitleable)
+    SetFormat(value WorkbookChartAxisFormatable)()
+    SetMajorGridlines(value WorkbookChartGridlinesable)()
+    SetMajorUnit(value Jsonable)()
+    SetMaximum(value Jsonable)()
+    SetMinimum(value Jsonable)()
+    SetMinorGridlines(value WorkbookChartGridlinesable)()
+    SetMinorUnit(value Jsonable)()
+    SetTitle(value WorkbookChartAxisTitleable)()
 }

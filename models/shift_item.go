@@ -7,12 +7,6 @@ import (
 // ShiftItem 
 type ShiftItem struct {
     ScheduleEntity
-    // An incremental part of a shift which can cover details of when and where an employee is during their shift. For example, an assignment or a scheduled break or lunch. Required.
-    activities []ShiftActivityable
-    // The shift label of the shiftItem.
-    displayName *string
-    // The shift notes for the shiftItem.
-    notes *string
 }
 // NewShiftItem instantiates a new ShiftItem and sets the default values.
 func NewShiftItem()(*ShiftItem) {
@@ -45,11 +39,25 @@ func CreateShiftItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 }
 // GetActivities gets the activities property value. An incremental part of a shift which can cover details of when and where an employee is during their shift. For example, an assignment or a scheduled break or lunch. Required.
 func (m *ShiftItem) GetActivities()([]ShiftActivityable) {
-    return m.activities
+    val, err := m.GetBackingStore().Get("activities")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ShiftActivityable)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The shift label of the shiftItem.
 func (m *ShiftItem) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ShiftItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -92,7 +100,14 @@ func (m *ShiftItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 }
 // GetNotes gets the notes property value. The shift notes for the shiftItem.
 func (m *ShiftItem) GetNotes()(*string) {
-    return m.notes
+    val, err := m.GetBackingStore().Get("notes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ShiftItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -126,13 +141,33 @@ func (m *ShiftItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetActivities sets the activities property value. An incremental part of a shift which can cover details of when and where an employee is during their shift. For example, an assignment or a scheduled break or lunch. Required.
 func (m *ShiftItem) SetActivities(value []ShiftActivityable)() {
-    m.activities = value
+    err := m.GetBackingStore().Set("activities", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The shift label of the shiftItem.
 func (m *ShiftItem) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNotes sets the notes property value. The shift notes for the shiftItem.
 func (m *ShiftItem) SetNotes(value *string)() {
-    m.notes = value
+    err := m.GetBackingStore().Set("notes", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ShiftItemable 
+type ShiftItemable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    ScheduleEntityable
+    GetActivities()([]ShiftActivityable)
+    GetDisplayName()(*string)
+    GetNotes()(*string)
+    SetActivities(value []ShiftActivityable)()
+    SetDisplayName(value *string)()
+    SetNotes(value *string)()
 }

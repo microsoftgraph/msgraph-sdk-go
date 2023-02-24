@@ -7,8 +7,6 @@ import (
 // ScheduleItemCollectionResponse 
 type ScheduleItemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ScheduleItemable
 }
 // NewScheduleItemCollectionResponse instantiates a new ScheduleItemCollectionResponse and sets the default values.
 func NewScheduleItemCollectionResponse()(*ScheduleItemCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ScheduleItemCollectionResponse) GetFieldDeserializers()(map[string]func
 }
 // GetValue gets the value property value. The value property
 func (m *ScheduleItemCollectionResponse) GetValue()([]ScheduleItemable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ScheduleItemable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ScheduleItemCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ScheduleItemCollectionResponse) Serialize(writer i878a80d2330e89d268963
 }
 // SetValue sets the value property value. The value property
 func (m *ScheduleItemCollectionResponse) SetValue(value []ScheduleItemable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ScheduleItemCollectionResponseable 
+type ScheduleItemCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ScheduleItemable)
+    SetValue(value []ScheduleItemable)()
 }

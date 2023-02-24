@@ -3,23 +3,19 @@ package drives
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ItemItemsItemWorkbookFunctionsMicrosoftGraphTimeTimePostRequestBody 
 type ItemItemsItemWorkbookFunctionsMicrosoftGraphTimeTimePostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The hour property
-    hour iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable
-    // The minute property
-    minute iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable
-    // The second property
-    second iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewItemItemsItemWorkbookFunctionsMicrosoftGraphTimeTimePostRequestBody instantiates a new ItemItemsItemWorkbookFunctionsMicrosoftGraphTimeTimePostRequestBody and sets the default values.
 func NewItemItemsItemWorkbookFunctionsMicrosoftGraphTimeTimePostRequestBody()(*ItemItemsItemWorkbookFunctionsMicrosoftGraphTimeTimePostRequestBody) {
     m := &ItemItemsItemWorkbookFunctionsMicrosoftGraphTimeTimePostRequestBody{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -29,7 +25,19 @@ func CreateItemItemsItemWorkbookFunctionsMicrosoftGraphTimeTimePostRequestBodyFr
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphTimeTimePostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphTimeTimePostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphTimeTimePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -68,15 +76,36 @@ func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphTimeTimePostRequestBody) Ge
 }
 // GetHour gets the hour property value. The hour property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphTimeTimePostRequestBody) GetHour()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
-    return m.hour
+    val, err := m.GetBackingStore().Get("hour")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    }
+    return nil
 }
 // GetMinute gets the minute property value. The minute property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphTimeTimePostRequestBody) GetMinute()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
-    return m.minute
+    val, err := m.GetBackingStore().Get("minute")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    }
+    return nil
 }
 // GetSecond gets the second property value. The second property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphTimeTimePostRequestBody) GetSecond()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
-    return m.second
+    val, err := m.GetBackingStore().Get("second")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphTimeTimePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -108,17 +137,47 @@ func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphTimeTimePostRequestBody) Se
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphTimeTimePostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphTimeTimePostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetHour sets the hour property value. The hour property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphTimeTimePostRequestBody) SetHour(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
-    m.hour = value
+    err := m.GetBackingStore().Set("hour", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMinute sets the minute property value. The minute property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphTimeTimePostRequestBody) SetMinute(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
-    m.minute = value
+    err := m.GetBackingStore().Set("minute", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSecond sets the second property value. The second property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphTimeTimePostRequestBody) SetSecond(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
-    m.second = value
+    err := m.GetBackingStore().Set("second", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemItemsItemWorkbookFunctionsMicrosoftGraphTimeTimePostRequestBodyable 
+type ItemItemsItemWorkbookFunctionsMicrosoftGraphTimeTimePostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetHour()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    GetMinute()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    GetSecond()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetHour(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
+    SetMinute(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
+    SetSecond(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
 }

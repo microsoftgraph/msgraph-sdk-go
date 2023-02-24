@@ -7,10 +7,6 @@ import (
 // SingleServicePrincipal 
 type SingleServicePrincipal struct {
     SubjectSet
-    // Description of this service principal.
-    description *string
-    // ID of the servicePrincipal.
-    servicePrincipalId *string
 }
 // NewSingleServicePrincipal instantiates a new SingleServicePrincipal and sets the default values.
 func NewSingleServicePrincipal()(*SingleServicePrincipal) {
@@ -27,7 +23,14 @@ func CreateSingleServicePrincipalFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetDescription gets the description property value. Description of this service principal.
 func (m *SingleServicePrincipal) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SingleServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -56,7 +59,14 @@ func (m *SingleServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetServicePrincipalId gets the servicePrincipalId property value. ID of the servicePrincipal.
 func (m *SingleServicePrincipal) GetServicePrincipalId()(*string) {
-    return m.servicePrincipalId
+    val, err := m.GetBackingStore().Get("servicePrincipalId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SingleServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -80,9 +90,24 @@ func (m *SingleServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetDescription sets the description property value. Description of this service principal.
 func (m *SingleServicePrincipal) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetServicePrincipalId sets the servicePrincipalId property value. ID of the servicePrincipal.
 func (m *SingleServicePrincipal) SetServicePrincipalId(value *string)() {
-    m.servicePrincipalId = value
+    err := m.GetBackingStore().Set("servicePrincipalId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SingleServicePrincipalable 
+type SingleServicePrincipalable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    SubjectSetable
+    GetDescription()(*string)
+    GetServicePrincipalId()(*string)
+    SetDescription(value *string)()
+    SetServicePrincipalId(value *string)()
 }

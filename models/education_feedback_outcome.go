@@ -7,10 +7,6 @@ import (
 // EducationFeedbackOutcome 
 type EducationFeedbackOutcome struct {
     EducationOutcome
-    // Teacher's written feedback to the student.
-    feedback EducationFeedbackable
-    // A copy of the feedback property that is made when the grade is released to the student.
-    publishedFeedback EducationFeedbackable
 }
 // NewEducationFeedbackOutcome instantiates a new EducationFeedbackOutcome and sets the default values.
 func NewEducationFeedbackOutcome()(*EducationFeedbackOutcome) {
@@ -27,7 +23,14 @@ func CreateEducationFeedbackOutcomeFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetFeedback gets the feedback property value. Teacher's written feedback to the student.
 func (m *EducationFeedbackOutcome) GetFeedback()(EducationFeedbackable) {
-    return m.feedback
+    val, err := m.GetBackingStore().Get("feedback")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(EducationFeedbackable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationFeedbackOutcome) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -56,7 +59,14 @@ func (m *EducationFeedbackOutcome) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetPublishedFeedback gets the publishedFeedback property value. A copy of the feedback property that is made when the grade is released to the student.
 func (m *EducationFeedbackOutcome) GetPublishedFeedback()(EducationFeedbackable) {
-    return m.publishedFeedback
+    val, err := m.GetBackingStore().Get("publishedFeedback")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(EducationFeedbackable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EducationFeedbackOutcome) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -80,9 +90,24 @@ func (m *EducationFeedbackOutcome) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetFeedback sets the feedback property value. Teacher's written feedback to the student.
 func (m *EducationFeedbackOutcome) SetFeedback(value EducationFeedbackable)() {
-    m.feedback = value
+    err := m.GetBackingStore().Set("feedback", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPublishedFeedback sets the publishedFeedback property value. A copy of the feedback property that is made when the grade is released to the student.
 func (m *EducationFeedbackOutcome) SetPublishedFeedback(value EducationFeedbackable)() {
-    m.publishedFeedback = value
+    err := m.GetBackingStore().Set("publishedFeedback", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EducationFeedbackOutcomeable 
+type EducationFeedbackOutcomeable interface {
+    EducationOutcomeable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetFeedback()(EducationFeedbackable)
+    GetPublishedFeedback()(EducationFeedbackable)
+    SetFeedback(value EducationFeedbackable)()
+    SetPublishedFeedback(value EducationFeedbackable)()
 }

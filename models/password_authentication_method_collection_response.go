@@ -7,8 +7,6 @@ import (
 // PasswordAuthenticationMethodCollectionResponse 
 type PasswordAuthenticationMethodCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []PasswordAuthenticationMethodable
 }
 // NewPasswordAuthenticationMethodCollectionResponse instantiates a new PasswordAuthenticationMethodCollectionResponse and sets the default values.
 func NewPasswordAuthenticationMethodCollectionResponse()(*PasswordAuthenticationMethodCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *PasswordAuthenticationMethodCollectionResponse) GetFieldDeserializers()
 }
 // GetValue gets the value property value. The value property
 func (m *PasswordAuthenticationMethodCollectionResponse) GetValue()([]PasswordAuthenticationMethodable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PasswordAuthenticationMethodable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PasswordAuthenticationMethodCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *PasswordAuthenticationMethodCollectionResponse) Serialize(writer i878a8
 }
 // SetValue sets the value property value. The value property
 func (m *PasswordAuthenticationMethodCollectionResponse) SetValue(value []PasswordAuthenticationMethodable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PasswordAuthenticationMethodCollectionResponseable 
+type PasswordAuthenticationMethodCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]PasswordAuthenticationMethodable)
+    SetValue(value []PasswordAuthenticationMethodable)()
 }

@@ -7,8 +7,6 @@ import (
 // AudioRoutingGroupCollectionResponse 
 type AudioRoutingGroupCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AudioRoutingGroupable
 }
 // NewAudioRoutingGroupCollectionResponse instantiates a new AudioRoutingGroupCollectionResponse and sets the default values.
 func NewAudioRoutingGroupCollectionResponse()(*AudioRoutingGroupCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AudioRoutingGroupCollectionResponse) GetFieldDeserializers()(map[string
 }
 // GetValue gets the value property value. The value property
 func (m *AudioRoutingGroupCollectionResponse) GetValue()([]AudioRoutingGroupable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AudioRoutingGroupable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AudioRoutingGroupCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AudioRoutingGroupCollectionResponse) Serialize(writer i878a80d2330e89d2
 }
 // SetValue sets the value property value. The value property
 func (m *AudioRoutingGroupCollectionResponse) SetValue(value []AudioRoutingGroupable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AudioRoutingGroupCollectionResponseable 
+type AudioRoutingGroupCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AudioRoutingGroupable)
+    SetValue(value []AudioRoutingGroupable)()
 }

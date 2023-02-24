@@ -7,8 +7,6 @@ import (
 // BookingCurrency 
 type BookingCurrency struct {
     Entity
-    // The currency symbol. For example, the currency symbol for the US dollar and for the Australian dollar is $.
-    symbol *string
 }
 // NewBookingCurrency instantiates a new BookingCurrency and sets the default values.
 func NewBookingCurrency()(*BookingCurrency) {
@@ -38,7 +36,14 @@ func (m *BookingCurrency) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetSymbol gets the symbol property value. The currency symbol. For example, the currency symbol for the US dollar and for the Australian dollar is $.
 func (m *BookingCurrency) GetSymbol()(*string) {
-    return m.symbol
+    val, err := m.GetBackingStore().Get("symbol")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *BookingCurrency) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,5 +61,15 @@ func (m *BookingCurrency) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetSymbol sets the symbol property value. The currency symbol. For example, the currency symbol for the US dollar and for the Australian dollar is $.
 func (m *BookingCurrency) SetSymbol(value *string)() {
-    m.symbol = value
+    err := m.GetBackingStore().Set("symbol", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// BookingCurrencyable 
+type BookingCurrencyable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetSymbol()(*string)
+    SetSymbol(value *string)()
 }

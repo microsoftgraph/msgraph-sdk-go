@@ -7,8 +7,6 @@ import (
 // StsPolicyCollectionResponse 
 type StsPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []StsPolicyable
 }
 // NewStsPolicyCollectionResponse instantiates a new StsPolicyCollectionResponse and sets the default values.
 func NewStsPolicyCollectionResponse()(*StsPolicyCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *StsPolicyCollectionResponse) GetFieldDeserializers()(map[string]func(i8
 }
 // GetValue gets the value property value. The value property
 func (m *StsPolicyCollectionResponse) GetValue()([]StsPolicyable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]StsPolicyable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *StsPolicyCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *StsPolicyCollectionResponse) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetValue sets the value property value. The value property
 func (m *StsPolicyCollectionResponse) SetValue(value []StsPolicyable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// StsPolicyCollectionResponseable 
+type StsPolicyCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]StsPolicyable)
+    SetValue(value []StsPolicyable)()
 }

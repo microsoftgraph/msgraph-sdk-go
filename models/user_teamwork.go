@@ -7,10 +7,6 @@ import (
 // UserTeamwork 
 type UserTeamwork struct {
     Entity
-    // The list of associatedTeamInfo objects that a user is associated with.
-    associatedTeams []AssociatedTeamInfoable
-    // The apps installed in the personal scope of this user.
-    installedApps []UserScopeTeamsAppInstallationable
 }
 // NewUserTeamwork instantiates a new userTeamwork and sets the default values.
 func NewUserTeamwork()(*UserTeamwork) {
@@ -25,7 +21,14 @@ func CreateUserTeamworkFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetAssociatedTeams gets the associatedTeams property value. The list of associatedTeamInfo objects that a user is associated with.
 func (m *UserTeamwork) GetAssociatedTeams()([]AssociatedTeamInfoable) {
-    return m.associatedTeams
+    val, err := m.GetBackingStore().Get("associatedTeams")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AssociatedTeamInfoable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserTeamwork) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +65,14 @@ func (m *UserTeamwork) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetInstalledApps gets the installedApps property value. The apps installed in the personal scope of this user.
 func (m *UserTeamwork) GetInstalledApps()([]UserScopeTeamsAppInstallationable) {
-    return m.installedApps
+    val, err := m.GetBackingStore().Get("installedApps")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserScopeTeamsAppInstallationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserTeamwork) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -94,9 +104,24 @@ func (m *UserTeamwork) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetAssociatedTeams sets the associatedTeams property value. The list of associatedTeamInfo objects that a user is associated with.
 func (m *UserTeamwork) SetAssociatedTeams(value []AssociatedTeamInfoable)() {
-    m.associatedTeams = value
+    err := m.GetBackingStore().Set("associatedTeams", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInstalledApps sets the installedApps property value. The apps installed in the personal scope of this user.
 func (m *UserTeamwork) SetInstalledApps(value []UserScopeTeamsAppInstallationable)() {
-    m.installedApps = value
+    err := m.GetBackingStore().Set("installedApps", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserTeamworkable 
+type UserTeamworkable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAssociatedTeams()([]AssociatedTeamInfoable)
+    GetInstalledApps()([]UserScopeTeamsAppInstallationable)
+    SetAssociatedTeams(value []AssociatedTeamInfoable)()
+    SetInstalledApps(value []UserScopeTeamsAppInstallationable)()
 }

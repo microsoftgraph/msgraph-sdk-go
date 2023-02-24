@@ -8,14 +8,6 @@ import (
 // ChecklistItem 
 type ChecklistItem struct {
     Entity
-    // The date and time when the checklistItem was finished.
-    checkedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The date and time when the checklistItem was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Field indicating the title of checklistItem.
-    displayName *string
-    // State indicating whether the item is checked off or not.
-    isChecked *bool
 }
 // NewChecklistItem instantiates a new checklistItem and sets the default values.
 func NewChecklistItem()(*ChecklistItem) {
@@ -30,15 +22,36 @@ func CreateChecklistItemFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetCheckedDateTime gets the checkedDateTime property value. The date and time when the checklistItem was finished.
 func (m *ChecklistItem) GetCheckedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.checkedDateTime
+    val, err := m.GetBackingStore().Get("checkedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time when the checklistItem was created.
 func (m *ChecklistItem) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. Field indicating the title of checklistItem.
 func (m *ChecklistItem) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ChecklistItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -87,7 +100,14 @@ func (m *ChecklistItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetIsChecked gets the isChecked property value. State indicating whether the item is checked off or not.
 func (m *ChecklistItem) GetIsChecked()(*bool) {
-    return m.isChecked
+    val, err := m.GetBackingStore().Get("isChecked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ChecklistItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -123,17 +143,42 @@ func (m *ChecklistItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetCheckedDateTime sets the checkedDateTime property value. The date and time when the checklistItem was finished.
 func (m *ChecklistItem) SetCheckedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.checkedDateTime = value
+    err := m.GetBackingStore().Set("checkedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time when the checklistItem was created.
 func (m *ChecklistItem) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. Field indicating the title of checklistItem.
 func (m *ChecklistItem) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsChecked sets the isChecked property value. State indicating whether the item is checked off or not.
 func (m *ChecklistItem) SetIsChecked(value *bool)() {
-    m.isChecked = value
+    err := m.GetBackingStore().Set("isChecked", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ChecklistItemable 
+type ChecklistItemable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCheckedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDisplayName()(*string)
+    GetIsChecked()(*bool)
+    SetCheckedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDisplayName(value *string)()
+    SetIsChecked(value *bool)()
 }

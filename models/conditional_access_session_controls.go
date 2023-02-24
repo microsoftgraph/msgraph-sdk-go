@@ -2,29 +2,19 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ConditionalAccessSessionControls 
 type ConditionalAccessSessionControls struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Session control to enforce application restrictions. Only Exchange Online and Sharepoint Online support this session control.
-    applicationEnforcedRestrictions ApplicationEnforcedRestrictionsSessionControlable
-    // Session control to apply cloud app security.
-    cloudAppSecurity CloudAppSecuritySessionControlable
-    // Session control that determines whether it is acceptable for Azure AD to extend existing sessions based on information collected prior to an outage or not.
-    disableResilienceDefaults *bool
-    // The OdataType property
-    odataType *string
-    // Session control to define whether to persist cookies or not. All apps should be selected for this session control to work correctly.
-    persistentBrowser PersistentBrowserSessionControlable
-    // Session control to enforce signin frequency.
-    signInFrequency SignInFrequencySessionControlable
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewConditionalAccessSessionControls instantiates a new conditionalAccessSessionControls and sets the default values.
 func NewConditionalAccessSessionControls()(*ConditionalAccessSessionControls) {
     m := &ConditionalAccessSessionControls{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -34,19 +24,52 @@ func CreateConditionalAccessSessionControlsFromDiscriminatorValue(parseNode i878
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessSessionControls) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetApplicationEnforcedRestrictions gets the applicationEnforcedRestrictions property value. Session control to enforce application restrictions. Only Exchange Online and Sharepoint Online support this session control.
 func (m *ConditionalAccessSessionControls) GetApplicationEnforcedRestrictions()(ApplicationEnforcedRestrictionsSessionControlable) {
-    return m.applicationEnforcedRestrictions
+    val, err := m.GetBackingStore().Get("applicationEnforcedRestrictions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ApplicationEnforcedRestrictionsSessionControlable)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ConditionalAccessSessionControls) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetCloudAppSecurity gets the cloudAppSecurity property value. Session control to apply cloud app security.
 func (m *ConditionalAccessSessionControls) GetCloudAppSecurity()(CloudAppSecuritySessionControlable) {
-    return m.cloudAppSecurity
+    val, err := m.GetBackingStore().Get("cloudAppSecurity")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CloudAppSecuritySessionControlable)
+    }
+    return nil
 }
 // GetDisableResilienceDefaults gets the disableResilienceDefaults property value. Session control that determines whether it is acceptable for Azure AD to extend existing sessions based on information collected prior to an outage or not.
 func (m *ConditionalAccessSessionControls) GetDisableResilienceDefaults()(*bool) {
-    return m.disableResilienceDefaults
+    val, err := m.GetBackingStore().Get("disableResilienceDefaults")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConditionalAccessSessionControls) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -115,15 +138,36 @@ func (m *ConditionalAccessSessionControls) GetFieldDeserializers()(map[string]fu
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ConditionalAccessSessionControls) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPersistentBrowser gets the persistentBrowser property value. Session control to define whether to persist cookies or not. All apps should be selected for this session control to work correctly.
 func (m *ConditionalAccessSessionControls) GetPersistentBrowser()(PersistentBrowserSessionControlable) {
-    return m.persistentBrowser
+    val, err := m.GetBackingStore().Get("persistentBrowser")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PersistentBrowserSessionControlable)
+    }
+    return nil
 }
 // GetSignInFrequency gets the signInFrequency property value. Session control to enforce signin frequency.
 func (m *ConditionalAccessSessionControls) GetSignInFrequency()(SignInFrequencySessionControlable) {
-    return m.signInFrequency
+    val, err := m.GetBackingStore().Get("signInFrequency")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SignInFrequencySessionControlable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ConditionalAccessSessionControls) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -173,29 +217,74 @@ func (m *ConditionalAccessSessionControls) Serialize(writer i878a80d2330e89d2689
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessSessionControls) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApplicationEnforcedRestrictions sets the applicationEnforcedRestrictions property value. Session control to enforce application restrictions. Only Exchange Online and Sharepoint Online support this session control.
 func (m *ConditionalAccessSessionControls) SetApplicationEnforcedRestrictions(value ApplicationEnforcedRestrictionsSessionControlable)() {
-    m.applicationEnforcedRestrictions = value
+    err := m.GetBackingStore().Set("applicationEnforcedRestrictions", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ConditionalAccessSessionControls) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetCloudAppSecurity sets the cloudAppSecurity property value. Session control to apply cloud app security.
 func (m *ConditionalAccessSessionControls) SetCloudAppSecurity(value CloudAppSecuritySessionControlable)() {
-    m.cloudAppSecurity = value
+    err := m.GetBackingStore().Set("cloudAppSecurity", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisableResilienceDefaults sets the disableResilienceDefaults property value. Session control that determines whether it is acceptable for Azure AD to extend existing sessions based on information collected prior to an outage or not.
 func (m *ConditionalAccessSessionControls) SetDisableResilienceDefaults(value *bool)() {
-    m.disableResilienceDefaults = value
+    err := m.GetBackingStore().Set("disableResilienceDefaults", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ConditionalAccessSessionControls) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPersistentBrowser sets the persistentBrowser property value. Session control to define whether to persist cookies or not. All apps should be selected for this session control to work correctly.
 func (m *ConditionalAccessSessionControls) SetPersistentBrowser(value PersistentBrowserSessionControlable)() {
-    m.persistentBrowser = value
+    err := m.GetBackingStore().Set("persistentBrowser", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSignInFrequency sets the signInFrequency property value. Session control to enforce signin frequency.
 func (m *ConditionalAccessSessionControls) SetSignInFrequency(value SignInFrequencySessionControlable)() {
-    m.signInFrequency = value
+    err := m.GetBackingStore().Set("signInFrequency", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ConditionalAccessSessionControlsable 
+type ConditionalAccessSessionControlsable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetApplicationEnforcedRestrictions()(ApplicationEnforcedRestrictionsSessionControlable)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetCloudAppSecurity()(CloudAppSecuritySessionControlable)
+    GetDisableResilienceDefaults()(*bool)
+    GetOdataType()(*string)
+    GetPersistentBrowser()(PersistentBrowserSessionControlable)
+    GetSignInFrequency()(SignInFrequencySessionControlable)
+    SetApplicationEnforcedRestrictions(value ApplicationEnforcedRestrictionsSessionControlable)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetCloudAppSecurity(value CloudAppSecuritySessionControlable)()
+    SetDisableResilienceDefaults(value *bool)()
+    SetOdataType(value *string)()
+    SetPersistentBrowser(value PersistentBrowserSessionControlable)()
+    SetSignInFrequency(value SignInFrequencySessionControlable)()
 }

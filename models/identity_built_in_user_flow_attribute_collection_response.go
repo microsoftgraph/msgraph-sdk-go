@@ -7,8 +7,6 @@ import (
 // IdentityBuiltInUserFlowAttributeCollectionResponse 
 type IdentityBuiltInUserFlowAttributeCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []IdentityBuiltInUserFlowAttributeable
 }
 // NewIdentityBuiltInUserFlowAttributeCollectionResponse instantiates a new IdentityBuiltInUserFlowAttributeCollectionResponse and sets the default values.
 func NewIdentityBuiltInUserFlowAttributeCollectionResponse()(*IdentityBuiltInUserFlowAttributeCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *IdentityBuiltInUserFlowAttributeCollectionResponse) GetFieldDeserialize
 }
 // GetValue gets the value property value. The value property
 func (m *IdentityBuiltInUserFlowAttributeCollectionResponse) GetValue()([]IdentityBuiltInUserFlowAttributeable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IdentityBuiltInUserFlowAttributeable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IdentityBuiltInUserFlowAttributeCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *IdentityBuiltInUserFlowAttributeCollectionResponse) Serialize(writer i8
 }
 // SetValue sets the value property value. The value property
 func (m *IdentityBuiltInUserFlowAttributeCollectionResponse) SetValue(value []IdentityBuiltInUserFlowAttributeable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IdentityBuiltInUserFlowAttributeCollectionResponseable 
+type IdentityBuiltInUserFlowAttributeCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]IdentityBuiltInUserFlowAttributeable)
+    SetValue(value []IdentityBuiltInUserFlowAttributeable)()
 }

@@ -7,8 +7,6 @@ import (
 // ScopedRoleMembershipCollectionResponse 
 type ScopedRoleMembershipCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ScopedRoleMembershipable
 }
 // NewScopedRoleMembershipCollectionResponse instantiates a new ScopedRoleMembershipCollectionResponse and sets the default values.
 func NewScopedRoleMembershipCollectionResponse()(*ScopedRoleMembershipCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ScopedRoleMembershipCollectionResponse) GetFieldDeserializers()(map[str
 }
 // GetValue gets the value property value. The value property
 func (m *ScopedRoleMembershipCollectionResponse) GetValue()([]ScopedRoleMembershipable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ScopedRoleMembershipable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ScopedRoleMembershipCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ScopedRoleMembershipCollectionResponse) Serialize(writer i878a80d2330e8
 }
 // SetValue sets the value property value. The value property
 func (m *ScopedRoleMembershipCollectionResponse) SetValue(value []ScopedRoleMembershipable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ScopedRoleMembershipCollectionResponseable 
+type ScopedRoleMembershipCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ScopedRoleMembershipable)
+    SetValue(value []ScopedRoleMembershipable)()
 }

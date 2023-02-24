@@ -7,8 +7,6 @@ import (
 // WindowsDefenderScanActionResult 
 type WindowsDefenderScanActionResult struct {
     DeviceActionResult
-    // Scan type either full scan or quick scan
-    scanType *string
 }
 // NewWindowsDefenderScanActionResult instantiates a new WindowsDefenderScanActionResult and sets the default values.
 func NewWindowsDefenderScanActionResult()(*WindowsDefenderScanActionResult) {
@@ -38,7 +36,14 @@ func (m *WindowsDefenderScanActionResult) GetFieldDeserializers()(map[string]fun
 }
 // GetScanType gets the scanType property value. Scan type either full scan or quick scan
 func (m *WindowsDefenderScanActionResult) GetScanType()(*string) {
-    return m.scanType
+    val, err := m.GetBackingStore().Get("scanType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsDefenderScanActionResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,5 +61,15 @@ func (m *WindowsDefenderScanActionResult) Serialize(writer i878a80d2330e89d26896
 }
 // SetScanType sets the scanType property value. Scan type either full scan or quick scan
 func (m *WindowsDefenderScanActionResult) SetScanType(value *string)() {
-    m.scanType = value
+    err := m.GetBackingStore().Set("scanType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsDefenderScanActionResultable 
+type WindowsDefenderScanActionResultable interface {
+    DeviceActionResultable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetScanType()(*string)
+    SetScanType(value *string)()
 }

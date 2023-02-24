@@ -7,8 +7,6 @@ import (
 // MobileAppCategoryCollectionResponse 
 type MobileAppCategoryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []MobileAppCategoryable
 }
 // NewMobileAppCategoryCollectionResponse instantiates a new MobileAppCategoryCollectionResponse and sets the default values.
 func NewMobileAppCategoryCollectionResponse()(*MobileAppCategoryCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *MobileAppCategoryCollectionResponse) GetFieldDeserializers()(map[string
 }
 // GetValue gets the value property value. The value property
 func (m *MobileAppCategoryCollectionResponse) GetValue()([]MobileAppCategoryable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MobileAppCategoryable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MobileAppCategoryCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *MobileAppCategoryCollectionResponse) Serialize(writer i878a80d2330e89d2
 }
 // SetValue sets the value property value. The value property
 func (m *MobileAppCategoryCollectionResponse) SetValue(value []MobileAppCategoryable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MobileAppCategoryCollectionResponseable 
+type MobileAppCategoryCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]MobileAppCategoryable)
+    SetValue(value []MobileAppCategoryable)()
 }

@@ -7,10 +7,6 @@ import (
 // IosVppAppAssignmentSettings 
 type IosVppAppAssignmentSettings struct {
     MobileAppAssignmentSettings
-    // Whether or not to use device licensing.
-    useDeviceLicensing *bool
-    // The VPN Configuration Id to apply for this app.
-    vpnConfigurationId *string
 }
 // NewIosVppAppAssignmentSettings instantiates a new IosVppAppAssignmentSettings and sets the default values.
 func NewIosVppAppAssignmentSettings()(*IosVppAppAssignmentSettings) {
@@ -52,11 +48,25 @@ func (m *IosVppAppAssignmentSettings) GetFieldDeserializers()(map[string]func(i8
 }
 // GetUseDeviceLicensing gets the useDeviceLicensing property value. Whether or not to use device licensing.
 func (m *IosVppAppAssignmentSettings) GetUseDeviceLicensing()(*bool) {
-    return m.useDeviceLicensing
+    val, err := m.GetBackingStore().Get("useDeviceLicensing")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetVpnConfigurationId gets the vpnConfigurationId property value. The VPN Configuration Id to apply for this app.
 func (m *IosVppAppAssignmentSettings) GetVpnConfigurationId()(*string) {
-    return m.vpnConfigurationId
+    val, err := m.GetBackingStore().Get("vpnConfigurationId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IosVppAppAssignmentSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -80,9 +90,24 @@ func (m *IosVppAppAssignmentSettings) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetUseDeviceLicensing sets the useDeviceLicensing property value. Whether or not to use device licensing.
 func (m *IosVppAppAssignmentSettings) SetUseDeviceLicensing(value *bool)() {
-    m.useDeviceLicensing = value
+    err := m.GetBackingStore().Set("useDeviceLicensing", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVpnConfigurationId sets the vpnConfigurationId property value. The VPN Configuration Id to apply for this app.
 func (m *IosVppAppAssignmentSettings) SetVpnConfigurationId(value *string)() {
-    m.vpnConfigurationId = value
+    err := m.GetBackingStore().Set("vpnConfigurationId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IosVppAppAssignmentSettingsable 
+type IosVppAppAssignmentSettingsable interface {
+    MobileAppAssignmentSettingsable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetUseDeviceLicensing()(*bool)
+    GetVpnConfigurationId()(*string)
+    SetUseDeviceLicensing(value *bool)()
+    SetVpnConfigurationId(value *string)()
 }

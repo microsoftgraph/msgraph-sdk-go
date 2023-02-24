@@ -7,10 +7,6 @@ import (
 // UnifiedRoleManagementPolicyExpirationRule 
 type UnifiedRoleManagementPolicyExpirationRule struct {
     UnifiedRoleManagementPolicyRule
-    // Indicates whether expiration is required or if it's a permanently active assignment or eligibility.
-    isExpirationRequired *bool
-    // The maximum duration allowed for eligibility or assignment which is not permanent. Required when isExpirationRequired is true.
-    maximumDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
 }
 // NewUnifiedRoleManagementPolicyExpirationRule instantiates a new UnifiedRoleManagementPolicyExpirationRule and sets the default values.
 func NewUnifiedRoleManagementPolicyExpirationRule()(*UnifiedRoleManagementPolicyExpirationRule) {
@@ -52,11 +48,25 @@ func (m *UnifiedRoleManagementPolicyExpirationRule) GetFieldDeserializers()(map[
 }
 // GetIsExpirationRequired gets the isExpirationRequired property value. Indicates whether expiration is required or if it's a permanently active assignment or eligibility.
 func (m *UnifiedRoleManagementPolicyExpirationRule) GetIsExpirationRequired()(*bool) {
-    return m.isExpirationRequired
+    val, err := m.GetBackingStore().Get("isExpirationRequired")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetMaximumDuration gets the maximumDuration property value. The maximum duration allowed for eligibility or assignment which is not permanent. Required when isExpirationRequired is true.
 func (m *UnifiedRoleManagementPolicyExpirationRule) GetMaximumDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    return m.maximumDuration
+    val, err := m.GetBackingStore().Get("maximumDuration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UnifiedRoleManagementPolicyExpirationRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -80,9 +90,24 @@ func (m *UnifiedRoleManagementPolicyExpirationRule) Serialize(writer i878a80d233
 }
 // SetIsExpirationRequired sets the isExpirationRequired property value. Indicates whether expiration is required or if it's a permanently active assignment or eligibility.
 func (m *UnifiedRoleManagementPolicyExpirationRule) SetIsExpirationRequired(value *bool)() {
-    m.isExpirationRequired = value
+    err := m.GetBackingStore().Set("isExpirationRequired", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMaximumDuration sets the maximumDuration property value. The maximum duration allowed for eligibility or assignment which is not permanent. Required when isExpirationRequired is true.
 func (m *UnifiedRoleManagementPolicyExpirationRule) SetMaximumDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    m.maximumDuration = value
+    err := m.GetBackingStore().Set("maximumDuration", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UnifiedRoleManagementPolicyExpirationRuleable 
+type UnifiedRoleManagementPolicyExpirationRuleable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    UnifiedRoleManagementPolicyRuleable
+    GetIsExpirationRequired()(*bool)
+    GetMaximumDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
+    SetIsExpirationRequired(value *bool)()
+    SetMaximumDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
 }

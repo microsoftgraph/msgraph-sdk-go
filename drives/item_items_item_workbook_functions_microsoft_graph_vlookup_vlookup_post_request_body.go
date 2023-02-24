@@ -3,25 +3,19 @@ package drives
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ItemItemsItemWorkbookFunctionsMicrosoftGraphVlookupVlookupPostRequestBody 
 type ItemItemsItemWorkbookFunctionsMicrosoftGraphVlookupVlookupPostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The colIndexNum property
-    colIndexNum iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable
-    // The lookupValue property
-    lookupValue iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable
-    // The rangeLookup property
-    rangeLookup iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable
-    // The tableArray property
-    tableArray iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewItemItemsItemWorkbookFunctionsMicrosoftGraphVlookupVlookupPostRequestBody instantiates a new ItemItemsItemWorkbookFunctionsMicrosoftGraphVlookupVlookupPostRequestBody and sets the default values.
 func NewItemItemsItemWorkbookFunctionsMicrosoftGraphVlookupVlookupPostRequestBody()(*ItemItemsItemWorkbookFunctionsMicrosoftGraphVlookupVlookupPostRequestBody) {
     m := &ItemItemsItemWorkbookFunctionsMicrosoftGraphVlookupVlookupPostRequestBody{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -31,11 +25,30 @@ func CreateItemItemsItemWorkbookFunctionsMicrosoftGraphVlookupVlookupPostRequest
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphVlookupVlookupPostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphVlookupVlookupPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetColIndexNum gets the colIndexNum property value. The colIndexNum property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphVlookupVlookupPostRequestBody) GetColIndexNum()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
-    return m.colIndexNum
+    val, err := m.GetBackingStore().Get("colIndexNum")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphVlookupVlookupPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -84,15 +97,36 @@ func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphVlookupVlookupPostRequestBo
 }
 // GetLookupValue gets the lookupValue property value. The lookupValue property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphVlookupVlookupPostRequestBody) GetLookupValue()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
-    return m.lookupValue
+    val, err := m.GetBackingStore().Get("lookupValue")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    }
+    return nil
 }
 // GetRangeLookup gets the rangeLookup property value. The rangeLookup property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphVlookupVlookupPostRequestBody) GetRangeLookup()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
-    return m.rangeLookup
+    val, err := m.GetBackingStore().Get("rangeLookup")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    }
+    return nil
 }
 // GetTableArray gets the tableArray property value. The tableArray property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphVlookupVlookupPostRequestBody) GetTableArray()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
-    return m.tableArray
+    val, err := m.GetBackingStore().Get("tableArray")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphVlookupVlookupPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -130,21 +164,56 @@ func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphVlookupVlookupPostRequestBo
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphVlookupVlookupPostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphVlookupVlookupPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetColIndexNum sets the colIndexNum property value. The colIndexNum property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphVlookupVlookupPostRequestBody) SetColIndexNum(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
-    m.colIndexNum = value
+    err := m.GetBackingStore().Set("colIndexNum", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLookupValue sets the lookupValue property value. The lookupValue property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphVlookupVlookupPostRequestBody) SetLookupValue(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
-    m.lookupValue = value
+    err := m.GetBackingStore().Set("lookupValue", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRangeLookup sets the rangeLookup property value. The rangeLookup property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphVlookupVlookupPostRequestBody) SetRangeLookup(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
-    m.rangeLookup = value
+    err := m.GetBackingStore().Set("rangeLookup", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTableArray sets the tableArray property value. The tableArray property
 func (m *ItemItemsItemWorkbookFunctionsMicrosoftGraphVlookupVlookupPostRequestBody) SetTableArray(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
-    m.tableArray = value
+    err := m.GetBackingStore().Set("tableArray", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemItemsItemWorkbookFunctionsMicrosoftGraphVlookupVlookupPostRequestBodyable 
+type ItemItemsItemWorkbookFunctionsMicrosoftGraphVlookupVlookupPostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetColIndexNum()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    GetLookupValue()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    GetRangeLookup()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    GetTableArray()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetColIndexNum(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
+    SetLookupValue(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
+    SetRangeLookup(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
+    SetTableArray(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
 }

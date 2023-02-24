@@ -7,8 +7,6 @@ import (
 // PresenceCollectionResponse 
 type PresenceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Presenceable
 }
 // NewPresenceCollectionResponse instantiates a new PresenceCollectionResponse and sets the default values.
 func NewPresenceCollectionResponse()(*PresenceCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *PresenceCollectionResponse) GetFieldDeserializers()(map[string]func(i87
 }
 // GetValue gets the value property value. The value property
 func (m *PresenceCollectionResponse) GetValue()([]Presenceable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Presenceable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PresenceCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *PresenceCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetValue sets the value property value. The value property
 func (m *PresenceCollectionResponse) SetValue(value []Presenceable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PresenceCollectionResponseable 
+type PresenceCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Presenceable)
+    SetValue(value []Presenceable)()
 }

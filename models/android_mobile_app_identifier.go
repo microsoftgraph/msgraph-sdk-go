@@ -7,8 +7,6 @@ import (
 // AndroidMobileAppIdentifier 
 type AndroidMobileAppIdentifier struct {
     MobileAppIdentifier
-    // The identifier for an app, as specified in the play store.
-    packageId *string
 }
 // NewAndroidMobileAppIdentifier instantiates a new AndroidMobileAppIdentifier and sets the default values.
 func NewAndroidMobileAppIdentifier()(*AndroidMobileAppIdentifier) {
@@ -40,7 +38,14 @@ func (m *AndroidMobileAppIdentifier) GetFieldDeserializers()(map[string]func(i87
 }
 // GetPackageId gets the packageId property value. The identifier for an app, as specified in the play store.
 func (m *AndroidMobileAppIdentifier) GetPackageId()(*string) {
-    return m.packageId
+    val, err := m.GetBackingStore().Get("packageId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidMobileAppIdentifier) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *AndroidMobileAppIdentifier) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetPackageId sets the packageId property value. The identifier for an app, as specified in the play store.
 func (m *AndroidMobileAppIdentifier) SetPackageId(value *string)() {
-    m.packageId = value
+    err := m.GetBackingStore().Set("packageId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidMobileAppIdentifierable 
+type AndroidMobileAppIdentifierable interface {
+    MobileAppIdentifierable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetPackageId()(*string)
+    SetPackageId(value *string)()
 }

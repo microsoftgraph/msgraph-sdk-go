@@ -8,48 +8,8 @@ import (
 // ServicePrincipalRiskDetection 
 type ServicePrincipalRiskDetection struct {
     Entity
-    // Indicates the activity type the detected risk is linked to.  The possible values are: signin, servicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: servicePrincipal.
-    activity *ActivityType
-    // Date and time when the risky activity occurred. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    activityDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Additional information associated with the risk detection. This string value is represented as a JSON object with the quotations escaped.
-    additionalInfo *string
-    // The unique identifier for the associated application.
-    appId *string
-    // Correlation ID of the sign-in activity associated with the risk detection. This property is null if the risk detection is not associated with a sign-in activity.
-    correlationId *string
-    // Date and time when the risk was detected. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    detectedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Timing of the detected risk , whether real-time or offline. The possible values are: notDefined, realtime, nearRealtime, offline, unknownFutureValue.
-    detectionTimingType *RiskDetectionTimingType
-    // Provides the IP address of the client from where the risk occurred.
-    ipAddress *string
-    // The unique identifier for the key credential associated with the risk detection.
-    keyIds []string
-    // Date and time when the risk detection was last updated.
-    lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Location from where the sign-in was initiated.
-    location SignInLocationable
-    // Request identifier of the sign-in activity associated with the risk detection. This property is null if the risk detection is not associated with a sign-in activity. Supports $filter (eq).
-    requestId *string
-    // Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: none, hidden, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
-    riskDetail *RiskDetail
-    // The type of risk event detected. The possible values are: investigationsThreatIntelligence, generic, adminConfirmedServicePrincipalCompromised, suspiciousSignins, leakedCredentials, anomalousServicePrincipalActivity, maliciousApplication, suspiciousApplication.
-    riskEventType *string
-    // Level of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: low, medium, high, hidden, none.
-    riskLevel *RiskLevel
-    // The state of a detected risky service principal or sign-in activity. The possible values are: none, dismissed, atRisk, confirmedCompromised.
-    riskState *RiskState
-    // The display name for the service principal.
-    servicePrincipalDisplayName *string
-    // The unique identifier for the service principal. Supports $filter (eq).
-    servicePrincipalId *string
-    // Source of the risk detection. For example, identityProtection.
-    source *string
-    // Indicates the type of token issuer for the detected sign-in risk. The possible values are: AzureAD.
-    tokenIssuerType *TokenIssuerType
 }
-// NewServicePrincipalRiskDetection instantiates a new ServicePrincipalRiskDetection and sets the default values.
+// NewServicePrincipalRiskDetection instantiates a new servicePrincipalRiskDetection and sets the default values.
 func NewServicePrincipalRiskDetection()(*ServicePrincipalRiskDetection) {
     m := &ServicePrincipalRiskDetection{
         Entity: *NewEntity(),
@@ -62,31 +22,80 @@ func CreateServicePrincipalRiskDetectionFromDiscriminatorValue(parseNode i878a80
 }
 // GetActivity gets the activity property value. Indicates the activity type the detected risk is linked to.  The possible values are: signin, servicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: servicePrincipal.
 func (m *ServicePrincipalRiskDetection) GetActivity()(*ActivityType) {
-    return m.activity
+    val, err := m.GetBackingStore().Get("activity")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ActivityType)
+    }
+    return nil
 }
 // GetActivityDateTime gets the activityDateTime property value. Date and time when the risky activity occurred. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *ServicePrincipalRiskDetection) GetActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.activityDateTime
+    val, err := m.GetBackingStore().Get("activityDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetAdditionalInfo gets the additionalInfo property value. Additional information associated with the risk detection. This string value is represented as a JSON object with the quotations escaped.
 func (m *ServicePrincipalRiskDetection) GetAdditionalInfo()(*string) {
-    return m.additionalInfo
+    val, err := m.GetBackingStore().Get("additionalInfo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAppId gets the appId property value. The unique identifier for the associated application.
 func (m *ServicePrincipalRiskDetection) GetAppId()(*string) {
-    return m.appId
+    val, err := m.GetBackingStore().Get("appId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCorrelationId gets the correlationId property value. Correlation ID of the sign-in activity associated with the risk detection. This property is null if the risk detection is not associated with a sign-in activity.
 func (m *ServicePrincipalRiskDetection) GetCorrelationId()(*string) {
-    return m.correlationId
+    val, err := m.GetBackingStore().Get("correlationId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDetectedDateTime gets the detectedDateTime property value. Date and time when the risk was detected. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *ServicePrincipalRiskDetection) GetDetectedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.detectedDateTime
+    val, err := m.GetBackingStore().Get("detectedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetDetectionTimingType gets the detectionTimingType property value. Timing of the detected risk , whether real-time or offline. The possible values are: notDefined, realtime, nearRealtime, offline, unknownFutureValue.
 func (m *ServicePrincipalRiskDetection) GetDetectionTimingType()(*RiskDetectionTimingType) {
-    return m.detectionTimingType
+    val, err := m.GetBackingStore().Get("detectionTimingType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*RiskDetectionTimingType)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ServicePrincipalRiskDetection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -299,55 +308,146 @@ func (m *ServicePrincipalRiskDetection) GetFieldDeserializers()(map[string]func(
 }
 // GetIpAddress gets the ipAddress property value. Provides the IP address of the client from where the risk occurred.
 func (m *ServicePrincipalRiskDetection) GetIpAddress()(*string) {
-    return m.ipAddress
+    val, err := m.GetBackingStore().Get("ipAddress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetKeyIds gets the keyIds property value. The unique identifier for the key credential associated with the risk detection.
 func (m *ServicePrincipalRiskDetection) GetKeyIds()([]string) {
-    return m.keyIds
+    val, err := m.GetBackingStore().Get("keyIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Date and time when the risk detection was last updated.
 func (m *ServicePrincipalRiskDetection) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastUpdatedDateTime
+    val, err := m.GetBackingStore().Get("lastUpdatedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetLocation gets the location property value. Location from where the sign-in was initiated.
 func (m *ServicePrincipalRiskDetection) GetLocation()(SignInLocationable) {
-    return m.location
+    val, err := m.GetBackingStore().Get("location")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SignInLocationable)
+    }
+    return nil
 }
 // GetRequestId gets the requestId property value. Request identifier of the sign-in activity associated with the risk detection. This property is null if the risk detection is not associated with a sign-in activity. Supports $filter (eq).
 func (m *ServicePrincipalRiskDetection) GetRequestId()(*string) {
-    return m.requestId
+    val, err := m.GetBackingStore().Get("requestId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRiskDetail gets the riskDetail property value. Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: none, hidden, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
 func (m *ServicePrincipalRiskDetection) GetRiskDetail()(*RiskDetail) {
-    return m.riskDetail
+    val, err := m.GetBackingStore().Get("riskDetail")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*RiskDetail)
+    }
+    return nil
 }
 // GetRiskEventType gets the riskEventType property value. The type of risk event detected. The possible values are: investigationsThreatIntelligence, generic, adminConfirmedServicePrincipalCompromised, suspiciousSignins, leakedCredentials, anomalousServicePrincipalActivity, maliciousApplication, suspiciousApplication.
 func (m *ServicePrincipalRiskDetection) GetRiskEventType()(*string) {
-    return m.riskEventType
+    val, err := m.GetBackingStore().Get("riskEventType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRiskLevel gets the riskLevel property value. Level of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: low, medium, high, hidden, none.
 func (m *ServicePrincipalRiskDetection) GetRiskLevel()(*RiskLevel) {
-    return m.riskLevel
+    val, err := m.GetBackingStore().Get("riskLevel")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*RiskLevel)
+    }
+    return nil
 }
 // GetRiskState gets the riskState property value. The state of a detected risky service principal or sign-in activity. The possible values are: none, dismissed, atRisk, confirmedCompromised.
 func (m *ServicePrincipalRiskDetection) GetRiskState()(*RiskState) {
-    return m.riskState
+    val, err := m.GetBackingStore().Get("riskState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*RiskState)
+    }
+    return nil
 }
 // GetServicePrincipalDisplayName gets the servicePrincipalDisplayName property value. The display name for the service principal.
 func (m *ServicePrincipalRiskDetection) GetServicePrincipalDisplayName()(*string) {
-    return m.servicePrincipalDisplayName
+    val, err := m.GetBackingStore().Get("servicePrincipalDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetServicePrincipalId gets the servicePrincipalId property value. The unique identifier for the service principal. Supports $filter (eq).
 func (m *ServicePrincipalRiskDetection) GetServicePrincipalId()(*string) {
-    return m.servicePrincipalId
+    val, err := m.GetBackingStore().Get("servicePrincipalId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSource gets the source property value. Source of the risk detection. For example, identityProtection.
 func (m *ServicePrincipalRiskDetection) GetSource()(*string) {
-    return m.source
+    val, err := m.GetBackingStore().Get("source")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTokenIssuerType gets the tokenIssuerType property value. Indicates the type of token issuer for the detected sign-in risk. The possible values are: AzureAD.
 func (m *ServicePrincipalRiskDetection) GetTokenIssuerType()(*TokenIssuerType) {
-    return m.tokenIssuerType
+    val, err := m.GetBackingStore().Get("tokenIssuerType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*TokenIssuerType)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ServicePrincipalRiskDetection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -485,81 +585,186 @@ func (m *ServicePrincipalRiskDetection) Serialize(writer i878a80d2330e89d2689638
 }
 // SetActivity sets the activity property value. Indicates the activity type the detected risk is linked to.  The possible values are: signin, servicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: servicePrincipal.
 func (m *ServicePrincipalRiskDetection) SetActivity(value *ActivityType)() {
-    m.activity = value
+    err := m.GetBackingStore().Set("activity", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetActivityDateTime sets the activityDateTime property value. Date and time when the risky activity occurred. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *ServicePrincipalRiskDetection) SetActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.activityDateTime = value
+    err := m.GetBackingStore().Set("activityDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAdditionalInfo sets the additionalInfo property value. Additional information associated with the risk detection. This string value is represented as a JSON object with the quotations escaped.
 func (m *ServicePrincipalRiskDetection) SetAdditionalInfo(value *string)() {
-    m.additionalInfo = value
+    err := m.GetBackingStore().Set("additionalInfo", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppId sets the appId property value. The unique identifier for the associated application.
 func (m *ServicePrincipalRiskDetection) SetAppId(value *string)() {
-    m.appId = value
+    err := m.GetBackingStore().Set("appId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCorrelationId sets the correlationId property value. Correlation ID of the sign-in activity associated with the risk detection. This property is null if the risk detection is not associated with a sign-in activity.
 func (m *ServicePrincipalRiskDetection) SetCorrelationId(value *string)() {
-    m.correlationId = value
+    err := m.GetBackingStore().Set("correlationId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDetectedDateTime sets the detectedDateTime property value. Date and time when the risk was detected. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *ServicePrincipalRiskDetection) SetDetectedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.detectedDateTime = value
+    err := m.GetBackingStore().Set("detectedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDetectionTimingType sets the detectionTimingType property value. Timing of the detected risk , whether real-time or offline. The possible values are: notDefined, realtime, nearRealtime, offline, unknownFutureValue.
 func (m *ServicePrincipalRiskDetection) SetDetectionTimingType(value *RiskDetectionTimingType)() {
-    m.detectionTimingType = value
+    err := m.GetBackingStore().Set("detectionTimingType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIpAddress sets the ipAddress property value. Provides the IP address of the client from where the risk occurred.
 func (m *ServicePrincipalRiskDetection) SetIpAddress(value *string)() {
-    m.ipAddress = value
+    err := m.GetBackingStore().Set("ipAddress", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetKeyIds sets the keyIds property value. The unique identifier for the key credential associated with the risk detection.
 func (m *ServicePrincipalRiskDetection) SetKeyIds(value []string)() {
-    m.keyIds = value
+    err := m.GetBackingStore().Set("keyIds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. Date and time when the risk detection was last updated.
 func (m *ServicePrincipalRiskDetection) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastUpdatedDateTime = value
+    err := m.GetBackingStore().Set("lastUpdatedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocation sets the location property value. Location from where the sign-in was initiated.
 func (m *ServicePrincipalRiskDetection) SetLocation(value SignInLocationable)() {
-    m.location = value
+    err := m.GetBackingStore().Set("location", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRequestId sets the requestId property value. Request identifier of the sign-in activity associated with the risk detection. This property is null if the risk detection is not associated with a sign-in activity. Supports $filter (eq).
 func (m *ServicePrincipalRiskDetection) SetRequestId(value *string)() {
-    m.requestId = value
+    err := m.GetBackingStore().Set("requestId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRiskDetail sets the riskDetail property value. Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: none, hidden, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
 func (m *ServicePrincipalRiskDetection) SetRiskDetail(value *RiskDetail)() {
-    m.riskDetail = value
+    err := m.GetBackingStore().Set("riskDetail", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRiskEventType sets the riskEventType property value. The type of risk event detected. The possible values are: investigationsThreatIntelligence, generic, adminConfirmedServicePrincipalCompromised, suspiciousSignins, leakedCredentials, anomalousServicePrincipalActivity, maliciousApplication, suspiciousApplication.
 func (m *ServicePrincipalRiskDetection) SetRiskEventType(value *string)() {
-    m.riskEventType = value
+    err := m.GetBackingStore().Set("riskEventType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRiskLevel sets the riskLevel property value. Level of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: low, medium, high, hidden, none.
 func (m *ServicePrincipalRiskDetection) SetRiskLevel(value *RiskLevel)() {
-    m.riskLevel = value
+    err := m.GetBackingStore().Set("riskLevel", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRiskState sets the riskState property value. The state of a detected risky service principal or sign-in activity. The possible values are: none, dismissed, atRisk, confirmedCompromised.
 func (m *ServicePrincipalRiskDetection) SetRiskState(value *RiskState)() {
-    m.riskState = value
+    err := m.GetBackingStore().Set("riskState", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetServicePrincipalDisplayName sets the servicePrincipalDisplayName property value. The display name for the service principal.
 func (m *ServicePrincipalRiskDetection) SetServicePrincipalDisplayName(value *string)() {
-    m.servicePrincipalDisplayName = value
+    err := m.GetBackingStore().Set("servicePrincipalDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetServicePrincipalId sets the servicePrincipalId property value. The unique identifier for the service principal. Supports $filter (eq).
 func (m *ServicePrincipalRiskDetection) SetServicePrincipalId(value *string)() {
-    m.servicePrincipalId = value
+    err := m.GetBackingStore().Set("servicePrincipalId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSource sets the source property value. Source of the risk detection. For example, identityProtection.
 func (m *ServicePrincipalRiskDetection) SetSource(value *string)() {
-    m.source = value
+    err := m.GetBackingStore().Set("source", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTokenIssuerType sets the tokenIssuerType property value. Indicates the type of token issuer for the detected sign-in risk. The possible values are: AzureAD.
 func (m *ServicePrincipalRiskDetection) SetTokenIssuerType(value *TokenIssuerType)() {
-    m.tokenIssuerType = value
+    err := m.GetBackingStore().Set("tokenIssuerType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ServicePrincipalRiskDetectionable 
+type ServicePrincipalRiskDetectionable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetActivity()(*ActivityType)
+    GetActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetAdditionalInfo()(*string)
+    GetAppId()(*string)
+    GetCorrelationId()(*string)
+    GetDetectedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDetectionTimingType()(*RiskDetectionTimingType)
+    GetIpAddress()(*string)
+    GetKeyIds()([]string)
+    GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetLocation()(SignInLocationable)
+    GetRequestId()(*string)
+    GetRiskDetail()(*RiskDetail)
+    GetRiskEventType()(*string)
+    GetRiskLevel()(*RiskLevel)
+    GetRiskState()(*RiskState)
+    GetServicePrincipalDisplayName()(*string)
+    GetServicePrincipalId()(*string)
+    GetSource()(*string)
+    GetTokenIssuerType()(*TokenIssuerType)
+    SetActivity(value *ActivityType)()
+    SetActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetAdditionalInfo(value *string)()
+    SetAppId(value *string)()
+    SetCorrelationId(value *string)()
+    SetDetectedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDetectionTimingType(value *RiskDetectionTimingType)()
+    SetIpAddress(value *string)()
+    SetKeyIds(value []string)()
+    SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetLocation(value SignInLocationable)()
+    SetRequestId(value *string)()
+    SetRiskDetail(value *RiskDetail)()
+    SetRiskEventType(value *string)()
+    SetRiskLevel(value *RiskLevel)()
+    SetRiskState(value *RiskState)()
+    SetServicePrincipalDisplayName(value *string)()
+    SetServicePrincipalId(value *string)()
+    SetSource(value *string)()
+    SetTokenIssuerType(value *TokenIssuerType)()
 }

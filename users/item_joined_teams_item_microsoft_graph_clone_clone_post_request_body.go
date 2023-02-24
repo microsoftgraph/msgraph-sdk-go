@@ -3,29 +3,19 @@ package users
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ItemJoinedTeamsItemMicrosoftGraphCloneClonePostRequestBody 
 type ItemJoinedTeamsItemMicrosoftGraphCloneClonePostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The classification property
-    classification *string
-    // The description property
-    description *string
-    // The displayName property
-    displayName *string
-    // The mailNickname property
-    mailNickname *string
-    // The partsToClone property
-    partsToClone *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ClonableTeamParts
-    // The visibility property
-    visibility *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamVisibilityType
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewItemJoinedTeamsItemMicrosoftGraphCloneClonePostRequestBody instantiates a new ItemJoinedTeamsItemMicrosoftGraphCloneClonePostRequestBody and sets the default values.
 func NewItemJoinedTeamsItemMicrosoftGraphCloneClonePostRequestBody()(*ItemJoinedTeamsItemMicrosoftGraphCloneClonePostRequestBody) {
     m := &ItemJoinedTeamsItemMicrosoftGraphCloneClonePostRequestBody{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -35,19 +25,52 @@ func CreateItemJoinedTeamsItemMicrosoftGraphCloneClonePostRequestBodyFromDiscrim
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemJoinedTeamsItemMicrosoftGraphCloneClonePostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ItemJoinedTeamsItemMicrosoftGraphCloneClonePostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetClassification gets the classification property value. The classification property
 func (m *ItemJoinedTeamsItemMicrosoftGraphCloneClonePostRequestBody) GetClassification()(*string) {
-    return m.classification
+    val, err := m.GetBackingStore().Get("classification")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDescription gets the description property value. The description property
 func (m *ItemJoinedTeamsItemMicrosoftGraphCloneClonePostRequestBody) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *ItemJoinedTeamsItemMicrosoftGraphCloneClonePostRequestBody) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemJoinedTeamsItemMicrosoftGraphCloneClonePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -116,15 +139,36 @@ func (m *ItemJoinedTeamsItemMicrosoftGraphCloneClonePostRequestBody) GetFieldDes
 }
 // GetMailNickname gets the mailNickname property value. The mailNickname property
 func (m *ItemJoinedTeamsItemMicrosoftGraphCloneClonePostRequestBody) GetMailNickname()(*string) {
-    return m.mailNickname
+    val, err := m.GetBackingStore().Get("mailNickname")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPartsToClone gets the partsToClone property value. The partsToClone property
 func (m *ItemJoinedTeamsItemMicrosoftGraphCloneClonePostRequestBody) GetPartsToClone()(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ClonableTeamParts) {
-    return m.partsToClone
+    val, err := m.GetBackingStore().Get("partsToClone")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ClonableTeamParts)
+    }
+    return nil
 }
 // GetVisibility gets the visibility property value. The visibility property
 func (m *ItemJoinedTeamsItemMicrosoftGraphCloneClonePostRequestBody) GetVisibility()(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamVisibilityType) {
-    return m.visibility
+    val, err := m.GetBackingStore().Get("visibility")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamVisibilityType)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemJoinedTeamsItemMicrosoftGraphCloneClonePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -176,29 +220,74 @@ func (m *ItemJoinedTeamsItemMicrosoftGraphCloneClonePostRequestBody) Serialize(w
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemJoinedTeamsItemMicrosoftGraphCloneClonePostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ItemJoinedTeamsItemMicrosoftGraphCloneClonePostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetClassification sets the classification property value. The classification property
 func (m *ItemJoinedTeamsItemMicrosoftGraphCloneClonePostRequestBody) SetClassification(value *string)() {
-    m.classification = value
+    err := m.GetBackingStore().Set("classification", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. The description property
 func (m *ItemJoinedTeamsItemMicrosoftGraphCloneClonePostRequestBody) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *ItemJoinedTeamsItemMicrosoftGraphCloneClonePostRequestBody) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMailNickname sets the mailNickname property value. The mailNickname property
 func (m *ItemJoinedTeamsItemMicrosoftGraphCloneClonePostRequestBody) SetMailNickname(value *string)() {
-    m.mailNickname = value
+    err := m.GetBackingStore().Set("mailNickname", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPartsToClone sets the partsToClone property value. The partsToClone property
 func (m *ItemJoinedTeamsItemMicrosoftGraphCloneClonePostRequestBody) SetPartsToClone(value *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ClonableTeamParts)() {
-    m.partsToClone = value
+    err := m.GetBackingStore().Set("partsToClone", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVisibility sets the visibility property value. The visibility property
 func (m *ItemJoinedTeamsItemMicrosoftGraphCloneClonePostRequestBody) SetVisibility(value *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamVisibilityType)() {
-    m.visibility = value
+    err := m.GetBackingStore().Set("visibility", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemJoinedTeamsItemMicrosoftGraphCloneClonePostRequestBodyable 
+type ItemJoinedTeamsItemMicrosoftGraphCloneClonePostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetClassification()(*string)
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetMailNickname()(*string)
+    GetPartsToClone()(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ClonableTeamParts)
+    GetVisibility()(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamVisibilityType)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetClassification(value *string)()
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetMailNickname(value *string)()
+    SetPartsToClone(value *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ClonableTeamParts)()
+    SetVisibility(value *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamVisibilityType)()
 }

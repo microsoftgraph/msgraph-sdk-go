@@ -3,33 +3,19 @@ package communications
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // CallsItemMicrosoftGraphRecordResponseRecordResponsePostRequestBody 
 type CallsItemMicrosoftGraphRecordResponseRecordResponsePostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The bargeInAllowed property
-    bargeInAllowed *bool
-    // The clientContext property
-    clientContext *string
-    // The initialSilenceTimeoutInSeconds property
-    initialSilenceTimeoutInSeconds *int32
-    // The maxRecordDurationInSeconds property
-    maxRecordDurationInSeconds *int32
-    // The maxSilenceTimeoutInSeconds property
-    maxSilenceTimeoutInSeconds *int32
-    // The playBeep property
-    playBeep *bool
-    // The prompts property
-    prompts []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Promptable
-    // The stopTones property
-    stopTones []string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewCallsItemMicrosoftGraphRecordResponseRecordResponsePostRequestBody instantiates a new CallsItemMicrosoftGraphRecordResponseRecordResponsePostRequestBody and sets the default values.
 func NewCallsItemMicrosoftGraphRecordResponseRecordResponsePostRequestBody()(*CallsItemMicrosoftGraphRecordResponseRecordResponsePostRequestBody) {
     m := &CallsItemMicrosoftGraphRecordResponseRecordResponsePostRequestBody{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -39,15 +25,41 @@ func CreateCallsItemMicrosoftGraphRecordResponseRecordResponsePostRequestBodyFro
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CallsItemMicrosoftGraphRecordResponseRecordResponsePostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *CallsItemMicrosoftGraphRecordResponseRecordResponsePostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetBargeInAllowed gets the bargeInAllowed property value. The bargeInAllowed property
 func (m *CallsItemMicrosoftGraphRecordResponseRecordResponsePostRequestBody) GetBargeInAllowed()(*bool) {
-    return m.bargeInAllowed
+    val, err := m.GetBackingStore().Get("bargeInAllowed")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetClientContext gets the clientContext property value. The clientContext property
 func (m *CallsItemMicrosoftGraphRecordResponseRecordResponsePostRequestBody) GetClientContext()(*string) {
-    return m.clientContext
+    val, err := m.GetBackingStore().Get("clientContext")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CallsItemMicrosoftGraphRecordResponseRecordResponsePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -144,27 +156,69 @@ func (m *CallsItemMicrosoftGraphRecordResponseRecordResponsePostRequestBody) Get
 }
 // GetInitialSilenceTimeoutInSeconds gets the initialSilenceTimeoutInSeconds property value. The initialSilenceTimeoutInSeconds property
 func (m *CallsItemMicrosoftGraphRecordResponseRecordResponsePostRequestBody) GetInitialSilenceTimeoutInSeconds()(*int32) {
-    return m.initialSilenceTimeoutInSeconds
+    val, err := m.GetBackingStore().Get("initialSilenceTimeoutInSeconds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetMaxRecordDurationInSeconds gets the maxRecordDurationInSeconds property value. The maxRecordDurationInSeconds property
 func (m *CallsItemMicrosoftGraphRecordResponseRecordResponsePostRequestBody) GetMaxRecordDurationInSeconds()(*int32) {
-    return m.maxRecordDurationInSeconds
+    val, err := m.GetBackingStore().Get("maxRecordDurationInSeconds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetMaxSilenceTimeoutInSeconds gets the maxSilenceTimeoutInSeconds property value. The maxSilenceTimeoutInSeconds property
 func (m *CallsItemMicrosoftGraphRecordResponseRecordResponsePostRequestBody) GetMaxSilenceTimeoutInSeconds()(*int32) {
-    return m.maxSilenceTimeoutInSeconds
+    val, err := m.GetBackingStore().Get("maxSilenceTimeoutInSeconds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetPlayBeep gets the playBeep property value. The playBeep property
 func (m *CallsItemMicrosoftGraphRecordResponseRecordResponsePostRequestBody) GetPlayBeep()(*bool) {
-    return m.playBeep
+    val, err := m.GetBackingStore().Get("playBeep")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPrompts gets the prompts property value. The prompts property
 func (m *CallsItemMicrosoftGraphRecordResponseRecordResponsePostRequestBody) GetPrompts()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Promptable) {
-    return m.prompts
+    val, err := m.GetBackingStore().Get("prompts")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Promptable)
+    }
+    return nil
 }
 // GetStopTones gets the stopTones property value. The stopTones property
 func (m *CallsItemMicrosoftGraphRecordResponseRecordResponsePostRequestBody) GetStopTones()([]string) {
-    return m.stopTones
+    val, err := m.GetBackingStore().Get("stopTones")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CallsItemMicrosoftGraphRecordResponseRecordResponsePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -230,37 +284,92 @@ func (m *CallsItemMicrosoftGraphRecordResponseRecordResponsePostRequestBody) Ser
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CallsItemMicrosoftGraphRecordResponseRecordResponsePostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *CallsItemMicrosoftGraphRecordResponseRecordResponsePostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetBargeInAllowed sets the bargeInAllowed property value. The bargeInAllowed property
 func (m *CallsItemMicrosoftGraphRecordResponseRecordResponsePostRequestBody) SetBargeInAllowed(value *bool)() {
-    m.bargeInAllowed = value
+    err := m.GetBackingStore().Set("bargeInAllowed", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetClientContext sets the clientContext property value. The clientContext property
 func (m *CallsItemMicrosoftGraphRecordResponseRecordResponsePostRequestBody) SetClientContext(value *string)() {
-    m.clientContext = value
+    err := m.GetBackingStore().Set("clientContext", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInitialSilenceTimeoutInSeconds sets the initialSilenceTimeoutInSeconds property value. The initialSilenceTimeoutInSeconds property
 func (m *CallsItemMicrosoftGraphRecordResponseRecordResponsePostRequestBody) SetInitialSilenceTimeoutInSeconds(value *int32)() {
-    m.initialSilenceTimeoutInSeconds = value
+    err := m.GetBackingStore().Set("initialSilenceTimeoutInSeconds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMaxRecordDurationInSeconds sets the maxRecordDurationInSeconds property value. The maxRecordDurationInSeconds property
 func (m *CallsItemMicrosoftGraphRecordResponseRecordResponsePostRequestBody) SetMaxRecordDurationInSeconds(value *int32)() {
-    m.maxRecordDurationInSeconds = value
+    err := m.GetBackingStore().Set("maxRecordDurationInSeconds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMaxSilenceTimeoutInSeconds sets the maxSilenceTimeoutInSeconds property value. The maxSilenceTimeoutInSeconds property
 func (m *CallsItemMicrosoftGraphRecordResponseRecordResponsePostRequestBody) SetMaxSilenceTimeoutInSeconds(value *int32)() {
-    m.maxSilenceTimeoutInSeconds = value
+    err := m.GetBackingStore().Set("maxSilenceTimeoutInSeconds", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPlayBeep sets the playBeep property value. The playBeep property
 func (m *CallsItemMicrosoftGraphRecordResponseRecordResponsePostRequestBody) SetPlayBeep(value *bool)() {
-    m.playBeep = value
+    err := m.GetBackingStore().Set("playBeep", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPrompts sets the prompts property value. The prompts property
 func (m *CallsItemMicrosoftGraphRecordResponseRecordResponsePostRequestBody) SetPrompts(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Promptable)() {
-    m.prompts = value
+    err := m.GetBackingStore().Set("prompts", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStopTones sets the stopTones property value. The stopTones property
 func (m *CallsItemMicrosoftGraphRecordResponseRecordResponsePostRequestBody) SetStopTones(value []string)() {
-    m.stopTones = value
+    err := m.GetBackingStore().Set("stopTones", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CallsItemMicrosoftGraphRecordResponseRecordResponsePostRequestBodyable 
+type CallsItemMicrosoftGraphRecordResponseRecordResponsePostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetBargeInAllowed()(*bool)
+    GetClientContext()(*string)
+    GetInitialSilenceTimeoutInSeconds()(*int32)
+    GetMaxRecordDurationInSeconds()(*int32)
+    GetMaxSilenceTimeoutInSeconds()(*int32)
+    GetPlayBeep()(*bool)
+    GetPrompts()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Promptable)
+    GetStopTones()([]string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetBargeInAllowed(value *bool)()
+    SetClientContext(value *string)()
+    SetInitialSilenceTimeoutInSeconds(value *int32)()
+    SetMaxRecordDurationInSeconds(value *int32)()
+    SetMaxSilenceTimeoutInSeconds(value *int32)()
+    SetPlayBeep(value *bool)()
+    SetPrompts(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Promptable)()
+    SetStopTones(value []string)()
 }

@@ -3,23 +3,19 @@ package drives
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ItemItemsItemWorkbookTablesItemSortMicrosoftGraphApplyApplyPostRequestBody 
 type ItemItemsItemWorkbookTablesItemSortMicrosoftGraphApplyApplyPostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The fields property
-    fields []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookSortFieldable
-    // The matchCase property
-    matchCase *bool
-    // The method property
-    method *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewItemItemsItemWorkbookTablesItemSortMicrosoftGraphApplyApplyPostRequestBody instantiates a new ItemItemsItemWorkbookTablesItemSortMicrosoftGraphApplyApplyPostRequestBody and sets the default values.
 func NewItemItemsItemWorkbookTablesItemSortMicrosoftGraphApplyApplyPostRequestBody()(*ItemItemsItemWorkbookTablesItemSortMicrosoftGraphApplyApplyPostRequestBody) {
     m := &ItemItemsItemWorkbookTablesItemSortMicrosoftGraphApplyApplyPostRequestBody{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -29,7 +25,19 @@ func CreateItemItemsItemWorkbookTablesItemSortMicrosoftGraphApplyApplyPostReques
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemItemsItemWorkbookTablesItemSortMicrosoftGraphApplyApplyPostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ItemItemsItemWorkbookTablesItemSortMicrosoftGraphApplyApplyPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemItemsItemWorkbookTablesItemSortMicrosoftGraphApplyApplyPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,15 +80,36 @@ func (m *ItemItemsItemWorkbookTablesItemSortMicrosoftGraphApplyApplyPostRequestB
 }
 // GetFields gets the fields property value. The fields property
 func (m *ItemItemsItemWorkbookTablesItemSortMicrosoftGraphApplyApplyPostRequestBody) GetFields()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookSortFieldable) {
-    return m.fields
+    val, err := m.GetBackingStore().Get("fields")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookSortFieldable)
+    }
+    return nil
 }
 // GetMatchCase gets the matchCase property value. The matchCase property
 func (m *ItemItemsItemWorkbookTablesItemSortMicrosoftGraphApplyApplyPostRequestBody) GetMatchCase()(*bool) {
-    return m.matchCase
+    val, err := m.GetBackingStore().Get("matchCase")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetMethod gets the method property value. The method property
 func (m *ItemItemsItemWorkbookTablesItemSortMicrosoftGraphApplyApplyPostRequestBody) GetMethod()(*string) {
-    return m.method
+    val, err := m.GetBackingStore().Get("method")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemItemsItemWorkbookTablesItemSortMicrosoftGraphApplyApplyPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -116,17 +145,47 @@ func (m *ItemItemsItemWorkbookTablesItemSortMicrosoftGraphApplyApplyPostRequestB
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemItemsItemWorkbookTablesItemSortMicrosoftGraphApplyApplyPostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ItemItemsItemWorkbookTablesItemSortMicrosoftGraphApplyApplyPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetFields sets the fields property value. The fields property
 func (m *ItemItemsItemWorkbookTablesItemSortMicrosoftGraphApplyApplyPostRequestBody) SetFields(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookSortFieldable)() {
-    m.fields = value
+    err := m.GetBackingStore().Set("fields", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMatchCase sets the matchCase property value. The matchCase property
 func (m *ItemItemsItemWorkbookTablesItemSortMicrosoftGraphApplyApplyPostRequestBody) SetMatchCase(value *bool)() {
-    m.matchCase = value
+    err := m.GetBackingStore().Set("matchCase", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMethod sets the method property value. The method property
 func (m *ItemItemsItemWorkbookTablesItemSortMicrosoftGraphApplyApplyPostRequestBody) SetMethod(value *string)() {
-    m.method = value
+    err := m.GetBackingStore().Set("method", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemItemsItemWorkbookTablesItemSortMicrosoftGraphApplyApplyPostRequestBodyable 
+type ItemItemsItemWorkbookTablesItemSortMicrosoftGraphApplyApplyPostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetFields()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookSortFieldable)
+    GetMatchCase()(*bool)
+    GetMethod()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetFields(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookSortFieldable)()
+    SetMatchCase(value *bool)()
+    SetMethod(value *string)()
 }

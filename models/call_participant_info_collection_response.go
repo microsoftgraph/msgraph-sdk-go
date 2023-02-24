@@ -7,8 +7,6 @@ import (
 // CallParticipantInfoCollectionResponse 
 type CallParticipantInfoCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []CallParticipantInfoable
 }
 // NewCallParticipantInfoCollectionResponse instantiates a new CallParticipantInfoCollectionResponse and sets the default values.
 func NewCallParticipantInfoCollectionResponse()(*CallParticipantInfoCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *CallParticipantInfoCollectionResponse) GetFieldDeserializers()(map[stri
 }
 // GetValue gets the value property value. The value property
 func (m *CallParticipantInfoCollectionResponse) GetValue()([]CallParticipantInfoable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CallParticipantInfoable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CallParticipantInfoCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *CallParticipantInfoCollectionResponse) Serialize(writer i878a80d2330e89
 }
 // SetValue sets the value property value. The value property
 func (m *CallParticipantInfoCollectionResponse) SetValue(value []CallParticipantInfoable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CallParticipantInfoCollectionResponseable 
+type CallParticipantInfoCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]CallParticipantInfoable)
+    SetValue(value []CallParticipantInfoable)()
 }

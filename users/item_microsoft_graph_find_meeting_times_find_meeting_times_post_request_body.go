@@ -3,33 +3,19 @@ package users
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ItemMicrosoftGraphFindMeetingTimesFindMeetingTimesPostRequestBody 
 type ItemMicrosoftGraphFindMeetingTimesFindMeetingTimesPostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The attendees property
-    attendees []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttendeeBaseable
-    // The isOrganizerOptional property
-    isOrganizerOptional *bool
-    // The locationConstraint property
-    locationConstraint iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LocationConstraintable
-    // The maxCandidates property
-    maxCandidates *int32
-    // The meetingDuration property
-    meetingDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
-    // The minimumAttendeePercentage property
-    minimumAttendeePercentage *float64
-    // The returnSuggestionReasons property
-    returnSuggestionReasons *bool
-    // The timeConstraint property
-    timeConstraint iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeConstraintable
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewItemMicrosoftGraphFindMeetingTimesFindMeetingTimesPostRequestBody instantiates a new ItemMicrosoftGraphFindMeetingTimesFindMeetingTimesPostRequestBody and sets the default values.
 func NewItemMicrosoftGraphFindMeetingTimesFindMeetingTimesPostRequestBody()(*ItemMicrosoftGraphFindMeetingTimesFindMeetingTimesPostRequestBody) {
     m := &ItemMicrosoftGraphFindMeetingTimesFindMeetingTimesPostRequestBody{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -39,11 +25,30 @@ func CreateItemMicrosoftGraphFindMeetingTimesFindMeetingTimesPostRequestBodyFrom
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemMicrosoftGraphFindMeetingTimesFindMeetingTimesPostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetAttendees gets the attendees property value. The attendees property
 func (m *ItemMicrosoftGraphFindMeetingTimesFindMeetingTimesPostRequestBody) GetAttendees()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttendeeBaseable) {
-    return m.attendees
+    val, err := m.GetBackingStore().Get("attendees")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttendeeBaseable)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ItemMicrosoftGraphFindMeetingTimesFindMeetingTimesPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemMicrosoftGraphFindMeetingTimesFindMeetingTimesPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -136,31 +141,80 @@ func (m *ItemMicrosoftGraphFindMeetingTimesFindMeetingTimesPostRequestBody) GetF
 }
 // GetIsOrganizerOptional gets the isOrganizerOptional property value. The isOrganizerOptional property
 func (m *ItemMicrosoftGraphFindMeetingTimesFindMeetingTimesPostRequestBody) GetIsOrganizerOptional()(*bool) {
-    return m.isOrganizerOptional
+    val, err := m.GetBackingStore().Get("isOrganizerOptional")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLocationConstraint gets the locationConstraint property value. The locationConstraint property
 func (m *ItemMicrosoftGraphFindMeetingTimesFindMeetingTimesPostRequestBody) GetLocationConstraint()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LocationConstraintable) {
-    return m.locationConstraint
+    val, err := m.GetBackingStore().Get("locationConstraint")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LocationConstraintable)
+    }
+    return nil
 }
 // GetMaxCandidates gets the maxCandidates property value. The maxCandidates property
 func (m *ItemMicrosoftGraphFindMeetingTimesFindMeetingTimesPostRequestBody) GetMaxCandidates()(*int32) {
-    return m.maxCandidates
+    val, err := m.GetBackingStore().Get("maxCandidates")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetMeetingDuration gets the meetingDuration property value. The meetingDuration property
 func (m *ItemMicrosoftGraphFindMeetingTimesFindMeetingTimesPostRequestBody) GetMeetingDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    return m.meetingDuration
+    val, err := m.GetBackingStore().Get("meetingDuration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
+    }
+    return nil
 }
 // GetMinimumAttendeePercentage gets the minimumAttendeePercentage property value. The minimumAttendeePercentage property
 func (m *ItemMicrosoftGraphFindMeetingTimesFindMeetingTimesPostRequestBody) GetMinimumAttendeePercentage()(*float64) {
-    return m.minimumAttendeePercentage
+    val, err := m.GetBackingStore().Get("minimumAttendeePercentage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // GetReturnSuggestionReasons gets the returnSuggestionReasons property value. The returnSuggestionReasons property
 func (m *ItemMicrosoftGraphFindMeetingTimesFindMeetingTimesPostRequestBody) GetReturnSuggestionReasons()(*bool) {
-    return m.returnSuggestionReasons
+    val, err := m.GetBackingStore().Get("returnSuggestionReasons")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetTimeConstraint gets the timeConstraint property value. The timeConstraint property
 func (m *ItemMicrosoftGraphFindMeetingTimesFindMeetingTimesPostRequestBody) GetTimeConstraint()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeConstraintable) {
-    return m.timeConstraint
+    val, err := m.GetBackingStore().Get("timeConstraint")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeConstraintable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemMicrosoftGraphFindMeetingTimesFindMeetingTimesPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -226,37 +280,92 @@ func (m *ItemMicrosoftGraphFindMeetingTimesFindMeetingTimesPostRequestBody) Seri
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemMicrosoftGraphFindMeetingTimesFindMeetingTimesPostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAttendees sets the attendees property value. The attendees property
 func (m *ItemMicrosoftGraphFindMeetingTimesFindMeetingTimesPostRequestBody) SetAttendees(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttendeeBaseable)() {
-    m.attendees = value
+    err := m.GetBackingStore().Set("attendees", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ItemMicrosoftGraphFindMeetingTimesFindMeetingTimesPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetIsOrganizerOptional sets the isOrganizerOptional property value. The isOrganizerOptional property
 func (m *ItemMicrosoftGraphFindMeetingTimesFindMeetingTimesPostRequestBody) SetIsOrganizerOptional(value *bool)() {
-    m.isOrganizerOptional = value
+    err := m.GetBackingStore().Set("isOrganizerOptional", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocationConstraint sets the locationConstraint property value. The locationConstraint property
 func (m *ItemMicrosoftGraphFindMeetingTimesFindMeetingTimesPostRequestBody) SetLocationConstraint(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LocationConstraintable)() {
-    m.locationConstraint = value
+    err := m.GetBackingStore().Set("locationConstraint", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMaxCandidates sets the maxCandidates property value. The maxCandidates property
 func (m *ItemMicrosoftGraphFindMeetingTimesFindMeetingTimesPostRequestBody) SetMaxCandidates(value *int32)() {
-    m.maxCandidates = value
+    err := m.GetBackingStore().Set("maxCandidates", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMeetingDuration sets the meetingDuration property value. The meetingDuration property
 func (m *ItemMicrosoftGraphFindMeetingTimesFindMeetingTimesPostRequestBody) SetMeetingDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    m.meetingDuration = value
+    err := m.GetBackingStore().Set("meetingDuration", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMinimumAttendeePercentage sets the minimumAttendeePercentage property value. The minimumAttendeePercentage property
 func (m *ItemMicrosoftGraphFindMeetingTimesFindMeetingTimesPostRequestBody) SetMinimumAttendeePercentage(value *float64)() {
-    m.minimumAttendeePercentage = value
+    err := m.GetBackingStore().Set("minimumAttendeePercentage", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetReturnSuggestionReasons sets the returnSuggestionReasons property value. The returnSuggestionReasons property
 func (m *ItemMicrosoftGraphFindMeetingTimesFindMeetingTimesPostRequestBody) SetReturnSuggestionReasons(value *bool)() {
-    m.returnSuggestionReasons = value
+    err := m.GetBackingStore().Set("returnSuggestionReasons", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTimeConstraint sets the timeConstraint property value. The timeConstraint property
 func (m *ItemMicrosoftGraphFindMeetingTimesFindMeetingTimesPostRequestBody) SetTimeConstraint(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeConstraintable)() {
-    m.timeConstraint = value
+    err := m.GetBackingStore().Set("timeConstraint", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemMicrosoftGraphFindMeetingTimesFindMeetingTimesPostRequestBodyable 
+type ItemMicrosoftGraphFindMeetingTimesFindMeetingTimesPostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAttendees()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttendeeBaseable)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetIsOrganizerOptional()(*bool)
+    GetLocationConstraint()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LocationConstraintable)
+    GetMaxCandidates()(*int32)
+    GetMeetingDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
+    GetMinimumAttendeePercentage()(*float64)
+    GetReturnSuggestionReasons()(*bool)
+    GetTimeConstraint()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeConstraintable)
+    SetAttendees(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttendeeBaseable)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetIsOrganizerOptional(value *bool)()
+    SetLocationConstraint(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LocationConstraintable)()
+    SetMaxCandidates(value *int32)()
+    SetMeetingDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
+    SetMinimumAttendeePercentage(value *float64)()
+    SetReturnSuggestionReasons(value *bool)()
+    SetTimeConstraint(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeConstraintable)()
 }

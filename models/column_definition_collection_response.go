@@ -7,8 +7,6 @@ import (
 // ColumnDefinitionCollectionResponse 
 type ColumnDefinitionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ColumnDefinitionable
 }
 // NewColumnDefinitionCollectionResponse instantiates a new ColumnDefinitionCollectionResponse and sets the default values.
 func NewColumnDefinitionCollectionResponse()(*ColumnDefinitionCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ColumnDefinitionCollectionResponse) GetFieldDeserializers()(map[string]
 }
 // GetValue gets the value property value. The value property
 func (m *ColumnDefinitionCollectionResponse) GetValue()([]ColumnDefinitionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ColumnDefinitionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ColumnDefinitionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ColumnDefinitionCollectionResponse) Serialize(writer i878a80d2330e89d26
 }
 // SetValue sets the value property value. The value property
 func (m *ColumnDefinitionCollectionResponse) SetValue(value []ColumnDefinitionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ColumnDefinitionCollectionResponseable 
+type ColumnDefinitionCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ColumnDefinitionable)
+    SetValue(value []ColumnDefinitionable)()
 }

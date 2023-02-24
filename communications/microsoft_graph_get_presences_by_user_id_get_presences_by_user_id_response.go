@@ -8,8 +8,6 @@ import (
 // MicrosoftGraphGetPresencesByUserIdGetPresencesByUserIdResponse 
 type MicrosoftGraphGetPresencesByUserIdGetPresencesByUserIdResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
-    // The value property
-    value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Presenceable
 }
 // NewMicrosoftGraphGetPresencesByUserIdGetPresencesByUserIdResponse instantiates a new MicrosoftGraphGetPresencesByUserIdGetPresencesByUserIdResponse and sets the default values.
 func NewMicrosoftGraphGetPresencesByUserIdGetPresencesByUserIdResponse()(*MicrosoftGraphGetPresencesByUserIdGetPresencesByUserIdResponse) {
@@ -43,7 +41,14 @@ func (m *MicrosoftGraphGetPresencesByUserIdGetPresencesByUserIdResponse) GetFiel
 }
 // GetValue gets the value property value. The value property
 func (m *MicrosoftGraphGetPresencesByUserIdGetPresencesByUserIdResponse) GetValue()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Presenceable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Presenceable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MicrosoftGraphGetPresencesByUserIdGetPresencesByUserIdResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *MicrosoftGraphGetPresencesByUserIdGetPresencesByUserIdResponse) Seriali
 }
 // SetValue sets the value property value. The value property
 func (m *MicrosoftGraphGetPresencesByUserIdGetPresencesByUserIdResponse) SetValue(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Presenceable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MicrosoftGraphGetPresencesByUserIdGetPresencesByUserIdResponseable 
+type MicrosoftGraphGetPresencesByUserIdGetPresencesByUserIdResponseable interface {
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Presenceable)
+    SetValue(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Presenceable)()
 }

@@ -7,8 +7,6 @@ import (
 // SharingDetailCollectionResponse 
 type SharingDetailCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []SharingDetailable
 }
 // NewSharingDetailCollectionResponse instantiates a new SharingDetailCollectionResponse and sets the default values.
 func NewSharingDetailCollectionResponse()(*SharingDetailCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *SharingDetailCollectionResponse) GetFieldDeserializers()(map[string]fun
 }
 // GetValue gets the value property value. The value property
 func (m *SharingDetailCollectionResponse) GetValue()([]SharingDetailable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SharingDetailable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SharingDetailCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *SharingDetailCollectionResponse) Serialize(writer i878a80d2330e89d26896
 }
 // SetValue sets the value property value. The value property
 func (m *SharingDetailCollectionResponse) SetValue(value []SharingDetailable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SharingDetailCollectionResponseable 
+type SharingDetailCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]SharingDetailable)
+    SetValue(value []SharingDetailable)()
 }

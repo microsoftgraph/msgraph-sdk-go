@@ -7,8 +7,6 @@ import (
 // SearchHitsContainerCollectionResponse 
 type SearchHitsContainerCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []SearchHitsContainerable
 }
 // NewSearchHitsContainerCollectionResponse instantiates a new SearchHitsContainerCollectionResponse and sets the default values.
 func NewSearchHitsContainerCollectionResponse()(*SearchHitsContainerCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *SearchHitsContainerCollectionResponse) GetFieldDeserializers()(map[stri
 }
 // GetValue gets the value property value. The value property
 func (m *SearchHitsContainerCollectionResponse) GetValue()([]SearchHitsContainerable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SearchHitsContainerable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SearchHitsContainerCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *SearchHitsContainerCollectionResponse) Serialize(writer i878a80d2330e89
 }
 // SetValue sets the value property value. The value property
 func (m *SearchHitsContainerCollectionResponse) SetValue(value []SearchHitsContainerable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SearchHitsContainerCollectionResponseable 
+type SearchHitsContainerCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]SearchHitsContainerable)
+    SetValue(value []SearchHitsContainerable)()
 }

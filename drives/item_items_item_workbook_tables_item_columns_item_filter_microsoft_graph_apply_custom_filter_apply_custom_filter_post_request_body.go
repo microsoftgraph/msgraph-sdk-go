@@ -2,23 +2,19 @@ package drives
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyCustomFilterApplyCustomFilterPostRequestBody 
 type ItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyCustomFilterApplyCustomFilterPostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The criteria1 property
-    criteria1 *string
-    // The criteria2 property
-    criteria2 *string
-    // The oper property
-    oper *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyCustomFilterApplyCustomFilterPostRequestBody instantiates a new ItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyCustomFilterApplyCustomFilterPostRequestBody and sets the default values.
 func NewItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyCustomFilterApplyCustomFilterPostRequestBody()(*ItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyCustomFilterApplyCustomFilterPostRequestBody) {
     m := &ItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyCustomFilterApplyCustomFilterPostRequestBody{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -28,15 +24,41 @@ func CreateItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyCu
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyCustomFilterApplyCustomFilterPostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyCustomFilterApplyCustomFilterPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetCriteria1 gets the criteria1 property value. The criteria1 property
 func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyCustomFilterApplyCustomFilterPostRequestBody) GetCriteria1()(*string) {
-    return m.criteria1
+    val, err := m.GetBackingStore().Get("criteria1")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCriteria2 gets the criteria2 property value. The criteria2 property
 func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyCustomFilterApplyCustomFilterPostRequestBody) GetCriteria2()(*string) {
-    return m.criteria2
+    val, err := m.GetBackingStore().Get("criteria2")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyCustomFilterApplyCustomFilterPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -75,7 +97,14 @@ func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyCust
 }
 // GetOper gets the oper property value. The oper property
 func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyCustomFilterApplyCustomFilterPostRequestBody) GetOper()(*string) {
-    return m.oper
+    val, err := m.GetBackingStore().Get("oper")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyCustomFilterApplyCustomFilterPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -107,17 +136,47 @@ func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyCust
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyCustomFilterApplyCustomFilterPostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyCustomFilterApplyCustomFilterPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetCriteria1 sets the criteria1 property value. The criteria1 property
 func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyCustomFilterApplyCustomFilterPostRequestBody) SetCriteria1(value *string)() {
-    m.criteria1 = value
+    err := m.GetBackingStore().Set("criteria1", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCriteria2 sets the criteria2 property value. The criteria2 property
 func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyCustomFilterApplyCustomFilterPostRequestBody) SetCriteria2(value *string)() {
-    m.criteria2 = value
+    err := m.GetBackingStore().Set("criteria2", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOper sets the oper property value. The oper property
 func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyCustomFilterApplyCustomFilterPostRequestBody) SetOper(value *string)() {
-    m.oper = value
+    err := m.GetBackingStore().Set("oper", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyCustomFilterApplyCustomFilterPostRequestBodyable 
+type ItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyCustomFilterApplyCustomFilterPostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetCriteria1()(*string)
+    GetCriteria2()(*string)
+    GetOper()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetCriteria1(value *string)()
+    SetCriteria2(value *string)()
+    SetOper(value *string)()
 }

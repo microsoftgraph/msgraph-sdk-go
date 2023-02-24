@@ -7,10 +7,6 @@ import (
 // OnenoteResource 
 type OnenoteResource struct {
     OnenoteEntityBaseModel
-    // The content stream
-    content []byte
-    // The URL for downloading the content
-    contentUrl *string
 }
 // NewOnenoteResource instantiates a new OnenoteResource and sets the default values.
 func NewOnenoteResource()(*OnenoteResource) {
@@ -27,11 +23,25 @@ func CreateOnenoteResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetContent gets the content property value. The content stream
 func (m *OnenoteResource) GetContent()([]byte) {
-    return m.content
+    val, err := m.GetBackingStore().Get("content")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]byte)
+    }
+    return nil
 }
 // GetContentUrl gets the contentUrl property value. The URL for downloading the content
 func (m *OnenoteResource) GetContentUrl()(*string) {
-    return m.contentUrl
+    val, err := m.GetBackingStore().Get("contentUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OnenoteResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -80,9 +90,24 @@ func (m *OnenoteResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetContent sets the content property value. The content stream
 func (m *OnenoteResource) SetContent(value []byte)() {
-    m.content = value
+    err := m.GetBackingStore().Set("content", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetContentUrl sets the contentUrl property value. The URL for downloading the content
 func (m *OnenoteResource) SetContentUrl(value *string)() {
-    m.contentUrl = value
+    err := m.GetBackingStore().Set("contentUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OnenoteResourceable 
+type OnenoteResourceable interface {
+    OnenoteEntityBaseModelable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetContent()([]byte)
+    GetContentUrl()(*string)
+    SetContent(value []byte)()
+    SetContentUrl(value *string)()
 }

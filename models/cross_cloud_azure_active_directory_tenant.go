@@ -7,12 +7,6 @@ import (
 // CrossCloudAzureActiveDirectoryTenant 
 type CrossCloudAzureActiveDirectoryTenant struct {
     IdentitySource
-    // The ID of the cloud where the tenant is located, one of microsoftonline.com, microsoftonline.us or partner.microsoftonline.cn. Read only.
-    cloudInstance *string
-    // The name of the Azure Active Directory tenant. Read only.
-    displayName *string
-    // The ID of the Azure Active Directory tenant. Read only.
-    tenantId *string
 }
 // NewCrossCloudAzureActiveDirectoryTenant instantiates a new CrossCloudAzureActiveDirectoryTenant and sets the default values.
 func NewCrossCloudAzureActiveDirectoryTenant()(*CrossCloudAzureActiveDirectoryTenant) {
@@ -29,11 +23,25 @@ func CreateCrossCloudAzureActiveDirectoryTenantFromDiscriminatorValue(parseNode 
 }
 // GetCloudInstance gets the cloudInstance property value. The ID of the cloud where the tenant is located, one of microsoftonline.com, microsoftonline.us or partner.microsoftonline.cn. Read only.
 func (m *CrossCloudAzureActiveDirectoryTenant) GetCloudInstance()(*string) {
-    return m.cloudInstance
+    val, err := m.GetBackingStore().Get("cloudInstance")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The name of the Azure Active Directory tenant. Read only.
 func (m *CrossCloudAzureActiveDirectoryTenant) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CrossCloudAzureActiveDirectoryTenant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,7 +80,14 @@ func (m *CrossCloudAzureActiveDirectoryTenant) GetFieldDeserializers()(map[strin
 }
 // GetTenantId gets the tenantId property value. The ID of the Azure Active Directory tenant. Read only.
 func (m *CrossCloudAzureActiveDirectoryTenant) GetTenantId()(*string) {
-    return m.tenantId
+    val, err := m.GetBackingStore().Get("tenantId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CrossCloudAzureActiveDirectoryTenant) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -102,13 +117,33 @@ func (m *CrossCloudAzureActiveDirectoryTenant) Serialize(writer i878a80d2330e89d
 }
 // SetCloudInstance sets the cloudInstance property value. The ID of the cloud where the tenant is located, one of microsoftonline.com, microsoftonline.us or partner.microsoftonline.cn. Read only.
 func (m *CrossCloudAzureActiveDirectoryTenant) SetCloudInstance(value *string)() {
-    m.cloudInstance = value
+    err := m.GetBackingStore().Set("cloudInstance", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The name of the Azure Active Directory tenant. Read only.
 func (m *CrossCloudAzureActiveDirectoryTenant) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTenantId sets the tenantId property value. The ID of the Azure Active Directory tenant. Read only.
 func (m *CrossCloudAzureActiveDirectoryTenant) SetTenantId(value *string)() {
-    m.tenantId = value
+    err := m.GetBackingStore().Set("tenantId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CrossCloudAzureActiveDirectoryTenantable 
+type CrossCloudAzureActiveDirectoryTenantable interface {
+    IdentitySourceable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCloudInstance()(*string)
+    GetDisplayName()(*string)
+    GetTenantId()(*string)
+    SetCloudInstance(value *string)()
+    SetDisplayName(value *string)()
+    SetTenantId(value *string)()
 }

@@ -7,8 +7,6 @@ import (
 // EducationSubmissionResourceCollectionResponse 
 type EducationSubmissionResourceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []EducationSubmissionResourceable
 }
 // NewEducationSubmissionResourceCollectionResponse instantiates a new EducationSubmissionResourceCollectionResponse and sets the default values.
 func NewEducationSubmissionResourceCollectionResponse()(*EducationSubmissionResourceCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *EducationSubmissionResourceCollectionResponse) GetFieldDeserializers()(
 }
 // GetValue gets the value property value. The value property
 func (m *EducationSubmissionResourceCollectionResponse) GetValue()([]EducationSubmissionResourceable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EducationSubmissionResourceable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EducationSubmissionResourceCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *EducationSubmissionResourceCollectionResponse) Serialize(writer i878a80
 }
 // SetValue sets the value property value. The value property
 func (m *EducationSubmissionResourceCollectionResponse) SetValue(value []EducationSubmissionResourceable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EducationSubmissionResourceCollectionResponseable 
+type EducationSubmissionResourceCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]EducationSubmissionResourceable)
+    SetValue(value []EducationSubmissionResourceable)()
 }

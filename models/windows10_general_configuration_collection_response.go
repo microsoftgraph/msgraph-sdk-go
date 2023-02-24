@@ -7,8 +7,6 @@ import (
 // Windows10GeneralConfigurationCollectionResponse 
 type Windows10GeneralConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Windows10GeneralConfigurationable
 }
 // NewWindows10GeneralConfigurationCollectionResponse instantiates a new Windows10GeneralConfigurationCollectionResponse and sets the default values.
 func NewWindows10GeneralConfigurationCollectionResponse()(*Windows10GeneralConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *Windows10GeneralConfigurationCollectionResponse) GetFieldDeserializers(
 }
 // GetValue gets the value property value. The value property
 func (m *Windows10GeneralConfigurationCollectionResponse) GetValue()([]Windows10GeneralConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Windows10GeneralConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Windows10GeneralConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *Windows10GeneralConfigurationCollectionResponse) Serialize(writer i878a
 }
 // SetValue sets the value property value. The value property
 func (m *Windows10GeneralConfigurationCollectionResponse) SetValue(value []Windows10GeneralConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Windows10GeneralConfigurationCollectionResponseable 
+type Windows10GeneralConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Windows10GeneralConfigurationable)
+    SetValue(value []Windows10GeneralConfigurationable)()
 }

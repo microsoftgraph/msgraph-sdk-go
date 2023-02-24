@@ -7,10 +7,6 @@ import (
 // AttributeRuleMembers 
 type AttributeRuleMembers struct {
     SubjectSet
-    // A description of the membership rule.
-    description *string
-    // Determines the allowed target users for this policy. For more information about the syntax of the membership rule, see Membership Rules syntax.
-    membershipRule *string
 }
 // NewAttributeRuleMembers instantiates a new AttributeRuleMembers and sets the default values.
 func NewAttributeRuleMembers()(*AttributeRuleMembers) {
@@ -27,7 +23,14 @@ func CreateAttributeRuleMembersFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetDescription gets the description property value. A description of the membership rule.
 func (m *AttributeRuleMembers) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AttributeRuleMembers) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -56,7 +59,14 @@ func (m *AttributeRuleMembers) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetMembershipRule gets the membershipRule property value. Determines the allowed target users for this policy. For more information about the syntax of the membership rule, see Membership Rules syntax.
 func (m *AttributeRuleMembers) GetMembershipRule()(*string) {
-    return m.membershipRule
+    val, err := m.GetBackingStore().Get("membershipRule")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AttributeRuleMembers) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -80,9 +90,24 @@ func (m *AttributeRuleMembers) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetDescription sets the description property value. A description of the membership rule.
 func (m *AttributeRuleMembers) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMembershipRule sets the membershipRule property value. Determines the allowed target users for this policy. For more information about the syntax of the membership rule, see Membership Rules syntax.
 func (m *AttributeRuleMembers) SetMembershipRule(value *string)() {
-    m.membershipRule = value
+    err := m.GetBackingStore().Set("membershipRule", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AttributeRuleMembersable 
+type AttributeRuleMembersable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    SubjectSetable
+    GetDescription()(*string)
+    GetMembershipRule()(*string)
+    SetDescription(value *string)()
+    SetMembershipRule(value *string)()
 }

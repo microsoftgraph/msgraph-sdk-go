@@ -7,44 +7,6 @@ import (
 // Person 
 type Person struct {
     Entity
-    // The person's birthday.
-    birthday *string
-    // The name of the person's company.
-    companyName *string
-    // The person's department.
-    department *string
-    // The person's display name.
-    displayName *string
-    // The person's given name.
-    givenName *string
-    // The instant message voice over IP (VOIP) session initiation protocol (SIP) address for the user. Read-only.
-    imAddress *string
-    // true if the user has flagged this person as a favorite.
-    isFavorite *bool
-    // The person's job title.
-    jobTitle *string
-    // The location of the person's office.
-    officeLocation *string
-    // Free-form notes that the user has taken about this person.
-    personNotes *string
-    // The type of person.
-    personType PersonTypeable
-    // The person's phone numbers.
-    phones []Phoneable
-    // The person's addresses.
-    postalAddresses []Locationable
-    // The person's profession.
-    profession *string
-    // The person's email addresses.
-    scoredEmailAddresses []ScoredEmailAddressable
-    // The person's surname.
-    surname *string
-    // The user principal name (UPN) of the person. The UPN is an Internet-style login name for the person based on the Internet standard RFC 822. By convention, this should map to the person's email name. The general format is alias@domain.
-    userPrincipalName *string
-    // The person's websites.
-    websites []Websiteable
-    // The phonetic Japanese name of the person's company.
-    yomiCompany *string
 }
 // NewPerson instantiates a new person and sets the default values.
 func NewPerson()(*Person) {
@@ -59,19 +21,47 @@ func CreatePersonFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 }
 // GetBirthday gets the birthday property value. The person's birthday.
 func (m *Person) GetBirthday()(*string) {
-    return m.birthday
+    val, err := m.GetBackingStore().Get("birthday")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCompanyName gets the companyName property value. The name of the person's company.
 func (m *Person) GetCompanyName()(*string) {
-    return m.companyName
+    val, err := m.GetBackingStore().Get("companyName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDepartment gets the department property value. The person's department.
 func (m *Person) GetDepartment()(*string) {
-    return m.department
+    val, err := m.GetBackingStore().Get("department")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The person's display name.
 func (m *Person) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Person) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -286,63 +276,168 @@ func (m *Person) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
 }
 // GetGivenName gets the givenName property value. The person's given name.
 func (m *Person) GetGivenName()(*string) {
-    return m.givenName
+    val, err := m.GetBackingStore().Get("givenName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetImAddress gets the imAddress property value. The instant message voice over IP (VOIP) session initiation protocol (SIP) address for the user. Read-only.
 func (m *Person) GetImAddress()(*string) {
-    return m.imAddress
+    val, err := m.GetBackingStore().Get("imAddress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetIsFavorite gets the isFavorite property value. true if the user has flagged this person as a favorite.
 func (m *Person) GetIsFavorite()(*bool) {
-    return m.isFavorite
+    val, err := m.GetBackingStore().Get("isFavorite")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetJobTitle gets the jobTitle property value. The person's job title.
 func (m *Person) GetJobTitle()(*string) {
-    return m.jobTitle
+    val, err := m.GetBackingStore().Get("jobTitle")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOfficeLocation gets the officeLocation property value. The location of the person's office.
 func (m *Person) GetOfficeLocation()(*string) {
-    return m.officeLocation
+    val, err := m.GetBackingStore().Get("officeLocation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPersonNotes gets the personNotes property value. Free-form notes that the user has taken about this person.
 func (m *Person) GetPersonNotes()(*string) {
-    return m.personNotes
+    val, err := m.GetBackingStore().Get("personNotes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPersonType gets the personType property value. The type of person.
 func (m *Person) GetPersonType()(PersonTypeable) {
-    return m.personType
+    val, err := m.GetBackingStore().Get("personType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PersonTypeable)
+    }
+    return nil
 }
 // GetPhones gets the phones property value. The person's phone numbers.
 func (m *Person) GetPhones()([]Phoneable) {
-    return m.phones
+    val, err := m.GetBackingStore().Get("phones")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Phoneable)
+    }
+    return nil
 }
 // GetPostalAddresses gets the postalAddresses property value. The person's addresses.
 func (m *Person) GetPostalAddresses()([]Locationable) {
-    return m.postalAddresses
+    val, err := m.GetBackingStore().Get("postalAddresses")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Locationable)
+    }
+    return nil
 }
 // GetProfession gets the profession property value. The person's profession.
 func (m *Person) GetProfession()(*string) {
-    return m.profession
+    val, err := m.GetBackingStore().Get("profession")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetScoredEmailAddresses gets the scoredEmailAddresses property value. The person's email addresses.
 func (m *Person) GetScoredEmailAddresses()([]ScoredEmailAddressable) {
-    return m.scoredEmailAddresses
+    val, err := m.GetBackingStore().Get("scoredEmailAddresses")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ScoredEmailAddressable)
+    }
+    return nil
 }
 // GetSurname gets the surname property value. The person's surname.
 func (m *Person) GetSurname()(*string) {
-    return m.surname
+    val, err := m.GetBackingStore().Get("surname")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. The user principal name (UPN) of the person. The UPN is an Internet-style login name for the person based on the Internet standard RFC 822. By convention, this should map to the person's email name. The general format is alias@domain.
 func (m *Person) GetUserPrincipalName()(*string) {
-    return m.userPrincipalName
+    val, err := m.GetBackingStore().Get("userPrincipalName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetWebsites gets the websites property value. The person's websites.
 func (m *Person) GetWebsites()([]Websiteable) {
-    return m.websites
+    val, err := m.GetBackingStore().Get("websites")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Websiteable)
+    }
+    return nil
 }
 // GetYomiCompany gets the yomiCompany property value. The phonetic Japanese name of the person's company.
 func (m *Person) GetYomiCompany()(*string) {
-    return m.yomiCompany
+    val, err := m.GetBackingStore().Get("yomiCompany")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Person) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -484,77 +579,177 @@ func (m *Person) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
 }
 // SetBirthday sets the birthday property value. The person's birthday.
 func (m *Person) SetBirthday(value *string)() {
-    m.birthday = value
+    err := m.GetBackingStore().Set("birthday", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCompanyName sets the companyName property value. The name of the person's company.
 func (m *Person) SetCompanyName(value *string)() {
-    m.companyName = value
+    err := m.GetBackingStore().Set("companyName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDepartment sets the department property value. The person's department.
 func (m *Person) SetDepartment(value *string)() {
-    m.department = value
+    err := m.GetBackingStore().Set("department", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The person's display name.
 func (m *Person) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetGivenName sets the givenName property value. The person's given name.
 func (m *Person) SetGivenName(value *string)() {
-    m.givenName = value
+    err := m.GetBackingStore().Set("givenName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetImAddress sets the imAddress property value. The instant message voice over IP (VOIP) session initiation protocol (SIP) address for the user. Read-only.
 func (m *Person) SetImAddress(value *string)() {
-    m.imAddress = value
+    err := m.GetBackingStore().Set("imAddress", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsFavorite sets the isFavorite property value. true if the user has flagged this person as a favorite.
 func (m *Person) SetIsFavorite(value *bool)() {
-    m.isFavorite = value
+    err := m.GetBackingStore().Set("isFavorite", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetJobTitle sets the jobTitle property value. The person's job title.
 func (m *Person) SetJobTitle(value *string)() {
-    m.jobTitle = value
+    err := m.GetBackingStore().Set("jobTitle", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOfficeLocation sets the officeLocation property value. The location of the person's office.
 func (m *Person) SetOfficeLocation(value *string)() {
-    m.officeLocation = value
+    err := m.GetBackingStore().Set("officeLocation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPersonNotes sets the personNotes property value. Free-form notes that the user has taken about this person.
 func (m *Person) SetPersonNotes(value *string)() {
-    m.personNotes = value
+    err := m.GetBackingStore().Set("personNotes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPersonType sets the personType property value. The type of person.
 func (m *Person) SetPersonType(value PersonTypeable)() {
-    m.personType = value
+    err := m.GetBackingStore().Set("personType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPhones sets the phones property value. The person's phone numbers.
 func (m *Person) SetPhones(value []Phoneable)() {
-    m.phones = value
+    err := m.GetBackingStore().Set("phones", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPostalAddresses sets the postalAddresses property value. The person's addresses.
 func (m *Person) SetPostalAddresses(value []Locationable)() {
-    m.postalAddresses = value
+    err := m.GetBackingStore().Set("postalAddresses", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProfession sets the profession property value. The person's profession.
 func (m *Person) SetProfession(value *string)() {
-    m.profession = value
+    err := m.GetBackingStore().Set("profession", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetScoredEmailAddresses sets the scoredEmailAddresses property value. The person's email addresses.
 func (m *Person) SetScoredEmailAddresses(value []ScoredEmailAddressable)() {
-    m.scoredEmailAddresses = value
+    err := m.GetBackingStore().Set("scoredEmailAddresses", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSurname sets the surname property value. The person's surname.
 func (m *Person) SetSurname(value *string)() {
-    m.surname = value
+    err := m.GetBackingStore().Set("surname", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. The user principal name (UPN) of the person. The UPN is an Internet-style login name for the person based on the Internet standard RFC 822. By convention, this should map to the person's email name. The general format is alias@domain.
 func (m *Person) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    err := m.GetBackingStore().Set("userPrincipalName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWebsites sets the websites property value. The person's websites.
 func (m *Person) SetWebsites(value []Websiteable)() {
-    m.websites = value
+    err := m.GetBackingStore().Set("websites", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetYomiCompany sets the yomiCompany property value. The phonetic Japanese name of the person's company.
 func (m *Person) SetYomiCompany(value *string)() {
-    m.yomiCompany = value
+    err := m.GetBackingStore().Set("yomiCompany", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Personable 
+type Personable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBirthday()(*string)
+    GetCompanyName()(*string)
+    GetDepartment()(*string)
+    GetDisplayName()(*string)
+    GetGivenName()(*string)
+    GetImAddress()(*string)
+    GetIsFavorite()(*bool)
+    GetJobTitle()(*string)
+    GetOfficeLocation()(*string)
+    GetPersonNotes()(*string)
+    GetPersonType()(PersonTypeable)
+    GetPhones()([]Phoneable)
+    GetPostalAddresses()([]Locationable)
+    GetProfession()(*string)
+    GetScoredEmailAddresses()([]ScoredEmailAddressable)
+    GetSurname()(*string)
+    GetUserPrincipalName()(*string)
+    GetWebsites()([]Websiteable)
+    GetYomiCompany()(*string)
+    SetBirthday(value *string)()
+    SetCompanyName(value *string)()
+    SetDepartment(value *string)()
+    SetDisplayName(value *string)()
+    SetGivenName(value *string)()
+    SetImAddress(value *string)()
+    SetIsFavorite(value *bool)()
+    SetJobTitle(value *string)()
+    SetOfficeLocation(value *string)()
+    SetPersonNotes(value *string)()
+    SetPersonType(value PersonTypeable)()
+    SetPhones(value []Phoneable)()
+    SetPostalAddresses(value []Locationable)()
+    SetProfession(value *string)()
+    SetScoredEmailAddresses(value []ScoredEmailAddressable)()
+    SetSurname(value *string)()
+    SetUserPrincipalName(value *string)()
+    SetWebsites(value []Websiteable)()
+    SetYomiCompany(value *string)()
 }

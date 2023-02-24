@@ -7,8 +7,6 @@ import (
 // WorkbookChartPointFormat 
 type WorkbookChartPointFormat struct {
     Entity
-    // Represents the fill format of a chart, which includes background formating information. Read-only.
-    fill WorkbookChartFillable
 }
 // NewWorkbookChartPointFormat instantiates a new workbookChartPointFormat and sets the default values.
 func NewWorkbookChartPointFormat()(*WorkbookChartPointFormat) {
@@ -38,7 +36,14 @@ func (m *WorkbookChartPointFormat) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetFill gets the fill property value. Represents the fill format of a chart, which includes background formating information. Read-only.
 func (m *WorkbookChartPointFormat) GetFill()(WorkbookChartFillable) {
-    return m.fill
+    val, err := m.GetBackingStore().Get("fill")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WorkbookChartFillable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WorkbookChartPointFormat) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,5 +61,15 @@ func (m *WorkbookChartPointFormat) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetFill sets the fill property value. Represents the fill format of a chart, which includes background formating information. Read-only.
 func (m *WorkbookChartPointFormat) SetFill(value WorkbookChartFillable)() {
-    m.fill = value
+    err := m.GetBackingStore().Set("fill", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WorkbookChartPointFormatable 
+type WorkbookChartPointFormatable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetFill()(WorkbookChartFillable)
+    SetFill(value WorkbookChartFillable)()
 }

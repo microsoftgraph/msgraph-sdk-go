@@ -7,8 +7,6 @@ import (
 // UnifiedApprovalStageCollectionResponse 
 type UnifiedApprovalStageCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []UnifiedApprovalStageable
 }
 // NewUnifiedApprovalStageCollectionResponse instantiates a new UnifiedApprovalStageCollectionResponse and sets the default values.
 func NewUnifiedApprovalStageCollectionResponse()(*UnifiedApprovalStageCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *UnifiedApprovalStageCollectionResponse) GetFieldDeserializers()(map[str
 }
 // GetValue gets the value property value. The value property
 func (m *UnifiedApprovalStageCollectionResponse) GetValue()([]UnifiedApprovalStageable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UnifiedApprovalStageable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UnifiedApprovalStageCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *UnifiedApprovalStageCollectionResponse) Serialize(writer i878a80d2330e8
 }
 // SetValue sets the value property value. The value property
 func (m *UnifiedApprovalStageCollectionResponse) SetValue(value []UnifiedApprovalStageable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UnifiedApprovalStageCollectionResponseable 
+type UnifiedApprovalStageCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]UnifiedApprovalStageable)
+    SetValue(value []UnifiedApprovalStageable)()
 }

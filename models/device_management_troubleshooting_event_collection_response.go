@@ -7,8 +7,6 @@ import (
 // DeviceManagementTroubleshootingEventCollectionResponse 
 type DeviceManagementTroubleshootingEventCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceManagementTroubleshootingEventable
 }
 // NewDeviceManagementTroubleshootingEventCollectionResponse instantiates a new DeviceManagementTroubleshootingEventCollectionResponse and sets the default values.
 func NewDeviceManagementTroubleshootingEventCollectionResponse()(*DeviceManagementTroubleshootingEventCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementTroubleshootingEventCollectionResponse) GetFieldDeseria
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceManagementTroubleshootingEventCollectionResponse) GetValue()([]DeviceManagementTroubleshootingEventable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementTroubleshootingEventable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementTroubleshootingEventCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementTroubleshootingEventCollectionResponse) Serialize(write
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceManagementTroubleshootingEventCollectionResponse) SetValue(value []DeviceManagementTroubleshootingEventable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementTroubleshootingEventCollectionResponseable 
+type DeviceManagementTroubleshootingEventCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementTroubleshootingEventable)
+    SetValue(value []DeviceManagementTroubleshootingEventable)()
 }

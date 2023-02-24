@@ -7,8 +7,6 @@ import (
 // DaylightTimeZoneOffset 
 type DaylightTimeZoneOffset struct {
     StandardTimeZoneOffset
-    // The time offset from Coordinated Universal Time (UTC) for daylight saving time. This value is in minutes.
-    daylightBias *int32
 }
 // NewDaylightTimeZoneOffset instantiates a new DaylightTimeZoneOffset and sets the default values.
 func NewDaylightTimeZoneOffset()(*DaylightTimeZoneOffset) {
@@ -25,7 +23,14 @@ func CreateDaylightTimeZoneOffsetFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetDaylightBias gets the daylightBias property value. The time offset from Coordinated Universal Time (UTC) for daylight saving time. This value is in minutes.
 func (m *DaylightTimeZoneOffset) GetDaylightBias()(*int32) {
-    return m.daylightBias
+    val, err := m.GetBackingStore().Get("daylightBias")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DaylightTimeZoneOffset) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -58,5 +63,15 @@ func (m *DaylightTimeZoneOffset) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetDaylightBias sets the daylightBias property value. The time offset from Coordinated Universal Time (UTC) for daylight saving time. This value is in minutes.
 func (m *DaylightTimeZoneOffset) SetDaylightBias(value *int32)() {
-    m.daylightBias = value
+    err := m.GetBackingStore().Set("daylightBias", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DaylightTimeZoneOffsetable 
+type DaylightTimeZoneOffsetable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    StandardTimeZoneOffsetable
+    GetDaylightBias()(*int32)
+    SetDaylightBias(value *int32)()
 }

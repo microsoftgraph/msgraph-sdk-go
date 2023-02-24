@@ -8,16 +8,6 @@ import (
 // Attachment 
 type Attachment struct {
     Entity
-    // The MIME type.
-    contentType *string
-    // true if the attachment is an inline attachment; otherwise, false.
-    isInline *bool
-    // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The attachment's file name.
-    name *string
-    // The length of the attachment in bytes.
-    size *int32
 }
 // NewAttachment instantiates a new attachment and sets the default values.
 func NewAttachment()(*Attachment) {
@@ -54,7 +44,14 @@ func CreateAttachmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 }
 // GetContentType gets the contentType property value. The MIME type.
 func (m *Attachment) GetContentType()(*string) {
-    return m.contentType
+    val, err := m.GetBackingStore().Get("contentType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Attachment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -113,19 +110,47 @@ func (m *Attachment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetIsInline gets the isInline property value. true if the attachment is an inline attachment; otherwise, false.
 func (m *Attachment) GetIsInline()(*bool) {
-    return m.isInline
+    val, err := m.GetBackingStore().Get("isInline")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *Attachment) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastModifiedDateTime
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetName gets the name property value. The attachment's file name.
 func (m *Attachment) GetName()(*string) {
-    return m.name
+    val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSize gets the size property value. The length of the attachment in bytes.
 func (m *Attachment) GetSize()(*int32) {
-    return m.size
+    val, err := m.GetBackingStore().Get("size")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Attachment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -167,21 +192,51 @@ func (m *Attachment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetContentType sets the contentType property value. The MIME type.
 func (m *Attachment) SetContentType(value *string)() {
-    m.contentType = value
+    err := m.GetBackingStore().Set("contentType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsInline sets the isInline property value. true if the attachment is an inline attachment; otherwise, false.
 func (m *Attachment) SetIsInline(value *bool)() {
-    m.isInline = value
+    err := m.GetBackingStore().Set("isInline", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *Attachment) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetName sets the name property value. The attachment's file name.
 func (m *Attachment) SetName(value *string)() {
-    m.name = value
+    err := m.GetBackingStore().Set("name", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSize sets the size property value. The length of the attachment in bytes.
 func (m *Attachment) SetSize(value *int32)() {
-    m.size = value
+    err := m.GetBackingStore().Set("size", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Attachmentable 
+type Attachmentable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetContentType()(*string)
+    GetIsInline()(*bool)
+    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetName()(*string)
+    GetSize()(*int32)
+    SetContentType(value *string)()
+    SetIsInline(value *bool)()
+    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetName(value *string)()
+    SetSize(value *int32)()
 }

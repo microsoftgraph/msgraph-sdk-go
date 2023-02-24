@@ -7,8 +7,6 @@ import (
 // PrintTaskDefinitionCollectionResponse 
 type PrintTaskDefinitionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []PrintTaskDefinitionable
 }
 // NewPrintTaskDefinitionCollectionResponse instantiates a new PrintTaskDefinitionCollectionResponse and sets the default values.
 func NewPrintTaskDefinitionCollectionResponse()(*PrintTaskDefinitionCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *PrintTaskDefinitionCollectionResponse) GetFieldDeserializers()(map[stri
 }
 // GetValue gets the value property value. The value property
 func (m *PrintTaskDefinitionCollectionResponse) GetValue()([]PrintTaskDefinitionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrintTaskDefinitionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PrintTaskDefinitionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *PrintTaskDefinitionCollectionResponse) Serialize(writer i878a80d2330e89
 }
 // SetValue sets the value property value. The value property
 func (m *PrintTaskDefinitionCollectionResponse) SetValue(value []PrintTaskDefinitionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PrintTaskDefinitionCollectionResponseable 
+type PrintTaskDefinitionCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]PrintTaskDefinitionable)
+    SetValue(value []PrintTaskDefinitionable)()
 }

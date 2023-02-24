@@ -3,21 +3,19 @@ package communications
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // CallsItemMicrosoftGraphRejectRejectPostRequestBody 
 type CallsItemMicrosoftGraphRejectRejectPostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The callbackUri property
-    callbackUri *string
-    // The reason property
-    reason *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RejectReason
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewCallsItemMicrosoftGraphRejectRejectPostRequestBody instantiates a new CallsItemMicrosoftGraphRejectRejectPostRequestBody and sets the default values.
 func NewCallsItemMicrosoftGraphRejectRejectPostRequestBody()(*CallsItemMicrosoftGraphRejectRejectPostRequestBody) {
     m := &CallsItemMicrosoftGraphRejectRejectPostRequestBody{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -27,11 +25,30 @@ func CreateCallsItemMicrosoftGraphRejectRejectPostRequestBodyFromDiscriminatorVa
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CallsItemMicrosoftGraphRejectRejectPostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *CallsItemMicrosoftGraphRejectRejectPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetCallbackUri gets the callbackUri property value. The callbackUri property
 func (m *CallsItemMicrosoftGraphRejectRejectPostRequestBody) GetCallbackUri()(*string) {
-    return m.callbackUri
+    val, err := m.GetBackingStore().Get("callbackUri")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CallsItemMicrosoftGraphRejectRejectPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,7 +77,14 @@ func (m *CallsItemMicrosoftGraphRejectRejectPostRequestBody) GetFieldDeserialize
 }
 // GetReason gets the reason property value. The reason property
 func (m *CallsItemMicrosoftGraphRejectRejectPostRequestBody) GetReason()(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RejectReason) {
-    return m.reason
+    val, err := m.GetBackingStore().Get("reason")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RejectReason)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CallsItemMicrosoftGraphRejectRejectPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -87,13 +111,38 @@ func (m *CallsItemMicrosoftGraphRejectRejectPostRequestBody) Serialize(writer i8
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CallsItemMicrosoftGraphRejectRejectPostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *CallsItemMicrosoftGraphRejectRejectPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetCallbackUri sets the callbackUri property value. The callbackUri property
 func (m *CallsItemMicrosoftGraphRejectRejectPostRequestBody) SetCallbackUri(value *string)() {
-    m.callbackUri = value
+    err := m.GetBackingStore().Set("callbackUri", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetReason sets the reason property value. The reason property
 func (m *CallsItemMicrosoftGraphRejectRejectPostRequestBody) SetReason(value *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RejectReason)() {
-    m.reason = value
+    err := m.GetBackingStore().Set("reason", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CallsItemMicrosoftGraphRejectRejectPostRequestBodyable 
+type CallsItemMicrosoftGraphRejectRejectPostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetCallbackUri()(*string)
+    GetReason()(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RejectReason)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetCallbackUri(value *string)()
+    SetReason(value *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RejectReason)()
 }

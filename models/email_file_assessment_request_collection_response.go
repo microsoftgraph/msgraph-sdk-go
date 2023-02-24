@@ -7,8 +7,6 @@ import (
 // EmailFileAssessmentRequestCollectionResponse 
 type EmailFileAssessmentRequestCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []EmailFileAssessmentRequestable
 }
 // NewEmailFileAssessmentRequestCollectionResponse instantiates a new EmailFileAssessmentRequestCollectionResponse and sets the default values.
 func NewEmailFileAssessmentRequestCollectionResponse()(*EmailFileAssessmentRequestCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *EmailFileAssessmentRequestCollectionResponse) GetFieldDeserializers()(m
 }
 // GetValue gets the value property value. The value property
 func (m *EmailFileAssessmentRequestCollectionResponse) GetValue()([]EmailFileAssessmentRequestable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EmailFileAssessmentRequestable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EmailFileAssessmentRequestCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *EmailFileAssessmentRequestCollectionResponse) Serialize(writer i878a80d
 }
 // SetValue sets the value property value. The value property
 func (m *EmailFileAssessmentRequestCollectionResponse) SetValue(value []EmailFileAssessmentRequestable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EmailFileAssessmentRequestCollectionResponseable 
+type EmailFileAssessmentRequestCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]EmailFileAssessmentRequestable)
+    SetValue(value []EmailFileAssessmentRequestable)()
 }

@@ -7,8 +7,6 @@ import (
 // MdmWindowsInformationProtectionPolicyCollectionResponse 
 type MdmWindowsInformationProtectionPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []MdmWindowsInformationProtectionPolicyable
 }
 // NewMdmWindowsInformationProtectionPolicyCollectionResponse instantiates a new MdmWindowsInformationProtectionPolicyCollectionResponse and sets the default values.
 func NewMdmWindowsInformationProtectionPolicyCollectionResponse()(*MdmWindowsInformationProtectionPolicyCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *MdmWindowsInformationProtectionPolicyCollectionResponse) GetFieldDeseri
 }
 // GetValue gets the value property value. The value property
 func (m *MdmWindowsInformationProtectionPolicyCollectionResponse) GetValue()([]MdmWindowsInformationProtectionPolicyable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MdmWindowsInformationProtectionPolicyable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MdmWindowsInformationProtectionPolicyCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *MdmWindowsInformationProtectionPolicyCollectionResponse) Serialize(writ
 }
 // SetValue sets the value property value. The value property
 func (m *MdmWindowsInformationProtectionPolicyCollectionResponse) SetValue(value []MdmWindowsInformationProtectionPolicyable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MdmWindowsInformationProtectionPolicyCollectionResponseable 
+type MdmWindowsInformationProtectionPolicyCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]MdmWindowsInformationProtectionPolicyable)
+    SetValue(value []MdmWindowsInformationProtectionPolicyable)()
 }

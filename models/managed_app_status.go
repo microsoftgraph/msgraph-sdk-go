@@ -7,10 +7,6 @@ import (
 // ManagedAppStatus represents app protection and configuration status for the organization.
 type ManagedAppStatus struct {
     Entity
-    // Friendly name of the status report.
-    displayName *string
-    // Version of the entity.
-    version *string
 }
 // NewManagedAppStatus instantiates a new managedAppStatus and sets the default values.
 func NewManagedAppStatus()(*ManagedAppStatus) {
@@ -43,7 +39,14 @@ func CreateManagedAppStatusFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetDisplayName gets the displayName property value. Friendly name of the status report.
 func (m *ManagedAppStatus) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedAppStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,7 +75,14 @@ func (m *ManagedAppStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetVersion gets the version property value. Version of the entity.
 func (m *ManagedAppStatus) GetVersion()(*string) {
-    return m.version
+    val, err := m.GetBackingStore().Get("version")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ManagedAppStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -96,9 +106,24 @@ func (m *ManagedAppStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetDisplayName sets the displayName property value. Friendly name of the status report.
 func (m *ManagedAppStatus) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVersion sets the version property value. Version of the entity.
 func (m *ManagedAppStatus) SetVersion(value *string)() {
-    m.version = value
+    err := m.GetBackingStore().Set("version", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ManagedAppStatusable 
+type ManagedAppStatusable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDisplayName()(*string)
+    GetVersion()(*string)
+    SetDisplayName(value *string)()
+    SetVersion(value *string)()
 }

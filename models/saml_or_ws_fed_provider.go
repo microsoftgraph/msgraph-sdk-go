@@ -7,16 +7,6 @@ import (
 // SamlOrWsFedProvider 
 type SamlOrWsFedProvider struct {
     IdentityProviderBase
-    // Issuer URI of the federation server.
-    issuerUri *string
-    // URI of the metadata exchange endpoint used for authentication from rich client applications.
-    metadataExchangeUri *string
-    // URI that web-based clients are directed to when signing in to Azure Active Directory (Azure AD) services.
-    passiveSignInUri *string
-    // Preferred authentication protocol. The possible values are: wsFed, saml, unknownFutureValue.
-    preferredAuthenticationProtocol *AuthenticationProtocol
-    // Current certificate used to sign tokens passed to the Microsoft identity platform. The certificate is formatted as a Base64 encoded string of the public portion of the federated IdP's token signing certificate and must be compatible with the X509Certificate2 class.   This property is used in the following scenarios:  if a rollover is required outside of the autorollover update a new federation service is being set up  if the new token signing certificate isn't present in the federation properties after the federation service certificate has been updated.   Azure AD updates certificates via an autorollover process in which it attempts to retrieve a new certificate from the federation service metadata, 30 days before expiry of the current certificate. If a new certificate isn't available, Azure AD monitors the metadata daily and will update the federation settings for the domain when a new certificate is available.
-    signingCertificate *string
 }
 // NewSamlOrWsFedProvider instantiates a new SamlOrWsFedProvider and sets the default values.
 func NewSamlOrWsFedProvider()(*SamlOrWsFedProvider) {
@@ -108,23 +98,58 @@ func (m *SamlOrWsFedProvider) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetIssuerUri gets the issuerUri property value. Issuer URI of the federation server.
 func (m *SamlOrWsFedProvider) GetIssuerUri()(*string) {
-    return m.issuerUri
+    val, err := m.GetBackingStore().Get("issuerUri")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetMetadataExchangeUri gets the metadataExchangeUri property value. URI of the metadata exchange endpoint used for authentication from rich client applications.
 func (m *SamlOrWsFedProvider) GetMetadataExchangeUri()(*string) {
-    return m.metadataExchangeUri
+    val, err := m.GetBackingStore().Get("metadataExchangeUri")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPassiveSignInUri gets the passiveSignInUri property value. URI that web-based clients are directed to when signing in to Azure Active Directory (Azure AD) services.
 func (m *SamlOrWsFedProvider) GetPassiveSignInUri()(*string) {
-    return m.passiveSignInUri
+    val, err := m.GetBackingStore().Get("passiveSignInUri")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPreferredAuthenticationProtocol gets the preferredAuthenticationProtocol property value. Preferred authentication protocol. The possible values are: wsFed, saml, unknownFutureValue.
 func (m *SamlOrWsFedProvider) GetPreferredAuthenticationProtocol()(*AuthenticationProtocol) {
-    return m.preferredAuthenticationProtocol
+    val, err := m.GetBackingStore().Get("preferredAuthenticationProtocol")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AuthenticationProtocol)
+    }
+    return nil
 }
 // GetSigningCertificate gets the signingCertificate property value. Current certificate used to sign tokens passed to the Microsoft identity platform. The certificate is formatted as a Base64 encoded string of the public portion of the federated IdP's token signing certificate and must be compatible with the X509Certificate2 class.   This property is used in the following scenarios:  if a rollover is required outside of the autorollover update a new federation service is being set up  if the new token signing certificate isn't present in the federation properties after the federation service certificate has been updated.   Azure AD updates certificates via an autorollover process in which it attempts to retrieve a new certificate from the federation service metadata, 30 days before expiry of the current certificate. If a new certificate isn't available, Azure AD monitors the metadata daily and will update the federation settings for the domain when a new certificate is available.
 func (m *SamlOrWsFedProvider) GetSigningCertificate()(*string) {
-    return m.signingCertificate
+    val, err := m.GetBackingStore().Get("signingCertificate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SamlOrWsFedProvider) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -167,21 +192,51 @@ func (m *SamlOrWsFedProvider) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetIssuerUri sets the issuerUri property value. Issuer URI of the federation server.
 func (m *SamlOrWsFedProvider) SetIssuerUri(value *string)() {
-    m.issuerUri = value
+    err := m.GetBackingStore().Set("issuerUri", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMetadataExchangeUri sets the metadataExchangeUri property value. URI of the metadata exchange endpoint used for authentication from rich client applications.
 func (m *SamlOrWsFedProvider) SetMetadataExchangeUri(value *string)() {
-    m.metadataExchangeUri = value
+    err := m.GetBackingStore().Set("metadataExchangeUri", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPassiveSignInUri sets the passiveSignInUri property value. URI that web-based clients are directed to when signing in to Azure Active Directory (Azure AD) services.
 func (m *SamlOrWsFedProvider) SetPassiveSignInUri(value *string)() {
-    m.passiveSignInUri = value
+    err := m.GetBackingStore().Set("passiveSignInUri", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPreferredAuthenticationProtocol sets the preferredAuthenticationProtocol property value. Preferred authentication protocol. The possible values are: wsFed, saml, unknownFutureValue.
 func (m *SamlOrWsFedProvider) SetPreferredAuthenticationProtocol(value *AuthenticationProtocol)() {
-    m.preferredAuthenticationProtocol = value
+    err := m.GetBackingStore().Set("preferredAuthenticationProtocol", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSigningCertificate sets the signingCertificate property value. Current certificate used to sign tokens passed to the Microsoft identity platform. The certificate is formatted as a Base64 encoded string of the public portion of the federated IdP's token signing certificate and must be compatible with the X509Certificate2 class.   This property is used in the following scenarios:  if a rollover is required outside of the autorollover update a new federation service is being set up  if the new token signing certificate isn't present in the federation properties after the federation service certificate has been updated.   Azure AD updates certificates via an autorollover process in which it attempts to retrieve a new certificate from the federation service metadata, 30 days before expiry of the current certificate. If a new certificate isn't available, Azure AD monitors the metadata daily and will update the federation settings for the domain when a new certificate is available.
 func (m *SamlOrWsFedProvider) SetSigningCertificate(value *string)() {
-    m.signingCertificate = value
+    err := m.GetBackingStore().Set("signingCertificate", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SamlOrWsFedProviderable 
+type SamlOrWsFedProviderable interface {
+    IdentityProviderBaseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetIssuerUri()(*string)
+    GetMetadataExchangeUri()(*string)
+    GetPassiveSignInUri()(*string)
+    GetPreferredAuthenticationProtocol()(*AuthenticationProtocol)
+    GetSigningCertificate()(*string)
+    SetIssuerUri(value *string)()
+    SetMetadataExchangeUri(value *string)()
+    SetPassiveSignInUri(value *string)()
+    SetPreferredAuthenticationProtocol(value *AuthenticationProtocol)()
+    SetSigningCertificate(value *string)()
 }

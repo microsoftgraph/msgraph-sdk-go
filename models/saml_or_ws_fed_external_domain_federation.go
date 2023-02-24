@@ -7,8 +7,6 @@ import (
 // SamlOrWsFedExternalDomainFederation 
 type SamlOrWsFedExternalDomainFederation struct {
     SamlOrWsFedProvider
-    // Collection of domain names of the external organizations that the tenant is federating with. Supports $filter (eq).
-    domains []ExternalDomainNameable
 }
 // NewSamlOrWsFedExternalDomainFederation instantiates a new SamlOrWsFedExternalDomainFederation and sets the default values.
 func NewSamlOrWsFedExternalDomainFederation()(*SamlOrWsFedExternalDomainFederation) {
@@ -25,7 +23,14 @@ func CreateSamlOrWsFedExternalDomainFederationFromDiscriminatorValue(parseNode i
 }
 // GetDomains gets the domains property value. Collection of domain names of the external organizations that the tenant is federating with. Supports $filter (eq).
 func (m *SamlOrWsFedExternalDomainFederation) GetDomains()([]ExternalDomainNameable) {
-    return m.domains
+    val, err := m.GetBackingStore().Get("domains")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ExternalDomainNameable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SamlOrWsFedExternalDomainFederation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -66,5 +71,15 @@ func (m *SamlOrWsFedExternalDomainFederation) Serialize(writer i878a80d2330e89d2
 }
 // SetDomains sets the domains property value. Collection of domain names of the external organizations that the tenant is federating with. Supports $filter (eq).
 func (m *SamlOrWsFedExternalDomainFederation) SetDomains(value []ExternalDomainNameable)() {
-    m.domains = value
+    err := m.GetBackingStore().Set("domains", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SamlOrWsFedExternalDomainFederationable 
+type SamlOrWsFedExternalDomainFederationable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    SamlOrWsFedProviderable
+    GetDomains()([]ExternalDomainNameable)
+    SetDomains(value []ExternalDomainNameable)()
 }

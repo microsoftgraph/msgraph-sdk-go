@@ -7,8 +7,6 @@ import (
 // EventCollectionResponse 
 type EventCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Eventable
 }
 // NewEventCollectionResponse instantiates a new EventCollectionResponse and sets the default values.
 func NewEventCollectionResponse()(*EventCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *EventCollectionResponse) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetValue gets the value property value. The value property
 func (m *EventCollectionResponse) GetValue()([]Eventable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Eventable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EventCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *EventCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetValue sets the value property value. The value property
 func (m *EventCollectionResponse) SetValue(value []Eventable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EventCollectionResponseable 
+type EventCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Eventable)
+    SetValue(value []Eventable)()
 }

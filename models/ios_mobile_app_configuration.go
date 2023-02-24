@@ -7,10 +7,6 @@ import (
 // IosMobileAppConfiguration 
 type IosMobileAppConfiguration struct {
     ManagedDeviceMobileAppConfiguration
-    // mdm app configuration Base64 binary.
-    encodedSettingXml []byte
-    // app configuration setting items.
-    settings []AppConfigurationSettingItemable
 }
 // NewIosMobileAppConfiguration instantiates a new IosMobileAppConfiguration and sets the default values.
 func NewIosMobileAppConfiguration()(*IosMobileAppConfiguration) {
@@ -27,7 +23,14 @@ func CreateIosMobileAppConfigurationFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetEncodedSettingXml gets the encodedSettingXml property value. mdm app configuration Base64 binary.
 func (m *IosMobileAppConfiguration) GetEncodedSettingXml()([]byte) {
-    return m.encodedSettingXml
+    val, err := m.GetBackingStore().Get("encodedSettingXml")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]byte)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosMobileAppConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,7 +63,14 @@ func (m *IosMobileAppConfiguration) GetFieldDeserializers()(map[string]func(i878
 }
 // GetSettings gets the settings property value. app configuration setting items.
 func (m *IosMobileAppConfiguration) GetSettings()([]AppConfigurationSettingItemable) {
-    return m.settings
+    val, err := m.GetBackingStore().Get("settings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AppConfigurationSettingItemable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IosMobileAppConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,9 +98,24 @@ func (m *IosMobileAppConfiguration) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetEncodedSettingXml sets the encodedSettingXml property value. mdm app configuration Base64 binary.
 func (m *IosMobileAppConfiguration) SetEncodedSettingXml(value []byte)() {
-    m.encodedSettingXml = value
+    err := m.GetBackingStore().Set("encodedSettingXml", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettings sets the settings property value. app configuration setting items.
 func (m *IosMobileAppConfiguration) SetSettings(value []AppConfigurationSettingItemable)() {
-    m.settings = value
+    err := m.GetBackingStore().Set("settings", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IosMobileAppConfigurationable 
+type IosMobileAppConfigurationable interface {
+    ManagedDeviceMobileAppConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetEncodedSettingXml()([]byte)
+    GetSettings()([]AppConfigurationSettingItemable)
+    SetEncodedSettingXml(value []byte)()
+    SetSettings(value []AppConfigurationSettingItemable)()
 }

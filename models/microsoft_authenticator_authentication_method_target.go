@@ -7,8 +7,6 @@ import (
 // MicrosoftAuthenticatorAuthenticationMethodTarget 
 type MicrosoftAuthenticatorAuthenticationMethodTarget struct {
     AuthenticationMethodTarget
-    // The authenticationMode property
-    authenticationMode *MicrosoftAuthenticatorAuthenticationMode
 }
 // NewMicrosoftAuthenticatorAuthenticationMethodTarget instantiates a new MicrosoftAuthenticatorAuthenticationMethodTarget and sets the default values.
 func NewMicrosoftAuthenticatorAuthenticationMethodTarget()(*MicrosoftAuthenticatorAuthenticationMethodTarget) {
@@ -23,7 +21,14 @@ func CreateMicrosoftAuthenticatorAuthenticationMethodTargetFromDiscriminatorValu
 }
 // GetAuthenticationMode gets the authenticationMode property value. The authenticationMode property
 func (m *MicrosoftAuthenticatorAuthenticationMethodTarget) GetAuthenticationMode()(*MicrosoftAuthenticatorAuthenticationMode) {
-    return m.authenticationMode
+    val, err := m.GetBackingStore().Get("authenticationMode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*MicrosoftAuthenticatorAuthenticationMode)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MicrosoftAuthenticatorAuthenticationMethodTarget) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -57,5 +62,15 @@ func (m *MicrosoftAuthenticatorAuthenticationMethodTarget) Serialize(writer i878
 }
 // SetAuthenticationMode sets the authenticationMode property value. The authenticationMode property
 func (m *MicrosoftAuthenticatorAuthenticationMethodTarget) SetAuthenticationMode(value *MicrosoftAuthenticatorAuthenticationMode)() {
-    m.authenticationMode = value
+    err := m.GetBackingStore().Set("authenticationMode", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MicrosoftAuthenticatorAuthenticationMethodTargetable 
+type MicrosoftAuthenticatorAuthenticationMethodTargetable interface {
+    AuthenticationMethodTargetable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAuthenticationMode()(*MicrosoftAuthenticatorAuthenticationMode)
+    SetAuthenticationMode(value *MicrosoftAuthenticatorAuthenticationMode)()
 }

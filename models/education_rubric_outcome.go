@@ -7,14 +7,6 @@ import (
 // EducationRubricOutcome 
 type EducationRubricOutcome struct {
     EducationOutcome
-    // A copy of the rubricQualityFeedback property that is made when the grade is released to the student.
-    publishedRubricQualityFeedback []RubricQualityFeedbackModelable
-    // A copy of the rubricQualitySelectedLevels property that is made when the grade is released to the student.
-    publishedRubricQualitySelectedLevels []RubricQualitySelectedColumnModelable
-    // A collection of specific feedback for each quality of this rubric.
-    rubricQualityFeedback []RubricQualityFeedbackModelable
-    // The level that the teacher has selected for each quality while grading this assignment.
-    rubricQualitySelectedLevels []RubricQualitySelectedColumnModelable
 }
 // NewEducationRubricOutcome instantiates a new EducationRubricOutcome and sets the default values.
 func NewEducationRubricOutcome()(*EducationRubricOutcome) {
@@ -92,19 +84,47 @@ func (m *EducationRubricOutcome) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetPublishedRubricQualityFeedback gets the publishedRubricQualityFeedback property value. A copy of the rubricQualityFeedback property that is made when the grade is released to the student.
 func (m *EducationRubricOutcome) GetPublishedRubricQualityFeedback()([]RubricQualityFeedbackModelable) {
-    return m.publishedRubricQualityFeedback
+    val, err := m.GetBackingStore().Get("publishedRubricQualityFeedback")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]RubricQualityFeedbackModelable)
+    }
+    return nil
 }
 // GetPublishedRubricQualitySelectedLevels gets the publishedRubricQualitySelectedLevels property value. A copy of the rubricQualitySelectedLevels property that is made when the grade is released to the student.
 func (m *EducationRubricOutcome) GetPublishedRubricQualitySelectedLevels()([]RubricQualitySelectedColumnModelable) {
-    return m.publishedRubricQualitySelectedLevels
+    val, err := m.GetBackingStore().Get("publishedRubricQualitySelectedLevels")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]RubricQualitySelectedColumnModelable)
+    }
+    return nil
 }
 // GetRubricQualityFeedback gets the rubricQualityFeedback property value. A collection of specific feedback for each quality of this rubric.
 func (m *EducationRubricOutcome) GetRubricQualityFeedback()([]RubricQualityFeedbackModelable) {
-    return m.rubricQualityFeedback
+    val, err := m.GetBackingStore().Get("rubricQualityFeedback")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]RubricQualityFeedbackModelable)
+    }
+    return nil
 }
 // GetRubricQualitySelectedLevels gets the rubricQualitySelectedLevels property value. The level that the teacher has selected for each quality while grading this assignment.
 func (m *EducationRubricOutcome) GetRubricQualitySelectedLevels()([]RubricQualitySelectedColumnModelable) {
-    return m.rubricQualitySelectedLevels
+    val, err := m.GetBackingStore().Get("rubricQualitySelectedLevels")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]RubricQualitySelectedColumnModelable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EducationRubricOutcome) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -156,17 +176,42 @@ func (m *EducationRubricOutcome) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetPublishedRubricQualityFeedback sets the publishedRubricQualityFeedback property value. A copy of the rubricQualityFeedback property that is made when the grade is released to the student.
 func (m *EducationRubricOutcome) SetPublishedRubricQualityFeedback(value []RubricQualityFeedbackModelable)() {
-    m.publishedRubricQualityFeedback = value
+    err := m.GetBackingStore().Set("publishedRubricQualityFeedback", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPublishedRubricQualitySelectedLevels sets the publishedRubricQualitySelectedLevels property value. A copy of the rubricQualitySelectedLevels property that is made when the grade is released to the student.
 func (m *EducationRubricOutcome) SetPublishedRubricQualitySelectedLevels(value []RubricQualitySelectedColumnModelable)() {
-    m.publishedRubricQualitySelectedLevels = value
+    err := m.GetBackingStore().Set("publishedRubricQualitySelectedLevels", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRubricQualityFeedback sets the rubricQualityFeedback property value. A collection of specific feedback for each quality of this rubric.
 func (m *EducationRubricOutcome) SetRubricQualityFeedback(value []RubricQualityFeedbackModelable)() {
-    m.rubricQualityFeedback = value
+    err := m.GetBackingStore().Set("rubricQualityFeedback", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRubricQualitySelectedLevels sets the rubricQualitySelectedLevels property value. The level that the teacher has selected for each quality while grading this assignment.
 func (m *EducationRubricOutcome) SetRubricQualitySelectedLevels(value []RubricQualitySelectedColumnModelable)() {
-    m.rubricQualitySelectedLevels = value
+    err := m.GetBackingStore().Set("rubricQualitySelectedLevels", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EducationRubricOutcomeable 
+type EducationRubricOutcomeable interface {
+    EducationOutcomeable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetPublishedRubricQualityFeedback()([]RubricQualityFeedbackModelable)
+    GetPublishedRubricQualitySelectedLevels()([]RubricQualitySelectedColumnModelable)
+    GetRubricQualityFeedback()([]RubricQualityFeedbackModelable)
+    GetRubricQualitySelectedLevels()([]RubricQualitySelectedColumnModelable)
+    SetPublishedRubricQualityFeedback(value []RubricQualityFeedbackModelable)()
+    SetPublishedRubricQualitySelectedLevels(value []RubricQualitySelectedColumnModelable)()
+    SetRubricQualityFeedback(value []RubricQualityFeedbackModelable)()
+    SetRubricQualitySelectedLevels(value []RubricQualitySelectedColumnModelable)()
 }

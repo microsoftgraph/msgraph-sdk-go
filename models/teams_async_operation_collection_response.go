@@ -7,8 +7,6 @@ import (
 // TeamsAsyncOperationCollectionResponse 
 type TeamsAsyncOperationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []TeamsAsyncOperationable
 }
 // NewTeamsAsyncOperationCollectionResponse instantiates a new TeamsAsyncOperationCollectionResponse and sets the default values.
 func NewTeamsAsyncOperationCollectionResponse()(*TeamsAsyncOperationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *TeamsAsyncOperationCollectionResponse) GetFieldDeserializers()(map[stri
 }
 // GetValue gets the value property value. The value property
 func (m *TeamsAsyncOperationCollectionResponse) GetValue()([]TeamsAsyncOperationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TeamsAsyncOperationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TeamsAsyncOperationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *TeamsAsyncOperationCollectionResponse) Serialize(writer i878a80d2330e89
 }
 // SetValue sets the value property value. The value property
 func (m *TeamsAsyncOperationCollectionResponse) SetValue(value []TeamsAsyncOperationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TeamsAsyncOperationCollectionResponseable 
+type TeamsAsyncOperationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]TeamsAsyncOperationable)
+    SetValue(value []TeamsAsyncOperationable)()
 }

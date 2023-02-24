@@ -3,21 +3,19 @@ package communications
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // CallsItemParticipantsItemMicrosoftGraphStartHoldMusicStartHoldMusicPostRequestBody 
 type CallsItemParticipantsItemMicrosoftGraphStartHoldMusicStartHoldMusicPostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The clientContext property
-    clientContext *string
-    // The customPrompt property
-    customPrompt iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Promptable
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewCallsItemParticipantsItemMicrosoftGraphStartHoldMusicStartHoldMusicPostRequestBody instantiates a new CallsItemParticipantsItemMicrosoftGraphStartHoldMusicStartHoldMusicPostRequestBody and sets the default values.
 func NewCallsItemParticipantsItemMicrosoftGraphStartHoldMusicStartHoldMusicPostRequestBody()(*CallsItemParticipantsItemMicrosoftGraphStartHoldMusicStartHoldMusicPostRequestBody) {
     m := &CallsItemParticipantsItemMicrosoftGraphStartHoldMusicStartHoldMusicPostRequestBody{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -27,15 +25,41 @@ func CreateCallsItemParticipantsItemMicrosoftGraphStartHoldMusicStartHoldMusicPo
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CallsItemParticipantsItemMicrosoftGraphStartHoldMusicStartHoldMusicPostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *CallsItemParticipantsItemMicrosoftGraphStartHoldMusicStartHoldMusicPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetClientContext gets the clientContext property value. The clientContext property
 func (m *CallsItemParticipantsItemMicrosoftGraphStartHoldMusicStartHoldMusicPostRequestBody) GetClientContext()(*string) {
-    return m.clientContext
+    val, err := m.GetBackingStore().Get("clientContext")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCustomPrompt gets the customPrompt property value. The customPrompt property
 func (m *CallsItemParticipantsItemMicrosoftGraphStartHoldMusicStartHoldMusicPostRequestBody) GetCustomPrompt()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Promptable) {
-    return m.customPrompt
+    val, err := m.GetBackingStore().Get("customPrompt")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Promptable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CallsItemParticipantsItemMicrosoftGraphStartHoldMusicStartHoldMusicPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -86,13 +110,38 @@ func (m *CallsItemParticipantsItemMicrosoftGraphStartHoldMusicStartHoldMusicPost
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CallsItemParticipantsItemMicrosoftGraphStartHoldMusicStartHoldMusicPostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *CallsItemParticipantsItemMicrosoftGraphStartHoldMusicStartHoldMusicPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetClientContext sets the clientContext property value. The clientContext property
 func (m *CallsItemParticipantsItemMicrosoftGraphStartHoldMusicStartHoldMusicPostRequestBody) SetClientContext(value *string)() {
-    m.clientContext = value
+    err := m.GetBackingStore().Set("clientContext", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCustomPrompt sets the customPrompt property value. The customPrompt property
 func (m *CallsItemParticipantsItemMicrosoftGraphStartHoldMusicStartHoldMusicPostRequestBody) SetCustomPrompt(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Promptable)() {
-    m.customPrompt = value
+    err := m.GetBackingStore().Set("customPrompt", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CallsItemParticipantsItemMicrosoftGraphStartHoldMusicStartHoldMusicPostRequestBodyable 
+type CallsItemParticipantsItemMicrosoftGraphStartHoldMusicStartHoldMusicPostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetClientContext()(*string)
+    GetCustomPrompt()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Promptable)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetClientContext(value *string)()
+    SetCustomPrompt(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Promptable)()
 }

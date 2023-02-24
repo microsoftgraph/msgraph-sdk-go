@@ -8,20 +8,6 @@ import (
 // Printer 
 type Printer struct {
     PrinterBase
-    // The connectors that are associated with the printer.
-    connectors []PrintConnectorable
-    // True if the printer has a physical device for printing. Read-only.
-    hasPhysicalDevice *bool
-    // True if the printer is shared; false otherwise. Read-only.
-    isShared *bool
-    // The most recent dateTimeOffset when a printer interacted with Universal Print. Read-only.
-    lastSeenDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The DateTimeOffset when the printer was registered. Read-only.
-    registeredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.
-    shares []PrinterShareable
-    // A list of task triggers that are associated with the printer.
-    taskTriggers []PrintTaskTriggerable
 }
 // NewPrinter instantiates a new Printer and sets the default values.
 func NewPrinter()(*Printer) {
@@ -38,7 +24,14 @@ func CreatePrinterFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
 }
 // GetConnectors gets the connectors property value. The connectors that are associated with the printer.
 func (m *Printer) GetConnectors()([]PrintConnectorable) {
-    return m.connectors
+    val, err := m.GetBackingStore().Get("connectors")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrintConnectorable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Printer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -129,27 +122,69 @@ func (m *Printer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
 }
 // GetHasPhysicalDevice gets the hasPhysicalDevice property value. True if the printer has a physical device for printing. Read-only.
 func (m *Printer) GetHasPhysicalDevice()(*bool) {
-    return m.hasPhysicalDevice
+    val, err := m.GetBackingStore().Get("hasPhysicalDevice")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsShared gets the isShared property value. True if the printer is shared; false otherwise. Read-only.
 func (m *Printer) GetIsShared()(*bool) {
-    return m.isShared
+    val, err := m.GetBackingStore().Get("isShared")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLastSeenDateTime gets the lastSeenDateTime property value. The most recent dateTimeOffset when a printer interacted with Universal Print. Read-only.
 func (m *Printer) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.lastSeenDateTime
+    val, err := m.GetBackingStore().Get("lastSeenDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetRegisteredDateTime gets the registeredDateTime property value. The DateTimeOffset when the printer was registered. Read-only.
 func (m *Printer) GetRegisteredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.registeredDateTime
+    val, err := m.GetBackingStore().Get("registeredDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetShares gets the shares property value. The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.
 func (m *Printer) GetShares()([]PrinterShareable) {
-    return m.shares
+    val, err := m.GetBackingStore().Get("shares")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrinterShareable)
+    }
+    return nil
 }
 // GetTaskTriggers gets the taskTriggers property value. A list of task triggers that are associated with the printer.
 func (m *Printer) GetTaskTriggers()([]PrintTaskTriggerable) {
-    return m.taskTriggers
+    val, err := m.GetBackingStore().Get("taskTriggers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrintTaskTriggerable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Printer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -215,29 +250,69 @@ func (m *Printer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
 }
 // SetConnectors sets the connectors property value. The connectors that are associated with the printer.
 func (m *Printer) SetConnectors(value []PrintConnectorable)() {
-    m.connectors = value
+    err := m.GetBackingStore().Set("connectors", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHasPhysicalDevice sets the hasPhysicalDevice property value. True if the printer has a physical device for printing. Read-only.
 func (m *Printer) SetHasPhysicalDevice(value *bool)() {
-    m.hasPhysicalDevice = value
+    err := m.GetBackingStore().Set("hasPhysicalDevice", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsShared sets the isShared property value. True if the printer is shared; false otherwise. Read-only.
 func (m *Printer) SetIsShared(value *bool)() {
-    m.isShared = value
+    err := m.GetBackingStore().Set("isShared", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastSeenDateTime sets the lastSeenDateTime property value. The most recent dateTimeOffset when a printer interacted with Universal Print. Read-only.
 func (m *Printer) SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastSeenDateTime = value
+    err := m.GetBackingStore().Set("lastSeenDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRegisteredDateTime sets the registeredDateTime property value. The DateTimeOffset when the printer was registered. Read-only.
 func (m *Printer) SetRegisteredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.registeredDateTime = value
+    err := m.GetBackingStore().Set("registeredDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetShares sets the shares property value. The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.
 func (m *Printer) SetShares(value []PrinterShareable)() {
-    m.shares = value
+    err := m.GetBackingStore().Set("shares", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTaskTriggers sets the taskTriggers property value. A list of task triggers that are associated with the printer.
 func (m *Printer) SetTaskTriggers(value []PrintTaskTriggerable)() {
-    m.taskTriggers = value
+    err := m.GetBackingStore().Set("taskTriggers", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Printerable 
+type Printerable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    PrinterBaseable
+    GetConnectors()([]PrintConnectorable)
+    GetHasPhysicalDevice()(*bool)
+    GetIsShared()(*bool)
+    GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetRegisteredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetShares()([]PrinterShareable)
+    GetTaskTriggers()([]PrintTaskTriggerable)
+    SetConnectors(value []PrintConnectorable)()
+    SetHasPhysicalDevice(value *bool)()
+    SetIsShared(value *bool)()
+    SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetRegisteredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetShares(value []PrinterShareable)()
+    SetTaskTriggers(value []PrintTaskTriggerable)()
 }

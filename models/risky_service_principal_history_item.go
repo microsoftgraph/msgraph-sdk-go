@@ -7,10 +7,6 @@ import (
 // RiskyServicePrincipalHistoryItem 
 type RiskyServicePrincipalHistoryItem struct {
     RiskyServicePrincipal
-    // The activity related to service principal risk level change.
-    activity RiskServicePrincipalActivityable
-    // The identifier of the actor of the operation.
-    initiatedBy *string
 }
 // NewRiskyServicePrincipalHistoryItem instantiates a new riskyServicePrincipalHistoryItem and sets the default values.
 func NewRiskyServicePrincipalHistoryItem()(*RiskyServicePrincipalHistoryItem) {
@@ -25,7 +21,14 @@ func CreateRiskyServicePrincipalHistoryItemFromDiscriminatorValue(parseNode i878
 }
 // GetActivity gets the activity property value. The activity related to service principal risk level change.
 func (m *RiskyServicePrincipalHistoryItem) GetActivity()(RiskServicePrincipalActivityable) {
-    return m.activity
+    val, err := m.GetBackingStore().Get("activity")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(RiskServicePrincipalActivityable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RiskyServicePrincipalHistoryItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -54,7 +57,14 @@ func (m *RiskyServicePrincipalHistoryItem) GetFieldDeserializers()(map[string]fu
 }
 // GetInitiatedBy gets the initiatedBy property value. The identifier of the actor of the operation.
 func (m *RiskyServicePrincipalHistoryItem) GetInitiatedBy()(*string) {
-    return m.initiatedBy
+    val, err := m.GetBackingStore().Get("initiatedBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *RiskyServicePrincipalHistoryItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -78,9 +88,24 @@ func (m *RiskyServicePrincipalHistoryItem) Serialize(writer i878a80d2330e89d2689
 }
 // SetActivity sets the activity property value. The activity related to service principal risk level change.
 func (m *RiskyServicePrincipalHistoryItem) SetActivity(value RiskServicePrincipalActivityable)() {
-    m.activity = value
+    err := m.GetBackingStore().Set("activity", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInitiatedBy sets the initiatedBy property value. The identifier of the actor of the operation.
 func (m *RiskyServicePrincipalHistoryItem) SetInitiatedBy(value *string)() {
-    m.initiatedBy = value
+    err := m.GetBackingStore().Set("initiatedBy", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// RiskyServicePrincipalHistoryItemable 
+type RiskyServicePrincipalHistoryItemable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    RiskyServicePrincipalable
+    GetActivity()(RiskServicePrincipalActivityable)
+    GetInitiatedBy()(*string)
+    SetActivity(value RiskServicePrincipalActivityable)()
+    SetInitiatedBy(value *string)()
 }

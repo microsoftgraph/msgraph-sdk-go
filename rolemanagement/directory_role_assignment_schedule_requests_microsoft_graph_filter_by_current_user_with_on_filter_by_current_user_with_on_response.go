@@ -8,8 +8,6 @@ import (
 // DirectoryRoleAssignmentScheduleRequestsMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnResponse 
 type DirectoryRoleAssignmentScheduleRequestsMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
-    // The value property
-    value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleAssignmentScheduleRequestable
 }
 // NewDirectoryRoleAssignmentScheduleRequestsMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnResponse instantiates a new DirectoryRoleAssignmentScheduleRequestsMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnResponse and sets the default values.
 func NewDirectoryRoleAssignmentScheduleRequestsMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnResponse()(*DirectoryRoleAssignmentScheduleRequestsMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnResponse) {
@@ -43,7 +41,14 @@ func (m *DirectoryRoleAssignmentScheduleRequestsMicrosoftGraphFilterByCurrentUse
 }
 // GetValue gets the value property value. The value property
 func (m *DirectoryRoleAssignmentScheduleRequestsMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnResponse) GetValue()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleAssignmentScheduleRequestable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleAssignmentScheduleRequestable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DirectoryRoleAssignmentScheduleRequestsMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *DirectoryRoleAssignmentScheduleRequestsMicrosoftGraphFilterByCurrentUse
 }
 // SetValue sets the value property value. The value property
 func (m *DirectoryRoleAssignmentScheduleRequestsMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnResponse) SetValue(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleAssignmentScheduleRequestable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DirectoryRoleAssignmentScheduleRequestsMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnResponseable 
+type DirectoryRoleAssignmentScheduleRequestsMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnResponseable interface {
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleAssignmentScheduleRequestable)
+    SetValue(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleAssignmentScheduleRequestable)()
 }

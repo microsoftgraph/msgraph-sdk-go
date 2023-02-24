@@ -2,21 +2,19 @@ package users
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ItemMicrosoftGraphChangePasswordChangePasswordPostRequestBody 
 type ItemMicrosoftGraphChangePasswordChangePasswordPostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The currentPassword property
-    currentPassword *string
-    // The newPassword property
-    newPassword *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewItemMicrosoftGraphChangePasswordChangePasswordPostRequestBody instantiates a new ItemMicrosoftGraphChangePasswordChangePasswordPostRequestBody and sets the default values.
 func NewItemMicrosoftGraphChangePasswordChangePasswordPostRequestBody()(*ItemMicrosoftGraphChangePasswordChangePasswordPostRequestBody) {
     m := &ItemMicrosoftGraphChangePasswordChangePasswordPostRequestBody{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -26,11 +24,30 @@ func CreateItemMicrosoftGraphChangePasswordChangePasswordPostRequestBodyFromDisc
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemMicrosoftGraphChangePasswordChangePasswordPostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ItemMicrosoftGraphChangePasswordChangePasswordPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetCurrentPassword gets the currentPassword property value. The currentPassword property
 func (m *ItemMicrosoftGraphChangePasswordChangePasswordPostRequestBody) GetCurrentPassword()(*string) {
-    return m.currentPassword
+    val, err := m.GetBackingStore().Get("currentPassword")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemMicrosoftGraphChangePasswordChangePasswordPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -59,7 +76,14 @@ func (m *ItemMicrosoftGraphChangePasswordChangePasswordPostRequestBody) GetField
 }
 // GetNewPassword gets the newPassword property value. The newPassword property
 func (m *ItemMicrosoftGraphChangePasswordChangePasswordPostRequestBody) GetNewPassword()(*string) {
-    return m.newPassword
+    val, err := m.GetBackingStore().Get("newPassword")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ItemMicrosoftGraphChangePasswordChangePasswordPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -85,13 +109,38 @@ func (m *ItemMicrosoftGraphChangePasswordChangePasswordPostRequestBody) Serializ
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemMicrosoftGraphChangePasswordChangePasswordPostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ItemMicrosoftGraphChangePasswordChangePasswordPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetCurrentPassword sets the currentPassword property value. The currentPassword property
 func (m *ItemMicrosoftGraphChangePasswordChangePasswordPostRequestBody) SetCurrentPassword(value *string)() {
-    m.currentPassword = value
+    err := m.GetBackingStore().Set("currentPassword", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNewPassword sets the newPassword property value. The newPassword property
 func (m *ItemMicrosoftGraphChangePasswordChangePasswordPostRequestBody) SetNewPassword(value *string)() {
-    m.newPassword = value
+    err := m.GetBackingStore().Set("newPassword", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ItemMicrosoftGraphChangePasswordChangePasswordPostRequestBodyable 
+type ItemMicrosoftGraphChangePasswordChangePasswordPostRequestBodyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetCurrentPassword()(*string)
+    GetNewPassword()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetCurrentPassword(value *string)()
+    SetNewPassword(value *string)()
 }

@@ -8,8 +8,6 @@ import (
 // EntitlementManagementCatalogsItemAccessPackagesMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnResponse 
 type EntitlementManagementCatalogsItemAccessPackagesMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
-    // The value property
-    value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable
 }
 // NewEntitlementManagementCatalogsItemAccessPackagesMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnResponse instantiates a new EntitlementManagementCatalogsItemAccessPackagesMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnResponse and sets the default values.
 func NewEntitlementManagementCatalogsItemAccessPackagesMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnResponse()(*EntitlementManagementCatalogsItemAccessPackagesMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnResponse) {
@@ -43,7 +41,14 @@ func (m *EntitlementManagementCatalogsItemAccessPackagesMicrosoftGraphFilterByCu
 }
 // GetValue gets the value property value. The value property
 func (m *EntitlementManagementCatalogsItemAccessPackagesMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnResponse) GetValue()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EntitlementManagementCatalogsItemAccessPackagesMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *EntitlementManagementCatalogsItemAccessPackagesMicrosoftGraphFilterByCu
 }
 // SetValue sets the value property value. The value property
 func (m *EntitlementManagementCatalogsItemAccessPackagesMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnResponse) SetValue(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EntitlementManagementCatalogsItemAccessPackagesMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnResponseable 
+type EntitlementManagementCatalogsItemAccessPackagesMicrosoftGraphFilterByCurrentUserWithOnFilterByCurrentUserWithOnResponseable interface {
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable)
+    SetValue(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable)()
 }

@@ -7,10 +7,6 @@ import (
 // AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource 
 type AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource struct {
     AccessReviewInstanceDecisionItemResource
-    // Display name of the access package to which access has been granted.
-    accessPackageDisplayName *string
-    // Identifier of the access package to which access has been granted.
-    accessPackageId *string
 }
 // NewAccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource instantiates a new AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource and sets the default values.
 func NewAccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource()(*AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource) {
@@ -27,11 +23,25 @@ func CreateAccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource
 }
 // GetAccessPackageDisplayName gets the accessPackageDisplayName property value. Display name of the access package to which access has been granted.
 func (m *AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource) GetAccessPackageDisplayName()(*string) {
-    return m.accessPackageDisplayName
+    val, err := m.GetBackingStore().Get("accessPackageDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAccessPackageId gets the accessPackageId property value. Identifier of the access package to which access has been granted.
 func (m *AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource) GetAccessPackageId()(*string) {
-    return m.accessPackageId
+    val, err := m.GetBackingStore().Get("accessPackageId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -80,9 +90,24 @@ func (m *AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource) 
 }
 // SetAccessPackageDisplayName sets the accessPackageDisplayName property value. Display name of the access package to which access has been granted.
 func (m *AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource) SetAccessPackageDisplayName(value *string)() {
-    m.accessPackageDisplayName = value
+    err := m.GetBackingStore().Set("accessPackageDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAccessPackageId sets the accessPackageId property value. Identifier of the access package to which access has been granted.
 func (m *AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource) SetAccessPackageId(value *string)() {
-    m.accessPackageId = value
+    err := m.GetBackingStore().Set("accessPackageId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResourceable 
+type AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResourceable interface {
+    AccessReviewInstanceDecisionItemResourceable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAccessPackageDisplayName()(*string)
+    GetAccessPackageId()(*string)
+    SetAccessPackageDisplayName(value *string)()
+    SetAccessPackageId(value *string)()
 }

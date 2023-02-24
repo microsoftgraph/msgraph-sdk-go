@@ -8,10 +8,6 @@ import (
 // DeviceManagementTroubleshootingEvent event representing an general failure.
 type DeviceManagementTroubleshootingEvent struct {
     Entity
-    // Id used for tracing the failure in the service.
-    correlationId *string
-    // Time when the event occurred .
-    eventDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewDeviceManagementTroubleshootingEvent instantiates a new deviceManagementTroubleshootingEvent and sets the default values.
 func NewDeviceManagementTroubleshootingEvent()(*DeviceManagementTroubleshootingEvent) {
@@ -44,11 +40,25 @@ func CreateDeviceManagementTroubleshootingEventFromDiscriminatorValue(parseNode 
 }
 // GetCorrelationId gets the correlationId property value. Id used for tracing the failure in the service.
 func (m *DeviceManagementTroubleshootingEvent) GetCorrelationId()(*string) {
-    return m.correlationId
+    val, err := m.GetBackingStore().Get("correlationId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetEventDateTime gets the eventDateTime property value. Time when the event occurred .
 func (m *DeviceManagementTroubleshootingEvent) GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.eventDateTime
+    val, err := m.GetBackingStore().Get("eventDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementTroubleshootingEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -97,9 +107,24 @@ func (m *DeviceManagementTroubleshootingEvent) Serialize(writer i878a80d2330e89d
 }
 // SetCorrelationId sets the correlationId property value. Id used for tracing the failure in the service.
 func (m *DeviceManagementTroubleshootingEvent) SetCorrelationId(value *string)() {
-    m.correlationId = value
+    err := m.GetBackingStore().Set("correlationId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEventDateTime sets the eventDateTime property value. Time when the event occurred .
 func (m *DeviceManagementTroubleshootingEvent) SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.eventDateTime = value
+    err := m.GetBackingStore().Set("eventDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementTroubleshootingEventable 
+type DeviceManagementTroubleshootingEventable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCorrelationId()(*string)
+    GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    SetCorrelationId(value *string)()
+    SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
 }

@@ -7,18 +7,6 @@ import (
 // EdiscoverySearch 
 type EdiscoverySearch struct {
     Search
-    // Adds an additional source to the eDiscovery search.
-    additionalSources []DataSourceable
-    // Adds the results of the eDiscovery search to the specified reviewSet.
-    addToReviewSetOperation EdiscoveryAddToReviewSetOperationable
-    // Custodian sources that are included in the eDiscovery search.
-    custodianSources []DataSourceable
-    // When specified, the collection will span across a service for an entire workload. Possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.
-    dataSourceScopes *DataSourceScopes
-    // The last estimate operation associated with the eDiscovery search.
-    lastEstimateStatisticsOperation EdiscoveryEstimateOperationable
-    // noncustodialDataSource sources that are included in the eDiscovery search
-    noncustodialSources []EdiscoveryNoncustodialDataSourceable
 }
 // NewEdiscoverySearch instantiates a new EdiscoverySearch and sets the default values.
 func NewEdiscoverySearch()(*EdiscoverySearch) {
@@ -35,19 +23,47 @@ func CreateEdiscoverySearchFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetAdditionalSources gets the additionalSources property value. Adds an additional source to the eDiscovery search.
 func (m *EdiscoverySearch) GetAdditionalSources()([]DataSourceable) {
-    return m.additionalSources
+    val, err := m.GetBackingStore().Get("additionalSources")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DataSourceable)
+    }
+    return nil
 }
 // GetAddToReviewSetOperation gets the addToReviewSetOperation property value. Adds the results of the eDiscovery search to the specified reviewSet.
 func (m *EdiscoverySearch) GetAddToReviewSetOperation()(EdiscoveryAddToReviewSetOperationable) {
-    return m.addToReviewSetOperation
+    val, err := m.GetBackingStore().Get("addToReviewSetOperation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(EdiscoveryAddToReviewSetOperationable)
+    }
+    return nil
 }
 // GetCustodianSources gets the custodianSources property value. Custodian sources that are included in the eDiscovery search.
 func (m *EdiscoverySearch) GetCustodianSources()([]DataSourceable) {
-    return m.custodianSources
+    val, err := m.GetBackingStore().Get("custodianSources")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DataSourceable)
+    }
+    return nil
 }
 // GetDataSourceScopes gets the dataSourceScopes property value. When specified, the collection will span across a service for an entire workload. Possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.
 func (m *EdiscoverySearch) GetDataSourceScopes()(*DataSourceScopes) {
-    return m.dataSourceScopes
+    val, err := m.GetBackingStore().Get("dataSourceScopes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DataSourceScopes)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EdiscoverySearch) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -128,11 +144,25 @@ func (m *EdiscoverySearch) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetLastEstimateStatisticsOperation gets the lastEstimateStatisticsOperation property value. The last estimate operation associated with the eDiscovery search.
 func (m *EdiscoverySearch) GetLastEstimateStatisticsOperation()(EdiscoveryEstimateOperationable) {
-    return m.lastEstimateStatisticsOperation
+    val, err := m.GetBackingStore().Get("lastEstimateStatisticsOperation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(EdiscoveryEstimateOperationable)
+    }
+    return nil
 }
 // GetNoncustodialSources gets the noncustodialSources property value. noncustodialDataSource sources that are included in the eDiscovery search
 func (m *EdiscoverySearch) GetNoncustodialSources()([]EdiscoveryNoncustodialDataSourceable) {
-    return m.noncustodialSources
+    val, err := m.GetBackingStore().Get("noncustodialSources")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EdiscoveryNoncustodialDataSourceable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EdiscoverySearch) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -193,25 +223,60 @@ func (m *EdiscoverySearch) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetAdditionalSources sets the additionalSources property value. Adds an additional source to the eDiscovery search.
 func (m *EdiscoverySearch) SetAdditionalSources(value []DataSourceable)() {
-    m.additionalSources = value
+    err := m.GetBackingStore().Set("additionalSources", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAddToReviewSetOperation sets the addToReviewSetOperation property value. Adds the results of the eDiscovery search to the specified reviewSet.
 func (m *EdiscoverySearch) SetAddToReviewSetOperation(value EdiscoveryAddToReviewSetOperationable)() {
-    m.addToReviewSetOperation = value
+    err := m.GetBackingStore().Set("addToReviewSetOperation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCustodianSources sets the custodianSources property value. Custodian sources that are included in the eDiscovery search.
 func (m *EdiscoverySearch) SetCustodianSources(value []DataSourceable)() {
-    m.custodianSources = value
+    err := m.GetBackingStore().Set("custodianSources", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDataSourceScopes sets the dataSourceScopes property value. When specified, the collection will span across a service for an entire workload. Possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.
 func (m *EdiscoverySearch) SetDataSourceScopes(value *DataSourceScopes)() {
-    m.dataSourceScopes = value
+    err := m.GetBackingStore().Set("dataSourceScopes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastEstimateStatisticsOperation sets the lastEstimateStatisticsOperation property value. The last estimate operation associated with the eDiscovery search.
 func (m *EdiscoverySearch) SetLastEstimateStatisticsOperation(value EdiscoveryEstimateOperationable)() {
-    m.lastEstimateStatisticsOperation = value
+    err := m.GetBackingStore().Set("lastEstimateStatisticsOperation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNoncustodialSources sets the noncustodialSources property value. noncustodialDataSource sources that are included in the eDiscovery search
 func (m *EdiscoverySearch) SetNoncustodialSources(value []EdiscoveryNoncustodialDataSourceable)() {
-    m.noncustodialSources = value
+    err := m.GetBackingStore().Set("noncustodialSources", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EdiscoverySearchable 
+type EdiscoverySearchable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    Searchable
+    GetAdditionalSources()([]DataSourceable)
+    GetAddToReviewSetOperation()(EdiscoveryAddToReviewSetOperationable)
+    GetCustodianSources()([]DataSourceable)
+    GetDataSourceScopes()(*DataSourceScopes)
+    GetLastEstimateStatisticsOperation()(EdiscoveryEstimateOperationable)
+    GetNoncustodialSources()([]EdiscoveryNoncustodialDataSourceable)
+    SetAdditionalSources(value []DataSourceable)()
+    SetAddToReviewSetOperation(value EdiscoveryAddToReviewSetOperationable)()
+    SetCustodianSources(value []DataSourceable)()
+    SetDataSourceScopes(value *DataSourceScopes)()
+    SetLastEstimateStatisticsOperation(value EdiscoveryEstimateOperationable)()
+    SetNoncustodialSources(value []EdiscoveryNoncustodialDataSourceable)()
 }

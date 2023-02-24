@@ -7,14 +7,6 @@ import (
 // Shift 
 type Shift struct {
     ChangeTrackedEntity
-    // The draft version of this shift that is viewable by managers. Required.
-    draftShift ShiftItemable
-    // ID of the scheduling group the shift is part of. Required.
-    schedulingGroupId *string
-    // The shared version of this shift that is viewable by both employees and managers. Required.
-    sharedShift ShiftItemable
-    // ID of the user assigned to the shift. Required.
-    userId *string
 }
 // NewShift instantiates a new Shift and sets the default values.
 func NewShift()(*Shift) {
@@ -31,7 +23,14 @@ func CreateShiftFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487e
 }
 // GetDraftShift gets the draftShift property value. The draft version of this shift that is viewable by managers. Required.
 func (m *Shift) GetDraftShift()(ShiftItemable) {
-    return m.draftShift
+    val, err := m.GetBackingStore().Get("draftShift")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ShiftItemable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Shift) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -80,15 +79,36 @@ func (m *Shift) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
 }
 // GetSchedulingGroupId gets the schedulingGroupId property value. ID of the scheduling group the shift is part of. Required.
 func (m *Shift) GetSchedulingGroupId()(*string) {
-    return m.schedulingGroupId
+    val, err := m.GetBackingStore().Get("schedulingGroupId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSharedShift gets the sharedShift property value. The shared version of this shift that is viewable by both employees and managers. Required.
 func (m *Shift) GetSharedShift()(ShiftItemable) {
-    return m.sharedShift
+    val, err := m.GetBackingStore().Get("sharedShift")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ShiftItemable)
+    }
+    return nil
 }
 // GetUserId gets the userId property value. ID of the user assigned to the shift. Required.
 func (m *Shift) GetUserId()(*string) {
-    return m.userId
+    val, err := m.GetBackingStore().Get("userId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Shift) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -124,17 +144,42 @@ func (m *Shift) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
 }
 // SetDraftShift sets the draftShift property value. The draft version of this shift that is viewable by managers. Required.
 func (m *Shift) SetDraftShift(value ShiftItemable)() {
-    m.draftShift = value
+    err := m.GetBackingStore().Set("draftShift", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSchedulingGroupId sets the schedulingGroupId property value. ID of the scheduling group the shift is part of. Required.
 func (m *Shift) SetSchedulingGroupId(value *string)() {
-    m.schedulingGroupId = value
+    err := m.GetBackingStore().Set("schedulingGroupId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSharedShift sets the sharedShift property value. The shared version of this shift that is viewable by both employees and managers. Required.
 func (m *Shift) SetSharedShift(value ShiftItemable)() {
-    m.sharedShift = value
+    err := m.GetBackingStore().Set("sharedShift", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserId sets the userId property value. ID of the user assigned to the shift. Required.
 func (m *Shift) SetUserId(value *string)() {
-    m.userId = value
+    err := m.GetBackingStore().Set("userId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Shiftable 
+type Shiftable interface {
+    ChangeTrackedEntityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDraftShift()(ShiftItemable)
+    GetSchedulingGroupId()(*string)
+    GetSharedShift()(ShiftItemable)
+    GetUserId()(*string)
+    SetDraftShift(value ShiftItemable)()
+    SetSchedulingGroupId(value *string)()
+    SetSharedShift(value ShiftItemable)()
+    SetUserId(value *string)()
 }

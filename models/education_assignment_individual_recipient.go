@@ -7,8 +7,6 @@ import (
 // EducationAssignmentIndividualRecipient 
 type EducationAssignmentIndividualRecipient struct {
     EducationAssignmentRecipient
-    // A collection of IDs of the recipients.
-    recipients []string
 }
 // NewEducationAssignmentIndividualRecipient instantiates a new EducationAssignmentIndividualRecipient and sets the default values.
 func NewEducationAssignmentIndividualRecipient()(*EducationAssignmentIndividualRecipient) {
@@ -44,7 +42,14 @@ func (m *EducationAssignmentIndividualRecipient) GetFieldDeserializers()(map[str
 }
 // GetRecipients gets the recipients property value. A collection of IDs of the recipients.
 func (m *EducationAssignmentIndividualRecipient) GetRecipients()([]string) {
-    return m.recipients
+    val, err := m.GetBackingStore().Get("recipients")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EducationAssignmentIndividualRecipient) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,5 +67,15 @@ func (m *EducationAssignmentIndividualRecipient) Serialize(writer i878a80d2330e8
 }
 // SetRecipients sets the recipients property value. A collection of IDs of the recipients.
 func (m *EducationAssignmentIndividualRecipient) SetRecipients(value []string)() {
-    m.recipients = value
+    err := m.GetBackingStore().Set("recipients", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EducationAssignmentIndividualRecipientable 
+type EducationAssignmentIndividualRecipientable interface {
+    EducationAssignmentRecipientable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetRecipients()([]string)
+    SetRecipients(value []string)()
 }

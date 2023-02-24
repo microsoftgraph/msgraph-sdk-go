@@ -7,10 +7,6 @@ import (
 // MobileAppContent contains content properties for a specific app version. Each mobileAppContent can have multiple mobileAppContentFile.
 type MobileAppContent struct {
     Entity
-    // The collection of contained apps in a MobileLobApp acting as a package.
-    containedApps []MobileContainedAppable
-    // The list of files for this app content version.
-    files []MobileAppContentFileable
 }
 // NewMobileAppContent instantiates a new mobileAppContent and sets the default values.
 func NewMobileAppContent()(*MobileAppContent) {
@@ -25,7 +21,14 @@ func CreateMobileAppContentFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetContainedApps gets the containedApps property value. The collection of contained apps in a MobileLobApp acting as a package.
 func (m *MobileAppContent) GetContainedApps()([]MobileContainedAppable) {
-    return m.containedApps
+    val, err := m.GetBackingStore().Get("containedApps")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MobileContainedAppable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MobileAppContent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +65,14 @@ func (m *MobileAppContent) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetFiles gets the files property value. The list of files for this app content version.
 func (m *MobileAppContent) GetFiles()([]MobileAppContentFileable) {
-    return m.files
+    val, err := m.GetBackingStore().Get("files")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MobileAppContentFileable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MobileAppContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -94,9 +104,24 @@ func (m *MobileAppContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetContainedApps sets the containedApps property value. The collection of contained apps in a MobileLobApp acting as a package.
 func (m *MobileAppContent) SetContainedApps(value []MobileContainedAppable)() {
-    m.containedApps = value
+    err := m.GetBackingStore().Set("containedApps", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFiles sets the files property value. The list of files for this app content version.
 func (m *MobileAppContent) SetFiles(value []MobileAppContentFileable)() {
-    m.files = value
+    err := m.GetBackingStore().Set("files", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MobileAppContentable 
+type MobileAppContentable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetContainedApps()([]MobileContainedAppable)
+    GetFiles()([]MobileAppContentFileable)
+    SetContainedApps(value []MobileContainedAppable)()
+    SetFiles(value []MobileAppContentFileable)()
 }

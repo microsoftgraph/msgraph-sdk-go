@@ -2,31 +2,19 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // AudioConferencing 
 type AudioConferencing struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The conference id of the online meeting.
-    conferenceId *string
-    // A URL to the externally-accessible web page that contains dial-in information.
-    dialinUrl *string
-    // The OdataType property
-    odataType *string
-    // The tollFreeNumber property
-    tollFreeNumber *string
-    // List of toll-free numbers that are displayed in the meeting invite.
-    tollFreeNumbers []string
-    // The tollNumber property
-    tollNumber *string
-    // List of toll numbers that are displayed in the meeting invite.
-    tollNumbers []string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewAudioConferencing instantiates a new audioConferencing and sets the default values.
 func NewAudioConferencing()(*AudioConferencing) {
     m := &AudioConferencing{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -36,15 +24,41 @@ func CreateAudioConferencingFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AudioConferencing) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *AudioConferencing) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetConferenceId gets the conferenceId property value. The conference id of the online meeting.
 func (m *AudioConferencing) GetConferenceId()(*string) {
-    return m.conferenceId
+    val, err := m.GetBackingStore().Get("conferenceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDialinUrl gets the dialinUrl property value. A URL to the externally-accessible web page that contains dial-in information.
 func (m *AudioConferencing) GetDialinUrl()(*string) {
-    return m.dialinUrl
+    val, err := m.GetBackingStore().Get("dialinUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AudioConferencing) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -131,23 +145,58 @@ func (m *AudioConferencing) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AudioConferencing) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTollFreeNumber gets the tollFreeNumber property value. The tollFreeNumber property
 func (m *AudioConferencing) GetTollFreeNumber()(*string) {
-    return m.tollFreeNumber
+    val, err := m.GetBackingStore().Get("tollFreeNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTollFreeNumbers gets the tollFreeNumbers property value. List of toll-free numbers that are displayed in the meeting invite.
 func (m *AudioConferencing) GetTollFreeNumbers()([]string) {
-    return m.tollFreeNumbers
+    val, err := m.GetBackingStore().Get("tollFreeNumbers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetTollNumber gets the tollNumber property value. The tollNumber property
 func (m *AudioConferencing) GetTollNumber()(*string) {
-    return m.tollNumber
+    val, err := m.GetBackingStore().Get("tollNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTollNumbers gets the tollNumbers property value. List of toll numbers that are displayed in the meeting invite.
 func (m *AudioConferencing) GetTollNumbers()([]string) {
-    return m.tollNumbers
+    val, err := m.GetBackingStore().Get("tollNumbers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AudioConferencing) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -203,33 +252,83 @@ func (m *AudioConferencing) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AudioConferencing) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *AudioConferencing) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetConferenceId sets the conferenceId property value. The conference id of the online meeting.
 func (m *AudioConferencing) SetConferenceId(value *string)() {
-    m.conferenceId = value
+    err := m.GetBackingStore().Set("conferenceId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDialinUrl sets the dialinUrl property value. A URL to the externally-accessible web page that contains dial-in information.
 func (m *AudioConferencing) SetDialinUrl(value *string)() {
-    m.dialinUrl = value
+    err := m.GetBackingStore().Set("dialinUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AudioConferencing) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTollFreeNumber sets the tollFreeNumber property value. The tollFreeNumber property
 func (m *AudioConferencing) SetTollFreeNumber(value *string)() {
-    m.tollFreeNumber = value
+    err := m.GetBackingStore().Set("tollFreeNumber", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTollFreeNumbers sets the tollFreeNumbers property value. List of toll-free numbers that are displayed in the meeting invite.
 func (m *AudioConferencing) SetTollFreeNumbers(value []string)() {
-    m.tollFreeNumbers = value
+    err := m.GetBackingStore().Set("tollFreeNumbers", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTollNumber sets the tollNumber property value. The tollNumber property
 func (m *AudioConferencing) SetTollNumber(value *string)() {
-    m.tollNumber = value
+    err := m.GetBackingStore().Set("tollNumber", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTollNumbers sets the tollNumbers property value. List of toll numbers that are displayed in the meeting invite.
 func (m *AudioConferencing) SetTollNumbers(value []string)() {
-    m.tollNumbers = value
+    err := m.GetBackingStore().Set("tollNumbers", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AudioConferencingable 
+type AudioConferencingable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetConferenceId()(*string)
+    GetDialinUrl()(*string)
+    GetOdataType()(*string)
+    GetTollFreeNumber()(*string)
+    GetTollFreeNumbers()([]string)
+    GetTollNumber()(*string)
+    GetTollNumbers()([]string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetConferenceId(value *string)()
+    SetDialinUrl(value *string)()
+    SetOdataType(value *string)()
+    SetTollFreeNumber(value *string)()
+    SetTollFreeNumbers(value []string)()
+    SetTollNumber(value *string)()
+    SetTollNumbers(value []string)()
 }

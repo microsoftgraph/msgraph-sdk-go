@@ -7,8 +7,6 @@ import (
 // Windows10EnterpriseModernAppManagementConfigurationCollectionResponse 
 type Windows10EnterpriseModernAppManagementConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Windows10EnterpriseModernAppManagementConfigurationable
 }
 // NewWindows10EnterpriseModernAppManagementConfigurationCollectionResponse instantiates a new Windows10EnterpriseModernAppManagementConfigurationCollectionResponse and sets the default values.
 func NewWindows10EnterpriseModernAppManagementConfigurationCollectionResponse()(*Windows10EnterpriseModernAppManagementConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *Windows10EnterpriseModernAppManagementConfigurationCollectionResponse) 
 }
 // GetValue gets the value property value. The value property
 func (m *Windows10EnterpriseModernAppManagementConfigurationCollectionResponse) GetValue()([]Windows10EnterpriseModernAppManagementConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Windows10EnterpriseModernAppManagementConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Windows10EnterpriseModernAppManagementConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *Windows10EnterpriseModernAppManagementConfigurationCollectionResponse) 
 }
 // SetValue sets the value property value. The value property
 func (m *Windows10EnterpriseModernAppManagementConfigurationCollectionResponse) SetValue(value []Windows10EnterpriseModernAppManagementConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Windows10EnterpriseModernAppManagementConfigurationCollectionResponseable 
+type Windows10EnterpriseModernAppManagementConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Windows10EnterpriseModernAppManagementConfigurationable)
+    SetValue(value []Windows10EnterpriseModernAppManagementConfigurationable)()
 }

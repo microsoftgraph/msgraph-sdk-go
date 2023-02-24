@@ -2,29 +2,19 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // InformationalUrl 
 type InformationalUrl struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // CDN URL to the application's logo, Read-only.
-    logoUrl *string
-    // Link to the application's marketing page. For example, https://www.contoso.com/app/marketing
-    marketingUrl *string
-    // The OdataType property
-    odataType *string
-    // Link to the application's privacy statement. For example, https://www.contoso.com/app/privacy
-    privacyStatementUrl *string
-    // Link to the application's support page. For example, https://www.contoso.com/app/support
-    supportUrl *string
-    // Link to the application's terms of service statement. For example, https://www.contoso.com/app/termsofservice
-    termsOfServiceUrl *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewInformationalUrl instantiates a new informationalUrl and sets the default values.
 func NewInformationalUrl()(*InformationalUrl) {
     m := &InformationalUrl{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -34,7 +24,19 @@ func CreateInformationalUrlFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InformationalUrl) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *InformationalUrl) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *InformationalUrl) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -103,27 +105,69 @@ func (m *InformationalUrl) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetLogoUrl gets the logoUrl property value. CDN URL to the application's logo, Read-only.
 func (m *InformationalUrl) GetLogoUrl()(*string) {
-    return m.logoUrl
+    val, err := m.GetBackingStore().Get("logoUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetMarketingUrl gets the marketingUrl property value. Link to the application's marketing page. For example, https://www.contoso.com/app/marketing
 func (m *InformationalUrl) GetMarketingUrl()(*string) {
-    return m.marketingUrl
+    val, err := m.GetBackingStore().Get("marketingUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *InformationalUrl) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPrivacyStatementUrl gets the privacyStatementUrl property value. Link to the application's privacy statement. For example, https://www.contoso.com/app/privacy
 func (m *InformationalUrl) GetPrivacyStatementUrl()(*string) {
-    return m.privacyStatementUrl
+    val, err := m.GetBackingStore().Get("privacyStatementUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSupportUrl gets the supportUrl property value. Link to the application's support page. For example, https://www.contoso.com/app/support
 func (m *InformationalUrl) GetSupportUrl()(*string) {
-    return m.supportUrl
+    val, err := m.GetBackingStore().Get("supportUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTermsOfServiceUrl gets the termsOfServiceUrl property value. Link to the application's terms of service statement. For example, https://www.contoso.com/app/termsofservice
 func (m *InformationalUrl) GetTermsOfServiceUrl()(*string) {
-    return m.termsOfServiceUrl
+    val, err := m.GetBackingStore().Get("termsOfServiceUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *InformationalUrl) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -173,29 +217,74 @@ func (m *InformationalUrl) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InformationalUrl) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *InformationalUrl) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetLogoUrl sets the logoUrl property value. CDN URL to the application's logo, Read-only.
 func (m *InformationalUrl) SetLogoUrl(value *string)() {
-    m.logoUrl = value
+    err := m.GetBackingStore().Set("logoUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMarketingUrl sets the marketingUrl property value. Link to the application's marketing page. For example, https://www.contoso.com/app/marketing
 func (m *InformationalUrl) SetMarketingUrl(value *string)() {
-    m.marketingUrl = value
+    err := m.GetBackingStore().Set("marketingUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *InformationalUrl) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPrivacyStatementUrl sets the privacyStatementUrl property value. Link to the application's privacy statement. For example, https://www.contoso.com/app/privacy
 func (m *InformationalUrl) SetPrivacyStatementUrl(value *string)() {
-    m.privacyStatementUrl = value
+    err := m.GetBackingStore().Set("privacyStatementUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSupportUrl sets the supportUrl property value. Link to the application's support page. For example, https://www.contoso.com/app/support
 func (m *InformationalUrl) SetSupportUrl(value *string)() {
-    m.supportUrl = value
+    err := m.GetBackingStore().Set("supportUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTermsOfServiceUrl sets the termsOfServiceUrl property value. Link to the application's terms of service statement. For example, https://www.contoso.com/app/termsofservice
 func (m *InformationalUrl) SetTermsOfServiceUrl(value *string)() {
-    m.termsOfServiceUrl = value
+    err := m.GetBackingStore().Set("termsOfServiceUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// InformationalUrlable 
+type InformationalUrlable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetLogoUrl()(*string)
+    GetMarketingUrl()(*string)
+    GetOdataType()(*string)
+    GetPrivacyStatementUrl()(*string)
+    GetSupportUrl()(*string)
+    GetTermsOfServiceUrl()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetLogoUrl(value *string)()
+    SetMarketingUrl(value *string)()
+    SetOdataType(value *string)()
+    SetPrivacyStatementUrl(value *string)()
+    SetSupportUrl(value *string)()
+    SetTermsOfServiceUrl(value *string)()
 }

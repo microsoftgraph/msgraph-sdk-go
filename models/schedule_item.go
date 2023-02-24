@@ -2,31 +2,19 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ScheduleItem 
 type ScheduleItem struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The date, time, and time zone that the corresponding event ends.
-    end DateTimeTimeZoneable
-    // The sensitivity of the corresponding event. True if the event is marked private, false otherwise. Optional.
-    isPrivate *bool
-    // The location where the corresponding event is held or attended from. Optional.
-    location *string
-    // The OdataType property
-    odataType *string
-    // The date, time, and time zone that the corresponding event starts.
-    start DateTimeTimeZoneable
-    // The availability status of the user or resource during the corresponding event. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
-    status *FreeBusyStatus
-    // The corresponding event's subject line. Optional.
-    subject *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewScheduleItem instantiates a new scheduleItem and sets the default values.
 func NewScheduleItem()(*ScheduleItem) {
     m := &ScheduleItem{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -36,11 +24,30 @@ func CreateScheduleItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ScheduleItem) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ScheduleItem) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetEnd gets the end property value. The date, time, and time zone that the corresponding event ends.
 func (m *ScheduleItem) GetEnd()(DateTimeTimeZoneable) {
-    return m.end
+    val, err := m.GetBackingStore().Get("end")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DateTimeTimeZoneable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ScheduleItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -119,27 +126,69 @@ func (m *ScheduleItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetIsPrivate gets the isPrivate property value. The sensitivity of the corresponding event. True if the event is marked private, false otherwise. Optional.
 func (m *ScheduleItem) GetIsPrivate()(*bool) {
-    return m.isPrivate
+    val, err := m.GetBackingStore().Get("isPrivate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLocation gets the location property value. The location where the corresponding event is held or attended from. Optional.
 func (m *ScheduleItem) GetLocation()(*string) {
-    return m.location
+    val, err := m.GetBackingStore().Get("location")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ScheduleItem) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetStart gets the start property value. The date, time, and time zone that the corresponding event starts.
 func (m *ScheduleItem) GetStart()(DateTimeTimeZoneable) {
-    return m.start
+    val, err := m.GetBackingStore().Get("start")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DateTimeTimeZoneable)
+    }
+    return nil
 }
 // GetStatus gets the status property value. The availability status of the user or resource during the corresponding event. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
 func (m *ScheduleItem) GetStatus()(*FreeBusyStatus) {
-    return m.status
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*FreeBusyStatus)
+    }
+    return nil
 }
 // GetSubject gets the subject property value. The corresponding event's subject line. Optional.
 func (m *ScheduleItem) GetSubject()(*string) {
-    return m.subject
+    val, err := m.GetBackingStore().Get("subject")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ScheduleItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -196,33 +245,83 @@ func (m *ScheduleItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ScheduleItem) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ScheduleItem) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetEnd sets the end property value. The date, time, and time zone that the corresponding event ends.
 func (m *ScheduleItem) SetEnd(value DateTimeTimeZoneable)() {
-    m.end = value
+    err := m.GetBackingStore().Set("end", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsPrivate sets the isPrivate property value. The sensitivity of the corresponding event. True if the event is marked private, false otherwise. Optional.
 func (m *ScheduleItem) SetIsPrivate(value *bool)() {
-    m.isPrivate = value
+    err := m.GetBackingStore().Set("isPrivate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocation sets the location property value. The location where the corresponding event is held or attended from. Optional.
 func (m *ScheduleItem) SetLocation(value *string)() {
-    m.location = value
+    err := m.GetBackingStore().Set("location", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ScheduleItem) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStart sets the start property value. The date, time, and time zone that the corresponding event starts.
 func (m *ScheduleItem) SetStart(value DateTimeTimeZoneable)() {
-    m.start = value
+    err := m.GetBackingStore().Set("start", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStatus sets the status property value. The availability status of the user or resource during the corresponding event. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
 func (m *ScheduleItem) SetStatus(value *FreeBusyStatus)() {
-    m.status = value
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSubject sets the subject property value. The corresponding event's subject line. Optional.
 func (m *ScheduleItem) SetSubject(value *string)() {
-    m.subject = value
+    err := m.GetBackingStore().Set("subject", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ScheduleItemable 
+type ScheduleItemable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetEnd()(DateTimeTimeZoneable)
+    GetIsPrivate()(*bool)
+    GetLocation()(*string)
+    GetOdataType()(*string)
+    GetStart()(DateTimeTimeZoneable)
+    GetStatus()(*FreeBusyStatus)
+    GetSubject()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetEnd(value DateTimeTimeZoneable)()
+    SetIsPrivate(value *bool)()
+    SetLocation(value *string)()
+    SetOdataType(value *string)()
+    SetStart(value DateTimeTimeZoneable)()
+    SetStatus(value *FreeBusyStatus)()
+    SetSubject(value *string)()
 }
