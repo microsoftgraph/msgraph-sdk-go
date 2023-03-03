@@ -7,8 +7,6 @@ import (
 // StringCollectionResponse 
 type StringCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []string
 }
 // NewStringCollectionResponse instantiates a new StringCollectionResponse and sets the default values.
 func NewStringCollectionResponse()(*StringCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *StringCollectionResponse) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetValue gets the value property value. The value property
 func (m *StringCollectionResponse) GetValue()([]string) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *StringCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -60,5 +65,15 @@ func (m *StringCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetValue sets the value property value. The value property
 func (m *StringCollectionResponse) SetValue(value []string)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// StringCollectionResponseable 
+type StringCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]string)
+    SetValue(value []string)()
 }

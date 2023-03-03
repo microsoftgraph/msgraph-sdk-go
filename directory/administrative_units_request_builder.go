@@ -74,6 +74,10 @@ func NewAdministrativeUnitsRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *AdministrativeUnitsRequestBuilder) Count()(*AdministrativeUnitsCountRequestBuilder) {
     return NewAdministrativeUnitsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// Delta provides operations to call the delta method.
+func (m *AdministrativeUnitsRequestBuilder) Delta()(*AdministrativeUnitsDeltaRequestBuilder) {
+    return NewAdministrativeUnitsDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Get retrieve a list of administrativeUnit objects.
 // [Find more info here]
 // 
@@ -95,10 +99,6 @@ func (m *AdministrativeUnitsRequestBuilder) Get(ctx context.Context, requestConf
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AdministrativeUnitCollectionResponseable), nil
-}
-// MicrosoftGraphDelta provides operations to call the delta method.
-func (m *AdministrativeUnitsRequestBuilder) MicrosoftGraphDelta()(*AdministrativeUnitsMicrosoftGraphDeltaRequestBuilder) {
-    return NewAdministrativeUnitsMicrosoftGraphDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post use this API to create a new administrativeUnit.
 // [Find more info here]

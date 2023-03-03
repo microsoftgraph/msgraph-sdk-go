@@ -8,26 +8,6 @@ import (
 // SecureScore 
 type SecureScore struct {
     Entity
-    // Active user count of the given tenant.
-    activeUserCount *int32
-    // Average score by different scopes (for example, average by industry, average by seating) and control category (Identity, Data, Device, Apps, Infrastructure) within the scope.
-    averageComparativeScores []AverageComparativeScoreable
-    // GUID string for tenant ID.
-    azureTenantId *string
-    // Contains tenant scores for a set of controls.
-    controlScores []ControlScoreable
-    // The date when the entity is created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Tenant current attained score on specified date.
-    currentScore *float64
-    // Microsoft-provided services for the tenant (for example, Exchange online, Skype, Sharepoint).
-    enabledServices []string
-    // Licensed user count of the given tenant.
-    licensedUserCount *int32
-    // Tenant maximum possible score on specified date.
-    maxScore *float64
-    // Complex type containing details about the security product/service vendor, provider, and subprovider (for example, vendor=Microsoft; provider=SecureScore). Required.
-    vendorInformation SecurityVendorInformationable
 }
 // NewSecureScore instantiates a new secureScore and sets the default values.
 func NewSecureScore()(*SecureScore) {
@@ -42,31 +22,80 @@ func CreateSecureScoreFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetActiveUserCount gets the activeUserCount property value. Active user count of the given tenant.
 func (m *SecureScore) GetActiveUserCount()(*int32) {
-    return m.activeUserCount
+    val, err := m.GetBackingStore().Get("activeUserCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetAverageComparativeScores gets the averageComparativeScores property value. Average score by different scopes (for example, average by industry, average by seating) and control category (Identity, Data, Device, Apps, Infrastructure) within the scope.
 func (m *SecureScore) GetAverageComparativeScores()([]AverageComparativeScoreable) {
-    return m.averageComparativeScores
+    val, err := m.GetBackingStore().Get("averageComparativeScores")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AverageComparativeScoreable)
+    }
+    return nil
 }
 // GetAzureTenantId gets the azureTenantId property value. GUID string for tenant ID.
 func (m *SecureScore) GetAzureTenantId()(*string) {
-    return m.azureTenantId
+    val, err := m.GetBackingStore().Get("azureTenantId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetControlScores gets the controlScores property value. Contains tenant scores for a set of controls.
 func (m *SecureScore) GetControlScores()([]ControlScoreable) {
-    return m.controlScores
+    val, err := m.GetBackingStore().Get("controlScores")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ControlScoreable)
+    }
+    return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date when the entity is created.
 func (m *SecureScore) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetCurrentScore gets the currentScore property value. Tenant current attained score on specified date.
 func (m *SecureScore) GetCurrentScore()(*float64) {
-    return m.currentScore
+    val, err := m.GetBackingStore().Get("currentScore")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // GetEnabledServices gets the enabledServices property value. Microsoft-provided services for the tenant (for example, Exchange online, Skype, Sharepoint).
 func (m *SecureScore) GetEnabledServices()([]string) {
-    return m.enabledServices
+    val, err := m.GetBackingStore().Get("enabledServices")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SecureScore) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -187,15 +216,36 @@ func (m *SecureScore) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetLicensedUserCount gets the licensedUserCount property value. Licensed user count of the given tenant.
 func (m *SecureScore) GetLicensedUserCount()(*int32) {
-    return m.licensedUserCount
+    val, err := m.GetBackingStore().Get("licensedUserCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetMaxScore gets the maxScore property value. Tenant maximum possible score on specified date.
 func (m *SecureScore) GetMaxScore()(*float64) {
-    return m.maxScore
+    val, err := m.GetBackingStore().Get("maxScore")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // GetVendorInformation gets the vendorInformation property value. Complex type containing details about the security product/service vendor, provider, and subprovider (for example, vendor=Microsoft; provider=SecureScore). Required.
 func (m *SecureScore) GetVendorInformation()(SecurityVendorInformationable) {
-    return m.vendorInformation
+    val, err := m.GetBackingStore().Get("vendorInformation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SecurityVendorInformationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SecureScore) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -275,41 +325,96 @@ func (m *SecureScore) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetActiveUserCount sets the activeUserCount property value. Active user count of the given tenant.
 func (m *SecureScore) SetActiveUserCount(value *int32)() {
-    m.activeUserCount = value
+    err := m.GetBackingStore().Set("activeUserCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAverageComparativeScores sets the averageComparativeScores property value. Average score by different scopes (for example, average by industry, average by seating) and control category (Identity, Data, Device, Apps, Infrastructure) within the scope.
 func (m *SecureScore) SetAverageComparativeScores(value []AverageComparativeScoreable)() {
-    m.averageComparativeScores = value
+    err := m.GetBackingStore().Set("averageComparativeScores", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAzureTenantId sets the azureTenantId property value. GUID string for tenant ID.
 func (m *SecureScore) SetAzureTenantId(value *string)() {
-    m.azureTenantId = value
+    err := m.GetBackingStore().Set("azureTenantId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetControlScores sets the controlScores property value. Contains tenant scores for a set of controls.
 func (m *SecureScore) SetControlScores(value []ControlScoreable)() {
-    m.controlScores = value
+    err := m.GetBackingStore().Set("controlScores", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date when the entity is created.
 func (m *SecureScore) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCurrentScore sets the currentScore property value. Tenant current attained score on specified date.
 func (m *SecureScore) SetCurrentScore(value *float64)() {
-    m.currentScore = value
+    err := m.GetBackingStore().Set("currentScore", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEnabledServices sets the enabledServices property value. Microsoft-provided services for the tenant (for example, Exchange online, Skype, Sharepoint).
 func (m *SecureScore) SetEnabledServices(value []string)() {
-    m.enabledServices = value
+    err := m.GetBackingStore().Set("enabledServices", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLicensedUserCount sets the licensedUserCount property value. Licensed user count of the given tenant.
 func (m *SecureScore) SetLicensedUserCount(value *int32)() {
-    m.licensedUserCount = value
+    err := m.GetBackingStore().Set("licensedUserCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMaxScore sets the maxScore property value. Tenant maximum possible score on specified date.
 func (m *SecureScore) SetMaxScore(value *float64)() {
-    m.maxScore = value
+    err := m.GetBackingStore().Set("maxScore", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVendorInformation sets the vendorInformation property value. Complex type containing details about the security product/service vendor, provider, and subprovider (for example, vendor=Microsoft; provider=SecureScore). Required.
 func (m *SecureScore) SetVendorInformation(value SecurityVendorInformationable)() {
-    m.vendorInformation = value
+    err := m.GetBackingStore().Set("vendorInformation", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SecureScoreable 
+type SecureScoreable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetActiveUserCount()(*int32)
+    GetAverageComparativeScores()([]AverageComparativeScoreable)
+    GetAzureTenantId()(*string)
+    GetControlScores()([]ControlScoreable)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetCurrentScore()(*float64)
+    GetEnabledServices()([]string)
+    GetLicensedUserCount()(*int32)
+    GetMaxScore()(*float64)
+    GetVendorInformation()(SecurityVendorInformationable)
+    SetActiveUserCount(value *int32)()
+    SetAverageComparativeScores(value []AverageComparativeScoreable)()
+    SetAzureTenantId(value *string)()
+    SetControlScores(value []ControlScoreable)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetCurrentScore(value *float64)()
+    SetEnabledServices(value []string)()
+    SetLicensedUserCount(value *int32)()
+    SetMaxScore(value *float64)()
+    SetVendorInformation(value SecurityVendorInformationable)()
 }

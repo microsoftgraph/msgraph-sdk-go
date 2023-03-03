@@ -7,48 +7,8 @@ import (
 // EducationClass 
 type EducationClass struct {
     Entity
-    // All categories associated with this class. Nullable.
-    assignmentCategories []EducationCategoryable
-    // Specifies class-level defaults respected by new assignments created in the class.
-    assignmentDefaults EducationAssignmentDefaultsable
-    // All assignments associated with this class. Nullable.
-    assignments []EducationAssignmentable
-    // Specifies class-level assignments settings.
-    assignmentSettings EducationAssignmentSettingsable
-    // Class code used by the school to identify the class.
-    classCode *string
-    // The course property
-    course EducationCourseable
-    // Entity who created the class
-    createdBy IdentitySetable
-    // Description of the class.
-    description *string
-    // Name of the class.
-    displayName *string
-    // ID of the class from the syncing system.
-    externalId *string
-    // Name of the class in the syncing system.
-    externalName *string
-    // How this class was created. Possible values are: sis, manual.
-    externalSource *EducationExternalSource
-    // The name of the external source this resources was generated from.
-    externalSourceDetail *string
-    // Grade level of the class.
-    grade *string
-    // The underlying Microsoft 365 group object.
-    group Groupable
-    // Mail name for sending email to all members, if this is enabled.
-    mailNickname *string
-    // All users in the class. Nullable.
-    members []EducationUserable
-    // All schools that this class is associated with. Nullable.
-    schools []EducationSchoolable
-    // All teachers in the class. Nullable.
-    teachers []EducationUserable
-    // Term for this class.
-    term EducationTermable
 }
-// NewEducationClass instantiates a new EducationClass and sets the default values.
+// NewEducationClass instantiates a new educationClass and sets the default values.
 func NewEducationClass()(*EducationClass) {
     m := &EducationClass{
         Entity: *NewEntity(),
@@ -61,55 +21,146 @@ func CreateEducationClassFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetAssignmentCategories gets the assignmentCategories property value. All categories associated with this class. Nullable.
 func (m *EducationClass) GetAssignmentCategories()([]EducationCategoryable) {
-    return m.assignmentCategories
+    val, err := m.GetBackingStore().Get("assignmentCategories")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EducationCategoryable)
+    }
+    return nil
 }
 // GetAssignmentDefaults gets the assignmentDefaults property value. Specifies class-level defaults respected by new assignments created in the class.
 func (m *EducationClass) GetAssignmentDefaults()(EducationAssignmentDefaultsable) {
-    return m.assignmentDefaults
+    val, err := m.GetBackingStore().Get("assignmentDefaults")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(EducationAssignmentDefaultsable)
+    }
+    return nil
 }
 // GetAssignments gets the assignments property value. All assignments associated with this class. Nullable.
 func (m *EducationClass) GetAssignments()([]EducationAssignmentable) {
-    return m.assignments
+    val, err := m.GetBackingStore().Get("assignments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EducationAssignmentable)
+    }
+    return nil
 }
 // GetAssignmentSettings gets the assignmentSettings property value. Specifies class-level assignments settings.
 func (m *EducationClass) GetAssignmentSettings()(EducationAssignmentSettingsable) {
-    return m.assignmentSettings
+    val, err := m.GetBackingStore().Get("assignmentSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(EducationAssignmentSettingsable)
+    }
+    return nil
 }
 // GetClassCode gets the classCode property value. Class code used by the school to identify the class.
 func (m *EducationClass) GetClassCode()(*string) {
-    return m.classCode
+    val, err := m.GetBackingStore().Get("classCode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetCourse gets the course property value. The course property
 func (m *EducationClass) GetCourse()(EducationCourseable) {
-    return m.course
+    val, err := m.GetBackingStore().Get("course")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(EducationCourseable)
+    }
+    return nil
 }
 // GetCreatedBy gets the createdBy property value. Entity who created the class
 func (m *EducationClass) GetCreatedBy()(IdentitySetable) {
-    return m.createdBy
+    val, err := m.GetBackingStore().Get("createdBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentitySetable)
+    }
+    return nil
 }
 // GetDescription gets the description property value. Description of the class.
 func (m *EducationClass) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. Name of the class.
 func (m *EducationClass) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetExternalId gets the externalId property value. ID of the class from the syncing system.
 func (m *EducationClass) GetExternalId()(*string) {
-    return m.externalId
+    val, err := m.GetBackingStore().Get("externalId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetExternalName gets the externalName property value. Name of the class in the syncing system.
 func (m *EducationClass) GetExternalName()(*string) {
-    return m.externalName
+    val, err := m.GetBackingStore().Get("externalName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetExternalSource gets the externalSource property value. How this class was created. Possible values are: sis, manual.
 func (m *EducationClass) GetExternalSource()(*EducationExternalSource) {
-    return m.externalSource
+    val, err := m.GetBackingStore().Get("externalSource")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*EducationExternalSource)
+    }
+    return nil
 }
 // GetExternalSourceDetail gets the externalSourceDetail property value. The name of the external source this resources was generated from.
 func (m *EducationClass) GetExternalSourceDetail()(*string) {
-    return m.externalSourceDetail
+    val, err := m.GetBackingStore().Get("externalSourceDetail")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationClass) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -338,31 +389,80 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetGrade gets the grade property value. Grade level of the class.
 func (m *EducationClass) GetGrade()(*string) {
-    return m.grade
+    val, err := m.GetBackingStore().Get("grade")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetGroup gets the group property value. The underlying Microsoft 365 group object.
 func (m *EducationClass) GetGroup()(Groupable) {
-    return m.group
+    val, err := m.GetBackingStore().Get("group")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Groupable)
+    }
+    return nil
 }
 // GetMailNickname gets the mailNickname property value. Mail name for sending email to all members, if this is enabled.
 func (m *EducationClass) GetMailNickname()(*string) {
-    return m.mailNickname
+    val, err := m.GetBackingStore().Get("mailNickname")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetMembers gets the members property value. All users in the class. Nullable.
 func (m *EducationClass) GetMembers()([]EducationUserable) {
-    return m.members
+    val, err := m.GetBackingStore().Get("members")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EducationUserable)
+    }
+    return nil
 }
 // GetSchools gets the schools property value. All schools that this class is associated with. Nullable.
 func (m *EducationClass) GetSchools()([]EducationSchoolable) {
-    return m.schools
+    val, err := m.GetBackingStore().Get("schools")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EducationSchoolable)
+    }
+    return nil
 }
 // GetTeachers gets the teachers property value. All teachers in the class. Nullable.
 func (m *EducationClass) GetTeachers()([]EducationUserable) {
-    return m.teachers
+    val, err := m.GetBackingStore().Get("teachers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EducationUserable)
+    }
+    return nil
 }
 // GetTerm gets the term property value. Term for this class.
 func (m *EducationClass) GetTerm()(EducationTermable) {
-    return m.term
+    val, err := m.GetBackingStore().Get("term")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(EducationTermable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EducationClass) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -515,81 +615,186 @@ func (m *EducationClass) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetAssignmentCategories sets the assignmentCategories property value. All categories associated with this class. Nullable.
 func (m *EducationClass) SetAssignmentCategories(value []EducationCategoryable)() {
-    m.assignmentCategories = value
+    err := m.GetBackingStore().Set("assignmentCategories", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAssignmentDefaults sets the assignmentDefaults property value. Specifies class-level defaults respected by new assignments created in the class.
 func (m *EducationClass) SetAssignmentDefaults(value EducationAssignmentDefaultsable)() {
-    m.assignmentDefaults = value
+    err := m.GetBackingStore().Set("assignmentDefaults", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAssignments sets the assignments property value. All assignments associated with this class. Nullable.
 func (m *EducationClass) SetAssignments(value []EducationAssignmentable)() {
-    m.assignments = value
+    err := m.GetBackingStore().Set("assignments", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAssignmentSettings sets the assignmentSettings property value. Specifies class-level assignments settings.
 func (m *EducationClass) SetAssignmentSettings(value EducationAssignmentSettingsable)() {
-    m.assignmentSettings = value
+    err := m.GetBackingStore().Set("assignmentSettings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetClassCode sets the classCode property value. Class code used by the school to identify the class.
 func (m *EducationClass) SetClassCode(value *string)() {
-    m.classCode = value
+    err := m.GetBackingStore().Set("classCode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCourse sets the course property value. The course property
 func (m *EducationClass) SetCourse(value EducationCourseable)() {
-    m.course = value
+    err := m.GetBackingStore().Set("course", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedBy sets the createdBy property value. Entity who created the class
 func (m *EducationClass) SetCreatedBy(value IdentitySetable)() {
-    m.createdBy = value
+    err := m.GetBackingStore().Set("createdBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. Description of the class.
 func (m *EducationClass) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. Name of the class.
 func (m *EducationClass) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExternalId sets the externalId property value. ID of the class from the syncing system.
 func (m *EducationClass) SetExternalId(value *string)() {
-    m.externalId = value
+    err := m.GetBackingStore().Set("externalId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExternalName sets the externalName property value. Name of the class in the syncing system.
 func (m *EducationClass) SetExternalName(value *string)() {
-    m.externalName = value
+    err := m.GetBackingStore().Set("externalName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExternalSource sets the externalSource property value. How this class was created. Possible values are: sis, manual.
 func (m *EducationClass) SetExternalSource(value *EducationExternalSource)() {
-    m.externalSource = value
+    err := m.GetBackingStore().Set("externalSource", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExternalSourceDetail sets the externalSourceDetail property value. The name of the external source this resources was generated from.
 func (m *EducationClass) SetExternalSourceDetail(value *string)() {
-    m.externalSourceDetail = value
+    err := m.GetBackingStore().Set("externalSourceDetail", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetGrade sets the grade property value. Grade level of the class.
 func (m *EducationClass) SetGrade(value *string)() {
-    m.grade = value
+    err := m.GetBackingStore().Set("grade", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetGroup sets the group property value. The underlying Microsoft 365 group object.
 func (m *EducationClass) SetGroup(value Groupable)() {
-    m.group = value
+    err := m.GetBackingStore().Set("group", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMailNickname sets the mailNickname property value. Mail name for sending email to all members, if this is enabled.
 func (m *EducationClass) SetMailNickname(value *string)() {
-    m.mailNickname = value
+    err := m.GetBackingStore().Set("mailNickname", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMembers sets the members property value. All users in the class. Nullable.
 func (m *EducationClass) SetMembers(value []EducationUserable)() {
-    m.members = value
+    err := m.GetBackingStore().Set("members", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSchools sets the schools property value. All schools that this class is associated with. Nullable.
 func (m *EducationClass) SetSchools(value []EducationSchoolable)() {
-    m.schools = value
+    err := m.GetBackingStore().Set("schools", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTeachers sets the teachers property value. All teachers in the class. Nullable.
 func (m *EducationClass) SetTeachers(value []EducationUserable)() {
-    m.teachers = value
+    err := m.GetBackingStore().Set("teachers", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTerm sets the term property value. Term for this class.
 func (m *EducationClass) SetTerm(value EducationTermable)() {
-    m.term = value
+    err := m.GetBackingStore().Set("term", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EducationClassable 
+type EducationClassable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAssignmentCategories()([]EducationCategoryable)
+    GetAssignmentDefaults()(EducationAssignmentDefaultsable)
+    GetAssignments()([]EducationAssignmentable)
+    GetAssignmentSettings()(EducationAssignmentSettingsable)
+    GetClassCode()(*string)
+    GetCourse()(EducationCourseable)
+    GetCreatedBy()(IdentitySetable)
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetExternalId()(*string)
+    GetExternalName()(*string)
+    GetExternalSource()(*EducationExternalSource)
+    GetExternalSourceDetail()(*string)
+    GetGrade()(*string)
+    GetGroup()(Groupable)
+    GetMailNickname()(*string)
+    GetMembers()([]EducationUserable)
+    GetSchools()([]EducationSchoolable)
+    GetTeachers()([]EducationUserable)
+    GetTerm()(EducationTermable)
+    SetAssignmentCategories(value []EducationCategoryable)()
+    SetAssignmentDefaults(value EducationAssignmentDefaultsable)()
+    SetAssignments(value []EducationAssignmentable)()
+    SetAssignmentSettings(value EducationAssignmentSettingsable)()
+    SetClassCode(value *string)()
+    SetCourse(value EducationCourseable)()
+    SetCreatedBy(value IdentitySetable)()
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetExternalId(value *string)()
+    SetExternalName(value *string)()
+    SetExternalSource(value *EducationExternalSource)()
+    SetExternalSourceDetail(value *string)()
+    SetGrade(value *string)()
+    SetGroup(value Groupable)()
+    SetMailNickname(value *string)()
+    SetMembers(value []EducationUserable)()
+    SetSchools(value []EducationSchoolable)()
+    SetTeachers(value []EducationUserable)()
+    SetTerm(value EducationTermable)()
 }

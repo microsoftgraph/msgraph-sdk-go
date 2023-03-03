@@ -7,8 +7,6 @@ import (
 // AppRoleAssignmentCollectionResponse 
 type AppRoleAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AppRoleAssignmentable
 }
 // NewAppRoleAssignmentCollectionResponse instantiates a new AppRoleAssignmentCollectionResponse and sets the default values.
 func NewAppRoleAssignmentCollectionResponse()(*AppRoleAssignmentCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AppRoleAssignmentCollectionResponse) GetFieldDeserializers()(map[string
 }
 // GetValue gets the value property value. The value property
 func (m *AppRoleAssignmentCollectionResponse) GetValue()([]AppRoleAssignmentable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AppRoleAssignmentable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AppRoleAssignmentCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AppRoleAssignmentCollectionResponse) Serialize(writer i878a80d2330e89d2
 }
 // SetValue sets the value property value. The value property
 func (m *AppRoleAssignmentCollectionResponse) SetValue(value []AppRoleAssignmentable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AppRoleAssignmentCollectionResponseable 
+type AppRoleAssignmentCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AppRoleAssignmentable)
+    SetValue(value []AppRoleAssignmentable)()
 }

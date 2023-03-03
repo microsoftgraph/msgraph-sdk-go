@@ -115,14 +115,6 @@ func (m *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) Host
     }
     return NewDeletedTeamsItemChannelsItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
-// MicrosoftGraphSoftDelete provides operations to call the softDelete method.
-func (m *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) MicrosoftGraphSoftDelete()(*DeletedTeamsItemChannelsItemMessagesItemMicrosoftGraphSoftDeleteRequestBuilder) {
-    return NewDeletedTeamsItemChannelsItemMessagesItemMicrosoftGraphSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphUndoSoftDelete provides operations to call the undoSoftDelete method.
-func (m *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) MicrosoftGraphUndoSoftDelete()(*DeletedTeamsItemChannelsItemMessagesItemMicrosoftGraphUndoSoftDeleteRequestBuilder) {
-    return NewDeletedTeamsItemChannelsItemMessagesItemMicrosoftGraphUndoSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Patch update the navigation property messages in teamwork
 func (m *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable, requestConfiguration *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -156,6 +148,10 @@ func (m *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) Repl
         urlTplParams["chatMessage%2Did1"] = id
     }
     return NewDeletedTeamsItemChannelsItemMessagesItemRepliesChatMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+}
+// SoftDelete provides operations to call the softDelete method.
+func (m *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) SoftDelete()(*DeletedTeamsItemChannelsItemMessagesItemSoftDeleteRequestBuilder) {
+    return NewDeletedTeamsItemChannelsItemMessagesItemSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property messages for teamwork
 func (m *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -201,4 +197,8 @@ func (m *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) ToPa
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// UndoSoftDelete provides operations to call the undoSoftDelete method.
+func (m *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) UndoSoftDelete()(*DeletedTeamsItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilder) {
+    return NewDeletedTeamsItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

@@ -7,10 +7,6 @@ import (
 // WindowsDefenderAdvancedThreatProtectionConfiguration 
 type WindowsDefenderAdvancedThreatProtectionConfiguration struct {
     DeviceConfiguration
-    // Windows Defender AdvancedThreatProtection 'Allow Sample Sharing' Rule
-    allowSampleSharing *bool
-    // Expedite Windows Defender Advanced Threat Protection telemetry reporting frequency.
-    enableExpeditedTelemetryReporting *bool
 }
 // NewWindowsDefenderAdvancedThreatProtectionConfiguration instantiates a new WindowsDefenderAdvancedThreatProtectionConfiguration and sets the default values.
 func NewWindowsDefenderAdvancedThreatProtectionConfiguration()(*WindowsDefenderAdvancedThreatProtectionConfiguration) {
@@ -27,11 +23,25 @@ func CreateWindowsDefenderAdvancedThreatProtectionConfigurationFromDiscriminator
 }
 // GetAllowSampleSharing gets the allowSampleSharing property value. Windows Defender AdvancedThreatProtection 'Allow Sample Sharing' Rule
 func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) GetAllowSampleSharing()(*bool) {
-    return m.allowSampleSharing
+    val, err := m.GetBackingStore().Get("allowSampleSharing")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetEnableExpeditedTelemetryReporting gets the enableExpeditedTelemetryReporting property value. Expedite Windows Defender Advanced Threat Protection telemetry reporting frequency.
 func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) GetEnableExpeditedTelemetryReporting()(*bool) {
-    return m.enableExpeditedTelemetryReporting
+    val, err := m.GetBackingStore().Get("enableExpeditedTelemetryReporting")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -80,9 +90,24 @@ func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) Serialize(writer 
 }
 // SetAllowSampleSharing sets the allowSampleSharing property value. Windows Defender AdvancedThreatProtection 'Allow Sample Sharing' Rule
 func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) SetAllowSampleSharing(value *bool)() {
-    m.allowSampleSharing = value
+    err := m.GetBackingStore().Set("allowSampleSharing", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEnableExpeditedTelemetryReporting sets the enableExpeditedTelemetryReporting property value. Expedite Windows Defender Advanced Threat Protection telemetry reporting frequency.
 func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) SetEnableExpeditedTelemetryReporting(value *bool)() {
-    m.enableExpeditedTelemetryReporting = value
+    err := m.GetBackingStore().Set("enableExpeditedTelemetryReporting", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsDefenderAdvancedThreatProtectionConfigurationable 
+type WindowsDefenderAdvancedThreatProtectionConfigurationable interface {
+    DeviceConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAllowSampleSharing()(*bool)
+    GetEnableExpeditedTelemetryReporting()(*bool)
+    SetAllowSampleSharing(value *bool)()
+    SetEnableExpeditedTelemetryReporting(value *bool)()
 }

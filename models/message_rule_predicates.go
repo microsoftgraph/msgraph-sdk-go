@@ -2,79 +2,19 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // MessageRulePredicates 
 type MessageRulePredicates struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Represents the strings that should appear in the body of an incoming message in order for the condition or exception to apply.
-    bodyContains []string
-    // Represents the strings that should appear in the body or subject of an incoming message in order for the condition or exception to apply.
-    bodyOrSubjectContains []string
-    // Represents the categories that an incoming message should be labeled with in order for the condition or exception to apply.
-    categories []string
-    // Represents the specific sender email addresses of an incoming message in order for the condition or exception to apply.
-    fromAddresses []Recipientable
-    // Indicates whether an incoming message must have attachments in order for the condition or exception to apply.
-    hasAttachments *bool
-    // Represents the strings that appear in the headers of an incoming message in order for the condition or exception to apply.
-    headerContains []string
-    // The importance that is stamped on an incoming message in order for the condition or exception to apply: low, normal, high.
-    importance *Importance
-    // Indicates whether an incoming message must be an approval request in order for the condition or exception to apply.
-    isApprovalRequest *bool
-    // Indicates whether an incoming message must be automatically forwarded in order for the condition or exception to apply.
-    isAutomaticForward *bool
-    // Indicates whether an incoming message must be an auto reply in order for the condition or exception to apply.
-    isAutomaticReply *bool
-    // Indicates whether an incoming message must be encrypted in order for the condition or exception to apply.
-    isEncrypted *bool
-    // Indicates whether an incoming message must be a meeting request in order for the condition or exception to apply.
-    isMeetingRequest *bool
-    // Indicates whether an incoming message must be a meeting response in order for the condition or exception to apply.
-    isMeetingResponse *bool
-    // Indicates whether an incoming message must be a non-delivery report in order for the condition or exception to apply.
-    isNonDeliveryReport *bool
-    // Indicates whether an incoming message must be permission controlled (RMS-protected) in order for the condition or exception to apply.
-    isPermissionControlled *bool
-    // Indicates whether an incoming message must be a read receipt in order for the condition or exception to apply.
-    isReadReceipt *bool
-    // Indicates whether an incoming message must be S/MIME-signed in order for the condition or exception to apply.
-    isSigned *bool
-    // Indicates whether an incoming message must be a voice mail in order for the condition or exception to apply.
-    isVoicemail *bool
-    // Represents the flag-for-action value that appears on an incoming message in order for the condition or exception to apply. The possible values are: any, call, doNotForward, followUp, fyi, forward, noResponseNecessary, read, reply, replyToAll, review.
-    messageActionFlag *MessageActionFlag
-    // Indicates whether the owner of the mailbox must not be a recipient of an incoming message in order for the condition or exception to apply.
-    notSentToMe *bool
-    // The OdataType property
-    odataType *string
-    // Represents the strings that appear in either the toRecipients or ccRecipients properties of an incoming message in order for the condition or exception to apply.
-    recipientContains []string
-    // Represents the strings that appear in the from property of an incoming message in order for the condition or exception to apply.
-    senderContains []string
-    // Represents the sensitivity level that must be stamped on an incoming message in order for the condition or exception to apply. The possible values are: normal, personal, private, confidential.
-    sensitivity *Sensitivity
-    // Indicates whether the owner of the mailbox must be in the ccRecipients property of an incoming message in order for the condition or exception to apply.
-    sentCcMe *bool
-    // Indicates whether the owner of the mailbox must be the only recipient in an incoming message in order for the condition or exception to apply.
-    sentOnlyToMe *bool
-    // Represents the email addresses that an incoming message must have been sent to in order for the condition or exception to apply.
-    sentToAddresses []Recipientable
-    // Indicates whether the owner of the mailbox must be in the toRecipients property of an incoming message in order for the condition or exception to apply.
-    sentToMe *bool
-    // Indicates whether the owner of the mailbox must be in either a toRecipients or ccRecipients property of an incoming message in order for the condition or exception to apply.
-    sentToOrCcMe *bool
-    // Represents the strings that appear in the subject of an incoming message in order for the condition or exception to apply.
-    subjectContains []string
-    // Represents the minimum and maximum sizes (in kilobytes) that an incoming message must fall in between in order for the condition or exception to apply.
-    withinSizeRange SizeRangeable
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewMessageRulePredicates instantiates a new messageRulePredicates and sets the default values.
 func NewMessageRulePredicates()(*MessageRulePredicates) {
     m := &MessageRulePredicates{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -84,19 +24,52 @@ func CreateMessageRulePredicatesFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MessageRulePredicates) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *MessageRulePredicates) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetBodyContains gets the bodyContains property value. Represents the strings that should appear in the body of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetBodyContains()([]string) {
-    return m.bodyContains
+    val, err := m.GetBackingStore().Get("bodyContains")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetBodyOrSubjectContains gets the bodyOrSubjectContains property value. Represents the strings that should appear in the body or subject of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetBodyOrSubjectContains()([]string) {
-    return m.bodyOrSubjectContains
+    val, err := m.GetBackingStore().Get("bodyOrSubjectContains")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetCategories gets the categories property value. Represents the categories that an incoming message should be labeled with in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetCategories()([]string) {
-    return m.categories
+    val, err := m.GetBackingStore().Get("categories")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -451,115 +424,311 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetFromAddresses gets the fromAddresses property value. Represents the specific sender email addresses of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetFromAddresses()([]Recipientable) {
-    return m.fromAddresses
+    val, err := m.GetBackingStore().Get("fromAddresses")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Recipientable)
+    }
+    return nil
 }
 // GetHasAttachments gets the hasAttachments property value. Indicates whether an incoming message must have attachments in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetHasAttachments()(*bool) {
-    return m.hasAttachments
+    val, err := m.GetBackingStore().Get("hasAttachments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetHeaderContains gets the headerContains property value. Represents the strings that appear in the headers of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetHeaderContains()([]string) {
-    return m.headerContains
+    val, err := m.GetBackingStore().Get("headerContains")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetImportance gets the importance property value. The importance that is stamped on an incoming message in order for the condition or exception to apply: low, normal, high.
 func (m *MessageRulePredicates) GetImportance()(*Importance) {
-    return m.importance
+    val, err := m.GetBackingStore().Get("importance")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*Importance)
+    }
+    return nil
 }
 // GetIsApprovalRequest gets the isApprovalRequest property value. Indicates whether an incoming message must be an approval request in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetIsApprovalRequest()(*bool) {
-    return m.isApprovalRequest
+    val, err := m.GetBackingStore().Get("isApprovalRequest")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsAutomaticForward gets the isAutomaticForward property value. Indicates whether an incoming message must be automatically forwarded in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetIsAutomaticForward()(*bool) {
-    return m.isAutomaticForward
+    val, err := m.GetBackingStore().Get("isAutomaticForward")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsAutomaticReply gets the isAutomaticReply property value. Indicates whether an incoming message must be an auto reply in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetIsAutomaticReply()(*bool) {
-    return m.isAutomaticReply
+    val, err := m.GetBackingStore().Get("isAutomaticReply")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsEncrypted gets the isEncrypted property value. Indicates whether an incoming message must be encrypted in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetIsEncrypted()(*bool) {
-    return m.isEncrypted
+    val, err := m.GetBackingStore().Get("isEncrypted")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsMeetingRequest gets the isMeetingRequest property value. Indicates whether an incoming message must be a meeting request in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetIsMeetingRequest()(*bool) {
-    return m.isMeetingRequest
+    val, err := m.GetBackingStore().Get("isMeetingRequest")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsMeetingResponse gets the isMeetingResponse property value. Indicates whether an incoming message must be a meeting response in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetIsMeetingResponse()(*bool) {
-    return m.isMeetingResponse
+    val, err := m.GetBackingStore().Get("isMeetingResponse")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsNonDeliveryReport gets the isNonDeliveryReport property value. Indicates whether an incoming message must be a non-delivery report in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetIsNonDeliveryReport()(*bool) {
-    return m.isNonDeliveryReport
+    val, err := m.GetBackingStore().Get("isNonDeliveryReport")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsPermissionControlled gets the isPermissionControlled property value. Indicates whether an incoming message must be permission controlled (RMS-protected) in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetIsPermissionControlled()(*bool) {
-    return m.isPermissionControlled
+    val, err := m.GetBackingStore().Get("isPermissionControlled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsReadReceipt gets the isReadReceipt property value. Indicates whether an incoming message must be a read receipt in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetIsReadReceipt()(*bool) {
-    return m.isReadReceipt
+    val, err := m.GetBackingStore().Get("isReadReceipt")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsSigned gets the isSigned property value. Indicates whether an incoming message must be S/MIME-signed in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetIsSigned()(*bool) {
-    return m.isSigned
+    val, err := m.GetBackingStore().Get("isSigned")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsVoicemail gets the isVoicemail property value. Indicates whether an incoming message must be a voice mail in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetIsVoicemail()(*bool) {
-    return m.isVoicemail
+    val, err := m.GetBackingStore().Get("isVoicemail")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetMessageActionFlag gets the messageActionFlag property value. Represents the flag-for-action value that appears on an incoming message in order for the condition or exception to apply. The possible values are: any, call, doNotForward, followUp, fyi, forward, noResponseNecessary, read, reply, replyToAll, review.
 func (m *MessageRulePredicates) GetMessageActionFlag()(*MessageActionFlag) {
-    return m.messageActionFlag
+    val, err := m.GetBackingStore().Get("messageActionFlag")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*MessageActionFlag)
+    }
+    return nil
 }
 // GetNotSentToMe gets the notSentToMe property value. Indicates whether the owner of the mailbox must not be a recipient of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetNotSentToMe()(*bool) {
-    return m.notSentToMe
+    val, err := m.GetBackingStore().Get("notSentToMe")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *MessageRulePredicates) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRecipientContains gets the recipientContains property value. Represents the strings that appear in either the toRecipients or ccRecipients properties of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetRecipientContains()([]string) {
-    return m.recipientContains
+    val, err := m.GetBackingStore().Get("recipientContains")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetSenderContains gets the senderContains property value. Represents the strings that appear in the from property of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetSenderContains()([]string) {
-    return m.senderContains
+    val, err := m.GetBackingStore().Get("senderContains")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetSensitivity gets the sensitivity property value. Represents the sensitivity level that must be stamped on an incoming message in order for the condition or exception to apply. The possible values are: normal, personal, private, confidential.
 func (m *MessageRulePredicates) GetSensitivity()(*Sensitivity) {
-    return m.sensitivity
+    val, err := m.GetBackingStore().Get("sensitivity")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*Sensitivity)
+    }
+    return nil
 }
 // GetSentCcMe gets the sentCcMe property value. Indicates whether the owner of the mailbox must be in the ccRecipients property of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetSentCcMe()(*bool) {
-    return m.sentCcMe
+    val, err := m.GetBackingStore().Get("sentCcMe")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSentOnlyToMe gets the sentOnlyToMe property value. Indicates whether the owner of the mailbox must be the only recipient in an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetSentOnlyToMe()(*bool) {
-    return m.sentOnlyToMe
+    val, err := m.GetBackingStore().Get("sentOnlyToMe")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSentToAddresses gets the sentToAddresses property value. Represents the email addresses that an incoming message must have been sent to in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetSentToAddresses()([]Recipientable) {
-    return m.sentToAddresses
+    val, err := m.GetBackingStore().Get("sentToAddresses")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Recipientable)
+    }
+    return nil
 }
 // GetSentToMe gets the sentToMe property value. Indicates whether the owner of the mailbox must be in the toRecipients property of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetSentToMe()(*bool) {
-    return m.sentToMe
+    val, err := m.GetBackingStore().Get("sentToMe")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSentToOrCcMe gets the sentToOrCcMe property value. Indicates whether the owner of the mailbox must be in either a toRecipients or ccRecipients property of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetSentToOrCcMe()(*bool) {
-    return m.sentToOrCcMe
+    val, err := m.GetBackingStore().Get("sentToOrCcMe")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetSubjectContains gets the subjectContains property value. Represents the strings that appear in the subject of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetSubjectContains()([]string) {
-    return m.subjectContains
+    val, err := m.GetBackingStore().Get("subjectContains")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetWithinSizeRange gets the withinSizeRange property value. Represents the minimum and maximum sizes (in kilobytes) that an incoming message must fall in between in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetWithinSizeRange()(SizeRangeable) {
-    return m.withinSizeRange
+    val, err := m.GetBackingStore().Get("withinSizeRange")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SizeRangeable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MessageRulePredicates) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -770,129 +939,299 @@ func (m *MessageRulePredicates) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MessageRulePredicates) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *MessageRulePredicates) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetBodyContains sets the bodyContains property value. Represents the strings that should appear in the body of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetBodyContains(value []string)() {
-    m.bodyContains = value
+    err := m.GetBackingStore().Set("bodyContains", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBodyOrSubjectContains sets the bodyOrSubjectContains property value. Represents the strings that should appear in the body or subject of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetBodyOrSubjectContains(value []string)() {
-    m.bodyOrSubjectContains = value
+    err := m.GetBackingStore().Set("bodyOrSubjectContains", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCategories sets the categories property value. Represents the categories that an incoming message should be labeled with in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetCategories(value []string)() {
-    m.categories = value
+    err := m.GetBackingStore().Set("categories", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFromAddresses sets the fromAddresses property value. Represents the specific sender email addresses of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetFromAddresses(value []Recipientable)() {
-    m.fromAddresses = value
+    err := m.GetBackingStore().Set("fromAddresses", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHasAttachments sets the hasAttachments property value. Indicates whether an incoming message must have attachments in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetHasAttachments(value *bool)() {
-    m.hasAttachments = value
+    err := m.GetBackingStore().Set("hasAttachments", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHeaderContains sets the headerContains property value. Represents the strings that appear in the headers of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetHeaderContains(value []string)() {
-    m.headerContains = value
+    err := m.GetBackingStore().Set("headerContains", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetImportance sets the importance property value. The importance that is stamped on an incoming message in order for the condition or exception to apply: low, normal, high.
 func (m *MessageRulePredicates) SetImportance(value *Importance)() {
-    m.importance = value
+    err := m.GetBackingStore().Set("importance", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsApprovalRequest sets the isApprovalRequest property value. Indicates whether an incoming message must be an approval request in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetIsApprovalRequest(value *bool)() {
-    m.isApprovalRequest = value
+    err := m.GetBackingStore().Set("isApprovalRequest", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsAutomaticForward sets the isAutomaticForward property value. Indicates whether an incoming message must be automatically forwarded in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetIsAutomaticForward(value *bool)() {
-    m.isAutomaticForward = value
+    err := m.GetBackingStore().Set("isAutomaticForward", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsAutomaticReply sets the isAutomaticReply property value. Indicates whether an incoming message must be an auto reply in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetIsAutomaticReply(value *bool)() {
-    m.isAutomaticReply = value
+    err := m.GetBackingStore().Set("isAutomaticReply", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsEncrypted sets the isEncrypted property value. Indicates whether an incoming message must be encrypted in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetIsEncrypted(value *bool)() {
-    m.isEncrypted = value
+    err := m.GetBackingStore().Set("isEncrypted", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsMeetingRequest sets the isMeetingRequest property value. Indicates whether an incoming message must be a meeting request in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetIsMeetingRequest(value *bool)() {
-    m.isMeetingRequest = value
+    err := m.GetBackingStore().Set("isMeetingRequest", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsMeetingResponse sets the isMeetingResponse property value. Indicates whether an incoming message must be a meeting response in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetIsMeetingResponse(value *bool)() {
-    m.isMeetingResponse = value
+    err := m.GetBackingStore().Set("isMeetingResponse", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsNonDeliveryReport sets the isNonDeliveryReport property value. Indicates whether an incoming message must be a non-delivery report in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetIsNonDeliveryReport(value *bool)() {
-    m.isNonDeliveryReport = value
+    err := m.GetBackingStore().Set("isNonDeliveryReport", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsPermissionControlled sets the isPermissionControlled property value. Indicates whether an incoming message must be permission controlled (RMS-protected) in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetIsPermissionControlled(value *bool)() {
-    m.isPermissionControlled = value
+    err := m.GetBackingStore().Set("isPermissionControlled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsReadReceipt sets the isReadReceipt property value. Indicates whether an incoming message must be a read receipt in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetIsReadReceipt(value *bool)() {
-    m.isReadReceipt = value
+    err := m.GetBackingStore().Set("isReadReceipt", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsSigned sets the isSigned property value. Indicates whether an incoming message must be S/MIME-signed in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetIsSigned(value *bool)() {
-    m.isSigned = value
+    err := m.GetBackingStore().Set("isSigned", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsVoicemail sets the isVoicemail property value. Indicates whether an incoming message must be a voice mail in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetIsVoicemail(value *bool)() {
-    m.isVoicemail = value
+    err := m.GetBackingStore().Set("isVoicemail", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMessageActionFlag sets the messageActionFlag property value. Represents the flag-for-action value that appears on an incoming message in order for the condition or exception to apply. The possible values are: any, call, doNotForward, followUp, fyi, forward, noResponseNecessary, read, reply, replyToAll, review.
 func (m *MessageRulePredicates) SetMessageActionFlag(value *MessageActionFlag)() {
-    m.messageActionFlag = value
+    err := m.GetBackingStore().Set("messageActionFlag", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNotSentToMe sets the notSentToMe property value. Indicates whether the owner of the mailbox must not be a recipient of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetNotSentToMe(value *bool)() {
-    m.notSentToMe = value
+    err := m.GetBackingStore().Set("notSentToMe", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *MessageRulePredicates) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRecipientContains sets the recipientContains property value. Represents the strings that appear in either the toRecipients or ccRecipients properties of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetRecipientContains(value []string)() {
-    m.recipientContains = value
+    err := m.GetBackingStore().Set("recipientContains", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSenderContains sets the senderContains property value. Represents the strings that appear in the from property of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetSenderContains(value []string)() {
-    m.senderContains = value
+    err := m.GetBackingStore().Set("senderContains", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSensitivity sets the sensitivity property value. Represents the sensitivity level that must be stamped on an incoming message in order for the condition or exception to apply. The possible values are: normal, personal, private, confidential.
 func (m *MessageRulePredicates) SetSensitivity(value *Sensitivity)() {
-    m.sensitivity = value
+    err := m.GetBackingStore().Set("sensitivity", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSentCcMe sets the sentCcMe property value. Indicates whether the owner of the mailbox must be in the ccRecipients property of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetSentCcMe(value *bool)() {
-    m.sentCcMe = value
+    err := m.GetBackingStore().Set("sentCcMe", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSentOnlyToMe sets the sentOnlyToMe property value. Indicates whether the owner of the mailbox must be the only recipient in an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetSentOnlyToMe(value *bool)() {
-    m.sentOnlyToMe = value
+    err := m.GetBackingStore().Set("sentOnlyToMe", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSentToAddresses sets the sentToAddresses property value. Represents the email addresses that an incoming message must have been sent to in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetSentToAddresses(value []Recipientable)() {
-    m.sentToAddresses = value
+    err := m.GetBackingStore().Set("sentToAddresses", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSentToMe sets the sentToMe property value. Indicates whether the owner of the mailbox must be in the toRecipients property of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetSentToMe(value *bool)() {
-    m.sentToMe = value
+    err := m.GetBackingStore().Set("sentToMe", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSentToOrCcMe sets the sentToOrCcMe property value. Indicates whether the owner of the mailbox must be in either a toRecipients or ccRecipients property of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetSentToOrCcMe(value *bool)() {
-    m.sentToOrCcMe = value
+    err := m.GetBackingStore().Set("sentToOrCcMe", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSubjectContains sets the subjectContains property value. Represents the strings that appear in the subject of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetSubjectContains(value []string)() {
-    m.subjectContains = value
+    err := m.GetBackingStore().Set("subjectContains", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWithinSizeRange sets the withinSizeRange property value. Represents the minimum and maximum sizes (in kilobytes) that an incoming message must fall in between in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetWithinSizeRange(value SizeRangeable)() {
-    m.withinSizeRange = value
+    err := m.GetBackingStore().Set("withinSizeRange", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MessageRulePredicatesable 
+type MessageRulePredicatesable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetBodyContains()([]string)
+    GetBodyOrSubjectContains()([]string)
+    GetCategories()([]string)
+    GetFromAddresses()([]Recipientable)
+    GetHasAttachments()(*bool)
+    GetHeaderContains()([]string)
+    GetImportance()(*Importance)
+    GetIsApprovalRequest()(*bool)
+    GetIsAutomaticForward()(*bool)
+    GetIsAutomaticReply()(*bool)
+    GetIsEncrypted()(*bool)
+    GetIsMeetingRequest()(*bool)
+    GetIsMeetingResponse()(*bool)
+    GetIsNonDeliveryReport()(*bool)
+    GetIsPermissionControlled()(*bool)
+    GetIsReadReceipt()(*bool)
+    GetIsSigned()(*bool)
+    GetIsVoicemail()(*bool)
+    GetMessageActionFlag()(*MessageActionFlag)
+    GetNotSentToMe()(*bool)
+    GetOdataType()(*string)
+    GetRecipientContains()([]string)
+    GetSenderContains()([]string)
+    GetSensitivity()(*Sensitivity)
+    GetSentCcMe()(*bool)
+    GetSentOnlyToMe()(*bool)
+    GetSentToAddresses()([]Recipientable)
+    GetSentToMe()(*bool)
+    GetSentToOrCcMe()(*bool)
+    GetSubjectContains()([]string)
+    GetWithinSizeRange()(SizeRangeable)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetBodyContains(value []string)()
+    SetBodyOrSubjectContains(value []string)()
+    SetCategories(value []string)()
+    SetFromAddresses(value []Recipientable)()
+    SetHasAttachments(value *bool)()
+    SetHeaderContains(value []string)()
+    SetImportance(value *Importance)()
+    SetIsApprovalRequest(value *bool)()
+    SetIsAutomaticForward(value *bool)()
+    SetIsAutomaticReply(value *bool)()
+    SetIsEncrypted(value *bool)()
+    SetIsMeetingRequest(value *bool)()
+    SetIsMeetingResponse(value *bool)()
+    SetIsNonDeliveryReport(value *bool)()
+    SetIsPermissionControlled(value *bool)()
+    SetIsReadReceipt(value *bool)()
+    SetIsSigned(value *bool)()
+    SetIsVoicemail(value *bool)()
+    SetMessageActionFlag(value *MessageActionFlag)()
+    SetNotSentToMe(value *bool)()
+    SetOdataType(value *string)()
+    SetRecipientContains(value []string)()
+    SetSenderContains(value []string)()
+    SetSensitivity(value *Sensitivity)()
+    SetSentCcMe(value *bool)()
+    SetSentOnlyToMe(value *bool)()
+    SetSentToAddresses(value []Recipientable)()
+    SetSentToMe(value *bool)()
+    SetSentToOrCcMe(value *bool)()
+    SetSubjectContains(value []string)()
+    SetWithinSizeRange(value SizeRangeable)()
 }

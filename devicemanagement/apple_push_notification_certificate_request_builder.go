@@ -81,6 +81,10 @@ func (m *ApplePushNotificationCertificateRequestBuilder) Delete(ctx context.Cont
     }
     return nil
 }
+// DownloadApplePushNotificationCertificateSigningRequest provides operations to call the downloadApplePushNotificationCertificateSigningRequest method.
+func (m *ApplePushNotificationCertificateRequestBuilder) DownloadApplePushNotificationCertificateSigningRequest()(*ApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequestRequestBuilder) {
+    return NewApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequestRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Get apple push notification certificate.
 func (m *ApplePushNotificationCertificateRequestBuilder) Get(ctx context.Context, requestConfiguration *ApplePushNotificationCertificateRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApplePushNotificationCertificateable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -99,10 +103,6 @@ func (m *ApplePushNotificationCertificateRequestBuilder) Get(ctx context.Context
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApplePushNotificationCertificateable), nil
-}
-// MicrosoftGraphDownloadApplePushNotificationCertificateSigningRequest provides operations to call the downloadApplePushNotificationCertificateSigningRequest method.
-func (m *ApplePushNotificationCertificateRequestBuilder) MicrosoftGraphDownloadApplePushNotificationCertificateSigningRequest()(*ApplePushNotificationCertificateMicrosoftGraphDownloadApplePushNotificationCertificateSigningRequestRequestBuilder) {
-    return NewApplePushNotificationCertificateMicrosoftGraphDownloadApplePushNotificationCertificateSigningRequestRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property applePushNotificationCertificate in deviceManagement
 func (m *ApplePushNotificationCertificateRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApplePushNotificationCertificateable, requestConfiguration *ApplePushNotificationCertificateRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApplePushNotificationCertificateable, error) {

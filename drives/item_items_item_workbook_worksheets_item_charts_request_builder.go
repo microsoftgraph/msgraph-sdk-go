@@ -51,6 +51,10 @@ type ItemItemsItemWorkbookWorksheetsItemChartsRequestBuilderPostRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Add provides operations to call the add method.
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsRequestBuilder) Add()(*ItemItemsItemWorkbookWorksheetsItemChartsAddRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemChartsAddRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // NewItemItemsItemWorkbookWorksheetsItemChartsRequestBuilderInternal instantiates a new ChartsRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsItemChartsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookWorksheetsItemChartsRequestBuilder) {
     m := &ItemItemsItemWorkbookWorksheetsItemChartsRequestBuilder{
@@ -70,14 +74,14 @@ func NewItemItemsItemWorkbookWorksheetsItemChartsRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookWorksheetsItemChartsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count provides operations to count the resources in the collection.
+// Count provides operations to call the count method.
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsRequestBuilder) Count()(*ItemItemsItemWorkbookWorksheetsItemChartsCountRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemChartsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of chart objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/worksheet-list-charts?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/chart-list?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,21 +100,13 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsRequestBuilder) Get(ctx contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartCollectionResponseable), nil
 }
-// MicrosoftGraphAdd provides operations to call the add method.
-func (m *ItemItemsItemWorkbookWorksheetsItemChartsRequestBuilder) MicrosoftGraphAdd()(*ItemItemsItemWorkbookWorksheetsItemChartsMicrosoftGraphAddRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemChartsMicrosoftGraphAddRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// ItemAtWithIndex provides operations to call the itemAt method.
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsRequestBuilder) ItemAtWithIndex(index *int32)(*ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexRequestBuilderInternal(m.pathParameters, m.requestAdapter, index)
 }
-// MicrosoftGraphCount provides operations to call the count method.
-func (m *ItemItemsItemWorkbookWorksheetsItemChartsRequestBuilder) MicrosoftGraphCount()(*ItemItemsItemWorkbookWorksheetsItemChartsMicrosoftGraphCountRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemChartsMicrosoftGraphCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphItemAtWithIndex provides operations to call the itemAt method.
-func (m *ItemItemsItemWorkbookWorksheetsItemChartsRequestBuilder) MicrosoftGraphItemAtWithIndex(index *int32)(*ItemItemsItemWorkbookWorksheetsItemChartsMicrosoftGraphItemAtWithIndexRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemChartsMicrosoftGraphItemAtWithIndexRequestBuilderInternal(m.pathParameters, m.requestAdapter, index)
-}
-// MicrosoftGraphItemWithName provides operations to call the item method.
-func (m *ItemItemsItemWorkbookWorksheetsItemChartsRequestBuilder) MicrosoftGraphItemWithName(name *string)(*ItemItemsItemWorkbookWorksheetsItemChartsMicrosoftGraphItemWithNameRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemChartsMicrosoftGraphItemWithNameRequestBuilderInternal(m.pathParameters, m.requestAdapter, name)
+// ItemWithName provides operations to call the item method.
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsRequestBuilder) ItemWithName(name *string)(*ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemChartsItemWithNameRequestBuilderInternal(m.pathParameters, m.requestAdapter, name)
 }
 // Post use this API to create a new Chart.
 // [Find more info here]

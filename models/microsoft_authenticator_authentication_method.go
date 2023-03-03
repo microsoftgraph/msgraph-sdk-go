@@ -8,16 +8,6 @@ import (
 // MicrosoftAuthenticatorAuthenticationMethod 
 type MicrosoftAuthenticatorAuthenticationMethod struct {
     AuthenticationMethod
-    // The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The registered device on which Microsoft Authenticator resides. This property is null if the device is not registered for passwordless Phone Sign-In.
-    device Deviceable
-    // Tags containing app metadata.
-    deviceTag *string
-    // The name of the device on which this app is registered.
-    displayName *string
-    // Numerical version of this instance of the Authenticator app.
-    phoneAppVersion *string
 }
 // NewMicrosoftAuthenticatorAuthenticationMethod instantiates a new MicrosoftAuthenticatorAuthenticationMethod and sets the default values.
 func NewMicrosoftAuthenticatorAuthenticationMethod()(*MicrosoftAuthenticatorAuthenticationMethod) {
@@ -34,19 +24,47 @@ func CreateMicrosoftAuthenticatorAuthenticationMethodFromDiscriminatorValue(pars
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
 func (m *MicrosoftAuthenticatorAuthenticationMethod) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.createdDateTime
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetDevice gets the device property value. The registered device on which Microsoft Authenticator resides. This property is null if the device is not registered for passwordless Phone Sign-In.
 func (m *MicrosoftAuthenticatorAuthenticationMethod) GetDevice()(Deviceable) {
-    return m.device
+    val, err := m.GetBackingStore().Get("device")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Deviceable)
+    }
+    return nil
 }
 // GetDeviceTag gets the deviceTag property value. Tags containing app metadata.
 func (m *MicrosoftAuthenticatorAuthenticationMethod) GetDeviceTag()(*string) {
-    return m.deviceTag
+    val, err := m.GetBackingStore().Get("deviceTag")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The name of the device on which this app is registered.
 func (m *MicrosoftAuthenticatorAuthenticationMethod) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MicrosoftAuthenticatorAuthenticationMethod) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -105,7 +123,14 @@ func (m *MicrosoftAuthenticatorAuthenticationMethod) GetFieldDeserializers()(map
 }
 // GetPhoneAppVersion gets the phoneAppVersion property value. Numerical version of this instance of the Authenticator app.
 func (m *MicrosoftAuthenticatorAuthenticationMethod) GetPhoneAppVersion()(*string) {
-    return m.phoneAppVersion
+    val, err := m.GetBackingStore().Get("phoneAppVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MicrosoftAuthenticatorAuthenticationMethod) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -147,21 +172,51 @@ func (m *MicrosoftAuthenticatorAuthenticationMethod) Serialize(writer i878a80d23
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
 func (m *MicrosoftAuthenticatorAuthenticationMethod) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDevice sets the device property value. The registered device on which Microsoft Authenticator resides. This property is null if the device is not registered for passwordless Phone Sign-In.
 func (m *MicrosoftAuthenticatorAuthenticationMethod) SetDevice(value Deviceable)() {
-    m.device = value
+    err := m.GetBackingStore().Set("device", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceTag sets the deviceTag property value. Tags containing app metadata.
 func (m *MicrosoftAuthenticatorAuthenticationMethod) SetDeviceTag(value *string)() {
-    m.deviceTag = value
+    err := m.GetBackingStore().Set("deviceTag", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The name of the device on which this app is registered.
 func (m *MicrosoftAuthenticatorAuthenticationMethod) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPhoneAppVersion sets the phoneAppVersion property value. Numerical version of this instance of the Authenticator app.
 func (m *MicrosoftAuthenticatorAuthenticationMethod) SetPhoneAppVersion(value *string)() {
-    m.phoneAppVersion = value
+    err := m.GetBackingStore().Set("phoneAppVersion", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MicrosoftAuthenticatorAuthenticationMethodable 
+type MicrosoftAuthenticatorAuthenticationMethodable interface {
+    AuthenticationMethodable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDevice()(Deviceable)
+    GetDeviceTag()(*string)
+    GetDisplayName()(*string)
+    GetPhoneAppVersion()(*string)
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDevice(value Deviceable)()
+    SetDeviceTag(value *string)()
+    SetDisplayName(value *string)()
+    SetPhoneAppVersion(value *string)()
 }

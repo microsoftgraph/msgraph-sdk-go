@@ -7,8 +7,6 @@ import (
 // UnifiedRoleManagementPolicyNotificationRuleCollectionResponse 
 type UnifiedRoleManagementPolicyNotificationRuleCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []UnifiedRoleManagementPolicyNotificationRuleable
 }
 // NewUnifiedRoleManagementPolicyNotificationRuleCollectionResponse instantiates a new UnifiedRoleManagementPolicyNotificationRuleCollectionResponse and sets the default values.
 func NewUnifiedRoleManagementPolicyNotificationRuleCollectionResponse()(*UnifiedRoleManagementPolicyNotificationRuleCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *UnifiedRoleManagementPolicyNotificationRuleCollectionResponse) GetField
 }
 // GetValue gets the value property value. The value property
 func (m *UnifiedRoleManagementPolicyNotificationRuleCollectionResponse) GetValue()([]UnifiedRoleManagementPolicyNotificationRuleable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UnifiedRoleManagementPolicyNotificationRuleable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UnifiedRoleManagementPolicyNotificationRuleCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *UnifiedRoleManagementPolicyNotificationRuleCollectionResponse) Serializ
 }
 // SetValue sets the value property value. The value property
 func (m *UnifiedRoleManagementPolicyNotificationRuleCollectionResponse) SetValue(value []UnifiedRoleManagementPolicyNotificationRuleable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UnifiedRoleManagementPolicyNotificationRuleCollectionResponseable 
+type UnifiedRoleManagementPolicyNotificationRuleCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]UnifiedRoleManagementPolicyNotificationRuleable)
+    SetValue(value []UnifiedRoleManagementPolicyNotificationRuleable)()
 }

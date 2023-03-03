@@ -7,8 +7,6 @@ import (
 // DetectedAppCollectionResponse 
 type DetectedAppCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DetectedAppable
 }
 // NewDetectedAppCollectionResponse instantiates a new DetectedAppCollectionResponse and sets the default values.
 func NewDetectedAppCollectionResponse()(*DetectedAppCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DetectedAppCollectionResponse) GetFieldDeserializers()(map[string]func(
 }
 // GetValue gets the value property value. The value property
 func (m *DetectedAppCollectionResponse) GetValue()([]DetectedAppable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DetectedAppable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DetectedAppCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DetectedAppCollectionResponse) Serialize(writer i878a80d2330e89d2689638
 }
 // SetValue sets the value property value. The value property
 func (m *DetectedAppCollectionResponse) SetValue(value []DetectedAppable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DetectedAppCollectionResponseable 
+type DetectedAppCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DetectedAppable)
+    SetValue(value []DetectedAppable)()
 }

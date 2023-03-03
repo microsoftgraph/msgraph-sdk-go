@@ -7,8 +7,6 @@ import (
 // AssignedPlanCollectionResponse 
 type AssignedPlanCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AssignedPlanable
 }
 // NewAssignedPlanCollectionResponse instantiates a new AssignedPlanCollectionResponse and sets the default values.
 func NewAssignedPlanCollectionResponse()(*AssignedPlanCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AssignedPlanCollectionResponse) GetFieldDeserializers()(map[string]func
 }
 // GetValue gets the value property value. The value property
 func (m *AssignedPlanCollectionResponse) GetValue()([]AssignedPlanable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AssignedPlanable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AssignedPlanCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AssignedPlanCollectionResponse) Serialize(writer i878a80d2330e89d268963
 }
 // SetValue sets the value property value. The value property
 func (m *AssignedPlanCollectionResponse) SetValue(value []AssignedPlanable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AssignedPlanCollectionResponseable 
+type AssignedPlanCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AssignedPlanable)
+    SetValue(value []AssignedPlanable)()
 }

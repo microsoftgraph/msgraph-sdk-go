@@ -74,6 +74,10 @@ func NewEntitlementManagementRoleEligibilityScheduleRequestsRequestBuilder(rawUr
 func (m *EntitlementManagementRoleEligibilityScheduleRequestsRequestBuilder) Count()(*EntitlementManagementRoleEligibilityScheduleRequestsCountRequestBuilder) {
     return NewEntitlementManagementRoleEligibilityScheduleRequestsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
+func (m *EntitlementManagementRoleEligibilityScheduleRequestsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*EntitlementManagementRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnRequestBuilder) {
+    return NewEntitlementManagementRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
+}
 // Get in PIM, retrieve the requests for role eligibilities for principals made through the unifiedRoleEligibilityScheduleRequest object.
 // [Find more info here]
 // 
@@ -95,10 +99,6 @@ func (m *EntitlementManagementRoleEligibilityScheduleRequestsRequestBuilder) Get
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleEligibilityScheduleRequestCollectionResponseable), nil
-}
-// MicrosoftGraphFilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
-func (m *EntitlementManagementRoleEligibilityScheduleRequestsRequestBuilder) MicrosoftGraphFilterByCurrentUserWithOn(on *string)(*EntitlementManagementRoleEligibilityScheduleRequestsMicrosoftGraphFilterByCurrentUserWithOnRequestBuilder) {
-    return NewEntitlementManagementRoleEligibilityScheduleRequestsMicrosoftGraphFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
 }
 // Post in PIM, request for a role eligibility for a principal through the unifiedRoleEligibilityScheduleRequest object. This operation allows both admins and eligible users to add, revoke, or extend eligible assignments.
 // [Find more info here]

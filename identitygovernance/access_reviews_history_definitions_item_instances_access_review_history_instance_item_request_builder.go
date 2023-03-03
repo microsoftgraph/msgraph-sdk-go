@@ -81,6 +81,10 @@ func (m *AccessReviewsHistoryDefinitionsItemInstancesAccessReviewHistoryInstance
     }
     return nil
 }
+// GenerateDownloadUri provides operations to call the generateDownloadUri method.
+func (m *AccessReviewsHistoryDefinitionsItemInstancesAccessReviewHistoryInstanceItemRequestBuilder) GenerateDownloadUri()(*AccessReviewsHistoryDefinitionsItemInstancesItemGenerateDownloadUriRequestBuilder) {
+    return NewAccessReviewsHistoryDefinitionsItemInstancesItemGenerateDownloadUriRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Get if the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that does not recur will have exactly one instance.
 func (m *AccessReviewsHistoryDefinitionsItemInstancesAccessReviewHistoryInstanceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AccessReviewsHistoryDefinitionsItemInstancesAccessReviewHistoryInstanceItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewHistoryInstanceable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -99,10 +103,6 @@ func (m *AccessReviewsHistoryDefinitionsItemInstancesAccessReviewHistoryInstance
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewHistoryInstanceable), nil
-}
-// MicrosoftGraphGenerateDownloadUri provides operations to call the generateDownloadUri method.
-func (m *AccessReviewsHistoryDefinitionsItemInstancesAccessReviewHistoryInstanceItemRequestBuilder) MicrosoftGraphGenerateDownloadUri()(*AccessReviewsHistoryDefinitionsItemInstancesItemMicrosoftGraphGenerateDownloadUriRequestBuilder) {
-    return NewAccessReviewsHistoryDefinitionsItemInstancesItemMicrosoftGraphGenerateDownloadUriRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property instances in identityGovernance
 func (m *AccessReviewsHistoryDefinitionsItemInstancesAccessReviewHistoryInstanceItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewHistoryInstanceable, requestConfiguration *AccessReviewsHistoryDefinitionsItemInstancesAccessReviewHistoryInstanceItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewHistoryInstanceable, error) {

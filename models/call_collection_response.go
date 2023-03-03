@@ -7,8 +7,6 @@ import (
 // CallCollectionResponse 
 type CallCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Callable
 }
 // NewCallCollectionResponse instantiates a new CallCollectionResponse and sets the default values.
 func NewCallCollectionResponse()(*CallCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *CallCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetValue gets the value property value. The value property
 func (m *CallCollectionResponse) GetValue()([]Callable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Callable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CallCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *CallCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetValue sets the value property value. The value property
 func (m *CallCollectionResponse) SetValue(value []Callable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CallCollectionResponseable 
+type CallCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Callable)
+    SetValue(value []Callable)()
 }

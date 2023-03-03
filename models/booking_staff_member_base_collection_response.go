@@ -7,8 +7,6 @@ import (
 // BookingStaffMemberBaseCollectionResponse 
 type BookingStaffMemberBaseCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []BookingStaffMemberBaseable
 }
 // NewBookingStaffMemberBaseCollectionResponse instantiates a new BookingStaffMemberBaseCollectionResponse and sets the default values.
 func NewBookingStaffMemberBaseCollectionResponse()(*BookingStaffMemberBaseCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *BookingStaffMemberBaseCollectionResponse) GetFieldDeserializers()(map[s
 }
 // GetValue gets the value property value. The value property
 func (m *BookingStaffMemberBaseCollectionResponse) GetValue()([]BookingStaffMemberBaseable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]BookingStaffMemberBaseable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *BookingStaffMemberBaseCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *BookingStaffMemberBaseCollectionResponse) Serialize(writer i878a80d2330
 }
 // SetValue sets the value property value. The value property
 func (m *BookingStaffMemberBaseCollectionResponse) SetValue(value []BookingStaffMemberBaseable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// BookingStaffMemberBaseCollectionResponseable 
+type BookingStaffMemberBaseCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]BookingStaffMemberBaseable)
+    SetValue(value []BookingStaffMemberBaseable)()
 }

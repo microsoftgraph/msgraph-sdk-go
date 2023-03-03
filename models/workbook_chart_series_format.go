@@ -7,10 +7,6 @@ import (
 // WorkbookChartSeriesFormat 
 type WorkbookChartSeriesFormat struct {
     Entity
-    // Represents the fill format of a chart series, which includes background formating information. Read-only.
-    fill WorkbookChartFillable
-    // Represents line formatting. Read-only.
-    line WorkbookChartLineFormatable
 }
 // NewWorkbookChartSeriesFormat instantiates a new workbookChartSeriesFormat and sets the default values.
 func NewWorkbookChartSeriesFormat()(*WorkbookChartSeriesFormat) {
@@ -50,11 +46,25 @@ func (m *WorkbookChartSeriesFormat) GetFieldDeserializers()(map[string]func(i878
 }
 // GetFill gets the fill property value. Represents the fill format of a chart series, which includes background formating information. Read-only.
 func (m *WorkbookChartSeriesFormat) GetFill()(WorkbookChartFillable) {
-    return m.fill
+    val, err := m.GetBackingStore().Get("fill")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WorkbookChartFillable)
+    }
+    return nil
 }
 // GetLine gets the line property value. Represents line formatting. Read-only.
 func (m *WorkbookChartSeriesFormat) GetLine()(WorkbookChartLineFormatable) {
-    return m.line
+    val, err := m.GetBackingStore().Get("line")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WorkbookChartLineFormatable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WorkbookChartSeriesFormat) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -78,9 +88,24 @@ func (m *WorkbookChartSeriesFormat) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetFill sets the fill property value. Represents the fill format of a chart series, which includes background formating information. Read-only.
 func (m *WorkbookChartSeriesFormat) SetFill(value WorkbookChartFillable)() {
-    m.fill = value
+    err := m.GetBackingStore().Set("fill", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLine sets the line property value. Represents line formatting. Read-only.
 func (m *WorkbookChartSeriesFormat) SetLine(value WorkbookChartLineFormatable)() {
-    m.line = value
+    err := m.GetBackingStore().Set("line", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WorkbookChartSeriesFormatable 
+type WorkbookChartSeriesFormatable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetFill()(WorkbookChartFillable)
+    GetLine()(WorkbookChartLineFormatable)
+    SetFill(value WorkbookChartFillable)()
+    SetLine(value WorkbookChartLineFormatable)()
 }

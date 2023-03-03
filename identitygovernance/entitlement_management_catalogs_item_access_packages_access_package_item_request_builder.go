@@ -134,6 +134,10 @@ func (m *EntitlementManagementCatalogsItemAccessPackagesAccessPackageItemRequest
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable), nil
 }
+// GetApplicablePolicyRequirements provides operations to call the getApplicablePolicyRequirements method.
+func (m *EntitlementManagementCatalogsItemAccessPackagesAccessPackageItemRequestBuilder) GetApplicablePolicyRequirements()(*EntitlementManagementCatalogsItemAccessPackagesItemGetApplicablePolicyRequirementsRequestBuilder) {
+    return NewEntitlementManagementCatalogsItemAccessPackagesItemGetApplicablePolicyRequirementsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // IncompatibleAccessPackages provides operations to manage the incompatibleAccessPackages property of the microsoft.graph.accessPackage entity.
 func (m *EntitlementManagementCatalogsItemAccessPackagesAccessPackageItemRequestBuilder) IncompatibleAccessPackages()(*EntitlementManagementCatalogsItemAccessPackagesItemIncompatibleAccessPackagesRequestBuilder) {
     return NewEntitlementManagementCatalogsItemAccessPackagesItemIncompatibleAccessPackagesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
@@ -163,10 +167,6 @@ func (m *EntitlementManagementCatalogsItemAccessPackagesAccessPackageItemRequest
         urlTplParams["group%2Did"] = id
     }
     return NewEntitlementManagementCatalogsItemAccessPackagesItemIncompatibleGroupsGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
-}
-// MicrosoftGraphGetApplicablePolicyRequirements provides operations to call the getApplicablePolicyRequirements method.
-func (m *EntitlementManagementCatalogsItemAccessPackagesAccessPackageItemRequestBuilder) MicrosoftGraphGetApplicablePolicyRequirements()(*EntitlementManagementCatalogsItemAccessPackagesItemMicrosoftGraphGetApplicablePolicyRequirementsRequestBuilder) {
-    return NewEntitlementManagementCatalogsItemAccessPackagesItemMicrosoftGraphGetApplicablePolicyRequirementsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property accessPackages in identityGovernance
 func (m *EntitlementManagementCatalogsItemAccessPackagesAccessPackageItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable, requestConfiguration *EntitlementManagementCatalogsItemAccessPackagesAccessPackageItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable, error) {

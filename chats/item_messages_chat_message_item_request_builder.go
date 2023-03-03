@@ -115,14 +115,6 @@ func (m *ItemMessagesChatMessageItemRequestBuilder) HostedContentsById(id string
     }
     return NewItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
-// MicrosoftGraphSoftDelete provides operations to call the softDelete method.
-func (m *ItemMessagesChatMessageItemRequestBuilder) MicrosoftGraphSoftDelete()(*ItemMessagesItemMicrosoftGraphSoftDeleteRequestBuilder) {
-    return NewItemMessagesItemMicrosoftGraphSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphUndoSoftDelete provides operations to call the undoSoftDelete method.
-func (m *ItemMessagesChatMessageItemRequestBuilder) MicrosoftGraphUndoSoftDelete()(*ItemMessagesItemMicrosoftGraphUndoSoftDeleteRequestBuilder) {
-    return NewItemMessagesItemMicrosoftGraphUndoSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Patch update the navigation property messages in chats
 func (m *ItemMessagesChatMessageItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable, requestConfiguration *ItemMessagesChatMessageItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -156,6 +148,10 @@ func (m *ItemMessagesChatMessageItemRequestBuilder) RepliesById(id string)(*Item
         urlTplParams["chatMessage%2Did1"] = id
     }
     return NewItemMessagesItemRepliesChatMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+}
+// SoftDelete provides operations to call the softDelete method.
+func (m *ItemMessagesChatMessageItemRequestBuilder) SoftDelete()(*ItemMessagesItemSoftDeleteRequestBuilder) {
+    return NewItemMessagesItemSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property messages for chats
 func (m *ItemMessagesChatMessageItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemMessagesChatMessageItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -201,4 +197,8 @@ func (m *ItemMessagesChatMessageItemRequestBuilder) ToPatchRequestInformation(ct
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// UndoSoftDelete provides operations to call the undoSoftDelete method.
+func (m *ItemMessagesChatMessageItemRequestBuilder) UndoSoftDelete()(*ItemMessagesItemUndoSoftDeleteRequestBuilder) {
+    return NewItemMessagesItemUndoSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

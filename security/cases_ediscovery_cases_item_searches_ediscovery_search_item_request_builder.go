@@ -138,14 +138,6 @@ func (m *CasesEdiscoveryCasesItemSearchesEdiscoverySearchItemRequestBuilder) Get
 func (m *CasesEdiscoveryCasesItemSearchesEdiscoverySearchItemRequestBuilder) LastEstimateStatisticsOperation()(*CasesEdiscoveryCasesItemSearchesItemLastEstimateStatisticsOperationRequestBuilder) {
     return NewCasesEdiscoveryCasesItemSearchesItemLastEstimateStatisticsOperationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphSecurityEstimateStatistics provides operations to call the estimateStatistics method.
-func (m *CasesEdiscoveryCasesItemSearchesEdiscoverySearchItemRequestBuilder) MicrosoftGraphSecurityEstimateStatistics()(*CasesEdiscoveryCasesItemSearchesItemMicrosoftGraphSecurityEstimateStatisticsRequestBuilder) {
-    return NewCasesEdiscoveryCasesItemSearchesItemMicrosoftGraphSecurityEstimateStatisticsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphSecurityPurgeData provides operations to call the purgeData method.
-func (m *CasesEdiscoveryCasesItemSearchesEdiscoverySearchItemRequestBuilder) MicrosoftGraphSecurityPurgeData()(*CasesEdiscoveryCasesItemSearchesItemMicrosoftGraphSecurityPurgeDataRequestBuilder) {
-    return NewCasesEdiscoveryCasesItemSearchesItemMicrosoftGraphSecurityPurgeDataRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // NoncustodialSources provides operations to manage the noncustodialSources property of the microsoft.graph.security.ediscoverySearch entity.
 func (m *CasesEdiscoveryCasesItemSearchesEdiscoverySearchItemRequestBuilder) NoncustodialSources()(*CasesEdiscoveryCasesItemSearchesItemNoncustodialSourcesRequestBuilder) {
     return NewCasesEdiscoveryCasesItemSearchesItemNoncustodialSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
@@ -179,6 +171,14 @@ func (m *CasesEdiscoveryCasesItemSearchesEdiscoverySearchItemRequestBuilder) Pat
         return nil, nil
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoverySearchable), nil
+}
+// SecurityEstimateStatistics provides operations to call the estimateStatistics method.
+func (m *CasesEdiscoveryCasesItemSearchesEdiscoverySearchItemRequestBuilder) SecurityEstimateStatistics()(*CasesEdiscoveryCasesItemSearchesItemSecurityEstimateStatisticsRequestBuilder) {
+    return NewCasesEdiscoveryCasesItemSearchesItemSecurityEstimateStatisticsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// SecurityPurgeData provides operations to call the purgeData method.
+func (m *CasesEdiscoveryCasesItemSearchesEdiscoverySearchItemRequestBuilder) SecurityPurgeData()(*CasesEdiscoveryCasesItemSearchesItemSecurityPurgeDataRequestBuilder) {
+    return NewCasesEdiscoveryCasesItemSearchesItemSecurityPurgeDataRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property searches for security
 func (m *CasesEdiscoveryCasesItemSearchesEdiscoverySearchItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemSearchesEdiscoverySearchItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

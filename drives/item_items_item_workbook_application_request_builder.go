@@ -46,6 +46,10 @@ type ItemItemsItemWorkbookApplicationRequestBuilderPatchRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Calculate provides operations to call the calculate method.
+func (m *ItemItemsItemWorkbookApplicationRequestBuilder) Calculate()(*ItemItemsItemWorkbookApplicationCalculateRequestBuilder) {
+    return NewItemItemsItemWorkbookApplicationCalculateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // NewItemItemsItemWorkbookApplicationRequestBuilderInternal instantiates a new ApplicationRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookApplicationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookApplicationRequestBuilder) {
     m := &ItemItemsItemWorkbookApplicationRequestBuilder{
@@ -102,10 +106,6 @@ func (m *ItemItemsItemWorkbookApplicationRequestBuilder) Get(ctx context.Context
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookApplicationable), nil
-}
-// MicrosoftGraphCalculate provides operations to call the calculate method.
-func (m *ItemItemsItemWorkbookApplicationRequestBuilder) MicrosoftGraphCalculate()(*ItemItemsItemWorkbookApplicationMicrosoftGraphCalculateRequestBuilder) {
-    return NewItemItemsItemWorkbookApplicationMicrosoftGraphCalculateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property application in drives
 func (m *ItemItemsItemWorkbookApplicationRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookApplicationable, requestConfiguration *ItemItemsItemWorkbookApplicationRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookApplicationable, error) {

@@ -7,8 +7,6 @@ import (
 // UserAttributeValuesItemCollectionResponse 
 type UserAttributeValuesItemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []UserAttributeValuesItemable
 }
 // NewUserAttributeValuesItemCollectionResponse instantiates a new UserAttributeValuesItemCollectionResponse and sets the default values.
 func NewUserAttributeValuesItemCollectionResponse()(*UserAttributeValuesItemCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *UserAttributeValuesItemCollectionResponse) GetFieldDeserializers()(map[
 }
 // GetValue gets the value property value. The value property
 func (m *UserAttributeValuesItemCollectionResponse) GetValue()([]UserAttributeValuesItemable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserAttributeValuesItemable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserAttributeValuesItemCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *UserAttributeValuesItemCollectionResponse) Serialize(writer i878a80d233
 }
 // SetValue sets the value property value. The value property
 func (m *UserAttributeValuesItemCollectionResponse) SetValue(value []UserAttributeValuesItemable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserAttributeValuesItemCollectionResponseable 
+type UserAttributeValuesItemCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]UserAttributeValuesItemable)
+    SetValue(value []UserAttributeValuesItemable)()
 }

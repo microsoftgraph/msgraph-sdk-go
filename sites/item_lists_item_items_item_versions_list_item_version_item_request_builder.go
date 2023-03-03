@@ -104,10 +104,6 @@ func (m *ItemListsItemItemsItemVersionsListItemVersionItemRequestBuilder) Get(ct
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemVersionable), nil
 }
-// MicrosoftGraphRestoreVersion provides operations to call the restoreVersion method.
-func (m *ItemListsItemItemsItemVersionsListItemVersionItemRequestBuilder) MicrosoftGraphRestoreVersion()(*ItemListsItemItemsItemVersionsItemMicrosoftGraphRestoreVersionRequestBuilder) {
-    return NewItemListsItemItemsItemVersionsItemMicrosoftGraphRestoreVersionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Patch update the navigation property versions in sites
 func (m *ItemListsItemItemsItemVersionsListItemVersionItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemVersionable, requestConfiguration *ItemListsItemItemsItemVersionsListItemVersionItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemVersionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -126,6 +122,10 @@ func (m *ItemListsItemItemsItemVersionsListItemVersionItemRequestBuilder) Patch(
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemVersionable), nil
+}
+// RestoreVersion provides operations to call the restoreVersion method.
+func (m *ItemListsItemItemsItemVersionsListItemVersionItemRequestBuilder) RestoreVersion()(*ItemListsItemItemsItemVersionsItemRestoreVersionRequestBuilder) {
+    return NewItemListsItemItemsItemVersionsItemRestoreVersionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property versions for sites
 func (m *ItemListsItemItemsItemVersionsListItemVersionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemListsItemItemsItemVersionsListItemVersionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

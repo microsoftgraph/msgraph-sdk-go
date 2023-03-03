@@ -7,10 +7,6 @@ import (
 // WindowsUpdateActiveHoursInstall 
 type WindowsUpdateActiveHoursInstall struct {
     WindowsUpdateInstallScheduleType
-    // Active Hours End
-    activeHoursEnd *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
-    // Active Hours Start
-    activeHoursStart *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
 }
 // NewWindowsUpdateActiveHoursInstall instantiates a new WindowsUpdateActiveHoursInstall and sets the default values.
 func NewWindowsUpdateActiveHoursInstall()(*WindowsUpdateActiveHoursInstall) {
@@ -27,11 +23,25 @@ func CreateWindowsUpdateActiveHoursInstallFromDiscriminatorValue(parseNode i878a
 }
 // GetActiveHoursEnd gets the activeHoursEnd property value. Active Hours End
 func (m *WindowsUpdateActiveHoursInstall) GetActiveHoursEnd()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly) {
-    return m.activeHoursEnd
+    val, err := m.GetBackingStore().Get("activeHoursEnd")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)
+    }
+    return nil
 }
 // GetActiveHoursStart gets the activeHoursStart property value. Active Hours Start
 func (m *WindowsUpdateActiveHoursInstall) GetActiveHoursStart()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly) {
-    return m.activeHoursStart
+    val, err := m.GetBackingStore().Get("activeHoursStart")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsUpdateActiveHoursInstall) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -80,9 +90,24 @@ func (m *WindowsUpdateActiveHoursInstall) Serialize(writer i878a80d2330e89d26896
 }
 // SetActiveHoursEnd sets the activeHoursEnd property value. Active Hours End
 func (m *WindowsUpdateActiveHoursInstall) SetActiveHoursEnd(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)() {
-    m.activeHoursEnd = value
+    err := m.GetBackingStore().Set("activeHoursEnd", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetActiveHoursStart sets the activeHoursStart property value. Active Hours Start
 func (m *WindowsUpdateActiveHoursInstall) SetActiveHoursStart(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)() {
-    m.activeHoursStart = value
+    err := m.GetBackingStore().Set("activeHoursStart", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsUpdateActiveHoursInstallable 
+type WindowsUpdateActiveHoursInstallable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    WindowsUpdateInstallScheduleTypeable
+    GetActiveHoursEnd()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)
+    GetActiveHoursStart()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)
+    SetActiveHoursEnd(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)()
+    SetActiveHoursStart(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)()
 }

@@ -7,8 +7,6 @@ import (
 // WorkbookPivotTableCollectionResponse 
 type WorkbookPivotTableCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []WorkbookPivotTableable
 }
 // NewWorkbookPivotTableCollectionResponse instantiates a new WorkbookPivotTableCollectionResponse and sets the default values.
 func NewWorkbookPivotTableCollectionResponse()(*WorkbookPivotTableCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *WorkbookPivotTableCollectionResponse) GetFieldDeserializers()(map[strin
 }
 // GetValue gets the value property value. The value property
 func (m *WorkbookPivotTableCollectionResponse) GetValue()([]WorkbookPivotTableable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WorkbookPivotTableable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WorkbookPivotTableCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *WorkbookPivotTableCollectionResponse) Serialize(writer i878a80d2330e89d
 }
 // SetValue sets the value property value. The value property
 func (m *WorkbookPivotTableCollectionResponse) SetValue(value []WorkbookPivotTableable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WorkbookPivotTableCollectionResponseable 
+type WorkbookPivotTableCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]WorkbookPivotTableable)
+    SetValue(value []WorkbookPivotTableable)()
 }

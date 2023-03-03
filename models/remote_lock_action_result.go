@@ -7,8 +7,6 @@ import (
 // RemoteLockActionResult 
 type RemoteLockActionResult struct {
     DeviceActionResult
-    // Pin to unlock the client
-    unlockPin *string
 }
 // NewRemoteLockActionResult instantiates a new RemoteLockActionResult and sets the default values.
 func NewRemoteLockActionResult()(*RemoteLockActionResult) {
@@ -38,7 +36,14 @@ func (m *RemoteLockActionResult) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetUnlockPin gets the unlockPin property value. Pin to unlock the client
 func (m *RemoteLockActionResult) GetUnlockPin()(*string) {
-    return m.unlockPin
+    val, err := m.GetBackingStore().Get("unlockPin")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *RemoteLockActionResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,5 +61,15 @@ func (m *RemoteLockActionResult) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetUnlockPin sets the unlockPin property value. Pin to unlock the client
 func (m *RemoteLockActionResult) SetUnlockPin(value *string)() {
-    m.unlockPin = value
+    err := m.GetBackingStore().Set("unlockPin", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// RemoteLockActionResultable 
+type RemoteLockActionResultable interface {
+    DeviceActionResultable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetUnlockPin()(*string)
+    SetUnlockPin(value *string)()
 }

@@ -7,8 +7,6 @@ import (
 // WindowsInformationProtectionPolicyCollectionResponse 
 type WindowsInformationProtectionPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []WindowsInformationProtectionPolicyable
 }
 // NewWindowsInformationProtectionPolicyCollectionResponse instantiates a new WindowsInformationProtectionPolicyCollectionResponse and sets the default values.
 func NewWindowsInformationProtectionPolicyCollectionResponse()(*WindowsInformationProtectionPolicyCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *WindowsInformationProtectionPolicyCollectionResponse) GetFieldDeseriali
 }
 // GetValue gets the value property value. The value property
 func (m *WindowsInformationProtectionPolicyCollectionResponse) GetValue()([]WindowsInformationProtectionPolicyable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsInformationProtectionPolicyable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsInformationProtectionPolicyCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *WindowsInformationProtectionPolicyCollectionResponse) Serialize(writer 
 }
 // SetValue sets the value property value. The value property
 func (m *WindowsInformationProtectionPolicyCollectionResponse) SetValue(value []WindowsInformationProtectionPolicyable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsInformationProtectionPolicyCollectionResponseable 
+type WindowsInformationProtectionPolicyCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]WindowsInformationProtectionPolicyable)
+    SetValue(value []WindowsInformationProtectionPolicyable)()
 }

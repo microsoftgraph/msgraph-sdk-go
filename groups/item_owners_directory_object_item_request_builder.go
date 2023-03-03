@@ -32,29 +32,29 @@ func NewItemOwnersDirectoryObjectItemRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewItemOwnersDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// MicrosoftGraphApplication casts the previous resource to application.
-func (m *ItemOwnersDirectoryObjectItemRequestBuilder) MicrosoftGraphApplication()(*ItemOwnersItemMicrosoftGraphApplicationRequestBuilder) {
-    return NewItemOwnersItemMicrosoftGraphApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphApplication casts the previous resource to application.
+func (m *ItemOwnersDirectoryObjectItemRequestBuilder) GraphApplication()(*ItemOwnersItemGraphApplicationRequestBuilder) {
+    return NewItemOwnersItemGraphApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphDevice casts the previous resource to device.
-func (m *ItemOwnersDirectoryObjectItemRequestBuilder) MicrosoftGraphDevice()(*ItemOwnersItemMicrosoftGraphDeviceRequestBuilder) {
-    return NewItemOwnersItemMicrosoftGraphDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphDevice casts the previous resource to device.
+func (m *ItemOwnersDirectoryObjectItemRequestBuilder) GraphDevice()(*ItemOwnersItemGraphDeviceRequestBuilder) {
+    return NewItemOwnersItemGraphDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphGroup casts the previous resource to group.
-func (m *ItemOwnersDirectoryObjectItemRequestBuilder) MicrosoftGraphGroup()(*ItemOwnersItemMicrosoftGraphGroupRequestBuilder) {
-    return NewItemOwnersItemMicrosoftGraphGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphGroup casts the previous resource to group.
+func (m *ItemOwnersDirectoryObjectItemRequestBuilder) GraphGroup()(*ItemOwnersItemGraphGroupRequestBuilder) {
+    return NewItemOwnersItemGraphGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphOrgContact casts the previous resource to orgContact.
-func (m *ItemOwnersDirectoryObjectItemRequestBuilder) MicrosoftGraphOrgContact()(*ItemOwnersItemMicrosoftGraphOrgContactRequestBuilder) {
-    return NewItemOwnersItemMicrosoftGraphOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphOrgContact casts the previous resource to orgContact.
+func (m *ItemOwnersDirectoryObjectItemRequestBuilder) GraphOrgContact()(*ItemOwnersItemGraphOrgContactRequestBuilder) {
+    return NewItemOwnersItemGraphOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphServicePrincipal casts the previous resource to servicePrincipal.
-func (m *ItemOwnersDirectoryObjectItemRequestBuilder) MicrosoftGraphServicePrincipal()(*ItemOwnersItemMicrosoftGraphServicePrincipalRequestBuilder) {
-    return NewItemOwnersItemMicrosoftGraphServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphServicePrincipal casts the previous resource to servicePrincipal.
+func (m *ItemOwnersDirectoryObjectItemRequestBuilder) GraphServicePrincipal()(*ItemOwnersItemGraphServicePrincipalRequestBuilder) {
+    return NewItemOwnersItemGraphServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphUser casts the previous resource to user.
-func (m *ItemOwnersDirectoryObjectItemRequestBuilder) MicrosoftGraphUser()(*ItemOwnersItemMicrosoftGraphUserRequestBuilder) {
-    return NewItemOwnersItemMicrosoftGraphUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphUser casts the previous resource to user.
+func (m *ItemOwnersDirectoryObjectItemRequestBuilder) GraphUser()(*ItemOwnersItemGraphUserRequestBuilder) {
+    return NewItemOwnersItemGraphUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Ref provides operations to manage the collection of group entities.
 func (m *ItemOwnersDirectoryObjectItemRequestBuilder) Ref()(*ItemOwnersItemRefRequestBuilder) {

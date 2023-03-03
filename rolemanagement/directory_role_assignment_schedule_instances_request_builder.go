@@ -74,6 +74,10 @@ func NewDirectoryRoleAssignmentScheduleInstancesRequestBuilder(rawUrl string, re
 func (m *DirectoryRoleAssignmentScheduleInstancesRequestBuilder) Count()(*DirectoryRoleAssignmentScheduleInstancesCountRequestBuilder) {
     return NewDirectoryRoleAssignmentScheduleInstancesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
+func (m *DirectoryRoleAssignmentScheduleInstancesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*DirectoryRoleAssignmentScheduleInstancesFilterByCurrentUserWithOnRequestBuilder) {
+    return NewDirectoryRoleAssignmentScheduleInstancesFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
+}
 // Get get the instances of active role assignments in your tenant. The active assignments include those made through assignments and activation requests, and directly through the role assignments API.
 // [Find more info here]
 // 
@@ -95,10 +99,6 @@ func (m *DirectoryRoleAssignmentScheduleInstancesRequestBuilder) Get(ctx context
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleAssignmentScheduleInstanceCollectionResponseable), nil
-}
-// MicrosoftGraphFilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
-func (m *DirectoryRoleAssignmentScheduleInstancesRequestBuilder) MicrosoftGraphFilterByCurrentUserWithOn(on *string)(*DirectoryRoleAssignmentScheduleInstancesMicrosoftGraphFilterByCurrentUserWithOnRequestBuilder) {
-    return NewDirectoryRoleAssignmentScheduleInstancesMicrosoftGraphFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
 }
 // Post create new navigation property to roleAssignmentScheduleInstances for roleManagement
 func (m *DirectoryRoleAssignmentScheduleInstancesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleAssignmentScheduleInstanceable, requestConfiguration *DirectoryRoleAssignmentScheduleInstancesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleAssignmentScheduleInstanceable, error) {

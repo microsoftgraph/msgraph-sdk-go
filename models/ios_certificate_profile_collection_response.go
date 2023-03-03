@@ -7,8 +7,6 @@ import (
 // IosCertificateProfileCollectionResponse 
 type IosCertificateProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []IosCertificateProfileable
 }
 // NewIosCertificateProfileCollectionResponse instantiates a new IosCertificateProfileCollectionResponse and sets the default values.
 func NewIosCertificateProfileCollectionResponse()(*IosCertificateProfileCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *IosCertificateProfileCollectionResponse) GetFieldDeserializers()(map[st
 }
 // GetValue gets the value property value. The value property
 func (m *IosCertificateProfileCollectionResponse) GetValue()([]IosCertificateProfileable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IosCertificateProfileable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IosCertificateProfileCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *IosCertificateProfileCollectionResponse) Serialize(writer i878a80d2330e
 }
 // SetValue sets the value property value. The value property
 func (m *IosCertificateProfileCollectionResponse) SetValue(value []IosCertificateProfileable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IosCertificateProfileCollectionResponseable 
+type IosCertificateProfileCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]IosCertificateProfileable)
+    SetValue(value []IosCertificateProfileable)()
 }

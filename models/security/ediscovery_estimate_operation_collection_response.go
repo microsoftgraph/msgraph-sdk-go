@@ -8,8 +8,6 @@ import (
 // EdiscoveryEstimateOperationCollectionResponse 
 type EdiscoveryEstimateOperationCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
-    // The value property
-    value []EdiscoveryEstimateOperationable
 }
 // NewEdiscoveryEstimateOperationCollectionResponse instantiates a new EdiscoveryEstimateOperationCollectionResponse and sets the default values.
 func NewEdiscoveryEstimateOperationCollectionResponse()(*EdiscoveryEstimateOperationCollectionResponse) {
@@ -43,7 +41,14 @@ func (m *EdiscoveryEstimateOperationCollectionResponse) GetFieldDeserializers()(
 }
 // GetValue gets the value property value. The value property
 func (m *EdiscoveryEstimateOperationCollectionResponse) GetValue()([]EdiscoveryEstimateOperationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EdiscoveryEstimateOperationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EdiscoveryEstimateOperationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *EdiscoveryEstimateOperationCollectionResponse) Serialize(writer i878a80
 }
 // SetValue sets the value property value. The value property
 func (m *EdiscoveryEstimateOperationCollectionResponse) SetValue(value []EdiscoveryEstimateOperationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EdiscoveryEstimateOperationCollectionResponseable 
+type EdiscoveryEstimateOperationCollectionResponseable interface {
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]EdiscoveryEstimateOperationable)
+    SetValue(value []EdiscoveryEstimateOperationable)()
 }

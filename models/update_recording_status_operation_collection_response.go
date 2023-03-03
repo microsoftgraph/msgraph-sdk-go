@@ -7,8 +7,6 @@ import (
 // UpdateRecordingStatusOperationCollectionResponse 
 type UpdateRecordingStatusOperationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []UpdateRecordingStatusOperationable
 }
 // NewUpdateRecordingStatusOperationCollectionResponse instantiates a new UpdateRecordingStatusOperationCollectionResponse and sets the default values.
 func NewUpdateRecordingStatusOperationCollectionResponse()(*UpdateRecordingStatusOperationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *UpdateRecordingStatusOperationCollectionResponse) GetFieldDeserializers
 }
 // GetValue gets the value property value. The value property
 func (m *UpdateRecordingStatusOperationCollectionResponse) GetValue()([]UpdateRecordingStatusOperationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UpdateRecordingStatusOperationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UpdateRecordingStatusOperationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *UpdateRecordingStatusOperationCollectionResponse) Serialize(writer i878
 }
 // SetValue sets the value property value. The value property
 func (m *UpdateRecordingStatusOperationCollectionResponse) SetValue(value []UpdateRecordingStatusOperationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UpdateRecordingStatusOperationCollectionResponseable 
+type UpdateRecordingStatusOperationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]UpdateRecordingStatusOperationable)
+    SetValue(value []UpdateRecordingStatusOperationable)()
 }

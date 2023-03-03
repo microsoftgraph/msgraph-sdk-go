@@ -70,6 +70,10 @@ func NewItemCalendarEventsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *ItemCalendarEventsRequestBuilder) Count()(*ItemCalendarEventsCountRequestBuilder) {
     return NewItemCalendarEventsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// Delta provides operations to call the delta method.
+func (m *ItemCalendarEventsRequestBuilder) Delta()(*ItemCalendarEventsDeltaRequestBuilder) {
+    return NewItemCalendarEventsDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Get retrieve a list of events in a calendar.  The calendar can be one for a user, or the default calendar of a Microsoft 365 group. The list of events contains single instance meetings and series masters. To get expanded event instances, you can get the calendar view, or get the instances of an event.
 // [Find more info here]
 // 
@@ -91,10 +95,6 @@ func (m *ItemCalendarEventsRequestBuilder) Get(ctx context.Context, requestConfi
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EventCollectionResponseable), nil
-}
-// MicrosoftGraphDelta provides operations to call the delta method.
-func (m *ItemCalendarEventsRequestBuilder) MicrosoftGraphDelta()(*ItemCalendarEventsMicrosoftGraphDeltaRequestBuilder) {
-    return NewItemCalendarEventsMicrosoftGraphDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post use this API to create a new event in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. 
 // [Find more info here]

@@ -7,8 +7,6 @@ import (
 // WebsiteCollectionResponse 
 type WebsiteCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Websiteable
 }
 // NewWebsiteCollectionResponse instantiates a new WebsiteCollectionResponse and sets the default values.
 func NewWebsiteCollectionResponse()(*WebsiteCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *WebsiteCollectionResponse) GetFieldDeserializers()(map[string]func(i878
 }
 // GetValue gets the value property value. The value property
 func (m *WebsiteCollectionResponse) GetValue()([]Websiteable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Websiteable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WebsiteCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *WebsiteCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetValue sets the value property value. The value property
 func (m *WebsiteCollectionResponse) SetValue(value []Websiteable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WebsiteCollectionResponseable 
+type WebsiteCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Websiteable)
+    SetValue(value []Websiteable)()
 }

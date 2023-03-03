@@ -100,10 +100,6 @@ func (m *DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilder) Get(
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementPartnerable), nil
 }
-// MicrosoftGraphTerminate provides operations to call the terminate method.
-func (m *DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilder) MicrosoftGraphTerminate()(*DeviceManagementPartnersItemMicrosoftGraphTerminateRequestBuilder) {
-    return NewDeviceManagementPartnersItemMicrosoftGraphTerminateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Patch update the navigation property deviceManagementPartners in deviceManagement
 func (m *DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementPartnerable, requestConfiguration *DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementPartnerable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -122,6 +118,10 @@ func (m *DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilder) Patc
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementPartnerable), nil
+}
+// Terminate provides operations to call the terminate method.
+func (m *DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilder) Terminate()(*DeviceManagementPartnersItemTerminateRequestBuilder) {
+    return NewDeviceManagementPartnersItemTerminateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property deviceManagementPartners for deviceManagement
 func (m *DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

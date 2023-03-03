@@ -89,29 +89,9 @@ func (m *ItemTransitiveMemberOfRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
 }
-// MicrosoftGraphApplication casts the previous resource to application.
-func (m *ItemTransitiveMemberOfRequestBuilder) MicrosoftGraphApplication()(*ItemTransitiveMemberOfMicrosoftGraphApplicationRequestBuilder) {
-    return NewItemTransitiveMemberOfMicrosoftGraphApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphDevice casts the previous resource to device.
-func (m *ItemTransitiveMemberOfRequestBuilder) MicrosoftGraphDevice()(*ItemTransitiveMemberOfMicrosoftGraphDeviceRequestBuilder) {
-    return NewItemTransitiveMemberOfMicrosoftGraphDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphGroup casts the previous resource to group.
-func (m *ItemTransitiveMemberOfRequestBuilder) MicrosoftGraphGroup()(*ItemTransitiveMemberOfMicrosoftGraphGroupRequestBuilder) {
-    return NewItemTransitiveMemberOfMicrosoftGraphGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphOrgContact casts the previous resource to orgContact.
-func (m *ItemTransitiveMemberOfRequestBuilder) MicrosoftGraphOrgContact()(*ItemTransitiveMemberOfMicrosoftGraphOrgContactRequestBuilder) {
-    return NewItemTransitiveMemberOfMicrosoftGraphOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphServicePrincipal casts the previous resource to servicePrincipal.
-func (m *ItemTransitiveMemberOfRequestBuilder) MicrosoftGraphServicePrincipal()(*ItemTransitiveMemberOfMicrosoftGraphServicePrincipalRequestBuilder) {
-    return NewItemTransitiveMemberOfMicrosoftGraphServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphUser casts the previous resource to user.
-func (m *ItemTransitiveMemberOfRequestBuilder) MicrosoftGraphUser()(*ItemTransitiveMemberOfMicrosoftGraphUserRequestBuilder) {
-    return NewItemTransitiveMemberOfMicrosoftGraphUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphGroup casts the previous resource to group.
+func (m *ItemTransitiveMemberOfRequestBuilder) GraphGroup()(*ItemTransitiveMemberOfGraphGroupRequestBuilder) {
+    return NewItemTransitiveMemberOfGraphGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation the groups that a group is a member of, either directly and through nested membership. Nullable.
 func (m *ItemTransitiveMemberOfRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTransitiveMemberOfRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

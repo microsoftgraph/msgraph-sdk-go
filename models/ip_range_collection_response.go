@@ -7,8 +7,6 @@ import (
 // IpRangeCollectionResponse 
 type IpRangeCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []IpRangeable
 }
 // NewIpRangeCollectionResponse instantiates a new IpRangeCollectionResponse and sets the default values.
 func NewIpRangeCollectionResponse()(*IpRangeCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *IpRangeCollectionResponse) GetFieldDeserializers()(map[string]func(i878
 }
 // GetValue gets the value property value. The value property
 func (m *IpRangeCollectionResponse) GetValue()([]IpRangeable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IpRangeable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IpRangeCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *IpRangeCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetValue sets the value property value. The value property
 func (m *IpRangeCollectionResponse) SetValue(value []IpRangeable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IpRangeCollectionResponseable 
+type IpRangeCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]IpRangeable)
+    SetValue(value []IpRangeable)()
 }

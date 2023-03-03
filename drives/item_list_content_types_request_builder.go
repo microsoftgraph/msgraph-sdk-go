@@ -51,6 +51,14 @@ type ItemListContentTypesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// AddCopy provides operations to call the addCopy method.
+func (m *ItemListContentTypesRequestBuilder) AddCopy()(*ItemListContentTypesAddCopyRequestBuilder) {
+    return NewItemListContentTypesAddCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// AddCopyFromContentTypeHub provides operations to call the addCopyFromContentTypeHub method.
+func (m *ItemListContentTypesRequestBuilder) AddCopyFromContentTypeHub()(*ItemListContentTypesAddCopyFromContentTypeHubRequestBuilder) {
+    return NewItemListContentTypesAddCopyFromContentTypeHubRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // NewItemListContentTypesRequestBuilderInternal instantiates a new ContentTypesRequestBuilder and sets the default values.
 func NewItemListContentTypesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListContentTypesRequestBuilder) {
     m := &ItemListContentTypesRequestBuilder{
@@ -96,17 +104,9 @@ func (m *ItemListContentTypesRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeCollectionResponseable), nil
 }
-// MicrosoftGraphAddCopy provides operations to call the addCopy method.
-func (m *ItemListContentTypesRequestBuilder) MicrosoftGraphAddCopy()(*ItemListContentTypesMicrosoftGraphAddCopyRequestBuilder) {
-    return NewItemListContentTypesMicrosoftGraphAddCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphAddCopyFromContentTypeHub provides operations to call the addCopyFromContentTypeHub method.
-func (m *ItemListContentTypesRequestBuilder) MicrosoftGraphAddCopyFromContentTypeHub()(*ItemListContentTypesMicrosoftGraphAddCopyFromContentTypeHubRequestBuilder) {
-    return NewItemListContentTypesMicrosoftGraphAddCopyFromContentTypeHubRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphGetCompatibleHubContentTypes provides operations to call the getCompatibleHubContentTypes method.
-func (m *ItemListContentTypesRequestBuilder) MicrosoftGraphGetCompatibleHubContentTypes()(*ItemListContentTypesMicrosoftGraphGetCompatibleHubContentTypesRequestBuilder) {
-    return NewItemListContentTypesMicrosoftGraphGetCompatibleHubContentTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GetCompatibleHubContentTypes provides operations to call the getCompatibleHubContentTypes method.
+func (m *ItemListContentTypesRequestBuilder) GetCompatibleHubContentTypes()(*ItemListContentTypesGetCompatibleHubContentTypesRequestBuilder) {
+    return NewItemListContentTypesGetCompatibleHubContentTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to contentTypes for drives
 func (m *ItemListContentTypesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeable, requestConfiguration *ItemListContentTypesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeable, error) {

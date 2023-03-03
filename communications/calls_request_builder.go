@@ -93,9 +93,9 @@ func (m *CallsRequestBuilder) Get(ctx context.Context, requestConfiguration *Cal
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CallCollectionResponseable), nil
 }
-// MicrosoftGraphLogTeleconferenceDeviceQuality provides operations to call the logTeleconferenceDeviceQuality method.
-func (m *CallsRequestBuilder) MicrosoftGraphLogTeleconferenceDeviceQuality()(*CallsMicrosoftGraphLogTeleconferenceDeviceQualityRequestBuilder) {
-    return NewCallsMicrosoftGraphLogTeleconferenceDeviceQualityRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// LogTeleconferenceDeviceQuality provides operations to call the logTeleconferenceDeviceQuality method.
+func (m *CallsRequestBuilder) LogTeleconferenceDeviceQuality()(*CallsLogTeleconferenceDeviceQualityRequestBuilder) {
+    return NewCallsLogTeleconferenceDeviceQualityRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting. You will need to register the calling bot and go through the list of permissions needed as mentioned below.
 // [Find more info here]

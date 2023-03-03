@@ -2,47 +2,19 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // IntuneBrand intuneBrand contains data which is used in customizing the appearance of the Company Portal applications as well as the end user web portal.
 type IntuneBrand struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Email address of the person/organization responsible for IT support.
-    contactITEmailAddress *string
-    // Name of the person/organization responsible for IT support.
-    contactITName *string
-    // Text comments regarding the person/organization responsible for IT support.
-    contactITNotes *string
-    // Phone number of the person/organization responsible for IT support.
-    contactITPhoneNumber *string
-    // Logo image displayed in Company Portal apps which have a dark background behind the logo.
-    darkBackgroundLogo MimeContentable
-    // Company/organization name that is displayed to end users.
-    displayName *string
-    // Logo image displayed in Company Portal apps which have a light background behind the logo.
-    lightBackgroundLogo MimeContentable
-    // The OdataType property
-    odataType *string
-    // Display name of the company/organization’s IT helpdesk site.
-    onlineSupportSiteName *string
-    // URL to the company/organization’s IT helpdesk site.
-    onlineSupportSiteUrl *string
-    // URL to the company/organization’s privacy policy.
-    privacyUrl *string
-    // Boolean that represents whether the administrator-supplied display name will be shown next to the logo image.
-    showDisplayNameNextToLogo *bool
-    // Boolean that represents whether the administrator-supplied logo images are shown or not shown.
-    showLogo *bool
-    // Boolean that represents whether the administrator-supplied display name will be shown next to the logo image.
-    showNameNextToLogo *bool
-    // Primary theme color used in the Company Portal applications and web portal.
-    themeColor RgbColorable
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewIntuneBrand instantiates a new intuneBrand and sets the default values.
 func NewIntuneBrand()(*IntuneBrand) {
     m := &IntuneBrand{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -52,31 +24,85 @@ func CreateIntuneBrandFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IntuneBrand) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *IntuneBrand) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetContactITEmailAddress gets the contactITEmailAddress property value. Email address of the person/organization responsible for IT support.
 func (m *IntuneBrand) GetContactITEmailAddress()(*string) {
-    return m.contactITEmailAddress
+    val, err := m.GetBackingStore().Get("contactITEmailAddress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetContactITName gets the contactITName property value. Name of the person/organization responsible for IT support.
 func (m *IntuneBrand) GetContactITName()(*string) {
-    return m.contactITName
+    val, err := m.GetBackingStore().Get("contactITName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetContactITNotes gets the contactITNotes property value. Text comments regarding the person/organization responsible for IT support.
 func (m *IntuneBrand) GetContactITNotes()(*string) {
-    return m.contactITNotes
+    val, err := m.GetBackingStore().Get("contactITNotes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetContactITPhoneNumber gets the contactITPhoneNumber property value. Phone number of the person/organization responsible for IT support.
 func (m *IntuneBrand) GetContactITPhoneNumber()(*string) {
-    return m.contactITPhoneNumber
+    val, err := m.GetBackingStore().Get("contactITPhoneNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDarkBackgroundLogo gets the darkBackgroundLogo property value. Logo image displayed in Company Portal apps which have a dark background behind the logo.
 func (m *IntuneBrand) GetDarkBackgroundLogo()(MimeContentable) {
-    return m.darkBackgroundLogo
+    val, err := m.GetBackingStore().Get("darkBackgroundLogo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(MimeContentable)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. Company/organization name that is displayed to end users.
 func (m *IntuneBrand) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IntuneBrand) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -235,39 +261,102 @@ func (m *IntuneBrand) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetLightBackgroundLogo gets the lightBackgroundLogo property value. Logo image displayed in Company Portal apps which have a light background behind the logo.
 func (m *IntuneBrand) GetLightBackgroundLogo()(MimeContentable) {
-    return m.lightBackgroundLogo
+    val, err := m.GetBackingStore().Get("lightBackgroundLogo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(MimeContentable)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *IntuneBrand) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOnlineSupportSiteName gets the onlineSupportSiteName property value. Display name of the company/organization’s IT helpdesk site.
 func (m *IntuneBrand) GetOnlineSupportSiteName()(*string) {
-    return m.onlineSupportSiteName
+    val, err := m.GetBackingStore().Get("onlineSupportSiteName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOnlineSupportSiteUrl gets the onlineSupportSiteUrl property value. URL to the company/organization’s IT helpdesk site.
 func (m *IntuneBrand) GetOnlineSupportSiteUrl()(*string) {
-    return m.onlineSupportSiteUrl
+    val, err := m.GetBackingStore().Get("onlineSupportSiteUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPrivacyUrl gets the privacyUrl property value. URL to the company/organization’s privacy policy.
 func (m *IntuneBrand) GetPrivacyUrl()(*string) {
-    return m.privacyUrl
+    val, err := m.GetBackingStore().Get("privacyUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetShowDisplayNameNextToLogo gets the showDisplayNameNextToLogo property value. Boolean that represents whether the administrator-supplied display name will be shown next to the logo image.
 func (m *IntuneBrand) GetShowDisplayNameNextToLogo()(*bool) {
-    return m.showDisplayNameNextToLogo
+    val, err := m.GetBackingStore().Get("showDisplayNameNextToLogo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetShowLogo gets the showLogo property value. Boolean that represents whether the administrator-supplied logo images are shown or not shown.
 func (m *IntuneBrand) GetShowLogo()(*bool) {
-    return m.showLogo
+    val, err := m.GetBackingStore().Get("showLogo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetShowNameNextToLogo gets the showNameNextToLogo property value. Boolean that represents whether the administrator-supplied display name will be shown next to the logo image.
 func (m *IntuneBrand) GetShowNameNextToLogo()(*bool) {
-    return m.showNameNextToLogo
+    val, err := m.GetBackingStore().Get("showNameNextToLogo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetThemeColor gets the themeColor property value. Primary theme color used in the Company Portal applications and web portal.
 func (m *IntuneBrand) GetThemeColor()(RgbColorable) {
-    return m.themeColor
+    val, err := m.GetBackingStore().Get("themeColor")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(RgbColorable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IntuneBrand) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -371,65 +460,155 @@ func (m *IntuneBrand) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IntuneBrand) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *IntuneBrand) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetContactITEmailAddress sets the contactITEmailAddress property value. Email address of the person/organization responsible for IT support.
 func (m *IntuneBrand) SetContactITEmailAddress(value *string)() {
-    m.contactITEmailAddress = value
+    err := m.GetBackingStore().Set("contactITEmailAddress", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetContactITName sets the contactITName property value. Name of the person/organization responsible for IT support.
 func (m *IntuneBrand) SetContactITName(value *string)() {
-    m.contactITName = value
+    err := m.GetBackingStore().Set("contactITName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetContactITNotes sets the contactITNotes property value. Text comments regarding the person/organization responsible for IT support.
 func (m *IntuneBrand) SetContactITNotes(value *string)() {
-    m.contactITNotes = value
+    err := m.GetBackingStore().Set("contactITNotes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetContactITPhoneNumber sets the contactITPhoneNumber property value. Phone number of the person/organization responsible for IT support.
 func (m *IntuneBrand) SetContactITPhoneNumber(value *string)() {
-    m.contactITPhoneNumber = value
+    err := m.GetBackingStore().Set("contactITPhoneNumber", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDarkBackgroundLogo sets the darkBackgroundLogo property value. Logo image displayed in Company Portal apps which have a dark background behind the logo.
 func (m *IntuneBrand) SetDarkBackgroundLogo(value MimeContentable)() {
-    m.darkBackgroundLogo = value
+    err := m.GetBackingStore().Set("darkBackgroundLogo", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. Company/organization name that is displayed to end users.
 func (m *IntuneBrand) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLightBackgroundLogo sets the lightBackgroundLogo property value. Logo image displayed in Company Portal apps which have a light background behind the logo.
 func (m *IntuneBrand) SetLightBackgroundLogo(value MimeContentable)() {
-    m.lightBackgroundLogo = value
+    err := m.GetBackingStore().Set("lightBackgroundLogo", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *IntuneBrand) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOnlineSupportSiteName sets the onlineSupportSiteName property value. Display name of the company/organization’s IT helpdesk site.
 func (m *IntuneBrand) SetOnlineSupportSiteName(value *string)() {
-    m.onlineSupportSiteName = value
+    err := m.GetBackingStore().Set("onlineSupportSiteName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOnlineSupportSiteUrl sets the onlineSupportSiteUrl property value. URL to the company/organization’s IT helpdesk site.
 func (m *IntuneBrand) SetOnlineSupportSiteUrl(value *string)() {
-    m.onlineSupportSiteUrl = value
+    err := m.GetBackingStore().Set("onlineSupportSiteUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPrivacyUrl sets the privacyUrl property value. URL to the company/organization’s privacy policy.
 func (m *IntuneBrand) SetPrivacyUrl(value *string)() {
-    m.privacyUrl = value
+    err := m.GetBackingStore().Set("privacyUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetShowDisplayNameNextToLogo sets the showDisplayNameNextToLogo property value. Boolean that represents whether the administrator-supplied display name will be shown next to the logo image.
 func (m *IntuneBrand) SetShowDisplayNameNextToLogo(value *bool)() {
-    m.showDisplayNameNextToLogo = value
+    err := m.GetBackingStore().Set("showDisplayNameNextToLogo", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetShowLogo sets the showLogo property value. Boolean that represents whether the administrator-supplied logo images are shown or not shown.
 func (m *IntuneBrand) SetShowLogo(value *bool)() {
-    m.showLogo = value
+    err := m.GetBackingStore().Set("showLogo", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetShowNameNextToLogo sets the showNameNextToLogo property value. Boolean that represents whether the administrator-supplied display name will be shown next to the logo image.
 func (m *IntuneBrand) SetShowNameNextToLogo(value *bool)() {
-    m.showNameNextToLogo = value
+    err := m.GetBackingStore().Set("showNameNextToLogo", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetThemeColor sets the themeColor property value. Primary theme color used in the Company Portal applications and web portal.
 func (m *IntuneBrand) SetThemeColor(value RgbColorable)() {
-    m.themeColor = value
+    err := m.GetBackingStore().Set("themeColor", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IntuneBrandable 
+type IntuneBrandable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetContactITEmailAddress()(*string)
+    GetContactITName()(*string)
+    GetContactITNotes()(*string)
+    GetContactITPhoneNumber()(*string)
+    GetDarkBackgroundLogo()(MimeContentable)
+    GetDisplayName()(*string)
+    GetLightBackgroundLogo()(MimeContentable)
+    GetOdataType()(*string)
+    GetOnlineSupportSiteName()(*string)
+    GetOnlineSupportSiteUrl()(*string)
+    GetPrivacyUrl()(*string)
+    GetShowDisplayNameNextToLogo()(*bool)
+    GetShowLogo()(*bool)
+    GetShowNameNextToLogo()(*bool)
+    GetThemeColor()(RgbColorable)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetContactITEmailAddress(value *string)()
+    SetContactITName(value *string)()
+    SetContactITNotes(value *string)()
+    SetContactITPhoneNumber(value *string)()
+    SetDarkBackgroundLogo(value MimeContentable)()
+    SetDisplayName(value *string)()
+    SetLightBackgroundLogo(value MimeContentable)()
+    SetOdataType(value *string)()
+    SetOnlineSupportSiteName(value *string)()
+    SetOnlineSupportSiteUrl(value *string)()
+    SetPrivacyUrl(value *string)()
+    SetShowDisplayNameNextToLogo(value *bool)()
+    SetShowLogo(value *bool)()
+    SetShowNameNextToLogo(value *bool)()
+    SetThemeColor(value RgbColorable)()
 }

@@ -104,10 +104,6 @@ func (m *ItemSitesItemListsItemItemsItemVersionsListItemVersionItemRequestBuilde
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemVersionable), nil
 }
-// MicrosoftGraphRestoreVersion provides operations to call the restoreVersion method.
-func (m *ItemSitesItemListsItemItemsItemVersionsListItemVersionItemRequestBuilder) MicrosoftGraphRestoreVersion()(*ItemSitesItemListsItemItemsItemVersionsItemMicrosoftGraphRestoreVersionRequestBuilder) {
-    return NewItemSitesItemListsItemItemsItemVersionsItemMicrosoftGraphRestoreVersionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Patch update the navigation property versions in groups
 func (m *ItemSitesItemListsItemItemsItemVersionsListItemVersionItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemVersionable, requestConfiguration *ItemSitesItemListsItemItemsItemVersionsListItemVersionItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemVersionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -126,6 +122,10 @@ func (m *ItemSitesItemListsItemItemsItemVersionsListItemVersionItemRequestBuilde
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemVersionable), nil
+}
+// RestoreVersion provides operations to call the restoreVersion method.
+func (m *ItemSitesItemListsItemItemsItemVersionsListItemVersionItemRequestBuilder) RestoreVersion()(*ItemSitesItemListsItemItemsItemVersionsItemRestoreVersionRequestBuilder) {
+    return NewItemSitesItemListsItemItemsItemVersionsItemRestoreVersionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property versions for groups
 func (m *ItemSitesItemListsItemItemsItemVersionsListItemVersionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemListsItemItemsItemVersionsListItemVersionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

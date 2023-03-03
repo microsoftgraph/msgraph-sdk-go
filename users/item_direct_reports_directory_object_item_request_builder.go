@@ -70,13 +70,13 @@ func (m *ItemDirectReportsDirectoryObjectItemRequestBuilder) Get(ctx context.Con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable), nil
 }
-// MicrosoftGraphOrgContact casts the previous resource to orgContact.
-func (m *ItemDirectReportsDirectoryObjectItemRequestBuilder) MicrosoftGraphOrgContact()(*ItemDirectReportsItemMicrosoftGraphOrgContactRequestBuilder) {
-    return NewItemDirectReportsItemMicrosoftGraphOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphOrgContact casts the previous resource to orgContact.
+func (m *ItemDirectReportsDirectoryObjectItemRequestBuilder) GraphOrgContact()(*ItemDirectReportsItemGraphOrgContactRequestBuilder) {
+    return NewItemDirectReportsItemGraphOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphUser casts the previous resource to user.
-func (m *ItemDirectReportsDirectoryObjectItemRequestBuilder) MicrosoftGraphUser()(*ItemDirectReportsItemMicrosoftGraphUserRequestBuilder) {
-    return NewItemDirectReportsItemMicrosoftGraphUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphUser casts the previous resource to user.
+func (m *ItemDirectReportsDirectoryObjectItemRequestBuilder) GraphUser()(*ItemDirectReportsItemGraphUserRequestBuilder) {
+    return NewItemDirectReportsItemGraphUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation the users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
 func (m *ItemDirectReportsDirectoryObjectItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemDirectReportsDirectoryObjectItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

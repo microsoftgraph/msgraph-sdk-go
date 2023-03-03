@@ -145,6 +145,22 @@ func (m *ItemSitesSiteItemRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Siteable), nil
 }
+// GetActivitiesByInterval provides operations to call the getActivitiesByInterval method.
+func (m *ItemSitesSiteItemRequestBuilder) GetActivitiesByInterval()(*ItemSitesItemGetActivitiesByIntervalRequestBuilder) {
+    return NewItemSitesItemGetActivitiesByIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval provides operations to call the getActivitiesByInterval method.
+func (m *ItemSitesSiteItemRequestBuilder) GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(endDateTime *string, interval *string, startDateTime *string)(*ItemSitesItemGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
+    return NewItemSitesItemGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter, endDateTime, interval, startDateTime)
+}
+// GetApplicableContentTypesForListWithListId provides operations to call the getApplicableContentTypesForList method.
+func (m *ItemSitesSiteItemRequestBuilder) GetApplicableContentTypesForListWithListId(listId *string)(*ItemSitesItemGetApplicableContentTypesForListWithListIdRequestBuilder) {
+    return NewItemSitesItemGetApplicableContentTypesForListWithListIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, listId)
+}
+// GetByPathWithPath provides operations to call the getByPath method.
+func (m *ItemSitesSiteItemRequestBuilder) GetByPathWithPath(path *string)(*ItemSitesItemGetByPathWithPathRequestBuilder) {
+    return NewItemSitesItemGetByPathWithPathRequestBuilderInternal(m.pathParameters, m.requestAdapter, path)
+}
 // Items provides operations to manage the items property of the microsoft.graph.site entity.
 func (m *ItemSitesSiteItemRequestBuilder) Items()(*ItemSitesItemItemsRequestBuilder) {
     return NewItemSitesItemItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
@@ -174,22 +190,6 @@ func (m *ItemSitesSiteItemRequestBuilder) ListsById(id string)(*ItemSitesItemLis
         urlTplParams["list%2Did"] = id
     }
     return NewItemSitesItemListsListItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
-}
-// MicrosoftGraphGetActivitiesByInterval provides operations to call the getActivitiesByInterval method.
-func (m *ItemSitesSiteItemRequestBuilder) MicrosoftGraphGetActivitiesByInterval()(*ItemSitesItemMicrosoftGraphGetActivitiesByIntervalRequestBuilder) {
-    return NewItemSitesItemMicrosoftGraphGetActivitiesByIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval provides operations to call the getActivitiesByInterval method.
-func (m *ItemSitesSiteItemRequestBuilder) MicrosoftGraphGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(endDateTime *string, interval *string, startDateTime *string)(*ItemSitesItemMicrosoftGraphGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
-    return NewItemSitesItemMicrosoftGraphGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter, endDateTime, interval, startDateTime)
-}
-// MicrosoftGraphGetApplicableContentTypesForListWithListId provides operations to call the getApplicableContentTypesForList method.
-func (m *ItemSitesSiteItemRequestBuilder) MicrosoftGraphGetApplicableContentTypesForListWithListId(listId *string)(*ItemSitesItemMicrosoftGraphGetApplicableContentTypesForListWithListIdRequestBuilder) {
-    return NewItemSitesItemMicrosoftGraphGetApplicableContentTypesForListWithListIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, listId)
-}
-// MicrosoftGraphGetByPathWithPath provides operations to call the getByPath method.
-func (m *ItemSitesSiteItemRequestBuilder) MicrosoftGraphGetByPathWithPath(path *string)(*ItemSitesItemMicrosoftGraphGetByPathWithPathRequestBuilder) {
-    return NewItemSitesItemMicrosoftGraphGetByPathWithPathRequestBuilderInternal(m.pathParameters, m.requestAdapter, path)
 }
 // Onenote provides operations to manage the onenote property of the microsoft.graph.site entity.
 func (m *ItemSitesSiteItemRequestBuilder) Onenote()(*ItemSitesItemOnenoteRequestBuilder) {

@@ -70,6 +70,10 @@ func NewItemTodoListsItemTasksItemAttachmentsRequestBuilder(rawUrl string, reque
 func (m *ItemTodoListsItemTasksItemAttachmentsRequestBuilder) Count()(*ItemTodoListsItemTasksItemAttachmentsCountRequestBuilder) {
     return NewItemTodoListsItemTasksItemAttachmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// CreateUploadSession provides operations to call the createUploadSession method.
+func (m *ItemTodoListsItemTasksItemAttachmentsRequestBuilder) CreateUploadSession()(*ItemTodoListsItemTasksItemAttachmentsCreateUploadSessionRequestBuilder) {
+    return NewItemTodoListsItemTasksItemAttachmentsCreateUploadSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Get get a list of the taskFileAttachment objects and their properties. The **contentBytes** property will not be returned in the response. Use the Get attachment API to view the **contentBytes**.
 // [Find more info here]
 // 
@@ -91,10 +95,6 @@ func (m *ItemTodoListsItemTasksItemAttachmentsRequestBuilder) Get(ctx context.Co
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentBaseCollectionResponseable), nil
-}
-// MicrosoftGraphCreateUploadSession provides operations to call the createUploadSession method.
-func (m *ItemTodoListsItemTasksItemAttachmentsRequestBuilder) MicrosoftGraphCreateUploadSession()(*ItemTodoListsItemTasksItemAttachmentsMicrosoftGraphCreateUploadSessionRequestBuilder) {
-    return NewItemTodoListsItemTasksItemAttachmentsMicrosoftGraphCreateUploadSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post add a new taskFileAttachment object to a todoTask. This operation limits the size of the attachment you can add to under 3 MB. If the size of the file attachments is more than 3 MB, create an upload session to upload the attachments.
 // [Find more info here]

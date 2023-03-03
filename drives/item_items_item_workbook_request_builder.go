@@ -50,6 +50,10 @@ type ItemItemsItemWorkbookRequestBuilderPatchRequestConfiguration struct {
 func (m *ItemItemsItemWorkbookRequestBuilder) Application()(*ItemItemsItemWorkbookApplicationRequestBuilder) {
     return NewItemItemsItemWorkbookApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// CloseSession provides operations to call the closeSession method.
+func (m *ItemItemsItemWorkbookRequestBuilder) CloseSession()(*ItemItemsItemWorkbookCloseSessionRequestBuilder) {
+    return NewItemItemsItemWorkbookCloseSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Comments provides operations to manage the comments property of the microsoft.graph.workbook entity.
 func (m *ItemItemsItemWorkbookRequestBuilder) Comments()(*ItemItemsItemWorkbookCommentsRequestBuilder) {
     return NewItemItemsItemWorkbookCommentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
@@ -83,6 +87,10 @@ func NewItemItemsItemWorkbookRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookRequestBuilderInternal(urlParams, requestAdapter)
+}
+// CreateSession provides operations to call the createSession method.
+func (m *ItemItemsItemWorkbookRequestBuilder) CreateSession()(*ItemItemsItemWorkbookCreateSessionRequestBuilder) {
+    return NewItemItemsItemWorkbookCreateSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete navigation property workbook for drives
 func (m *ItemItemsItemWorkbookRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookRequestBuilderDeleteRequestConfiguration)(error) {
@@ -122,26 +130,6 @@ func (m *ItemItemsItemWorkbookRequestBuilder) Get(ctx context.Context, requestCo
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Workbookable), nil
-}
-// MicrosoftGraphCloseSession provides operations to call the closeSession method.
-func (m *ItemItemsItemWorkbookRequestBuilder) MicrosoftGraphCloseSession()(*ItemItemsItemWorkbookMicrosoftGraphCloseSessionRequestBuilder) {
-    return NewItemItemsItemWorkbookMicrosoftGraphCloseSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphCreateSession provides operations to call the createSession method.
-func (m *ItemItemsItemWorkbookRequestBuilder) MicrosoftGraphCreateSession()(*ItemItemsItemWorkbookMicrosoftGraphCreateSessionRequestBuilder) {
-    return NewItemItemsItemWorkbookMicrosoftGraphCreateSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphRefreshSession provides operations to call the refreshSession method.
-func (m *ItemItemsItemWorkbookRequestBuilder) MicrosoftGraphRefreshSession()(*ItemItemsItemWorkbookMicrosoftGraphRefreshSessionRequestBuilder) {
-    return NewItemItemsItemWorkbookMicrosoftGraphRefreshSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphSessionInfoResourceWithKey provides operations to call the sessionInfoResource method.
-func (m *ItemItemsItemWorkbookRequestBuilder) MicrosoftGraphSessionInfoResourceWithKey(key *string)(*ItemItemsItemWorkbookMicrosoftGraphSessionInfoResourceWithKeyRequestBuilder) {
-    return NewItemItemsItemWorkbookMicrosoftGraphSessionInfoResourceWithKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter, key)
-}
-// MicrosoftGraphTableRowOperationResultWithKey provides operations to call the tableRowOperationResult method.
-func (m *ItemItemsItemWorkbookRequestBuilder) MicrosoftGraphTableRowOperationResultWithKey(key *string)(*ItemItemsItemWorkbookMicrosoftGraphTableRowOperationResultWithKeyRequestBuilder) {
-    return NewItemItemsItemWorkbookMicrosoftGraphTableRowOperationResultWithKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter, key)
 }
 // Names provides operations to manage the names property of the microsoft.graph.workbook entity.
 func (m *ItemItemsItemWorkbookRequestBuilder) Names()(*ItemItemsItemWorkbookNamesRequestBuilder) {
@@ -191,6 +179,18 @@ func (m *ItemItemsItemWorkbookRequestBuilder) Patch(ctx context.Context, body ia
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Workbookable), nil
+}
+// RefreshSession provides operations to call the refreshSession method.
+func (m *ItemItemsItemWorkbookRequestBuilder) RefreshSession()(*ItemItemsItemWorkbookRefreshSessionRequestBuilder) {
+    return NewItemItemsItemWorkbookRefreshSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// SessionInfoResourceWithKey provides operations to call the sessionInfoResource method.
+func (m *ItemItemsItemWorkbookRequestBuilder) SessionInfoResourceWithKey(key *string)(*ItemItemsItemWorkbookSessionInfoResourceWithKeyRequestBuilder) {
+    return NewItemItemsItemWorkbookSessionInfoResourceWithKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter, key)
+}
+// TableRowOperationResultWithKey provides operations to call the tableRowOperationResult method.
+func (m *ItemItemsItemWorkbookRequestBuilder) TableRowOperationResultWithKey(key *string)(*ItemItemsItemWorkbookTableRowOperationResultWithKeyRequestBuilder) {
+    return NewItemItemsItemWorkbookTableRowOperationResultWithKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter, key)
 }
 // Tables provides operations to manage the tables property of the microsoft.graph.workbook entity.
 func (m *ItemItemsItemWorkbookRequestBuilder) Tables()(*ItemItemsItemWorkbookTablesRequestBuilder) {

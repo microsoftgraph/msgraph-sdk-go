@@ -70,6 +70,10 @@ func NewItemMailFoldersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 func (m *ItemMailFoldersRequestBuilder) Count()(*ItemMailFoldersCountRequestBuilder) {
     return NewItemMailFoldersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// Delta provides operations to call the delta method.
+func (m *ItemMailFoldersRequestBuilder) Delta()(*ItemMailFoldersDeltaRequestBuilder) {
+    return NewItemMailFoldersDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Get get the mail folder collection directly under the root folder of the signed-in user. The returned collection includes any mail search folders directly under the root. By default, this operation does not return hidden folders. Use a query parameter _includeHiddenFolders_ to include them in the response.
 // [Find more info here]
 // 
@@ -91,10 +95,6 @@ func (m *ItemMailFoldersRequestBuilder) Get(ctx context.Context, requestConfigur
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailFolderCollectionResponseable), nil
-}
-// MicrosoftGraphDelta provides operations to call the delta method.
-func (m *ItemMailFoldersRequestBuilder) MicrosoftGraphDelta()(*ItemMailFoldersMicrosoftGraphDeltaRequestBuilder) {
-    return NewItemMailFoldersMicrosoftGraphDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post use this API to create a new mail folder in the root folder of the user's mailbox. If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.
 // [Find more info here]

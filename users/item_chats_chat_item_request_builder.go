@@ -100,6 +100,10 @@ func (m *ItemChatsChatItemRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Chatable), nil
 }
+// HideForUser provides operations to call the hideForUser method.
+func (m *ItemChatsChatItemRequestBuilder) HideForUser()(*ItemChatsItemHideForUserRequestBuilder) {
+    return NewItemChatsItemHideForUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // InstalledApps provides operations to manage the installedApps property of the microsoft.graph.chat entity.
 func (m *ItemChatsChatItemRequestBuilder) InstalledApps()(*ItemChatsItemInstalledAppsRequestBuilder) {
     return NewItemChatsItemInstalledAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
@@ -118,6 +122,14 @@ func (m *ItemChatsChatItemRequestBuilder) InstalledAppsById(id string)(*ItemChat
 // LastMessagePreview provides operations to manage the lastMessagePreview property of the microsoft.graph.chat entity.
 func (m *ItemChatsChatItemRequestBuilder) LastMessagePreview()(*ItemChatsItemLastMessagePreviewRequestBuilder) {
     return NewItemChatsItemLastMessagePreviewRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MarkChatReadForUser provides operations to call the markChatReadForUser method.
+func (m *ItemChatsChatItemRequestBuilder) MarkChatReadForUser()(*ItemChatsItemMarkChatReadForUserRequestBuilder) {
+    return NewItemChatsItemMarkChatReadForUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// MarkChatUnreadForUser provides operations to call the markChatUnreadForUser method.
+func (m *ItemChatsChatItemRequestBuilder) MarkChatUnreadForUser()(*ItemChatsItemMarkChatUnreadForUserRequestBuilder) {
+    return NewItemChatsItemMarkChatUnreadForUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Members provides operations to manage the members property of the microsoft.graph.chat entity.
 func (m *ItemChatsChatItemRequestBuilder) Members()(*ItemChatsItemMembersRequestBuilder) {
@@ -148,26 +160,6 @@ func (m *ItemChatsChatItemRequestBuilder) MessagesById(id string)(*ItemChatsItem
         urlTplParams["chatMessage%2Did"] = id
     }
     return NewItemChatsItemMessagesChatMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
-}
-// MicrosoftGraphHideForUser provides operations to call the hideForUser method.
-func (m *ItemChatsChatItemRequestBuilder) MicrosoftGraphHideForUser()(*ItemChatsItemMicrosoftGraphHideForUserRequestBuilder) {
-    return NewItemChatsItemMicrosoftGraphHideForUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphMarkChatReadForUser provides operations to call the markChatReadForUser method.
-func (m *ItemChatsChatItemRequestBuilder) MicrosoftGraphMarkChatReadForUser()(*ItemChatsItemMicrosoftGraphMarkChatReadForUserRequestBuilder) {
-    return NewItemChatsItemMicrosoftGraphMarkChatReadForUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphMarkChatUnreadForUser provides operations to call the markChatUnreadForUser method.
-func (m *ItemChatsChatItemRequestBuilder) MicrosoftGraphMarkChatUnreadForUser()(*ItemChatsItemMicrosoftGraphMarkChatUnreadForUserRequestBuilder) {
-    return NewItemChatsItemMicrosoftGraphMarkChatUnreadForUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphSendActivityNotification provides operations to call the sendActivityNotification method.
-func (m *ItemChatsChatItemRequestBuilder) MicrosoftGraphSendActivityNotification()(*ItemChatsItemMicrosoftGraphSendActivityNotificationRequestBuilder) {
-    return NewItemChatsItemMicrosoftGraphSendActivityNotificationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphUnhideForUser provides operations to call the unhideForUser method.
-func (m *ItemChatsChatItemRequestBuilder) MicrosoftGraphUnhideForUser()(*ItemChatsItemMicrosoftGraphUnhideForUserRequestBuilder) {
-    return NewItemChatsItemMicrosoftGraphUnhideForUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property chats in users
 func (m *ItemChatsChatItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Chatable, requestConfiguration *ItemChatsChatItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Chatable, error) {
@@ -202,6 +194,10 @@ func (m *ItemChatsChatItemRequestBuilder) PinnedMessagesById(id string)(*ItemCha
         urlTplParams["pinnedChatMessageInfo%2Did"] = id
     }
     return NewItemChatsItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+}
+// SendActivityNotification provides operations to call the sendActivityNotification method.
+func (m *ItemChatsChatItemRequestBuilder) SendActivityNotification()(*ItemChatsItemSendActivityNotificationRequestBuilder) {
+    return NewItemChatsItemSendActivityNotificationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Tabs provides operations to manage the tabs property of the microsoft.graph.chat entity.
 func (m *ItemChatsChatItemRequestBuilder) Tabs()(*ItemChatsItemTabsRequestBuilder) {
@@ -262,4 +258,8 @@ func (m *ItemChatsChatItemRequestBuilder) ToPatchRequestInformation(ctx context.
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// UnhideForUser provides operations to call the unhideForUser method.
+func (m *ItemChatsChatItemRequestBuilder) UnhideForUser()(*ItemChatsItemUnhideForUserRequestBuilder) {
+    return NewItemChatsItemUnhideForUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

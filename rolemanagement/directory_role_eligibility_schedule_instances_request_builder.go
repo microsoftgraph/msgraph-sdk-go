@@ -74,6 +74,10 @@ func NewDirectoryRoleEligibilityScheduleInstancesRequestBuilder(rawUrl string, r
 func (m *DirectoryRoleEligibilityScheduleInstancesRequestBuilder) Count()(*DirectoryRoleEligibilityScheduleInstancesCountRequestBuilder) {
     return NewDirectoryRoleEligibilityScheduleInstancesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
+func (m *DirectoryRoleEligibilityScheduleInstancesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*DirectoryRoleEligibilityScheduleInstancesFilterByCurrentUserWithOnRequestBuilder) {
+    return NewDirectoryRoleEligibilityScheduleInstancesFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
+}
 // Get get the instances of role eligibilities.
 // [Find more info here]
 // 
@@ -95,10 +99,6 @@ func (m *DirectoryRoleEligibilityScheduleInstancesRequestBuilder) Get(ctx contex
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleEligibilityScheduleInstanceCollectionResponseable), nil
-}
-// MicrosoftGraphFilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
-func (m *DirectoryRoleEligibilityScheduleInstancesRequestBuilder) MicrosoftGraphFilterByCurrentUserWithOn(on *string)(*DirectoryRoleEligibilityScheduleInstancesMicrosoftGraphFilterByCurrentUserWithOnRequestBuilder) {
-    return NewDirectoryRoleEligibilityScheduleInstancesMicrosoftGraphFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
 }
 // Post create new navigation property to roleEligibilityScheduleInstances for roleManagement
 func (m *DirectoryRoleEligibilityScheduleInstancesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleEligibilityScheduleInstanceable, requestConfiguration *DirectoryRoleEligibilityScheduleInstancesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleEligibilityScheduleInstanceable, error) {

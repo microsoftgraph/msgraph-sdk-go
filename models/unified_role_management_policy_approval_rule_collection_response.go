@@ -7,8 +7,6 @@ import (
 // UnifiedRoleManagementPolicyApprovalRuleCollectionResponse 
 type UnifiedRoleManagementPolicyApprovalRuleCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []UnifiedRoleManagementPolicyApprovalRuleable
 }
 // NewUnifiedRoleManagementPolicyApprovalRuleCollectionResponse instantiates a new UnifiedRoleManagementPolicyApprovalRuleCollectionResponse and sets the default values.
 func NewUnifiedRoleManagementPolicyApprovalRuleCollectionResponse()(*UnifiedRoleManagementPolicyApprovalRuleCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *UnifiedRoleManagementPolicyApprovalRuleCollectionResponse) GetFieldDese
 }
 // GetValue gets the value property value. The value property
 func (m *UnifiedRoleManagementPolicyApprovalRuleCollectionResponse) GetValue()([]UnifiedRoleManagementPolicyApprovalRuleable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UnifiedRoleManagementPolicyApprovalRuleable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UnifiedRoleManagementPolicyApprovalRuleCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *UnifiedRoleManagementPolicyApprovalRuleCollectionResponse) Serialize(wr
 }
 // SetValue sets the value property value. The value property
 func (m *UnifiedRoleManagementPolicyApprovalRuleCollectionResponse) SetValue(value []UnifiedRoleManagementPolicyApprovalRuleable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UnifiedRoleManagementPolicyApprovalRuleCollectionResponseable 
+type UnifiedRoleManagementPolicyApprovalRuleCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]UnifiedRoleManagementPolicyApprovalRuleable)
+    SetValue(value []UnifiedRoleManagementPolicyApprovalRuleable)()
 }

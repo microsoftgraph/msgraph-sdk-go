@@ -74,6 +74,10 @@ func NewClassesItemAssignmentsRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *ClassesItemAssignmentsRequestBuilder) Count()(*ClassesItemAssignmentsCountRequestBuilder) {
     return NewClassesItemAssignmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// Delta provides operations to call the delta method.
+func (m *ClassesItemAssignmentsRequestBuilder) Delta()(*ClassesItemAssignmentsDeltaRequestBuilder) {
+    return NewClassesItemAssignmentsDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Get retrieve a list of assignment objects. Only teachers, students, and applications with application permissions can perform this operation. A teacher or an application executing with application permissions can see all assignment objects for the class. Students can only see assignments that are assigned to them.
 // [Find more info here]
 // 
@@ -95,10 +99,6 @@ func (m *ClassesItemAssignmentsRequestBuilder) Get(ctx context.Context, requestC
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationAssignmentCollectionResponseable), nil
-}
-// MicrosoftGraphDelta provides operations to call the delta method.
-func (m *ClassesItemAssignmentsRequestBuilder) MicrosoftGraphDelta()(*ClassesItemAssignmentsMicrosoftGraphDeltaRequestBuilder) {
-    return NewClassesItemAssignmentsMicrosoftGraphDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create a new assignment. Only teachers in a class can create an assignment. Assignments start in the Draft state, which means that students will not see the assignment until publication.
 // [Find more info here]

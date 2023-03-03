@@ -7,8 +7,6 @@ import (
 // RemoteAssistancePartnerCollectionResponse 
 type RemoteAssistancePartnerCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []RemoteAssistancePartnerable
 }
 // NewRemoteAssistancePartnerCollectionResponse instantiates a new RemoteAssistancePartnerCollectionResponse and sets the default values.
 func NewRemoteAssistancePartnerCollectionResponse()(*RemoteAssistancePartnerCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *RemoteAssistancePartnerCollectionResponse) GetFieldDeserializers()(map[
 }
 // GetValue gets the value property value. The value property
 func (m *RemoteAssistancePartnerCollectionResponse) GetValue()([]RemoteAssistancePartnerable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]RemoteAssistancePartnerable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *RemoteAssistancePartnerCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *RemoteAssistancePartnerCollectionResponse) Serialize(writer i878a80d233
 }
 // SetValue sets the value property value. The value property
 func (m *RemoteAssistancePartnerCollectionResponse) SetValue(value []RemoteAssistancePartnerable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// RemoteAssistancePartnerCollectionResponseable 
+type RemoteAssistancePartnerCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]RemoteAssistancePartnerable)
+    SetValue(value []RemoteAssistancePartnerable)()
 }

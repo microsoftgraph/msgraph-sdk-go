@@ -7,8 +7,6 @@ import (
 // EditionUpgradeConfigurationCollectionResponse 
 type EditionUpgradeConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []EditionUpgradeConfigurationable
 }
 // NewEditionUpgradeConfigurationCollectionResponse instantiates a new EditionUpgradeConfigurationCollectionResponse and sets the default values.
 func NewEditionUpgradeConfigurationCollectionResponse()(*EditionUpgradeConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *EditionUpgradeConfigurationCollectionResponse) GetFieldDeserializers()(
 }
 // GetValue gets the value property value. The value property
 func (m *EditionUpgradeConfigurationCollectionResponse) GetValue()([]EditionUpgradeConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EditionUpgradeConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EditionUpgradeConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *EditionUpgradeConfigurationCollectionResponse) Serialize(writer i878a80
 }
 // SetValue sets the value property value. The value property
 func (m *EditionUpgradeConfigurationCollectionResponse) SetValue(value []EditionUpgradeConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EditionUpgradeConfigurationCollectionResponseable 
+type EditionUpgradeConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]EditionUpgradeConfigurationable)
+    SetValue(value []EditionUpgradeConfigurationable)()
 }

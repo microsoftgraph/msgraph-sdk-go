@@ -70,29 +70,9 @@ func (m *ItemMemberOfDirectoryObjectItemRequestBuilder) Get(ctx context.Context,
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable), nil
 }
-// MicrosoftGraphApplication casts the previous resource to application.
-func (m *ItemMemberOfDirectoryObjectItemRequestBuilder) MicrosoftGraphApplication()(*ItemMemberOfItemMicrosoftGraphApplicationRequestBuilder) {
-    return NewItemMemberOfItemMicrosoftGraphApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphDevice casts the previous resource to device.
-func (m *ItemMemberOfDirectoryObjectItemRequestBuilder) MicrosoftGraphDevice()(*ItemMemberOfItemMicrosoftGraphDeviceRequestBuilder) {
-    return NewItemMemberOfItemMicrosoftGraphDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphGroup casts the previous resource to group.
-func (m *ItemMemberOfDirectoryObjectItemRequestBuilder) MicrosoftGraphGroup()(*ItemMemberOfItemMicrosoftGraphGroupRequestBuilder) {
-    return NewItemMemberOfItemMicrosoftGraphGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphOrgContact casts the previous resource to orgContact.
-func (m *ItemMemberOfDirectoryObjectItemRequestBuilder) MicrosoftGraphOrgContact()(*ItemMemberOfItemMicrosoftGraphOrgContactRequestBuilder) {
-    return NewItemMemberOfItemMicrosoftGraphOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphServicePrincipal casts the previous resource to servicePrincipal.
-func (m *ItemMemberOfDirectoryObjectItemRequestBuilder) MicrosoftGraphServicePrincipal()(*ItemMemberOfItemMicrosoftGraphServicePrincipalRequestBuilder) {
-    return NewItemMemberOfItemMicrosoftGraphServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphUser casts the previous resource to user.
-func (m *ItemMemberOfDirectoryObjectItemRequestBuilder) MicrosoftGraphUser()(*ItemMemberOfItemMicrosoftGraphUserRequestBuilder) {
-    return NewItemMemberOfItemMicrosoftGraphUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphGroup casts the previous resource to group.
+func (m *ItemMemberOfDirectoryObjectItemRequestBuilder) GraphGroup()(*ItemMemberOfItemGraphGroupRequestBuilder) {
+    return NewItemMemberOfItemGraphGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
 func (m *ItemMemberOfDirectoryObjectItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMemberOfDirectoryObjectItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

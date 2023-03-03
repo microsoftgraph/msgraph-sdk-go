@@ -7,8 +7,6 @@ import (
 // DelegatedPermissionClassificationCollectionResponse 
 type DelegatedPermissionClassificationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DelegatedPermissionClassificationable
 }
 // NewDelegatedPermissionClassificationCollectionResponse instantiates a new DelegatedPermissionClassificationCollectionResponse and sets the default values.
 func NewDelegatedPermissionClassificationCollectionResponse()(*DelegatedPermissionClassificationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DelegatedPermissionClassificationCollectionResponse) GetFieldDeserializ
 }
 // GetValue gets the value property value. The value property
 func (m *DelegatedPermissionClassificationCollectionResponse) GetValue()([]DelegatedPermissionClassificationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DelegatedPermissionClassificationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DelegatedPermissionClassificationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DelegatedPermissionClassificationCollectionResponse) Serialize(writer i
 }
 // SetValue sets the value property value. The value property
 func (m *DelegatedPermissionClassificationCollectionResponse) SetValue(value []DelegatedPermissionClassificationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DelegatedPermissionClassificationCollectionResponseable 
+type DelegatedPermissionClassificationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DelegatedPermissionClassificationable)
+    SetValue(value []DelegatedPermissionClassificationable)()
 }

@@ -93,9 +93,9 @@ func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) Get(ctx context
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ImportedWindowsAutopilotDeviceIdentityCollectionResponseable), nil
 }
-// MicrosoftGraphImport provides operations to call the import method.
-func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) MicrosoftGraphImport()(*ImportedWindowsAutopilotDeviceIdentitiesMicrosoftGraphImportRequestBuilder) {
-    return NewImportedWindowsAutopilotDeviceIdentitiesMicrosoftGraphImportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// ImportEscaped provides operations to call the import method.
+func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) ImportEscaped()(*ImportedWindowsAutopilotDeviceIdentitiesImportRequestBuilder) {
+    return NewImportedWindowsAutopilotDeviceIdentitiesImportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to importedWindowsAutopilotDeviceIdentities for deviceManagement
 func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ImportedWindowsAutopilotDeviceIdentityable, requestConfiguration *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ImportedWindowsAutopilotDeviceIdentityable, error) {

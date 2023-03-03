@@ -7,12 +7,6 @@ import (
 // StsPolicy 
 type StsPolicy struct {
     PolicyBase
-    // The appliesTo property
-    appliesTo []DirectoryObjectable
-    // A string collection containing a JSON string that defines the rules and settings for a policy. The syntax for the definition differs for each derived policy type. Required.
-    definition []string
-    // If set to true, activates this policy. There can be many policies for the same policy type, but only one can be activated as the organization default. Optional, default value is false.
-    isOrganizationDefault *bool
 }
 // NewStsPolicy instantiates a new StsPolicy and sets the default values.
 func NewStsPolicy()(*StsPolicy) {
@@ -55,11 +49,25 @@ func CreateStsPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 }
 // GetAppliesTo gets the appliesTo property value. The appliesTo property
 func (m *StsPolicy) GetAppliesTo()([]DirectoryObjectable) {
-    return m.appliesTo
+    val, err := m.GetBackingStore().Get("appliesTo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DirectoryObjectable)
+    }
+    return nil
 }
 // GetDefinition gets the definition property value. A string collection containing a JSON string that defines the rules and settings for a policy. The syntax for the definition differs for each derived policy type. Required.
 func (m *StsPolicy) GetDefinition()([]string) {
-    return m.definition
+    val, err := m.GetBackingStore().Get("definition")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *StsPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -106,7 +114,14 @@ func (m *StsPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 }
 // GetIsOrganizationDefault gets the isOrganizationDefault property value. If set to true, activates this policy. There can be many policies for the same policy type, but only one can be activated as the organization default. Optional, default value is false.
 func (m *StsPolicy) GetIsOrganizationDefault()(*bool) {
-    return m.isOrganizationDefault
+    val, err := m.GetBackingStore().Get("isOrganizationDefault")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *StsPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -140,13 +155,33 @@ func (m *StsPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetAppliesTo sets the appliesTo property value. The appliesTo property
 func (m *StsPolicy) SetAppliesTo(value []DirectoryObjectable)() {
-    m.appliesTo = value
+    err := m.GetBackingStore().Set("appliesTo", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefinition sets the definition property value. A string collection containing a JSON string that defines the rules and settings for a policy. The syntax for the definition differs for each derived policy type. Required.
 func (m *StsPolicy) SetDefinition(value []string)() {
-    m.definition = value
+    err := m.GetBackingStore().Set("definition", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsOrganizationDefault sets the isOrganizationDefault property value. If set to true, activates this policy. There can be many policies for the same policy type, but only one can be activated as the organization default. Optional, default value is false.
 func (m *StsPolicy) SetIsOrganizationDefault(value *bool)() {
-    m.isOrganizationDefault = value
+    err := m.GetBackingStore().Set("isOrganizationDefault", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// StsPolicyable 
+type StsPolicyable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    PolicyBaseable
+    GetAppliesTo()([]DirectoryObjectable)
+    GetDefinition()([]string)
+    GetIsOrganizationDefault()(*bool)
+    SetAppliesTo(value []DirectoryObjectable)()
+    SetDefinition(value []string)()
+    SetIsOrganizationDefault(value *bool)()
 }

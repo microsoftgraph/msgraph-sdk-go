@@ -93,14 +93,6 @@ func (m *CasesEdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) Get(ctx 
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryNoncustodialDataSourceCollectionResponseable), nil
 }
-// MicrosoftGraphSecurityApplyHold provides operations to call the applyHold method.
-func (m *CasesEdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) MicrosoftGraphSecurityApplyHold()(*CasesEdiscoveryCasesItemNoncustodialDataSourcesMicrosoftGraphSecurityApplyHoldRequestBuilder) {
-    return NewCasesEdiscoveryCasesItemNoncustodialDataSourcesMicrosoftGraphSecurityApplyHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphSecurityRemoveHold provides operations to call the removeHold method.
-func (m *CasesEdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) MicrosoftGraphSecurityRemoveHold()(*CasesEdiscoveryCasesItemNoncustodialDataSourcesMicrosoftGraphSecurityRemoveHoldRequestBuilder) {
-    return NewCasesEdiscoveryCasesItemNoncustodialDataSourcesMicrosoftGraphSecurityRemoveHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Post create a new ediscoveryNoncustodialDataSource object.
 // [Find more info here]
 // 
@@ -122,6 +114,14 @@ func (m *CasesEdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) Post(ctx
         return nil, nil
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryNoncustodialDataSourceable), nil
+}
+// SecurityApplyHold provides operations to call the applyHold method.
+func (m *CasesEdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) SecurityApplyHold()(*CasesEdiscoveryCasesItemNoncustodialDataSourcesSecurityApplyHoldRequestBuilder) {
+    return NewCasesEdiscoveryCasesItemNoncustodialDataSourcesSecurityApplyHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// SecurityRemoveHold provides operations to call the removeHold method.
+func (m *CasesEdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) SecurityRemoveHold()(*CasesEdiscoveryCasesItemNoncustodialDataSourcesSecurityRemoveHoldRequestBuilder) {
+    return NewCasesEdiscoveryCasesItemNoncustodialDataSourcesSecurityRemoveHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation returns a list of case ediscoveryNoncustodialDataSource objects for this case.
 func (m *CasesEdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemNoncustodialDataSourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -7,14 +7,6 @@ import (
 // Security 
 type Security struct {
     Entity
-    // The alerts property
-    alerts []Alertable
-    // The attackSimulation property
-    attackSimulation AttackSimulationRootable
-    // The secureScoreControlProfiles property
-    secureScoreControlProfiles []SecureScoreControlProfileable
-    // The secureScores property
-    secureScores []SecureScoreable
 }
 // NewSecurity instantiates a new Security and sets the default values.
 func NewSecurity()(*Security) {
@@ -29,11 +21,25 @@ func CreateSecurityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 }
 // GetAlerts gets the alerts property value. The alerts property
 func (m *Security) GetAlerts()([]Alertable) {
-    return m.alerts
+    val, err := m.GetBackingStore().Get("alerts")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Alertable)
+    }
+    return nil
 }
 // GetAttackSimulation gets the attackSimulation property value. The attackSimulation property
 func (m *Security) GetAttackSimulation()(AttackSimulationRootable) {
-    return m.attackSimulation
+    val, err := m.GetBackingStore().Get("attackSimulation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AttackSimulationRootable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Security) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -94,11 +100,25 @@ func (m *Security) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetSecureScoreControlProfiles gets the secureScoreControlProfiles property value. The secureScoreControlProfiles property
 func (m *Security) GetSecureScoreControlProfiles()([]SecureScoreControlProfileable) {
-    return m.secureScoreControlProfiles
+    val, err := m.GetBackingStore().Get("secureScoreControlProfiles")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SecureScoreControlProfileable)
+    }
+    return nil
 }
 // GetSecureScores gets the secureScores property value. The secureScores property
 func (m *Security) GetSecureScores()([]SecureScoreable) {
-    return m.secureScores
+    val, err := m.GetBackingStore().Get("secureScores")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SecureScoreable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -146,17 +166,42 @@ func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetAlerts sets the alerts property value. The alerts property
 func (m *Security) SetAlerts(value []Alertable)() {
-    m.alerts = value
+    err := m.GetBackingStore().Set("alerts", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAttackSimulation sets the attackSimulation property value. The attackSimulation property
 func (m *Security) SetAttackSimulation(value AttackSimulationRootable)() {
-    m.attackSimulation = value
+    err := m.GetBackingStore().Set("attackSimulation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSecureScoreControlProfiles sets the secureScoreControlProfiles property value. The secureScoreControlProfiles property
 func (m *Security) SetSecureScoreControlProfiles(value []SecureScoreControlProfileable)() {
-    m.secureScoreControlProfiles = value
+    err := m.GetBackingStore().Set("secureScoreControlProfiles", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSecureScores sets the secureScores property value. The secureScores property
 func (m *Security) SetSecureScores(value []SecureScoreable)() {
-    m.secureScores = value
+    err := m.GetBackingStore().Set("secureScores", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Securityable 
+type Securityable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAlerts()([]Alertable)
+    GetAttackSimulation()(AttackSimulationRootable)
+    GetSecureScoreControlProfiles()([]SecureScoreControlProfileable)
+    GetSecureScores()([]SecureScoreable)
+    SetAlerts(value []Alertable)()
+    SetAttackSimulation(value AttackSimulationRootable)()
+    SetSecureScoreControlProfiles(value []SecureScoreControlProfileable)()
+    SetSecureScores(value []SecureScoreable)()
 }

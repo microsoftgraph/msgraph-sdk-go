@@ -89,17 +89,17 @@ func (m *ItemOwnedDevicesRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
 }
-// MicrosoftGraphAppRoleAssignment casts the previous resource to appRoleAssignment.
-func (m *ItemOwnedDevicesRequestBuilder) MicrosoftGraphAppRoleAssignment()(*ItemOwnedDevicesMicrosoftGraphAppRoleAssignmentRequestBuilder) {
-    return NewItemOwnedDevicesMicrosoftGraphAppRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphAppRoleAssignment casts the previous resource to appRoleAssignment.
+func (m *ItemOwnedDevicesRequestBuilder) GraphAppRoleAssignment()(*ItemOwnedDevicesGraphAppRoleAssignmentRequestBuilder) {
+    return NewItemOwnedDevicesGraphAppRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphDevice casts the previous resource to device.
-func (m *ItemOwnedDevicesRequestBuilder) MicrosoftGraphDevice()(*ItemOwnedDevicesMicrosoftGraphDeviceRequestBuilder) {
-    return NewItemOwnedDevicesMicrosoftGraphDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphDevice casts the previous resource to device.
+func (m *ItemOwnedDevicesRequestBuilder) GraphDevice()(*ItemOwnedDevicesGraphDeviceRequestBuilder) {
+    return NewItemOwnedDevicesGraphDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphEndpoint casts the previous resource to endpoint.
-func (m *ItemOwnedDevicesRequestBuilder) MicrosoftGraphEndpoint()(*ItemOwnedDevicesMicrosoftGraphEndpointRequestBuilder) {
-    return NewItemOwnedDevicesMicrosoftGraphEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphEndpoint casts the previous resource to endpoint.
+func (m *ItemOwnedDevicesRequestBuilder) GraphEndpoint()(*ItemOwnedDevicesGraphEndpointRequestBuilder) {
+    return NewItemOwnedDevicesGraphEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation devices that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 func (m *ItemOwnedDevicesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOwnedDevicesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

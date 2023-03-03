@@ -46,6 +46,14 @@ type ItemItemsItemWorkbookWorksheetsItemTablesItemSortRequestBuilderPatchRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Apply provides operations to call the apply method.
+func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemSortRequestBuilder) Apply()(*ItemItemsItemWorkbookWorksheetsItemTablesItemSortApplyRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemTablesItemSortApplyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// Clear provides operations to call the clear method.
+func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemSortRequestBuilder) Clear()(*ItemItemsItemWorkbookWorksheetsItemTablesItemSortClearRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemTablesItemSortClearRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // NewItemItemsItemWorkbookWorksheetsItemTablesItemSortRequestBuilderInternal instantiates a new SortRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsItemTablesItemSortRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookWorksheetsItemTablesItemSortRequestBuilder) {
     m := &ItemItemsItemWorkbookWorksheetsItemTablesItemSortRequestBuilder{
@@ -103,18 +111,6 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemSortRequestBuilder) Get(ct
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableSortable), nil
 }
-// MicrosoftGraphApply provides operations to call the apply method.
-func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemSortRequestBuilder) MicrosoftGraphApply()(*ItemItemsItemWorkbookWorksheetsItemTablesItemSortMicrosoftGraphApplyRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemTablesItemSortMicrosoftGraphApplyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphClear provides operations to call the clear method.
-func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemSortRequestBuilder) MicrosoftGraphClear()(*ItemItemsItemWorkbookWorksheetsItemTablesItemSortMicrosoftGraphClearRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemTablesItemSortMicrosoftGraphClearRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphReapply provides operations to call the reapply method.
-func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemSortRequestBuilder) MicrosoftGraphReapply()(*ItemItemsItemWorkbookWorksheetsItemTablesItemSortMicrosoftGraphReapplyRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemTablesItemSortMicrosoftGraphReapplyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Patch update the navigation property sort in drives
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemSortRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableSortable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTablesItemSortRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableSortable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -133,6 +129,10 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemSortRequestBuilder) Patch(
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableSortable), nil
+}
+// Reapply provides operations to call the reapply method.
+func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemSortRequestBuilder) Reapply()(*ItemItemsItemWorkbookWorksheetsItemTablesItemSortReapplyRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemTablesItemSortReapplyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property sort for drives
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemSortRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTablesItemSortRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

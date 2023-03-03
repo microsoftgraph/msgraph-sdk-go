@@ -46,6 +46,10 @@ type GroupLifecyclePolicyItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// AddGroup provides operations to call the addGroup method.
+func (m *GroupLifecyclePolicyItemRequestBuilder) AddGroup()(*ItemAddGroupRequestBuilder) {
+    return NewItemAddGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // NewGroupLifecyclePolicyItemRequestBuilderInternal instantiates a new GroupLifecyclePolicyItemRequestBuilder and sets the default values.
 func NewGroupLifecyclePolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupLifecyclePolicyItemRequestBuilder) {
     m := &GroupLifecyclePolicyItemRequestBuilder{
@@ -106,14 +110,6 @@ func (m *GroupLifecyclePolicyItemRequestBuilder) Get(ctx context.Context, reques
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupLifecyclePolicyable), nil
 }
-// MicrosoftGraphAddGroup provides operations to call the addGroup method.
-func (m *GroupLifecyclePolicyItemRequestBuilder) MicrosoftGraphAddGroup()(*ItemMicrosoftGraphAddGroupRequestBuilder) {
-    return NewItemMicrosoftGraphAddGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphRemoveGroup provides operations to call the removeGroup method.
-func (m *GroupLifecyclePolicyItemRequestBuilder) MicrosoftGraphRemoveGroup()(*ItemMicrosoftGraphRemoveGroupRequestBuilder) {
-    return NewItemMicrosoftGraphRemoveGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Patch update the properties of a groupLifecyclePolicygroupLifecyclePolicy resource type object.
 // [Find more info here]
 // 
@@ -135,6 +131,10 @@ func (m *GroupLifecyclePolicyItemRequestBuilder) Patch(ctx context.Context, body
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupLifecyclePolicyable), nil
+}
+// RemoveGroup provides operations to call the removeGroup method.
+func (m *GroupLifecyclePolicyItemRequestBuilder) RemoveGroup()(*ItemRemoveGroupRequestBuilder) {
+    return NewItemRemoveGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete a groupLifecyclePolicy.
 func (m *GroupLifecyclePolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *GroupLifecyclePolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

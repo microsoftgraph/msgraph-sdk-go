@@ -69,6 +69,10 @@ func NewItemOnenoteNotebooksItemSectionsItemPagesOnenotePageItemRequestBuilder(r
 func (m *ItemOnenoteNotebooksItemSectionsItemPagesOnenotePageItemRequestBuilder) Content()(*ItemOnenoteNotebooksItemSectionsItemPagesItemContentRequestBuilder) {
     return NewItemOnenoteNotebooksItemSectionsItemPagesItemContentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// CopyToSection provides operations to call the copyToSection method.
+func (m *ItemOnenoteNotebooksItemSectionsItemPagesOnenotePageItemRequestBuilder) CopyToSection()(*ItemOnenoteNotebooksItemSectionsItemPagesItemCopyToSectionRequestBuilder) {
+    return NewItemOnenoteNotebooksItemSectionsItemPagesItemCopyToSectionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Delete delete navigation property pages for groups
 func (m *ItemOnenoteNotebooksItemSectionsItemPagesOnenotePageItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemOnenoteNotebooksItemSectionsItemPagesOnenotePageItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -104,17 +108,9 @@ func (m *ItemOnenoteNotebooksItemSectionsItemPagesOnenotePageItemRequestBuilder)
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenotePageable), nil
 }
-// MicrosoftGraphCopyToSection provides operations to call the copyToSection method.
-func (m *ItemOnenoteNotebooksItemSectionsItemPagesOnenotePageItemRequestBuilder) MicrosoftGraphCopyToSection()(*ItemOnenoteNotebooksItemSectionsItemPagesItemMicrosoftGraphCopyToSectionRequestBuilder) {
-    return NewItemOnenoteNotebooksItemSectionsItemPagesItemMicrosoftGraphCopyToSectionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphOnenotePatchContent provides operations to call the onenotePatchContent method.
-func (m *ItemOnenoteNotebooksItemSectionsItemPagesOnenotePageItemRequestBuilder) MicrosoftGraphOnenotePatchContent()(*ItemOnenoteNotebooksItemSectionsItemPagesItemMicrosoftGraphOnenotePatchContentRequestBuilder) {
-    return NewItemOnenoteNotebooksItemSectionsItemPagesItemMicrosoftGraphOnenotePatchContentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphPreview provides operations to call the preview method.
-func (m *ItemOnenoteNotebooksItemSectionsItemPagesOnenotePageItemRequestBuilder) MicrosoftGraphPreview()(*ItemOnenoteNotebooksItemSectionsItemPagesItemMicrosoftGraphPreviewRequestBuilder) {
-    return NewItemOnenoteNotebooksItemSectionsItemPagesItemMicrosoftGraphPreviewRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// OnenotePatchContent provides operations to call the onenotePatchContent method.
+func (m *ItemOnenoteNotebooksItemSectionsItemPagesOnenotePageItemRequestBuilder) OnenotePatchContent()(*ItemOnenoteNotebooksItemSectionsItemPagesItemOnenotePatchContentRequestBuilder) {
+    return NewItemOnenoteNotebooksItemSectionsItemPagesItemOnenotePatchContentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ParentNotebook provides operations to manage the parentNotebook property of the microsoft.graph.onenotePage entity.
 func (m *ItemOnenoteNotebooksItemSectionsItemPagesOnenotePageItemRequestBuilder) ParentNotebook()(*ItemOnenoteNotebooksItemSectionsItemPagesItemParentNotebookRequestBuilder) {
@@ -142,6 +138,10 @@ func (m *ItemOnenoteNotebooksItemSectionsItemPagesOnenotePageItemRequestBuilder)
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenotePageable), nil
+}
+// Preview provides operations to call the preview method.
+func (m *ItemOnenoteNotebooksItemSectionsItemPagesOnenotePageItemRequestBuilder) Preview()(*ItemOnenoteNotebooksItemSectionsItemPagesItemPreviewRequestBuilder) {
+    return NewItemOnenoteNotebooksItemSectionsItemPagesItemPreviewRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property pages for groups
 func (m *ItemOnenoteNotebooksItemSectionsItemPagesOnenotePageItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemOnenoteNotebooksItemSectionsItemPagesOnenotePageItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

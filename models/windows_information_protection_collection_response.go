@@ -7,8 +7,6 @@ import (
 // WindowsInformationProtectionCollectionResponse 
 type WindowsInformationProtectionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []WindowsInformationProtectionable
 }
 // NewWindowsInformationProtectionCollectionResponse instantiates a new WindowsInformationProtectionCollectionResponse and sets the default values.
 func NewWindowsInformationProtectionCollectionResponse()(*WindowsInformationProtectionCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *WindowsInformationProtectionCollectionResponse) GetFieldDeserializers()
 }
 // GetValue gets the value property value. The value property
 func (m *WindowsInformationProtectionCollectionResponse) GetValue()([]WindowsInformationProtectionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsInformationProtectionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsInformationProtectionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *WindowsInformationProtectionCollectionResponse) Serialize(writer i878a8
 }
 // SetValue sets the value property value. The value property
 func (m *WindowsInformationProtectionCollectionResponse) SetValue(value []WindowsInformationProtectionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsInformationProtectionCollectionResponseable 
+type WindowsInformationProtectionCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]WindowsInformationProtectionable)
+    SetValue(value []WindowsInformationProtectionable)()
 }

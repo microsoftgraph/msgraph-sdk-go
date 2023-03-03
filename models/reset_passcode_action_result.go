@@ -7,8 +7,6 @@ import (
 // ResetPasscodeActionResult 
 type ResetPasscodeActionResult struct {
     DeviceActionResult
-    // Newly generated passcode for the device
-    passcode *string
 }
 // NewResetPasscodeActionResult instantiates a new ResetPasscodeActionResult and sets the default values.
 func NewResetPasscodeActionResult()(*ResetPasscodeActionResult) {
@@ -38,7 +36,14 @@ func (m *ResetPasscodeActionResult) GetFieldDeserializers()(map[string]func(i878
 }
 // GetPasscode gets the passcode property value. Newly generated passcode for the device
 func (m *ResetPasscodeActionResult) GetPasscode()(*string) {
-    return m.passcode
+    val, err := m.GetBackingStore().Get("passcode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ResetPasscodeActionResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,5 +61,15 @@ func (m *ResetPasscodeActionResult) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetPasscode sets the passcode property value. Newly generated passcode for the device
 func (m *ResetPasscodeActionResult) SetPasscode(value *string)() {
-    m.passcode = value
+    err := m.GetBackingStore().Set("passcode", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ResetPasscodeActionResultable 
+type ResetPasscodeActionResultable interface {
+    DeviceActionResultable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetPasscode()(*string)
+    SetPasscode(value *string)()
 }

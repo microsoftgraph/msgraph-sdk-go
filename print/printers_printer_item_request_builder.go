@@ -115,10 +115,6 @@ func (m *PrintersPrinterItemRequestBuilder) Get(ctx context.Context, requestConf
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Printerable), nil
 }
-// MicrosoftGraphRestoreFactoryDefaults provides operations to call the restoreFactoryDefaults method.
-func (m *PrintersPrinterItemRequestBuilder) MicrosoftGraphRestoreFactoryDefaults()(*PrintersItemMicrosoftGraphRestoreFactoryDefaultsRequestBuilder) {
-    return NewPrintersItemMicrosoftGraphRestoreFactoryDefaultsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Patch update the navigation property printers in print
 func (m *PrintersPrinterItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Printerable, requestConfiguration *PrintersPrinterItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Printerable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -137,6 +133,10 @@ func (m *PrintersPrinterItemRequestBuilder) Patch(ctx context.Context, body iadc
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Printerable), nil
+}
+// RestoreFactoryDefaults provides operations to call the restoreFactoryDefaults method.
+func (m *PrintersPrinterItemRequestBuilder) RestoreFactoryDefaults()(*PrintersItemRestoreFactoryDefaultsRequestBuilder) {
+    return NewPrintersItemRestoreFactoryDefaultsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Shares provides operations to manage the shares property of the microsoft.graph.printer entity.
 func (m *PrintersPrinterItemRequestBuilder) Shares()(*PrintersItemSharesRequestBuilder) {

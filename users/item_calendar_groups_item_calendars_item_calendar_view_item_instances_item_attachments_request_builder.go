@@ -72,6 +72,10 @@ func NewItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemAttachme
 func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemAttachmentsRequestBuilder) Count()(*ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemAttachmentsCountRequestBuilder) {
     return NewItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemAttachmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// CreateUploadSession provides operations to call the createUploadSession method.
+func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemAttachmentsRequestBuilder) CreateUploadSession()(*ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemAttachmentsCreateUploadSessionRequestBuilder) {
+    return NewItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemAttachmentsCreateUploadSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Get retrieve a list of attachment objects attached to an event.
 // [Find more info here]
 // 
@@ -93,10 +97,6 @@ func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemAttachm
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentCollectionResponseable), nil
-}
-// MicrosoftGraphCreateUploadSession provides operations to call the createUploadSession method.
-func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemAttachmentsRequestBuilder) MicrosoftGraphCreateUploadSession()(*ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemAttachmentsMicrosoftGraphCreateUploadSessionRequestBuilder) {
-    return NewItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemAttachmentsMicrosoftGraphCreateUploadSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
 // [Find more info here]

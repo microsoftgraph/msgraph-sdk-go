@@ -2,25 +2,19 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // DocumentSetContent 
 type DocumentSetContent struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Content type information of the file.
-    contentType ContentTypeInfoable
-    // Name of the file in resource folder that should be added as a default content or a template in the document set.
-    fileName *string
-    // Folder name in which the file will be placed when a new document set is created in the library.
-    folderName *string
-    // The OdataType property
-    odataType *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewDocumentSetContent instantiates a new documentSetContent and sets the default values.
 func NewDocumentSetContent()(*DocumentSetContent) {
     m := &DocumentSetContent{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -30,11 +24,30 @@ func CreateDocumentSetContentFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DocumentSetContent) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *DocumentSetContent) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetContentType gets the contentType property value. Content type information of the file.
 func (m *DocumentSetContent) GetContentType()(ContentTypeInfoable) {
-    return m.contentType
+    val, err := m.GetBackingStore().Get("contentType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ContentTypeInfoable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DocumentSetContent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -83,15 +96,36 @@ func (m *DocumentSetContent) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetFileName gets the fileName property value. Name of the file in resource folder that should be added as a default content or a template in the document set.
 func (m *DocumentSetContent) GetFileName()(*string) {
-    return m.fileName
+    val, err := m.GetBackingStore().Get("fileName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFolderName gets the folderName property value. Folder name in which the file will be placed when a new document set is created in the library.
 func (m *DocumentSetContent) GetFolderName()(*string) {
-    return m.folderName
+    val, err := m.GetBackingStore().Get("folderName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DocumentSetContent) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DocumentSetContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -129,21 +163,56 @@ func (m *DocumentSetContent) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DocumentSetContent) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *DocumentSetContent) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetContentType sets the contentType property value. Content type information of the file.
 func (m *DocumentSetContent) SetContentType(value ContentTypeInfoable)() {
-    m.contentType = value
+    err := m.GetBackingStore().Set("contentType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFileName sets the fileName property value. Name of the file in resource folder that should be added as a default content or a template in the document set.
 func (m *DocumentSetContent) SetFileName(value *string)() {
-    m.fileName = value
+    err := m.GetBackingStore().Set("fileName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFolderName sets the folderName property value. Folder name in which the file will be placed when a new document set is created in the library.
 func (m *DocumentSetContent) SetFolderName(value *string)() {
-    m.folderName = value
+    err := m.GetBackingStore().Set("folderName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DocumentSetContent) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DocumentSetContentable 
+type DocumentSetContentable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetContentType()(ContentTypeInfoable)
+    GetFileName()(*string)
+    GetFolderName()(*string)
+    GetOdataType()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetContentType(value ContentTypeInfoable)()
+    SetFileName(value *string)()
+    SetFolderName(value *string)()
+    SetOdataType(value *string)()
 }

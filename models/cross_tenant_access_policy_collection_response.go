@@ -7,8 +7,6 @@ import (
 // CrossTenantAccessPolicyCollectionResponse 
 type CrossTenantAccessPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []CrossTenantAccessPolicyable
 }
 // NewCrossTenantAccessPolicyCollectionResponse instantiates a new CrossTenantAccessPolicyCollectionResponse and sets the default values.
 func NewCrossTenantAccessPolicyCollectionResponse()(*CrossTenantAccessPolicyCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *CrossTenantAccessPolicyCollectionResponse) GetFieldDeserializers()(map[
 }
 // GetValue gets the value property value. The value property
 func (m *CrossTenantAccessPolicyCollectionResponse) GetValue()([]CrossTenantAccessPolicyable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CrossTenantAccessPolicyable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CrossTenantAccessPolicyCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *CrossTenantAccessPolicyCollectionResponse) Serialize(writer i878a80d233
 }
 // SetValue sets the value property value. The value property
 func (m *CrossTenantAccessPolicyCollectionResponse) SetValue(value []CrossTenantAccessPolicyable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CrossTenantAccessPolicyCollectionResponseable 
+type CrossTenantAccessPolicyCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]CrossTenantAccessPolicyable)
+    SetValue(value []CrossTenantAccessPolicyable)()
 }

@@ -50,6 +50,14 @@ type ItemItemsDriveItemItemRequestBuilderPatchRequestConfiguration struct {
 func (m *ItemItemsDriveItemItemRequestBuilder) Analytics()(*ItemItemsItemAnalyticsRequestBuilder) {
     return NewItemItemsItemAnalyticsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// Checkin provides operations to call the checkin method.
+func (m *ItemItemsDriveItemItemRequestBuilder) Checkin()(*ItemItemsItemCheckinRequestBuilder) {
+    return NewItemItemsItemCheckinRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// Checkout provides operations to call the checkout method.
+func (m *ItemItemsDriveItemItemRequestBuilder) Checkout()(*ItemItemsItemCheckoutRequestBuilder) {
+    return NewItemItemsItemCheckoutRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Children provides operations to manage the children property of the microsoft.graph.driveItem entity.
 func (m *ItemItemsDriveItemItemRequestBuilder) Children()(*ItemItemsItemChildrenRequestBuilder) {
     return NewItemItemsItemChildrenRequestBuilderInternal(m.pathParameters, m.requestAdapter)
@@ -88,6 +96,18 @@ func NewItemItemsDriveItemItemRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *ItemItemsDriveItemItemRequestBuilder) Content()(*ItemItemsItemContentRequestBuilder) {
     return NewItemItemsItemContentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// Copy provides operations to call the copy method.
+func (m *ItemItemsDriveItemItemRequestBuilder) Copy()(*ItemItemsItemCopyRequestBuilder) {
+    return NewItemItemsItemCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// CreateLink provides operations to call the createLink method.
+func (m *ItemItemsDriveItemItemRequestBuilder) CreateLink()(*ItemItemsItemCreateLinkRequestBuilder) {
+    return NewItemItemsItemCreateLinkRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// CreateUploadSession provides operations to call the createUploadSession method.
+func (m *ItemItemsDriveItemItemRequestBuilder) CreateUploadSession()(*ItemItemsItemCreateUploadSessionRequestBuilder) {
+    return NewItemItemsItemCreateUploadSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Delete delete navigation property items for drives
 func (m *ItemItemsDriveItemItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemItemsDriveItemItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -103,6 +123,18 @@ func (m *ItemItemsDriveItemItemRequestBuilder) Delete(ctx context.Context, reque
         return err
     }
     return nil
+}
+// Delta provides operations to call the delta method.
+func (m *ItemItemsDriveItemItemRequestBuilder) Delta()(*ItemItemsItemDeltaRequestBuilder) {
+    return NewItemItemsItemDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// DeltaWithToken provides operations to call the delta method.
+func (m *ItemItemsDriveItemItemRequestBuilder) DeltaWithToken(token *string)(*ItemItemsItemDeltaWithTokenRequestBuilder) {
+    return NewItemItemsItemDeltaWithTokenRequestBuilderInternal(m.pathParameters, m.requestAdapter, token)
+}
+// Follow provides operations to call the follow method.
+func (m *ItemItemsDriveItemItemRequestBuilder) Follow()(*ItemItemsItemFollowRequestBuilder) {
+    return NewItemItemsItemFollowRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get all items contained in the drive. Read-only. Nullable.
 func (m *ItemItemsDriveItemItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsDriveItemItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable, error) {
@@ -123,73 +155,21 @@ func (m *ItemItemsDriveItemItemRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable), nil
 }
+// GetActivitiesByInterval provides operations to call the getActivitiesByInterval method.
+func (m *ItemItemsDriveItemItemRequestBuilder) GetActivitiesByInterval()(*ItemItemsItemGetActivitiesByIntervalRequestBuilder) {
+    return NewItemItemsItemGetActivitiesByIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval provides operations to call the getActivitiesByInterval method.
+func (m *ItemItemsDriveItemItemRequestBuilder) GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(endDateTime *string, interval *string, startDateTime *string)(*ItemItemsItemGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
+    return NewItemItemsItemGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter, endDateTime, interval, startDateTime)
+}
+// Invite provides operations to call the invite method.
+func (m *ItemItemsDriveItemItemRequestBuilder) Invite()(*ItemItemsItemInviteRequestBuilder) {
+    return NewItemItemsItemInviteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // ListItem provides operations to manage the listItem property of the microsoft.graph.driveItem entity.
 func (m *ItemItemsDriveItemItemRequestBuilder) ListItem()(*ItemItemsItemListItemRequestBuilder) {
     return NewItemItemsItemListItemRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphCheckin provides operations to call the checkin method.
-func (m *ItemItemsDriveItemItemRequestBuilder) MicrosoftGraphCheckin()(*ItemItemsItemMicrosoftGraphCheckinRequestBuilder) {
-    return NewItemItemsItemMicrosoftGraphCheckinRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphCheckout provides operations to call the checkout method.
-func (m *ItemItemsDriveItemItemRequestBuilder) MicrosoftGraphCheckout()(*ItemItemsItemMicrosoftGraphCheckoutRequestBuilder) {
-    return NewItemItemsItemMicrosoftGraphCheckoutRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphCopy provides operations to call the copy method.
-func (m *ItemItemsDriveItemItemRequestBuilder) MicrosoftGraphCopy()(*ItemItemsItemMicrosoftGraphCopyRequestBuilder) {
-    return NewItemItemsItemMicrosoftGraphCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphCreateLink provides operations to call the createLink method.
-func (m *ItemItemsDriveItemItemRequestBuilder) MicrosoftGraphCreateLink()(*ItemItemsItemMicrosoftGraphCreateLinkRequestBuilder) {
-    return NewItemItemsItemMicrosoftGraphCreateLinkRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphCreateUploadSession provides operations to call the createUploadSession method.
-func (m *ItemItemsDriveItemItemRequestBuilder) MicrosoftGraphCreateUploadSession()(*ItemItemsItemMicrosoftGraphCreateUploadSessionRequestBuilder) {
-    return NewItemItemsItemMicrosoftGraphCreateUploadSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphDelta provides operations to call the delta method.
-func (m *ItemItemsDriveItemItemRequestBuilder) MicrosoftGraphDelta()(*ItemItemsItemMicrosoftGraphDeltaRequestBuilder) {
-    return NewItemItemsItemMicrosoftGraphDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphDeltaWithToken provides operations to call the delta method.
-func (m *ItemItemsDriveItemItemRequestBuilder) MicrosoftGraphDeltaWithToken(token *string)(*ItemItemsItemMicrosoftGraphDeltaWithTokenRequestBuilder) {
-    return NewItemItemsItemMicrosoftGraphDeltaWithTokenRequestBuilderInternal(m.pathParameters, m.requestAdapter, token)
-}
-// MicrosoftGraphFollow provides operations to call the follow method.
-func (m *ItemItemsDriveItemItemRequestBuilder) MicrosoftGraphFollow()(*ItemItemsItemMicrosoftGraphFollowRequestBuilder) {
-    return NewItemItemsItemMicrosoftGraphFollowRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphGetActivitiesByInterval provides operations to call the getActivitiesByInterval method.
-func (m *ItemItemsDriveItemItemRequestBuilder) MicrosoftGraphGetActivitiesByInterval()(*ItemItemsItemMicrosoftGraphGetActivitiesByIntervalRequestBuilder) {
-    return NewItemItemsItemMicrosoftGraphGetActivitiesByIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval provides operations to call the getActivitiesByInterval method.
-func (m *ItemItemsDriveItemItemRequestBuilder) MicrosoftGraphGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(endDateTime *string, interval *string, startDateTime *string)(*ItemItemsItemMicrosoftGraphGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
-    return NewItemItemsItemMicrosoftGraphGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter, endDateTime, interval, startDateTime)
-}
-// MicrosoftGraphInvite provides operations to call the invite method.
-func (m *ItemItemsDriveItemItemRequestBuilder) MicrosoftGraphInvite()(*ItemItemsItemMicrosoftGraphInviteRequestBuilder) {
-    return NewItemItemsItemMicrosoftGraphInviteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphPreview provides operations to call the preview method.
-func (m *ItemItemsDriveItemItemRequestBuilder) MicrosoftGraphPreview()(*ItemItemsItemMicrosoftGraphPreviewRequestBuilder) {
-    return NewItemItemsItemMicrosoftGraphPreviewRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphRestore provides operations to call the restore method.
-func (m *ItemItemsDriveItemItemRequestBuilder) MicrosoftGraphRestore()(*ItemItemsItemMicrosoftGraphRestoreRequestBuilder) {
-    return NewItemItemsItemMicrosoftGraphRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphSearchWithQ provides operations to call the search method.
-func (m *ItemItemsDriveItemItemRequestBuilder) MicrosoftGraphSearchWithQ(q *string)(*ItemItemsItemMicrosoftGraphSearchWithQRequestBuilder) {
-    return NewItemItemsItemMicrosoftGraphSearchWithQRequestBuilderInternal(m.pathParameters, m.requestAdapter, q)
-}
-// MicrosoftGraphUnfollow provides operations to call the unfollow method.
-func (m *ItemItemsDriveItemItemRequestBuilder) MicrosoftGraphUnfollow()(*ItemItemsItemMicrosoftGraphUnfollowRequestBuilder) {
-    return NewItemItemsItemMicrosoftGraphUnfollowRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphValidatePermission provides operations to call the validatePermission method.
-func (m *ItemItemsDriveItemItemRequestBuilder) MicrosoftGraphValidatePermission()(*ItemItemsItemMicrosoftGraphValidatePermissionRequestBuilder) {
-    return NewItemItemsItemMicrosoftGraphValidatePermissionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property items in drives
 func (m *ItemItemsDriveItemItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable, requestConfiguration *ItemItemsDriveItemItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable, error) {
@@ -224,6 +204,18 @@ func (m *ItemItemsDriveItemItemRequestBuilder) PermissionsById(id string)(*ItemI
         urlTplParams["permission%2Did"] = id
     }
     return NewItemItemsItemPermissionsPermissionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+}
+// Preview provides operations to call the preview method.
+func (m *ItemItemsDriveItemItemRequestBuilder) Preview()(*ItemItemsItemPreviewRequestBuilder) {
+    return NewItemItemsItemPreviewRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// Restore provides operations to call the restore method.
+func (m *ItemItemsDriveItemItemRequestBuilder) Restore()(*ItemItemsItemRestoreRequestBuilder) {
+    return NewItemItemsItemRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// SearchWithQ provides operations to call the search method.
+func (m *ItemItemsDriveItemItemRequestBuilder) SearchWithQ(q *string)(*ItemItemsItemSearchWithQRequestBuilder) {
+    return NewItemItemsItemSearchWithQRequestBuilderInternal(m.pathParameters, m.requestAdapter, q)
 }
 // Subscriptions provides operations to manage the subscriptions property of the microsoft.graph.driveItem entity.
 func (m *ItemItemsDriveItemItemRequestBuilder) Subscriptions()(*ItemItemsItemSubscriptionsRequestBuilder) {
@@ -299,6 +291,14 @@ func (m *ItemItemsDriveItemItemRequestBuilder) ToPatchRequestInformation(ctx con
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// Unfollow provides operations to call the unfollow method.
+func (m *ItemItemsDriveItemItemRequestBuilder) Unfollow()(*ItemItemsItemUnfollowRequestBuilder) {
+    return NewItemItemsItemUnfollowRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// ValidatePermission provides operations to call the validatePermission method.
+func (m *ItemItemsDriveItemItemRequestBuilder) ValidatePermission()(*ItemItemsItemValidatePermissionRequestBuilder) {
+    return NewItemItemsItemValidatePermissionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Versions provides operations to manage the versions property of the microsoft.graph.driveItem entity.
 func (m *ItemItemsDriveItemItemRequestBuilder) Versions()(*ItemItemsItemVersionsRequestBuilder) {

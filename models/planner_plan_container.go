@@ -2,25 +2,21 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // PlannerPlanContainer 
 type PlannerPlanContainer struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The identifier of the resource that contains the plan. Optional.
-    containerId *string
-    // The OdataType property
-    odataType *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
     // The type of the resource that contains the plan. For supported types, see the previous table. Possible values are: group, unknownFutureValue, roster. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster. Optional.
-    typeEscaped *PlannerContainerType
-    // The full canonical URL of the container. Optional.
-    url *string
+    TypeEscaped *PlannerContainerType
 }
 // NewPlannerPlanContainer instantiates a new plannerPlanContainer and sets the default values.
 func NewPlannerPlanContainer()(*PlannerPlanContainer) {
     m := &PlannerPlanContainer{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -30,11 +26,30 @@ func CreatePlannerPlanContainerFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PlannerPlanContainer) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *PlannerPlanContainer) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetContainerId gets the containerId property value. The identifier of the resource that contains the plan. Optional.
 func (m *PlannerPlanContainer) GetContainerId()(*string) {
-    return m.containerId
+    val, err := m.GetBackingStore().Get("containerId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PlannerPlanContainer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -83,15 +98,36 @@ func (m *PlannerPlanContainer) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *PlannerPlanContainer) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetType gets the type property value. The type of the resource that contains the plan. For supported types, see the previous table. Possible values are: group, unknownFutureValue, roster. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster. Optional.
 func (m *PlannerPlanContainer) GetType()(*PlannerContainerType) {
-    return m.typeEscaped
+    val, err := m.GetBackingStore().Get("typeEscaped")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*PlannerContainerType)
+    }
+    return nil
 }
 // GetUrl gets the url property value. The full canonical URL of the container. Optional.
 func (m *PlannerPlanContainer) GetUrl()(*string) {
-    return m.url
+    val, err := m.GetBackingStore().Get("url")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PlannerPlanContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -130,21 +166,56 @@ func (m *PlannerPlanContainer) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PlannerPlanContainer) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *PlannerPlanContainer) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetContainerId sets the containerId property value. The identifier of the resource that contains the plan. Optional.
 func (m *PlannerPlanContainer) SetContainerId(value *string)() {
-    m.containerId = value
+    err := m.GetBackingStore().Set("containerId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *PlannerPlanContainer) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetType sets the type property value. The type of the resource that contains the plan. For supported types, see the previous table. Possible values are: group, unknownFutureValue, roster. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster. Optional.
 func (m *PlannerPlanContainer) SetType(value *PlannerContainerType)() {
-    m.typeEscaped = value
+    err := m.GetBackingStore().Set("typeEscaped", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUrl sets the url property value. The full canonical URL of the container. Optional.
 func (m *PlannerPlanContainer) SetUrl(value *string)() {
-    m.url = value
+    err := m.GetBackingStore().Set("url", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PlannerPlanContainerable 
+type PlannerPlanContainerable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetContainerId()(*string)
+    GetOdataType()(*string)
+    GetType()(*PlannerContainerType)
+    GetUrl()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetContainerId(value *string)()
+    SetOdataType(value *string)()
+    SetType(value *PlannerContainerType)()
+    SetUrl(value *string)()
 }

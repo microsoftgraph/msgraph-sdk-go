@@ -96,13 +96,13 @@ func (m *ItemOnenoteNotebooksRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NotebookCollectionResponseable), nil
 }
-// MicrosoftGraphGetNotebookFromWebUrl provides operations to call the getNotebookFromWebUrl method.
-func (m *ItemOnenoteNotebooksRequestBuilder) MicrosoftGraphGetNotebookFromWebUrl()(*ItemOnenoteNotebooksMicrosoftGraphGetNotebookFromWebUrlRequestBuilder) {
-    return NewItemOnenoteNotebooksMicrosoftGraphGetNotebookFromWebUrlRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GetNotebookFromWebUrl provides operations to call the getNotebookFromWebUrl method.
+func (m *ItemOnenoteNotebooksRequestBuilder) GetNotebookFromWebUrl()(*ItemOnenoteNotebooksGetNotebookFromWebUrlRequestBuilder) {
+    return NewItemOnenoteNotebooksGetNotebookFromWebUrlRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphGetRecentNotebooksWithIncludePersonalNotebooks provides operations to call the getRecentNotebooks method.
-func (m *ItemOnenoteNotebooksRequestBuilder) MicrosoftGraphGetRecentNotebooksWithIncludePersonalNotebooks(includePersonalNotebooks *bool)(*ItemOnenoteNotebooksMicrosoftGraphGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder) {
-    return NewItemOnenoteNotebooksMicrosoftGraphGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderInternal(m.pathParameters, m.requestAdapter, includePersonalNotebooks)
+// GetRecentNotebooksWithIncludePersonalNotebooks provides operations to call the getRecentNotebooks method.
+func (m *ItemOnenoteNotebooksRequestBuilder) GetRecentNotebooksWithIncludePersonalNotebooks(includePersonalNotebooks *bool)(*ItemOnenoteNotebooksGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder) {
+    return NewItemOnenoteNotebooksGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderInternal(m.pathParameters, m.requestAdapter, includePersonalNotebooks)
 }
 // Post create a new OneNote notebook.
 // [Find more info here]

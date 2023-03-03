@@ -70,6 +70,10 @@ func NewItemContactFoldersRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *ItemContactFoldersRequestBuilder) Count()(*ItemContactFoldersCountRequestBuilder) {
     return NewItemContactFoldersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// Delta provides operations to call the delta method.
+func (m *ItemContactFoldersRequestBuilder) Delta()(*ItemContactFoldersDeltaRequestBuilder) {
+    return NewItemContactFoldersDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Get get the contact folder collection in the default Contacts folder of the signed-in user.
 // [Find more info here]
 // 
@@ -91,10 +95,6 @@ func (m *ItemContactFoldersRequestBuilder) Get(ctx context.Context, requestConfi
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContactFolderCollectionResponseable), nil
-}
-// MicrosoftGraphDelta provides operations to call the delta method.
-func (m *ItemContactFoldersRequestBuilder) MicrosoftGraphDelta()(*ItemContactFoldersMicrosoftGraphDeltaRequestBuilder) {
-    return NewItemContactFoldersMicrosoftGraphDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create a new contactFolder under the user's default contacts folder. You can also create a new contactfolder as a child of any specified contact folder.
 // [Find more info here]

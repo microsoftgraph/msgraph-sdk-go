@@ -44,6 +44,10 @@ type ItemCalendarsCalendarItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// AllowedCalendarSharingRolesWithUser provides operations to call the allowedCalendarSharingRoles method.
+func (m *ItemCalendarsCalendarItemRequestBuilder) AllowedCalendarSharingRolesWithUser(user *string)(*ItemCalendarsItemAllowedCalendarSharingRolesWithUserRequestBuilder) {
+    return NewItemCalendarsItemAllowedCalendarSharingRolesWithUserRequestBuilderInternal(m.pathParameters, m.requestAdapter, user)
+}
 // CalendarPermissions provides operations to manage the calendarPermissions property of the microsoft.graph.calendar entity.
 func (m *ItemCalendarsCalendarItemRequestBuilder) CalendarPermissions()(*ItemCalendarsItemCalendarPermissionsRequestBuilder) {
     return NewItemCalendarsItemCalendarPermissionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
@@ -143,13 +147,9 @@ func (m *ItemCalendarsCalendarItemRequestBuilder) Get(ctx context.Context, reque
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Calendarable), nil
 }
-// MicrosoftGraphAllowedCalendarSharingRolesWithUser provides operations to call the allowedCalendarSharingRoles method.
-func (m *ItemCalendarsCalendarItemRequestBuilder) MicrosoftGraphAllowedCalendarSharingRolesWithUser(user *string)(*ItemCalendarsItemMicrosoftGraphAllowedCalendarSharingRolesWithUserRequestBuilder) {
-    return NewItemCalendarsItemMicrosoftGraphAllowedCalendarSharingRolesWithUserRequestBuilderInternal(m.pathParameters, m.requestAdapter, user)
-}
-// MicrosoftGraphGetSchedule provides operations to call the getSchedule method.
-func (m *ItemCalendarsCalendarItemRequestBuilder) MicrosoftGraphGetSchedule()(*ItemCalendarsItemMicrosoftGraphGetScheduleRequestBuilder) {
-    return NewItemCalendarsItemMicrosoftGraphGetScheduleRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GetSchedule provides operations to call the getSchedule method.
+func (m *ItemCalendarsCalendarItemRequestBuilder) GetSchedule()(*ItemCalendarsItemGetScheduleRequestBuilder) {
+    return NewItemCalendarsItemGetScheduleRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.calendar entity.
 func (m *ItemCalendarsCalendarItemRequestBuilder) MultiValueExtendedProperties()(*ItemCalendarsItemMultiValueExtendedPropertiesRequestBuilder) {

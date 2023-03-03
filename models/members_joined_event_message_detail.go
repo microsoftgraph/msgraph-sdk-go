@@ -7,10 +7,6 @@ import (
 // MembersJoinedEventMessageDetail 
 type MembersJoinedEventMessageDetail struct {
     EventMessageDetail
-    // Initiator of the event.
-    initiator IdentitySetable
-    // List of members who joined the chat.
-    members []TeamworkUserIdentityable
 }
 // NewMembersJoinedEventMessageDetail instantiates a new MembersJoinedEventMessageDetail and sets the default values.
 func NewMembersJoinedEventMessageDetail()(*MembersJoinedEventMessageDetail) {
@@ -56,11 +52,25 @@ func (m *MembersJoinedEventMessageDetail) GetFieldDeserializers()(map[string]fun
 }
 // GetInitiator gets the initiator property value. Initiator of the event.
 func (m *MembersJoinedEventMessageDetail) GetInitiator()(IdentitySetable) {
-    return m.initiator
+    val, err := m.GetBackingStore().Get("initiator")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentitySetable)
+    }
+    return nil
 }
 // GetMembers gets the members property value. List of members who joined the chat.
 func (m *MembersJoinedEventMessageDetail) GetMembers()([]TeamworkUserIdentityable) {
-    return m.members
+    val, err := m.GetBackingStore().Get("members")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TeamworkUserIdentityable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MembersJoinedEventMessageDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,9 +98,24 @@ func (m *MembersJoinedEventMessageDetail) Serialize(writer i878a80d2330e89d26896
 }
 // SetInitiator sets the initiator property value. Initiator of the event.
 func (m *MembersJoinedEventMessageDetail) SetInitiator(value IdentitySetable)() {
-    m.initiator = value
+    err := m.GetBackingStore().Set("initiator", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMembers sets the members property value. List of members who joined the chat.
 func (m *MembersJoinedEventMessageDetail) SetMembers(value []TeamworkUserIdentityable)() {
-    m.members = value
+    err := m.GetBackingStore().Set("members", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MembersJoinedEventMessageDetailable 
+type MembersJoinedEventMessageDetailable interface {
+    EventMessageDetailable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetInitiator()(IdentitySetable)
+    GetMembers()([]TeamworkUserIdentityable)
+    SetInitiator(value IdentitySetable)()
+    SetMembers(value []TeamworkUserIdentityable)()
 }

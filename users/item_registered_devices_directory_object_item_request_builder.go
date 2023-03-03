@@ -70,17 +70,17 @@ func (m *ItemRegisteredDevicesDirectoryObjectItemRequestBuilder) Get(ctx context
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable), nil
 }
-// MicrosoftGraphAppRoleAssignment casts the previous resource to appRoleAssignment.
-func (m *ItemRegisteredDevicesDirectoryObjectItemRequestBuilder) MicrosoftGraphAppRoleAssignment()(*ItemRegisteredDevicesItemMicrosoftGraphAppRoleAssignmentRequestBuilder) {
-    return NewItemRegisteredDevicesItemMicrosoftGraphAppRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphAppRoleAssignment casts the previous resource to appRoleAssignment.
+func (m *ItemRegisteredDevicesDirectoryObjectItemRequestBuilder) GraphAppRoleAssignment()(*ItemRegisteredDevicesItemGraphAppRoleAssignmentRequestBuilder) {
+    return NewItemRegisteredDevicesItemGraphAppRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphDevice casts the previous resource to device.
-func (m *ItemRegisteredDevicesDirectoryObjectItemRequestBuilder) MicrosoftGraphDevice()(*ItemRegisteredDevicesItemMicrosoftGraphDeviceRequestBuilder) {
-    return NewItemRegisteredDevicesItemMicrosoftGraphDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphDevice casts the previous resource to device.
+func (m *ItemRegisteredDevicesDirectoryObjectItemRequestBuilder) GraphDevice()(*ItemRegisteredDevicesItemGraphDeviceRequestBuilder) {
+    return NewItemRegisteredDevicesItemGraphDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphEndpoint casts the previous resource to endpoint.
-func (m *ItemRegisteredDevicesDirectoryObjectItemRequestBuilder) MicrosoftGraphEndpoint()(*ItemRegisteredDevicesItemMicrosoftGraphEndpointRequestBuilder) {
-    return NewItemRegisteredDevicesItemMicrosoftGraphEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphEndpoint casts the previous resource to endpoint.
+func (m *ItemRegisteredDevicesDirectoryObjectItemRequestBuilder) GraphEndpoint()(*ItemRegisteredDevicesItemGraphEndpointRequestBuilder) {
+    return NewItemRegisteredDevicesItemGraphEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation devices that are registered for the user. Read-only. Nullable. Supports $expand.
 func (m *ItemRegisteredDevicesDirectoryObjectItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemRegisteredDevicesDirectoryObjectItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

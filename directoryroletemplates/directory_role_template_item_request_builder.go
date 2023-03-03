@@ -46,6 +46,14 @@ type DirectoryRoleTemplateItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// CheckMemberGroups provides operations to call the checkMemberGroups method.
+func (m *DirectoryRoleTemplateItemRequestBuilder) CheckMemberGroups()(*ItemCheckMemberGroupsRequestBuilder) {
+    return NewItemCheckMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// CheckMemberObjects provides operations to call the checkMemberObjects method.
+func (m *DirectoryRoleTemplateItemRequestBuilder) CheckMemberObjects()(*ItemCheckMemberObjectsRequestBuilder) {
+    return NewItemCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // NewDirectoryRoleTemplateItemRequestBuilderInternal instantiates a new DirectoryRoleTemplateItemRequestBuilder and sets the default values.
 func NewDirectoryRoleTemplateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryRoleTemplateItemRequestBuilder) {
     m := &DirectoryRoleTemplateItemRequestBuilder{
@@ -103,25 +111,13 @@ func (m *DirectoryRoleTemplateItemRequestBuilder) Get(ctx context.Context, reque
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryRoleTemplateable), nil
 }
-// MicrosoftGraphCheckMemberGroups provides operations to call the checkMemberGroups method.
-func (m *DirectoryRoleTemplateItemRequestBuilder) MicrosoftGraphCheckMemberGroups()(*ItemMicrosoftGraphCheckMemberGroupsRequestBuilder) {
-    return NewItemMicrosoftGraphCheckMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GetMemberGroups provides operations to call the getMemberGroups method.
+func (m *DirectoryRoleTemplateItemRequestBuilder) GetMemberGroups()(*ItemGetMemberGroupsRequestBuilder) {
+    return NewItemGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphCheckMemberObjects provides operations to call the checkMemberObjects method.
-func (m *DirectoryRoleTemplateItemRequestBuilder) MicrosoftGraphCheckMemberObjects()(*ItemMicrosoftGraphCheckMemberObjectsRequestBuilder) {
-    return NewItemMicrosoftGraphCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphGetMemberGroups provides operations to call the getMemberGroups method.
-func (m *DirectoryRoleTemplateItemRequestBuilder) MicrosoftGraphGetMemberGroups()(*ItemMicrosoftGraphGetMemberGroupsRequestBuilder) {
-    return NewItemMicrosoftGraphGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphGetMemberObjects provides operations to call the getMemberObjects method.
-func (m *DirectoryRoleTemplateItemRequestBuilder) MicrosoftGraphGetMemberObjects()(*ItemMicrosoftGraphGetMemberObjectsRequestBuilder) {
-    return NewItemMicrosoftGraphGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphRestore provides operations to call the restore method.
-func (m *DirectoryRoleTemplateItemRequestBuilder) MicrosoftGraphRestore()(*ItemMicrosoftGraphRestoreRequestBuilder) {
-    return NewItemMicrosoftGraphRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GetMemberObjects provides operations to call the getMemberObjects method.
+func (m *DirectoryRoleTemplateItemRequestBuilder) GetMemberObjects()(*ItemGetMemberObjectsRequestBuilder) {
+    return NewItemGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update entity in directoryRoleTemplates
 func (m *DirectoryRoleTemplateItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryRoleTemplateable, requestConfiguration *DirectoryRoleTemplateItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryRoleTemplateable, error) {
@@ -141,6 +137,10 @@ func (m *DirectoryRoleTemplateItemRequestBuilder) Patch(ctx context.Context, bod
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryRoleTemplateable), nil
+}
+// Restore provides operations to call the restore method.
+func (m *DirectoryRoleTemplateItemRequestBuilder) Restore()(*ItemRestoreRequestBuilder) {
+    return NewItemRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete entity from directoryRoleTemplates
 func (m *DirectoryRoleTemplateItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DirectoryRoleTemplateItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -8,14 +8,6 @@ import (
 // DirectoryObjectPartnerReference 
 type DirectoryObjectPartnerReference struct {
     DirectoryObject
-    // Description of the object returned. Read-only.
-    description *string
-    // Name of directory object being returned, like group or application. Read-only.
-    displayName *string
-    // The tenant identifier for the partner tenant. Read-only.
-    externalPartnerTenantId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
-    // The type of the referenced object in the partner tenant. Read-only.
-    objectType *string
 }
 // NewDirectoryObjectPartnerReference instantiates a new DirectoryObjectPartnerReference and sets the default values.
 func NewDirectoryObjectPartnerReference()(*DirectoryObjectPartnerReference) {
@@ -32,15 +24,36 @@ func CreateDirectoryObjectPartnerReferenceFromDiscriminatorValue(parseNode i878a
 }
 // GetDescription gets the description property value. Description of the object returned. Read-only.
 func (m *DirectoryObjectPartnerReference) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. Name of directory object being returned, like group or application. Read-only.
 func (m *DirectoryObjectPartnerReference) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetExternalPartnerTenantId gets the externalPartnerTenantId property value. The tenant identifier for the partner tenant. Read-only.
 func (m *DirectoryObjectPartnerReference) GetExternalPartnerTenantId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
-    return m.externalPartnerTenantId
+    val, err := m.GetBackingStore().Get("externalPartnerTenantId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DirectoryObjectPartnerReference) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,7 +102,14 @@ func (m *DirectoryObjectPartnerReference) GetFieldDeserializers()(map[string]fun
 }
 // GetObjectType gets the objectType property value. The type of the referenced object in the partner tenant. Read-only.
 func (m *DirectoryObjectPartnerReference) GetObjectType()(*string) {
-    return m.objectType
+    val, err := m.GetBackingStore().Get("objectType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DirectoryObjectPartnerReference) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,17 +145,42 @@ func (m *DirectoryObjectPartnerReference) Serialize(writer i878a80d2330e89d26896
 }
 // SetDescription sets the description property value. Description of the object returned. Read-only.
 func (m *DirectoryObjectPartnerReference) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. Name of directory object being returned, like group or application. Read-only.
 func (m *DirectoryObjectPartnerReference) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExternalPartnerTenantId sets the externalPartnerTenantId property value. The tenant identifier for the partner tenant. Read-only.
 func (m *DirectoryObjectPartnerReference) SetExternalPartnerTenantId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
-    m.externalPartnerTenantId = value
+    err := m.GetBackingStore().Set("externalPartnerTenantId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetObjectType sets the objectType property value. The type of the referenced object in the partner tenant. Read-only.
 func (m *DirectoryObjectPartnerReference) SetObjectType(value *string)() {
-    m.objectType = value
+    err := m.GetBackingStore().Set("objectType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DirectoryObjectPartnerReferenceable 
+type DirectoryObjectPartnerReferenceable interface {
+    DirectoryObjectable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetExternalPartnerTenantId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    GetObjectType()(*string)
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetExternalPartnerTenantId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
+    SetObjectType(value *string)()
 }

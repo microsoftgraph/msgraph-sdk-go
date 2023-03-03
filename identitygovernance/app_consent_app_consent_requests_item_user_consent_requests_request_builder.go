@@ -74,6 +74,10 @@ func NewAppConsentAppConsentRequestsItemUserConsentRequestsRequestBuilder(rawUrl
 func (m *AppConsentAppConsentRequestsItemUserConsentRequestsRequestBuilder) Count()(*AppConsentAppConsentRequestsItemUserConsentRequestsCountRequestBuilder) {
     return NewAppConsentAppConsentRequestsItemUserConsentRequestsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
+func (m *AppConsentAppConsentRequestsItemUserConsentRequestsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*AppConsentAppConsentRequestsItemUserConsentRequestsFilterByCurrentUserWithOnRequestBuilder) {
+    return NewAppConsentAppConsentRequestsItemUserConsentRequestsFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
+}
 // Get retrieve a collection of userConsentRequest objects and their properties.
 // [Find more info here]
 // 
@@ -95,10 +99,6 @@ func (m *AppConsentAppConsentRequestsItemUserConsentRequestsRequestBuilder) Get(
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserConsentRequestCollectionResponseable), nil
-}
-// MicrosoftGraphFilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
-func (m *AppConsentAppConsentRequestsItemUserConsentRequestsRequestBuilder) MicrosoftGraphFilterByCurrentUserWithOn(on *string)(*AppConsentAppConsentRequestsItemUserConsentRequestsMicrosoftGraphFilterByCurrentUserWithOnRequestBuilder) {
-    return NewAppConsentAppConsentRequestsItemUserConsentRequestsMicrosoftGraphFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
 }
 // Post create new navigation property to userConsentRequests for identityGovernance
 func (m *AppConsentAppConsentRequestsItemUserConsentRequestsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserConsentRequestable, requestConfiguration *AppConsentAppConsentRequestsItemUserConsentRequestsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserConsentRequestable, error) {

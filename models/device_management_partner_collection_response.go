@@ -7,8 +7,6 @@ import (
 // DeviceManagementPartnerCollectionResponse 
 type DeviceManagementPartnerCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceManagementPartnerable
 }
 // NewDeviceManagementPartnerCollectionResponse instantiates a new DeviceManagementPartnerCollectionResponse and sets the default values.
 func NewDeviceManagementPartnerCollectionResponse()(*DeviceManagementPartnerCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceManagementPartnerCollectionResponse) GetFieldDeserializers()(map[
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceManagementPartnerCollectionResponse) GetValue()([]DeviceManagementPartnerable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceManagementPartnerable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementPartnerCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceManagementPartnerCollectionResponse) Serialize(writer i878a80d233
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceManagementPartnerCollectionResponse) SetValue(value []DeviceManagementPartnerable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceManagementPartnerCollectionResponseable 
+type DeviceManagementPartnerCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceManagementPartnerable)
+    SetValue(value []DeviceManagementPartnerable)()
 }

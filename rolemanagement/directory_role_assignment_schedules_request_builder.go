@@ -74,6 +74,10 @@ func NewDirectoryRoleAssignmentSchedulesRequestBuilder(rawUrl string, requestAda
 func (m *DirectoryRoleAssignmentSchedulesRequestBuilder) Count()(*DirectoryRoleAssignmentSchedulesCountRequestBuilder) {
     return NewDirectoryRoleAssignmentSchedulesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
+func (m *DirectoryRoleAssignmentSchedulesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*DirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOnRequestBuilder) {
+    return NewDirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
+}
 // Get get the schedules for active role assignment operations.
 // [Find more info here]
 // 
@@ -95,10 +99,6 @@ func (m *DirectoryRoleAssignmentSchedulesRequestBuilder) Get(ctx context.Context
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleAssignmentScheduleCollectionResponseable), nil
-}
-// MicrosoftGraphFilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
-func (m *DirectoryRoleAssignmentSchedulesRequestBuilder) MicrosoftGraphFilterByCurrentUserWithOn(on *string)(*DirectoryRoleAssignmentSchedulesMicrosoftGraphFilterByCurrentUserWithOnRequestBuilder) {
-    return NewDirectoryRoleAssignmentSchedulesMicrosoftGraphFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
 }
 // Post create new navigation property to roleAssignmentSchedules for roleManagement
 func (m *DirectoryRoleAssignmentSchedulesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleAssignmentScheduleable, requestConfiguration *DirectoryRoleAssignmentSchedulesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleAssignmentScheduleable, error) {

@@ -8,10 +8,6 @@ import (
 // UnifiedGroupSource 
 type UnifiedGroupSource struct {
     DataSource
-    // The group property
-    group iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Groupable
-    // Specifies which sources are included in this group. Possible values are: mailbox, site.
-    includedSources *SourceType
 }
 // NewUnifiedGroupSource instantiates a new UnifiedGroupSource and sets the default values.
 func NewUnifiedGroupSource()(*UnifiedGroupSource) {
@@ -53,11 +49,25 @@ func (m *UnifiedGroupSource) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetGroup gets the group property value. The group property
 func (m *UnifiedGroupSource) GetGroup()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Groupable) {
-    return m.group
+    val, err := m.GetBackingStore().Get("group")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Groupable)
+    }
+    return nil
 }
 // GetIncludedSources gets the includedSources property value. Specifies which sources are included in this group. Possible values are: mailbox, site.
 func (m *UnifiedGroupSource) GetIncludedSources()(*SourceType) {
-    return m.includedSources
+    val, err := m.GetBackingStore().Get("includedSources")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*SourceType)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UnifiedGroupSource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -82,9 +92,24 @@ func (m *UnifiedGroupSource) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetGroup sets the group property value. The group property
 func (m *UnifiedGroupSource) SetGroup(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Groupable)() {
-    m.group = value
+    err := m.GetBackingStore().Set("group", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIncludedSources sets the includedSources property value. Specifies which sources are included in this group. Possible values are: mailbox, site.
 func (m *UnifiedGroupSource) SetIncludedSources(value *SourceType)() {
-    m.includedSources = value
+    err := m.GetBackingStore().Set("includedSources", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UnifiedGroupSourceable 
+type UnifiedGroupSourceable interface {
+    DataSourceable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetGroup()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Groupable)
+    GetIncludedSources()(*SourceType)
+    SetGroup(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Groupable)()
+    SetIncludedSources(value *SourceType)()
 }

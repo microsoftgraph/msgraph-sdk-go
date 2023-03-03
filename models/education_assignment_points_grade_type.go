@@ -7,8 +7,6 @@ import (
 // EducationAssignmentPointsGradeType 
 type EducationAssignmentPointsGradeType struct {
     EducationAssignmentGradeType
-    // Max points possible for this assignment.
-    maxPoints *float32
 }
 // NewEducationAssignmentPointsGradeType instantiates a new EducationAssignmentPointsGradeType and sets the default values.
 func NewEducationAssignmentPointsGradeType()(*EducationAssignmentPointsGradeType) {
@@ -40,7 +38,14 @@ func (m *EducationAssignmentPointsGradeType) GetFieldDeserializers()(map[string]
 }
 // GetMaxPoints gets the maxPoints property value. Max points possible for this assignment.
 func (m *EducationAssignmentPointsGradeType) GetMaxPoints()(*float32) {
-    return m.maxPoints
+    val, err := m.GetBackingStore().Get("maxPoints")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EducationAssignmentPointsGradeType) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *EducationAssignmentPointsGradeType) Serialize(writer i878a80d2330e89d26
 }
 // SetMaxPoints sets the maxPoints property value. Max points possible for this assignment.
 func (m *EducationAssignmentPointsGradeType) SetMaxPoints(value *float32)() {
-    m.maxPoints = value
+    err := m.GetBackingStore().Set("maxPoints", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EducationAssignmentPointsGradeTypeable 
+type EducationAssignmentPointsGradeTypeable interface {
+    EducationAssignmentGradeTypeable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetMaxPoints()(*float32)
+    SetMaxPoints(value *float32)()
 }

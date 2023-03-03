@@ -7,8 +7,6 @@ import (
 // WindowsUpdateForBusinessConfigurationCollectionResponse 
 type WindowsUpdateForBusinessConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []WindowsUpdateForBusinessConfigurationable
 }
 // NewWindowsUpdateForBusinessConfigurationCollectionResponse instantiates a new WindowsUpdateForBusinessConfigurationCollectionResponse and sets the default values.
 func NewWindowsUpdateForBusinessConfigurationCollectionResponse()(*WindowsUpdateForBusinessConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *WindowsUpdateForBusinessConfigurationCollectionResponse) GetFieldDeseri
 }
 // GetValue gets the value property value. The value property
 func (m *WindowsUpdateForBusinessConfigurationCollectionResponse) GetValue()([]WindowsUpdateForBusinessConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsUpdateForBusinessConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsUpdateForBusinessConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *WindowsUpdateForBusinessConfigurationCollectionResponse) Serialize(writ
 }
 // SetValue sets the value property value. The value property
 func (m *WindowsUpdateForBusinessConfigurationCollectionResponse) SetValue(value []WindowsUpdateForBusinessConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsUpdateForBusinessConfigurationCollectionResponseable 
+type WindowsUpdateForBusinessConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]WindowsUpdateForBusinessConfigurationable)
+    SetValue(value []WindowsUpdateForBusinessConfigurationable)()
 }

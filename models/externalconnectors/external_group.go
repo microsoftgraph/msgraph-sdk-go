@@ -8,12 +8,6 @@ import (
 // ExternalGroup 
 type ExternalGroup struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
-    // The description of the external group. Optional.
-    description *string
-    // The friendly name of the external group. Optional.
-    displayName *string
-    // A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
-    members []Identityable
 }
 // NewExternalGroup instantiates a new externalGroup and sets the default values.
 func NewExternalGroup()(*ExternalGroup) {
@@ -28,11 +22,25 @@ func CreateExternalGroupFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetDescription gets the description property value. The description of the external group. Optional.
 func (m *ExternalGroup) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The friendly name of the external group. Optional.
 func (m *ExternalGroup) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ExternalGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -75,7 +83,14 @@ func (m *ExternalGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetMembers gets the members property value. A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
 func (m *ExternalGroup) GetMembers()([]Identityable) {
-    return m.members
+    val, err := m.GetBackingStore().Get("members")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Identityable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ExternalGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -109,13 +124,33 @@ func (m *ExternalGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetDescription sets the description property value. The description of the external group. Optional.
 func (m *ExternalGroup) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The friendly name of the external group. Optional.
 func (m *ExternalGroup) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMembers sets the members property value. A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
 func (m *ExternalGroup) SetMembers(value []Identityable)() {
-    m.members = value
+    err := m.GetBackingStore().Set("members", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ExternalGroupable 
+type ExternalGroupable interface {
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetMembers()([]Identityable)
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetMembers(value []Identityable)()
 }

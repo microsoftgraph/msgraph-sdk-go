@@ -8,28 +8,6 @@ import (
 // ServiceUpdateMessage 
 type ServiceUpdateMessage struct {
     ServiceAnnouncementBase
-    // The expected deadline of the action for the message.
-    actionRequiredByDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // A collection of serviceAnnouncementAttachments.
-    attachments []ServiceAnnouncementAttachmentable
-    // The zip file that contains all attachments for a message.
-    attachmentsArchive []byte
-    // The body property
-    body ItemBodyable
-    // The category property
-    category *ServiceUpdateCategory
-    // Indicates whether the message has any attachment.
-    hasAttachments *bool
-    // Indicates whether the message describes a major update for the service.
-    isMajorChange *bool
-    // The affected services by the service message.
-    services []string
-    // The severity property
-    severity *ServiceUpdateSeverity
-    // A collection of tags for the service message. Tags are provided by the service team/support team who post the message to tell whether this message contains privacy data, or whether this message is for a service new feature update, and so on.
-    tags []string
-    // Represents user viewpoints data of the service message. This data includes message status such as whether the user has archived, read, or marked the message as favorite. This property is null when accessed with application permissions.
-    viewPoint ServiceUpdateMessageViewpointable
 }
 // NewServiceUpdateMessage instantiates a new ServiceUpdateMessage and sets the default values.
 func NewServiceUpdateMessage()(*ServiceUpdateMessage) {
@@ -46,23 +24,58 @@ func CreateServiceUpdateMessageFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetActionRequiredByDateTime gets the actionRequiredByDateTime property value. The expected deadline of the action for the message.
 func (m *ServiceUpdateMessage) GetActionRequiredByDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.actionRequiredByDateTime
+    val, err := m.GetBackingStore().Get("actionRequiredByDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetAttachments gets the attachments property value. A collection of serviceAnnouncementAttachments.
 func (m *ServiceUpdateMessage) GetAttachments()([]ServiceAnnouncementAttachmentable) {
-    return m.attachments
+    val, err := m.GetBackingStore().Get("attachments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ServiceAnnouncementAttachmentable)
+    }
+    return nil
 }
 // GetAttachmentsArchive gets the attachmentsArchive property value. The zip file that contains all attachments for a message.
 func (m *ServiceUpdateMessage) GetAttachmentsArchive()([]byte) {
-    return m.attachmentsArchive
+    val, err := m.GetBackingStore().Get("attachmentsArchive")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]byte)
+    }
+    return nil
 }
 // GetBody gets the body property value. The body property
 func (m *ServiceUpdateMessage) GetBody()(ItemBodyable) {
-    return m.body
+    val, err := m.GetBackingStore().Get("body")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ItemBodyable)
+    }
+    return nil
 }
 // GetCategory gets the category property value. The category property
 func (m *ServiceUpdateMessage) GetCategory()(*ServiceUpdateCategory) {
-    return m.category
+    val, err := m.GetBackingStore().Get("category")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ServiceUpdateCategory)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ServiceUpdateMessage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -193,27 +206,69 @@ func (m *ServiceUpdateMessage) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetHasAttachments gets the hasAttachments property value. Indicates whether the message has any attachment.
 func (m *ServiceUpdateMessage) GetHasAttachments()(*bool) {
-    return m.hasAttachments
+    val, err := m.GetBackingStore().Get("hasAttachments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsMajorChange gets the isMajorChange property value. Indicates whether the message describes a major update for the service.
 func (m *ServiceUpdateMessage) GetIsMajorChange()(*bool) {
-    return m.isMajorChange
+    val, err := m.GetBackingStore().Get("isMajorChange")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetServices gets the services property value. The affected services by the service message.
 func (m *ServiceUpdateMessage) GetServices()([]string) {
-    return m.services
+    val, err := m.GetBackingStore().Get("services")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetSeverity gets the severity property value. The severity property
 func (m *ServiceUpdateMessage) GetSeverity()(*ServiceUpdateSeverity) {
-    return m.severity
+    val, err := m.GetBackingStore().Get("severity")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ServiceUpdateSeverity)
+    }
+    return nil
 }
 // GetTags gets the tags property value. A collection of tags for the service message. Tags are provided by the service team/support team who post the message to tell whether this message contains privacy data, or whether this message is for a service new feature update, and so on.
 func (m *ServiceUpdateMessage) GetTags()([]string) {
-    return m.tags
+    val, err := m.GetBackingStore().Get("tags")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetViewPoint gets the viewPoint property value. Represents user viewpoints data of the service message. This data includes message status such as whether the user has archived, read, or marked the message as favorite. This property is null when accessed with application permissions.
 func (m *ServiceUpdateMessage) GetViewPoint()(ServiceUpdateMessageViewpointable) {
-    return m.viewPoint
+    val, err := m.GetBackingStore().Get("viewPoint")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ServiceUpdateMessageViewpointable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ServiceUpdateMessage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -297,45 +352,105 @@ func (m *ServiceUpdateMessage) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetActionRequiredByDateTime sets the actionRequiredByDateTime property value. The expected deadline of the action for the message.
 func (m *ServiceUpdateMessage) SetActionRequiredByDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.actionRequiredByDateTime = value
+    err := m.GetBackingStore().Set("actionRequiredByDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAttachments sets the attachments property value. A collection of serviceAnnouncementAttachments.
 func (m *ServiceUpdateMessage) SetAttachments(value []ServiceAnnouncementAttachmentable)() {
-    m.attachments = value
+    err := m.GetBackingStore().Set("attachments", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAttachmentsArchive sets the attachmentsArchive property value. The zip file that contains all attachments for a message.
 func (m *ServiceUpdateMessage) SetAttachmentsArchive(value []byte)() {
-    m.attachmentsArchive = value
+    err := m.GetBackingStore().Set("attachmentsArchive", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBody sets the body property value. The body property
 func (m *ServiceUpdateMessage) SetBody(value ItemBodyable)() {
-    m.body = value
+    err := m.GetBackingStore().Set("body", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCategory sets the category property value. The category property
 func (m *ServiceUpdateMessage) SetCategory(value *ServiceUpdateCategory)() {
-    m.category = value
+    err := m.GetBackingStore().Set("category", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHasAttachments sets the hasAttachments property value. Indicates whether the message has any attachment.
 func (m *ServiceUpdateMessage) SetHasAttachments(value *bool)() {
-    m.hasAttachments = value
+    err := m.GetBackingStore().Set("hasAttachments", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsMajorChange sets the isMajorChange property value. Indicates whether the message describes a major update for the service.
 func (m *ServiceUpdateMessage) SetIsMajorChange(value *bool)() {
-    m.isMajorChange = value
+    err := m.GetBackingStore().Set("isMajorChange", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetServices sets the services property value. The affected services by the service message.
 func (m *ServiceUpdateMessage) SetServices(value []string)() {
-    m.services = value
+    err := m.GetBackingStore().Set("services", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSeverity sets the severity property value. The severity property
 func (m *ServiceUpdateMessage) SetSeverity(value *ServiceUpdateSeverity)() {
-    m.severity = value
+    err := m.GetBackingStore().Set("severity", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTags sets the tags property value. A collection of tags for the service message. Tags are provided by the service team/support team who post the message to tell whether this message contains privacy data, or whether this message is for a service new feature update, and so on.
 func (m *ServiceUpdateMessage) SetTags(value []string)() {
-    m.tags = value
+    err := m.GetBackingStore().Set("tags", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetViewPoint sets the viewPoint property value. Represents user viewpoints data of the service message. This data includes message status such as whether the user has archived, read, or marked the message as favorite. This property is null when accessed with application permissions.
 func (m *ServiceUpdateMessage) SetViewPoint(value ServiceUpdateMessageViewpointable)() {
-    m.viewPoint = value
+    err := m.GetBackingStore().Set("viewPoint", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ServiceUpdateMessageable 
+type ServiceUpdateMessageable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    ServiceAnnouncementBaseable
+    GetActionRequiredByDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetAttachments()([]ServiceAnnouncementAttachmentable)
+    GetAttachmentsArchive()([]byte)
+    GetBody()(ItemBodyable)
+    GetCategory()(*ServiceUpdateCategory)
+    GetHasAttachments()(*bool)
+    GetIsMajorChange()(*bool)
+    GetServices()([]string)
+    GetSeverity()(*ServiceUpdateSeverity)
+    GetTags()([]string)
+    GetViewPoint()(ServiceUpdateMessageViewpointable)
+    SetActionRequiredByDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetAttachments(value []ServiceAnnouncementAttachmentable)()
+    SetAttachmentsArchive(value []byte)()
+    SetBody(value ItemBodyable)()
+    SetCategory(value *ServiceUpdateCategory)()
+    SetHasAttachments(value *bool)()
+    SetIsMajorChange(value *bool)()
+    SetServices(value []string)()
+    SetSeverity(value *ServiceUpdateSeverity)()
+    SetTags(value []string)()
+    SetViewPoint(value ServiceUpdateMessageViewpointable)()
 }

@@ -7,8 +7,6 @@ import (
 // OmaSettingString 
 type OmaSettingString struct {
     OmaSetting
-    // Value.
-    value *string
 }
 // NewOmaSettingString instantiates a new OmaSettingString and sets the default values.
 func NewOmaSettingString()(*OmaSettingString) {
@@ -40,7 +38,14 @@ func (m *OmaSettingString) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetValue gets the value property value. Value.
 func (m *OmaSettingString) GetValue()(*string) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OmaSettingString) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *OmaSettingString) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetValue sets the value property value. Value.
 func (m *OmaSettingString) SetValue(value *string)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OmaSettingStringable 
+type OmaSettingStringable interface {
+    OmaSettingable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()(*string)
+    SetValue(value *string)()
 }

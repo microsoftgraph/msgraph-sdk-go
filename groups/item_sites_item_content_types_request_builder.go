@@ -51,6 +51,14 @@ type ItemSitesItemContentTypesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// AddCopy provides operations to call the addCopy method.
+func (m *ItemSitesItemContentTypesRequestBuilder) AddCopy()(*ItemSitesItemContentTypesAddCopyRequestBuilder) {
+    return NewItemSitesItemContentTypesAddCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// AddCopyFromContentTypeHub provides operations to call the addCopyFromContentTypeHub method.
+func (m *ItemSitesItemContentTypesRequestBuilder) AddCopyFromContentTypeHub()(*ItemSitesItemContentTypesAddCopyFromContentTypeHubRequestBuilder) {
+    return NewItemSitesItemContentTypesAddCopyFromContentTypeHubRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // NewItemSitesItemContentTypesRequestBuilderInternal instantiates a new ContentTypesRequestBuilder and sets the default values.
 func NewItemSitesItemContentTypesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemContentTypesRequestBuilder) {
     m := &ItemSitesItemContentTypesRequestBuilder{
@@ -96,17 +104,9 @@ func (m *ItemSitesItemContentTypesRequestBuilder) Get(ctx context.Context, reque
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeCollectionResponseable), nil
 }
-// MicrosoftGraphAddCopy provides operations to call the addCopy method.
-func (m *ItemSitesItemContentTypesRequestBuilder) MicrosoftGraphAddCopy()(*ItemSitesItemContentTypesMicrosoftGraphAddCopyRequestBuilder) {
-    return NewItemSitesItemContentTypesMicrosoftGraphAddCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphAddCopyFromContentTypeHub provides operations to call the addCopyFromContentTypeHub method.
-func (m *ItemSitesItemContentTypesRequestBuilder) MicrosoftGraphAddCopyFromContentTypeHub()(*ItemSitesItemContentTypesMicrosoftGraphAddCopyFromContentTypeHubRequestBuilder) {
-    return NewItemSitesItemContentTypesMicrosoftGraphAddCopyFromContentTypeHubRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphGetCompatibleHubContentTypes provides operations to call the getCompatibleHubContentTypes method.
-func (m *ItemSitesItemContentTypesRequestBuilder) MicrosoftGraphGetCompatibleHubContentTypes()(*ItemSitesItemContentTypesMicrosoftGraphGetCompatibleHubContentTypesRequestBuilder) {
-    return NewItemSitesItemContentTypesMicrosoftGraphGetCompatibleHubContentTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GetCompatibleHubContentTypes provides operations to call the getCompatibleHubContentTypes method.
+func (m *ItemSitesItemContentTypesRequestBuilder) GetCompatibleHubContentTypes()(*ItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilder) {
+    return NewItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create a new [contentType][] in a [site][].
 // [Find more info here]

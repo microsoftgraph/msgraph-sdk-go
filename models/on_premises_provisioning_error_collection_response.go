@@ -7,8 +7,6 @@ import (
 // OnPremisesProvisioningErrorCollectionResponse 
 type OnPremisesProvisioningErrorCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []OnPremisesProvisioningErrorable
 }
 // NewOnPremisesProvisioningErrorCollectionResponse instantiates a new OnPremisesProvisioningErrorCollectionResponse and sets the default values.
 func NewOnPremisesProvisioningErrorCollectionResponse()(*OnPremisesProvisioningErrorCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *OnPremisesProvisioningErrorCollectionResponse) GetFieldDeserializers()(
 }
 // GetValue gets the value property value. The value property
 func (m *OnPremisesProvisioningErrorCollectionResponse) GetValue()([]OnPremisesProvisioningErrorable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OnPremisesProvisioningErrorable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OnPremisesProvisioningErrorCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *OnPremisesProvisioningErrorCollectionResponse) Serialize(writer i878a80
 }
 // SetValue sets the value property value. The value property
 func (m *OnPremisesProvisioningErrorCollectionResponse) SetValue(value []OnPremisesProvisioningErrorable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OnPremisesProvisioningErrorCollectionResponseable 
+type OnPremisesProvisioningErrorCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]OnPremisesProvisioningErrorable)
+    SetValue(value []OnPremisesProvisioningErrorable)()
 }

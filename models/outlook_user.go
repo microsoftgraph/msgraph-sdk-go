@@ -7,8 +7,6 @@ import (
 // OutlookUser 
 type OutlookUser struct {
     Entity
-    // A list of categories defined for the user.
-    masterCategories []OutlookCategoryable
 }
 // NewOutlookUser instantiates a new outlookUser and sets the default values.
 func NewOutlookUser()(*OutlookUser) {
@@ -42,7 +40,14 @@ func (m *OutlookUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetMasterCategories gets the masterCategories property value. A list of categories defined for the user.
 func (m *OutlookUser) GetMasterCategories()([]OutlookCategoryable) {
-    return m.masterCategories
+    val, err := m.GetBackingStore().Get("masterCategories")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OutlookCategoryable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OutlookUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *OutlookUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetMasterCategories sets the masterCategories property value. A list of categories defined for the user.
 func (m *OutlookUser) SetMasterCategories(value []OutlookCategoryable)() {
-    m.masterCategories = value
+    err := m.GetBackingStore().Set("masterCategories", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OutlookUserable 
+type OutlookUserable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetMasterCategories()([]OutlookCategoryable)
+    SetMasterCategories(value []OutlookCategoryable)()
 }

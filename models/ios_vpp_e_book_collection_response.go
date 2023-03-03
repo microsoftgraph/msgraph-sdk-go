@@ -7,8 +7,6 @@ import (
 // IosVppEBookCollectionResponse 
 type IosVppEBookCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []IosVppEBookable
 }
 // NewIosVppEBookCollectionResponse instantiates a new IosVppEBookCollectionResponse and sets the default values.
 func NewIosVppEBookCollectionResponse()(*IosVppEBookCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *IosVppEBookCollectionResponse) GetFieldDeserializers()(map[string]func(
 }
 // GetValue gets the value property value. The value property
 func (m *IosVppEBookCollectionResponse) GetValue()([]IosVppEBookable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IosVppEBookable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IosVppEBookCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *IosVppEBookCollectionResponse) Serialize(writer i878a80d2330e89d2689638
 }
 // SetValue sets the value property value. The value property
 func (m *IosVppEBookCollectionResponse) SetValue(value []IosVppEBookable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IosVppEBookCollectionResponseable 
+type IosVppEBookCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]IosVppEBookable)
+    SetValue(value []IosVppEBookable)()
 }

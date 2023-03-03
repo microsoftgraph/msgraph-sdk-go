@@ -100,10 +100,6 @@ func (m *ItemSitesItemListsItemSubscriptionsSubscriptionItemRequestBuilder) Get(
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Subscriptionable), nil
 }
-// MicrosoftGraphReauthorize provides operations to call the reauthorize method.
-func (m *ItemSitesItemListsItemSubscriptionsSubscriptionItemRequestBuilder) MicrosoftGraphReauthorize()(*ItemSitesItemListsItemSubscriptionsItemMicrosoftGraphReauthorizeRequestBuilder) {
-    return NewItemSitesItemListsItemSubscriptionsItemMicrosoftGraphReauthorizeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Patch update the navigation property subscriptions in groups
 func (m *ItemSitesItemListsItemSubscriptionsSubscriptionItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Subscriptionable, requestConfiguration *ItemSitesItemListsItemSubscriptionsSubscriptionItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Subscriptionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -122,6 +118,10 @@ func (m *ItemSitesItemListsItemSubscriptionsSubscriptionItemRequestBuilder) Patc
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Subscriptionable), nil
+}
+// Reauthorize provides operations to call the reauthorize method.
+func (m *ItemSitesItemListsItemSubscriptionsSubscriptionItemRequestBuilder) Reauthorize()(*ItemSitesItemListsItemSubscriptionsItemReauthorizeRequestBuilder) {
+    return NewItemSitesItemListsItemSubscriptionsItemReauthorizeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property subscriptions for groups
 func (m *ItemSitesItemListsItemSubscriptionsSubscriptionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemListsItemSubscriptionsSubscriptionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

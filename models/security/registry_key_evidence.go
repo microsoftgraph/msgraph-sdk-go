@@ -7,10 +7,6 @@ import (
 // RegistryKeyEvidence 
 type RegistryKeyEvidence struct {
     AlertEvidence
-    // Registry hive of the key that the recorded action was applied to.
-    registryHive *string
-    // Registry key that the recorded action was applied to.
-    registryKey *string
 }
 // NewRegistryKeyEvidence instantiates a new RegistryKeyEvidence and sets the default values.
 func NewRegistryKeyEvidence()(*RegistryKeyEvidence) {
@@ -50,11 +46,25 @@ func (m *RegistryKeyEvidence) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetRegistryHive gets the registryHive property value. Registry hive of the key that the recorded action was applied to.
 func (m *RegistryKeyEvidence) GetRegistryHive()(*string) {
-    return m.registryHive
+    val, err := m.GetBackingStore().Get("registryHive")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRegistryKey gets the registryKey property value. Registry key that the recorded action was applied to.
 func (m *RegistryKeyEvidence) GetRegistryKey()(*string) {
-    return m.registryKey
+    val, err := m.GetBackingStore().Get("registryKey")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *RegistryKeyEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -78,9 +88,24 @@ func (m *RegistryKeyEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetRegistryHive sets the registryHive property value. Registry hive of the key that the recorded action was applied to.
 func (m *RegistryKeyEvidence) SetRegistryHive(value *string)() {
-    m.registryHive = value
+    err := m.GetBackingStore().Set("registryHive", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRegistryKey sets the registryKey property value. Registry key that the recorded action was applied to.
 func (m *RegistryKeyEvidence) SetRegistryKey(value *string)() {
-    m.registryKey = value
+    err := m.GetBackingStore().Set("registryKey", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// RegistryKeyEvidenceable 
+type RegistryKeyEvidenceable interface {
+    AlertEvidenceable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetRegistryHive()(*string)
+    GetRegistryKey()(*string)
+    SetRegistryHive(value *string)()
+    SetRegistryKey(value *string)()
 }

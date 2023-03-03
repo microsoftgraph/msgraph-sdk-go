@@ -7,8 +7,6 @@ import (
 // PrintDocumentCollectionResponse 
 type PrintDocumentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []PrintDocumentable
 }
 // NewPrintDocumentCollectionResponse instantiates a new PrintDocumentCollectionResponse and sets the default values.
 func NewPrintDocumentCollectionResponse()(*PrintDocumentCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *PrintDocumentCollectionResponse) GetFieldDeserializers()(map[string]fun
 }
 // GetValue gets the value property value. The value property
 func (m *PrintDocumentCollectionResponse) GetValue()([]PrintDocumentable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrintDocumentable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PrintDocumentCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *PrintDocumentCollectionResponse) Serialize(writer i878a80d2330e89d26896
 }
 // SetValue sets the value property value. The value property
 func (m *PrintDocumentCollectionResponse) SetValue(value []PrintDocumentable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PrintDocumentCollectionResponseable 
+type PrintDocumentCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]PrintDocumentable)
+    SetValue(value []PrintDocumentable)()
 }

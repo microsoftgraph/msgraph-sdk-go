@@ -7,16 +7,6 @@ import (
 // AccessPackageQuestion 
 type AccessPackageQuestion struct {
     Entity
-    // Specifies whether the requestor is allowed to edit answers to questions for an assignment by posting an update to accessPackageAssignmentRequest.
-    isAnswerEditable *bool
-    // Whether the requestor is required to supply an answer or not.
-    isRequired *bool
-    // The text of the question represented in a format for a specific locale.
-    localizations []AccessPackageLocalizedTextable
-    // Relative position of this question when displaying a list of questions to the requestor.
-    sequence *int32
-    // The text of the question to show to the requestor.
-    text *string
 }
 // NewAccessPackageQuestion instantiates a new accessPackageQuestion and sets the default values.
 func NewAccessPackageQuestion()(*AccessPackageQuestion) {
@@ -110,23 +100,58 @@ func (m *AccessPackageQuestion) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetIsAnswerEditable gets the isAnswerEditable property value. Specifies whether the requestor is allowed to edit answers to questions for an assignment by posting an update to accessPackageAssignmentRequest.
 func (m *AccessPackageQuestion) GetIsAnswerEditable()(*bool) {
-    return m.isAnswerEditable
+    val, err := m.GetBackingStore().Get("isAnswerEditable")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsRequired gets the isRequired property value. Whether the requestor is required to supply an answer or not.
 func (m *AccessPackageQuestion) GetIsRequired()(*bool) {
-    return m.isRequired
+    val, err := m.GetBackingStore().Get("isRequired")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLocalizations gets the localizations property value. The text of the question represented in a format for a specific locale.
 func (m *AccessPackageQuestion) GetLocalizations()([]AccessPackageLocalizedTextable) {
-    return m.localizations
+    val, err := m.GetBackingStore().Get("localizations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AccessPackageLocalizedTextable)
+    }
+    return nil
 }
 // GetSequence gets the sequence property value. Relative position of this question when displaying a list of questions to the requestor.
 func (m *AccessPackageQuestion) GetSequence()(*int32) {
-    return m.sequence
+    val, err := m.GetBackingStore().Get("sequence")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetText gets the text property value. The text of the question to show to the requestor.
 func (m *AccessPackageQuestion) GetText()(*string) {
-    return m.text
+    val, err := m.GetBackingStore().Get("text")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AccessPackageQuestion) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -172,21 +197,51 @@ func (m *AccessPackageQuestion) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetIsAnswerEditable sets the isAnswerEditable property value. Specifies whether the requestor is allowed to edit answers to questions for an assignment by posting an update to accessPackageAssignmentRequest.
 func (m *AccessPackageQuestion) SetIsAnswerEditable(value *bool)() {
-    m.isAnswerEditable = value
+    err := m.GetBackingStore().Set("isAnswerEditable", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsRequired sets the isRequired property value. Whether the requestor is required to supply an answer or not.
 func (m *AccessPackageQuestion) SetIsRequired(value *bool)() {
-    m.isRequired = value
+    err := m.GetBackingStore().Set("isRequired", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocalizations sets the localizations property value. The text of the question represented in a format for a specific locale.
 func (m *AccessPackageQuestion) SetLocalizations(value []AccessPackageLocalizedTextable)() {
-    m.localizations = value
+    err := m.GetBackingStore().Set("localizations", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSequence sets the sequence property value. Relative position of this question when displaying a list of questions to the requestor.
 func (m *AccessPackageQuestion) SetSequence(value *int32)() {
-    m.sequence = value
+    err := m.GetBackingStore().Set("sequence", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetText sets the text property value. The text of the question to show to the requestor.
 func (m *AccessPackageQuestion) SetText(value *string)() {
-    m.text = value
+    err := m.GetBackingStore().Set("text", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AccessPackageQuestionable 
+type AccessPackageQuestionable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetIsAnswerEditable()(*bool)
+    GetIsRequired()(*bool)
+    GetLocalizations()([]AccessPackageLocalizedTextable)
+    GetSequence()(*int32)
+    GetText()(*string)
+    SetIsAnswerEditable(value *bool)()
+    SetIsRequired(value *bool)()
+    SetLocalizations(value []AccessPackageLocalizedTextable)()
+    SetSequence(value *int32)()
+    SetText(value *string)()
 }

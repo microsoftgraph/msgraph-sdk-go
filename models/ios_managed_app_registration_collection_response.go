@@ -7,8 +7,6 @@ import (
 // IosManagedAppRegistrationCollectionResponse 
 type IosManagedAppRegistrationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []IosManagedAppRegistrationable
 }
 // NewIosManagedAppRegistrationCollectionResponse instantiates a new IosManagedAppRegistrationCollectionResponse and sets the default values.
 func NewIosManagedAppRegistrationCollectionResponse()(*IosManagedAppRegistrationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *IosManagedAppRegistrationCollectionResponse) GetFieldDeserializers()(ma
 }
 // GetValue gets the value property value. The value property
 func (m *IosManagedAppRegistrationCollectionResponse) GetValue()([]IosManagedAppRegistrationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IosManagedAppRegistrationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IosManagedAppRegistrationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *IosManagedAppRegistrationCollectionResponse) Serialize(writer i878a80d2
 }
 // SetValue sets the value property value. The value property
 func (m *IosManagedAppRegistrationCollectionResponse) SetValue(value []IosManagedAppRegistrationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IosManagedAppRegistrationCollectionResponseable 
+type IosManagedAppRegistrationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]IosManagedAppRegistrationable)
+    SetValue(value []IosManagedAppRegistrationable)()
 }

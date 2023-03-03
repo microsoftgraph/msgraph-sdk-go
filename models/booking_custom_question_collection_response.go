@@ -7,8 +7,6 @@ import (
 // BookingCustomQuestionCollectionResponse 
 type BookingCustomQuestionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []BookingCustomQuestionable
 }
 // NewBookingCustomQuestionCollectionResponse instantiates a new BookingCustomQuestionCollectionResponse and sets the default values.
 func NewBookingCustomQuestionCollectionResponse()(*BookingCustomQuestionCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *BookingCustomQuestionCollectionResponse) GetFieldDeserializers()(map[st
 }
 // GetValue gets the value property value. The value property
 func (m *BookingCustomQuestionCollectionResponse) GetValue()([]BookingCustomQuestionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]BookingCustomQuestionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *BookingCustomQuestionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *BookingCustomQuestionCollectionResponse) Serialize(writer i878a80d2330e
 }
 // SetValue sets the value property value. The value property
 func (m *BookingCustomQuestionCollectionResponse) SetValue(value []BookingCustomQuestionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// BookingCustomQuestionCollectionResponseable 
+type BookingCustomQuestionCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]BookingCustomQuestionable)
+    SetValue(value []BookingCustomQuestionable)()
 }

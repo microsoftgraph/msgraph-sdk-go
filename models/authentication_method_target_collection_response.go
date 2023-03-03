@@ -7,8 +7,6 @@ import (
 // AuthenticationMethodTargetCollectionResponse 
 type AuthenticationMethodTargetCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AuthenticationMethodTargetable
 }
 // NewAuthenticationMethodTargetCollectionResponse instantiates a new AuthenticationMethodTargetCollectionResponse and sets the default values.
 func NewAuthenticationMethodTargetCollectionResponse()(*AuthenticationMethodTargetCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AuthenticationMethodTargetCollectionResponse) GetFieldDeserializers()(m
 }
 // GetValue gets the value property value. The value property
 func (m *AuthenticationMethodTargetCollectionResponse) GetValue()([]AuthenticationMethodTargetable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AuthenticationMethodTargetable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AuthenticationMethodTargetCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AuthenticationMethodTargetCollectionResponse) Serialize(writer i878a80d
 }
 // SetValue sets the value property value. The value property
 func (m *AuthenticationMethodTargetCollectionResponse) SetValue(value []AuthenticationMethodTargetable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AuthenticationMethodTargetCollectionResponseable 
+type AuthenticationMethodTargetCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AuthenticationMethodTargetable)
+    SetValue(value []AuthenticationMethodTargetable)()
 }

@@ -74,6 +74,10 @@ func NewAccessReviewsDefinitionsItemInstancesRequestBuilder(rawUrl string, reque
 func (m *AccessReviewsDefinitionsItemInstancesRequestBuilder) Count()(*AccessReviewsDefinitionsItemInstancesCountRequestBuilder) {
     return NewAccessReviewsDefinitionsItemInstancesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
+func (m *AccessReviewsDefinitionsItemInstancesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*AccessReviewsDefinitionsItemInstancesFilterByCurrentUserWithOnRequestBuilder) {
+    return NewAccessReviewsDefinitionsItemInstancesFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
+}
 // Get get a list of the accessReviewInstance objects and their properties.
 // [Find more info here]
 // 
@@ -95,10 +99,6 @@ func (m *AccessReviewsDefinitionsItemInstancesRequestBuilder) Get(ctx context.Co
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewInstanceCollectionResponseable), nil
-}
-// MicrosoftGraphFilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
-func (m *AccessReviewsDefinitionsItemInstancesRequestBuilder) MicrosoftGraphFilterByCurrentUserWithOn(on *string)(*AccessReviewsDefinitionsItemInstancesMicrosoftGraphFilterByCurrentUserWithOnRequestBuilder) {
-    return NewAccessReviewsDefinitionsItemInstancesMicrosoftGraphFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
 }
 // Post create new navigation property to instances for identityGovernance
 func (m *AccessReviewsDefinitionsItemInstancesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewInstanceable, requestConfiguration *AccessReviewsDefinitionsItemInstancesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewInstanceable, error) {

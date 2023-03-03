@@ -7,18 +7,6 @@ import (
 // SharedInsight 
 type SharedInsight struct {
     Entity
-    // Details about the shared item. Read only.
-    lastShared SharingDetailable
-    // The lastSharedMethod property
-    lastSharedMethod Entityable
-    // Used for navigating to the item that was shared. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.
-    resource Entityable
-    // Reference properties of the shared document, such as the url and type of the document. Read-only
-    resourceReference ResourceReferenceable
-    // Properties that you can use to visualize the document in your experience. Read-only
-    resourceVisualization ResourceVisualizationable
-    // The sharingHistory property
-    sharingHistory []SharingDetailable
 }
 // NewSharedInsight instantiates a new sharedInsight and sets the default values.
 func NewSharedInsight()(*SharedInsight) {
@@ -102,27 +90,69 @@ func (m *SharedInsight) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetLastShared gets the lastShared property value. Details about the shared item. Read only.
 func (m *SharedInsight) GetLastShared()(SharingDetailable) {
-    return m.lastShared
+    val, err := m.GetBackingStore().Get("lastShared")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SharingDetailable)
+    }
+    return nil
 }
 // GetLastSharedMethod gets the lastSharedMethod property value. The lastSharedMethod property
 func (m *SharedInsight) GetLastSharedMethod()(Entityable) {
-    return m.lastSharedMethod
+    val, err := m.GetBackingStore().Get("lastSharedMethod")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Entityable)
+    }
+    return nil
 }
 // GetResource gets the resource property value. Used for navigating to the item that was shared. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.
 func (m *SharedInsight) GetResource()(Entityable) {
-    return m.resource
+    val, err := m.GetBackingStore().Get("resource")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Entityable)
+    }
+    return nil
 }
 // GetResourceReference gets the resourceReference property value. Reference properties of the shared document, such as the url and type of the document. Read-only
 func (m *SharedInsight) GetResourceReference()(ResourceReferenceable) {
-    return m.resourceReference
+    val, err := m.GetBackingStore().Get("resourceReference")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ResourceReferenceable)
+    }
+    return nil
 }
 // GetResourceVisualization gets the resourceVisualization property value. Properties that you can use to visualize the document in your experience. Read-only
 func (m *SharedInsight) GetResourceVisualization()(ResourceVisualizationable) {
-    return m.resourceVisualization
+    val, err := m.GetBackingStore().Get("resourceVisualization")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ResourceVisualizationable)
+    }
+    return nil
 }
 // GetSharingHistory gets the sharingHistory property value. The sharingHistory property
 func (m *SharedInsight) GetSharingHistory()([]SharingDetailable) {
-    return m.sharingHistory
+    val, err := m.GetBackingStore().Get("sharingHistory")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SharingDetailable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SharedInsight) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -162,25 +192,60 @@ func (m *SharedInsight) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetLastShared sets the lastShared property value. Details about the shared item. Read only.
 func (m *SharedInsight) SetLastShared(value SharingDetailable)() {
-    m.lastShared = value
+    err := m.GetBackingStore().Set("lastShared", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastSharedMethod sets the lastSharedMethod property value. The lastSharedMethod property
 func (m *SharedInsight) SetLastSharedMethod(value Entityable)() {
-    m.lastSharedMethod = value
+    err := m.GetBackingStore().Set("lastSharedMethod", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetResource sets the resource property value. Used for navigating to the item that was shared. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.
 func (m *SharedInsight) SetResource(value Entityable)() {
-    m.resource = value
+    err := m.GetBackingStore().Set("resource", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetResourceReference sets the resourceReference property value. Reference properties of the shared document, such as the url and type of the document. Read-only
 func (m *SharedInsight) SetResourceReference(value ResourceReferenceable)() {
-    m.resourceReference = value
+    err := m.GetBackingStore().Set("resourceReference", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetResourceVisualization sets the resourceVisualization property value. Properties that you can use to visualize the document in your experience. Read-only
 func (m *SharedInsight) SetResourceVisualization(value ResourceVisualizationable)() {
-    m.resourceVisualization = value
+    err := m.GetBackingStore().Set("resourceVisualization", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSharingHistory sets the sharingHistory property value. The sharingHistory property
 func (m *SharedInsight) SetSharingHistory(value []SharingDetailable)() {
-    m.sharingHistory = value
+    err := m.GetBackingStore().Set("sharingHistory", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SharedInsightable 
+type SharedInsightable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetLastShared()(SharingDetailable)
+    GetLastSharedMethod()(Entityable)
+    GetResource()(Entityable)
+    GetResourceReference()(ResourceReferenceable)
+    GetResourceVisualization()(ResourceVisualizationable)
+    GetSharingHistory()([]SharingDetailable)
+    SetLastShared(value SharingDetailable)()
+    SetLastSharedMethod(value Entityable)()
+    SetResource(value Entityable)()
+    SetResourceReference(value ResourceReferenceable)()
+    SetResourceVisualization(value ResourceVisualizationable)()
+    SetSharingHistory(value []SharingDetailable)()
 }

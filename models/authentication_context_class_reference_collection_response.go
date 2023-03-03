@@ -7,8 +7,6 @@ import (
 // AuthenticationContextClassReferenceCollectionResponse 
 type AuthenticationContextClassReferenceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AuthenticationContextClassReferenceable
 }
 // NewAuthenticationContextClassReferenceCollectionResponse instantiates a new AuthenticationContextClassReferenceCollectionResponse and sets the default values.
 func NewAuthenticationContextClassReferenceCollectionResponse()(*AuthenticationContextClassReferenceCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AuthenticationContextClassReferenceCollectionResponse) GetFieldDeserial
 }
 // GetValue gets the value property value. The value property
 func (m *AuthenticationContextClassReferenceCollectionResponse) GetValue()([]AuthenticationContextClassReferenceable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AuthenticationContextClassReferenceable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AuthenticationContextClassReferenceCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AuthenticationContextClassReferenceCollectionResponse) Serialize(writer
 }
 // SetValue sets the value property value. The value property
 func (m *AuthenticationContextClassReferenceCollectionResponse) SetValue(value []AuthenticationContextClassReferenceable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AuthenticationContextClassReferenceCollectionResponseable 
+type AuthenticationContextClassReferenceCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AuthenticationContextClassReferenceable)
+    SetValue(value []AuthenticationContextClassReferenceable)()
 }

@@ -74,6 +74,10 @@ func NewAccessReviewsDefinitionsItemInstancesItemDecisionsRequestBuilder(rawUrl 
 func (m *AccessReviewsDefinitionsItemInstancesItemDecisionsRequestBuilder) Count()(*AccessReviewsDefinitionsItemInstancesItemDecisionsCountRequestBuilder) {
     return NewAccessReviewsDefinitionsItemInstancesItemDecisionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
+func (m *AccessReviewsDefinitionsItemInstancesItemDecisionsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*AccessReviewsDefinitionsItemInstancesItemDecisionsFilterByCurrentUserWithOnRequestBuilder) {
+    return NewAccessReviewsDefinitionsItemInstancesItemDecisionsFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
+}
 // Get get the accessReviewInstanceDecisionItem resources from the decisions navigation property on a given accessReviewInstance. A list of zero or more accessReviewInstanceDecisionItem objects are returned, including all of their nested properties.
 // [Find more info here]
 // 
@@ -95,10 +99,6 @@ func (m *AccessReviewsDefinitionsItemInstancesItemDecisionsRequestBuilder) Get(c
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewInstanceDecisionItemCollectionResponseable), nil
-}
-// MicrosoftGraphFilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
-func (m *AccessReviewsDefinitionsItemInstancesItemDecisionsRequestBuilder) MicrosoftGraphFilterByCurrentUserWithOn(on *string)(*AccessReviewsDefinitionsItemInstancesItemDecisionsMicrosoftGraphFilterByCurrentUserWithOnRequestBuilder) {
-    return NewAccessReviewsDefinitionsItemInstancesItemDecisionsMicrosoftGraphFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
 }
 // Post create new navigation property to decisions for identityGovernance
 func (m *AccessReviewsDefinitionsItemInstancesItemDecisionsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewInstanceDecisionItemable, requestConfiguration *AccessReviewsDefinitionsItemInstancesItemDecisionsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewInstanceDecisionItemable, error) {

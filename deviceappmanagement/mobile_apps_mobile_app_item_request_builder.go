@@ -46,6 +46,10 @@ type MobileAppsMobileAppItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Assign provides operations to call the assign method.
+func (m *MobileAppsMobileAppItemRequestBuilder) Assign()(*MobileAppsItemAssignRequestBuilder) {
+    return NewMobileAppsItemAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Assignments provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.
 func (m *MobileAppsMobileAppItemRequestBuilder) Assignments()(*MobileAppsItemAssignmentsRequestBuilder) {
     return NewMobileAppsItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
@@ -130,17 +134,13 @@ func (m *MobileAppsMobileAppItemRequestBuilder) Get(ctx context.Context, request
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppable), nil
 }
-// MicrosoftGraphAssign provides operations to call the assign method.
-func (m *MobileAppsMobileAppItemRequestBuilder) MicrosoftGraphAssign()(*MobileAppsItemMicrosoftGraphAssignRequestBuilder) {
-    return NewMobileAppsItemMicrosoftGraphAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphManagedMobileLobApp casts the previous resource to managedMobileLobApp.
+func (m *MobileAppsMobileAppItemRequestBuilder) GraphManagedMobileLobApp()(*MobileAppsItemGraphManagedMobileLobAppRequestBuilder) {
+    return NewMobileAppsItemGraphManagedMobileLobAppRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphManagedMobileLobApp casts the previous resource to managedMobileLobApp.
-func (m *MobileAppsMobileAppItemRequestBuilder) MicrosoftGraphManagedMobileLobApp()(*MobileAppsItemMicrosoftGraphManagedMobileLobAppRequestBuilder) {
-    return NewMobileAppsItemMicrosoftGraphManagedMobileLobAppRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphMobileLobApp casts the previous resource to mobileLobApp.
-func (m *MobileAppsMobileAppItemRequestBuilder) MicrosoftGraphMobileLobApp()(*MobileAppsItemMicrosoftGraphMobileLobAppRequestBuilder) {
-    return NewMobileAppsItemMicrosoftGraphMobileLobAppRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphMobileLobApp casts the previous resource to mobileLobApp.
+func (m *MobileAppsMobileAppItemRequestBuilder) GraphMobileLobApp()(*MobileAppsItemGraphMobileLobAppRequestBuilder) {
+    return NewMobileAppsItemGraphMobileLobAppRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property mobileApps in deviceAppManagement
 func (m *MobileAppsMobileAppItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppable, requestConfiguration *MobileAppsMobileAppItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppable, error) {

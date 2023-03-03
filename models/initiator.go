@@ -7,8 +7,6 @@ import (
 // Initiator 
 type Initiator struct {
     Identity
-    // Type of initiator. Possible values are: user, application, system, unknownFutureValue.
-    initiatorType *InitiatorType
 }
 // NewInitiator instantiates a new Initiator and sets the default values.
 func NewInitiator()(*Initiator) {
@@ -40,7 +38,14 @@ func (m *Initiator) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 }
 // GetInitiatorType gets the initiatorType property value. Type of initiator. Possible values are: user, application, system, unknownFutureValue.
 func (m *Initiator) GetInitiatorType()(*InitiatorType) {
-    return m.initiatorType
+    val, err := m.GetBackingStore().Get("initiatorType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*InitiatorType)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Initiator) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -59,5 +64,15 @@ func (m *Initiator) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetInitiatorType sets the initiatorType property value. Type of initiator. Possible values are: user, application, system, unknownFutureValue.
 func (m *Initiator) SetInitiatorType(value *InitiatorType)() {
-    m.initiatorType = value
+    err := m.GetBackingStore().Set("initiatorType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Initiatorable 
+type Initiatorable interface {
+    Identityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetInitiatorType()(*InitiatorType)
+    SetInitiatorType(value *InitiatorType)()
 }

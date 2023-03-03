@@ -7,12 +7,6 @@ import (
 // AndroidStoreApp 
 type AndroidStoreApp struct {
     MobileApp
-    // The Android app store URL.
-    appStoreUrl *string
-    // The value for the minimum applicable operating system.
-    minimumSupportedOperatingSystem AndroidMinimumOperatingSystemable
-    // The package identifier.
-    packageId *string
 }
 // NewAndroidStoreApp instantiates a new AndroidStoreApp and sets the default values.
 func NewAndroidStoreApp()(*AndroidStoreApp) {
@@ -29,7 +23,14 @@ func CreateAndroidStoreAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetAppStoreUrl gets the appStoreUrl property value. The Android app store URL.
 func (m *AndroidStoreApp) GetAppStoreUrl()(*string) {
-    return m.appStoreUrl
+    val, err := m.GetBackingStore().Get("appStoreUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidStoreApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -68,11 +69,25 @@ func (m *AndroidStoreApp) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetMinimumSupportedOperatingSystem gets the minimumSupportedOperatingSystem property value. The value for the minimum applicable operating system.
 func (m *AndroidStoreApp) GetMinimumSupportedOperatingSystem()(AndroidMinimumOperatingSystemable) {
-    return m.minimumSupportedOperatingSystem
+    val, err := m.GetBackingStore().Get("minimumSupportedOperatingSystem")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AndroidMinimumOperatingSystemable)
+    }
+    return nil
 }
 // GetPackageId gets the packageId property value. The package identifier.
 func (m *AndroidStoreApp) GetPackageId()(*string) {
-    return m.packageId
+    val, err := m.GetBackingStore().Get("packageId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidStoreApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -102,13 +117,33 @@ func (m *AndroidStoreApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetAppStoreUrl sets the appStoreUrl property value. The Android app store URL.
 func (m *AndroidStoreApp) SetAppStoreUrl(value *string)() {
-    m.appStoreUrl = value
+    err := m.GetBackingStore().Set("appStoreUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMinimumSupportedOperatingSystem sets the minimumSupportedOperatingSystem property value. The value for the minimum applicable operating system.
 func (m *AndroidStoreApp) SetMinimumSupportedOperatingSystem(value AndroidMinimumOperatingSystemable)() {
-    m.minimumSupportedOperatingSystem = value
+    err := m.GetBackingStore().Set("minimumSupportedOperatingSystem", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPackageId sets the packageId property value. The package identifier.
 func (m *AndroidStoreApp) SetPackageId(value *string)() {
-    m.packageId = value
+    err := m.GetBackingStore().Set("packageId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidStoreAppable 
+type AndroidStoreAppable interface {
+    MobileAppable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAppStoreUrl()(*string)
+    GetMinimumSupportedOperatingSystem()(AndroidMinimumOperatingSystemable)
+    GetPackageId()(*string)
+    SetAppStoreUrl(value *string)()
+    SetMinimumSupportedOperatingSystem(value AndroidMinimumOperatingSystemable)()
+    SetPackageId(value *string)()
 }

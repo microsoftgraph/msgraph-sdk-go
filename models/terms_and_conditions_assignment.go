@@ -7,8 +7,6 @@ import (
 // TermsAndConditionsAssignment a termsAndConditionsAssignment entity represents the assignment of a given Terms and Conditions (T&C) policy to a given group. Users in the group will be required to accept the terms in order to have devices enrolled into Intune.
 type TermsAndConditionsAssignment struct {
     Entity
-    // Assignment target that the T&C policy is assigned to.
-    target DeviceAndAppManagementAssignmentTargetable
 }
 // NewTermsAndConditionsAssignment instantiates a new termsAndConditionsAssignment and sets the default values.
 func NewTermsAndConditionsAssignment()(*TermsAndConditionsAssignment) {
@@ -38,7 +36,14 @@ func (m *TermsAndConditionsAssignment) GetFieldDeserializers()(map[string]func(i
 }
 // GetTarget gets the target property value. Assignment target that the T&C policy is assigned to.
 func (m *TermsAndConditionsAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
-    return m.target
+    val, err := m.GetBackingStore().Get("target")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceAndAppManagementAssignmentTargetable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TermsAndConditionsAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,5 +61,15 @@ func (m *TermsAndConditionsAssignment) Serialize(writer i878a80d2330e89d26896388
 }
 // SetTarget sets the target property value. Assignment target that the T&C policy is assigned to.
 func (m *TermsAndConditionsAssignment) SetTarget(value DeviceAndAppManagementAssignmentTargetable)() {
-    m.target = value
+    err := m.GetBackingStore().Set("target", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TermsAndConditionsAssignmentable 
+type TermsAndConditionsAssignmentable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetTarget()(DeviceAndAppManagementAssignmentTargetable)
+    SetTarget(value DeviceAndAppManagementAssignmentTargetable)()
 }

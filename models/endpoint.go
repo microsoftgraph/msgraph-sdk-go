@@ -7,16 +7,6 @@ import (
 // Endpoint 
 type Endpoint struct {
     DirectoryObject
-    // The capability property
-    capability *string
-    // The providerId property
-    providerId *string
-    // The providerName property
-    providerName *string
-    // The providerResourceId property
-    providerResourceId *string
-    // The uri property
-    uri *string
 }
 // NewEndpoint instantiates a new endpoint and sets the default values.
 func NewEndpoint()(*Endpoint) {
@@ -33,7 +23,14 @@ func CreateEndpointFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 }
 // GetCapability gets the capability property value. The capability property
 func (m *Endpoint) GetCapability()(*string) {
-    return m.capability
+    val, err := m.GetBackingStore().Get("capability")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Endpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -92,19 +89,47 @@ func (m *Endpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetProviderId gets the providerId property value. The providerId property
 func (m *Endpoint) GetProviderId()(*string) {
-    return m.providerId
+    val, err := m.GetBackingStore().Get("providerId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetProviderName gets the providerName property value. The providerName property
 func (m *Endpoint) GetProviderName()(*string) {
-    return m.providerName
+    val, err := m.GetBackingStore().Get("providerName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetProviderResourceId gets the providerResourceId property value. The providerResourceId property
 func (m *Endpoint) GetProviderResourceId()(*string) {
-    return m.providerResourceId
+    val, err := m.GetBackingStore().Get("providerResourceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUri gets the uri property value. The uri property
 func (m *Endpoint) GetUri()(*string) {
-    return m.uri
+    val, err := m.GetBackingStore().Get("uri")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Endpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -146,21 +171,51 @@ func (m *Endpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetCapability sets the capability property value. The capability property
 func (m *Endpoint) SetCapability(value *string)() {
-    m.capability = value
+    err := m.GetBackingStore().Set("capability", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProviderId sets the providerId property value. The providerId property
 func (m *Endpoint) SetProviderId(value *string)() {
-    m.providerId = value
+    err := m.GetBackingStore().Set("providerId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProviderName sets the providerName property value. The providerName property
 func (m *Endpoint) SetProviderName(value *string)() {
-    m.providerName = value
+    err := m.GetBackingStore().Set("providerName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProviderResourceId sets the providerResourceId property value. The providerResourceId property
 func (m *Endpoint) SetProviderResourceId(value *string)() {
-    m.providerResourceId = value
+    err := m.GetBackingStore().Set("providerResourceId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUri sets the uri property value. The uri property
 func (m *Endpoint) SetUri(value *string)() {
-    m.uri = value
+    err := m.GetBackingStore().Set("uri", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Endpointable 
+type Endpointable interface {
+    DirectoryObjectable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCapability()(*string)
+    GetProviderId()(*string)
+    GetProviderName()(*string)
+    GetProviderResourceId()(*string)
+    GetUri()(*string)
+    SetCapability(value *string)()
+    SetProviderId(value *string)()
+    SetProviderName(value *string)()
+    SetProviderResourceId(value *string)()
+    SetUri(value *string)()
 }

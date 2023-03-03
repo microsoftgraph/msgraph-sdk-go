@@ -7,8 +7,6 @@ import (
 // OAuth2PermissionGrantCollectionResponse 
 type OAuth2PermissionGrantCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []OAuth2PermissionGrantable
 }
 // NewOAuth2PermissionGrantCollectionResponse instantiates a new OAuth2PermissionGrantCollectionResponse and sets the default values.
 func NewOAuth2PermissionGrantCollectionResponse()(*OAuth2PermissionGrantCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *OAuth2PermissionGrantCollectionResponse) GetFieldDeserializers()(map[st
 }
 // GetValue gets the value property value. The value property
 func (m *OAuth2PermissionGrantCollectionResponse) GetValue()([]OAuth2PermissionGrantable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OAuth2PermissionGrantable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OAuth2PermissionGrantCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *OAuth2PermissionGrantCollectionResponse) Serialize(writer i878a80d2330e
 }
 // SetValue sets the value property value. The value property
 func (m *OAuth2PermissionGrantCollectionResponse) SetValue(value []OAuth2PermissionGrantable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OAuth2PermissionGrantCollectionResponseable 
+type OAuth2PermissionGrantCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]OAuth2PermissionGrantable)
+    SetValue(value []OAuth2PermissionGrantable)()
 }

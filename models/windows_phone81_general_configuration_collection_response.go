@@ -7,8 +7,6 @@ import (
 // WindowsPhone81GeneralConfigurationCollectionResponse 
 type WindowsPhone81GeneralConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []WindowsPhone81GeneralConfigurationable
 }
 // NewWindowsPhone81GeneralConfigurationCollectionResponse instantiates a new WindowsPhone81GeneralConfigurationCollectionResponse and sets the default values.
 func NewWindowsPhone81GeneralConfigurationCollectionResponse()(*WindowsPhone81GeneralConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *WindowsPhone81GeneralConfigurationCollectionResponse) GetFieldDeseriali
 }
 // GetValue gets the value property value. The value property
 func (m *WindowsPhone81GeneralConfigurationCollectionResponse) GetValue()([]WindowsPhone81GeneralConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsPhone81GeneralConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsPhone81GeneralConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *WindowsPhone81GeneralConfigurationCollectionResponse) Serialize(writer 
 }
 // SetValue sets the value property value. The value property
 func (m *WindowsPhone81GeneralConfigurationCollectionResponse) SetValue(value []WindowsPhone81GeneralConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsPhone81GeneralConfigurationCollectionResponseable 
+type WindowsPhone81GeneralConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]WindowsPhone81GeneralConfigurationable)
+    SetValue(value []WindowsPhone81GeneralConfigurationable)()
 }

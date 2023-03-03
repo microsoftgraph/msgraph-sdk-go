@@ -65,6 +65,10 @@ func NewItemMailFoldersItemChildFoldersMailFolderItemRequestBuilder(rawUrl strin
     urlParams["request-raw-url"] = rawUrl
     return NewItemMailFoldersItemChildFoldersMailFolderItemRequestBuilderInternal(urlParams, requestAdapter)
 }
+// Copy provides operations to call the copy method.
+func (m *ItemMailFoldersItemChildFoldersMailFolderItemRequestBuilder) Copy()(*ItemMailFoldersItemChildFoldersItemCopyRequestBuilder) {
+    return NewItemMailFoldersItemChildFoldersItemCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Delete delete navigation property childFolders for users
 func (m *ItemMailFoldersItemChildFoldersMailFolderItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemMailFoldersItemChildFoldersMailFolderItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -130,13 +134,9 @@ func (m *ItemMailFoldersItemChildFoldersMailFolderItemRequestBuilder) MessagesBy
     }
     return NewItemMailFoldersItemChildFoldersItemMessagesMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
-// MicrosoftGraphCopy provides operations to call the copy method.
-func (m *ItemMailFoldersItemChildFoldersMailFolderItemRequestBuilder) MicrosoftGraphCopy()(*ItemMailFoldersItemChildFoldersItemMicrosoftGraphCopyRequestBuilder) {
-    return NewItemMailFoldersItemChildFoldersItemMicrosoftGraphCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphMove provides operations to call the move method.
-func (m *ItemMailFoldersItemChildFoldersMailFolderItemRequestBuilder) MicrosoftGraphMove()(*ItemMailFoldersItemChildFoldersItemMicrosoftGraphMoveRequestBuilder) {
-    return NewItemMailFoldersItemChildFoldersItemMicrosoftGraphMoveRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// Move provides operations to call the move method.
+func (m *ItemMailFoldersItemChildFoldersMailFolderItemRequestBuilder) Move()(*ItemMailFoldersItemChildFoldersItemMoveRequestBuilder) {
+    return NewItemMailFoldersItemChildFoldersItemMoveRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.mailFolder entity.
 func (m *ItemMailFoldersItemChildFoldersMailFolderItemRequestBuilder) MultiValueExtendedProperties()(*ItemMailFoldersItemChildFoldersItemMultiValueExtendedPropertiesRequestBuilder) {

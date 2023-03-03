@@ -65,6 +65,10 @@ func NewItemOnenoteNotebooksNotebookItemRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewItemOnenoteNotebooksNotebookItemRequestBuilderInternal(urlParams, requestAdapter)
 }
+// CopyNotebook provides operations to call the copyNotebook method.
+func (m *ItemOnenoteNotebooksNotebookItemRequestBuilder) CopyNotebook()(*ItemOnenoteNotebooksItemCopyNotebookRequestBuilder) {
+    return NewItemOnenoteNotebooksItemCopyNotebookRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Delete delete navigation property notebooks for users
 func (m *ItemOnenoteNotebooksNotebookItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemOnenoteNotebooksNotebookItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -99,10 +103,6 @@ func (m *ItemOnenoteNotebooksNotebookItemRequestBuilder) Get(ctx context.Context
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Notebookable), nil
-}
-// MicrosoftGraphCopyNotebook provides operations to call the copyNotebook method.
-func (m *ItemOnenoteNotebooksNotebookItemRequestBuilder) MicrosoftGraphCopyNotebook()(*ItemOnenoteNotebooksItemMicrosoftGraphCopyNotebookRequestBuilder) {
-    return NewItemOnenoteNotebooksItemMicrosoftGraphCopyNotebookRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property notebooks in users
 func (m *ItemOnenoteNotebooksNotebookItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Notebookable, requestConfiguration *ItemOnenoteNotebooksNotebookItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Notebookable, error) {

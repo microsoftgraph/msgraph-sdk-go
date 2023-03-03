@@ -7,8 +7,6 @@ import (
 // AppConsentRequestScopeCollectionResponse 
 type AppConsentRequestScopeCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AppConsentRequestScopeable
 }
 // NewAppConsentRequestScopeCollectionResponse instantiates a new AppConsentRequestScopeCollectionResponse and sets the default values.
 func NewAppConsentRequestScopeCollectionResponse()(*AppConsentRequestScopeCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AppConsentRequestScopeCollectionResponse) GetFieldDeserializers()(map[s
 }
 // GetValue gets the value property value. The value property
 func (m *AppConsentRequestScopeCollectionResponse) GetValue()([]AppConsentRequestScopeable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AppConsentRequestScopeable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AppConsentRequestScopeCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AppConsentRequestScopeCollectionResponse) Serialize(writer i878a80d2330
 }
 // SetValue sets the value property value. The value property
 func (m *AppConsentRequestScopeCollectionResponse) SetValue(value []AppConsentRequestScopeable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AppConsentRequestScopeCollectionResponseable 
+type AppConsentRequestScopeCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AppConsentRequestScopeable)
+    SetValue(value []AppConsentRequestScopeable)()
 }

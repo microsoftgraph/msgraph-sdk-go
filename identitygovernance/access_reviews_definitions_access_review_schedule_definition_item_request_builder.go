@@ -115,10 +115,6 @@ func (m *AccessReviewsDefinitionsAccessReviewScheduleDefinitionItemRequestBuilde
     }
     return NewAccessReviewsDefinitionsItemInstancesAccessReviewInstanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
-// MicrosoftGraphStop provides operations to call the stop method.
-func (m *AccessReviewsDefinitionsAccessReviewScheduleDefinitionItemRequestBuilder) MicrosoftGraphStop()(*AccessReviewsDefinitionsItemMicrosoftGraphStopRequestBuilder) {
-    return NewAccessReviewsDefinitionsItemMicrosoftGraphStopRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Patch update the navigation property definitions in identityGovernance
 func (m *AccessReviewsDefinitionsAccessReviewScheduleDefinitionItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewScheduleDefinitionable, requestConfiguration *AccessReviewsDefinitionsAccessReviewScheduleDefinitionItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewScheduleDefinitionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -137,6 +133,10 @@ func (m *AccessReviewsDefinitionsAccessReviewScheduleDefinitionItemRequestBuilde
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewScheduleDefinitionable), nil
+}
+// Stop provides operations to call the stop method.
+func (m *AccessReviewsDefinitionsAccessReviewScheduleDefinitionItemRequestBuilder) Stop()(*AccessReviewsDefinitionsItemStopRequestBuilder) {
+    return NewAccessReviewsDefinitionsItemStopRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property definitions for identityGovernance
 func (m *AccessReviewsDefinitionsAccessReviewScheduleDefinitionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AccessReviewsDefinitionsAccessReviewScheduleDefinitionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

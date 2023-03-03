@@ -51,6 +51,10 @@ type RiskyServicePrincipalsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ConfirmCompromised provides operations to call the confirmCompromised method.
+func (m *RiskyServicePrincipalsRequestBuilder) ConfirmCompromised()(*RiskyServicePrincipalsConfirmCompromisedRequestBuilder) {
+    return NewRiskyServicePrincipalsConfirmCompromisedRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // NewRiskyServicePrincipalsRequestBuilderInternal instantiates a new RiskyServicePrincipalsRequestBuilder and sets the default values.
 func NewRiskyServicePrincipalsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RiskyServicePrincipalsRequestBuilder) {
     m := &RiskyServicePrincipalsRequestBuilder{
@@ -74,6 +78,10 @@ func NewRiskyServicePrincipalsRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *RiskyServicePrincipalsRequestBuilder) Count()(*RiskyServicePrincipalsCountRequestBuilder) {
     return NewRiskyServicePrincipalsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// Dismiss provides operations to call the dismiss method.
+func (m *RiskyServicePrincipalsRequestBuilder) Dismiss()(*RiskyServicePrincipalsDismissRequestBuilder) {
+    return NewRiskyServicePrincipalsDismissRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Get retrieve the properties and relationships of riskyServicePrincipal objects.
 // [Find more info here]
 // 
@@ -95,14 +103,6 @@ func (m *RiskyServicePrincipalsRequestBuilder) Get(ctx context.Context, requestC
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RiskyServicePrincipalCollectionResponseable), nil
-}
-// MicrosoftGraphConfirmCompromised provides operations to call the confirmCompromised method.
-func (m *RiskyServicePrincipalsRequestBuilder) MicrosoftGraphConfirmCompromised()(*RiskyServicePrincipalsMicrosoftGraphConfirmCompromisedRequestBuilder) {
-    return NewRiskyServicePrincipalsMicrosoftGraphConfirmCompromisedRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphDismiss provides operations to call the dismiss method.
-func (m *RiskyServicePrincipalsRequestBuilder) MicrosoftGraphDismiss()(*RiskyServicePrincipalsMicrosoftGraphDismissRequestBuilder) {
-    return NewRiskyServicePrincipalsMicrosoftGraphDismissRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to riskyServicePrincipals for identityProtection
 func (m *RiskyServicePrincipalsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RiskyServicePrincipalable, requestConfiguration *RiskyServicePrincipalsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RiskyServicePrincipalable, error) {

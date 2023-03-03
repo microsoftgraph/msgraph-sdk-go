@@ -7,12 +7,6 @@ import (
 // CloudCommunications 
 type CloudCommunications struct {
     Entity
-    // The calls property
-    calls []Callable
-    // The onlineMeetings property
-    onlineMeetings []OnlineMeetingable
-    // The presences property
-    presences []Presenceable
 }
 // NewCloudCommunications instantiates a new CloudCommunications and sets the default values.
 func NewCloudCommunications()(*CloudCommunications) {
@@ -27,7 +21,14 @@ func CreateCloudCommunicationsFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetCalls gets the calls property value. The calls property
 func (m *CloudCommunications) GetCalls()([]Callable) {
-    return m.calls
+    val, err := m.GetBackingStore().Get("calls")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Callable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudCommunications) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -78,11 +79,25 @@ func (m *CloudCommunications) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetOnlineMeetings gets the onlineMeetings property value. The onlineMeetings property
 func (m *CloudCommunications) GetOnlineMeetings()([]OnlineMeetingable) {
-    return m.onlineMeetings
+    val, err := m.GetBackingStore().Get("onlineMeetings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OnlineMeetingable)
+    }
+    return nil
 }
 // GetPresences gets the presences property value. The presences property
 func (m *CloudCommunications) GetPresences()([]Presenceable) {
-    return m.presences
+    val, err := m.GetBackingStore().Get("presences")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Presenceable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CloudCommunications) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -124,13 +139,33 @@ func (m *CloudCommunications) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetCalls sets the calls property value. The calls property
 func (m *CloudCommunications) SetCalls(value []Callable)() {
-    m.calls = value
+    err := m.GetBackingStore().Set("calls", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOnlineMeetings sets the onlineMeetings property value. The onlineMeetings property
 func (m *CloudCommunications) SetOnlineMeetings(value []OnlineMeetingable)() {
-    m.onlineMeetings = value
+    err := m.GetBackingStore().Set("onlineMeetings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPresences sets the presences property value. The presences property
 func (m *CloudCommunications) SetPresences(value []Presenceable)() {
-    m.presences = value
+    err := m.GetBackingStore().Set("presences", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CloudCommunicationsable 
+type CloudCommunicationsable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCalls()([]Callable)
+    GetOnlineMeetings()([]OnlineMeetingable)
+    GetPresences()([]Presenceable)
+    SetCalls(value []Callable)()
+    SetOnlineMeetings(value []OnlineMeetingable)()
+    SetPresences(value []Presenceable)()
 }

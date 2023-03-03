@@ -7,8 +7,6 @@ import (
 // IosStoreAppAssignmentSettings 
 type IosStoreAppAssignmentSettings struct {
     MobileAppAssignmentSettings
-    // The VPN Configuration Id to apply for this app.
-    vpnConfigurationId *string
 }
 // NewIosStoreAppAssignmentSettings instantiates a new IosStoreAppAssignmentSettings and sets the default values.
 func NewIosStoreAppAssignmentSettings()(*IosStoreAppAssignmentSettings) {
@@ -40,7 +38,14 @@ func (m *IosStoreAppAssignmentSettings) GetFieldDeserializers()(map[string]func(
 }
 // GetVpnConfigurationId gets the vpnConfigurationId property value. The VPN Configuration Id to apply for this app.
 func (m *IosStoreAppAssignmentSettings) GetVpnConfigurationId()(*string) {
-    return m.vpnConfigurationId
+    val, err := m.GetBackingStore().Get("vpnConfigurationId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IosStoreAppAssignmentSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *IosStoreAppAssignmentSettings) Serialize(writer i878a80d2330e89d2689638
 }
 // SetVpnConfigurationId sets the vpnConfigurationId property value. The VPN Configuration Id to apply for this app.
 func (m *IosStoreAppAssignmentSettings) SetVpnConfigurationId(value *string)() {
-    m.vpnConfigurationId = value
+    err := m.GetBackingStore().Set("vpnConfigurationId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IosStoreAppAssignmentSettingsable 
+type IosStoreAppAssignmentSettingsable interface {
+    MobileAppAssignmentSettingsable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetVpnConfigurationId()(*string)
+    SetVpnConfigurationId(value *string)()
 }

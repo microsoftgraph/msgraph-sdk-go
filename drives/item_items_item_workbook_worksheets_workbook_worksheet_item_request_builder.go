@@ -46,6 +46,10 @@ type ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilderPatchRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// CellWithRowWithColumn provides operations to call the cell method.
+func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) CellWithRowWithColumn(column *int32, row *int32)(*ItemItemsItemWorkbookWorksheetsItemCellWithRowWithColumnRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemCellWithRowWithColumnRequestBuilderInternal(m.pathParameters, m.requestAdapter, column, row)
+}
 // Charts provides operations to manage the charts property of the microsoft.graph.workbookWorksheet entity.
 func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) Charts()(*ItemItemsItemWorkbookWorksheetsItemChartsRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemChartsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
@@ -115,26 +119,6 @@ func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) Get
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookWorksheetable), nil
 }
-// MicrosoftGraphCellWithRowWithColumn provides operations to call the cell method.
-func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) MicrosoftGraphCellWithRowWithColumn(column *int32, row *int32)(*ItemItemsItemWorkbookWorksheetsItemMicrosoftGraphCellWithRowWithColumnRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemMicrosoftGraphCellWithRowWithColumnRequestBuilderInternal(m.pathParameters, m.requestAdapter, column, row)
-}
-// MicrosoftGraphRange provides operations to call the range method.
-func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) MicrosoftGraphRange()(*ItemItemsItemWorkbookWorksheetsItemMicrosoftGraphRangeRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemMicrosoftGraphRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphRangeWithAddress provides operations to call the range method.
-func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) MicrosoftGraphRangeWithAddress(address *string)(*ItemItemsItemWorkbookWorksheetsItemMicrosoftGraphRangeWithAddressRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemMicrosoftGraphRangeWithAddressRequestBuilderInternal(m.pathParameters, m.requestAdapter, address)
-}
-// MicrosoftGraphUsedRange provides operations to call the usedRange method.
-func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) MicrosoftGraphUsedRange()(*ItemItemsItemWorkbookWorksheetsItemMicrosoftGraphUsedRangeRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemMicrosoftGraphUsedRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphUsedRangeWithValuesOnly provides operations to call the usedRange method.
-func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) MicrosoftGraphUsedRangeWithValuesOnly(valuesOnly *bool)(*ItemItemsItemWorkbookWorksheetsItemMicrosoftGraphUsedRangeWithValuesOnlyRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemMicrosoftGraphUsedRangeWithValuesOnlyRequestBuilderInternal(m.pathParameters, m.requestAdapter, valuesOnly)
-}
 // Names provides operations to manage the names property of the microsoft.graph.workbookWorksheet entity.
 func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) Names()(*ItemItemsItemWorkbookWorksheetsItemNamesRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemNamesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
@@ -187,6 +171,14 @@ func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) Piv
 // Protection provides operations to manage the protection property of the microsoft.graph.workbookWorksheet entity.
 func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) Protection()(*ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// RangeEscaped provides operations to call the range method.
+func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) RangeEscaped()(*ItemItemsItemWorkbookWorksheetsItemRangeRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// RangeWithAddress provides operations to call the range method.
+func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) RangeWithAddress(address *string)(*ItemItemsItemWorkbookWorksheetsItemRangeWithAddressRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemRangeWithAddressRequestBuilderInternal(m.pathParameters, m.requestAdapter, address)
 }
 // Tables provides operations to manage the tables property of the microsoft.graph.workbookWorksheet entity.
 func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) Tables()(*ItemItemsItemWorkbookWorksheetsItemTablesRequestBuilder) {
@@ -247,4 +239,12 @@ func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) ToP
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// UsedRange provides operations to call the usedRange method.
+func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) UsedRange()(*ItemItemsItemWorkbookWorksheetsItemUsedRangeRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemUsedRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// UsedRangeWithValuesOnly provides operations to call the usedRange method.
+func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) UsedRangeWithValuesOnly(valuesOnly *bool)(*ItemItemsItemWorkbookWorksheetsItemUsedRangeWithValuesOnlyRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemUsedRangeWithValuesOnlyRequestBuilderInternal(m.pathParameters, m.requestAdapter, valuesOnly)
 }

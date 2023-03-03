@@ -8,8 +8,6 @@ import (
 // EdiscoveryTagOperationCollectionResponse 
 type EdiscoveryTagOperationCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
-    // The value property
-    value []EdiscoveryTagOperationable
 }
 // NewEdiscoveryTagOperationCollectionResponse instantiates a new EdiscoveryTagOperationCollectionResponse and sets the default values.
 func NewEdiscoveryTagOperationCollectionResponse()(*EdiscoveryTagOperationCollectionResponse) {
@@ -43,7 +41,14 @@ func (m *EdiscoveryTagOperationCollectionResponse) GetFieldDeserializers()(map[s
 }
 // GetValue gets the value property value. The value property
 func (m *EdiscoveryTagOperationCollectionResponse) GetValue()([]EdiscoveryTagOperationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EdiscoveryTagOperationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EdiscoveryTagOperationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *EdiscoveryTagOperationCollectionResponse) Serialize(writer i878a80d2330
 }
 // SetValue sets the value property value. The value property
 func (m *EdiscoveryTagOperationCollectionResponse) SetValue(value []EdiscoveryTagOperationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EdiscoveryTagOperationCollectionResponseable 
+type EdiscoveryTagOperationCollectionResponseable interface {
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]EdiscoveryTagOperationable)
+    SetValue(value []EdiscoveryTagOperationable)()
 }

@@ -7,10 +7,6 @@ import (
 // UnifiedRoleEligibilitySchedule 
 type UnifiedRoleEligibilitySchedule struct {
     UnifiedRoleScheduleBase
-    // How the role eligibility is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleEligibilitySchedule can be managed by the caller. Supports $filter (eq, ne).
-    memberType *string
-    // The period of the role eligibility.
-    scheduleInfo RequestScheduleable
 }
 // NewUnifiedRoleEligibilitySchedule instantiates a new unifiedRoleEligibilitySchedule and sets the default values.
 func NewUnifiedRoleEligibilitySchedule()(*UnifiedRoleEligibilitySchedule) {
@@ -50,11 +46,25 @@ func (m *UnifiedRoleEligibilitySchedule) GetFieldDeserializers()(map[string]func
 }
 // GetMemberType gets the memberType property value. How the role eligibility is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleEligibilitySchedule can be managed by the caller. Supports $filter (eq, ne).
 func (m *UnifiedRoleEligibilitySchedule) GetMemberType()(*string) {
-    return m.memberType
+    val, err := m.GetBackingStore().Get("memberType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetScheduleInfo gets the scheduleInfo property value. The period of the role eligibility.
 func (m *UnifiedRoleEligibilitySchedule) GetScheduleInfo()(RequestScheduleable) {
-    return m.scheduleInfo
+    val, err := m.GetBackingStore().Get("scheduleInfo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(RequestScheduleable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UnifiedRoleEligibilitySchedule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -78,9 +88,24 @@ func (m *UnifiedRoleEligibilitySchedule) Serialize(writer i878a80d2330e89d268963
 }
 // SetMemberType sets the memberType property value. How the role eligibility is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleEligibilitySchedule can be managed by the caller. Supports $filter (eq, ne).
 func (m *UnifiedRoleEligibilitySchedule) SetMemberType(value *string)() {
-    m.memberType = value
+    err := m.GetBackingStore().Set("memberType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetScheduleInfo sets the scheduleInfo property value. The period of the role eligibility.
 func (m *UnifiedRoleEligibilitySchedule) SetScheduleInfo(value RequestScheduleable)() {
-    m.scheduleInfo = value
+    err := m.GetBackingStore().Set("scheduleInfo", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UnifiedRoleEligibilityScheduleable 
+type UnifiedRoleEligibilityScheduleable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    UnifiedRoleScheduleBaseable
+    GetMemberType()(*string)
+    GetScheduleInfo()(RequestScheduleable)
+    SetMemberType(value *string)()
+    SetScheduleInfo(value RequestScheduleable)()
 }

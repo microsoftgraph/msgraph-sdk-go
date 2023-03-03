@@ -115,10 +115,6 @@ func (m *NotificationMessageTemplatesNotificationMessageTemplateItemRequestBuild
     }
     return NewNotificationMessageTemplatesItemLocalizedNotificationMessagesLocalizedNotificationMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
-// MicrosoftGraphSendTestMessage provides operations to call the sendTestMessage method.
-func (m *NotificationMessageTemplatesNotificationMessageTemplateItemRequestBuilder) MicrosoftGraphSendTestMessage()(*NotificationMessageTemplatesItemMicrosoftGraphSendTestMessageRequestBuilder) {
-    return NewNotificationMessageTemplatesItemMicrosoftGraphSendTestMessageRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Patch update the navigation property notificationMessageTemplates in deviceManagement
 func (m *NotificationMessageTemplatesNotificationMessageTemplateItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NotificationMessageTemplateable, requestConfiguration *NotificationMessageTemplatesNotificationMessageTemplateItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NotificationMessageTemplateable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -137,6 +133,10 @@ func (m *NotificationMessageTemplatesNotificationMessageTemplateItemRequestBuild
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NotificationMessageTemplateable), nil
+}
+// SendTestMessage provides operations to call the sendTestMessage method.
+func (m *NotificationMessageTemplatesNotificationMessageTemplateItemRequestBuilder) SendTestMessage()(*NotificationMessageTemplatesItemSendTestMessageRequestBuilder) {
+    return NewNotificationMessageTemplatesItemSendTestMessageRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property notificationMessageTemplates for deviceManagement
 func (m *NotificationMessageTemplatesNotificationMessageTemplateItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *NotificationMessageTemplatesNotificationMessageTemplateItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

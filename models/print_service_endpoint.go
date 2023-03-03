@@ -7,10 +7,6 @@ import (
 // PrintServiceEndpoint 
 type PrintServiceEndpoint struct {
     Entity
-    // A human-readable display name for the endpoint.
-    displayName *string
-    // The URI that can be used to access the service.
-    uri *string
 }
 // NewPrintServiceEndpoint instantiates a new printServiceEndpoint and sets the default values.
 func NewPrintServiceEndpoint()(*PrintServiceEndpoint) {
@@ -25,7 +21,14 @@ func CreatePrintServiceEndpointFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetDisplayName gets the displayName property value. A human-readable display name for the endpoint.
 func (m *PrintServiceEndpoint) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrintServiceEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -54,7 +57,14 @@ func (m *PrintServiceEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetUri gets the uri property value. The URI that can be used to access the service.
 func (m *PrintServiceEndpoint) GetUri()(*string) {
-    return m.uri
+    val, err := m.GetBackingStore().Get("uri")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PrintServiceEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -78,9 +88,24 @@ func (m *PrintServiceEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetDisplayName sets the displayName property value. A human-readable display name for the endpoint.
 func (m *PrintServiceEndpoint) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUri sets the uri property value. The URI that can be used to access the service.
 func (m *PrintServiceEndpoint) SetUri(value *string)() {
-    m.uri = value
+    err := m.GetBackingStore().Set("uri", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PrintServiceEndpointable 
+type PrintServiceEndpointable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDisplayName()(*string)
+    GetUri()(*string)
+    SetDisplayName(value *string)()
+    SetUri(value *string)()
 }

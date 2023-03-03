@@ -7,8 +7,6 @@ import (
 // TeamMembersNotificationRecipient 
 type TeamMembersNotificationRecipient struct {
     TeamworkNotificationRecipient
-    // The unique identifier for the team whose members should receive the notification.
-    teamId *string
 }
 // NewTeamMembersNotificationRecipient instantiates a new TeamMembersNotificationRecipient and sets the default values.
 func NewTeamMembersNotificationRecipient()(*TeamMembersNotificationRecipient) {
@@ -40,7 +38,14 @@ func (m *TeamMembersNotificationRecipient) GetFieldDeserializers()(map[string]fu
 }
 // GetTeamId gets the teamId property value. The unique identifier for the team whose members should receive the notification.
 func (m *TeamMembersNotificationRecipient) GetTeamId()(*string) {
-    return m.teamId
+    val, err := m.GetBackingStore().Get("teamId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TeamMembersNotificationRecipient) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *TeamMembersNotificationRecipient) Serialize(writer i878a80d2330e89d2689
 }
 // SetTeamId sets the teamId property value. The unique identifier for the team whose members should receive the notification.
 func (m *TeamMembersNotificationRecipient) SetTeamId(value *string)() {
-    m.teamId = value
+    err := m.GetBackingStore().Set("teamId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TeamMembersNotificationRecipientable 
+type TeamMembersNotificationRecipientable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    TeamworkNotificationRecipientable
+    GetTeamId()(*string)
+    SetTeamId(value *string)()
 }

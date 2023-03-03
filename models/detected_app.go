@@ -7,20 +7,6 @@ import (
 // DetectedApp a managed or unmanaged app that is installed on a managed device. Unmanaged apps will only appear for devices marked as corporate owned.
 type DetectedApp struct {
     Entity
-    // The number of devices that have installed this application
-    deviceCount *int32
-    // Name of the discovered application. Read-only
-    displayName *string
-    // The devices that have the discovered application installed
-    managedDevices []ManagedDeviceable
-    // Indicates the operating system / platform of the discovered application.  Some possible values are Windows, iOS, macOS. The default value is unknown (0).
-    platform *DetectedAppPlatformType
-    // Indicates the publisher of the discovered application. For example: 'Microsoft'.  The default value is an empty string.
-    publisher *string
-    // Discovered application size in bytes. Read-only
-    sizeInByte *int64
-    // Version of the discovered application. Read-only
-    version *string
 }
 // NewDetectedApp instantiates a new detectedApp and sets the default values.
 func NewDetectedApp()(*DetectedApp) {
@@ -35,11 +21,25 @@ func CreateDetectedAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetDeviceCount gets the deviceCount property value. The number of devices that have installed this application
 func (m *DetectedApp) GetDeviceCount()(*int32) {
-    return m.deviceCount
+    val, err := m.GetBackingStore().Get("deviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. Name of the discovered application. Read-only
 func (m *DetectedApp) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DetectedApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -122,23 +122,58 @@ func (m *DetectedApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetManagedDevices gets the managedDevices property value. The devices that have the discovered application installed
 func (m *DetectedApp) GetManagedDevices()([]ManagedDeviceable) {
-    return m.managedDevices
+    val, err := m.GetBackingStore().Get("managedDevices")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagedDeviceable)
+    }
+    return nil
 }
 // GetPlatform gets the platform property value. Indicates the operating system / platform of the discovered application.  Some possible values are Windows, iOS, macOS. The default value is unknown (0).
 func (m *DetectedApp) GetPlatform()(*DetectedAppPlatformType) {
-    return m.platform
+    val, err := m.GetBackingStore().Get("platform")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DetectedAppPlatformType)
+    }
+    return nil
 }
 // GetPublisher gets the publisher property value. Indicates the publisher of the discovered application. For example: 'Microsoft'.  The default value is an empty string.
 func (m *DetectedApp) GetPublisher()(*string) {
-    return m.publisher
+    val, err := m.GetBackingStore().Get("publisher")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSizeInByte gets the sizeInByte property value. Discovered application size in bytes. Read-only
 func (m *DetectedApp) GetSizeInByte()(*int64) {
-    return m.sizeInByte
+    val, err := m.GetBackingStore().Get("sizeInByte")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetVersion gets the version property value. Version of the discovered application. Read-only
 func (m *DetectedApp) GetVersion()(*string) {
-    return m.version
+    val, err := m.GetBackingStore().Get("version")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DetectedApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -197,29 +232,69 @@ func (m *DetectedApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetDeviceCount sets the deviceCount property value. The number of devices that have installed this application
 func (m *DetectedApp) SetDeviceCount(value *int32)() {
-    m.deviceCount = value
+    err := m.GetBackingStore().Set("deviceCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. Name of the discovered application. Read-only
 func (m *DetectedApp) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManagedDevices sets the managedDevices property value. The devices that have the discovered application installed
 func (m *DetectedApp) SetManagedDevices(value []ManagedDeviceable)() {
-    m.managedDevices = value
+    err := m.GetBackingStore().Set("managedDevices", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPlatform sets the platform property value. Indicates the operating system / platform of the discovered application.  Some possible values are Windows, iOS, macOS. The default value is unknown (0).
 func (m *DetectedApp) SetPlatform(value *DetectedAppPlatformType)() {
-    m.platform = value
+    err := m.GetBackingStore().Set("platform", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPublisher sets the publisher property value. Indicates the publisher of the discovered application. For example: 'Microsoft'.  The default value is an empty string.
 func (m *DetectedApp) SetPublisher(value *string)() {
-    m.publisher = value
+    err := m.GetBackingStore().Set("publisher", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSizeInByte sets the sizeInByte property value. Discovered application size in bytes. Read-only
 func (m *DetectedApp) SetSizeInByte(value *int64)() {
-    m.sizeInByte = value
+    err := m.GetBackingStore().Set("sizeInByte", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVersion sets the version property value. Version of the discovered application. Read-only
 func (m *DetectedApp) SetVersion(value *string)() {
-    m.version = value
+    err := m.GetBackingStore().Set("version", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DetectedAppable 
+type DetectedAppable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDeviceCount()(*int32)
+    GetDisplayName()(*string)
+    GetManagedDevices()([]ManagedDeviceable)
+    GetPlatform()(*DetectedAppPlatformType)
+    GetPublisher()(*string)
+    GetSizeInByte()(*int64)
+    GetVersion()(*string)
+    SetDeviceCount(value *int32)()
+    SetDisplayName(value *string)()
+    SetManagedDevices(value []ManagedDeviceable)()
+    SetPlatform(value *DetectedAppPlatformType)()
+    SetPublisher(value *string)()
+    SetSizeInByte(value *int64)()
+    SetVersion(value *string)()
 }

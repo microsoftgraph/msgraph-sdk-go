@@ -65,6 +65,10 @@ func NewItemItemsItemWorkbookTablesItemColumnsWorkbookTableColumnItemRequestBuil
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookTablesItemColumnsWorkbookTableColumnItemRequestBuilderInternal(urlParams, requestAdapter)
 }
+// DataBodyRange provides operations to call the dataBodyRange method.
+func (m *ItemItemsItemWorkbookTablesItemColumnsWorkbookTableColumnItemRequestBuilder) DataBodyRange()(*ItemItemsItemWorkbookTablesItemColumnsItemDataBodyRangeRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemColumnsItemDataBodyRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Delete delete navigation property columns for drives
 func (m *ItemItemsItemWorkbookTablesItemColumnsWorkbookTableColumnItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemColumnsWorkbookTableColumnItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -104,21 +108,9 @@ func (m *ItemItemsItemWorkbookTablesItemColumnsWorkbookTableColumnItemRequestBui
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableColumnable), nil
 }
-// MicrosoftGraphDataBodyRange provides operations to call the dataBodyRange method.
-func (m *ItemItemsItemWorkbookTablesItemColumnsWorkbookTableColumnItemRequestBuilder) MicrosoftGraphDataBodyRange()(*ItemItemsItemWorkbookTablesItemColumnsItemMicrosoftGraphDataBodyRangeRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesItemColumnsItemMicrosoftGraphDataBodyRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphHeaderRowRange provides operations to call the headerRowRange method.
-func (m *ItemItemsItemWorkbookTablesItemColumnsWorkbookTableColumnItemRequestBuilder) MicrosoftGraphHeaderRowRange()(*ItemItemsItemWorkbookTablesItemColumnsItemMicrosoftGraphHeaderRowRangeRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesItemColumnsItemMicrosoftGraphHeaderRowRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphRange provides operations to call the range method.
-func (m *ItemItemsItemWorkbookTablesItemColumnsWorkbookTableColumnItemRequestBuilder) MicrosoftGraphRange()(*ItemItemsItemWorkbookTablesItemColumnsItemMicrosoftGraphRangeRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesItemColumnsItemMicrosoftGraphRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphTotalRowRange provides operations to call the totalRowRange method.
-func (m *ItemItemsItemWorkbookTablesItemColumnsWorkbookTableColumnItemRequestBuilder) MicrosoftGraphTotalRowRange()(*ItemItemsItemWorkbookTablesItemColumnsItemMicrosoftGraphTotalRowRangeRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesItemColumnsItemMicrosoftGraphTotalRowRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// HeaderRowRange provides operations to call the headerRowRange method.
+func (m *ItemItemsItemWorkbookTablesItemColumnsWorkbookTableColumnItemRequestBuilder) HeaderRowRange()(*ItemItemsItemWorkbookTablesItemColumnsItemHeaderRowRangeRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemColumnsItemHeaderRowRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property columns in drives
 func (m *ItemItemsItemWorkbookTablesItemColumnsWorkbookTableColumnItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableColumnable, requestConfiguration *ItemItemsItemWorkbookTablesItemColumnsWorkbookTableColumnItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableColumnable, error) {
@@ -138,6 +130,10 @@ func (m *ItemItemsItemWorkbookTablesItemColumnsWorkbookTableColumnItemRequestBui
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableColumnable), nil
+}
+// RangeEscaped provides operations to call the range method.
+func (m *ItemItemsItemWorkbookTablesItemColumnsWorkbookTableColumnItemRequestBuilder) RangeEscaped()(*ItemItemsItemWorkbookTablesItemColumnsItemRangeRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemColumnsItemRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property columns for drives
 func (m *ItemItemsItemWorkbookTablesItemColumnsWorkbookTableColumnItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemColumnsWorkbookTableColumnItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -183,4 +179,8 @@ func (m *ItemItemsItemWorkbookTablesItemColumnsWorkbookTableColumnItemRequestBui
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// TotalRowRange provides operations to call the totalRowRange method.
+func (m *ItemItemsItemWorkbookTablesItemColumnsWorkbookTableColumnItemRequestBuilder) TotalRowRange()(*ItemItemsItemWorkbookTablesItemColumnsItemTotalRowRangeRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemColumnsItemTotalRowRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

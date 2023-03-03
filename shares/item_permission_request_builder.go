@@ -100,9 +100,9 @@ func (m *ItemPermissionRequestBuilder) Get(ctx context.Context, requestConfigura
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable), nil
 }
-// MicrosoftGraphGrant provides operations to call the grant method.
-func (m *ItemPermissionRequestBuilder) MicrosoftGraphGrant()(*ItemPermissionMicrosoftGraphGrantRequestBuilder) {
-    return NewItemPermissionMicrosoftGraphGrantRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// Grant provides operations to call the grant method.
+func (m *ItemPermissionRequestBuilder) Grant()(*ItemPermissionGrantRequestBuilder) {
+    return NewItemPermissionGrantRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property permission in shares
 func (m *ItemPermissionRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable, requestConfiguration *ItemPermissionRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable, error) {

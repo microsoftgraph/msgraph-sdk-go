@@ -51,6 +51,10 @@ type ItemChannelsItemMembersRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Add provides operations to call the add method.
+func (m *ItemChannelsItemMembersRequestBuilder) Add()(*ItemChannelsItemMembersAddRequestBuilder) {
+    return NewItemChannelsItemMembersAddRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // NewItemChannelsItemMembersRequestBuilderInternal instantiates a new MembersRequestBuilder and sets the default values.
 func NewItemChannelsItemMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemChannelsItemMembersRequestBuilder) {
     m := &ItemChannelsItemMembersRequestBuilder{
@@ -95,10 +99,6 @@ func (m *ItemChannelsItemMembersRequestBuilder) Get(ctx context.Context, request
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberCollectionResponseable), nil
-}
-// MicrosoftGraphAdd provides operations to call the add method.
-func (m *ItemChannelsItemMembersRequestBuilder) MicrosoftGraphAdd()(*ItemChannelsItemMembersMicrosoftGraphAddRequestBuilder) {
-    return NewItemChannelsItemMembersMicrosoftGraphAddRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post add a conversationMember to a channel.
 // [Find more info here]

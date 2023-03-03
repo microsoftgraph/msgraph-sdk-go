@@ -46,6 +46,10 @@ type MobileAppConfigurationsManagedDeviceMobileAppConfigurationItemRequestBuilde
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Assign provides operations to call the assign method.
+func (m *MobileAppConfigurationsManagedDeviceMobileAppConfigurationItemRequestBuilder) Assign()(*MobileAppConfigurationsItemAssignRequestBuilder) {
+    return NewMobileAppConfigurationsItemAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Assignments provides operations to manage the assignments property of the microsoft.graph.managedDeviceMobileAppConfiguration entity.
 func (m *MobileAppConfigurationsManagedDeviceMobileAppConfigurationItemRequestBuilder) Assignments()(*MobileAppConfigurationsItemAssignmentsRequestBuilder) {
     return NewMobileAppConfigurationsItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
@@ -133,10 +137,6 @@ func (m *MobileAppConfigurationsManagedDeviceMobileAppConfigurationItemRequestBu
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedDeviceMobileAppConfigurationable), nil
-}
-// MicrosoftGraphAssign provides operations to call the assign method.
-func (m *MobileAppConfigurationsManagedDeviceMobileAppConfigurationItemRequestBuilder) MicrosoftGraphAssign()(*MobileAppConfigurationsItemMicrosoftGraphAssignRequestBuilder) {
-    return NewMobileAppConfigurationsItemMicrosoftGraphAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property mobileAppConfigurations in deviceAppManagement
 func (m *MobileAppConfigurationsManagedDeviceMobileAppConfigurationItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedDeviceMobileAppConfigurationable, requestConfiguration *MobileAppConfigurationsManagedDeviceMobileAppConfigurationItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedDeviceMobileAppConfigurationable, error) {

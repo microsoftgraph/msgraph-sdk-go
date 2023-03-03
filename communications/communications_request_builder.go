@@ -107,9 +107,9 @@ func (m *CommunicationsRequestBuilder) Get(ctx context.Context, requestConfigura
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CloudCommunicationsable), nil
 }
-// MicrosoftGraphGetPresencesByUserId provides operations to call the getPresencesByUserId method.
-func (m *CommunicationsRequestBuilder) MicrosoftGraphGetPresencesByUserId()(*MicrosoftGraphGetPresencesByUserIdRequestBuilder) {
-    return NewMicrosoftGraphGetPresencesByUserIdRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GetPresencesByUserId provides operations to call the getPresencesByUserId method.
+func (m *CommunicationsRequestBuilder) GetPresencesByUserId()(*GetPresencesByUserIdRequestBuilder) {
+    return NewGetPresencesByUserIdRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // OnlineMeetings provides operations to manage the onlineMeetings property of the microsoft.graph.cloudCommunications entity.
 func (m *CommunicationsRequestBuilder) OnlineMeetings()(*OnlineMeetingsRequestBuilder) {

@@ -104,26 +104,6 @@ func (m *CasesEdiscoveryCasesItemCustodiansEdiscoveryCustodianItemRequestBuilder
 func (m *CasesEdiscoveryCasesItemCustodiansEdiscoveryCustodianItemRequestBuilder) LastIndexOperation()(*CasesEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilder) {
     return NewCasesEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphSecurityActivate provides operations to call the activate method.
-func (m *CasesEdiscoveryCasesItemCustodiansEdiscoveryCustodianItemRequestBuilder) MicrosoftGraphSecurityActivate()(*CasesEdiscoveryCasesItemCustodiansItemMicrosoftGraphSecurityActivateRequestBuilder) {
-    return NewCasesEdiscoveryCasesItemCustodiansItemMicrosoftGraphSecurityActivateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphSecurityApplyHold provides operations to call the applyHold method.
-func (m *CasesEdiscoveryCasesItemCustodiansEdiscoveryCustodianItemRequestBuilder) MicrosoftGraphSecurityApplyHold()(*CasesEdiscoveryCasesItemCustodiansItemMicrosoftGraphSecurityApplyHoldRequestBuilder) {
-    return NewCasesEdiscoveryCasesItemCustodiansItemMicrosoftGraphSecurityApplyHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphSecurityRelease provides operations to call the release method.
-func (m *CasesEdiscoveryCasesItemCustodiansEdiscoveryCustodianItemRequestBuilder) MicrosoftGraphSecurityRelease()(*CasesEdiscoveryCasesItemCustodiansItemMicrosoftGraphSecurityReleaseRequestBuilder) {
-    return NewCasesEdiscoveryCasesItemCustodiansItemMicrosoftGraphSecurityReleaseRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphSecurityRemoveHold provides operations to call the removeHold method.
-func (m *CasesEdiscoveryCasesItemCustodiansEdiscoveryCustodianItemRequestBuilder) MicrosoftGraphSecurityRemoveHold()(*CasesEdiscoveryCasesItemCustodiansItemMicrosoftGraphSecurityRemoveHoldRequestBuilder) {
-    return NewCasesEdiscoveryCasesItemCustodiansItemMicrosoftGraphSecurityRemoveHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphSecurityUpdateIndex provides operations to call the updateIndex method.
-func (m *CasesEdiscoveryCasesItemCustodiansEdiscoveryCustodianItemRequestBuilder) MicrosoftGraphSecurityUpdateIndex()(*CasesEdiscoveryCasesItemCustodiansItemMicrosoftGraphSecurityUpdateIndexRequestBuilder) {
-    return NewCasesEdiscoveryCasesItemCustodiansItemMicrosoftGraphSecurityUpdateIndexRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Patch update the navigation property custodians in security
 func (m *CasesEdiscoveryCasesItemCustodiansEdiscoveryCustodianItemRequestBuilder) Patch(ctx context.Context, body idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryCustodianable, requestConfiguration *CasesEdiscoveryCasesItemCustodiansEdiscoveryCustodianItemRequestBuilderPatchRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryCustodianable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -142,6 +122,26 @@ func (m *CasesEdiscoveryCasesItemCustodiansEdiscoveryCustodianItemRequestBuilder
         return nil, nil
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryCustodianable), nil
+}
+// SecurityActivate provides operations to call the activate method.
+func (m *CasesEdiscoveryCasesItemCustodiansEdiscoveryCustodianItemRequestBuilder) SecurityActivate()(*CasesEdiscoveryCasesItemCustodiansItemSecurityActivateRequestBuilder) {
+    return NewCasesEdiscoveryCasesItemCustodiansItemSecurityActivateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// SecurityApplyHold provides operations to call the applyHold method.
+func (m *CasesEdiscoveryCasesItemCustodiansEdiscoveryCustodianItemRequestBuilder) SecurityApplyHold()(*CasesEdiscoveryCasesItemCustodiansItemSecurityApplyHoldRequestBuilder) {
+    return NewCasesEdiscoveryCasesItemCustodiansItemSecurityApplyHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// SecurityRelease provides operations to call the release method.
+func (m *CasesEdiscoveryCasesItemCustodiansEdiscoveryCustodianItemRequestBuilder) SecurityRelease()(*CasesEdiscoveryCasesItemCustodiansItemSecurityReleaseRequestBuilder) {
+    return NewCasesEdiscoveryCasesItemCustodiansItemSecurityReleaseRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// SecurityRemoveHold provides operations to call the removeHold method.
+func (m *CasesEdiscoveryCasesItemCustodiansEdiscoveryCustodianItemRequestBuilder) SecurityRemoveHold()(*CasesEdiscoveryCasesItemCustodiansItemSecurityRemoveHoldRequestBuilder) {
+    return NewCasesEdiscoveryCasesItemCustodiansItemSecurityRemoveHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// SecurityUpdateIndex provides operations to call the updateIndex method.
+func (m *CasesEdiscoveryCasesItemCustodiansEdiscoveryCustodianItemRequestBuilder) SecurityUpdateIndex()(*CasesEdiscoveryCasesItemCustodiansItemSecurityUpdateIndexRequestBuilder) {
+    return NewCasesEdiscoveryCasesItemCustodiansItemSecurityUpdateIndexRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SiteSources provides operations to manage the siteSources property of the microsoft.graph.security.ediscoveryCustodian entity.
 func (m *CasesEdiscoveryCasesItemCustodiansEdiscoveryCustodianItemRequestBuilder) SiteSources()(*CasesEdiscoveryCasesItemCustodiansItemSiteSourcesRequestBuilder) {

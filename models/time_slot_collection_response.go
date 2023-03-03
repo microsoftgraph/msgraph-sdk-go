@@ -7,8 +7,6 @@ import (
 // TimeSlotCollectionResponse 
 type TimeSlotCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []TimeSlotable
 }
 // NewTimeSlotCollectionResponse instantiates a new TimeSlotCollectionResponse and sets the default values.
 func NewTimeSlotCollectionResponse()(*TimeSlotCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *TimeSlotCollectionResponse) GetFieldDeserializers()(map[string]func(i87
 }
 // GetValue gets the value property value. The value property
 func (m *TimeSlotCollectionResponse) GetValue()([]TimeSlotable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TimeSlotable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TimeSlotCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *TimeSlotCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetValue sets the value property value. The value property
 func (m *TimeSlotCollectionResponse) SetValue(value []TimeSlotable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TimeSlotCollectionResponseable 
+type TimeSlotCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]TimeSlotable)
+    SetValue(value []TimeSlotable)()
 }

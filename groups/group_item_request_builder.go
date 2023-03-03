@@ -61,6 +61,10 @@ func (m *GroupItemRequestBuilder) AcceptedSendersById(id string)(*ItemAcceptedSe
     }
     return NewItemAcceptedSendersDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
+// AddFavorite provides operations to call the addFavorite method.
+func (m *GroupItemRequestBuilder) AddFavorite()(*ItemAddFavoriteRequestBuilder) {
+    return NewItemAddFavoriteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // AppRoleAssignments provides operations to manage the appRoleAssignments property of the microsoft.graph.group entity.
 func (m *GroupItemRequestBuilder) AppRoleAssignments()(*ItemAppRoleAssignmentsRequestBuilder) {
     return NewItemAppRoleAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
@@ -75,6 +79,10 @@ func (m *GroupItemRequestBuilder) AppRoleAssignmentsById(id string)(*ItemAppRole
         urlTplParams["appRoleAssignment%2Did"] = id
     }
     return NewItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+}
+// AssignLicense provides operations to call the assignLicense method.
+func (m *GroupItemRequestBuilder) AssignLicense()(*ItemAssignLicenseRequestBuilder) {
+    return NewItemAssignLicenseRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Calendar provides operations to manage the calendar property of the microsoft.graph.group entity.
 func (m *GroupItemRequestBuilder) Calendar()(*ItemCalendarRequestBuilder) {
@@ -94,6 +102,18 @@ func (m *GroupItemRequestBuilder) CalendarViewById(id string)(*ItemCalendarViewE
         urlTplParams["event%2Did"] = id
     }
     return NewItemCalendarViewEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+}
+// CheckGrantedPermissionsForApp provides operations to call the checkGrantedPermissionsForApp method.
+func (m *GroupItemRequestBuilder) CheckGrantedPermissionsForApp()(*ItemCheckGrantedPermissionsForAppRequestBuilder) {
+    return NewItemCheckGrantedPermissionsForAppRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// CheckMemberGroups provides operations to call the checkMemberGroups method.
+func (m *GroupItemRequestBuilder) CheckMemberGroups()(*ItemCheckMemberGroupsRequestBuilder) {
+    return NewItemCheckMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// CheckMemberObjects provides operations to call the checkMemberObjects method.
+func (m *GroupItemRequestBuilder) CheckMemberObjects()(*ItemCheckMemberObjectsRequestBuilder) {
+    return NewItemCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewGroupItemRequestBuilderInternal instantiates a new GroupItemRequestBuilder and sets the default values.
 func NewGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupItemRequestBuilder) {
@@ -223,6 +243,14 @@ func (m *GroupItemRequestBuilder) Get(ctx context.Context, requestConfiguration 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Groupable), nil
 }
+// GetMemberGroups provides operations to call the getMemberGroups method.
+func (m *GroupItemRequestBuilder) GetMemberGroups()(*ItemGetMemberGroupsRequestBuilder) {
+    return NewItemGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// GetMemberObjects provides operations to call the getMemberObjects method.
+func (m *GroupItemRequestBuilder) GetMemberObjects()(*ItemGetMemberObjectsRequestBuilder) {
+    return NewItemGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // GroupLifecyclePolicies provides operations to manage the groupLifecyclePolicies property of the microsoft.graph.group entity.
 func (m *GroupItemRequestBuilder) GroupLifecyclePolicies()(*ItemGroupLifecyclePoliciesRequestBuilder) {
     return NewItemGroupLifecyclePoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
@@ -282,62 +310,6 @@ func (m *GroupItemRequestBuilder) MembersWithLicenseErrorsById(id string)(*ItemM
         urlTplParams["directoryObject%2Did"] = id
     }
     return NewItemMembersWithLicenseErrorsDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
-}
-// MicrosoftGraphAddFavorite provides operations to call the addFavorite method.
-func (m *GroupItemRequestBuilder) MicrosoftGraphAddFavorite()(*ItemMicrosoftGraphAddFavoriteRequestBuilder) {
-    return NewItemMicrosoftGraphAddFavoriteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphAssignLicense provides operations to call the assignLicense method.
-func (m *GroupItemRequestBuilder) MicrosoftGraphAssignLicense()(*ItemMicrosoftGraphAssignLicenseRequestBuilder) {
-    return NewItemMicrosoftGraphAssignLicenseRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphCheckGrantedPermissionsForApp provides operations to call the checkGrantedPermissionsForApp method.
-func (m *GroupItemRequestBuilder) MicrosoftGraphCheckGrantedPermissionsForApp()(*ItemMicrosoftGraphCheckGrantedPermissionsForAppRequestBuilder) {
-    return NewItemMicrosoftGraphCheckGrantedPermissionsForAppRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphCheckMemberGroups provides operations to call the checkMemberGroups method.
-func (m *GroupItemRequestBuilder) MicrosoftGraphCheckMemberGroups()(*ItemMicrosoftGraphCheckMemberGroupsRequestBuilder) {
-    return NewItemMicrosoftGraphCheckMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphCheckMemberObjects provides operations to call the checkMemberObjects method.
-func (m *GroupItemRequestBuilder) MicrosoftGraphCheckMemberObjects()(*ItemMicrosoftGraphCheckMemberObjectsRequestBuilder) {
-    return NewItemMicrosoftGraphCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphGetMemberGroups provides operations to call the getMemberGroups method.
-func (m *GroupItemRequestBuilder) MicrosoftGraphGetMemberGroups()(*ItemMicrosoftGraphGetMemberGroupsRequestBuilder) {
-    return NewItemMicrosoftGraphGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphGetMemberObjects provides operations to call the getMemberObjects method.
-func (m *GroupItemRequestBuilder) MicrosoftGraphGetMemberObjects()(*ItemMicrosoftGraphGetMemberObjectsRequestBuilder) {
-    return NewItemMicrosoftGraphGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphRemoveFavorite provides operations to call the removeFavorite method.
-func (m *GroupItemRequestBuilder) MicrosoftGraphRemoveFavorite()(*ItemMicrosoftGraphRemoveFavoriteRequestBuilder) {
-    return NewItemMicrosoftGraphRemoveFavoriteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphRenew provides operations to call the renew method.
-func (m *GroupItemRequestBuilder) MicrosoftGraphRenew()(*ItemMicrosoftGraphRenewRequestBuilder) {
-    return NewItemMicrosoftGraphRenewRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphResetUnseenCount provides operations to call the resetUnseenCount method.
-func (m *GroupItemRequestBuilder) MicrosoftGraphResetUnseenCount()(*ItemMicrosoftGraphResetUnseenCountRequestBuilder) {
-    return NewItemMicrosoftGraphResetUnseenCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphRestore provides operations to call the restore method.
-func (m *GroupItemRequestBuilder) MicrosoftGraphRestore()(*ItemMicrosoftGraphRestoreRequestBuilder) {
-    return NewItemMicrosoftGraphRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphSubscribeByMail provides operations to call the subscribeByMail method.
-func (m *GroupItemRequestBuilder) MicrosoftGraphSubscribeByMail()(*ItemMicrosoftGraphSubscribeByMailRequestBuilder) {
-    return NewItemMicrosoftGraphSubscribeByMailRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphUnsubscribeByMail provides operations to call the unsubscribeByMail method.
-func (m *GroupItemRequestBuilder) MicrosoftGraphUnsubscribeByMail()(*ItemMicrosoftGraphUnsubscribeByMailRequestBuilder) {
-    return NewItemMicrosoftGraphUnsubscribeByMailRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphValidateProperties provides operations to call the validateProperties method.
-func (m *GroupItemRequestBuilder) MicrosoftGraphValidateProperties()(*ItemMicrosoftGraphValidatePropertiesRequestBuilder) {
-    return NewItemMicrosoftGraphValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Onenote provides operations to manage the onenote property of the microsoft.graph.group entity.
 func (m *GroupItemRequestBuilder) Onenote()(*ItemOnenoteRequestBuilder) {
@@ -433,6 +405,22 @@ func (m *GroupItemRequestBuilder) RejectedSendersById(id string)(*ItemRejectedSe
     }
     return NewItemRejectedSendersDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
+// RemoveFavorite provides operations to call the removeFavorite method.
+func (m *GroupItemRequestBuilder) RemoveFavorite()(*ItemRemoveFavoriteRequestBuilder) {
+    return NewItemRemoveFavoriteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// Renew provides operations to call the renew method.
+func (m *GroupItemRequestBuilder) Renew()(*ItemRenewRequestBuilder) {
+    return NewItemRenewRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// ResetUnseenCount provides operations to call the resetUnseenCount method.
+func (m *GroupItemRequestBuilder) ResetUnseenCount()(*ItemResetUnseenCountRequestBuilder) {
+    return NewItemResetUnseenCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// Restore provides operations to call the restore method.
+func (m *GroupItemRequestBuilder) Restore()(*ItemRestoreRequestBuilder) {
+    return NewItemRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Settings provides operations to manage the settings property of the microsoft.graph.group entity.
 func (m *GroupItemRequestBuilder) Settings()(*ItemSettingsRequestBuilder) {
     return NewItemSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
@@ -462,6 +450,10 @@ func (m *GroupItemRequestBuilder) SitesById(id string)(*ItemSitesSiteItemRequest
         urlTplParams["site%2Did"] = id
     }
     return NewItemSitesSiteItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+}
+// SubscribeByMail provides operations to call the subscribeByMail method.
+func (m *GroupItemRequestBuilder) SubscribeByMail()(*ItemSubscribeByMailRequestBuilder) {
+    return NewItemSubscribeByMailRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Team provides operations to manage the team property of the microsoft.graph.group entity.
 func (m *GroupItemRequestBuilder) Team()(*ItemTeamRequestBuilder) {
@@ -556,4 +548,12 @@ func (m *GroupItemRequestBuilder) TransitiveMembersById(id string)(*ItemTransiti
         urlTplParams["directoryObject%2Did"] = id
     }
     return NewItemTransitiveMembersDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+}
+// UnsubscribeByMail provides operations to call the unsubscribeByMail method.
+func (m *GroupItemRequestBuilder) UnsubscribeByMail()(*ItemUnsubscribeByMailRequestBuilder) {
+    return NewItemUnsubscribeByMailRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// ValidateProperties provides operations to call the validateProperties method.
+func (m *GroupItemRequestBuilder) ValidateProperties()(*ItemValidatePropertiesRequestBuilder) {
+    return NewItemValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

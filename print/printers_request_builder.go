@@ -74,6 +74,10 @@ func NewPrintersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 func (m *PrintersRequestBuilder) Count()(*PrintersCountRequestBuilder) {
     return NewPrintersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// Create provides operations to call the create method.
+func (m *PrintersRequestBuilder) Create()(*PrintersCreateRequestBuilder) {
+    return NewPrintersCreateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Get retrieve the list of **printers** that are registered in the tenant.
 // [Find more info here]
 // 
@@ -95,10 +99,6 @@ func (m *PrintersRequestBuilder) Get(ctx context.Context, requestConfiguration *
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrinterCollectionResponseable), nil
-}
-// MicrosoftGraphCreate provides operations to call the create method.
-func (m *PrintersRequestBuilder) MicrosoftGraphCreate()(*PrintersMicrosoftGraphCreateRequestBuilder) {
-    return NewPrintersMicrosoftGraphCreateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to printers for print
 func (m *PrintersRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Printerable, requestConfiguration *PrintersRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Printerable, error) {

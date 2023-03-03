@@ -2,27 +2,19 @@ package security
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // VmMetadata 
 type VmMetadata struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The cloudProvider property
-    cloudProvider *VmCloudProvider
-    // The OdataType property
-    odataType *string
-    // Unique identifier of the Azure resource.
-    resourceId *string
-    // Unique identifier of the Azure subscription the customer tenant belongs to.
-    subscriptionId *string
-    // Unique identifier of the virtual machine instance.
-    vmId *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewVmMetadata instantiates a new vmMetadata and sets the default values.
 func NewVmMetadata()(*VmMetadata) {
     m := &VmMetadata{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -32,11 +24,30 @@ func CreateVmMetadataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VmMetadata) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *VmMetadata) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetCloudProvider gets the cloudProvider property value. The cloudProvider property
 func (m *VmMetadata) GetCloudProvider()(*VmCloudProvider) {
-    return m.cloudProvider
+    val, err := m.GetBackingStore().Get("cloudProvider")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*VmCloudProvider)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *VmMetadata) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -95,19 +106,47 @@ func (m *VmMetadata) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *VmMetadata) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetResourceId gets the resourceId property value. Unique identifier of the Azure resource.
 func (m *VmMetadata) GetResourceId()(*string) {
-    return m.resourceId
+    val, err := m.GetBackingStore().Get("resourceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSubscriptionId gets the subscriptionId property value. Unique identifier of the Azure subscription the customer tenant belongs to.
 func (m *VmMetadata) GetSubscriptionId()(*string) {
-    return m.subscriptionId
+    val, err := m.GetBackingStore().Get("subscriptionId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetVmId gets the vmId property value. Unique identifier of the virtual machine instance.
 func (m *VmMetadata) GetVmId()(*string) {
-    return m.vmId
+    val, err := m.GetBackingStore().Get("vmId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *VmMetadata) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -152,25 +191,65 @@ func (m *VmMetadata) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VmMetadata) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *VmMetadata) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetCloudProvider sets the cloudProvider property value. The cloudProvider property
 func (m *VmMetadata) SetCloudProvider(value *VmCloudProvider)() {
-    m.cloudProvider = value
+    err := m.GetBackingStore().Set("cloudProvider", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *VmMetadata) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetResourceId sets the resourceId property value. Unique identifier of the Azure resource.
 func (m *VmMetadata) SetResourceId(value *string)() {
-    m.resourceId = value
+    err := m.GetBackingStore().Set("resourceId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSubscriptionId sets the subscriptionId property value. Unique identifier of the Azure subscription the customer tenant belongs to.
 func (m *VmMetadata) SetSubscriptionId(value *string)() {
-    m.subscriptionId = value
+    err := m.GetBackingStore().Set("subscriptionId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVmId sets the vmId property value. Unique identifier of the virtual machine instance.
 func (m *VmMetadata) SetVmId(value *string)() {
-    m.vmId = value
+    err := m.GetBackingStore().Set("vmId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// VmMetadataable 
+type VmMetadataable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetCloudProvider()(*VmCloudProvider)
+    GetOdataType()(*string)
+    GetResourceId()(*string)
+    GetSubscriptionId()(*string)
+    GetVmId()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetCloudProvider(value *VmCloudProvider)()
+    SetOdataType(value *string)()
+    SetResourceId(value *string)()
+    SetSubscriptionId(value *string)()
+    SetVmId(value *string)()
 }

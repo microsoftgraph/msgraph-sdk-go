@@ -93,9 +93,9 @@ func (m *TeamsRequestBuilder) Get(ctx context.Context, requestConfiguration *Tea
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamCollectionResponseable), nil
 }
-// MicrosoftGraphGetAllMessages provides operations to call the getAllMessages method.
-func (m *TeamsRequestBuilder) MicrosoftGraphGetAllMessages()(*MicrosoftGraphGetAllMessagesRequestBuilder) {
-    return NewMicrosoftGraphGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GetAllMessages provides operations to call the getAllMessages method.
+func (m *TeamsRequestBuilder) GetAllMessages()(*GetAllMessagesRequestBuilder) {
+    return NewGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create a new team.
 // [Find more info here]

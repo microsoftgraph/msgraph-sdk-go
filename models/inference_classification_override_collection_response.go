@@ -7,8 +7,6 @@ import (
 // InferenceClassificationOverrideCollectionResponse 
 type InferenceClassificationOverrideCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []InferenceClassificationOverrideable
 }
 // NewInferenceClassificationOverrideCollectionResponse instantiates a new InferenceClassificationOverrideCollectionResponse and sets the default values.
 func NewInferenceClassificationOverrideCollectionResponse()(*InferenceClassificationOverrideCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *InferenceClassificationOverrideCollectionResponse) GetFieldDeserializer
 }
 // GetValue gets the value property value. The value property
 func (m *InferenceClassificationOverrideCollectionResponse) GetValue()([]InferenceClassificationOverrideable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]InferenceClassificationOverrideable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *InferenceClassificationOverrideCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *InferenceClassificationOverrideCollectionResponse) Serialize(writer i87
 }
 // SetValue sets the value property value. The value property
 func (m *InferenceClassificationOverrideCollectionResponse) SetValue(value []InferenceClassificationOverrideable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// InferenceClassificationOverrideCollectionResponseable 
+type InferenceClassificationOverrideCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]InferenceClassificationOverrideable)
+    SetValue(value []InferenceClassificationOverrideable)()
 }

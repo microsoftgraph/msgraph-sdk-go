@@ -100,9 +100,9 @@ func (m *ItemItemsItemPermissionsPermissionItemRequestBuilder) Get(ctx context.C
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable), nil
 }
-// MicrosoftGraphGrant provides operations to call the grant method.
-func (m *ItemItemsItemPermissionsPermissionItemRequestBuilder) MicrosoftGraphGrant()(*ItemItemsItemPermissionsItemMicrosoftGraphGrantRequestBuilder) {
-    return NewItemItemsItemPermissionsItemMicrosoftGraphGrantRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// Grant provides operations to call the grant method.
+func (m *ItemItemsItemPermissionsPermissionItemRequestBuilder) Grant()(*ItemItemsItemPermissionsItemGrantRequestBuilder) {
+    return NewItemItemsItemPermissionsItemGrantRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property permissions in drives
 func (m *ItemItemsItemPermissionsPermissionItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable, requestConfiguration *ItemItemsItemPermissionsPermissionItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable, error) {

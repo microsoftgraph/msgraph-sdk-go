@@ -7,8 +7,6 @@ import (
 // TimeOffReasonCollectionResponse 
 type TimeOffReasonCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []TimeOffReasonable
 }
 // NewTimeOffReasonCollectionResponse instantiates a new TimeOffReasonCollectionResponse and sets the default values.
 func NewTimeOffReasonCollectionResponse()(*TimeOffReasonCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *TimeOffReasonCollectionResponse) GetFieldDeserializers()(map[string]fun
 }
 // GetValue gets the value property value. The value property
 func (m *TimeOffReasonCollectionResponse) GetValue()([]TimeOffReasonable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TimeOffReasonable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TimeOffReasonCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *TimeOffReasonCollectionResponse) Serialize(writer i878a80d2330e89d26896
 }
 // SetValue sets the value property value. The value property
 func (m *TimeOffReasonCollectionResponse) SetValue(value []TimeOffReasonable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TimeOffReasonCollectionResponseable 
+type TimeOffReasonCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]TimeOffReasonable)
+    SetValue(value []TimeOffReasonable)()
 }

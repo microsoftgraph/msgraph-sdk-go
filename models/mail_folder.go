@@ -7,28 +7,6 @@ import (
 // MailFolder 
 type MailFolder struct {
     Entity
-    // The number of immediate child mailFolders in the current mailFolder.
-    childFolderCount *int32
-    // The collection of child folders in the mailFolder.
-    childFolders []MailFolderable
-    // The mailFolder's display name.
-    displayName *string
-    // Indicates whether the mailFolder is hidden. This property can be set only when creating the folder. Find more information in Hidden mail folders.
-    isHidden *bool
-    // The collection of rules that apply to the user's Inbox folder.
-    messageRules []MessageRuleable
-    // The collection of messages in the mailFolder.
-    messages []Messageable
-    // The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
-    multiValueExtendedProperties []MultiValueLegacyExtendedPropertyable
-    // The unique identifier for the mailFolder's parent mailFolder.
-    parentFolderId *string
-    // The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
-    singleValueExtendedProperties []SingleValueLegacyExtendedPropertyable
-    // The number of items in the mailFolder.
-    totalItemCount *int32
-    // The number of items in the mailFolder marked as unread.
-    unreadItemCount *int32
 }
 // NewMailFolder instantiates a new mailFolder and sets the default values.
 func NewMailFolder()(*MailFolder) {
@@ -61,15 +39,36 @@ func CreateMailFolderFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 }
 // GetChildFolderCount gets the childFolderCount property value. The number of immediate child mailFolders in the current mailFolder.
 func (m *MailFolder) GetChildFolderCount()(*int32) {
-    return m.childFolderCount
+    val, err := m.GetBackingStore().Get("childFolderCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetChildFolders gets the childFolders property value. The collection of child folders in the mailFolder.
 func (m *MailFolder) GetChildFolders()([]MailFolderable) {
-    return m.childFolders
+    val, err := m.GetBackingStore().Get("childFolders")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MailFolderable)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The mailFolder's display name.
 func (m *MailFolder) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MailFolder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -208,35 +207,91 @@ func (m *MailFolder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetIsHidden gets the isHidden property value. Indicates whether the mailFolder is hidden. This property can be set only when creating the folder. Find more information in Hidden mail folders.
 func (m *MailFolder) GetIsHidden()(*bool) {
-    return m.isHidden
+    val, err := m.GetBackingStore().Get("isHidden")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetMessageRules gets the messageRules property value. The collection of rules that apply to the user's Inbox folder.
 func (m *MailFolder) GetMessageRules()([]MessageRuleable) {
-    return m.messageRules
+    val, err := m.GetBackingStore().Get("messageRules")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MessageRuleable)
+    }
+    return nil
 }
 // GetMessages gets the messages property value. The collection of messages in the mailFolder.
 func (m *MailFolder) GetMessages()([]Messageable) {
-    return m.messages
+    val, err := m.GetBackingStore().Get("messages")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Messageable)
+    }
+    return nil
 }
 // GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
 func (m *MailFolder) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPropertyable) {
-    return m.multiValueExtendedProperties
+    val, err := m.GetBackingStore().Get("multiValueExtendedProperties")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MultiValueLegacyExtendedPropertyable)
+    }
+    return nil
 }
 // GetParentFolderId gets the parentFolderId property value. The unique identifier for the mailFolder's parent mailFolder.
 func (m *MailFolder) GetParentFolderId()(*string) {
-    return m.parentFolderId
+    val, err := m.GetBackingStore().Get("parentFolderId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
 func (m *MailFolder) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable) {
-    return m.singleValueExtendedProperties
+    val, err := m.GetBackingStore().Get("singleValueExtendedProperties")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SingleValueLegacyExtendedPropertyable)
+    }
+    return nil
 }
 // GetTotalItemCount gets the totalItemCount property value. The number of items in the mailFolder.
 func (m *MailFolder) GetTotalItemCount()(*int32) {
-    return m.totalItemCount
+    val, err := m.GetBackingStore().Get("totalItemCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetUnreadItemCount gets the unreadItemCount property value. The number of items in the mailFolder marked as unread.
 func (m *MailFolder) GetUnreadItemCount()(*int32) {
-    return m.unreadItemCount
+    val, err := m.GetBackingStore().Get("unreadItemCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MailFolder) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -334,45 +389,105 @@ func (m *MailFolder) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetChildFolderCount sets the childFolderCount property value. The number of immediate child mailFolders in the current mailFolder.
 func (m *MailFolder) SetChildFolderCount(value *int32)() {
-    m.childFolderCount = value
+    err := m.GetBackingStore().Set("childFolderCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetChildFolders sets the childFolders property value. The collection of child folders in the mailFolder.
 func (m *MailFolder) SetChildFolders(value []MailFolderable)() {
-    m.childFolders = value
+    err := m.GetBackingStore().Set("childFolders", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The mailFolder's display name.
 func (m *MailFolder) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsHidden sets the isHidden property value. Indicates whether the mailFolder is hidden. This property can be set only when creating the folder. Find more information in Hidden mail folders.
 func (m *MailFolder) SetIsHidden(value *bool)() {
-    m.isHidden = value
+    err := m.GetBackingStore().Set("isHidden", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMessageRules sets the messageRules property value. The collection of rules that apply to the user's Inbox folder.
 func (m *MailFolder) SetMessageRules(value []MessageRuleable)() {
-    m.messageRules = value
+    err := m.GetBackingStore().Set("messageRules", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMessages sets the messages property value. The collection of messages in the mailFolder.
 func (m *MailFolder) SetMessages(value []Messageable)() {
-    m.messages = value
+    err := m.GetBackingStore().Set("messages", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMultiValueExtendedProperties sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
 func (m *MailFolder) SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedPropertyable)() {
-    m.multiValueExtendedProperties = value
+    err := m.GetBackingStore().Set("multiValueExtendedProperties", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetParentFolderId sets the parentFolderId property value. The unique identifier for the mailFolder's parent mailFolder.
 func (m *MailFolder) SetParentFolderId(value *string)() {
-    m.parentFolderId = value
+    err := m.GetBackingStore().Set("parentFolderId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
 func (m *MailFolder) SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedPropertyable)() {
-    m.singleValueExtendedProperties = value
+    err := m.GetBackingStore().Set("singleValueExtendedProperties", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTotalItemCount sets the totalItemCount property value. The number of items in the mailFolder.
 func (m *MailFolder) SetTotalItemCount(value *int32)() {
-    m.totalItemCount = value
+    err := m.GetBackingStore().Set("totalItemCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUnreadItemCount sets the unreadItemCount property value. The number of items in the mailFolder marked as unread.
 func (m *MailFolder) SetUnreadItemCount(value *int32)() {
-    m.unreadItemCount = value
+    err := m.GetBackingStore().Set("unreadItemCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MailFolderable 
+type MailFolderable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetChildFolderCount()(*int32)
+    GetChildFolders()([]MailFolderable)
+    GetDisplayName()(*string)
+    GetIsHidden()(*bool)
+    GetMessageRules()([]MessageRuleable)
+    GetMessages()([]Messageable)
+    GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPropertyable)
+    GetParentFolderId()(*string)
+    GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable)
+    GetTotalItemCount()(*int32)
+    GetUnreadItemCount()(*int32)
+    SetChildFolderCount(value *int32)()
+    SetChildFolders(value []MailFolderable)()
+    SetDisplayName(value *string)()
+    SetIsHidden(value *bool)()
+    SetMessageRules(value []MessageRuleable)()
+    SetMessages(value []Messageable)()
+    SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedPropertyable)()
+    SetParentFolderId(value *string)()
+    SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedPropertyable)()
+    SetTotalItemCount(value *int32)()
+    SetUnreadItemCount(value *int32)()
 }

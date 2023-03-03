@@ -7,8 +7,6 @@ import (
 // SingleValueLegacyExtendedPropertyCollectionResponse 
 type SingleValueLegacyExtendedPropertyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []SingleValueLegacyExtendedPropertyable
 }
 // NewSingleValueLegacyExtendedPropertyCollectionResponse instantiates a new SingleValueLegacyExtendedPropertyCollectionResponse and sets the default values.
 func NewSingleValueLegacyExtendedPropertyCollectionResponse()(*SingleValueLegacyExtendedPropertyCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *SingleValueLegacyExtendedPropertyCollectionResponse) GetFieldDeserializ
 }
 // GetValue gets the value property value. The value property
 func (m *SingleValueLegacyExtendedPropertyCollectionResponse) GetValue()([]SingleValueLegacyExtendedPropertyable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SingleValueLegacyExtendedPropertyable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SingleValueLegacyExtendedPropertyCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *SingleValueLegacyExtendedPropertyCollectionResponse) Serialize(writer i
 }
 // SetValue sets the value property value. The value property
 func (m *SingleValueLegacyExtendedPropertyCollectionResponse) SetValue(value []SingleValueLegacyExtendedPropertyable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SingleValueLegacyExtendedPropertyCollectionResponseable 
+type SingleValueLegacyExtendedPropertyCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]SingleValueLegacyExtendedPropertyable)
+    SetValue(value []SingleValueLegacyExtendedPropertyable)()
 }

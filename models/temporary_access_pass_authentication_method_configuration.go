@@ -7,18 +7,6 @@ import (
 // TemporaryAccessPassAuthenticationMethodConfiguration 
 type TemporaryAccessPassAuthenticationMethodConfiguration struct {
     AuthenticationMethodConfiguration
-    // Default length in characters of a Temporary Access Pass object. Must be between 8 and 48 characters.
-    defaultLength *int32
-    // Default lifetime in minutes for a Temporary Access Pass. Value can be any integer between the minimumLifetimeInMinutes and maximumLifetimeInMinutes.
-    defaultLifetimeInMinutes *int32
-    // A collection of groups that are enabled to use the authentication method.
-    includeTargets []AuthenticationMethodTargetable
-    // If true, all the passes in the tenant will be restricted to one-time use. If false, passes in the tenant can be created to be either one-time use or reusable.
-    isUsableOnce *bool
-    // Maximum lifetime in minutes for any Temporary Access Pass created in the tenant. Value can be between 10 and 43200 minutes (equivalent to 30 days).
-    maximumLifetimeInMinutes *int32
-    // Minimum lifetime in minutes for any Temporary Access Pass created in the tenant. Value can be between 10 and 43200 minutes (equivalent to 30 days).
-    minimumLifetimeInMinutes *int32
 }
 // NewTemporaryAccessPassAuthenticationMethodConfiguration instantiates a new TemporaryAccessPassAuthenticationMethodConfiguration and sets the default values.
 func NewTemporaryAccessPassAuthenticationMethodConfiguration()(*TemporaryAccessPassAuthenticationMethodConfiguration) {
@@ -35,11 +23,25 @@ func CreateTemporaryAccessPassAuthenticationMethodConfigurationFromDiscriminator
 }
 // GetDefaultLength gets the defaultLength property value. Default length in characters of a Temporary Access Pass object. Must be between 8 and 48 characters.
 func (m *TemporaryAccessPassAuthenticationMethodConfiguration) GetDefaultLength()(*int32) {
-    return m.defaultLength
+    val, err := m.GetBackingStore().Get("defaultLength")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetDefaultLifetimeInMinutes gets the defaultLifetimeInMinutes property value. Default lifetime in minutes for a Temporary Access Pass. Value can be any integer between the minimumLifetimeInMinutes and maximumLifetimeInMinutes.
 func (m *TemporaryAccessPassAuthenticationMethodConfiguration) GetDefaultLifetimeInMinutes()(*int32) {
-    return m.defaultLifetimeInMinutes
+    val, err := m.GetBackingStore().Get("defaultLifetimeInMinutes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TemporaryAccessPassAuthenticationMethodConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -112,19 +114,47 @@ func (m *TemporaryAccessPassAuthenticationMethodConfiguration) GetFieldDeseriali
 }
 // GetIncludeTargets gets the includeTargets property value. A collection of groups that are enabled to use the authentication method.
 func (m *TemporaryAccessPassAuthenticationMethodConfiguration) GetIncludeTargets()([]AuthenticationMethodTargetable) {
-    return m.includeTargets
+    val, err := m.GetBackingStore().Get("includeTargets")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AuthenticationMethodTargetable)
+    }
+    return nil
 }
 // GetIsUsableOnce gets the isUsableOnce property value. If true, all the passes in the tenant will be restricted to one-time use. If false, passes in the tenant can be created to be either one-time use or reusable.
 func (m *TemporaryAccessPassAuthenticationMethodConfiguration) GetIsUsableOnce()(*bool) {
-    return m.isUsableOnce
+    val, err := m.GetBackingStore().Get("isUsableOnce")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetMaximumLifetimeInMinutes gets the maximumLifetimeInMinutes property value. Maximum lifetime in minutes for any Temporary Access Pass created in the tenant. Value can be between 10 and 43200 minutes (equivalent to 30 days).
 func (m *TemporaryAccessPassAuthenticationMethodConfiguration) GetMaximumLifetimeInMinutes()(*int32) {
-    return m.maximumLifetimeInMinutes
+    val, err := m.GetBackingStore().Get("maximumLifetimeInMinutes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetMinimumLifetimeInMinutes gets the minimumLifetimeInMinutes property value. Minimum lifetime in minutes for any Temporary Access Pass created in the tenant. Value can be between 10 and 43200 minutes (equivalent to 30 days).
 func (m *TemporaryAccessPassAuthenticationMethodConfiguration) GetMinimumLifetimeInMinutes()(*int32) {
-    return m.minimumLifetimeInMinutes
+    val, err := m.GetBackingStore().Get("minimumLifetimeInMinutes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TemporaryAccessPassAuthenticationMethodConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -176,25 +206,60 @@ func (m *TemporaryAccessPassAuthenticationMethodConfiguration) Serialize(writer 
 }
 // SetDefaultLength sets the defaultLength property value. Default length in characters of a Temporary Access Pass object. Must be between 8 and 48 characters.
 func (m *TemporaryAccessPassAuthenticationMethodConfiguration) SetDefaultLength(value *int32)() {
-    m.defaultLength = value
+    err := m.GetBackingStore().Set("defaultLength", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDefaultLifetimeInMinutes sets the defaultLifetimeInMinutes property value. Default lifetime in minutes for a Temporary Access Pass. Value can be any integer between the minimumLifetimeInMinutes and maximumLifetimeInMinutes.
 func (m *TemporaryAccessPassAuthenticationMethodConfiguration) SetDefaultLifetimeInMinutes(value *int32)() {
-    m.defaultLifetimeInMinutes = value
+    err := m.GetBackingStore().Set("defaultLifetimeInMinutes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIncludeTargets sets the includeTargets property value. A collection of groups that are enabled to use the authentication method.
 func (m *TemporaryAccessPassAuthenticationMethodConfiguration) SetIncludeTargets(value []AuthenticationMethodTargetable)() {
-    m.includeTargets = value
+    err := m.GetBackingStore().Set("includeTargets", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsUsableOnce sets the isUsableOnce property value. If true, all the passes in the tenant will be restricted to one-time use. If false, passes in the tenant can be created to be either one-time use or reusable.
 func (m *TemporaryAccessPassAuthenticationMethodConfiguration) SetIsUsableOnce(value *bool)() {
-    m.isUsableOnce = value
+    err := m.GetBackingStore().Set("isUsableOnce", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMaximumLifetimeInMinutes sets the maximumLifetimeInMinutes property value. Maximum lifetime in minutes for any Temporary Access Pass created in the tenant. Value can be between 10 and 43200 minutes (equivalent to 30 days).
 func (m *TemporaryAccessPassAuthenticationMethodConfiguration) SetMaximumLifetimeInMinutes(value *int32)() {
-    m.maximumLifetimeInMinutes = value
+    err := m.GetBackingStore().Set("maximumLifetimeInMinutes", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMinimumLifetimeInMinutes sets the minimumLifetimeInMinutes property value. Minimum lifetime in minutes for any Temporary Access Pass created in the tenant. Value can be between 10 and 43200 minutes (equivalent to 30 days).
 func (m *TemporaryAccessPassAuthenticationMethodConfiguration) SetMinimumLifetimeInMinutes(value *int32)() {
-    m.minimumLifetimeInMinutes = value
+    err := m.GetBackingStore().Set("minimumLifetimeInMinutes", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TemporaryAccessPassAuthenticationMethodConfigurationable 
+type TemporaryAccessPassAuthenticationMethodConfigurationable interface {
+    AuthenticationMethodConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDefaultLength()(*int32)
+    GetDefaultLifetimeInMinutes()(*int32)
+    GetIncludeTargets()([]AuthenticationMethodTargetable)
+    GetIsUsableOnce()(*bool)
+    GetMaximumLifetimeInMinutes()(*int32)
+    GetMinimumLifetimeInMinutes()(*int32)
+    SetDefaultLength(value *int32)()
+    SetDefaultLifetimeInMinutes(value *int32)()
+    SetIncludeTargets(value []AuthenticationMethodTargetable)()
+    SetIsUsableOnce(value *bool)()
+    SetMaximumLifetimeInMinutes(value *int32)()
+    SetMinimumLifetimeInMinutes(value *int32)()
 }

@@ -74,6 +74,10 @@ func NewEntitlementManagementCatalogsItemAccessPackagesRequestBuilder(rawUrl str
 func (m *EntitlementManagementCatalogsItemAccessPackagesRequestBuilder) Count()(*EntitlementManagementCatalogsItemAccessPackagesCountRequestBuilder) {
     return NewEntitlementManagementCatalogsItemAccessPackagesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
+func (m *EntitlementManagementCatalogsItemAccessPackagesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*EntitlementManagementCatalogsItemAccessPackagesFilterByCurrentUserWithOnRequestBuilder) {
+    return NewEntitlementManagementCatalogsItemAccessPackagesFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
+}
 // Get the access packages in this catalog. Read-only. Nullable.
 func (m *EntitlementManagementCatalogsItemAccessPackagesRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementCatalogsItemAccessPackagesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -92,10 +96,6 @@ func (m *EntitlementManagementCatalogsItemAccessPackagesRequestBuilder) Get(ctx 
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageCollectionResponseable), nil
-}
-// MicrosoftGraphFilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
-func (m *EntitlementManagementCatalogsItemAccessPackagesRequestBuilder) MicrosoftGraphFilterByCurrentUserWithOn(on *string)(*EntitlementManagementCatalogsItemAccessPackagesMicrosoftGraphFilterByCurrentUserWithOnRequestBuilder) {
-    return NewEntitlementManagementCatalogsItemAccessPackagesMicrosoftGraphFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
 }
 // Post create new navigation property to accessPackages for identityGovernance
 func (m *EntitlementManagementCatalogsItemAccessPackagesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable, requestConfiguration *EntitlementManagementCatalogsItemAccessPackagesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable, error) {

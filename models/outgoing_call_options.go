@@ -34,3 +34,8 @@ func (m *OutgoingCallOptions) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
+// OutgoingCallOptionsable 
+type OutgoingCallOptionsable interface {
+    CallOptionsable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+}

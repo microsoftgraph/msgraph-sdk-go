@@ -7,22 +7,6 @@ import (
 // Win32LobAppPowerShellScriptRule 
 type Win32LobAppPowerShellScriptRule struct {
     Win32LobAppRule
-    // The script output comparison value. Do not specify a value if the rule is used for detection.
-    comparisonValue *string
-    // The display name for the rule. Do not specify this value if the rule is used for detection.
-    displayName *string
-    // A value indicating whether a signature check is enforced.
-    enforceSignatureCheck *bool
-    // Contains all supported Powershell Script output detection type.
-    operationType *Win32LobAppPowerShellScriptRuleOperationType
-    // Contains properties for detection operator.
-    operator *Win32LobAppRuleOperator
-    // A value indicating whether the script should run as 32-bit.
-    runAs32Bit *bool
-    // The execution context of the script. Do not specify this value if the rule is used for detection. Script detection rules will run in the same context as the associated app install context. Possible values are: system, user.
-    runAsAccount *RunAsAccountType
-    // The base64-encoded script content.
-    scriptContent *string
 }
 // NewWin32LobAppPowerShellScriptRule instantiates a new Win32LobAppPowerShellScriptRule and sets the default values.
 func NewWin32LobAppPowerShellScriptRule()(*Win32LobAppPowerShellScriptRule) {
@@ -39,15 +23,36 @@ func CreateWin32LobAppPowerShellScriptRuleFromDiscriminatorValue(parseNode i878a
 }
 // GetComparisonValue gets the comparisonValue property value. The script output comparison value. Do not specify a value if the rule is used for detection.
 func (m *Win32LobAppPowerShellScriptRule) GetComparisonValue()(*string) {
-    return m.comparisonValue
+    val, err := m.GetBackingStore().Get("comparisonValue")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The display name for the rule. Do not specify this value if the rule is used for detection.
 func (m *Win32LobAppPowerShellScriptRule) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetEnforceSignatureCheck gets the enforceSignatureCheck property value. A value indicating whether a signature check is enforced.
 func (m *Win32LobAppPowerShellScriptRule) GetEnforceSignatureCheck()(*bool) {
-    return m.enforceSignatureCheck
+    val, err := m.GetBackingStore().Get("enforceSignatureCheck")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Win32LobAppPowerShellScriptRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -136,23 +141,58 @@ func (m *Win32LobAppPowerShellScriptRule) GetFieldDeserializers()(map[string]fun
 }
 // GetOperationType gets the operationType property value. Contains all supported Powershell Script output detection type.
 func (m *Win32LobAppPowerShellScriptRule) GetOperationType()(*Win32LobAppPowerShellScriptRuleOperationType) {
-    return m.operationType
+    val, err := m.GetBackingStore().Get("operationType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*Win32LobAppPowerShellScriptRuleOperationType)
+    }
+    return nil
 }
 // GetOperator gets the operator property value. Contains properties for detection operator.
 func (m *Win32LobAppPowerShellScriptRule) GetOperator()(*Win32LobAppRuleOperator) {
-    return m.operator
+    val, err := m.GetBackingStore().Get("operator")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*Win32LobAppRuleOperator)
+    }
+    return nil
 }
 // GetRunAs32Bit gets the runAs32Bit property value. A value indicating whether the script should run as 32-bit.
 func (m *Win32LobAppPowerShellScriptRule) GetRunAs32Bit()(*bool) {
-    return m.runAs32Bit
+    val, err := m.GetBackingStore().Get("runAs32Bit")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetRunAsAccount gets the runAsAccount property value. The execution context of the script. Do not specify this value if the rule is used for detection. Script detection rules will run in the same context as the associated app install context. Possible values are: system, user.
 func (m *Win32LobAppPowerShellScriptRule) GetRunAsAccount()(*RunAsAccountType) {
-    return m.runAsAccount
+    val, err := m.GetBackingStore().Get("runAsAccount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*RunAsAccountType)
+    }
+    return nil
 }
 // GetScriptContent gets the scriptContent property value. The base64-encoded script content.
 func (m *Win32LobAppPowerShellScriptRule) GetScriptContent()(*string) {
-    return m.scriptContent
+    val, err := m.GetBackingStore().Get("scriptContent")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Win32LobAppPowerShellScriptRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -215,33 +255,78 @@ func (m *Win32LobAppPowerShellScriptRule) Serialize(writer i878a80d2330e89d26896
 }
 // SetComparisonValue sets the comparisonValue property value. The script output comparison value. Do not specify a value if the rule is used for detection.
 func (m *Win32LobAppPowerShellScriptRule) SetComparisonValue(value *string)() {
-    m.comparisonValue = value
+    err := m.GetBackingStore().Set("comparisonValue", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The display name for the rule. Do not specify this value if the rule is used for detection.
 func (m *Win32LobAppPowerShellScriptRule) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEnforceSignatureCheck sets the enforceSignatureCheck property value. A value indicating whether a signature check is enforced.
 func (m *Win32LobAppPowerShellScriptRule) SetEnforceSignatureCheck(value *bool)() {
-    m.enforceSignatureCheck = value
+    err := m.GetBackingStore().Set("enforceSignatureCheck", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOperationType sets the operationType property value. Contains all supported Powershell Script output detection type.
 func (m *Win32LobAppPowerShellScriptRule) SetOperationType(value *Win32LobAppPowerShellScriptRuleOperationType)() {
-    m.operationType = value
+    err := m.GetBackingStore().Set("operationType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOperator sets the operator property value. Contains properties for detection operator.
 func (m *Win32LobAppPowerShellScriptRule) SetOperator(value *Win32LobAppRuleOperator)() {
-    m.operator = value
+    err := m.GetBackingStore().Set("operator", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRunAs32Bit sets the runAs32Bit property value. A value indicating whether the script should run as 32-bit.
 func (m *Win32LobAppPowerShellScriptRule) SetRunAs32Bit(value *bool)() {
-    m.runAs32Bit = value
+    err := m.GetBackingStore().Set("runAs32Bit", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRunAsAccount sets the runAsAccount property value. The execution context of the script. Do not specify this value if the rule is used for detection. Script detection rules will run in the same context as the associated app install context. Possible values are: system, user.
 func (m *Win32LobAppPowerShellScriptRule) SetRunAsAccount(value *RunAsAccountType)() {
-    m.runAsAccount = value
+    err := m.GetBackingStore().Set("runAsAccount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetScriptContent sets the scriptContent property value. The base64-encoded script content.
 func (m *Win32LobAppPowerShellScriptRule) SetScriptContent(value *string)() {
-    m.scriptContent = value
+    err := m.GetBackingStore().Set("scriptContent", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Win32LobAppPowerShellScriptRuleable 
+type Win32LobAppPowerShellScriptRuleable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    Win32LobAppRuleable
+    GetComparisonValue()(*string)
+    GetDisplayName()(*string)
+    GetEnforceSignatureCheck()(*bool)
+    GetOperationType()(*Win32LobAppPowerShellScriptRuleOperationType)
+    GetOperator()(*Win32LobAppRuleOperator)
+    GetRunAs32Bit()(*bool)
+    GetRunAsAccount()(*RunAsAccountType)
+    GetScriptContent()(*string)
+    SetComparisonValue(value *string)()
+    SetDisplayName(value *string)()
+    SetEnforceSignatureCheck(value *bool)()
+    SetOperationType(value *Win32LobAppPowerShellScriptRuleOperationType)()
+    SetOperator(value *Win32LobAppRuleOperator)()
+    SetRunAs32Bit(value *bool)()
+    SetRunAsAccount(value *RunAsAccountType)()
+    SetScriptContent(value *string)()
 }

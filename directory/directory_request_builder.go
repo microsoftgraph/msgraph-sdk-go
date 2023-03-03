@@ -122,6 +122,21 @@ func (m *DirectoryRequestBuilder) Get(ctx context.Context, requestConfiguration 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Directoryable), nil
 }
+// OnPremisesSynchronization provides operations to manage the onPremisesSynchronization property of the microsoft.graph.directory entity.
+func (m *DirectoryRequestBuilder) OnPremisesSynchronization()(*OnPremisesSynchronizationRequestBuilder) {
+    return NewOnPremisesSynchronizationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// OnPremisesSynchronizationById provides operations to manage the onPremisesSynchronization property of the microsoft.graph.directory entity.
+func (m *DirectoryRequestBuilder) OnPremisesSynchronizationById(id string)(*OnPremisesSynchronizationOnPremisesDirectorySynchronizationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["onPremisesDirectorySynchronization%2Did"] = id
+    }
+    return NewOnPremisesSynchronizationOnPremisesDirectorySynchronizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+}
 // Patch update directory
 func (m *DirectoryRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Directoryable, requestConfiguration *DirectoryRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Directoryable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);

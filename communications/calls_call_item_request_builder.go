@@ -46,6 +46,14 @@ type CallsCallItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// AddLargeGalleryView provides operations to call the addLargeGalleryView method.
+func (m *CallsCallItemRequestBuilder) AddLargeGalleryView()(*CallsItemAddLargeGalleryViewRequestBuilder) {
+    return NewCallsItemAddLargeGalleryViewRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// Answer provides operations to call the answer method.
+func (m *CallsCallItemRequestBuilder) Answer()(*CallsItemAnswerRequestBuilder) {
+    return NewCallsItemAnswerRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // AudioRoutingGroups provides operations to manage the audioRoutingGroups property of the microsoft.graph.call entity.
 func (m *CallsCallItemRequestBuilder) AudioRoutingGroups()(*CallsItemAudioRoutingGroupsRequestBuilder) {
     return NewCallsItemAudioRoutingGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
@@ -60,6 +68,14 @@ func (m *CallsCallItemRequestBuilder) AudioRoutingGroupsById(id string)(*CallsIt
         urlTplParams["audioRoutingGroup%2Did"] = id
     }
     return NewCallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+}
+// CancelMediaProcessing provides operations to call the cancelMediaProcessing method.
+func (m *CallsCallItemRequestBuilder) CancelMediaProcessing()(*CallsItemCancelMediaProcessingRequestBuilder) {
+    return NewCallsItemCancelMediaProcessingRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// ChangeScreenSharingRole provides operations to call the changeScreenSharingRole method.
+func (m *CallsCallItemRequestBuilder) ChangeScreenSharingRole()(*CallsItemChangeScreenSharingRoleRequestBuilder) {
+    return NewCallsItemChangeScreenSharingRoleRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewCallsCallItemRequestBuilderInternal instantiates a new CallItemRequestBuilder and sets the default values.
 func NewCallsCallItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallsCallItemRequestBuilder) {
@@ -130,61 +146,13 @@ func (m *CallsCallItemRequestBuilder) Get(ctx context.Context, requestConfigurat
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Callable), nil
 }
-// MicrosoftGraphAddLargeGalleryView provides operations to call the addLargeGalleryView method.
-func (m *CallsCallItemRequestBuilder) MicrosoftGraphAddLargeGalleryView()(*CallsItemMicrosoftGraphAddLargeGalleryViewRequestBuilder) {
-    return NewCallsItemMicrosoftGraphAddLargeGalleryViewRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// KeepAlive provides operations to call the keepAlive method.
+func (m *CallsCallItemRequestBuilder) KeepAlive()(*CallsItemKeepAliveRequestBuilder) {
+    return NewCallsItemKeepAliveRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphAnswer provides operations to call the answer method.
-func (m *CallsCallItemRequestBuilder) MicrosoftGraphAnswer()(*CallsItemMicrosoftGraphAnswerRequestBuilder) {
-    return NewCallsItemMicrosoftGraphAnswerRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphCancelMediaProcessing provides operations to call the cancelMediaProcessing method.
-func (m *CallsCallItemRequestBuilder) MicrosoftGraphCancelMediaProcessing()(*CallsItemMicrosoftGraphCancelMediaProcessingRequestBuilder) {
-    return NewCallsItemMicrosoftGraphCancelMediaProcessingRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphChangeScreenSharingRole provides operations to call the changeScreenSharingRole method.
-func (m *CallsCallItemRequestBuilder) MicrosoftGraphChangeScreenSharingRole()(*CallsItemMicrosoftGraphChangeScreenSharingRoleRequestBuilder) {
-    return NewCallsItemMicrosoftGraphChangeScreenSharingRoleRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphKeepAlive provides operations to call the keepAlive method.
-func (m *CallsCallItemRequestBuilder) MicrosoftGraphKeepAlive()(*CallsItemMicrosoftGraphKeepAliveRequestBuilder) {
-    return NewCallsItemMicrosoftGraphKeepAliveRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphMute provides operations to call the mute method.
-func (m *CallsCallItemRequestBuilder) MicrosoftGraphMute()(*CallsItemMicrosoftGraphMuteRequestBuilder) {
-    return NewCallsItemMicrosoftGraphMuteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphPlayPrompt provides operations to call the playPrompt method.
-func (m *CallsCallItemRequestBuilder) MicrosoftGraphPlayPrompt()(*CallsItemMicrosoftGraphPlayPromptRequestBuilder) {
-    return NewCallsItemMicrosoftGraphPlayPromptRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphRecordResponse provides operations to call the recordResponse method.
-func (m *CallsCallItemRequestBuilder) MicrosoftGraphRecordResponse()(*CallsItemMicrosoftGraphRecordResponseRequestBuilder) {
-    return NewCallsItemMicrosoftGraphRecordResponseRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphRedirect provides operations to call the redirect method.
-func (m *CallsCallItemRequestBuilder) MicrosoftGraphRedirect()(*CallsItemMicrosoftGraphRedirectRequestBuilder) {
-    return NewCallsItemMicrosoftGraphRedirectRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphReject provides operations to call the reject method.
-func (m *CallsCallItemRequestBuilder) MicrosoftGraphReject()(*CallsItemMicrosoftGraphRejectRequestBuilder) {
-    return NewCallsItemMicrosoftGraphRejectRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphSubscribeToTone provides operations to call the subscribeToTone method.
-func (m *CallsCallItemRequestBuilder) MicrosoftGraphSubscribeToTone()(*CallsItemMicrosoftGraphSubscribeToToneRequestBuilder) {
-    return NewCallsItemMicrosoftGraphSubscribeToToneRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphTransfer provides operations to call the transfer method.
-func (m *CallsCallItemRequestBuilder) MicrosoftGraphTransfer()(*CallsItemMicrosoftGraphTransferRequestBuilder) {
-    return NewCallsItemMicrosoftGraphTransferRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphUnmute provides operations to call the unmute method.
-func (m *CallsCallItemRequestBuilder) MicrosoftGraphUnmute()(*CallsItemMicrosoftGraphUnmuteRequestBuilder) {
-    return NewCallsItemMicrosoftGraphUnmuteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphUpdateRecordingStatus provides operations to call the updateRecordingStatus method.
-func (m *CallsCallItemRequestBuilder) MicrosoftGraphUpdateRecordingStatus()(*CallsItemMicrosoftGraphUpdateRecordingStatusRequestBuilder) {
-    return NewCallsItemMicrosoftGraphUpdateRecordingStatusRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// Mute provides operations to call the mute method.
+func (m *CallsCallItemRequestBuilder) Mute()(*CallsItemMuteRequestBuilder) {
+    return NewCallsItemMuteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Operations provides operations to manage the operations property of the microsoft.graph.call entity.
 func (m *CallsCallItemRequestBuilder) Operations()(*CallsItemOperationsRequestBuilder) {
@@ -235,6 +203,26 @@ func (m *CallsCallItemRequestBuilder) Patch(ctx context.Context, body iadcd81124
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Callable), nil
 }
+// PlayPrompt provides operations to call the playPrompt method.
+func (m *CallsCallItemRequestBuilder) PlayPrompt()(*CallsItemPlayPromptRequestBuilder) {
+    return NewCallsItemPlayPromptRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// RecordResponse provides operations to call the recordResponse method.
+func (m *CallsCallItemRequestBuilder) RecordResponse()(*CallsItemRecordResponseRequestBuilder) {
+    return NewCallsItemRecordResponseRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// Redirect provides operations to call the redirect method.
+func (m *CallsCallItemRequestBuilder) Redirect()(*CallsItemRedirectRequestBuilder) {
+    return NewCallsItemRedirectRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// Reject provides operations to call the reject method.
+func (m *CallsCallItemRequestBuilder) Reject()(*CallsItemRejectRequestBuilder) {
+    return NewCallsItemRejectRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// SubscribeToTone provides operations to call the subscribeToTone method.
+func (m *CallsCallItemRequestBuilder) SubscribeToTone()(*CallsItemSubscribeToToneRequestBuilder) {
+    return NewCallsItemSubscribeToToneRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property calls for communications
 func (m *CallsCallItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CallsCallItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
@@ -279,4 +267,16 @@ func (m *CallsCallItemRequestBuilder) ToPatchRequestInformation(ctx context.Cont
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// Transfer provides operations to call the transfer method.
+func (m *CallsCallItemRequestBuilder) Transfer()(*CallsItemTransferRequestBuilder) {
+    return NewCallsItemTransferRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// Unmute provides operations to call the unmute method.
+func (m *CallsCallItemRequestBuilder) Unmute()(*CallsItemUnmuteRequestBuilder) {
+    return NewCallsItemUnmuteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// UpdateRecordingStatus provides operations to call the updateRecordingStatus method.
+func (m *CallsCallItemRequestBuilder) UpdateRecordingStatus()(*CallsItemUpdateRecordingStatusRequestBuilder) {
+    return NewCallsItemUpdateRecordingStatusRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

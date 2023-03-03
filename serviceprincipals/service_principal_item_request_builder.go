@@ -46,6 +46,33 @@ type ServicePrincipalItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// AddKey provides operations to call the addKey method.
+func (m *ServicePrincipalItemRequestBuilder) AddKey()(*ItemAddKeyRequestBuilder) {
+    return NewItemAddKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// AddPassword provides operations to call the addPassword method.
+func (m *ServicePrincipalItemRequestBuilder) AddPassword()(*ItemAddPasswordRequestBuilder) {
+    return NewItemAddPasswordRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// AddTokenSigningCertificate provides operations to call the addTokenSigningCertificate method.
+func (m *ServicePrincipalItemRequestBuilder) AddTokenSigningCertificate()(*ItemAddTokenSigningCertificateRequestBuilder) {
+    return NewItemAddTokenSigningCertificateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// AppManagementPolicies provides operations to manage the appManagementPolicies property of the microsoft.graph.servicePrincipal entity.
+func (m *ServicePrincipalItemRequestBuilder) AppManagementPolicies()(*ItemAppManagementPoliciesRequestBuilder) {
+    return NewItemAppManagementPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// AppManagementPoliciesById provides operations to manage the appManagementPolicies property of the microsoft.graph.servicePrincipal entity.
+func (m *ServicePrincipalItemRequestBuilder) AppManagementPoliciesById(id string)(*ItemAppManagementPoliciesAppManagementPolicyItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["appManagementPolicy%2Did"] = id
+    }
+    return NewItemAppManagementPoliciesAppManagementPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+}
 // AppRoleAssignedTo provides operations to manage the appRoleAssignedTo property of the microsoft.graph.servicePrincipal entity.
 func (m *ServicePrincipalItemRequestBuilder) AppRoleAssignedTo()(*ItemAppRoleAssignedToRequestBuilder) {
     return NewItemAppRoleAssignedToRequestBuilderInternal(m.pathParameters, m.requestAdapter)
@@ -75,6 +102,14 @@ func (m *ServicePrincipalItemRequestBuilder) AppRoleAssignmentsById(id string)(*
         urlTplParams["appRoleAssignment%2Did"] = id
     }
     return NewItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+}
+// CheckMemberGroups provides operations to call the checkMemberGroups method.
+func (m *ServicePrincipalItemRequestBuilder) CheckMemberGroups()(*ItemCheckMemberGroupsRequestBuilder) {
+    return NewItemCheckMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// CheckMemberObjects provides operations to call the checkMemberObjects method.
+func (m *ServicePrincipalItemRequestBuilder) CheckMemberObjects()(*ItemCheckMemberObjectsRequestBuilder) {
+    return NewItemCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ClaimsMappingPolicies provides operations to manage the claimsMappingPolicies property of the microsoft.graph.servicePrincipal entity.
 func (m *ServicePrincipalItemRequestBuilder) ClaimsMappingPolicies()(*ItemClaimsMappingPoliciesRequestBuilder) {
@@ -211,6 +246,14 @@ func (m *ServicePrincipalItemRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServicePrincipalable), nil
 }
+// GetMemberGroups provides operations to call the getMemberGroups method.
+func (m *ServicePrincipalItemRequestBuilder) GetMemberGroups()(*ItemGetMemberGroupsRequestBuilder) {
+    return NewItemGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// GetMemberObjects provides operations to call the getMemberObjects method.
+func (m *ServicePrincipalItemRequestBuilder) GetMemberObjects()(*ItemGetMemberObjectsRequestBuilder) {
+    return NewItemGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // HomeRealmDiscoveryPolicies provides operations to manage the homeRealmDiscoveryPolicies property of the microsoft.graph.servicePrincipal entity.
 func (m *ServicePrincipalItemRequestBuilder) HomeRealmDiscoveryPolicies()(*ItemHomeRealmDiscoveryPoliciesRequestBuilder) {
     return NewItemHomeRealmDiscoveryPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
@@ -240,46 +283,6 @@ func (m *ServicePrincipalItemRequestBuilder) MemberOfById(id string)(*ItemMember
         urlTplParams["directoryObject%2Did"] = id
     }
     return NewItemMemberOfDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
-}
-// MicrosoftGraphAddKey provides operations to call the addKey method.
-func (m *ServicePrincipalItemRequestBuilder) MicrosoftGraphAddKey()(*ItemMicrosoftGraphAddKeyRequestBuilder) {
-    return NewItemMicrosoftGraphAddKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphAddPassword provides operations to call the addPassword method.
-func (m *ServicePrincipalItemRequestBuilder) MicrosoftGraphAddPassword()(*ItemMicrosoftGraphAddPasswordRequestBuilder) {
-    return NewItemMicrosoftGraphAddPasswordRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphAddTokenSigningCertificate provides operations to call the addTokenSigningCertificate method.
-func (m *ServicePrincipalItemRequestBuilder) MicrosoftGraphAddTokenSigningCertificate()(*ItemMicrosoftGraphAddTokenSigningCertificateRequestBuilder) {
-    return NewItemMicrosoftGraphAddTokenSigningCertificateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphCheckMemberGroups provides operations to call the checkMemberGroups method.
-func (m *ServicePrincipalItemRequestBuilder) MicrosoftGraphCheckMemberGroups()(*ItemMicrosoftGraphCheckMemberGroupsRequestBuilder) {
-    return NewItemMicrosoftGraphCheckMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphCheckMemberObjects provides operations to call the checkMemberObjects method.
-func (m *ServicePrincipalItemRequestBuilder) MicrosoftGraphCheckMemberObjects()(*ItemMicrosoftGraphCheckMemberObjectsRequestBuilder) {
-    return NewItemMicrosoftGraphCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphGetMemberGroups provides operations to call the getMemberGroups method.
-func (m *ServicePrincipalItemRequestBuilder) MicrosoftGraphGetMemberGroups()(*ItemMicrosoftGraphGetMemberGroupsRequestBuilder) {
-    return NewItemMicrosoftGraphGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphGetMemberObjects provides operations to call the getMemberObjects method.
-func (m *ServicePrincipalItemRequestBuilder) MicrosoftGraphGetMemberObjects()(*ItemMicrosoftGraphGetMemberObjectsRequestBuilder) {
-    return NewItemMicrosoftGraphGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphRemoveKey provides operations to call the removeKey method.
-func (m *ServicePrincipalItemRequestBuilder) MicrosoftGraphRemoveKey()(*ItemMicrosoftGraphRemoveKeyRequestBuilder) {
-    return NewItemMicrosoftGraphRemoveKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphRemovePassword provides operations to call the removePassword method.
-func (m *ServicePrincipalItemRequestBuilder) MicrosoftGraphRemovePassword()(*ItemMicrosoftGraphRemovePasswordRequestBuilder) {
-    return NewItemMicrosoftGraphRemovePasswordRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphRestore provides operations to call the restore method.
-func (m *ServicePrincipalItemRequestBuilder) MicrosoftGraphRestore()(*ItemMicrosoftGraphRestoreRequestBuilder) {
-    return NewItemMicrosoftGraphRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Oauth2PermissionGrants provides operations to manage the oauth2PermissionGrants property of the microsoft.graph.servicePrincipal entity.
 func (m *ServicePrincipalItemRequestBuilder) Oauth2PermissionGrants()(*ItemOauth2PermissionGrantsRequestBuilder) {
@@ -344,6 +347,18 @@ func (m *ServicePrincipalItemRequestBuilder) Patch(ctx context.Context, body iad
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServicePrincipalable), nil
+}
+// RemoveKey provides operations to call the removeKey method.
+func (m *ServicePrincipalItemRequestBuilder) RemoveKey()(*ItemRemoveKeyRequestBuilder) {
+    return NewItemRemoveKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// RemovePassword provides operations to call the removePassword method.
+func (m *ServicePrincipalItemRequestBuilder) RemovePassword()(*ItemRemovePasswordRequestBuilder) {
+    return NewItemRemovePasswordRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// Restore provides operations to call the restore method.
+func (m *ServicePrincipalItemRequestBuilder) Restore()(*ItemRestoreRequestBuilder) {
+    return NewItemRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete a servicePrincipal object.
 func (m *ServicePrincipalItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ServicePrincipalItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

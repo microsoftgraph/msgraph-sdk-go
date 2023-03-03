@@ -2,41 +2,19 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // WorkbookWorksheetProtectionOptions 
 type WorkbookWorksheetProtectionOptions struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Represents the worksheet protection option of allowing using auto filter feature.
-    allowAutoFilter *bool
-    // Represents the worksheet protection option of allowing deleting columns.
-    allowDeleteColumns *bool
-    // Represents the worksheet protection option of allowing deleting rows.
-    allowDeleteRows *bool
-    // Represents the worksheet protection option of allowing formatting cells.
-    allowFormatCells *bool
-    // Represents the worksheet protection option of allowing formatting columns.
-    allowFormatColumns *bool
-    // Represents the worksheet protection option of allowing formatting rows.
-    allowFormatRows *bool
-    // Represents the worksheet protection option of allowing inserting columns.
-    allowInsertColumns *bool
-    // Represents the worksheet protection option of allowing inserting hyperlinks.
-    allowInsertHyperlinks *bool
-    // Represents the worksheet protection option of allowing inserting rows.
-    allowInsertRows *bool
-    // Represents the worksheet protection option of allowing using pivot table feature.
-    allowPivotTables *bool
-    // Represents the worksheet protection option of allowing using sort feature.
-    allowSort *bool
-    // The OdataType property
-    odataType *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewWorkbookWorksheetProtectionOptions instantiates a new workbookWorksheetProtectionOptions and sets the default values.
 func NewWorkbookWorksheetProtectionOptions()(*WorkbookWorksheetProtectionOptions) {
     m := &WorkbookWorksheetProtectionOptions{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -46,51 +24,140 @@ func CreateWorkbookWorksheetProtectionOptionsFromDiscriminatorValue(parseNode i8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WorkbookWorksheetProtectionOptions) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetAllowAutoFilter gets the allowAutoFilter property value. Represents the worksheet protection option of allowing using auto filter feature.
 func (m *WorkbookWorksheetProtectionOptions) GetAllowAutoFilter()(*bool) {
-    return m.allowAutoFilter
+    val, err := m.GetBackingStore().Get("allowAutoFilter")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetAllowDeleteColumns gets the allowDeleteColumns property value. Represents the worksheet protection option of allowing deleting columns.
 func (m *WorkbookWorksheetProtectionOptions) GetAllowDeleteColumns()(*bool) {
-    return m.allowDeleteColumns
+    val, err := m.GetBackingStore().Get("allowDeleteColumns")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetAllowDeleteRows gets the allowDeleteRows property value. Represents the worksheet protection option of allowing deleting rows.
 func (m *WorkbookWorksheetProtectionOptions) GetAllowDeleteRows()(*bool) {
-    return m.allowDeleteRows
+    val, err := m.GetBackingStore().Get("allowDeleteRows")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetAllowFormatCells gets the allowFormatCells property value. Represents the worksheet protection option of allowing formatting cells.
 func (m *WorkbookWorksheetProtectionOptions) GetAllowFormatCells()(*bool) {
-    return m.allowFormatCells
+    val, err := m.GetBackingStore().Get("allowFormatCells")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetAllowFormatColumns gets the allowFormatColumns property value. Represents the worksheet protection option of allowing formatting columns.
 func (m *WorkbookWorksheetProtectionOptions) GetAllowFormatColumns()(*bool) {
-    return m.allowFormatColumns
+    val, err := m.GetBackingStore().Get("allowFormatColumns")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetAllowFormatRows gets the allowFormatRows property value. Represents the worksheet protection option of allowing formatting rows.
 func (m *WorkbookWorksheetProtectionOptions) GetAllowFormatRows()(*bool) {
-    return m.allowFormatRows
+    val, err := m.GetBackingStore().Get("allowFormatRows")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetAllowInsertColumns gets the allowInsertColumns property value. Represents the worksheet protection option of allowing inserting columns.
 func (m *WorkbookWorksheetProtectionOptions) GetAllowInsertColumns()(*bool) {
-    return m.allowInsertColumns
+    val, err := m.GetBackingStore().Get("allowInsertColumns")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetAllowInsertHyperlinks gets the allowInsertHyperlinks property value. Represents the worksheet protection option of allowing inserting hyperlinks.
 func (m *WorkbookWorksheetProtectionOptions) GetAllowInsertHyperlinks()(*bool) {
-    return m.allowInsertHyperlinks
+    val, err := m.GetBackingStore().Get("allowInsertHyperlinks")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetAllowInsertRows gets the allowInsertRows property value. Represents the worksheet protection option of allowing inserting rows.
 func (m *WorkbookWorksheetProtectionOptions) GetAllowInsertRows()(*bool) {
-    return m.allowInsertRows
+    val, err := m.GetBackingStore().Get("allowInsertRows")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetAllowPivotTables gets the allowPivotTables property value. Represents the worksheet protection option of allowing using pivot table feature.
 func (m *WorkbookWorksheetProtectionOptions) GetAllowPivotTables()(*bool) {
-    return m.allowPivotTables
+    val, err := m.GetBackingStore().Get("allowPivotTables")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetAllowSort gets the allowSort property value. Represents the worksheet protection option of allowing using sort feature.
 func (m *WorkbookWorksheetProtectionOptions) GetAllowSort()(*bool) {
-    return m.allowSort
+    val, err := m.GetBackingStore().Get("allowSort")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *WorkbookWorksheetProtectionOptions) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WorkbookWorksheetProtectionOptions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -219,7 +286,14 @@ func (m *WorkbookWorksheetProtectionOptions) GetFieldDeserializers()(map[string]
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *WorkbookWorksheetProtectionOptions) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WorkbookWorksheetProtectionOptions) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -305,53 +379,128 @@ func (m *WorkbookWorksheetProtectionOptions) Serialize(writer i878a80d2330e89d26
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WorkbookWorksheetProtectionOptions) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAllowAutoFilter sets the allowAutoFilter property value. Represents the worksheet protection option of allowing using auto filter feature.
 func (m *WorkbookWorksheetProtectionOptions) SetAllowAutoFilter(value *bool)() {
-    m.allowAutoFilter = value
+    err := m.GetBackingStore().Set("allowAutoFilter", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAllowDeleteColumns sets the allowDeleteColumns property value. Represents the worksheet protection option of allowing deleting columns.
 func (m *WorkbookWorksheetProtectionOptions) SetAllowDeleteColumns(value *bool)() {
-    m.allowDeleteColumns = value
+    err := m.GetBackingStore().Set("allowDeleteColumns", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAllowDeleteRows sets the allowDeleteRows property value. Represents the worksheet protection option of allowing deleting rows.
 func (m *WorkbookWorksheetProtectionOptions) SetAllowDeleteRows(value *bool)() {
-    m.allowDeleteRows = value
+    err := m.GetBackingStore().Set("allowDeleteRows", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAllowFormatCells sets the allowFormatCells property value. Represents the worksheet protection option of allowing formatting cells.
 func (m *WorkbookWorksheetProtectionOptions) SetAllowFormatCells(value *bool)() {
-    m.allowFormatCells = value
+    err := m.GetBackingStore().Set("allowFormatCells", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAllowFormatColumns sets the allowFormatColumns property value. Represents the worksheet protection option of allowing formatting columns.
 func (m *WorkbookWorksheetProtectionOptions) SetAllowFormatColumns(value *bool)() {
-    m.allowFormatColumns = value
+    err := m.GetBackingStore().Set("allowFormatColumns", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAllowFormatRows sets the allowFormatRows property value. Represents the worksheet protection option of allowing formatting rows.
 func (m *WorkbookWorksheetProtectionOptions) SetAllowFormatRows(value *bool)() {
-    m.allowFormatRows = value
+    err := m.GetBackingStore().Set("allowFormatRows", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAllowInsertColumns sets the allowInsertColumns property value. Represents the worksheet protection option of allowing inserting columns.
 func (m *WorkbookWorksheetProtectionOptions) SetAllowInsertColumns(value *bool)() {
-    m.allowInsertColumns = value
+    err := m.GetBackingStore().Set("allowInsertColumns", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAllowInsertHyperlinks sets the allowInsertHyperlinks property value. Represents the worksheet protection option of allowing inserting hyperlinks.
 func (m *WorkbookWorksheetProtectionOptions) SetAllowInsertHyperlinks(value *bool)() {
-    m.allowInsertHyperlinks = value
+    err := m.GetBackingStore().Set("allowInsertHyperlinks", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAllowInsertRows sets the allowInsertRows property value. Represents the worksheet protection option of allowing inserting rows.
 func (m *WorkbookWorksheetProtectionOptions) SetAllowInsertRows(value *bool)() {
-    m.allowInsertRows = value
+    err := m.GetBackingStore().Set("allowInsertRows", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAllowPivotTables sets the allowPivotTables property value. Represents the worksheet protection option of allowing using pivot table feature.
 func (m *WorkbookWorksheetProtectionOptions) SetAllowPivotTables(value *bool)() {
-    m.allowPivotTables = value
+    err := m.GetBackingStore().Set("allowPivotTables", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAllowSort sets the allowSort property value. Represents the worksheet protection option of allowing using sort feature.
 func (m *WorkbookWorksheetProtectionOptions) SetAllowSort(value *bool)() {
-    m.allowSort = value
+    err := m.GetBackingStore().Set("allowSort", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *WorkbookWorksheetProtectionOptions) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *WorkbookWorksheetProtectionOptions) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WorkbookWorksheetProtectionOptionsable 
+type WorkbookWorksheetProtectionOptionsable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAllowAutoFilter()(*bool)
+    GetAllowDeleteColumns()(*bool)
+    GetAllowDeleteRows()(*bool)
+    GetAllowFormatCells()(*bool)
+    GetAllowFormatColumns()(*bool)
+    GetAllowFormatRows()(*bool)
+    GetAllowInsertColumns()(*bool)
+    GetAllowInsertHyperlinks()(*bool)
+    GetAllowInsertRows()(*bool)
+    GetAllowPivotTables()(*bool)
+    GetAllowSort()(*bool)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetOdataType()(*string)
+    SetAllowAutoFilter(value *bool)()
+    SetAllowDeleteColumns(value *bool)()
+    SetAllowDeleteRows(value *bool)()
+    SetAllowFormatCells(value *bool)()
+    SetAllowFormatColumns(value *bool)()
+    SetAllowFormatRows(value *bool)()
+    SetAllowInsertColumns(value *bool)()
+    SetAllowInsertHyperlinks(value *bool)()
+    SetAllowInsertRows(value *bool)()
+    SetAllowPivotTables(value *bool)()
+    SetAllowSort(value *bool)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetOdataType(value *string)()
 }

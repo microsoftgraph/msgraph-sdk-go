@@ -7,10 +7,6 @@ import (
 // ProfilePhoto 
 type ProfilePhoto struct {
     Entity
-    // The height of the photo. Read-only.
-    height *int32
-    // The width of the photo. Read-only.
-    width *int32
 }
 // NewProfilePhoto instantiates a new profilePhoto and sets the default values.
 func NewProfilePhoto()(*ProfilePhoto) {
@@ -50,11 +46,25 @@ func (m *ProfilePhoto) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetHeight gets the height property value. The height of the photo. Read-only.
 func (m *ProfilePhoto) GetHeight()(*int32) {
-    return m.height
+    val, err := m.GetBackingStore().Get("height")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetWidth gets the width property value. The width of the photo. Read-only.
 func (m *ProfilePhoto) GetWidth()(*int32) {
-    return m.width
+    val, err := m.GetBackingStore().Get("width")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ProfilePhoto) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -78,9 +88,24 @@ func (m *ProfilePhoto) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetHeight sets the height property value. The height of the photo. Read-only.
 func (m *ProfilePhoto) SetHeight(value *int32)() {
-    m.height = value
+    err := m.GetBackingStore().Set("height", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWidth sets the width property value. The width of the photo. Read-only.
 func (m *ProfilePhoto) SetWidth(value *int32)() {
-    m.width = value
+    err := m.GetBackingStore().Set("width", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ProfilePhotoable 
+type ProfilePhotoable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetHeight()(*int32)
+    GetWidth()(*int32)
+    SetHeight(value *int32)()
+    SetWidth(value *int32)()
 }

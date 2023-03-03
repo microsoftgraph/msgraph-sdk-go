@@ -7,8 +7,6 @@ import (
 // EducationLinkResource 
 type EducationLinkResource struct {
     EducationResource
-    // URL to the resource.
-    link *string
 }
 // NewEducationLinkResource instantiates a new EducationLinkResource and sets the default values.
 func NewEducationLinkResource()(*EducationLinkResource) {
@@ -40,7 +38,14 @@ func (m *EducationLinkResource) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetLink gets the link property value. URL to the resource.
 func (m *EducationLinkResource) GetLink()(*string) {
-    return m.link
+    val, err := m.GetBackingStore().Get("link")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EducationLinkResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *EducationLinkResource) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetLink sets the link property value. URL to the resource.
 func (m *EducationLinkResource) SetLink(value *string)() {
-    m.link = value
+    err := m.GetBackingStore().Set("link", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EducationLinkResourceable 
+type EducationLinkResourceable interface {
+    EducationResourceable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetLink()(*string)
+    SetLink(value *string)()
 }

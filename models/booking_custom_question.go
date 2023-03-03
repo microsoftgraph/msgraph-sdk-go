@@ -7,12 +7,6 @@ import (
 // BookingCustomQuestion represents a custom question of the business.
 type BookingCustomQuestion struct {
     Entity
-    // The expected answer type. The possible values are: text, radioButton, unknownFutureValue.
-    answerInputType *AnswerInputType
-    // List of possible answer values.
-    answerOptions []string
-    // The question.
-    displayName *string
 }
 // NewBookingCustomQuestion instantiates a new bookingCustomQuestion and sets the default values.
 func NewBookingCustomQuestion()(*BookingCustomQuestion) {
@@ -27,15 +21,36 @@ func CreateBookingCustomQuestionFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAnswerInputType gets the answerInputType property value. The expected answer type. The possible values are: text, radioButton, unknownFutureValue.
 func (m *BookingCustomQuestion) GetAnswerInputType()(*AnswerInputType) {
-    return m.answerInputType
+    val, err := m.GetBackingStore().Get("answerInputType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AnswerInputType)
+    }
+    return nil
 }
 // GetAnswerOptions gets the answerOptions property value. List of possible answer values.
 func (m *BookingCustomQuestion) GetAnswerOptions()([]string) {
-    return m.answerOptions
+    val, err := m.GetBackingStore().Get("answerOptions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The question.
 func (m *BookingCustomQuestion) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *BookingCustomQuestion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -105,13 +120,33 @@ func (m *BookingCustomQuestion) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAnswerInputType sets the answerInputType property value. The expected answer type. The possible values are: text, radioButton, unknownFutureValue.
 func (m *BookingCustomQuestion) SetAnswerInputType(value *AnswerInputType)() {
-    m.answerInputType = value
+    err := m.GetBackingStore().Set("answerInputType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAnswerOptions sets the answerOptions property value. List of possible answer values.
 func (m *BookingCustomQuestion) SetAnswerOptions(value []string)() {
-    m.answerOptions = value
+    err := m.GetBackingStore().Set("answerOptions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The question.
 func (m *BookingCustomQuestion) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// BookingCustomQuestionable 
+type BookingCustomQuestionable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAnswerInputType()(*AnswerInputType)
+    GetAnswerOptions()([]string)
+    GetDisplayName()(*string)
+    SetAnswerInputType(value *AnswerInputType)()
+    SetAnswerOptions(value []string)()
+    SetDisplayName(value *string)()
 }

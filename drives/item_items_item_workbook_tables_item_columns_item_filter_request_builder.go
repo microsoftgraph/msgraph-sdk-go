@@ -46,6 +46,54 @@ type ItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilderPatchRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Apply provides operations to call the apply method.
+func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilder) Apply()(*ItemItemsItemWorkbookTablesItemColumnsItemFilterApplyRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemColumnsItemFilterApplyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// ApplyBottomItemsFilter provides operations to call the applyBottomItemsFilter method.
+func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilder) ApplyBottomItemsFilter()(*ItemItemsItemWorkbookTablesItemColumnsItemFilterApplyBottomItemsFilterRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemColumnsItemFilterApplyBottomItemsFilterRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// ApplyBottomPercentFilter provides operations to call the applyBottomPercentFilter method.
+func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilder) ApplyBottomPercentFilter()(*ItemItemsItemWorkbookTablesItemColumnsItemFilterApplyBottomPercentFilterRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemColumnsItemFilterApplyBottomPercentFilterRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// ApplyCellColorFilter provides operations to call the applyCellColorFilter method.
+func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilder) ApplyCellColorFilter()(*ItemItemsItemWorkbookTablesItemColumnsItemFilterApplyCellColorFilterRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemColumnsItemFilterApplyCellColorFilterRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// ApplyCustomFilter provides operations to call the applyCustomFilter method.
+func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilder) ApplyCustomFilter()(*ItemItemsItemWorkbookTablesItemColumnsItemFilterApplyCustomFilterRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemColumnsItemFilterApplyCustomFilterRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// ApplyDynamicFilter provides operations to call the applyDynamicFilter method.
+func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilder) ApplyDynamicFilter()(*ItemItemsItemWorkbookTablesItemColumnsItemFilterApplyDynamicFilterRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemColumnsItemFilterApplyDynamicFilterRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// ApplyFontColorFilter provides operations to call the applyFontColorFilter method.
+func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilder) ApplyFontColorFilter()(*ItemItemsItemWorkbookTablesItemColumnsItemFilterApplyFontColorFilterRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemColumnsItemFilterApplyFontColorFilterRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// ApplyIconFilter provides operations to call the applyIconFilter method.
+func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilder) ApplyIconFilter()(*ItemItemsItemWorkbookTablesItemColumnsItemFilterApplyIconFilterRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemColumnsItemFilterApplyIconFilterRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// ApplyTopItemsFilter provides operations to call the applyTopItemsFilter method.
+func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilder) ApplyTopItemsFilter()(*ItemItemsItemWorkbookTablesItemColumnsItemFilterApplyTopItemsFilterRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemColumnsItemFilterApplyTopItemsFilterRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// ApplyTopPercentFilter provides operations to call the applyTopPercentFilter method.
+func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilder) ApplyTopPercentFilter()(*ItemItemsItemWorkbookTablesItemColumnsItemFilterApplyTopPercentFilterRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemColumnsItemFilterApplyTopPercentFilterRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// ApplyValuesFilter provides operations to call the applyValuesFilter method.
+func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilder) ApplyValuesFilter()(*ItemItemsItemWorkbookTablesItemColumnsItemFilterApplyValuesFilterRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemColumnsItemFilterApplyValuesFilterRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// Clear provides operations to call the clear method.
+func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilder) Clear()(*ItemItemsItemWorkbookTablesItemColumnsItemFilterClearRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemColumnsItemFilterClearRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // NewItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilderInternal instantiates a new FilterRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilder) {
     m := &ItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilder{
@@ -99,54 +147,6 @@ func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilder) Get(ctx
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookFilterable), nil
-}
-// MicrosoftGraphApply provides operations to call the apply method.
-func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilder) MicrosoftGraphApply()(*ItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphApplyBottomItemsFilter provides operations to call the applyBottomItemsFilter method.
-func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilder) MicrosoftGraphApplyBottomItemsFilter()(*ItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyBottomItemsFilterRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyBottomItemsFilterRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphApplyBottomPercentFilter provides operations to call the applyBottomPercentFilter method.
-func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilder) MicrosoftGraphApplyBottomPercentFilter()(*ItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyBottomPercentFilterRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyBottomPercentFilterRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphApplyCellColorFilter provides operations to call the applyCellColorFilter method.
-func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilder) MicrosoftGraphApplyCellColorFilter()(*ItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyCellColorFilterRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyCellColorFilterRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphApplyCustomFilter provides operations to call the applyCustomFilter method.
-func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilder) MicrosoftGraphApplyCustomFilter()(*ItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyCustomFilterRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyCustomFilterRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphApplyDynamicFilter provides operations to call the applyDynamicFilter method.
-func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilder) MicrosoftGraphApplyDynamicFilter()(*ItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyDynamicFilterRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyDynamicFilterRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphApplyFontColorFilter provides operations to call the applyFontColorFilter method.
-func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilder) MicrosoftGraphApplyFontColorFilter()(*ItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyFontColorFilterRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyFontColorFilterRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphApplyIconFilter provides operations to call the applyIconFilter method.
-func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilder) MicrosoftGraphApplyIconFilter()(*ItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyIconFilterRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyIconFilterRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphApplyTopItemsFilter provides operations to call the applyTopItemsFilter method.
-func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilder) MicrosoftGraphApplyTopItemsFilter()(*ItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyTopItemsFilterRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyTopItemsFilterRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphApplyTopPercentFilter provides operations to call the applyTopPercentFilter method.
-func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilder) MicrosoftGraphApplyTopPercentFilter()(*ItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyTopPercentFilterRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyTopPercentFilterRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphApplyValuesFilter provides operations to call the applyValuesFilter method.
-func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilder) MicrosoftGraphApplyValuesFilter()(*ItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyValuesFilterRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphApplyValuesFilterRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphClear provides operations to call the clear method.
-func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilder) MicrosoftGraphClear()(*ItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphClearRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesItemColumnsItemFilterMicrosoftGraphClearRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property filter in drives
 func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookFilterable, requestConfiguration *ItemItemsItemWorkbookTablesItemColumnsItemFilterRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookFilterable, error) {

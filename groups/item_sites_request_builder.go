@@ -44,6 +44,10 @@ type ItemSitesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemSitesRequestBuilderGetQueryParameters
 }
+// Add provides operations to call the add method.
+func (m *ItemSitesRequestBuilder) Add()(*ItemSitesAddRequestBuilder) {
+    return NewItemSitesAddRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // NewItemSitesRequestBuilderInternal instantiates a new SitesRequestBuilder and sets the default values.
 func NewItemSitesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesRequestBuilder) {
     m := &ItemSitesRequestBuilder{
@@ -86,13 +90,9 @@ func (m *ItemSitesRequestBuilder) Get(ctx context.Context, requestConfiguration 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SiteCollectionResponseable), nil
 }
-// MicrosoftGraphAdd provides operations to call the add method.
-func (m *ItemSitesRequestBuilder) MicrosoftGraphAdd()(*ItemSitesMicrosoftGraphAddRequestBuilder) {
-    return NewItemSitesMicrosoftGraphAddRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphRemove provides operations to call the remove method.
-func (m *ItemSitesRequestBuilder) MicrosoftGraphRemove()(*ItemSitesMicrosoftGraphRemoveRequestBuilder) {
-    return NewItemSitesMicrosoftGraphRemoveRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// Remove provides operations to call the remove method.
+func (m *ItemSitesRequestBuilder) Remove()(*ItemSitesRemoveRequestBuilder) {
+    return NewItemSitesRemoveRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation the list of SharePoint sites in this group. Access the default site with /sites/root.
 func (m *ItemSitesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

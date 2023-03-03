@@ -2,29 +2,19 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ApprovalSettings 
 type ApprovalSettings struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // One of SingleStage, Serial, Parallel, NoApproval (default). NoApproval is used when isApprovalRequired is false.
-    approvalMode *string
-    // If approval is required, the one or two elements of this collection define each of the stages of approval. An empty array if no approval is required.
-    approvalStages []UnifiedApprovalStageable
-    // Indicates whether approval is required for requests in this policy.
-    isApprovalRequired *bool
-    // Indicates whether approval is required for a user to extend their assignment.
-    isApprovalRequiredForExtension *bool
-    // Indicates whether the requestor is required to supply a justification in their request.
-    isRequestorJustificationRequired *bool
-    // The OdataType property
-    odataType *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewApprovalSettings instantiates a new approvalSettings and sets the default values.
 func NewApprovalSettings()(*ApprovalSettings) {
     m := &ApprovalSettings{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -34,15 +24,41 @@ func CreateApprovalSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApprovalSettings) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetApprovalMode gets the approvalMode property value. One of SingleStage, Serial, Parallel, NoApproval (default). NoApproval is used when isApprovalRequired is false.
 func (m *ApprovalSettings) GetApprovalMode()(*string) {
-    return m.approvalMode
+    val, err := m.GetBackingStore().Get("approvalMode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetApprovalStages gets the approvalStages property value. If approval is required, the one or two elements of this collection define each of the stages of approval. An empty array if no approval is required.
 func (m *ApprovalSettings) GetApprovalStages()([]UnifiedApprovalStageable) {
-    return m.approvalStages
+    val, err := m.GetBackingStore().Get("approvalStages")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UnifiedApprovalStageable)
+    }
+    return nil
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ApprovalSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ApprovalSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -115,19 +131,47 @@ func (m *ApprovalSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetIsApprovalRequired gets the isApprovalRequired property value. Indicates whether approval is required for requests in this policy.
 func (m *ApprovalSettings) GetIsApprovalRequired()(*bool) {
-    return m.isApprovalRequired
+    val, err := m.GetBackingStore().Get("isApprovalRequired")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsApprovalRequiredForExtension gets the isApprovalRequiredForExtension property value. Indicates whether approval is required for a user to extend their assignment.
 func (m *ApprovalSettings) GetIsApprovalRequiredForExtension()(*bool) {
-    return m.isApprovalRequiredForExtension
+    val, err := m.GetBackingStore().Get("isApprovalRequiredForExtension")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsRequestorJustificationRequired gets the isRequestorJustificationRequired property value. Indicates whether the requestor is required to supply a justification in their request.
 func (m *ApprovalSettings) GetIsRequestorJustificationRequired()(*bool) {
-    return m.isRequestorJustificationRequired
+    val, err := m.GetBackingStore().Get("isRequestorJustificationRequired")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ApprovalSettings) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ApprovalSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -181,29 +225,74 @@ func (m *ApprovalSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApprovalSettings) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApprovalMode sets the approvalMode property value. One of SingleStage, Serial, Parallel, NoApproval (default). NoApproval is used when isApprovalRequired is false.
 func (m *ApprovalSettings) SetApprovalMode(value *string)() {
-    m.approvalMode = value
+    err := m.GetBackingStore().Set("approvalMode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApprovalStages sets the approvalStages property value. If approval is required, the one or two elements of this collection define each of the stages of approval. An empty array if no approval is required.
 func (m *ApprovalSettings) SetApprovalStages(value []UnifiedApprovalStageable)() {
-    m.approvalStages = value
+    err := m.GetBackingStore().Set("approvalStages", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ApprovalSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetIsApprovalRequired sets the isApprovalRequired property value. Indicates whether approval is required for requests in this policy.
 func (m *ApprovalSettings) SetIsApprovalRequired(value *bool)() {
-    m.isApprovalRequired = value
+    err := m.GetBackingStore().Set("isApprovalRequired", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsApprovalRequiredForExtension sets the isApprovalRequiredForExtension property value. Indicates whether approval is required for a user to extend their assignment.
 func (m *ApprovalSettings) SetIsApprovalRequiredForExtension(value *bool)() {
-    m.isApprovalRequiredForExtension = value
+    err := m.GetBackingStore().Set("isApprovalRequiredForExtension", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsRequestorJustificationRequired sets the isRequestorJustificationRequired property value. Indicates whether the requestor is required to supply a justification in their request.
 func (m *ApprovalSettings) SetIsRequestorJustificationRequired(value *bool)() {
-    m.isRequestorJustificationRequired = value
+    err := m.GetBackingStore().Set("isRequestorJustificationRequired", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ApprovalSettings) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ApprovalSettingsable 
+type ApprovalSettingsable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetApprovalMode()(*string)
+    GetApprovalStages()([]UnifiedApprovalStageable)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetIsApprovalRequired()(*bool)
+    GetIsApprovalRequiredForExtension()(*bool)
+    GetIsRequestorJustificationRequired()(*bool)
+    GetOdataType()(*string)
+    SetApprovalMode(value *string)()
+    SetApprovalStages(value []UnifiedApprovalStageable)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetIsApprovalRequired(value *bool)()
+    SetIsApprovalRequiredForExtension(value *bool)()
+    SetIsRequestorJustificationRequired(value *bool)()
+    SetOdataType(value *string)()
 }

@@ -2,51 +2,19 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // AndroidMinimumOperatingSystem contains properties for the minimum operating system required for an Android mobile app.
 type AndroidMinimumOperatingSystem struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The OdataType property
-    odataType *string
-    // When TRUE, only Version 10.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-    v10_0 *bool
-    // When TRUE, only Version 11.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-    v11_0 *bool
-    // When TRUE, only Version 4.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-    v4_0 *bool
-    // When TRUE, only Version 4.0.3 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-    v4_0_3 *bool
-    // When TRUE, only Version 4.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-    v4_1 *bool
-    // When TRUE, only Version 4.2 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-    v4_2 *bool
-    // When TRUE, only Version 4.3 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-    v4_3 *bool
-    // When TRUE, only Version 4.4 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-    v4_4 *bool
-    // When TRUE, only Version 5.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-    v5_0 *bool
-    // When TRUE, only Version 5.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-    v5_1 *bool
-    // When TRUE, only Version 6.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-    v6_0 *bool
-    // When TRUE, only Version 7.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-    v7_0 *bool
-    // When TRUE, only Version 7.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-    v7_1 *bool
-    // When TRUE, only Version 8.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-    v8_0 *bool
-    // When TRUE, only Version 8.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-    v8_1 *bool
-    // When TRUE, only Version 9.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
-    v9_0 *bool
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewAndroidMinimumOperatingSystem instantiates a new androidMinimumOperatingSystem and sets the default values.
 func NewAndroidMinimumOperatingSystem()(*AndroidMinimumOperatingSystem) {
     m := &AndroidMinimumOperatingSystem{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -56,7 +24,19 @@ func CreateAndroidMinimumOperatingSystemFromDiscriminatorValue(parseNode i878a80
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AndroidMinimumOperatingSystem) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *AndroidMinimumOperatingSystem) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -235,71 +215,190 @@ func (m *AndroidMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AndroidMinimumOperatingSystem) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetV100 gets the v10_0 property value. When TRUE, only Version 10.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *AndroidMinimumOperatingSystem) GetV100()(*bool) {
-    return m.v10_0
+    val, err := m.GetBackingStore().Get("v10_0")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetV110 gets the v11_0 property value. When TRUE, only Version 11.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *AndroidMinimumOperatingSystem) GetV110()(*bool) {
-    return m.v11_0
+    val, err := m.GetBackingStore().Get("v11_0")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetV40 gets the v4_0 property value. When TRUE, only Version 4.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *AndroidMinimumOperatingSystem) GetV40()(*bool) {
-    return m.v4_0
+    val, err := m.GetBackingStore().Get("v4_0")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetV403 gets the v4_0_3 property value. When TRUE, only Version 4.0.3 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *AndroidMinimumOperatingSystem) GetV403()(*bool) {
-    return m.v4_0_3
+    val, err := m.GetBackingStore().Get("v4_0_3")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetV41 gets the v4_1 property value. When TRUE, only Version 4.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *AndroidMinimumOperatingSystem) GetV41()(*bool) {
-    return m.v4_1
+    val, err := m.GetBackingStore().Get("v4_1")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetV42 gets the v4_2 property value. When TRUE, only Version 4.2 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *AndroidMinimumOperatingSystem) GetV42()(*bool) {
-    return m.v4_2
+    val, err := m.GetBackingStore().Get("v4_2")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetV43 gets the v4_3 property value. When TRUE, only Version 4.3 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *AndroidMinimumOperatingSystem) GetV43()(*bool) {
-    return m.v4_3
+    val, err := m.GetBackingStore().Get("v4_3")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetV44 gets the v4_4 property value. When TRUE, only Version 4.4 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *AndroidMinimumOperatingSystem) GetV44()(*bool) {
-    return m.v4_4
+    val, err := m.GetBackingStore().Get("v4_4")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetV50 gets the v5_0 property value. When TRUE, only Version 5.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *AndroidMinimumOperatingSystem) GetV50()(*bool) {
-    return m.v5_0
+    val, err := m.GetBackingStore().Get("v5_0")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetV51 gets the v5_1 property value. When TRUE, only Version 5.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *AndroidMinimumOperatingSystem) GetV51()(*bool) {
-    return m.v5_1
+    val, err := m.GetBackingStore().Get("v5_1")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetV60 gets the v6_0 property value. When TRUE, only Version 6.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *AndroidMinimumOperatingSystem) GetV60()(*bool) {
-    return m.v6_0
+    val, err := m.GetBackingStore().Get("v6_0")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetV70 gets the v7_0 property value. When TRUE, only Version 7.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *AndroidMinimumOperatingSystem) GetV70()(*bool) {
-    return m.v7_0
+    val, err := m.GetBackingStore().Get("v7_0")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetV71 gets the v7_1 property value. When TRUE, only Version 7.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *AndroidMinimumOperatingSystem) GetV71()(*bool) {
-    return m.v7_1
+    val, err := m.GetBackingStore().Get("v7_1")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetV80 gets the v8_0 property value. When TRUE, only Version 8.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *AndroidMinimumOperatingSystem) GetV80()(*bool) {
-    return m.v8_0
+    val, err := m.GetBackingStore().Get("v8_0")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetV81 gets the v8_1 property value. When TRUE, only Version 8.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *AndroidMinimumOperatingSystem) GetV81()(*bool) {
-    return m.v8_1
+    val, err := m.GetBackingStore().Get("v8_1")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetV90 gets the v9_0 property value. When TRUE, only Version 9.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *AndroidMinimumOperatingSystem) GetV90()(*bool) {
-    return m.v9_0
+    val, err := m.GetBackingStore().Get("v9_0")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidMinimumOperatingSystem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -415,73 +514,173 @@ func (m *AndroidMinimumOperatingSystem) Serialize(writer i878a80d2330e89d2689638
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AndroidMinimumOperatingSystem) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *AndroidMinimumOperatingSystem) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AndroidMinimumOperatingSystem) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetV100 sets the v10_0 property value. When TRUE, only Version 10.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *AndroidMinimumOperatingSystem) SetV100(value *bool)() {
-    m.v10_0 = value
+    err := m.GetBackingStore().Set("v10_0", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetV110 sets the v11_0 property value. When TRUE, only Version 11.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *AndroidMinimumOperatingSystem) SetV110(value *bool)() {
-    m.v11_0 = value
+    err := m.GetBackingStore().Set("v11_0", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetV40 sets the v4_0 property value. When TRUE, only Version 4.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *AndroidMinimumOperatingSystem) SetV40(value *bool)() {
-    m.v4_0 = value
+    err := m.GetBackingStore().Set("v4_0", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetV403 sets the v4_0_3 property value. When TRUE, only Version 4.0.3 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *AndroidMinimumOperatingSystem) SetV403(value *bool)() {
-    m.v4_0_3 = value
+    err := m.GetBackingStore().Set("v4_0_3", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetV41 sets the v4_1 property value. When TRUE, only Version 4.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *AndroidMinimumOperatingSystem) SetV41(value *bool)() {
-    m.v4_1 = value
+    err := m.GetBackingStore().Set("v4_1", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetV42 sets the v4_2 property value. When TRUE, only Version 4.2 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *AndroidMinimumOperatingSystem) SetV42(value *bool)() {
-    m.v4_2 = value
+    err := m.GetBackingStore().Set("v4_2", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetV43 sets the v4_3 property value. When TRUE, only Version 4.3 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *AndroidMinimumOperatingSystem) SetV43(value *bool)() {
-    m.v4_3 = value
+    err := m.GetBackingStore().Set("v4_3", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetV44 sets the v4_4 property value. When TRUE, only Version 4.4 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *AndroidMinimumOperatingSystem) SetV44(value *bool)() {
-    m.v4_4 = value
+    err := m.GetBackingStore().Set("v4_4", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetV50 sets the v5_0 property value. When TRUE, only Version 5.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *AndroidMinimumOperatingSystem) SetV50(value *bool)() {
-    m.v5_0 = value
+    err := m.GetBackingStore().Set("v5_0", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetV51 sets the v5_1 property value. When TRUE, only Version 5.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *AndroidMinimumOperatingSystem) SetV51(value *bool)() {
-    m.v5_1 = value
+    err := m.GetBackingStore().Set("v5_1", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetV60 sets the v6_0 property value. When TRUE, only Version 6.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *AndroidMinimumOperatingSystem) SetV60(value *bool)() {
-    m.v6_0 = value
+    err := m.GetBackingStore().Set("v6_0", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetV70 sets the v7_0 property value. When TRUE, only Version 7.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *AndroidMinimumOperatingSystem) SetV70(value *bool)() {
-    m.v7_0 = value
+    err := m.GetBackingStore().Set("v7_0", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetV71 sets the v7_1 property value. When TRUE, only Version 7.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *AndroidMinimumOperatingSystem) SetV71(value *bool)() {
-    m.v7_1 = value
+    err := m.GetBackingStore().Set("v7_1", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetV80 sets the v8_0 property value. When TRUE, only Version 8.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *AndroidMinimumOperatingSystem) SetV80(value *bool)() {
-    m.v8_0 = value
+    err := m.GetBackingStore().Set("v8_0", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetV81 sets the v8_1 property value. When TRUE, only Version 8.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *AndroidMinimumOperatingSystem) SetV81(value *bool)() {
-    m.v8_1 = value
+    err := m.GetBackingStore().Set("v8_1", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetV90 sets the v9_0 property value. When TRUE, only Version 9.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *AndroidMinimumOperatingSystem) SetV90(value *bool)() {
-    m.v9_0 = value
+    err := m.GetBackingStore().Set("v9_0", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidMinimumOperatingSystemable 
+type AndroidMinimumOperatingSystemable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetOdataType()(*string)
+    GetV100()(*bool)
+    GetV110()(*bool)
+    GetV40()(*bool)
+    GetV403()(*bool)
+    GetV41()(*bool)
+    GetV42()(*bool)
+    GetV43()(*bool)
+    GetV44()(*bool)
+    GetV50()(*bool)
+    GetV51()(*bool)
+    GetV60()(*bool)
+    GetV70()(*bool)
+    GetV71()(*bool)
+    GetV80()(*bool)
+    GetV81()(*bool)
+    GetV90()(*bool)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetOdataType(value *string)()
+    SetV100(value *bool)()
+    SetV110(value *bool)()
+    SetV40(value *bool)()
+    SetV403(value *bool)()
+    SetV41(value *bool)()
+    SetV42(value *bool)()
+    SetV43(value *bool)()
+    SetV44(value *bool)()
+    SetV50(value *bool)()
+    SetV51(value *bool)()
+    SetV60(value *bool)()
+    SetV70(value *bool)()
+    SetV71(value *bool)()
+    SetV80(value *bool)()
+    SetV81(value *bool)()
+    SetV90(value *bool)()
 }

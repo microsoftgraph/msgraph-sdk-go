@@ -2,33 +2,19 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // Print 
 type Print struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The list of available print connectors.
-    connectors []PrintConnectorable
-    // The OdataType property
-    odataType *string
-    // The list of print long running operations.
-    operations []PrintOperationable
-    // The list of printers registered in the tenant.
-    printers []Printerable
-    // The list of available Universal Print service endpoints.
-    services []PrintServiceable
-    // Tenant-wide settings for the Universal Print service.
-    settings PrintSettingsable
-    // The list of printer shares registered in the tenant.
-    shares []PrinterShareable
-    // List of abstract definition for a task that can be triggered when various events occur within Universal Print.
-    taskDefinitions []PrintTaskDefinitionable
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewPrint instantiates a new Print and sets the default values.
 func NewPrint()(*Print) {
     m := &Print{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -38,11 +24,30 @@ func CreatePrintFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487e
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Print) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *Print) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetConnectors gets the connectors property value. The list of available print connectors.
 func (m *Print) GetConnectors()([]PrintConnectorable) {
-    return m.connectors
+    val, err := m.GetBackingStore().Get("connectors")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrintConnectorable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Print) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -155,31 +160,80 @@ func (m *Print) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *Print) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOperations gets the operations property value. The list of print long running operations.
 func (m *Print) GetOperations()([]PrintOperationable) {
-    return m.operations
+    val, err := m.GetBackingStore().Get("operations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrintOperationable)
+    }
+    return nil
 }
 // GetPrinters gets the printers property value. The list of printers registered in the tenant.
 func (m *Print) GetPrinters()([]Printerable) {
-    return m.printers
+    val, err := m.GetBackingStore().Get("printers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Printerable)
+    }
+    return nil
 }
 // GetServices gets the services property value. The list of available Universal Print service endpoints.
 func (m *Print) GetServices()([]PrintServiceable) {
-    return m.services
+    val, err := m.GetBackingStore().Get("services")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrintServiceable)
+    }
+    return nil
 }
 // GetSettings gets the settings property value. Tenant-wide settings for the Universal Print service.
 func (m *Print) GetSettings()(PrintSettingsable) {
-    return m.settings
+    val, err := m.GetBackingStore().Get("settings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PrintSettingsable)
+    }
+    return nil
 }
 // GetShares gets the shares property value. The list of printer shares registered in the tenant.
 func (m *Print) GetShares()([]PrinterShareable) {
-    return m.shares
+    val, err := m.GetBackingStore().Get("shares")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrinterShareable)
+    }
+    return nil
 }
 // GetTaskDefinitions gets the taskDefinitions property value. List of abstract definition for a task that can be triggered when various events occur within Universal Print.
 func (m *Print) GetTaskDefinitions()([]PrintTaskDefinitionable) {
-    return m.taskDefinitions
+    val, err := m.GetBackingStore().Get("taskDefinitions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrintTaskDefinitionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Print) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -265,37 +319,92 @@ func (m *Print) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Print) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *Print) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetConnectors sets the connectors property value. The list of available print connectors.
 func (m *Print) SetConnectors(value []PrintConnectorable)() {
-    m.connectors = value
+    err := m.GetBackingStore().Set("connectors", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *Print) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOperations sets the operations property value. The list of print long running operations.
 func (m *Print) SetOperations(value []PrintOperationable)() {
-    m.operations = value
+    err := m.GetBackingStore().Set("operations", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPrinters sets the printers property value. The list of printers registered in the tenant.
 func (m *Print) SetPrinters(value []Printerable)() {
-    m.printers = value
+    err := m.GetBackingStore().Set("printers", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetServices sets the services property value. The list of available Universal Print service endpoints.
 func (m *Print) SetServices(value []PrintServiceable)() {
-    m.services = value
+    err := m.GetBackingStore().Set("services", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettings sets the settings property value. Tenant-wide settings for the Universal Print service.
 func (m *Print) SetSettings(value PrintSettingsable)() {
-    m.settings = value
+    err := m.GetBackingStore().Set("settings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetShares sets the shares property value. The list of printer shares registered in the tenant.
 func (m *Print) SetShares(value []PrinterShareable)() {
-    m.shares = value
+    err := m.GetBackingStore().Set("shares", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTaskDefinitions sets the taskDefinitions property value. List of abstract definition for a task that can be triggered when various events occur within Universal Print.
 func (m *Print) SetTaskDefinitions(value []PrintTaskDefinitionable)() {
-    m.taskDefinitions = value
+    err := m.GetBackingStore().Set("taskDefinitions", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Printable 
+type Printable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetConnectors()([]PrintConnectorable)
+    GetOdataType()(*string)
+    GetOperations()([]PrintOperationable)
+    GetPrinters()([]Printerable)
+    GetServices()([]PrintServiceable)
+    GetSettings()(PrintSettingsable)
+    GetShares()([]PrinterShareable)
+    GetTaskDefinitions()([]PrintTaskDefinitionable)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetConnectors(value []PrintConnectorable)()
+    SetOdataType(value *string)()
+    SetOperations(value []PrintOperationable)()
+    SetPrinters(value []Printerable)()
+    SetServices(value []PrintServiceable)()
+    SetSettings(value PrintSettingsable)()
+    SetShares(value []PrinterShareable)()
+    SetTaskDefinitions(value []PrintTaskDefinitionable)()
 }

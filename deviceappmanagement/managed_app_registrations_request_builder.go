@@ -93,9 +93,9 @@ func (m *ManagedAppRegistrationsRequestBuilder) Get(ctx context.Context, request
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAppRegistrationCollectionResponseable), nil
 }
-// MicrosoftGraphGetUserIdsWithFlaggedAppRegistration provides operations to call the getUserIdsWithFlaggedAppRegistration method.
-func (m *ManagedAppRegistrationsRequestBuilder) MicrosoftGraphGetUserIdsWithFlaggedAppRegistration()(*ManagedAppRegistrationsMicrosoftGraphGetUserIdsWithFlaggedAppRegistrationRequestBuilder) {
-    return NewManagedAppRegistrationsMicrosoftGraphGetUserIdsWithFlaggedAppRegistrationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GetUserIdsWithFlaggedAppRegistration provides operations to call the getUserIdsWithFlaggedAppRegistration method.
+func (m *ManagedAppRegistrationsRequestBuilder) GetUserIdsWithFlaggedAppRegistration()(*ManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationRequestBuilder) {
+    return NewManagedAppRegistrationsGetUserIdsWithFlaggedAppRegistrationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to managedAppRegistrations for deviceAppManagement
 func (m *ManagedAppRegistrationsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAppRegistrationable, requestConfiguration *ManagedAppRegistrationsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAppRegistrationable, error) {

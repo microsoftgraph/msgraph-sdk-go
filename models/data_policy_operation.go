@@ -8,18 +8,6 @@ import (
 // DataPolicyOperation 
 type DataPolicyOperation struct {
     Entity
-    // Represents when the request for this data policy operation was completed, in UTC time, using the ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Null until the operation completes.
-    completedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Specifies the progress of an operation.
-    progress *float64
-    // Possible values are: notStarted, running, complete, failed, unknownFutureValue.
-    status *DataPolicyOperationStatus
-    // The URL location to where data is being exported for export requests.
-    storageLocation *string
-    // Represents when the request for this data operation was submitted, in UTC time, using the ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    submittedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The id for the user on whom the operation is performed.
-    userId *string
 }
 // NewDataPolicyOperation instantiates a new dataPolicyOperation and sets the default values.
 func NewDataPolicyOperation()(*DataPolicyOperation) {
@@ -34,7 +22,14 @@ func CreateDataPolicyOperationFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetCompletedDateTime gets the completedDateTime property value. Represents when the request for this data policy operation was completed, in UTC time, using the ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Null until the operation completes.
 func (m *DataPolicyOperation) GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.completedDateTime
+    val, err := m.GetBackingStore().Get("completedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DataPolicyOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -103,23 +98,58 @@ func (m *DataPolicyOperation) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetProgress gets the progress property value. Specifies the progress of an operation.
 func (m *DataPolicyOperation) GetProgress()(*float64) {
-    return m.progress
+    val, err := m.GetBackingStore().Get("progress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
 }
 // GetStatus gets the status property value. Possible values are: notStarted, running, complete, failed, unknownFutureValue.
 func (m *DataPolicyOperation) GetStatus()(*DataPolicyOperationStatus) {
-    return m.status
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DataPolicyOperationStatus)
+    }
+    return nil
 }
 // GetStorageLocation gets the storageLocation property value. The URL location to where data is being exported for export requests.
 func (m *DataPolicyOperation) GetStorageLocation()(*string) {
-    return m.storageLocation
+    val, err := m.GetBackingStore().Get("storageLocation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSubmittedDateTime gets the submittedDateTime property value. Represents when the request for this data operation was submitted, in UTC time, using the ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *DataPolicyOperation) GetSubmittedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.submittedDateTime
+    val, err := m.GetBackingStore().Get("submittedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetUserId gets the userId property value. The id for the user on whom the operation is performed.
 func (m *DataPolicyOperation) GetUserId()(*string) {
-    return m.userId
+    val, err := m.GetBackingStore().Get("userId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DataPolicyOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -168,25 +198,60 @@ func (m *DataPolicyOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetCompletedDateTime sets the completedDateTime property value. Represents when the request for this data policy operation was completed, in UTC time, using the ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Null until the operation completes.
 func (m *DataPolicyOperation) SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.completedDateTime = value
+    err := m.GetBackingStore().Set("completedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProgress sets the progress property value. Specifies the progress of an operation.
 func (m *DataPolicyOperation) SetProgress(value *float64)() {
-    m.progress = value
+    err := m.GetBackingStore().Set("progress", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStatus sets the status property value. Possible values are: notStarted, running, complete, failed, unknownFutureValue.
 func (m *DataPolicyOperation) SetStatus(value *DataPolicyOperationStatus)() {
-    m.status = value
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStorageLocation sets the storageLocation property value. The URL location to where data is being exported for export requests.
 func (m *DataPolicyOperation) SetStorageLocation(value *string)() {
-    m.storageLocation = value
+    err := m.GetBackingStore().Set("storageLocation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSubmittedDateTime sets the submittedDateTime property value. Represents when the request for this data operation was submitted, in UTC time, using the ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *DataPolicyOperation) SetSubmittedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.submittedDateTime = value
+    err := m.GetBackingStore().Set("submittedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserId sets the userId property value. The id for the user on whom the operation is performed.
 func (m *DataPolicyOperation) SetUserId(value *string)() {
-    m.userId = value
+    err := m.GetBackingStore().Set("userId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DataPolicyOperationable 
+type DataPolicyOperationable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetProgress()(*float64)
+    GetStatus()(*DataPolicyOperationStatus)
+    GetStorageLocation()(*string)
+    GetSubmittedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetUserId()(*string)
+    SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetProgress(value *float64)()
+    SetStatus(value *DataPolicyOperationStatus)()
+    SetStorageLocation(value *string)()
+    SetSubmittedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetUserId(value *string)()
 }

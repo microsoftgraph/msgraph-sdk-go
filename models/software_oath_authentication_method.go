@@ -7,8 +7,6 @@ import (
 // SoftwareOathAuthenticationMethod 
 type SoftwareOathAuthenticationMethod struct {
     AuthenticationMethod
-    // The secret key of the method. Always returns null.
-    secretKey *string
 }
 // NewSoftwareOathAuthenticationMethod instantiates a new SoftwareOathAuthenticationMethod and sets the default values.
 func NewSoftwareOathAuthenticationMethod()(*SoftwareOathAuthenticationMethod) {
@@ -40,7 +38,14 @@ func (m *SoftwareOathAuthenticationMethod) GetFieldDeserializers()(map[string]fu
 }
 // GetSecretKey gets the secretKey property value. The secret key of the method. Always returns null.
 func (m *SoftwareOathAuthenticationMethod) GetSecretKey()(*string) {
-    return m.secretKey
+    val, err := m.GetBackingStore().Get("secretKey")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SoftwareOathAuthenticationMethod) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *SoftwareOathAuthenticationMethod) Serialize(writer i878a80d2330e89d2689
 }
 // SetSecretKey sets the secretKey property value. The secret key of the method. Always returns null.
 func (m *SoftwareOathAuthenticationMethod) SetSecretKey(value *string)() {
-    m.secretKey = value
+    err := m.GetBackingStore().Set("secretKey", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SoftwareOathAuthenticationMethodable 
+type SoftwareOathAuthenticationMethodable interface {
+    AuthenticationMethodable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetSecretKey()(*string)
+    SetSecretKey(value *string)()
 }

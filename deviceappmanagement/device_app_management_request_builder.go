@@ -197,10 +197,6 @@ func (m *DeviceAppManagementRequestBuilder) MdmWindowsInformationProtectionPolic
     }
     return NewMdmWindowsInformationProtectionPoliciesMdmWindowsInformationProtectionPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
-// MicrosoftGraphSyncMicrosoftStoreForBusinessApps provides operations to call the syncMicrosoftStoreForBusinessApps method.
-func (m *DeviceAppManagementRequestBuilder) MicrosoftGraphSyncMicrosoftStoreForBusinessApps()(*MicrosoftGraphSyncMicrosoftStoreForBusinessAppsRequestBuilder) {
-    return NewMicrosoftGraphSyncMicrosoftStoreForBusinessAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // MobileAppCategories provides operations to manage the mobileAppCategories property of the microsoft.graph.deviceAppManagement entity.
 func (m *DeviceAppManagementRequestBuilder) MobileAppCategories()(*MobileAppCategoriesRequestBuilder) {
     return NewMobileAppCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
@@ -264,6 +260,10 @@ func (m *DeviceAppManagementRequestBuilder) Patch(ctx context.Context, body iadc
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceAppManagementable), nil
+}
+// SyncMicrosoftStoreForBusinessApps provides operations to call the syncMicrosoftStoreForBusinessApps method.
+func (m *DeviceAppManagementRequestBuilder) SyncMicrosoftStoreForBusinessApps()(*SyncMicrosoftStoreForBusinessAppsRequestBuilder) {
+    return NewSyncMicrosoftStoreForBusinessAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // TargetedManagedAppConfigurations provides operations to manage the targetedManagedAppConfigurations property of the microsoft.graph.deviceAppManagement entity.
 func (m *DeviceAppManagementRequestBuilder) TargetedManagedAppConfigurations()(*TargetedManagedAppConfigurationsRequestBuilder) {

@@ -8,8 +8,6 @@ import (
 // EdiscoveryPurgeDataOperationCollectionResponse 
 type EdiscoveryPurgeDataOperationCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
-    // The value property
-    value []EdiscoveryPurgeDataOperationable
 }
 // NewEdiscoveryPurgeDataOperationCollectionResponse instantiates a new EdiscoveryPurgeDataOperationCollectionResponse and sets the default values.
 func NewEdiscoveryPurgeDataOperationCollectionResponse()(*EdiscoveryPurgeDataOperationCollectionResponse) {
@@ -43,7 +41,14 @@ func (m *EdiscoveryPurgeDataOperationCollectionResponse) GetFieldDeserializers()
 }
 // GetValue gets the value property value. The value property
 func (m *EdiscoveryPurgeDataOperationCollectionResponse) GetValue()([]EdiscoveryPurgeDataOperationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EdiscoveryPurgeDataOperationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EdiscoveryPurgeDataOperationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *EdiscoveryPurgeDataOperationCollectionResponse) Serialize(writer i878a8
 }
 // SetValue sets the value property value. The value property
 func (m *EdiscoveryPurgeDataOperationCollectionResponse) SetValue(value []EdiscoveryPurgeDataOperationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EdiscoveryPurgeDataOperationCollectionResponseable 
+type EdiscoveryPurgeDataOperationCollectionResponseable interface {
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]EdiscoveryPurgeDataOperationable)
+    SetValue(value []EdiscoveryPurgeDataOperationable)()
 }

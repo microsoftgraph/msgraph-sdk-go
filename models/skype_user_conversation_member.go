@@ -7,8 +7,6 @@ import (
 // SkypeUserConversationMember 
 type SkypeUserConversationMember struct {
     ConversationMember
-    // Skype ID of the user.
-    skypeId *string
 }
 // NewSkypeUserConversationMember instantiates a new SkypeUserConversationMember and sets the default values.
 func NewSkypeUserConversationMember()(*SkypeUserConversationMember) {
@@ -40,7 +38,14 @@ func (m *SkypeUserConversationMember) GetFieldDeserializers()(map[string]func(i8
 }
 // GetSkypeId gets the skypeId property value. Skype ID of the user.
 func (m *SkypeUserConversationMember) GetSkypeId()(*string) {
-    return m.skypeId
+    val, err := m.GetBackingStore().Get("skypeId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SkypeUserConversationMember) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *SkypeUserConversationMember) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetSkypeId sets the skypeId property value. Skype ID of the user.
 func (m *SkypeUserConversationMember) SetSkypeId(value *string)() {
-    m.skypeId = value
+    err := m.GetBackingStore().Set("skypeId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SkypeUserConversationMemberable 
+type SkypeUserConversationMemberable interface {
+    ConversationMemberable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetSkypeId()(*string)
+    SetSkypeId(value *string)()
 }

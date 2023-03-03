@@ -7,16 +7,6 @@ import (
 // RegistryValueEvidence 
 type RegistryValueEvidence struct {
     AlertEvidence
-    // Registry hive of the key that the recorded action was applied to.
-    registryHive *string
-    // Registry key that the recorded action was applied to.
-    registryKey *string
-    // Data of the registry value that the recorded action was applied to.
-    registryValue *string
-    // Name of the registry value that the recorded action was applied to.
-    registryValueName *string
-    // Data type, such as binary or string, of the registry value that the recorded action was applied to.
-    registryValueType *string
 }
 // NewRegistryValueEvidence instantiates a new RegistryValueEvidence and sets the default values.
 func NewRegistryValueEvidence()(*RegistryValueEvidence) {
@@ -86,23 +76,58 @@ func (m *RegistryValueEvidence) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetRegistryHive gets the registryHive property value. Registry hive of the key that the recorded action was applied to.
 func (m *RegistryValueEvidence) GetRegistryHive()(*string) {
-    return m.registryHive
+    val, err := m.GetBackingStore().Get("registryHive")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRegistryKey gets the registryKey property value. Registry key that the recorded action was applied to.
 func (m *RegistryValueEvidence) GetRegistryKey()(*string) {
-    return m.registryKey
+    val, err := m.GetBackingStore().Get("registryKey")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRegistryValue gets the registryValue property value. Data of the registry value that the recorded action was applied to.
 func (m *RegistryValueEvidence) GetRegistryValue()(*string) {
-    return m.registryValue
+    val, err := m.GetBackingStore().Get("registryValue")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRegistryValueName gets the registryValueName property value. Name of the registry value that the recorded action was applied to.
 func (m *RegistryValueEvidence) GetRegistryValueName()(*string) {
-    return m.registryValueName
+    val, err := m.GetBackingStore().Get("registryValueName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRegistryValueType gets the registryValueType property value. Data type, such as binary or string, of the registry value that the recorded action was applied to.
 func (m *RegistryValueEvidence) GetRegistryValueType()(*string) {
-    return m.registryValueType
+    val, err := m.GetBackingStore().Get("registryValueType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *RegistryValueEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -144,21 +169,51 @@ func (m *RegistryValueEvidence) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetRegistryHive sets the registryHive property value. Registry hive of the key that the recorded action was applied to.
 func (m *RegistryValueEvidence) SetRegistryHive(value *string)() {
-    m.registryHive = value
+    err := m.GetBackingStore().Set("registryHive", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRegistryKey sets the registryKey property value. Registry key that the recorded action was applied to.
 func (m *RegistryValueEvidence) SetRegistryKey(value *string)() {
-    m.registryKey = value
+    err := m.GetBackingStore().Set("registryKey", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRegistryValue sets the registryValue property value. Data of the registry value that the recorded action was applied to.
 func (m *RegistryValueEvidence) SetRegistryValue(value *string)() {
-    m.registryValue = value
+    err := m.GetBackingStore().Set("registryValue", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRegistryValueName sets the registryValueName property value. Name of the registry value that the recorded action was applied to.
 func (m *RegistryValueEvidence) SetRegistryValueName(value *string)() {
-    m.registryValueName = value
+    err := m.GetBackingStore().Set("registryValueName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRegistryValueType sets the registryValueType property value. Data type, such as binary or string, of the registry value that the recorded action was applied to.
 func (m *RegistryValueEvidence) SetRegistryValueType(value *string)() {
-    m.registryValueType = value
+    err := m.GetBackingStore().Set("registryValueType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// RegistryValueEvidenceable 
+type RegistryValueEvidenceable interface {
+    AlertEvidenceable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetRegistryHive()(*string)
+    GetRegistryKey()(*string)
+    GetRegistryValue()(*string)
+    GetRegistryValueName()(*string)
+    GetRegistryValueType()(*string)
+    SetRegistryHive(value *string)()
+    SetRegistryKey(value *string)()
+    SetRegistryValue(value *string)()
+    SetRegistryValueName(value *string)()
+    SetRegistryValueType(value *string)()
 }

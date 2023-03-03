@@ -98,10 +98,6 @@ func (m *ItemThreadsConversationThreadItemRequestBuilder) Get(ctx context.Contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationThreadable), nil
 }
-// MicrosoftGraphReply provides operations to call the reply method.
-func (m *ItemThreadsConversationThreadItemRequestBuilder) MicrosoftGraphReply()(*ItemThreadsItemMicrosoftGraphReplyRequestBuilder) {
-    return NewItemThreadsItemMicrosoftGraphReplyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Patch update the navigation property threads in groups
 func (m *ItemThreadsConversationThreadItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationThreadable, requestConfiguration *ItemThreadsConversationThreadItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationThreadable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -135,6 +131,10 @@ func (m *ItemThreadsConversationThreadItemRequestBuilder) PostsById(id string)(*
         urlTplParams["post%2Did"] = id
     }
     return NewItemThreadsItemPostsPostItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+}
+// Reply provides operations to call the reply method.
+func (m *ItemThreadsConversationThreadItemRequestBuilder) Reply()(*ItemThreadsItemReplyRequestBuilder) {
+    return NewItemThreadsItemReplyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property threads for groups
 func (m *ItemThreadsConversationThreadItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemThreadsConversationThreadItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

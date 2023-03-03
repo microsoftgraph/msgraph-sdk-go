@@ -7,8 +7,6 @@ import (
 // CalendarGroupCollectionResponse 
 type CalendarGroupCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []CalendarGroupable
 }
 // NewCalendarGroupCollectionResponse instantiates a new CalendarGroupCollectionResponse and sets the default values.
 func NewCalendarGroupCollectionResponse()(*CalendarGroupCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *CalendarGroupCollectionResponse) GetFieldDeserializers()(map[string]fun
 }
 // GetValue gets the value property value. The value property
 func (m *CalendarGroupCollectionResponse) GetValue()([]CalendarGroupable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CalendarGroupable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CalendarGroupCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *CalendarGroupCollectionResponse) Serialize(writer i878a80d2330e89d26896
 }
 // SetValue sets the value property value. The value property
 func (m *CalendarGroupCollectionResponse) SetValue(value []CalendarGroupable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CalendarGroupCollectionResponseable 
+type CalendarGroupCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]CalendarGroupable)
+    SetValue(value []CalendarGroupable)()
 }

@@ -8,42 +8,6 @@ import (
 // OrgContact 
 type OrgContact struct {
     DirectoryObject
-    // The addresses property
-    addresses []PhysicalOfficeAddressable
-    // The companyName property
-    companyName *string
-    // The department property
-    department *string
-    // The directReports property
-    directReports []DirectoryObjectable
-    // The displayName property
-    displayName *string
-    // The givenName property
-    givenName *string
-    // The jobTitle property
-    jobTitle *string
-    // The mail property
-    mail *string
-    // The mailNickname property
-    mailNickname *string
-    // The manager property
-    manager DirectoryObjectable
-    // The memberOf property
-    memberOf []DirectoryObjectable
-    // The onPremisesLastSyncDateTime property
-    onPremisesLastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The onPremisesProvisioningErrors property
-    onPremisesProvisioningErrors []OnPremisesProvisioningErrorable
-    // The onPremisesSyncEnabled property
-    onPremisesSyncEnabled *bool
-    // The phones property
-    phones []Phoneable
-    // The proxyAddresses property
-    proxyAddresses []string
-    // The surname property
-    surname *string
-    // The transitiveMemberOf property
-    transitiveMemberOf []DirectoryObjectable
 }
 // NewOrgContact instantiates a new OrgContact and sets the default values.
 func NewOrgContact()(*OrgContact) {
@@ -60,23 +24,58 @@ func CreateOrgContactFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 }
 // GetAddresses gets the addresses property value. The addresses property
 func (m *OrgContact) GetAddresses()([]PhysicalOfficeAddressable) {
-    return m.addresses
+    val, err := m.GetBackingStore().Get("addresses")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PhysicalOfficeAddressable)
+    }
+    return nil
 }
 // GetCompanyName gets the companyName property value. The companyName property
 func (m *OrgContact) GetCompanyName()(*string) {
-    return m.companyName
+    val, err := m.GetBackingStore().Get("companyName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDepartment gets the department property value. The department property
 func (m *OrgContact) GetDepartment()(*string) {
-    return m.department
+    val, err := m.GetBackingStore().Get("department")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDirectReports gets the directReports property value. The directReports property
 func (m *OrgContact) GetDirectReports()([]DirectoryObjectable) {
-    return m.directReports
+    val, err := m.GetBackingStore().Get("directReports")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DirectoryObjectable)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *OrgContact) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OrgContact) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -293,55 +292,146 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetGivenName gets the givenName property value. The givenName property
 func (m *OrgContact) GetGivenName()(*string) {
-    return m.givenName
+    val, err := m.GetBackingStore().Get("givenName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetJobTitle gets the jobTitle property value. The jobTitle property
 func (m *OrgContact) GetJobTitle()(*string) {
-    return m.jobTitle
+    val, err := m.GetBackingStore().Get("jobTitle")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetMail gets the mail property value. The mail property
 func (m *OrgContact) GetMail()(*string) {
-    return m.mail
+    val, err := m.GetBackingStore().Get("mail")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetMailNickname gets the mailNickname property value. The mailNickname property
 func (m *OrgContact) GetMailNickname()(*string) {
-    return m.mailNickname
+    val, err := m.GetBackingStore().Get("mailNickname")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetManager gets the manager property value. The manager property
 func (m *OrgContact) GetManager()(DirectoryObjectable) {
-    return m.manager
+    val, err := m.GetBackingStore().Get("manager")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DirectoryObjectable)
+    }
+    return nil
 }
 // GetMemberOf gets the memberOf property value. The memberOf property
 func (m *OrgContact) GetMemberOf()([]DirectoryObjectable) {
-    return m.memberOf
+    val, err := m.GetBackingStore().Get("memberOf")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DirectoryObjectable)
+    }
+    return nil
 }
 // GetOnPremisesLastSyncDateTime gets the onPremisesLastSyncDateTime property value. The onPremisesLastSyncDateTime property
 func (m *OrgContact) GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.onPremisesLastSyncDateTime
+    val, err := m.GetBackingStore().Get("onPremisesLastSyncDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetOnPremisesProvisioningErrors gets the onPremisesProvisioningErrors property value. The onPremisesProvisioningErrors property
 func (m *OrgContact) GetOnPremisesProvisioningErrors()([]OnPremisesProvisioningErrorable) {
-    return m.onPremisesProvisioningErrors
+    val, err := m.GetBackingStore().Get("onPremisesProvisioningErrors")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OnPremisesProvisioningErrorable)
+    }
+    return nil
 }
 // GetOnPremisesSyncEnabled gets the onPremisesSyncEnabled property value. The onPremisesSyncEnabled property
 func (m *OrgContact) GetOnPremisesSyncEnabled()(*bool) {
-    return m.onPremisesSyncEnabled
+    val, err := m.GetBackingStore().Get("onPremisesSyncEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPhones gets the phones property value. The phones property
 func (m *OrgContact) GetPhones()([]Phoneable) {
-    return m.phones
+    val, err := m.GetBackingStore().Get("phones")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Phoneable)
+    }
+    return nil
 }
 // GetProxyAddresses gets the proxyAddresses property value. The proxyAddresses property
 func (m *OrgContact) GetProxyAddresses()([]string) {
-    return m.proxyAddresses
+    val, err := m.GetBackingStore().Get("proxyAddresses")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetSurname gets the surname property value. The surname property
 func (m *OrgContact) GetSurname()(*string) {
-    return m.surname
+    val, err := m.GetBackingStore().Get("surname")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTransitiveMemberOf gets the transitiveMemberOf property value. The transitiveMemberOf property
 func (m *OrgContact) GetTransitiveMemberOf()([]DirectoryObjectable) {
-    return m.transitiveMemberOf
+    val, err := m.GetBackingStore().Get("transitiveMemberOf")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DirectoryObjectable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OrgContact) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -485,73 +575,168 @@ func (m *OrgContact) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetAddresses sets the addresses property value. The addresses property
 func (m *OrgContact) SetAddresses(value []PhysicalOfficeAddressable)() {
-    m.addresses = value
+    err := m.GetBackingStore().Set("addresses", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCompanyName sets the companyName property value. The companyName property
 func (m *OrgContact) SetCompanyName(value *string)() {
-    m.companyName = value
+    err := m.GetBackingStore().Set("companyName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDepartment sets the department property value. The department property
 func (m *OrgContact) SetDepartment(value *string)() {
-    m.department = value
+    err := m.GetBackingStore().Set("department", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDirectReports sets the directReports property value. The directReports property
 func (m *OrgContact) SetDirectReports(value []DirectoryObjectable)() {
-    m.directReports = value
+    err := m.GetBackingStore().Set("directReports", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *OrgContact) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetGivenName sets the givenName property value. The givenName property
 func (m *OrgContact) SetGivenName(value *string)() {
-    m.givenName = value
+    err := m.GetBackingStore().Set("givenName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetJobTitle sets the jobTitle property value. The jobTitle property
 func (m *OrgContact) SetJobTitle(value *string)() {
-    m.jobTitle = value
+    err := m.GetBackingStore().Set("jobTitle", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMail sets the mail property value. The mail property
 func (m *OrgContact) SetMail(value *string)() {
-    m.mail = value
+    err := m.GetBackingStore().Set("mail", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMailNickname sets the mailNickname property value. The mailNickname property
 func (m *OrgContact) SetMailNickname(value *string)() {
-    m.mailNickname = value
+    err := m.GetBackingStore().Set("mailNickname", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetManager sets the manager property value. The manager property
 func (m *OrgContact) SetManager(value DirectoryObjectable)() {
-    m.manager = value
+    err := m.GetBackingStore().Set("manager", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMemberOf sets the memberOf property value. The memberOf property
 func (m *OrgContact) SetMemberOf(value []DirectoryObjectable)() {
-    m.memberOf = value
+    err := m.GetBackingStore().Set("memberOf", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOnPremisesLastSyncDateTime sets the onPremisesLastSyncDateTime property value. The onPremisesLastSyncDateTime property
 func (m *OrgContact) SetOnPremisesLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.onPremisesLastSyncDateTime = value
+    err := m.GetBackingStore().Set("onPremisesLastSyncDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOnPremisesProvisioningErrors sets the onPremisesProvisioningErrors property value. The onPremisesProvisioningErrors property
 func (m *OrgContact) SetOnPremisesProvisioningErrors(value []OnPremisesProvisioningErrorable)() {
-    m.onPremisesProvisioningErrors = value
+    err := m.GetBackingStore().Set("onPremisesProvisioningErrors", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOnPremisesSyncEnabled sets the onPremisesSyncEnabled property value. The onPremisesSyncEnabled property
 func (m *OrgContact) SetOnPremisesSyncEnabled(value *bool)() {
-    m.onPremisesSyncEnabled = value
+    err := m.GetBackingStore().Set("onPremisesSyncEnabled", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPhones sets the phones property value. The phones property
 func (m *OrgContact) SetPhones(value []Phoneable)() {
-    m.phones = value
+    err := m.GetBackingStore().Set("phones", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProxyAddresses sets the proxyAddresses property value. The proxyAddresses property
 func (m *OrgContact) SetProxyAddresses(value []string)() {
-    m.proxyAddresses = value
+    err := m.GetBackingStore().Set("proxyAddresses", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSurname sets the surname property value. The surname property
 func (m *OrgContact) SetSurname(value *string)() {
-    m.surname = value
+    err := m.GetBackingStore().Set("surname", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTransitiveMemberOf sets the transitiveMemberOf property value. The transitiveMemberOf property
 func (m *OrgContact) SetTransitiveMemberOf(value []DirectoryObjectable)() {
-    m.transitiveMemberOf = value
+    err := m.GetBackingStore().Set("transitiveMemberOf", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OrgContactable 
+type OrgContactable interface {
+    DirectoryObjectable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAddresses()([]PhysicalOfficeAddressable)
+    GetCompanyName()(*string)
+    GetDepartment()(*string)
+    GetDirectReports()([]DirectoryObjectable)
+    GetDisplayName()(*string)
+    GetGivenName()(*string)
+    GetJobTitle()(*string)
+    GetMail()(*string)
+    GetMailNickname()(*string)
+    GetManager()(DirectoryObjectable)
+    GetMemberOf()([]DirectoryObjectable)
+    GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOnPremisesProvisioningErrors()([]OnPremisesProvisioningErrorable)
+    GetOnPremisesSyncEnabled()(*bool)
+    GetPhones()([]Phoneable)
+    GetProxyAddresses()([]string)
+    GetSurname()(*string)
+    GetTransitiveMemberOf()([]DirectoryObjectable)
+    SetAddresses(value []PhysicalOfficeAddressable)()
+    SetCompanyName(value *string)()
+    SetDepartment(value *string)()
+    SetDirectReports(value []DirectoryObjectable)()
+    SetDisplayName(value *string)()
+    SetGivenName(value *string)()
+    SetJobTitle(value *string)()
+    SetMail(value *string)()
+    SetMailNickname(value *string)()
+    SetManager(value DirectoryObjectable)()
+    SetMemberOf(value []DirectoryObjectable)()
+    SetOnPremisesLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOnPremisesProvisioningErrors(value []OnPremisesProvisioningErrorable)()
+    SetOnPremisesSyncEnabled(value *bool)()
+    SetPhones(value []Phoneable)()
+    SetProxyAddresses(value []string)()
+    SetSurname(value *string)()
+    SetTransitiveMemberOf(value []DirectoryObjectable)()
 }

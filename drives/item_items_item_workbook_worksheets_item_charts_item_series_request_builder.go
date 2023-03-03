@@ -70,14 +70,14 @@ func NewItemItemsItemWorkbookWorksheetsItemChartsItemSeriesRequestBuilder(rawUrl
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookWorksheetsItemChartsItemSeriesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count provides operations to count the resources in the collection.
+// Count provides operations to call the count method.
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesRequestBuilder) Count()(*ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesCountRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemChartsItemSeriesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of chartseries objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/chart-list-series?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/chartseries-list?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartSeriesCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,13 +96,9 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesRequestBuilder) Get(
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartSeriesCollectionResponseable), nil
 }
-// MicrosoftGraphCount provides operations to call the count method.
-func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesRequestBuilder) MicrosoftGraphCount()(*ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesMicrosoftGraphCountRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemChartsItemSeriesMicrosoftGraphCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphItemAtWithIndex provides operations to call the itemAt method.
-func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesRequestBuilder) MicrosoftGraphItemAtWithIndex(index *int32)(*ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesMicrosoftGraphItemAtWithIndexRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemChartsItemSeriesMicrosoftGraphItemAtWithIndexRequestBuilderInternal(m.pathParameters, m.requestAdapter, index)
+// ItemAtWithIndex provides operations to call the itemAt method.
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesRequestBuilder) ItemAtWithIndex(index *int32)(*ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemAtWithIndexRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemAtWithIndexRequestBuilderInternal(m.pathParameters, m.requestAdapter, index)
 }
 // Post use this API to create a new ChartSeries.
 // [Find more info here]

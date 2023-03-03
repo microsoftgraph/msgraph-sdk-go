@@ -7,8 +7,6 @@ import (
 // PrintUsageByPrinterCollectionResponse 
 type PrintUsageByPrinterCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []PrintUsageByPrinterable
 }
 // NewPrintUsageByPrinterCollectionResponse instantiates a new PrintUsageByPrinterCollectionResponse and sets the default values.
 func NewPrintUsageByPrinterCollectionResponse()(*PrintUsageByPrinterCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *PrintUsageByPrinterCollectionResponse) GetFieldDeserializers()(map[stri
 }
 // GetValue gets the value property value. The value property
 func (m *PrintUsageByPrinterCollectionResponse) GetValue()([]PrintUsageByPrinterable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrintUsageByPrinterable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PrintUsageByPrinterCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *PrintUsageByPrinterCollectionResponse) Serialize(writer i878a80d2330e89
 }
 // SetValue sets the value property value. The value property
 func (m *PrintUsageByPrinterCollectionResponse) SetValue(value []PrintUsageByPrinterable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PrintUsageByPrinterCollectionResponseable 
+type PrintUsageByPrinterCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]PrintUsageByPrinterable)
+    SetValue(value []PrintUsageByPrinterable)()
 }

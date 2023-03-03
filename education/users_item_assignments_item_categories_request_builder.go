@@ -74,6 +74,10 @@ func NewUsersItemAssignmentsItemCategoriesRequestBuilder(rawUrl string, requestA
 func (m *UsersItemAssignmentsItemCategoriesRequestBuilder) Count()(*UsersItemAssignmentsItemCategoriesCountRequestBuilder) {
     return NewUsersItemAssignmentsItemCategoriesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// Delta provides operations to call the delta method.
+func (m *UsersItemAssignmentsItemCategoriesRequestBuilder) Delta()(*UsersItemAssignmentsItemCategoriesDeltaRequestBuilder) {
+    return NewUsersItemAssignmentsItemCategoriesDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Get list all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
 // [Find more info here]
 // 
@@ -95,10 +99,6 @@ func (m *UsersItemAssignmentsItemCategoriesRequestBuilder) Get(ctx context.Conte
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationCategoryCollectionResponseable), nil
-}
-// MicrosoftGraphDelta provides operations to call the delta method.
-func (m *UsersItemAssignmentsItemCategoriesRequestBuilder) MicrosoftGraphDelta()(*UsersItemAssignmentsItemCategoriesMicrosoftGraphDeltaRequestBuilder) {
-    return NewUsersItemAssignmentsItemCategoriesMicrosoftGraphDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to categories for education
 func (m *UsersItemAssignmentsItemCategoriesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationCategoryable, requestConfiguration *UsersItemAssignmentsItemCategoriesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationCategoryable, error) {

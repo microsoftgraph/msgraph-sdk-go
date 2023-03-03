@@ -100,9 +100,9 @@ func (m *ServiceAnnouncementHealthOverviewsItemIssuesServiceHealthIssueItemReque
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceHealthIssueable), nil
 }
-// MicrosoftGraphIncidentReport provides operations to call the incidentReport method.
-func (m *ServiceAnnouncementHealthOverviewsItemIssuesServiceHealthIssueItemRequestBuilder) MicrosoftGraphIncidentReport()(*ServiceAnnouncementHealthOverviewsItemIssuesItemMicrosoftGraphIncidentReportRequestBuilder) {
-    return NewServiceAnnouncementHealthOverviewsItemIssuesItemMicrosoftGraphIncidentReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// IncidentReport provides operations to call the incidentReport method.
+func (m *ServiceAnnouncementHealthOverviewsItemIssuesServiceHealthIssueItemRequestBuilder) IncidentReport()(*ServiceAnnouncementHealthOverviewsItemIssuesItemIncidentReportRequestBuilder) {
+    return NewServiceAnnouncementHealthOverviewsItemIssuesItemIncidentReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property issues in admin
 func (m *ServiceAnnouncementHealthOverviewsItemIssuesServiceHealthIssueItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceHealthIssueable, requestConfiguration *ServiceAnnouncementHealthOverviewsItemIssuesServiceHealthIssueItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceHealthIssueable, error) {

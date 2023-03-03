@@ -7,8 +7,6 @@ import (
 // ExternalDomainNameCollectionResponse 
 type ExternalDomainNameCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ExternalDomainNameable
 }
 // NewExternalDomainNameCollectionResponse instantiates a new ExternalDomainNameCollectionResponse and sets the default values.
 func NewExternalDomainNameCollectionResponse()(*ExternalDomainNameCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ExternalDomainNameCollectionResponse) GetFieldDeserializers()(map[strin
 }
 // GetValue gets the value property value. The value property
 func (m *ExternalDomainNameCollectionResponse) GetValue()([]ExternalDomainNameable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ExternalDomainNameable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ExternalDomainNameCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ExternalDomainNameCollectionResponse) Serialize(writer i878a80d2330e89d
 }
 // SetValue sets the value property value. The value property
 func (m *ExternalDomainNameCollectionResponse) SetValue(value []ExternalDomainNameable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ExternalDomainNameCollectionResponseable 
+type ExternalDomainNameCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ExternalDomainNameable)
+    SetValue(value []ExternalDomainNameable)()
 }

@@ -61,6 +61,10 @@ func (m *TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequ
     }
     return NewTargetedManagedAppConfigurationsItemAppsManagedMobileAppItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
+// Assign provides operations to call the assign method.
+func (m *TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilder) Assign()(*TargetedManagedAppConfigurationsItemAssignRequestBuilder) {
+    return NewTargetedManagedAppConfigurationsItemAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Assignments provides operations to manage the assignments property of the microsoft.graph.targetedManagedAppConfiguration entity.
 func (m *TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilder) Assignments()(*TargetedManagedAppConfigurationsItemAssignmentsRequestBuilder) {
     return NewTargetedManagedAppConfigurationsItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
@@ -134,14 +138,6 @@ func (m *TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequ
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TargetedManagedAppConfigurationable), nil
 }
-// MicrosoftGraphAssign provides operations to call the assign method.
-func (m *TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilder) MicrosoftGraphAssign()(*TargetedManagedAppConfigurationsItemMicrosoftGraphAssignRequestBuilder) {
-    return NewTargetedManagedAppConfigurationsItemMicrosoftGraphAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphTargetApps provides operations to call the targetApps method.
-func (m *TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilder) MicrosoftGraphTargetApps()(*TargetedManagedAppConfigurationsItemMicrosoftGraphTargetAppsRequestBuilder) {
-    return NewTargetedManagedAppConfigurationsItemMicrosoftGraphTargetAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Patch update the navigation property targetedManagedAppConfigurations in deviceAppManagement
 func (m *TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TargetedManagedAppConfigurationable, requestConfiguration *TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TargetedManagedAppConfigurationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -160,6 +156,10 @@ func (m *TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequ
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TargetedManagedAppConfigurationable), nil
+}
+// TargetApps provides operations to call the targetApps method.
+func (m *TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilder) TargetApps()(*TargetedManagedAppConfigurationsItemTargetAppsRequestBuilder) {
+    return NewTargetedManagedAppConfigurationsItemTargetAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property targetedManagedAppConfigurations for deviceAppManagement
 func (m *TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

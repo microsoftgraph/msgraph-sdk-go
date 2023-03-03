@@ -8,34 +8,8 @@ import (
 // Post 
 type Post struct {
     OutlookItem
-    // Read-only. Nullable. Supports $expand.
-    attachments []Attachmentable
-    // The contents of the post. This is a default property. This property can be null.
-    body ItemBodyable
-    // Unique ID of the conversation. Read-only.
-    conversationId *string
-    // Unique ID of the conversation thread. Read-only.
-    conversationThreadId *string
-    // The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
-    extensions []Extensionable
-    // The from property
-    from Recipientable
-    // Indicates whether the post has at least one attachment. This is a default property.
-    hasAttachments *bool
-    // Read-only. Supports $expand.
-    inReplyTo Postable
-    // The collection of multi-value extended properties defined for the post. Read-only. Nullable.
-    multiValueExtendedProperties []MultiValueLegacyExtendedPropertyable
-    // Conversation participants that were added to the thread as part of this post.
-    newParticipants []Recipientable
-    // Specifies when the post was received. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    receivedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Contains the address of the sender. The value of Sender is assumed to be the address of the authenticated user in the case when Sender is not specified. This is a default property.
-    sender Recipientable
-    // The collection of single-value extended properties defined for the post. Read-only. Nullable.
-    singleValueExtendedProperties []SingleValueLegacyExtendedPropertyable
 }
-// NewPost instantiates a new post and sets the default values.
+// NewPost instantiates a new Post and sets the default values.
 func NewPost()(*Post) {
     m := &Post{
         OutlookItem: *NewOutlookItem(),
@@ -50,23 +24,58 @@ func CreatePostFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487ee
 }
 // GetAttachments gets the attachments property value. Read-only. Nullable. Supports $expand.
 func (m *Post) GetAttachments()([]Attachmentable) {
-    return m.attachments
+    val, err := m.GetBackingStore().Get("attachments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Attachmentable)
+    }
+    return nil
 }
 // GetBody gets the body property value. The contents of the post. This is a default property. This property can be null.
 func (m *Post) GetBody()(ItemBodyable) {
-    return m.body
+    val, err := m.GetBackingStore().Get("body")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ItemBodyable)
+    }
+    return nil
 }
 // GetConversationId gets the conversationId property value. Unique ID of the conversation. Read-only.
 func (m *Post) GetConversationId()(*string) {
-    return m.conversationId
+    val, err := m.GetBackingStore().Get("conversationId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetConversationThreadId gets the conversationThreadId property value. Unique ID of the conversation thread. Read-only.
 func (m *Post) GetConversationThreadId()(*string) {
-    return m.conversationThreadId
+    val, err := m.GetBackingStore().Get("conversationThreadId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetExtensions gets the extensions property value. The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
 func (m *Post) GetExtensions()([]Extensionable) {
-    return m.extensions
+    val, err := m.GetBackingStore().Get("extensions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Extensionable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Post) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -225,35 +234,91 @@ func (m *Post) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
 }
 // GetFrom gets the from property value. The from property
 func (m *Post) GetFrom()(Recipientable) {
-    return m.from
+    val, err := m.GetBackingStore().Get("from")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Recipientable)
+    }
+    return nil
 }
 // GetHasAttachments gets the hasAttachments property value. Indicates whether the post has at least one attachment. This is a default property.
 func (m *Post) GetHasAttachments()(*bool) {
-    return m.hasAttachments
+    val, err := m.GetBackingStore().Get("hasAttachments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetInReplyTo gets the inReplyTo property value. Read-only. Supports $expand.
 func (m *Post) GetInReplyTo()(Postable) {
-    return m.inReplyTo
+    val, err := m.GetBackingStore().Get("inReplyTo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Postable)
+    }
+    return nil
 }
 // GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the post. Read-only. Nullable.
 func (m *Post) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPropertyable) {
-    return m.multiValueExtendedProperties
+    val, err := m.GetBackingStore().Get("multiValueExtendedProperties")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MultiValueLegacyExtendedPropertyable)
+    }
+    return nil
 }
 // GetNewParticipants gets the newParticipants property value. Conversation participants that were added to the thread as part of this post.
 func (m *Post) GetNewParticipants()([]Recipientable) {
-    return m.newParticipants
+    val, err := m.GetBackingStore().Get("newParticipants")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Recipientable)
+    }
+    return nil
 }
 // GetReceivedDateTime gets the receivedDateTime property value. Specifies when the post was received. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *Post) GetReceivedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.receivedDateTime
+    val, err := m.GetBackingStore().Get("receivedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetSender gets the sender property value. Contains the address of the sender. The value of Sender is assumed to be the address of the authenticated user in the case when Sender is not specified. This is a default property.
 func (m *Post) GetSender()(Recipientable) {
-    return m.sender
+    val, err := m.GetBackingStore().Get("sender")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Recipientable)
+    }
+    return nil
 }
 // GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the post. Read-only. Nullable.
 func (m *Post) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable) {
-    return m.singleValueExtendedProperties
+    val, err := m.GetBackingStore().Get("singleValueExtendedProperties")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SingleValueLegacyExtendedPropertyable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Post) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -363,53 +428,123 @@ func (m *Post) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
 }
 // SetAttachments sets the attachments property value. Read-only. Nullable. Supports $expand.
 func (m *Post) SetAttachments(value []Attachmentable)() {
-    m.attachments = value
+    err := m.GetBackingStore().Set("attachments", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBody sets the body property value. The contents of the post. This is a default property. This property can be null.
 func (m *Post) SetBody(value ItemBodyable)() {
-    m.body = value
+    err := m.GetBackingStore().Set("body", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConversationId sets the conversationId property value. Unique ID of the conversation. Read-only.
 func (m *Post) SetConversationId(value *string)() {
-    m.conversationId = value
+    err := m.GetBackingStore().Set("conversationId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConversationThreadId sets the conversationThreadId property value. Unique ID of the conversation thread. Read-only.
 func (m *Post) SetConversationThreadId(value *string)() {
-    m.conversationThreadId = value
+    err := m.GetBackingStore().Set("conversationThreadId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExtensions sets the extensions property value. The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
 func (m *Post) SetExtensions(value []Extensionable)() {
-    m.extensions = value
+    err := m.GetBackingStore().Set("extensions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFrom sets the from property value. The from property
 func (m *Post) SetFrom(value Recipientable)() {
-    m.from = value
+    err := m.GetBackingStore().Set("from", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetHasAttachments sets the hasAttachments property value. Indicates whether the post has at least one attachment. This is a default property.
 func (m *Post) SetHasAttachments(value *bool)() {
-    m.hasAttachments = value
+    err := m.GetBackingStore().Set("hasAttachments", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInReplyTo sets the inReplyTo property value. Read-only. Supports $expand.
 func (m *Post) SetInReplyTo(value Postable)() {
-    m.inReplyTo = value
+    err := m.GetBackingStore().Set("inReplyTo", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMultiValueExtendedProperties sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the post. Read-only. Nullable.
 func (m *Post) SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedPropertyable)() {
-    m.multiValueExtendedProperties = value
+    err := m.GetBackingStore().Set("multiValueExtendedProperties", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNewParticipants sets the newParticipants property value. Conversation participants that were added to the thread as part of this post.
 func (m *Post) SetNewParticipants(value []Recipientable)() {
-    m.newParticipants = value
+    err := m.GetBackingStore().Set("newParticipants", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetReceivedDateTime sets the receivedDateTime property value. Specifies when the post was received. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *Post) SetReceivedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.receivedDateTime = value
+    err := m.GetBackingStore().Set("receivedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSender sets the sender property value. Contains the address of the sender. The value of Sender is assumed to be the address of the authenticated user in the case when Sender is not specified. This is a default property.
 func (m *Post) SetSender(value Recipientable)() {
-    m.sender = value
+    err := m.GetBackingStore().Set("sender", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the post. Read-only. Nullable.
 func (m *Post) SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedPropertyable)() {
-    m.singleValueExtendedProperties = value
+    err := m.GetBackingStore().Set("singleValueExtendedProperties", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Postable 
+type Postable interface {
+    OutlookItemable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAttachments()([]Attachmentable)
+    GetBody()(ItemBodyable)
+    GetConversationId()(*string)
+    GetConversationThreadId()(*string)
+    GetExtensions()([]Extensionable)
+    GetFrom()(Recipientable)
+    GetHasAttachments()(*bool)
+    GetInReplyTo()(Postable)
+    GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPropertyable)
+    GetNewParticipants()([]Recipientable)
+    GetReceivedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetSender()(Recipientable)
+    GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable)
+    SetAttachments(value []Attachmentable)()
+    SetBody(value ItemBodyable)()
+    SetConversationId(value *string)()
+    SetConversationThreadId(value *string)()
+    SetExtensions(value []Extensionable)()
+    SetFrom(value Recipientable)()
+    SetHasAttachments(value *bool)()
+    SetInReplyTo(value Postable)()
+    SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedPropertyable)()
+    SetNewParticipants(value []Recipientable)()
+    SetReceivedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetSender(value Recipientable)()
+    SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedPropertyable)()
 }

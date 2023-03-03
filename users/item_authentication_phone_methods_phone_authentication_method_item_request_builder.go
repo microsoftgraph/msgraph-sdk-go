@@ -81,6 +81,14 @@ func (m *ItemAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuild
     }
     return nil
 }
+// DisableSmsSignIn provides operations to call the disableSmsSignIn method.
+func (m *ItemAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder) DisableSmsSignIn()(*ItemAuthenticationPhoneMethodsItemDisableSmsSignInRequestBuilder) {
+    return NewItemAuthenticationPhoneMethodsItemDisableSmsSignInRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// EnableSmsSignIn provides operations to call the enableSmsSignIn method.
+func (m *ItemAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder) EnableSmsSignIn()(*ItemAuthenticationPhoneMethodsItemEnableSmsSignInRequestBuilder) {
+    return NewItemAuthenticationPhoneMethodsItemEnableSmsSignInRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Get the phone numbers registered to a user for authentication.
 func (m *ItemAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PhoneAuthenticationMethodable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -99,14 +107,6 @@ func (m *ItemAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuild
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PhoneAuthenticationMethodable), nil
-}
-// MicrosoftGraphDisableSmsSignIn provides operations to call the disableSmsSignIn method.
-func (m *ItemAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder) MicrosoftGraphDisableSmsSignIn()(*ItemAuthenticationPhoneMethodsItemMicrosoftGraphDisableSmsSignInRequestBuilder) {
-    return NewItemAuthenticationPhoneMethodsItemMicrosoftGraphDisableSmsSignInRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphEnableSmsSignIn provides operations to call the enableSmsSignIn method.
-func (m *ItemAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder) MicrosoftGraphEnableSmsSignIn()(*ItemAuthenticationPhoneMethodsItemMicrosoftGraphEnableSmsSignInRequestBuilder) {
-    return NewItemAuthenticationPhoneMethodsItemMicrosoftGraphEnableSmsSignInRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property phoneMethods in users
 func (m *ItemAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PhoneAuthenticationMethodable, requestConfiguration *ItemAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PhoneAuthenticationMethodable, error) {

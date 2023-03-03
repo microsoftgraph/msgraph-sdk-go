@@ -7,8 +7,6 @@ import (
 // UserSimulationDetailsCollectionResponse 
 type UserSimulationDetailsCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []UserSimulationDetailsable
 }
 // NewUserSimulationDetailsCollectionResponse instantiates a new UserSimulationDetailsCollectionResponse and sets the default values.
 func NewUserSimulationDetailsCollectionResponse()(*UserSimulationDetailsCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *UserSimulationDetailsCollectionResponse) GetFieldDeserializers()(map[st
 }
 // GetValue gets the value property value. The value property
 func (m *UserSimulationDetailsCollectionResponse) GetValue()([]UserSimulationDetailsable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserSimulationDetailsable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserSimulationDetailsCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *UserSimulationDetailsCollectionResponse) Serialize(writer i878a80d2330e
 }
 // SetValue sets the value property value. The value property
 func (m *UserSimulationDetailsCollectionResponse) SetValue(value []UserSimulationDetailsable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserSimulationDetailsCollectionResponseable 
+type UserSimulationDetailsCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]UserSimulationDetailsable)
+    SetValue(value []UserSimulationDetailsable)()
 }

@@ -2,31 +2,19 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ConfigurationManagerClientEnabledFeatures configuration Manager client enabled features
 type ConfigurationManagerClientEnabledFeatures struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Whether compliance policy is managed by Intune
-    compliancePolicy *bool
-    // Whether device configuration is managed by Intune
-    deviceConfiguration *bool
-    // Whether inventory is managed by Intune
-    inventory *bool
-    // Whether modern application is managed by Intune
-    modernApps *bool
-    // The OdataType property
-    odataType *string
-    // Whether resource access is managed by Intune
-    resourceAccess *bool
-    // Whether Windows Update for Business is managed by Intune
-    windowsUpdateForBusiness *bool
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewConfigurationManagerClientEnabledFeatures instantiates a new configurationManagerClientEnabledFeatures and sets the default values.
 func NewConfigurationManagerClientEnabledFeatures()(*ConfigurationManagerClientEnabledFeatures) {
     m := &ConfigurationManagerClientEnabledFeatures{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -36,15 +24,41 @@ func CreateConfigurationManagerClientEnabledFeaturesFromDiscriminatorValue(parse
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConfigurationManagerClientEnabledFeatures) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ConfigurationManagerClientEnabledFeatures) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetCompliancePolicy gets the compliancePolicy property value. Whether compliance policy is managed by Intune
 func (m *ConfigurationManagerClientEnabledFeatures) GetCompliancePolicy()(*bool) {
-    return m.compliancePolicy
+    val, err := m.GetBackingStore().Get("compliancePolicy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetDeviceConfiguration gets the deviceConfiguration property value. Whether device configuration is managed by Intune
 func (m *ConfigurationManagerClientEnabledFeatures) GetDeviceConfiguration()(*bool) {
-    return m.deviceConfiguration
+    val, err := m.GetBackingStore().Get("deviceConfiguration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConfigurationManagerClientEnabledFeatures) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -123,23 +137,58 @@ func (m *ConfigurationManagerClientEnabledFeatures) GetFieldDeserializers()(map[
 }
 // GetInventory gets the inventory property value. Whether inventory is managed by Intune
 func (m *ConfigurationManagerClientEnabledFeatures) GetInventory()(*bool) {
-    return m.inventory
+    val, err := m.GetBackingStore().Get("inventory")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetModernApps gets the modernApps property value. Whether modern application is managed by Intune
 func (m *ConfigurationManagerClientEnabledFeatures) GetModernApps()(*bool) {
-    return m.modernApps
+    val, err := m.GetBackingStore().Get("modernApps")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ConfigurationManagerClientEnabledFeatures) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetResourceAccess gets the resourceAccess property value. Whether resource access is managed by Intune
 func (m *ConfigurationManagerClientEnabledFeatures) GetResourceAccess()(*bool) {
-    return m.resourceAccess
+    val, err := m.GetBackingStore().Get("resourceAccess")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetWindowsUpdateForBusiness gets the windowsUpdateForBusiness property value. Whether Windows Update for Business is managed by Intune
 func (m *ConfigurationManagerClientEnabledFeatures) GetWindowsUpdateForBusiness()(*bool) {
-    return m.windowsUpdateForBusiness
+    val, err := m.GetBackingStore().Get("windowsUpdateForBusiness")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ConfigurationManagerClientEnabledFeatures) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -195,33 +244,83 @@ func (m *ConfigurationManagerClientEnabledFeatures) Serialize(writer i878a80d233
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConfigurationManagerClientEnabledFeatures) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ConfigurationManagerClientEnabledFeatures) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetCompliancePolicy sets the compliancePolicy property value. Whether compliance policy is managed by Intune
 func (m *ConfigurationManagerClientEnabledFeatures) SetCompliancePolicy(value *bool)() {
-    m.compliancePolicy = value
+    err := m.GetBackingStore().Set("compliancePolicy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeviceConfiguration sets the deviceConfiguration property value. Whether device configuration is managed by Intune
 func (m *ConfigurationManagerClientEnabledFeatures) SetDeviceConfiguration(value *bool)() {
-    m.deviceConfiguration = value
+    err := m.GetBackingStore().Set("deviceConfiguration", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInventory sets the inventory property value. Whether inventory is managed by Intune
 func (m *ConfigurationManagerClientEnabledFeatures) SetInventory(value *bool)() {
-    m.inventory = value
+    err := m.GetBackingStore().Set("inventory", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetModernApps sets the modernApps property value. Whether modern application is managed by Intune
 func (m *ConfigurationManagerClientEnabledFeatures) SetModernApps(value *bool)() {
-    m.modernApps = value
+    err := m.GetBackingStore().Set("modernApps", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ConfigurationManagerClientEnabledFeatures) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetResourceAccess sets the resourceAccess property value. Whether resource access is managed by Intune
 func (m *ConfigurationManagerClientEnabledFeatures) SetResourceAccess(value *bool)() {
-    m.resourceAccess = value
+    err := m.GetBackingStore().Set("resourceAccess", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWindowsUpdateForBusiness sets the windowsUpdateForBusiness property value. Whether Windows Update for Business is managed by Intune
 func (m *ConfigurationManagerClientEnabledFeatures) SetWindowsUpdateForBusiness(value *bool)() {
-    m.windowsUpdateForBusiness = value
+    err := m.GetBackingStore().Set("windowsUpdateForBusiness", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ConfigurationManagerClientEnabledFeaturesable 
+type ConfigurationManagerClientEnabledFeaturesable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetCompliancePolicy()(*bool)
+    GetDeviceConfiguration()(*bool)
+    GetInventory()(*bool)
+    GetModernApps()(*bool)
+    GetOdataType()(*string)
+    GetResourceAccess()(*bool)
+    GetWindowsUpdateForBusiness()(*bool)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetCompliancePolicy(value *bool)()
+    SetDeviceConfiguration(value *bool)()
+    SetInventory(value *bool)()
+    SetModernApps(value *bool)()
+    SetOdataType(value *string)()
+    SetResourceAccess(value *bool)()
+    SetWindowsUpdateForBusiness(value *bool)()
 }

@@ -7,8 +7,6 @@ import (
 // AadUserConversationMemberCollectionResponse 
 type AadUserConversationMemberCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AadUserConversationMemberable
 }
 // NewAadUserConversationMemberCollectionResponse instantiates a new AadUserConversationMemberCollectionResponse and sets the default values.
 func NewAadUserConversationMemberCollectionResponse()(*AadUserConversationMemberCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AadUserConversationMemberCollectionResponse) GetFieldDeserializers()(ma
 }
 // GetValue gets the value property value. The value property
 func (m *AadUserConversationMemberCollectionResponse) GetValue()([]AadUserConversationMemberable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AadUserConversationMemberable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AadUserConversationMemberCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AadUserConversationMemberCollectionResponse) Serialize(writer i878a80d2
 }
 // SetValue sets the value property value. The value property
 func (m *AadUserConversationMemberCollectionResponse) SetValue(value []AadUserConversationMemberable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AadUserConversationMemberCollectionResponseable 
+type AadUserConversationMemberCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AadUserConversationMemberable)
+    SetValue(value []AadUserConversationMemberable)()
 }

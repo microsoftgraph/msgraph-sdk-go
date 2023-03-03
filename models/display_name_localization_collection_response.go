@@ -7,8 +7,6 @@ import (
 // DisplayNameLocalizationCollectionResponse 
 type DisplayNameLocalizationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DisplayNameLocalizationable
 }
 // NewDisplayNameLocalizationCollectionResponse instantiates a new DisplayNameLocalizationCollectionResponse and sets the default values.
 func NewDisplayNameLocalizationCollectionResponse()(*DisplayNameLocalizationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DisplayNameLocalizationCollectionResponse) GetFieldDeserializers()(map[
 }
 // GetValue gets the value property value. The value property
 func (m *DisplayNameLocalizationCollectionResponse) GetValue()([]DisplayNameLocalizationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DisplayNameLocalizationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DisplayNameLocalizationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DisplayNameLocalizationCollectionResponse) Serialize(writer i878a80d233
 }
 // SetValue sets the value property value. The value property
 func (m *DisplayNameLocalizationCollectionResponse) SetValue(value []DisplayNameLocalizationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DisplayNameLocalizationCollectionResponseable 
+type DisplayNameLocalizationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DisplayNameLocalizationable)
+    SetValue(value []DisplayNameLocalizationable)()
 }

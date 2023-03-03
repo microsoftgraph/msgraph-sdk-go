@@ -7,14 +7,6 @@ import (
 // WorkbookChartLegend 
 type WorkbookChartLegend struct {
     Entity
-    // Represents the formatting of a chart legend, which includes fill and font formatting. Read-only.
-    format WorkbookChartLegendFormatable
-    // Boolean value for whether the chart legend should overlap with the main body of the chart.
-    overlay *bool
-    // Represents the position of the legend on the chart. The possible values are: Top, Bottom, Left, Right, Corner, Custom.
-    position *string
-    // A boolean value the represents the visibility of a ChartLegend object.
-    visible *bool
 }
 // NewWorkbookChartLegend instantiates a new workbookChartLegend and sets the default values.
 func NewWorkbookChartLegend()(*WorkbookChartLegend) {
@@ -74,19 +66,47 @@ func (m *WorkbookChartLegend) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetFormat gets the format property value. Represents the formatting of a chart legend, which includes fill and font formatting. Read-only.
 func (m *WorkbookChartLegend) GetFormat()(WorkbookChartLegendFormatable) {
-    return m.format
+    val, err := m.GetBackingStore().Get("format")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WorkbookChartLegendFormatable)
+    }
+    return nil
 }
 // GetOverlay gets the overlay property value. Boolean value for whether the chart legend should overlap with the main body of the chart.
 func (m *WorkbookChartLegend) GetOverlay()(*bool) {
-    return m.overlay
+    val, err := m.GetBackingStore().Get("overlay")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPosition gets the position property value. Represents the position of the legend on the chart. The possible values are: Top, Bottom, Left, Right, Corner, Custom.
 func (m *WorkbookChartLegend) GetPosition()(*string) {
-    return m.position
+    val, err := m.GetBackingStore().Get("position")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetVisible gets the visible property value. A boolean value the represents the visibility of a ChartLegend object.
 func (m *WorkbookChartLegend) GetVisible()(*bool) {
-    return m.visible
+    val, err := m.GetBackingStore().Get("visible")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WorkbookChartLegend) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -122,17 +142,42 @@ func (m *WorkbookChartLegend) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetFormat sets the format property value. Represents the formatting of a chart legend, which includes fill and font formatting. Read-only.
 func (m *WorkbookChartLegend) SetFormat(value WorkbookChartLegendFormatable)() {
-    m.format = value
+    err := m.GetBackingStore().Set("format", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOverlay sets the overlay property value. Boolean value for whether the chart legend should overlap with the main body of the chart.
 func (m *WorkbookChartLegend) SetOverlay(value *bool)() {
-    m.overlay = value
+    err := m.GetBackingStore().Set("overlay", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPosition sets the position property value. Represents the position of the legend on the chart. The possible values are: Top, Bottom, Left, Right, Corner, Custom.
 func (m *WorkbookChartLegend) SetPosition(value *string)() {
-    m.position = value
+    err := m.GetBackingStore().Set("position", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVisible sets the visible property value. A boolean value the represents the visibility of a ChartLegend object.
 func (m *WorkbookChartLegend) SetVisible(value *bool)() {
-    m.visible = value
+    err := m.GetBackingStore().Set("visible", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WorkbookChartLegendable 
+type WorkbookChartLegendable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetFormat()(WorkbookChartLegendFormatable)
+    GetOverlay()(*bool)
+    GetPosition()(*string)
+    GetVisible()(*bool)
+    SetFormat(value WorkbookChartLegendFormatable)()
+    SetOverlay(value *bool)()
+    SetPosition(value *string)()
+    SetVisible(value *bool)()
 }

@@ -74,6 +74,10 @@ func NewItemTodoListsItemTasksRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *ItemTodoListsItemTasksRequestBuilder) Count()(*ItemTodoListsItemTasksCountRequestBuilder) {
     return NewItemTodoListsItemTasksCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// Delta provides operations to call the delta method.
+func (m *ItemTodoListsItemTasksRequestBuilder) Delta()(*ItemTodoListsItemTasksDeltaRequestBuilder) {
+    return NewItemTodoListsItemTasksDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Get get the **todoTask** resources from the **tasks** navigation property of a specified todoTaskList.
 // [Find more info here]
 // 
@@ -95,10 +99,6 @@ func (m *ItemTodoListsItemTasksRequestBuilder) Get(ctx context.Context, requestC
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TodoTaskCollectionResponseable), nil
-}
-// MicrosoftGraphDelta provides operations to call the delta method.
-func (m *ItemTodoListsItemTasksRequestBuilder) MicrosoftGraphDelta()(*ItemTodoListsItemTasksMicrosoftGraphDeltaRequestBuilder) {
-    return NewItemTodoListsItemTasksMicrosoftGraphDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create a new task object in a specified todoTaskList.
 // [Find more info here]

@@ -51,6 +51,10 @@ type FederationConfigurationsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// AvailableProviderTypes provides operations to call the availableProviderTypes method.
+func (m *FederationConfigurationsRequestBuilder) AvailableProviderTypes()(*FederationConfigurationsAvailableProviderTypesRequestBuilder) {
+    return NewFederationConfigurationsAvailableProviderTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // NewFederationConfigurationsRequestBuilderInternal instantiates a new FederationConfigurationsRequestBuilder and sets the default values.
 func NewFederationConfigurationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FederationConfigurationsRequestBuilder) {
     m := &FederationConfigurationsRequestBuilder{
@@ -92,10 +96,6 @@ func (m *FederationConfigurationsRequestBuilder) Get(ctx context.Context, reques
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProviderBaseCollectionResponseable), nil
-}
-// MicrosoftGraphAvailableProviderTypes provides operations to call the availableProviderTypes method.
-func (m *FederationConfigurationsRequestBuilder) MicrosoftGraphAvailableProviderTypes()(*FederationConfigurationsMicrosoftGraphAvailableProviderTypesRequestBuilder) {
-    return NewFederationConfigurationsMicrosoftGraphAvailableProviderTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to federationConfigurations for directory
 func (m *FederationConfigurationsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProviderBaseable, requestConfiguration *FederationConfigurationsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProviderBaseable, error) {

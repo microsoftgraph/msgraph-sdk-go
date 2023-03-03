@@ -7,8 +7,6 @@ import (
 // ChannelCollectionResponse 
 type ChannelCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Channelable
 }
 // NewChannelCollectionResponse instantiates a new ChannelCollectionResponse and sets the default values.
 func NewChannelCollectionResponse()(*ChannelCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ChannelCollectionResponse) GetFieldDeserializers()(map[string]func(i878
 }
 // GetValue gets the value property value. The value property
 func (m *ChannelCollectionResponse) GetValue()([]Channelable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Channelable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ChannelCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ChannelCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetValue sets the value property value. The value property
 func (m *ChannelCollectionResponse) SetValue(value []Channelable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ChannelCollectionResponseable 
+type ChannelCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Channelable)
+    SetValue(value []Channelable)()
 }

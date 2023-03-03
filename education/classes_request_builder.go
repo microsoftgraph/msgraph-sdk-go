@@ -74,6 +74,10 @@ func NewClassesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 func (m *ClassesRequestBuilder) Count()(*ClassesCountRequestBuilder) {
     return NewClassesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// Delta provides operations to call the delta method.
+func (m *ClassesRequestBuilder) Delta()(*ClassesDeltaRequestBuilder) {
+    return NewClassesDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Get get a list of the educationClass objects and their properties.
 // [Find more info here]
 // 
@@ -95,10 +99,6 @@ func (m *ClassesRequestBuilder) Get(ctx context.Context, requestConfiguration *C
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationClassCollectionResponseable), nil
-}
-// MicrosoftGraphDelta provides operations to call the delta method.
-func (m *ClassesRequestBuilder) MicrosoftGraphDelta()(*ClassesMicrosoftGraphDeltaRequestBuilder) {
-    return NewClassesMicrosoftGraphDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create a new educationClass object.
 // [Find more info here]

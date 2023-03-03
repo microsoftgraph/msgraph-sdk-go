@@ -7,8 +7,6 @@ import (
 // ManagedDeviceMobileAppConfigurationAssignment contains the properties used to assign an MDM app configuration to a group.
 type ManagedDeviceMobileAppConfigurationAssignment struct {
     Entity
-    // Assignment target that the T&C policy is assigned to.
-    target DeviceAndAppManagementAssignmentTargetable
 }
 // NewManagedDeviceMobileAppConfigurationAssignment instantiates a new managedDeviceMobileAppConfigurationAssignment and sets the default values.
 func NewManagedDeviceMobileAppConfigurationAssignment()(*ManagedDeviceMobileAppConfigurationAssignment) {
@@ -38,7 +36,14 @@ func (m *ManagedDeviceMobileAppConfigurationAssignment) GetFieldDeserializers()(
 }
 // GetTarget gets the target property value. Assignment target that the T&C policy is assigned to.
 func (m *ManagedDeviceMobileAppConfigurationAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
-    return m.target
+    val, err := m.GetBackingStore().Get("target")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceAndAppManagementAssignmentTargetable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ManagedDeviceMobileAppConfigurationAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,5 +61,15 @@ func (m *ManagedDeviceMobileAppConfigurationAssignment) Serialize(writer i878a80
 }
 // SetTarget sets the target property value. Assignment target that the T&C policy is assigned to.
 func (m *ManagedDeviceMobileAppConfigurationAssignment) SetTarget(value DeviceAndAppManagementAssignmentTargetable)() {
-    m.target = value
+    err := m.GetBackingStore().Set("target", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ManagedDeviceMobileAppConfigurationAssignmentable 
+type ManagedDeviceMobileAppConfigurationAssignmentable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetTarget()(DeviceAndAppManagementAssignmentTargetable)
+    SetTarget(value DeviceAndAppManagementAssignmentTargetable)()
 }

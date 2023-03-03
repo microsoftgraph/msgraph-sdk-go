@@ -7,8 +7,6 @@ import (
 // OmaSettingInteger 
 type OmaSettingInteger struct {
     OmaSetting
-    // Value.
-    value *int32
 }
 // NewOmaSettingInteger instantiates a new OmaSettingInteger and sets the default values.
 func NewOmaSettingInteger()(*OmaSettingInteger) {
@@ -40,7 +38,14 @@ func (m *OmaSettingInteger) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetValue gets the value property value. Value.
 func (m *OmaSettingInteger) GetValue()(*int32) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OmaSettingInteger) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *OmaSettingInteger) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetValue sets the value property value. Value.
 func (m *OmaSettingInteger) SetValue(value *int32)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OmaSettingIntegerable 
+type OmaSettingIntegerable interface {
+    OmaSettingable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()(*int32)
+    SetValue(value *int32)()
 }

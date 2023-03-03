@@ -7,10 +7,6 @@ import (
 // WorkbookCommentReply 
 type WorkbookCommentReply struct {
     Entity
-    // The content of a comment reply.
-    content *string
-    // Indicates the type for the comment reply.
-    contentType *string
 }
 // NewWorkbookCommentReply instantiates a new workbookCommentReply and sets the default values.
 func NewWorkbookCommentReply()(*WorkbookCommentReply) {
@@ -25,11 +21,25 @@ func CreateWorkbookCommentReplyFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetContent gets the content property value. The content of a comment reply.
 func (m *WorkbookCommentReply) GetContent()(*string) {
-    return m.content
+    val, err := m.GetBackingStore().Get("content")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetContentType gets the contentType property value. Indicates the type for the comment reply.
 func (m *WorkbookCommentReply) GetContentType()(*string) {
-    return m.contentType
+    val, err := m.GetBackingStore().Get("contentType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WorkbookCommentReply) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -78,9 +88,24 @@ func (m *WorkbookCommentReply) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetContent sets the content property value. The content of a comment reply.
 func (m *WorkbookCommentReply) SetContent(value *string)() {
-    m.content = value
+    err := m.GetBackingStore().Set("content", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetContentType sets the contentType property value. Indicates the type for the comment reply.
 func (m *WorkbookCommentReply) SetContentType(value *string)() {
-    m.contentType = value
+    err := m.GetBackingStore().Set("contentType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WorkbookCommentReplyable 
+type WorkbookCommentReplyable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetContent()(*string)
+    GetContentType()(*string)
+    SetContent(value *string)()
+    SetContentType(value *string)()
 }

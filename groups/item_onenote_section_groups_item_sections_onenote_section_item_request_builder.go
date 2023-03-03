@@ -65,6 +65,14 @@ func NewItemOnenoteSectionGroupsItemSectionsOnenoteSectionItemRequestBuilder(raw
     urlParams["request-raw-url"] = rawUrl
     return NewItemOnenoteSectionGroupsItemSectionsOnenoteSectionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
+// CopyToNotebook provides operations to call the copyToNotebook method.
+func (m *ItemOnenoteSectionGroupsItemSectionsOnenoteSectionItemRequestBuilder) CopyToNotebook()(*ItemOnenoteSectionGroupsItemSectionsItemCopyToNotebookRequestBuilder) {
+    return NewItemOnenoteSectionGroupsItemSectionsItemCopyToNotebookRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// CopyToSectionGroup provides operations to call the copyToSectionGroup method.
+func (m *ItemOnenoteSectionGroupsItemSectionsOnenoteSectionItemRequestBuilder) CopyToSectionGroup()(*ItemOnenoteSectionGroupsItemSectionsItemCopyToSectionGroupRequestBuilder) {
+    return NewItemOnenoteSectionGroupsItemSectionsItemCopyToSectionGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Delete delete navigation property sections for groups
 func (m *ItemOnenoteSectionGroupsItemSectionsOnenoteSectionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemOnenoteSectionGroupsItemSectionsOnenoteSectionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -99,14 +107,6 @@ func (m *ItemOnenoteSectionGroupsItemSectionsOnenoteSectionItemRequestBuilder) G
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenoteSectionable), nil
-}
-// MicrosoftGraphCopyToNotebook provides operations to call the copyToNotebook method.
-func (m *ItemOnenoteSectionGroupsItemSectionsOnenoteSectionItemRequestBuilder) MicrosoftGraphCopyToNotebook()(*ItemOnenoteSectionGroupsItemSectionsItemMicrosoftGraphCopyToNotebookRequestBuilder) {
-    return NewItemOnenoteSectionGroupsItemSectionsItemMicrosoftGraphCopyToNotebookRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphCopyToSectionGroup provides operations to call the copyToSectionGroup method.
-func (m *ItemOnenoteSectionGroupsItemSectionsOnenoteSectionItemRequestBuilder) MicrosoftGraphCopyToSectionGroup()(*ItemOnenoteSectionGroupsItemSectionsItemMicrosoftGraphCopyToSectionGroupRequestBuilder) {
-    return NewItemOnenoteSectionGroupsItemSectionsItemMicrosoftGraphCopyToSectionGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Pages provides operations to manage the pages property of the microsoft.graph.onenoteSection entity.
 func (m *ItemOnenoteSectionGroupsItemSectionsOnenoteSectionItemRequestBuilder) Pages()(*ItemOnenoteSectionGroupsItemSectionsItemPagesRequestBuilder) {

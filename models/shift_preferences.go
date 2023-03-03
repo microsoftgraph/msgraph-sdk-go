@@ -7,8 +7,6 @@ import (
 // ShiftPreferences 
 type ShiftPreferences struct {
     ChangeTrackedEntity
-    // Availability of the user to be scheduled for work and its recurrence pattern.
-    availability []ShiftAvailabilityable
 }
 // NewShiftPreferences instantiates a new ShiftPreferences and sets the default values.
 func NewShiftPreferences()(*ShiftPreferences) {
@@ -25,7 +23,14 @@ func CreateShiftPreferencesFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetAvailability gets the availability property value. Availability of the user to be scheduled for work and its recurrence pattern.
 func (m *ShiftPreferences) GetAvailability()([]ShiftAvailabilityable) {
-    return m.availability
+    val, err := m.GetBackingStore().Get("availability")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ShiftAvailabilityable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ShiftPreferences) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -66,5 +71,15 @@ func (m *ShiftPreferences) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetAvailability sets the availability property value. Availability of the user to be scheduled for work and its recurrence pattern.
 func (m *ShiftPreferences) SetAvailability(value []ShiftAvailabilityable)() {
-    m.availability = value
+    err := m.GetBackingStore().Set("availability", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ShiftPreferencesable 
+type ShiftPreferencesable interface {
+    ChangeTrackedEntityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAvailability()([]ShiftAvailabilityable)
+    SetAvailability(value []ShiftAvailabilityable)()
 }

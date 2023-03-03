@@ -7,8 +7,6 @@ import (
 // ThreatAssessmentRequestCollectionResponse 
 type ThreatAssessmentRequestCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ThreatAssessmentRequestable
 }
 // NewThreatAssessmentRequestCollectionResponse instantiates a new ThreatAssessmentRequestCollectionResponse and sets the default values.
 func NewThreatAssessmentRequestCollectionResponse()(*ThreatAssessmentRequestCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ThreatAssessmentRequestCollectionResponse) GetFieldDeserializers()(map[
 }
 // GetValue gets the value property value. The value property
 func (m *ThreatAssessmentRequestCollectionResponse) GetValue()([]ThreatAssessmentRequestable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ThreatAssessmentRequestable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ThreatAssessmentRequestCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ThreatAssessmentRequestCollectionResponse) Serialize(writer i878a80d233
 }
 // SetValue sets the value property value. The value property
 func (m *ThreatAssessmentRequestCollectionResponse) SetValue(value []ThreatAssessmentRequestable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ThreatAssessmentRequestCollectionResponseable 
+type ThreatAssessmentRequestCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ThreatAssessmentRequestable)
+    SetValue(value []ThreatAssessmentRequestable)()
 }

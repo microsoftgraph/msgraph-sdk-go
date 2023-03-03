@@ -2,27 +2,19 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // ConditionalAccessGrantControls 
 type ConditionalAccessGrantControls struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue.
-    builtInControls []ConditionalAccessGrantControl
-    // List of custom controls IDs required by the policy. For more information, see Custom controls.
-    customAuthenticationFactors []string
-    // The OdataType property
-    odataType *string
-    // Defines the relationship of the grant controls. Possible values: AND, OR.
-    operator *string
-    // List of terms of use IDs required by the policy.
-    termsOfUse []string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewConditionalAccessGrantControls instantiates a new conditionalAccessGrantControls and sets the default values.
 func NewConditionalAccessGrantControls()(*ConditionalAccessGrantControls) {
     m := &ConditionalAccessGrantControls{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -32,15 +24,41 @@ func CreateConditionalAccessGrantControlsFromDiscriminatorValue(parseNode i878a8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessGrantControls) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *ConditionalAccessGrantControls) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetBuiltInControls gets the builtInControls property value. List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue.
 func (m *ConditionalAccessGrantControls) GetBuiltInControls()([]ConditionalAccessGrantControl) {
-    return m.builtInControls
+    val, err := m.GetBackingStore().Get("builtInControls")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ConditionalAccessGrantControl)
+    }
+    return nil
 }
 // GetCustomAuthenticationFactors gets the customAuthenticationFactors property value. List of custom controls IDs required by the policy. For more information, see Custom controls.
 func (m *ConditionalAccessGrantControls) GetCustomAuthenticationFactors()([]string) {
-    return m.customAuthenticationFactors
+    val, err := m.GetBackingStore().Get("customAuthenticationFactors")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConditionalAccessGrantControls) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -111,15 +129,36 @@ func (m *ConditionalAccessGrantControls) GetFieldDeserializers()(map[string]func
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ConditionalAccessGrantControls) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOperator gets the operator property value. Defines the relationship of the grant controls. Possible values: AND, OR.
 func (m *ConditionalAccessGrantControls) GetOperator()(*string) {
-    return m.operator
+    val, err := m.GetBackingStore().Get("operator")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTermsOfUse gets the termsOfUse property value. List of terms of use IDs required by the policy.
 func (m *ConditionalAccessGrantControls) GetTermsOfUse()([]string) {
-    return m.termsOfUse
+    val, err := m.GetBackingStore().Get("termsOfUse")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ConditionalAccessGrantControls) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -163,25 +202,65 @@ func (m *ConditionalAccessGrantControls) Serialize(writer i878a80d2330e89d268963
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessGrantControls) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *ConditionalAccessGrantControls) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetBuiltInControls sets the builtInControls property value. List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue.
 func (m *ConditionalAccessGrantControls) SetBuiltInControls(value []ConditionalAccessGrantControl)() {
-    m.builtInControls = value
+    err := m.GetBackingStore().Set("builtInControls", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCustomAuthenticationFactors sets the customAuthenticationFactors property value. List of custom controls IDs required by the policy. For more information, see Custom controls.
 func (m *ConditionalAccessGrantControls) SetCustomAuthenticationFactors(value []string)() {
-    m.customAuthenticationFactors = value
+    err := m.GetBackingStore().Set("customAuthenticationFactors", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ConditionalAccessGrantControls) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOperator sets the operator property value. Defines the relationship of the grant controls. Possible values: AND, OR.
 func (m *ConditionalAccessGrantControls) SetOperator(value *string)() {
-    m.operator = value
+    err := m.GetBackingStore().Set("operator", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTermsOfUse sets the termsOfUse property value. List of terms of use IDs required by the policy.
 func (m *ConditionalAccessGrantControls) SetTermsOfUse(value []string)() {
-    m.termsOfUse = value
+    err := m.GetBackingStore().Set("termsOfUse", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ConditionalAccessGrantControlsable 
+type ConditionalAccessGrantControlsable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetBuiltInControls()([]ConditionalAccessGrantControl)
+    GetCustomAuthenticationFactors()([]string)
+    GetOdataType()(*string)
+    GetOperator()(*string)
+    GetTermsOfUse()([]string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetBuiltInControls(value []ConditionalAccessGrantControl)()
+    SetCustomAuthenticationFactors(value []string)()
+    SetOdataType(value *string)()
+    SetOperator(value *string)()
+    SetTermsOfUse(value []string)()
 }

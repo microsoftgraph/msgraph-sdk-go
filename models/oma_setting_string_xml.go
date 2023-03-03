@@ -7,10 +7,6 @@ import (
 // OmaSettingStringXml 
 type OmaSettingStringXml struct {
     OmaSetting
-    // File name associated with the Value property (.xml).
-    fileName *string
-    // Value. (UTF8 encoded byte array)
-    value []byte
 }
 // NewOmaSettingStringXml instantiates a new OmaSettingStringXml and sets the default values.
 func NewOmaSettingStringXml()(*OmaSettingStringXml) {
@@ -52,11 +48,25 @@ func (m *OmaSettingStringXml) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetFileName gets the fileName property value. File name associated with the Value property (.xml).
 func (m *OmaSettingStringXml) GetFileName()(*string) {
-    return m.fileName
+    val, err := m.GetBackingStore().Get("fileName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetValue gets the value property value. Value. (UTF8 encoded byte array)
 func (m *OmaSettingStringXml) GetValue()([]byte) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]byte)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OmaSettingStringXml) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -80,9 +90,24 @@ func (m *OmaSettingStringXml) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetFileName sets the fileName property value. File name associated with the Value property (.xml).
 func (m *OmaSettingStringXml) SetFileName(value *string)() {
-    m.fileName = value
+    err := m.GetBackingStore().Set("fileName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetValue sets the value property value. Value. (UTF8 encoded byte array)
 func (m *OmaSettingStringXml) SetValue(value []byte)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OmaSettingStringXmlable 
+type OmaSettingStringXmlable interface {
+    OmaSettingable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetFileName()(*string)
+    GetValue()([]byte)
+    SetFileName(value *string)()
+    SetValue(value []byte)()
 }

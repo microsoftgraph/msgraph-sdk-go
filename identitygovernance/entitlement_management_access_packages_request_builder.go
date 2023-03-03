@@ -74,6 +74,10 @@ func NewEntitlementManagementAccessPackagesRequestBuilder(rawUrl string, request
 func (m *EntitlementManagementAccessPackagesRequestBuilder) Count()(*EntitlementManagementAccessPackagesCountRequestBuilder) {
     return NewEntitlementManagementAccessPackagesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
+func (m *EntitlementManagementAccessPackagesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*EntitlementManagementAccessPackagesFilterByCurrentUserWithOnRequestBuilder) {
+    return NewEntitlementManagementAccessPackagesFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
+}
 // Get retrieve a list of accessPackage objects.  The resulting list includes all the access packages that the caller has access to read, across all catalogs.
 // [Find more info here]
 // 
@@ -95,10 +99,6 @@ func (m *EntitlementManagementAccessPackagesRequestBuilder) Get(ctx context.Cont
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageCollectionResponseable), nil
-}
-// MicrosoftGraphFilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
-func (m *EntitlementManagementAccessPackagesRequestBuilder) MicrosoftGraphFilterByCurrentUserWithOn(on *string)(*EntitlementManagementAccessPackagesMicrosoftGraphFilterByCurrentUserWithOnRequestBuilder) {
-    return NewEntitlementManagementAccessPackagesMicrosoftGraphFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
 }
 // Post create a new accessPackage object. The access package will be added to an existing accessPackageCatalog.
 // [Find more info here]

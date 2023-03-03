@@ -74,6 +74,10 @@ func NewUsersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
 func (m *UsersRequestBuilder) Count()(*UsersCountRequestBuilder) {
     return NewUsersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// Delta provides operations to call the delta method.
+func (m *UsersRequestBuilder) Delta()(*UsersDeltaRequestBuilder) {
+    return NewUsersDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Get get a list of the educationUser objects and their properties.
 // [Find more info here]
 // 
@@ -95,10 +99,6 @@ func (m *UsersRequestBuilder) Get(ctx context.Context, requestConfiguration *Use
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationUserCollectionResponseable), nil
-}
-// MicrosoftGraphDelta provides operations to call the delta method.
-func (m *UsersRequestBuilder) MicrosoftGraphDelta()(*UsersMicrosoftGraphDeltaRequestBuilder) {
-    return NewUsersMicrosoftGraphDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create a new educationUser object.
 // [Find more info here]

@@ -7,8 +7,6 @@ import (
 // Windows10EnterpriseModernAppManagementConfiguration 
 type Windows10EnterpriseModernAppManagementConfiguration struct {
     DeviceConfiguration
-    // Indicates whether or not to uninstall a fixed list of built-in Windows apps.
-    uninstallBuiltInApps *bool
 }
 // NewWindows10EnterpriseModernAppManagementConfiguration instantiates a new Windows10EnterpriseModernAppManagementConfiguration and sets the default values.
 func NewWindows10EnterpriseModernAppManagementConfiguration()(*Windows10EnterpriseModernAppManagementConfiguration) {
@@ -40,7 +38,14 @@ func (m *Windows10EnterpriseModernAppManagementConfiguration) GetFieldDeserializ
 }
 // GetUninstallBuiltInApps gets the uninstallBuiltInApps property value. Indicates whether or not to uninstall a fixed list of built-in Windows apps.
 func (m *Windows10EnterpriseModernAppManagementConfiguration) GetUninstallBuiltInApps()(*bool) {
-    return m.uninstallBuiltInApps
+    val, err := m.GetBackingStore().Get("uninstallBuiltInApps")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Windows10EnterpriseModernAppManagementConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *Windows10EnterpriseModernAppManagementConfiguration) Serialize(writer i
 }
 // SetUninstallBuiltInApps sets the uninstallBuiltInApps property value. Indicates whether or not to uninstall a fixed list of built-in Windows apps.
 func (m *Windows10EnterpriseModernAppManagementConfiguration) SetUninstallBuiltInApps(value *bool)() {
-    m.uninstallBuiltInApps = value
+    err := m.GetBackingStore().Set("uninstallBuiltInApps", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Windows10EnterpriseModernAppManagementConfigurationable 
+type Windows10EnterpriseModernAppManagementConfigurationable interface {
+    DeviceConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetUninstallBuiltInApps()(*bool)
+    SetUninstallBuiltInApps(value *bool)()
 }

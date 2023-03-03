@@ -103,10 +103,6 @@ func (m *ItemTeamScheduleRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Scheduleable), nil
 }
-// MicrosoftGraphShare provides operations to call the share method.
-func (m *ItemTeamScheduleRequestBuilder) MicrosoftGraphShare()(*ItemTeamScheduleMicrosoftGraphShareRequestBuilder) {
-    return NewItemTeamScheduleMicrosoftGraphShareRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // OfferShiftRequests provides operations to manage the offerShiftRequests property of the microsoft.graph.schedule entity.
 func (m *ItemTeamScheduleRequestBuilder) OfferShiftRequests()(*ItemTeamScheduleOfferShiftRequestsRequestBuilder) {
     return NewItemTeamScheduleOfferShiftRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
@@ -185,6 +181,10 @@ func (m *ItemTeamScheduleRequestBuilder) SchedulingGroupsById(id string)(*ItemTe
         urlTplParams["schedulingGroup%2Did"] = id
     }
     return NewItemTeamScheduleSchedulingGroupsSchedulingGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+}
+// Share provides operations to call the share method.
+func (m *ItemTeamScheduleRequestBuilder) Share()(*ItemTeamScheduleShareRequestBuilder) {
+    return NewItemTeamScheduleShareRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Shifts provides operations to manage the shifts property of the microsoft.graph.schedule entity.
 func (m *ItemTeamScheduleRequestBuilder) Shifts()(*ItemTeamScheduleShiftsRequestBuilder) {

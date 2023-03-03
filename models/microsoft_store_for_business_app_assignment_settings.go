@@ -7,8 +7,6 @@ import (
 // MicrosoftStoreForBusinessAppAssignmentSettings 
 type MicrosoftStoreForBusinessAppAssignmentSettings struct {
     MobileAppAssignmentSettings
-    // Whether or not to use device execution context for Microsoft Store for Business mobile app.
-    useDeviceContext *bool
 }
 // NewMicrosoftStoreForBusinessAppAssignmentSettings instantiates a new MicrosoftStoreForBusinessAppAssignmentSettings and sets the default values.
 func NewMicrosoftStoreForBusinessAppAssignmentSettings()(*MicrosoftStoreForBusinessAppAssignmentSettings) {
@@ -40,7 +38,14 @@ func (m *MicrosoftStoreForBusinessAppAssignmentSettings) GetFieldDeserializers()
 }
 // GetUseDeviceContext gets the useDeviceContext property value. Whether or not to use device execution context for Microsoft Store for Business mobile app.
 func (m *MicrosoftStoreForBusinessAppAssignmentSettings) GetUseDeviceContext()(*bool) {
-    return m.useDeviceContext
+    val, err := m.GetBackingStore().Get("useDeviceContext")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MicrosoftStoreForBusinessAppAssignmentSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *MicrosoftStoreForBusinessAppAssignmentSettings) Serialize(writer i878a8
 }
 // SetUseDeviceContext sets the useDeviceContext property value. Whether or not to use device execution context for Microsoft Store for Business mobile app.
 func (m *MicrosoftStoreForBusinessAppAssignmentSettings) SetUseDeviceContext(value *bool)() {
-    m.useDeviceContext = value
+    err := m.GetBackingStore().Set("useDeviceContext", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MicrosoftStoreForBusinessAppAssignmentSettingsable 
+type MicrosoftStoreForBusinessAppAssignmentSettingsable interface {
+    MobileAppAssignmentSettingsable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetUseDeviceContext()(*bool)
+    SetUseDeviceContext(value *bool)()
 }

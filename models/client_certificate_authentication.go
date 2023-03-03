@@ -7,8 +7,6 @@ import (
 // ClientCertificateAuthentication 
 type ClientCertificateAuthentication struct {
     ApiAuthenticationConfigurationBase
-    // The list of certificates uploaded for this API connector.
-    certificateList []Pkcs12CertificateInformationable
 }
 // NewClientCertificateAuthentication instantiates a new ClientCertificateAuthentication and sets the default values.
 func NewClientCertificateAuthentication()(*ClientCertificateAuthentication) {
@@ -25,7 +23,14 @@ func CreateClientCertificateAuthenticationFromDiscriminatorValue(parseNode i878a
 }
 // GetCertificateList gets the certificateList property value. The list of certificates uploaded for this API connector.
 func (m *ClientCertificateAuthentication) GetCertificateList()([]Pkcs12CertificateInformationable) {
-    return m.certificateList
+    val, err := m.GetBackingStore().Get("certificateList")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Pkcs12CertificateInformationable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ClientCertificateAuthentication) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -66,5 +71,15 @@ func (m *ClientCertificateAuthentication) Serialize(writer i878a80d2330e89d26896
 }
 // SetCertificateList sets the certificateList property value. The list of certificates uploaded for this API connector.
 func (m *ClientCertificateAuthentication) SetCertificateList(value []Pkcs12CertificateInformationable)() {
-    m.certificateList = value
+    err := m.GetBackingStore().Set("certificateList", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ClientCertificateAuthenticationable 
+type ClientCertificateAuthenticationable interface {
+    ApiAuthenticationConfigurationBaseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCertificateList()([]Pkcs12CertificateInformationable)
+    SetCertificateList(value []Pkcs12CertificateInformationable)()
 }

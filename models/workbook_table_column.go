@@ -7,14 +7,6 @@ import (
 // WorkbookTableColumn 
 type WorkbookTableColumn struct {
     Entity
-    // Retrieve the filter applied to the column. Read-only.
-    filter WorkbookFilterable
-    // Returns the index number of the column within the columns collection of the table. Zero-indexed. Read-only.
-    index *int32
-    // Returns the name of the table column.
-    name *string
-    // Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
-    values Jsonable
 }
 // NewWorkbookTableColumn instantiates a new workbookTableColumn and sets the default values.
 func NewWorkbookTableColumn()(*WorkbookTableColumn) {
@@ -74,19 +66,47 @@ func (m *WorkbookTableColumn) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetFilter gets the filter property value. Retrieve the filter applied to the column. Read-only.
 func (m *WorkbookTableColumn) GetFilter()(WorkbookFilterable) {
-    return m.filter
+    val, err := m.GetBackingStore().Get("filter")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WorkbookFilterable)
+    }
+    return nil
 }
 // GetIndex gets the index property value. Returns the index number of the column within the columns collection of the table. Zero-indexed. Read-only.
 func (m *WorkbookTableColumn) GetIndex()(*int32) {
-    return m.index
+    val, err := m.GetBackingStore().Get("index")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetName gets the name property value. Returns the name of the table column.
 func (m *WorkbookTableColumn) GetName()(*string) {
-    return m.name
+    val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetValues gets the values property value. Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
 func (m *WorkbookTableColumn) GetValues()(Jsonable) {
-    return m.values
+    val, err := m.GetBackingStore().Get("values")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Jsonable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WorkbookTableColumn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -122,17 +142,42 @@ func (m *WorkbookTableColumn) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetFilter sets the filter property value. Retrieve the filter applied to the column. Read-only.
 func (m *WorkbookTableColumn) SetFilter(value WorkbookFilterable)() {
-    m.filter = value
+    err := m.GetBackingStore().Set("filter", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIndex sets the index property value. Returns the index number of the column within the columns collection of the table. Zero-indexed. Read-only.
 func (m *WorkbookTableColumn) SetIndex(value *int32)() {
-    m.index = value
+    err := m.GetBackingStore().Set("index", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetName sets the name property value. Returns the name of the table column.
 func (m *WorkbookTableColumn) SetName(value *string)() {
-    m.name = value
+    err := m.GetBackingStore().Set("name", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetValues sets the values property value. Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
 func (m *WorkbookTableColumn) SetValues(value Jsonable)() {
-    m.values = value
+    err := m.GetBackingStore().Set("values", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WorkbookTableColumnable 
+type WorkbookTableColumnable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetFilter()(WorkbookFilterable)
+    GetIndex()(*int32)
+    GetName()(*string)
+    GetValues()(Jsonable)
+    SetFilter(value WorkbookFilterable)()
+    SetIndex(value *int32)()
+    SetName(value *string)()
+    SetValues(value Jsonable)()
 }
