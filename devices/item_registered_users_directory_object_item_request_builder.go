@@ -70,21 +70,21 @@ func (m *ItemRegisteredUsersDirectoryObjectItemRequestBuilder) Get(ctx context.C
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable), nil
 }
-// MicrosoftGraphAppRoleAssignment casts the previous resource to appRoleAssignment.
-func (m *ItemRegisteredUsersDirectoryObjectItemRequestBuilder) MicrosoftGraphAppRoleAssignment()(*ItemRegisteredUsersItemMicrosoftGraphAppRoleAssignmentRequestBuilder) {
-    return NewItemRegisteredUsersItemMicrosoftGraphAppRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphAppRoleAssignment casts the previous resource to appRoleAssignment.
+func (m *ItemRegisteredUsersDirectoryObjectItemRequestBuilder) GraphAppRoleAssignment()(*ItemRegisteredUsersItemGraphAppRoleAssignmentRequestBuilder) {
+    return NewItemRegisteredUsersItemGraphAppRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphEndpoint casts the previous resource to endpoint.
-func (m *ItemRegisteredUsersDirectoryObjectItemRequestBuilder) MicrosoftGraphEndpoint()(*ItemRegisteredUsersItemMicrosoftGraphEndpointRequestBuilder) {
-    return NewItemRegisteredUsersItemMicrosoftGraphEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphEndpoint casts the previous resource to endpoint.
+func (m *ItemRegisteredUsersDirectoryObjectItemRequestBuilder) GraphEndpoint()(*ItemRegisteredUsersItemGraphEndpointRequestBuilder) {
+    return NewItemRegisteredUsersItemGraphEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphServicePrincipal casts the previous resource to servicePrincipal.
-func (m *ItemRegisteredUsersDirectoryObjectItemRequestBuilder) MicrosoftGraphServicePrincipal()(*ItemRegisteredUsersItemMicrosoftGraphServicePrincipalRequestBuilder) {
-    return NewItemRegisteredUsersItemMicrosoftGraphServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphServicePrincipal casts the previous resource to servicePrincipal.
+func (m *ItemRegisteredUsersDirectoryObjectItemRequestBuilder) GraphServicePrincipal()(*ItemRegisteredUsersItemGraphServicePrincipalRequestBuilder) {
+    return NewItemRegisteredUsersItemGraphServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphUser casts the previous resource to user.
-func (m *ItemRegisteredUsersDirectoryObjectItemRequestBuilder) MicrosoftGraphUser()(*ItemRegisteredUsersItemMicrosoftGraphUserRequestBuilder) {
-    return NewItemRegisteredUsersItemMicrosoftGraphUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphUser casts the previous resource to user.
+func (m *ItemRegisteredUsersDirectoryObjectItemRequestBuilder) GraphUser()(*ItemRegisteredUsersItemGraphUserRequestBuilder) {
+    return NewItemRegisteredUsersItemGraphUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
 func (m *ItemRegisteredUsersDirectoryObjectItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemRegisteredUsersDirectoryObjectItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

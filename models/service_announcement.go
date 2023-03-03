@@ -7,12 +7,6 @@ import (
 // ServiceAnnouncement 
 type ServiceAnnouncement struct {
     Entity
-    // A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
-    healthOverviews []ServiceHealthable
-    // A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.
-    issues []ServiceHealthIssueable
-    // A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
-    messages []ServiceUpdateMessageable
 }
 // NewServiceAnnouncement instantiates a new serviceAnnouncement and sets the default values.
 func NewServiceAnnouncement()(*ServiceAnnouncement) {
@@ -74,15 +68,36 @@ func (m *ServiceAnnouncement) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetHealthOverviews gets the healthOverviews property value. A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
 func (m *ServiceAnnouncement) GetHealthOverviews()([]ServiceHealthable) {
-    return m.healthOverviews
+    val, err := m.GetBackingStore().Get("healthOverviews")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ServiceHealthable)
+    }
+    return nil
 }
 // GetIssues gets the issues property value. A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.
 func (m *ServiceAnnouncement) GetIssues()([]ServiceHealthIssueable) {
-    return m.issues
+    val, err := m.GetBackingStore().Get("issues")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ServiceHealthIssueable)
+    }
+    return nil
 }
 // GetMessages gets the messages property value. A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
 func (m *ServiceAnnouncement) GetMessages()([]ServiceUpdateMessageable) {
-    return m.messages
+    val, err := m.GetBackingStore().Get("messages")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ServiceUpdateMessageable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ServiceAnnouncement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -124,13 +139,33 @@ func (m *ServiceAnnouncement) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetHealthOverviews sets the healthOverviews property value. A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
 func (m *ServiceAnnouncement) SetHealthOverviews(value []ServiceHealthable)() {
-    m.healthOverviews = value
+    err := m.GetBackingStore().Set("healthOverviews", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIssues sets the issues property value. A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.
 func (m *ServiceAnnouncement) SetIssues(value []ServiceHealthIssueable)() {
-    m.issues = value
+    err := m.GetBackingStore().Set("issues", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMessages sets the messages property value. A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
 func (m *ServiceAnnouncement) SetMessages(value []ServiceUpdateMessageable)() {
-    m.messages = value
+    err := m.GetBackingStore().Set("messages", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ServiceAnnouncementable 
+type ServiceAnnouncementable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetHealthOverviews()([]ServiceHealthable)
+    GetIssues()([]ServiceHealthIssueable)
+    GetMessages()([]ServiceUpdateMessageable)
+    SetHealthOverviews(value []ServiceHealthable)()
+    SetIssues(value []ServiceHealthIssueable)()
+    SetMessages(value []ServiceUpdateMessageable)()
 }

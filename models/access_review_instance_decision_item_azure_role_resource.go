@@ -7,8 +7,6 @@ import (
 // AccessReviewInstanceDecisionItemAzureRoleResource 
 type AccessReviewInstanceDecisionItemAzureRoleResource struct {
     AccessReviewInstanceDecisionItemResource
-    // Details of the scope this role is associated with.
-    scope AccessReviewInstanceDecisionItemResourceable
 }
 // NewAccessReviewInstanceDecisionItemAzureRoleResource instantiates a new AccessReviewInstanceDecisionItemAzureRoleResource and sets the default values.
 func NewAccessReviewInstanceDecisionItemAzureRoleResource()(*AccessReviewInstanceDecisionItemAzureRoleResource) {
@@ -40,7 +38,14 @@ func (m *AccessReviewInstanceDecisionItemAzureRoleResource) GetFieldDeserializer
 }
 // GetScope gets the scope property value. Details of the scope this role is associated with.
 func (m *AccessReviewInstanceDecisionItemAzureRoleResource) GetScope()(AccessReviewInstanceDecisionItemResourceable) {
-    return m.scope
+    val, err := m.GetBackingStore().Get("scope")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AccessReviewInstanceDecisionItemResourceable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AccessReviewInstanceDecisionItemAzureRoleResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *AccessReviewInstanceDecisionItemAzureRoleResource) Serialize(writer i87
 }
 // SetScope sets the scope property value. Details of the scope this role is associated with.
 func (m *AccessReviewInstanceDecisionItemAzureRoleResource) SetScope(value AccessReviewInstanceDecisionItemResourceable)() {
-    m.scope = value
+    err := m.GetBackingStore().Set("scope", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AccessReviewInstanceDecisionItemAzureRoleResourceable 
+type AccessReviewInstanceDecisionItemAzureRoleResourceable interface {
+    AccessReviewInstanceDecisionItemResourceable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetScope()(AccessReviewInstanceDecisionItemResourceable)
+    SetScope(value AccessReviewInstanceDecisionItemResourceable)()
 }

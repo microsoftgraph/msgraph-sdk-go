@@ -7,8 +7,6 @@ import (
 // WindowsDeviceAzureADAccount 
 type WindowsDeviceAzureADAccount struct {
     WindowsDeviceAccount
-    // Not yet documented
-    userPrincipalName *string
 }
 // NewWindowsDeviceAzureADAccount instantiates a new WindowsDeviceAzureADAccount and sets the default values.
 func NewWindowsDeviceAzureADAccount()(*WindowsDeviceAzureADAccount) {
@@ -40,7 +38,14 @@ func (m *WindowsDeviceAzureADAccount) GetFieldDeserializers()(map[string]func(i8
 }
 // GetUserPrincipalName gets the userPrincipalName property value. Not yet documented
 func (m *WindowsDeviceAzureADAccount) GetUserPrincipalName()(*string) {
-    return m.userPrincipalName
+    val, err := m.GetBackingStore().Get("userPrincipalName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsDeviceAzureADAccount) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *WindowsDeviceAzureADAccount) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetUserPrincipalName sets the userPrincipalName property value. Not yet documented
 func (m *WindowsDeviceAzureADAccount) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    err := m.GetBackingStore().Set("userPrincipalName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsDeviceAzureADAccountable 
+type WindowsDeviceAzureADAccountable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    WindowsDeviceAccountable
+    GetUserPrincipalName()(*string)
+    SetUserPrincipalName(value *string)()
 }

@@ -7,8 +7,6 @@ import (
 // PermissionGrantPolicyCollectionResponse 
 type PermissionGrantPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []PermissionGrantPolicyable
 }
 // NewPermissionGrantPolicyCollectionResponse instantiates a new PermissionGrantPolicyCollectionResponse and sets the default values.
 func NewPermissionGrantPolicyCollectionResponse()(*PermissionGrantPolicyCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *PermissionGrantPolicyCollectionResponse) GetFieldDeserializers()(map[st
 }
 // GetValue gets the value property value. The value property
 func (m *PermissionGrantPolicyCollectionResponse) GetValue()([]PermissionGrantPolicyable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PermissionGrantPolicyable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PermissionGrantPolicyCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *PermissionGrantPolicyCollectionResponse) Serialize(writer i878a80d2330e
 }
 // SetValue sets the value property value. The value property
 func (m *PermissionGrantPolicyCollectionResponse) SetValue(value []PermissionGrantPolicyable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PermissionGrantPolicyCollectionResponseable 
+type PermissionGrantPolicyCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]PermissionGrantPolicyable)
+    SetValue(value []PermissionGrantPolicyable)()
 }

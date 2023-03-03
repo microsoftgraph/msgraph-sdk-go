@@ -46,6 +46,10 @@ type ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisMajorGridlinesFor
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Clear provides operations to call the clear method.
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisMajorGridlinesFormatLineRequestBuilder) Clear()(*ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisMajorGridlinesFormatLineClearRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisMajorGridlinesFormatLineClearRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // NewItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisMajorGridlinesFormatLineRequestBuilderInternal instantiates a new LineRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisMajorGridlinesFormatLineRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisMajorGridlinesFormatLineRequestBuilder) {
     m := &ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisMajorGridlinesFormatLineRequestBuilder{
@@ -99,10 +103,6 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisMajorGridline
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartLineFormatable), nil
-}
-// MicrosoftGraphClear provides operations to call the clear method.
-func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisMajorGridlinesFormatLineRequestBuilder) MicrosoftGraphClear()(*ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisMajorGridlinesFormatLineMicrosoftGraphClearRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisMajorGridlinesFormatLineMicrosoftGraphClearRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property line in drives
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisMajorGridlinesFormatLineRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartLineFormatable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisMajorGridlinesFormatLineRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartLineFormatable, error) {

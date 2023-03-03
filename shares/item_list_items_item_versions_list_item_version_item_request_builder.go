@@ -104,10 +104,6 @@ func (m *ItemListItemsItemVersionsListItemVersionItemRequestBuilder) Get(ctx con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemVersionable), nil
 }
-// MicrosoftGraphRestoreVersion provides operations to call the restoreVersion method.
-func (m *ItemListItemsItemVersionsListItemVersionItemRequestBuilder) MicrosoftGraphRestoreVersion()(*ItemListItemsItemVersionsItemMicrosoftGraphRestoreVersionRequestBuilder) {
-    return NewItemListItemsItemVersionsItemMicrosoftGraphRestoreVersionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Patch update the navigation property versions in shares
 func (m *ItemListItemsItemVersionsListItemVersionItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemVersionable, requestConfiguration *ItemListItemsItemVersionsListItemVersionItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemVersionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -126,6 +122,10 @@ func (m *ItemListItemsItemVersionsListItemVersionItemRequestBuilder) Patch(ctx c
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemVersionable), nil
+}
+// RestoreVersion provides operations to call the restoreVersion method.
+func (m *ItemListItemsItemVersionsListItemVersionItemRequestBuilder) RestoreVersion()(*ItemListItemsItemVersionsItemRestoreVersionRequestBuilder) {
+    return NewItemListItemsItemVersionsItemRestoreVersionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property versions for shares
 func (m *ItemListItemsItemVersionsListItemVersionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemListItemsItemVersionsListItemVersionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -7,8 +7,6 @@ import (
 // X509CertificateRuleCollectionResponse 
 type X509CertificateRuleCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []X509CertificateRuleable
 }
 // NewX509CertificateRuleCollectionResponse instantiates a new X509CertificateRuleCollectionResponse and sets the default values.
 func NewX509CertificateRuleCollectionResponse()(*X509CertificateRuleCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *X509CertificateRuleCollectionResponse) GetFieldDeserializers()(map[stri
 }
 // GetValue gets the value property value. The value property
 func (m *X509CertificateRuleCollectionResponse) GetValue()([]X509CertificateRuleable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]X509CertificateRuleable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *X509CertificateRuleCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *X509CertificateRuleCollectionResponse) Serialize(writer i878a80d2330e89
 }
 // SetValue sets the value property value. The value property
 func (m *X509CertificateRuleCollectionResponse) SetValue(value []X509CertificateRuleable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// X509CertificateRuleCollectionResponseable 
+type X509CertificateRuleCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]X509CertificateRuleable)
+    SetValue(value []X509CertificateRuleable)()
 }

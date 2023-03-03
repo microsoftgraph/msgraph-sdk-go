@@ -7,8 +7,6 @@ import (
 // PhysicalOfficeAddressCollectionResponse 
 type PhysicalOfficeAddressCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []PhysicalOfficeAddressable
 }
 // NewPhysicalOfficeAddressCollectionResponse instantiates a new PhysicalOfficeAddressCollectionResponse and sets the default values.
 func NewPhysicalOfficeAddressCollectionResponse()(*PhysicalOfficeAddressCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *PhysicalOfficeAddressCollectionResponse) GetFieldDeserializers()(map[st
 }
 // GetValue gets the value property value. The value property
 func (m *PhysicalOfficeAddressCollectionResponse) GetValue()([]PhysicalOfficeAddressable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PhysicalOfficeAddressable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PhysicalOfficeAddressCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *PhysicalOfficeAddressCollectionResponse) Serialize(writer i878a80d2330e
 }
 // SetValue sets the value property value. The value property
 func (m *PhysicalOfficeAddressCollectionResponse) SetValue(value []PhysicalOfficeAddressable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PhysicalOfficeAddressCollectionResponseable 
+type PhysicalOfficeAddressCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]PhysicalOfficeAddressable)
+    SetValue(value []PhysicalOfficeAddressable)()
 }

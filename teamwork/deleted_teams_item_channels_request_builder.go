@@ -93,9 +93,9 @@ func (m *DeletedTeamsItemChannelsRequestBuilder) Get(ctx context.Context, reques
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChannelCollectionResponseable), nil
 }
-// MicrosoftGraphGetAllMessages provides operations to call the getAllMessages method.
-func (m *DeletedTeamsItemChannelsRequestBuilder) MicrosoftGraphGetAllMessages()(*DeletedTeamsItemChannelsMicrosoftGraphGetAllMessagesRequestBuilder) {
-    return NewDeletedTeamsItemChannelsMicrosoftGraphGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GetAllMessages provides operations to call the getAllMessages method.
+func (m *DeletedTeamsItemChannelsRequestBuilder) GetAllMessages()(*DeletedTeamsItemChannelsGetAllMessagesRequestBuilder) {
+    return NewDeletedTeamsItemChannelsGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to channels for teamwork
 func (m *DeletedTeamsItemChannelsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Channelable, requestConfiguration *DeletedTeamsItemChannelsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Channelable, error) {

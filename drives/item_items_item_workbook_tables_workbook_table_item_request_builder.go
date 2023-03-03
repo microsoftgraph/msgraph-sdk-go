@@ -46,6 +46,10 @@ type ItemItemsItemWorkbookTablesWorkbookTableItemRequestBuilderPatchRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ClearFilters provides operations to call the clearFilters method.
+func (m *ItemItemsItemWorkbookTablesWorkbookTableItemRequestBuilder) ClearFilters()(*ItemItemsItemWorkbookTablesItemClearFiltersRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemClearFiltersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Columns provides operations to manage the columns property of the microsoft.graph.workbookTable entity.
 func (m *ItemItemsItemWorkbookTablesWorkbookTableItemRequestBuilder) Columns()(*ItemItemsItemWorkbookTablesItemColumnsRequestBuilder) {
     return NewItemItemsItemWorkbookTablesItemColumnsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
@@ -79,6 +83,14 @@ func NewItemItemsItemWorkbookTablesWorkbookTableItemRequestBuilder(rawUrl string
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookTablesWorkbookTableItemRequestBuilderInternal(urlParams, requestAdapter)
+}
+// ConvertToRange provides operations to call the convertToRange method.
+func (m *ItemItemsItemWorkbookTablesWorkbookTableItemRequestBuilder) ConvertToRange()(*ItemItemsItemWorkbookTablesItemConvertToRangeRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemConvertToRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// DataBodyRange provides operations to call the dataBodyRange method.
+func (m *ItemItemsItemWorkbookTablesWorkbookTableItemRequestBuilder) DataBodyRange()(*ItemItemsItemWorkbookTablesItemDataBodyRangeRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemDataBodyRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Delete delete navigation property tables for drives
 func (m *ItemItemsItemWorkbookTablesWorkbookTableItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesWorkbookTableItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -115,33 +127,9 @@ func (m *ItemItemsItemWorkbookTablesWorkbookTableItemRequestBuilder) Get(ctx con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableable), nil
 }
-// MicrosoftGraphClearFilters provides operations to call the clearFilters method.
-func (m *ItemItemsItemWorkbookTablesWorkbookTableItemRequestBuilder) MicrosoftGraphClearFilters()(*ItemItemsItemWorkbookTablesItemMicrosoftGraphClearFiltersRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesItemMicrosoftGraphClearFiltersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphConvertToRange provides operations to call the convertToRange method.
-func (m *ItemItemsItemWorkbookTablesWorkbookTableItemRequestBuilder) MicrosoftGraphConvertToRange()(*ItemItemsItemWorkbookTablesItemMicrosoftGraphConvertToRangeRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesItemMicrosoftGraphConvertToRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphDataBodyRange provides operations to call the dataBodyRange method.
-func (m *ItemItemsItemWorkbookTablesWorkbookTableItemRequestBuilder) MicrosoftGraphDataBodyRange()(*ItemItemsItemWorkbookTablesItemMicrosoftGraphDataBodyRangeRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesItemMicrosoftGraphDataBodyRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphHeaderRowRange provides operations to call the headerRowRange method.
-func (m *ItemItemsItemWorkbookTablesWorkbookTableItemRequestBuilder) MicrosoftGraphHeaderRowRange()(*ItemItemsItemWorkbookTablesItemMicrosoftGraphHeaderRowRangeRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesItemMicrosoftGraphHeaderRowRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphRange provides operations to call the range method.
-func (m *ItemItemsItemWorkbookTablesWorkbookTableItemRequestBuilder) MicrosoftGraphRange()(*ItemItemsItemWorkbookTablesItemMicrosoftGraphRangeRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesItemMicrosoftGraphRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphReapplyFilters provides operations to call the reapplyFilters method.
-func (m *ItemItemsItemWorkbookTablesWorkbookTableItemRequestBuilder) MicrosoftGraphReapplyFilters()(*ItemItemsItemWorkbookTablesItemMicrosoftGraphReapplyFiltersRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesItemMicrosoftGraphReapplyFiltersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphTotalRowRange provides operations to call the totalRowRange method.
-func (m *ItemItemsItemWorkbookTablesWorkbookTableItemRequestBuilder) MicrosoftGraphTotalRowRange()(*ItemItemsItemWorkbookTablesItemMicrosoftGraphTotalRowRangeRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesItemMicrosoftGraphTotalRowRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// HeaderRowRange provides operations to call the headerRowRange method.
+func (m *ItemItemsItemWorkbookTablesWorkbookTableItemRequestBuilder) HeaderRowRange()(*ItemItemsItemWorkbookTablesItemHeaderRowRangeRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemHeaderRowRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property tables in drives
 func (m *ItemItemsItemWorkbookTablesWorkbookTableItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableable, requestConfiguration *ItemItemsItemWorkbookTablesWorkbookTableItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableable, error) {
@@ -161,6 +149,14 @@ func (m *ItemItemsItemWorkbookTablesWorkbookTableItemRequestBuilder) Patch(ctx c
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableable), nil
+}
+// RangeEscaped provides operations to call the range method.
+func (m *ItemItemsItemWorkbookTablesWorkbookTableItemRequestBuilder) RangeEscaped()(*ItemItemsItemWorkbookTablesItemRangeRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// ReapplyFilters provides operations to call the reapplyFilters method.
+func (m *ItemItemsItemWorkbookTablesWorkbookTableItemRequestBuilder) ReapplyFilters()(*ItemItemsItemWorkbookTablesItemReapplyFiltersRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemReapplyFiltersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Rows provides operations to manage the rows property of the microsoft.graph.workbookTable entity.
 func (m *ItemItemsItemWorkbookTablesWorkbookTableItemRequestBuilder) Rows()(*ItemItemsItemWorkbookTablesItemRowsRequestBuilder) {
@@ -225,6 +221,10 @@ func (m *ItemItemsItemWorkbookTablesWorkbookTableItemRequestBuilder) ToPatchRequ
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// TotalRowRange provides operations to call the totalRowRange method.
+func (m *ItemItemsItemWorkbookTablesWorkbookTableItemRequestBuilder) TotalRowRange()(*ItemItemsItemWorkbookTablesItemTotalRowRangeRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemTotalRowRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Worksheet provides operations to manage the worksheet property of the microsoft.graph.workbookTable entity.
 func (m *ItemItemsItemWorkbookTablesWorkbookTableItemRequestBuilder) Worksheet()(*ItemItemsItemWorkbookTablesItemWorksheetRequestBuilder) {

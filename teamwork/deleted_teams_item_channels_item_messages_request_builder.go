@@ -74,6 +74,10 @@ func NewDeletedTeamsItemChannelsItemMessagesRequestBuilder(rawUrl string, reques
 func (m *DeletedTeamsItemChannelsItemMessagesRequestBuilder) Count()(*DeletedTeamsItemChannelsItemMessagesCountRequestBuilder) {
     return NewDeletedTeamsItemChannelsItemMessagesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// Delta provides operations to call the delta method.
+func (m *DeletedTeamsItemChannelsItemMessagesRequestBuilder) Delta()(*DeletedTeamsItemChannelsItemMessagesDeltaRequestBuilder) {
+    return NewDeletedTeamsItemChannelsItemMessagesDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Get retrieve the list of messages (without the replies) in a channel of a team.  To get the replies for a message, call the list message replies or the get message reply API.  This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).
 // [Find more info here]
 // 
@@ -95,10 +99,6 @@ func (m *DeletedTeamsItemChannelsItemMessagesRequestBuilder) Get(ctx context.Con
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageCollectionResponseable), nil
-}
-// MicrosoftGraphDelta provides operations to call the delta method.
-func (m *DeletedTeamsItemChannelsItemMessagesRequestBuilder) MicrosoftGraphDelta()(*DeletedTeamsItemChannelsItemMessagesMicrosoftGraphDeltaRequestBuilder) {
-    return NewDeletedTeamsItemChannelsItemMessagesMicrosoftGraphDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post send a new chatMessage in the specified channel.
 // [Find more info here]

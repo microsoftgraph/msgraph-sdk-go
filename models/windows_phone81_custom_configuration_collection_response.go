@@ -7,8 +7,6 @@ import (
 // WindowsPhone81CustomConfigurationCollectionResponse 
 type WindowsPhone81CustomConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []WindowsPhone81CustomConfigurationable
 }
 // NewWindowsPhone81CustomConfigurationCollectionResponse instantiates a new WindowsPhone81CustomConfigurationCollectionResponse and sets the default values.
 func NewWindowsPhone81CustomConfigurationCollectionResponse()(*WindowsPhone81CustomConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *WindowsPhone81CustomConfigurationCollectionResponse) GetFieldDeserializ
 }
 // GetValue gets the value property value. The value property
 func (m *WindowsPhone81CustomConfigurationCollectionResponse) GetValue()([]WindowsPhone81CustomConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsPhone81CustomConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsPhone81CustomConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *WindowsPhone81CustomConfigurationCollectionResponse) Serialize(writer i
 }
 // SetValue sets the value property value. The value property
 func (m *WindowsPhone81CustomConfigurationCollectionResponse) SetValue(value []WindowsPhone81CustomConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsPhone81CustomConfigurationCollectionResponseable 
+type WindowsPhone81CustomConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]WindowsPhone81CustomConfigurationable)
+    SetValue(value []WindowsPhone81CustomConfigurationable)()
 }

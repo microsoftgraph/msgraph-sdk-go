@@ -7,10 +7,6 @@ import (
 // EventMessageResponse 
 type EventMessageResponse struct {
     EventMessage
-    // The proposedNewTime property
-    proposedNewTime TimeSlotable
-    // The responseType property
-    responseType *ResponseType
 }
 // NewEventMessageResponse instantiates a new EventMessageResponse and sets the default values.
 func NewEventMessageResponse()(*EventMessageResponse) {
@@ -52,11 +48,25 @@ func (m *EventMessageResponse) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetProposedNewTime gets the proposedNewTime property value. The proposedNewTime property
 func (m *EventMessageResponse) GetProposedNewTime()(TimeSlotable) {
-    return m.proposedNewTime
+    val, err := m.GetBackingStore().Get("proposedNewTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TimeSlotable)
+    }
+    return nil
 }
 // GetResponseType gets the responseType property value. The responseType property
 func (m *EventMessageResponse) GetResponseType()(*ResponseType) {
-    return m.responseType
+    val, err := m.GetBackingStore().Get("responseType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ResponseType)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EventMessageResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -81,9 +91,24 @@ func (m *EventMessageResponse) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetProposedNewTime sets the proposedNewTime property value. The proposedNewTime property
 func (m *EventMessageResponse) SetProposedNewTime(value TimeSlotable)() {
-    m.proposedNewTime = value
+    err := m.GetBackingStore().Set("proposedNewTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetResponseType sets the responseType property value. The responseType property
 func (m *EventMessageResponse) SetResponseType(value *ResponseType)() {
-    m.responseType = value
+    err := m.GetBackingStore().Set("responseType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EventMessageResponseable 
+type EventMessageResponseable interface {
+    EventMessageable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetProposedNewTime()(TimeSlotable)
+    GetResponseType()(*ResponseType)
+    SetProposedNewTime(value TimeSlotable)()
+    SetResponseType(value *ResponseType)()
 }

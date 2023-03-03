@@ -7,12 +7,6 @@ import (
 // CallStartedEventMessageDetail 
 type CallStartedEventMessageDetail struct {
     EventMessageDetail
-    // Represents the call event type. Possible values are: call, meeting, screenShare, unknownFutureValue.
-    callEventType *TeamworkCallEventType
-    // Unique identifier of the call.
-    callId *string
-    // Initiator of the event.
-    initiator IdentitySetable
 }
 // NewCallStartedEventMessageDetail instantiates a new CallStartedEventMessageDetail and sets the default values.
 func NewCallStartedEventMessageDetail()(*CallStartedEventMessageDetail) {
@@ -29,11 +23,25 @@ func CreateCallStartedEventMessageDetailFromDiscriminatorValue(parseNode i878a80
 }
 // GetCallEventType gets the callEventType property value. Represents the call event type. Possible values are: call, meeting, screenShare, unknownFutureValue.
 func (m *CallStartedEventMessageDetail) GetCallEventType()(*TeamworkCallEventType) {
-    return m.callEventType
+    val, err := m.GetBackingStore().Get("callEventType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*TeamworkCallEventType)
+    }
+    return nil
 }
 // GetCallId gets the callId property value. Unique identifier of the call.
 func (m *CallStartedEventMessageDetail) GetCallId()(*string) {
-    return m.callId
+    val, err := m.GetBackingStore().Get("callId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CallStartedEventMessageDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,7 +80,14 @@ func (m *CallStartedEventMessageDetail) GetFieldDeserializers()(map[string]func(
 }
 // GetInitiator gets the initiator property value. Initiator of the event.
 func (m *CallStartedEventMessageDetail) GetInitiator()(IdentitySetable) {
-    return m.initiator
+    val, err := m.GetBackingStore().Get("initiator")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentitySetable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CallStartedEventMessageDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -103,13 +118,33 @@ func (m *CallStartedEventMessageDetail) Serialize(writer i878a80d2330e89d2689638
 }
 // SetCallEventType sets the callEventType property value. Represents the call event type. Possible values are: call, meeting, screenShare, unknownFutureValue.
 func (m *CallStartedEventMessageDetail) SetCallEventType(value *TeamworkCallEventType)() {
-    m.callEventType = value
+    err := m.GetBackingStore().Set("callEventType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCallId sets the callId property value. Unique identifier of the call.
 func (m *CallStartedEventMessageDetail) SetCallId(value *string)() {
-    m.callId = value
+    err := m.GetBackingStore().Set("callId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInitiator sets the initiator property value. Initiator of the event.
 func (m *CallStartedEventMessageDetail) SetInitiator(value IdentitySetable)() {
-    m.initiator = value
+    err := m.GetBackingStore().Set("initiator", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CallStartedEventMessageDetailable 
+type CallStartedEventMessageDetailable interface {
+    EventMessageDetailable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCallEventType()(*TeamworkCallEventType)
+    GetCallId()(*string)
+    GetInitiator()(IdentitySetable)
+    SetCallEventType(value *TeamworkCallEventType)()
+    SetCallId(value *string)()
+    SetInitiator(value IdentitySetable)()
 }

@@ -7,10 +7,6 @@ import (
 // PolicyBase 
 type PolicyBase struct {
     DirectoryObject
-    // Description for this policy. Required.
-    description *string
-    // Display name for this policy. Required.
-    displayName *string
 }
 // NewPolicyBase instantiates a new policyBase and sets the default values.
 func NewPolicyBase()(*PolicyBase) {
@@ -37,6 +33,8 @@ func CreatePolicyBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
                 switch *mappingValue {
                     case "#microsoft.graph.activityBasedTimeoutPolicy":
                         return NewActivityBasedTimeoutPolicy(), nil
+                    case "#microsoft.graph.appManagementPolicy":
+                        return NewAppManagementPolicy(), nil
                     case "#microsoft.graph.authorizationPolicy":
                         return NewAuthorizationPolicy(), nil
                     case "#microsoft.graph.claimsMappingPolicy":
@@ -51,6 +49,8 @@ func CreatePolicyBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
                         return NewPermissionGrantPolicy(), nil
                     case "#microsoft.graph.stsPolicy":
                         return NewStsPolicy(), nil
+                    case "#microsoft.graph.tenantAppManagementPolicy":
+                        return NewTenantAppManagementPolicy(), nil
                     case "#microsoft.graph.tokenIssuancePolicy":
                         return NewTokenIssuancePolicy(), nil
                     case "#microsoft.graph.tokenLifetimePolicy":
@@ -63,11 +63,25 @@ func CreatePolicyBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 }
 // GetDescription gets the description property value. Description for this policy. Required.
 func (m *PolicyBase) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. Display name for this policy. Required.
 func (m *PolicyBase) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PolicyBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -116,9 +130,24 @@ func (m *PolicyBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetDescription sets the description property value. Description for this policy. Required.
 func (m *PolicyBase) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. Display name for this policy. Required.
 func (m *PolicyBase) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PolicyBaseable 
+type PolicyBaseable interface {
+    DirectoryObjectable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
 }

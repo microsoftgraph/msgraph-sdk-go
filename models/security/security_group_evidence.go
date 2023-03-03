@@ -7,10 +7,6 @@ import (
 // SecurityGroupEvidence 
 type SecurityGroupEvidence struct {
     AlertEvidence
-    // The name of the security group.
-    displayName *string
-    // Unique identifier of the security group.
-    securityGroupId *string
 }
 // NewSecurityGroupEvidence instantiates a new SecurityGroupEvidence and sets the default values.
 func NewSecurityGroupEvidence()(*SecurityGroupEvidence) {
@@ -25,7 +21,14 @@ func CreateSecurityGroupEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetDisplayName gets the displayName property value. The name of the security group.
 func (m *SecurityGroupEvidence) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SecurityGroupEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -54,7 +57,14 @@ func (m *SecurityGroupEvidence) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetSecurityGroupId gets the securityGroupId property value. Unique identifier of the security group.
 func (m *SecurityGroupEvidence) GetSecurityGroupId()(*string) {
-    return m.securityGroupId
+    val, err := m.GetBackingStore().Get("securityGroupId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SecurityGroupEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -78,9 +88,24 @@ func (m *SecurityGroupEvidence) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetDisplayName sets the displayName property value. The name of the security group.
 func (m *SecurityGroupEvidence) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSecurityGroupId sets the securityGroupId property value. Unique identifier of the security group.
 func (m *SecurityGroupEvidence) SetSecurityGroupId(value *string)() {
-    m.securityGroupId = value
+    err := m.GetBackingStore().Set("securityGroupId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SecurityGroupEvidenceable 
+type SecurityGroupEvidenceable interface {
+    AlertEvidenceable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDisplayName()(*string)
+    GetSecurityGroupId()(*string)
+    SetDisplayName(value *string)()
+    SetSecurityGroupId(value *string)()
 }

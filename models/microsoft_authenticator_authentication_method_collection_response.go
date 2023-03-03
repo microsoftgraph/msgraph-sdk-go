@@ -7,8 +7,6 @@ import (
 // MicrosoftAuthenticatorAuthenticationMethodCollectionResponse 
 type MicrosoftAuthenticatorAuthenticationMethodCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []MicrosoftAuthenticatorAuthenticationMethodable
 }
 // NewMicrosoftAuthenticatorAuthenticationMethodCollectionResponse instantiates a new MicrosoftAuthenticatorAuthenticationMethodCollectionResponse and sets the default values.
 func NewMicrosoftAuthenticatorAuthenticationMethodCollectionResponse()(*MicrosoftAuthenticatorAuthenticationMethodCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *MicrosoftAuthenticatorAuthenticationMethodCollectionResponse) GetFieldD
 }
 // GetValue gets the value property value. The value property
 func (m *MicrosoftAuthenticatorAuthenticationMethodCollectionResponse) GetValue()([]MicrosoftAuthenticatorAuthenticationMethodable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MicrosoftAuthenticatorAuthenticationMethodable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MicrosoftAuthenticatorAuthenticationMethodCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *MicrosoftAuthenticatorAuthenticationMethodCollectionResponse) Serialize
 }
 // SetValue sets the value property value. The value property
 func (m *MicrosoftAuthenticatorAuthenticationMethodCollectionResponse) SetValue(value []MicrosoftAuthenticatorAuthenticationMethodable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MicrosoftAuthenticatorAuthenticationMethodCollectionResponseable 
+type MicrosoftAuthenticatorAuthenticationMethodCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]MicrosoftAuthenticatorAuthenticationMethodable)
+    SetValue(value []MicrosoftAuthenticatorAuthenticationMethodable)()
 }

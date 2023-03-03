@@ -7,8 +7,6 @@ import (
 // AccessReviewHistoryDefinitionCollectionResponse 
 type AccessReviewHistoryDefinitionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AccessReviewHistoryDefinitionable
 }
 // NewAccessReviewHistoryDefinitionCollectionResponse instantiates a new AccessReviewHistoryDefinitionCollectionResponse and sets the default values.
 func NewAccessReviewHistoryDefinitionCollectionResponse()(*AccessReviewHistoryDefinitionCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AccessReviewHistoryDefinitionCollectionResponse) GetFieldDeserializers(
 }
 // GetValue gets the value property value. The value property
 func (m *AccessReviewHistoryDefinitionCollectionResponse) GetValue()([]AccessReviewHistoryDefinitionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AccessReviewHistoryDefinitionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AccessReviewHistoryDefinitionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AccessReviewHistoryDefinitionCollectionResponse) Serialize(writer i878a
 }
 // SetValue sets the value property value. The value property
 func (m *AccessReviewHistoryDefinitionCollectionResponse) SetValue(value []AccessReviewHistoryDefinitionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AccessReviewHistoryDefinitionCollectionResponseable 
+type AccessReviewHistoryDefinitionCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AccessReviewHistoryDefinitionable)
+    SetValue(value []AccessReviewHistoryDefinitionable)()
 }

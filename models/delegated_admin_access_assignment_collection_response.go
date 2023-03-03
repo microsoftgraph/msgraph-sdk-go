@@ -7,8 +7,6 @@ import (
 // DelegatedAdminAccessAssignmentCollectionResponse 
 type DelegatedAdminAccessAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DelegatedAdminAccessAssignmentable
 }
 // NewDelegatedAdminAccessAssignmentCollectionResponse instantiates a new DelegatedAdminAccessAssignmentCollectionResponse and sets the default values.
 func NewDelegatedAdminAccessAssignmentCollectionResponse()(*DelegatedAdminAccessAssignmentCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DelegatedAdminAccessAssignmentCollectionResponse) GetFieldDeserializers
 }
 // GetValue gets the value property value. The value property
 func (m *DelegatedAdminAccessAssignmentCollectionResponse) GetValue()([]DelegatedAdminAccessAssignmentable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DelegatedAdminAccessAssignmentable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DelegatedAdminAccessAssignmentCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DelegatedAdminAccessAssignmentCollectionResponse) Serialize(writer i878
 }
 // SetValue sets the value property value. The value property
 func (m *DelegatedAdminAccessAssignmentCollectionResponse) SetValue(value []DelegatedAdminAccessAssignmentable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DelegatedAdminAccessAssignmentCollectionResponseable 
+type DelegatedAdminAccessAssignmentCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DelegatedAdminAccessAssignmentable)
+    SetValue(value []DelegatedAdminAccessAssignmentable)()
 }

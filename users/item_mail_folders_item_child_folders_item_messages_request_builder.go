@@ -74,6 +74,10 @@ func NewItemMailFoldersItemChildFoldersItemMessagesRequestBuilder(rawUrl string,
 func (m *ItemMailFoldersItemChildFoldersItemMessagesRequestBuilder) Count()(*ItemMailFoldersItemChildFoldersItemMessagesCountRequestBuilder) {
     return NewItemMailFoldersItemChildFoldersItemMessagesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// Delta provides operations to call the delta method.
+func (m *ItemMailFoldersItemChildFoldersItemMessagesRequestBuilder) Delta()(*ItemMailFoldersItemChildFoldersItemMessagesDeltaRequestBuilder) {
+    return NewItemMailFoldersItemChildFoldersItemMessagesDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Get get all the messages in the specified user's mailbox, or those messages in a specified folder in the mailbox.
 // [Find more info here]
 // 
@@ -95,10 +99,6 @@ func (m *ItemMailFoldersItemChildFoldersItemMessagesRequestBuilder) Get(ctx cont
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MessageCollectionResponseable), nil
-}
-// MicrosoftGraphDelta provides operations to call the delta method.
-func (m *ItemMailFoldersItemChildFoldersItemMessagesRequestBuilder) MicrosoftGraphDelta()(*ItemMailFoldersItemChildFoldersItemMessagesMicrosoftGraphDeltaRequestBuilder) {
-    return NewItemMailFoldersItemChildFoldersItemMessagesMicrosoftGraphDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post use this API to create a new Message in a mailfolder.
 // [Find more info here]

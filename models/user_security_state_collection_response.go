@@ -7,8 +7,6 @@ import (
 // UserSecurityStateCollectionResponse 
 type UserSecurityStateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []UserSecurityStateable
 }
 // NewUserSecurityStateCollectionResponse instantiates a new UserSecurityStateCollectionResponse and sets the default values.
 func NewUserSecurityStateCollectionResponse()(*UserSecurityStateCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *UserSecurityStateCollectionResponse) GetFieldDeserializers()(map[string
 }
 // GetValue gets the value property value. The value property
 func (m *UserSecurityStateCollectionResponse) GetValue()([]UserSecurityStateable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserSecurityStateable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserSecurityStateCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *UserSecurityStateCollectionResponse) Serialize(writer i878a80d2330e89d2
 }
 // SetValue sets the value property value. The value property
 func (m *UserSecurityStateCollectionResponse) SetValue(value []UserSecurityStateable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserSecurityStateCollectionResponseable 
+type UserSecurityStateCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]UserSecurityStateable)
+    SetValue(value []UserSecurityStateable)()
 }

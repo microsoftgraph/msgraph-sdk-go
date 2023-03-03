@@ -7,8 +7,6 @@ import (
 // MicrosoftStoreForBusinessAppCollectionResponse 
 type MicrosoftStoreForBusinessAppCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []MicrosoftStoreForBusinessAppable
 }
 // NewMicrosoftStoreForBusinessAppCollectionResponse instantiates a new MicrosoftStoreForBusinessAppCollectionResponse and sets the default values.
 func NewMicrosoftStoreForBusinessAppCollectionResponse()(*MicrosoftStoreForBusinessAppCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *MicrosoftStoreForBusinessAppCollectionResponse) GetFieldDeserializers()
 }
 // GetValue gets the value property value. The value property
 func (m *MicrosoftStoreForBusinessAppCollectionResponse) GetValue()([]MicrosoftStoreForBusinessAppable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MicrosoftStoreForBusinessAppable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MicrosoftStoreForBusinessAppCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *MicrosoftStoreForBusinessAppCollectionResponse) Serialize(writer i878a8
 }
 // SetValue sets the value property value. The value property
 func (m *MicrosoftStoreForBusinessAppCollectionResponse) SetValue(value []MicrosoftStoreForBusinessAppable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MicrosoftStoreForBusinessAppCollectionResponseable 
+type MicrosoftStoreForBusinessAppCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]MicrosoftStoreForBusinessAppable)
+    SetValue(value []MicrosoftStoreForBusinessAppable)()
 }

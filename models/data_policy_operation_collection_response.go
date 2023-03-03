@@ -7,8 +7,6 @@ import (
 // DataPolicyOperationCollectionResponse 
 type DataPolicyOperationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DataPolicyOperationable
 }
 // NewDataPolicyOperationCollectionResponse instantiates a new DataPolicyOperationCollectionResponse and sets the default values.
 func NewDataPolicyOperationCollectionResponse()(*DataPolicyOperationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DataPolicyOperationCollectionResponse) GetFieldDeserializers()(map[stri
 }
 // GetValue gets the value property value. The value property
 func (m *DataPolicyOperationCollectionResponse) GetValue()([]DataPolicyOperationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DataPolicyOperationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DataPolicyOperationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DataPolicyOperationCollectionResponse) Serialize(writer i878a80d2330e89
 }
 // SetValue sets the value property value. The value property
 func (m *DataPolicyOperationCollectionResponse) SetValue(value []DataPolicyOperationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DataPolicyOperationCollectionResponseable 
+type DataPolicyOperationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DataPolicyOperationable)
+    SetValue(value []DataPolicyOperationable)()
 }

@@ -100,10 +100,6 @@ func (m *ApiConnectorsIdentityApiConnectorItemRequestBuilder) Get(ctx context.Co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityApiConnectorable), nil
 }
-// MicrosoftGraphUploadClientCertificate provides operations to call the uploadClientCertificate method.
-func (m *ApiConnectorsIdentityApiConnectorItemRequestBuilder) MicrosoftGraphUploadClientCertificate()(*ApiConnectorsItemMicrosoftGraphUploadClientCertificateRequestBuilder) {
-    return NewApiConnectorsItemMicrosoftGraphUploadClientCertificateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Patch update the navigation property apiConnectors in identity
 func (m *ApiConnectorsIdentityApiConnectorItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityApiConnectorable, requestConfiguration *ApiConnectorsIdentityApiConnectorItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityApiConnectorable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -167,4 +163,8 @@ func (m *ApiConnectorsIdentityApiConnectorItemRequestBuilder) ToPatchRequestInfo
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// UploadClientCertificate provides operations to call the uploadClientCertificate method.
+func (m *ApiConnectorsIdentityApiConnectorItemRequestBuilder) UploadClientCertificate()(*ApiConnectorsItemUploadClientCertificateRequestBuilder) {
+    return NewApiConnectorsItemUploadClientCertificateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

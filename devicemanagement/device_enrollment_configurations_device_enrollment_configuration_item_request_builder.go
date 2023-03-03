@@ -46,6 +46,10 @@ type DeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuild
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Assign provides operations to call the assign method.
+func (m *DeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilder) Assign()(*DeviceEnrollmentConfigurationsItemAssignRequestBuilder) {
+    return NewDeviceEnrollmentConfigurationsItemAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Assignments provides operations to manage the assignments property of the microsoft.graph.deviceEnrollmentConfiguration entity.
 func (m *DeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilder) Assignments()(*DeviceEnrollmentConfigurationsItemAssignmentsRequestBuilder) {
     return NewDeviceEnrollmentConfigurationsItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
@@ -115,14 +119,6 @@ func (m *DeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestB
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceEnrollmentConfigurationable), nil
 }
-// MicrosoftGraphAssign provides operations to call the assign method.
-func (m *DeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilder) MicrosoftGraphAssign()(*DeviceEnrollmentConfigurationsItemMicrosoftGraphAssignRequestBuilder) {
-    return NewDeviceEnrollmentConfigurationsItemMicrosoftGraphAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphSetPriority provides operations to call the setPriority method.
-func (m *DeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilder) MicrosoftGraphSetPriority()(*DeviceEnrollmentConfigurationsItemMicrosoftGraphSetPriorityRequestBuilder) {
-    return NewDeviceEnrollmentConfigurationsItemMicrosoftGraphSetPriorityRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Patch update the navigation property deviceEnrollmentConfigurations in deviceManagement
 func (m *DeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceEnrollmentConfigurationable, requestConfiguration *DeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceEnrollmentConfigurationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -141,6 +137,10 @@ func (m *DeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestB
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceEnrollmentConfigurationable), nil
+}
+// SetPriority provides operations to call the setPriority method.
+func (m *DeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilder) SetPriority()(*DeviceEnrollmentConfigurationsItemSetPriorityRequestBuilder) {
+    return NewDeviceEnrollmentConfigurationsItemSetPriorityRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property deviceEnrollmentConfigurations for deviceManagement
 func (m *DeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

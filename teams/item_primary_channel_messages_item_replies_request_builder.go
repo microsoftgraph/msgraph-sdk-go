@@ -74,6 +74,10 @@ func NewItemPrimaryChannelMessagesItemRepliesRequestBuilder(rawUrl string, reque
 func (m *ItemPrimaryChannelMessagesItemRepliesRequestBuilder) Count()(*ItemPrimaryChannelMessagesItemRepliesCountRequestBuilder) {
     return NewItemPrimaryChannelMessagesItemRepliesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// Delta provides operations to call the delta method.
+func (m *ItemPrimaryChannelMessagesItemRepliesRequestBuilder) Delta()(*ItemPrimaryChannelMessagesItemRepliesDeltaRequestBuilder) {
+    return NewItemPrimaryChannelMessagesItemRepliesDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Get list all the replies to a message in a channel of a team. This method lists only the replies of the specified message, if any. To get the message itself, simply call get channel message.
 // [Find more info here]
 // 
@@ -95,10 +99,6 @@ func (m *ItemPrimaryChannelMessagesItemRepliesRequestBuilder) Get(ctx context.Co
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageCollectionResponseable), nil
-}
-// MicrosoftGraphDelta provides operations to call the delta method.
-func (m *ItemPrimaryChannelMessagesItemRepliesRequestBuilder) MicrosoftGraphDelta()(*ItemPrimaryChannelMessagesItemRepliesMicrosoftGraphDeltaRequestBuilder) {
-    return NewItemPrimaryChannelMessagesItemRepliesMicrosoftGraphDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create a new reply to a chatMessage in a specified channel.
 // [Find more info here]

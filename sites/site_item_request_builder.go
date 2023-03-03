@@ -148,6 +148,22 @@ func (m *SiteItemRequestBuilder) Get(ctx context.Context, requestConfiguration *
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Siteable), nil
 }
+// GetActivitiesByInterval provides operations to call the getActivitiesByInterval method.
+func (m *SiteItemRequestBuilder) GetActivitiesByInterval()(*ItemGetActivitiesByIntervalRequestBuilder) {
+    return NewItemGetActivitiesByIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval provides operations to call the getActivitiesByInterval method.
+func (m *SiteItemRequestBuilder) GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(endDateTime *string, interval *string, startDateTime *string)(*ItemGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
+    return NewItemGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter, endDateTime, interval, startDateTime)
+}
+// GetApplicableContentTypesForListWithListId provides operations to call the getApplicableContentTypesForList method.
+func (m *SiteItemRequestBuilder) GetApplicableContentTypesForListWithListId(listId *string)(*ItemGetApplicableContentTypesForListWithListIdRequestBuilder) {
+    return NewItemGetApplicableContentTypesForListWithListIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, listId)
+}
+// GetByPathWithPath provides operations to call the getByPath method.
+func (m *SiteItemRequestBuilder) GetByPathWithPath(path *string)(*ItemGetByPathWithPathRequestBuilder) {
+    return NewItemGetByPathWithPathRequestBuilderInternal(m.pathParameters, m.requestAdapter, path)
+}
 // Items provides operations to manage the items property of the microsoft.graph.site entity.
 func (m *SiteItemRequestBuilder) Items()(*ItemItemsRequestBuilder) {
     return NewItemItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
@@ -177,22 +193,6 @@ func (m *SiteItemRequestBuilder) ListsById(id string)(*ItemListsListItemRequestB
         urlTplParams["list%2Did"] = id
     }
     return NewItemListsListItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
-}
-// MicrosoftGraphGetActivitiesByInterval provides operations to call the getActivitiesByInterval method.
-func (m *SiteItemRequestBuilder) MicrosoftGraphGetActivitiesByInterval()(*ItemMicrosoftGraphGetActivitiesByIntervalRequestBuilder) {
-    return NewItemMicrosoftGraphGetActivitiesByIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval provides operations to call the getActivitiesByInterval method.
-func (m *SiteItemRequestBuilder) MicrosoftGraphGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(endDateTime *string, interval *string, startDateTime *string)(*ItemMicrosoftGraphGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
-    return NewItemMicrosoftGraphGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter, endDateTime, interval, startDateTime)
-}
-// MicrosoftGraphGetApplicableContentTypesForListWithListId provides operations to call the getApplicableContentTypesForList method.
-func (m *SiteItemRequestBuilder) MicrosoftGraphGetApplicableContentTypesForListWithListId(listId *string)(*ItemMicrosoftGraphGetApplicableContentTypesForListWithListIdRequestBuilder) {
-    return NewItemMicrosoftGraphGetApplicableContentTypesForListWithListIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, listId)
-}
-// MicrosoftGraphGetByPathWithPath provides operations to call the getByPath method.
-func (m *SiteItemRequestBuilder) MicrosoftGraphGetByPathWithPath(path *string)(*ItemMicrosoftGraphGetByPathWithPathRequestBuilder) {
-    return NewItemMicrosoftGraphGetByPathWithPathRequestBuilderInternal(m.pathParameters, m.requestAdapter, path)
 }
 // Onenote provides operations to manage the onenote property of the microsoft.graph.site entity.
 func (m *SiteItemRequestBuilder) Onenote()(*ItemOnenoteRequestBuilder) {

@@ -7,8 +7,6 @@ import (
 // PrintUsageByUser 
 type PrintUsageByUser struct {
     PrintUsage
-    // The UPN of the user represented by these statistics.
-    userPrincipalName *string
 }
 // NewPrintUsageByUser instantiates a new PrintUsageByUser and sets the default values.
 func NewPrintUsageByUser()(*PrintUsageByUser) {
@@ -40,7 +38,14 @@ func (m *PrintUsageByUser) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetUserPrincipalName gets the userPrincipalName property value. The UPN of the user represented by these statistics.
 func (m *PrintUsageByUser) GetUserPrincipalName()(*string) {
-    return m.userPrincipalName
+    val, err := m.GetBackingStore().Get("userPrincipalName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PrintUsageByUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *PrintUsageByUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetUserPrincipalName sets the userPrincipalName property value. The UPN of the user represented by these statistics.
 func (m *PrintUsageByUser) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    err := m.GetBackingStore().Set("userPrincipalName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PrintUsageByUserable 
+type PrintUsageByUserable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    PrintUsageable
+    GetUserPrincipalName()(*string)
+    SetUserPrincipalName(value *string)()
 }

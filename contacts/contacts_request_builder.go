@@ -74,6 +74,10 @@ func NewContactsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 func (m *ContactsRequestBuilder) Count()(*CountRequestBuilder) {
     return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// Delta provides operations to call the delta method.
+func (m *ContactsRequestBuilder) Delta()(*DeltaRequestBuilder) {
+    return NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Get get the list of organizational contacts for this organization.
 // [Find more info here]
 // 
@@ -96,21 +100,13 @@ func (m *ContactsRequestBuilder) Get(ctx context.Context, requestConfiguration *
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OrgContactCollectionResponseable), nil
 }
-// MicrosoftGraphDelta provides operations to call the delta method.
-func (m *ContactsRequestBuilder) MicrosoftGraphDelta()(*MicrosoftGraphDeltaRequestBuilder) {
-    return NewMicrosoftGraphDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GetAvailableExtensionProperties provides operations to call the getAvailableExtensionProperties method.
+func (m *ContactsRequestBuilder) GetAvailableExtensionProperties()(*GetAvailableExtensionPropertiesRequestBuilder) {
+    return NewGetAvailableExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphGetAvailableExtensionProperties provides operations to call the getAvailableExtensionProperties method.
-func (m *ContactsRequestBuilder) MicrosoftGraphGetAvailableExtensionProperties()(*MicrosoftGraphGetAvailableExtensionPropertiesRequestBuilder) {
-    return NewMicrosoftGraphGetAvailableExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphGetByIds provides operations to call the getByIds method.
-func (m *ContactsRequestBuilder) MicrosoftGraphGetByIds()(*MicrosoftGraphGetByIdsRequestBuilder) {
-    return NewMicrosoftGraphGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphValidateProperties provides operations to call the validateProperties method.
-func (m *ContactsRequestBuilder) MicrosoftGraphValidateProperties()(*MicrosoftGraphValidatePropertiesRequestBuilder) {
-    return NewMicrosoftGraphValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GetByIds provides operations to call the getByIds method.
+func (m *ContactsRequestBuilder) GetByIds()(*GetByIdsRequestBuilder) {
+    return NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post add new entity to contacts
 func (m *ContactsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OrgContactable, requestConfiguration *ContactsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OrgContactable, error) {
@@ -163,4 +159,8 @@ func (m *ContactsRequestBuilder) ToPostRequestInformation(ctx context.Context, b
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// ValidateProperties provides operations to call the validateProperties method.
+func (m *ContactsRequestBuilder) ValidateProperties()(*ValidatePropertiesRequestBuilder) {
+    return NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

@@ -73,9 +73,9 @@ func (m *ApplicationTemplateItemRequestBuilder) Get(ctx context.Context, request
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApplicationTemplateable), nil
 }
-// MicrosoftGraphInstantiate provides operations to call the instantiate method.
-func (m *ApplicationTemplateItemRequestBuilder) MicrosoftGraphInstantiate()(*ItemMicrosoftGraphInstantiateRequestBuilder) {
-    return NewItemMicrosoftGraphInstantiateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// Instantiate provides operations to call the instantiate method.
+func (m *ApplicationTemplateItemRequestBuilder) Instantiate()(*ItemInstantiateRequestBuilder) {
+    return NewItemInstantiateRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation retrieve the properties of an applicationTemplate object.
 func (m *ApplicationTemplateItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ApplicationTemplateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

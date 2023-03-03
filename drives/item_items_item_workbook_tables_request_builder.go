@@ -51,6 +51,10 @@ type ItemItemsItemWorkbookTablesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Add provides operations to call the add method.
+func (m *ItemItemsItemWorkbookTablesRequestBuilder) Add()(*ItemItemsItemWorkbookTablesAddRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesAddRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // NewItemItemsItemWorkbookTablesRequestBuilderInternal instantiates a new TablesRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookTablesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookTablesRequestBuilder) {
     m := &ItemItemsItemWorkbookTablesRequestBuilder{
@@ -70,14 +74,14 @@ func NewItemItemsItemWorkbookTablesRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookTablesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count provides operations to count the resources in the collection.
+// Count provides operations to call the count method.
 func (m *ItemItemsItemWorkbookTablesRequestBuilder) Count()(*ItemItemsItemWorkbookTablesCountRequestBuilder) {
     return NewItemItemsItemWorkbookTablesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of table objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/table-list?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/workbook-list-tables?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookTablesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,17 +100,9 @@ func (m *ItemItemsItemWorkbookTablesRequestBuilder) Get(ctx context.Context, req
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableCollectionResponseable), nil
 }
-// MicrosoftGraphAdd provides operations to call the add method.
-func (m *ItemItemsItemWorkbookTablesRequestBuilder) MicrosoftGraphAdd()(*ItemItemsItemWorkbookTablesMicrosoftGraphAddRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesMicrosoftGraphAddRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphCount provides operations to call the count method.
-func (m *ItemItemsItemWorkbookTablesRequestBuilder) MicrosoftGraphCount()(*ItemItemsItemWorkbookTablesMicrosoftGraphCountRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesMicrosoftGraphCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphItemAtWithIndex provides operations to call the itemAt method.
-func (m *ItemItemsItemWorkbookTablesRequestBuilder) MicrosoftGraphItemAtWithIndex(index *int32)(*ItemItemsItemWorkbookTablesMicrosoftGraphItemAtWithIndexRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesMicrosoftGraphItemAtWithIndexRequestBuilderInternal(m.pathParameters, m.requestAdapter, index)
+// ItemAtWithIndex provides operations to call the itemAt method.
+func (m *ItemItemsItemWorkbookTablesRequestBuilder) ItemAtWithIndex(index *int32)(*ItemItemsItemWorkbookTablesItemAtWithIndexRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemAtWithIndexRequestBuilderInternal(m.pathParameters, m.requestAdapter, index)
 }
 // Post create new navigation property to tables for drives
 func (m *ItemItemsItemWorkbookTablesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableable, requestConfiguration *ItemItemsItemWorkbookTablesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableable, error) {

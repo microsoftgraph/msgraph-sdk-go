@@ -7,8 +7,6 @@ import (
 // AccessReviewInactiveUsersQueryScope 
 type AccessReviewInactiveUsersQueryScope struct {
     AccessReviewQueryScope
-    // Defines the duration of inactivity. Inactivity is based on the last sign in date of the user compared to the access review instance's start date. If this property is not specified, it's assigned the default value PT0S.
-    inactiveDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
 }
 // NewAccessReviewInactiveUsersQueryScope instantiates a new AccessReviewInactiveUsersQueryScope and sets the default values.
 func NewAccessReviewInactiveUsersQueryScope()(*AccessReviewInactiveUsersQueryScope) {
@@ -40,7 +38,14 @@ func (m *AccessReviewInactiveUsersQueryScope) GetFieldDeserializers()(map[string
 }
 // GetInactiveDuration gets the inactiveDuration property value. Defines the duration of inactivity. Inactivity is based on the last sign in date of the user compared to the access review instance's start date. If this property is not specified, it's assigned the default value PT0S.
 func (m *AccessReviewInactiveUsersQueryScope) GetInactiveDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    return m.inactiveDuration
+    val, err := m.GetBackingStore().Get("inactiveDuration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AccessReviewInactiveUsersQueryScope) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *AccessReviewInactiveUsersQueryScope) Serialize(writer i878a80d2330e89d2
 }
 // SetInactiveDuration sets the inactiveDuration property value. Defines the duration of inactivity. Inactivity is based on the last sign in date of the user compared to the access review instance's start date. If this property is not specified, it's assigned the default value PT0S.
 func (m *AccessReviewInactiveUsersQueryScope) SetInactiveDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    m.inactiveDuration = value
+    err := m.GetBackingStore().Set("inactiveDuration", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AccessReviewInactiveUsersQueryScopeable 
+type AccessReviewInactiveUsersQueryScopeable interface {
+    AccessReviewQueryScopeable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetInactiveDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
+    SetInactiveDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
 }

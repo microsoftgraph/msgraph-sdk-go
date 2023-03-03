@@ -2,57 +2,19 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // PrintJobConfiguration 
 type PrintJobConfiguration struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Whether the printer should collate pages wehen printing multiple copies of a multi-page document.
-    collate *bool
-    // The color mode the printer should use to print the job. Valid values are described in the table below. Read-only.
-    colorMode *PrintColorMode
-    // The number of copies that should be printed. Read-only.
-    copies *int32
-    // The resolution to use when printing the job, expressed in dots per inch (DPI). Read-only.
-    dpi *int32
-    // The duplex mode the printer should use when printing the job. Valid values are described in the table below. Read-only.
-    duplexMode *PrintDuplexMode
-    // The orientation to use when feeding media into the printer. Valid values are described in the following table. Read-only.
-    feedOrientation *PrinterFeedOrientation
-    // Finishing processes to use when printing.
-    finishings []PrintFinishing
-    // The fitPdfToPage property
-    fitPdfToPage *bool
-    // The input bin (tray) to use when printing. See the printer's capabilities for a list of supported input bins.
-    inputBin *string
-    // The margin settings to use when printing.
-    margin PrintMarginable
-    // The media size to use when printing. Supports standard size names for ISO and ANSI media sizes.
-    mediaSize *string
-    // The mediaType property
-    mediaType *string
-    // The multipageLayout property
-    multipageLayout *PrintMultipageLayout
-    // The OdataType property
-    odataType *string
-    // The orientation property
-    orientation *PrintOrientation
-    // The outputBin property
-    outputBin *string
-    // The pageRanges property
-    pageRanges []IntegerRangeable
-    // The pagesPerSheet property
-    pagesPerSheet *int32
-    // The quality property
-    quality *PrintQuality
-    // The scaling property
-    scaling *PrintScaling
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewPrintJobConfiguration instantiates a new printJobConfiguration and sets the default values.
 func NewPrintJobConfiguration()(*PrintJobConfiguration) {
     m := &PrintJobConfiguration{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -62,31 +24,85 @@ func CreatePrintJobConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrintJobConfiguration) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *PrintJobConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetCollate gets the collate property value. Whether the printer should collate pages wehen printing multiple copies of a multi-page document.
 func (m *PrintJobConfiguration) GetCollate()(*bool) {
-    return m.collate
+    val, err := m.GetBackingStore().Get("collate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetColorMode gets the colorMode property value. The color mode the printer should use to print the job. Valid values are described in the table below. Read-only.
 func (m *PrintJobConfiguration) GetColorMode()(*PrintColorMode) {
-    return m.colorMode
+    val, err := m.GetBackingStore().Get("colorMode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*PrintColorMode)
+    }
+    return nil
 }
 // GetCopies gets the copies property value. The number of copies that should be printed. Read-only.
 func (m *PrintJobConfiguration) GetCopies()(*int32) {
-    return m.copies
+    val, err := m.GetBackingStore().Get("copies")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetDpi gets the dpi property value. The resolution to use when printing the job, expressed in dots per inch (DPI). Read-only.
 func (m *PrintJobConfiguration) GetDpi()(*int32) {
-    return m.dpi
+    val, err := m.GetBackingStore().Get("dpi")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetDuplexMode gets the duplexMode property value. The duplex mode the printer should use when printing the job. Valid values are described in the table below. Read-only.
 func (m *PrintJobConfiguration) GetDuplexMode()(*PrintDuplexMode) {
-    return m.duplexMode
+    val, err := m.GetBackingStore().Get("duplexMode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*PrintDuplexMode)
+    }
+    return nil
 }
 // GetFeedOrientation gets the feedOrientation property value. The orientation to use when feeding media into the printer. Valid values are described in the following table. Read-only.
 func (m *PrintJobConfiguration) GetFeedOrientation()(*PrinterFeedOrientation) {
-    return m.feedOrientation
+    val, err := m.GetBackingStore().Get("feedOrientation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*PrinterFeedOrientation)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -303,59 +319,157 @@ func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetFinishings gets the finishings property value. Finishing processes to use when printing.
 func (m *PrintJobConfiguration) GetFinishings()([]PrintFinishing) {
-    return m.finishings
+    val, err := m.GetBackingStore().Get("finishings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrintFinishing)
+    }
+    return nil
 }
 // GetFitPdfToPage gets the fitPdfToPage property value. The fitPdfToPage property
 func (m *PrintJobConfiguration) GetFitPdfToPage()(*bool) {
-    return m.fitPdfToPage
+    val, err := m.GetBackingStore().Get("fitPdfToPage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetInputBin gets the inputBin property value. The input bin (tray) to use when printing. See the printer's capabilities for a list of supported input bins.
 func (m *PrintJobConfiguration) GetInputBin()(*string) {
-    return m.inputBin
+    val, err := m.GetBackingStore().Get("inputBin")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetMargin gets the margin property value. The margin settings to use when printing.
 func (m *PrintJobConfiguration) GetMargin()(PrintMarginable) {
-    return m.margin
+    val, err := m.GetBackingStore().Get("margin")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PrintMarginable)
+    }
+    return nil
 }
 // GetMediaSize gets the mediaSize property value. The media size to use when printing. Supports standard size names for ISO and ANSI media sizes.
 func (m *PrintJobConfiguration) GetMediaSize()(*string) {
-    return m.mediaSize
+    val, err := m.GetBackingStore().Get("mediaSize")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetMediaType gets the mediaType property value. The mediaType property
 func (m *PrintJobConfiguration) GetMediaType()(*string) {
-    return m.mediaType
+    val, err := m.GetBackingStore().Get("mediaType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetMultipageLayout gets the multipageLayout property value. The multipageLayout property
 func (m *PrintJobConfiguration) GetMultipageLayout()(*PrintMultipageLayout) {
-    return m.multipageLayout
+    val, err := m.GetBackingStore().Get("multipageLayout")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*PrintMultipageLayout)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *PrintJobConfiguration) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOrientation gets the orientation property value. The orientation property
 func (m *PrintJobConfiguration) GetOrientation()(*PrintOrientation) {
-    return m.orientation
+    val, err := m.GetBackingStore().Get("orientation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*PrintOrientation)
+    }
+    return nil
 }
 // GetOutputBin gets the outputBin property value. The outputBin property
 func (m *PrintJobConfiguration) GetOutputBin()(*string) {
-    return m.outputBin
+    val, err := m.GetBackingStore().Get("outputBin")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPageRanges gets the pageRanges property value. The pageRanges property
 func (m *PrintJobConfiguration) GetPageRanges()([]IntegerRangeable) {
-    return m.pageRanges
+    val, err := m.GetBackingStore().Get("pageRanges")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IntegerRangeable)
+    }
+    return nil
 }
 // GetPagesPerSheet gets the pagesPerSheet property value. The pagesPerSheet property
 func (m *PrintJobConfiguration) GetPagesPerSheet()(*int32) {
-    return m.pagesPerSheet
+    val, err := m.GetBackingStore().Get("pagesPerSheet")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetQuality gets the quality property value. The quality property
 func (m *PrintJobConfiguration) GetQuality()(*PrintQuality) {
-    return m.quality
+    val, err := m.GetBackingStore().Get("quality")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*PrintQuality)
+    }
+    return nil
 }
 // GetScaling gets the scaling property value. The scaling property
 func (m *PrintJobConfiguration) GetScaling()(*PrintScaling) {
-    return m.scaling
+    val, err := m.GetBackingStore().Get("scaling")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*PrintScaling)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PrintJobConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -500,85 +614,200 @@ func (m *PrintJobConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrintJobConfiguration) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *PrintJobConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetCollate sets the collate property value. Whether the printer should collate pages wehen printing multiple copies of a multi-page document.
 func (m *PrintJobConfiguration) SetCollate(value *bool)() {
-    m.collate = value
+    err := m.GetBackingStore().Set("collate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetColorMode sets the colorMode property value. The color mode the printer should use to print the job. Valid values are described in the table below. Read-only.
 func (m *PrintJobConfiguration) SetColorMode(value *PrintColorMode)() {
-    m.colorMode = value
+    err := m.GetBackingStore().Set("colorMode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCopies sets the copies property value. The number of copies that should be printed. Read-only.
 func (m *PrintJobConfiguration) SetCopies(value *int32)() {
-    m.copies = value
+    err := m.GetBackingStore().Set("copies", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDpi sets the dpi property value. The resolution to use when printing the job, expressed in dots per inch (DPI). Read-only.
 func (m *PrintJobConfiguration) SetDpi(value *int32)() {
-    m.dpi = value
+    err := m.GetBackingStore().Set("dpi", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDuplexMode sets the duplexMode property value. The duplex mode the printer should use when printing the job. Valid values are described in the table below. Read-only.
 func (m *PrintJobConfiguration) SetDuplexMode(value *PrintDuplexMode)() {
-    m.duplexMode = value
+    err := m.GetBackingStore().Set("duplexMode", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFeedOrientation sets the feedOrientation property value. The orientation to use when feeding media into the printer. Valid values are described in the following table. Read-only.
 func (m *PrintJobConfiguration) SetFeedOrientation(value *PrinterFeedOrientation)() {
-    m.feedOrientation = value
+    err := m.GetBackingStore().Set("feedOrientation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFinishings sets the finishings property value. Finishing processes to use when printing.
 func (m *PrintJobConfiguration) SetFinishings(value []PrintFinishing)() {
-    m.finishings = value
+    err := m.GetBackingStore().Set("finishings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFitPdfToPage sets the fitPdfToPage property value. The fitPdfToPage property
 func (m *PrintJobConfiguration) SetFitPdfToPage(value *bool)() {
-    m.fitPdfToPage = value
+    err := m.GetBackingStore().Set("fitPdfToPage", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInputBin sets the inputBin property value. The input bin (tray) to use when printing. See the printer's capabilities for a list of supported input bins.
 func (m *PrintJobConfiguration) SetInputBin(value *string)() {
-    m.inputBin = value
+    err := m.GetBackingStore().Set("inputBin", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMargin sets the margin property value. The margin settings to use when printing.
 func (m *PrintJobConfiguration) SetMargin(value PrintMarginable)() {
-    m.margin = value
+    err := m.GetBackingStore().Set("margin", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMediaSize sets the mediaSize property value. The media size to use when printing. Supports standard size names for ISO and ANSI media sizes.
 func (m *PrintJobConfiguration) SetMediaSize(value *string)() {
-    m.mediaSize = value
+    err := m.GetBackingStore().Set("mediaSize", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMediaType sets the mediaType property value. The mediaType property
 func (m *PrintJobConfiguration) SetMediaType(value *string)() {
-    m.mediaType = value
+    err := m.GetBackingStore().Set("mediaType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMultipageLayout sets the multipageLayout property value. The multipageLayout property
 func (m *PrintJobConfiguration) SetMultipageLayout(value *PrintMultipageLayout)() {
-    m.multipageLayout = value
+    err := m.GetBackingStore().Set("multipageLayout", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *PrintJobConfiguration) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOrientation sets the orientation property value. The orientation property
 func (m *PrintJobConfiguration) SetOrientation(value *PrintOrientation)() {
-    m.orientation = value
+    err := m.GetBackingStore().Set("orientation", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOutputBin sets the outputBin property value. The outputBin property
 func (m *PrintJobConfiguration) SetOutputBin(value *string)() {
-    m.outputBin = value
+    err := m.GetBackingStore().Set("outputBin", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPageRanges sets the pageRanges property value. The pageRanges property
 func (m *PrintJobConfiguration) SetPageRanges(value []IntegerRangeable)() {
-    m.pageRanges = value
+    err := m.GetBackingStore().Set("pageRanges", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPagesPerSheet sets the pagesPerSheet property value. The pagesPerSheet property
 func (m *PrintJobConfiguration) SetPagesPerSheet(value *int32)() {
-    m.pagesPerSheet = value
+    err := m.GetBackingStore().Set("pagesPerSheet", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetQuality sets the quality property value. The quality property
 func (m *PrintJobConfiguration) SetQuality(value *PrintQuality)() {
-    m.quality = value
+    err := m.GetBackingStore().Set("quality", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetScaling sets the scaling property value. The scaling property
 func (m *PrintJobConfiguration) SetScaling(value *PrintScaling)() {
-    m.scaling = value
+    err := m.GetBackingStore().Set("scaling", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PrintJobConfigurationable 
+type PrintJobConfigurationable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetCollate()(*bool)
+    GetColorMode()(*PrintColorMode)
+    GetCopies()(*int32)
+    GetDpi()(*int32)
+    GetDuplexMode()(*PrintDuplexMode)
+    GetFeedOrientation()(*PrinterFeedOrientation)
+    GetFinishings()([]PrintFinishing)
+    GetFitPdfToPage()(*bool)
+    GetInputBin()(*string)
+    GetMargin()(PrintMarginable)
+    GetMediaSize()(*string)
+    GetMediaType()(*string)
+    GetMultipageLayout()(*PrintMultipageLayout)
+    GetOdataType()(*string)
+    GetOrientation()(*PrintOrientation)
+    GetOutputBin()(*string)
+    GetPageRanges()([]IntegerRangeable)
+    GetPagesPerSheet()(*int32)
+    GetQuality()(*PrintQuality)
+    GetScaling()(*PrintScaling)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetCollate(value *bool)()
+    SetColorMode(value *PrintColorMode)()
+    SetCopies(value *int32)()
+    SetDpi(value *int32)()
+    SetDuplexMode(value *PrintDuplexMode)()
+    SetFeedOrientation(value *PrinterFeedOrientation)()
+    SetFinishings(value []PrintFinishing)()
+    SetFitPdfToPage(value *bool)()
+    SetInputBin(value *string)()
+    SetMargin(value PrintMarginable)()
+    SetMediaSize(value *string)()
+    SetMediaType(value *string)()
+    SetMultipageLayout(value *PrintMultipageLayout)()
+    SetOdataType(value *string)()
+    SetOrientation(value *PrintOrientation)()
+    SetOutputBin(value *string)()
+    SetPageRanges(value []IntegerRangeable)()
+    SetPagesPerSheet(value *int32)()
+    SetQuality(value *PrintQuality)()
+    SetScaling(value *PrintScaling)()
 }

@@ -96,10 +96,6 @@ func (m *CasesEdiscoveryCasesItemTagsRequestBuilder) Get(ctx context.Context, re
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewTagCollectionResponseable), nil
 }
-// MicrosoftGraphSecurityAsHierarchy provides operations to call the asHierarchy method.
-func (m *CasesEdiscoveryCasesItemTagsRequestBuilder) MicrosoftGraphSecurityAsHierarchy()(*CasesEdiscoveryCasesItemTagsMicrosoftGraphSecurityAsHierarchyRequestBuilder) {
-    return NewCasesEdiscoveryCasesItemTagsMicrosoftGraphSecurityAsHierarchyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Post create a new ediscoveryReviewTag object.
 // [Find more info here]
 // 
@@ -121,6 +117,10 @@ func (m *CasesEdiscoveryCasesItemTagsRequestBuilder) Post(ctx context.Context, b
         return nil, nil
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewTagable), nil
+}
+// SecurityAsHierarchy provides operations to call the asHierarchy method.
+func (m *CasesEdiscoveryCasesItemTagsRequestBuilder) SecurityAsHierarchy()(*CasesEdiscoveryCasesItemTagsSecurityAsHierarchyRequestBuilder) {
+    return NewCasesEdiscoveryCasesItemTagsSecurityAsHierarchyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation get a list of eDiscoveryReviewTag objects and their properties.
 func (m *CasesEdiscoveryCasesItemTagsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemTagsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -100,10 +100,6 @@ func (m *ItemInstalledAppsTeamsAppInstallationItemRequestBuilder) Get(ctx contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsAppInstallationable), nil
 }
-// MicrosoftGraphUpgrade provides operations to call the upgrade method.
-func (m *ItemInstalledAppsTeamsAppInstallationItemRequestBuilder) MicrosoftGraphUpgrade()(*ItemInstalledAppsItemMicrosoftGraphUpgradeRequestBuilder) {
-    return NewItemInstalledAppsItemMicrosoftGraphUpgradeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Patch update the navigation property installedApps in teams
 func (m *ItemInstalledAppsTeamsAppInstallationItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsAppInstallationable, requestConfiguration *ItemInstalledAppsTeamsAppInstallationItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsAppInstallationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -175,4 +171,8 @@ func (m *ItemInstalledAppsTeamsAppInstallationItemRequestBuilder) ToPatchRequest
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// Upgrade provides operations to call the upgrade method.
+func (m *ItemInstalledAppsTeamsAppInstallationItemRequestBuilder) Upgrade()(*ItemInstalledAppsItemUpgradeRequestBuilder) {
+    return NewItemInstalledAppsItemUpgradeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

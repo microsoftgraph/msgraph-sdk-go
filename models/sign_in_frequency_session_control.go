@@ -7,14 +7,8 @@ import (
 // SignInFrequencySessionControl 
 type SignInFrequencySessionControl struct {
     ConditionalAccessSessionControl
-    // The possible values are primaryAndSecondaryAuthentication, secondaryAuthentication, unknownFutureValue.
-    authenticationType *SignInFrequencyAuthenticationType
-    // The possible values are timeBased, everyTime, unknownFutureValue.
-    frequencyInterval *SignInFrequencyInterval
     // Possible values are: days, hours.
-    typeEscaped *SigninFrequencyType
-    // The number of days or hours.
-    value *int32
+    TypeEscaped *SigninFrequencyType
 }
 // NewSignInFrequencySessionControl instantiates a new SignInFrequencySessionControl and sets the default values.
 func NewSignInFrequencySessionControl()(*SignInFrequencySessionControl) {
@@ -31,7 +25,14 @@ func CreateSignInFrequencySessionControlFromDiscriminatorValue(parseNode i878a80
 }
 // GetAuthenticationType gets the authenticationType property value. The possible values are primaryAndSecondaryAuthentication, secondaryAuthentication, unknownFutureValue.
 func (m *SignInFrequencySessionControl) GetAuthenticationType()(*SignInFrequencyAuthenticationType) {
-    return m.authenticationType
+    val, err := m.GetBackingStore().Get("authenticationType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*SignInFrequencyAuthenticationType)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SignInFrequencySessionControl) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -80,15 +81,36 @@ func (m *SignInFrequencySessionControl) GetFieldDeserializers()(map[string]func(
 }
 // GetFrequencyInterval gets the frequencyInterval property value. The possible values are timeBased, everyTime, unknownFutureValue.
 func (m *SignInFrequencySessionControl) GetFrequencyInterval()(*SignInFrequencyInterval) {
-    return m.frequencyInterval
+    val, err := m.GetBackingStore().Get("frequencyInterval")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*SignInFrequencyInterval)
+    }
+    return nil
 }
 // GetType gets the type property value. Possible values are: days, hours.
 func (m *SignInFrequencySessionControl) GetType()(*SigninFrequencyType) {
-    return m.typeEscaped
+    val, err := m.GetBackingStore().Get("typeEscaped")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*SigninFrequencyType)
+    }
+    return nil
 }
 // GetValue gets the value property value. The number of days or hours.
 func (m *SignInFrequencySessionControl) GetValue()(*int32) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SignInFrequencySessionControl) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -127,17 +149,42 @@ func (m *SignInFrequencySessionControl) Serialize(writer i878a80d2330e89d2689638
 }
 // SetAuthenticationType sets the authenticationType property value. The possible values are primaryAndSecondaryAuthentication, secondaryAuthentication, unknownFutureValue.
 func (m *SignInFrequencySessionControl) SetAuthenticationType(value *SignInFrequencyAuthenticationType)() {
-    m.authenticationType = value
+    err := m.GetBackingStore().Set("authenticationType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFrequencyInterval sets the frequencyInterval property value. The possible values are timeBased, everyTime, unknownFutureValue.
 func (m *SignInFrequencySessionControl) SetFrequencyInterval(value *SignInFrequencyInterval)() {
-    m.frequencyInterval = value
+    err := m.GetBackingStore().Set("frequencyInterval", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetType sets the type property value. Possible values are: days, hours.
 func (m *SignInFrequencySessionControl) SetType(value *SigninFrequencyType)() {
-    m.typeEscaped = value
+    err := m.GetBackingStore().Set("typeEscaped", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetValue sets the value property value. The number of days or hours.
 func (m *SignInFrequencySessionControl) SetValue(value *int32)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SignInFrequencySessionControlable 
+type SignInFrequencySessionControlable interface {
+    ConditionalAccessSessionControlable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAuthenticationType()(*SignInFrequencyAuthenticationType)
+    GetFrequencyInterval()(*SignInFrequencyInterval)
+    GetType()(*SigninFrequencyType)
+    GetValue()(*int32)
+    SetAuthenticationType(value *SignInFrequencyAuthenticationType)()
+    SetFrequencyInterval(value *SignInFrequencyInterval)()
+    SetType(value *SigninFrequencyType)()
+    SetValue(value *int32)()
 }

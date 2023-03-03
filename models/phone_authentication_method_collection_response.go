@@ -7,8 +7,6 @@ import (
 // PhoneAuthenticationMethodCollectionResponse 
 type PhoneAuthenticationMethodCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []PhoneAuthenticationMethodable
 }
 // NewPhoneAuthenticationMethodCollectionResponse instantiates a new PhoneAuthenticationMethodCollectionResponse and sets the default values.
 func NewPhoneAuthenticationMethodCollectionResponse()(*PhoneAuthenticationMethodCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *PhoneAuthenticationMethodCollectionResponse) GetFieldDeserializers()(ma
 }
 // GetValue gets the value property value. The value property
 func (m *PhoneAuthenticationMethodCollectionResponse) GetValue()([]PhoneAuthenticationMethodable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PhoneAuthenticationMethodable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PhoneAuthenticationMethodCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *PhoneAuthenticationMethodCollectionResponse) Serialize(writer i878a80d2
 }
 // SetValue sets the value property value. The value property
 func (m *PhoneAuthenticationMethodCollectionResponse) SetValue(value []PhoneAuthenticationMethodable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PhoneAuthenticationMethodCollectionResponseable 
+type PhoneAuthenticationMethodCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]PhoneAuthenticationMethodable)
+    SetValue(value []PhoneAuthenticationMethodable)()
 }

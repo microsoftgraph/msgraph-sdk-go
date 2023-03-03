@@ -160,17 +160,9 @@ func (m *BookingBusinessesBookingBusinessItemRequestBuilder) Get(ctx context.Con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingBusinessable), nil
 }
-// MicrosoftGraphGetStaffAvailability provides operations to call the getStaffAvailability method.
-func (m *BookingBusinessesBookingBusinessItemRequestBuilder) MicrosoftGraphGetStaffAvailability()(*BookingBusinessesItemMicrosoftGraphGetStaffAvailabilityRequestBuilder) {
-    return NewBookingBusinessesItemMicrosoftGraphGetStaffAvailabilityRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphPublish provides operations to call the publish method.
-func (m *BookingBusinessesBookingBusinessItemRequestBuilder) MicrosoftGraphPublish()(*BookingBusinessesItemMicrosoftGraphPublishRequestBuilder) {
-    return NewBookingBusinessesItemMicrosoftGraphPublishRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphUnpublish provides operations to call the unpublish method.
-func (m *BookingBusinessesBookingBusinessItemRequestBuilder) MicrosoftGraphUnpublish()(*BookingBusinessesItemMicrosoftGraphUnpublishRequestBuilder) {
-    return NewBookingBusinessesItemMicrosoftGraphUnpublishRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GetStaffAvailability provides operations to call the getStaffAvailability method.
+func (m *BookingBusinessesBookingBusinessItemRequestBuilder) GetStaffAvailability()(*BookingBusinessesItemGetStaffAvailabilityRequestBuilder) {
+    return NewBookingBusinessesItemGetStaffAvailabilityRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property bookingBusinesses in solutions
 func (m *BookingBusinessesBookingBusinessItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingBusinessable, requestConfiguration *BookingBusinessesBookingBusinessItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingBusinessable, error) {
@@ -190,6 +182,10 @@ func (m *BookingBusinessesBookingBusinessItemRequestBuilder) Patch(ctx context.C
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingBusinessable), nil
+}
+// Publish provides operations to call the publish method.
+func (m *BookingBusinessesBookingBusinessItemRequestBuilder) Publish()(*BookingBusinessesItemPublishRequestBuilder) {
+    return NewBookingBusinessesItemPublishRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Services provides operations to manage the services property of the microsoft.graph.bookingBusiness entity.
 func (m *BookingBusinessesBookingBusinessItemRequestBuilder) Services()(*BookingBusinessesItemServicesRequestBuilder) {
@@ -265,4 +261,8 @@ func (m *BookingBusinessesBookingBusinessItemRequestBuilder) ToPatchRequestInfor
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// Unpublish provides operations to call the unpublish method.
+func (m *BookingBusinessesBookingBusinessItemRequestBuilder) Unpublish()(*BookingBusinessesItemUnpublishRequestBuilder) {
+    return NewBookingBusinessesItemUnpublishRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

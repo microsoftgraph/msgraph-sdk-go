@@ -112,33 +112,25 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsWorkbookChartItemRequestBuilde
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartable), nil
 }
+// Image provides operations to call the image method.
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsWorkbookChartItemRequestBuilder) Image()(*ItemItemsItemWorkbookWorksheetsItemChartsItemImageRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemChartsItemImageRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// ImageWithWidth provides operations to call the image method.
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsWorkbookChartItemRequestBuilder) ImageWithWidth(width *int32)(*ItemItemsItemWorkbookWorksheetsItemChartsItemImageWithWidthRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemChartsItemImageWithWidthRequestBuilderInternal(m.pathParameters, m.requestAdapter, width)
+}
+// ImageWithWidthWithHeight provides operations to call the image method.
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsWorkbookChartItemRequestBuilder) ImageWithWidthWithHeight(height *int32, width *int32)(*ItemItemsItemWorkbookWorksheetsItemChartsItemImageWithWidthWithHeightRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemChartsItemImageWithWidthWithHeightRequestBuilderInternal(m.pathParameters, m.requestAdapter, height, width)
+}
+// ImageWithWidthWithHeightWithFittingMode provides operations to call the image method.
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsWorkbookChartItemRequestBuilder) ImageWithWidthWithHeightWithFittingMode(fittingMode *string, height *int32, width *int32)(*ItemItemsItemWorkbookWorksheetsItemChartsItemImageWithWidthWithHeightWithFittingModeRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemChartsItemImageWithWidthWithHeightWithFittingModeRequestBuilderInternal(m.pathParameters, m.requestAdapter, fittingMode, height, width)
+}
 // Legend provides operations to manage the legend property of the microsoft.graph.workbookChart entity.
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsWorkbookChartItemRequestBuilder) Legend()(*ItemItemsItemWorkbookWorksheetsItemChartsItemLegendRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemChartsItemLegendRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphImage provides operations to call the image method.
-func (m *ItemItemsItemWorkbookWorksheetsItemChartsWorkbookChartItemRequestBuilder) MicrosoftGraphImage()(*ItemItemsItemWorkbookWorksheetsItemChartsItemMicrosoftGraphImageRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemChartsItemMicrosoftGraphImageRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphImageWithWidth provides operations to call the image method.
-func (m *ItemItemsItemWorkbookWorksheetsItemChartsWorkbookChartItemRequestBuilder) MicrosoftGraphImageWithWidth(width *int32)(*ItemItemsItemWorkbookWorksheetsItemChartsItemMicrosoftGraphImageWithWidthRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemChartsItemMicrosoftGraphImageWithWidthRequestBuilderInternal(m.pathParameters, m.requestAdapter, width)
-}
-// MicrosoftGraphImageWithWidthWithHeight provides operations to call the image method.
-func (m *ItemItemsItemWorkbookWorksheetsItemChartsWorkbookChartItemRequestBuilder) MicrosoftGraphImageWithWidthWithHeight(height *int32, width *int32)(*ItemItemsItemWorkbookWorksheetsItemChartsItemMicrosoftGraphImageWithWidthWithHeightRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemChartsItemMicrosoftGraphImageWithWidthWithHeightRequestBuilderInternal(m.pathParameters, m.requestAdapter, height, width)
-}
-// MicrosoftGraphImageWithWidthWithHeightWithFittingMode provides operations to call the image method.
-func (m *ItemItemsItemWorkbookWorksheetsItemChartsWorkbookChartItemRequestBuilder) MicrosoftGraphImageWithWidthWithHeightWithFittingMode(fittingMode *string, height *int32, width *int32)(*ItemItemsItemWorkbookWorksheetsItemChartsItemMicrosoftGraphImageWithWidthWithHeightWithFittingModeRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemChartsItemMicrosoftGraphImageWithWidthWithHeightWithFittingModeRequestBuilderInternal(m.pathParameters, m.requestAdapter, fittingMode, height, width)
-}
-// MicrosoftGraphSetData provides operations to call the setData method.
-func (m *ItemItemsItemWorkbookWorksheetsItemChartsWorkbookChartItemRequestBuilder) MicrosoftGraphSetData()(*ItemItemsItemWorkbookWorksheetsItemChartsItemMicrosoftGraphSetDataRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemChartsItemMicrosoftGraphSetDataRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphSetPosition provides operations to call the setPosition method.
-func (m *ItemItemsItemWorkbookWorksheetsItemChartsWorkbookChartItemRequestBuilder) MicrosoftGraphSetPosition()(*ItemItemsItemWorkbookWorksheetsItemChartsItemMicrosoftGraphSetPositionRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemChartsItemMicrosoftGraphSetPositionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property charts in drives
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsWorkbookChartItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsWorkbookChartItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartable, error) {
@@ -173,6 +165,14 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsWorkbookChartItemRequestBuilde
         urlTplParams["workbookChartSeries%2Did"] = id
     }
     return NewItemItemsItemWorkbookWorksheetsItemChartsItemSeriesWorkbookChartSeriesItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+}
+// SetData provides operations to call the setData method.
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsWorkbookChartItemRequestBuilder) SetData()(*ItemItemsItemWorkbookWorksheetsItemChartsItemSetDataRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemChartsItemSetDataRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// SetPosition provides operations to call the setPosition method.
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsWorkbookChartItemRequestBuilder) SetPosition()(*ItemItemsItemWorkbookWorksheetsItemChartsItemSetPositionRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemChartsItemSetPositionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Title provides operations to manage the title property of the microsoft.graph.workbookChart entity.
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsWorkbookChartItemRequestBuilder) Title()(*ItemItemsItemWorkbookWorksheetsItemChartsItemTitleRequestBuilder) {

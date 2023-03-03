@@ -7,8 +7,6 @@ import (
 // CertificateAuthorityCollectionResponse 
 type CertificateAuthorityCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []CertificateAuthorityable
 }
 // NewCertificateAuthorityCollectionResponse instantiates a new CertificateAuthorityCollectionResponse and sets the default values.
 func NewCertificateAuthorityCollectionResponse()(*CertificateAuthorityCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *CertificateAuthorityCollectionResponse) GetFieldDeserializers()(map[str
 }
 // GetValue gets the value property value. The value property
 func (m *CertificateAuthorityCollectionResponse) GetValue()([]CertificateAuthorityable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CertificateAuthorityable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CertificateAuthorityCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *CertificateAuthorityCollectionResponse) Serialize(writer i878a80d2330e8
 }
 // SetValue sets the value property value. The value property
 func (m *CertificateAuthorityCollectionResponse) SetValue(value []CertificateAuthorityable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CertificateAuthorityCollectionResponseable 
+type CertificateAuthorityCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]CertificateAuthorityable)
+    SetValue(value []CertificateAuthorityable)()
 }

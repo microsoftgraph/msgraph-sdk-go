@@ -7,8 +7,6 @@ import (
 // ManagedAppProtectionCollectionResponse 
 type ManagedAppProtectionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ManagedAppProtectionable
 }
 // NewManagedAppProtectionCollectionResponse instantiates a new ManagedAppProtectionCollectionResponse and sets the default values.
 func NewManagedAppProtectionCollectionResponse()(*ManagedAppProtectionCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ManagedAppProtectionCollectionResponse) GetFieldDeserializers()(map[str
 }
 // GetValue gets the value property value. The value property
 func (m *ManagedAppProtectionCollectionResponse) GetValue()([]ManagedAppProtectionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagedAppProtectionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ManagedAppProtectionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ManagedAppProtectionCollectionResponse) Serialize(writer i878a80d2330e8
 }
 // SetValue sets the value property value. The value property
 func (m *ManagedAppProtectionCollectionResponse) SetValue(value []ManagedAppProtectionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ManagedAppProtectionCollectionResponseable 
+type ManagedAppProtectionCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ManagedAppProtectionable)
+    SetValue(value []ManagedAppProtectionable)()
 }

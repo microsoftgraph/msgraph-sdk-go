@@ -33,7 +33,6 @@ import (
     i638650494f9db477daff56d31ff923f5c100f72df0257ed7fa5c222cb1a77a94 "github.com/microsoftgraph/msgraph-sdk-go/deviceappmanagement"
     i663c30678b300c2c4b619c4964b4326e471e4da61a44d7c39f752349da7a468e "github.com/microsoftgraph/msgraph-sdk-go/identityprotection"
     i6bf2d83eea06710580ad0d54b886ac4e14cbab0d1d84937f340f02b99f8f5738 "github.com/microsoftgraph/msgraph-sdk-go/reports"
-    i71117da372286e863c042a526ec1361696ab14b838a5b77db5bc54386d436543 "github.com/microsoftgraph/msgraph-sdk-go/me"
     i738daeb889f22c1e163aee5a37a094b55b1d815dc76d4802d64e4e1b2e44206c "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement"
     i79ca23a9ac0659e1330dd29e049fe157787d5af6695ead2ff8263396db68d027 "github.com/microsoftgraph/msgraph-sdk-go/identity"
     i7c9d1b36ac198368c1d8bed014b43e2a518b170ee45bf02c8bbe64544a50539a "github.com/microsoftgraph/msgraph-sdk-go/admin"
@@ -65,6 +64,7 @@ import (
     ie05ac24b652f7d895cca374316c093c4ca40dd2df0f1518c465233d6432b1ef9 "github.com/microsoftgraph/msgraph-sdk-go/teamwork"
     ie3631868038c44f490dbc03525ac7249d0523c29cc45cbb25b2aebcf470d6c0c "github.com/microsoftgraph/msgraph-sdk-go/contracts"
     ie66b913c1bc1c536bc8db5d185910e9318f621374e016f95e36e9d59b7127f63 "github.com/microsoftgraph/msgraph-sdk-go/planner"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
     ieaa2790c8b7fa361674e69e4a385e279c8c641adf79d86e5b0ca566591a507e8 "github.com/microsoftgraph/msgraph-sdk-go/agreements"
     iefc72d8a17962d4db125c50866617eaa15d662c6e3fb13735d477380dcc0dbe3 "github.com/microsoftgraph/msgraph-sdk-go/drives"
     if398f5c2f1cb53106e045240edd469d82f1854899fd95cfdf8f559b19375750c "github.com/microsoftgraph/msgraph-sdk-go/branding"
@@ -233,7 +233,7 @@ func (m *GraphBaseServiceClient) ConnectionsById(id string)(*icabdee72951e77325f
     return icabdee72951e77325f237b36d388a199c87e65f67652b6bb85723aba847d7e83.NewExternalConnectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 // NewGraphBaseServiceClient instantiates a new GraphBaseServiceClient and sets the default values.
-func NewGraphBaseServiceClient(requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GraphBaseServiceClient) {
+func NewGraphBaseServiceClient(requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactory)(*GraphBaseServiceClient) {
     m := &GraphBaseServiceClient{
     }
     m.pathParameters = make(map[string]string);
@@ -249,6 +249,7 @@ func NewGraphBaseServiceClient(requestAdapter i2ae4187f7daee263371cb1c977df63981
         m.requestAdapter.SetBaseUrl("https://graph.microsoft.com/v1.0")
     }
     m.pathParameters["baseurl"] = m.requestAdapter.GetBaseUrl()
+    m.requestAdapter.EnableBackingStore(backingStore);
     return m
 }
 // Contacts provides operations to manage the collection of orgContact entities.
@@ -542,10 +543,6 @@ func (m *GraphBaseServiceClient) LocalizationsById(id string)(*i61686672307beee8
     }
     return i61686672307beee899fe5a14188df42982da47730f55a14800b102cd10ab2d72.NewOrganizationalBrandingLocalizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
-// Me provides operations to manage the user singleton.
-func (m *GraphBaseServiceClient) Me()(*i71117da372286e863c042a526ec1361696ab14b838a5b77db5bc54386d436543.MeRequestBuilder) {
-    return i71117da372286e863c042a526ec1361696ab14b838a5b77db5bc54386d436543.NewMeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Oauth2PermissionGrants provides operations to manage the collection of oAuth2PermissionGrant entities.
 func (m *GraphBaseServiceClient) Oauth2PermissionGrants()(*i86cada4d4a5f2f8a9d1e7a85eacd70a661ea7b20d2737008c0719e95b5be3e16.Oauth2PermissionGrantsRequestBuilder) {
     return i86cada4d4a5f2f8a9d1e7a85eacd70a661ea7b20d2737008c0719e95b5be3e16.NewOauth2PermissionGrantsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
@@ -591,7 +588,7 @@ func (m *GraphBaseServiceClient) PermissionGrantsById(id string)(*i1a1369b1521a8
     }
     return i1a1369b1521a8ac4885166fd68eae4247248a891006fea464d2eea2a271b2cdb.NewResourceSpecificPermissionGrantItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
-// Places provides operations to manage the collection of place entities.
+// Places the places property
 func (m *GraphBaseServiceClient) Places()(*ia3e0f7c2d21d5c73ecb8a7552177d0fe444ae0522290dd1c4b5559e449b118af.PlacesRequestBuilder) {
     return ia3e0f7c2d21d5c73ecb8a7552177d0fe444ae0522290dd1c4b5559e449b118af.NewPlacesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

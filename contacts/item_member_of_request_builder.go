@@ -89,29 +89,9 @@ func (m *ItemMemberOfRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
 }
-// MicrosoftGraphApplication casts the previous resource to application.
-func (m *ItemMemberOfRequestBuilder) MicrosoftGraphApplication()(*ItemMemberOfMicrosoftGraphApplicationRequestBuilder) {
-    return NewItemMemberOfMicrosoftGraphApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphDevice casts the previous resource to device.
-func (m *ItemMemberOfRequestBuilder) MicrosoftGraphDevice()(*ItemMemberOfMicrosoftGraphDeviceRequestBuilder) {
-    return NewItemMemberOfMicrosoftGraphDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphGroup casts the previous resource to group.
-func (m *ItemMemberOfRequestBuilder) MicrosoftGraphGroup()(*ItemMemberOfMicrosoftGraphGroupRequestBuilder) {
-    return NewItemMemberOfMicrosoftGraphGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphOrgContact casts the previous resource to orgContact.
-func (m *ItemMemberOfRequestBuilder) MicrosoftGraphOrgContact()(*ItemMemberOfMicrosoftGraphOrgContactRequestBuilder) {
-    return NewItemMemberOfMicrosoftGraphOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphServicePrincipal casts the previous resource to servicePrincipal.
-func (m *ItemMemberOfRequestBuilder) MicrosoftGraphServicePrincipal()(*ItemMemberOfMicrosoftGraphServicePrincipalRequestBuilder) {
-    return NewItemMemberOfMicrosoftGraphServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphUser casts the previous resource to user.
-func (m *ItemMemberOfRequestBuilder) MicrosoftGraphUser()(*ItemMemberOfMicrosoftGraphUserRequestBuilder) {
-    return NewItemMemberOfMicrosoftGraphUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphGroup casts the previous resource to group.
+func (m *ItemMemberOfRequestBuilder) GraphGroup()(*ItemMemberOfGraphGroupRequestBuilder) {
+    return NewItemMemberOfGraphGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation get memberOf from contacts
 func (m *ItemMemberOfRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMemberOfRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

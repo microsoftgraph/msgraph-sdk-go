@@ -46,6 +46,10 @@ type DeletedTeamsItemChannelsChannelItemRequestBuilderPatchRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// CompleteMigration provides operations to call the completeMigration method.
+func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) CompleteMigration()(*DeletedTeamsItemChannelsItemCompleteMigrationRequestBuilder) {
+    return NewDeletedTeamsItemChannelsItemCompleteMigrationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // NewDeletedTeamsItemChannelsChannelItemRequestBuilderInternal instantiates a new ChannelItemRequestBuilder and sets the default values.
 func NewDeletedTeamsItemChannelsChannelItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeletedTeamsItemChannelsChannelItemRequestBuilder) {
     m := &DeletedTeamsItemChannelsChannelItemRequestBuilder{
@@ -80,6 +84,10 @@ func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) Delete(ctx context.C
         return err
     }
     return nil
+}
+// DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName provides operations to call the doesUserHaveAccess method.
+func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName()(*DeletedTeamsItemChannelsItemDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder) {
+    return NewDeletedTeamsItemChannelsItemDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // FilesFolder provides operations to manage the filesFolder property of the microsoft.graph.channel entity.
 func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) FilesFolder()(*DeletedTeamsItemChannelsItemFilesFolderRequestBuilder) {
@@ -134,22 +142,6 @@ func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) MessagesById(id stri
     }
     return NewDeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
-// MicrosoftGraphCompleteMigration provides operations to call the completeMigration method.
-func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) MicrosoftGraphCompleteMigration()(*DeletedTeamsItemChannelsItemMicrosoftGraphCompleteMigrationRequestBuilder) {
-    return NewDeletedTeamsItemChannelsItemMicrosoftGraphCompleteMigrationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName provides operations to call the doesUserHaveAccess method.
-func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) MicrosoftGraphDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName()(*DeletedTeamsItemChannelsItemMicrosoftGraphDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder) {
-    return NewDeletedTeamsItemChannelsItemMicrosoftGraphDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphProvisionEmail provides operations to call the provisionEmail method.
-func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) MicrosoftGraphProvisionEmail()(*DeletedTeamsItemChannelsItemMicrosoftGraphProvisionEmailRequestBuilder) {
-    return NewDeletedTeamsItemChannelsItemMicrosoftGraphProvisionEmailRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphRemoveEmail provides operations to call the removeEmail method.
-func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) MicrosoftGraphRemoveEmail()(*DeletedTeamsItemChannelsItemMicrosoftGraphRemoveEmailRequestBuilder) {
-    return NewDeletedTeamsItemChannelsItemMicrosoftGraphRemoveEmailRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Patch update the navigation property channels in teamwork
 func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Channelable, requestConfiguration *DeletedTeamsItemChannelsChannelItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Channelable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -168,6 +160,14 @@ func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) Patch(ctx context.Co
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Channelable), nil
+}
+// ProvisionEmail provides operations to call the provisionEmail method.
+func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) ProvisionEmail()(*DeletedTeamsItemChannelsItemProvisionEmailRequestBuilder) {
+    return NewDeletedTeamsItemChannelsItemProvisionEmailRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// RemoveEmail provides operations to call the removeEmail method.
+func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) RemoveEmail()(*DeletedTeamsItemChannelsItemRemoveEmailRequestBuilder) {
+    return NewDeletedTeamsItemChannelsItemRemoveEmailRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SharedWithTeams provides operations to manage the sharedWithTeams property of the microsoft.graph.channel entity.
 func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) SharedWithTeams()(*DeletedTeamsItemChannelsItemSharedWithTeamsRequestBuilder) {

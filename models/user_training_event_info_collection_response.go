@@ -7,8 +7,6 @@ import (
 // UserTrainingEventInfoCollectionResponse 
 type UserTrainingEventInfoCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []UserTrainingEventInfoable
 }
 // NewUserTrainingEventInfoCollectionResponse instantiates a new UserTrainingEventInfoCollectionResponse and sets the default values.
 func NewUserTrainingEventInfoCollectionResponse()(*UserTrainingEventInfoCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *UserTrainingEventInfoCollectionResponse) GetFieldDeserializers()(map[st
 }
 // GetValue gets the value property value. The value property
 func (m *UserTrainingEventInfoCollectionResponse) GetValue()([]UserTrainingEventInfoable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserTrainingEventInfoable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserTrainingEventInfoCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *UserTrainingEventInfoCollectionResponse) Serialize(writer i878a80d2330e
 }
 // SetValue sets the value property value. The value property
 func (m *UserTrainingEventInfoCollectionResponse) SetValue(value []UserTrainingEventInfoable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserTrainingEventInfoCollectionResponseable 
+type UserTrainingEventInfoCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]UserTrainingEventInfoable)
+    SetValue(value []UserTrainingEventInfoable)()
 }

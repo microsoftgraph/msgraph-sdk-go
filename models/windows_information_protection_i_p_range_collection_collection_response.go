@@ -7,8 +7,6 @@ import (
 // WindowsInformationProtectionIPRangeCollectionCollectionResponse 
 type WindowsInformationProtectionIPRangeCollectionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []WindowsInformationProtectionIPRangeCollectionable
 }
 // NewWindowsInformationProtectionIPRangeCollectionCollectionResponse instantiates a new WindowsInformationProtectionIPRangeCollectionCollectionResponse and sets the default values.
 func NewWindowsInformationProtectionIPRangeCollectionCollectionResponse()(*WindowsInformationProtectionIPRangeCollectionCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *WindowsInformationProtectionIPRangeCollectionCollectionResponse) GetFie
 }
 // GetValue gets the value property value. The value property
 func (m *WindowsInformationProtectionIPRangeCollectionCollectionResponse) GetValue()([]WindowsInformationProtectionIPRangeCollectionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsInformationProtectionIPRangeCollectionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsInformationProtectionIPRangeCollectionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *WindowsInformationProtectionIPRangeCollectionCollectionResponse) Serial
 }
 // SetValue sets the value property value. The value property
 func (m *WindowsInformationProtectionIPRangeCollectionCollectionResponse) SetValue(value []WindowsInformationProtectionIPRangeCollectionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsInformationProtectionIPRangeCollectionCollectionResponseable 
+type WindowsInformationProtectionIPRangeCollectionCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]WindowsInformationProtectionIPRangeCollectionable)
+    SetValue(value []WindowsInformationProtectionIPRangeCollectionable)()
 }

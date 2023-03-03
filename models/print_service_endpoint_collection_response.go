@@ -7,8 +7,6 @@ import (
 // PrintServiceEndpointCollectionResponse 
 type PrintServiceEndpointCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []PrintServiceEndpointable
 }
 // NewPrintServiceEndpointCollectionResponse instantiates a new PrintServiceEndpointCollectionResponse and sets the default values.
 func NewPrintServiceEndpointCollectionResponse()(*PrintServiceEndpointCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *PrintServiceEndpointCollectionResponse) GetFieldDeserializers()(map[str
 }
 // GetValue gets the value property value. The value property
 func (m *PrintServiceEndpointCollectionResponse) GetValue()([]PrintServiceEndpointable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrintServiceEndpointable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PrintServiceEndpointCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *PrintServiceEndpointCollectionResponse) Serialize(writer i878a80d2330e8
 }
 // SetValue sets the value property value. The value property
 func (m *PrintServiceEndpointCollectionResponse) SetValue(value []PrintServiceEndpointable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PrintServiceEndpointCollectionResponseable 
+type PrintServiceEndpointCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]PrintServiceEndpointable)
+    SetValue(value []PrintServiceEndpointable)()
 }

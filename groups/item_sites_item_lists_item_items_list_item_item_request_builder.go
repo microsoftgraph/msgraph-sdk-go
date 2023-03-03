@@ -127,13 +127,13 @@ func (m *ItemSitesItemListsItemItemsListItemItemRequestBuilder) Get(ctx context.
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemable), nil
 }
-// MicrosoftGraphGetActivitiesByInterval provides operations to call the getActivitiesByInterval method.
-func (m *ItemSitesItemListsItemItemsListItemItemRequestBuilder) MicrosoftGraphGetActivitiesByInterval()(*ItemSitesItemListsItemItemsItemMicrosoftGraphGetActivitiesByIntervalRequestBuilder) {
-    return NewItemSitesItemListsItemItemsItemMicrosoftGraphGetActivitiesByIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GetActivitiesByInterval provides operations to call the getActivitiesByInterval method.
+func (m *ItemSitesItemListsItemItemsListItemItemRequestBuilder) GetActivitiesByInterval()(*ItemSitesItemListsItemItemsItemGetActivitiesByIntervalRequestBuilder) {
+    return NewItemSitesItemListsItemItemsItemGetActivitiesByIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval provides operations to call the getActivitiesByInterval method.
-func (m *ItemSitesItemListsItemItemsListItemItemRequestBuilder) MicrosoftGraphGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(endDateTime *string, interval *string, startDateTime *string)(*ItemSitesItemListsItemItemsItemMicrosoftGraphGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
-    return NewItemSitesItemListsItemItemsItemMicrosoftGraphGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter, endDateTime, interval, startDateTime)
+// GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval provides operations to call the getActivitiesByInterval method.
+func (m *ItemSitesItemListsItemItemsListItemItemRequestBuilder) GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(endDateTime *string, interval *string, startDateTime *string)(*ItemSitesItemListsItemItemsItemGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
+    return NewItemSitesItemListsItemItemsItemGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter, endDateTime, interval, startDateTime)
 }
 // Patch update the navigation property items in groups
 func (m *ItemSitesItemListsItemItemsListItemItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemable, requestConfiguration *ItemSitesItemListsItemItemsListItemItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemable, error) {

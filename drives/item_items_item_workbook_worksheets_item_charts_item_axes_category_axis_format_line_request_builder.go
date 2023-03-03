@@ -46,6 +46,10 @@ type ItemItemsItemWorkbookWorksheetsItemChartsItemAxesCategoryAxisFormatLineRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Clear provides operations to call the clear method.
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesCategoryAxisFormatLineRequestBuilder) Clear()(*ItemItemsItemWorkbookWorksheetsItemChartsItemAxesCategoryAxisFormatLineClearRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemChartsItemAxesCategoryAxisFormatLineClearRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // NewItemItemsItemWorkbookWorksheetsItemChartsItemAxesCategoryAxisFormatLineRequestBuilderInternal instantiates a new LineRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsItemChartsItemAxesCategoryAxisFormatLineRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookWorksheetsItemChartsItemAxesCategoryAxisFormatLineRequestBuilder) {
     m := &ItemItemsItemWorkbookWorksheetsItemChartsItemAxesCategoryAxisFormatLineRequestBuilder{
@@ -102,10 +106,6 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesCategoryAxisFormatLine
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartLineFormatable), nil
-}
-// MicrosoftGraphClear provides operations to call the clear method.
-func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesCategoryAxisFormatLineRequestBuilder) MicrosoftGraphClear()(*ItemItemsItemWorkbookWorksheetsItemChartsItemAxesCategoryAxisFormatLineMicrosoftGraphClearRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemChartsItemAxesCategoryAxisFormatLineMicrosoftGraphClearRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the properties of chartlineformat object.
 // [Find more info here]

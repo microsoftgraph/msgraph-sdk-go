@@ -7,16 +7,6 @@ import (
 // B2xIdentityUserFlow 
 type B2xIdentityUserFlow struct {
     IdentityUserFlow
-    // Configuration for enabling an API connector for use as part of the self-service sign-up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
-    apiConnectorConfiguration UserFlowApiConnectorConfigurationable
-    // The identity providers included in the user flow.
-    identityProviders []IdentityProviderable
-    // The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
-    languages []UserFlowLanguageConfigurationable
-    // The user attribute assignments included in the user flow.
-    userAttributeAssignments []IdentityUserFlowAttributeAssignmentable
-    // The userFlowIdentityProviders property
-    userFlowIdentityProviders []IdentityProviderBaseable
 }
 // NewB2xIdentityUserFlow instantiates a new B2xIdentityUserFlow and sets the default values.
 func NewB2xIdentityUserFlow()(*B2xIdentityUserFlow) {
@@ -31,7 +21,14 @@ func CreateB2xIdentityUserFlowFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetApiConnectorConfiguration gets the apiConnectorConfiguration property value. Configuration for enabling an API connector for use as part of the self-service sign-up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
 func (m *B2xIdentityUserFlow) GetApiConnectorConfiguration()(UserFlowApiConnectorConfigurationable) {
-    return m.apiConnectorConfiguration
+    val, err := m.GetBackingStore().Get("apiConnectorConfiguration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(UserFlowApiConnectorConfigurationable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *B2xIdentityUserFlow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -106,19 +103,47 @@ func (m *B2xIdentityUserFlow) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetIdentityProviders gets the identityProviders property value. The identity providers included in the user flow.
 func (m *B2xIdentityUserFlow) GetIdentityProviders()([]IdentityProviderable) {
-    return m.identityProviders
+    val, err := m.GetBackingStore().Get("identityProviders")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IdentityProviderable)
+    }
+    return nil
 }
 // GetLanguages gets the languages property value. The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
 func (m *B2xIdentityUserFlow) GetLanguages()([]UserFlowLanguageConfigurationable) {
-    return m.languages
+    val, err := m.GetBackingStore().Get("languages")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserFlowLanguageConfigurationable)
+    }
+    return nil
 }
 // GetUserAttributeAssignments gets the userAttributeAssignments property value. The user attribute assignments included in the user flow.
 func (m *B2xIdentityUserFlow) GetUserAttributeAssignments()([]IdentityUserFlowAttributeAssignmentable) {
-    return m.userAttributeAssignments
+    val, err := m.GetBackingStore().Get("userAttributeAssignments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IdentityUserFlowAttributeAssignmentable)
+    }
+    return nil
 }
 // GetUserFlowIdentityProviders gets the userFlowIdentityProviders property value. The userFlowIdentityProviders property
 func (m *B2xIdentityUserFlow) GetUserFlowIdentityProviders()([]IdentityProviderBaseable) {
-    return m.userFlowIdentityProviders
+    val, err := m.GetBackingStore().Get("userFlowIdentityProviders")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IdentityProviderBaseable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *B2xIdentityUserFlow) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -176,21 +201,51 @@ func (m *B2xIdentityUserFlow) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetApiConnectorConfiguration sets the apiConnectorConfiguration property value. Configuration for enabling an API connector for use as part of the self-service sign-up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
 func (m *B2xIdentityUserFlow) SetApiConnectorConfiguration(value UserFlowApiConnectorConfigurationable)() {
-    m.apiConnectorConfiguration = value
+    err := m.GetBackingStore().Set("apiConnectorConfiguration", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIdentityProviders sets the identityProviders property value. The identity providers included in the user flow.
 func (m *B2xIdentityUserFlow) SetIdentityProviders(value []IdentityProviderable)() {
-    m.identityProviders = value
+    err := m.GetBackingStore().Set("identityProviders", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLanguages sets the languages property value. The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
 func (m *B2xIdentityUserFlow) SetLanguages(value []UserFlowLanguageConfigurationable)() {
-    m.languages = value
+    err := m.GetBackingStore().Set("languages", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserAttributeAssignments sets the userAttributeAssignments property value. The user attribute assignments included in the user flow.
 func (m *B2xIdentityUserFlow) SetUserAttributeAssignments(value []IdentityUserFlowAttributeAssignmentable)() {
-    m.userAttributeAssignments = value
+    err := m.GetBackingStore().Set("userAttributeAssignments", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserFlowIdentityProviders sets the userFlowIdentityProviders property value. The userFlowIdentityProviders property
 func (m *B2xIdentityUserFlow) SetUserFlowIdentityProviders(value []IdentityProviderBaseable)() {
-    m.userFlowIdentityProviders = value
+    err := m.GetBackingStore().Set("userFlowIdentityProviders", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// B2xIdentityUserFlowable 
+type B2xIdentityUserFlowable interface {
+    IdentityUserFlowable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetApiConnectorConfiguration()(UserFlowApiConnectorConfigurationable)
+    GetIdentityProviders()([]IdentityProviderable)
+    GetLanguages()([]UserFlowLanguageConfigurationable)
+    GetUserAttributeAssignments()([]IdentityUserFlowAttributeAssignmentable)
+    GetUserFlowIdentityProviders()([]IdentityProviderBaseable)
+    SetApiConnectorConfiguration(value UserFlowApiConnectorConfigurationable)()
+    SetIdentityProviders(value []IdentityProviderable)()
+    SetLanguages(value []UserFlowLanguageConfigurationable)()
+    SetUserAttributeAssignments(value []IdentityUserFlowAttributeAssignmentable)()
+    SetUserFlowIdentityProviders(value []IdentityProviderBaseable)()
 }

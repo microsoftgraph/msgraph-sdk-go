@@ -51,6 +51,10 @@ type ItemItemsItemWorkbookTablesItemColumnsRequestBuilderPostRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Add provides operations to call the add method.
+func (m *ItemItemsItemWorkbookTablesItemColumnsRequestBuilder) Add()(*ItemItemsItemWorkbookTablesItemColumnsAddRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemColumnsAddRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // NewItemItemsItemWorkbookTablesItemColumnsRequestBuilderInternal instantiates a new ColumnsRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookTablesItemColumnsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookTablesItemColumnsRequestBuilder) {
     m := &ItemItemsItemWorkbookTablesItemColumnsRequestBuilder{
@@ -70,14 +74,14 @@ func NewItemItemsItemWorkbookTablesItemColumnsRequestBuilder(rawUrl string, requ
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookTablesItemColumnsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count provides operations to count the resources in the collection.
+// Count provides operations to call the count method.
 func (m *ItemItemsItemWorkbookTablesItemColumnsRequestBuilder) Count()(*ItemItemsItemWorkbookTablesItemColumnsCountRequestBuilder) {
     return NewItemItemsItemWorkbookTablesItemColumnsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of tablecolumn objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/table-list-columns?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/tablecolumn-list?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookTablesItemColumnsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemColumnsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableColumnCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,17 +100,9 @@ func (m *ItemItemsItemWorkbookTablesItemColumnsRequestBuilder) Get(ctx context.C
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableColumnCollectionResponseable), nil
 }
-// MicrosoftGraphAdd provides operations to call the add method.
-func (m *ItemItemsItemWorkbookTablesItemColumnsRequestBuilder) MicrosoftGraphAdd()(*ItemItemsItemWorkbookTablesItemColumnsMicrosoftGraphAddRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesItemColumnsMicrosoftGraphAddRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphCount provides operations to call the count method.
-func (m *ItemItemsItemWorkbookTablesItemColumnsRequestBuilder) MicrosoftGraphCount()(*ItemItemsItemWorkbookTablesItemColumnsMicrosoftGraphCountRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesItemColumnsMicrosoftGraphCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphItemAtWithIndex provides operations to call the itemAt method.
-func (m *ItemItemsItemWorkbookTablesItemColumnsRequestBuilder) MicrosoftGraphItemAtWithIndex(index *int32)(*ItemItemsItemWorkbookTablesItemColumnsMicrosoftGraphItemAtWithIndexRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesItemColumnsMicrosoftGraphItemAtWithIndexRequestBuilderInternal(m.pathParameters, m.requestAdapter, index)
+// ItemAtWithIndex provides operations to call the itemAt method.
+func (m *ItemItemsItemWorkbookTablesItemColumnsRequestBuilder) ItemAtWithIndex(index *int32)(*ItemItemsItemWorkbookTablesItemColumnsItemAtWithIndexRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemColumnsItemAtWithIndexRequestBuilderInternal(m.pathParameters, m.requestAdapter, index)
 }
 // Post use this API to create a new TableColumn.
 // [Find more info here]

@@ -7,12 +7,6 @@ import (
 // WindowsInformationProtectionDesktopApp 
 type WindowsInformationProtectionDesktopApp struct {
     WindowsInformationProtectionApp
-    // The binary name.
-    binaryName *string
-    // The high binary version.
-    binaryVersionHigh *string
-    // The lower binary version.
-    binaryVersionLow *string
 }
 // NewWindowsInformationProtectionDesktopApp instantiates a new WindowsInformationProtectionDesktopApp and sets the default values.
 func NewWindowsInformationProtectionDesktopApp()(*WindowsInformationProtectionDesktopApp) {
@@ -29,15 +23,36 @@ func CreateWindowsInformationProtectionDesktopAppFromDiscriminatorValue(parseNod
 }
 // GetBinaryName gets the binaryName property value. The binary name.
 func (m *WindowsInformationProtectionDesktopApp) GetBinaryName()(*string) {
-    return m.binaryName
+    val, err := m.GetBackingStore().Get("binaryName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetBinaryVersionHigh gets the binaryVersionHigh property value. The high binary version.
 func (m *WindowsInformationProtectionDesktopApp) GetBinaryVersionHigh()(*string) {
-    return m.binaryVersionHigh
+    val, err := m.GetBackingStore().Get("binaryVersionHigh")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetBinaryVersionLow gets the binaryVersionLow property value. The lower binary version.
 func (m *WindowsInformationProtectionDesktopApp) GetBinaryVersionLow()(*string) {
-    return m.binaryVersionLow
+    val, err := m.GetBackingStore().Get("binaryVersionLow")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsInformationProtectionDesktopApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -102,13 +117,33 @@ func (m *WindowsInformationProtectionDesktopApp) Serialize(writer i878a80d2330e8
 }
 // SetBinaryName sets the binaryName property value. The binary name.
 func (m *WindowsInformationProtectionDesktopApp) SetBinaryName(value *string)() {
-    m.binaryName = value
+    err := m.GetBackingStore().Set("binaryName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBinaryVersionHigh sets the binaryVersionHigh property value. The high binary version.
 func (m *WindowsInformationProtectionDesktopApp) SetBinaryVersionHigh(value *string)() {
-    m.binaryVersionHigh = value
+    err := m.GetBackingStore().Set("binaryVersionHigh", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBinaryVersionLow sets the binaryVersionLow property value. The lower binary version.
 func (m *WindowsInformationProtectionDesktopApp) SetBinaryVersionLow(value *string)() {
-    m.binaryVersionLow = value
+    err := m.GetBackingStore().Set("binaryVersionLow", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsInformationProtectionDesktopAppable 
+type WindowsInformationProtectionDesktopAppable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    WindowsInformationProtectionAppable
+    GetBinaryName()(*string)
+    GetBinaryVersionHigh()(*string)
+    GetBinaryVersionLow()(*string)
+    SetBinaryName(value *string)()
+    SetBinaryVersionHigh(value *string)()
+    SetBinaryVersionLow(value *string)()
 }

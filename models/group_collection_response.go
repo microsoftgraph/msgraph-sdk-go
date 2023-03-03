@@ -7,8 +7,6 @@ import (
 // GroupCollectionResponse 
 type GroupCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Groupable
 }
 // NewGroupCollectionResponse instantiates a new GroupCollectionResponse and sets the default values.
 func NewGroupCollectionResponse()(*GroupCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *GroupCollectionResponse) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetValue gets the value property value. The value property
 func (m *GroupCollectionResponse) GetValue()([]Groupable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Groupable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *GroupCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *GroupCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetValue sets the value property value. The value property
 func (m *GroupCollectionResponse) SetValue(value []Groupable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// GroupCollectionResponseable 
+type GroupCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Groupable)
+    SetValue(value []Groupable)()
 }

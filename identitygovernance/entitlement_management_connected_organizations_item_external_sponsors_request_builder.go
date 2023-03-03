@@ -74,6 +74,10 @@ func NewEntitlementManagementConnectedOrganizationsItemExternalSponsorsRequestBu
 func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsRequestBuilder) Count()(*EntitlementManagementConnectedOrganizationsItemExternalSponsorsCountRequestBuilder) {
     return NewEntitlementManagementConnectedOrganizationsItemExternalSponsorsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// Delta provides operations to call the delta method.
+func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsRequestBuilder) Delta()(*EntitlementManagementConnectedOrganizationsItemExternalSponsorsDeltaRequestBuilder) {
+    return NewEntitlementManagementConnectedOrganizationsItemExternalSponsorsDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Get retrieve a list of a connectedOrganization's external sponsors.  The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
 // [Find more info here]
 // 
@@ -96,17 +100,13 @@ func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsRequestB
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
 }
-// MicrosoftGraphGetAvailableExtensionProperties provides operations to call the getAvailableExtensionProperties method.
-func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsRequestBuilder) MicrosoftGraphGetAvailableExtensionProperties()(*EntitlementManagementConnectedOrganizationsItemExternalSponsorsMicrosoftGraphGetAvailableExtensionPropertiesRequestBuilder) {
-    return NewEntitlementManagementConnectedOrganizationsItemExternalSponsorsMicrosoftGraphGetAvailableExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GetAvailableExtensionProperties provides operations to call the getAvailableExtensionProperties method.
+func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsRequestBuilder) GetAvailableExtensionProperties()(*EntitlementManagementConnectedOrganizationsItemExternalSponsorsGetAvailableExtensionPropertiesRequestBuilder) {
+    return NewEntitlementManagementConnectedOrganizationsItemExternalSponsorsGetAvailableExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphGetByIds provides operations to call the getByIds method.
-func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsRequestBuilder) MicrosoftGraphGetByIds()(*EntitlementManagementConnectedOrganizationsItemExternalSponsorsMicrosoftGraphGetByIdsRequestBuilder) {
-    return NewEntitlementManagementConnectedOrganizationsItemExternalSponsorsMicrosoftGraphGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphValidateProperties provides operations to call the validateProperties method.
-func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsRequestBuilder) MicrosoftGraphValidateProperties()(*EntitlementManagementConnectedOrganizationsItemExternalSponsorsMicrosoftGraphValidatePropertiesRequestBuilder) {
-    return NewEntitlementManagementConnectedOrganizationsItemExternalSponsorsMicrosoftGraphValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GetByIds provides operations to call the getByIds method.
+func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsRequestBuilder) GetByIds()(*EntitlementManagementConnectedOrganizationsItemExternalSponsorsGetByIdsRequestBuilder) {
+    return NewEntitlementManagementConnectedOrganizationsItemExternalSponsorsGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to externalSponsors for identityGovernance
 func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, requestConfiguration *EntitlementManagementConnectedOrganizationsItemExternalSponsorsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, error) {
@@ -163,4 +163,8 @@ func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsRequestB
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// ValidateProperties provides operations to call the validateProperties method.
+func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsRequestBuilder) ValidateProperties()(*EntitlementManagementConnectedOrganizationsItemExternalSponsorsValidatePropertiesRequestBuilder) {
+    return NewEntitlementManagementConnectedOrganizationsItemExternalSponsorsValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

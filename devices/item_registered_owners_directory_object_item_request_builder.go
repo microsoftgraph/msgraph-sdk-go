@@ -32,21 +32,21 @@ func NewItemRegisteredOwnersDirectoryObjectItemRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewItemRegisteredOwnersDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// MicrosoftGraphAppRoleAssignment casts the previous resource to appRoleAssignment.
-func (m *ItemRegisteredOwnersDirectoryObjectItemRequestBuilder) MicrosoftGraphAppRoleAssignment()(*ItemRegisteredOwnersItemMicrosoftGraphAppRoleAssignmentRequestBuilder) {
-    return NewItemRegisteredOwnersItemMicrosoftGraphAppRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphAppRoleAssignment casts the previous resource to appRoleAssignment.
+func (m *ItemRegisteredOwnersDirectoryObjectItemRequestBuilder) GraphAppRoleAssignment()(*ItemRegisteredOwnersItemGraphAppRoleAssignmentRequestBuilder) {
+    return NewItemRegisteredOwnersItemGraphAppRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphEndpoint casts the previous resource to endpoint.
-func (m *ItemRegisteredOwnersDirectoryObjectItemRequestBuilder) MicrosoftGraphEndpoint()(*ItemRegisteredOwnersItemMicrosoftGraphEndpointRequestBuilder) {
-    return NewItemRegisteredOwnersItemMicrosoftGraphEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphEndpoint casts the previous resource to endpoint.
+func (m *ItemRegisteredOwnersDirectoryObjectItemRequestBuilder) GraphEndpoint()(*ItemRegisteredOwnersItemGraphEndpointRequestBuilder) {
+    return NewItemRegisteredOwnersItemGraphEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphServicePrincipal casts the previous resource to servicePrincipal.
-func (m *ItemRegisteredOwnersDirectoryObjectItemRequestBuilder) MicrosoftGraphServicePrincipal()(*ItemRegisteredOwnersItemMicrosoftGraphServicePrincipalRequestBuilder) {
-    return NewItemRegisteredOwnersItemMicrosoftGraphServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphServicePrincipal casts the previous resource to servicePrincipal.
+func (m *ItemRegisteredOwnersDirectoryObjectItemRequestBuilder) GraphServicePrincipal()(*ItemRegisteredOwnersItemGraphServicePrincipalRequestBuilder) {
+    return NewItemRegisteredOwnersItemGraphServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphUser casts the previous resource to user.
-func (m *ItemRegisteredOwnersDirectoryObjectItemRequestBuilder) MicrosoftGraphUser()(*ItemRegisteredOwnersItemMicrosoftGraphUserRequestBuilder) {
-    return NewItemRegisteredOwnersItemMicrosoftGraphUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphUser casts the previous resource to user.
+func (m *ItemRegisteredOwnersDirectoryObjectItemRequestBuilder) GraphUser()(*ItemRegisteredOwnersItemGraphUserRequestBuilder) {
+    return NewItemRegisteredOwnersItemGraphUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Ref provides operations to manage the collection of device entities.
 func (m *ItemRegisteredOwnersDirectoryObjectItemRequestBuilder) Ref()(*ItemRegisteredOwnersItemRefRequestBuilder) {

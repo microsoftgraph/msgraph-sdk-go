@@ -51,6 +51,10 @@ type ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilderPostReque
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Add provides operations to call the add method.
+func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilder) Add()(*ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsAddRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemTablesItemColumnsAddRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // NewItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilderInternal instantiates a new ColumnsRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilder) {
     m := &ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilder{
@@ -70,14 +74,14 @@ func NewItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilder(rawUr
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count provides operations to count the resources in the collection.
+// Count provides operations to call the count method.
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilder) Count()(*ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsCountRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemTablesItemColumnsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of tablecolumn objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/table-list-columns?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/tablecolumn-list?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableColumnCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,17 +100,9 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilder) Get
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableColumnCollectionResponseable), nil
 }
-// MicrosoftGraphAdd provides operations to call the add method.
-func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilder) MicrosoftGraphAdd()(*ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsMicrosoftGraphAddRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemTablesItemColumnsMicrosoftGraphAddRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphCount provides operations to call the count method.
-func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilder) MicrosoftGraphCount()(*ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsMicrosoftGraphCountRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemTablesItemColumnsMicrosoftGraphCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphItemAtWithIndex provides operations to call the itemAt method.
-func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilder) MicrosoftGraphItemAtWithIndex(index *int32)(*ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsMicrosoftGraphItemAtWithIndexRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemTablesItemColumnsMicrosoftGraphItemAtWithIndexRequestBuilderInternal(m.pathParameters, m.requestAdapter, index)
+// ItemAtWithIndex provides operations to call the itemAt method.
+func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilder) ItemAtWithIndex(index *int32)(*ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsItemAtWithIndexRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemTablesItemColumnsItemAtWithIndexRequestBuilderInternal(m.pathParameters, m.requestAdapter, index)
 }
 // Post use this API to create a new TableColumn.
 // [Find more info here]

@@ -7,12 +7,6 @@ import (
 // MobileAppAssignment a class containing the properties used for Group Assignment of a Mobile App.
 type MobileAppAssignment struct {
     Entity
-    // Possible values for the install intent chosen by the admin.
-    intent *InstallIntent
-    // The settings for target assignment defined by the admin.
-    settings MobileAppAssignmentSettingsable
-    // The target group assignment defined by the admin.
-    target DeviceAndAppManagementAssignmentTargetable
 }
 // NewMobileAppAssignment instantiates a new mobileAppAssignment and sets the default values.
 func NewMobileAppAssignment()(*MobileAppAssignment) {
@@ -62,15 +56,36 @@ func (m *MobileAppAssignment) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetIntent gets the intent property value. Possible values for the install intent chosen by the admin.
 func (m *MobileAppAssignment) GetIntent()(*InstallIntent) {
-    return m.intent
+    val, err := m.GetBackingStore().Get("intent")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*InstallIntent)
+    }
+    return nil
 }
 // GetSettings gets the settings property value. The settings for target assignment defined by the admin.
 func (m *MobileAppAssignment) GetSettings()(MobileAppAssignmentSettingsable) {
-    return m.settings
+    val, err := m.GetBackingStore().Get("settings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(MobileAppAssignmentSettingsable)
+    }
+    return nil
 }
 // GetTarget gets the target property value. The target group assignment defined by the admin.
 func (m *MobileAppAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
-    return m.target
+    val, err := m.GetBackingStore().Get("target")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceAndAppManagementAssignmentTargetable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MobileAppAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -101,13 +116,33 @@ func (m *MobileAppAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetIntent sets the intent property value. Possible values for the install intent chosen by the admin.
 func (m *MobileAppAssignment) SetIntent(value *InstallIntent)() {
-    m.intent = value
+    err := m.GetBackingStore().Set("intent", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettings sets the settings property value. The settings for target assignment defined by the admin.
 func (m *MobileAppAssignment) SetSettings(value MobileAppAssignmentSettingsable)() {
-    m.settings = value
+    err := m.GetBackingStore().Set("settings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTarget sets the target property value. The target group assignment defined by the admin.
 func (m *MobileAppAssignment) SetTarget(value DeviceAndAppManagementAssignmentTargetable)() {
-    m.target = value
+    err := m.GetBackingStore().Set("target", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MobileAppAssignmentable 
+type MobileAppAssignmentable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetIntent()(*InstallIntent)
+    GetSettings()(MobileAppAssignmentSettingsable)
+    GetTarget()(DeviceAndAppManagementAssignmentTargetable)
+    SetIntent(value *InstallIntent)()
+    SetSettings(value MobileAppAssignmentSettingsable)()
+    SetTarget(value DeviceAndAppManagementAssignmentTargetable)()
 }

@@ -8,26 +8,6 @@ import (
 // IosVppApp 
 type IosVppApp struct {
     MobileApp
-    // The applicable iOS Device Type.
-    applicableDeviceType IosDeviceTypeable
-    // The store URL.
-    appStoreUrl *string
-    // The Identity Name.
-    bundleId *string
-    // The supported License Type.
-    licensingType VppLicensingTypeable
-    // The VPP application release date and time.
-    releaseDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The total number of VPP licenses.
-    totalLicenseCount *int32
-    // The number of VPP licenses in use.
-    usedLicenseCount *int32
-    // Possible types of an Apple Volume Purchase Program token.
-    vppTokenAccountType *VppTokenAccountType
-    // The Apple Id associated with the given Apple Volume Purchase Program Token.
-    vppTokenAppleId *string
-    // The organization associated with the Apple Volume Purchase Program Token
-    vppTokenOrganizationName *string
 }
 // NewIosVppApp instantiates a new IosVppApp and sets the default values.
 func NewIosVppApp()(*IosVppApp) {
@@ -44,15 +24,36 @@ func CreateIosVppAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 }
 // GetApplicableDeviceType gets the applicableDeviceType property value. The applicable iOS Device Type.
 func (m *IosVppApp) GetApplicableDeviceType()(IosDeviceTypeable) {
-    return m.applicableDeviceType
+    val, err := m.GetBackingStore().Get("applicableDeviceType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IosDeviceTypeable)
+    }
+    return nil
 }
 // GetAppStoreUrl gets the appStoreUrl property value. The store URL.
 func (m *IosVppApp) GetAppStoreUrl()(*string) {
-    return m.appStoreUrl
+    val, err := m.GetBackingStore().Get("appStoreUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetBundleId gets the bundleId property value. The Identity Name.
 func (m *IosVppApp) GetBundleId()(*string) {
-    return m.bundleId
+    val, err := m.GetBackingStore().Get("bundleId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosVppApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -161,31 +162,80 @@ func (m *IosVppApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 }
 // GetLicensingType gets the licensingType property value. The supported License Type.
 func (m *IosVppApp) GetLicensingType()(VppLicensingTypeable) {
-    return m.licensingType
+    val, err := m.GetBackingStore().Get("licensingType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(VppLicensingTypeable)
+    }
+    return nil
 }
 // GetReleaseDateTime gets the releaseDateTime property value. The VPP application release date and time.
 func (m *IosVppApp) GetReleaseDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.releaseDateTime
+    val, err := m.GetBackingStore().Get("releaseDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetTotalLicenseCount gets the totalLicenseCount property value. The total number of VPP licenses.
 func (m *IosVppApp) GetTotalLicenseCount()(*int32) {
-    return m.totalLicenseCount
+    val, err := m.GetBackingStore().Get("totalLicenseCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetUsedLicenseCount gets the usedLicenseCount property value. The number of VPP licenses in use.
 func (m *IosVppApp) GetUsedLicenseCount()(*int32) {
-    return m.usedLicenseCount
+    val, err := m.GetBackingStore().Get("usedLicenseCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetVppTokenAccountType gets the vppTokenAccountType property value. Possible types of an Apple Volume Purchase Program token.
 func (m *IosVppApp) GetVppTokenAccountType()(*VppTokenAccountType) {
-    return m.vppTokenAccountType
+    val, err := m.GetBackingStore().Get("vppTokenAccountType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*VppTokenAccountType)
+    }
+    return nil
 }
 // GetVppTokenAppleId gets the vppTokenAppleId property value. The Apple Id associated with the given Apple Volume Purchase Program Token.
 func (m *IosVppApp) GetVppTokenAppleId()(*string) {
-    return m.vppTokenAppleId
+    val, err := m.GetBackingStore().Get("vppTokenAppleId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetVppTokenOrganizationName gets the vppTokenOrganizationName property value. The organization associated with the Apple Volume Purchase Program Token
 func (m *IosVppApp) GetVppTokenOrganizationName()(*string) {
-    return m.vppTokenOrganizationName
+    val, err := m.GetBackingStore().Get("vppTokenOrganizationName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IosVppApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -258,41 +308,96 @@ func (m *IosVppApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetApplicableDeviceType sets the applicableDeviceType property value. The applicable iOS Device Type.
 func (m *IosVppApp) SetApplicableDeviceType(value IosDeviceTypeable)() {
-    m.applicableDeviceType = value
+    err := m.GetBackingStore().Set("applicableDeviceType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppStoreUrl sets the appStoreUrl property value. The store URL.
 func (m *IosVppApp) SetAppStoreUrl(value *string)() {
-    m.appStoreUrl = value
+    err := m.GetBackingStore().Set("appStoreUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetBundleId sets the bundleId property value. The Identity Name.
 func (m *IosVppApp) SetBundleId(value *string)() {
-    m.bundleId = value
+    err := m.GetBackingStore().Set("bundleId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLicensingType sets the licensingType property value. The supported License Type.
 func (m *IosVppApp) SetLicensingType(value VppLicensingTypeable)() {
-    m.licensingType = value
+    err := m.GetBackingStore().Set("licensingType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetReleaseDateTime sets the releaseDateTime property value. The VPP application release date and time.
 func (m *IosVppApp) SetReleaseDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.releaseDateTime = value
+    err := m.GetBackingStore().Set("releaseDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTotalLicenseCount sets the totalLicenseCount property value. The total number of VPP licenses.
 func (m *IosVppApp) SetTotalLicenseCount(value *int32)() {
-    m.totalLicenseCount = value
+    err := m.GetBackingStore().Set("totalLicenseCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUsedLicenseCount sets the usedLicenseCount property value. The number of VPP licenses in use.
 func (m *IosVppApp) SetUsedLicenseCount(value *int32)() {
-    m.usedLicenseCount = value
+    err := m.GetBackingStore().Set("usedLicenseCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVppTokenAccountType sets the vppTokenAccountType property value. Possible types of an Apple Volume Purchase Program token.
 func (m *IosVppApp) SetVppTokenAccountType(value *VppTokenAccountType)() {
-    m.vppTokenAccountType = value
+    err := m.GetBackingStore().Set("vppTokenAccountType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVppTokenAppleId sets the vppTokenAppleId property value. The Apple Id associated with the given Apple Volume Purchase Program Token.
 func (m *IosVppApp) SetVppTokenAppleId(value *string)() {
-    m.vppTokenAppleId = value
+    err := m.GetBackingStore().Set("vppTokenAppleId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVppTokenOrganizationName sets the vppTokenOrganizationName property value. The organization associated with the Apple Volume Purchase Program Token
 func (m *IosVppApp) SetVppTokenOrganizationName(value *string)() {
-    m.vppTokenOrganizationName = value
+    err := m.GetBackingStore().Set("vppTokenOrganizationName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IosVppAppable 
+type IosVppAppable interface {
+    MobileAppable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetApplicableDeviceType()(IosDeviceTypeable)
+    GetAppStoreUrl()(*string)
+    GetBundleId()(*string)
+    GetLicensingType()(VppLicensingTypeable)
+    GetReleaseDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetTotalLicenseCount()(*int32)
+    GetUsedLicenseCount()(*int32)
+    GetVppTokenAccountType()(*VppTokenAccountType)
+    GetVppTokenAppleId()(*string)
+    GetVppTokenOrganizationName()(*string)
+    SetApplicableDeviceType(value IosDeviceTypeable)()
+    SetAppStoreUrl(value *string)()
+    SetBundleId(value *string)()
+    SetLicensingType(value VppLicensingTypeable)()
+    SetReleaseDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetTotalLicenseCount(value *int32)()
+    SetUsedLicenseCount(value *int32)()
+    SetVppTokenAccountType(value *VppTokenAccountType)()
+    SetVppTokenAppleId(value *string)()
+    SetVppTokenOrganizationName(value *string)()
 }

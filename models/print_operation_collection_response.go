@@ -7,8 +7,6 @@ import (
 // PrintOperationCollectionResponse 
 type PrintOperationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []PrintOperationable
 }
 // NewPrintOperationCollectionResponse instantiates a new PrintOperationCollectionResponse and sets the default values.
 func NewPrintOperationCollectionResponse()(*PrintOperationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *PrintOperationCollectionResponse) GetFieldDeserializers()(map[string]fu
 }
 // GetValue gets the value property value. The value property
 func (m *PrintOperationCollectionResponse) GetValue()([]PrintOperationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrintOperationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PrintOperationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *PrintOperationCollectionResponse) Serialize(writer i878a80d2330e89d2689
 }
 // SetValue sets the value property value. The value property
 func (m *PrintOperationCollectionResponse) SetValue(value []PrintOperationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PrintOperationCollectionResponseable 
+type PrintOperationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]PrintOperationable)
+    SetValue(value []PrintOperationable)()
 }

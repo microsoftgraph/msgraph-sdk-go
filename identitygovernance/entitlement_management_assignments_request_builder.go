@@ -51,6 +51,14 @@ type EntitlementManagementAssignmentsRequestBuilderPostRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// AdditionalAccess provides operations to call the additionalAccess method.
+func (m *EntitlementManagementAssignmentsRequestBuilder) AdditionalAccess()(*EntitlementManagementAssignmentsAdditionalAccessRequestBuilder) {
+    return NewEntitlementManagementAssignmentsAdditionalAccessRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageId provides operations to call the additionalAccess method.
+func (m *EntitlementManagementAssignmentsRequestBuilder) AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageId(accessPackageId *string, incompatibleAccessPackageId *string)(*EntitlementManagementAssignmentsAdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilder) {
+    return NewEntitlementManagementAssignmentsAdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, accessPackageId, incompatibleAccessPackageId)
+}
 // NewEntitlementManagementAssignmentsRequestBuilderInternal instantiates a new AssignmentsRequestBuilder and sets the default values.
 func NewEntitlementManagementAssignmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAssignmentsRequestBuilder) {
     m := &EntitlementManagementAssignmentsRequestBuilder{
@@ -74,6 +82,10 @@ func NewEntitlementManagementAssignmentsRequestBuilder(rawUrl string, requestAda
 func (m *EntitlementManagementAssignmentsRequestBuilder) Count()(*EntitlementManagementAssignmentsCountRequestBuilder) {
     return NewEntitlementManagementAssignmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
+func (m *EntitlementManagementAssignmentsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*EntitlementManagementAssignmentsFilterByCurrentUserWithOnRequestBuilder) {
+    return NewEntitlementManagementAssignmentsFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
+}
 // Get in Azure AD entitlement management, retrieve a list of accessPackageAssignment objects. For directory-wide administrators, the resulting list includes all the assignments, current and well as expired, that the caller has access to read, across all catalogs and access packages.  If the caller is on behalf of a delegated user who is assigned only to catalog-specific delegated administrative roles, the request must supply a filter to indicate a specific access package, such as: `$filter=accessPackage/id eq 'a914b616-e04e-476b-aa37-91038f0b165b'`.
 // [Find more info here]
 // 
@@ -95,18 +107,6 @@ func (m *EntitlementManagementAssignmentsRequestBuilder) Get(ctx context.Context
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageAssignmentCollectionResponseable), nil
-}
-// MicrosoftGraphAdditionalAccess provides operations to call the additionalAccess method.
-func (m *EntitlementManagementAssignmentsRequestBuilder) MicrosoftGraphAdditionalAccess()(*EntitlementManagementAssignmentsMicrosoftGraphAdditionalAccessRequestBuilder) {
-    return NewEntitlementManagementAssignmentsMicrosoftGraphAdditionalAccessRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphAdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageId provides operations to call the additionalAccess method.
-func (m *EntitlementManagementAssignmentsRequestBuilder) MicrosoftGraphAdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageId(accessPackageId *string, incompatibleAccessPackageId *string)(*EntitlementManagementAssignmentsMicrosoftGraphAdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilder) {
-    return NewEntitlementManagementAssignmentsMicrosoftGraphAdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, accessPackageId, incompatibleAccessPackageId)
-}
-// MicrosoftGraphFilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
-func (m *EntitlementManagementAssignmentsRequestBuilder) MicrosoftGraphFilterByCurrentUserWithOn(on *string)(*EntitlementManagementAssignmentsMicrosoftGraphFilterByCurrentUserWithOnRequestBuilder) {
-    return NewEntitlementManagementAssignmentsMicrosoftGraphFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
 }
 // Post create new navigation property to assignments for identityGovernance
 func (m *EntitlementManagementAssignmentsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageAssignmentable, requestConfiguration *EntitlementManagementAssignmentsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageAssignmentable, error) {

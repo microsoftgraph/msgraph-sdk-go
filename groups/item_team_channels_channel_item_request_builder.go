@@ -46,6 +46,10 @@ type ItemTeamChannelsChannelItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// CompleteMigration provides operations to call the completeMigration method.
+func (m *ItemTeamChannelsChannelItemRequestBuilder) CompleteMigration()(*ItemTeamChannelsItemCompleteMigrationRequestBuilder) {
+    return NewItemTeamChannelsItemCompleteMigrationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // NewItemTeamChannelsChannelItemRequestBuilderInternal instantiates a new ChannelItemRequestBuilder and sets the default values.
 func NewItemTeamChannelsChannelItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamChannelsChannelItemRequestBuilder) {
     m := &ItemTeamChannelsChannelItemRequestBuilder{
@@ -80,6 +84,10 @@ func (m *ItemTeamChannelsChannelItemRequestBuilder) Delete(ctx context.Context, 
         return err
     }
     return nil
+}
+// DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName provides operations to call the doesUserHaveAccess method.
+func (m *ItemTeamChannelsChannelItemRequestBuilder) DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName()(*ItemTeamChannelsItemDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder) {
+    return NewItemTeamChannelsItemDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // FilesFolder provides operations to manage the filesFolder property of the microsoft.graph.channel entity.
 func (m *ItemTeamChannelsChannelItemRequestBuilder) FilesFolder()(*ItemTeamChannelsItemFilesFolderRequestBuilder) {
@@ -134,22 +142,6 @@ func (m *ItemTeamChannelsChannelItemRequestBuilder) MessagesById(id string)(*Ite
     }
     return NewItemTeamChannelsItemMessagesChatMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
-// MicrosoftGraphCompleteMigration provides operations to call the completeMigration method.
-func (m *ItemTeamChannelsChannelItemRequestBuilder) MicrosoftGraphCompleteMigration()(*ItemTeamChannelsItemMicrosoftGraphCompleteMigrationRequestBuilder) {
-    return NewItemTeamChannelsItemMicrosoftGraphCompleteMigrationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName provides operations to call the doesUserHaveAccess method.
-func (m *ItemTeamChannelsChannelItemRequestBuilder) MicrosoftGraphDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName()(*ItemTeamChannelsItemMicrosoftGraphDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder) {
-    return NewItemTeamChannelsItemMicrosoftGraphDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphProvisionEmail provides operations to call the provisionEmail method.
-func (m *ItemTeamChannelsChannelItemRequestBuilder) MicrosoftGraphProvisionEmail()(*ItemTeamChannelsItemMicrosoftGraphProvisionEmailRequestBuilder) {
-    return NewItemTeamChannelsItemMicrosoftGraphProvisionEmailRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphRemoveEmail provides operations to call the removeEmail method.
-func (m *ItemTeamChannelsChannelItemRequestBuilder) MicrosoftGraphRemoveEmail()(*ItemTeamChannelsItemMicrosoftGraphRemoveEmailRequestBuilder) {
-    return NewItemTeamChannelsItemMicrosoftGraphRemoveEmailRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Patch update the navigation property channels in groups
 func (m *ItemTeamChannelsChannelItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Channelable, requestConfiguration *ItemTeamChannelsChannelItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Channelable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -168,6 +160,14 @@ func (m *ItemTeamChannelsChannelItemRequestBuilder) Patch(ctx context.Context, b
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Channelable), nil
+}
+// ProvisionEmail provides operations to call the provisionEmail method.
+func (m *ItemTeamChannelsChannelItemRequestBuilder) ProvisionEmail()(*ItemTeamChannelsItemProvisionEmailRequestBuilder) {
+    return NewItemTeamChannelsItemProvisionEmailRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// RemoveEmail provides operations to call the removeEmail method.
+func (m *ItemTeamChannelsChannelItemRequestBuilder) RemoveEmail()(*ItemTeamChannelsItemRemoveEmailRequestBuilder) {
+    return NewItemTeamChannelsItemRemoveEmailRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SharedWithTeams provides operations to manage the sharedWithTeams property of the microsoft.graph.channel entity.
 func (m *ItemTeamChannelsChannelItemRequestBuilder) SharedWithTeams()(*ItemTeamChannelsItemSharedWithTeamsRequestBuilder) {

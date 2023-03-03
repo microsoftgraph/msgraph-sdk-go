@@ -7,8 +7,6 @@ import (
 // DeviceCompliancePolicySettingStateSummaryCollectionResponse 
 type DeviceCompliancePolicySettingStateSummaryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceCompliancePolicySettingStateSummaryable
 }
 // NewDeviceCompliancePolicySettingStateSummaryCollectionResponse instantiates a new DeviceCompliancePolicySettingStateSummaryCollectionResponse and sets the default values.
 func NewDeviceCompliancePolicySettingStateSummaryCollectionResponse()(*DeviceCompliancePolicySettingStateSummaryCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceCompliancePolicySettingStateSummaryCollectionResponse) GetFieldDe
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceCompliancePolicySettingStateSummaryCollectionResponse) GetValue()([]DeviceCompliancePolicySettingStateSummaryable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceCompliancePolicySettingStateSummaryable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceCompliancePolicySettingStateSummaryCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceCompliancePolicySettingStateSummaryCollectionResponse) Serialize(
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceCompliancePolicySettingStateSummaryCollectionResponse) SetValue(value []DeviceCompliancePolicySettingStateSummaryable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceCompliancePolicySettingStateSummaryCollectionResponseable 
+type DeviceCompliancePolicySettingStateSummaryCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceCompliancePolicySettingStateSummaryable)
+    SetValue(value []DeviceCompliancePolicySettingStateSummaryable)()
 }

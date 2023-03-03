@@ -65,6 +65,14 @@ func (m *OrganizationItemRequestBuilder) CertificateBasedAuthConfigurationById(i
     }
     return NewItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
+// CheckMemberGroups provides operations to call the checkMemberGroups method.
+func (m *OrganizationItemRequestBuilder) CheckMemberGroups()(*ItemCheckMemberGroupsRequestBuilder) {
+    return NewItemCheckMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// CheckMemberObjects provides operations to call the checkMemberObjects method.
+func (m *OrganizationItemRequestBuilder) CheckMemberObjects()(*ItemCheckMemberObjectsRequestBuilder) {
+    return NewItemCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // NewOrganizationItemRequestBuilderInternal instantiates a new OrganizationItemRequestBuilder and sets the default values.
 func NewOrganizationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OrganizationItemRequestBuilder) {
     m := &OrganizationItemRequestBuilder{
@@ -137,29 +145,13 @@ func (m *OrganizationItemRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Organizationable), nil
 }
-// MicrosoftGraphCheckMemberGroups provides operations to call the checkMemberGroups method.
-func (m *OrganizationItemRequestBuilder) MicrosoftGraphCheckMemberGroups()(*ItemMicrosoftGraphCheckMemberGroupsRequestBuilder) {
-    return NewItemMicrosoftGraphCheckMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GetMemberGroups provides operations to call the getMemberGroups method.
+func (m *OrganizationItemRequestBuilder) GetMemberGroups()(*ItemGetMemberGroupsRequestBuilder) {
+    return NewItemGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphCheckMemberObjects provides operations to call the checkMemberObjects method.
-func (m *OrganizationItemRequestBuilder) MicrosoftGraphCheckMemberObjects()(*ItemMicrosoftGraphCheckMemberObjectsRequestBuilder) {
-    return NewItemMicrosoftGraphCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphGetMemberGroups provides operations to call the getMemberGroups method.
-func (m *OrganizationItemRequestBuilder) MicrosoftGraphGetMemberGroups()(*ItemMicrosoftGraphGetMemberGroupsRequestBuilder) {
-    return NewItemMicrosoftGraphGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphGetMemberObjects provides operations to call the getMemberObjects method.
-func (m *OrganizationItemRequestBuilder) MicrosoftGraphGetMemberObjects()(*ItemMicrosoftGraphGetMemberObjectsRequestBuilder) {
-    return NewItemMicrosoftGraphGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphRestore provides operations to call the restore method.
-func (m *OrganizationItemRequestBuilder) MicrosoftGraphRestore()(*ItemMicrosoftGraphRestoreRequestBuilder) {
-    return NewItemMicrosoftGraphRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphSetMobileDeviceManagementAuthority provides operations to call the setMobileDeviceManagementAuthority method.
-func (m *OrganizationItemRequestBuilder) MicrosoftGraphSetMobileDeviceManagementAuthority()(*ItemMicrosoftGraphSetMobileDeviceManagementAuthorityRequestBuilder) {
-    return NewItemMicrosoftGraphSetMobileDeviceManagementAuthorityRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GetMemberObjects provides operations to call the getMemberObjects method.
+func (m *OrganizationItemRequestBuilder) GetMemberObjects()(*ItemGetMemberObjectsRequestBuilder) {
+    return NewItemGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the properties of the currently authenticated organization. In this case, `organization` is defined as a collection of exactly one record, and so its **ID** must be specified in the request.  The **ID** is also known as the **tenantId** of the organization.
 // [Find more info here]
@@ -182,6 +174,14 @@ func (m *OrganizationItemRequestBuilder) Patch(ctx context.Context, body iadcd81
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Organizationable), nil
+}
+// Restore provides operations to call the restore method.
+func (m *OrganizationItemRequestBuilder) Restore()(*ItemRestoreRequestBuilder) {
+    return NewItemRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// SetMobileDeviceManagementAuthority provides operations to call the setMobileDeviceManagementAuthority method.
+func (m *OrganizationItemRequestBuilder) SetMobileDeviceManagementAuthority()(*ItemSetMobileDeviceManagementAuthorityRequestBuilder) {
+    return NewItemSetMobileDeviceManagementAuthorityRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete entity from organization
 func (m *OrganizationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *OrganizationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

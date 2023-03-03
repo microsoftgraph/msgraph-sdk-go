@@ -7,16 +7,6 @@ import (
 // TargetedManagedAppConfiguration 
 type TargetedManagedAppConfiguration struct {
     ManagedAppConfiguration
-    // List of apps to which the policy is deployed.
-    apps []ManagedMobileAppable
-    // Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
-    assignments []TargetedManagedAppPolicyAssignmentable
-    // Count of apps to which the current policy is deployed.
-    deployedAppCount *int32
-    // Navigation property to deployment summary of the configuration.
-    deploymentSummary ManagedAppPolicyDeploymentSummaryable
-    // Indicates if the policy is deployed to any inclusion groups or not.
-    isAssigned *bool
 }
 // NewTargetedManagedAppConfiguration instantiates a new TargetedManagedAppConfiguration and sets the default values.
 func NewTargetedManagedAppConfiguration()(*TargetedManagedAppConfiguration) {
@@ -33,19 +23,47 @@ func CreateTargetedManagedAppConfigurationFromDiscriminatorValue(parseNode i878a
 }
 // GetApps gets the apps property value. List of apps to which the policy is deployed.
 func (m *TargetedManagedAppConfiguration) GetApps()([]ManagedMobileAppable) {
-    return m.apps
+    val, err := m.GetBackingStore().Get("apps")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagedMobileAppable)
+    }
+    return nil
 }
 // GetAssignments gets the assignments property value. Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
 func (m *TargetedManagedAppConfiguration) GetAssignments()([]TargetedManagedAppPolicyAssignmentable) {
-    return m.assignments
+    val, err := m.GetBackingStore().Get("assignments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TargetedManagedAppPolicyAssignmentable)
+    }
+    return nil
 }
 // GetDeployedAppCount gets the deployedAppCount property value. Count of apps to which the current policy is deployed.
 func (m *TargetedManagedAppConfiguration) GetDeployedAppCount()(*int32) {
-    return m.deployedAppCount
+    val, err := m.GetBackingStore().Get("deployedAppCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetDeploymentSummary gets the deploymentSummary property value. Navigation property to deployment summary of the configuration.
 func (m *TargetedManagedAppConfiguration) GetDeploymentSummary()(ManagedAppPolicyDeploymentSummaryable) {
-    return m.deploymentSummary
+    val, err := m.GetBackingStore().Get("deploymentSummary")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ManagedAppPolicyDeploymentSummaryable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TargetedManagedAppConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -112,7 +130,14 @@ func (m *TargetedManagedAppConfiguration) GetFieldDeserializers()(map[string]fun
 }
 // GetIsAssigned gets the isAssigned property value. Indicates if the policy is deployed to any inclusion groups or not.
 func (m *TargetedManagedAppConfiguration) GetIsAssigned()(*bool) {
-    return m.isAssigned
+    val, err := m.GetBackingStore().Get("isAssigned")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TargetedManagedAppConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -162,21 +187,51 @@ func (m *TargetedManagedAppConfiguration) Serialize(writer i878a80d2330e89d26896
 }
 // SetApps sets the apps property value. List of apps to which the policy is deployed.
 func (m *TargetedManagedAppConfiguration) SetApps(value []ManagedMobileAppable)() {
-    m.apps = value
+    err := m.GetBackingStore().Set("apps", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAssignments sets the assignments property value. Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
 func (m *TargetedManagedAppConfiguration) SetAssignments(value []TargetedManagedAppPolicyAssignmentable)() {
-    m.assignments = value
+    err := m.GetBackingStore().Set("assignments", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeployedAppCount sets the deployedAppCount property value. Count of apps to which the current policy is deployed.
 func (m *TargetedManagedAppConfiguration) SetDeployedAppCount(value *int32)() {
-    m.deployedAppCount = value
+    err := m.GetBackingStore().Set("deployedAppCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeploymentSummary sets the deploymentSummary property value. Navigation property to deployment summary of the configuration.
 func (m *TargetedManagedAppConfiguration) SetDeploymentSummary(value ManagedAppPolicyDeploymentSummaryable)() {
-    m.deploymentSummary = value
+    err := m.GetBackingStore().Set("deploymentSummary", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsAssigned sets the isAssigned property value. Indicates if the policy is deployed to any inclusion groups or not.
 func (m *TargetedManagedAppConfiguration) SetIsAssigned(value *bool)() {
-    m.isAssigned = value
+    err := m.GetBackingStore().Set("isAssigned", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TargetedManagedAppConfigurationable 
+type TargetedManagedAppConfigurationable interface {
+    ManagedAppConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetApps()([]ManagedMobileAppable)
+    GetAssignments()([]TargetedManagedAppPolicyAssignmentable)
+    GetDeployedAppCount()(*int32)
+    GetDeploymentSummary()(ManagedAppPolicyDeploymentSummaryable)
+    GetIsAssigned()(*bool)
+    SetApps(value []ManagedMobileAppable)()
+    SetAssignments(value []TargetedManagedAppPolicyAssignmentable)()
+    SetDeployedAppCount(value *int32)()
+    SetDeploymentSummary(value ManagedAppPolicyDeploymentSummaryable)()
+    SetIsAssigned(value *bool)()
 }

@@ -51,6 +51,10 @@ type ItemItemsItemWorkbookWorksheetsRequestBuilderPostRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Add provides operations to call the add method.
+func (m *ItemItemsItemWorkbookWorksheetsRequestBuilder) Add()(*ItemItemsItemWorkbookWorksheetsAddRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsAddRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // NewItemItemsItemWorkbookWorksheetsRequestBuilderInternal instantiates a new WorksheetsRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookWorksheetsRequestBuilder) {
     m := &ItemItemsItemWorkbookWorksheetsRequestBuilder{
@@ -77,7 +81,7 @@ func (m *ItemItemsItemWorkbookWorksheetsRequestBuilder) Count()(*ItemItemsItemWo
 // Get retrieve a list of worksheet objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/workbook-list-worksheets?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/worksheet-list?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookWorksheetCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,10 +99,6 @@ func (m *ItemItemsItemWorkbookWorksheetsRequestBuilder) Get(ctx context.Context,
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookWorksheetCollectionResponseable), nil
-}
-// MicrosoftGraphAdd provides operations to call the add method.
-func (m *ItemItemsItemWorkbookWorksheetsRequestBuilder) MicrosoftGraphAdd()(*ItemItemsItemWorkbookWorksheetsMicrosoftGraphAddRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsMicrosoftGraphAddRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to worksheets for drives
 func (m *ItemItemsItemWorkbookWorksheetsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookWorksheetable, requestConfiguration *ItemItemsItemWorkbookWorksheetsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookWorksheetable, error) {

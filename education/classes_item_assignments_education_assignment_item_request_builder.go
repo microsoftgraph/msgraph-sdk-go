@@ -115,18 +115,6 @@ func (m *ClassesItemAssignmentsEducationAssignmentItemRequestBuilder) Get(ctx co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationAssignmentable), nil
 }
-// MicrosoftGraphPublish provides operations to call the publish method.
-func (m *ClassesItemAssignmentsEducationAssignmentItemRequestBuilder) MicrosoftGraphPublish()(*ClassesItemAssignmentsItemMicrosoftGraphPublishRequestBuilder) {
-    return NewClassesItemAssignmentsItemMicrosoftGraphPublishRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphSetUpFeedbackResourcesFolder provides operations to call the setUpFeedbackResourcesFolder method.
-func (m *ClassesItemAssignmentsEducationAssignmentItemRequestBuilder) MicrosoftGraphSetUpFeedbackResourcesFolder()(*ClassesItemAssignmentsItemMicrosoftGraphSetUpFeedbackResourcesFolderRequestBuilder) {
-    return NewClassesItemAssignmentsItemMicrosoftGraphSetUpFeedbackResourcesFolderRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphSetUpResourcesFolder provides operations to call the setUpResourcesFolder method.
-func (m *ClassesItemAssignmentsEducationAssignmentItemRequestBuilder) MicrosoftGraphSetUpResourcesFolder()(*ClassesItemAssignmentsItemMicrosoftGraphSetUpResourcesFolderRequestBuilder) {
-    return NewClassesItemAssignmentsItemMicrosoftGraphSetUpResourcesFolderRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Patch update the navigation property assignments in education
 func (m *ClassesItemAssignmentsEducationAssignmentItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationAssignmentable, requestConfiguration *ClassesItemAssignmentsEducationAssignmentItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationAssignmentable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -146,6 +134,10 @@ func (m *ClassesItemAssignmentsEducationAssignmentItemRequestBuilder) Patch(ctx 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationAssignmentable), nil
 }
+// Publish provides operations to call the publish method.
+func (m *ClassesItemAssignmentsEducationAssignmentItemRequestBuilder) Publish()(*ClassesItemAssignmentsItemPublishRequestBuilder) {
+    return NewClassesItemAssignmentsItemPublishRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Resources provides operations to manage the resources property of the microsoft.graph.educationAssignment entity.
 func (m *ClassesItemAssignmentsEducationAssignmentItemRequestBuilder) Resources()(*ClassesItemAssignmentsItemResourcesRequestBuilder) {
     return NewClassesItemAssignmentsItemResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
@@ -164,6 +156,14 @@ func (m *ClassesItemAssignmentsEducationAssignmentItemRequestBuilder) ResourcesB
 // Rubric provides operations to manage the rubric property of the microsoft.graph.educationAssignment entity.
 func (m *ClassesItemAssignmentsEducationAssignmentItemRequestBuilder) Rubric()(*ClassesItemAssignmentsItemRubricRequestBuilder) {
     return NewClassesItemAssignmentsItemRubricRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// SetUpFeedbackResourcesFolder provides operations to call the setUpFeedbackResourcesFolder method.
+func (m *ClassesItemAssignmentsEducationAssignmentItemRequestBuilder) SetUpFeedbackResourcesFolder()(*ClassesItemAssignmentsItemSetUpFeedbackResourcesFolderRequestBuilder) {
+    return NewClassesItemAssignmentsItemSetUpFeedbackResourcesFolderRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// SetUpResourcesFolder provides operations to call the setUpResourcesFolder method.
+func (m *ClassesItemAssignmentsEducationAssignmentItemRequestBuilder) SetUpResourcesFolder()(*ClassesItemAssignmentsItemSetUpResourcesFolderRequestBuilder) {
+    return NewClassesItemAssignmentsItemSetUpResourcesFolderRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Submissions provides operations to manage the submissions property of the microsoft.graph.educationAssignment entity.
 func (m *ClassesItemAssignmentsEducationAssignmentItemRequestBuilder) Submissions()(*ClassesItemAssignmentsItemSubmissionsRequestBuilder) {

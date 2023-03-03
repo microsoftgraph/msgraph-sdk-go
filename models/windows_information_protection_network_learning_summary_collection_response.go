@@ -7,8 +7,6 @@ import (
 // WindowsInformationProtectionNetworkLearningSummaryCollectionResponse 
 type WindowsInformationProtectionNetworkLearningSummaryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []WindowsInformationProtectionNetworkLearningSummaryable
 }
 // NewWindowsInformationProtectionNetworkLearningSummaryCollectionResponse instantiates a new WindowsInformationProtectionNetworkLearningSummaryCollectionResponse and sets the default values.
 func NewWindowsInformationProtectionNetworkLearningSummaryCollectionResponse()(*WindowsInformationProtectionNetworkLearningSummaryCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *WindowsInformationProtectionNetworkLearningSummaryCollectionResponse) G
 }
 // GetValue gets the value property value. The value property
 func (m *WindowsInformationProtectionNetworkLearningSummaryCollectionResponse) GetValue()([]WindowsInformationProtectionNetworkLearningSummaryable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsInformationProtectionNetworkLearningSummaryable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WindowsInformationProtectionNetworkLearningSummaryCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *WindowsInformationProtectionNetworkLearningSummaryCollectionResponse) S
 }
 // SetValue sets the value property value. The value property
 func (m *WindowsInformationProtectionNetworkLearningSummaryCollectionResponse) SetValue(value []WindowsInformationProtectionNetworkLearningSummaryable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WindowsInformationProtectionNetworkLearningSummaryCollectionResponseable 
+type WindowsInformationProtectionNetworkLearningSummaryCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]WindowsInformationProtectionNetworkLearningSummaryable)
+    SetValue(value []WindowsInformationProtectionNetworkLearningSummaryable)()
 }

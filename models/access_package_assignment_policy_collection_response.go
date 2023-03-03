@@ -7,8 +7,6 @@ import (
 // AccessPackageAssignmentPolicyCollectionResponse 
 type AccessPackageAssignmentPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AccessPackageAssignmentPolicyable
 }
 // NewAccessPackageAssignmentPolicyCollectionResponse instantiates a new AccessPackageAssignmentPolicyCollectionResponse and sets the default values.
 func NewAccessPackageAssignmentPolicyCollectionResponse()(*AccessPackageAssignmentPolicyCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AccessPackageAssignmentPolicyCollectionResponse) GetFieldDeserializers(
 }
 // GetValue gets the value property value. The value property
 func (m *AccessPackageAssignmentPolicyCollectionResponse) GetValue()([]AccessPackageAssignmentPolicyable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AccessPackageAssignmentPolicyable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AccessPackageAssignmentPolicyCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AccessPackageAssignmentPolicyCollectionResponse) Serialize(writer i878a
 }
 // SetValue sets the value property value. The value property
 func (m *AccessPackageAssignmentPolicyCollectionResponse) SetValue(value []AccessPackageAssignmentPolicyable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AccessPackageAssignmentPolicyCollectionResponseable 
+type AccessPackageAssignmentPolicyCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AccessPackageAssignmentPolicyable)
+    SetValue(value []AccessPackageAssignmentPolicyable)()
 }

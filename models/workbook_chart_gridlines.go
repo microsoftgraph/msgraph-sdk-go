@@ -7,10 +7,6 @@ import (
 // WorkbookChartGridlines 
 type WorkbookChartGridlines struct {
     Entity
-    // Represents the formatting of chart gridlines. Read-only.
-    format WorkbookChartGridlinesFormatable
-    // Boolean value representing if the axis gridlines are visible or not.
-    visible *bool
 }
 // NewWorkbookChartGridlines instantiates a new workbookChartGridlines and sets the default values.
 func NewWorkbookChartGridlines()(*WorkbookChartGridlines) {
@@ -50,11 +46,25 @@ func (m *WorkbookChartGridlines) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetFormat gets the format property value. Represents the formatting of chart gridlines. Read-only.
 func (m *WorkbookChartGridlines) GetFormat()(WorkbookChartGridlinesFormatable) {
-    return m.format
+    val, err := m.GetBackingStore().Get("format")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WorkbookChartGridlinesFormatable)
+    }
+    return nil
 }
 // GetVisible gets the visible property value. Boolean value representing if the axis gridlines are visible or not.
 func (m *WorkbookChartGridlines) GetVisible()(*bool) {
-    return m.visible
+    val, err := m.GetBackingStore().Get("visible")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WorkbookChartGridlines) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -78,9 +88,24 @@ func (m *WorkbookChartGridlines) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetFormat sets the format property value. Represents the formatting of chart gridlines. Read-only.
 func (m *WorkbookChartGridlines) SetFormat(value WorkbookChartGridlinesFormatable)() {
-    m.format = value
+    err := m.GetBackingStore().Set("format", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetVisible sets the visible property value. Boolean value representing if the axis gridlines are visible or not.
 func (m *WorkbookChartGridlines) SetVisible(value *bool)() {
-    m.visible = value
+    err := m.GetBackingStore().Set("visible", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WorkbookChartGridlinesable 
+type WorkbookChartGridlinesable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetFormat()(WorkbookChartGridlinesFormatable)
+    GetVisible()(*bool)
+    SetFormat(value WorkbookChartGridlinesFormatable)()
+    SetVisible(value *bool)()
 }

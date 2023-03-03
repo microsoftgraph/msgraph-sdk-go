@@ -7,8 +7,6 @@ import (
 // DirectoryObjectCollectionResponse 
 type DirectoryObjectCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DirectoryObjectable
 }
 // NewDirectoryObjectCollectionResponse instantiates a new DirectoryObjectCollectionResponse and sets the default values.
 func NewDirectoryObjectCollectionResponse()(*DirectoryObjectCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DirectoryObjectCollectionResponse) GetFieldDeserializers()(map[string]f
 }
 // GetValue gets the value property value. The value property
 func (m *DirectoryObjectCollectionResponse) GetValue()([]DirectoryObjectable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DirectoryObjectable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DirectoryObjectCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DirectoryObjectCollectionResponse) Serialize(writer i878a80d2330e89d268
 }
 // SetValue sets the value property value. The value property
 func (m *DirectoryObjectCollectionResponse) SetValue(value []DirectoryObjectable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DirectoryObjectCollectionResponseable 
+type DirectoryObjectCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DirectoryObjectable)
+    SetValue(value []DirectoryObjectable)()
 }

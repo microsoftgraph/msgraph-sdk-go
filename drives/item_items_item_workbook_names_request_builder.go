@@ -51,6 +51,14 @@ type ItemItemsItemWorkbookNamesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Add provides operations to call the add method.
+func (m *ItemItemsItemWorkbookNamesRequestBuilder) Add()(*ItemItemsItemWorkbookNamesAddRequestBuilder) {
+    return NewItemItemsItemWorkbookNamesAddRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// AddFormulaLocal provides operations to call the addFormulaLocal method.
+func (m *ItemItemsItemWorkbookNamesRequestBuilder) AddFormulaLocal()(*ItemItemsItemWorkbookNamesAddFormulaLocalRequestBuilder) {
+    return NewItemItemsItemWorkbookNamesAddFormulaLocalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // NewItemItemsItemWorkbookNamesRequestBuilderInternal instantiates a new NamesRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookNamesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookNamesRequestBuilder) {
     m := &ItemItemsItemWorkbookNamesRequestBuilder{
@@ -95,14 +103,6 @@ func (m *ItemItemsItemWorkbookNamesRequestBuilder) Get(ctx context.Context, requ
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookNamedItemCollectionResponseable), nil
-}
-// MicrosoftGraphAdd provides operations to call the add method.
-func (m *ItemItemsItemWorkbookNamesRequestBuilder) MicrosoftGraphAdd()(*ItemItemsItemWorkbookNamesMicrosoftGraphAddRequestBuilder) {
-    return NewItemItemsItemWorkbookNamesMicrosoftGraphAddRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphAddFormulaLocal provides operations to call the addFormulaLocal method.
-func (m *ItemItemsItemWorkbookNamesRequestBuilder) MicrosoftGraphAddFormulaLocal()(*ItemItemsItemWorkbookNamesMicrosoftGraphAddFormulaLocalRequestBuilder) {
-    return NewItemItemsItemWorkbookNamesMicrosoftGraphAddFormulaLocalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to names for drives
 func (m *ItemItemsItemWorkbookNamesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookNamedItemable, requestConfiguration *ItemItemsItemWorkbookNamesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookNamedItemable, error) {

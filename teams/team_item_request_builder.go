@@ -61,6 +61,10 @@ func (m *TeamItemRequestBuilder) AllChannelsById(id string)(*ItemAllChannelsChan
     }
     return NewItemAllChannelsChannelItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
+// Archive provides operations to call the archive method.
+func (m *TeamItemRequestBuilder) Archive()(*ItemArchiveRequestBuilder) {
+    return NewItemArchiveRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Channels provides operations to manage the channels property of the microsoft.graph.team entity.
 func (m *TeamItemRequestBuilder) Channels()(*ItemChannelsRequestBuilder) {
     return NewItemChannelsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
@@ -75,6 +79,14 @@ func (m *TeamItemRequestBuilder) ChannelsById(id string)(*ItemChannelsChannelIte
         urlTplParams["channel%2Did"] = id
     }
     return NewItemChannelsChannelItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+}
+// Clone provides operations to call the clone method.
+func (m *TeamItemRequestBuilder) Clone()(*ItemCloneRequestBuilder) {
+    return NewItemCloneRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// CompleteMigration provides operations to call the completeMigration method.
+func (m *TeamItemRequestBuilder) CompleteMigration()(*ItemCompleteMigrationRequestBuilder) {
+    return NewItemCompleteMigrationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewTeamItemRequestBuilderInternal instantiates a new TeamItemRequestBuilder and sets the default values.
 func NewTeamItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamItemRequestBuilder) {
@@ -182,26 +194,6 @@ func (m *TeamItemRequestBuilder) MembersById(id string)(*ItemMembersConversation
     }
     return NewItemMembersConversationMemberItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
-// MicrosoftGraphArchive provides operations to call the archive method.
-func (m *TeamItemRequestBuilder) MicrosoftGraphArchive()(*ItemMicrosoftGraphArchiveRequestBuilder) {
-    return NewItemMicrosoftGraphArchiveRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphClone provides operations to call the clone method.
-func (m *TeamItemRequestBuilder) MicrosoftGraphClone()(*ItemMicrosoftGraphCloneRequestBuilder) {
-    return NewItemMicrosoftGraphCloneRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphCompleteMigration provides operations to call the completeMigration method.
-func (m *TeamItemRequestBuilder) MicrosoftGraphCompleteMigration()(*ItemMicrosoftGraphCompleteMigrationRequestBuilder) {
-    return NewItemMicrosoftGraphCompleteMigrationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphSendActivityNotification provides operations to call the sendActivityNotification method.
-func (m *TeamItemRequestBuilder) MicrosoftGraphSendActivityNotification()(*ItemMicrosoftGraphSendActivityNotificationRequestBuilder) {
-    return NewItemMicrosoftGraphSendActivityNotificationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphUnarchive provides operations to call the unarchive method.
-func (m *TeamItemRequestBuilder) MicrosoftGraphUnarchive()(*ItemMicrosoftGraphUnarchiveRequestBuilder) {
-    return NewItemMicrosoftGraphUnarchiveRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Operations provides operations to manage the operations property of the microsoft.graph.team entity.
 func (m *TeamItemRequestBuilder) Operations()(*ItemOperationsRequestBuilder) {
     return NewItemOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
@@ -250,6 +242,10 @@ func (m *TeamItemRequestBuilder) PrimaryChannel()(*ItemPrimaryChannelRequestBuil
 // Schedule provides operations to manage the schedule property of the microsoft.graph.team entity.
 func (m *TeamItemRequestBuilder) Schedule()(*ItemScheduleRequestBuilder) {
     return NewItemScheduleRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// SendActivityNotification provides operations to call the sendActivityNotification method.
+func (m *TeamItemRequestBuilder) SendActivityNotification()(*ItemSendActivityNotificationRequestBuilder) {
+    return NewItemSendActivityNotificationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Tags provides operations to manage the tags property of the microsoft.graph.team entity.
 func (m *TeamItemRequestBuilder) Tags()(*ItemTagsRequestBuilder) {
@@ -314,4 +310,8 @@ func (m *TeamItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, 
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// Unarchive provides operations to call the unarchive method.
+func (m *TeamItemRequestBuilder) Unarchive()(*ItemUnarchiveRequestBuilder) {
+    return NewItemUnarchiveRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

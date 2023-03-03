@@ -7,8 +7,6 @@ import (
 // AadUserNotificationRecipient 
 type AadUserNotificationRecipient struct {
     TeamworkNotificationRecipient
-    // Azure AD user identifier. Use the List users method to get this ID.
-    userId *string
 }
 // NewAadUserNotificationRecipient instantiates a new AadUserNotificationRecipient and sets the default values.
 func NewAadUserNotificationRecipient()(*AadUserNotificationRecipient) {
@@ -40,7 +38,14 @@ func (m *AadUserNotificationRecipient) GetFieldDeserializers()(map[string]func(i
 }
 // GetUserId gets the userId property value. Azure AD user identifier. Use the List users method to get this ID.
 func (m *AadUserNotificationRecipient) GetUserId()(*string) {
-    return m.userId
+    val, err := m.GetBackingStore().Get("userId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AadUserNotificationRecipient) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *AadUserNotificationRecipient) Serialize(writer i878a80d2330e89d26896388
 }
 // SetUserId sets the userId property value. Azure AD user identifier. Use the List users method to get this ID.
 func (m *AadUserNotificationRecipient) SetUserId(value *string)() {
-    m.userId = value
+    err := m.GetBackingStore().Set("userId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AadUserNotificationRecipientable 
+type AadUserNotificationRecipientable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    TeamworkNotificationRecipientable
+    GetUserId()(*string)
+    SetUserId(value *string)()
 }

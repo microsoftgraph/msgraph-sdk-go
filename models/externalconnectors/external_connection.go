@@ -8,24 +8,8 @@ import (
 // ExternalConnection 
 type ExternalConnection struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
-    // Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.
-    configuration Configurationable
-    // Description of the connection displayed in the Microsoft 365 admin center. Optional.
-    description *string
-    // The groups property
-    groups []ExternalGroupable
-    // The items property
-    items []ExternalItemable
-    // The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.
-    name *string
-    // The operations property
-    operations []ConnectionOperationable
-    // The schema property
-    schema Schemaable
-    // Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.
-    state *ConnectionState
 }
-// NewExternalConnection instantiates a new ExternalConnection and sets the default values.
+// NewExternalConnection instantiates a new externalConnection and sets the default values.
 func NewExternalConnection()(*ExternalConnection) {
     m := &ExternalConnection{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
@@ -38,11 +22,25 @@ func CreateExternalConnectionFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetConfiguration gets the configuration property value. Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.
 func (m *ExternalConnection) GetConfiguration()(Configurationable) {
-    return m.configuration
+    val, err := m.GetBackingStore().Get("configuration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Configurationable)
+    }
+    return nil
 }
 // GetDescription gets the description property value. Description of the connection displayed in the Microsoft 365 admin center. Optional.
 func (m *ExternalConnection) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -143,27 +141,69 @@ func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetGroups gets the groups property value. The groups property
 func (m *ExternalConnection) GetGroups()([]ExternalGroupable) {
-    return m.groups
+    val, err := m.GetBackingStore().Get("groups")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ExternalGroupable)
+    }
+    return nil
 }
 // GetItems gets the items property value. The items property
 func (m *ExternalConnection) GetItems()([]ExternalItemable) {
-    return m.items
+    val, err := m.GetBackingStore().Get("items")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ExternalItemable)
+    }
+    return nil
 }
 // GetName gets the name property value. The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.
 func (m *ExternalConnection) GetName()(*string) {
-    return m.name
+    val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOperations gets the operations property value. The operations property
 func (m *ExternalConnection) GetOperations()([]ConnectionOperationable) {
-    return m.operations
+    val, err := m.GetBackingStore().Get("operations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ConnectionOperationable)
+    }
+    return nil
 }
 // GetSchema gets the schema property value. The schema property
 func (m *ExternalConnection) GetSchema()(Schemaable) {
-    return m.schema
+    val, err := m.GetBackingStore().Get("schema")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Schemaable)
+    }
+    return nil
 }
 // GetState gets the state property value. Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.
 func (m *ExternalConnection) GetState()(*ConnectionState) {
-    return m.state
+    val, err := m.GetBackingStore().Get("state")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ConnectionState)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ExternalConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -229,33 +269,78 @@ func (m *ExternalConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetConfiguration sets the configuration property value. Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.
 func (m *ExternalConnection) SetConfiguration(value Configurationable)() {
-    m.configuration = value
+    err := m.GetBackingStore().Set("configuration", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDescription sets the description property value. Description of the connection displayed in the Microsoft 365 admin center. Optional.
 func (m *ExternalConnection) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetGroups sets the groups property value. The groups property
 func (m *ExternalConnection) SetGroups(value []ExternalGroupable)() {
-    m.groups = value
+    err := m.GetBackingStore().Set("groups", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetItems sets the items property value. The items property
 func (m *ExternalConnection) SetItems(value []ExternalItemable)() {
-    m.items = value
+    err := m.GetBackingStore().Set("items", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetName sets the name property value. The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.
 func (m *ExternalConnection) SetName(value *string)() {
-    m.name = value
+    err := m.GetBackingStore().Set("name", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOperations sets the operations property value. The operations property
 func (m *ExternalConnection) SetOperations(value []ConnectionOperationable)() {
-    m.operations = value
+    err := m.GetBackingStore().Set("operations", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSchema sets the schema property value. The schema property
 func (m *ExternalConnection) SetSchema(value Schemaable)() {
-    m.schema = value
+    err := m.GetBackingStore().Set("schema", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetState sets the state property value. Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.
 func (m *ExternalConnection) SetState(value *ConnectionState)() {
-    m.state = value
+    err := m.GetBackingStore().Set("state", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ExternalConnectionable 
+type ExternalConnectionable interface {
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetConfiguration()(Configurationable)
+    GetDescription()(*string)
+    GetGroups()([]ExternalGroupable)
+    GetItems()([]ExternalItemable)
+    GetName()(*string)
+    GetOperations()([]ConnectionOperationable)
+    GetSchema()(Schemaable)
+    GetState()(*ConnectionState)
+    SetConfiguration(value Configurationable)()
+    SetDescription(value *string)()
+    SetGroups(value []ExternalGroupable)()
+    SetItems(value []ExternalItemable)()
+    SetName(value *string)()
+    SetOperations(value []ConnectionOperationable)()
+    SetSchema(value Schemaable)()
+    SetState(value *ConnectionState)()
 }

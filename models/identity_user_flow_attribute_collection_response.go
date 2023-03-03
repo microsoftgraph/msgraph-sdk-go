@@ -7,8 +7,6 @@ import (
 // IdentityUserFlowAttributeCollectionResponse 
 type IdentityUserFlowAttributeCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []IdentityUserFlowAttributeable
 }
 // NewIdentityUserFlowAttributeCollectionResponse instantiates a new IdentityUserFlowAttributeCollectionResponse and sets the default values.
 func NewIdentityUserFlowAttributeCollectionResponse()(*IdentityUserFlowAttributeCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *IdentityUserFlowAttributeCollectionResponse) GetFieldDeserializers()(ma
 }
 // GetValue gets the value property value. The value property
 func (m *IdentityUserFlowAttributeCollectionResponse) GetValue()([]IdentityUserFlowAttributeable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IdentityUserFlowAttributeable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IdentityUserFlowAttributeCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *IdentityUserFlowAttributeCollectionResponse) Serialize(writer i878a80d2
 }
 // SetValue sets the value property value. The value property
 func (m *IdentityUserFlowAttributeCollectionResponse) SetValue(value []IdentityUserFlowAttributeable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IdentityUserFlowAttributeCollectionResponseable 
+type IdentityUserFlowAttributeCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]IdentityUserFlowAttributeable)
+    SetValue(value []IdentityUserFlowAttributeable)()
 }

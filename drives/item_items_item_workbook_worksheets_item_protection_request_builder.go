@@ -103,14 +103,6 @@ func (m *ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilder) Get(ctx co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookWorksheetProtectionable), nil
 }
-// MicrosoftGraphProtect provides operations to call the protect method.
-func (m *ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilder) MicrosoftGraphProtect()(*ItemItemsItemWorkbookWorksheetsItemProtectionMicrosoftGraphProtectRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemProtectionMicrosoftGraphProtectRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphUnprotect provides operations to call the unprotect method.
-func (m *ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilder) MicrosoftGraphUnprotect()(*ItemItemsItemWorkbookWorksheetsItemProtectionMicrosoftGraphUnprotectRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemProtectionMicrosoftGraphUnprotectRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Patch update the navigation property protection in drives
 func (m *ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookWorksheetProtectionable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookWorksheetProtectionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -129,6 +121,10 @@ func (m *ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilder) Patch(ctx 
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookWorksheetProtectionable), nil
+}
+// Protect provides operations to call the protect method.
+func (m *ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilder) Protect()(*ItemItemsItemWorkbookWorksheetsItemProtectionProtectRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemProtectionProtectRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property protection for drives
 func (m *ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -174,4 +170,8 @@ func (m *ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilder) ToPatchReq
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// Unprotect provides operations to call the unprotect method.
+func (m *ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilder) Unprotect()(*ItemItemsItemWorkbookWorksheetsItemProtectionUnprotectRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemProtectionUnprotectRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

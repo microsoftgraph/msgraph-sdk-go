@@ -7,8 +7,6 @@ import (
 // SortPropertyCollectionResponse 
 type SortPropertyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []SortPropertyable
 }
 // NewSortPropertyCollectionResponse instantiates a new SortPropertyCollectionResponse and sets the default values.
 func NewSortPropertyCollectionResponse()(*SortPropertyCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *SortPropertyCollectionResponse) GetFieldDeserializers()(map[string]func
 }
 // GetValue gets the value property value. The value property
 func (m *SortPropertyCollectionResponse) GetValue()([]SortPropertyable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SortPropertyable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SortPropertyCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *SortPropertyCollectionResponse) Serialize(writer i878a80d2330e89d268963
 }
 // SetValue sets the value property value. The value property
 func (m *SortPropertyCollectionResponse) SetValue(value []SortPropertyable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SortPropertyCollectionResponseable 
+type SortPropertyCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]SortPropertyable)
+    SetValue(value []SortPropertyable)()
 }

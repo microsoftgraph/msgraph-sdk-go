@@ -6,7 +6,7 @@ import (
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
 
-// ItemItemsItemWorkbookWorksheetsItemChartsCountRequestBuilder provides operations to count the resources in the collection.
+// ItemItemsItemWorkbookWorksheetsItemChartsCountRequestBuilder provides operations to call the count method.
 type ItemItemsItemWorkbookWorksheetsItemChartsCountRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string
@@ -15,27 +15,18 @@ type ItemItemsItemWorkbookWorksheetsItemChartsCountRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ItemItemsItemWorkbookWorksheetsItemChartsCountRequestBuilderGetQueryParameters get the number of the resource
-type ItemItemsItemWorkbookWorksheetsItemChartsCountRequestBuilderGetQueryParameters struct {
-    // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
-    // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
-}
 // ItemItemsItemWorkbookWorksheetsItemChartsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemItemsItemWorkbookWorksheetsItemChartsCountRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *ItemItemsItemWorkbookWorksheetsItemChartsCountRequestBuilderGetQueryParameters
 }
 // NewItemItemsItemWorkbookWorksheetsItemChartsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsItemChartsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookWorksheetsItemChartsCountRequestBuilder) {
     m := &ItemItemsItemWorkbookWorksheetsItemChartsCountRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/charts/$count{?%24search,%24filter}";
+    m.urlTemplate = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/charts/count()";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -50,8 +41,8 @@ func NewItemItemsItemWorkbookWorksheetsItemChartsCountRequestBuilder(rawUrl stri
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookWorksheetsItemChartsCountRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get the number of the resource
-func (m *ItemItemsItemWorkbookWorksheetsItemChartsCountRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsCountRequestBuilderGetRequestConfiguration)(*int32, error) {
+// Get invoke function count
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsCountRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsCountRequestBuilderGetRequestConfiguration)(ItemItemsItemWorkbookWorksheetsItemChartsCountResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -60,26 +51,23 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsCountRequestBuilder) Get(ctx c
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
+    res, err := m.requestAdapter.Send(ctx, requestInfo, CreateItemItemsItemWorkbookWorksheetsItemChartsCountResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(*int32), nil
+    return res.(ItemItemsItemWorkbookWorksheetsItemChartsCountResponseable), nil
 }
-// ToGetRequestInformation get the number of the resource
+// ToGetRequestInformation invoke function count
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.Add("Accept", "text/plain")
+    requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }

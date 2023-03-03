@@ -74,6 +74,10 @@ func NewDirectoryRoleEligibilitySchedulesRequestBuilder(rawUrl string, requestAd
 func (m *DirectoryRoleEligibilitySchedulesRequestBuilder) Count()(*DirectoryRoleEligibilitySchedulesCountRequestBuilder) {
     return NewDirectoryRoleEligibilitySchedulesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
+func (m *DirectoryRoleEligibilitySchedulesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*DirectoryRoleEligibilitySchedulesFilterByCurrentUserWithOnRequestBuilder) {
+    return NewDirectoryRoleEligibilitySchedulesFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
+}
 // Get get the unifiedRoleEligibilitySchedule resources from the roleEligibilitySchedules navigation property.
 // [Find more info here]
 // 
@@ -95,10 +99,6 @@ func (m *DirectoryRoleEligibilitySchedulesRequestBuilder) Get(ctx context.Contex
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleEligibilityScheduleCollectionResponseable), nil
-}
-// MicrosoftGraphFilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
-func (m *DirectoryRoleEligibilitySchedulesRequestBuilder) MicrosoftGraphFilterByCurrentUserWithOn(on *string)(*DirectoryRoleEligibilitySchedulesMicrosoftGraphFilterByCurrentUserWithOnRequestBuilder) {
-    return NewDirectoryRoleEligibilitySchedulesMicrosoftGraphFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
 }
 // Post create new navigation property to roleEligibilitySchedules for roleManagement
 func (m *DirectoryRoleEligibilitySchedulesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleEligibilityScheduleable, requestConfiguration *DirectoryRoleEligibilitySchedulesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleEligibilityScheduleable, error) {

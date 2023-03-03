@@ -7,8 +7,6 @@ import (
 // AuthenticationMethodsRegistrationCampaignIncludeTargetCollectionResponse 
 type AuthenticationMethodsRegistrationCampaignIncludeTargetCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AuthenticationMethodsRegistrationCampaignIncludeTargetable
 }
 // NewAuthenticationMethodsRegistrationCampaignIncludeTargetCollectionResponse instantiates a new AuthenticationMethodsRegistrationCampaignIncludeTargetCollectionResponse and sets the default values.
 func NewAuthenticationMethodsRegistrationCampaignIncludeTargetCollectionResponse()(*AuthenticationMethodsRegistrationCampaignIncludeTargetCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AuthenticationMethodsRegistrationCampaignIncludeTargetCollectionRespons
 }
 // GetValue gets the value property value. The value property
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTargetCollectionResponse) GetValue()([]AuthenticationMethodsRegistrationCampaignIncludeTargetable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AuthenticationMethodsRegistrationCampaignIncludeTargetable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTargetCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AuthenticationMethodsRegistrationCampaignIncludeTargetCollectionRespons
 }
 // SetValue sets the value property value. The value property
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTargetCollectionResponse) SetValue(value []AuthenticationMethodsRegistrationCampaignIncludeTargetable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AuthenticationMethodsRegistrationCampaignIncludeTargetCollectionResponseable 
+type AuthenticationMethodsRegistrationCampaignIncludeTargetCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AuthenticationMethodsRegistrationCampaignIncludeTargetable)
+    SetValue(value []AuthenticationMethodsRegistrationCampaignIncludeTargetable)()
 }

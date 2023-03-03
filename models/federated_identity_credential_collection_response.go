@@ -7,8 +7,6 @@ import (
 // FederatedIdentityCredentialCollectionResponse 
 type FederatedIdentityCredentialCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []FederatedIdentityCredentialable
 }
 // NewFederatedIdentityCredentialCollectionResponse instantiates a new FederatedIdentityCredentialCollectionResponse and sets the default values.
 func NewFederatedIdentityCredentialCollectionResponse()(*FederatedIdentityCredentialCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *FederatedIdentityCredentialCollectionResponse) GetFieldDeserializers()(
 }
 // GetValue gets the value property value. The value property
 func (m *FederatedIdentityCredentialCollectionResponse) GetValue()([]FederatedIdentityCredentialable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]FederatedIdentityCredentialable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *FederatedIdentityCredentialCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *FederatedIdentityCredentialCollectionResponse) Serialize(writer i878a80
 }
 // SetValue sets the value property value. The value property
 func (m *FederatedIdentityCredentialCollectionResponse) SetValue(value []FederatedIdentityCredentialable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// FederatedIdentityCredentialCollectionResponseable 
+type FederatedIdentityCredentialCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]FederatedIdentityCredentialable)
+    SetValue(value []FederatedIdentityCredentialable)()
 }

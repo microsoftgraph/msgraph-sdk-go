@@ -103,10 +103,6 @@ func (m *CasesEdiscoveryCasesItemSettingsRequestBuilder) Get(ctx context.Context
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryCaseSettingsable), nil
 }
-// MicrosoftGraphSecurityResetToDefault provides operations to call the resetToDefault method.
-func (m *CasesEdiscoveryCasesItemSettingsRequestBuilder) MicrosoftGraphSecurityResetToDefault()(*CasesEdiscoveryCasesItemSettingsMicrosoftGraphSecurityResetToDefaultRequestBuilder) {
-    return NewCasesEdiscoveryCasesItemSettingsMicrosoftGraphSecurityResetToDefaultRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Patch update the properties of an ediscoveryCaseSettings object.
 // [Find more info here]
 // 
@@ -128,6 +124,10 @@ func (m *CasesEdiscoveryCasesItemSettingsRequestBuilder) Patch(ctx context.Conte
         return nil, nil
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryCaseSettingsable), nil
+}
+// SecurityResetToDefault provides operations to call the resetToDefault method.
+func (m *CasesEdiscoveryCasesItemSettingsRequestBuilder) SecurityResetToDefault()(*CasesEdiscoveryCasesItemSettingsSecurityResetToDefaultRequestBuilder) {
+    return NewCasesEdiscoveryCasesItemSettingsSecurityResetToDefaultRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property settings for security
 func (m *CasesEdiscoveryCasesItemSettingsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemSettingsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -9,18 +9,6 @@ import (
 // Segment 
 type Segment struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
-    // Endpoint that answered this segment.
-    callee Endpointable
-    // Endpoint that initiated this segment.
-    caller Endpointable
-    // UTC time when the segment ended. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Failure information associated with the segment if it failed.
-    failureInfo FailureInfoable
-    // Media associated with this segment.
-    media []Mediaable
-    // UTC time when the segment started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewSegment instantiates a new segment and sets the default values.
 func NewSegment()(*Segment) {
@@ -35,19 +23,47 @@ func CreateSegmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
 }
 // GetCallee gets the callee property value. Endpoint that answered this segment.
 func (m *Segment) GetCallee()(Endpointable) {
-    return m.callee
+    val, err := m.GetBackingStore().Get("callee")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Endpointable)
+    }
+    return nil
 }
 // GetCaller gets the caller property value. Endpoint that initiated this segment.
 func (m *Segment) GetCaller()(Endpointable) {
-    return m.caller
+    val, err := m.GetBackingStore().Get("caller")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Endpointable)
+    }
+    return nil
 }
 // GetEndDateTime gets the endDateTime property value. UTC time when the segment ended. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *Segment) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.endDateTime
+    val, err := m.GetBackingStore().Get("endDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetFailureInfo gets the failureInfo property value. Failure information associated with the segment if it failed.
 func (m *Segment) GetFailureInfo()(FailureInfoable) {
-    return m.failureInfo
+    val, err := m.GetBackingStore().Get("failureInfo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(FailureInfoable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Segment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -120,11 +136,25 @@ func (m *Segment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
 }
 // GetMedia gets the media property value. Media associated with this segment.
 func (m *Segment) GetMedia()([]Mediaable) {
-    return m.media
+    val, err := m.GetBackingStore().Get("media")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Mediaable)
+    }
+    return nil
 }
 // GetStartDateTime gets the startDateTime property value. UTC time when the segment started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *Segment) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.startDateTime
+    val, err := m.GetBackingStore().Get("startDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Segment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -176,25 +206,60 @@ func (m *Segment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
 }
 // SetCallee sets the callee property value. Endpoint that answered this segment.
 func (m *Segment) SetCallee(value Endpointable)() {
-    m.callee = value
+    err := m.GetBackingStore().Set("callee", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCaller sets the caller property value. Endpoint that initiated this segment.
 func (m *Segment) SetCaller(value Endpointable)() {
-    m.caller = value
+    err := m.GetBackingStore().Set("caller", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetEndDateTime sets the endDateTime property value. UTC time when the segment ended. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *Segment) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.endDateTime = value
+    err := m.GetBackingStore().Set("endDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFailureInfo sets the failureInfo property value. Failure information associated with the segment if it failed.
 func (m *Segment) SetFailureInfo(value FailureInfoable)() {
-    m.failureInfo = value
+    err := m.GetBackingStore().Set("failureInfo", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMedia sets the media property value. Media associated with this segment.
 func (m *Segment) SetMedia(value []Mediaable)() {
-    m.media = value
+    err := m.GetBackingStore().Set("media", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStartDateTime sets the startDateTime property value. UTC time when the segment started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *Segment) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.startDateTime = value
+    err := m.GetBackingStore().Set("startDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Segmentable 
+type Segmentable interface {
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCallee()(Endpointable)
+    GetCaller()(Endpointable)
+    GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetFailureInfo()(FailureInfoable)
+    GetMedia()([]Mediaable)
+    GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    SetCallee(value Endpointable)()
+    SetCaller(value Endpointable)()
+    SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetFailureInfo(value FailureInfoable)()
+    SetMedia(value []Mediaable)()
+    SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
 }

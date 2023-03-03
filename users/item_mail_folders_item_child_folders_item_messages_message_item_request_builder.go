@@ -84,6 +84,22 @@ func NewItemMailFoldersItemChildFoldersItemMessagesMessageItemRequestBuilder(raw
 func (m *ItemMailFoldersItemChildFoldersItemMessagesMessageItemRequestBuilder) Content()(*ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilder) {
     return NewItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// Copy provides operations to call the copy method.
+func (m *ItemMailFoldersItemChildFoldersItemMessagesMessageItemRequestBuilder) Copy()(*ItemMailFoldersItemChildFoldersItemMessagesItemCopyRequestBuilder) {
+    return NewItemMailFoldersItemChildFoldersItemMessagesItemCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// CreateForward provides operations to call the createForward method.
+func (m *ItemMailFoldersItemChildFoldersItemMessagesMessageItemRequestBuilder) CreateForward()(*ItemMailFoldersItemChildFoldersItemMessagesItemCreateForwardRequestBuilder) {
+    return NewItemMailFoldersItemChildFoldersItemMessagesItemCreateForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// CreateReply provides operations to call the createReply method.
+func (m *ItemMailFoldersItemChildFoldersItemMessagesMessageItemRequestBuilder) CreateReply()(*ItemMailFoldersItemChildFoldersItemMessagesItemCreateReplyRequestBuilder) {
+    return NewItemMailFoldersItemChildFoldersItemMessagesItemCreateReplyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// CreateReplyAll provides operations to call the createReplyAll method.
+func (m *ItemMailFoldersItemChildFoldersItemMessagesMessageItemRequestBuilder) CreateReplyAll()(*ItemMailFoldersItemChildFoldersItemMessagesItemCreateReplyAllRequestBuilder) {
+    return NewItemMailFoldersItemChildFoldersItemMessagesItemCreateReplyAllRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Delete delete navigation property messages for users
 func (m *ItemMailFoldersItemChildFoldersItemMessagesMessageItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessagesMessageItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -115,6 +131,10 @@ func (m *ItemMailFoldersItemChildFoldersItemMessagesMessageItemRequestBuilder) E
     }
     return NewItemMailFoldersItemChildFoldersItemMessagesItemExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
+// Forward provides operations to call the forward method.
+func (m *ItemMailFoldersItemChildFoldersItemMessagesMessageItemRequestBuilder) Forward()(*ItemMailFoldersItemChildFoldersItemMessagesItemForwardRequestBuilder) {
+    return NewItemMailFoldersItemChildFoldersItemMessagesItemForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Get the collection of messages in the mailFolder.
 func (m *ItemMailFoldersItemChildFoldersItemMessagesMessageItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessagesMessageItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Messageable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -134,41 +154,9 @@ func (m *ItemMailFoldersItemChildFoldersItemMessagesMessageItemRequestBuilder) G
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Messageable), nil
 }
-// MicrosoftGraphCopy provides operations to call the copy method.
-func (m *ItemMailFoldersItemChildFoldersItemMessagesMessageItemRequestBuilder) MicrosoftGraphCopy()(*ItemMailFoldersItemChildFoldersItemMessagesItemMicrosoftGraphCopyRequestBuilder) {
-    return NewItemMailFoldersItemChildFoldersItemMessagesItemMicrosoftGraphCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphCreateForward provides operations to call the createForward method.
-func (m *ItemMailFoldersItemChildFoldersItemMessagesMessageItemRequestBuilder) MicrosoftGraphCreateForward()(*ItemMailFoldersItemChildFoldersItemMessagesItemMicrosoftGraphCreateForwardRequestBuilder) {
-    return NewItemMailFoldersItemChildFoldersItemMessagesItemMicrosoftGraphCreateForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphCreateReply provides operations to call the createReply method.
-func (m *ItemMailFoldersItemChildFoldersItemMessagesMessageItemRequestBuilder) MicrosoftGraphCreateReply()(*ItemMailFoldersItemChildFoldersItemMessagesItemMicrosoftGraphCreateReplyRequestBuilder) {
-    return NewItemMailFoldersItemChildFoldersItemMessagesItemMicrosoftGraphCreateReplyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphCreateReplyAll provides operations to call the createReplyAll method.
-func (m *ItemMailFoldersItemChildFoldersItemMessagesMessageItemRequestBuilder) MicrosoftGraphCreateReplyAll()(*ItemMailFoldersItemChildFoldersItemMessagesItemMicrosoftGraphCreateReplyAllRequestBuilder) {
-    return NewItemMailFoldersItemChildFoldersItemMessagesItemMicrosoftGraphCreateReplyAllRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphForward provides operations to call the forward method.
-func (m *ItemMailFoldersItemChildFoldersItemMessagesMessageItemRequestBuilder) MicrosoftGraphForward()(*ItemMailFoldersItemChildFoldersItemMessagesItemMicrosoftGraphForwardRequestBuilder) {
-    return NewItemMailFoldersItemChildFoldersItemMessagesItemMicrosoftGraphForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphMove provides operations to call the move method.
-func (m *ItemMailFoldersItemChildFoldersItemMessagesMessageItemRequestBuilder) MicrosoftGraphMove()(*ItemMailFoldersItemChildFoldersItemMessagesItemMicrosoftGraphMoveRequestBuilder) {
-    return NewItemMailFoldersItemChildFoldersItemMessagesItemMicrosoftGraphMoveRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphReply provides operations to call the reply method.
-func (m *ItemMailFoldersItemChildFoldersItemMessagesMessageItemRequestBuilder) MicrosoftGraphReply()(*ItemMailFoldersItemChildFoldersItemMessagesItemMicrosoftGraphReplyRequestBuilder) {
-    return NewItemMailFoldersItemChildFoldersItemMessagesItemMicrosoftGraphReplyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphReplyAll provides operations to call the replyAll method.
-func (m *ItemMailFoldersItemChildFoldersItemMessagesMessageItemRequestBuilder) MicrosoftGraphReplyAll()(*ItemMailFoldersItemChildFoldersItemMessagesItemMicrosoftGraphReplyAllRequestBuilder) {
-    return NewItemMailFoldersItemChildFoldersItemMessagesItemMicrosoftGraphReplyAllRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphSend provides operations to call the send method.
-func (m *ItemMailFoldersItemChildFoldersItemMessagesMessageItemRequestBuilder) MicrosoftGraphSend()(*ItemMailFoldersItemChildFoldersItemMessagesItemMicrosoftGraphSendRequestBuilder) {
-    return NewItemMailFoldersItemChildFoldersItemMessagesItemMicrosoftGraphSendRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// Move provides operations to call the move method.
+func (m *ItemMailFoldersItemChildFoldersItemMessagesMessageItemRequestBuilder) Move()(*ItemMailFoldersItemChildFoldersItemMessagesItemMoveRequestBuilder) {
+    return NewItemMailFoldersItemChildFoldersItemMessagesItemMoveRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.message entity.
 func (m *ItemMailFoldersItemChildFoldersItemMessagesMessageItemRequestBuilder) MultiValueExtendedProperties()(*ItemMailFoldersItemChildFoldersItemMessagesItemMultiValueExtendedPropertiesRequestBuilder) {
@@ -203,6 +191,18 @@ func (m *ItemMailFoldersItemChildFoldersItemMessagesMessageItemRequestBuilder) P
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Messageable), nil
+}
+// Reply provides operations to call the reply method.
+func (m *ItemMailFoldersItemChildFoldersItemMessagesMessageItemRequestBuilder) Reply()(*ItemMailFoldersItemChildFoldersItemMessagesItemReplyRequestBuilder) {
+    return NewItemMailFoldersItemChildFoldersItemMessagesItemReplyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// ReplyAll provides operations to call the replyAll method.
+func (m *ItemMailFoldersItemChildFoldersItemMessagesMessageItemRequestBuilder) ReplyAll()(*ItemMailFoldersItemChildFoldersItemMessagesItemReplyAllRequestBuilder) {
+    return NewItemMailFoldersItemChildFoldersItemMessagesItemReplyAllRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// Send provides operations to call the send method.
+func (m *ItemMailFoldersItemChildFoldersItemMessagesMessageItemRequestBuilder) Send()(*ItemMailFoldersItemChildFoldersItemMessagesItemSendRequestBuilder) {
+    return NewItemMailFoldersItemChildFoldersItemMessagesItemSendRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SingleValueExtendedProperties provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.message entity.
 func (m *ItemMailFoldersItemChildFoldersItemMessagesMessageItemRequestBuilder) SingleValueExtendedProperties()(*ItemMailFoldersItemChildFoldersItemMessagesItemSingleValueExtendedPropertiesRequestBuilder) {

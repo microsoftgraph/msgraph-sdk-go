@@ -7,8 +7,6 @@ import (
 // OrganizationalBranding 
 type OrganizationalBranding struct {
     OrganizationalBrandingProperties
-    // Add different branding based on a locale.
-    localizations []OrganizationalBrandingLocalizationable
 }
 // NewOrganizationalBranding instantiates a new OrganizationalBranding and sets the default values.
 func NewOrganizationalBranding()(*OrganizationalBranding) {
@@ -44,7 +42,14 @@ func (m *OrganizationalBranding) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetLocalizations gets the localizations property value. Add different branding based on a locale.
 func (m *OrganizationalBranding) GetLocalizations()([]OrganizationalBrandingLocalizationable) {
-    return m.localizations
+    val, err := m.GetBackingStore().Get("localizations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OrganizationalBrandingLocalizationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OrganizationalBranding) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -66,5 +71,15 @@ func (m *OrganizationalBranding) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetLocalizations sets the localizations property value. Add different branding based on a locale.
 func (m *OrganizationalBranding) SetLocalizations(value []OrganizationalBrandingLocalizationable)() {
-    m.localizations = value
+    err := m.GetBackingStore().Set("localizations", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OrganizationalBrandingable 
+type OrganizationalBrandingable interface {
+    OrganizationalBrandingPropertiesable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetLocalizations()([]OrganizationalBrandingLocalizationable)
+    SetLocalizations(value []OrganizationalBrandingLocalizationable)()
 }

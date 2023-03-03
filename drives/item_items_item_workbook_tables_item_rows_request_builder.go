@@ -51,6 +51,10 @@ type ItemItemsItemWorkbookTablesItemRowsRequestBuilderPostRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Add provides operations to call the add method.
+func (m *ItemItemsItemWorkbookTablesItemRowsRequestBuilder) Add()(*ItemItemsItemWorkbookTablesItemRowsAddRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemRowsAddRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // NewItemItemsItemWorkbookTablesItemRowsRequestBuilderInternal instantiates a new RowsRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookTablesItemRowsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookTablesItemRowsRequestBuilder) {
     m := &ItemItemsItemWorkbookTablesItemRowsRequestBuilder{
@@ -70,14 +74,14 @@ func NewItemItemsItemWorkbookTablesItemRowsRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookTablesItemRowsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count provides operations to count the resources in the collection.
+// Count provides operations to call the count method.
 func (m *ItemItemsItemWorkbookTablesItemRowsRequestBuilder) Count()(*ItemItemsItemWorkbookTablesItemRowsCountRequestBuilder) {
     return NewItemItemsItemWorkbookTablesItemRowsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get retrieve a list of tablerow objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/table-list-rows?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/tablerow-list?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookTablesItemRowsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemRowsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableRowCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,17 +100,9 @@ func (m *ItemItemsItemWorkbookTablesItemRowsRequestBuilder) Get(ctx context.Cont
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableRowCollectionResponseable), nil
 }
-// MicrosoftGraphAdd provides operations to call the add method.
-func (m *ItemItemsItemWorkbookTablesItemRowsRequestBuilder) MicrosoftGraphAdd()(*ItemItemsItemWorkbookTablesItemRowsMicrosoftGraphAddRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesItemRowsMicrosoftGraphAddRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphCount provides operations to call the count method.
-func (m *ItemItemsItemWorkbookTablesItemRowsRequestBuilder) MicrosoftGraphCount()(*ItemItemsItemWorkbookTablesItemRowsMicrosoftGraphCountRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesItemRowsMicrosoftGraphCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphItemAtWithIndex provides operations to call the itemAt method.
-func (m *ItemItemsItemWorkbookTablesItemRowsRequestBuilder) MicrosoftGraphItemAtWithIndex(index *int32)(*ItemItemsItemWorkbookTablesItemRowsMicrosoftGraphItemAtWithIndexRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesItemRowsMicrosoftGraphItemAtWithIndexRequestBuilderInternal(m.pathParameters, m.requestAdapter, index)
+// ItemAtWithIndex provides operations to call the itemAt method.
+func (m *ItemItemsItemWorkbookTablesItemRowsRequestBuilder) ItemAtWithIndex(index *int32)(*ItemItemsItemWorkbookTablesItemRowsItemAtWithIndexRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemRowsItemAtWithIndexRequestBuilderInternal(m.pathParameters, m.requestAdapter, index)
 }
 // Post adds rows to the end of a table.  Note that this API can accept multiple rows of data. Adding one row at a time can affect performance. The recommended approach is to batch the rows together in a single call rather than inserting single rows. For best results, collect the rows to be inserted on the application side and perform a single row add operation. Experiment with the number of rows to determine the ideal number of rows to use in a single API call.  This request might occasionally result in a `504 HTTP` error. The appropriate response to this error is to repeat the request.
 // [Find more info here]

@@ -44,6 +44,10 @@ type SitesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *SitesRequestBuilderGetQueryParameters
 }
+// Add provides operations to call the add method.
+func (m *SitesRequestBuilder) Add()(*AddRequestBuilder) {
+    return NewAddRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // NewSitesRequestBuilderInternal instantiates a new SitesRequestBuilder and sets the default values.
 func NewSitesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SitesRequestBuilder) {
     m := &SitesRequestBuilder{
@@ -89,13 +93,9 @@ func (m *SitesRequestBuilder) Get(ctx context.Context, requestConfiguration *Sit
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SiteCollectionResponseable), nil
 }
-// MicrosoftGraphAdd provides operations to call the add method.
-func (m *SitesRequestBuilder) MicrosoftGraphAdd()(*MicrosoftGraphAddRequestBuilder) {
-    return NewMicrosoftGraphAddRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphRemove provides operations to call the remove method.
-func (m *SitesRequestBuilder) MicrosoftGraphRemove()(*MicrosoftGraphRemoveRequestBuilder) {
-    return NewMicrosoftGraphRemoveRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// Remove provides operations to call the remove method.
+func (m *SitesRequestBuilder) Remove()(*RemoveRequestBuilder) {
+    return NewRemoveRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation search across a SharePoint tenant for [sites][] that match keywords provided. The only property that works for sorting is **createdDateTime**. The search filter is a free text search that uses multiple properties when retrieving the search results.
 func (m *SitesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SitesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

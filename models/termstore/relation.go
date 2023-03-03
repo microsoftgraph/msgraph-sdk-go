@@ -8,14 +8,6 @@ import (
 // Relation 
 type Relation struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
-    // The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].
-    fromTerm Termable
-    // The type of relation. Possible values are: pin, reuse.
-    relationship *RelationType
-    // The [set] in which the relation is relevant.
-    set Setable
-    // The to [term] of the relation. The term to which the relationship is defined.
-    toTerm Termable
 }
 // NewRelation instantiates a new relation and sets the default values.
 func NewRelation()(*Relation) {
@@ -75,19 +67,47 @@ func (m *Relation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetFromTerm gets the fromTerm property value. The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].
 func (m *Relation) GetFromTerm()(Termable) {
-    return m.fromTerm
+    val, err := m.GetBackingStore().Get("fromTerm")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Termable)
+    }
+    return nil
 }
 // GetRelationship gets the relationship property value. The type of relation. Possible values are: pin, reuse.
 func (m *Relation) GetRelationship()(*RelationType) {
-    return m.relationship
+    val, err := m.GetBackingStore().Get("relationship")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*RelationType)
+    }
+    return nil
 }
 // GetSet gets the set property value. The [set] in which the relation is relevant.
 func (m *Relation) GetSet()(Setable) {
-    return m.set
+    val, err := m.GetBackingStore().Get("set")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Setable)
+    }
+    return nil
 }
 // GetToTerm gets the toTerm property value. The to [term] of the relation. The term to which the relationship is defined.
 func (m *Relation) GetToTerm()(Termable) {
-    return m.toTerm
+    val, err := m.GetBackingStore().Get("toTerm")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Termable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Relation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -124,17 +144,42 @@ func (m *Relation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetFromTerm sets the fromTerm property value. The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].
 func (m *Relation) SetFromTerm(value Termable)() {
-    m.fromTerm = value
+    err := m.GetBackingStore().Set("fromTerm", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRelationship sets the relationship property value. The type of relation. Possible values are: pin, reuse.
 func (m *Relation) SetRelationship(value *RelationType)() {
-    m.relationship = value
+    err := m.GetBackingStore().Set("relationship", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSet sets the set property value. The [set] in which the relation is relevant.
 func (m *Relation) SetSet(value Setable)() {
-    m.set = value
+    err := m.GetBackingStore().Set("set", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetToTerm sets the toTerm property value. The to [term] of the relation. The term to which the relationship is defined.
 func (m *Relation) SetToTerm(value Termable)() {
-    m.toTerm = value
+    err := m.GetBackingStore().Set("toTerm", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Relationable 
+type Relationable interface {
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetFromTerm()(Termable)
+    GetRelationship()(*RelationType)
+    GetSet()(Setable)
+    GetToTerm()(Termable)
+    SetFromTerm(value Termable)()
+    SetRelationship(value *RelationType)()
+    SetSet(value Setable)()
+    SetToTerm(value Termable)()
 }

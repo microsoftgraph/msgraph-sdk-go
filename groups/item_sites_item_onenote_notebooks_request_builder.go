@@ -96,13 +96,13 @@ func (m *ItemSitesItemOnenoteNotebooksRequestBuilder) Get(ctx context.Context, r
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NotebookCollectionResponseable), nil
 }
-// MicrosoftGraphGetNotebookFromWebUrl provides operations to call the getNotebookFromWebUrl method.
-func (m *ItemSitesItemOnenoteNotebooksRequestBuilder) MicrosoftGraphGetNotebookFromWebUrl()(*ItemSitesItemOnenoteNotebooksMicrosoftGraphGetNotebookFromWebUrlRequestBuilder) {
-    return NewItemSitesItemOnenoteNotebooksMicrosoftGraphGetNotebookFromWebUrlRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GetNotebookFromWebUrl provides operations to call the getNotebookFromWebUrl method.
+func (m *ItemSitesItemOnenoteNotebooksRequestBuilder) GetNotebookFromWebUrl()(*ItemSitesItemOnenoteNotebooksGetNotebookFromWebUrlRequestBuilder) {
+    return NewItemSitesItemOnenoteNotebooksGetNotebookFromWebUrlRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphGetRecentNotebooksWithIncludePersonalNotebooks provides operations to call the getRecentNotebooks method.
-func (m *ItemSitesItemOnenoteNotebooksRequestBuilder) MicrosoftGraphGetRecentNotebooksWithIncludePersonalNotebooks(includePersonalNotebooks *bool)(*ItemSitesItemOnenoteNotebooksMicrosoftGraphGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder) {
-    return NewItemSitesItemOnenoteNotebooksMicrosoftGraphGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderInternal(m.pathParameters, m.requestAdapter, includePersonalNotebooks)
+// GetRecentNotebooksWithIncludePersonalNotebooks provides operations to call the getRecentNotebooks method.
+func (m *ItemSitesItemOnenoteNotebooksRequestBuilder) GetRecentNotebooksWithIncludePersonalNotebooks(includePersonalNotebooks *bool)(*ItemSitesItemOnenoteNotebooksGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder) {
+    return NewItemSitesItemOnenoteNotebooksGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderInternal(m.pathParameters, m.requestAdapter, includePersonalNotebooks)
 }
 // Post create a new OneNote notebook.
 // [Find more info here]

@@ -7,8 +7,6 @@ import (
 // InviteParticipantsOperation 
 type InviteParticipantsOperation struct {
     CommsOperation
-    // The participants to invite.
-    participants []InvitationParticipantInfoable
 }
 // NewInviteParticipantsOperation instantiates a new InviteParticipantsOperation and sets the default values.
 func NewInviteParticipantsOperation()(*InviteParticipantsOperation) {
@@ -42,7 +40,14 @@ func (m *InviteParticipantsOperation) GetFieldDeserializers()(map[string]func(i8
 }
 // GetParticipants gets the participants property value. The participants to invite.
 func (m *InviteParticipantsOperation) GetParticipants()([]InvitationParticipantInfoable) {
-    return m.participants
+    val, err := m.GetBackingStore().Get("participants")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]InvitationParticipantInfoable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *InviteParticipantsOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *InviteParticipantsOperation) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetParticipants sets the participants property value. The participants to invite.
 func (m *InviteParticipantsOperation) SetParticipants(value []InvitationParticipantInfoable)() {
-    m.participants = value
+    err := m.GetBackingStore().Set("participants", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// InviteParticipantsOperationable 
+type InviteParticipantsOperationable interface {
+    CommsOperationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetParticipants()([]InvitationParticipantInfoable)
+    SetParticipants(value []InvitationParticipantInfoable)()
 }

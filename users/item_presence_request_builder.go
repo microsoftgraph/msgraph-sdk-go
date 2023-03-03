@@ -46,6 +46,14 @@ type ItemPresenceRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ClearPresence provides operations to call the clearPresence method.
+func (m *ItemPresenceRequestBuilder) ClearPresence()(*ItemPresenceClearPresenceRequestBuilder) {
+    return NewItemPresenceClearPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// ClearUserPreferredPresence provides operations to call the clearUserPreferredPresence method.
+func (m *ItemPresenceRequestBuilder) ClearUserPreferredPresence()(*ItemPresenceClearUserPreferredPresenceRequestBuilder) {
+    return NewItemPresenceClearUserPreferredPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // NewItemPresenceRequestBuilderInternal instantiates a new PresenceRequestBuilder and sets the default values.
 func NewItemPresenceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPresenceRequestBuilder) {
     m := &ItemPresenceRequestBuilder{
@@ -103,22 +111,6 @@ func (m *ItemPresenceRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Presenceable), nil
 }
-// MicrosoftGraphClearPresence provides operations to call the clearPresence method.
-func (m *ItemPresenceRequestBuilder) MicrosoftGraphClearPresence()(*ItemPresenceMicrosoftGraphClearPresenceRequestBuilder) {
-    return NewItemPresenceMicrosoftGraphClearPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphClearUserPreferredPresence provides operations to call the clearUserPreferredPresence method.
-func (m *ItemPresenceRequestBuilder) MicrosoftGraphClearUserPreferredPresence()(*ItemPresenceMicrosoftGraphClearUserPreferredPresenceRequestBuilder) {
-    return NewItemPresenceMicrosoftGraphClearUserPreferredPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphSetPresence provides operations to call the setPresence method.
-func (m *ItemPresenceRequestBuilder) MicrosoftGraphSetPresence()(*ItemPresenceMicrosoftGraphSetPresenceRequestBuilder) {
-    return NewItemPresenceMicrosoftGraphSetPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphSetUserPreferredPresence provides operations to call the setUserPreferredPresence method.
-func (m *ItemPresenceRequestBuilder) MicrosoftGraphSetUserPreferredPresence()(*ItemPresenceMicrosoftGraphSetUserPreferredPresenceRequestBuilder) {
-    return NewItemPresenceMicrosoftGraphSetUserPreferredPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Patch update the navigation property presence in users
 func (m *ItemPresenceRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Presenceable, requestConfiguration *ItemPresenceRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Presenceable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -137,6 +129,14 @@ func (m *ItemPresenceRequestBuilder) Patch(ctx context.Context, body iadcd811244
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Presenceable), nil
+}
+// SetPresence provides operations to call the setPresence method.
+func (m *ItemPresenceRequestBuilder) SetPresence()(*ItemPresenceSetPresenceRequestBuilder) {
+    return NewItemPresenceSetPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// SetUserPreferredPresence provides operations to call the setUserPreferredPresence method.
+func (m *ItemPresenceRequestBuilder) SetUserPreferredPresence()(*ItemPresenceSetUserPreferredPresenceRequestBuilder) {
+    return NewItemPresenceSetUserPreferredPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property presence for users
 func (m *ItemPresenceRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemPresenceRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -2,33 +2,19 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // SharepointIds 
 type SharepointIds struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The unique identifier (guid) for the item's list in SharePoint.
-    listId *string
-    // An integer identifier for the item within the containing list.
-    listItemId *string
-    // The unique identifier (guid) for the item within OneDrive for Business or a SharePoint site.
-    listItemUniqueId *string
-    // The OdataType property
-    odataType *string
-    // The unique identifier (guid) for the item's site collection (SPSite).
-    siteId *string
-    // The SharePoint URL for the site that contains the item.
-    siteUrl *string
-    // The unique identifier (guid) for the tenancy.
-    tenantId *string
-    // The unique identifier (guid) for the item's site (SPWeb).
-    webId *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewSharepointIds instantiates a new sharepointIds and sets the default values.
 func NewSharepointIds()(*SharepointIds) {
     m := &SharepointIds{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -38,7 +24,19 @@ func CreateSharepointIdsFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SharepointIds) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *SharepointIds) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SharepointIds) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -127,35 +125,91 @@ func (m *SharepointIds) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetListId gets the listId property value. The unique identifier (guid) for the item's list in SharePoint.
 func (m *SharepointIds) GetListId()(*string) {
-    return m.listId
+    val, err := m.GetBackingStore().Get("listId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetListItemId gets the listItemId property value. An integer identifier for the item within the containing list.
 func (m *SharepointIds) GetListItemId()(*string) {
-    return m.listItemId
+    val, err := m.GetBackingStore().Get("listItemId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetListItemUniqueId gets the listItemUniqueId property value. The unique identifier (guid) for the item within OneDrive for Business or a SharePoint site.
 func (m *SharepointIds) GetListItemUniqueId()(*string) {
-    return m.listItemUniqueId
+    val, err := m.GetBackingStore().Get("listItemUniqueId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SharepointIds) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSiteId gets the siteId property value. The unique identifier (guid) for the item's site collection (SPSite).
 func (m *SharepointIds) GetSiteId()(*string) {
-    return m.siteId
+    val, err := m.GetBackingStore().Get("siteId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSiteUrl gets the siteUrl property value. The SharePoint URL for the site that contains the item.
 func (m *SharepointIds) GetSiteUrl()(*string) {
-    return m.siteUrl
+    val, err := m.GetBackingStore().Get("siteUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTenantId gets the tenantId property value. The unique identifier (guid) for the tenancy.
 func (m *SharepointIds) GetTenantId()(*string) {
-    return m.tenantId
+    val, err := m.GetBackingStore().Get("tenantId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetWebId gets the webId property value. The unique identifier (guid) for the item's site (SPWeb).
 func (m *SharepointIds) GetWebId()(*string) {
-    return m.webId
+    val, err := m.GetBackingStore().Get("webId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SharepointIds) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -217,37 +271,92 @@ func (m *SharepointIds) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SharepointIds) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *SharepointIds) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetListId sets the listId property value. The unique identifier (guid) for the item's list in SharePoint.
 func (m *SharepointIds) SetListId(value *string)() {
-    m.listId = value
+    err := m.GetBackingStore().Set("listId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetListItemId sets the listItemId property value. An integer identifier for the item within the containing list.
 func (m *SharepointIds) SetListItemId(value *string)() {
-    m.listItemId = value
+    err := m.GetBackingStore().Set("listItemId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetListItemUniqueId sets the listItemUniqueId property value. The unique identifier (guid) for the item within OneDrive for Business or a SharePoint site.
 func (m *SharepointIds) SetListItemUniqueId(value *string)() {
-    m.listItemUniqueId = value
+    err := m.GetBackingStore().Set("listItemUniqueId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SharepointIds) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSiteId sets the siteId property value. The unique identifier (guid) for the item's site collection (SPSite).
 func (m *SharepointIds) SetSiteId(value *string)() {
-    m.siteId = value
+    err := m.GetBackingStore().Set("siteId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSiteUrl sets the siteUrl property value. The SharePoint URL for the site that contains the item.
 func (m *SharepointIds) SetSiteUrl(value *string)() {
-    m.siteUrl = value
+    err := m.GetBackingStore().Set("siteUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTenantId sets the tenantId property value. The unique identifier (guid) for the tenancy.
 func (m *SharepointIds) SetTenantId(value *string)() {
-    m.tenantId = value
+    err := m.GetBackingStore().Set("tenantId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetWebId sets the webId property value. The unique identifier (guid) for the item's site (SPWeb).
 func (m *SharepointIds) SetWebId(value *string)() {
-    m.webId = value
+    err := m.GetBackingStore().Set("webId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SharepointIdsable 
+type SharepointIdsable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetListId()(*string)
+    GetListItemId()(*string)
+    GetListItemUniqueId()(*string)
+    GetOdataType()(*string)
+    GetSiteId()(*string)
+    GetSiteUrl()(*string)
+    GetTenantId()(*string)
+    GetWebId()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetListId(value *string)()
+    SetListItemId(value *string)()
+    SetListItemUniqueId(value *string)()
+    SetOdataType(value *string)()
+    SetSiteId(value *string)()
+    SetSiteUrl(value *string)()
+    SetTenantId(value *string)()
+    SetWebId(value *string)()
 }

@@ -51,6 +51,10 @@ type ServiceAnnouncementMessagesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Archive provides operations to call the archive method.
+func (m *ServiceAnnouncementMessagesRequestBuilder) Archive()(*ServiceAnnouncementMessagesArchiveRequestBuilder) {
+    return NewServiceAnnouncementMessagesArchiveRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // NewServiceAnnouncementMessagesRequestBuilderInternal instantiates a new MessagesRequestBuilder and sets the default values.
 func NewServiceAnnouncementMessagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ServiceAnnouncementMessagesRequestBuilder) {
     m := &ServiceAnnouncementMessagesRequestBuilder{
@@ -74,6 +78,10 @@ func NewServiceAnnouncementMessagesRequestBuilder(rawUrl string, requestAdapter 
 func (m *ServiceAnnouncementMessagesRequestBuilder) Count()(*ServiceAnnouncementMessagesCountRequestBuilder) {
     return NewServiceAnnouncementMessagesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// Favorite provides operations to call the favorite method.
+func (m *ServiceAnnouncementMessagesRequestBuilder) Favorite()(*ServiceAnnouncementMessagesFavoriteRequestBuilder) {
+    return NewServiceAnnouncementMessagesFavoriteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Get retrieve the serviceUpdateMessage resources from the **messages** navigation property. This operation retrieves all service update messages that exist for the tenant.
 // [Find more info here]
 // 
@@ -96,29 +104,13 @@ func (m *ServiceAnnouncementMessagesRequestBuilder) Get(ctx context.Context, req
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceUpdateMessageCollectionResponseable), nil
 }
-// MicrosoftGraphArchive provides operations to call the archive method.
-func (m *ServiceAnnouncementMessagesRequestBuilder) MicrosoftGraphArchive()(*ServiceAnnouncementMessagesMicrosoftGraphArchiveRequestBuilder) {
-    return NewServiceAnnouncementMessagesMicrosoftGraphArchiveRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// MarkRead provides operations to call the markRead method.
+func (m *ServiceAnnouncementMessagesRequestBuilder) MarkRead()(*ServiceAnnouncementMessagesMarkReadRequestBuilder) {
+    return NewServiceAnnouncementMessagesMarkReadRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphFavorite provides operations to call the favorite method.
-func (m *ServiceAnnouncementMessagesRequestBuilder) MicrosoftGraphFavorite()(*ServiceAnnouncementMessagesMicrosoftGraphFavoriteRequestBuilder) {
-    return NewServiceAnnouncementMessagesMicrosoftGraphFavoriteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphMarkRead provides operations to call the markRead method.
-func (m *ServiceAnnouncementMessagesRequestBuilder) MicrosoftGraphMarkRead()(*ServiceAnnouncementMessagesMicrosoftGraphMarkReadRequestBuilder) {
-    return NewServiceAnnouncementMessagesMicrosoftGraphMarkReadRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphMarkUnread provides operations to call the markUnread method.
-func (m *ServiceAnnouncementMessagesRequestBuilder) MicrosoftGraphMarkUnread()(*ServiceAnnouncementMessagesMicrosoftGraphMarkUnreadRequestBuilder) {
-    return NewServiceAnnouncementMessagesMicrosoftGraphMarkUnreadRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphUnarchive provides operations to call the unarchive method.
-func (m *ServiceAnnouncementMessagesRequestBuilder) MicrosoftGraphUnarchive()(*ServiceAnnouncementMessagesMicrosoftGraphUnarchiveRequestBuilder) {
-    return NewServiceAnnouncementMessagesMicrosoftGraphUnarchiveRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphUnfavorite provides operations to call the unfavorite method.
-func (m *ServiceAnnouncementMessagesRequestBuilder) MicrosoftGraphUnfavorite()(*ServiceAnnouncementMessagesMicrosoftGraphUnfavoriteRequestBuilder) {
-    return NewServiceAnnouncementMessagesMicrosoftGraphUnfavoriteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// MarkUnread provides operations to call the markUnread method.
+func (m *ServiceAnnouncementMessagesRequestBuilder) MarkUnread()(*ServiceAnnouncementMessagesMarkUnreadRequestBuilder) {
+    return NewServiceAnnouncementMessagesMarkUnreadRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to messages for admin
 func (m *ServiceAnnouncementMessagesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceUpdateMessageable, requestConfiguration *ServiceAnnouncementMessagesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceUpdateMessageable, error) {
@@ -171,4 +163,12 @@ func (m *ServiceAnnouncementMessagesRequestBuilder) ToPostRequestInformation(ctx
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// Unarchive provides operations to call the unarchive method.
+func (m *ServiceAnnouncementMessagesRequestBuilder) Unarchive()(*ServiceAnnouncementMessagesUnarchiveRequestBuilder) {
+    return NewServiceAnnouncementMessagesUnarchiveRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// Unfavorite provides operations to call the unfavorite method.
+func (m *ServiceAnnouncementMessagesRequestBuilder) Unfavorite()(*ServiceAnnouncementMessagesUnfavoriteRequestBuilder) {
+    return NewServiceAnnouncementMessagesUnfavoriteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

@@ -86,29 +86,29 @@ func (m *ItemMembersWithLicenseErrorsRequestBuilder) Get(ctx context.Context, re
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
 }
-// MicrosoftGraphApplication casts the previous resource to application.
-func (m *ItemMembersWithLicenseErrorsRequestBuilder) MicrosoftGraphApplication()(*ItemMembersWithLicenseErrorsMicrosoftGraphApplicationRequestBuilder) {
-    return NewItemMembersWithLicenseErrorsMicrosoftGraphApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphApplication casts the previous resource to application.
+func (m *ItemMembersWithLicenseErrorsRequestBuilder) GraphApplication()(*ItemMembersWithLicenseErrorsGraphApplicationRequestBuilder) {
+    return NewItemMembersWithLicenseErrorsGraphApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphDevice casts the previous resource to device.
-func (m *ItemMembersWithLicenseErrorsRequestBuilder) MicrosoftGraphDevice()(*ItemMembersWithLicenseErrorsMicrosoftGraphDeviceRequestBuilder) {
-    return NewItemMembersWithLicenseErrorsMicrosoftGraphDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphDevice casts the previous resource to device.
+func (m *ItemMembersWithLicenseErrorsRequestBuilder) GraphDevice()(*ItemMembersWithLicenseErrorsGraphDeviceRequestBuilder) {
+    return NewItemMembersWithLicenseErrorsGraphDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphGroup casts the previous resource to group.
-func (m *ItemMembersWithLicenseErrorsRequestBuilder) MicrosoftGraphGroup()(*ItemMembersWithLicenseErrorsMicrosoftGraphGroupRequestBuilder) {
-    return NewItemMembersWithLicenseErrorsMicrosoftGraphGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphGroup casts the previous resource to group.
+func (m *ItemMembersWithLicenseErrorsRequestBuilder) GraphGroup()(*ItemMembersWithLicenseErrorsGraphGroupRequestBuilder) {
+    return NewItemMembersWithLicenseErrorsGraphGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphOrgContact casts the previous resource to orgContact.
-func (m *ItemMembersWithLicenseErrorsRequestBuilder) MicrosoftGraphOrgContact()(*ItemMembersWithLicenseErrorsMicrosoftGraphOrgContactRequestBuilder) {
-    return NewItemMembersWithLicenseErrorsMicrosoftGraphOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphOrgContact casts the previous resource to orgContact.
+func (m *ItemMembersWithLicenseErrorsRequestBuilder) GraphOrgContact()(*ItemMembersWithLicenseErrorsGraphOrgContactRequestBuilder) {
+    return NewItemMembersWithLicenseErrorsGraphOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphServicePrincipal casts the previous resource to servicePrincipal.
-func (m *ItemMembersWithLicenseErrorsRequestBuilder) MicrosoftGraphServicePrincipal()(*ItemMembersWithLicenseErrorsMicrosoftGraphServicePrincipalRequestBuilder) {
-    return NewItemMembersWithLicenseErrorsMicrosoftGraphServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphServicePrincipal casts the previous resource to servicePrincipal.
+func (m *ItemMembersWithLicenseErrorsRequestBuilder) GraphServicePrincipal()(*ItemMembersWithLicenseErrorsGraphServicePrincipalRequestBuilder) {
+    return NewItemMembersWithLicenseErrorsGraphServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphUser casts the previous resource to user.
-func (m *ItemMembersWithLicenseErrorsRequestBuilder) MicrosoftGraphUser()(*ItemMembersWithLicenseErrorsMicrosoftGraphUserRequestBuilder) {
-    return NewItemMembersWithLicenseErrorsMicrosoftGraphUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphUser casts the previous resource to user.
+func (m *ItemMembersWithLicenseErrorsRequestBuilder) GraphUser()(*ItemMembersWithLicenseErrorsGraphUserRequestBuilder) {
+    return NewItemMembersWithLicenseErrorsGraphUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation a list of group members with license errors from this group-based license assignment. Read-only.
 func (m *ItemMembersWithLicenseErrorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMembersWithLicenseErrorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

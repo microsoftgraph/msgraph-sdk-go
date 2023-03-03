@@ -7,8 +7,6 @@ import (
 // NotebookCollectionResponse 
 type NotebookCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Notebookable
 }
 // NewNotebookCollectionResponse instantiates a new NotebookCollectionResponse and sets the default values.
 func NewNotebookCollectionResponse()(*NotebookCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *NotebookCollectionResponse) GetFieldDeserializers()(map[string]func(i87
 }
 // GetValue gets the value property value. The value property
 func (m *NotebookCollectionResponse) GetValue()([]Notebookable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Notebookable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *NotebookCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *NotebookCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetValue sets the value property value. The value property
 func (m *NotebookCollectionResponse) SetValue(value []Notebookable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// NotebookCollectionResponseable 
+type NotebookCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Notebookable)
+    SetValue(value []Notebookable)()
 }

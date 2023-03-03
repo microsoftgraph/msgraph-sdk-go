@@ -115,14 +115,6 @@ func (m *ItemTeamChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) H
     }
     return NewItemTeamChannelsItemMessagesItemRepliesItemHostedContentsChatMessageHostedContentItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
-// MicrosoftGraphSoftDelete provides operations to call the softDelete method.
-func (m *ItemTeamChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) MicrosoftGraphSoftDelete()(*ItemTeamChannelsItemMessagesItemRepliesItemMicrosoftGraphSoftDeleteRequestBuilder) {
-    return NewItemTeamChannelsItemMessagesItemRepliesItemMicrosoftGraphSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphUndoSoftDelete provides operations to call the undoSoftDelete method.
-func (m *ItemTeamChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) MicrosoftGraphUndoSoftDelete()(*ItemTeamChannelsItemMessagesItemRepliesItemMicrosoftGraphUndoSoftDeleteRequestBuilder) {
-    return NewItemTeamChannelsItemMessagesItemRepliesItemMicrosoftGraphUndoSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Patch update the navigation property replies in groups
 func (m *ItemTeamChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable, requestConfiguration *ItemTeamChannelsItemMessagesItemRepliesChatMessageItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -141,6 +133,10 @@ func (m *ItemTeamChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) P
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable), nil
+}
+// SoftDelete provides operations to call the softDelete method.
+func (m *ItemTeamChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) SoftDelete()(*ItemTeamChannelsItemMessagesItemRepliesItemSoftDeleteRequestBuilder) {
+    return NewItemTeamChannelsItemMessagesItemRepliesItemSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property replies for groups
 func (m *ItemTeamChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTeamChannelsItemMessagesItemRepliesChatMessageItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -186,4 +182,8 @@ func (m *ItemTeamChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) T
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// UndoSoftDelete provides operations to call the undoSoftDelete method.
+func (m *ItemTeamChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) UndoSoftDelete()(*ItemTeamChannelsItemMessagesItemRepliesItemUndoSoftDeleteRequestBuilder) {
+    return NewItemTeamChannelsItemMessagesItemRepliesItemUndoSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

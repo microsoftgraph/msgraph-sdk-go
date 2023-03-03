@@ -7,8 +7,6 @@ import (
 // ConversationMemberCollectionResponse 
 type ConversationMemberCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ConversationMemberable
 }
 // NewConversationMemberCollectionResponse instantiates a new ConversationMemberCollectionResponse and sets the default values.
 func NewConversationMemberCollectionResponse()(*ConversationMemberCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ConversationMemberCollectionResponse) GetFieldDeserializers()(map[strin
 }
 // GetValue gets the value property value. The value property
 func (m *ConversationMemberCollectionResponse) GetValue()([]ConversationMemberable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ConversationMemberable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ConversationMemberCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ConversationMemberCollectionResponse) Serialize(writer i878a80d2330e89d
 }
 // SetValue sets the value property value. The value property
 func (m *ConversationMemberCollectionResponse) SetValue(value []ConversationMemberable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ConversationMemberCollectionResponseable 
+type ConversationMemberCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ConversationMemberable)
+    SetValue(value []ConversationMemberable)()
 }

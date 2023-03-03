@@ -7,8 +7,6 @@ import (
 // ClaimsMappingPolicyCollectionResponse 
 type ClaimsMappingPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ClaimsMappingPolicyable
 }
 // NewClaimsMappingPolicyCollectionResponse instantiates a new ClaimsMappingPolicyCollectionResponse and sets the default values.
 func NewClaimsMappingPolicyCollectionResponse()(*ClaimsMappingPolicyCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ClaimsMappingPolicyCollectionResponse) GetFieldDeserializers()(map[stri
 }
 // GetValue gets the value property value. The value property
 func (m *ClaimsMappingPolicyCollectionResponse) GetValue()([]ClaimsMappingPolicyable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ClaimsMappingPolicyable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ClaimsMappingPolicyCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ClaimsMappingPolicyCollectionResponse) Serialize(writer i878a80d2330e89
 }
 // SetValue sets the value property value. The value property
 func (m *ClaimsMappingPolicyCollectionResponse) SetValue(value []ClaimsMappingPolicyable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ClaimsMappingPolicyCollectionResponseable 
+type ClaimsMappingPolicyCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ClaimsMappingPolicyable)
+    SetValue(value []ClaimsMappingPolicyable)()
 }

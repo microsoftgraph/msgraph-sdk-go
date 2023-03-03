@@ -7,8 +7,6 @@ import (
 // DeviceInstallStateCollectionResponse 
 type DeviceInstallStateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []DeviceInstallStateable
 }
 // NewDeviceInstallStateCollectionResponse instantiates a new DeviceInstallStateCollectionResponse and sets the default values.
 func NewDeviceInstallStateCollectionResponse()(*DeviceInstallStateCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceInstallStateCollectionResponse) GetFieldDeserializers()(map[strin
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceInstallStateCollectionResponse) GetValue()([]DeviceInstallStateable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceInstallStateable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceInstallStateCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceInstallStateCollectionResponse) Serialize(writer i878a80d2330e89d
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceInstallStateCollectionResponse) SetValue(value []DeviceInstallStateable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceInstallStateCollectionResponseable 
+type DeviceInstallStateCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]DeviceInstallStateable)
+    SetValue(value []DeviceInstallStateable)()
 }

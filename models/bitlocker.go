@@ -7,8 +7,6 @@ import (
 // Bitlocker 
 type Bitlocker struct {
     Entity
-    // The recovery keys associated with the bitlocker entity.
-    recoveryKeys []BitlockerRecoveryKeyable
 }
 // NewBitlocker instantiates a new Bitlocker and sets the default values.
 func NewBitlocker()(*Bitlocker) {
@@ -42,7 +40,14 @@ func (m *Bitlocker) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 }
 // GetRecoveryKeys gets the recoveryKeys property value. The recovery keys associated with the bitlocker entity.
 func (m *Bitlocker) GetRecoveryKeys()([]BitlockerRecoveryKeyable) {
-    return m.recoveryKeys
+    val, err := m.GetBackingStore().Get("recoveryKeys")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]BitlockerRecoveryKeyable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Bitlocker) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *Bitlocker) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetRecoveryKeys sets the recoveryKeys property value. The recovery keys associated with the bitlocker entity.
 func (m *Bitlocker) SetRecoveryKeys(value []BitlockerRecoveryKeyable)() {
-    m.recoveryKeys = value
+    err := m.GetBackingStore().Set("recoveryKeys", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Bitlockerable 
+type Bitlockerable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetRecoveryKeys()([]BitlockerRecoveryKeyable)
+    SetRecoveryKeys(value []BitlockerRecoveryKeyable)()
 }

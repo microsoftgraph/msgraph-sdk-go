@@ -7,10 +7,6 @@ import (
 // WorkbookChartAxisFormat 
 type WorkbookChartAxisFormat struct {
     Entity
-    // Represents the font attributes (font name, font size, color, etc.) for a chart axis element. Read-only.
-    font WorkbookChartFontable
-    // Represents chart line formatting. Read-only.
-    line WorkbookChartLineFormatable
 }
 // NewWorkbookChartAxisFormat instantiates a new workbookChartAxisFormat and sets the default values.
 func NewWorkbookChartAxisFormat()(*WorkbookChartAxisFormat) {
@@ -50,11 +46,25 @@ func (m *WorkbookChartAxisFormat) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetFont gets the font property value. Represents the font attributes (font name, font size, color, etc.) for a chart axis element. Read-only.
 func (m *WorkbookChartAxisFormat) GetFont()(WorkbookChartFontable) {
-    return m.font
+    val, err := m.GetBackingStore().Get("font")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WorkbookChartFontable)
+    }
+    return nil
 }
 // GetLine gets the line property value. Represents chart line formatting. Read-only.
 func (m *WorkbookChartAxisFormat) GetLine()(WorkbookChartLineFormatable) {
-    return m.line
+    val, err := m.GetBackingStore().Get("line")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WorkbookChartLineFormatable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *WorkbookChartAxisFormat) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -78,9 +88,24 @@ func (m *WorkbookChartAxisFormat) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetFont sets the font property value. Represents the font attributes (font name, font size, color, etc.) for a chart axis element. Read-only.
 func (m *WorkbookChartAxisFormat) SetFont(value WorkbookChartFontable)() {
-    m.font = value
+    err := m.GetBackingStore().Set("font", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLine sets the line property value. Represents chart line formatting. Read-only.
 func (m *WorkbookChartAxisFormat) SetLine(value WorkbookChartLineFormatable)() {
-    m.line = value
+    err := m.GetBackingStore().Set("line", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// WorkbookChartAxisFormatable 
+type WorkbookChartAxisFormatable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetFont()(WorkbookChartFontable)
+    GetLine()(WorkbookChartLineFormatable)
+    SetFont(value WorkbookChartFontable)()
+    SetLine(value WorkbookChartLineFormatable)()
 }

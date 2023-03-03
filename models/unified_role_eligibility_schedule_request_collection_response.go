@@ -7,8 +7,6 @@ import (
 // UnifiedRoleEligibilityScheduleRequestCollectionResponse 
 type UnifiedRoleEligibilityScheduleRequestCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []UnifiedRoleEligibilityScheduleRequestable
 }
 // NewUnifiedRoleEligibilityScheduleRequestCollectionResponse instantiates a new UnifiedRoleEligibilityScheduleRequestCollectionResponse and sets the default values.
 func NewUnifiedRoleEligibilityScheduleRequestCollectionResponse()(*UnifiedRoleEligibilityScheduleRequestCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *UnifiedRoleEligibilityScheduleRequestCollectionResponse) GetFieldDeseri
 }
 // GetValue gets the value property value. The value property
 func (m *UnifiedRoleEligibilityScheduleRequestCollectionResponse) GetValue()([]UnifiedRoleEligibilityScheduleRequestable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UnifiedRoleEligibilityScheduleRequestable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UnifiedRoleEligibilityScheduleRequestCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *UnifiedRoleEligibilityScheduleRequestCollectionResponse) Serialize(writ
 }
 // SetValue sets the value property value. The value property
 func (m *UnifiedRoleEligibilityScheduleRequestCollectionResponse) SetValue(value []UnifiedRoleEligibilityScheduleRequestable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UnifiedRoleEligibilityScheduleRequestCollectionResponseable 
+type UnifiedRoleEligibilityScheduleRequestCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]UnifiedRoleEligibilityScheduleRequestable)
+    SetValue(value []UnifiedRoleEligibilityScheduleRequestable)()
 }

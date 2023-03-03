@@ -108,10 +108,6 @@ func (m *EntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuild
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageAssignmentable), nil
 }
-// MicrosoftGraphReprocess provides operations to call the reprocess method.
-func (m *EntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuilder) MicrosoftGraphReprocess()(*EntitlementManagementAssignmentsItemMicrosoftGraphReprocessRequestBuilder) {
-    return NewEntitlementManagementAssignmentsItemMicrosoftGraphReprocessRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Patch update the navigation property assignments in identityGovernance
 func (m *EntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageAssignmentable, requestConfiguration *EntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageAssignmentable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -130,6 +126,10 @@ func (m *EntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuild
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageAssignmentable), nil
+}
+// Reprocess provides operations to call the reprocess method.
+func (m *EntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuilder) Reprocess()(*EntitlementManagementAssignmentsItemReprocessRequestBuilder) {
+    return NewEntitlementManagementAssignmentsItemReprocessRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Target provides operations to manage the target property of the microsoft.graph.accessPackageAssignment entity.
 func (m *EntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuilder) Target()(*EntitlementManagementAssignmentsItemTargetRequestBuilder) {

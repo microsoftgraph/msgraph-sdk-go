@@ -81,6 +81,10 @@ func (m *ItemConversationsItemThreadsItemPostsPostItemRequestBuilder) Extensions
     }
     return NewItemConversationsItemThreadsItemPostsItemExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
+// Forward provides operations to call the forward method.
+func (m *ItemConversationsItemThreadsItemPostsPostItemRequestBuilder) Forward()(*ItemConversationsItemThreadsItemPostsItemForwardRequestBuilder) {
+    return NewItemConversationsItemThreadsItemPostsItemForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Get get posts from groups
 func (m *ItemConversationsItemThreadsItemPostsPostItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemConversationsItemThreadsItemPostsPostItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Postable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -104,14 +108,6 @@ func (m *ItemConversationsItemThreadsItemPostsPostItemRequestBuilder) Get(ctx co
 func (m *ItemConversationsItemThreadsItemPostsPostItemRequestBuilder) InReplyTo()(*ItemConversationsItemThreadsItemPostsItemInReplyToRequestBuilder) {
     return NewItemConversationsItemThreadsItemPostsItemInReplyToRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphForward provides operations to call the forward method.
-func (m *ItemConversationsItemThreadsItemPostsPostItemRequestBuilder) MicrosoftGraphForward()(*ItemConversationsItemThreadsItemPostsItemMicrosoftGraphForwardRequestBuilder) {
-    return NewItemConversationsItemThreadsItemPostsItemMicrosoftGraphForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphReply provides operations to call the reply method.
-func (m *ItemConversationsItemThreadsItemPostsPostItemRequestBuilder) MicrosoftGraphReply()(*ItemConversationsItemThreadsItemPostsItemMicrosoftGraphReplyRequestBuilder) {
-    return NewItemConversationsItemThreadsItemPostsItemMicrosoftGraphReplyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.post entity.
 func (m *ItemConversationsItemThreadsItemPostsPostItemRequestBuilder) MultiValueExtendedProperties()(*ItemConversationsItemThreadsItemPostsItemMultiValueExtendedPropertiesRequestBuilder) {
     return NewItemConversationsItemThreadsItemPostsItemMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
@@ -126,6 +122,10 @@ func (m *ItemConversationsItemThreadsItemPostsPostItemRequestBuilder) MultiValue
         urlTplParams["multiValueLegacyExtendedProperty%2Did"] = id
     }
     return NewItemConversationsItemThreadsItemPostsItemMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+}
+// Reply provides operations to call the reply method.
+func (m *ItemConversationsItemThreadsItemPostsPostItemRequestBuilder) Reply()(*ItemConversationsItemThreadsItemPostsItemReplyRequestBuilder) {
+    return NewItemConversationsItemThreadsItemPostsItemReplyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // SingleValueExtendedProperties provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.post entity.
 func (m *ItemConversationsItemThreadsItemPostsPostItemRequestBuilder) SingleValueExtendedProperties()(*ItemConversationsItemThreadsItemPostsItemSingleValueExtendedPropertiesRequestBuilder) {

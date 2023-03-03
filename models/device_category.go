@@ -7,10 +7,6 @@ import (
 // DeviceCategory 
 type DeviceCategory struct {
     Entity
-    // Optional description for the device category.
-    description *string
-    // Display name for the device category.
-    displayName *string
 }
 // NewDeviceCategory instantiates a new deviceCategory and sets the default values.
 func NewDeviceCategory()(*DeviceCategory) {
@@ -25,11 +21,25 @@ func CreateDeviceCategoryFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetDescription gets the description property value. Optional description for the device category.
 func (m *DeviceCategory) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. Display name for the device category.
 func (m *DeviceCategory) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceCategory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -78,9 +88,24 @@ func (m *DeviceCategory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetDescription sets the description property value. Optional description for the device category.
 func (m *DeviceCategory) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. Display name for the device category.
 func (m *DeviceCategory) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceCategoryable 
+type DeviceCategoryable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
 }

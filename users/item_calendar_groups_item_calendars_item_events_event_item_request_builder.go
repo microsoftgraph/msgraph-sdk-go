@@ -44,6 +44,10 @@ type ItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilderPatchReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Accept provides operations to call the accept method.
+func (m *ItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilder) Accept()(*ItemCalendarGroupsItemCalendarsItemEventsItemAcceptRequestBuilder) {
+    return NewItemCalendarGroupsItemCalendarsItemEventsItemAcceptRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Attachments provides operations to manage the attachments property of the microsoft.graph.event entity.
 func (m *ItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilder) Attachments()(*ItemCalendarGroupsItemCalendarsItemEventsItemAttachmentsRequestBuilder) {
     return NewItemCalendarGroupsItemCalendarsItemEventsItemAttachmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
@@ -62,6 +66,10 @@ func (m *ItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilder) Attac
 // Calendar provides operations to manage the calendar property of the microsoft.graph.event entity.
 func (m *ItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilder) Calendar()(*ItemCalendarGroupsItemCalendarsItemEventsItemCalendarRequestBuilder) {
     return NewItemCalendarGroupsItemCalendarsItemEventsItemCalendarRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// Cancel provides operations to call the cancel method.
+func (m *ItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilder) Cancel()(*ItemCalendarGroupsItemCalendarsItemEventsItemCancelRequestBuilder) {
+    return NewItemCalendarGroupsItemCalendarsItemEventsItemCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilderInternal instantiates a new EventItemRequestBuilder and sets the default values.
 func NewItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilder) {
@@ -82,6 +90,10 @@ func NewItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilder(rawUrl 
     urlParams["request-raw-url"] = rawUrl
     return NewItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilderInternal(urlParams, requestAdapter)
 }
+// Decline provides operations to call the decline method.
+func (m *ItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilder) Decline()(*ItemCalendarGroupsItemCalendarsItemEventsItemDeclineRequestBuilder) {
+    return NewItemCalendarGroupsItemCalendarsItemEventsItemDeclineRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Delete delete navigation property events for users
 func (m *ItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -98,6 +110,10 @@ func (m *ItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilder) Delet
     }
     return nil
 }
+// DismissReminder provides operations to call the dismissReminder method.
+func (m *ItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilder) DismissReminder()(*ItemCalendarGroupsItemCalendarsItemEventsItemDismissReminderRequestBuilder) {
+    return NewItemCalendarGroupsItemCalendarsItemEventsItemDismissReminderRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Extensions provides operations to manage the extensions property of the microsoft.graph.event entity.
 func (m *ItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilder) Extensions()(*ItemCalendarGroupsItemCalendarsItemEventsItemExtensionsRequestBuilder) {
     return NewItemCalendarGroupsItemCalendarsItemEventsItemExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
@@ -112,6 +128,10 @@ func (m *ItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilder) Exten
         urlTplParams["extension%2Did"] = id
     }
     return NewItemCalendarGroupsItemCalendarsItemEventsItemExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+}
+// Forward provides operations to call the forward method.
+func (m *ItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilder) Forward()(*ItemCalendarGroupsItemCalendarsItemEventsItemForwardRequestBuilder) {
+    return NewItemCalendarGroupsItemCalendarsItemEventsItemForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Get the events in the calendar. Navigation property. Read-only.
 func (m *ItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Eventable, error) {
@@ -146,34 +166,6 @@ func (m *ItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilder) Insta
         urlTplParams["event%2Did1"] = id
     }
     return NewItemCalendarGroupsItemCalendarsItemEventsItemInstancesEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
-}
-// MicrosoftGraphAccept provides operations to call the accept method.
-func (m *ItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilder) MicrosoftGraphAccept()(*ItemCalendarGroupsItemCalendarsItemEventsItemMicrosoftGraphAcceptRequestBuilder) {
-    return NewItemCalendarGroupsItemCalendarsItemEventsItemMicrosoftGraphAcceptRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphCancel provides operations to call the cancel method.
-func (m *ItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilder) MicrosoftGraphCancel()(*ItemCalendarGroupsItemCalendarsItemEventsItemMicrosoftGraphCancelRequestBuilder) {
-    return NewItemCalendarGroupsItemCalendarsItemEventsItemMicrosoftGraphCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphDecline provides operations to call the decline method.
-func (m *ItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilder) MicrosoftGraphDecline()(*ItemCalendarGroupsItemCalendarsItemEventsItemMicrosoftGraphDeclineRequestBuilder) {
-    return NewItemCalendarGroupsItemCalendarsItemEventsItemMicrosoftGraphDeclineRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphDismissReminder provides operations to call the dismissReminder method.
-func (m *ItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilder) MicrosoftGraphDismissReminder()(*ItemCalendarGroupsItemCalendarsItemEventsItemMicrosoftGraphDismissReminderRequestBuilder) {
-    return NewItemCalendarGroupsItemCalendarsItemEventsItemMicrosoftGraphDismissReminderRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphForward provides operations to call the forward method.
-func (m *ItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilder) MicrosoftGraphForward()(*ItemCalendarGroupsItemCalendarsItemEventsItemMicrosoftGraphForwardRequestBuilder) {
-    return NewItemCalendarGroupsItemCalendarsItemEventsItemMicrosoftGraphForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphSnoozeReminder provides operations to call the snoozeReminder method.
-func (m *ItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilder) MicrosoftGraphSnoozeReminder()(*ItemCalendarGroupsItemCalendarsItemEventsItemMicrosoftGraphSnoozeReminderRequestBuilder) {
-    return NewItemCalendarGroupsItemCalendarsItemEventsItemMicrosoftGraphSnoozeReminderRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphTentativelyAccept provides operations to call the tentativelyAccept method.
-func (m *ItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilder) MicrosoftGraphTentativelyAccept()(*ItemCalendarGroupsItemCalendarsItemEventsItemMicrosoftGraphTentativelyAcceptRequestBuilder) {
-    return NewItemCalendarGroupsItemCalendarsItemEventsItemMicrosoftGraphTentativelyAcceptRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.event entity.
 func (m *ItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilder) MultiValueExtendedProperties()(*ItemCalendarGroupsItemCalendarsItemEventsItemMultiValueExtendedPropertiesRequestBuilder) {
@@ -223,6 +215,14 @@ func (m *ItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilder) Singl
         urlTplParams["singleValueLegacyExtendedProperty%2Did"] = id
     }
     return NewItemCalendarGroupsItemCalendarsItemEventsItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+}
+// SnoozeReminder provides operations to call the snoozeReminder method.
+func (m *ItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilder) SnoozeReminder()(*ItemCalendarGroupsItemCalendarsItemEventsItemSnoozeReminderRequestBuilder) {
+    return NewItemCalendarGroupsItemCalendarsItemEventsItemSnoozeReminderRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// TentativelyAccept provides operations to call the tentativelyAccept method.
+func (m *ItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilder) TentativelyAccept()(*ItemCalendarGroupsItemCalendarsItemEventsItemTentativelyAcceptRequestBuilder) {
+    return NewItemCalendarGroupsItemCalendarsItemEventsItemTentativelyAcceptRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property events for users
 func (m *ItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

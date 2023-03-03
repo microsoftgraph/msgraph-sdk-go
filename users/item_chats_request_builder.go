@@ -96,9 +96,9 @@ func (m *ItemChatsRequestBuilder) Get(ctx context.Context, requestConfiguration 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatCollectionResponseable), nil
 }
-// MicrosoftGraphGetAllMessages provides operations to call the getAllMessages method.
-func (m *ItemChatsRequestBuilder) MicrosoftGraphGetAllMessages()(*ItemChatsMicrosoftGraphGetAllMessagesRequestBuilder) {
-    return NewItemChatsMicrosoftGraphGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GetAllMessages provides operations to call the getAllMessages method.
+func (m *ItemChatsRequestBuilder) GetAllMessages()(*ItemChatsGetAllMessagesRequestBuilder) {
+    return NewItemChatsGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to chats for users
 func (m *ItemChatsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Chatable, requestConfiguration *ItemChatsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Chatable, error) {

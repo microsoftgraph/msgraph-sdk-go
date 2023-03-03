@@ -100,10 +100,6 @@ func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesWorkbookPivotTableItemReq
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookPivotTableable), nil
 }
-// MicrosoftGraphRefresh provides operations to call the refresh method.
-func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesWorkbookPivotTableItemRequestBuilder) MicrosoftGraphRefresh()(*ItemItemsItemWorkbookWorksheetsItemPivotTablesItemMicrosoftGraphRefreshRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemPivotTablesItemMicrosoftGraphRefreshRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Patch update the navigation property pivotTables in drives
 func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesWorkbookPivotTableItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookPivotTableable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemPivotTablesWorkbookPivotTableItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookPivotTableable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -122,6 +118,10 @@ func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesWorkbookPivotTableItemReq
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookPivotTableable), nil
+}
+// Refresh provides operations to call the refresh method.
+func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesWorkbookPivotTableItemRequestBuilder) Refresh()(*ItemItemsItemWorkbookWorksheetsItemPivotTablesItemRefreshRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemPivotTablesItemRefreshRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property pivotTables for drives
 func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesWorkbookPivotTableItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemPivotTablesWorkbookPivotTableItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

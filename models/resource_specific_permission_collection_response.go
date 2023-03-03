@@ -7,8 +7,6 @@ import (
 // ResourceSpecificPermissionCollectionResponse 
 type ResourceSpecificPermissionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ResourceSpecificPermissionable
 }
 // NewResourceSpecificPermissionCollectionResponse instantiates a new ResourceSpecificPermissionCollectionResponse and sets the default values.
 func NewResourceSpecificPermissionCollectionResponse()(*ResourceSpecificPermissionCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ResourceSpecificPermissionCollectionResponse) GetFieldDeserializers()(m
 }
 // GetValue gets the value property value. The value property
 func (m *ResourceSpecificPermissionCollectionResponse) GetValue()([]ResourceSpecificPermissionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ResourceSpecificPermissionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ResourceSpecificPermissionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ResourceSpecificPermissionCollectionResponse) Serialize(writer i878a80d
 }
 // SetValue sets the value property value. The value property
 func (m *ResourceSpecificPermissionCollectionResponse) SetValue(value []ResourceSpecificPermissionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ResourceSpecificPermissionCollectionResponseable 
+type ResourceSpecificPermissionCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ResourceSpecificPermissionable)
+    SetValue(value []ResourceSpecificPermissionable)()
 }

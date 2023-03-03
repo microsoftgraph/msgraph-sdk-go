@@ -7,20 +7,6 @@ import (
 // IosManagedAppProtection 
 type IosManagedAppProtection struct {
     TargetedManagedAppProtection
-    // Represents the level to which app data is encrypted for managed apps
-    appDataEncryptionType *ManagedAppDataEncryptionType
-    // List of apps to which the policy is deployed.
-    apps []ManagedMobileAppable
-    // A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
-    customBrowserProtocol *string
-    // Count of apps to which the current policy is deployed.
-    deployedAppCount *int32
-    // Navigation property to deployment summary of the configuration.
-    deploymentSummary ManagedAppPolicyDeploymentSummaryable
-    // Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True.
-    faceIdBlocked *bool
-    // Versions less than the specified version will block the managed app from accessing company data.
-    minimumRequiredSdkVersion *string
 }
 // NewIosManagedAppProtection instantiates a new IosManagedAppProtection and sets the default values.
 func NewIosManagedAppProtection()(*IosManagedAppProtection) {
@@ -37,27 +23,69 @@ func CreateIosManagedAppProtectionFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetAppDataEncryptionType gets the appDataEncryptionType property value. Represents the level to which app data is encrypted for managed apps
 func (m *IosManagedAppProtection) GetAppDataEncryptionType()(*ManagedAppDataEncryptionType) {
-    return m.appDataEncryptionType
+    val, err := m.GetBackingStore().Get("appDataEncryptionType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ManagedAppDataEncryptionType)
+    }
+    return nil
 }
 // GetApps gets the apps property value. List of apps to which the policy is deployed.
 func (m *IosManagedAppProtection) GetApps()([]ManagedMobileAppable) {
-    return m.apps
+    val, err := m.GetBackingStore().Get("apps")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagedMobileAppable)
+    }
+    return nil
 }
 // GetCustomBrowserProtocol gets the customBrowserProtocol property value. A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
 func (m *IosManagedAppProtection) GetCustomBrowserProtocol()(*string) {
-    return m.customBrowserProtocol
+    val, err := m.GetBackingStore().Get("customBrowserProtocol")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDeployedAppCount gets the deployedAppCount property value. Count of apps to which the current policy is deployed.
 func (m *IosManagedAppProtection) GetDeployedAppCount()(*int32) {
-    return m.deployedAppCount
+    val, err := m.GetBackingStore().Get("deployedAppCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetDeploymentSummary gets the deploymentSummary property value. Navigation property to deployment summary of the configuration.
 func (m *IosManagedAppProtection) GetDeploymentSummary()(ManagedAppPolicyDeploymentSummaryable) {
-    return m.deploymentSummary
+    val, err := m.GetBackingStore().Get("deploymentSummary")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ManagedAppPolicyDeploymentSummaryable)
+    }
+    return nil
 }
 // GetFaceIdBlocked gets the faceIdBlocked property value. Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True.
 func (m *IosManagedAppProtection) GetFaceIdBlocked()(*bool) {
-    return m.faceIdBlocked
+    val, err := m.GetBackingStore().Get("faceIdBlocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -140,7 +168,14 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetMinimumRequiredSdkVersion gets the minimumRequiredSdkVersion property value. Versions less than the specified version will block the managed app from accessing company data.
 func (m *IosManagedAppProtection) GetMinimumRequiredSdkVersion()(*string) {
-    return m.minimumRequiredSdkVersion
+    val, err := m.GetBackingStore().Get("minimumRequiredSdkVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IosManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -199,29 +234,69 @@ func (m *IosManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetAppDataEncryptionType sets the appDataEncryptionType property value. Represents the level to which app data is encrypted for managed apps
 func (m *IosManagedAppProtection) SetAppDataEncryptionType(value *ManagedAppDataEncryptionType)() {
-    m.appDataEncryptionType = value
+    err := m.GetBackingStore().Set("appDataEncryptionType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApps sets the apps property value. List of apps to which the policy is deployed.
 func (m *IosManagedAppProtection) SetApps(value []ManagedMobileAppable)() {
-    m.apps = value
+    err := m.GetBackingStore().Set("apps", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCustomBrowserProtocol sets the customBrowserProtocol property value. A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
 func (m *IosManagedAppProtection) SetCustomBrowserProtocol(value *string)() {
-    m.customBrowserProtocol = value
+    err := m.GetBackingStore().Set("customBrowserProtocol", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeployedAppCount sets the deployedAppCount property value. Count of apps to which the current policy is deployed.
 func (m *IosManagedAppProtection) SetDeployedAppCount(value *int32)() {
-    m.deployedAppCount = value
+    err := m.GetBackingStore().Set("deployedAppCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDeploymentSummary sets the deploymentSummary property value. Navigation property to deployment summary of the configuration.
 func (m *IosManagedAppProtection) SetDeploymentSummary(value ManagedAppPolicyDeploymentSummaryable)() {
-    m.deploymentSummary = value
+    err := m.GetBackingStore().Set("deploymentSummary", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFaceIdBlocked sets the faceIdBlocked property value. Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True.
 func (m *IosManagedAppProtection) SetFaceIdBlocked(value *bool)() {
-    m.faceIdBlocked = value
+    err := m.GetBackingStore().Set("faceIdBlocked", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMinimumRequiredSdkVersion sets the minimumRequiredSdkVersion property value. Versions less than the specified version will block the managed app from accessing company data.
 func (m *IosManagedAppProtection) SetMinimumRequiredSdkVersion(value *string)() {
-    m.minimumRequiredSdkVersion = value
+    err := m.GetBackingStore().Set("minimumRequiredSdkVersion", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IosManagedAppProtectionable 
+type IosManagedAppProtectionable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    TargetedManagedAppProtectionable
+    GetAppDataEncryptionType()(*ManagedAppDataEncryptionType)
+    GetApps()([]ManagedMobileAppable)
+    GetCustomBrowserProtocol()(*string)
+    GetDeployedAppCount()(*int32)
+    GetDeploymentSummary()(ManagedAppPolicyDeploymentSummaryable)
+    GetFaceIdBlocked()(*bool)
+    GetMinimumRequiredSdkVersion()(*string)
+    SetAppDataEncryptionType(value *ManagedAppDataEncryptionType)()
+    SetApps(value []ManagedMobileAppable)()
+    SetCustomBrowserProtocol(value *string)()
+    SetDeployedAppCount(value *int32)()
+    SetDeploymentSummary(value ManagedAppPolicyDeploymentSummaryable)()
+    SetFaceIdBlocked(value *bool)()
+    SetMinimumRequiredSdkVersion(value *string)()
 }

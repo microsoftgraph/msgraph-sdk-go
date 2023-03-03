@@ -7,8 +7,6 @@ import (
 // UnifiedRoleManagementPolicyCollectionResponse 
 type UnifiedRoleManagementPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []UnifiedRoleManagementPolicyable
 }
 // NewUnifiedRoleManagementPolicyCollectionResponse instantiates a new UnifiedRoleManagementPolicyCollectionResponse and sets the default values.
 func NewUnifiedRoleManagementPolicyCollectionResponse()(*UnifiedRoleManagementPolicyCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *UnifiedRoleManagementPolicyCollectionResponse) GetFieldDeserializers()(
 }
 // GetValue gets the value property value. The value property
 func (m *UnifiedRoleManagementPolicyCollectionResponse) GetValue()([]UnifiedRoleManagementPolicyable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UnifiedRoleManagementPolicyable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UnifiedRoleManagementPolicyCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *UnifiedRoleManagementPolicyCollectionResponse) Serialize(writer i878a80
 }
 // SetValue sets the value property value. The value property
 func (m *UnifiedRoleManagementPolicyCollectionResponse) SetValue(value []UnifiedRoleManagementPolicyable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UnifiedRoleManagementPolicyCollectionResponseable 
+type UnifiedRoleManagementPolicyCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]UnifiedRoleManagementPolicyable)
+    SetValue(value []UnifiedRoleManagementPolicyable)()
 }

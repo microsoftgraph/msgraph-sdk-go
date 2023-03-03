@@ -2,31 +2,19 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // EducationStudent 
 type EducationStudent struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Birth date of the student.
-    birthDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
-    // ID of the student in the source system.
-    externalId *string
-    // The possible values are: female, male, other, unknownFutureValue.
-    gender *EducationGender
-    // Current grade level of the student.
-    grade *string
-    // Year the student is graduating from the school.
-    graduationYear *string
-    // The OdataType property
-    odataType *string
-    // Student Number.
-    studentNumber *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewEducationStudent instantiates a new educationStudent and sets the default values.
 func NewEducationStudent()(*EducationStudent) {
     m := &EducationStudent{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -36,15 +24,41 @@ func CreateEducationStudentFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EducationStudent) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *EducationStudent) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetBirthDate gets the birthDate property value. Birth date of the student.
 func (m *EducationStudent) GetBirthDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    return m.birthDate
+    val, err := m.GetBackingStore().Get("birthDate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    }
+    return nil
 }
 // GetExternalId gets the externalId property value. ID of the student in the source system.
 func (m *EducationStudent) GetExternalId()(*string) {
-    return m.externalId
+    val, err := m.GetBackingStore().Get("externalId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationStudent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -123,23 +137,58 @@ func (m *EducationStudent) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetGender gets the gender property value. The possible values are: female, male, other, unknownFutureValue.
 func (m *EducationStudent) GetGender()(*EducationGender) {
-    return m.gender
+    val, err := m.GetBackingStore().Get("gender")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*EducationGender)
+    }
+    return nil
 }
 // GetGrade gets the grade property value. Current grade level of the student.
 func (m *EducationStudent) GetGrade()(*string) {
-    return m.grade
+    val, err := m.GetBackingStore().Get("grade")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetGraduationYear gets the graduationYear property value. Year the student is graduating from the school.
 func (m *EducationStudent) GetGraduationYear()(*string) {
-    return m.graduationYear
+    val, err := m.GetBackingStore().Get("graduationYear")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *EducationStudent) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetStudentNumber gets the studentNumber property value. Student Number.
 func (m *EducationStudent) GetStudentNumber()(*string) {
-    return m.studentNumber
+    val, err := m.GetBackingStore().Get("studentNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EducationStudent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -196,33 +245,83 @@ func (m *EducationStudent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EducationStudent) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *EducationStudent) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetBirthDate sets the birthDate property value. Birth date of the student.
 func (m *EducationStudent) SetBirthDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    m.birthDate = value
+    err := m.GetBackingStore().Set("birthDate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExternalId sets the externalId property value. ID of the student in the source system.
 func (m *EducationStudent) SetExternalId(value *string)() {
-    m.externalId = value
+    err := m.GetBackingStore().Set("externalId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetGender sets the gender property value. The possible values are: female, male, other, unknownFutureValue.
 func (m *EducationStudent) SetGender(value *EducationGender)() {
-    m.gender = value
+    err := m.GetBackingStore().Set("gender", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetGrade sets the grade property value. Current grade level of the student.
 func (m *EducationStudent) SetGrade(value *string)() {
-    m.grade = value
+    err := m.GetBackingStore().Set("grade", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetGraduationYear sets the graduationYear property value. Year the student is graduating from the school.
 func (m *EducationStudent) SetGraduationYear(value *string)() {
-    m.graduationYear = value
+    err := m.GetBackingStore().Set("graduationYear", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *EducationStudent) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetStudentNumber sets the studentNumber property value. Student Number.
 func (m *EducationStudent) SetStudentNumber(value *string)() {
-    m.studentNumber = value
+    err := m.GetBackingStore().Set("studentNumber", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EducationStudentable 
+type EducationStudentable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetBirthDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    GetExternalId()(*string)
+    GetGender()(*EducationGender)
+    GetGrade()(*string)
+    GetGraduationYear()(*string)
+    GetOdataType()(*string)
+    GetStudentNumber()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetBirthDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
+    SetExternalId(value *string)()
+    SetGender(value *EducationGender)()
+    SetGrade(value *string)()
+    SetGraduationYear(value *string)()
+    SetOdataType(value *string)()
+    SetStudentNumber(value *string)()
 }

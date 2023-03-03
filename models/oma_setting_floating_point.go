@@ -7,8 +7,6 @@ import (
 // OmaSettingFloatingPoint 
 type OmaSettingFloatingPoint struct {
     OmaSetting
-    // Value.
-    value *float32
 }
 // NewOmaSettingFloatingPoint instantiates a new OmaSettingFloatingPoint and sets the default values.
 func NewOmaSettingFloatingPoint()(*OmaSettingFloatingPoint) {
@@ -40,7 +38,14 @@ func (m *OmaSettingFloatingPoint) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetValue gets the value property value. Value.
 func (m *OmaSettingFloatingPoint) GetValue()(*float32) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OmaSettingFloatingPoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *OmaSettingFloatingPoint) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetValue sets the value property value. Value.
 func (m *OmaSettingFloatingPoint) SetValue(value *float32)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// OmaSettingFloatingPointable 
+type OmaSettingFloatingPointable interface {
+    OmaSettingable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()(*float32)
+    SetValue(value *float32)()
 }

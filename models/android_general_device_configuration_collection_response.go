@@ -7,8 +7,6 @@ import (
 // AndroidGeneralDeviceConfigurationCollectionResponse 
 type AndroidGeneralDeviceConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AndroidGeneralDeviceConfigurationable
 }
 // NewAndroidGeneralDeviceConfigurationCollectionResponse instantiates a new AndroidGeneralDeviceConfigurationCollectionResponse and sets the default values.
 func NewAndroidGeneralDeviceConfigurationCollectionResponse()(*AndroidGeneralDeviceConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AndroidGeneralDeviceConfigurationCollectionResponse) GetFieldDeserializ
 }
 // GetValue gets the value property value. The value property
 func (m *AndroidGeneralDeviceConfigurationCollectionResponse) GetValue()([]AndroidGeneralDeviceConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidGeneralDeviceConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidGeneralDeviceConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AndroidGeneralDeviceConfigurationCollectionResponse) Serialize(writer i
 }
 // SetValue sets the value property value. The value property
 func (m *AndroidGeneralDeviceConfigurationCollectionResponse) SetValue(value []AndroidGeneralDeviceConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidGeneralDeviceConfigurationCollectionResponseable 
+type AndroidGeneralDeviceConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AndroidGeneralDeviceConfigurationable)
+    SetValue(value []AndroidGeneralDeviceConfigurationable)()
 }

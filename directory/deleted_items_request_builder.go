@@ -74,6 +74,10 @@ func NewDeletedItemsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *DeletedItemsRequestBuilder) Count()(*DeletedItemsCountRequestBuilder) {
     return NewDeletedItemsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// Delta provides operations to call the delta method.
+func (m *DeletedItemsRequestBuilder) Delta()(*DeletedItemsDeltaRequestBuilder) {
+    return NewDeletedItemsDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Get recently deleted items. Read-only. Nullable.
 func (m *DeletedItemsRequestBuilder) Get(ctx context.Context, requestConfiguration *DeletedItemsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -93,29 +97,25 @@ func (m *DeletedItemsRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
 }
-// MicrosoftGraphApplication casts the previous resource to application.
-func (m *DeletedItemsRequestBuilder) MicrosoftGraphApplication()(*DeletedItemsMicrosoftGraphApplicationRequestBuilder) {
-    return NewDeletedItemsMicrosoftGraphApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GetAvailableExtensionProperties provides operations to call the getAvailableExtensionProperties method.
+func (m *DeletedItemsRequestBuilder) GetAvailableExtensionProperties()(*DeletedItemsGetAvailableExtensionPropertiesRequestBuilder) {
+    return NewDeletedItemsGetAvailableExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphGetAvailableExtensionProperties provides operations to call the getAvailableExtensionProperties method.
-func (m *DeletedItemsRequestBuilder) MicrosoftGraphGetAvailableExtensionProperties()(*DeletedItemsMicrosoftGraphGetAvailableExtensionPropertiesRequestBuilder) {
-    return NewDeletedItemsMicrosoftGraphGetAvailableExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GetByIds provides operations to call the getByIds method.
+func (m *DeletedItemsRequestBuilder) GetByIds()(*DeletedItemsGetByIdsRequestBuilder) {
+    return NewDeletedItemsGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphGetByIds provides operations to call the getByIds method.
-func (m *DeletedItemsRequestBuilder) MicrosoftGraphGetByIds()(*DeletedItemsMicrosoftGraphGetByIdsRequestBuilder) {
-    return NewDeletedItemsMicrosoftGraphGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphApplication casts the previous resource to application.
+func (m *DeletedItemsRequestBuilder) GraphApplication()(*DeletedItemsGraphApplicationRequestBuilder) {
+    return NewDeletedItemsGraphApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphGroup casts the previous resource to group.
-func (m *DeletedItemsRequestBuilder) MicrosoftGraphGroup()(*DeletedItemsMicrosoftGraphGroupRequestBuilder) {
-    return NewDeletedItemsMicrosoftGraphGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphGroup casts the previous resource to group.
+func (m *DeletedItemsRequestBuilder) GraphGroup()(*DeletedItemsGraphGroupRequestBuilder) {
+    return NewDeletedItemsGraphGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphUser casts the previous resource to user.
-func (m *DeletedItemsRequestBuilder) MicrosoftGraphUser()(*DeletedItemsMicrosoftGraphUserRequestBuilder) {
-    return NewDeletedItemsMicrosoftGraphUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphValidateProperties provides operations to call the validateProperties method.
-func (m *DeletedItemsRequestBuilder) MicrosoftGraphValidateProperties()(*DeletedItemsMicrosoftGraphValidatePropertiesRequestBuilder) {
-    return NewDeletedItemsMicrosoftGraphValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphUser casts the previous resource to user.
+func (m *DeletedItemsRequestBuilder) GraphUser()(*DeletedItemsGraphUserRequestBuilder) {
+    return NewDeletedItemsGraphUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to deletedItems for directory
 func (m *DeletedItemsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, requestConfiguration *DeletedItemsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, error) {
@@ -168,4 +168,8 @@ func (m *DeletedItemsRequestBuilder) ToPostRequestInformation(ctx context.Contex
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// ValidateProperties provides operations to call the validateProperties method.
+func (m *DeletedItemsRequestBuilder) ValidateProperties()(*DeletedItemsValidatePropertiesRequestBuilder) {
+    return NewDeletedItemsValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

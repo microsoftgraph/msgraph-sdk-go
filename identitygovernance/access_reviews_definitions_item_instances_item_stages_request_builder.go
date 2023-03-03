@@ -74,6 +74,10 @@ func NewAccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder(rawUrl str
 func (m *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder) Count()(*AccessReviewsDefinitionsItemInstancesItemStagesCountRequestBuilder) {
     return NewAccessReviewsDefinitionsItemInstancesItemStagesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
+func (m *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*AccessReviewsDefinitionsItemInstancesItemStagesFilterByCurrentUserWithOnRequestBuilder) {
+    return NewAccessReviewsDefinitionsItemInstancesItemStagesFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
+}
 // Get retrieve the stages in a multi-stage access review instance.
 // [Find more info here]
 // 
@@ -95,10 +99,6 @@ func (m *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder) Get(ctx 
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewStageCollectionResponseable), nil
-}
-// MicrosoftGraphFilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
-func (m *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder) MicrosoftGraphFilterByCurrentUserWithOn(on *string)(*AccessReviewsDefinitionsItemInstancesItemStagesMicrosoftGraphFilterByCurrentUserWithOnRequestBuilder) {
-    return NewAccessReviewsDefinitionsItemInstancesItemStagesMicrosoftGraphFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
 }
 // Post create new navigation property to stages for identityGovernance
 func (m *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewStageable, requestConfiguration *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewStageable, error) {

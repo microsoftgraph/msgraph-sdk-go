@@ -7,10 +7,6 @@ import (
 // PlannerUser 
 type PlannerUser struct {
     Entity
-    // Read-only. Nullable. Returns the plannerTasks assigned to the user.
-    plans []PlannerPlanable
-    // Read-only. Nullable. Returns the plannerPlans shared with the user.
-    tasks []PlannerTaskable
 }
 // NewPlannerUser instantiates a new plannerUser and sets the default values.
 func NewPlannerUser()(*PlannerUser) {
@@ -58,11 +54,25 @@ func (m *PlannerUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetPlans gets the plans property value. Read-only. Nullable. Returns the plannerTasks assigned to the user.
 func (m *PlannerUser) GetPlans()([]PlannerPlanable) {
-    return m.plans
+    val, err := m.GetBackingStore().Get("plans")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PlannerPlanable)
+    }
+    return nil
 }
 // GetTasks gets the tasks property value. Read-only. Nullable. Returns the plannerPlans shared with the user.
 func (m *PlannerUser) GetTasks()([]PlannerTaskable) {
-    return m.tasks
+    val, err := m.GetBackingStore().Get("tasks")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PlannerTaskable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PlannerUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -94,9 +104,24 @@ func (m *PlannerUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetPlans sets the plans property value. Read-only. Nullable. Returns the plannerTasks assigned to the user.
 func (m *PlannerUser) SetPlans(value []PlannerPlanable)() {
-    m.plans = value
+    err := m.GetBackingStore().Set("plans", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTasks sets the tasks property value. Read-only. Nullable. Returns the plannerPlans shared with the user.
 func (m *PlannerUser) SetTasks(value []PlannerTaskable)() {
-    m.tasks = value
+    err := m.GetBackingStore().Set("tasks", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PlannerUserable 
+type PlannerUserable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetPlans()([]PlannerPlanable)
+    GetTasks()([]PlannerTaskable)
+    SetPlans(value []PlannerPlanable)()
+    SetTasks(value []PlannerTaskable)()
 }

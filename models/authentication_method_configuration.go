@@ -7,10 +7,8 @@ import (
 // AuthenticationMethodConfiguration 
 type AuthenticationMethodConfiguration struct {
     Entity
-    // The state of the policy. Possible values are: enabled, disabled.
-    state *AuthenticationMethodState
 }
-// NewAuthenticationMethodConfiguration instantiates a new AuthenticationMethodConfiguration and sets the default values.
+// NewAuthenticationMethodConfiguration instantiates a new authenticationMethodConfiguration and sets the default values.
 func NewAuthenticationMethodConfiguration()(*AuthenticationMethodConfiguration) {
     m := &AuthenticationMethodConfiguration{
         Entity: *NewEntity(),
@@ -64,7 +62,14 @@ func (m *AuthenticationMethodConfiguration) GetFieldDeserializers()(map[string]f
 }
 // GetState gets the state property value. The state of the policy. Possible values are: enabled, disabled.
 func (m *AuthenticationMethodConfiguration) GetState()(*AuthenticationMethodState) {
-    return m.state
+    val, err := m.GetBackingStore().Get("state")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AuthenticationMethodState)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AuthenticationMethodConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -83,5 +88,15 @@ func (m *AuthenticationMethodConfiguration) Serialize(writer i878a80d2330e89d268
 }
 // SetState sets the state property value. The state of the policy. Possible values are: enabled, disabled.
 func (m *AuthenticationMethodConfiguration) SetState(value *AuthenticationMethodState)() {
-    m.state = value
+    err := m.GetBackingStore().Set("state", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AuthenticationMethodConfigurationable 
+type AuthenticationMethodConfigurationable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetState()(*AuthenticationMethodState)
+    SetState(value *AuthenticationMethodState)()
 }

@@ -7,8 +7,6 @@ import (
 // EducationCategory 
 type EducationCategory struct {
     Entity
-    // Unique identifier for the category.
-    displayName *string
 }
 // NewEducationCategory instantiates a new educationCategory and sets the default values.
 func NewEducationCategory()(*EducationCategory) {
@@ -23,7 +21,14 @@ func CreateEducationCategoryFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetDisplayName gets the displayName property value. Unique identifier for the category.
 func (m *EducationCategory) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationCategory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -56,5 +61,15 @@ func (m *EducationCategory) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetDisplayName sets the displayName property value. Unique identifier for the category.
 func (m *EducationCategory) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EducationCategoryable 
+type EducationCategoryable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDisplayName()(*string)
+    SetDisplayName(value *string)()
 }

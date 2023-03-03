@@ -7,8 +7,6 @@ import (
 // IosVppEBookAssignmentCollectionResponse 
 type IosVppEBookAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []IosVppEBookAssignmentable
 }
 // NewIosVppEBookAssignmentCollectionResponse instantiates a new IosVppEBookAssignmentCollectionResponse and sets the default values.
 func NewIosVppEBookAssignmentCollectionResponse()(*IosVppEBookAssignmentCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *IosVppEBookAssignmentCollectionResponse) GetFieldDeserializers()(map[st
 }
 // GetValue gets the value property value. The value property
 func (m *IosVppEBookAssignmentCollectionResponse) GetValue()([]IosVppEBookAssignmentable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IosVppEBookAssignmentable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IosVppEBookAssignmentCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *IosVppEBookAssignmentCollectionResponse) Serialize(writer i878a80d2330e
 }
 // SetValue sets the value property value. The value property
 func (m *IosVppEBookAssignmentCollectionResponse) SetValue(value []IosVppEBookAssignmentable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IosVppEBookAssignmentCollectionResponseable 
+type IosVppEBookAssignmentCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]IosVppEBookAssignmentable)
+    SetValue(value []IosVppEBookAssignmentable)()
 }

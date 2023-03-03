@@ -70,29 +70,9 @@ func (m *ItemTransitiveMemberOfDirectoryObjectItemRequestBuilder) Get(ctx contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable), nil
 }
-// MicrosoftGraphApplication casts the previous resource to application.
-func (m *ItemTransitiveMemberOfDirectoryObjectItemRequestBuilder) MicrosoftGraphApplication()(*ItemTransitiveMemberOfItemMicrosoftGraphApplicationRequestBuilder) {
-    return NewItemTransitiveMemberOfItemMicrosoftGraphApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphDevice casts the previous resource to device.
-func (m *ItemTransitiveMemberOfDirectoryObjectItemRequestBuilder) MicrosoftGraphDevice()(*ItemTransitiveMemberOfItemMicrosoftGraphDeviceRequestBuilder) {
-    return NewItemTransitiveMemberOfItemMicrosoftGraphDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphGroup casts the previous resource to group.
-func (m *ItemTransitiveMemberOfDirectoryObjectItemRequestBuilder) MicrosoftGraphGroup()(*ItemTransitiveMemberOfItemMicrosoftGraphGroupRequestBuilder) {
-    return NewItemTransitiveMemberOfItemMicrosoftGraphGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphOrgContact casts the previous resource to orgContact.
-func (m *ItemTransitiveMemberOfDirectoryObjectItemRequestBuilder) MicrosoftGraphOrgContact()(*ItemTransitiveMemberOfItemMicrosoftGraphOrgContactRequestBuilder) {
-    return NewItemTransitiveMemberOfItemMicrosoftGraphOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphServicePrincipal casts the previous resource to servicePrincipal.
-func (m *ItemTransitiveMemberOfDirectoryObjectItemRequestBuilder) MicrosoftGraphServicePrincipal()(*ItemTransitiveMemberOfItemMicrosoftGraphServicePrincipalRequestBuilder) {
-    return NewItemTransitiveMemberOfItemMicrosoftGraphServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphUser casts the previous resource to user.
-func (m *ItemTransitiveMemberOfDirectoryObjectItemRequestBuilder) MicrosoftGraphUser()(*ItemTransitiveMemberOfItemMicrosoftGraphUserRequestBuilder) {
-    return NewItemTransitiveMemberOfItemMicrosoftGraphUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphGroup casts the previous resource to group.
+func (m *ItemTransitiveMemberOfDirectoryObjectItemRequestBuilder) GraphGroup()(*ItemTransitiveMemberOfItemGraphGroupRequestBuilder) {
+    return NewItemTransitiveMemberOfItemGraphGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation groups and administrative units that the device is a member of. This operation is transitive. Supports $expand.
 func (m *ItemTransitiveMemberOfDirectoryObjectItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTransitiveMemberOfDirectoryObjectItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

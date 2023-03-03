@@ -8,8 +8,6 @@ import (
 // ExternalConnectionCollectionResponse 
 type ExternalConnectionCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
-    // The value property
-    value []ExternalConnectionable
 }
 // NewExternalConnectionCollectionResponse instantiates a new ExternalConnectionCollectionResponse and sets the default values.
 func NewExternalConnectionCollectionResponse()(*ExternalConnectionCollectionResponse) {
@@ -43,7 +41,14 @@ func (m *ExternalConnectionCollectionResponse) GetFieldDeserializers()(map[strin
 }
 // GetValue gets the value property value. The value property
 func (m *ExternalConnectionCollectionResponse) GetValue()([]ExternalConnectionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ExternalConnectionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ExternalConnectionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,5 +70,15 @@ func (m *ExternalConnectionCollectionResponse) Serialize(writer i878a80d2330e89d
 }
 // SetValue sets the value property value. The value property
 func (m *ExternalConnectionCollectionResponse) SetValue(value []ExternalConnectionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ExternalConnectionCollectionResponseable 
+type ExternalConnectionCollectionResponseable interface {
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ExternalConnectionable)
+    SetValue(value []ExternalConnectionable)()
 }

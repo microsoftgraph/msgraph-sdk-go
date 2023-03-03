@@ -7,8 +7,6 @@ import (
 // SkypeForBusinessUserConversationMemberCollectionResponse 
 type SkypeForBusinessUserConversationMemberCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []SkypeForBusinessUserConversationMemberable
 }
 // NewSkypeForBusinessUserConversationMemberCollectionResponse instantiates a new SkypeForBusinessUserConversationMemberCollectionResponse and sets the default values.
 func NewSkypeForBusinessUserConversationMemberCollectionResponse()(*SkypeForBusinessUserConversationMemberCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *SkypeForBusinessUserConversationMemberCollectionResponse) GetFieldDeser
 }
 // GetValue gets the value property value. The value property
 func (m *SkypeForBusinessUserConversationMemberCollectionResponse) GetValue()([]SkypeForBusinessUserConversationMemberable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SkypeForBusinessUserConversationMemberable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SkypeForBusinessUserConversationMemberCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *SkypeForBusinessUserConversationMemberCollectionResponse) Serialize(wri
 }
 // SetValue sets the value property value. The value property
 func (m *SkypeForBusinessUserConversationMemberCollectionResponse) SetValue(value []SkypeForBusinessUserConversationMemberable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SkypeForBusinessUserConversationMemberCollectionResponseable 
+type SkypeForBusinessUserConversationMemberCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]SkypeForBusinessUserConversationMemberable)
+    SetValue(value []SkypeForBusinessUserConversationMemberable)()
 }

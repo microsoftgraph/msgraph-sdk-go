@@ -93,13 +93,13 @@ func (m *AuditEventsRequestBuilder) Get(ctx context.Context, requestConfiguratio
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuditEventCollectionResponseable), nil
 }
-// MicrosoftGraphGetAuditActivityTypesWithCategory provides operations to call the getAuditActivityTypes method.
-func (m *AuditEventsRequestBuilder) MicrosoftGraphGetAuditActivityTypesWithCategory(category *string)(*AuditEventsMicrosoftGraphGetAuditActivityTypesWithCategoryRequestBuilder) {
-    return NewAuditEventsMicrosoftGraphGetAuditActivityTypesWithCategoryRequestBuilderInternal(m.pathParameters, m.requestAdapter, category)
+// GetAuditActivityTypesWithCategory provides operations to call the getAuditActivityTypes method.
+func (m *AuditEventsRequestBuilder) GetAuditActivityTypesWithCategory(category *string)(*AuditEventsGetAuditActivityTypesWithCategoryRequestBuilder) {
+    return NewAuditEventsGetAuditActivityTypesWithCategoryRequestBuilderInternal(m.pathParameters, m.requestAdapter, category)
 }
-// MicrosoftGraphGetAuditCategories provides operations to call the getAuditCategories method.
-func (m *AuditEventsRequestBuilder) MicrosoftGraphGetAuditCategories()(*AuditEventsMicrosoftGraphGetAuditCategoriesRequestBuilder) {
-    return NewAuditEventsMicrosoftGraphGetAuditCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GetAuditCategories provides operations to call the getAuditCategories method.
+func (m *AuditEventsRequestBuilder) GetAuditCategories()(*AuditEventsGetAuditCategoriesRequestBuilder) {
+    return NewAuditEventsGetAuditCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to auditEvents for deviceManagement
 func (m *AuditEventsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuditEventable, requestConfiguration *AuditEventsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuditEventable, error) {

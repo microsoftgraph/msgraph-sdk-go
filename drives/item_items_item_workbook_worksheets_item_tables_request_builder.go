@@ -51,6 +51,10 @@ type ItemItemsItemWorkbookWorksheetsItemTablesRequestBuilderPostRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Add provides operations to call the add method.
+func (m *ItemItemsItemWorkbookWorksheetsItemTablesRequestBuilder) Add()(*ItemItemsItemWorkbookWorksheetsItemTablesAddRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemTablesAddRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // NewItemItemsItemWorkbookWorksheetsItemTablesRequestBuilderInternal instantiates a new TablesRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsItemTablesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookWorksheetsItemTablesRequestBuilder) {
     m := &ItemItemsItemWorkbookWorksheetsItemTablesRequestBuilder{
@@ -70,7 +74,7 @@ func NewItemItemsItemWorkbookWorksheetsItemTablesRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookWorksheetsItemTablesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count provides operations to count the resources in the collection.
+// Count provides operations to call the count method.
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesRequestBuilder) Count()(*ItemItemsItemWorkbookWorksheetsItemTablesCountRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemTablesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
@@ -96,17 +100,9 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesRequestBuilder) Get(ctx contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableCollectionResponseable), nil
 }
-// MicrosoftGraphAdd provides operations to call the add method.
-func (m *ItemItemsItemWorkbookWorksheetsItemTablesRequestBuilder) MicrosoftGraphAdd()(*ItemItemsItemWorkbookWorksheetsItemTablesMicrosoftGraphAddRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemTablesMicrosoftGraphAddRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphCount provides operations to call the count method.
-func (m *ItemItemsItemWorkbookWorksheetsItemTablesRequestBuilder) MicrosoftGraphCount()(*ItemItemsItemWorkbookWorksheetsItemTablesMicrosoftGraphCountRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemTablesMicrosoftGraphCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphItemAtWithIndex provides operations to call the itemAt method.
-func (m *ItemItemsItemWorkbookWorksheetsItemTablesRequestBuilder) MicrosoftGraphItemAtWithIndex(index *int32)(*ItemItemsItemWorkbookWorksheetsItemTablesMicrosoftGraphItemAtWithIndexRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemTablesMicrosoftGraphItemAtWithIndexRequestBuilderInternal(m.pathParameters, m.requestAdapter, index)
+// ItemAtWithIndex provides operations to call the itemAt method.
+func (m *ItemItemsItemWorkbookWorksheetsItemTablesRequestBuilder) ItemAtWithIndex(index *int32)(*ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexRequestBuilderInternal(m.pathParameters, m.requestAdapter, index)
 }
 // Post create new navigation property to tables for drives
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTablesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableable, error) {

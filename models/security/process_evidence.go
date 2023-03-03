@@ -8,26 +8,6 @@ import (
 // ProcessEvidence 
 type ProcessEvidence struct {
     AlertEvidence
-    // The status of the detection.The possible values are: detected, blocked, prevented, unknownFutureValue.
-    detectionStatus *DetectionStatus
-    // Image file details.
-    imageFile FileDetailsable
-    // A unique identifier assigned to a device by Microsoft Defender for Endpoint.
-    mdeDeviceId *string
-    // Date and time when the parent of the process was created.
-    parentProcessCreationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Process ID (PID) of the parent process that spawned the process.
-    parentProcessId *int64
-    // Parent process image file details.
-    parentProcessImageFile FileDetailsable
-    // Command line used to create the new process.
-    processCommandLine *string
-    // Date and time the process was created.
-    processCreationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Process ID (PID) of the newly created process.
-    processId *int64
-    // User details of the user that ran the process.
-    userAccount UserAccountable
 }
 // NewProcessEvidence instantiates a new ProcessEvidence and sets the default values.
 func NewProcessEvidence()(*ProcessEvidence) {
@@ -42,7 +22,14 @@ func CreateProcessEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetDetectionStatus gets the detectionStatus property value. The status of the detection.The possible values are: detected, blocked, prevented, unknownFutureValue.
 func (m *ProcessEvidence) GetDetectionStatus()(*DetectionStatus) {
-    return m.detectionStatus
+    val, err := m.GetBackingStore().Get("detectionStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DetectionStatus)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ProcessEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -151,39 +138,102 @@ func (m *ProcessEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetImageFile gets the imageFile property value. Image file details.
 func (m *ProcessEvidence) GetImageFile()(FileDetailsable) {
-    return m.imageFile
+    val, err := m.GetBackingStore().Get("imageFile")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(FileDetailsable)
+    }
+    return nil
 }
 // GetMdeDeviceId gets the mdeDeviceId property value. A unique identifier assigned to a device by Microsoft Defender for Endpoint.
 func (m *ProcessEvidence) GetMdeDeviceId()(*string) {
-    return m.mdeDeviceId
+    val, err := m.GetBackingStore().Get("mdeDeviceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetParentProcessCreationDateTime gets the parentProcessCreationDateTime property value. Date and time when the parent of the process was created.
 func (m *ProcessEvidence) GetParentProcessCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.parentProcessCreationDateTime
+    val, err := m.GetBackingStore().Get("parentProcessCreationDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetParentProcessId gets the parentProcessId property value. Process ID (PID) of the parent process that spawned the process.
 func (m *ProcessEvidence) GetParentProcessId()(*int64) {
-    return m.parentProcessId
+    val, err := m.GetBackingStore().Get("parentProcessId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetParentProcessImageFile gets the parentProcessImageFile property value. Parent process image file details.
 func (m *ProcessEvidence) GetParentProcessImageFile()(FileDetailsable) {
-    return m.parentProcessImageFile
+    val, err := m.GetBackingStore().Get("parentProcessImageFile")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(FileDetailsable)
+    }
+    return nil
 }
 // GetProcessCommandLine gets the processCommandLine property value. Command line used to create the new process.
 func (m *ProcessEvidence) GetProcessCommandLine()(*string) {
-    return m.processCommandLine
+    val, err := m.GetBackingStore().Get("processCommandLine")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetProcessCreationDateTime gets the processCreationDateTime property value. Date and time the process was created.
 func (m *ProcessEvidence) GetProcessCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.processCreationDateTime
+    val, err := m.GetBackingStore().Get("processCreationDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetProcessId gets the processId property value. Process ID (PID) of the newly created process.
 func (m *ProcessEvidence) GetProcessId()(*int64) {
-    return m.processId
+    val, err := m.GetBackingStore().Get("processId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetUserAccount gets the userAccount property value. User details of the user that ran the process.
 func (m *ProcessEvidence) GetUserAccount()(UserAccountable) {
-    return m.userAccount
+    val, err := m.GetBackingStore().Get("userAccount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(UserAccountable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ProcessEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -256,41 +306,96 @@ func (m *ProcessEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetDetectionStatus sets the detectionStatus property value. The status of the detection.The possible values are: detected, blocked, prevented, unknownFutureValue.
 func (m *ProcessEvidence) SetDetectionStatus(value *DetectionStatus)() {
-    m.detectionStatus = value
+    err := m.GetBackingStore().Set("detectionStatus", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetImageFile sets the imageFile property value. Image file details.
 func (m *ProcessEvidence) SetImageFile(value FileDetailsable)() {
-    m.imageFile = value
+    err := m.GetBackingStore().Set("imageFile", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMdeDeviceId sets the mdeDeviceId property value. A unique identifier assigned to a device by Microsoft Defender for Endpoint.
 func (m *ProcessEvidence) SetMdeDeviceId(value *string)() {
-    m.mdeDeviceId = value
+    err := m.GetBackingStore().Set("mdeDeviceId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetParentProcessCreationDateTime sets the parentProcessCreationDateTime property value. Date and time when the parent of the process was created.
 func (m *ProcessEvidence) SetParentProcessCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.parentProcessCreationDateTime = value
+    err := m.GetBackingStore().Set("parentProcessCreationDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetParentProcessId sets the parentProcessId property value. Process ID (PID) of the parent process that spawned the process.
 func (m *ProcessEvidence) SetParentProcessId(value *int64)() {
-    m.parentProcessId = value
+    err := m.GetBackingStore().Set("parentProcessId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetParentProcessImageFile sets the parentProcessImageFile property value. Parent process image file details.
 func (m *ProcessEvidence) SetParentProcessImageFile(value FileDetailsable)() {
-    m.parentProcessImageFile = value
+    err := m.GetBackingStore().Set("parentProcessImageFile", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProcessCommandLine sets the processCommandLine property value. Command line used to create the new process.
 func (m *ProcessEvidence) SetProcessCommandLine(value *string)() {
-    m.processCommandLine = value
+    err := m.GetBackingStore().Set("processCommandLine", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProcessCreationDateTime sets the processCreationDateTime property value. Date and time the process was created.
 func (m *ProcessEvidence) SetProcessCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.processCreationDateTime = value
+    err := m.GetBackingStore().Set("processCreationDateTime", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProcessId sets the processId property value. Process ID (PID) of the newly created process.
 func (m *ProcessEvidence) SetProcessId(value *int64)() {
-    m.processId = value
+    err := m.GetBackingStore().Set("processId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserAccount sets the userAccount property value. User details of the user that ran the process.
 func (m *ProcessEvidence) SetUserAccount(value UserAccountable)() {
-    m.userAccount = value
+    err := m.GetBackingStore().Set("userAccount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ProcessEvidenceable 
+type ProcessEvidenceable interface {
+    AlertEvidenceable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDetectionStatus()(*DetectionStatus)
+    GetImageFile()(FileDetailsable)
+    GetMdeDeviceId()(*string)
+    GetParentProcessCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetParentProcessId()(*int64)
+    GetParentProcessImageFile()(FileDetailsable)
+    GetProcessCommandLine()(*string)
+    GetProcessCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetProcessId()(*int64)
+    GetUserAccount()(UserAccountable)
+    SetDetectionStatus(value *DetectionStatus)()
+    SetImageFile(value FileDetailsable)()
+    SetMdeDeviceId(value *string)()
+    SetParentProcessCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetParentProcessId(value *int64)()
+    SetParentProcessImageFile(value FileDetailsable)()
+    SetProcessCommandLine(value *string)()
+    SetProcessCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetProcessId(value *int64)()
+    SetUserAccount(value UserAccountable)()
 }

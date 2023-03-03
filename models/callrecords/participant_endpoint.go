@@ -8,10 +8,6 @@ import (
 // ParticipantEndpoint 
 type ParticipantEndpoint struct {
     Endpoint
-    // The feedback provided by the user of this endpoint about the quality of the session.
-    feedback UserFeedbackable
-    // Identity associated with the endpoint.
-    identity iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable
 }
 // NewParticipantEndpoint instantiates a new ParticipantEndpoint and sets the default values.
 func NewParticipantEndpoint()(*ParticipantEndpoint) {
@@ -28,7 +24,14 @@ func CreateParticipantEndpointFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetFeedback gets the feedback property value. The feedback provided by the user of this endpoint about the quality of the session.
 func (m *ParticipantEndpoint) GetFeedback()(UserFeedbackable) {
-    return m.feedback
+    val, err := m.GetBackingStore().Get("feedback")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(UserFeedbackable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ParticipantEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -57,7 +60,14 @@ func (m *ParticipantEndpoint) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetIdentity gets the identity property value. Identity associated with the endpoint.
 func (m *ParticipantEndpoint) GetIdentity()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable) {
-    return m.identity
+    val, err := m.GetBackingStore().Get("identity")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ParticipantEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -81,9 +91,24 @@ func (m *ParticipantEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetFeedback sets the feedback property value. The feedback provided by the user of this endpoint about the quality of the session.
 func (m *ParticipantEndpoint) SetFeedback(value UserFeedbackable)() {
-    m.feedback = value
+    err := m.GetBackingStore().Set("feedback", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIdentity sets the identity property value. Identity associated with the endpoint.
 func (m *ParticipantEndpoint) SetIdentity(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable)() {
-    m.identity = value
+    err := m.GetBackingStore().Set("identity", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ParticipantEndpointable 
+type ParticipantEndpointable interface {
+    Endpointable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetFeedback()(UserFeedbackable)
+    GetIdentity()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable)
+    SetFeedback(value UserFeedbackable)()
+    SetIdentity(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable)()
 }

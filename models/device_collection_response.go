@@ -7,8 +7,6 @@ import (
 // DeviceCollectionResponse 
 type DeviceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []Deviceable
 }
 // NewDeviceCollectionResponse instantiates a new DeviceCollectionResponse and sets the default values.
 func NewDeviceCollectionResponse()(*DeviceCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *DeviceCollectionResponse) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetValue gets the value property value. The value property
 func (m *DeviceCollectionResponse) GetValue()([]Deviceable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Deviceable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DeviceCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *DeviceCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetValue sets the value property value. The value property
 func (m *DeviceCollectionResponse) SetValue(value []Deviceable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceCollectionResponseable 
+type DeviceCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]Deviceable)
+    SetValue(value []Deviceable)()
 }

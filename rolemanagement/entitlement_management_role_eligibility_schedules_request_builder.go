@@ -74,6 +74,10 @@ func NewEntitlementManagementRoleEligibilitySchedulesRequestBuilder(rawUrl strin
 func (m *EntitlementManagementRoleEligibilitySchedulesRequestBuilder) Count()(*EntitlementManagementRoleEligibilitySchedulesCountRequestBuilder) {
     return NewEntitlementManagementRoleEligibilitySchedulesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
+func (m *EntitlementManagementRoleEligibilitySchedulesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*EntitlementManagementRoleEligibilitySchedulesFilterByCurrentUserWithOnRequestBuilder) {
+    return NewEntitlementManagementRoleEligibilitySchedulesFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
+}
 // Get get the unifiedRoleEligibilitySchedule resources from the roleEligibilitySchedules navigation property.
 // [Find more info here]
 // 
@@ -95,10 +99,6 @@ func (m *EntitlementManagementRoleEligibilitySchedulesRequestBuilder) Get(ctx co
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleEligibilityScheduleCollectionResponseable), nil
-}
-// MicrosoftGraphFilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
-func (m *EntitlementManagementRoleEligibilitySchedulesRequestBuilder) MicrosoftGraphFilterByCurrentUserWithOn(on *string)(*EntitlementManagementRoleEligibilitySchedulesMicrosoftGraphFilterByCurrentUserWithOnRequestBuilder) {
-    return NewEntitlementManagementRoleEligibilitySchedulesMicrosoftGraphFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
 }
 // Post create new navigation property to roleEligibilitySchedules for roleManagement
 func (m *EntitlementManagementRoleEligibilitySchedulesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleEligibilityScheduleable, requestConfiguration *EntitlementManagementRoleEligibilitySchedulesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleEligibilityScheduleable, error) {

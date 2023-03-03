@@ -7,8 +7,6 @@ import (
 // AuditPropertyCollectionResponse 
 type AuditPropertyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AuditPropertyable
 }
 // NewAuditPropertyCollectionResponse instantiates a new AuditPropertyCollectionResponse and sets the default values.
 func NewAuditPropertyCollectionResponse()(*AuditPropertyCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AuditPropertyCollectionResponse) GetFieldDeserializers()(map[string]fun
 }
 // GetValue gets the value property value. The value property
 func (m *AuditPropertyCollectionResponse) GetValue()([]AuditPropertyable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AuditPropertyable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AuditPropertyCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AuditPropertyCollectionResponse) Serialize(writer i878a80d2330e89d26896
 }
 // SetValue sets the value property value. The value property
 func (m *AuditPropertyCollectionResponse) SetValue(value []AuditPropertyable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AuditPropertyCollectionResponseable 
+type AuditPropertyCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AuditPropertyable)
+    SetValue(value []AuditPropertyable)()
 }

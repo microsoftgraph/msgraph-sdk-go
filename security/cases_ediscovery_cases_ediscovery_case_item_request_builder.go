@@ -115,14 +115,6 @@ func (m *CasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilder) Get(ctx context.C
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryCaseable), nil
 }
-// MicrosoftGraphSecurityClose provides operations to call the close method.
-func (m *CasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilder) MicrosoftGraphSecurityClose()(*CasesEdiscoveryCasesItemMicrosoftGraphSecurityCloseRequestBuilder) {
-    return NewCasesEdiscoveryCasesItemMicrosoftGraphSecurityCloseRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphSecurityReopen provides operations to call the reopen method.
-func (m *CasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilder) MicrosoftGraphSecurityReopen()(*CasesEdiscoveryCasesItemMicrosoftGraphSecurityReopenRequestBuilder) {
-    return NewCasesEdiscoveryCasesItemMicrosoftGraphSecurityReopenRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // NoncustodialDataSources provides operations to manage the noncustodialDataSources property of the microsoft.graph.security.ediscoveryCase entity.
 func (m *CasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilder) NoncustodialDataSources()(*CasesEdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) {
     return NewCasesEdiscoveryCasesItemNoncustodialDataSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
@@ -201,6 +193,14 @@ func (m *CasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilder) SearchesById(id s
         urlTplParams["ediscoverySearch%2Did"] = id
     }
     return NewCasesEdiscoveryCasesItemSearchesEdiscoverySearchItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+}
+// SecurityClose provides operations to call the close method.
+func (m *CasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilder) SecurityClose()(*CasesEdiscoveryCasesItemSecurityCloseRequestBuilder) {
+    return NewCasesEdiscoveryCasesItemSecurityCloseRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// SecurityReopen provides operations to call the reopen method.
+func (m *CasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilder) SecurityReopen()(*CasesEdiscoveryCasesItemSecurityReopenRequestBuilder) {
+    return NewCasesEdiscoveryCasesItemSecurityReopenRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Settings provides operations to manage the settings property of the microsoft.graph.security.ediscoveryCase entity.
 func (m *CasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilder) Settings()(*CasesEdiscoveryCasesItemSettingsRequestBuilder) {

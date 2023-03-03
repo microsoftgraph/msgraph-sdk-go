@@ -46,6 +46,10 @@ type ManagedEBooksManagedEBookItemRequestBuilderPatchRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Assign provides operations to call the assign method.
+func (m *ManagedEBooksManagedEBookItemRequestBuilder) Assign()(*ManagedEBooksItemAssignRequestBuilder) {
+    return NewManagedEBooksItemAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Assignments provides operations to manage the assignments property of the microsoft.graph.managedEBook entity.
 func (m *ManagedEBooksManagedEBookItemRequestBuilder) Assignments()(*ManagedEBooksItemAssignmentsRequestBuilder) {
     return NewManagedEBooksItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
@@ -133,10 +137,6 @@ func (m *ManagedEBooksManagedEBookItemRequestBuilder) Get(ctx context.Context, r
 // InstallSummary provides operations to manage the installSummary property of the microsoft.graph.managedEBook entity.
 func (m *ManagedEBooksManagedEBookItemRequestBuilder) InstallSummary()(*ManagedEBooksItemInstallSummaryRequestBuilder) {
     return NewManagedEBooksItemInstallSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphAssign provides operations to call the assign method.
-func (m *ManagedEBooksManagedEBookItemRequestBuilder) MicrosoftGraphAssign()(*ManagedEBooksItemMicrosoftGraphAssignRequestBuilder) {
-    return NewManagedEBooksItemMicrosoftGraphAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property managedEBooks in deviceAppManagement
 func (m *ManagedEBooksManagedEBookItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedEBookable, requestConfiguration *ManagedEBooksManagedEBookItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedEBookable, error) {

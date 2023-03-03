@@ -72,6 +72,10 @@ func NewItemThreadsItemPostsItemAttachmentsRequestBuilder(rawUrl string, request
 func (m *ItemThreadsItemPostsItemAttachmentsRequestBuilder) Count()(*ItemThreadsItemPostsItemAttachmentsCountRequestBuilder) {
     return NewItemThreadsItemPostsItemAttachmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// CreateUploadSession provides operations to call the createUploadSession method.
+func (m *ItemThreadsItemPostsItemAttachmentsRequestBuilder) CreateUploadSession()(*ItemThreadsItemPostsItemAttachmentsCreateUploadSessionRequestBuilder) {
+    return NewItemThreadsItemPostsItemAttachmentsCreateUploadSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Get retrieve a list of attachment objects attached to a post.
 // [Find more info here]
 // 
@@ -93,10 +97,6 @@ func (m *ItemThreadsItemPostsItemAttachmentsRequestBuilder) Get(ctx context.Cont
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentCollectionResponseable), nil
-}
-// MicrosoftGraphCreateUploadSession provides operations to call the createUploadSession method.
-func (m *ItemThreadsItemPostsItemAttachmentsRequestBuilder) MicrosoftGraphCreateUploadSession()(*ItemThreadsItemPostsItemAttachmentsMicrosoftGraphCreateUploadSessionRequestBuilder) {
-    return NewItemThreadsItemPostsItemAttachmentsMicrosoftGraphCreateUploadSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to attachments for groups
 func (m *ItemThreadsItemPostsItemAttachmentsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Attachmentable, requestConfiguration *ItemThreadsItemPostsItemAttachmentsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Attachmentable, error) {

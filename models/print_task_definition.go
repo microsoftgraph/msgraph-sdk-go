@@ -7,12 +7,6 @@ import (
 // PrintTaskDefinition 
 type PrintTaskDefinition struct {
     Entity
-    // The createdBy property
-    createdBy AppIdentityable
-    // The name of the printTaskDefinition.
-    displayName *string
-    // A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
-    tasks []PrintTaskable
 }
 // NewPrintTaskDefinition instantiates a new printTaskDefinition and sets the default values.
 func NewPrintTaskDefinition()(*PrintTaskDefinition) {
@@ -27,11 +21,25 @@ func CreatePrintTaskDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetCreatedBy gets the createdBy property value. The createdBy property
 func (m *PrintTaskDefinition) GetCreatedBy()(AppIdentityable) {
-    return m.createdBy
+    val, err := m.GetBackingStore().Get("createdBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AppIdentityable)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The name of the printTaskDefinition.
 func (m *PrintTaskDefinition) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrintTaskDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -74,7 +82,14 @@ func (m *PrintTaskDefinition) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetTasks gets the tasks property value. A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
 func (m *PrintTaskDefinition) GetTasks()([]PrintTaskable) {
-    return m.tasks
+    val, err := m.GetBackingStore().Get("tasks")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrintTaskable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PrintTaskDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -108,13 +123,33 @@ func (m *PrintTaskDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetCreatedBy sets the createdBy property value. The createdBy property
 func (m *PrintTaskDefinition) SetCreatedBy(value AppIdentityable)() {
-    m.createdBy = value
+    err := m.GetBackingStore().Set("createdBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The name of the printTaskDefinition.
 func (m *PrintTaskDefinition) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTasks sets the tasks property value. A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
 func (m *PrintTaskDefinition) SetTasks(value []PrintTaskable)() {
-    m.tasks = value
+    err := m.GetBackingStore().Set("tasks", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PrintTaskDefinitionable 
+type PrintTaskDefinitionable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCreatedBy()(AppIdentityable)
+    GetDisplayName()(*string)
+    GetTasks()([]PrintTaskable)
+    SetCreatedBy(value AppIdentityable)()
+    SetDisplayName(value *string)()
+    SetTasks(value []PrintTaskable)()
 }

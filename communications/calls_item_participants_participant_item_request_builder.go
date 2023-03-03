@@ -100,17 +100,9 @@ func (m *CallsItemParticipantsParticipantItemRequestBuilder) Get(ctx context.Con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Participantable), nil
 }
-// MicrosoftGraphMute provides operations to call the mute method.
-func (m *CallsItemParticipantsParticipantItemRequestBuilder) MicrosoftGraphMute()(*CallsItemParticipantsItemMicrosoftGraphMuteRequestBuilder) {
-    return NewCallsItemParticipantsItemMicrosoftGraphMuteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphStartHoldMusic provides operations to call the startHoldMusic method.
-func (m *CallsItemParticipantsParticipantItemRequestBuilder) MicrosoftGraphStartHoldMusic()(*CallsItemParticipantsItemMicrosoftGraphStartHoldMusicRequestBuilder) {
-    return NewCallsItemParticipantsItemMicrosoftGraphStartHoldMusicRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphStopHoldMusic provides operations to call the stopHoldMusic method.
-func (m *CallsItemParticipantsParticipantItemRequestBuilder) MicrosoftGraphStopHoldMusic()(*CallsItemParticipantsItemMicrosoftGraphStopHoldMusicRequestBuilder) {
-    return NewCallsItemParticipantsItemMicrosoftGraphStopHoldMusicRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// Mute provides operations to call the mute method.
+func (m *CallsItemParticipantsParticipantItemRequestBuilder) Mute()(*CallsItemParticipantsItemMuteRequestBuilder) {
+    return NewCallsItemParticipantsItemMuteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property participants in communications
 func (m *CallsItemParticipantsParticipantItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Participantable, requestConfiguration *CallsItemParticipantsParticipantItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Participantable, error) {
@@ -130,6 +122,14 @@ func (m *CallsItemParticipantsParticipantItemRequestBuilder) Patch(ctx context.C
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Participantable), nil
+}
+// StartHoldMusic provides operations to call the startHoldMusic method.
+func (m *CallsItemParticipantsParticipantItemRequestBuilder) StartHoldMusic()(*CallsItemParticipantsItemStartHoldMusicRequestBuilder) {
+    return NewCallsItemParticipantsItemStartHoldMusicRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// StopHoldMusic provides operations to call the stopHoldMusic method.
+func (m *CallsItemParticipantsParticipantItemRequestBuilder) StopHoldMusic()(*CallsItemParticipantsItemStopHoldMusicRequestBuilder) {
+    return NewCallsItemParticipantsItemStopHoldMusicRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property participants for communications
 func (m *CallsItemParticipantsParticipantItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CallsItemParticipantsParticipantItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

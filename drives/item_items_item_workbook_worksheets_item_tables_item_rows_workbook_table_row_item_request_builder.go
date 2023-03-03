@@ -100,10 +100,6 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemRowsWorkbookTableRowItemRe
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableRowable), nil
 }
-// MicrosoftGraphRange provides operations to call the range method.
-func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemRowsWorkbookTableRowItemRequestBuilder) MicrosoftGraphRange()(*ItemItemsItemWorkbookWorksheetsItemTablesItemRowsItemMicrosoftGraphRangeRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemTablesItemRowsItemMicrosoftGraphRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Patch update the navigation property rows in drives
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemRowsWorkbookTableRowItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableRowable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTablesItemRowsWorkbookTableRowItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableRowable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -122,6 +118,10 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemRowsWorkbookTableRowItemRe
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableRowable), nil
+}
+// RangeEscaped provides operations to call the range method.
+func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemRowsWorkbookTableRowItemRequestBuilder) RangeEscaped()(*ItemItemsItemWorkbookWorksheetsItemTablesItemRowsItemRangeRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemTablesItemRowsItemRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property rows for drives
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemRowsWorkbookTableRowItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTablesItemRowsWorkbookTableRowItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

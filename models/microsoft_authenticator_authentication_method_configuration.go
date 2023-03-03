@@ -7,10 +7,6 @@ import (
 // MicrosoftAuthenticatorAuthenticationMethodConfiguration 
 type MicrosoftAuthenticatorAuthenticationMethodConfiguration struct {
     AuthenticationMethodConfiguration
-    // A collection of Microsoft Authenticator settings such as application context and location context, and whether they are enabled for all users or specific users only.
-    featureSettings MicrosoftAuthenticatorFeatureSettingsable
-    // A collection of groups that are enabled to use the authentication method. Expanded by default.
-    includeTargets []MicrosoftAuthenticatorAuthenticationMethodTargetable
 }
 // NewMicrosoftAuthenticatorAuthenticationMethodConfiguration instantiates a new MicrosoftAuthenticatorAuthenticationMethodConfiguration and sets the default values.
 func NewMicrosoftAuthenticatorAuthenticationMethodConfiguration()(*MicrosoftAuthenticatorAuthenticationMethodConfiguration) {
@@ -27,7 +23,14 @@ func CreateMicrosoftAuthenticatorAuthenticationMethodConfigurationFromDiscrimina
 }
 // GetFeatureSettings gets the featureSettings property value. A collection of Microsoft Authenticator settings such as application context and location context, and whether they are enabled for all users or specific users only.
 func (m *MicrosoftAuthenticatorAuthenticationMethodConfiguration) GetFeatureSettings()(MicrosoftAuthenticatorFeatureSettingsable) {
-    return m.featureSettings
+    val, err := m.GetBackingStore().Get("featureSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(MicrosoftAuthenticatorFeatureSettingsable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MicrosoftAuthenticatorAuthenticationMethodConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,7 +63,14 @@ func (m *MicrosoftAuthenticatorAuthenticationMethodConfiguration) GetFieldDeseri
 }
 // GetIncludeTargets gets the includeTargets property value. A collection of groups that are enabled to use the authentication method. Expanded by default.
 func (m *MicrosoftAuthenticatorAuthenticationMethodConfiguration) GetIncludeTargets()([]MicrosoftAuthenticatorAuthenticationMethodTargetable) {
-    return m.includeTargets
+    val, err := m.GetBackingStore().Get("includeTargets")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MicrosoftAuthenticatorAuthenticationMethodTargetable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MicrosoftAuthenticatorAuthenticationMethodConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,9 +98,24 @@ func (m *MicrosoftAuthenticatorAuthenticationMethodConfiguration) Serialize(writ
 }
 // SetFeatureSettings sets the featureSettings property value. A collection of Microsoft Authenticator settings such as application context and location context, and whether they are enabled for all users or specific users only.
 func (m *MicrosoftAuthenticatorAuthenticationMethodConfiguration) SetFeatureSettings(value MicrosoftAuthenticatorFeatureSettingsable)() {
-    m.featureSettings = value
+    err := m.GetBackingStore().Set("featureSettings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIncludeTargets sets the includeTargets property value. A collection of groups that are enabled to use the authentication method. Expanded by default.
 func (m *MicrosoftAuthenticatorAuthenticationMethodConfiguration) SetIncludeTargets(value []MicrosoftAuthenticatorAuthenticationMethodTargetable)() {
-    m.includeTargets = value
+    err := m.GetBackingStore().Set("includeTargets", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MicrosoftAuthenticatorAuthenticationMethodConfigurationable 
+type MicrosoftAuthenticatorAuthenticationMethodConfigurationable interface {
+    AuthenticationMethodConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetFeatureSettings()(MicrosoftAuthenticatorFeatureSettingsable)
+    GetIncludeTargets()([]MicrosoftAuthenticatorAuthenticationMethodTargetable)
+    SetFeatureSettings(value MicrosoftAuthenticatorFeatureSettingsable)()
+    SetIncludeTargets(value []MicrosoftAuthenticatorAuthenticationMethodTargetable)()
 }

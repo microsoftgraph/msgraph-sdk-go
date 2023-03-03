@@ -7,8 +7,6 @@ import (
 // CancelMediaProcessingOperationCollectionResponse 
 type CancelMediaProcessingOperationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []CancelMediaProcessingOperationable
 }
 // NewCancelMediaProcessingOperationCollectionResponse instantiates a new CancelMediaProcessingOperationCollectionResponse and sets the default values.
 func NewCancelMediaProcessingOperationCollectionResponse()(*CancelMediaProcessingOperationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *CancelMediaProcessingOperationCollectionResponse) GetFieldDeserializers
 }
 // GetValue gets the value property value. The value property
 func (m *CancelMediaProcessingOperationCollectionResponse) GetValue()([]CancelMediaProcessingOperationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CancelMediaProcessingOperationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CancelMediaProcessingOperationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *CancelMediaProcessingOperationCollectionResponse) Serialize(writer i878
 }
 // SetValue sets the value property value. The value property
 func (m *CancelMediaProcessingOperationCollectionResponse) SetValue(value []CancelMediaProcessingOperationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// CancelMediaProcessingOperationCollectionResponseable 
+type CancelMediaProcessingOperationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]CancelMediaProcessingOperationable)
+    SetValue(value []CancelMediaProcessingOperationable)()
 }

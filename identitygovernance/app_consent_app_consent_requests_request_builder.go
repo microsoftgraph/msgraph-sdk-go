@@ -74,6 +74,10 @@ func NewAppConsentAppConsentRequestsRequestBuilder(rawUrl string, requestAdapter
 func (m *AppConsentAppConsentRequestsRequestBuilder) Count()(*AppConsentAppConsentRequestsCountRequestBuilder) {
     return NewAppConsentAppConsentRequestsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
+func (m *AppConsentAppConsentRequestsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*AppConsentAppConsentRequestsFilterByCurrentUserWithOnRequestBuilder) {
+    return NewAppConsentAppConsentRequestsFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
+}
 // Get retrieve appConsentRequest objects and their properties.
 // [Find more info here]
 // 
@@ -95,10 +99,6 @@ func (m *AppConsentAppConsentRequestsRequestBuilder) Get(ctx context.Context, re
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AppConsentRequestCollectionResponseable), nil
-}
-// MicrosoftGraphFilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
-func (m *AppConsentAppConsentRequestsRequestBuilder) MicrosoftGraphFilterByCurrentUserWithOn(on *string)(*AppConsentAppConsentRequestsMicrosoftGraphFilterByCurrentUserWithOnRequestBuilder) {
-    return NewAppConsentAppConsentRequestsMicrosoftGraphFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
 }
 // Post create new navigation property to appConsentRequests for identityGovernance
 func (m *AppConsentAppConsentRequestsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AppConsentRequestable, requestConfiguration *AppConsentAppConsentRequestsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AppConsentRequestable, error) {

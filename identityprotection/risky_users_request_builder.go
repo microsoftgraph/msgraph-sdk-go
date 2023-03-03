@@ -51,6 +51,10 @@ type RiskyUsersRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ConfirmCompromised provides operations to call the confirmCompromised method.
+func (m *RiskyUsersRequestBuilder) ConfirmCompromised()(*RiskyUsersConfirmCompromisedRequestBuilder) {
+    return NewRiskyUsersConfirmCompromisedRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // NewRiskyUsersRequestBuilderInternal instantiates a new RiskyUsersRequestBuilder and sets the default values.
 func NewRiskyUsersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RiskyUsersRequestBuilder) {
     m := &RiskyUsersRequestBuilder{
@@ -74,6 +78,10 @@ func NewRiskyUsersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 func (m *RiskyUsersRequestBuilder) Count()(*RiskyUsersCountRequestBuilder) {
     return NewRiskyUsersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// Dismiss provides operations to call the dismiss method.
+func (m *RiskyUsersRequestBuilder) Dismiss()(*RiskyUsersDismissRequestBuilder) {
+    return NewRiskyUsersDismissRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Get get a list of the riskyUser objects and their properties.
 // [Find more info here]
 // 
@@ -95,14 +103,6 @@ func (m *RiskyUsersRequestBuilder) Get(ctx context.Context, requestConfiguration
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RiskyUserCollectionResponseable), nil
-}
-// MicrosoftGraphConfirmCompromised provides operations to call the confirmCompromised method.
-func (m *RiskyUsersRequestBuilder) MicrosoftGraphConfirmCompromised()(*RiskyUsersMicrosoftGraphConfirmCompromisedRequestBuilder) {
-    return NewRiskyUsersMicrosoftGraphConfirmCompromisedRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphDismiss provides operations to call the dismiss method.
-func (m *RiskyUsersRequestBuilder) MicrosoftGraphDismiss()(*RiskyUsersMicrosoftGraphDismissRequestBuilder) {
-    return NewRiskyUsersMicrosoftGraphDismissRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to riskyUsers for identityProtection
 func (m *RiskyUsersRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RiskyUserable, requestConfiguration *RiskyUsersRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RiskyUserable, error) {

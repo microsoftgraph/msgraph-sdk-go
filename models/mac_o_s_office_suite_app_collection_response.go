@@ -7,8 +7,6 @@ import (
 // MacOSOfficeSuiteAppCollectionResponse 
 type MacOSOfficeSuiteAppCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []MacOSOfficeSuiteAppable
 }
 // NewMacOSOfficeSuiteAppCollectionResponse instantiates a new MacOSOfficeSuiteAppCollectionResponse and sets the default values.
 func NewMacOSOfficeSuiteAppCollectionResponse()(*MacOSOfficeSuiteAppCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *MacOSOfficeSuiteAppCollectionResponse) GetFieldDeserializers()(map[stri
 }
 // GetValue gets the value property value. The value property
 func (m *MacOSOfficeSuiteAppCollectionResponse) GetValue()([]MacOSOfficeSuiteAppable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MacOSOfficeSuiteAppable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MacOSOfficeSuiteAppCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *MacOSOfficeSuiteAppCollectionResponse) Serialize(writer i878a80d2330e89
 }
 // SetValue sets the value property value. The value property
 func (m *MacOSOfficeSuiteAppCollectionResponse) SetValue(value []MacOSOfficeSuiteAppable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MacOSOfficeSuiteAppCollectionResponseable 
+type MacOSOfficeSuiteAppCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]MacOSOfficeSuiteAppable)
+    SetValue(value []MacOSOfficeSuiteAppable)()
 }

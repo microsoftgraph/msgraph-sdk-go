@@ -7,8 +7,6 @@ import (
 // UnifiedRoleAssignmentScheduleRequestCollectionResponse 
 type UnifiedRoleAssignmentScheduleRequestCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []UnifiedRoleAssignmentScheduleRequestable
 }
 // NewUnifiedRoleAssignmentScheduleRequestCollectionResponse instantiates a new UnifiedRoleAssignmentScheduleRequestCollectionResponse and sets the default values.
 func NewUnifiedRoleAssignmentScheduleRequestCollectionResponse()(*UnifiedRoleAssignmentScheduleRequestCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *UnifiedRoleAssignmentScheduleRequestCollectionResponse) GetFieldDeseria
 }
 // GetValue gets the value property value. The value property
 func (m *UnifiedRoleAssignmentScheduleRequestCollectionResponse) GetValue()([]UnifiedRoleAssignmentScheduleRequestable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UnifiedRoleAssignmentScheduleRequestable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UnifiedRoleAssignmentScheduleRequestCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *UnifiedRoleAssignmentScheduleRequestCollectionResponse) Serialize(write
 }
 // SetValue sets the value property value. The value property
 func (m *UnifiedRoleAssignmentScheduleRequestCollectionResponse) SetValue(value []UnifiedRoleAssignmentScheduleRequestable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UnifiedRoleAssignmentScheduleRequestCollectionResponseable 
+type UnifiedRoleAssignmentScheduleRequestCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]UnifiedRoleAssignmentScheduleRequestable)
+    SetValue(value []UnifiedRoleAssignmentScheduleRequestable)()
 }

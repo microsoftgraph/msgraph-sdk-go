@@ -7,10 +7,6 @@ import (
 // AttackSimulationRoot 
 type AttackSimulationRoot struct {
     Entity
-    // Represents simulation automation created to run on a tenant.
-    simulationAutomations []SimulationAutomationable
-    // Represents an attack simulation training campaign in a tenant.
-    simulations []Simulationable
 }
 // NewAttackSimulationRoot instantiates a new attackSimulationRoot and sets the default values.
 func NewAttackSimulationRoot()(*AttackSimulationRoot) {
@@ -58,11 +54,25 @@ func (m *AttackSimulationRoot) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetSimulationAutomations gets the simulationAutomations property value. Represents simulation automation created to run on a tenant.
 func (m *AttackSimulationRoot) GetSimulationAutomations()([]SimulationAutomationable) {
-    return m.simulationAutomations
+    val, err := m.GetBackingStore().Get("simulationAutomations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SimulationAutomationable)
+    }
+    return nil
 }
 // GetSimulations gets the simulations property value. Represents an attack simulation training campaign in a tenant.
 func (m *AttackSimulationRoot) GetSimulations()([]Simulationable) {
-    return m.simulations
+    val, err := m.GetBackingStore().Get("simulations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Simulationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AttackSimulationRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -94,9 +104,24 @@ func (m *AttackSimulationRoot) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetSimulationAutomations sets the simulationAutomations property value. Represents simulation automation created to run on a tenant.
 func (m *AttackSimulationRoot) SetSimulationAutomations(value []SimulationAutomationable)() {
-    m.simulationAutomations = value
+    err := m.GetBackingStore().Set("simulationAutomations", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSimulations sets the simulations property value. Represents an attack simulation training campaign in a tenant.
 func (m *AttackSimulationRoot) SetSimulations(value []Simulationable)() {
-    m.simulations = value
+    err := m.GetBackingStore().Set("simulations", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AttackSimulationRootable 
+type AttackSimulationRootable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetSimulationAutomations()([]SimulationAutomationable)
+    GetSimulations()([]Simulationable)
+    SetSimulationAutomations(value []SimulationAutomationable)()
+    SetSimulations(value []Simulationable)()
 }

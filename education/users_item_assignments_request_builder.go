@@ -74,6 +74,10 @@ func NewUsersItemAssignmentsRequestBuilder(rawUrl string, requestAdapter i2ae418
 func (m *UsersItemAssignmentsRequestBuilder) Count()(*UsersItemAssignmentsCountRequestBuilder) {
     return NewUsersItemAssignmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// Delta provides operations to call the delta method.
+func (m *UsersItemAssignmentsRequestBuilder) Delta()(*UsersItemAssignmentsDeltaRequestBuilder) {
+    return NewUsersItemAssignmentsDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Get returns a list of educationAssignment assigned to a educationUser for all classes. Only teachers, students, and applications with application permissions can perform this operation. This method allows a caller to find all the **assignments** belonging to a student or a teacher in a single call rather than having to request **assignments** from each **class**. The **assignment** list contains what is needed to get the detailed information for the **assignment** from within the **class** namespace. Use the methods defined for the **assignment** for all other operations.
 // [Find more info here]
 // 
@@ -95,10 +99,6 @@ func (m *UsersItemAssignmentsRequestBuilder) Get(ctx context.Context, requestCon
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationAssignmentCollectionResponseable), nil
-}
-// MicrosoftGraphDelta provides operations to call the delta method.
-func (m *UsersItemAssignmentsRequestBuilder) MicrosoftGraphDelta()(*UsersItemAssignmentsMicrosoftGraphDeltaRequestBuilder) {
-    return NewUsersItemAssignmentsMicrosoftGraphDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to assignments for education
 func (m *UsersItemAssignmentsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationAssignmentable, requestConfiguration *UsersItemAssignmentsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationAssignmentable, error) {

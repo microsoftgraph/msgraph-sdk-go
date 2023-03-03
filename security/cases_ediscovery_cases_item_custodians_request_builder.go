@@ -96,14 +96,6 @@ func (m *CasesEdiscoveryCasesItemCustodiansRequestBuilder) Get(ctx context.Conte
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryCustodianCollectionResponseable), nil
 }
-// MicrosoftGraphSecurityApplyHold provides operations to call the applyHold method.
-func (m *CasesEdiscoveryCasesItemCustodiansRequestBuilder) MicrosoftGraphSecurityApplyHold()(*CasesEdiscoveryCasesItemCustodiansMicrosoftGraphSecurityApplyHoldRequestBuilder) {
-    return NewCasesEdiscoveryCasesItemCustodiansMicrosoftGraphSecurityApplyHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphSecurityRemoveHold provides operations to call the removeHold method.
-func (m *CasesEdiscoveryCasesItemCustodiansRequestBuilder) MicrosoftGraphSecurityRemoveHold()(*CasesEdiscoveryCasesItemCustodiansMicrosoftGraphSecurityRemoveHoldRequestBuilder) {
-    return NewCasesEdiscoveryCasesItemCustodiansMicrosoftGraphSecurityRemoveHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Post create a new ediscoveryCustodian object.After the custodian object is created, you will need to create the custodian's userSource to reference their mailbox and OneDrive for Business site.
 // [Find more info here]
 // 
@@ -125,6 +117,14 @@ func (m *CasesEdiscoveryCasesItemCustodiansRequestBuilder) Post(ctx context.Cont
         return nil, nil
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryCustodianable), nil
+}
+// SecurityApplyHold provides operations to call the applyHold method.
+func (m *CasesEdiscoveryCasesItemCustodiansRequestBuilder) SecurityApplyHold()(*CasesEdiscoveryCasesItemCustodiansSecurityApplyHoldRequestBuilder) {
+    return NewCasesEdiscoveryCasesItemCustodiansSecurityApplyHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// SecurityRemoveHold provides operations to call the removeHold method.
+func (m *CasesEdiscoveryCasesItemCustodiansRequestBuilder) SecurityRemoveHold()(*CasesEdiscoveryCasesItemCustodiansSecurityRemoveHoldRequestBuilder) {
+    return NewCasesEdiscoveryCasesItemCustodiansSecurityRemoveHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation get a list of the custodian objects and their properties.
 func (m *CasesEdiscoveryCasesItemCustodiansRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemCustodiansRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

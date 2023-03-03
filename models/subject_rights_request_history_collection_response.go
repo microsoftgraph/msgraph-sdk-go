@@ -7,8 +7,6 @@ import (
 // SubjectRightsRequestHistoryCollectionResponse 
 type SubjectRightsRequestHistoryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []SubjectRightsRequestHistoryable
 }
 // NewSubjectRightsRequestHistoryCollectionResponse instantiates a new SubjectRightsRequestHistoryCollectionResponse and sets the default values.
 func NewSubjectRightsRequestHistoryCollectionResponse()(*SubjectRightsRequestHistoryCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *SubjectRightsRequestHistoryCollectionResponse) GetFieldDeserializers()(
 }
 // GetValue gets the value property value. The value property
 func (m *SubjectRightsRequestHistoryCollectionResponse) GetValue()([]SubjectRightsRequestHistoryable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SubjectRightsRequestHistoryable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SubjectRightsRequestHistoryCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *SubjectRightsRequestHistoryCollectionResponse) Serialize(writer i878a80
 }
 // SetValue sets the value property value. The value property
 func (m *SubjectRightsRequestHistoryCollectionResponse) SetValue(value []SubjectRightsRequestHistoryable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SubjectRightsRequestHistoryCollectionResponseable 
+type SubjectRightsRequestHistoryCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]SubjectRightsRequestHistoryable)
+    SetValue(value []SubjectRightsRequestHistoryable)()
 }

@@ -100,10 +100,6 @@ func (m *ItemItemsItemWorkbookWorksheetsItemNamesWorkbookNamedItemItemRequestBui
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookNamedItemable), nil
 }
-// MicrosoftGraphRange provides operations to call the range method.
-func (m *ItemItemsItemWorkbookWorksheetsItemNamesWorkbookNamedItemItemRequestBuilder) MicrosoftGraphRange()(*ItemItemsItemWorkbookWorksheetsItemNamesItemMicrosoftGraphRangeRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemNamesItemMicrosoftGraphRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Patch update the navigation property names in drives
 func (m *ItemItemsItemWorkbookWorksheetsItemNamesWorkbookNamedItemItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookNamedItemable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemNamesWorkbookNamedItemItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookNamedItemable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -122,6 +118,10 @@ func (m *ItemItemsItemWorkbookWorksheetsItemNamesWorkbookNamedItemItemRequestBui
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookNamedItemable), nil
+}
+// RangeEscaped provides operations to call the range method.
+func (m *ItemItemsItemWorkbookWorksheetsItemNamesWorkbookNamedItemItemRequestBuilder) RangeEscaped()(*ItemItemsItemWorkbookWorksheetsItemNamesItemRangeRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemNamesItemRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property names for drives
 func (m *ItemItemsItemWorkbookWorksheetsItemNamesWorkbookNamedItemItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemNamesWorkbookNamedItemItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

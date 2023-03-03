@@ -7,10 +7,8 @@ import (
 // EducationAssignmentSettings 
 type EducationAssignmentSettings struct {
     Entity
-    // Indicates whether turn-in celebration animation will be shown. A value of true indicates that the animation will not be shown. Default value is false.
-    submissionAnimationDisabled *bool
 }
-// NewEducationAssignmentSettings instantiates a new EducationAssignmentSettings and sets the default values.
+// NewEducationAssignmentSettings instantiates a new educationAssignmentSettings and sets the default values.
 func NewEducationAssignmentSettings()(*EducationAssignmentSettings) {
     m := &EducationAssignmentSettings{
         Entity: *NewEntity(),
@@ -38,7 +36,14 @@ func (m *EducationAssignmentSettings) GetFieldDeserializers()(map[string]func(i8
 }
 // GetSubmissionAnimationDisabled gets the submissionAnimationDisabled property value. Indicates whether turn-in celebration animation will be shown. A value of true indicates that the animation will not be shown. Default value is false.
 func (m *EducationAssignmentSettings) GetSubmissionAnimationDisabled()(*bool) {
-    return m.submissionAnimationDisabled
+    val, err := m.GetBackingStore().Get("submissionAnimationDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EducationAssignmentSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,5 +61,15 @@ func (m *EducationAssignmentSettings) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetSubmissionAnimationDisabled sets the submissionAnimationDisabled property value. Indicates whether turn-in celebration animation will be shown. A value of true indicates that the animation will not be shown. Default value is false.
 func (m *EducationAssignmentSettings) SetSubmissionAnimationDisabled(value *bool)() {
-    m.submissionAnimationDisabled = value
+    err := m.GetBackingStore().Set("submissionAnimationDisabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// EducationAssignmentSettingsable 
+type EducationAssignmentSettingsable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetSubmissionAnimationDisabled()(*bool)
+    SetSubmissionAnimationDisabled(value *bool)()
 }

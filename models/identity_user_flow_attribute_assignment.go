@@ -7,18 +7,6 @@ import (
 // IdentityUserFlowAttributeAssignment 
 type IdentityUserFlowAttributeAssignment struct {
     Entity
-    // The display name of the identityUserFlowAttribute within a user flow.
-    displayName *string
-    // Determines whether the identityUserFlowAttribute is optional. true means the user doesn't have to provide a value. false means the user cannot complete sign-up without providing a value.
-    isOptional *bool
-    // Determines whether the identityUserFlowAttribute requires verification. This is only used for verifying the user's phone number or email address.
-    requiresVerification *bool
-    // The user attribute that you want to add to your user flow.
-    userAttribute IdentityUserFlowAttributeable
-    // The input options for the user flow attribute. Only applicable when the userInputType is radioSingleSelect, dropdownSingleSelect, or checkboxMultiSelect.
-    userAttributeValues []UserAttributeValuesItemable
-    // The userInputType property
-    userInputType *IdentityUserFlowAttributeInputType
 }
 // NewIdentityUserFlowAttributeAssignment instantiates a new identityUserFlowAttributeAssignment and sets the default values.
 func NewIdentityUserFlowAttributeAssignment()(*IdentityUserFlowAttributeAssignment) {
@@ -33,7 +21,14 @@ func CreateIdentityUserFlowAttributeAssignmentFromDiscriminatorValue(parseNode i
 }
 // GetDisplayName gets the displayName property value. The display name of the identityUserFlowAttribute within a user flow.
 func (m *IdentityUserFlowAttributeAssignment) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IdentityUserFlowAttributeAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -106,23 +101,58 @@ func (m *IdentityUserFlowAttributeAssignment) GetFieldDeserializers()(map[string
 }
 // GetIsOptional gets the isOptional property value. Determines whether the identityUserFlowAttribute is optional. true means the user doesn't have to provide a value. false means the user cannot complete sign-up without providing a value.
 func (m *IdentityUserFlowAttributeAssignment) GetIsOptional()(*bool) {
-    return m.isOptional
+    val, err := m.GetBackingStore().Get("isOptional")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetRequiresVerification gets the requiresVerification property value. Determines whether the identityUserFlowAttribute requires verification. This is only used for verifying the user's phone number or email address.
 func (m *IdentityUserFlowAttributeAssignment) GetRequiresVerification()(*bool) {
-    return m.requiresVerification
+    val, err := m.GetBackingStore().Get("requiresVerification")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetUserAttribute gets the userAttribute property value. The user attribute that you want to add to your user flow.
 func (m *IdentityUserFlowAttributeAssignment) GetUserAttribute()(IdentityUserFlowAttributeable) {
-    return m.userAttribute
+    val, err := m.GetBackingStore().Get("userAttribute")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentityUserFlowAttributeable)
+    }
+    return nil
 }
 // GetUserAttributeValues gets the userAttributeValues property value. The input options for the user flow attribute. Only applicable when the userInputType is radioSingleSelect, dropdownSingleSelect, or checkboxMultiSelect.
 func (m *IdentityUserFlowAttributeAssignment) GetUserAttributeValues()([]UserAttributeValuesItemable) {
-    return m.userAttributeValues
+    val, err := m.GetBackingStore().Get("userAttributeValues")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserAttributeValuesItemable)
+    }
+    return nil
 }
 // GetUserInputType gets the userInputType property value. The userInputType property
 func (m *IdentityUserFlowAttributeAssignment) GetUserInputType()(*IdentityUserFlowAttributeInputType) {
-    return m.userInputType
+    val, err := m.GetBackingStore().Get("userInputType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*IdentityUserFlowAttributeInputType)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IdentityUserFlowAttributeAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -175,25 +205,60 @@ func (m *IdentityUserFlowAttributeAssignment) Serialize(writer i878a80d2330e89d2
 }
 // SetDisplayName sets the displayName property value. The display name of the identityUserFlowAttribute within a user flow.
 func (m *IdentityUserFlowAttributeAssignment) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIsOptional sets the isOptional property value. Determines whether the identityUserFlowAttribute is optional. true means the user doesn't have to provide a value. false means the user cannot complete sign-up without providing a value.
 func (m *IdentityUserFlowAttributeAssignment) SetIsOptional(value *bool)() {
-    m.isOptional = value
+    err := m.GetBackingStore().Set("isOptional", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRequiresVerification sets the requiresVerification property value. Determines whether the identityUserFlowAttribute requires verification. This is only used for verifying the user's phone number or email address.
 func (m *IdentityUserFlowAttributeAssignment) SetRequiresVerification(value *bool)() {
-    m.requiresVerification = value
+    err := m.GetBackingStore().Set("requiresVerification", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserAttribute sets the userAttribute property value. The user attribute that you want to add to your user flow.
 func (m *IdentityUserFlowAttributeAssignment) SetUserAttribute(value IdentityUserFlowAttributeable)() {
-    m.userAttribute = value
+    err := m.GetBackingStore().Set("userAttribute", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserAttributeValues sets the userAttributeValues property value. The input options for the user flow attribute. Only applicable when the userInputType is radioSingleSelect, dropdownSingleSelect, or checkboxMultiSelect.
 func (m *IdentityUserFlowAttributeAssignment) SetUserAttributeValues(value []UserAttributeValuesItemable)() {
-    m.userAttributeValues = value
+    err := m.GetBackingStore().Set("userAttributeValues", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserInputType sets the userInputType property value. The userInputType property
 func (m *IdentityUserFlowAttributeAssignment) SetUserInputType(value *IdentityUserFlowAttributeInputType)() {
-    m.userInputType = value
+    err := m.GetBackingStore().Set("userInputType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// IdentityUserFlowAttributeAssignmentable 
+type IdentityUserFlowAttributeAssignmentable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDisplayName()(*string)
+    GetIsOptional()(*bool)
+    GetRequiresVerification()(*bool)
+    GetUserAttribute()(IdentityUserFlowAttributeable)
+    GetUserAttributeValues()([]UserAttributeValuesItemable)
+    GetUserInputType()(*IdentityUserFlowAttributeInputType)
+    SetDisplayName(value *string)()
+    SetIsOptional(value *bool)()
+    SetRequiresVerification(value *bool)()
+    SetUserAttribute(value IdentityUserFlowAttributeable)()
+    SetUserAttributeValues(value []UserAttributeValuesItemable)()
+    SetUserInputType(value *IdentityUserFlowAttributeInputType)()
 }

@@ -46,6 +46,10 @@ type ItemContentTypesContentTypeItemRequestBuilderPatchRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// AssociateWithHubSites provides operations to call the associateWithHubSites method.
+func (m *ItemContentTypesContentTypeItemRequestBuilder) AssociateWithHubSites()(*ItemContentTypesItemAssociateWithHubSitesRequestBuilder) {
+    return NewItemContentTypesItemAssociateWithHubSitesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Base provides operations to manage the base property of the microsoft.graph.contentType entity.
 func (m *ItemContentTypesContentTypeItemRequestBuilder) Base()(*ItemContentTypesItemBaseRequestBuilder) {
     return NewItemContentTypesItemBaseRequestBuilderInternal(m.pathParameters, m.requestAdapter)
@@ -129,6 +133,10 @@ func NewItemContentTypesContentTypeItemRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewItemContentTypesContentTypeItemRequestBuilderInternal(urlParams, requestAdapter)
 }
+// CopyToDefaultContentLocation provides operations to call the copyToDefaultContentLocation method.
+func (m *ItemContentTypesContentTypeItemRequestBuilder) CopyToDefaultContentLocation()(*ItemContentTypesItemCopyToDefaultContentLocationRequestBuilder) {
+    return NewItemContentTypesItemCopyToDefaultContentLocationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Delete delete navigation property contentTypes for sites
 func (m *ItemContentTypesContentTypeItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemContentTypesContentTypeItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -164,25 +172,9 @@ func (m *ItemContentTypesContentTypeItemRequestBuilder) Get(ctx context.Context,
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeable), nil
 }
-// MicrosoftGraphAssociateWithHubSites provides operations to call the associateWithHubSites method.
-func (m *ItemContentTypesContentTypeItemRequestBuilder) MicrosoftGraphAssociateWithHubSites()(*ItemContentTypesItemMicrosoftGraphAssociateWithHubSitesRequestBuilder) {
-    return NewItemContentTypesItemMicrosoftGraphAssociateWithHubSitesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphCopyToDefaultContentLocation provides operations to call the copyToDefaultContentLocation method.
-func (m *ItemContentTypesContentTypeItemRequestBuilder) MicrosoftGraphCopyToDefaultContentLocation()(*ItemContentTypesItemMicrosoftGraphCopyToDefaultContentLocationRequestBuilder) {
-    return NewItemContentTypesItemMicrosoftGraphCopyToDefaultContentLocationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphIsPublished provides operations to call the isPublished method.
-func (m *ItemContentTypesContentTypeItemRequestBuilder) MicrosoftGraphIsPublished()(*ItemContentTypesItemMicrosoftGraphIsPublishedRequestBuilder) {
-    return NewItemContentTypesItemMicrosoftGraphIsPublishedRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphPublish provides operations to call the publish method.
-func (m *ItemContentTypesContentTypeItemRequestBuilder) MicrosoftGraphPublish()(*ItemContentTypesItemMicrosoftGraphPublishRequestBuilder) {
-    return NewItemContentTypesItemMicrosoftGraphPublishRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphUnpublish provides operations to call the unpublish method.
-func (m *ItemContentTypesContentTypeItemRequestBuilder) MicrosoftGraphUnpublish()(*ItemContentTypesItemMicrosoftGraphUnpublishRequestBuilder) {
-    return NewItemContentTypesItemMicrosoftGraphUnpublishRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// IsPublished provides operations to call the isPublished method.
+func (m *ItemContentTypesContentTypeItemRequestBuilder) IsPublished()(*ItemContentTypesItemIsPublishedRequestBuilder) {
+    return NewItemContentTypesItemIsPublishedRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update the navigation property contentTypes in sites
 func (m *ItemContentTypesContentTypeItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeable, requestConfiguration *ItemContentTypesContentTypeItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeable, error) {
@@ -202,6 +194,10 @@ func (m *ItemContentTypesContentTypeItemRequestBuilder) Patch(ctx context.Contex
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeable), nil
+}
+// Publish provides operations to call the publish method.
+func (m *ItemContentTypesContentTypeItemRequestBuilder) Publish()(*ItemContentTypesItemPublishRequestBuilder) {
+    return NewItemContentTypesItemPublishRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property contentTypes for sites
 func (m *ItemContentTypesContentTypeItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemContentTypesContentTypeItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -247,4 +243,8 @@ func (m *ItemContentTypesContentTypeItemRequestBuilder) ToPatchRequestInformatio
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// Unpublish provides operations to call the unpublish method.
+func (m *ItemContentTypesContentTypeItemRequestBuilder) Unpublish()(*ItemContentTypesItemUnpublishRequestBuilder) {
+    return NewItemContentTypesItemUnpublishRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

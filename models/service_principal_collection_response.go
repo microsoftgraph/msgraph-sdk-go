@@ -7,8 +7,6 @@ import (
 // ServicePrincipalCollectionResponse 
 type ServicePrincipalCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []ServicePrincipalable
 }
 // NewServicePrincipalCollectionResponse instantiates a new ServicePrincipalCollectionResponse and sets the default values.
 func NewServicePrincipalCollectionResponse()(*ServicePrincipalCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *ServicePrincipalCollectionResponse) GetFieldDeserializers()(map[string]
 }
 // GetValue gets the value property value. The value property
 func (m *ServicePrincipalCollectionResponse) GetValue()([]ServicePrincipalable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ServicePrincipalable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ServicePrincipalCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *ServicePrincipalCollectionResponse) Serialize(writer i878a80d2330e89d26
 }
 // SetValue sets the value property value. The value property
 func (m *ServicePrincipalCollectionResponse) SetValue(value []ServicePrincipalable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ServicePrincipalCollectionResponseable 
+type ServicePrincipalCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]ServicePrincipalable)
+    SetValue(value []ServicePrincipalable)()
 }

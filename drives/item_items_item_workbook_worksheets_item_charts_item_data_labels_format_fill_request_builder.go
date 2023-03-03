@@ -46,6 +46,10 @@ type ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatFillRequestBui
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Clear provides operations to call the clear method.
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatFillRequestBuilder) Clear()(*ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatFillClearRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatFillClearRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // NewItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatFillRequestBuilderInternal instantiates a new FillRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatFillRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatFillRequestBuilder) {
     m := &ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatFillRequestBuilder{
@@ -100,14 +104,6 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatFillReques
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartFillable), nil
 }
-// MicrosoftGraphClear provides operations to call the clear method.
-func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatFillRequestBuilder) MicrosoftGraphClear()(*ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatFillMicrosoftGraphClearRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatFillMicrosoftGraphClearRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphSetSolidColor provides operations to call the setSolidColor method.
-func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatFillRequestBuilder) MicrosoftGraphSetSolidColor()(*ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatFillMicrosoftGraphSetSolidColorRequestBuilder) {
-    return NewItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatFillMicrosoftGraphSetSolidColorRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Patch update the navigation property fill in drives
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatFillRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartFillable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatFillRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartFillable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -126,6 +122,10 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatFillReques
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartFillable), nil
+}
+// SetSolidColor provides operations to call the setSolidColor method.
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatFillRequestBuilder) SetSolidColor()(*ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatFillSetSolidColorRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatFillSetSolidColorRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property fill for drives
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatFillRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatFillRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

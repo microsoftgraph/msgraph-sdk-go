@@ -8,12 +8,6 @@ import (
 // ExternalItem 
 type ExternalItem struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
-    // An array of access control entries. Each entry specifies the access granted to a user or group. Required.
-    acl []Aclable
-    // A plain-text  representation of the contents of the item. The text in this property is full-text indexed. Optional.
-    content ExternalItemContentable
-    // A property bag with the properties of the item. The properties MUST conform to the schema defined for the externalConnection. Required.
-    properties Propertiesable
 }
 // NewExternalItem instantiates a new externalItem and sets the default values.
 func NewExternalItem()(*ExternalItem) {
@@ -28,11 +22,25 @@ func CreateExternalItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetAcl gets the acl property value. An array of access control entries. Each entry specifies the access granted to a user or group. Required.
 func (m *ExternalItem) GetAcl()([]Aclable) {
-    return m.acl
+    val, err := m.GetBackingStore().Get("acl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Aclable)
+    }
+    return nil
 }
 // GetContent gets the content property value. A plain-text  representation of the contents of the item. The text in this property is full-text indexed. Optional.
 func (m *ExternalItem) GetContent()(ExternalItemContentable) {
-    return m.content
+    val, err := m.GetBackingStore().Get("content")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ExternalItemContentable)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ExternalItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -75,7 +83,14 @@ func (m *ExternalItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetProperties gets the properties property value. A property bag with the properties of the item. The properties MUST conform to the schema defined for the externalConnection. Required.
 func (m *ExternalItem) GetProperties()(Propertiesable) {
-    return m.properties
+    val, err := m.GetBackingStore().Get("properties")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Propertiesable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ExternalItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -109,13 +124,33 @@ func (m *ExternalItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetAcl sets the acl property value. An array of access control entries. Each entry specifies the access granted to a user or group. Required.
 func (m *ExternalItem) SetAcl(value []Aclable)() {
-    m.acl = value
+    err := m.GetBackingStore().Set("acl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetContent sets the content property value. A plain-text  representation of the contents of the item. The text in this property is full-text indexed. Optional.
 func (m *ExternalItem) SetContent(value ExternalItemContentable)() {
-    m.content = value
+    err := m.GetBackingStore().Set("content", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProperties sets the properties property value. A property bag with the properties of the item. The properties MUST conform to the schema defined for the externalConnection. Required.
 func (m *ExternalItem) SetProperties(value Propertiesable)() {
-    m.properties = value
+    err := m.GetBackingStore().Set("properties", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// ExternalItemable 
+type ExternalItemable interface {
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAcl()([]Aclable)
+    GetContent()(ExternalItemContentable)
+    GetProperties()(Propertiesable)
+    SetAcl(value []Aclable)()
+    SetContent(value ExternalItemContentable)()
+    SetProperties(value Propertiesable)()
 }

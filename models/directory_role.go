@@ -7,16 +7,6 @@ import (
 // DirectoryRole 
 type DirectoryRole struct {
     DirectoryObject
-    // The description for the directory role. Read-only. Supports $filter (eq), $search, $select.
-    description *string
-    // The display name for the directory role. Read-only. Supports $filter (eq), $search, $select.
-    displayName *string
-    // Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.
-    members []DirectoryObjectable
-    // The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only. Supports $filter (eq), $select.
-    roleTemplateId *string
-    // Members of this directory role that are scoped to administrative units. Read-only. Nullable.
-    scopedMembers []ScopedRoleMembershipable
 }
 // NewDirectoryRole instantiates a new DirectoryRole and sets the default values.
 func NewDirectoryRole()(*DirectoryRole) {
@@ -33,11 +23,25 @@ func CreateDirectoryRoleFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetDescription gets the description property value. The description for the directory role. Read-only. Supports $filter (eq), $search, $select.
 func (m *DirectoryRole) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The display name for the directory role. Read-only. Supports $filter (eq), $search, $select.
 func (m *DirectoryRole) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DirectoryRole) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -104,15 +108,36 @@ func (m *DirectoryRole) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetMembers gets the members property value. Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.
 func (m *DirectoryRole) GetMembers()([]DirectoryObjectable) {
-    return m.members
+    val, err := m.GetBackingStore().Get("members")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DirectoryObjectable)
+    }
+    return nil
 }
 // GetRoleTemplateId gets the roleTemplateId property value. The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only. Supports $filter (eq), $select.
 func (m *DirectoryRole) GetRoleTemplateId()(*string) {
-    return m.roleTemplateId
+    val, err := m.GetBackingStore().Get("roleTemplateId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetScopedMembers gets the scopedMembers property value. Members of this directory role that are scoped to administrative units. Read-only. Nullable.
 func (m *DirectoryRole) GetScopedMembers()([]ScopedRoleMembershipable) {
-    return m.scopedMembers
+    val, err := m.GetBackingStore().Get("scopedMembers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ScopedRoleMembershipable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *DirectoryRole) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -162,21 +187,51 @@ func (m *DirectoryRole) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetDescription sets the description property value. The description for the directory role. Read-only. Supports $filter (eq), $search, $select.
 func (m *DirectoryRole) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The display name for the directory role. Read-only. Supports $filter (eq), $search, $select.
 func (m *DirectoryRole) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMembers sets the members property value. Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.
 func (m *DirectoryRole) SetMembers(value []DirectoryObjectable)() {
-    m.members = value
+    err := m.GetBackingStore().Set("members", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRoleTemplateId sets the roleTemplateId property value. The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only. Supports $filter (eq), $select.
 func (m *DirectoryRole) SetRoleTemplateId(value *string)() {
-    m.roleTemplateId = value
+    err := m.GetBackingStore().Set("roleTemplateId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetScopedMembers sets the scopedMembers property value. Members of this directory role that are scoped to administrative units. Read-only. Nullable.
 func (m *DirectoryRole) SetScopedMembers(value []ScopedRoleMembershipable)() {
-    m.scopedMembers = value
+    err := m.GetBackingStore().Set("scopedMembers", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DirectoryRoleable 
+type DirectoryRoleable interface {
+    DirectoryObjectable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDescription()(*string)
+    GetDisplayName()(*string)
+    GetMembers()([]DirectoryObjectable)
+    GetRoleTemplateId()(*string)
+    GetScopedMembers()([]ScopedRoleMembershipable)
+    SetDescription(value *string)()
+    SetDisplayName(value *string)()
+    SetMembers(value []DirectoryObjectable)()
+    SetRoleTemplateId(value *string)()
+    SetScopedMembers(value []ScopedRoleMembershipable)()
 }

@@ -7,8 +7,6 @@ import (
 // TaskFileAttachment 
 type TaskFileAttachment struct {
     AttachmentBase
-    // The base64-encoded contents of the file.
-    contentBytes []byte
 }
 // NewTaskFileAttachment instantiates a new TaskFileAttachment and sets the default values.
 func NewTaskFileAttachment()(*TaskFileAttachment) {
@@ -25,7 +23,14 @@ func CreateTaskFileAttachmentFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetContentBytes gets the contentBytes property value. The base64-encoded contents of the file.
 func (m *TaskFileAttachment) GetContentBytes()([]byte) {
-    return m.contentBytes
+    val, err := m.GetBackingStore().Get("contentBytes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]byte)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TaskFileAttachment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -58,5 +63,15 @@ func (m *TaskFileAttachment) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetContentBytes sets the contentBytes property value. The base64-encoded contents of the file.
 func (m *TaskFileAttachment) SetContentBytes(value []byte)() {
-    m.contentBytes = value
+    err := m.GetBackingStore().Set("contentBytes", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TaskFileAttachmentable 
+type TaskFileAttachmentable interface {
+    AttachmentBaseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetContentBytes()([]byte)
+    SetContentBytes(value []byte)()
 }

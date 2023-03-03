@@ -7,8 +7,6 @@ import (
 // UnifiedRoleDefinitionCollectionResponse 
 type UnifiedRoleDefinitionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []UnifiedRoleDefinitionable
 }
 // NewUnifiedRoleDefinitionCollectionResponse instantiates a new UnifiedRoleDefinitionCollectionResponse and sets the default values.
 func NewUnifiedRoleDefinitionCollectionResponse()(*UnifiedRoleDefinitionCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *UnifiedRoleDefinitionCollectionResponse) GetFieldDeserializers()(map[st
 }
 // GetValue gets the value property value. The value property
 func (m *UnifiedRoleDefinitionCollectionResponse) GetValue()([]UnifiedRoleDefinitionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UnifiedRoleDefinitionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UnifiedRoleDefinitionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *UnifiedRoleDefinitionCollectionResponse) Serialize(writer i878a80d2330e
 }
 // SetValue sets the value property value. The value property
 func (m *UnifiedRoleDefinitionCollectionResponse) SetValue(value []UnifiedRoleDefinitionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UnifiedRoleDefinitionCollectionResponseable 
+type UnifiedRoleDefinitionCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]UnifiedRoleDefinitionable)
+    SetValue(value []UnifiedRoleDefinitionable)()
 }

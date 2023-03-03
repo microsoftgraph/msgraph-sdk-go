@@ -7,8 +7,6 @@ import (
 // AlertDetectionCollectionResponse 
 type AlertDetectionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AlertDetectionable
 }
 // NewAlertDetectionCollectionResponse instantiates a new AlertDetectionCollectionResponse and sets the default values.
 func NewAlertDetectionCollectionResponse()(*AlertDetectionCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AlertDetectionCollectionResponse) GetFieldDeserializers()(map[string]fu
 }
 // GetValue gets the value property value. The value property
 func (m *AlertDetectionCollectionResponse) GetValue()([]AlertDetectionable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AlertDetectionable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AlertDetectionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AlertDetectionCollectionResponse) Serialize(writer i878a80d2330e89d2689
 }
 // SetValue sets the value property value. The value property
 func (m *AlertDetectionCollectionResponse) SetValue(value []AlertDetectionable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AlertDetectionCollectionResponseable 
+type AlertDetectionCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AlertDetectionable)
+    SetValue(value []AlertDetectionable)()
 }

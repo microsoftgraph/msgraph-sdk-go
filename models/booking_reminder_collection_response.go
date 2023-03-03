@@ -7,8 +7,6 @@ import (
 // BookingReminderCollectionResponse 
 type BookingReminderCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []BookingReminderable
 }
 // NewBookingReminderCollectionResponse instantiates a new BookingReminderCollectionResponse and sets the default values.
 func NewBookingReminderCollectionResponse()(*BookingReminderCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *BookingReminderCollectionResponse) GetFieldDeserializers()(map[string]f
 }
 // GetValue gets the value property value. The value property
 func (m *BookingReminderCollectionResponse) GetValue()([]BookingReminderable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]BookingReminderable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *BookingReminderCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *BookingReminderCollectionResponse) Serialize(writer i878a80d2330e89d268
 }
 // SetValue sets the value property value. The value property
 func (m *BookingReminderCollectionResponse) SetValue(value []BookingReminderable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// BookingReminderCollectionResponseable 
+type BookingReminderCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]BookingReminderable)
+    SetValue(value []BookingReminderable)()
 }

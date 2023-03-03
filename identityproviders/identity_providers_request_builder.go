@@ -51,6 +51,10 @@ type IdentityProvidersRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// AvailableProviderTypes provides operations to call the availableProviderTypes method.
+func (m *IdentityProvidersRequestBuilder) AvailableProviderTypes()(*AvailableProviderTypesRequestBuilder) {
+    return NewAvailableProviderTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // NewIdentityProvidersRequestBuilderInternal instantiates a new IdentityProvidersRequestBuilder and sets the default values.
 func NewIdentityProvidersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IdentityProvidersRequestBuilder) {
     m := &IdentityProvidersRequestBuilder{
@@ -95,10 +99,6 @@ func (m *IdentityProvidersRequestBuilder) Get(ctx context.Context, requestConfig
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProviderCollectionResponseable), nil
-}
-// MicrosoftGraphAvailableProviderTypes provides operations to call the availableProviderTypes method.
-func (m *IdentityProvidersRequestBuilder) MicrosoftGraphAvailableProviderTypes()(*MicrosoftGraphAvailableProviderTypesRequestBuilder) {
-    return NewMicrosoftGraphAvailableProviderTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post add new entity to identityProviders
 func (m *IdentityProvidersRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProviderable, requestConfiguration *IdentityProvidersRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProviderable, error) {

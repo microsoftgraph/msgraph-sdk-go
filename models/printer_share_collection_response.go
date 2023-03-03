@@ -7,8 +7,6 @@ import (
 // PrinterShareCollectionResponse 
 type PrinterShareCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []PrinterShareable
 }
 // NewPrinterShareCollectionResponse instantiates a new PrinterShareCollectionResponse and sets the default values.
 func NewPrinterShareCollectionResponse()(*PrinterShareCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *PrinterShareCollectionResponse) GetFieldDeserializers()(map[string]func
 }
 // GetValue gets the value property value. The value property
 func (m *PrinterShareCollectionResponse) GetValue()([]PrinterShareable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrinterShareable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PrinterShareCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *PrinterShareCollectionResponse) Serialize(writer i878a80d2330e89d268963
 }
 // SetValue sets the value property value. The value property
 func (m *PrinterShareCollectionResponse) SetValue(value []PrinterShareable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PrinterShareCollectionResponseable 
+type PrinterShareCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]PrinterShareable)
+    SetValue(value []PrinterShareable)()
 }

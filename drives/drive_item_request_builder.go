@@ -152,18 +152,6 @@ func (m *DriveItemRequestBuilder) ItemsById(id string)(*ItemItemsDriveItemItemRe
 func (m *DriveItemRequestBuilder) List()(*ItemListRequestBuilder) {
     return NewItemListRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphRecent provides operations to call the recent method.
-func (m *DriveItemRequestBuilder) MicrosoftGraphRecent()(*ItemMicrosoftGraphRecentRequestBuilder) {
-    return NewItemMicrosoftGraphRecentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphSearchWithQ provides operations to call the search method.
-func (m *DriveItemRequestBuilder) MicrosoftGraphSearchWithQ(q *string)(*ItemMicrosoftGraphSearchWithQRequestBuilder) {
-    return NewItemMicrosoftGraphSearchWithQRequestBuilderInternal(m.pathParameters, m.requestAdapter, q)
-}
-// MicrosoftGraphSharedWithMe provides operations to call the sharedWithMe method.
-func (m *DriveItemRequestBuilder) MicrosoftGraphSharedWithMe()(*ItemMicrosoftGraphSharedWithMeRequestBuilder) {
-    return NewItemMicrosoftGraphSharedWithMeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Patch update entity in drives
 func (m *DriveItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Driveable, requestConfiguration *DriveItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Driveable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -183,9 +171,21 @@ func (m *DriveItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Driveable), nil
 }
+// Recent provides operations to call the recent method.
+func (m *DriveItemRequestBuilder) Recent()(*ItemRecentRequestBuilder) {
+    return NewItemRecentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Root provides operations to manage the root property of the microsoft.graph.drive entity.
 func (m *DriveItemRequestBuilder) Root()(*ItemRootRequestBuilder) {
     return NewItemRootRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// SearchWithQ provides operations to call the search method.
+func (m *DriveItemRequestBuilder) SearchWithQ(q *string)(*ItemSearchWithQRequestBuilder) {
+    return NewItemSearchWithQRequestBuilderInternal(m.pathParameters, m.requestAdapter, q)
+}
+// SharedWithMe provides operations to call the sharedWithMe method.
+func (m *DriveItemRequestBuilder) SharedWithMe()(*ItemSharedWithMeRequestBuilder) {
+    return NewItemSharedWithMeRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Special provides operations to manage the special property of the microsoft.graph.drive entity.
 func (m *DriveItemRequestBuilder) Special()(*ItemSpecialRequestBuilder) {

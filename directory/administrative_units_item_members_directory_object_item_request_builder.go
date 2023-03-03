@@ -32,29 +32,29 @@ func NewAdministrativeUnitsItemMembersDirectoryObjectItemRequestBuilder(rawUrl s
     urlParams["request-raw-url"] = rawUrl
     return NewAdministrativeUnitsItemMembersDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// MicrosoftGraphApplication casts the previous resource to application.
-func (m *AdministrativeUnitsItemMembersDirectoryObjectItemRequestBuilder) MicrosoftGraphApplication()(*AdministrativeUnitsItemMembersItemMicrosoftGraphApplicationRequestBuilder) {
-    return NewAdministrativeUnitsItemMembersItemMicrosoftGraphApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphApplication casts the previous resource to application.
+func (m *AdministrativeUnitsItemMembersDirectoryObjectItemRequestBuilder) GraphApplication()(*AdministrativeUnitsItemMembersItemGraphApplicationRequestBuilder) {
+    return NewAdministrativeUnitsItemMembersItemGraphApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphDevice casts the previous resource to device.
-func (m *AdministrativeUnitsItemMembersDirectoryObjectItemRequestBuilder) MicrosoftGraphDevice()(*AdministrativeUnitsItemMembersItemMicrosoftGraphDeviceRequestBuilder) {
-    return NewAdministrativeUnitsItemMembersItemMicrosoftGraphDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphDevice casts the previous resource to device.
+func (m *AdministrativeUnitsItemMembersDirectoryObjectItemRequestBuilder) GraphDevice()(*AdministrativeUnitsItemMembersItemGraphDeviceRequestBuilder) {
+    return NewAdministrativeUnitsItemMembersItemGraphDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphGroup casts the previous resource to group.
-func (m *AdministrativeUnitsItemMembersDirectoryObjectItemRequestBuilder) MicrosoftGraphGroup()(*AdministrativeUnitsItemMembersItemMicrosoftGraphGroupRequestBuilder) {
-    return NewAdministrativeUnitsItemMembersItemMicrosoftGraphGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphGroup casts the previous resource to group.
+func (m *AdministrativeUnitsItemMembersDirectoryObjectItemRequestBuilder) GraphGroup()(*AdministrativeUnitsItemMembersItemGraphGroupRequestBuilder) {
+    return NewAdministrativeUnitsItemMembersItemGraphGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphOrgContact casts the previous resource to orgContact.
-func (m *AdministrativeUnitsItemMembersDirectoryObjectItemRequestBuilder) MicrosoftGraphOrgContact()(*AdministrativeUnitsItemMembersItemMicrosoftGraphOrgContactRequestBuilder) {
-    return NewAdministrativeUnitsItemMembersItemMicrosoftGraphOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphOrgContact casts the previous resource to orgContact.
+func (m *AdministrativeUnitsItemMembersDirectoryObjectItemRequestBuilder) GraphOrgContact()(*AdministrativeUnitsItemMembersItemGraphOrgContactRequestBuilder) {
+    return NewAdministrativeUnitsItemMembersItemGraphOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphServicePrincipal casts the previous resource to servicePrincipal.
-func (m *AdministrativeUnitsItemMembersDirectoryObjectItemRequestBuilder) MicrosoftGraphServicePrincipal()(*AdministrativeUnitsItemMembersItemMicrosoftGraphServicePrincipalRequestBuilder) {
-    return NewAdministrativeUnitsItemMembersItemMicrosoftGraphServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphServicePrincipal casts the previous resource to servicePrincipal.
+func (m *AdministrativeUnitsItemMembersDirectoryObjectItemRequestBuilder) GraphServicePrincipal()(*AdministrativeUnitsItemMembersItemGraphServicePrincipalRequestBuilder) {
+    return NewAdministrativeUnitsItemMembersItemGraphServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphUser casts the previous resource to user.
-func (m *AdministrativeUnitsItemMembersDirectoryObjectItemRequestBuilder) MicrosoftGraphUser()(*AdministrativeUnitsItemMembersItemMicrosoftGraphUserRequestBuilder) {
-    return NewAdministrativeUnitsItemMembersItemMicrosoftGraphUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphUser casts the previous resource to user.
+func (m *AdministrativeUnitsItemMembersDirectoryObjectItemRequestBuilder) GraphUser()(*AdministrativeUnitsItemMembersItemGraphUserRequestBuilder) {
+    return NewAdministrativeUnitsItemMembersItemGraphUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Ref provides operations to manage the collection of directory entities.
 func (m *AdministrativeUnitsItemMembersDirectoryObjectItemRequestBuilder) Ref()(*AdministrativeUnitsItemMembersItemRefRequestBuilder) {

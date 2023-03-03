@@ -7,12 +7,6 @@ import (
 // AccessReviewQueryScope 
 type AccessReviewQueryScope struct {
     AccessReviewScope
-    // The query representing what will be reviewed in an access review.
-    query *string
-    // In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query is specified. For example, ./manager.
-    queryRoot *string
-    // Indicates the type of query. Types include MicrosoftGraph and ARM.
-    queryType *string
 }
 // NewAccessReviewQueryScope instantiates a new AccessReviewQueryScope and sets the default values.
 func NewAccessReviewQueryScope()(*AccessReviewQueryScope) {
@@ -82,15 +76,36 @@ func (m *AccessReviewQueryScope) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetQuery gets the query property value. The query representing what will be reviewed in an access review.
 func (m *AccessReviewQueryScope) GetQuery()(*string) {
-    return m.query
+    val, err := m.GetBackingStore().Get("query")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetQueryRoot gets the queryRoot property value. In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query is specified. For example, ./manager.
 func (m *AccessReviewQueryScope) GetQueryRoot()(*string) {
-    return m.queryRoot
+    val, err := m.GetBackingStore().Get("queryRoot")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetQueryType gets the queryType property value. Indicates the type of query. Types include MicrosoftGraph and ARM.
 func (m *AccessReviewQueryScope) GetQueryType()(*string) {
-    return m.queryType
+    val, err := m.GetBackingStore().Get("queryType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AccessReviewQueryScope) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -120,13 +135,33 @@ func (m *AccessReviewQueryScope) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetQuery sets the query property value. The query representing what will be reviewed in an access review.
 func (m *AccessReviewQueryScope) SetQuery(value *string)() {
-    m.query = value
+    err := m.GetBackingStore().Set("query", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetQueryRoot sets the queryRoot property value. In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query is specified. For example, ./manager.
 func (m *AccessReviewQueryScope) SetQueryRoot(value *string)() {
-    m.queryRoot = value
+    err := m.GetBackingStore().Set("queryRoot", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetQueryType sets the queryType property value. Indicates the type of query. Types include MicrosoftGraph and ARM.
 func (m *AccessReviewQueryScope) SetQueryType(value *string)() {
-    m.queryType = value
+    err := m.GetBackingStore().Set("queryType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AccessReviewQueryScopeable 
+type AccessReviewQueryScopeable interface {
+    AccessReviewScopeable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetQuery()(*string)
+    GetQueryRoot()(*string)
+    GetQueryType()(*string)
+    SetQuery(value *string)()
+    SetQueryRoot(value *string)()
+    SetQueryType(value *string)()
 }

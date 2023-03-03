@@ -89,29 +89,29 @@ func (m *ItemTransitiveMembersRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
 }
-// MicrosoftGraphApplication casts the previous resource to application.
-func (m *ItemTransitiveMembersRequestBuilder) MicrosoftGraphApplication()(*ItemTransitiveMembersMicrosoftGraphApplicationRequestBuilder) {
-    return NewItemTransitiveMembersMicrosoftGraphApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphApplication casts the previous resource to application.
+func (m *ItemTransitiveMembersRequestBuilder) GraphApplication()(*ItemTransitiveMembersGraphApplicationRequestBuilder) {
+    return NewItemTransitiveMembersGraphApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphDevice casts the previous resource to device.
-func (m *ItemTransitiveMembersRequestBuilder) MicrosoftGraphDevice()(*ItemTransitiveMembersMicrosoftGraphDeviceRequestBuilder) {
-    return NewItemTransitiveMembersMicrosoftGraphDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphDevice casts the previous resource to device.
+func (m *ItemTransitiveMembersRequestBuilder) GraphDevice()(*ItemTransitiveMembersGraphDeviceRequestBuilder) {
+    return NewItemTransitiveMembersGraphDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphGroup casts the previous resource to group.
-func (m *ItemTransitiveMembersRequestBuilder) MicrosoftGraphGroup()(*ItemTransitiveMembersMicrosoftGraphGroupRequestBuilder) {
-    return NewItemTransitiveMembersMicrosoftGraphGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphGroup casts the previous resource to group.
+func (m *ItemTransitiveMembersRequestBuilder) GraphGroup()(*ItemTransitiveMembersGraphGroupRequestBuilder) {
+    return NewItemTransitiveMembersGraphGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphOrgContact casts the previous resource to orgContact.
-func (m *ItemTransitiveMembersRequestBuilder) MicrosoftGraphOrgContact()(*ItemTransitiveMembersMicrosoftGraphOrgContactRequestBuilder) {
-    return NewItemTransitiveMembersMicrosoftGraphOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphOrgContact casts the previous resource to orgContact.
+func (m *ItemTransitiveMembersRequestBuilder) GraphOrgContact()(*ItemTransitiveMembersGraphOrgContactRequestBuilder) {
+    return NewItemTransitiveMembersGraphOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphServicePrincipal casts the previous resource to servicePrincipal.
-func (m *ItemTransitiveMembersRequestBuilder) MicrosoftGraphServicePrincipal()(*ItemTransitiveMembersMicrosoftGraphServicePrincipalRequestBuilder) {
-    return NewItemTransitiveMembersMicrosoftGraphServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphServicePrincipal casts the previous resource to servicePrincipal.
+func (m *ItemTransitiveMembersRequestBuilder) GraphServicePrincipal()(*ItemTransitiveMembersGraphServicePrincipalRequestBuilder) {
+    return NewItemTransitiveMembersGraphServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphUser casts the previous resource to user.
-func (m *ItemTransitiveMembersRequestBuilder) MicrosoftGraphUser()(*ItemTransitiveMembersMicrosoftGraphUserRequestBuilder) {
-    return NewItemTransitiveMembersMicrosoftGraphUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphUser casts the previous resource to user.
+func (m *ItemTransitiveMembersRequestBuilder) GraphUser()(*ItemTransitiveMembersGraphUserRequestBuilder) {
+    return NewItemTransitiveMembersGraphUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation the direct and transitive members of a group. Nullable.
 func (m *ItemTransitiveMembersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTransitiveMembersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

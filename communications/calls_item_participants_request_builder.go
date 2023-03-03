@@ -96,9 +96,9 @@ func (m *CallsItemParticipantsRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ParticipantCollectionResponseable), nil
 }
-// MicrosoftGraphInvite provides operations to call the invite method.
-func (m *CallsItemParticipantsRequestBuilder) MicrosoftGraphInvite()(*CallsItemParticipantsMicrosoftGraphInviteRequestBuilder) {
-    return NewCallsItemParticipantsMicrosoftGraphInviteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// Invite provides operations to call the invite method.
+func (m *CallsItemParticipantsRequestBuilder) Invite()(*CallsItemParticipantsInviteRequestBuilder) {
+    return NewCallsItemParticipantsInviteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to participants for communications
 func (m *CallsItemParticipantsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Participantable, requestConfiguration *CallsItemParticipantsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Participantable, error) {

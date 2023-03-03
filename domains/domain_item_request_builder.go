@@ -114,6 +114,10 @@ func (m *DomainItemRequestBuilder) FederationConfigurationById(id string)(*ItemF
     }
     return NewItemFederationConfigurationInternalDomainFederationItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
+// ForceDelete provides operations to call the forceDelete method.
+func (m *DomainItemRequestBuilder) ForceDelete()(*ItemForceDeleteRequestBuilder) {
+    return NewItemForceDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Get retrieve the properties and relationships of domain object.
 // [Find more info here]
 // 
@@ -136,18 +140,6 @@ func (m *DomainItemRequestBuilder) Get(ctx context.Context, requestConfiguration
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Domainable), nil
 }
-// MicrosoftGraphForceDelete provides operations to call the forceDelete method.
-func (m *DomainItemRequestBuilder) MicrosoftGraphForceDelete()(*ItemMicrosoftGraphForceDeleteRequestBuilder) {
-    return NewItemMicrosoftGraphForceDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphPromote provides operations to call the promote method.
-func (m *DomainItemRequestBuilder) MicrosoftGraphPromote()(*ItemMicrosoftGraphPromoteRequestBuilder) {
-    return NewItemMicrosoftGraphPromoteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphVerify provides operations to call the verify method.
-func (m *DomainItemRequestBuilder) MicrosoftGraphVerify()(*ItemMicrosoftGraphVerifyRequestBuilder) {
-    return NewItemMicrosoftGraphVerifyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Patch update the properties of domain object.
 // [Find more info here]
 // 
@@ -169,6 +161,10 @@ func (m *DomainItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Domainable), nil
+}
+// Promote provides operations to call the promote method.
+func (m *DomainItemRequestBuilder) Promote()(*ItemPromoteRequestBuilder) {
+    return NewItemPromoteRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ServiceConfigurationRecords provides operations to manage the serviceConfigurationRecords property of the microsoft.graph.domain entity.
 func (m *DomainItemRequestBuilder) ServiceConfigurationRecords()(*ItemServiceConfigurationRecordsRequestBuilder) {
@@ -244,4 +240,8 @@ func (m *DomainItemRequestBuilder) VerificationDnsRecordsById(id string)(*ItemVe
         urlTplParams["domainDnsRecord%2Did"] = id
     }
     return NewItemVerificationDnsRecordsDomainDnsRecordItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+}
+// Verify provides operations to call the verify method.
+func (m *DomainItemRequestBuilder) Verify()(*ItemVerifyRequestBuilder) {
+    return NewItemVerifyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

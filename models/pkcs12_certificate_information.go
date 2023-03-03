@@ -2,27 +2,19 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // Pkcs12CertificateInformation 
 type Pkcs12CertificateInformation struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // Represents whether the certificate is the active certificate to be used for calling the API connector. The active certificate is the most recently uploaded certificate which is not yet expired but whose notBefore time is in the past.
-    isActive *bool
-    // The certificate's expiry. This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
-    notAfter *int64
-    // The certificate's issue time (not before). This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
-    notBefore *int64
-    // The OdataType property
-    odataType *string
-    // The certificate thumbprint.
-    thumbprint *string
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewPkcs12CertificateInformation instantiates a new pkcs12CertificateInformation and sets the default values.
 func NewPkcs12CertificateInformation()(*Pkcs12CertificateInformation) {
     m := &Pkcs12CertificateInformation{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -32,7 +24,19 @@ func CreatePkcs12CertificateInformationFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Pkcs12CertificateInformation) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *Pkcs12CertificateInformation) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Pkcs12CertificateInformation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -91,23 +95,58 @@ func (m *Pkcs12CertificateInformation) GetFieldDeserializers()(map[string]func(i
 }
 // GetIsActive gets the isActive property value. Represents whether the certificate is the active certificate to be used for calling the API connector. The active certificate is the most recently uploaded certificate which is not yet expired but whose notBefore time is in the past.
 func (m *Pkcs12CertificateInformation) GetIsActive()(*bool) {
-    return m.isActive
+    val, err := m.GetBackingStore().Get("isActive")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetNotAfter gets the notAfter property value. The certificate's expiry. This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
 func (m *Pkcs12CertificateInformation) GetNotAfter()(*int64) {
-    return m.notAfter
+    val, err := m.GetBackingStore().Get("notAfter")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetNotBefore gets the notBefore property value. The certificate's issue time (not before). This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
 func (m *Pkcs12CertificateInformation) GetNotBefore()(*int64) {
-    return m.notBefore
+    val, err := m.GetBackingStore().Get("notBefore")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *Pkcs12CertificateInformation) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetThumbprint gets the thumbprint property value. The certificate thumbprint.
 func (m *Pkcs12CertificateInformation) GetThumbprint()(*string) {
-    return m.thumbprint
+    val, err := m.GetBackingStore().Get("thumbprint")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Pkcs12CertificateInformation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,25 +190,65 @@ func (m *Pkcs12CertificateInformation) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Pkcs12CertificateInformation) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *Pkcs12CertificateInformation) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetIsActive sets the isActive property value. Represents whether the certificate is the active certificate to be used for calling the API connector. The active certificate is the most recently uploaded certificate which is not yet expired but whose notBefore time is in the past.
 func (m *Pkcs12CertificateInformation) SetIsActive(value *bool)() {
-    m.isActive = value
+    err := m.GetBackingStore().Set("isActive", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNotAfter sets the notAfter property value. The certificate's expiry. This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
 func (m *Pkcs12CertificateInformation) SetNotAfter(value *int64)() {
-    m.notAfter = value
+    err := m.GetBackingStore().Set("notAfter", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetNotBefore sets the notBefore property value. The certificate's issue time (not before). This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
 func (m *Pkcs12CertificateInformation) SetNotBefore(value *int64)() {
-    m.notBefore = value
+    err := m.GetBackingStore().Set("notBefore", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *Pkcs12CertificateInformation) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetThumbprint sets the thumbprint property value. The certificate thumbprint.
 func (m *Pkcs12CertificateInformation) SetThumbprint(value *string)() {
-    m.thumbprint = value
+    err := m.GetBackingStore().Set("thumbprint", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// Pkcs12CertificateInformationable 
+type Pkcs12CertificateInformationable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetIsActive()(*bool)
+    GetNotAfter()(*int64)
+    GetNotBefore()(*int64)
+    GetOdataType()(*string)
+    GetThumbprint()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetIsActive(value *bool)()
+    SetNotAfter(value *int64)()
+    SetNotBefore(value *int64)()
+    SetOdataType(value *string)()
+    SetThumbprint(value *string)()
 }

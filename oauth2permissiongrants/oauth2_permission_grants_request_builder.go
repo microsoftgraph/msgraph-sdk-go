@@ -74,6 +74,10 @@ func NewOauth2PermissionGrantsRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *Oauth2PermissionGrantsRequestBuilder) Count()(*CountRequestBuilder) {
     return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// Delta provides operations to call the delta method.
+func (m *Oauth2PermissionGrantsRequestBuilder) Delta()(*DeltaRequestBuilder) {
+    return NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Get retrieve a list of oAuth2PermissionGrant objects, representing delegated permissions which have been granted for client applications to access APIs on behalf of signed-in users.
 // [Find more info here]
 // 
@@ -95,10 +99,6 @@ func (m *Oauth2PermissionGrantsRequestBuilder) Get(ctx context.Context, requestC
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OAuth2PermissionGrantCollectionResponseable), nil
-}
-// MicrosoftGraphDelta provides operations to call the delta method.
-func (m *Oauth2PermissionGrantsRequestBuilder) MicrosoftGraphDelta()(*MicrosoftGraphDeltaRequestBuilder) {
-    return NewMicrosoftGraphDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create a delegated permission grant represented by an oAuth2PermissionGrant object. A delegated permission grant authorizes a client service principal (representing a client application) to access a resource service principal (representing an API), on behalf of a signed-in user, for the level of access limited by the delegated permissions which were granted.
 // [Find more info here]

@@ -7,10 +7,6 @@ import (
 // PrinterCreateOperation 
 type PrinterCreateOperation struct {
     PrintOperation
-    // The signed certificate created during the registration process. Read-only.
-    certificate *string
-    // The created printer entity. Read-only.
-    printer Printerable
 }
 // NewPrinterCreateOperation instantiates a new PrinterCreateOperation and sets the default values.
 func NewPrinterCreateOperation()(*PrinterCreateOperation) {
@@ -27,7 +23,14 @@ func CreatePrinterCreateOperationFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetCertificate gets the certificate property value. The signed certificate created during the registration process. Read-only.
 func (m *PrinterCreateOperation) GetCertificate()(*string) {
-    return m.certificate
+    val, err := m.GetBackingStore().Get("certificate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrinterCreateOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -56,7 +59,14 @@ func (m *PrinterCreateOperation) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetPrinter gets the printer property value. The created printer entity. Read-only.
 func (m *PrinterCreateOperation) GetPrinter()(Printerable) {
-    return m.printer
+    val, err := m.GetBackingStore().Get("printer")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Printerable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PrinterCreateOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -80,9 +90,24 @@ func (m *PrinterCreateOperation) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetCertificate sets the certificate property value. The signed certificate created during the registration process. Read-only.
 func (m *PrinterCreateOperation) SetCertificate(value *string)() {
-    m.certificate = value
+    err := m.GetBackingStore().Set("certificate", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPrinter sets the printer property value. The created printer entity. Read-only.
 func (m *PrinterCreateOperation) SetPrinter(value Printerable)() {
-    m.printer = value
+    err := m.GetBackingStore().Set("printer", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PrinterCreateOperationable 
+type PrinterCreateOperationable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    PrintOperationable
+    GetCertificate()(*string)
+    GetPrinter()(Printerable)
+    SetCertificate(value *string)()
+    SetPrinter(value Printerable)()
 }

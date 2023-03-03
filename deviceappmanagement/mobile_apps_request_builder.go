@@ -93,13 +93,13 @@ func (m *MobileAppsRequestBuilder) Get(ctx context.Context, requestConfiguration
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppCollectionResponseable), nil
 }
-// MicrosoftGraphManagedMobileLobApp casts the previous resource to managedMobileLobApp.
-func (m *MobileAppsRequestBuilder) MicrosoftGraphManagedMobileLobApp()(*MobileAppsMicrosoftGraphManagedMobileLobAppRequestBuilder) {
-    return NewMobileAppsMicrosoftGraphManagedMobileLobAppRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphManagedMobileLobApp casts the previous resource to managedMobileLobApp.
+func (m *MobileAppsRequestBuilder) GraphManagedMobileLobApp()(*MobileAppsGraphManagedMobileLobAppRequestBuilder) {
+    return NewMobileAppsGraphManagedMobileLobAppRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphMobileLobApp casts the previous resource to mobileLobApp.
-func (m *MobileAppsRequestBuilder) MicrosoftGraphMobileLobApp()(*MobileAppsMicrosoftGraphMobileLobAppRequestBuilder) {
-    return NewMobileAppsMicrosoftGraphMobileLobAppRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphMobileLobApp casts the previous resource to mobileLobApp.
+func (m *MobileAppsRequestBuilder) GraphMobileLobApp()(*MobileAppsGraphMobileLobAppRequestBuilder) {
+    return NewMobileAppsGraphMobileLobAppRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post create new navigation property to mobileApps for deviceAppManagement
 func (m *MobileAppsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppable, requestConfiguration *MobileAppsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppable, error) {

@@ -7,8 +7,6 @@ import (
 // AzureCommunicationServicesUserConversationMember 
 type AzureCommunicationServicesUserConversationMember struct {
     ConversationMember
-    // The azureCommunicationServicesId property
-    azureCommunicationServicesId *string
 }
 // NewAzureCommunicationServicesUserConversationMember instantiates a new AzureCommunicationServicesUserConversationMember and sets the default values.
 func NewAzureCommunicationServicesUserConversationMember()(*AzureCommunicationServicesUserConversationMember) {
@@ -23,9 +21,16 @@ func NewAzureCommunicationServicesUserConversationMember()(*AzureCommunicationSe
 func CreateAzureCommunicationServicesUserConversationMemberFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAzureCommunicationServicesUserConversationMember(), nil
 }
-// GetAzureCommunicationServicesId gets the azureCommunicationServicesId property value. The azureCommunicationServicesId property
+// GetAzureCommunicationServicesId gets the azureCommunicationServicesId property value. Azure Communication Services ID of the user.
 func (m *AzureCommunicationServicesUserConversationMember) GetAzureCommunicationServicesId()(*string) {
-    return m.azureCommunicationServicesId
+    val, err := m.GetBackingStore().Get("azureCommunicationServicesId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AzureCommunicationServicesUserConversationMember) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -56,7 +61,17 @@ func (m *AzureCommunicationServicesUserConversationMember) Serialize(writer i878
     }
     return nil
 }
-// SetAzureCommunicationServicesId sets the azureCommunicationServicesId property value. The azureCommunicationServicesId property
+// SetAzureCommunicationServicesId sets the azureCommunicationServicesId property value. Azure Communication Services ID of the user.
 func (m *AzureCommunicationServicesUserConversationMember) SetAzureCommunicationServicesId(value *string)() {
-    m.azureCommunicationServicesId = value
+    err := m.GetBackingStore().Set("azureCommunicationServicesId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AzureCommunicationServicesUserConversationMemberable 
+type AzureCommunicationServicesUserConversationMemberable interface {
+    ConversationMemberable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAzureCommunicationServicesId()(*string)
+    SetAzureCommunicationServicesId(value *string)()
 }

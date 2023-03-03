@@ -74,6 +74,10 @@ func NewEntitlementManagementAssignmentRequestsRequestBuilder(rawUrl string, req
 func (m *EntitlementManagementAssignmentRequestsRequestBuilder) Count()(*EntitlementManagementAssignmentRequestsCountRequestBuilder) {
     return NewEntitlementManagementAssignmentRequestsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
+func (m *EntitlementManagementAssignmentRequestsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnRequestBuilder) {
+    return NewEntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
+}
 // Get in Azure AD entitlement management, retrieve a list of accessPackageAssignmentRequest objects.  The resulting list includes all the assignment requests, current and well as expired, that the caller has access to read, across all catalogs and access packages.
 // [Find more info here]
 // 
@@ -95,10 +99,6 @@ func (m *EntitlementManagementAssignmentRequestsRequestBuilder) Get(ctx context.
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageAssignmentRequestCollectionResponseable), nil
-}
-// MicrosoftGraphFilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
-func (m *EntitlementManagementAssignmentRequestsRequestBuilder) MicrosoftGraphFilterByCurrentUserWithOn(on *string)(*EntitlementManagementAssignmentRequestsMicrosoftGraphFilterByCurrentUserWithOnRequestBuilder) {
-    return NewEntitlementManagementAssignmentRequestsMicrosoftGraphFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
 }
 // Post in Azure AD Entitlement Management, create a new accessPackageAssignmentRequest object.  This operation is used to assign a user to an access package, update the assignment, or to remove an access package assignment.
 // [Find more info here]

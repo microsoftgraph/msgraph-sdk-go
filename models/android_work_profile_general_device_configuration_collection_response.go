@@ -7,8 +7,6 @@ import (
 // AndroidWorkProfileGeneralDeviceConfigurationCollectionResponse 
 type AndroidWorkProfileGeneralDeviceConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AndroidWorkProfileGeneralDeviceConfigurationable
 }
 // NewAndroidWorkProfileGeneralDeviceConfigurationCollectionResponse instantiates a new AndroidWorkProfileGeneralDeviceConfigurationCollectionResponse and sets the default values.
 func NewAndroidWorkProfileGeneralDeviceConfigurationCollectionResponse()(*AndroidWorkProfileGeneralDeviceConfigurationCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AndroidWorkProfileGeneralDeviceConfigurationCollectionResponse) GetFiel
 }
 // GetValue gets the value property value. The value property
 func (m *AndroidWorkProfileGeneralDeviceConfigurationCollectionResponse) GetValue()([]AndroidWorkProfileGeneralDeviceConfigurationable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidWorkProfileGeneralDeviceConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AndroidWorkProfileGeneralDeviceConfigurationCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AndroidWorkProfileGeneralDeviceConfigurationCollectionResponse) Seriali
 }
 // SetValue sets the value property value. The value property
 func (m *AndroidWorkProfileGeneralDeviceConfigurationCollectionResponse) SetValue(value []AndroidWorkProfileGeneralDeviceConfigurationable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AndroidWorkProfileGeneralDeviceConfigurationCollectionResponseable 
+type AndroidWorkProfileGeneralDeviceConfigurationCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AndroidWorkProfileGeneralDeviceConfigurationable)
+    SetValue(value []AndroidWorkProfileGeneralDeviceConfigurationable)()
 }

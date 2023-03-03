@@ -7,10 +7,6 @@ import (
 // GroupMembers 
 type GroupMembers struct {
     SubjectSet
-    // The name of the group in Azure AD. Read only.
-    description *string
-    // The ID of the group in Azure AD.
-    groupId *string
 }
 // NewGroupMembers instantiates a new GroupMembers and sets the default values.
 func NewGroupMembers()(*GroupMembers) {
@@ -27,7 +23,14 @@ func CreateGroupMembersFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetDescription gets the description property value. The name of the group in Azure AD. Read only.
 func (m *GroupMembers) GetDescription()(*string) {
-    return m.description
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GroupMembers) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -56,7 +59,14 @@ func (m *GroupMembers) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetGroupId gets the groupId property value. The ID of the group in Azure AD.
 func (m *GroupMembers) GetGroupId()(*string) {
-    return m.groupId
+    val, err := m.GetBackingStore().Get("groupId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *GroupMembers) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -80,9 +90,24 @@ func (m *GroupMembers) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetDescription sets the description property value. The name of the group in Azure AD. Read only.
 func (m *GroupMembers) SetDescription(value *string)() {
-    m.description = value
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetGroupId sets the groupId property value. The ID of the group in Azure AD.
 func (m *GroupMembers) SetGroupId(value *string)() {
-    m.groupId = value
+    err := m.GetBackingStore().Set("groupId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// GroupMembersable 
+type GroupMembersable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    SubjectSetable
+    GetDescription()(*string)
+    GetGroupId()(*string)
+    SetDescription(value *string)()
+    SetGroupId(value *string)()
 }

@@ -7,8 +7,6 @@ import (
 // SharedDriveItemCollectionResponse 
 type SharedDriveItemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []SharedDriveItemable
 }
 // NewSharedDriveItemCollectionResponse instantiates a new SharedDriveItemCollectionResponse and sets the default values.
 func NewSharedDriveItemCollectionResponse()(*SharedDriveItemCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *SharedDriveItemCollectionResponse) GetFieldDeserializers()(map[string]f
 }
 // GetValue gets the value property value. The value property
 func (m *SharedDriveItemCollectionResponse) GetValue()([]SharedDriveItemable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SharedDriveItemable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SharedDriveItemCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *SharedDriveItemCollectionResponse) Serialize(writer i878a80d2330e89d268
 }
 // SetValue sets the value property value. The value property
 func (m *SharedDriveItemCollectionResponse) SetValue(value []SharedDriveItemable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SharedDriveItemCollectionResponseable 
+type SharedDriveItemCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]SharedDriveItemable)
+    SetValue(value []SharedDriveItemable)()
 }

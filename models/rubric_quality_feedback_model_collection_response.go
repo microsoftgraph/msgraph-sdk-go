@@ -7,8 +7,6 @@ import (
 // RubricQualityFeedbackModelCollectionResponse 
 type RubricQualityFeedbackModelCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []RubricQualityFeedbackModelable
 }
 // NewRubricQualityFeedbackModelCollectionResponse instantiates a new RubricQualityFeedbackModelCollectionResponse and sets the default values.
 func NewRubricQualityFeedbackModelCollectionResponse()(*RubricQualityFeedbackModelCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *RubricQualityFeedbackModelCollectionResponse) GetFieldDeserializers()(m
 }
 // GetValue gets the value property value. The value property
 func (m *RubricQualityFeedbackModelCollectionResponse) GetValue()([]RubricQualityFeedbackModelable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]RubricQualityFeedbackModelable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *RubricQualityFeedbackModelCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *RubricQualityFeedbackModelCollectionResponse) Serialize(writer i878a80d
 }
 // SetValue sets the value property value. The value property
 func (m *RubricQualityFeedbackModelCollectionResponse) SetValue(value []RubricQualityFeedbackModelable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// RubricQualityFeedbackModelCollectionResponseable 
+type RubricQualityFeedbackModelCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]RubricQualityFeedbackModelable)
+    SetValue(value []RubricQualityFeedbackModelable)()
 }

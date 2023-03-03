@@ -89,17 +89,17 @@ func (m *ItemOwnedObjectsRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
 }
-// MicrosoftGraphApplication casts the previous resource to application.
-func (m *ItemOwnedObjectsRequestBuilder) MicrosoftGraphApplication()(*ItemOwnedObjectsMicrosoftGraphApplicationRequestBuilder) {
-    return NewItemOwnedObjectsMicrosoftGraphApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphApplication casts the previous resource to application.
+func (m *ItemOwnedObjectsRequestBuilder) GraphApplication()(*ItemOwnedObjectsGraphApplicationRequestBuilder) {
+    return NewItemOwnedObjectsGraphApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphGroup casts the previous resource to group.
-func (m *ItemOwnedObjectsRequestBuilder) MicrosoftGraphGroup()(*ItemOwnedObjectsMicrosoftGraphGroupRequestBuilder) {
-    return NewItemOwnedObjectsMicrosoftGraphGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphGroup casts the previous resource to group.
+func (m *ItemOwnedObjectsRequestBuilder) GraphGroup()(*ItemOwnedObjectsGraphGroupRequestBuilder) {
+    return NewItemOwnedObjectsGraphGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphServicePrincipal casts the previous resource to servicePrincipal.
-func (m *ItemOwnedObjectsRequestBuilder) MicrosoftGraphServicePrincipal()(*ItemOwnedObjectsMicrosoftGraphServicePrincipalRequestBuilder) {
-    return NewItemOwnedObjectsMicrosoftGraphServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GraphServicePrincipal casts the previous resource to servicePrincipal.
+func (m *ItemOwnedObjectsRequestBuilder) GraphServicePrincipal()(*ItemOwnedObjectsGraphServicePrincipalRequestBuilder) {
+    return NewItemOwnedObjectsGraphServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToGetRequestInformation directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
 func (m *ItemOwnedObjectsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOwnedObjectsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

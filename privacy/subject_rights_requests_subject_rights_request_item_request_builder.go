@@ -100,13 +100,13 @@ func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) Get(ctx co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubjectRightsRequestable), nil
 }
-// MicrosoftGraphGetFinalAttachment provides operations to call the getFinalAttachment method.
-func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) MicrosoftGraphGetFinalAttachment()(*SubjectRightsRequestsItemMicrosoftGraphGetFinalAttachmentRequestBuilder) {
-    return NewSubjectRightsRequestsItemMicrosoftGraphGetFinalAttachmentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GetFinalAttachment provides operations to call the getFinalAttachment method.
+func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) GetFinalAttachment()(*SubjectRightsRequestsItemGetFinalAttachmentRequestBuilder) {
+    return NewSubjectRightsRequestsItemGetFinalAttachmentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphGetFinalReport provides operations to call the getFinalReport method.
-func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) MicrosoftGraphGetFinalReport()(*SubjectRightsRequestsItemMicrosoftGraphGetFinalReportRequestBuilder) {
-    return NewSubjectRightsRequestsItemMicrosoftGraphGetFinalReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GetFinalReport provides operations to call the getFinalReport method.
+func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) GetFinalReport()(*SubjectRightsRequestsItemGetFinalReportRequestBuilder) {
+    return NewSubjectRightsRequestsItemGetFinalReportRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Notes provides operations to manage the notes property of the microsoft.graph.subjectRightsRequest entity.
 func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) Notes()(*SubjectRightsRequestsItemNotesRequestBuilder) {

@@ -7,12 +7,6 @@ import (
 // MacOSCustomConfiguration 
 type MacOSCustomConfiguration struct {
     DeviceConfiguration
-    // Payload. (UTF8 encoded byte array)
-    payload []byte
-    // Payload file name (.mobileconfig
-    payloadFileName *string
-    // Name that is displayed to the user.
-    payloadName *string
 }
 // NewMacOSCustomConfiguration instantiates a new MacOSCustomConfiguration and sets the default values.
 func NewMacOSCustomConfiguration()(*MacOSCustomConfiguration) {
@@ -64,15 +58,36 @@ func (m *MacOSCustomConfiguration) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetPayload gets the payload property value. Payload. (UTF8 encoded byte array)
 func (m *MacOSCustomConfiguration) GetPayload()([]byte) {
-    return m.payload
+    val, err := m.GetBackingStore().Get("payload")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]byte)
+    }
+    return nil
 }
 // GetPayloadFileName gets the payloadFileName property value. Payload file name (.mobileconfig
 func (m *MacOSCustomConfiguration) GetPayloadFileName()(*string) {
-    return m.payloadFileName
+    val, err := m.GetBackingStore().Get("payloadFileName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPayloadName gets the payloadName property value. Name that is displayed to the user.
 func (m *MacOSCustomConfiguration) GetPayloadName()(*string) {
-    return m.payloadName
+    val, err := m.GetBackingStore().Get("payloadName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MacOSCustomConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -102,13 +117,33 @@ func (m *MacOSCustomConfiguration) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetPayload sets the payload property value. Payload. (UTF8 encoded byte array)
 func (m *MacOSCustomConfiguration) SetPayload(value []byte)() {
-    m.payload = value
+    err := m.GetBackingStore().Set("payload", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPayloadFileName sets the payloadFileName property value. Payload file name (.mobileconfig
 func (m *MacOSCustomConfiguration) SetPayloadFileName(value *string)() {
-    m.payloadFileName = value
+    err := m.GetBackingStore().Set("payloadFileName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPayloadName sets the payloadName property value. Name that is displayed to the user.
 func (m *MacOSCustomConfiguration) SetPayloadName(value *string)() {
-    m.payloadName = value
+    err := m.GetBackingStore().Set("payloadName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MacOSCustomConfigurationable 
+type MacOSCustomConfigurationable interface {
+    DeviceConfigurationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetPayload()([]byte)
+    GetPayloadFileName()(*string)
+    GetPayloadName()(*string)
+    SetPayload(value []byte)()
+    SetPayloadFileName(value *string)()
+    SetPayloadName(value *string)()
 }

@@ -2,27 +2,19 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // SharingInvitation 
 type SharingInvitation struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The email address provided for the recipient of the sharing invitation. Read-only.
-    email *string
-    // Provides information about who sent the invitation that created this permission, if that information is available. Read-only.
-    invitedBy IdentitySetable
-    // The OdataType property
-    odataType *string
-    // The redeemedBy property
-    redeemedBy *string
-    // If true the recipient of the invitation needs to sign in in order to access the shared item. Read-only.
-    signInRequired *bool
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewSharingInvitation instantiates a new sharingInvitation and sets the default values.
 func NewSharingInvitation()(*SharingInvitation) {
     m := &SharingInvitation{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -32,11 +24,30 @@ func CreateSharingInvitationFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SharingInvitation) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *SharingInvitation) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetEmail gets the email property value. The email address provided for the recipient of the sharing invitation. Read-only.
 func (m *SharingInvitation) GetEmail()(*string) {
-    return m.email
+    val, err := m.GetBackingStore().Get("email")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SharingInvitation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -95,19 +106,47 @@ func (m *SharingInvitation) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetInvitedBy gets the invitedBy property value. Provides information about who sent the invitation that created this permission, if that information is available. Read-only.
 func (m *SharingInvitation) GetInvitedBy()(IdentitySetable) {
-    return m.invitedBy
+    val, err := m.GetBackingStore().Get("invitedBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentitySetable)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SharingInvitation) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRedeemedBy gets the redeemedBy property value. The redeemedBy property
 func (m *SharingInvitation) GetRedeemedBy()(*string) {
-    return m.redeemedBy
+    val, err := m.GetBackingStore().Get("redeemedBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSignInRequired gets the signInRequired property value. If true the recipient of the invitation needs to sign in in order to access the shared item. Read-only.
 func (m *SharingInvitation) GetSignInRequired()(*bool) {
-    return m.signInRequired
+    val, err := m.GetBackingStore().Get("signInRequired")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *SharingInvitation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,25 +190,65 @@ func (m *SharingInvitation) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SharingInvitation) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *SharingInvitation) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetEmail sets the email property value. The email address provided for the recipient of the sharing invitation. Read-only.
 func (m *SharingInvitation) SetEmail(value *string)() {
-    m.email = value
+    err := m.GetBackingStore().Set("email", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetInvitedBy sets the invitedBy property value. Provides information about who sent the invitation that created this permission, if that information is available. Read-only.
 func (m *SharingInvitation) SetInvitedBy(value IdentitySetable)() {
-    m.invitedBy = value
+    err := m.GetBackingStore().Set("invitedBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SharingInvitation) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRedeemedBy sets the redeemedBy property value. The redeemedBy property
 func (m *SharingInvitation) SetRedeemedBy(value *string)() {
-    m.redeemedBy = value
+    err := m.GetBackingStore().Set("redeemedBy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSignInRequired sets the signInRequired property value. If true the recipient of the invitation needs to sign in in order to access the shared item. Read-only.
 func (m *SharingInvitation) SetSignInRequired(value *bool)() {
-    m.signInRequired = value
+    err := m.GetBackingStore().Set("signInRequired", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SharingInvitationable 
+type SharingInvitationable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetEmail()(*string)
+    GetInvitedBy()(IdentitySetable)
+    GetOdataType()(*string)
+    GetRedeemedBy()(*string)
+    GetSignInRequired()(*bool)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetEmail(value *string)()
+    SetInvitedBy(value IdentitySetable)()
+    SetOdataType(value *string)()
+    SetRedeemedBy(value *string)()
+    SetSignInRequired(value *bool)()
 }

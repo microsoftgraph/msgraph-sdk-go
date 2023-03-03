@@ -72,6 +72,10 @@ func NewItemContactFoldersItemChildFoldersItemContactsRequestBuilder(rawUrl stri
 func (m *ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) Count()(*ItemContactFoldersItemChildFoldersItemContactsCountRequestBuilder) {
     return NewItemContactFoldersItemChildFoldersItemContactsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// Delta provides operations to call the delta method.
+func (m *ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) Delta()(*ItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilder) {
+    return NewItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Get get a contact collection from the default Contacts folder of the signed-in user (`.../me/contacts`), or from the specified contact folder.
 // [Find more info here]
 // 
@@ -93,10 +97,6 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) Get(ctx c
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContactCollectionResponseable), nil
-}
-// MicrosoftGraphDelta provides operations to call the delta method.
-func (m *ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) MicrosoftGraphDelta()(*ItemContactFoldersItemChildFoldersItemContactsMicrosoftGraphDeltaRequestBuilder) {
-    return NewItemContactFoldersItemChildFoldersItemContactsMicrosoftGraphDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Post add a contact to the root Contacts folder or to the `contacts` endpoint of another contact folder.
 // [Find more info here]

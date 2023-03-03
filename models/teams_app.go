@@ -7,14 +7,6 @@ import (
 // TeamsApp 
 type TeamsApp struct {
     Entity
-    // The details for each version of the app.
-    appDefinitions []TeamsAppDefinitionable
-    // The name of the catalog app provided by the app developer in the Microsoft Teams zip app package.
-    displayName *string
-    // The method of distribution for the app. Read-only.
-    distributionMethod *TeamsAppDistributionMethod
-    // The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.
-    externalId *string
 }
 // NewTeamsApp instantiates a new teamsApp and sets the default values.
 func NewTeamsApp()(*TeamsApp) {
@@ -29,19 +21,47 @@ func CreateTeamsAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 }
 // GetAppDefinitions gets the appDefinitions property value. The details for each version of the app.
 func (m *TeamsApp) GetAppDefinitions()([]TeamsAppDefinitionable) {
-    return m.appDefinitions
+    val, err := m.GetBackingStore().Get("appDefinitions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TeamsAppDefinitionable)
+    }
+    return nil
 }
 // GetDisplayName gets the displayName property value. The name of the catalog app provided by the app developer in the Microsoft Teams zip app package.
 func (m *TeamsApp) GetDisplayName()(*string) {
-    return m.displayName
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetDistributionMethod gets the distributionMethod property value. The method of distribution for the app. Read-only.
 func (m *TeamsApp) GetDistributionMethod()(*TeamsAppDistributionMethod) {
-    return m.distributionMethod
+    val, err := m.GetBackingStore().Get("distributionMethod")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*TeamsAppDistributionMethod)
+    }
+    return nil
 }
 // GetExternalId gets the externalId property value. The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.
 func (m *TeamsApp) GetExternalId()(*string) {
-    return m.externalId
+    val, err := m.GetBackingStore().Get("externalId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamsApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -131,17 +151,42 @@ func (m *TeamsApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetAppDefinitions sets the appDefinitions property value. The details for each version of the app.
 func (m *TeamsApp) SetAppDefinitions(value []TeamsAppDefinitionable)() {
-    m.appDefinitions = value
+    err := m.GetBackingStore().Set("appDefinitions", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The name of the catalog app provided by the app developer in the Microsoft Teams zip app package.
 func (m *TeamsApp) SetDisplayName(value *string)() {
-    m.displayName = value
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDistributionMethod sets the distributionMethod property value. The method of distribution for the app. Read-only.
 func (m *TeamsApp) SetDistributionMethod(value *TeamsAppDistributionMethod)() {
-    m.distributionMethod = value
+    err := m.GetBackingStore().Set("distributionMethod", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetExternalId sets the externalId property value. The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.
 func (m *TeamsApp) SetExternalId(value *string)() {
-    m.externalId = value
+    err := m.GetBackingStore().Set("externalId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// TeamsAppable 
+type TeamsAppable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAppDefinitions()([]TeamsAppDefinitionable)
+    GetDisplayName()(*string)
+    GetDistributionMethod()(*TeamsAppDistributionMethod)
+    GetExternalId()(*string)
+    SetAppDefinitions(value []TeamsAppDefinitionable)()
+    SetDisplayName(value *string)()
+    SetDistributionMethod(value *TeamsAppDistributionMethod)()
+    SetExternalId(value *string)()
 }

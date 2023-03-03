@@ -7,8 +7,6 @@ import (
 // MicrosoftAuthenticatorAuthenticationMethodTargetCollectionResponse 
 type MicrosoftAuthenticatorAuthenticationMethodTargetCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []MicrosoftAuthenticatorAuthenticationMethodTargetable
 }
 // NewMicrosoftAuthenticatorAuthenticationMethodTargetCollectionResponse instantiates a new MicrosoftAuthenticatorAuthenticationMethodTargetCollectionResponse and sets the default values.
 func NewMicrosoftAuthenticatorAuthenticationMethodTargetCollectionResponse()(*MicrosoftAuthenticatorAuthenticationMethodTargetCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *MicrosoftAuthenticatorAuthenticationMethodTargetCollectionResponse) Get
 }
 // GetValue gets the value property value. The value property
 func (m *MicrosoftAuthenticatorAuthenticationMethodTargetCollectionResponse) GetValue()([]MicrosoftAuthenticatorAuthenticationMethodTargetable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MicrosoftAuthenticatorAuthenticationMethodTargetable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MicrosoftAuthenticatorAuthenticationMethodTargetCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *MicrosoftAuthenticatorAuthenticationMethodTargetCollectionResponse) Ser
 }
 // SetValue sets the value property value. The value property
 func (m *MicrosoftAuthenticatorAuthenticationMethodTargetCollectionResponse) SetValue(value []MicrosoftAuthenticatorAuthenticationMethodTargetable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// MicrosoftAuthenticatorAuthenticationMethodTargetCollectionResponseable 
+type MicrosoftAuthenticatorAuthenticationMethodTargetCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]MicrosoftAuthenticatorAuthenticationMethodTargetable)
+    SetValue(value []MicrosoftAuthenticatorAuthenticationMethodTargetable)()
 }

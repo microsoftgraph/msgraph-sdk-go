@@ -7,8 +7,6 @@ import (
 // PlannerProgressTaskBoardTaskFormat 
 type PlannerProgressTaskBoardTaskFormat struct {
     Entity
-    // Hint value used to order the task on the progress view of the task board. For details about the supported format, see Using order hints in Planner.
-    orderHint *string
 }
 // NewPlannerProgressTaskBoardTaskFormat instantiates a new plannerProgressTaskBoardTaskFormat and sets the default values.
 func NewPlannerProgressTaskBoardTaskFormat()(*PlannerProgressTaskBoardTaskFormat) {
@@ -38,7 +36,14 @@ func (m *PlannerProgressTaskBoardTaskFormat) GetFieldDeserializers()(map[string]
 }
 // GetOrderHint gets the orderHint property value. Hint value used to order the task on the progress view of the task board. For details about the supported format, see Using order hints in Planner.
 func (m *PlannerProgressTaskBoardTaskFormat) GetOrderHint()(*string) {
-    return m.orderHint
+    val, err := m.GetBackingStore().Get("orderHint")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PlannerProgressTaskBoardTaskFormat) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,5 +61,15 @@ func (m *PlannerProgressTaskBoardTaskFormat) Serialize(writer i878a80d2330e89d26
 }
 // SetOrderHint sets the orderHint property value. Hint value used to order the task on the progress view of the task board. For details about the supported format, see Using order hints in Planner.
 func (m *PlannerProgressTaskBoardTaskFormat) SetOrderHint(value *string)() {
-    m.orderHint = value
+    err := m.GetBackingStore().Set("orderHint", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PlannerProgressTaskBoardTaskFormatable 
+type PlannerProgressTaskBoardTaskFormatable interface {
+    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOrderHint()(*string)
+    SetOrderHint(value *string)()
 }

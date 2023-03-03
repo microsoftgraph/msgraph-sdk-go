@@ -46,6 +46,14 @@ type GroupSettingTemplateItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// CheckMemberGroups provides operations to call the checkMemberGroups method.
+func (m *GroupSettingTemplateItemRequestBuilder) CheckMemberGroups()(*ItemCheckMemberGroupsRequestBuilder) {
+    return NewItemCheckMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// CheckMemberObjects provides operations to call the checkMemberObjects method.
+func (m *GroupSettingTemplateItemRequestBuilder) CheckMemberObjects()(*ItemCheckMemberObjectsRequestBuilder) {
+    return NewItemCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // NewGroupSettingTemplateItemRequestBuilderInternal instantiates a new GroupSettingTemplateItemRequestBuilder and sets the default values.
 func NewGroupSettingTemplateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupSettingTemplateItemRequestBuilder) {
     m := &GroupSettingTemplateItemRequestBuilder{
@@ -103,25 +111,13 @@ func (m *GroupSettingTemplateItemRequestBuilder) Get(ctx context.Context, reques
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupSettingTemplateable), nil
 }
-// MicrosoftGraphCheckMemberGroups provides operations to call the checkMemberGroups method.
-func (m *GroupSettingTemplateItemRequestBuilder) MicrosoftGraphCheckMemberGroups()(*ItemMicrosoftGraphCheckMemberGroupsRequestBuilder) {
-    return NewItemMicrosoftGraphCheckMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GetMemberGroups provides operations to call the getMemberGroups method.
+func (m *GroupSettingTemplateItemRequestBuilder) GetMemberGroups()(*ItemGetMemberGroupsRequestBuilder) {
+    return NewItemGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// MicrosoftGraphCheckMemberObjects provides operations to call the checkMemberObjects method.
-func (m *GroupSettingTemplateItemRequestBuilder) MicrosoftGraphCheckMemberObjects()(*ItemMicrosoftGraphCheckMemberObjectsRequestBuilder) {
-    return NewItemMicrosoftGraphCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphGetMemberGroups provides operations to call the getMemberGroups method.
-func (m *GroupSettingTemplateItemRequestBuilder) MicrosoftGraphGetMemberGroups()(*ItemMicrosoftGraphGetMemberGroupsRequestBuilder) {
-    return NewItemMicrosoftGraphGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphGetMemberObjects provides operations to call the getMemberObjects method.
-func (m *GroupSettingTemplateItemRequestBuilder) MicrosoftGraphGetMemberObjects()(*ItemMicrosoftGraphGetMemberObjectsRequestBuilder) {
-    return NewItemMicrosoftGraphGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphRestore provides operations to call the restore method.
-func (m *GroupSettingTemplateItemRequestBuilder) MicrosoftGraphRestore()(*ItemMicrosoftGraphRestoreRequestBuilder) {
-    return NewItemMicrosoftGraphRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+// GetMemberObjects provides operations to call the getMemberObjects method.
+func (m *GroupSettingTemplateItemRequestBuilder) GetMemberObjects()(*ItemGetMemberObjectsRequestBuilder) {
+    return NewItemGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Patch update entity in groupSettingTemplates
 func (m *GroupSettingTemplateItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupSettingTemplateable, requestConfiguration *GroupSettingTemplateItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupSettingTemplateable, error) {
@@ -141,6 +137,10 @@ func (m *GroupSettingTemplateItemRequestBuilder) Patch(ctx context.Context, body
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupSettingTemplateable), nil
+}
+// Restore provides operations to call the restore method.
+func (m *GroupSettingTemplateItemRequestBuilder) Restore()(*ItemRestoreRequestBuilder) {
+    return NewItemRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete entity from groupSettingTemplates
 func (m *GroupSettingTemplateItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *GroupSettingTemplateItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

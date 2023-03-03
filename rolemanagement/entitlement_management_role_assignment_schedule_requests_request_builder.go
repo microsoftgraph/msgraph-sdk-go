@@ -74,6 +74,10 @@ func NewEntitlementManagementRoleAssignmentScheduleRequestsRequestBuilder(rawUrl
 func (m *EntitlementManagementRoleAssignmentScheduleRequestsRequestBuilder) Count()(*EntitlementManagementRoleAssignmentScheduleRequestsCountRequestBuilder) {
     return NewEntitlementManagementRoleAssignmentScheduleRequestsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
+func (m *EntitlementManagementRoleAssignmentScheduleRequestsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*EntitlementManagementRoleAssignmentScheduleRequestsFilterByCurrentUserWithOnRequestBuilder) {
+    return NewEntitlementManagementRoleAssignmentScheduleRequestsFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
+}
 // Get retrieve the requests for active role assignments to principals. The active assignments include those made through assignments and activation requests, and directly through the role assignments API. The role assignments can be permanently active with or without an expiry date, or temporarily active after user activation of eligible assignments.
 // [Find more info here]
 // 
@@ -95,10 +99,6 @@ func (m *EntitlementManagementRoleAssignmentScheduleRequestsRequestBuilder) Get(
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleAssignmentScheduleRequestCollectionResponseable), nil
-}
-// MicrosoftGraphFilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
-func (m *EntitlementManagementRoleAssignmentScheduleRequestsRequestBuilder) MicrosoftGraphFilterByCurrentUserWithOn(on *string)(*EntitlementManagementRoleAssignmentScheduleRequestsMicrosoftGraphFilterByCurrentUserWithOnRequestBuilder) {
-    return NewEntitlementManagementRoleAssignmentScheduleRequestsMicrosoftGraphFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
 }
 // Post in PIM, carry out the following operations through the unifiedRoleAssignmentScheduleRequest object:+ Request active and persistent role assignments for a principal, with or without expiry dates.+ Activate, deactivate, extend, or renew an eligible role assignment for a principal. To call this API to update, renew, and extend assignments for yourself, you must have multi-factor authentication (MFA) enforced, and running the query in a session in which they were challenged for MFA. See Enable per-user Azure AD Multi-Factor Authentication to secure sign-in events.
 // [Find more info here]

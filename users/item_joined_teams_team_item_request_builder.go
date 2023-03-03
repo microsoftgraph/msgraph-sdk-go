@@ -61,6 +61,10 @@ func (m *ItemJoinedTeamsTeamItemRequestBuilder) AllChannelsById(id string)(*Item
     }
     return NewItemJoinedTeamsItemAllChannelsChannelItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
+// Archive provides operations to call the archive method.
+func (m *ItemJoinedTeamsTeamItemRequestBuilder) Archive()(*ItemJoinedTeamsItemArchiveRequestBuilder) {
+    return NewItemJoinedTeamsItemArchiveRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // Channels provides operations to manage the channels property of the microsoft.graph.team entity.
 func (m *ItemJoinedTeamsTeamItemRequestBuilder) Channels()(*ItemJoinedTeamsItemChannelsRequestBuilder) {
     return NewItemJoinedTeamsItemChannelsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
@@ -75,6 +79,14 @@ func (m *ItemJoinedTeamsTeamItemRequestBuilder) ChannelsById(id string)(*ItemJoi
         urlTplParams["channel%2Did"] = id
     }
     return NewItemJoinedTeamsItemChannelsChannelItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+}
+// Clone provides operations to call the clone method.
+func (m *ItemJoinedTeamsTeamItemRequestBuilder) Clone()(*ItemJoinedTeamsItemCloneRequestBuilder) {
+    return NewItemJoinedTeamsItemCloneRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// CompleteMigration provides operations to call the completeMigration method.
+func (m *ItemJoinedTeamsTeamItemRequestBuilder) CompleteMigration()(*ItemJoinedTeamsItemCompleteMigrationRequestBuilder) {
+    return NewItemJoinedTeamsItemCompleteMigrationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // NewItemJoinedTeamsTeamItemRequestBuilderInternal instantiates a new TeamItemRequestBuilder and sets the default values.
 func NewItemJoinedTeamsTeamItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemJoinedTeamsTeamItemRequestBuilder) {
@@ -179,26 +191,6 @@ func (m *ItemJoinedTeamsTeamItemRequestBuilder) MembersById(id string)(*ItemJoin
     }
     return NewItemJoinedTeamsItemMembersConversationMemberItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
-// MicrosoftGraphArchive provides operations to call the archive method.
-func (m *ItemJoinedTeamsTeamItemRequestBuilder) MicrosoftGraphArchive()(*ItemJoinedTeamsItemMicrosoftGraphArchiveRequestBuilder) {
-    return NewItemJoinedTeamsItemMicrosoftGraphArchiveRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphClone provides operations to call the clone method.
-func (m *ItemJoinedTeamsTeamItemRequestBuilder) MicrosoftGraphClone()(*ItemJoinedTeamsItemMicrosoftGraphCloneRequestBuilder) {
-    return NewItemJoinedTeamsItemMicrosoftGraphCloneRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphCompleteMigration provides operations to call the completeMigration method.
-func (m *ItemJoinedTeamsTeamItemRequestBuilder) MicrosoftGraphCompleteMigration()(*ItemJoinedTeamsItemMicrosoftGraphCompleteMigrationRequestBuilder) {
-    return NewItemJoinedTeamsItemMicrosoftGraphCompleteMigrationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphSendActivityNotification provides operations to call the sendActivityNotification method.
-func (m *ItemJoinedTeamsTeamItemRequestBuilder) MicrosoftGraphSendActivityNotification()(*ItemJoinedTeamsItemMicrosoftGraphSendActivityNotificationRequestBuilder) {
-    return NewItemJoinedTeamsItemMicrosoftGraphSendActivityNotificationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphUnarchive provides operations to call the unarchive method.
-func (m *ItemJoinedTeamsTeamItemRequestBuilder) MicrosoftGraphUnarchive()(*ItemJoinedTeamsItemMicrosoftGraphUnarchiveRequestBuilder) {
-    return NewItemJoinedTeamsItemMicrosoftGraphUnarchiveRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Operations provides operations to manage the operations property of the microsoft.graph.team entity.
 func (m *ItemJoinedTeamsTeamItemRequestBuilder) Operations()(*ItemJoinedTeamsItemOperationsRequestBuilder) {
     return NewItemJoinedTeamsItemOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
@@ -244,6 +236,10 @@ func (m *ItemJoinedTeamsTeamItemRequestBuilder) PrimaryChannel()(*ItemJoinedTeam
 // Schedule provides operations to manage the schedule property of the microsoft.graph.team entity.
 func (m *ItemJoinedTeamsTeamItemRequestBuilder) Schedule()(*ItemJoinedTeamsItemScheduleRequestBuilder) {
     return NewItemJoinedTeamsItemScheduleRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// SendActivityNotification provides operations to call the sendActivityNotification method.
+func (m *ItemJoinedTeamsTeamItemRequestBuilder) SendActivityNotification()(*ItemJoinedTeamsItemSendActivityNotificationRequestBuilder) {
+    return NewItemJoinedTeamsItemSendActivityNotificationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // Tags provides operations to manage the tags property of the microsoft.graph.team entity.
 func (m *ItemJoinedTeamsTeamItemRequestBuilder) Tags()(*ItemJoinedTeamsItemTagsRequestBuilder) {
@@ -308,4 +304,8 @@ func (m *ItemJoinedTeamsTeamItemRequestBuilder) ToPatchRequestInformation(ctx co
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// Unarchive provides operations to call the unarchive method.
+func (m *ItemJoinedTeamsTeamItemRequestBuilder) Unarchive()(*ItemJoinedTeamsItemUnarchiveRequestBuilder) {
+    return NewItemJoinedTeamsItemUnarchiveRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }

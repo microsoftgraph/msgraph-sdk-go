@@ -7,8 +7,6 @@ import (
 // AccessPackageAnswerString 
 type AccessPackageAnswerString struct {
     AccessPackageAnswer
-    // The value stored on the requestor's user profile, if this answer is configured to be stored as a specific attribute.
-    value *string
 }
 // NewAccessPackageAnswerString instantiates a new AccessPackageAnswerString and sets the default values.
 func NewAccessPackageAnswerString()(*AccessPackageAnswerString) {
@@ -40,7 +38,14 @@ func (m *AccessPackageAnswerString) GetFieldDeserializers()(map[string]func(i878
 }
 // GetValue gets the value property value. The value stored on the requestor's user profile, if this answer is configured to be stored as a specific attribute.
 func (m *AccessPackageAnswerString) GetValue()(*string) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AccessPackageAnswerString) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -58,5 +63,15 @@ func (m *AccessPackageAnswerString) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetValue sets the value property value. The value stored on the requestor's user profile, if this answer is configured to be stored as a specific attribute.
 func (m *AccessPackageAnswerString) SetValue(value *string)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AccessPackageAnswerStringable 
+type AccessPackageAnswerStringable interface {
+    AccessPackageAnswerable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()(*string)
+    SetValue(value *string)()
 }

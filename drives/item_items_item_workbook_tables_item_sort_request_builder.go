@@ -46,6 +46,14 @@ type ItemItemsItemWorkbookTablesItemSortRequestBuilderPatchRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Apply provides operations to call the apply method.
+func (m *ItemItemsItemWorkbookTablesItemSortRequestBuilder) Apply()(*ItemItemsItemWorkbookTablesItemSortApplyRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemSortApplyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// Clear provides operations to call the clear method.
+func (m *ItemItemsItemWorkbookTablesItemSortRequestBuilder) Clear()(*ItemItemsItemWorkbookTablesItemSortClearRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemSortClearRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // NewItemItemsItemWorkbookTablesItemSortRequestBuilderInternal instantiates a new SortRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookTablesItemSortRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookTablesItemSortRequestBuilder) {
     m := &ItemItemsItemWorkbookTablesItemSortRequestBuilder{
@@ -103,18 +111,6 @@ func (m *ItemItemsItemWorkbookTablesItemSortRequestBuilder) Get(ctx context.Cont
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableSortable), nil
 }
-// MicrosoftGraphApply provides operations to call the apply method.
-func (m *ItemItemsItemWorkbookTablesItemSortRequestBuilder) MicrosoftGraphApply()(*ItemItemsItemWorkbookTablesItemSortMicrosoftGraphApplyRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesItemSortMicrosoftGraphApplyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphClear provides operations to call the clear method.
-func (m *ItemItemsItemWorkbookTablesItemSortRequestBuilder) MicrosoftGraphClear()(*ItemItemsItemWorkbookTablesItemSortMicrosoftGraphClearRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesItemSortMicrosoftGraphClearRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
-// MicrosoftGraphReapply provides operations to call the reapply method.
-func (m *ItemItemsItemWorkbookTablesItemSortRequestBuilder) MicrosoftGraphReapply()(*ItemItemsItemWorkbookTablesItemSortMicrosoftGraphReapplyRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesItemSortMicrosoftGraphReapplyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
-}
 // Patch update the navigation property sort in drives
 func (m *ItemItemsItemWorkbookTablesItemSortRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableSortable, requestConfiguration *ItemItemsItemWorkbookTablesItemSortRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableSortable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -133,6 +129,10 @@ func (m *ItemItemsItemWorkbookTablesItemSortRequestBuilder) Patch(ctx context.Co
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableSortable), nil
+}
+// Reapply provides operations to call the reapply method.
+func (m *ItemItemsItemWorkbookTablesItemSortRequestBuilder) Reapply()(*ItemItemsItemWorkbookTablesItemSortReapplyRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemSortReapplyRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property sort for drives
 func (m *ItemItemsItemWorkbookTablesItemSortRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemSortRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

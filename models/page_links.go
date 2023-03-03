@@ -2,23 +2,19 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // PageLinks 
 type PageLinks struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
-    // The OdataType property
-    odataType *string
-    // Opens the page in the OneNote native client if it's installed.
-    oneNoteClientUrl ExternalLinkable
-    // Opens the page in OneNote on the web.
-    oneNoteWebUrl ExternalLinkable
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewPageLinks instantiates a new pageLinks and sets the default values.
 func NewPageLinks()(*PageLinks) {
     m := &PageLinks{
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
@@ -28,7 +24,19 @@ func CreatePageLinksFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PageLinks) GetAdditionalData()(map[string]any) {
-    return m.additionalData
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the backingStore property value. Stores model information.
+func (m *PageLinks) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PageLinks) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -67,15 +75,36 @@ func (m *PageLinks) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *PageLinks) GetOdataType()(*string) {
-    return m.odataType
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOneNoteClientUrl gets the oneNoteClientUrl property value. Opens the page in the OneNote native client if it's installed.
 func (m *PageLinks) GetOneNoteClientUrl()(ExternalLinkable) {
-    return m.oneNoteClientUrl
+    val, err := m.GetBackingStore().Get("oneNoteClientUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ExternalLinkable)
+    }
+    return nil
 }
 // GetOneNoteWebUrl gets the oneNoteWebUrl property value. Opens the page in OneNote on the web.
 func (m *PageLinks) GetOneNoteWebUrl()(ExternalLinkable) {
-    return m.oneNoteWebUrl
+    val, err := m.GetBackingStore().Get("oneNoteWebUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ExternalLinkable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PageLinks) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -107,17 +136,47 @@ func (m *PageLinks) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PageLinks) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the backingStore property value. Stores model information.
+func (m *PageLinks) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *PageLinks) SetOdataType(value *string)() {
-    m.odataType = value
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOneNoteClientUrl sets the oneNoteClientUrl property value. Opens the page in the OneNote native client if it's installed.
 func (m *PageLinks) SetOneNoteClientUrl(value ExternalLinkable)() {
-    m.oneNoteClientUrl = value
+    err := m.GetBackingStore().Set("oneNoteClientUrl", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOneNoteWebUrl sets the oneNoteWebUrl property value. Opens the page in OneNote on the web.
 func (m *PageLinks) SetOneNoteWebUrl(value ExternalLinkable)() {
-    m.oneNoteWebUrl = value
+    err := m.GetBackingStore().Set("oneNoteWebUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// PageLinksable 
+type PageLinksable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetOdataType()(*string)
+    GetOneNoteClientUrl()(ExternalLinkable)
+    GetOneNoteWebUrl()(ExternalLinkable)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetOdataType(value *string)()
+    SetOneNoteClientUrl(value ExternalLinkable)()
+    SetOneNoteWebUrl(value ExternalLinkable)()
 }

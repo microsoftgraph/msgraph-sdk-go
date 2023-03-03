@@ -74,6 +74,10 @@ func NewEntitlementManagementRoleEligibilityScheduleInstancesRequestBuilder(rawU
 func (m *EntitlementManagementRoleEligibilityScheduleInstancesRequestBuilder) Count()(*EntitlementManagementRoleEligibilityScheduleInstancesCountRequestBuilder) {
     return NewEntitlementManagementRoleEligibilityScheduleInstancesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
+// FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
+func (m *EntitlementManagementRoleEligibilityScheduleInstancesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*EntitlementManagementRoleEligibilityScheduleInstancesFilterByCurrentUserWithOnRequestBuilder) {
+    return NewEntitlementManagementRoleEligibilityScheduleInstancesFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
+}
 // Get get the instances of role eligibilities.
 // [Find more info here]
 // 
@@ -95,10 +99,6 @@ func (m *EntitlementManagementRoleEligibilityScheduleInstancesRequestBuilder) Ge
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleEligibilityScheduleInstanceCollectionResponseable), nil
-}
-// MicrosoftGraphFilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
-func (m *EntitlementManagementRoleEligibilityScheduleInstancesRequestBuilder) MicrosoftGraphFilterByCurrentUserWithOn(on *string)(*EntitlementManagementRoleEligibilityScheduleInstancesMicrosoftGraphFilterByCurrentUserWithOnRequestBuilder) {
-    return NewEntitlementManagementRoleEligibilityScheduleInstancesMicrosoftGraphFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on)
 }
 // Post create new navigation property to roleEligibilityScheduleInstances for roleManagement
 func (m *EntitlementManagementRoleEligibilityScheduleInstancesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleEligibilityScheduleInstanceable, requestConfiguration *EntitlementManagementRoleEligibilityScheduleInstancesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleEligibilityScheduleInstanceable, error) {

@@ -7,8 +7,6 @@ import (
 // AdministrativeUnitCollectionResponse 
 type AdministrativeUnitCollectionResponse struct {
     BaseCollectionPaginationCountResponse
-    // The value property
-    value []AdministrativeUnitable
 }
 // NewAdministrativeUnitCollectionResponse instantiates a new AdministrativeUnitCollectionResponse and sets the default values.
 func NewAdministrativeUnitCollectionResponse()(*AdministrativeUnitCollectionResponse) {
@@ -42,7 +40,14 @@ func (m *AdministrativeUnitCollectionResponse) GetFieldDeserializers()(map[strin
 }
 // GetValue gets the value property value. The value property
 func (m *AdministrativeUnitCollectionResponse) GetValue()([]AdministrativeUnitable) {
-    return m.value
+    val, err := m.GetBackingStore().Get("value")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AdministrativeUnitable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AdministrativeUnitCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,5 +69,15 @@ func (m *AdministrativeUnitCollectionResponse) Serialize(writer i878a80d2330e89d
 }
 // SetValue sets the value property value. The value property
 func (m *AdministrativeUnitCollectionResponse) SetValue(value []AdministrativeUnitable)() {
-    m.value = value
+    err := m.GetBackingStore().Set("value", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// AdministrativeUnitCollectionResponseable 
+type AdministrativeUnitCollectionResponseable interface {
+    BaseCollectionPaginationCountResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetValue()([]AdministrativeUnitable)
+    SetValue(value []AdministrativeUnitable)()
 }
