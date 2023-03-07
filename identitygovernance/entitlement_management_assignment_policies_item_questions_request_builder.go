@@ -16,7 +16,7 @@ type EntitlementManagementAssignmentPoliciesItemQuestionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// EntitlementManagementAssignmentPoliciesItemQuestionsRequestBuilderGetQueryParameters get questions from identityGovernance
+// EntitlementManagementAssignmentPoliciesItemQuestionsRequestBuilderGetQueryParameters questions that are posed to the  requestor.
 type EntitlementManagementAssignmentPoliciesItemQuestionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewEntitlementManagementAssignmentPoliciesItemQuestionsRequestBuilder(rawUr
 func (m *EntitlementManagementAssignmentPoliciesItemQuestionsRequestBuilder) Count()(*EntitlementManagementAssignmentPoliciesItemQuestionsCountRequestBuilder) {
     return NewEntitlementManagementAssignmentPoliciesItemQuestionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// Get get questions from identityGovernance
+// Get questions that are posed to the  requestor.
 func (m *EntitlementManagementAssignmentPoliciesItemQuestionsRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAssignmentPoliciesItemQuestionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageQuestionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *EntitlementManagementAssignmentPoliciesItemQuestionsRequestBuilder) Pos
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageQuestionable), nil
 }
-// ToGetRequestInformation get questions from identityGovernance
+// ToGetRequestInformation questions that are posed to the  requestor.
 func (m *EntitlementManagementAssignmentPoliciesItemQuestionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAssignmentPoliciesItemQuestionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

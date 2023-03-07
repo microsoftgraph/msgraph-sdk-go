@@ -23,7 +23,7 @@ type EntitlementManagementAssignmentPoliciesItemQuestionsAccessPackageQuestionIt
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EntitlementManagementAssignmentPoliciesItemQuestionsAccessPackageQuestionItemRequestBuilderGetQueryParameters get questions from identityGovernance
+// EntitlementManagementAssignmentPoliciesItemQuestionsAccessPackageQuestionItemRequestBuilderGetQueryParameters questions that are posed to the  requestor.
 type EntitlementManagementAssignmentPoliciesItemQuestionsAccessPackageQuestionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -81,7 +81,7 @@ func (m *EntitlementManagementAssignmentPoliciesItemQuestionsAccessPackageQuesti
     }
     return nil
 }
-// Get get questions from identityGovernance
+// Get questions that are posed to the  requestor.
 func (m *EntitlementManagementAssignmentPoliciesItemQuestionsAccessPackageQuestionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAssignmentPoliciesItemQuestionsAccessPackageQuestionItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageQuestionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -131,7 +131,7 @@ func (m *EntitlementManagementAssignmentPoliciesItemQuestionsAccessPackageQuesti
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get questions from identityGovernance
+// ToGetRequestInformation questions that are posed to the  requestor.
 func (m *EntitlementManagementAssignmentPoliciesItemQuestionsAccessPackageQuestionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAssignmentPoliciesItemQuestionsAccessPackageQuestionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

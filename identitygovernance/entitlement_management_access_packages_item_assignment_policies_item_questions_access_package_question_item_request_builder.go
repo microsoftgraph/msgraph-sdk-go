@@ -23,7 +23,7 @@ type EntitlementManagementAccessPackagesItemAssignmentPoliciesItemQuestionsAcces
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EntitlementManagementAccessPackagesItemAssignmentPoliciesItemQuestionsAccessPackageQuestionItemRequestBuilderGetQueryParameters get questions from identityGovernance
+// EntitlementManagementAccessPackagesItemAssignmentPoliciesItemQuestionsAccessPackageQuestionItemRequestBuilderGetQueryParameters questions that are posed to the  requestor.
 type EntitlementManagementAccessPackagesItemAssignmentPoliciesItemQuestionsAccessPackageQuestionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -81,7 +81,7 @@ func (m *EntitlementManagementAccessPackagesItemAssignmentPoliciesItemQuestionsA
     }
     return nil
 }
-// Get get questions from identityGovernance
+// Get questions that are posed to the  requestor.
 func (m *EntitlementManagementAccessPackagesItemAssignmentPoliciesItemQuestionsAccessPackageQuestionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemAssignmentPoliciesItemQuestionsAccessPackageQuestionItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageQuestionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -131,7 +131,7 @@ func (m *EntitlementManagementAccessPackagesItemAssignmentPoliciesItemQuestionsA
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get questions from identityGovernance
+// ToGetRequestInformation questions that are posed to the  requestor.
 func (m *EntitlementManagementAccessPackagesItemAssignmentPoliciesItemQuestionsAccessPackageQuestionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemAssignmentPoliciesItemQuestionsAccessPackageQuestionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

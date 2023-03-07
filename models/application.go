@@ -10,7 +10,7 @@ import (
 type Application struct {
     DirectoryObject
 }
-// NewApplication instantiates a new application and sets the default values.
+// NewApplication instantiates a new Application and sets the default values.
 func NewApplication()(*Application) {
     m := &Application{
         DirectoryObject: *NewDirectoryObject(),
