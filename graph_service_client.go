@@ -5,7 +5,9 @@ import (
 	"github.com/Azure/azure-sdk-for-go/sdk/azcore"
 	abstractions "github.com/microsoft/kiota-abstractions-go"
 	"github.com/microsoft/kiota-abstractions-go/store"
+	coreutils "github.com/microsoftgraph/msgraph-sdk-go-core"
 	az "github.com/microsoftgraph/msgraph-sdk-go-core/authentication"
+	"github.com/microsoftgraph/msgraph-sdk-go/models"
 	if6ffd1464db2d9c22e351b03e4c00ebd24a5353cd70ffb7f56cfad1c3ceec329 "github.com/microsoftgraph/msgraph-sdk-go/users"
 )
 
@@ -69,4 +71,9 @@ func (m *GraphBaseServiceClient) Me() *if6ffd1464db2d9c22e351b03e4c00ebd24a5353c
 	}
 	urlTplParams["user%2Did"] = "me-token-to-replace"
 	return if6ffd1464db2d9c22e351b03e4c00ebd24a5353cd70ffb7f56cfad1c3ceec329.NewUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+}
+
+// NewPageIterator returns an instance of PageIterator to process results
+func (m *GraphBaseServiceClient) NewPageIterator(pagedResult interface{}) (*coreutils.PageIterator, error) {
+	return coreutils.NewPageIterator(pagedResult, m.requestAdapter, models.CreateEntityFromDiscriminatorValue)
 }
