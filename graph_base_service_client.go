@@ -51,6 +51,7 @@ import (
     ib3217193884e00033cb8182cac52178dfa3b20ce9c4eb48e37a6217882d956ae "github.com/microsoftgraph/msgraph-sdk-go/external"
     ib33fc5e9889e020c0c572578957f59819123a589c61fd7f3eb37eb7958b525ee "github.com/microsoftgraph/msgraph-sdk-go/datapolicyoperations"
     ib68fa8e66bda853b3a33c491e8a66ca665897dab129192b2c97289266c4a1415 "github.com/microsoftgraph/msgraph-sdk-go/informationprotection"
+    ib908319c645932a2c2abf7ce1571c02dfa73f84c9a76e6641ac843c4991c2f48 "github.com/microsoftgraph/msgraph-sdk-go/employeeexperience"
     ibaef614e7692eebc6aaa8080b8ac29169fdf539f24925bc1de4465a3fcdac177 "github.com/microsoftgraph/msgraph-sdk-go/chats"
     ic5e701d75e87f15ce153687b00984a314f7eeea8cfdc77cd9ad648e5ccbc7fbd "github.com/microsoftgraph/msgraph-sdk-go/invitations"
     ic949a0bb5066d68760e8502a7f9db83f571d9e01e38fad4aadf7268188e52df0 "github.com/microsoftgraph/msgraph-sdk-go/organization"
@@ -417,6 +418,10 @@ func (m *GraphBaseServiceClient) DrivesById(id string)(*iefc72d8a17962d4db125c50
 // Education provides operations to manage the educationRoot singleton.
 func (m *GraphBaseServiceClient) Education()(*i1be0f1b1da466bc62355d411ef490acbd8dc0ec5ca4d3448c7eb73e5caffafc3.EducationRequestBuilder) {
     return i1be0f1b1da466bc62355d411ef490acbd8dc0ec5ca4d3448c7eb73e5caffafc3.NewEducationRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
+// EmployeeExperience provides operations to manage the employeeExperience singleton.
+func (m *GraphBaseServiceClient) EmployeeExperience()(*ib908319c645932a2c2abf7ce1571c02dfa73f84c9a76e6641ac843c4991c2f48.EmployeeExperienceRequestBuilder) {
+    return ib908319c645932a2c2abf7ce1571c02dfa73f84c9a76e6641ac843c4991c2f48.NewEmployeeExperienceRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
 // External provides operations to manage the external singleton.
 func (m *GraphBaseServiceClient) External()(*ib3217193884e00033cb8182cac52178dfa3b20ce9c4eb48e37a6217882d956ae.ExternalRequestBuilder) {

@@ -272,7 +272,7 @@ func (m *AccessPackageAssignmentPolicy) GetModifiedDateTime()(*i336074805fc85398
     }
     return nil
 }
-// GetQuestions gets the questions property value. The questions property
+// GetQuestions gets the questions property value. Questions that are posed to the  requestor.
 func (m *AccessPackageAssignmentPolicy) GetQuestions()([]AccessPackageQuestionable) {
     val, err := m.GetBackingStore().Get("questions")
     if err != nil {
@@ -491,7 +491,7 @@ func (m *AccessPackageAssignmentPolicy) SetModifiedDateTime(value *i336074805fc8
         panic(err)
     }
 }
-// SetQuestions sets the questions property value. The questions property
+// SetQuestions sets the questions property value. Questions that are posed to the  requestor.
 func (m *AccessPackageAssignmentPolicy) SetQuestions(value []AccessPackageQuestionable)() {
     err := m.GetBackingStore().Set("questions", value)
     if err != nil {

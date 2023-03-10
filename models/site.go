@@ -8,7 +8,7 @@ import (
 type Site struct {
     BaseItem
 }
-// NewSite instantiates a new Site and sets the default values.
+// NewSite instantiates a new site and sets the default values.
 func NewSite()(*Site) {
     m := &Site{
         BaseItem: *NewBaseItem(),
