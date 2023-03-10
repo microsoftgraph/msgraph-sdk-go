@@ -49,6 +49,17 @@ func (m *ConditionalAccessUsers) GetExcludeGroups()([]string) {
     }
     return nil
 }
+// GetExcludeGuestsOrExternalUsers gets the excludeGuestsOrExternalUsers property value. The excludeGuestsOrExternalUsers property
+func (m *ConditionalAccessUsers) GetExcludeGuestsOrExternalUsers()(ConditionalAccessGuestsOrExternalUsersable) {
+    val, err := m.GetBackingStore().Get("excludeGuestsOrExternalUsers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ConditionalAccessGuestsOrExternalUsersable)
+    }
+    return nil
+}
 // GetExcludeRoles gets the excludeRoles property value. Role IDs excluded from scope of policy.
 func (m *ConditionalAccessUsers) GetExcludeRoles()([]string) {
     val, err := m.GetBackingStore().Get("excludeRoles")
@@ -85,6 +96,16 @@ func (m *ConditionalAccessUsers) GetFieldDeserializers()(map[string]func(i878a80
                 res[i] = *(v.(*string))
             }
             m.SetExcludeGroups(res)
+        }
+        return nil
+    }
+    res["excludeGuestsOrExternalUsers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateConditionalAccessGuestsOrExternalUsersFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetExcludeGuestsOrExternalUsers(val.(ConditionalAccessGuestsOrExternalUsersable))
         }
         return nil
     }
@@ -127,6 +148,16 @@ func (m *ConditionalAccessUsers) GetFieldDeserializers()(map[string]func(i878a80
                 res[i] = *(v.(*string))
             }
             m.SetIncludeGroups(res)
+        }
+        return nil
+    }
+    res["includeGuestsOrExternalUsers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateConditionalAccessGuestsOrExternalUsersFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIncludeGuestsOrExternalUsers(val.(ConditionalAccessGuestsOrExternalUsersable))
         }
         return nil
     }
@@ -181,6 +212,17 @@ func (m *ConditionalAccessUsers) GetIncludeGroups()([]string) {
     }
     return nil
 }
+// GetIncludeGuestsOrExternalUsers gets the includeGuestsOrExternalUsers property value. The includeGuestsOrExternalUsers property
+func (m *ConditionalAccessUsers) GetIncludeGuestsOrExternalUsers()(ConditionalAccessGuestsOrExternalUsersable) {
+    val, err := m.GetBackingStore().Get("includeGuestsOrExternalUsers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ConditionalAccessGuestsOrExternalUsersable)
+    }
+    return nil
+}
 // GetIncludeRoles gets the includeRoles property value. Role IDs in scope of policy unless explicitly excluded, or All.
 func (m *ConditionalAccessUsers) GetIncludeRoles()([]string) {
     val, err := m.GetBackingStore().Get("includeRoles")
@@ -222,6 +264,12 @@ func (m *ConditionalAccessUsers) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    {
+        err := writer.WriteObjectValue("excludeGuestsOrExternalUsers", m.GetExcludeGuestsOrExternalUsers())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetExcludeRoles() != nil {
         err := writer.WriteCollectionOfStringValues("excludeRoles", m.GetExcludeRoles())
         if err != nil {
@@ -236,6 +284,12 @@ func (m *ConditionalAccessUsers) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     if m.GetIncludeGroups() != nil {
         err := writer.WriteCollectionOfStringValues("includeGroups", m.GetIncludeGroups())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("includeGuestsOrExternalUsers", m.GetIncludeGuestsOrExternalUsers())
         if err != nil {
             return err
         }
@@ -284,6 +338,13 @@ func (m *ConditionalAccessUsers) SetExcludeGroups(value []string)() {
         panic(err)
     }
 }
+// SetExcludeGuestsOrExternalUsers sets the excludeGuestsOrExternalUsers property value. The excludeGuestsOrExternalUsers property
+func (m *ConditionalAccessUsers) SetExcludeGuestsOrExternalUsers(value ConditionalAccessGuestsOrExternalUsersable)() {
+    err := m.GetBackingStore().Set("excludeGuestsOrExternalUsers", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetExcludeRoles sets the excludeRoles property value. Role IDs excluded from scope of policy.
 func (m *ConditionalAccessUsers) SetExcludeRoles(value []string)() {
     err := m.GetBackingStore().Set("excludeRoles", value)
@@ -301,6 +362,13 @@ func (m *ConditionalAccessUsers) SetExcludeUsers(value []string)() {
 // SetIncludeGroups sets the includeGroups property value. Group IDs in scope of policy unless explicitly excluded, or All.
 func (m *ConditionalAccessUsers) SetIncludeGroups(value []string)() {
     err := m.GetBackingStore().Set("includeGroups", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetIncludeGuestsOrExternalUsers sets the includeGuestsOrExternalUsers property value. The includeGuestsOrExternalUsers property
+func (m *ConditionalAccessUsers) SetIncludeGuestsOrExternalUsers(value ConditionalAccessGuestsOrExternalUsersable)() {
+    err := m.GetBackingStore().Set("includeGuestsOrExternalUsers", value)
     if err != nil {
         panic(err)
     }
@@ -333,17 +401,21 @@ type ConditionalAccessUsersable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetExcludeGroups()([]string)
+    GetExcludeGuestsOrExternalUsers()(ConditionalAccessGuestsOrExternalUsersable)
     GetExcludeRoles()([]string)
     GetExcludeUsers()([]string)
     GetIncludeGroups()([]string)
+    GetIncludeGuestsOrExternalUsers()(ConditionalAccessGuestsOrExternalUsersable)
     GetIncludeRoles()([]string)
     GetIncludeUsers()([]string)
     GetOdataType()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetExcludeGroups(value []string)()
+    SetExcludeGuestsOrExternalUsers(value ConditionalAccessGuestsOrExternalUsersable)()
     SetExcludeRoles(value []string)()
     SetExcludeUsers(value []string)()
     SetIncludeGroups(value []string)()
+    SetIncludeGuestsOrExternalUsers(value ConditionalAccessGuestsOrExternalUsersable)()
     SetIncludeRoles(value []string)()
     SetIncludeUsers(value []string)()
     SetOdataType(value *string)()

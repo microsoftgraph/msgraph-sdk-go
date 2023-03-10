@@ -16,7 +16,7 @@ type RiskyUsersItemHistoryRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// RiskyUsersItemHistoryRequestBuilderGetQueryParameters read the properties and relationships of a riskyUserHistoryItem object.
+// RiskyUsersItemHistoryRequestBuilderGetQueryParameters get the riskyUserHistoryItems from the history navigation property.
 type RiskyUsersItemHistoryRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,10 @@ func NewRiskyUsersItemHistoryRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *RiskyUsersItemHistoryRequestBuilder) Count()(*RiskyUsersItemHistoryCountRequestBuilder) {
     return NewRiskyUsersItemHistoryCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// Get read the properties and relationships of a riskyUserHistoryItem object.
+// Get get the riskyUserHistoryItems from the history navigation property.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/riskyuser-get-riskyuserhistoryitem?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/riskyuser-list-history?view=graph-rest-1.0
 func (m *RiskyUsersItemHistoryRequestBuilder) Get(ctx context.Context, requestConfiguration *RiskyUsersItemHistoryRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RiskyUserHistoryItemCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +115,7 @@ func (m *RiskyUsersItemHistoryRequestBuilder) Post(ctx context.Context, body iad
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RiskyUserHistoryItemable), nil
 }
-// ToGetRequestInformation read the properties and relationships of a riskyUserHistoryItem object.
+// ToGetRequestInformation get the riskyUserHistoryItems from the history navigation property.
 func (m *RiskyUsersItemHistoryRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RiskyUsersItemHistoryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
