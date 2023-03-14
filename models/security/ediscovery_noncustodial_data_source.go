@@ -8,7 +8,7 @@ import (
 type EdiscoveryNoncustodialDataSource struct {
     DataSourceContainer
 }
-// NewEdiscoveryNoncustodialDataSource instantiates a new ediscoveryNoncustodialDataSource and sets the default values.
+// NewEdiscoveryNoncustodialDataSource instantiates a new EdiscoveryNoncustodialDataSource and sets the default values.
 func NewEdiscoveryNoncustodialDataSource()(*EdiscoveryNoncustodialDataSource) {
     m := &EdiscoveryNoncustodialDataSource{
         DataSourceContainer: *NewDataSourceContainer(),

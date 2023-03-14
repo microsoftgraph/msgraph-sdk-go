@@ -20,7 +20,7 @@ func NewMobileThreatDefenseConnector()(*MobileThreatDefenseConnector) {
 func CreateMobileThreatDefenseConnectorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMobileThreatDefenseConnector(), nil
 }
-// GetAllowPartnerToCollectIOSApplicationMetadata gets the allowPartnerToCollectIOSApplicationMetadata property value. When TRUE, indicates the data sync partner may collect metadata about installed applications from Intune for IOS devices. When FALSE, indicates the data sync partner may not collect metadata about installed applications from Intune for IOS devices. Default value is FALSE.
+// GetAllowPartnerToCollectIOSApplicationMetadata gets the allowPartnerToCollectIOSApplicationMetadata property value. When TRUE, indicates the Mobile Threat Defense partner may collect metadata about installed applications from Intune for IOS devices. When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about installed applications from Intune for IOS devices. Default value is FALSE.
 func (m *MobileThreatDefenseConnector) GetAllowPartnerToCollectIOSApplicationMetadata()(*bool) {
     val, err := m.GetBackingStore().Get("allowPartnerToCollectIOSApplicationMetadata")
     if err != nil {
@@ -31,7 +31,7 @@ func (m *MobileThreatDefenseConnector) GetAllowPartnerToCollectIOSApplicationMet
     }
     return nil
 }
-// GetAllowPartnerToCollectIOSPersonalApplicationMetadata gets the allowPartnerToCollectIOSPersonalApplicationMetadata property value. When TRUE, indicates the data sync partner may collect metadata about personally installed applications from Intune for IOS devices. When FALSE, indicates the data sync partner may not collect metadata about personally installed applications from Intune for IOS devices. Default value is FALSE.
+// GetAllowPartnerToCollectIOSPersonalApplicationMetadata gets the allowPartnerToCollectIOSPersonalApplicationMetadata property value. When TRUE, indicates the Mobile Threat Defense partner may collect metadata about personally installed applications from Intune for IOS devices. When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about personally installed applications from Intune for IOS devices. Default value is FALSE.
 func (m *MobileThreatDefenseConnector) GetAllowPartnerToCollectIOSPersonalApplicationMetadata()(*bool) {
     val, err := m.GetBackingStore().Get("allowPartnerToCollectIOSPersonalApplicationMetadata")
     if err != nil {
@@ -42,7 +42,7 @@ func (m *MobileThreatDefenseConnector) GetAllowPartnerToCollectIOSPersonalApplic
     }
     return nil
 }
-// GetAndroidDeviceBlockedOnMissingPartnerData gets the androidDeviceBlockedOnMissingPartnerData property value. For Android, set whether Intune must receive data from the data sync partner prior to marking a device compliant
+// GetAndroidDeviceBlockedOnMissingPartnerData gets the androidDeviceBlockedOnMissingPartnerData property value. For Android, set whether Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant
 func (m *MobileThreatDefenseConnector) GetAndroidDeviceBlockedOnMissingPartnerData()(*bool) {
     val, err := m.GetBackingStore().Get("androidDeviceBlockedOnMissingPartnerData")
     if err != nil {
@@ -53,7 +53,7 @@ func (m *MobileThreatDefenseConnector) GetAndroidDeviceBlockedOnMissingPartnerDa
     }
     return nil
 }
-// GetAndroidEnabled gets the androidEnabled property value. For Android, set whether data from the data sync partner should be used during compliance evaluations
+// GetAndroidEnabled gets the androidEnabled property value. For Android, set whether data from the Mobile Threat Defense partner should be used during compliance evaluations
 func (m *MobileThreatDefenseConnector) GetAndroidEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("androidEnabled")
     if err != nil {
@@ -64,7 +64,7 @@ func (m *MobileThreatDefenseConnector) GetAndroidEnabled()(*bool) {
     }
     return nil
 }
-// GetAndroidMobileApplicationManagementEnabled gets the androidMobileApplicationManagementEnabled property value. When TRUE, inidicates that data from the data sync partner can be used during Mobile Application Management (MAM) evaluations for Android devices. When FALSE, inidicates that data from the data sync partner should not be used during Mobile Application Management (MAM) evaluations for Android devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.
+// GetAndroidMobileApplicationManagementEnabled gets the androidMobileApplicationManagementEnabled property value. When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during Mobile Application Management (MAM) evaluations for Android devices. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during Mobile Application Management (MAM) evaluations for Android devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.
 func (m *MobileThreatDefenseConnector) GetAndroidMobileApplicationManagementEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("androidMobileApplicationManagementEnabled")
     if err != nil {
@@ -230,7 +230,7 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetIosDeviceBlockedOnMissingPartnerData gets the iosDeviceBlockedOnMissingPartnerData property value. For IOS, set whether Intune must receive data from the data sync partner prior to marking a device compliant
+// GetIosDeviceBlockedOnMissingPartnerData gets the iosDeviceBlockedOnMissingPartnerData property value. For IOS, set whether Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant
 func (m *MobileThreatDefenseConnector) GetIosDeviceBlockedOnMissingPartnerData()(*bool) {
     val, err := m.GetBackingStore().Get("iosDeviceBlockedOnMissingPartnerData")
     if err != nil {
@@ -241,7 +241,7 @@ func (m *MobileThreatDefenseConnector) GetIosDeviceBlockedOnMissingPartnerData()
     }
     return nil
 }
-// GetIosEnabled gets the iosEnabled property value. For IOS, get or set whether data from the data sync partner should be used during compliance evaluations
+// GetIosEnabled gets the iosEnabled property value. For IOS, get or set whether data from the Mobile Threat Defense partner should be used during compliance evaluations
 func (m *MobileThreatDefenseConnector) GetIosEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("iosEnabled")
     if err != nil {
@@ -252,7 +252,7 @@ func (m *MobileThreatDefenseConnector) GetIosEnabled()(*bool) {
     }
     return nil
 }
-// GetIosMobileApplicationManagementEnabled gets the iosMobileApplicationManagementEnabled property value. When TRUE, inidicates that data from the data sync partner can be used during Mobile Application Management (MAM) evaluations for IOS devices. When FALSE, inidicates that data from the data sync partner should not be used during Mobile Application Management (MAM) evaluations for IOS devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.
+// GetIosMobileApplicationManagementEnabled gets the iosMobileApplicationManagementEnabled property value. When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during Mobile Application Management (MAM) evaluations for IOS devices. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during Mobile Application Management (MAM) evaluations for IOS devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.
 func (m *MobileThreatDefenseConnector) GetIosMobileApplicationManagementEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("iosMobileApplicationManagementEnabled")
     if err != nil {
@@ -263,7 +263,7 @@ func (m *MobileThreatDefenseConnector) GetIosMobileApplicationManagementEnabled(
     }
     return nil
 }
-// GetLastHeartbeatDateTime gets the lastHeartbeatDateTime property value. DateTime of last Heartbeat recieved from the Data Sync Partner
+// GetLastHeartbeatDateTime gets the lastHeartbeatDateTime property value. DateTime of last Heartbeat recieved from the Mobile Threat Defense partner
 func (m *MobileThreatDefenseConnector) GetLastHeartbeatDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastHeartbeatDateTime")
     if err != nil {
@@ -307,7 +307,7 @@ func (m *MobileThreatDefenseConnector) GetPartnerUnresponsivenessThresholdInDays
     }
     return nil
 }
-// GetPartnerUnsupportedOsVersionBlocked gets the partnerUnsupportedOsVersionBlocked property value. Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Data Sync Partner
+// GetPartnerUnsupportedOsVersionBlocked gets the partnerUnsupportedOsVersionBlocked property value. Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Mobile Threat Defense partner
 func (m *MobileThreatDefenseConnector) GetPartnerUnsupportedOsVersionBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("partnerUnsupportedOsVersionBlocked")
     if err != nil {
@@ -318,7 +318,7 @@ func (m *MobileThreatDefenseConnector) GetPartnerUnsupportedOsVersionBlocked()(*
     }
     return nil
 }
-// GetWindowsDeviceBlockedOnMissingPartnerData gets the windowsDeviceBlockedOnMissingPartnerData property value. When TRUE, inidicates that Intune must receive data from the data sync partner prior to marking a device compliant for Windows. When FALSE, inidicates that Intune may make a device compliant without receiving data from the data sync partner for Windows. Default value is FALSE.
+// GetWindowsDeviceBlockedOnMissingPartnerData gets the windowsDeviceBlockedOnMissingPartnerData property value. When TRUE, inidicates that Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant for Windows. When FALSE, inidicates that Intune may make a device compliant without receiving data from the Mobile Threat Defense partner for Windows. Default value is FALSE.
 func (m *MobileThreatDefenseConnector) GetWindowsDeviceBlockedOnMissingPartnerData()(*bool) {
     val, err := m.GetBackingStore().Get("windowsDeviceBlockedOnMissingPartnerData")
     if err != nil {
@@ -329,7 +329,7 @@ func (m *MobileThreatDefenseConnector) GetWindowsDeviceBlockedOnMissingPartnerDa
     }
     return nil
 }
-// GetWindowsEnabled gets the windowsEnabled property value. When TRUE, inidicates that data from the data sync partner can be used during compliance evaluations for Windows. When FALSE, inidicates that data from the data sync partner should not be used during compliance evaluations for Windows. Default value is FALSE.
+// GetWindowsEnabled gets the windowsEnabled property value. When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during compliance evaluations for Windows. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during compliance evaluations for Windows. Default value is FALSE.
 func (m *MobileThreatDefenseConnector) GetWindowsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("windowsEnabled")
     if err != nil {
@@ -439,63 +439,63 @@ func (m *MobileThreatDefenseConnector) Serialize(writer i878a80d2330e89d26896388
     }
     return nil
 }
-// SetAllowPartnerToCollectIOSApplicationMetadata sets the allowPartnerToCollectIOSApplicationMetadata property value. When TRUE, indicates the data sync partner may collect metadata about installed applications from Intune for IOS devices. When FALSE, indicates the data sync partner may not collect metadata about installed applications from Intune for IOS devices. Default value is FALSE.
+// SetAllowPartnerToCollectIOSApplicationMetadata sets the allowPartnerToCollectIOSApplicationMetadata property value. When TRUE, indicates the Mobile Threat Defense partner may collect metadata about installed applications from Intune for IOS devices. When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about installed applications from Intune for IOS devices. Default value is FALSE.
 func (m *MobileThreatDefenseConnector) SetAllowPartnerToCollectIOSApplicationMetadata(value *bool)() {
     err := m.GetBackingStore().Set("allowPartnerToCollectIOSApplicationMetadata", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAllowPartnerToCollectIOSPersonalApplicationMetadata sets the allowPartnerToCollectIOSPersonalApplicationMetadata property value. When TRUE, indicates the data sync partner may collect metadata about personally installed applications from Intune for IOS devices. When FALSE, indicates the data sync partner may not collect metadata about personally installed applications from Intune for IOS devices. Default value is FALSE.
+// SetAllowPartnerToCollectIOSPersonalApplicationMetadata sets the allowPartnerToCollectIOSPersonalApplicationMetadata property value. When TRUE, indicates the Mobile Threat Defense partner may collect metadata about personally installed applications from Intune for IOS devices. When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about personally installed applications from Intune for IOS devices. Default value is FALSE.
 func (m *MobileThreatDefenseConnector) SetAllowPartnerToCollectIOSPersonalApplicationMetadata(value *bool)() {
     err := m.GetBackingStore().Set("allowPartnerToCollectIOSPersonalApplicationMetadata", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAndroidDeviceBlockedOnMissingPartnerData sets the androidDeviceBlockedOnMissingPartnerData property value. For Android, set whether Intune must receive data from the data sync partner prior to marking a device compliant
+// SetAndroidDeviceBlockedOnMissingPartnerData sets the androidDeviceBlockedOnMissingPartnerData property value. For Android, set whether Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant
 func (m *MobileThreatDefenseConnector) SetAndroidDeviceBlockedOnMissingPartnerData(value *bool)() {
     err := m.GetBackingStore().Set("androidDeviceBlockedOnMissingPartnerData", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAndroidEnabled sets the androidEnabled property value. For Android, set whether data from the data sync partner should be used during compliance evaluations
+// SetAndroidEnabled sets the androidEnabled property value. For Android, set whether data from the Mobile Threat Defense partner should be used during compliance evaluations
 func (m *MobileThreatDefenseConnector) SetAndroidEnabled(value *bool)() {
     err := m.GetBackingStore().Set("androidEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAndroidMobileApplicationManagementEnabled sets the androidMobileApplicationManagementEnabled property value. When TRUE, inidicates that data from the data sync partner can be used during Mobile Application Management (MAM) evaluations for Android devices. When FALSE, inidicates that data from the data sync partner should not be used during Mobile Application Management (MAM) evaluations for Android devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.
+// SetAndroidMobileApplicationManagementEnabled sets the androidMobileApplicationManagementEnabled property value. When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during Mobile Application Management (MAM) evaluations for Android devices. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during Mobile Application Management (MAM) evaluations for Android devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.
 func (m *MobileThreatDefenseConnector) SetAndroidMobileApplicationManagementEnabled(value *bool)() {
     err := m.GetBackingStore().Set("androidMobileApplicationManagementEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIosDeviceBlockedOnMissingPartnerData sets the iosDeviceBlockedOnMissingPartnerData property value. For IOS, set whether Intune must receive data from the data sync partner prior to marking a device compliant
+// SetIosDeviceBlockedOnMissingPartnerData sets the iosDeviceBlockedOnMissingPartnerData property value. For IOS, set whether Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant
 func (m *MobileThreatDefenseConnector) SetIosDeviceBlockedOnMissingPartnerData(value *bool)() {
     err := m.GetBackingStore().Set("iosDeviceBlockedOnMissingPartnerData", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIosEnabled sets the iosEnabled property value. For IOS, get or set whether data from the data sync partner should be used during compliance evaluations
+// SetIosEnabled sets the iosEnabled property value. For IOS, get or set whether data from the Mobile Threat Defense partner should be used during compliance evaluations
 func (m *MobileThreatDefenseConnector) SetIosEnabled(value *bool)() {
     err := m.GetBackingStore().Set("iosEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIosMobileApplicationManagementEnabled sets the iosMobileApplicationManagementEnabled property value. When TRUE, inidicates that data from the data sync partner can be used during Mobile Application Management (MAM) evaluations for IOS devices. When FALSE, inidicates that data from the data sync partner should not be used during Mobile Application Management (MAM) evaluations for IOS devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.
+// SetIosMobileApplicationManagementEnabled sets the iosMobileApplicationManagementEnabled property value. When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during Mobile Application Management (MAM) evaluations for IOS devices. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during Mobile Application Management (MAM) evaluations for IOS devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.
 func (m *MobileThreatDefenseConnector) SetIosMobileApplicationManagementEnabled(value *bool)() {
     err := m.GetBackingStore().Set("iosMobileApplicationManagementEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastHeartbeatDateTime sets the lastHeartbeatDateTime property value. DateTime of last Heartbeat recieved from the Data Sync Partner
+// SetLastHeartbeatDateTime sets the lastHeartbeatDateTime property value. DateTime of last Heartbeat recieved from the Mobile Threat Defense partner
 func (m *MobileThreatDefenseConnector) SetLastHeartbeatDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastHeartbeatDateTime", value)
     if err != nil {
@@ -523,21 +523,21 @@ func (m *MobileThreatDefenseConnector) SetPartnerUnresponsivenessThresholdInDays
         panic(err)
     }
 }
-// SetPartnerUnsupportedOsVersionBlocked sets the partnerUnsupportedOsVersionBlocked property value. Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Data Sync Partner
+// SetPartnerUnsupportedOsVersionBlocked sets the partnerUnsupportedOsVersionBlocked property value. Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Mobile Threat Defense partner
 func (m *MobileThreatDefenseConnector) SetPartnerUnsupportedOsVersionBlocked(value *bool)() {
     err := m.GetBackingStore().Set("partnerUnsupportedOsVersionBlocked", value)
     if err != nil {
         panic(err)
     }
 }
-// SetWindowsDeviceBlockedOnMissingPartnerData sets the windowsDeviceBlockedOnMissingPartnerData property value. When TRUE, inidicates that Intune must receive data from the data sync partner prior to marking a device compliant for Windows. When FALSE, inidicates that Intune may make a device compliant without receiving data from the data sync partner for Windows. Default value is FALSE.
+// SetWindowsDeviceBlockedOnMissingPartnerData sets the windowsDeviceBlockedOnMissingPartnerData property value. When TRUE, inidicates that Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant for Windows. When FALSE, inidicates that Intune may make a device compliant without receiving data from the Mobile Threat Defense partner for Windows. Default value is FALSE.
 func (m *MobileThreatDefenseConnector) SetWindowsDeviceBlockedOnMissingPartnerData(value *bool)() {
     err := m.GetBackingStore().Set("windowsDeviceBlockedOnMissingPartnerData", value)
     if err != nil {
         panic(err)
     }
 }
-// SetWindowsEnabled sets the windowsEnabled property value. When TRUE, inidicates that data from the data sync partner can be used during compliance evaluations for Windows. When FALSE, inidicates that data from the data sync partner should not be used during compliance evaluations for Windows. Default value is FALSE.
+// SetWindowsEnabled sets the windowsEnabled property value. When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during compliance evaluations for Windows. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during compliance evaluations for Windows. Default value is FALSE.
 func (m *MobileThreatDefenseConnector) SetWindowsEnabled(value *bool)() {
     err := m.GetBackingStore().Set("windowsEnabled", value)
     if err != nil {

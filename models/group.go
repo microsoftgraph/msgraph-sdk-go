@@ -9,7 +9,7 @@ import (
 type Group struct {
     DirectoryObject
 }
-// NewGroup instantiates a new Group and sets the default values.
+// NewGroup instantiates a new group and sets the default values.
 func NewGroup()(*Group) {
     m := &Group{
         DirectoryObject: *NewDirectoryObject(),

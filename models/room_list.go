@@ -8,7 +8,7 @@ import (
 type RoomList struct {
     Place
 }
-// NewRoomList instantiates a new RoomList and sets the default values.
+// NewRoomList instantiates a new roomList and sets the default values.
 func NewRoomList()(*RoomList) {
     m := &RoomList{
         Place: *NewPlace(),
