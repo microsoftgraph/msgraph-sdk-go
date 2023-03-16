@@ -5,7 +5,7 @@ go 1.18
 require (
 	github.com/Azure/azure-sdk-for-go/sdk/azcore v1.4.0
 	github.com/google/uuid v1.3.0
-	github.com/microsoft/kiota-abstractions-go v0.17.2
+	github.com/microsoft/kiota-abstractions-go v0.17.3
 	github.com/microsoft/kiota-serialization-form-go v0.9.0
 	github.com/microsoft/kiota-serialization-json-go v0.8.2
 	github.com/microsoft/kiota-serialization-text-go v0.7.0
@@ -15,7 +15,7 @@ require (
 
 require (
 	github.com/Azure/azure-sdk-for-go/sdk/internal v1.2.0 // indirect
-	github.com/cjlapao/common-go v0.0.38 // indirect
+	github.com/cjlapao/common-go v0.0.39 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/go-logr/logr v1.2.3 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
