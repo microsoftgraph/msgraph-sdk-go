@@ -8,7 +8,7 @@ import (
 type PrintUsageByUser struct {
     PrintUsage
 }
-// NewPrintUsageByUser instantiates a new printUsageByUser and sets the default values.
+// NewPrintUsageByUser instantiates a new PrintUsageByUser and sets the default values.
 func NewPrintUsageByUser()(*PrintUsageByUser) {
     m := &PrintUsageByUser{
         PrintUsage: *NewPrintUsage(),
