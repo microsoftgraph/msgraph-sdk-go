@@ -7,7 +7,7 @@ require (
 	github.com/google/uuid v1.3.0
 	github.com/microsoft/kiota-abstractions-go v0.17.3
 	github.com/microsoft/kiota-serialization-form-go v0.9.0
-	github.com/microsoft/kiota-serialization-json-go v0.8.2
+	github.com/microsoft/kiota-serialization-json-go v0.9.0
 	github.com/microsoft/kiota-serialization-text-go v0.7.0
 	github.com/microsoftgraph/msgraph-sdk-go-core v0.34.1
 	github.com/stretchr/testify v1.8.2
