@@ -19,7 +19,7 @@ func NewTeamwork()(*Teamwork) {
 func CreateTeamworkFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamwork(), nil
 }
-// GetDeletedTeams gets the deletedTeams property value. The deletedTeams property
+// GetDeletedTeams gets the deletedTeams property value. The deleted team.
 func (m *Teamwork) GetDeletedTeams()([]DeletedTeamable) {
     val, err := m.GetBackingStore().Get("deletedTeams")
     if err != nil {
@@ -102,7 +102,7 @@ func (m *Teamwork) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetDeletedTeams sets the deletedTeams property value. The deletedTeams property
+// SetDeletedTeams sets the deletedTeams property value. The deleted team.
 func (m *Teamwork) SetDeletedTeams(value []DeletedTeamable)() {
     err := m.GetBackingStore().Set("deletedTeams", value)
     if err != nil {

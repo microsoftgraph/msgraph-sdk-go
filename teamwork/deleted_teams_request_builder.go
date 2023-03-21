@@ -16,7 +16,7 @@ type DeletedTeamsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// DeletedTeamsRequestBuilderGetQueryParameters get deletedTeams from teamwork
+// DeletedTeamsRequestBuilderGetQueryParameters get a list of the deletedTeam objects and their properties.
 type DeletedTeamsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewDeletedTeamsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *DeletedTeamsRequestBuilder) Count()(*DeletedTeamsCountRequestBuilder) {
     return NewDeletedTeamsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// Get get deletedTeams from teamwork
+// Get get a list of the deletedTeam objects and their properties.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/teamwork-list-deletedteams?view=graph-rest-1.0
 func (m *DeletedTeamsRequestBuilder) Get(ctx context.Context, requestConfiguration *DeletedTeamsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeletedTeamCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *DeletedTeamsRequestBuilder) Post(ctx context.Context, body iadcd8112441
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeletedTeamable), nil
 }
-// ToGetRequestInformation get deletedTeams from teamwork
+// ToGetRequestInformation get a list of the deletedTeam objects and their properties.
 func (m *DeletedTeamsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeletedTeamsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

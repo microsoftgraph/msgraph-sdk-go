@@ -23,7 +23,7 @@ type DeletedTeamsItemChannelsChannelItemRequestBuilderDeleteRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DeletedTeamsItemChannelsChannelItemRequestBuilderGetQueryParameters get channels from teamwork
+// DeletedTeamsItemChannelsChannelItemRequestBuilderGetQueryParameters the channels that are either shared with this deleted team or created in this deleted team.
 type DeletedTeamsItemChannelsChannelItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -93,7 +93,7 @@ func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) DoesUserHaveAccessus
 func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) FilesFolder()(*DeletedTeamsItemChannelsItemFilesFolderRequestBuilder) {
     return NewDeletedTeamsItemChannelsItemFilesFolderRequestBuilderInternal(m.pathParameters, m.requestAdapter)
 }
-// Get get channels from teamwork
+// Get the channels that are either shared with this deleted team or created in this deleted team.
 func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DeletedTeamsItemChannelsChannelItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Channelable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -211,7 +211,7 @@ func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) ToDeleteRequestInfor
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get channels from teamwork
+// ToGetRequestInformation the channels that are either shared with this deleted team or created in this deleted team.
 func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeletedTeamsItemChannelsChannelItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

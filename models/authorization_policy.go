@@ -66,6 +66,17 @@ func (m *AuthorizationPolicy) GetAllowInvitesFrom()(*AllowInvitesFrom) {
     }
     return nil
 }
+// GetAllowUserConsentForRiskyApps gets the allowUserConsentForRiskyApps property value. The allowUserConsentForRiskyApps property
+func (m *AuthorizationPolicy) GetAllowUserConsentForRiskyApps()(*bool) {
+    val, err := m.GetBackingStore().Get("allowUserConsentForRiskyApps")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetBlockMsolPowerShell gets the blockMsolPowerShell property value. To disable the use of MSOL PowerShell set this property to true. This will also disable user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure AD Connect or Microsoft Graph.
 func (m *AuthorizationPolicy) GetBlockMsolPowerShell()(*bool) {
     val, err := m.GetBackingStore().Get("blockMsolPowerShell")
@@ -128,6 +139,16 @@ func (m *AuthorizationPolicy) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         if val != nil {
             m.SetAllowInvitesFrom(val.(*AllowInvitesFrom))
+        }
+        return nil
+    }
+    res["allowUserConsentForRiskyApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllowUserConsentForRiskyApps(val)
         }
         return nil
     }
@@ -206,6 +227,12 @@ func (m *AuthorizationPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     {
+        err = writer.WriteBoolValue("allowUserConsentForRiskyApps", m.GetAllowUserConsentForRiskyApps())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("blockMsolPowerShell", m.GetBlockMsolPowerShell())
         if err != nil {
             return err
@@ -253,6 +280,13 @@ func (m *AuthorizationPolicy) SetAllowInvitesFrom(value *AllowInvitesFrom)() {
         panic(err)
     }
 }
+// SetAllowUserConsentForRiskyApps sets the allowUserConsentForRiskyApps property value. The allowUserConsentForRiskyApps property
+func (m *AuthorizationPolicy) SetAllowUserConsentForRiskyApps(value *bool)() {
+    err := m.GetBackingStore().Set("allowUserConsentForRiskyApps", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetBlockMsolPowerShell sets the blockMsolPowerShell property value. To disable the use of MSOL PowerShell set this property to true. This will also disable user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure AD Connect or Microsoft Graph.
 func (m *AuthorizationPolicy) SetBlockMsolPowerShell(value *bool)() {
     err := m.GetBackingStore().Set("blockMsolPowerShell", value)
@@ -282,6 +316,7 @@ type AuthorizationPolicyable interface {
     GetAllowedToUseSSPR()(*bool)
     GetAllowEmailVerifiedUsersToJoinOrganization()(*bool)
     GetAllowInvitesFrom()(*AllowInvitesFrom)
+    GetAllowUserConsentForRiskyApps()(*bool)
     GetBlockMsolPowerShell()(*bool)
     GetDefaultUserRolePermissions()(DefaultUserRolePermissionsable)
     GetGuestUserRoleId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
@@ -289,6 +324,7 @@ type AuthorizationPolicyable interface {
     SetAllowedToUseSSPR(value *bool)()
     SetAllowEmailVerifiedUsersToJoinOrganization(value *bool)()
     SetAllowInvitesFrom(value *AllowInvitesFrom)()
+    SetAllowUserConsentForRiskyApps(value *bool)()
     SetBlockMsolPowerShell(value *bool)()
     SetDefaultUserRolePermissions(value DefaultUserRolePermissionsable)()
     SetGuestUserRoleId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()

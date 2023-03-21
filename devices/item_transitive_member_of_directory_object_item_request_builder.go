@@ -70,6 +70,10 @@ func (m *ItemTransitiveMemberOfDirectoryObjectItemRequestBuilder) Get(ctx contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable), nil
 }
+// GraphAdministrativeUnit casts the previous resource to administrativeUnit.
+func (m *ItemTransitiveMemberOfDirectoryObjectItemRequestBuilder) GraphAdministrativeUnit()(*ItemTransitiveMemberOfItemGraphAdministrativeUnitRequestBuilder) {
+    return NewItemTransitiveMemberOfItemGraphAdministrativeUnitRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+}
 // GraphGroup casts the previous resource to group.
 func (m *ItemTransitiveMemberOfDirectoryObjectItemRequestBuilder) GraphGroup()(*ItemTransitiveMemberOfItemGraphGroupRequestBuilder) {
     return NewItemTransitiveMemberOfItemGraphGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter)
