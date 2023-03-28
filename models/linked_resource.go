@@ -19,7 +19,7 @@ func NewLinkedResource()(*LinkedResource) {
 func CreateLinkedResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewLinkedResource(), nil
 }
-// GetApplicationName gets the applicationName property value. Field indicating the app name of the source that is sending the linkedResource.
+// GetApplicationName gets the applicationName property value. The app name of the source that sends the linkedResource.
 func (m *LinkedResource) GetApplicationName()(*string) {
     val, err := m.GetBackingStore().Get("applicationName")
     if err != nil {
@@ -30,7 +30,7 @@ func (m *LinkedResource) GetApplicationName()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. Field indicating the title of the linkedResource.
+// GetDisplayName gets the displayName property value. The title of the linkedResource.
 func (m *LinkedResource) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -41,7 +41,7 @@ func (m *LinkedResource) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetExternalId gets the externalId property value. Id of the object that is associated with this task on the third-party/partner system.
+// GetExternalId gets the externalId property value. ID of the object that is associated with this task on the third-party/partner system.
 func (m *LinkedResource) GetExternalId()(*string) {
     val, err := m.GetBackingStore().Get("externalId")
     if err != nil {
@@ -140,21 +140,21 @@ func (m *LinkedResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     return nil
 }
-// SetApplicationName sets the applicationName property value. Field indicating the app name of the source that is sending the linkedResource.
+// SetApplicationName sets the applicationName property value. The app name of the source that sends the linkedResource.
 func (m *LinkedResource) SetApplicationName(value *string)() {
     err := m.GetBackingStore().Set("applicationName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. Field indicating the title of the linkedResource.
+// SetDisplayName sets the displayName property value. The title of the linkedResource.
 func (m *LinkedResource) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExternalId sets the externalId property value. Id of the object that is associated with this task on the third-party/partner system.
+// SetExternalId sets the externalId property value. ID of the object that is associated with this task on the third-party/partner system.
 func (m *LinkedResource) SetExternalId(value *string)() {
     err := m.GetBackingStore().Set("externalId", value)
     if err != nil {

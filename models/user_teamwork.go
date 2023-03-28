@@ -8,7 +8,7 @@ import (
 type UserTeamwork struct {
     Entity
 }
-// NewUserTeamwork instantiates a new userTeamwork and sets the default values.
+// NewUserTeamwork instantiates a new UserTeamwork and sets the default values.
 func NewUserTeamwork()(*UserTeamwork) {
     m := &UserTeamwork{
         Entity: *NewEntity(),

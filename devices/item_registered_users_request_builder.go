@@ -9,12 +9,7 @@ import (
 
 // ItemRegisteredUsersRequestBuilder provides operations to manage the registeredUsers property of the microsoft.graph.device entity.
 type ItemRegisteredUsersRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ItemRegisteredUsersRequestBuilderGetQueryParameters collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
 type ItemRegisteredUsersRequestBuilderGetQueryParameters struct {
@@ -47,14 +42,8 @@ type ItemRegisteredUsersRequestBuilderGetRequestConfiguration struct {
 // NewItemRegisteredUsersRequestBuilderInternal instantiates a new RegisteredUsersRequestBuilder and sets the default values.
 func NewItemRegisteredUsersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemRegisteredUsersRequestBuilder) {
     m := &ItemRegisteredUsersRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/devices/{device%2Did}/registeredUsers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/devices/{device%2Did}/registeredUsers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemRegisteredUsersRequestBuilder instantiates a new RegisteredUsersRequestBuilder and sets the default values.
@@ -65,7 +54,7 @@ func NewItemRegisteredUsersRequestBuilder(rawUrl string, requestAdapter i2ae4187
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemRegisteredUsersRequestBuilder) Count()(*ItemRegisteredUsersCountRequestBuilder) {
-    return NewItemRegisteredUsersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemRegisteredUsersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
 // [Find more info here]
@@ -80,7 +69,7 @@ func (m *ItemRegisteredUsersRequestBuilder) Get(ctx context.Context, requestConf
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateDirectoryObjectCollectionResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateDirectoryObjectCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -91,25 +80,29 @@ func (m *ItemRegisteredUsersRequestBuilder) Get(ctx context.Context, requestConf
 }
 // GraphAppRoleAssignment casts the previous resource to appRoleAssignment.
 func (m *ItemRegisteredUsersRequestBuilder) GraphAppRoleAssignment()(*ItemRegisteredUsersGraphAppRoleAssignmentRequestBuilder) {
-    return NewItemRegisteredUsersGraphAppRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemRegisteredUsersGraphAppRoleAssignmentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GraphEndpoint casts the previous resource to endpoint.
 func (m *ItemRegisteredUsersRequestBuilder) GraphEndpoint()(*ItemRegisteredUsersGraphEndpointRequestBuilder) {
-    return NewItemRegisteredUsersGraphEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemRegisteredUsersGraphEndpointRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GraphServicePrincipal casts the previous resource to servicePrincipal.
 func (m *ItemRegisteredUsersRequestBuilder) GraphServicePrincipal()(*ItemRegisteredUsersGraphServicePrincipalRequestBuilder) {
-    return NewItemRegisteredUsersGraphServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemRegisteredUsersGraphServicePrincipalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GraphUser casts the previous resource to user.
 func (m *ItemRegisteredUsersRequestBuilder) GraphUser()(*ItemRegisteredUsersGraphUserRequestBuilder) {
-    return NewItemRegisteredUsersGraphUserRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemRegisteredUsersGraphUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Ref provides operations to manage the collection of device entities.
+func (m *ItemRegisteredUsersRequestBuilder) Ref()(*ItemRegisteredUsersRefRequestBuilder) {
+    return NewItemRegisteredUsersRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
 func (m *ItemRegisteredUsersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemRegisteredUsersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {

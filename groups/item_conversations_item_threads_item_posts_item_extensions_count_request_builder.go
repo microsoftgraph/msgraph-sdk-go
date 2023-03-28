@@ -8,12 +8,7 @@ import (
 
 // ItemConversationsItemThreadsItemPostsItemExtensionsCountRequestBuilder provides operations to count the resources in the collection.
 type ItemConversationsItemThreadsItemPostsItemExtensionsCountRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ItemConversationsItemThreadsItemPostsItemExtensionsCountRequestBuilderGetQueryParameters get the number of the resource
 type ItemConversationsItemThreadsItemPostsItemExtensionsCountRequestBuilderGetQueryParameters struct {
@@ -32,14 +27,8 @@ type ItemConversationsItemThreadsItemPostsItemExtensionsCountRequestBuilderGetRe
 // NewItemConversationsItemThreadsItemPostsItemExtensionsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewItemConversationsItemThreadsItemPostsItemExtensionsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConversationsItemThreadsItemPostsItemExtensionsCountRequestBuilder) {
     m := &ItemConversationsItemThreadsItemPostsItemExtensionsCountRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/conversations/{conversation%2Did}/threads/{conversationThread%2Did}/posts/{post%2Did}/extensions/$count{?%24filter}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/conversations/{conversation%2Did}/threads/{conversationThread%2Did}/posts/{post%2Did}/extensions/$count{?%24filter}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemConversationsItemThreadsItemPostsItemExtensionsCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
@@ -58,7 +47,7 @@ func (m *ItemConversationsItemThreadsItemPostsItemExtensionsCountRequestBuilder)
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
     if err != nil {
         return nil, err
     }
@@ -70,8 +59,8 @@ func (m *ItemConversationsItemThreadsItemPostsItemExtensionsCountRequestBuilder)
 // ToGetRequestInformation get the number of the resource
 func (m *ItemConversationsItemThreadsItemPostsItemExtensionsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemConversationsItemThreadsItemPostsItemExtensionsCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "text/plain")
     if requestConfiguration != nil {

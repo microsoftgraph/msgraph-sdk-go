@@ -8,7 +8,7 @@ import (
 type OpenShift struct {
     ChangeTrackedEntity
 }
-// NewOpenShift instantiates a new openShift and sets the default values.
+// NewOpenShift instantiates a new OpenShift and sets the default values.
 func NewOpenShift()(*OpenShift) {
     m := &OpenShift{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),

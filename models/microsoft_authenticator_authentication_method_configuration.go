@@ -59,6 +59,16 @@ func (m *MicrosoftAuthenticatorAuthenticationMethodConfiguration) GetFieldDeseri
         }
         return nil
     }
+    res["isSoftwareOathEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsSoftwareOathEnabled(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIncludeTargets gets the includeTargets property value. A collection of groups that are enabled to use the authentication method. Expanded by default.
@@ -69,6 +79,17 @@ func (m *MicrosoftAuthenticatorAuthenticationMethodConfiguration) GetIncludeTarg
     }
     if val != nil {
         return val.([]MicrosoftAuthenticatorAuthenticationMethodTargetable)
+    }
+    return nil
+}
+// GetIsSoftwareOathEnabled gets the isSoftwareOathEnabled property value. The isSoftwareOathEnabled property
+func (m *MicrosoftAuthenticatorAuthenticationMethodConfiguration) GetIsSoftwareOathEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("isSoftwareOathEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
     }
     return nil
 }
@@ -94,6 +115,12 @@ func (m *MicrosoftAuthenticatorAuthenticationMethodConfiguration) Serialize(writ
             return err
         }
     }
+    {
+        err = writer.WriteBoolValue("isSoftwareOathEnabled", m.GetIsSoftwareOathEnabled())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetFeatureSettings sets the featureSettings property value. A collection of Microsoft Authenticator settings such as application context and location context, and whether they are enabled for all users or specific users only.
@@ -110,12 +137,21 @@ func (m *MicrosoftAuthenticatorAuthenticationMethodConfiguration) SetIncludeTarg
         panic(err)
     }
 }
+// SetIsSoftwareOathEnabled sets the isSoftwareOathEnabled property value. The isSoftwareOathEnabled property
+func (m *MicrosoftAuthenticatorAuthenticationMethodConfiguration) SetIsSoftwareOathEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("isSoftwareOathEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // MicrosoftAuthenticatorAuthenticationMethodConfigurationable 
 type MicrosoftAuthenticatorAuthenticationMethodConfigurationable interface {
     AuthenticationMethodConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetFeatureSettings()(MicrosoftAuthenticatorFeatureSettingsable)
     GetIncludeTargets()([]MicrosoftAuthenticatorAuthenticationMethodTargetable)
+    GetIsSoftwareOathEnabled()(*bool)
     SetFeatureSettings(value MicrosoftAuthenticatorFeatureSettingsable)()
     SetIncludeTargets(value []MicrosoftAuthenticatorAuthenticationMethodTargetable)()
+    SetIsSoftwareOathEnabled(value *bool)()
 }

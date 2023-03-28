@@ -8,12 +8,7 @@ import (
 
 // AuditEventsGetAuditActivityTypesWithCategoryRequestBuilder provides operations to call the getAuditActivityTypes method.
 type AuditEventsGetAuditActivityTypesWithCategoryRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // AuditEventsGetAuditActivityTypesWithCategoryRequestBuilderGetQueryParameters invoke function getAuditActivityTypes
 type AuditEventsGetAuditActivityTypesWithCategoryRequestBuilderGetQueryParameters struct {
@@ -40,17 +35,11 @@ type AuditEventsGetAuditActivityTypesWithCategoryRequestBuilderGetRequestConfigu
 // NewAuditEventsGetAuditActivityTypesWithCategoryRequestBuilderInternal instantiates a new GetAuditActivityTypesWithCategoryRequestBuilder and sets the default values.
 func NewAuditEventsGetAuditActivityTypesWithCategoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, category *string)(*AuditEventsGetAuditActivityTypesWithCategoryRequestBuilder) {
     m := &AuditEventsGetAuditActivityTypesWithCategoryRequestBuilder{
-    }
-    m.urlTemplate = "{+baseurl}/deviceManagement/auditEvents/getAuditActivityTypes(category='{category}'){?%24top,%24skip,%24search,%24filter,%24count}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/auditEvents/getAuditActivityTypes(category='{category}'){?%24top,%24skip,%24search,%24filter,%24count}", pathParameters),
     }
     if category != nil {
-        urlTplParams["category"] = *category
+        m.BaseRequestBuilder.PathParameters["category"] = *category
     }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewAuditEventsGetAuditActivityTypesWithCategoryRequestBuilder instantiates a new GetAuditActivityTypesWithCategoryRequestBuilder and sets the default values.
@@ -69,7 +58,7 @@ func (m *AuditEventsGetAuditActivityTypesWithCategoryRequestBuilder) Get(ctx con
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, CreateAuditEventsGetAuditActivityTypesWithCategoryResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateAuditEventsGetAuditActivityTypesWithCategoryResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -81,8 +70,8 @@ func (m *AuditEventsGetAuditActivityTypesWithCategoryRequestBuilder) Get(ctx con
 // ToGetRequestInformation invoke function getAuditActivityTypes
 func (m *AuditEventsGetAuditActivityTypesWithCategoryRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuditEventsGetAuditActivityTypesWithCategoryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {

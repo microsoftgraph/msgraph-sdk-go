@@ -9,12 +9,7 @@ import (
 
 // GetOneDriveUsageAccountDetailWithDateRequestBuilder provides operations to call the getOneDriveUsageAccountDetail method.
 type GetOneDriveUsageAccountDetailWithDateRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // GetOneDriveUsageAccountDetailWithDateRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type GetOneDriveUsageAccountDetailWithDateRequestBuilderGetRequestConfiguration struct {
@@ -26,17 +21,11 @@ type GetOneDriveUsageAccountDetailWithDateRequestBuilderGetRequestConfiguration 
 // NewGetOneDriveUsageAccountDetailWithDateRequestBuilderInternal instantiates a new GetOneDriveUsageAccountDetailWithDateRequestBuilder and sets the default values.
 func NewGetOneDriveUsageAccountDetailWithDateRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*GetOneDriveUsageAccountDetailWithDateRequestBuilder) {
     m := &GetOneDriveUsageAccountDetailWithDateRequestBuilder{
-    }
-    m.urlTemplate = "{+baseurl}/reports/getOneDriveUsageAccountDetail(date={date})";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/getOneDriveUsageAccountDetail(date={date})", pathParameters),
     }
     if date != nil {
-        urlTplParams["date"] = (*date).String()
+        m.BaseRequestBuilder.PathParameters["date"] = (*date).String()
     }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewGetOneDriveUsageAccountDetailWithDateRequestBuilder instantiates a new GetOneDriveUsageAccountDetailWithDateRequestBuilder and sets the default values.
@@ -55,7 +44,7 @@ func (m *GetOneDriveUsageAccountDetailWithDateRequestBuilder) Get(ctx context.Co
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
         return nil, err
     }
@@ -67,8 +56,8 @@ func (m *GetOneDriveUsageAccountDetailWithDateRequestBuilder) Get(ctx context.Co
 // ToGetRequestInformation invoke function getOneDriveUsageAccountDetail
 func (m *GetOneDriveUsageAccountDetailWithDateRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetOneDriveUsageAccountDetailWithDateRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)

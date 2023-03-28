@@ -19,7 +19,7 @@ func NewTeamworkTag()(*TeamworkTag) {
 func CreateTeamworkTagFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamworkTag(), nil
 }
-// GetDescription gets the description property value. The description of the tag as it will appear to the user in Microsoft Teams.
+// GetDescription gets the description property value. The description of the tag as it will appear to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
 func (m *TeamworkTag) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -203,7 +203,7 @@ func (m *TeamworkTag) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetDescription sets the description property value. The description of the tag as it will appear to the user in Microsoft Teams.
+// SetDescription sets the description property value. The description of the tag as it will appear to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
 func (m *TeamworkTag) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {

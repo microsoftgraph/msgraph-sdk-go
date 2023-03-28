@@ -9,12 +9,7 @@ import (
 
 // DeletedItemsGraphApplicationRequestBuilder casts the previous resource to application.
 type DeletedItemsGraphApplicationRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // DeletedItemsGraphApplicationRequestBuilderGetQueryParameters get the items of type microsoft.graph.application in the microsoft.graph.directoryObject collection
 type DeletedItemsGraphApplicationRequestBuilderGetQueryParameters struct {
@@ -47,14 +42,8 @@ type DeletedItemsGraphApplicationRequestBuilderGetRequestConfiguration struct {
 // NewDeletedItemsGraphApplicationRequestBuilderInternal instantiates a new GraphApplicationRequestBuilder and sets the default values.
 func NewDeletedItemsGraphApplicationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeletedItemsGraphApplicationRequestBuilder) {
     m := &DeletedItemsGraphApplicationRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/deletedItems/graph.application{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/directory/deletedItems/graph.application{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewDeletedItemsGraphApplicationRequestBuilder instantiates a new GraphApplicationRequestBuilder and sets the default values.
@@ -65,7 +54,7 @@ func NewDeletedItemsGraphApplicationRequestBuilder(rawUrl string, requestAdapter
 }
 // Count provides operations to count the resources in the collection.
 func (m *DeletedItemsGraphApplicationRequestBuilder) Count()(*DeletedItemsGraphApplicationCountRequestBuilder) {
-    return NewDeletedItemsGraphApplicationCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewDeletedItemsGraphApplicationCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the items of type microsoft.graph.application in the microsoft.graph.directoryObject collection
 func (m *DeletedItemsGraphApplicationRequestBuilder) Get(ctx context.Context, requestConfiguration *DeletedItemsGraphApplicationRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApplicationCollectionResponseable, error) {
@@ -77,7 +66,7 @@ func (m *DeletedItemsGraphApplicationRequestBuilder) Get(ctx context.Context, re
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateApplicationCollectionResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateApplicationCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -89,8 +78,8 @@ func (m *DeletedItemsGraphApplicationRequestBuilder) Get(ctx context.Context, re
 // ToGetRequestInformation get the items of type microsoft.graph.application in the microsoft.graph.directoryObject collection
 func (m *DeletedItemsGraphApplicationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeletedItemsGraphApplicationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {

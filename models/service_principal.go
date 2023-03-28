@@ -99,7 +99,7 @@ func (m *ServicePrincipal) GetApplicationTemplateId()(*string) {
     }
     return nil
 }
-// GetAppManagementPolicies gets the appManagementPolicies property value. The appManagementPolicies property
+// GetAppManagementPolicies gets the appManagementPolicies property value. The appManagementPolicy applied to this application.
 func (m *ServicePrincipal) GetAppManagementPolicies()([]AppManagementPolicyable) {
     val, err := m.GetBackingStore().Get("appManagementPolicies")
     if err != nil {
@@ -1603,7 +1603,7 @@ func (m *ServicePrincipal) SetApplicationTemplateId(value *string)() {
         panic(err)
     }
 }
-// SetAppManagementPolicies sets the appManagementPolicies property value. The appManagementPolicies property
+// SetAppManagementPolicies sets the appManagementPolicies property value. The appManagementPolicy applied to this application.
 func (m *ServicePrincipal) SetAppManagementPolicies(value []AppManagementPolicyable)() {
     err := m.GetBackingStore().Set("appManagementPolicies", value)
     if err != nil {
