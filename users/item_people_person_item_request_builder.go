@@ -9,12 +9,7 @@ import (
 
 // ItemPeoplePersonItemRequestBuilder provides operations to manage the people property of the microsoft.graph.user entity.
 type ItemPeoplePersonItemRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ItemPeoplePersonItemRequestBuilderGetQueryParameters people that are relevant to the user. Read-only. Nullable.
 type ItemPeoplePersonItemRequestBuilderGetQueryParameters struct {
@@ -33,14 +28,8 @@ type ItemPeoplePersonItemRequestBuilderGetRequestConfiguration struct {
 // NewItemPeoplePersonItemRequestBuilderInternal instantiates a new PersonItemRequestBuilder and sets the default values.
 func NewItemPeoplePersonItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPeoplePersonItemRequestBuilder) {
     m := &ItemPeoplePersonItemRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/people/{person%2Did}{?%24select}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/people/{person%2Did}{?%24select}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemPeoplePersonItemRequestBuilder instantiates a new PersonItemRequestBuilder and sets the default values.
@@ -59,7 +48,7 @@ func (m *ItemPeoplePersonItemRequestBuilder) Get(ctx context.Context, requestCon
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreatePersonFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreatePersonFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -71,8 +60,8 @@ func (m *ItemPeoplePersonItemRequestBuilder) Get(ctx context.Context, requestCon
 // ToGetRequestInformation people that are relevant to the user. Read-only. Nullable.
 func (m *ItemPeoplePersonItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPeoplePersonItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {

@@ -9,12 +9,7 @@ import (
 
 // CasesEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilder provides operations to manage the lastIndexOperation property of the microsoft.graph.security.ediscoveryCustodian entity.
 type CasesEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // CasesEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilderGetQueryParameters get a list of the ediscoveryIndexOperations associated with an ediscoveryCustodian.
 type CasesEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilderGetQueryParameters struct {
@@ -35,14 +30,8 @@ type CasesEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilderGetRe
 // NewCasesEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilderInternal instantiates a new LastIndexOperationRequestBuilder and sets the default values.
 func NewCasesEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CasesEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilder) {
     m := &CasesEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/custodians/{ediscoveryCustodian%2Did}/lastIndexOperation{?%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/custodians/{ediscoveryCustodian%2Did}/lastIndexOperation{?%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewCasesEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilder instantiates a new LastIndexOperationRequestBuilder and sets the default values.
@@ -64,7 +53,7 @@ func (m *CasesEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilder)
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.CreateEdiscoveryIndexOperationFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.CreateEdiscoveryIndexOperationFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -76,8 +65,8 @@ func (m *CasesEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilder)
 // ToGetRequestInformation get a list of the ediscoveryIndexOperations associated with an ediscoveryCustodian.
 func (m *CasesEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {

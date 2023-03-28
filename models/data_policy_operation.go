@@ -9,7 +9,7 @@ import (
 type DataPolicyOperation struct {
     Entity
 }
-// NewDataPolicyOperation instantiates a new DataPolicyOperation and sets the default values.
+// NewDataPolicyOperation instantiates a new dataPolicyOperation and sets the default values.
 func NewDataPolicyOperation()(*DataPolicyOperation) {
     m := &DataPolicyOperation{
         Entity: *NewEntity(),

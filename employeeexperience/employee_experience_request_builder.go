@@ -9,12 +9,7 @@ import (
 
 // EmployeeExperienceRequestBuilder provides operations to manage the employeeExperience singleton.
 type EmployeeExperienceRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // EmployeeExperienceRequestBuilderGetQueryParameters get employeeExperience
 type EmployeeExperienceRequestBuilderGetQueryParameters struct {
@@ -42,14 +37,8 @@ type EmployeeExperienceRequestBuilderPatchRequestConfiguration struct {
 // NewEmployeeExperienceRequestBuilderInternal instantiates a new EmployeeExperienceRequestBuilder and sets the default values.
 func NewEmployeeExperienceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EmployeeExperienceRequestBuilder) {
     m := &EmployeeExperienceRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/employeeExperience{?%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/employeeExperience{?%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewEmployeeExperienceRequestBuilder instantiates a new EmployeeExperienceRequestBuilder and sets the default values.
@@ -68,7 +57,7 @@ func (m *EmployeeExperienceRequestBuilder) Get(ctx context.Context, requestConfi
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateEmployeeExperienceFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateEmployeeExperienceFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -79,18 +68,18 @@ func (m *EmployeeExperienceRequestBuilder) Get(ctx context.Context, requestConfi
 }
 // LearningProviders provides operations to manage the learningProviders property of the microsoft.graph.employeeExperience entity.
 func (m *EmployeeExperienceRequestBuilder) LearningProviders()(*LearningProvidersRequestBuilder) {
-    return NewLearningProvidersRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewLearningProvidersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // LearningProvidersById provides operations to manage the learningProviders property of the microsoft.graph.employeeExperience entity.
 func (m *EmployeeExperienceRequestBuilder) LearningProvidersById(id string)(*LearningProvidersLearningProviderItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["learningProvider%2Did"] = id
     }
-    return NewLearningProvidersLearningProviderItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewLearningProvidersLearningProviderItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update employeeExperience
 func (m *EmployeeExperienceRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EmployeeExperienceable, requestConfiguration *EmployeeExperienceRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EmployeeExperienceable, error) {
@@ -102,7 +91,7 @@ func (m *EmployeeExperienceRequestBuilder) Patch(ctx context.Context, body iadcd
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateEmployeeExperienceFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateEmployeeExperienceFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -114,8 +103,8 @@ func (m *EmployeeExperienceRequestBuilder) Patch(ctx context.Context, body iadcd
 // ToGetRequestInformation get employeeExperience
 func (m *EmployeeExperienceRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EmployeeExperienceRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
@@ -130,11 +119,11 @@ func (m *EmployeeExperienceRequestBuilder) ToGetRequestInformation(ctx context.C
 // ToPatchRequestInformation update employeeExperience
 func (m *EmployeeExperienceRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EmployeeExperienceable, requestConfiguration *EmployeeExperienceRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
     }

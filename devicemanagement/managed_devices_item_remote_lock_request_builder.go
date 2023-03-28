@@ -8,12 +8,7 @@ import (
 
 // ManagedDevicesItemRemoteLockRequestBuilder provides operations to call the remoteLock method.
 type ManagedDevicesItemRemoteLockRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ManagedDevicesItemRemoteLockRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ManagedDevicesItemRemoteLockRequestBuilderPostRequestConfiguration struct {
@@ -25,14 +20,8 @@ type ManagedDevicesItemRemoteLockRequestBuilderPostRequestConfiguration struct {
 // NewManagedDevicesItemRemoteLockRequestBuilderInternal instantiates a new RemoteLockRequestBuilder and sets the default values.
 func NewManagedDevicesItemRemoteLockRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedDevicesItemRemoteLockRequestBuilder) {
     m := &ManagedDevicesItemRemoteLockRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/remoteLock", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/remoteLock";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedDevicesItemRemoteLockRequestBuilder instantiates a new RemoteLockRequestBuilder and sets the default values.
@@ -51,7 +40,7 @@ func (m *ManagedDevicesItemRemoteLockRequestBuilder) Post(ctx context.Context, r
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }
@@ -60,8 +49,8 @@ func (m *ManagedDevicesItemRemoteLockRequestBuilder) Post(ctx context.Context, r
 // ToPostRequestInformation remote lock
 func (m *ManagedDevicesItemRemoteLockRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ManagedDevicesItemRemoteLockRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)

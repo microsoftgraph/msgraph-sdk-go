@@ -958,10 +958,16 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewSkypeForBusinessUserConversationMember(), nil
                     case "#microsoft.graph.skypeUserConversationMember":
                         return NewSkypeUserConversationMember(), nil
+                    case "#microsoft.graph.smsAuthenticationMethodConfiguration":
+                        return NewSmsAuthenticationMethodConfiguration(), nil
+                    case "#microsoft.graph.smsAuthenticationMethodTarget":
+                        return NewSmsAuthenticationMethodTarget(), nil
                     case "#microsoft.graph.socialIdentityProvider":
                         return NewSocialIdentityProvider(), nil
                     case "#microsoft.graph.softwareOathAuthenticationMethod":
                         return NewSoftwareOathAuthenticationMethod(), nil
+                    case "#microsoft.graph.softwareOathAuthenticationMethodConfiguration":
+                        return NewSoftwareOathAuthenticationMethodConfiguration(), nil
                     case "#microsoft.graph.softwareUpdateStatusSummary":
                         return NewSoftwareUpdateStatusSummary(), nil
                     case "#microsoft.graph.startHoldMusicOperation":
@@ -1118,6 +1124,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewUserSettings(), nil
                     case "#microsoft.graph.userTeamwork":
                         return NewUserTeamwork(), nil
+                    case "#microsoft.graph.voiceAuthenticationMethodConfiguration":
+                        return NewVoiceAuthenticationMethodConfiguration(), nil
                     case "#microsoft.graph.vppToken":
                         return NewVppToken(), nil
                     case "#microsoft.graph.webApp":

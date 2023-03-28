@@ -9,12 +9,7 @@ import (
 
 // ItemCalendarGroupsCalendarGroupItemRequestBuilder provides operations to manage the calendarGroups property of the microsoft.graph.user entity.
 type ItemCalendarGroupsCalendarGroupItemRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ItemCalendarGroupsCalendarGroupItemRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemCalendarGroupsCalendarGroupItemRequestBuilderDeleteRequestConfiguration struct {
@@ -46,30 +41,24 @@ type ItemCalendarGroupsCalendarGroupItemRequestBuilderPatchRequestConfiguration 
 }
 // Calendars provides operations to manage the calendars property of the microsoft.graph.calendarGroup entity.
 func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) Calendars()(*ItemCalendarGroupsItemCalendarsRequestBuilder) {
-    return NewItemCalendarGroupsItemCalendarsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemCalendarGroupsItemCalendarsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CalendarsById provides operations to manage the calendars property of the microsoft.graph.calendarGroup entity.
 func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) CalendarsById(id string)(*ItemCalendarGroupsItemCalendarsCalendarItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["calendar%2Did"] = id
     }
-    return NewItemCalendarGroupsItemCalendarsCalendarItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewItemCalendarGroupsItemCalendarsCalendarItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewItemCalendarGroupsCalendarGroupItemRequestBuilderInternal instantiates a new CalendarGroupItemRequestBuilder and sets the default values.
 func NewItemCalendarGroupsCalendarGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarGroupsCalendarGroupItemRequestBuilder) {
     m := &ItemCalendarGroupsCalendarGroupItemRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/calendarGroups/{calendarGroup%2Did}{?%24select}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/calendarGroups/{calendarGroup%2Did}{?%24select}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemCalendarGroupsCalendarGroupItemRequestBuilder instantiates a new CalendarGroupItemRequestBuilder and sets the default values.
@@ -88,7 +77,7 @@ func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) Delete(ctx context.C
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }
@@ -104,7 +93,7 @@ func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) Get(ctx context.Cont
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateCalendarGroupFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateCalendarGroupFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -123,7 +112,7 @@ func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) Patch(ctx context.Co
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateCalendarGroupFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateCalendarGroupFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -135,8 +124,8 @@ func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) Patch(ctx context.Co
 // ToDeleteRequestInformation delete navigation property calendarGroups for users
 func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarGroupsCalendarGroupItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
@@ -147,8 +136,8 @@ func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) ToDeleteRequestInfor
 // ToGetRequestInformation the user's calendar groups. Read-only. Nullable.
 func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarGroupsCalendarGroupItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
@@ -163,11 +152,11 @@ func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) ToGetRequestInformat
 // ToPatchRequestInformation update the navigation property calendarGroups in users
 func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarGroupable, requestConfiguration *ItemCalendarGroupsCalendarGroupItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
     }

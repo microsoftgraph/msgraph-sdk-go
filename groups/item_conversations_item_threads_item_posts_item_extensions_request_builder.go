@@ -9,12 +9,7 @@ import (
 
 // ItemConversationsItemThreadsItemPostsItemExtensionsRequestBuilder provides operations to manage the extensions property of the microsoft.graph.post entity.
 type ItemConversationsItemThreadsItemPostsItemExtensionsRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ItemConversationsItemThreadsItemPostsItemExtensionsRequestBuilderGetQueryParameters the collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
 type ItemConversationsItemThreadsItemPostsItemExtensionsRequestBuilderGetQueryParameters struct {
@@ -52,14 +47,8 @@ type ItemConversationsItemThreadsItemPostsItemExtensionsRequestBuilderPostReques
 // NewItemConversationsItemThreadsItemPostsItemExtensionsRequestBuilderInternal instantiates a new ExtensionsRequestBuilder and sets the default values.
 func NewItemConversationsItemThreadsItemPostsItemExtensionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConversationsItemThreadsItemPostsItemExtensionsRequestBuilder) {
     m := &ItemConversationsItemThreadsItemPostsItemExtensionsRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/conversations/{conversation%2Did}/threads/{conversationThread%2Did}/posts/{post%2Did}/extensions{?%24top,%24skip,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/conversations/{conversation%2Did}/threads/{conversationThread%2Did}/posts/{post%2Did}/extensions{?%24top,%24skip,%24filter,%24count,%24orderby,%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemConversationsItemThreadsItemPostsItemExtensionsRequestBuilder instantiates a new ExtensionsRequestBuilder and sets the default values.
@@ -70,7 +59,7 @@ func NewItemConversationsItemThreadsItemPostsItemExtensionsRequestBuilder(rawUrl
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemConversationsItemThreadsItemPostsItemExtensionsRequestBuilder) Count()(*ItemConversationsItemThreadsItemPostsItemExtensionsCountRequestBuilder) {
-    return NewItemConversationsItemThreadsItemPostsItemExtensionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemConversationsItemThreadsItemPostsItemExtensionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
 func (m *ItemConversationsItemThreadsItemPostsItemExtensionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemConversationsItemThreadsItemPostsItemExtensionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ExtensionCollectionResponseable, error) {
@@ -82,7 +71,7 @@ func (m *ItemConversationsItemThreadsItemPostsItemExtensionsRequestBuilder) Get(
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateExtensionCollectionResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateExtensionCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -101,7 +90,7 @@ func (m *ItemConversationsItemThreadsItemPostsItemExtensionsRequestBuilder) Post
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateExtensionFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateExtensionFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -113,8 +102,8 @@ func (m *ItemConversationsItemThreadsItemPostsItemExtensionsRequestBuilder) Post
 // ToGetRequestInformation the collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
 func (m *ItemConversationsItemThreadsItemPostsItemExtensionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemConversationsItemThreadsItemPostsItemExtensionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
@@ -129,11 +118,11 @@ func (m *ItemConversationsItemThreadsItemPostsItemExtensionsRequestBuilder) ToGe
 // ToPostRequestInformation create new navigation property to extensions for groups
 func (m *ItemConversationsItemThreadsItemPostsItemExtensionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Extensionable, requestConfiguration *ItemConversationsItemThreadsItemPostsItemExtensionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
     }

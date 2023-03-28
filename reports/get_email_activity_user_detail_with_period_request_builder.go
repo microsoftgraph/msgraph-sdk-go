@@ -8,12 +8,7 @@ import (
 
 // GetEmailActivityUserDetailWithPeriodRequestBuilder provides operations to call the getEmailActivityUserDetail method.
 type GetEmailActivityUserDetailWithPeriodRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // GetEmailActivityUserDetailWithPeriodRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type GetEmailActivityUserDetailWithPeriodRequestBuilderGetRequestConfiguration struct {
@@ -25,17 +20,11 @@ type GetEmailActivityUserDetailWithPeriodRequestBuilderGetRequestConfiguration s
 // NewGetEmailActivityUserDetailWithPeriodRequestBuilderInternal instantiates a new GetEmailActivityUserDetailWithPeriodRequestBuilder and sets the default values.
 func NewGetEmailActivityUserDetailWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, period *string)(*GetEmailActivityUserDetailWithPeriodRequestBuilder) {
     m := &GetEmailActivityUserDetailWithPeriodRequestBuilder{
-    }
-    m.urlTemplate = "{+baseurl}/reports/getEmailActivityUserDetail(period='{period}')";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/getEmailActivityUserDetail(period='{period}')", pathParameters),
     }
     if period != nil {
         urlTplParams["period"] = *period
     }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewGetEmailActivityUserDetailWithPeriodRequestBuilder instantiates a new GetEmailActivityUserDetailWithPeriodRequestBuilder and sets the default values.
@@ -54,7 +43,7 @@ func (m *GetEmailActivityUserDetailWithPeriodRequestBuilder) Get(ctx context.Con
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
         return nil, err
     }
@@ -66,8 +55,8 @@ func (m *GetEmailActivityUserDetailWithPeriodRequestBuilder) Get(ctx context.Con
 // ToGetRequestInformation invoke function getEmailActivityUserDetail
 func (m *GetEmailActivityUserDetailWithPeriodRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetEmailActivityUserDetailWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)

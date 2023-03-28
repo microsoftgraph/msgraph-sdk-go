@@ -9,12 +9,7 @@ import (
 
 // CasesEdiscoveryCasesItemSearchesRequestBuilder provides operations to manage the searches property of the microsoft.graph.security.ediscoveryCase entity.
 type CasesEdiscoveryCasesItemSearchesRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // CasesEdiscoveryCasesItemSearchesRequestBuilderGetQueryParameters get the list of ediscoverySearch resources from an eDiscoveryCase object.
 type CasesEdiscoveryCasesItemSearchesRequestBuilderGetQueryParameters struct {
@@ -54,14 +49,8 @@ type CasesEdiscoveryCasesItemSearchesRequestBuilderPostRequestConfiguration stru
 // NewCasesEdiscoveryCasesItemSearchesRequestBuilderInternal instantiates a new SearchesRequestBuilder and sets the default values.
 func NewCasesEdiscoveryCasesItemSearchesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CasesEdiscoveryCasesItemSearchesRequestBuilder) {
     m := &CasesEdiscoveryCasesItemSearchesRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/searches{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/searches{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewCasesEdiscoveryCasesItemSearchesRequestBuilder instantiates a new SearchesRequestBuilder and sets the default values.
@@ -72,7 +61,7 @@ func NewCasesEdiscoveryCasesItemSearchesRequestBuilder(rawUrl string, requestAda
 }
 // Count provides operations to count the resources in the collection.
 func (m *CasesEdiscoveryCasesItemSearchesRequestBuilder) Count()(*CasesEdiscoveryCasesItemSearchesCountRequestBuilder) {
-    return NewCasesEdiscoveryCasesItemSearchesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewCasesEdiscoveryCasesItemSearchesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the list of ediscoverySearch resources from an eDiscoveryCase object.
 // [Find more info here]
@@ -87,7 +76,7 @@ func (m *CasesEdiscoveryCasesItemSearchesRequestBuilder) Get(ctx context.Context
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.CreateEdiscoverySearchCollectionResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.CreateEdiscoverySearchCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -109,7 +98,7 @@ func (m *CasesEdiscoveryCasesItemSearchesRequestBuilder) Post(ctx context.Contex
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.CreateEdiscoverySearchFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.CreateEdiscoverySearchFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -121,8 +110,8 @@ func (m *CasesEdiscoveryCasesItemSearchesRequestBuilder) Post(ctx context.Contex
 // ToGetRequestInformation get the list of ediscoverySearch resources from an eDiscoveryCase object.
 func (m *CasesEdiscoveryCasesItemSearchesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemSearchesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
@@ -137,11 +126,11 @@ func (m *CasesEdiscoveryCasesItemSearchesRequestBuilder) ToGetRequestInformation
 // ToPostRequestInformation create a new ediscoverySearch object.
 func (m *CasesEdiscoveryCasesItemSearchesRequestBuilder) ToPostRequestInformation(ctx context.Context, body idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoverySearchable, requestConfiguration *CasesEdiscoveryCasesItemSearchesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
     }

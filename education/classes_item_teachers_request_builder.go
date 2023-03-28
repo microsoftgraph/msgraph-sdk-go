@@ -9,12 +9,7 @@ import (
 
 // ClassesItemTeachersRequestBuilder provides operations to manage the teachers property of the microsoft.graph.educationClass entity.
 type ClassesItemTeachersRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ClassesItemTeachersRequestBuilderGetQueryParameters retrieve a list teachers for a class. Delegated tokens must be members of the class to get the teacher list.
 type ClassesItemTeachersRequestBuilderGetQueryParameters struct {
@@ -47,14 +42,8 @@ type ClassesItemTeachersRequestBuilderGetRequestConfiguration struct {
 // NewClassesItemTeachersRequestBuilderInternal instantiates a new TeachersRequestBuilder and sets the default values.
 func NewClassesItemTeachersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ClassesItemTeachersRequestBuilder) {
     m := &ClassesItemTeachersRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/education/classes/{educationClass%2Did}/teachers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/education/classes/{educationClass%2Did}/teachers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewClassesItemTeachersRequestBuilder instantiates a new TeachersRequestBuilder and sets the default values.
@@ -65,7 +54,7 @@ func NewClassesItemTeachersRequestBuilder(rawUrl string, requestAdapter i2ae4187
 }
 // Count provides operations to count the resources in the collection.
 func (m *ClassesItemTeachersRequestBuilder) Count()(*ClassesItemTeachersCountRequestBuilder) {
-    return NewClassesItemTeachersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewClassesItemTeachersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve a list teachers for a class. Delegated tokens must be members of the class to get the teacher list.
 // [Find more info here]
@@ -80,7 +69,7 @@ func (m *ClassesItemTeachersRequestBuilder) Get(ctx context.Context, requestConf
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateEducationUserCollectionResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateEducationUserCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -91,13 +80,13 @@ func (m *ClassesItemTeachersRequestBuilder) Get(ctx context.Context, requestConf
 }
 // Ref provides operations to manage the collection of educationRoot entities.
 func (m *ClassesItemTeachersRequestBuilder) Ref()(*ClassesItemTeachersRefRequestBuilder) {
-    return NewClassesItemTeachersRefRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewClassesItemTeachersRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation retrieve a list teachers for a class. Delegated tokens must be members of the class to get the teacher list.
 func (m *ClassesItemTeachersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClassesItemTeachersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {

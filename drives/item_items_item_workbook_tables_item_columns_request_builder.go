@@ -9,12 +9,7 @@ import (
 
 // ItemItemsItemWorkbookTablesItemColumnsRequestBuilder provides operations to manage the columns property of the microsoft.graph.workbookTable entity.
 type ItemItemsItemWorkbookTablesItemColumnsRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ItemItemsItemWorkbookTablesItemColumnsRequestBuilderGetQueryParameters retrieve a list of tablecolumn objects.
 type ItemItemsItemWorkbookTablesItemColumnsRequestBuilderGetQueryParameters struct {
@@ -53,19 +48,13 @@ type ItemItemsItemWorkbookTablesItemColumnsRequestBuilderPostRequestConfiguratio
 }
 // Add provides operations to call the add method.
 func (m *ItemItemsItemWorkbookTablesItemColumnsRequestBuilder) Add()(*ItemItemsItemWorkbookTablesItemColumnsAddRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesItemColumnsAddRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemItemsItemWorkbookTablesItemColumnsAddRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewItemItemsItemWorkbookTablesItemColumnsRequestBuilderInternal instantiates a new ColumnsRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookTablesItemColumnsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookTablesItemColumnsRequestBuilder) {
     m := &ItemItemsItemWorkbookTablesItemColumnsRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/tables/{workbookTable%2Did}/columns{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/tables/{workbookTable%2Did}/columns{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemItemsItemWorkbookTablesItemColumnsRequestBuilder instantiates a new ColumnsRequestBuilder and sets the default values.
@@ -76,12 +65,12 @@ func NewItemItemsItemWorkbookTablesItemColumnsRequestBuilder(rawUrl string, requ
 }
 // Count provides operations to call the count method.
 func (m *ItemItemsItemWorkbookTablesItemColumnsRequestBuilder) Count()(*ItemItemsItemWorkbookTablesItemColumnsCountRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesItemColumnsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemItemsItemWorkbookTablesItemColumnsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve a list of tablecolumn objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/table-list-columns?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/tablecolumn-list?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookTablesItemColumnsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemColumnsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableColumnCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -91,7 +80,7 @@ func (m *ItemItemsItemWorkbookTablesItemColumnsRequestBuilder) Get(ctx context.C
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateWorkbookTableColumnCollectionResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateWorkbookTableColumnCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -102,7 +91,7 @@ func (m *ItemItemsItemWorkbookTablesItemColumnsRequestBuilder) Get(ctx context.C
 }
 // ItemAtWithIndex provides operations to call the itemAt method.
 func (m *ItemItemsItemWorkbookTablesItemColumnsRequestBuilder) ItemAtWithIndex(index *int32)(*ItemItemsItemWorkbookTablesItemColumnsItemAtWithIndexRequestBuilder) {
-    return NewItemItemsItemWorkbookTablesItemColumnsItemAtWithIndexRequestBuilderInternal(m.pathParameters, m.requestAdapter, index)
+    return NewItemItemsItemWorkbookTablesItemColumnsItemAtWithIndexRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, index)
 }
 // Post use this API to create a new TableColumn.
 // [Find more info here]
@@ -117,7 +106,7 @@ func (m *ItemItemsItemWorkbookTablesItemColumnsRequestBuilder) Post(ctx context.
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateWorkbookTableColumnFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateWorkbookTableColumnFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -129,8 +118,8 @@ func (m *ItemItemsItemWorkbookTablesItemColumnsRequestBuilder) Post(ctx context.
 // ToGetRequestInformation retrieve a list of tablecolumn objects.
 func (m *ItemItemsItemWorkbookTablesItemColumnsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemColumnsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
@@ -145,11 +134,11 @@ func (m *ItemItemsItemWorkbookTablesItemColumnsRequestBuilder) ToGetRequestInfor
 // ToPostRequestInformation use this API to create a new TableColumn.
 func (m *ItemItemsItemWorkbookTablesItemColumnsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableColumnable, requestConfiguration *ItemItemsItemWorkbookTablesItemColumnsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.Add("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
     }

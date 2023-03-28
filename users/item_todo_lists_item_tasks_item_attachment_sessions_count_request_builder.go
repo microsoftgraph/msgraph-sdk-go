@@ -8,12 +8,7 @@ import (
 
 // ItemTodoListsItemTasksItemAttachmentSessionsCountRequestBuilder provides operations to count the resources in the collection.
 type ItemTodoListsItemTasksItemAttachmentSessionsCountRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ItemTodoListsItemTasksItemAttachmentSessionsCountRequestBuilderGetQueryParameters get the number of the resource
 type ItemTodoListsItemTasksItemAttachmentSessionsCountRequestBuilderGetQueryParameters struct {
@@ -32,14 +27,8 @@ type ItemTodoListsItemTasksItemAttachmentSessionsCountRequestBuilderGetRequestCo
 // NewItemTodoListsItemTasksItemAttachmentSessionsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewItemTodoListsItemTasksItemAttachmentSessionsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTodoListsItemTasksItemAttachmentSessionsCountRequestBuilder) {
     m := &ItemTodoListsItemTasksItemAttachmentSessionsCountRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/todo/lists/{todoTaskList%2Did}/tasks/{todoTask%2Did}/attachmentSessions/$count{?%24filter}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/todo/lists/{todoTaskList%2Did}/tasks/{todoTask%2Did}/attachmentSessions/$count{?%24filter}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemTodoListsItemTasksItemAttachmentSessionsCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
@@ -58,7 +47,7 @@ func (m *ItemTodoListsItemTasksItemAttachmentSessionsCountRequestBuilder) Get(ct
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
     if err != nil {
         return nil, err
     }
@@ -70,8 +59,8 @@ func (m *ItemTodoListsItemTasksItemAttachmentSessionsCountRequestBuilder) Get(ct
 // ToGetRequestInformation get the number of the resource
 func (m *ItemTodoListsItemTasksItemAttachmentSessionsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemAttachmentSessionsCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "text/plain")
     if requestConfiguration != nil {

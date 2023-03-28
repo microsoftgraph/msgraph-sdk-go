@@ -9,12 +9,7 @@ import (
 
 // ItemAuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilder provides operations to manage the passwordMethods property of the microsoft.graph.authentication entity.
 type ItemAuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ItemAuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilderGetQueryParameters represents the password that's registered to a user for authentication. For security, the password itself will never be returned in the object, but action can be taken to reset a password.
 type ItemAuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilderGetQueryParameters struct {
@@ -35,14 +30,8 @@ type ItemAuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBui
 // NewItemAuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilderInternal instantiates a new PasswordAuthenticationMethodItemRequestBuilder and sets the default values.
 func NewItemAuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilder) {
     m := &ItemAuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/authentication/passwordMethods/{passwordAuthenticationMethod%2Did}{?%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/authentication/passwordMethods/{passwordAuthenticationMethod%2Did}{?%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemAuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilder instantiates a new PasswordAuthenticationMethodItemRequestBuilder and sets the default values.
@@ -61,7 +50,7 @@ func (m *ItemAuthenticationPasswordMethodsPasswordAuthenticationMethodItemReques
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreatePasswordAuthenticationMethodFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreatePasswordAuthenticationMethodFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -73,8 +62,8 @@ func (m *ItemAuthenticationPasswordMethodsPasswordAuthenticationMethodItemReques
 // ToGetRequestInformation represents the password that's registered to a user for authentication. For security, the password itself will never be returned in the object, but action can be taken to reset a password.
 func (m *ItemAuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {

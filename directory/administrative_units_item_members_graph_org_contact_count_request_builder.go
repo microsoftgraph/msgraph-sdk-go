@@ -8,12 +8,7 @@ import (
 
 // AdministrativeUnitsItemMembersGraphOrgContactCountRequestBuilder provides operations to count the resources in the collection.
 type AdministrativeUnitsItemMembersGraphOrgContactCountRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // AdministrativeUnitsItemMembersGraphOrgContactCountRequestBuilderGetQueryParameters get the number of the resource
 type AdministrativeUnitsItemMembersGraphOrgContactCountRequestBuilderGetQueryParameters struct {
@@ -34,14 +29,8 @@ type AdministrativeUnitsItemMembersGraphOrgContactCountRequestBuilderGetRequestC
 // NewAdministrativeUnitsItemMembersGraphOrgContactCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewAdministrativeUnitsItemMembersGraphOrgContactCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AdministrativeUnitsItemMembersGraphOrgContactCountRequestBuilder) {
     m := &AdministrativeUnitsItemMembersGraphOrgContactCountRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/administrativeUnits/{administrativeUnit%2Did}/members/graph.orgContact/$count{?%24search,%24filter}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/directory/administrativeUnits/{administrativeUnit%2Did}/members/graph.orgContact/$count{?%24search,%24filter}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewAdministrativeUnitsItemMembersGraphOrgContactCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
@@ -60,7 +49,7 @@ func (m *AdministrativeUnitsItemMembersGraphOrgContactCountRequestBuilder) Get(c
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
     if err != nil {
         return nil, err
     }
@@ -72,8 +61,8 @@ func (m *AdministrativeUnitsItemMembersGraphOrgContactCountRequestBuilder) Get(c
 // ToGetRequestInformation get the number of the resource
 func (m *AdministrativeUnitsItemMembersGraphOrgContactCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AdministrativeUnitsItemMembersGraphOrgContactCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "text/plain")
     if requestConfiguration != nil {

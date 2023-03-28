@@ -8,7 +8,7 @@ import (
 type WorkbookRangeView struct {
     Entity
 }
-// NewWorkbookRangeView instantiates a new workbookRangeView and sets the default values.
+// NewWorkbookRangeView instantiates a new WorkbookRangeView and sets the default values.
 func NewWorkbookRangeView()(*WorkbookRangeView) {
     m := &WorkbookRangeView{
         Entity: *NewEntity(),

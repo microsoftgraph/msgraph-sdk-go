@@ -9,12 +9,7 @@ import (
 
 // ItemPinnedMessagesItemMessageRequestBuilder provides operations to manage the message property of the microsoft.graph.pinnedChatMessageInfo entity.
 type ItemPinnedMessagesItemMessageRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ItemPinnedMessagesItemMessageRequestBuilderGetQueryParameters represents details about the chat message that is pinned.
 type ItemPinnedMessagesItemMessageRequestBuilderGetQueryParameters struct {
@@ -35,14 +30,8 @@ type ItemPinnedMessagesItemMessageRequestBuilderGetRequestConfiguration struct {
 // NewItemPinnedMessagesItemMessageRequestBuilderInternal instantiates a new MessageRequestBuilder and sets the default values.
 func NewItemPinnedMessagesItemMessageRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPinnedMessagesItemMessageRequestBuilder) {
     m := &ItemPinnedMessagesItemMessageRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/chats/{chat%2Did}/pinnedMessages/{pinnedChatMessageInfo%2Did}/message{?%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/chats/{chat%2Did}/pinnedMessages/{pinnedChatMessageInfo%2Did}/message{?%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemPinnedMessagesItemMessageRequestBuilder instantiates a new MessageRequestBuilder and sets the default values.
@@ -61,7 +50,7 @@ func (m *ItemPinnedMessagesItemMessageRequestBuilder) Get(ctx context.Context, r
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateChatMessageFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateChatMessageFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -73,8 +62,8 @@ func (m *ItemPinnedMessagesItemMessageRequestBuilder) Get(ctx context.Context, r
 // ToGetRequestInformation represents details about the chat message that is pinned.
 func (m *ItemPinnedMessagesItemMessageRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPinnedMessagesItemMessageRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {

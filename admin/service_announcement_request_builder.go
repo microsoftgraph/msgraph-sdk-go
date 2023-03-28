@@ -9,12 +9,7 @@ import (
 
 // ServiceAnnouncementRequestBuilder provides operations to manage the serviceAnnouncement property of the microsoft.graph.admin entity.
 type ServiceAnnouncementRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ServiceAnnouncementRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ServiceAnnouncementRequestBuilderDeleteRequestConfiguration struct {
@@ -49,14 +44,8 @@ type ServiceAnnouncementRequestBuilderPatchRequestConfiguration struct {
 // NewServiceAnnouncementRequestBuilderInternal instantiates a new ServiceAnnouncementRequestBuilder and sets the default values.
 func NewServiceAnnouncementRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ServiceAnnouncementRequestBuilder) {
     m := &ServiceAnnouncementRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/serviceAnnouncement{?%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/admin/serviceAnnouncement{?%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewServiceAnnouncementRequestBuilder instantiates a new ServiceAnnouncementRequestBuilder and sets the default values.
@@ -75,7 +64,7 @@ func (m *ServiceAnnouncementRequestBuilder) Delete(ctx context.Context, requestC
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }
@@ -91,7 +80,7 @@ func (m *ServiceAnnouncementRequestBuilder) Get(ctx context.Context, requestConf
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateServiceAnnouncementFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateServiceAnnouncementFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -102,48 +91,48 @@ func (m *ServiceAnnouncementRequestBuilder) Get(ctx context.Context, requestConf
 }
 // HealthOverviews provides operations to manage the healthOverviews property of the microsoft.graph.serviceAnnouncement entity.
 func (m *ServiceAnnouncementRequestBuilder) HealthOverviews()(*ServiceAnnouncementHealthOverviewsRequestBuilder) {
-    return NewServiceAnnouncementHealthOverviewsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewServiceAnnouncementHealthOverviewsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // HealthOverviewsById provides operations to manage the healthOverviews property of the microsoft.graph.serviceAnnouncement entity.
 func (m *ServiceAnnouncementRequestBuilder) HealthOverviewsById(id string)(*ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["serviceHealth%2Did"] = id
     }
-    return NewServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Issues provides operations to manage the issues property of the microsoft.graph.serviceAnnouncement entity.
 func (m *ServiceAnnouncementRequestBuilder) Issues()(*ServiceAnnouncementIssuesRequestBuilder) {
-    return NewServiceAnnouncementIssuesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewServiceAnnouncementIssuesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // IssuesById provides operations to manage the issues property of the microsoft.graph.serviceAnnouncement entity.
 func (m *ServiceAnnouncementRequestBuilder) IssuesById(id string)(*ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["serviceHealthIssue%2Did"] = id
     }
-    return NewServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Messages provides operations to manage the messages property of the microsoft.graph.serviceAnnouncement entity.
 func (m *ServiceAnnouncementRequestBuilder) Messages()(*ServiceAnnouncementMessagesRequestBuilder) {
-    return NewServiceAnnouncementMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewServiceAnnouncementMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MessagesById provides operations to manage the messages property of the microsoft.graph.serviceAnnouncement entity.
 func (m *ServiceAnnouncementRequestBuilder) MessagesById(id string)(*ServiceAnnouncementMessagesServiceUpdateMessageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["serviceUpdateMessage%2Did"] = id
     }
-    return NewServiceAnnouncementMessagesServiceUpdateMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewServiceAnnouncementMessagesServiceUpdateMessageItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property serviceAnnouncement in admin
 func (m *ServiceAnnouncementRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceAnnouncementable, requestConfiguration *ServiceAnnouncementRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceAnnouncementable, error) {
@@ -155,7 +144,7 @@ func (m *ServiceAnnouncementRequestBuilder) Patch(ctx context.Context, body iadc
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateServiceAnnouncementFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateServiceAnnouncementFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -167,8 +156,8 @@ func (m *ServiceAnnouncementRequestBuilder) Patch(ctx context.Context, body iadc
 // ToDeleteRequestInformation delete navigation property serviceAnnouncement for admin
 func (m *ServiceAnnouncementRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ServiceAnnouncementRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
@@ -179,8 +168,8 @@ func (m *ServiceAnnouncementRequestBuilder) ToDeleteRequestInformation(ctx conte
 // ToGetRequestInformation a container for service communications resources. Read-only.
 func (m *ServiceAnnouncementRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ServiceAnnouncementRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
@@ -195,11 +184,11 @@ func (m *ServiceAnnouncementRequestBuilder) ToGetRequestInformation(ctx context.
 // ToPatchRequestInformation update the navigation property serviceAnnouncement in admin
 func (m *ServiceAnnouncementRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceAnnouncementable, requestConfiguration *ServiceAnnouncementRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
     }

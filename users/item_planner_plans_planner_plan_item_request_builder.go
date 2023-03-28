@@ -9,12 +9,7 @@ import (
 
 // ItemPlannerPlansPlannerPlanItemRequestBuilder provides operations to manage the plans property of the microsoft.graph.plannerUser entity.
 type ItemPlannerPlansPlannerPlanItemRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ItemPlannerPlansPlannerPlanItemRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemPlannerPlansPlannerPlanItemRequestBuilderDeleteRequestConfiguration struct {
@@ -48,30 +43,24 @@ type ItemPlannerPlansPlannerPlanItemRequestBuilderPatchRequestConfiguration stru
 }
 // Buckets provides operations to manage the buckets property of the microsoft.graph.plannerPlan entity.
 func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) Buckets()(*ItemPlannerPlansItemBucketsRequestBuilder) {
-    return NewItemPlannerPlansItemBucketsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemPlannerPlansItemBucketsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // BucketsById provides operations to manage the buckets property of the microsoft.graph.plannerPlan entity.
 func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) BucketsById(id string)(*ItemPlannerPlansItemBucketsPlannerBucketItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["plannerBucket%2Did"] = id
     }
-    return NewItemPlannerPlansItemBucketsPlannerBucketItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewItemPlannerPlansItemBucketsPlannerBucketItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewItemPlannerPlansPlannerPlanItemRequestBuilderInternal instantiates a new PlannerPlanItemRequestBuilder and sets the default values.
 func NewItemPlannerPlansPlannerPlanItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPlannerPlansPlannerPlanItemRequestBuilder) {
     m := &ItemPlannerPlansPlannerPlanItemRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/planner/plans/{plannerPlan%2Did}{?%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/planner/plans/{plannerPlan%2Did}{?%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemPlannerPlansPlannerPlanItemRequestBuilder instantiates a new PlannerPlanItemRequestBuilder and sets the default values.
@@ -90,7 +79,7 @@ func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) Delete(ctx context.Conte
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }
@@ -98,7 +87,7 @@ func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) Delete(ctx context.Conte
 }
 // Details provides operations to manage the details property of the microsoft.graph.plannerPlan entity.
 func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) Details()(*ItemPlannerPlansItemDetailsRequestBuilder) {
-    return NewItemPlannerPlansItemDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemPlannerPlansItemDetailsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get read-only. Nullable. Returns the plannerTasks assigned to the user.
 func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPlannerPlansPlannerPlanItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerPlanable, error) {
@@ -110,7 +99,7 @@ func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) Get(ctx context.Context,
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreatePlannerPlanFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreatePlannerPlanFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -129,7 +118,7 @@ func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) Patch(ctx context.Contex
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreatePlannerPlanFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreatePlannerPlanFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -140,24 +129,24 @@ func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) Patch(ctx context.Contex
 }
 // Tasks provides operations to manage the tasks property of the microsoft.graph.plannerPlan entity.
 func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) Tasks()(*ItemPlannerPlansItemTasksRequestBuilder) {
-    return NewItemPlannerPlansItemTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemPlannerPlansItemTasksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TasksById provides operations to manage the tasks property of the microsoft.graph.plannerPlan entity.
 func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) TasksById(id string)(*ItemPlannerPlansItemTasksPlannerTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["plannerTask%2Did"] = id
     }
-    return NewItemPlannerPlansItemTasksPlannerTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
+    return NewItemPlannerPlansItemTasksPlannerTaskItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property plans for users
 func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemPlannerPlansPlannerPlanItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
@@ -168,8 +157,8 @@ func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) ToDeleteRequestInformati
 // ToGetRequestInformation read-only. Nullable. Returns the plannerTasks assigned to the user.
 func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPlannerPlansPlannerPlanItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
@@ -184,11 +173,11 @@ func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) ToGetRequestInformation(
 // ToPatchRequestInformation update the navigation property plans in users
 func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerPlanable, requestConfiguration *ItemPlannerPlansPlannerPlanItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.Add("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
     }

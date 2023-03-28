@@ -31,6 +31,8 @@ func CreateAuthenticationMethodTargetFromDiscriminatorValue(parseNode i878a80d23
                 switch *mappingValue {
                     case "#microsoft.graph.microsoftAuthenticatorAuthenticationMethodTarget":
                         return NewMicrosoftAuthenticatorAuthenticationMethodTarget(), nil
+                    case "#microsoft.graph.smsAuthenticationMethodTarget":
+                        return NewSmsAuthenticationMethodTarget(), nil
                 }
             }
         }

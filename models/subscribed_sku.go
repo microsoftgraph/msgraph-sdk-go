@@ -9,7 +9,7 @@ import (
 type SubscribedSku struct {
     Entity
 }
-// NewSubscribedSku instantiates a new subscribedSku and sets the default values.
+// NewSubscribedSku instantiates a new SubscribedSku and sets the default values.
 func NewSubscribedSku()(*SubscribedSku) {
     m := &SubscribedSku{
         Entity: *NewEntity(),

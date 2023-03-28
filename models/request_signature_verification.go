@@ -34,7 +34,7 @@ func (m *RequestSignatureVerification) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAllowedWeakAlgorithms gets the allowedWeakAlgorithms property value. The allowedWeakAlgorithms property
+// GetAllowedWeakAlgorithms gets the allowedWeakAlgorithms property value. Specifies which weak algorithms are allowed.  The possible values are: rsaSha1, unknownFutureValue.
 func (m *RequestSignatureVerification) GetAllowedWeakAlgorithms()(*WeakAlgorithms) {
     val, err := m.GetBackingStore().Get("allowedWeakAlgorithms")
     if err != nil {
@@ -84,7 +84,7 @@ func (m *RequestSignatureVerification) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetIsSignedRequestRequired gets the isSignedRequestRequired property value. The isSignedRequestRequired property
+// GetIsSignedRequestRequired gets the isSignedRequestRequired property value. Specifies whether signed authentication requests for this application should be required.
 func (m *RequestSignatureVerification) GetIsSignedRequestRequired()(*bool) {
     val, err := m.GetBackingStore().Get("isSignedRequestRequired")
     if err != nil {
@@ -142,7 +142,7 @@ func (m *RequestSignatureVerification) SetAdditionalData(value map[string]any)()
         panic(err)
     }
 }
-// SetAllowedWeakAlgorithms sets the allowedWeakAlgorithms property value. The allowedWeakAlgorithms property
+// SetAllowedWeakAlgorithms sets the allowedWeakAlgorithms property value. Specifies which weak algorithms are allowed.  The possible values are: rsaSha1, unknownFutureValue.
 func (m *RequestSignatureVerification) SetAllowedWeakAlgorithms(value *WeakAlgorithms)() {
     err := m.GetBackingStore().Set("allowedWeakAlgorithms", value)
     if err != nil {
@@ -153,7 +153,7 @@ func (m *RequestSignatureVerification) SetAllowedWeakAlgorithms(value *WeakAlgor
 func (m *RequestSignatureVerification) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIsSignedRequestRequired sets the isSignedRequestRequired property value. The isSignedRequestRequired property
+// SetIsSignedRequestRequired sets the isSignedRequestRequired property value. Specifies whether signed authentication requests for this application should be required.
 func (m *RequestSignatureVerification) SetIsSignedRequestRequired(value *bool)() {
     err := m.GetBackingStore().Set("isSignedRequestRequired", value)
     if err != nil {

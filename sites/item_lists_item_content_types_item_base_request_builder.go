@@ -9,12 +9,7 @@ import (
 
 // ItemListsItemContentTypesItemBaseRequestBuilder provides operations to manage the base property of the microsoft.graph.contentType entity.
 type ItemListsItemContentTypesItemBaseRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ItemListsItemContentTypesItemBaseRequestBuilderGetQueryParameters parent contentType from which this content type is derived.
 type ItemListsItemContentTypesItemBaseRequestBuilderGetQueryParameters struct {
@@ -35,14 +30,8 @@ type ItemListsItemContentTypesItemBaseRequestBuilderGetRequestConfiguration stru
 // NewItemListsItemContentTypesItemBaseRequestBuilderInternal instantiates a new BaseRequestBuilder and sets the default values.
 func NewItemListsItemContentTypesItemBaseRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListsItemContentTypesItemBaseRequestBuilder) {
     m := &ItemListsItemContentTypesItemBaseRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/contentTypes/{contentType%2Did}/base{?%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/contentTypes/{contentType%2Did}/base{?%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemListsItemContentTypesItemBaseRequestBuilder instantiates a new BaseRequestBuilder and sets the default values.
@@ -61,7 +50,7 @@ func (m *ItemListsItemContentTypesItemBaseRequestBuilder) Get(ctx context.Contex
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateContentTypeFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateContentTypeFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -73,8 +62,8 @@ func (m *ItemListsItemContentTypesItemBaseRequestBuilder) Get(ctx context.Contex
 // ToGetRequestInformation parent contentType from which this content type is derived.
 func (m *ItemListsItemContentTypesItemBaseRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemListsItemContentTypesItemBaseRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {

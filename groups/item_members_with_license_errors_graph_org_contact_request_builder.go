@@ -9,12 +9,7 @@ import (
 
 // ItemMembersWithLicenseErrorsGraphOrgContactRequestBuilder casts the previous resource to orgContact.
 type ItemMembersWithLicenseErrorsGraphOrgContactRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ItemMembersWithLicenseErrorsGraphOrgContactRequestBuilderGetQueryParameters get the items of type microsoft.graph.orgContact in the microsoft.graph.directoryObject collection
 type ItemMembersWithLicenseErrorsGraphOrgContactRequestBuilderGetQueryParameters struct {
@@ -47,14 +42,8 @@ type ItemMembersWithLicenseErrorsGraphOrgContactRequestBuilderGetRequestConfigur
 // NewItemMembersWithLicenseErrorsGraphOrgContactRequestBuilderInternal instantiates a new GraphOrgContactRequestBuilder and sets the default values.
 func NewItemMembersWithLicenseErrorsGraphOrgContactRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMembersWithLicenseErrorsGraphOrgContactRequestBuilder) {
     m := &ItemMembersWithLicenseErrorsGraphOrgContactRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/membersWithLicenseErrors/graph.orgContact{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/membersWithLicenseErrors/graph.orgContact{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemMembersWithLicenseErrorsGraphOrgContactRequestBuilder instantiates a new GraphOrgContactRequestBuilder and sets the default values.
@@ -65,7 +54,7 @@ func NewItemMembersWithLicenseErrorsGraphOrgContactRequestBuilder(rawUrl string,
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemMembersWithLicenseErrorsGraphOrgContactRequestBuilder) Count()(*ItemMembersWithLicenseErrorsGraphOrgContactCountRequestBuilder) {
-    return NewItemMembersWithLicenseErrorsGraphOrgContactCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemMembersWithLicenseErrorsGraphOrgContactCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the items of type microsoft.graph.orgContact in the microsoft.graph.directoryObject collection
 func (m *ItemMembersWithLicenseErrorsGraphOrgContactRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMembersWithLicenseErrorsGraphOrgContactRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OrgContactCollectionResponseable, error) {
@@ -77,7 +66,7 @@ func (m *ItemMembersWithLicenseErrorsGraphOrgContactRequestBuilder) Get(ctx cont
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateOrgContactCollectionResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateOrgContactCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -89,8 +78,8 @@ func (m *ItemMembersWithLicenseErrorsGraphOrgContactRequestBuilder) Get(ctx cont
 // ToGetRequestInformation get the items of type microsoft.graph.orgContact in the microsoft.graph.directoryObject collection
 func (m *ItemMembersWithLicenseErrorsGraphOrgContactRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMembersWithLicenseErrorsGraphOrgContactRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
