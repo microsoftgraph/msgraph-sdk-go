@@ -9,7 +9,7 @@ import (
 type Device struct {
     DirectoryObject
 }
-// NewDevice instantiates a new device and sets the default values.
+// NewDevice instantiates a new Device and sets the default values.
 func NewDevice()(*Device) {
     m := &Device{
         DirectoryObject: *NewDirectoryObject(),

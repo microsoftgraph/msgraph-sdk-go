@@ -8,12 +8,7 @@ import (
 
 // ItemOutlookSupportedTimeZonesRequestBuilder provides operations to call the supportedTimeZones method.
 type ItemOutlookSupportedTimeZonesRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ItemOutlookSupportedTimeZonesRequestBuilderGetQueryParameters invoke function supportedTimeZones
 type ItemOutlookSupportedTimeZonesRequestBuilderGetQueryParameters struct {
@@ -40,14 +35,8 @@ type ItemOutlookSupportedTimeZonesRequestBuilderGetRequestConfiguration struct {
 // NewItemOutlookSupportedTimeZonesRequestBuilderInternal instantiates a new SupportedTimeZonesRequestBuilder and sets the default values.
 func NewItemOutlookSupportedTimeZonesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOutlookSupportedTimeZonesRequestBuilder) {
     m := &ItemOutlookSupportedTimeZonesRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/outlook/supportedTimeZones(){?%24top,%24skip,%24search,%24filter,%24count}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/outlook/supportedTimeZones(){?%24top,%24skip,%24search,%24filter,%24count}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemOutlookSupportedTimeZonesRequestBuilder instantiates a new SupportedTimeZonesRequestBuilder and sets the default values.
@@ -66,7 +55,7 @@ func (m *ItemOutlookSupportedTimeZonesRequestBuilder) Get(ctx context.Context, r
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, CreateItemOutlookSupportedTimeZonesResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemOutlookSupportedTimeZonesResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -78,8 +67,8 @@ func (m *ItemOutlookSupportedTimeZonesRequestBuilder) Get(ctx context.Context, r
 // ToGetRequestInformation invoke function supportedTimeZones
 func (m *ItemOutlookSupportedTimeZonesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOutlookSupportedTimeZonesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {

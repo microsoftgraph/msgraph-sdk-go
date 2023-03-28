@@ -9,12 +9,7 @@ import (
 
 // ItemAuthenticationWindowsHelloForBusinessMethodsRequestBuilder provides operations to manage the windowsHelloForBusinessMethods property of the microsoft.graph.authentication entity.
 type ItemAuthenticationWindowsHelloForBusinessMethodsRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ItemAuthenticationWindowsHelloForBusinessMethodsRequestBuilderGetQueryParameters get a list of the windowsHelloForBusinessAuthenticationMethod objects and their properties.
 type ItemAuthenticationWindowsHelloForBusinessMethodsRequestBuilderGetQueryParameters struct {
@@ -47,14 +42,8 @@ type ItemAuthenticationWindowsHelloForBusinessMethodsRequestBuilderGetRequestCon
 // NewItemAuthenticationWindowsHelloForBusinessMethodsRequestBuilderInternal instantiates a new WindowsHelloForBusinessMethodsRequestBuilder and sets the default values.
 func NewItemAuthenticationWindowsHelloForBusinessMethodsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAuthenticationWindowsHelloForBusinessMethodsRequestBuilder) {
     m := &ItemAuthenticationWindowsHelloForBusinessMethodsRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/authentication/windowsHelloForBusinessMethods{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/authentication/windowsHelloForBusinessMethods{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemAuthenticationWindowsHelloForBusinessMethodsRequestBuilder instantiates a new WindowsHelloForBusinessMethodsRequestBuilder and sets the default values.
@@ -65,7 +54,7 @@ func NewItemAuthenticationWindowsHelloForBusinessMethodsRequestBuilder(rawUrl st
 }
 // Count provides operations to count the resources in the collection.
 func (m *ItemAuthenticationWindowsHelloForBusinessMethodsRequestBuilder) Count()(*ItemAuthenticationWindowsHelloForBusinessMethodsCountRequestBuilder) {
-    return NewItemAuthenticationWindowsHelloForBusinessMethodsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemAuthenticationWindowsHelloForBusinessMethodsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of the windowsHelloForBusinessAuthenticationMethod objects and their properties.
 // [Find more info here]
@@ -80,7 +69,7 @@ func (m *ItemAuthenticationWindowsHelloForBusinessMethodsRequestBuilder) Get(ctx
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateWindowsHelloForBusinessAuthenticationMethodCollectionResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateWindowsHelloForBusinessAuthenticationMethodCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -92,8 +81,8 @@ func (m *ItemAuthenticationWindowsHelloForBusinessMethodsRequestBuilder) Get(ctx
 // ToGetRequestInformation get a list of the windowsHelloForBusinessAuthenticationMethod objects and their properties.
 func (m *ItemAuthenticationWindowsHelloForBusinessMethodsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationWindowsHelloForBusinessMethodsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {

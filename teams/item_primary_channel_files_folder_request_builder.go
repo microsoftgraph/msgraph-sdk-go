@@ -9,12 +9,7 @@ import (
 
 // ItemPrimaryChannelFilesFolderRequestBuilder provides operations to manage the filesFolder property of the microsoft.graph.channel entity.
 type ItemPrimaryChannelFilesFolderRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ItemPrimaryChannelFilesFolderRequestBuilderGetQueryParameters get the metadata for the location where the files of a channel are stored. 
 type ItemPrimaryChannelFilesFolderRequestBuilderGetQueryParameters struct {
@@ -35,14 +30,8 @@ type ItemPrimaryChannelFilesFolderRequestBuilderGetRequestConfiguration struct {
 // NewItemPrimaryChannelFilesFolderRequestBuilderInternal instantiates a new FilesFolderRequestBuilder and sets the default values.
 func NewItemPrimaryChannelFilesFolderRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPrimaryChannelFilesFolderRequestBuilder) {
     m := &ItemPrimaryChannelFilesFolderRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teams/{team%2Did}/primaryChannel/filesFolder{?%24select,%24expand}", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/teams/{team%2Did}/primaryChannel/filesFolder{?%24select,%24expand}";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewItemPrimaryChannelFilesFolderRequestBuilder instantiates a new FilesFolderRequestBuilder and sets the default values.
@@ -53,7 +42,7 @@ func NewItemPrimaryChannelFilesFolderRequestBuilder(rawUrl string, requestAdapte
 }
 // Content provides operations to manage the media for the team entity.
 func (m *ItemPrimaryChannelFilesFolderRequestBuilder) Content()(*ItemPrimaryChannelFilesFolderContentRequestBuilder) {
-    return NewItemPrimaryChannelFilesFolderContentRequestBuilderInternal(m.pathParameters, m.requestAdapter)
+    return NewItemPrimaryChannelFilesFolderContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the metadata for the location where the files of a channel are stored. 
 // [Find more info here]
@@ -68,7 +57,7 @@ func (m *ItemPrimaryChannelFilesFolderRequestBuilder) Get(ctx context.Context, r
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateDriveItemFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateDriveItemFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -80,8 +69,8 @@ func (m *ItemPrimaryChannelFilesFolderRequestBuilder) Get(ctx context.Context, r
 // ToGetRequestInformation get the metadata for the location where the files of a channel are stored. 
 func (m *ItemPrimaryChannelFilesFolderRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPrimaryChannelFilesFolderRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {

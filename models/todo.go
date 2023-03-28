@@ -8,7 +8,7 @@ import (
 type Todo struct {
     Entity
 }
-// NewTodo instantiates a new todo and sets the default values.
+// NewTodo instantiates a new Todo and sets the default values.
 func NewTodo()(*Todo) {
     m := &Todo{
         Entity: *NewEntity(),

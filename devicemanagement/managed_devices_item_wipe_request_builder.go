@@ -8,12 +8,7 @@ import (
 
 // ManagedDevicesItemWipeRequestBuilder provides operations to call the wipe method.
 type ManagedDevicesItemWipeRequestBuilder struct {
-    // Path parameters for the request
-    pathParameters map[string]string
-    // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
-    // Url template to use to build the URL for the current request builder
-    urlTemplate string
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ManagedDevicesItemWipeRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ManagedDevicesItemWipeRequestBuilderPostRequestConfiguration struct {
@@ -25,14 +20,8 @@ type ManagedDevicesItemWipeRequestBuilderPostRequestConfiguration struct {
 // NewManagedDevicesItemWipeRequestBuilderInternal instantiates a new WipeRequestBuilder and sets the default values.
 func NewManagedDevicesItemWipeRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedDevicesItemWipeRequestBuilder) {
     m := &ManagedDevicesItemWipeRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/wipe", pathParameters),
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/wipe";
-    urlTplParams := make(map[string]string)
-    for idx, item := range pathParameters {
-        urlTplParams[idx] = item
-    }
-    m.pathParameters = urlTplParams
-    m.requestAdapter = requestAdapter
     return m
 }
 // NewManagedDevicesItemWipeRequestBuilder instantiates a new WipeRequestBuilder and sets the default values.
@@ -51,7 +40,7 @@ func (m *ManagedDevicesItemWipeRequestBuilder) Post(ctx context.Context, body Ma
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }
@@ -60,10 +49,10 @@ func (m *ManagedDevicesItemWipeRequestBuilder) Post(ctx context.Context, body Ma
 // ToPostRequestInformation wipe a device
 func (m *ManagedDevicesItemWipeRequestBuilder) ToPostRequestInformation(ctx context.Context, body ManagedDevicesItemWipePostRequestBodyable, requestConfiguration *ManagedDevicesItemWipeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    err := requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
     }

@@ -8,7 +8,7 @@ import (
 type AuthenticationMethodConfiguration struct {
     Entity
 }
-// NewAuthenticationMethodConfiguration instantiates a new authenticationMethodConfiguration and sets the default values.
+// NewAuthenticationMethodConfiguration instantiates a new AuthenticationMethodConfiguration and sets the default values.
 func NewAuthenticationMethodConfiguration()(*AuthenticationMethodConfiguration) {
     m := &AuthenticationMethodConfiguration{
         Entity: *NewEntity(),
@@ -35,8 +35,14 @@ func CreateAuthenticationMethodConfigurationFromDiscriminatorValue(parseNode i87
                         return NewFido2AuthenticationMethodConfiguration(), nil
                     case "#microsoft.graph.microsoftAuthenticatorAuthenticationMethodConfiguration":
                         return NewMicrosoftAuthenticatorAuthenticationMethodConfiguration(), nil
+                    case "#microsoft.graph.smsAuthenticationMethodConfiguration":
+                        return NewSmsAuthenticationMethodConfiguration(), nil
+                    case "#microsoft.graph.softwareOathAuthenticationMethodConfiguration":
+                        return NewSoftwareOathAuthenticationMethodConfiguration(), nil
                     case "#microsoft.graph.temporaryAccessPassAuthenticationMethodConfiguration":
                         return NewTemporaryAccessPassAuthenticationMethodConfiguration(), nil
+                    case "#microsoft.graph.voiceAuthenticationMethodConfiguration":
+                        return NewVoiceAuthenticationMethodConfiguration(), nil
                     case "#microsoft.graph.x509CertificateAuthenticationMethodConfiguration":
                         return NewX509CertificateAuthenticationMethodConfiguration(), nil
                 }
@@ -45,9 +51,34 @@ func CreateAuthenticationMethodConfigurationFromDiscriminatorValue(parseNode i87
     }
     return NewAuthenticationMethodConfiguration(), nil
 }
+// GetExcludeTargets gets the excludeTargets property value. Groups of users that are excluded from a policy.
+func (m *AuthenticationMethodConfiguration) GetExcludeTargets()([]ExcludeTargetable) {
+    val, err := m.GetBackingStore().Get("excludeTargets")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ExcludeTargetable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AuthenticationMethodConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["excludeTargets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateExcludeTargetFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ExcludeTargetable, len(val))
+            for i, v := range val {
+                res[i] = v.(ExcludeTargetable)
+            }
+            m.SetExcludeTargets(res)
+        }
+        return nil
+    }
     res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAuthenticationMethodState)
         if err != nil {
@@ -77,6 +108,16 @@ func (m *AuthenticationMethodConfiguration) Serialize(writer i878a80d2330e89d268
     if err != nil {
         return err
     }
+    if m.GetExcludeTargets() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExcludeTargets()))
+        for i, v := range m.GetExcludeTargets() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("excludeTargets", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetState() != nil {
         cast := (*m.GetState()).String()
         err = writer.WriteStringValue("state", &cast)
@@ -85,6 +126,13 @@ func (m *AuthenticationMethodConfiguration) Serialize(writer i878a80d2330e89d268
         }
     }
     return nil
+}
+// SetExcludeTargets sets the excludeTargets property value. Groups of users that are excluded from a policy.
+func (m *AuthenticationMethodConfiguration) SetExcludeTargets(value []ExcludeTargetable)() {
+    err := m.GetBackingStore().Set("excludeTargets", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetState sets the state property value. The state of the policy. Possible values are: enabled, disabled.
 func (m *AuthenticationMethodConfiguration) SetState(value *AuthenticationMethodState)() {
@@ -97,6 +145,8 @@ func (m *AuthenticationMethodConfiguration) SetState(value *AuthenticationMethod
 type AuthenticationMethodConfigurationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetExcludeTargets()([]ExcludeTargetable)
     GetState()(*AuthenticationMethodState)
+    SetExcludeTargets(value []ExcludeTargetable)()
     SetState(value *AuthenticationMethodState)()
 }
