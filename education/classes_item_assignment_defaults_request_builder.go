@@ -55,20 +55,23 @@ func NewClassesItemAssignmentDefaultsRequestBuilder(rawUrl string, requestAdapte
     return NewClassesItemAssignmentDefaultsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property assignmentDefaults for education
-func (m *ClassesItemAssignmentDefaultsRequestBuilder) Delete(ctx context.Context, requestConfiguration *ClassesItemAssignmentDefaultsRequestBuilderDeleteRequestConfiguration)(error) {
+func (m *ClassesItemAssignmentDefaultsRequestBuilder) Delete(ctx context.Context, requestConfiguration *ClassesItemAssignmentDefaultsRequestBuilderDeleteRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.([]byte), nil
 }
 // Get read the properties and relationships of an educationAssignmentDefaults object.  These are the class-level assignment defaults respected by new assignments created in the class. Callers can continue to specify custom values on each **assignment** creation if they don't want the default behaviors. Only teachers can perform this operation.
 // [Find more info here]

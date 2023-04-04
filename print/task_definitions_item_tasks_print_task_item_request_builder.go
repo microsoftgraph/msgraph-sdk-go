@@ -59,20 +59,23 @@ func (m *TaskDefinitionsItemTasksPrintTaskItemRequestBuilder) Definition()(*Task
     return NewTaskDefinitionsItemTasksItemDefinitionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property tasks for print
-func (m *TaskDefinitionsItemTasksPrintTaskItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TaskDefinitionsItemTasksPrintTaskItemRequestBuilderDeleteRequestConfiguration)(error) {
+func (m *TaskDefinitionsItemTasksPrintTaskItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TaskDefinitionsItemTasksPrintTaskItemRequestBuilderDeleteRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.([]byte), nil
 }
 // Get a list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
 func (m *TaskDefinitionsItemTasksPrintTaskItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TaskDefinitionsItemTasksPrintTaskItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintTaskable, error) {

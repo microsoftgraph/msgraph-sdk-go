@@ -57,20 +57,23 @@ func (m *ItemPhotosItemValueContentRequestBuilder) Get(ctx context.Context, requ
     return res.([]byte), nil
 }
 // Put update media content for the navigation property photos in users
-func (m *ItemPhotosItemValueContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *ItemPhotosItemValueContentRequestBuilderPutRequestConfiguration)(error) {
+func (m *ItemPhotosItemValueContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *ItemPhotosItemValueContentRequestBuilderPutRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.([]byte), nil
 }
 // ToGetRequestInformation get media content for the navigation property photos from users
 func (m *ItemPhotosItemValueContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPhotosItemValueContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

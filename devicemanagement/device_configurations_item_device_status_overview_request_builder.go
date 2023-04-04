@@ -55,20 +55,23 @@ func NewDeviceConfigurationsItemDeviceStatusOverviewRequestBuilder(rawUrl string
     return NewDeviceConfigurationsItemDeviceStatusOverviewRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property deviceStatusOverview for deviceManagement
-func (m *DeviceConfigurationsItemDeviceStatusOverviewRequestBuilder) Delete(ctx context.Context, requestConfiguration *DeviceConfigurationsItemDeviceStatusOverviewRequestBuilderDeleteRequestConfiguration)(error) {
+func (m *DeviceConfigurationsItemDeviceStatusOverviewRequestBuilder) Delete(ctx context.Context, requestConfiguration *DeviceConfigurationsItemDeviceStatusOverviewRequestBuilderDeleteRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.([]byte), nil
 }
 // Get device Configuration devices status overview
 func (m *DeviceConfigurationsItemDeviceStatusOverviewRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceConfigurationsItemDeviceStatusOverviewRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceConfigurationDeviceOverviewable, error) {

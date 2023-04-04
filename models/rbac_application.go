@@ -22,6 +22,20 @@ func CreateRbacApplicationFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RbacApplication) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["resourceNamespaces"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateUnifiedRbacResourceNamespaceFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]UnifiedRbacResourceNamespaceable, len(val))
+            for i, v := range val {
+                res[i] = v.(UnifiedRbacResourceNamespaceable)
+            }
+            m.SetResourceNamespaces(res)
+        }
+        return nil
+    }
     res["roleAssignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleAssignmentFromDiscriminatorValue)
         if err != nil {
@@ -136,6 +150,17 @@ func (m *RbacApplication) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
+// GetResourceNamespaces gets the resourceNamespaces property value. The resourceNamespaces property
+func (m *RbacApplication) GetResourceNamespaces()([]UnifiedRbacResourceNamespaceable) {
+    val, err := m.GetBackingStore().Get("resourceNamespaces")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UnifiedRbacResourceNamespaceable)
+    }
+    return nil
+}
 // GetRoleAssignments gets the roleAssignments property value. Resource to grant access to users or groups.
 func (m *RbacApplication) GetRoleAssignments()([]UnifiedRoleAssignmentable) {
     val, err := m.GetBackingStore().Get("roleAssignments")
@@ -230,6 +255,16 @@ func (m *RbacApplication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if err != nil {
         return err
     }
+    if m.GetResourceNamespaces() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetResourceNamespaces()))
+        for i, v := range m.GetResourceNamespaces() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("resourceNamespaces", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRoleAssignments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRoleAssignments()))
         for i, v := range m.GetRoleAssignments() {
@@ -312,6 +347,13 @@ func (m *RbacApplication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
+// SetResourceNamespaces sets the resourceNamespaces property value. The resourceNamespaces property
+func (m *RbacApplication) SetResourceNamespaces(value []UnifiedRbacResourceNamespaceable)() {
+    err := m.GetBackingStore().Set("resourceNamespaces", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRoleAssignments sets the roleAssignments property value. Resource to grant access to users or groups.
 func (m *RbacApplication) SetRoleAssignments(value []UnifiedRoleAssignmentable)() {
     err := m.GetBackingStore().Set("roleAssignments", value)
@@ -372,6 +414,7 @@ func (m *RbacApplication) SetRoleEligibilitySchedules(value []UnifiedRoleEligibi
 type RbacApplicationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetResourceNamespaces()([]UnifiedRbacResourceNamespaceable)
     GetRoleAssignments()([]UnifiedRoleAssignmentable)
     GetRoleAssignmentScheduleInstances()([]UnifiedRoleAssignmentScheduleInstanceable)
     GetRoleAssignmentScheduleRequests()([]UnifiedRoleAssignmentScheduleRequestable)
@@ -380,6 +423,7 @@ type RbacApplicationable interface {
     GetRoleEligibilityScheduleInstances()([]UnifiedRoleEligibilityScheduleInstanceable)
     GetRoleEligibilityScheduleRequests()([]UnifiedRoleEligibilityScheduleRequestable)
     GetRoleEligibilitySchedules()([]UnifiedRoleEligibilityScheduleable)
+    SetResourceNamespaces(value []UnifiedRbacResourceNamespaceable)()
     SetRoleAssignments(value []UnifiedRoleAssignmentable)()
     SetRoleAssignmentScheduleInstances(value []UnifiedRoleAssignmentScheduleInstanceable)()
     SetRoleAssignmentScheduleRequests(value []UnifiedRoleAssignmentScheduleRequestable)()

@@ -205,3 +205,11 @@ func (m *SecurityRequestBuilder) ToPatchRequestInformation(ctx context.Context, 
     }
     return requestInfo, nil
 }
+// Triggers provides operations to manage the triggers property of the microsoft.graph.security entity.
+func (m *SecurityRequestBuilder) Triggers()(*TriggersRequestBuilder) {
+    return NewTriggersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// TriggerTypes provides operations to manage the triggerTypes property of the microsoft.graph.security entity.
+func (m *SecurityRequestBuilder) TriggerTypes()(*TriggerTypesRequestBuilder) {
+    return NewTriggerTypesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}

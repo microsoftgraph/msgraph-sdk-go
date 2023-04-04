@@ -55,20 +55,23 @@ func NewItemListSubscriptionsSubscriptionItemRequestBuilder(rawUrl string, reque
     return NewItemListSubscriptionsSubscriptionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property subscriptions for shares
-func (m *ItemListSubscriptionsSubscriptionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemListSubscriptionsSubscriptionItemRequestBuilderDeleteRequestConfiguration)(error) {
+func (m *ItemListSubscriptionsSubscriptionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemListSubscriptionsSubscriptionItemRequestBuilderDeleteRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.([]byte), nil
 }
 // Get the set of subscriptions on the list.
 func (m *ItemListSubscriptionsSubscriptionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemListSubscriptionsSubscriptionItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Subscriptionable, error) {

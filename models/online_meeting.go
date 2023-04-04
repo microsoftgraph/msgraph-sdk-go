@@ -9,7 +9,7 @@ import (
 type OnlineMeeting struct {
     Entity
 }
-// NewOnlineMeeting instantiates a new onlineMeeting and sets the default values.
+// NewOnlineMeeting instantiates a new OnlineMeeting and sets the default values.
 func NewOnlineMeeting()(*OnlineMeeting) {
     m := &OnlineMeeting{
         Entity: *NewEntity(),

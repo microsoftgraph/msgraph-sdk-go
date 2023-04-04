@@ -20,10 +20,14 @@ type BookingBusinessesItemCalendarViewBookingAppointmentItemRequestBuilderDelete
 }
 // BookingBusinessesItemCalendarViewBookingAppointmentItemRequestBuilderGetQueryParameters the set of appointments of this business in a specified date range. Read-only. Nullable.
 type BookingBusinessesItemCalendarViewBookingAppointmentItemRequestBuilderGetQueryParameters struct {
+    // The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00
+    End *string
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
+    // The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00
+    Start *string
 }
 // BookingBusinessesItemCalendarViewBookingAppointmentItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type BookingBusinessesItemCalendarViewBookingAppointmentItemRequestBuilderGetRequestConfiguration struct {
@@ -48,7 +52,7 @@ func (m *BookingBusinessesItemCalendarViewBookingAppointmentItemRequestBuilder) 
 // NewBookingBusinessesItemCalendarViewBookingAppointmentItemRequestBuilderInternal instantiates a new BookingAppointmentItemRequestBuilder and sets the default values.
 func NewBookingBusinessesItemCalendarViewBookingAppointmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BookingBusinessesItemCalendarViewBookingAppointmentItemRequestBuilder) {
     m := &BookingBusinessesItemCalendarViewBookingAppointmentItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}/calendarView/{bookingAppointment%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}/calendarView/{bookingAppointment%2Did}{?start*,end*,%24select,%24expand}", pathParameters),
     }
     return m
 }
@@ -59,20 +63,23 @@ func NewBookingBusinessesItemCalendarViewBookingAppointmentItemRequestBuilder(ra
     return NewBookingBusinessesItemCalendarViewBookingAppointmentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property calendarView for solutions
-func (m *BookingBusinessesItemCalendarViewBookingAppointmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *BookingBusinessesItemCalendarViewBookingAppointmentItemRequestBuilderDeleteRequestConfiguration)(error) {
+func (m *BookingBusinessesItemCalendarViewBookingAppointmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *BookingBusinessesItemCalendarViewBookingAppointmentItemRequestBuilderDeleteRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.([]byte), nil
 }
 // Get the set of appointments of this business in a specified date range. Read-only. Nullable.
 func (m *BookingBusinessesItemCalendarViewBookingAppointmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BookingBusinessesItemCalendarViewBookingAppointmentItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingAppointmentable, error) {

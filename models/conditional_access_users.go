@@ -201,7 +201,7 @@ func (m *ConditionalAccessUsers) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetIncludeGroups gets the includeGroups property value. Group IDs in scope of policy unless explicitly excluded, or All.
+// GetIncludeGroups gets the includeGroups property value. Group IDs in scope of policy unless explicitly excluded.
 func (m *ConditionalAccessUsers) GetIncludeGroups()([]string) {
     val, err := m.GetBackingStore().Get("includeGroups")
     if err != nil {
@@ -223,7 +223,7 @@ func (m *ConditionalAccessUsers) GetIncludeGuestsOrExternalUsers()(ConditionalAc
     }
     return nil
 }
-// GetIncludeRoles gets the includeRoles property value. Role IDs in scope of policy unless explicitly excluded, or All.
+// GetIncludeRoles gets the includeRoles property value. Role IDs in scope of policy unless explicitly excluded.
 func (m *ConditionalAccessUsers) GetIncludeRoles()([]string) {
     val, err := m.GetBackingStore().Get("includeRoles")
     if err != nil {
@@ -234,7 +234,7 @@ func (m *ConditionalAccessUsers) GetIncludeRoles()([]string) {
     }
     return nil
 }
-// GetIncludeUsers gets the includeUsers property value. User IDs in scope of policy unless explicitly excluded, or None or All or GuestsOrExternalUsers.
+// GetIncludeUsers gets the includeUsers property value. User IDs in scope of policy unless explicitly excluded, None, All, or GuestsOrExternalUsers.
 func (m *ConditionalAccessUsers) GetIncludeUsers()([]string) {
     val, err := m.GetBackingStore().Get("includeUsers")
     if err != nil {
@@ -359,7 +359,7 @@ func (m *ConditionalAccessUsers) SetExcludeUsers(value []string)() {
         panic(err)
     }
 }
-// SetIncludeGroups sets the includeGroups property value. Group IDs in scope of policy unless explicitly excluded, or All.
+// SetIncludeGroups sets the includeGroups property value. Group IDs in scope of policy unless explicitly excluded.
 func (m *ConditionalAccessUsers) SetIncludeGroups(value []string)() {
     err := m.GetBackingStore().Set("includeGroups", value)
     if err != nil {
@@ -373,14 +373,14 @@ func (m *ConditionalAccessUsers) SetIncludeGuestsOrExternalUsers(value Condition
         panic(err)
     }
 }
-// SetIncludeRoles sets the includeRoles property value. Role IDs in scope of policy unless explicitly excluded, or All.
+// SetIncludeRoles sets the includeRoles property value. Role IDs in scope of policy unless explicitly excluded.
 func (m *ConditionalAccessUsers) SetIncludeRoles(value []string)() {
     err := m.GetBackingStore().Set("includeRoles", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIncludeUsers sets the includeUsers property value. User IDs in scope of policy unless explicitly excluded, or None or All or GuestsOrExternalUsers.
+// SetIncludeUsers sets the includeUsers property value. User IDs in scope of policy unless explicitly excluded, None, All, or GuestsOrExternalUsers.
 func (m *ConditionalAccessUsers) SetIncludeUsers(value []string)() {
     err := m.GetBackingStore().Set("includeUsers", value)
     if err != nil {

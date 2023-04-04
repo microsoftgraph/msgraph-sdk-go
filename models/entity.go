@@ -1060,6 +1060,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewTokenLifetimePolicy(), nil
                     case "#microsoft.graph.trending":
                         return NewTrending(), nil
+                    case "#microsoft.graph.unifiedRbacResourceAction":
+                        return NewUnifiedRbacResourceAction(), nil
+                    case "#microsoft.graph.unifiedRbacResourceNamespace":
+                        return NewUnifiedRbacResourceNamespace(), nil
                     case "#microsoft.graph.unifiedRoleAssignment":
                         return NewUnifiedRoleAssignment(), nil
                     case "#microsoft.graph.unifiedRoleAssignmentSchedule":
@@ -1152,6 +1156,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewWindows81CompliancePolicy(), nil
                     case "#microsoft.graph.windows81GeneralConfiguration":
                         return NewWindows81GeneralConfiguration(), nil
+                    case "#microsoft.graph.windowsAppX":
+                        return NewWindowsAppX(), nil
                     case "#microsoft.graph.windowsAutopilotDeviceIdentity":
                         return NewWindowsAutopilotDeviceIdentity(), nil
                     case "#microsoft.graph.windowsDefenderAdvancedThreatProtectionConfiguration":

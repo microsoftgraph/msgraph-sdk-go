@@ -68,6 +68,8 @@ func CreateMobileAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
                         return NewWebApp(), nil
                     case "#microsoft.graph.win32LobApp":
                         return NewWin32LobApp(), nil
+                    case "#microsoft.graph.windowsAppX":
+                        return NewWindowsAppX(), nil
                     case "#microsoft.graph.windowsMicrosoftEdgeApp":
                         return NewWindowsMicrosoftEdgeApp(), nil
                     case "#microsoft.graph.windowsMobileMSI":

@@ -58,20 +58,23 @@ func NewOAuth2PermissionGrantItemRequestBuilder(rawUrl string, requestAdapter i2
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/oauth2permissiongrant-delete?view=graph-rest-1.0
-func (m *OAuth2PermissionGrantItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *OAuth2PermissionGrantItemRequestBuilderDeleteRequestConfiguration)(error) {
+func (m *OAuth2PermissionGrantItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *OAuth2PermissionGrantItemRequestBuilderDeleteRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.([]byte), nil
 }
 // Get retrieve the properties of a single delegated permission grant represented by an oAuth2PermissionGrant object. An **oAuth2PermissionGrant** represents delegated permissions which have been granted for a client application to access an API on behalf of a signed-in user.
 // [Find more info here]

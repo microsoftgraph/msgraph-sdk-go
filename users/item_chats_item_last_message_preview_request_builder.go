@@ -55,20 +55,23 @@ func NewItemChatsItemLastMessagePreviewRequestBuilder(rawUrl string, requestAdap
     return NewItemChatsItemLastMessagePreviewRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property lastMessagePreview for users
-func (m *ItemChatsItemLastMessagePreviewRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemChatsItemLastMessagePreviewRequestBuilderDeleteRequestConfiguration)(error) {
+func (m *ItemChatsItemLastMessagePreviewRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemChatsItemLastMessagePreviewRequestBuilderDeleteRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.([]byte), nil
 }
 // Get preview of the last message sent in the chat. Null if no messages have been sent in the chat. Currently, only the list chats operation supports this property.
 func (m *ItemChatsItemLastMessagePreviewRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemChatsItemLastMessagePreviewRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageInfoable, error) {
