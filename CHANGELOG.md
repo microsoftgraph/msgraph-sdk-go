@@ -11,6 +11,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+## [0.61.0] - 2023-04-06
+
+### Changed
+
+- Weekly generation.
+- Restored support for APIs under /education/me.
+
 ## [0.60.0] - 2023-03-28
 
 ### Changed
