@@ -9,7 +9,7 @@ import (
 type DelegatedAdminAccessAssignment struct {
     Entity
 }
-// NewDelegatedAdminAccessAssignment instantiates a new DelegatedAdminAccessAssignment and sets the default values.
+// NewDelegatedAdminAccessAssignment instantiates a new delegatedAdminAccessAssignment and sets the default values.
 func NewDelegatedAdminAccessAssignment()(*DelegatedAdminAccessAssignment) {
     m := &DelegatedAdminAccessAssignment{
         Entity: *NewEntity(),

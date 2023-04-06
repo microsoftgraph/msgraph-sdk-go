@@ -54,6 +54,10 @@ func NewItemTeamPrimaryChannelMessagesItemHostedContentsChatMessageHostedContent
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamPrimaryChannelMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
+// Content provides operations to manage the media for the group entity.
+func (m *ItemTeamPrimaryChannelMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilder) Content()(*ItemTeamPrimaryChannelMessagesItemHostedContentsItemValueContentRequestBuilder) {
+    return NewItemTeamPrimaryChannelMessagesItemHostedContentsItemValueContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Delete delete navigation property hostedContents for groups
 func (m *ItemTeamPrimaryChannelMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTeamPrimaryChannelMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
