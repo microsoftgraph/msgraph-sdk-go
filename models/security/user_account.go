@@ -60,6 +60,17 @@ func (m *UserAccount) GetAzureAdUserId()(*string) {
 func (m *UserAccount) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
+// GetDisplayName gets the displayName property value. The displayName property
+func (m *UserAccount) GetDisplayName()(*string) {
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetDomainName gets the domainName property value. The name of the Active Directory domain of which the user is a member.
 func (m *UserAccount) GetDomainName()(*string) {
     val, err := m.GetBackingStore().Get("domainName")
@@ -91,6 +102,16 @@ func (m *UserAccount) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         if val != nil {
             m.SetAzureAdUserId(val)
+        }
+        return nil
+    }
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDisplayName(val)
         }
         return nil
     }
@@ -184,6 +205,12 @@ func (m *UserAccount) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err := writer.WriteStringValue("displayName", m.GetDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("domainName", m.GetDomainName())
         if err != nil {
             return err
@@ -240,6 +267,13 @@ func (m *UserAccount) SetAzureAdUserId(value *string)() {
 func (m *UserAccount) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
+// SetDisplayName sets the displayName property value. The displayName property
+func (m *UserAccount) SetDisplayName(value *string)() {
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDomainName sets the domainName property value. The name of the Active Directory domain of which the user is a member.
 func (m *UserAccount) SetDomainName(value *string)() {
     err := m.GetBackingStore().Set("domainName", value)
@@ -276,6 +310,7 @@ type UserAccountable interface {
     GetAccountName()(*string)
     GetAzureAdUserId()(*string)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDisplayName()(*string)
     GetDomainName()(*string)
     GetOdataType()(*string)
     GetUserPrincipalName()(*string)
@@ -283,6 +318,7 @@ type UserAccountable interface {
     SetAccountName(value *string)()
     SetAzureAdUserId(value *string)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDisplayName(value *string)()
     SetDomainName(value *string)()
     SetOdataType(value *string)()
     SetUserPrincipalName(value *string)()

@@ -206,6 +206,12 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewBookingStaffMember(), nil
                     case "#microsoft.graph.bookingStaffMemberBase":
                         return NewBookingStaffMemberBase(), nil
+                    case "#microsoft.graph.browserSharedCookie":
+                        return NewBrowserSharedCookie(), nil
+                    case "#microsoft.graph.browserSite":
+                        return NewBrowserSite(), nil
+                    case "#microsoft.graph.browserSiteList":
+                        return NewBrowserSiteList(), nil
                     case "#microsoft.graph.builtInIdentityProvider":
                         return NewBuiltInIdentityProvider(), nil
                     case "#microsoft.graph.calendar":
@@ -408,6 +414,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewDriveItemVersion(), nil
                     case "#microsoft.graph.eBookInstallSummary":
                         return NewEBookInstallSummary(), nil
+                    case "#microsoft.graph.edge":
+                        return NewEdge(), nil
                     case "#microsoft.graph.editionUpgradeConfiguration":
                         return NewEditionUpgradeConfiguration(), nil
                     case "#microsoft.graph.educationAssignment":
@@ -530,6 +538,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewInferenceClassificationOverride(), nil
                     case "#microsoft.graph.internalDomainFederation":
                         return NewInternalDomainFederation(), nil
+                    case "#microsoft.graph.internetExplorerMode":
+                        return NewInternetExplorerMode(), nil
                     case "#microsoft.graph.invitation":
                         return NewInvitation(), nil
                     case "#microsoft.graph.inviteParticipantsOperation":
@@ -1060,6 +1070,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewTokenLifetimePolicy(), nil
                     case "#microsoft.graph.trending":
                         return NewTrending(), nil
+                    case "#microsoft.graph.unifiedRbacResourceAction":
+                        return NewUnifiedRbacResourceAction(), nil
+                    case "#microsoft.graph.unifiedRbacResourceNamespace":
+                        return NewUnifiedRbacResourceNamespace(), nil
                     case "#microsoft.graph.unifiedRoleAssignment":
                         return NewUnifiedRoleAssignment(), nil
                     case "#microsoft.graph.unifiedRoleAssignmentSchedule":
@@ -1152,6 +1166,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewWindows81CompliancePolicy(), nil
                     case "#microsoft.graph.windows81GeneralConfiguration":
                         return NewWindows81GeneralConfiguration(), nil
+                    case "#microsoft.graph.windowsAppX":
+                        return NewWindowsAppX(), nil
                     case "#microsoft.graph.windowsAutopilotDeviceIdentity":
                         return NewWindowsAutopilotDeviceIdentity(), nil
                     case "#microsoft.graph.windowsDefenderAdvancedThreatProtectionConfiguration":

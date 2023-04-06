@@ -61,6 +61,16 @@ func (m *SearchQuery) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["queryTemplate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetQueryTemplate(val)
+        }
+        return nil
+    }
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
@@ -85,6 +95,17 @@ func (m *SearchQuery) GetQueryString()(*string) {
     }
     return nil
 }
+// GetQueryTemplate gets the queryTemplate property value. The queryTemplate property
+func (m *SearchQuery) GetQueryTemplate()(*string) {
+    val, err := m.GetBackingStore().Get("queryTemplate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *SearchQuery) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -95,6 +116,12 @@ func (m *SearchQuery) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     {
         err := writer.WriteStringValue("queryString", m.GetQueryString())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("queryTemplate", m.GetQueryTemplate())
         if err != nil {
             return err
         }
@@ -132,6 +159,13 @@ func (m *SearchQuery) SetQueryString(value *string)() {
         panic(err)
     }
 }
+// SetQueryTemplate sets the queryTemplate property value. The queryTemplate property
+func (m *SearchQuery) SetQueryTemplate(value *string)() {
+    err := m.GetBackingStore().Set("queryTemplate", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SearchQueryable 
 type SearchQueryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
@@ -140,7 +174,9 @@ type SearchQueryable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
     GetQueryString()(*string)
+    GetQueryTemplate()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
     SetQueryString(value *string)()
+    SetQueryTemplate(value *string)()
 }

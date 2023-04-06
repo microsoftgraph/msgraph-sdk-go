@@ -94,7 +94,7 @@ func (m *SignInActivity) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetLastNonInteractiveSignInDateTime gets the lastNonInteractiveSignInDateTime property value. The lastNonInteractiveSignInDateTime property
+// GetLastNonInteractiveSignInDateTime gets the lastNonInteractiveSignInDateTime property value. The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client signed in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
 func (m *SignInActivity) GetLastNonInteractiveSignInDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastNonInteractiveSignInDateTime")
     if err != nil {
@@ -105,7 +105,7 @@ func (m *SignInActivity) GetLastNonInteractiveSignInDateTime()(*i336074805fc8539
     }
     return nil
 }
-// GetLastNonInteractiveSignInRequestId gets the lastNonInteractiveSignInRequestId property value. The lastNonInteractiveSignInRequestId property
+// GetLastNonInteractiveSignInRequestId gets the lastNonInteractiveSignInRequestId property value. Request identifier of the last non-interactive sign-in performed by this user.
 func (m *SignInActivity) GetLastNonInteractiveSignInRequestId()(*string) {
     val, err := m.GetBackingStore().Get("lastNonInteractiveSignInRequestId")
     if err != nil {
@@ -116,7 +116,7 @@ func (m *SignInActivity) GetLastNonInteractiveSignInRequestId()(*string) {
     }
     return nil
 }
-// GetLastSignInDateTime gets the lastSignInDateTime property value. The lastSignInDateTime property
+// GetLastSignInDateTime gets the lastSignInDateTime property value. The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user signed in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
 func (m *SignInActivity) GetLastSignInDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSignInDateTime")
     if err != nil {
@@ -127,7 +127,7 @@ func (m *SignInActivity) GetLastSignInDateTime()(*i336074805fc853987abe6f7fe3ad9
     }
     return nil
 }
-// GetLastSignInRequestId gets the lastSignInRequestId property value. The lastSignInRequestId property
+// GetLastSignInRequestId gets the lastSignInRequestId property value. Request identifier of the last interactive sign-in performed by this user.
 func (m *SignInActivity) GetLastSignInRequestId()(*string) {
     val, err := m.GetBackingStore().Get("lastSignInRequestId")
     if err != nil {
@@ -200,28 +200,28 @@ func (m *SignInActivity) SetAdditionalData(value map[string]any)() {
 func (m *SignInActivity) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetLastNonInteractiveSignInDateTime sets the lastNonInteractiveSignInDateTime property value. The lastNonInteractiveSignInDateTime property
+// SetLastNonInteractiveSignInDateTime sets the lastNonInteractiveSignInDateTime property value. The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client signed in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
 func (m *SignInActivity) SetLastNonInteractiveSignInDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastNonInteractiveSignInDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastNonInteractiveSignInRequestId sets the lastNonInteractiveSignInRequestId property value. The lastNonInteractiveSignInRequestId property
+// SetLastNonInteractiveSignInRequestId sets the lastNonInteractiveSignInRequestId property value. Request identifier of the last non-interactive sign-in performed by this user.
 func (m *SignInActivity) SetLastNonInteractiveSignInRequestId(value *string)() {
     err := m.GetBackingStore().Set("lastNonInteractiveSignInRequestId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastSignInDateTime sets the lastSignInDateTime property value. The lastSignInDateTime property
+// SetLastSignInDateTime sets the lastSignInDateTime property value. The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user signed in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
 func (m *SignInActivity) SetLastSignInDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastSignInDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastSignInRequestId sets the lastSignInRequestId property value. The lastSignInRequestId property
+// SetLastSignInRequestId sets the lastSignInRequestId property value. Request identifier of the last interactive sign-in performed by this user.
 func (m *SignInActivity) SetLastSignInRequestId(value *string)() {
     err := m.GetBackingStore().Set("lastSignInRequestId", value)
     if err != nil {

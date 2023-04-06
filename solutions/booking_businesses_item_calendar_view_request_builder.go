@@ -11,10 +11,12 @@ import (
 type BookingBusinessesItemCalendarViewRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// BookingBusinessesItemCalendarViewRequestBuilderGetQueryParameters get the collection of bookingAppointment objects for a bookingBusiness that occurs in the specified date range.
+// BookingBusinessesItemCalendarViewRequestBuilderGetQueryParameters the set of appointments of this business in a specified date range. Read-only. Nullable.
 type BookingBusinessesItemCalendarViewRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
+    // The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00
+    End *string
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
     // Filter items by property values
@@ -27,6 +29,8 @@ type BookingBusinessesItemCalendarViewRequestBuilderGetQueryParameters struct {
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
     Skip *int32 `uriparametername:"%24skip"`
+    // The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00
+    Start *string
     // Show only the first n items
     Top *int32 `uriparametername:"%24top"`
 }
@@ -49,7 +53,7 @@ type BookingBusinessesItemCalendarViewRequestBuilderPostRequestConfiguration str
 // NewBookingBusinessesItemCalendarViewRequestBuilderInternal instantiates a new CalendarViewRequestBuilder and sets the default values.
 func NewBookingBusinessesItemCalendarViewRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BookingBusinessesItemCalendarViewRequestBuilder) {
     m := &BookingBusinessesItemCalendarViewRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}/calendarView{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}/calendarView{?start*,end*,%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
     }
     return m
 }
@@ -63,7 +67,7 @@ func NewBookingBusinessesItemCalendarViewRequestBuilder(rawUrl string, requestAd
 func (m *BookingBusinessesItemCalendarViewRequestBuilder) Count()(*BookingBusinessesItemCalendarViewCountRequestBuilder) {
     return NewBookingBusinessesItemCalendarViewCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the collection of bookingAppointment objects for a bookingBusiness that occurs in the specified date range.
+// Get the set of appointments of this business in a specified date range. Read-only. Nullable.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/bookingbusiness-list-calendarview?view=graph-rest-1.0
@@ -104,7 +108,7 @@ func (m *BookingBusinessesItemCalendarViewRequestBuilder) Post(ctx context.Conte
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingAppointmentable), nil
 }
-// ToGetRequestInformation get the collection of bookingAppointment objects for a bookingBusiness that occurs in the specified date range.
+// ToGetRequestInformation the set of appointments of this business in a specified date range. Read-only. Nullable.
 func (m *BookingBusinessesItemCalendarViewRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BookingBusinessesItemCalendarViewRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

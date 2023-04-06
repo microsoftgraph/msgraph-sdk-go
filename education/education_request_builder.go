@@ -81,6 +81,10 @@ func (m *EducationRequestBuilder) Get(ctx context.Context, requestConfiguration 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationRootable), nil
 }
+// Me provides operations to manage the me property of the microsoft.graph.educationRoot entity.
+func (m *EducationRequestBuilder) Me()(*MeRequestBuilder) {
+    return NewMeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update education
 func (m *EducationRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationRootable, requestConfiguration *EducationRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationRootable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);

@@ -3,6 +3,7 @@ package drives
 import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
 
@@ -57,20 +58,23 @@ func (m *ItemSpecialItemContentRequestBuilder) Get(ctx context.Context, requestC
     return res.([]byte), nil
 }
 // Put the content stream, if the item represents a file.
-func (m *ItemSpecialItemContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *ItemSpecialItemContentRequestBuilderPutRequestConfiguration)(error) {
+func (m *ItemSpecialItemContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *ItemSpecialItemContentRequestBuilderPutRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateDriveItemFromDiscriminatorValue, errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable), nil
 }
 // ToGetRequestInformation the content stream, if the item represents a file.
 func (m *ItemSpecialItemContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSpecialItemContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -90,6 +94,7 @@ func (m *ItemSpecialItemContentRequestBuilder) ToPutRequestInformation(ctx conte
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT
+    requestInfo.Headers.Add("Accept", "application/json")
     requestInfo.SetStreamContent(body)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)

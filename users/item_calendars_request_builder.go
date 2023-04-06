@@ -15,6 +15,8 @@ type ItemCalendarsRequestBuilder struct {
 type ItemCalendarsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
     // Order items by property values
@@ -45,7 +47,7 @@ type ItemCalendarsRequestBuilderPostRequestConfiguration struct {
 // NewItemCalendarsRequestBuilderInternal instantiates a new CalendarsRequestBuilder and sets the default values.
 func NewItemCalendarsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarsRequestBuilder) {
     m := &ItemCalendarsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/calendars{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/calendars{?%24top,%24skip,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
     }
     return m
 }

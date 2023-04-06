@@ -54,6 +54,10 @@ func NewItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilder
     urlParams["request-raw-url"] = rawUrl
     return NewItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
+// Content provides operations to manage the media for the chat entity.
+func (m *ItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilder) Content()(*ItemMessagesItemHostedContentsItemValueContentRequestBuilder) {
+    return NewItemMessagesItemHostedContentsItemValueContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Delete delete navigation property hostedContents for chats
 func (m *ItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);

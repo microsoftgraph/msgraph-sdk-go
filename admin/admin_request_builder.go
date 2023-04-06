@@ -47,6 +47,10 @@ func NewAdminRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     urlParams["request-raw-url"] = rawUrl
     return NewAdminRequestBuilderInternal(urlParams, requestAdapter)
 }
+// Edge provides operations to manage the edge property of the microsoft.graph.admin entity.
+func (m *AdminRequestBuilder) Edge()(*EdgeRequestBuilder) {
+    return NewEdgeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get get admin
 func (m *AdminRequestBuilder) Get(ctx context.Context, requestConfiguration *AdminRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Adminable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
