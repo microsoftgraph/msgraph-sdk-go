@@ -8,7 +8,7 @@ import (
 type Schedule struct {
     Entity
 }
-// NewSchedule instantiates a new schedule and sets the default values.
+// NewSchedule instantiates a new Schedule and sets the default values.
 func NewSchedule()(*Schedule) {
     m := &Schedule{
         Entity: *NewEntity(),

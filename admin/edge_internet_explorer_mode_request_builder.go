@@ -18,7 +18,7 @@ type EdgeInternetExplorerModeRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EdgeInternetExplorerModeRequestBuilderGetQueryParameters get internetExplorerMode from admin
+// EdgeInternetExplorerModeRequestBuilderGetQueryParameters a container for Internet Explorer mode resources.
 type EdgeInternetExplorerModeRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *EdgeInternetExplorerModeRequestBuilder) Delete(ctx context.Context, req
     }
     return nil
 }
-// Get get internetExplorerMode from admin
+// Get a container for Internet Explorer mode resources.
 func (m *EdgeInternetExplorerModeRequestBuilder) Get(ctx context.Context, requestConfiguration *EdgeInternetExplorerModeRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InternetExplorerModeable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -135,7 +135,7 @@ func (m *EdgeInternetExplorerModeRequestBuilder) ToDeleteRequestInformation(ctx 
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get internetExplorerMode from admin
+// ToGetRequestInformation a container for Internet Explorer mode resources.
 func (m *EdgeInternetExplorerModeRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdgeInternetExplorerModeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

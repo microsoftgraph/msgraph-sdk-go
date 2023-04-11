@@ -9,7 +9,7 @@ import (
 type TeamsAsyncOperation struct {
     Entity
 }
-// NewTeamsAsyncOperation instantiates a new teamsAsyncOperation and sets the default values.
+// NewTeamsAsyncOperation instantiates a new TeamsAsyncOperation and sets the default values.
 func NewTeamsAsyncOperation()(*TeamsAsyncOperation) {
     m := &TeamsAsyncOperation{
         Entity: *NewEntity(),

@@ -38,7 +38,7 @@ func (m *InternetExplorerMode) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetSiteLists gets the siteLists property value. The siteLists property
+// GetSiteLists gets the siteLists property value. A collection of site lists to support Internet Explorer mode.
 func (m *InternetExplorerMode) GetSiteLists()([]BrowserSiteListable) {
     val, err := m.GetBackingStore().Get("siteLists")
     if err != nil {
@@ -67,7 +67,7 @@ func (m *InternetExplorerMode) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetSiteLists sets the siteLists property value. The siteLists property
+// SetSiteLists sets the siteLists property value. A collection of site lists to support Internet Explorer mode.
 func (m *InternetExplorerMode) SetSiteLists(value []BrowserSiteListable)() {
     err := m.GetBackingStore().Set("siteLists", value)
     if err != nil {

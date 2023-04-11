@@ -39,7 +39,7 @@ func (m *BrowserSharedCookieHistory) GetAdditionalData()(map[string]any) {
 func (m *BrowserSharedCookieHistory) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetComment gets the comment property value. The comment of the cookie
+// GetComment gets the comment property value. The comment for the shared cookie.
 func (m *BrowserSharedCookieHistory) GetComment()(*string) {
     val, err := m.GetBackingStore().Get("comment")
     if err != nil {
@@ -50,7 +50,7 @@ func (m *BrowserSharedCookieHistory) GetComment()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The name of the cookie
+// GetDisplayName gets the displayName property value. The name of the cookie.
 func (m *BrowserSharedCookieHistory) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -156,7 +156,7 @@ func (m *BrowserSharedCookieHistory) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetHostOnly gets the hostOnly property value. Boolean attribute that determines whether a cookie is  a host-only or domain cookie
+// GetHostOnly gets the hostOnly property value. Controls whether a cookie is a host-only or domain cookie.
 func (m *BrowserSharedCookieHistory) GetHostOnly()(*bool) {
     val, err := m.GetBackingStore().Get("hostOnly")
     if err != nil {
@@ -167,7 +167,7 @@ func (m *BrowserSharedCookieHistory) GetHostOnly()(*bool) {
     }
     return nil
 }
-// GetHostOrDomain gets the hostOrDomain property value. The URL of the cookie
+// GetHostOrDomain gets the hostOrDomain property value. The URL of the cookie.
 func (m *BrowserSharedCookieHistory) GetHostOrDomain()(*string) {
     val, err := m.GetBackingStore().Get("hostOrDomain")
     if err != nil {
@@ -200,7 +200,7 @@ func (m *BrowserSharedCookieHistory) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPath gets the path property value. The path of the cookie
+// GetPath gets the path property value. The path of the cookie.
 func (m *BrowserSharedCookieHistory) GetPath()(*string) {
     val, err := m.GetBackingStore().Get("path")
     if err != nil {
@@ -211,7 +211,7 @@ func (m *BrowserSharedCookieHistory) GetPath()(*string) {
     }
     return nil
 }
-// GetPublishedDateTime gets the publishedDateTime property value. The time the cookie was published
+// GetPublishedDateTime gets the publishedDateTime property value. The date and time when the cookie was last published.
 func (m *BrowserSharedCookieHistory) GetPublishedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("publishedDateTime")
     if err != nil {
@@ -222,7 +222,7 @@ func (m *BrowserSharedCookieHistory) GetPublishedDateTime()(*i336074805fc853987a
     }
     return nil
 }
-// GetSourceEnvironment gets the sourceEnvironment property value. Specifies how the cookies are shared between Microsoft Edge and Internet Explorer
+// GetSourceEnvironment gets the sourceEnvironment property value. Specifies how the cookies are shared between Microsoft Edge and Internet Explorer. The possible values are: microsoftEdge, internetExplorer11, both, unknownFutureValue.
 func (m *BrowserSharedCookieHistory) GetSourceEnvironment()(*BrowserSharedCookieSourceEnvironment) {
     val, err := m.GetBackingStore().Get("sourceEnvironment")
     if err != nil {
@@ -309,28 +309,28 @@ func (m *BrowserSharedCookieHistory) SetAdditionalData(value map[string]any)() {
 func (m *BrowserSharedCookieHistory) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetComment sets the comment property value. The comment of the cookie
+// SetComment sets the comment property value. The comment for the shared cookie.
 func (m *BrowserSharedCookieHistory) SetComment(value *string)() {
     err := m.GetBackingStore().Set("comment", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The name of the cookie
+// SetDisplayName sets the displayName property value. The name of the cookie.
 func (m *BrowserSharedCookieHistory) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetHostOnly sets the hostOnly property value. Boolean attribute that determines whether a cookie is  a host-only or domain cookie
+// SetHostOnly sets the hostOnly property value. Controls whether a cookie is a host-only or domain cookie.
 func (m *BrowserSharedCookieHistory) SetHostOnly(value *bool)() {
     err := m.GetBackingStore().Set("hostOnly", value)
     if err != nil {
         panic(err)
     }
 }
-// SetHostOrDomain sets the hostOrDomain property value. The URL of the cookie
+// SetHostOrDomain sets the hostOrDomain property value. The URL of the cookie.
 func (m *BrowserSharedCookieHistory) SetHostOrDomain(value *string)() {
     err := m.GetBackingStore().Set("hostOrDomain", value)
     if err != nil {
@@ -351,21 +351,21 @@ func (m *BrowserSharedCookieHistory) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPath sets the path property value. The path of the cookie
+// SetPath sets the path property value. The path of the cookie.
 func (m *BrowserSharedCookieHistory) SetPath(value *string)() {
     err := m.GetBackingStore().Set("path", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPublishedDateTime sets the publishedDateTime property value. The time the cookie was published
+// SetPublishedDateTime sets the publishedDateTime property value. The date and time when the cookie was last published.
 func (m *BrowserSharedCookieHistory) SetPublishedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("publishedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSourceEnvironment sets the sourceEnvironment property value. Specifies how the cookies are shared between Microsoft Edge and Internet Explorer
+// SetSourceEnvironment sets the sourceEnvironment property value. Specifies how the cookies are shared between Microsoft Edge and Internet Explorer. The possible values are: microsoftEdge, internetExplorer11, both, unknownFutureValue.
 func (m *BrowserSharedCookieHistory) SetSourceEnvironment(value *BrowserSharedCookieSourceEnvironment)() {
     err := m.GetBackingStore().Set("sourceEnvironment", value)
     if err != nil {

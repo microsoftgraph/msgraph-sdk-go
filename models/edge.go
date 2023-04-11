@@ -8,7 +8,7 @@ import (
 type Edge struct {
     Entity
 }
-// NewEdge instantiates a new Edge and sets the default values.
+// NewEdge instantiates a new edge and sets the default values.
 func NewEdge()(*Edge) {
     m := &Edge{
         Entity: *NewEntity(),
@@ -34,7 +34,7 @@ func (m *Edge) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     }
     return res
 }
-// GetInternetExplorerMode gets the internetExplorerMode property value. The internetExplorerMode property
+// GetInternetExplorerMode gets the internetExplorerMode property value. A container for Internet Explorer mode resources.
 func (m *Edge) GetInternetExplorerMode()(InternetExplorerModeable) {
     val, err := m.GetBackingStore().Get("internetExplorerMode")
     if err != nil {
@@ -59,7 +59,7 @@ func (m *Edge) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     }
     return nil
 }
-// SetInternetExplorerMode sets the internetExplorerMode property value. The internetExplorerMode property
+// SetInternetExplorerMode sets the internetExplorerMode property value. A container for Internet Explorer mode resources.
 func (m *Edge) SetInternetExplorerMode(value InternetExplorerModeable)() {
     err := m.GetBackingStore().Set("internetExplorerMode", value)
     if err != nil {

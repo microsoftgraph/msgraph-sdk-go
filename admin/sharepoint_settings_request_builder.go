@@ -7,55 +7,55 @@ import (
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
 
-// EdgeRequestBuilder provides operations to manage the edge property of the microsoft.graph.admin entity.
-type EdgeRequestBuilder struct {
+// SharepointSettingsRequestBuilder provides operations to manage the settings property of the microsoft.graph.sharepoint entity.
+type SharepointSettingsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EdgeRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type EdgeRequestBuilderDeleteRequestConfiguration struct {
+// SharepointSettingsRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type SharepointSettingsRequestBuilderDeleteRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EdgeRequestBuilderGetQueryParameters a container for Microsoft Edge resources. Read-only.
-type EdgeRequestBuilderGetQueryParameters struct {
+// SharepointSettingsRequestBuilderGetQueryParameters get settings from admin
+type SharepointSettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
 }
-// EdgeRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type EdgeRequestBuilderGetRequestConfiguration struct {
+// SharepointSettingsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type SharepointSettingsRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *EdgeRequestBuilderGetQueryParameters
+    QueryParameters *SharepointSettingsRequestBuilderGetQueryParameters
 }
-// EdgeRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type EdgeRequestBuilderPatchRequestConfiguration struct {
+// SharepointSettingsRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type SharepointSettingsRequestBuilderPatchRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewEdgeRequestBuilderInternal instantiates a new EdgeRequestBuilder and sets the default values.
-func NewEdgeRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdgeRequestBuilder) {
-    m := &EdgeRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/edge{?%24select,%24expand}", pathParameters),
+// NewSharepointSettingsRequestBuilderInternal instantiates a new SettingsRequestBuilder and sets the default values.
+func NewSharepointSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SharepointSettingsRequestBuilder) {
+    m := &SharepointSettingsRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/sharepoint/settings{?%24select,%24expand}", pathParameters),
     }
     return m
 }
-// NewEdgeRequestBuilder instantiates a new EdgeRequestBuilder and sets the default values.
-func NewEdgeRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdgeRequestBuilder) {
+// NewSharepointSettingsRequestBuilder instantiates a new SettingsRequestBuilder and sets the default values.
+func NewSharepointSettingsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SharepointSettingsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewEdgeRequestBuilderInternal(urlParams, requestAdapter)
+    return NewSharepointSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property edge for admin
-func (m *EdgeRequestBuilder) Delete(ctx context.Context, requestConfiguration *EdgeRequestBuilderDeleteRequestConfiguration)(error) {
+// Delete delete navigation property settings for admin
+func (m *SharepointSettingsRequestBuilder) Delete(ctx context.Context, requestConfiguration *SharepointSettingsRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
@@ -70,8 +70,8 @@ func (m *EdgeRequestBuilder) Delete(ctx context.Context, requestConfiguration *E
     }
     return nil
 }
-// Get a container for Microsoft Edge resources. Read-only.
-func (m *EdgeRequestBuilder) Get(ctx context.Context, requestConfiguration *EdgeRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Edgeable, error) {
+// Get get settings from admin
+func (m *SharepointSettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *SharepointSettingsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SharepointSettingsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -80,21 +80,17 @@ func (m *EdgeRequestBuilder) Get(ctx context.Context, requestConfiguration *Edge
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateEdgeFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateSharepointSettingsFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Edgeable), nil
+    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SharepointSettingsable), nil
 }
-// InternetExplorerMode provides operations to manage the internetExplorerMode property of the microsoft.graph.edge entity.
-func (m *EdgeRequestBuilder) InternetExplorerMode()(*EdgeInternetExplorerModeRequestBuilder) {
-    return NewEdgeInternetExplorerModeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// Patch update the navigation property edge in admin
-func (m *EdgeRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Edgeable, requestConfiguration *EdgeRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Edgeable, error) {
+// Patch update the navigation property settings in admin
+func (m *SharepointSettingsRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SharepointSettingsable, requestConfiguration *SharepointSettingsRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SharepointSettingsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -103,17 +99,17 @@ func (m *EdgeRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e64
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateEdgeFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateSharepointSettingsFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Edgeable), nil
+    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SharepointSettingsable), nil
 }
-// ToDeleteRequestInformation delete navigation property edge for admin
-func (m *EdgeRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EdgeRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// ToDeleteRequestInformation delete navigation property settings for admin
+func (m *SharepointSettingsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *SharepointSettingsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
@@ -124,8 +120,8 @@ func (m *EdgeRequestBuilder) ToDeleteRequestInformation(ctx context.Context, req
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation a container for Microsoft Edge resources. Read-only.
-func (m *EdgeRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdgeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// ToGetRequestInformation get settings from admin
+func (m *SharepointSettingsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SharepointSettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
@@ -140,8 +136,8 @@ func (m *EdgeRequestBuilder) ToGetRequestInformation(ctx context.Context, reques
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property edge in admin
-func (m *EdgeRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Edgeable, requestConfiguration *EdgeRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// ToPatchRequestInformation update the navigation property settings in admin
+func (m *SharepointSettingsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SharepointSettingsable, requestConfiguration *SharepointSettingsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters

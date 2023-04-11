@@ -11,7 +11,7 @@ type SubjectRightsRequest struct {
     // The type of the request. Possible values are: export, delete,  access, tagForAction, unknownFutureValue.
     TypeEscaped *SubjectRightsRequestType
 }
-// NewSubjectRightsRequest instantiates a new subjectRightsRequest and sets the default values.
+// NewSubjectRightsRequest instantiates a new SubjectRightsRequest and sets the default values.
 func NewSubjectRightsRequest()(*SubjectRightsRequest) {
     m := &SubjectRightsRequest{
         Entity: *NewEntity(),

@@ -244,8 +244,6 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewChecklistItem(), nil
                     case "#microsoft.graph.claimsMappingPolicy":
                         return NewClaimsMappingPolicy(), nil
-                    case "#microsoft.graph.cloudCommunications":
-                        return NewCloudCommunications(), nil
                     case "#microsoft.graph.columnDefinition":
                         return NewColumnDefinition(), nil
                     case "#microsoft.graph.columnLink":
@@ -948,6 +946,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewSharedPCConfiguration(), nil
                     case "#microsoft.graph.sharedWithChannelTeamInfo":
                         return NewSharedWithChannelTeamInfo(), nil
+                    case "#microsoft.graph.sharepoint":
+                        return NewSharepoint(), nil
+                    case "#microsoft.graph.sharepointSettings":
+                        return NewSharepointSettings(), nil
                     case "#microsoft.graph.shift":
                         return NewShift(), nil
                     case "#microsoft.graph.shiftPreferences":
