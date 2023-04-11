@@ -20,7 +20,7 @@ func NewBrowserSiteList()(*BrowserSiteList) {
 func CreateBrowserSiteListFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBrowserSiteList(), nil
 }
-// GetDescription gets the description property value. Description for the site list
+// GetDescription gets the description property value. The description of the site list.
 func (m *BrowserSiteList) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -31,7 +31,7 @@ func (m *BrowserSiteList) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. Display name of this site list
+// GetDisplayName gets the displayName property value. The name of the site list.
 func (m *BrowserSiteList) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -155,7 +155,7 @@ func (m *BrowserSiteList) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. Name of the admin who made the last update on the site list
+// GetLastModifiedBy gets the lastModifiedBy property value. The user who last modified the site list.
 func (m *BrowserSiteList) GetLastModifiedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -166,7 +166,7 @@ func (m *BrowserSiteList) GetLastModifiedBy()(IdentitySetable) {
     }
     return nil
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The datetime that the admin last updated the site list.
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the site list was last modified.
 func (m *BrowserSiteList) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -177,7 +177,7 @@ func (m *BrowserSiteList) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3
     }
     return nil
 }
-// GetPublishedBy gets the publishedBy property value. Name of the admin who published the site list
+// GetPublishedBy gets the publishedBy property value. The user who published the site list.
 func (m *BrowserSiteList) GetPublishedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("publishedBy")
     if err != nil {
@@ -188,7 +188,7 @@ func (m *BrowserSiteList) GetPublishedBy()(IdentitySetable) {
     }
     return nil
 }
-// GetPublishedDateTime gets the publishedDateTime property value. The datetime that admin published the site list to users in their organization.
+// GetPublishedDateTime gets the publishedDateTime property value. The date and time when the site list was published.
 func (m *BrowserSiteList) GetPublishedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("publishedDateTime")
     if err != nil {
@@ -199,7 +199,7 @@ func (m *BrowserSiteList) GetPublishedDateTime()(*i336074805fc853987abe6f7fe3ad9
     }
     return nil
 }
-// GetRevision gets the revision property value. Admin can have multiple revisions of the site list and the revision is generated whenever admin create/update the site list.
+// GetRevision gets the revision property value. The current revision of the site list.
 func (m *BrowserSiteList) GetRevision()(*string) {
     val, err := m.GetBackingStore().Get("revision")
     if err != nil {
@@ -210,7 +210,7 @@ func (m *BrowserSiteList) GetRevision()(*string) {
     }
     return nil
 }
-// GetSharedCookies gets the sharedCookies property value. The sharedCookies property
+// GetSharedCookies gets the sharedCookies property value. A collection of shared cookies defined for the site list.
 func (m *BrowserSiteList) GetSharedCookies()([]BrowserSharedCookieable) {
     val, err := m.GetBackingStore().Get("sharedCookies")
     if err != nil {
@@ -221,7 +221,7 @@ func (m *BrowserSiteList) GetSharedCookies()([]BrowserSharedCookieable) {
     }
     return nil
 }
-// GetSites gets the sites property value. The sites property
+// GetSites gets the sites property value. A collection of sites defined for the site list.
 func (m *BrowserSiteList) GetSites()([]BrowserSiteable) {
     val, err := m.GetBackingStore().Get("sites")
     if err != nil {
@@ -320,63 +320,63 @@ func (m *BrowserSiteList) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// SetDescription sets the description property value. Description for the site list
+// SetDescription sets the description property value. The description of the site list.
 func (m *BrowserSiteList) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. Display name of this site list
+// SetDisplayName sets the displayName property value. The name of the site list.
 func (m *BrowserSiteList) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedBy sets the lastModifiedBy property value. Name of the admin who made the last update on the site list
+// SetLastModifiedBy sets the lastModifiedBy property value. The user who last modified the site list.
 func (m *BrowserSiteList) SetLastModifiedBy(value IdentitySetable)() {
     err := m.GetBackingStore().Set("lastModifiedBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The datetime that the admin last updated the site list.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time when the site list was last modified.
 func (m *BrowserSiteList) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPublishedBy sets the publishedBy property value. Name of the admin who published the site list
+// SetPublishedBy sets the publishedBy property value. The user who published the site list.
 func (m *BrowserSiteList) SetPublishedBy(value IdentitySetable)() {
     err := m.GetBackingStore().Set("publishedBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPublishedDateTime sets the publishedDateTime property value. The datetime that admin published the site list to users in their organization.
+// SetPublishedDateTime sets the publishedDateTime property value. The date and time when the site list was published.
 func (m *BrowserSiteList) SetPublishedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("publishedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRevision sets the revision property value. Admin can have multiple revisions of the site list and the revision is generated whenever admin create/update the site list.
+// SetRevision sets the revision property value. The current revision of the site list.
 func (m *BrowserSiteList) SetRevision(value *string)() {
     err := m.GetBackingStore().Set("revision", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSharedCookies sets the sharedCookies property value. The sharedCookies property
+// SetSharedCookies sets the sharedCookies property value. A collection of shared cookies defined for the site list.
 func (m *BrowserSiteList) SetSharedCookies(value []BrowserSharedCookieable)() {
     err := m.GetBackingStore().Set("sharedCookies", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSites sets the sites property value. The sites property
+// SetSites sets the sites property value. A collection of sites defined for the site list.
 func (m *BrowserSiteList) SetSites(value []BrowserSiteable)() {
     err := m.GetBackingStore().Set("sites", value)
     if err != nil {

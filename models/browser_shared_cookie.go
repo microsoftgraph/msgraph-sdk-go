@@ -20,7 +20,7 @@ func NewBrowserSharedCookie()(*BrowserSharedCookie) {
 func CreateBrowserSharedCookieFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBrowserSharedCookie(), nil
 }
-// GetComment gets the comment property value. The comment of the cookie
+// GetComment gets the comment property value. The comment for the shared cookie.
 func (m *BrowserSharedCookie) GetComment()(*string) {
     val, err := m.GetBackingStore().Get("comment")
     if err != nil {
@@ -31,7 +31,7 @@ func (m *BrowserSharedCookie) GetComment()(*string) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The datetime that the admin created the cookie
+// GetCreatedDateTime gets the createdDateTime property value. The date and time when the shared cookie was created.
 func (m *BrowserSharedCookie) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -42,7 +42,7 @@ func (m *BrowserSharedCookie) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3a
     }
     return nil
 }
-// GetDeletedDateTime gets the deletedDateTime property value. The datetime that the admin deleted the cookie
+// GetDeletedDateTime gets the deletedDateTime property value. The date and time when the shared cookie was deleted.
 func (m *BrowserSharedCookie) GetDeletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("deletedDateTime")
     if err != nil {
@@ -53,7 +53,7 @@ func (m *BrowserSharedCookie) GetDeletedDateTime()(*i336074805fc853987abe6f7fe3a
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The name of the cookie
+// GetDisplayName gets the displayName property value. The name of the cookie.
 func (m *BrowserSharedCookie) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -193,7 +193,7 @@ func (m *BrowserSharedCookie) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetHistory gets the history property value. The history of the cookie
+// GetHistory gets the history property value. The history of modifications applied to the cookie.
 func (m *BrowserSharedCookie) GetHistory()([]BrowserSharedCookieHistoryable) {
     val, err := m.GetBackingStore().Get("history")
     if err != nil {
@@ -204,7 +204,7 @@ func (m *BrowserSharedCookie) GetHistory()([]BrowserSharedCookieHistoryable) {
     }
     return nil
 }
-// GetHostOnly gets the hostOnly property value. Boolean attribute that determines whether a cookie is  a host-only or domain cookie
+// GetHostOnly gets the hostOnly property value. Controls whether a cookie is a host-only or domain cookie.
 func (m *BrowserSharedCookie) GetHostOnly()(*bool) {
     val, err := m.GetBackingStore().Get("hostOnly")
     if err != nil {
@@ -215,7 +215,7 @@ func (m *BrowserSharedCookie) GetHostOnly()(*bool) {
     }
     return nil
 }
-// GetHostOrDomain gets the hostOrDomain property value. The URL of the cookie
+// GetHostOrDomain gets the hostOrDomain property value. The URL of the cookie.
 func (m *BrowserSharedCookie) GetHostOrDomain()(*string) {
     val, err := m.GetBackingStore().Get("hostOrDomain")
     if err != nil {
@@ -226,7 +226,7 @@ func (m *BrowserSharedCookie) GetHostOrDomain()(*string) {
     }
     return nil
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. The identity of the admin who last updated the cookie
+// GetLastModifiedBy gets the lastModifiedBy property value. The user who last modified the cookie.
 func (m *BrowserSharedCookie) GetLastModifiedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -237,7 +237,7 @@ func (m *BrowserSharedCookie) GetLastModifiedBy()(IdentitySetable) {
     }
     return nil
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The datetime that the admin last updated the cookie
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the cookie was last modified.
 func (m *BrowserSharedCookie) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -248,7 +248,7 @@ func (m *BrowserSharedCookie) GetLastModifiedDateTime()(*i336074805fc853987abe6f
     }
     return nil
 }
-// GetPath gets the path property value. The path of the cookie
+// GetPath gets the path property value. The path of the cookie.
 func (m *BrowserSharedCookie) GetPath()(*string) {
     val, err := m.GetBackingStore().Get("path")
     if err != nil {
@@ -367,70 +367,70 @@ func (m *BrowserSharedCookie) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetComment sets the comment property value. The comment of the cookie
+// SetComment sets the comment property value. The comment for the shared cookie.
 func (m *BrowserSharedCookie) SetComment(value *string)() {
     err := m.GetBackingStore().Set("comment", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The datetime that the admin created the cookie
+// SetCreatedDateTime sets the createdDateTime property value. The date and time when the shared cookie was created.
 func (m *BrowserSharedCookie) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDeletedDateTime sets the deletedDateTime property value. The datetime that the admin deleted the cookie
+// SetDeletedDateTime sets the deletedDateTime property value. The date and time when the shared cookie was deleted.
 func (m *BrowserSharedCookie) SetDeletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("deletedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The name of the cookie
+// SetDisplayName sets the displayName property value. The name of the cookie.
 func (m *BrowserSharedCookie) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetHistory sets the history property value. The history of the cookie
+// SetHistory sets the history property value. The history of modifications applied to the cookie.
 func (m *BrowserSharedCookie) SetHistory(value []BrowserSharedCookieHistoryable)() {
     err := m.GetBackingStore().Set("history", value)
     if err != nil {
         panic(err)
     }
 }
-// SetHostOnly sets the hostOnly property value. Boolean attribute that determines whether a cookie is  a host-only or domain cookie
+// SetHostOnly sets the hostOnly property value. Controls whether a cookie is a host-only or domain cookie.
 func (m *BrowserSharedCookie) SetHostOnly(value *bool)() {
     err := m.GetBackingStore().Set("hostOnly", value)
     if err != nil {
         panic(err)
     }
 }
-// SetHostOrDomain sets the hostOrDomain property value. The URL of the cookie
+// SetHostOrDomain sets the hostOrDomain property value. The URL of the cookie.
 func (m *BrowserSharedCookie) SetHostOrDomain(value *string)() {
     err := m.GetBackingStore().Set("hostOrDomain", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedBy sets the lastModifiedBy property value. The identity of the admin who last updated the cookie
+// SetLastModifiedBy sets the lastModifiedBy property value. The user who last modified the cookie.
 func (m *BrowserSharedCookie) SetLastModifiedBy(value IdentitySetable)() {
     err := m.GetBackingStore().Set("lastModifiedBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The datetime that the admin last updated the cookie
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time when the cookie was last modified.
 func (m *BrowserSharedCookie) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPath sets the path property value. The path of the cookie
+// SetPath sets the path property value. The path of the cookie.
 func (m *BrowserSharedCookie) SetPath(value *string)() {
     err := m.GetBackingStore().Set("path", value)
     if err != nil {

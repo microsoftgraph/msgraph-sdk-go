@@ -31,7 +31,10 @@ func NewEdgeInternetExplorerModeSiteListsItemPublishRequestBuilder(rawUrl string
     urlParams["request-raw-url"] = rawUrl
     return NewEdgeInternetExplorerModeSiteListsItemPublishRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action publish
+// Post publish the specified browserSiteList for devices to download.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/browsersitelist-publish?view=graph-rest-1.0
 func (m *EdgeInternetExplorerModeSiteListsItemPublishRequestBuilder) Post(ctx context.Context, body EdgeInternetExplorerModeSiteListsItemPublishPostRequestBodyable, requestConfiguration *EdgeInternetExplorerModeSiteListsItemPublishRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BrowserSiteListable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -50,7 +53,7 @@ func (m *EdgeInternetExplorerModeSiteListsItemPublishRequestBuilder) Post(ctx co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BrowserSiteListable), nil
 }
-// ToPostRequestInformation invoke action publish
+// ToPostRequestInformation publish the specified browserSiteList for devices to download.
 func (m *EdgeInternetExplorerModeSiteListsItemPublishRequestBuilder) ToPostRequestInformation(ctx context.Context, body EdgeInternetExplorerModeSiteListsItemPublishPostRequestBodyable, requestConfiguration *EdgeInternetExplorerModeSiteListsItemPublishRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

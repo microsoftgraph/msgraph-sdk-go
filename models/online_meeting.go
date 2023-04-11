@@ -410,6 +410,16 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["watermarkProtection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateWatermarkProtectionValuesFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWatermarkProtection(val.(WatermarkProtectionValuesable))
+        }
+        return nil
+    }
     return res
 }
 // GetIsBroadcast gets the isBroadcast property value. Indicates if this is a Teams live event.
@@ -530,6 +540,17 @@ func (m *OnlineMeeting) GetVideoTeleconferenceId()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetWatermarkProtection gets the watermarkProtection property value. Specifies whether a watermark should be applied to a content type by the client application.
+func (m *OnlineMeeting) GetWatermarkProtection()(WatermarkProtectionValuesable) {
+    val, err := m.GetBackingStore().Get("watermarkProtection")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WatermarkProtectionValuesable)
     }
     return nil
 }
@@ -685,6 +706,12 @@ func (m *OnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     {
         err = writer.WriteStringValue("videoTeleconferenceId", m.GetVideoTeleconferenceId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("watermarkProtection", m.GetWatermarkProtection())
         if err != nil {
             return err
         }
@@ -859,6 +886,13 @@ func (m *OnlineMeeting) SetVideoTeleconferenceId(value *string)() {
         panic(err)
     }
 }
+// SetWatermarkProtection sets the watermarkProtection property value. Specifies whether a watermark should be applied to a content type by the client application.
+func (m *OnlineMeeting) SetWatermarkProtection(value WatermarkProtectionValuesable)() {
+    err := m.GetBackingStore().Set("watermarkProtection", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // OnlineMeetingable 
 type OnlineMeetingable interface {
     Entityable
@@ -887,6 +921,7 @@ type OnlineMeetingable interface {
     GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetSubject()(*string)
     GetVideoTeleconferenceId()(*string)
+    GetWatermarkProtection()(WatermarkProtectionValuesable)
     SetAllowAttendeeToEnableCamera(value *bool)()
     SetAllowAttendeeToEnableMic(value *bool)()
     SetAllowedPresenters(value *OnlineMeetingPresenters)()
@@ -911,4 +946,5 @@ type OnlineMeetingable interface {
     SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetSubject(value *string)()
     SetVideoTeleconferenceId(value *string)()
+    SetWatermarkProtection(value WatermarkProtectionValuesable)()
 }

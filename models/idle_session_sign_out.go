@@ -5,25 +5,25 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// Admin 
-type Admin struct {
+// IdleSessionSignOut 
+type IdleSessionSignOut struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAdmin instantiates a new Admin and sets the default values.
-func NewAdmin()(*Admin) {
-    m := &Admin{
+// NewIdleSessionSignOut instantiates a new idleSessionSignOut and sets the default values.
+func NewIdleSessionSignOut()(*IdleSessionSignOut) {
+    m := &IdleSessionSignOut{
     }
     m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
-// CreateAdminFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateAdminFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewAdmin(), nil
+// CreateIdleSessionSignOutFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateIdleSessionSignOutFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewIdleSessionSignOut(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Admin) GetAdditionalData()(map[string]any) {
+func (m *IdleSessionSignOut) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
         panic(err)
@@ -35,30 +35,19 @@ func (m *Admin) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the backingStore property value. Stores model information.
-func (m *Admin) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+func (m *IdleSessionSignOut) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetEdge gets the edge property value. A container for Microsoft Edge resources. Read-only.
-func (m *Admin) GetEdge()(Edgeable) {
-    val, err := m.GetBackingStore().Get("edge")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(Edgeable)
-    }
-    return nil
-}
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Admin) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *IdleSessionSignOut) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["edge"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateEdgeFromDiscriminatorValue)
+    res["isEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetEdge(val.(Edgeable))
+            m.SetIsEnabled(val)
         }
         return nil
     }
@@ -72,30 +61,41 @@ func (m *Admin) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
-    res["serviceAnnouncement"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateServiceAnnouncementFromDiscriminatorValue)
+    res["signOutAfterInSeconds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt64Value()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetServiceAnnouncement(val.(ServiceAnnouncementable))
+            m.SetSignOutAfterInSeconds(val)
         }
         return nil
     }
-    res["sharepoint"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateSharepointFromDiscriminatorValue)
+    res["warnAfterInSeconds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt64Value()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSharepoint(val.(Sharepointable))
+            m.SetWarnAfterInSeconds(val)
         }
         return nil
     }
     return res
 }
+// GetIsEnabled gets the isEnabled property value. The isEnabled property
+func (m *IdleSessionSignOut) GetIsEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("isEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetOdataType gets the @odata.type property value. The OdataType property
-func (m *Admin) GetOdataType()(*string) {
+func (m *IdleSessionSignOut) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
@@ -105,32 +105,32 @@ func (m *Admin) GetOdataType()(*string) {
     }
     return nil
 }
-// GetServiceAnnouncement gets the serviceAnnouncement property value. A container for service communications resources. Read-only.
-func (m *Admin) GetServiceAnnouncement()(ServiceAnnouncementable) {
-    val, err := m.GetBackingStore().Get("serviceAnnouncement")
+// GetSignOutAfterInSeconds gets the signOutAfterInSeconds property value. The signOutAfterInSeconds property
+func (m *IdleSessionSignOut) GetSignOutAfterInSeconds()(*int64) {
+    val, err := m.GetBackingStore().Get("signOutAfterInSeconds")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(ServiceAnnouncementable)
+        return val.(*int64)
     }
     return nil
 }
-// GetSharepoint gets the sharepoint property value. The sharepoint property
-func (m *Admin) GetSharepoint()(Sharepointable) {
-    val, err := m.GetBackingStore().Get("sharepoint")
+// GetWarnAfterInSeconds gets the warnAfterInSeconds property value. The warnAfterInSeconds property
+func (m *IdleSessionSignOut) GetWarnAfterInSeconds()(*int64) {
+    val, err := m.GetBackingStore().Get("warnAfterInSeconds")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(Sharepointable)
+        return val.(*int64)
     }
     return nil
 }
 // Serialize serializes information the current object
-func (m *Admin) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+func (m *IdleSessionSignOut) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteObjectValue("edge", m.GetEdge())
+        err := writer.WriteBoolValue("isEnabled", m.GetIsEnabled())
         if err != nil {
             return err
         }
@@ -142,13 +142,13 @@ func (m *Admin) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
         }
     }
     {
-        err := writer.WriteObjectValue("serviceAnnouncement", m.GetServiceAnnouncement())
+        err := writer.WriteInt64Value("signOutAfterInSeconds", m.GetSignOutAfterInSeconds())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteObjectValue("sharepoint", m.GetSharepoint())
+        err := writer.WriteInt64Value("warnAfterInSeconds", m.GetWarnAfterInSeconds())
         if err != nil {
             return err
         }
@@ -162,57 +162,57 @@ func (m *Admin) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Admin) SetAdditionalData(value map[string]any)() {
+func (m *IdleSessionSignOut) SetAdditionalData(value map[string]any)() {
     err := m.GetBackingStore().Set("additionalData", value)
     if err != nil {
         panic(err)
     }
 }
 // SetBackingStore sets the backingStore property value. Stores model information.
-func (m *Admin) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+func (m *IdleSessionSignOut) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetEdge sets the edge property value. A container for Microsoft Edge resources. Read-only.
-func (m *Admin) SetEdge(value Edgeable)() {
-    err := m.GetBackingStore().Set("edge", value)
+// SetIsEnabled sets the isEnabled property value. The isEnabled property
+func (m *IdleSessionSignOut) SetIsEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("isEnabled", value)
     if err != nil {
         panic(err)
     }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
-func (m *Admin) SetOdataType(value *string)() {
+func (m *IdleSessionSignOut) SetOdataType(value *string)() {
     err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetServiceAnnouncement sets the serviceAnnouncement property value. A container for service communications resources. Read-only.
-func (m *Admin) SetServiceAnnouncement(value ServiceAnnouncementable)() {
-    err := m.GetBackingStore().Set("serviceAnnouncement", value)
+// SetSignOutAfterInSeconds sets the signOutAfterInSeconds property value. The signOutAfterInSeconds property
+func (m *IdleSessionSignOut) SetSignOutAfterInSeconds(value *int64)() {
+    err := m.GetBackingStore().Set("signOutAfterInSeconds", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSharepoint sets the sharepoint property value. The sharepoint property
-func (m *Admin) SetSharepoint(value Sharepointable)() {
-    err := m.GetBackingStore().Set("sharepoint", value)
+// SetWarnAfterInSeconds sets the warnAfterInSeconds property value. The warnAfterInSeconds property
+func (m *IdleSessionSignOut) SetWarnAfterInSeconds(value *int64)() {
+    err := m.GetBackingStore().Set("warnAfterInSeconds", value)
     if err != nil {
         panic(err)
     }
 }
-// Adminable 
-type Adminable interface {
+// IdleSessionSignOutable 
+type IdleSessionSignOutable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetEdge()(Edgeable)
+    GetIsEnabled()(*bool)
     GetOdataType()(*string)
-    GetServiceAnnouncement()(ServiceAnnouncementable)
-    GetSharepoint()(Sharepointable)
+    GetSignOutAfterInSeconds()(*int64)
+    GetWarnAfterInSeconds()(*int64)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetEdge(value Edgeable)()
+    SetIsEnabled(value *bool)()
     SetOdataType(value *string)()
-    SetServiceAnnouncement(value ServiceAnnouncementable)()
-    SetSharepoint(value Sharepointable)()
+    SetSignOutAfterInSeconds(value *int64)()
+    SetWarnAfterInSeconds(value *int64)()
 }

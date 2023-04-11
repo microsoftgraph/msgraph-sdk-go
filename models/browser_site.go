@@ -20,7 +20,7 @@ func NewBrowserSite()(*BrowserSite) {
 func CreateBrowserSiteFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBrowserSite(), nil
 }
-// GetAllowRedirect gets the allowRedirect property value. Boolean attribute that controls the behavior of redirected sites
+// GetAllowRedirect gets the allowRedirect property value. Controls the behavior of redirected sites. If true, indicates that the site will open in Internet Explorer 11 or Microsoft Edge even if the site is navigated to as part of a HTTP or meta refresh redirection chain.
 func (m *BrowserSite) GetAllowRedirect()(*bool) {
     val, err := m.GetBackingStore().Get("allowRedirect")
     if err != nil {
@@ -31,7 +31,7 @@ func (m *BrowserSite) GetAllowRedirect()(*bool) {
     }
     return nil
 }
-// GetComment gets the comment property value. The comment for the site
+// GetComment gets the comment property value. The comment for the site.
 func (m *BrowserSite) GetComment()(*string) {
     val, err := m.GetBackingStore().Get("comment")
     if err != nil {
@@ -53,7 +53,7 @@ func (m *BrowserSite) GetCompatibilityMode()(*BrowserSiteCompatibilityMode) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The datetime that the site is created
+// GetCreatedDateTime gets the createdDateTime property value. The date and time when the site was created.
 func (m *BrowserSite) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -64,7 +64,7 @@ func (m *BrowserSite) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     }
     return nil
 }
-// GetDeletedDateTime gets the deletedDateTime property value. The datetime that the admin deleted the site
+// GetDeletedDateTime gets the deletedDateTime property value. The date and time when the site was deleted.
 func (m *BrowserSite) GetDeletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("deletedDateTime")
     if err != nil {
@@ -204,7 +204,7 @@ func (m *BrowserSite) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetHistory gets the history property value. The collection stores site revision metadata and audit logs.
+// GetHistory gets the history property value. The history of modifications applied to the site.
 func (m *BrowserSite) GetHistory()([]BrowserSiteHistoryable) {
     val, err := m.GetBackingStore().Get("history")
     if err != nil {
@@ -215,7 +215,7 @@ func (m *BrowserSite) GetHistory()([]BrowserSiteHistoryable) {
     }
     return nil
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. The admin who made the last update on the site.
+// GetLastModifiedBy gets the lastModifiedBy property value. The user who last modified the site.
 func (m *BrowserSite) GetLastModifiedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -226,7 +226,7 @@ func (m *BrowserSite) GetLastModifiedBy()(IdentitySetable) {
     }
     return nil
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The datetime that the admin updated the site.
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the site was last modified.
 func (m *BrowserSite) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -270,7 +270,7 @@ func (m *BrowserSite) GetTargetEnvironment()(*BrowserSiteTargetEnvironment) {
     }
     return nil
 }
-// GetWebUrl gets the webUrl property value. The URL of the site
+// GetWebUrl gets the webUrl property value. The URL of the site.
 func (m *BrowserSite) GetWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("webUrl")
     if err != nil {
@@ -369,14 +369,14 @@ func (m *BrowserSite) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetAllowRedirect sets the allowRedirect property value. Boolean attribute that controls the behavior of redirected sites
+// SetAllowRedirect sets the allowRedirect property value. Controls the behavior of redirected sites. If true, indicates that the site will open in Internet Explorer 11 or Microsoft Edge even if the site is navigated to as part of a HTTP or meta refresh redirection chain.
 func (m *BrowserSite) SetAllowRedirect(value *bool)() {
     err := m.GetBackingStore().Set("allowRedirect", value)
     if err != nil {
         panic(err)
     }
 }
-// SetComment sets the comment property value. The comment for the site
+// SetComment sets the comment property value. The comment for the site.
 func (m *BrowserSite) SetComment(value *string)() {
     err := m.GetBackingStore().Set("comment", value)
     if err != nil {
@@ -390,35 +390,35 @@ func (m *BrowserSite) SetCompatibilityMode(value *BrowserSiteCompatibilityMode)(
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The datetime that the site is created
+// SetCreatedDateTime sets the createdDateTime property value. The date and time when the site was created.
 func (m *BrowserSite) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDeletedDateTime sets the deletedDateTime property value. The datetime that the admin deleted the site
+// SetDeletedDateTime sets the deletedDateTime property value. The date and time when the site was deleted.
 func (m *BrowserSite) SetDeletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("deletedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetHistory sets the history property value. The collection stores site revision metadata and audit logs.
+// SetHistory sets the history property value. The history of modifications applied to the site.
 func (m *BrowserSite) SetHistory(value []BrowserSiteHistoryable)() {
     err := m.GetBackingStore().Set("history", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedBy sets the lastModifiedBy property value. The admin who made the last update on the site.
+// SetLastModifiedBy sets the lastModifiedBy property value. The user who last modified the site.
 func (m *BrowserSite) SetLastModifiedBy(value IdentitySetable)() {
     err := m.GetBackingStore().Set("lastModifiedBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The datetime that the admin updated the site.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time when the site was last modified.
 func (m *BrowserSite) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {
@@ -446,7 +446,7 @@ func (m *BrowserSite) SetTargetEnvironment(value *BrowserSiteTargetEnvironment)(
         panic(err)
     }
 }
-// SetWebUrl sets the webUrl property value. The URL of the site
+// SetWebUrl sets the webUrl property value. The URL of the site.
 func (m *BrowserSite) SetWebUrl(value *string)() {
     err := m.GetBackingStore().Set("webUrl", value)
     if err != nil {

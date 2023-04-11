@@ -11,7 +11,7 @@ import (
 type EdgeInternetExplorerModeSiteListsItemSitesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EdgeInternetExplorerModeSiteListsItemSitesRequestBuilderGetQueryParameters get sites from admin
+// EdgeInternetExplorerModeSiteListsItemSitesRequestBuilderGetQueryParameters get a list of the browserSite objects and their properties.
 type EdgeInternetExplorerModeSiteListsItemSitesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -63,7 +63,10 @@ func NewEdgeInternetExplorerModeSiteListsItemSitesRequestBuilder(rawUrl string, 
 func (m *EdgeInternetExplorerModeSiteListsItemSitesRequestBuilder) Count()(*EdgeInternetExplorerModeSiteListsItemSitesCountRequestBuilder) {
     return NewEdgeInternetExplorerModeSiteListsItemSitesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get sites from admin
+// Get get a list of the browserSite objects and their properties.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/browsersitelist-list-sites?view=graph-rest-1.0
 func (m *EdgeInternetExplorerModeSiteListsItemSitesRequestBuilder) Get(ctx context.Context, requestConfiguration *EdgeInternetExplorerModeSiteListsItemSitesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BrowserSiteCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -82,7 +85,10 @@ func (m *EdgeInternetExplorerModeSiteListsItemSitesRequestBuilder) Get(ctx conte
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BrowserSiteCollectionResponseable), nil
 }
-// Post create new navigation property to sites for admin
+// Post create a new browserSite object in a browserSiteList.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/browsersitelist-post-sites?view=graph-rest-1.0
 func (m *EdgeInternetExplorerModeSiteListsItemSitesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BrowserSiteable, requestConfiguration *EdgeInternetExplorerModeSiteListsItemSitesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BrowserSiteable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -101,7 +107,7 @@ func (m *EdgeInternetExplorerModeSiteListsItemSitesRequestBuilder) Post(ctx cont
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BrowserSiteable), nil
 }
-// ToGetRequestInformation get sites from admin
+// ToGetRequestInformation get a list of the browserSite objects and their properties.
 func (m *EdgeInternetExplorerModeSiteListsItemSitesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdgeInternetExplorerModeSiteListsItemSitesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -117,7 +123,7 @@ func (m *EdgeInternetExplorerModeSiteListsItemSitesRequestBuilder) ToGetRequestI
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to sites for admin
+// ToPostRequestInformation create a new browserSite object in a browserSiteList.
 func (m *EdgeInternetExplorerModeSiteListsItemSitesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BrowserSiteable, requestConfiguration *EdgeInternetExplorerModeSiteListsItemSitesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
