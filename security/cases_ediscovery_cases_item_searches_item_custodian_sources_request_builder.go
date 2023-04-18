@@ -39,6 +39,17 @@ type CasesEdiscoveryCasesItemSearchesItemCustodianSourcesRequestBuilderGetReques
     // Request query parameters
     QueryParameters *CasesEdiscoveryCasesItemSearchesItemCustodianSourcesRequestBuilderGetQueryParameters
 }
+// ByDataSourceId provides operations to manage the custodianSources property of the microsoft.graph.security.ediscoverySearch entity.
+func (m *CasesEdiscoveryCasesItemSearchesItemCustodianSourcesRequestBuilder) ByDataSourceId(dataSourceId string)(*CasesEdiscoveryCasesItemSearchesItemCustodianSourcesDataSourceItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if dataSourceId != "" {
+        urlTplParams["dataSource%2Did"] = dataSourceId
+    }
+    return NewCasesEdiscoveryCasesItemSearchesItemCustodianSourcesDataSourceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCasesEdiscoveryCasesItemSearchesItemCustodianSourcesRequestBuilderInternal instantiates a new CustodianSourcesRequestBuilder and sets the default values.
 func NewCasesEdiscoveryCasesItemSearchesItemCustodianSourcesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CasesEdiscoveryCasesItemSearchesItemCustodianSourcesRequestBuilder) {
     m := &CasesEdiscoveryCasesItemSearchesItemCustodianSourcesRequestBuilder{

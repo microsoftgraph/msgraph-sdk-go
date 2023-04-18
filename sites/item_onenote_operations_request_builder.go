@@ -46,6 +46,17 @@ type ItemOnenoteOperationsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByOnenoteOperationId provides operations to manage the operations property of the microsoft.graph.onenote entity.
+func (m *ItemOnenoteOperationsRequestBuilder) ByOnenoteOperationId(onenoteOperationId string)(*ItemOnenoteOperationsOnenoteOperationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if onenoteOperationId != "" {
+        urlTplParams["onenoteOperation%2Did"] = onenoteOperationId
+    }
+    return NewItemOnenoteOperationsOnenoteOperationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemOnenoteOperationsRequestBuilderInternal instantiates a new OperationsRequestBuilder and sets the default values.
 func NewItemOnenoteOperationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOnenoteOperationsRequestBuilder) {
     m := &ItemOnenoteOperationsRequestBuilder{

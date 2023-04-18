@@ -46,6 +46,17 @@ type CallsItemParticipantsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByParticipantId provides operations to manage the participants property of the microsoft.graph.call entity.
+func (m *CallsItemParticipantsRequestBuilder) ByParticipantId(participantId string)(*CallsItemParticipantsParticipantItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if participantId != "" {
+        urlTplParams["participant%2Did"] = participantId
+    }
+    return NewCallsItemParticipantsParticipantItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCallsItemParticipantsRequestBuilderInternal instantiates a new ParticipantsRequestBuilder and sets the default values.
 func NewCallsItemParticipantsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallsItemParticipantsRequestBuilder) {
     m := &CallsItemParticipantsRequestBuilder{

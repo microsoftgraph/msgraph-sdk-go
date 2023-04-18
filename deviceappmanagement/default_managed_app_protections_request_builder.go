@@ -46,6 +46,17 @@ type DefaultManagedAppProtectionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDefaultManagedAppProtectionId provides operations to manage the defaultManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.
+func (m *DefaultManagedAppProtectionsRequestBuilder) ByDefaultManagedAppProtectionId(defaultManagedAppProtectionId string)(*DefaultManagedAppProtectionsDefaultManagedAppProtectionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if defaultManagedAppProtectionId != "" {
+        urlTplParams["defaultManagedAppProtection%2Did"] = defaultManagedAppProtectionId
+    }
+    return NewDefaultManagedAppProtectionsDefaultManagedAppProtectionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewDefaultManagedAppProtectionsRequestBuilderInternal instantiates a new DefaultManagedAppProtectionsRequestBuilder and sets the default values.
 func NewDefaultManagedAppProtectionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DefaultManagedAppProtectionsRequestBuilder) {
     m := &DefaultManagedAppProtectionsRequestBuilder{

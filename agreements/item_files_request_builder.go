@@ -46,6 +46,17 @@ type ItemFilesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByAgreementFileLocalizationId provides operations to manage the files property of the microsoft.graph.agreement entity.
+func (m *ItemFilesRequestBuilder) ByAgreementFileLocalizationId(agreementFileLocalizationId string)(*ItemFilesAgreementFileLocalizationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if agreementFileLocalizationId != "" {
+        urlTplParams["agreementFileLocalization%2Did"] = agreementFileLocalizationId
+    }
+    return NewItemFilesAgreementFileLocalizationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemFilesRequestBuilderInternal instantiates a new FilesRequestBuilder and sets the default values.
 func NewItemFilesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemFilesRequestBuilder) {
     m := &ItemFilesRequestBuilder{

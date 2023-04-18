@@ -46,6 +46,17 @@ type GroupSettingsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByGroupSettingId provides operations to manage the collection of groupSetting entities.
+func (m *GroupSettingsRequestBuilder) ByGroupSettingId(groupSettingId string)(*GroupSettingItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if groupSettingId != "" {
+        urlTplParams["groupSetting%2Did"] = groupSettingId
+    }
+    return NewGroupSettingItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewGroupSettingsRequestBuilderInternal instantiates a new GroupSettingsRequestBuilder and sets the default values.
 func NewGroupSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupSettingsRequestBuilder) {
     m := &GroupSettingsRequestBuilder{

@@ -46,6 +46,17 @@ type ItemDeviceManagementTroubleshootingEventsRequestBuilderPostRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceManagementTroubleshootingEventId provides operations to manage the deviceManagementTroubleshootingEvents property of the microsoft.graph.user entity.
+func (m *ItemDeviceManagementTroubleshootingEventsRequestBuilder) ByDeviceManagementTroubleshootingEventId(deviceManagementTroubleshootingEventId string)(*ItemDeviceManagementTroubleshootingEventsDeviceManagementTroubleshootingEventItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceManagementTroubleshootingEventId != "" {
+        urlTplParams["deviceManagementTroubleshootingEvent%2Did"] = deviceManagementTroubleshootingEventId
+    }
+    return NewItemDeviceManagementTroubleshootingEventsDeviceManagementTroubleshootingEventItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemDeviceManagementTroubleshootingEventsRequestBuilderInternal instantiates a new DeviceManagementTroubleshootingEventsRequestBuilder and sets the default values.
 func NewItemDeviceManagementTroubleshootingEventsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDeviceManagementTroubleshootingEventsRequestBuilder) {
     m := &ItemDeviceManagementTroubleshootingEventsRequestBuilder{

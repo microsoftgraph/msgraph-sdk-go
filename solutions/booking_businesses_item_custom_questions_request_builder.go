@@ -46,6 +46,17 @@ type BookingBusinessesItemCustomQuestionsRequestBuilderPostRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByBookingCustomQuestionId provides operations to manage the customQuestions property of the microsoft.graph.bookingBusiness entity.
+func (m *BookingBusinessesItemCustomQuestionsRequestBuilder) ByBookingCustomQuestionId(bookingCustomQuestionId string)(*BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if bookingCustomQuestionId != "" {
+        urlTplParams["bookingCustomQuestion%2Did"] = bookingCustomQuestionId
+    }
+    return NewBookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewBookingBusinessesItemCustomQuestionsRequestBuilderInternal instantiates a new CustomQuestionsRequestBuilder and sets the default values.
 func NewBookingBusinessesItemCustomQuestionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BookingBusinessesItemCustomQuestionsRequestBuilder) {
     m := &BookingBusinessesItemCustomQuestionsRequestBuilder{

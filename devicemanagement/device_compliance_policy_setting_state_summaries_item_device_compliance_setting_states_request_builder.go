@@ -46,6 +46,17 @@ type DeviceCompliancePolicySettingStateSummariesItemDeviceComplianceSettingState
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceComplianceSettingStateId provides operations to manage the deviceComplianceSettingStates property of the microsoft.graph.deviceCompliancePolicySettingStateSummary entity.
+func (m *DeviceCompliancePolicySettingStateSummariesItemDeviceComplianceSettingStatesRequestBuilder) ByDeviceComplianceSettingStateId(deviceComplianceSettingStateId string)(*DeviceCompliancePolicySettingStateSummariesItemDeviceComplianceSettingStatesDeviceComplianceSettingStateItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceComplianceSettingStateId != "" {
+        urlTplParams["deviceComplianceSettingState%2Did"] = deviceComplianceSettingStateId
+    }
+    return NewDeviceCompliancePolicySettingStateSummariesItemDeviceComplianceSettingStatesDeviceComplianceSettingStateItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewDeviceCompliancePolicySettingStateSummariesItemDeviceComplianceSettingStatesRequestBuilderInternal instantiates a new DeviceComplianceSettingStatesRequestBuilder and sets the default values.
 func NewDeviceCompliancePolicySettingStateSummariesItemDeviceComplianceSettingStatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceCompliancePolicySettingStateSummariesItemDeviceComplianceSettingStatesRequestBuilder) {
     m := &DeviceCompliancePolicySettingStateSummariesItemDeviceComplianceSettingStatesRequestBuilder{

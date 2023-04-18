@@ -46,6 +46,17 @@ type ItemVerificationDnsRecordsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDomainDnsRecordId provides operations to manage the verificationDnsRecords property of the microsoft.graph.domain entity.
+func (m *ItemVerificationDnsRecordsRequestBuilder) ByDomainDnsRecordId(domainDnsRecordId string)(*ItemVerificationDnsRecordsDomainDnsRecordItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if domainDnsRecordId != "" {
+        urlTplParams["domainDnsRecord%2Did"] = domainDnsRecordId
+    }
+    return NewItemVerificationDnsRecordsDomainDnsRecordItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemVerificationDnsRecordsRequestBuilderInternal instantiates a new VerificationDnsRecordsRequestBuilder and sets the default values.
 func NewItemVerificationDnsRecordsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemVerificationDnsRecordsRequestBuilder) {
     m := &ItemVerificationDnsRecordsRequestBuilder{

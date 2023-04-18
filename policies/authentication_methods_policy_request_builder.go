@@ -45,17 +45,6 @@ type AuthenticationMethodsPolicyRequestBuilderPatchRequestConfiguration struct {
 func (m *AuthenticationMethodsPolicyRequestBuilder) AuthenticationMethodConfigurations()(*AuthenticationMethodsPolicyAuthenticationMethodConfigurationsRequestBuilder) {
     return NewAuthenticationMethodsPolicyAuthenticationMethodConfigurationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AuthenticationMethodConfigurationsById provides operations to manage the authenticationMethodConfigurations property of the microsoft.graph.authenticationMethodsPolicy entity.
-func (m *AuthenticationMethodsPolicyRequestBuilder) AuthenticationMethodConfigurationsById(id string)(*AuthenticationMethodsPolicyAuthenticationMethodConfigurationsAuthenticationMethodConfigurationItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["authenticationMethodConfiguration%2Did"] = id
-    }
-    return NewAuthenticationMethodsPolicyAuthenticationMethodConfigurationsAuthenticationMethodConfigurationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewAuthenticationMethodsPolicyRequestBuilderInternal instantiates a new AuthenticationMethodsPolicyRequestBuilder and sets the default values.
 func NewAuthenticationMethodsPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuthenticationMethodsPolicyRequestBuilder) {
     m := &AuthenticationMethodsPolicyRequestBuilder{

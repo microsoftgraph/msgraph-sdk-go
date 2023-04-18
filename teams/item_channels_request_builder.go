@@ -46,6 +46,17 @@ type ItemChannelsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByChannelId provides operations to manage the channels property of the microsoft.graph.team entity.
+func (m *ItemChannelsRequestBuilder) ByChannelId(channelId string)(*ItemChannelsChannelItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if channelId != "" {
+        urlTplParams["channel%2Did"] = channelId
+    }
+    return NewItemChannelsChannelItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemChannelsRequestBuilderInternal instantiates a new ChannelsRequestBuilder and sets the default values.
 func NewItemChannelsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemChannelsRequestBuilder) {
     m := &ItemChannelsRequestBuilder{

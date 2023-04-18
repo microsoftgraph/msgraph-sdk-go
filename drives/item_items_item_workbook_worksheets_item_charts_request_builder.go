@@ -50,6 +50,17 @@ type ItemItemsItemWorkbookWorksheetsItemChartsRequestBuilderPostRequestConfigura
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsRequestBuilder) Add()(*ItemItemsItemWorkbookWorksheetsItemChartsAddRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemChartsAddRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ByWorkbookChartId provides operations to manage the charts property of the microsoft.graph.workbookWorksheet entity.
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsRequestBuilder) ByWorkbookChartId(workbookChartId string)(*ItemItemsItemWorkbookWorksheetsItemChartsWorkbookChartItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if workbookChartId != "" {
+        urlTplParams["workbookChart%2Did"] = workbookChartId
+    }
+    return NewItemItemsItemWorkbookWorksheetsItemChartsWorkbookChartItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemItemsItemWorkbookWorksheetsItemChartsRequestBuilderInternal instantiates a new ChartsRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsItemChartsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookWorksheetsItemChartsRequestBuilder) {
     m := &ItemItemsItemWorkbookWorksheetsItemChartsRequestBuilder{

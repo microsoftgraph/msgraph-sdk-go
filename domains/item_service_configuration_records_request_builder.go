@@ -46,6 +46,17 @@ type ItemServiceConfigurationRecordsRequestBuilderPostRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDomainDnsRecordId provides operations to manage the serviceConfigurationRecords property of the microsoft.graph.domain entity.
+func (m *ItemServiceConfigurationRecordsRequestBuilder) ByDomainDnsRecordId(domainDnsRecordId string)(*ItemServiceConfigurationRecordsDomainDnsRecordItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if domainDnsRecordId != "" {
+        urlTplParams["domainDnsRecord%2Did"] = domainDnsRecordId
+    }
+    return NewItemServiceConfigurationRecordsDomainDnsRecordItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemServiceConfigurationRecordsRequestBuilderInternal instantiates a new ServiceConfigurationRecordsRequestBuilder and sets the default values.
 func NewItemServiceConfigurationRecordsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemServiceConfigurationRecordsRequestBuilder) {
     m := &ItemServiceConfigurationRecordsRequestBuilder{

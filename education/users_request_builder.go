@@ -46,6 +46,17 @@ type UsersRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByEducationUserId provides operations to manage the users property of the microsoft.graph.educationRoot entity.
+func (m *UsersRequestBuilder) ByEducationUserId(educationUserId string)(*UsersEducationUserItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if educationUserId != "" {
+        urlTplParams["educationUser%2Did"] = educationUserId
+    }
+    return NewUsersEducationUserItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewUsersRequestBuilderInternal instantiates a new UsersRequestBuilder and sets the default values.
 func NewUsersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UsersRequestBuilder) {
     m := &UsersRequestBuilder{

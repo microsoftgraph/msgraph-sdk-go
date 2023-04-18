@@ -46,6 +46,17 @@ type AndroidManagedAppProtectionsItemAppsRequestBuilderPostRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByManagedMobileAppId provides operations to manage the apps property of the microsoft.graph.androidManagedAppProtection entity.
+func (m *AndroidManagedAppProtectionsItemAppsRequestBuilder) ByManagedMobileAppId(managedMobileAppId string)(*AndroidManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if managedMobileAppId != "" {
+        urlTplParams["managedMobileApp%2Did"] = managedMobileAppId
+    }
+    return NewAndroidManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewAndroidManagedAppProtectionsItemAppsRequestBuilderInternal instantiates a new AppsRequestBuilder and sets the default values.
 func NewAndroidManagedAppProtectionsItemAppsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AndroidManagedAppProtectionsItemAppsRequestBuilder) {
     m := &AndroidManagedAppProtectionsItemAppsRequestBuilder{

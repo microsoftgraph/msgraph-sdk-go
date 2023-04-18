@@ -112,17 +112,6 @@ func (m *ItemTermStoreGroupsGroupItemRequestBuilder) Patch(ctx context.Context, 
 func (m *ItemTermStoreGroupsGroupItemRequestBuilder) Sets()(*ItemTermStoreGroupsItemSetsRequestBuilder) {
     return NewItemTermStoreGroupsItemSetsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// SetsById provides operations to manage the sets property of the microsoft.graph.termStore.group entity.
-func (m *ItemTermStoreGroupsGroupItemRequestBuilder) SetsById(id string)(*ItemTermStoreGroupsItemSetsSetItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["set%2Did"] = id
-    }
-    return NewItemTermStoreGroupsItemSetsSetItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property groups for sites
 func (m *ItemTermStoreGroupsGroupItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTermStoreGroupsGroupItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

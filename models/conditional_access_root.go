@@ -8,7 +8,7 @@ import (
 type ConditionalAccessRoot struct {
     Entity
 }
-// NewConditionalAccessRoot instantiates a new conditionalAccessRoot and sets the default values.
+// NewConditionalAccessRoot instantiates a new ConditionalAccessRoot and sets the default values.
 func NewConditionalAccessRoot()(*ConditionalAccessRoot) {
     m := &ConditionalAccessRoot{
         Entity: *NewEntity(),
@@ -30,6 +30,17 @@ func (m *ConditionalAccessRoot) GetAuthenticationContextClassReferences()([]Auth
     }
     return nil
 }
+// GetAuthenticationStrength gets the authenticationStrength property value. The authenticationStrength property
+func (m *ConditionalAccessRoot) GetAuthenticationStrength()(AuthenticationStrengthRootable) {
+    val, err := m.GetBackingStore().Get("authenticationStrength")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AuthenticationStrengthRootable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConditionalAccessRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
@@ -44,6 +55,16 @@ func (m *ConditionalAccessRoot) GetFieldDeserializers()(map[string]func(i878a80d
                 res[i] = v.(AuthenticationContextClassReferenceable)
             }
             m.SetAuthenticationContextClassReferences(res)
+        }
+        return nil
+    }
+    res["authenticationStrength"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateAuthenticationStrengthRootFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAuthenticationStrength(val.(AuthenticationStrengthRootable))
         }
         return nil
     }
@@ -140,6 +161,12 @@ func (m *ConditionalAccessRoot) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("authenticationStrength", m.GetAuthenticationStrength())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetNamedLocations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetNamedLocations()))
         for i, v := range m.GetNamedLocations() {
@@ -179,6 +206,13 @@ func (m *ConditionalAccessRoot) SetAuthenticationContextClassReferences(value []
         panic(err)
     }
 }
+// SetAuthenticationStrength sets the authenticationStrength property value. The authenticationStrength property
+func (m *ConditionalAccessRoot) SetAuthenticationStrength(value AuthenticationStrengthRootable)() {
+    err := m.GetBackingStore().Set("authenticationStrength", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetNamedLocations sets the namedLocations property value. Read-only. Nullable. Returns a collection of the specified named locations.
 func (m *ConditionalAccessRoot) SetNamedLocations(value []NamedLocationable)() {
     err := m.GetBackingStore().Set("namedLocations", value)
@@ -205,10 +239,12 @@ type ConditionalAccessRootable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAuthenticationContextClassReferences()([]AuthenticationContextClassReferenceable)
+    GetAuthenticationStrength()(AuthenticationStrengthRootable)
     GetNamedLocations()([]NamedLocationable)
     GetPolicies()([]ConditionalAccessPolicyable)
     GetTemplates()([]ConditionalAccessTemplateable)
     SetAuthenticationContextClassReferences(value []AuthenticationContextClassReferenceable)()
+    SetAuthenticationStrength(value AuthenticationStrengthRootable)()
     SetNamedLocations(value []NamedLocationable)()
     SetPolicies(value []ConditionalAccessPolicyable)()
     SetTemplates(value []ConditionalAccessTemplateable)()

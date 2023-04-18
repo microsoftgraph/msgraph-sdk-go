@@ -89,61 +89,17 @@ func (m *IdentityProtectionRequestBuilder) Patch(ctx context.Context, body iadcd
 func (m *IdentityProtectionRequestBuilder) RiskDetections()(*RiskDetectionsRequestBuilder) {
     return NewRiskDetectionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// RiskDetectionsById provides operations to manage the riskDetections property of the microsoft.graph.identityProtectionRoot entity.
-func (m *IdentityProtectionRequestBuilder) RiskDetectionsById(id string)(*RiskDetectionsRiskDetectionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["riskDetection%2Did"] = id
-    }
-    return NewRiskDetectionsRiskDetectionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // RiskyServicePrincipals provides operations to manage the riskyServicePrincipals property of the microsoft.graph.identityProtectionRoot entity.
 func (m *IdentityProtectionRequestBuilder) RiskyServicePrincipals()(*RiskyServicePrincipalsRequestBuilder) {
     return NewRiskyServicePrincipalsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// RiskyServicePrincipalsById provides operations to manage the riskyServicePrincipals property of the microsoft.graph.identityProtectionRoot entity.
-func (m *IdentityProtectionRequestBuilder) RiskyServicePrincipalsById(id string)(*RiskyServicePrincipalsRiskyServicePrincipalItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["riskyServicePrincipal%2Did"] = id
-    }
-    return NewRiskyServicePrincipalsRiskyServicePrincipalItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // RiskyUsers provides operations to manage the riskyUsers property of the microsoft.graph.identityProtectionRoot entity.
 func (m *IdentityProtectionRequestBuilder) RiskyUsers()(*RiskyUsersRequestBuilder) {
     return NewRiskyUsersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// RiskyUsersById provides operations to manage the riskyUsers property of the microsoft.graph.identityProtectionRoot entity.
-func (m *IdentityProtectionRequestBuilder) RiskyUsersById(id string)(*RiskyUsersRiskyUserItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["riskyUser%2Did"] = id
-    }
-    return NewRiskyUsersRiskyUserItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ServicePrincipalRiskDetections provides operations to manage the servicePrincipalRiskDetections property of the microsoft.graph.identityProtectionRoot entity.
 func (m *IdentityProtectionRequestBuilder) ServicePrincipalRiskDetections()(*ServicePrincipalRiskDetectionsRequestBuilder) {
     return NewServicePrincipalRiskDetectionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// ServicePrincipalRiskDetectionsById provides operations to manage the servicePrincipalRiskDetections property of the microsoft.graph.identityProtectionRoot entity.
-func (m *IdentityProtectionRequestBuilder) ServicePrincipalRiskDetectionsById(id string)(*ServicePrincipalRiskDetectionsServicePrincipalRiskDetectionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["servicePrincipalRiskDetection%2Did"] = id
-    }
-    return NewServicePrincipalRiskDetectionsServicePrincipalRiskDetectionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get identityProtection
 func (m *IdentityProtectionRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IdentityProtectionRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

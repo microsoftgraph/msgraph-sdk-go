@@ -39,6 +39,17 @@ type ItemOnenoteSectionGroupsItemSectionGroupsRequestBuilderGetRequestConfigurat
     // Request query parameters
     QueryParameters *ItemOnenoteSectionGroupsItemSectionGroupsRequestBuilderGetQueryParameters
 }
+// BySectionGroupId1 provides operations to manage the sectionGroups property of the microsoft.graph.sectionGroup entity.
+func (m *ItemOnenoteSectionGroupsItemSectionGroupsRequestBuilder) BySectionGroupId1(sectionGroupId1 string)(*ItemOnenoteSectionGroupsItemSectionGroupsSectionGroupItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if sectionGroupId1 != "" {
+        urlTplParams["sectionGroup%2Did1"] = sectionGroupId1
+    }
+    return NewItemOnenoteSectionGroupsItemSectionGroupsSectionGroupItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemOnenoteSectionGroupsItemSectionGroupsRequestBuilderInternal instantiates a new SectionGroupsRequestBuilder and sets the default values.
 func NewItemOnenoteSectionGroupsItemSectionGroupsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOnenoteSectionGroupsItemSectionGroupsRequestBuilder) {
     m := &ItemOnenoteSectionGroupsItemSectionGroupsRequestBuilder{

@@ -46,6 +46,17 @@ type IosUpdateStatusesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByIosUpdateDeviceStatusId provides operations to manage the iosUpdateStatuses property of the microsoft.graph.deviceManagement entity.
+func (m *IosUpdateStatusesRequestBuilder) ByIosUpdateDeviceStatusId(iosUpdateDeviceStatusId string)(*IosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if iosUpdateDeviceStatusId != "" {
+        urlTplParams["iosUpdateDeviceStatus%2Did"] = iosUpdateDeviceStatusId
+    }
+    return NewIosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewIosUpdateStatusesRequestBuilderInternal instantiates a new IosUpdateStatusesRequestBuilder and sets the default values.
 func NewIosUpdateStatusesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IosUpdateStatusesRequestBuilder) {
     m := &IosUpdateStatusesRequestBuilder{

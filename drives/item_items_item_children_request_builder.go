@@ -46,6 +46,17 @@ type ItemItemsItemChildrenRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDriveItemId1 provides operations to manage the children property of the microsoft.graph.driveItem entity.
+func (m *ItemItemsItemChildrenRequestBuilder) ByDriveItemId1(driveItemId1 string)(*ItemItemsItemChildrenDriveItemItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if driveItemId1 != "" {
+        urlTplParams["driveItem%2Did1"] = driveItemId1
+    }
+    return NewItemItemsItemChildrenDriveItemItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemItemsItemChildrenRequestBuilderInternal instantiates a new ChildrenRequestBuilder and sets the default values.
 func NewItemItemsItemChildrenRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemChildrenRequestBuilder) {
     m := &ItemItemsItemChildrenRequestBuilder{

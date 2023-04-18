@@ -46,6 +46,17 @@ type ItemScopedMembersRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByScopedRoleMembershipId provides operations to manage the scopedMembers property of the microsoft.graph.directoryRole entity.
+func (m *ItemScopedMembersRequestBuilder) ByScopedRoleMembershipId(scopedRoleMembershipId string)(*ItemScopedMembersScopedRoleMembershipItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if scopedRoleMembershipId != "" {
+        urlTplParams["scopedRoleMembership%2Did"] = scopedRoleMembershipId
+    }
+    return NewItemScopedMembersScopedRoleMembershipItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemScopedMembersRequestBuilderInternal instantiates a new ScopedMembersRequestBuilder and sets the default values.
 func NewItemScopedMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemScopedMembersRequestBuilder) {
     m := &ItemScopedMembersRequestBuilder{

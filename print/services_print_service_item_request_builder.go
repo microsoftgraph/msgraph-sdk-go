@@ -74,17 +74,6 @@ func (m *ServicesPrintServiceItemRequestBuilder) Delete(ctx context.Context, req
 func (m *ServicesPrintServiceItemRequestBuilder) Endpoints()(*ServicesItemEndpointsRequestBuilder) {
     return NewServicesItemEndpointsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// EndpointsById provides operations to manage the endpoints property of the microsoft.graph.printService entity.
-func (m *ServicesPrintServiceItemRequestBuilder) EndpointsById(id string)(*ServicesItemEndpointsPrintServiceEndpointItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["printServiceEndpoint%2Did"] = id
-    }
-    return NewServicesItemEndpointsPrintServiceEndpointItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get the list of available Universal Print service endpoints.
 func (m *ServicesPrintServiceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ServicesPrintServiceItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintServiceable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);

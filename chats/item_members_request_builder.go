@@ -50,6 +50,17 @@ type ItemMembersRequestBuilderPostRequestConfiguration struct {
 func (m *ItemMembersRequestBuilder) Add()(*ItemMembersAddRequestBuilder) {
     return NewItemMembersAddRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ByConversationMemberId provides operations to manage the members property of the microsoft.graph.chat entity.
+func (m *ItemMembersRequestBuilder) ByConversationMemberId(conversationMemberId string)(*ItemMembersConversationMemberItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if conversationMemberId != "" {
+        urlTplParams["conversationMember%2Did"] = conversationMemberId
+    }
+    return NewItemMembersConversationMemberItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemMembersRequestBuilderInternal instantiates a new MembersRequestBuilder and sets the default values.
 func NewItemMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMembersRequestBuilder) {
     m := &ItemMembersRequestBuilder{

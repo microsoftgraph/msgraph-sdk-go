@@ -46,6 +46,17 @@ type ItemConversationsItemThreadsItemPostsItemMultiValueExtendedPropertiesReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByMultiValueLegacyExtendedPropertyId provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.post entity.
+func (m *ItemConversationsItemThreadsItemPostsItemMultiValueExtendedPropertiesRequestBuilder) ByMultiValueLegacyExtendedPropertyId(multiValueLegacyExtendedPropertyId string)(*ItemConversationsItemThreadsItemPostsItemMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if multiValueLegacyExtendedPropertyId != "" {
+        urlTplParams["multiValueLegacyExtendedProperty%2Did"] = multiValueLegacyExtendedPropertyId
+    }
+    return NewItemConversationsItemThreadsItemPostsItemMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemConversationsItemThreadsItemPostsItemMultiValueExtendedPropertiesRequestBuilderInternal instantiates a new MultiValueExtendedPropertiesRequestBuilder and sets the default values.
 func NewItemConversationsItemThreadsItemPostsItemMultiValueExtendedPropertiesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConversationsItemThreadsItemPostsItemMultiValueExtendedPropertiesRequestBuilder) {
     m := &ItemConversationsItemThreadsItemPostsItemMultiValueExtendedPropertiesRequestBuilder{

@@ -44,6 +44,17 @@ type ItemTeamScheduleShiftsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByShiftId provides operations to manage the shifts property of the microsoft.graph.schedule entity.
+func (m *ItemTeamScheduleShiftsRequestBuilder) ByShiftId(shiftId string)(*ItemTeamScheduleShiftsShiftItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if shiftId != "" {
+        urlTplParams["shift%2Did"] = shiftId
+    }
+    return NewItemTeamScheduleShiftsShiftItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemTeamScheduleShiftsRequestBuilderInternal instantiates a new ShiftsRequestBuilder and sets the default values.
 func NewItemTeamScheduleShiftsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamScheduleShiftsRequestBuilder) {
     m := &ItemTeamScheduleShiftsRequestBuilder{

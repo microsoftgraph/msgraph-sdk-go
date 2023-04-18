@@ -45,31 +45,9 @@ type SharesPrinterShareItemRequestBuilderPatchRequestConfiguration struct {
 func (m *SharesPrinterShareItemRequestBuilder) AllowedGroups()(*SharesItemAllowedGroupsRequestBuilder) {
     return NewSharesItemAllowedGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AllowedGroupsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.print.shares.item.allowedGroups.item collection
-func (m *SharesPrinterShareItemRequestBuilder) AllowedGroupsById(id string)(*SharesItemAllowedGroupsGroupItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["group%2Did"] = id
-    }
-    return NewSharesItemAllowedGroupsGroupItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // AllowedUsers provides operations to manage the allowedUsers property of the microsoft.graph.printerShare entity.
 func (m *SharesPrinterShareItemRequestBuilder) AllowedUsers()(*SharesItemAllowedUsersRequestBuilder) {
     return NewSharesItemAllowedUsersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// AllowedUsersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.print.shares.item.allowedUsers.item collection
-func (m *SharesPrinterShareItemRequestBuilder) AllowedUsersById(id string)(*SharesItemAllowedUsersUserItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["user%2Did"] = id
-    }
-    return NewSharesItemAllowedUsersUserItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewSharesPrinterShareItemRequestBuilderInternal instantiates a new PrinterShareItemRequestBuilder and sets the default values.
 func NewSharesPrinterShareItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SharesPrinterShareItemRequestBuilder) {

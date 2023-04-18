@@ -46,6 +46,17 @@ type EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilderPostRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByApprovalId provides operations to manage the accessPackageAssignmentApprovals property of the microsoft.graph.entitlementManagement entity.
+func (m *EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilder) ByApprovalId(approvalId string)(*EntitlementManagementAccessPackageAssignmentApprovalsApprovalItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if approvalId != "" {
+        urlTplParams["approval%2Did"] = approvalId
+    }
+    return NewEntitlementManagementAccessPackageAssignmentApprovalsApprovalItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewEntitlementManagementAccessPackageAssignmentApprovalsRequestBuilderInternal instantiates a new AccessPackageAssignmentApprovalsRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackageAssignmentApprovalsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilder) {
     m := &EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilder{

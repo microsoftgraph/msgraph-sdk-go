@@ -42,6 +42,17 @@ type ItemEventsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByEventId provides operations to manage the events property of the microsoft.graph.group entity.
+func (m *ItemEventsRequestBuilder) ByEventId(eventId string)(*ItemEventsEventItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if eventId != "" {
+        urlTplParams["event%2Did"] = eventId
+    }
+    return NewItemEventsEventItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemEventsRequestBuilderInternal instantiates a new EventsRequestBuilder and sets the default values.
 func NewItemEventsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemEventsRequestBuilder) {
     m := &ItemEventsRequestBuilder{

@@ -89,17 +89,6 @@ func (m *PrivacyRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61
 func (m *PrivacyRequestBuilder) SubjectRightsRequests()(*SubjectRightsRequestsRequestBuilder) {
     return NewSubjectRightsRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// SubjectRightsRequestsById provides operations to manage the subjectRightsRequests property of the microsoft.graph.privacy entity.
-func (m *PrivacyRequestBuilder) SubjectRightsRequestsById(id string)(*SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["subjectRightsRequest%2Did"] = id
-    }
-    return NewSubjectRightsRequestsSubjectRightsRequestItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToGetRequestInformation get privacy
 func (m *PrivacyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivacyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

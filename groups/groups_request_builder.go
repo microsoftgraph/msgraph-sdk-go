@@ -46,6 +46,17 @@ type GroupsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByGroupId provides operations to manage the collection of group entities.
+func (m *GroupsRequestBuilder) ByGroupId(groupId string)(*GroupItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if groupId != "" {
+        urlTplParams["group%2Did"] = groupId
+    }
+    return NewGroupItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewGroupsRequestBuilderInternal instantiates a new GroupsRequestBuilder and sets the default values.
 func NewGroupsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupsRequestBuilder) {
     m := &GroupsRequestBuilder{

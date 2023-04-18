@@ -46,6 +46,17 @@ type ChatsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByChatId provides operations to manage the collection of chat entities.
+func (m *ChatsRequestBuilder) ByChatId(chatId string)(*ChatItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if chatId != "" {
+        urlTplParams["chat%2Did"] = chatId
+    }
+    return NewChatItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewChatsRequestBuilderInternal instantiates a new ChatsRequestBuilder and sets the default values.
 func NewChatsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ChatsRequestBuilder) {
     m := &ChatsRequestBuilder{

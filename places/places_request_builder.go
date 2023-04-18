@@ -8,6 +8,17 @@ import (
 type PlacesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
+// ByPlaceId provides operations to manage the collection of place entities.
+func (m *PlacesRequestBuilder) ByPlaceId(placeId string)(*PlaceItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if placeId != "" {
+        urlTplParams["place%2Did"] = placeId
+    }
+    return NewPlaceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewPlacesRequestBuilderInternal instantiates a new PlacesRequestBuilder and sets the default values.
 func NewPlacesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PlacesRequestBuilder) {
     m := &PlacesRequestBuilder{

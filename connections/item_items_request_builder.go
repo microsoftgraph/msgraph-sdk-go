@@ -46,6 +46,17 @@ type ItemItemsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByExternalItemId provides operations to manage the items property of the microsoft.graph.externalConnectors.externalConnection entity.
+func (m *ItemItemsRequestBuilder) ByExternalItemId(externalItemId string)(*ItemItemsExternalItemItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if externalItemId != "" {
+        urlTplParams["externalItem%2Did"] = externalItemId
+    }
+    return NewItemItemsExternalItemItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemItemsRequestBuilderInternal instantiates a new ItemsRequestBuilder and sets the default values.
 func NewItemItemsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsRequestBuilder) {
     m := &ItemItemsRequestBuilder{

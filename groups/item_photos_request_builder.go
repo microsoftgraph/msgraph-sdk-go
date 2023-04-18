@@ -35,6 +35,17 @@ type ItemPhotosRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemPhotosRequestBuilderGetQueryParameters
 }
+// ByProfilePhotoId provides operations to manage the photos property of the microsoft.graph.group entity.
+func (m *ItemPhotosRequestBuilder) ByProfilePhotoId(profilePhotoId string)(*ItemPhotosProfilePhotoItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if profilePhotoId != "" {
+        urlTplParams["profilePhoto%2Did"] = profilePhotoId
+    }
+    return NewItemPhotosProfilePhotoItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemPhotosRequestBuilderInternal instantiates a new PhotosRequestBuilder and sets the default values.
 func NewItemPhotosRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPhotosRequestBuilder) {
     m := &ItemPhotosRequestBuilder{

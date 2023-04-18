@@ -46,6 +46,17 @@ type ItemSettingsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByGroupSettingId provides operations to manage the settings property of the microsoft.graph.group entity.
+func (m *ItemSettingsRequestBuilder) ByGroupSettingId(groupSettingId string)(*ItemSettingsGroupSettingItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if groupSettingId != "" {
+        urlTplParams["groupSetting%2Did"] = groupSettingId
+    }
+    return NewItemSettingsGroupSettingItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemSettingsRequestBuilderInternal instantiates a new SettingsRequestBuilder and sets the default values.
 func NewItemSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSettingsRequestBuilder) {
     m := &ItemSettingsRequestBuilder{

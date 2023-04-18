@@ -35,6 +35,17 @@ type ItemRejectedSendersRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemRejectedSendersRequestBuilderGetQueryParameters
 }
+// ByDirectoryObjectId gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.rejectedSenders.item collection
+func (m *ItemRejectedSendersRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemRejectedSendersDirectoryObjectItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if directoryObjectId != "" {
+        urlTplParams["directoryObject%2Did"] = directoryObjectId
+    }
+    return NewItemRejectedSendersDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemRejectedSendersRequestBuilderInternal instantiates a new RejectedSendersRequestBuilder and sets the default values.
 func NewItemRejectedSendersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemRejectedSendersRequestBuilder) {
     m := &ItemRejectedSendersRequestBuilder{

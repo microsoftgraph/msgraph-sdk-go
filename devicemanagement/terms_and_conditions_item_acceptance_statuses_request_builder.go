@@ -46,6 +46,17 @@ type TermsAndConditionsItemAcceptanceStatusesRequestBuilderPostRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByTermsAndConditionsAcceptanceStatusId provides operations to manage the acceptanceStatuses property of the microsoft.graph.termsAndConditions entity.
+func (m *TermsAndConditionsItemAcceptanceStatusesRequestBuilder) ByTermsAndConditionsAcceptanceStatusId(termsAndConditionsAcceptanceStatusId string)(*TermsAndConditionsItemAcceptanceStatusesTermsAndConditionsAcceptanceStatusItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if termsAndConditionsAcceptanceStatusId != "" {
+        urlTplParams["termsAndConditionsAcceptanceStatus%2Did"] = termsAndConditionsAcceptanceStatusId
+    }
+    return NewTermsAndConditionsItemAcceptanceStatusesTermsAndConditionsAcceptanceStatusItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewTermsAndConditionsItemAcceptanceStatusesRequestBuilderInternal instantiates a new AcceptanceStatusesRequestBuilder and sets the default values.
 func NewTermsAndConditionsItemAcceptanceStatusesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TermsAndConditionsItemAcceptanceStatusesRequestBuilder) {
     m := &TermsAndConditionsItemAcceptanceStatusesRequestBuilder{

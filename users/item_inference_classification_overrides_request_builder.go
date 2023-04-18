@@ -42,6 +42,17 @@ type ItemInferenceClassificationOverridesRequestBuilderPostRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByInferenceClassificationOverrideId provides operations to manage the overrides property of the microsoft.graph.inferenceClassification entity.
+func (m *ItemInferenceClassificationOverridesRequestBuilder) ByInferenceClassificationOverrideId(inferenceClassificationOverrideId string)(*ItemInferenceClassificationOverridesInferenceClassificationOverrideItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if inferenceClassificationOverrideId != "" {
+        urlTplParams["inferenceClassificationOverride%2Did"] = inferenceClassificationOverrideId
+    }
+    return NewItemInferenceClassificationOverridesInferenceClassificationOverrideItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemInferenceClassificationOverridesRequestBuilderInternal instantiates a new OverridesRequestBuilder and sets the default values.
 func NewItemInferenceClassificationOverridesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInferenceClassificationOverridesRequestBuilder) {
     m := &ItemInferenceClassificationOverridesRequestBuilder{

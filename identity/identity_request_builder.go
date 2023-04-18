@@ -38,31 +38,9 @@ type IdentityRequestBuilderPatchRequestConfiguration struct {
 func (m *IdentityRequestBuilder) ApiConnectors()(*ApiConnectorsRequestBuilder) {
     return NewApiConnectorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ApiConnectorsById provides operations to manage the apiConnectors property of the microsoft.graph.identityContainer entity.
-func (m *IdentityRequestBuilder) ApiConnectorsById(id string)(*ApiConnectorsIdentityApiConnectorItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["identityApiConnector%2Did"] = id
-    }
-    return NewApiConnectorsIdentityApiConnectorItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // B2xUserFlows provides operations to manage the b2xUserFlows property of the microsoft.graph.identityContainer entity.
 func (m *IdentityRequestBuilder) B2xUserFlows()(*B2xUserFlowsRequestBuilder) {
     return NewB2xUserFlowsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// B2xUserFlowsById provides operations to manage the b2xUserFlows property of the microsoft.graph.identityContainer entity.
-func (m *IdentityRequestBuilder) B2xUserFlowsById(id string)(*B2xUserFlowsB2xIdentityUserFlowItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["b2xIdentityUserFlow%2Did"] = id
-    }
-    return NewB2xUserFlowsB2xIdentityUserFlowItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ConditionalAccess provides operations to manage the conditionalAccess property of the microsoft.graph.identityContainer entity.
 func (m *IdentityRequestBuilder) ConditionalAccess()(*ConditionalAccessRequestBuilder) {
@@ -103,17 +81,6 @@ func (m *IdentityRequestBuilder) Get(ctx context.Context, requestConfiguration *
 // IdentityProviders provides operations to manage the identityProviders property of the microsoft.graph.identityContainer entity.
 func (m *IdentityRequestBuilder) IdentityProviders()(*IdentityProvidersRequestBuilder) {
     return NewIdentityProvidersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// IdentityProvidersById provides operations to manage the identityProviders property of the microsoft.graph.identityContainer entity.
-func (m *IdentityRequestBuilder) IdentityProvidersById(id string)(*IdentityProvidersIdentityProviderBaseItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["identityProviderBase%2Did"] = id
-    }
-    return NewIdentityProvidersIdentityProviderBaseItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update identity
 func (m *IdentityRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityContainerable, requestConfiguration *IdentityRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityContainerable, error) {
@@ -170,15 +137,4 @@ func (m *IdentityRequestBuilder) ToPatchRequestInformation(ctx context.Context, 
 // UserFlowAttributes provides operations to manage the userFlowAttributes property of the microsoft.graph.identityContainer entity.
 func (m *IdentityRequestBuilder) UserFlowAttributes()(*UserFlowAttributesRequestBuilder) {
     return NewUserFlowAttributesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// UserFlowAttributesById provides operations to manage the userFlowAttributes property of the microsoft.graph.identityContainer entity.
-func (m *IdentityRequestBuilder) UserFlowAttributesById(id string)(*UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["identityUserFlowAttribute%2Did"] = id
-    }
-    return NewUserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }

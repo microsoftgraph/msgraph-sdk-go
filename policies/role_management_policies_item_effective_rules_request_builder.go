@@ -46,6 +46,17 @@ type RoleManagementPoliciesItemEffectiveRulesRequestBuilderPostRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUnifiedRoleManagementPolicyRuleId provides operations to manage the effectiveRules property of the microsoft.graph.unifiedRoleManagementPolicy entity.
+func (m *RoleManagementPoliciesItemEffectiveRulesRequestBuilder) ByUnifiedRoleManagementPolicyRuleId(unifiedRoleManagementPolicyRuleId string)(*RoleManagementPoliciesItemEffectiveRulesUnifiedRoleManagementPolicyRuleItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if unifiedRoleManagementPolicyRuleId != "" {
+        urlTplParams["unifiedRoleManagementPolicyRule%2Did"] = unifiedRoleManagementPolicyRuleId
+    }
+    return NewRoleManagementPoliciesItemEffectiveRulesUnifiedRoleManagementPolicyRuleItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewRoleManagementPoliciesItemEffectiveRulesRequestBuilderInternal instantiates a new EffectiveRulesRequestBuilder and sets the default values.
 func NewRoleManagementPoliciesItemEffectiveRulesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RoleManagementPoliciesItemEffectiveRulesRequestBuilder) {
     m := &RoleManagementPoliciesItemEffectiveRulesRequestBuilder{

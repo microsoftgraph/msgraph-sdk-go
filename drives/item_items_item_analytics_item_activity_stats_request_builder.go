@@ -46,6 +46,17 @@ type ItemItemsItemAnalyticsItemActivityStatsRequestBuilderPostRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByItemActivityStatId provides operations to manage the itemActivityStats property of the microsoft.graph.itemAnalytics entity.
+func (m *ItemItemsItemAnalyticsItemActivityStatsRequestBuilder) ByItemActivityStatId(itemActivityStatId string)(*ItemItemsItemAnalyticsItemActivityStatsItemActivityStatItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if itemActivityStatId != "" {
+        urlTplParams["itemActivityStat%2Did"] = itemActivityStatId
+    }
+    return NewItemItemsItemAnalyticsItemActivityStatsItemActivityStatItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemItemsItemAnalyticsItemActivityStatsRequestBuilderInternal instantiates a new ItemActivityStatsRequestBuilder and sets the default values.
 func NewItemItemsItemAnalyticsItemActivityStatsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemAnalyticsItemActivityStatsRequestBuilder) {
     m := &ItemItemsItemAnalyticsItemActivityStatsRequestBuilder{

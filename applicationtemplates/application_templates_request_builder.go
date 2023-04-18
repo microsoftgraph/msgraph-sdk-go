@@ -39,6 +39,17 @@ type ApplicationTemplatesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ApplicationTemplatesRequestBuilderGetQueryParameters
 }
+// ByApplicationTemplateId provides operations to manage the collection of applicationTemplate entities.
+func (m *ApplicationTemplatesRequestBuilder) ByApplicationTemplateId(applicationTemplateId string)(*ApplicationTemplateItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if applicationTemplateId != "" {
+        urlTplParams["applicationTemplate%2Did"] = applicationTemplateId
+    }
+    return NewApplicationTemplateItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewApplicationTemplatesRequestBuilderInternal instantiates a new ApplicationTemplatesRequestBuilder and sets the default values.
 func NewApplicationTemplatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ApplicationTemplatesRequestBuilder) {
     m := &ApplicationTemplatesRequestBuilder{

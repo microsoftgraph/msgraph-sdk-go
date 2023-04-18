@@ -84,17 +84,6 @@ func (m *ItemConversationsConversationItemRequestBuilder) Get(ctx context.Contex
 func (m *ItemConversationsConversationItemRequestBuilder) Threads()(*ItemConversationsItemThreadsRequestBuilder) {
     return NewItemConversationsItemThreadsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ThreadsById provides operations to manage the threads property of the microsoft.graph.conversation entity.
-func (m *ItemConversationsConversationItemRequestBuilder) ThreadsById(id string)(*ItemConversationsItemThreadsConversationThreadItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["conversationThread%2Did"] = id
-    }
-    return NewItemConversationsItemThreadsConversationThreadItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property conversations for groups
 func (m *ItemConversationsConversationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemConversationsConversationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

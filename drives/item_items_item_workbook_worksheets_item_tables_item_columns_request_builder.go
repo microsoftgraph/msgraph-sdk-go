@@ -50,6 +50,17 @@ type ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilderPostReque
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilder) Add()(*ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsAddRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemTablesItemColumnsAddRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ByWorkbookTableColumnId provides operations to manage the columns property of the microsoft.graph.workbookTable entity.
+func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilder) ByWorkbookTableColumnId(workbookTableColumnId string)(*ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsWorkbookTableColumnItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if workbookTableColumnId != "" {
+        urlTplParams["workbookTableColumn%2Did"] = workbookTableColumnId
+    }
+    return NewItemItemsItemWorkbookWorksheetsItemTablesItemColumnsWorkbookTableColumnItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilderInternal instantiates a new ColumnsRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilder) {
     m := &ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilder{

@@ -105,31 +105,9 @@ func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) Get(ctx context.Cont
 func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) Members()(*DeletedTeamsItemChannelsItemMembersRequestBuilder) {
     return NewDeletedTeamsItemChannelsItemMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// MembersById provides operations to manage the members property of the microsoft.graph.channel entity.
-func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) MembersById(id string)(*DeletedTeamsItemChannelsItemMembersConversationMemberItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["conversationMember%2Did"] = id
-    }
-    return NewDeletedTeamsItemChannelsItemMembersConversationMemberItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Messages provides operations to manage the messages property of the microsoft.graph.channel entity.
 func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) Messages()(*DeletedTeamsItemChannelsItemMessagesRequestBuilder) {
     return NewDeletedTeamsItemChannelsItemMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// MessagesById provides operations to manage the messages property of the microsoft.graph.channel entity.
-func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) MessagesById(id string)(*DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["chatMessage%2Did"] = id
-    }
-    return NewDeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property channels in teamwork
 func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Channelable, requestConfiguration *DeletedTeamsItemChannelsChannelItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Channelable, error) {
@@ -162,31 +140,9 @@ func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) RemoveEmail()(*Delet
 func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) SharedWithTeams()(*DeletedTeamsItemChannelsItemSharedWithTeamsRequestBuilder) {
     return NewDeletedTeamsItemChannelsItemSharedWithTeamsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// SharedWithTeamsById provides operations to manage the sharedWithTeams property of the microsoft.graph.channel entity.
-func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) SharedWithTeamsById(id string)(*DeletedTeamsItemChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["sharedWithChannelTeamInfo%2Did"] = id
-    }
-    return NewDeletedTeamsItemChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Tabs provides operations to manage the tabs property of the microsoft.graph.channel entity.
 func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) Tabs()(*DeletedTeamsItemChannelsItemTabsRequestBuilder) {
     return NewDeletedTeamsItemChannelsItemTabsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// TabsById provides operations to manage the tabs property of the microsoft.graph.channel entity.
-func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) TabsById(id string)(*DeletedTeamsItemChannelsItemTabsTeamsTabItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["teamsTab%2Did"] = id
-    }
-    return NewDeletedTeamsItemChannelsItemTabsTeamsTabItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property channels for teamwork
 func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DeletedTeamsItemChannelsChannelItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

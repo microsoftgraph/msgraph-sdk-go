@@ -45,31 +45,9 @@ type TermsOfUseRequestBuilderPatchRequestConfiguration struct {
 func (m *TermsOfUseRequestBuilder) AgreementAcceptances()(*TermsOfUseAgreementAcceptancesRequestBuilder) {
     return NewTermsOfUseAgreementAcceptancesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AgreementAcceptancesById provides operations to manage the agreementAcceptances property of the microsoft.graph.termsOfUseContainer entity.
-func (m *TermsOfUseRequestBuilder) AgreementAcceptancesById(id string)(*TermsOfUseAgreementAcceptancesAgreementAcceptanceItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["agreementAcceptance%2Did"] = id
-    }
-    return NewTermsOfUseAgreementAcceptancesAgreementAcceptanceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Agreements provides operations to manage the agreements property of the microsoft.graph.termsOfUseContainer entity.
 func (m *TermsOfUseRequestBuilder) Agreements()(*TermsOfUseAgreementsRequestBuilder) {
     return NewTermsOfUseAgreementsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// AgreementsById provides operations to manage the agreements property of the microsoft.graph.termsOfUseContainer entity.
-func (m *TermsOfUseRequestBuilder) AgreementsById(id string)(*TermsOfUseAgreementsAgreementItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["agreement%2Did"] = id
-    }
-    return NewTermsOfUseAgreementsAgreementItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewTermsOfUseRequestBuilderInternal instantiates a new TermsOfUseRequestBuilder and sets the default values.
 func NewTermsOfUseRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TermsOfUseRequestBuilder) {

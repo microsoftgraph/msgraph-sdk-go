@@ -46,6 +46,17 @@ type Alerts_v2RequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByAlertId provides operations to manage the alerts_v2 property of the microsoft.graph.security entity.
+func (m *Alerts_v2RequestBuilder) ByAlertId(alertId string)(*Alerts_v2AlertItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if alertId != "" {
+        urlTplParams["alert%2Did"] = alertId
+    }
+    return NewAlerts_v2AlertItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewAlerts_v2RequestBuilderInternal instantiates a new Alerts_v2RequestBuilder and sets the default values.
 func NewAlerts_v2RequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*Alerts_v2RequestBuilder) {
     m := &Alerts_v2RequestBuilder{

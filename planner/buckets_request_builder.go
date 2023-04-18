@@ -46,6 +46,17 @@ type BucketsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByPlannerBucketId provides operations to manage the buckets property of the microsoft.graph.planner entity.
+func (m *BucketsRequestBuilder) ByPlannerBucketId(plannerBucketId string)(*BucketsPlannerBucketItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if plannerBucketId != "" {
+        urlTplParams["plannerBucket%2Did"] = plannerBucketId
+    }
+    return NewBucketsPlannerBucketItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewBucketsRequestBuilderInternal instantiates a new BucketsRequestBuilder and sets the default values.
 func NewBucketsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BucketsRequestBuilder) {
     m := &BucketsRequestBuilder{

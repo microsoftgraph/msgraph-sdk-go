@@ -7,8 +7,6 @@ import (
 // DriveItem 
 type DriveItem struct {
     BaseItem
-    // If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
-    PackageEscaped PackageEscapedable
 }
 // NewDriveItem instantiates a new driveItem and sets the default values.
 func NewDriveItem()(*DriveItem) {

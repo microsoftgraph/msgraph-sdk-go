@@ -46,6 +46,17 @@ type ManagedEBooksItemUserStateSummaryRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUserInstallStateSummaryId provides operations to manage the userStateSummary property of the microsoft.graph.managedEBook entity.
+func (m *ManagedEBooksItemUserStateSummaryRequestBuilder) ByUserInstallStateSummaryId(userInstallStateSummaryId string)(*ManagedEBooksItemUserStateSummaryUserInstallStateSummaryItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if userInstallStateSummaryId != "" {
+        urlTplParams["userInstallStateSummary%2Did"] = userInstallStateSummaryId
+    }
+    return NewManagedEBooksItemUserStateSummaryUserInstallStateSummaryItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewManagedEBooksItemUserStateSummaryRequestBuilderInternal instantiates a new UserStateSummaryRequestBuilder and sets the default values.
 func NewManagedEBooksItemUserStateSummaryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedEBooksItemUserStateSummaryRequestBuilder) {
     m := &ManagedEBooksItemUserStateSummaryRequestBuilder{

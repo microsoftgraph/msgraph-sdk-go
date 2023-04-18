@@ -46,6 +46,17 @@ type ManagedAppRegistrationsItemOperationsRequestBuilderPostRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByManagedAppOperationId provides operations to manage the operations property of the microsoft.graph.managedAppRegistration entity.
+func (m *ManagedAppRegistrationsItemOperationsRequestBuilder) ByManagedAppOperationId(managedAppOperationId string)(*ManagedAppRegistrationsItemOperationsManagedAppOperationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if managedAppOperationId != "" {
+        urlTplParams["managedAppOperation%2Did"] = managedAppOperationId
+    }
+    return NewManagedAppRegistrationsItemOperationsManagedAppOperationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewManagedAppRegistrationsItemOperationsRequestBuilderInternal instantiates a new OperationsRequestBuilder and sets the default values.
 func NewManagedAppRegistrationsItemOperationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedAppRegistrationsItemOperationsRequestBuilder) {
     m := &ManagedAppRegistrationsItemOperationsRequestBuilder{

@@ -78,17 +78,6 @@ func (m *ItemListItemsListItemItemRequestBuilder) Delete(ctx context.Context, re
 func (m *ItemListItemsListItemItemRequestBuilder) DocumentSetVersions()(*ItemListItemsItemDocumentSetVersionsRequestBuilder) {
     return NewItemListItemsItemDocumentSetVersionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// DocumentSetVersionsById provides operations to manage the documentSetVersions property of the microsoft.graph.listItem entity.
-func (m *ItemListItemsListItemItemRequestBuilder) DocumentSetVersionsById(id string)(*ItemListItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["documentSetVersion%2Did"] = id
-    }
-    return NewItemListItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // DriveItem provides operations to manage the driveItem property of the microsoft.graph.listItem entity.
 func (m *ItemListItemsListItemItemRequestBuilder) DriveItem()(*ItemListItemsItemDriveItemRequestBuilder) {
     return NewItemListItemsItemDriveItemRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -191,15 +180,4 @@ func (m *ItemListItemsListItemItemRequestBuilder) ToPatchRequestInformation(ctx 
 // Versions provides operations to manage the versions property of the microsoft.graph.listItem entity.
 func (m *ItemListItemsListItemItemRequestBuilder) Versions()(*ItemListItemsItemVersionsRequestBuilder) {
     return NewItemListItemsItemVersionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// VersionsById provides operations to manage the versions property of the microsoft.graph.listItem entity.
-func (m *ItemListItemsListItemItemRequestBuilder) VersionsById(id string)(*ItemListItemsItemVersionsListItemVersionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["listItemVersion%2Did"] = id
-    }
-    return NewItemListItemsItemVersionsListItemVersionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }

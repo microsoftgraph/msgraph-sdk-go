@@ -46,6 +46,17 @@ type ConnectionsItemOperationsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByConnectionOperationId provides operations to manage the operations property of the microsoft.graph.externalConnectors.externalConnection entity.
+func (m *ConnectionsItemOperationsRequestBuilder) ByConnectionOperationId(connectionOperationId string)(*ConnectionsItemOperationsConnectionOperationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if connectionOperationId != "" {
+        urlTplParams["connectionOperation%2Did"] = connectionOperationId
+    }
+    return NewConnectionsItemOperationsConnectionOperationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewConnectionsItemOperationsRequestBuilderInternal instantiates a new OperationsRequestBuilder and sets the default values.
 func NewConnectionsItemOperationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConnectionsItemOperationsRequestBuilder) {
     m := &ConnectionsItemOperationsRequestBuilder{

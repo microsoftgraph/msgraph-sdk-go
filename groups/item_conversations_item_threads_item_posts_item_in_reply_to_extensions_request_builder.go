@@ -44,6 +44,17 @@ type ItemConversationsItemThreadsItemPostsItemInReplyToExtensionsRequestBuilderP
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByExtensionId provides operations to manage the extensions property of the microsoft.graph.post entity.
+func (m *ItemConversationsItemThreadsItemPostsItemInReplyToExtensionsRequestBuilder) ByExtensionId(extensionId string)(*ItemConversationsItemThreadsItemPostsItemInReplyToExtensionsExtensionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if extensionId != "" {
+        urlTplParams["extension%2Did"] = extensionId
+    }
+    return NewItemConversationsItemThreadsItemPostsItemInReplyToExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemConversationsItemThreadsItemPostsItemInReplyToExtensionsRequestBuilderInternal instantiates a new ExtensionsRequestBuilder and sets the default values.
 func NewItemConversationsItemThreadsItemPostsItemInReplyToExtensionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConversationsItemThreadsItemPostsItemInReplyToExtensionsRequestBuilder) {
     m := &ItemConversationsItemThreadsItemPostsItemInReplyToExtensionsRequestBuilder{

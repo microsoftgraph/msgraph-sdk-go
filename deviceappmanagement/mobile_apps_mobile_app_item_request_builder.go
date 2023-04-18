@@ -49,31 +49,9 @@ func (m *MobileAppsMobileAppItemRequestBuilder) Assign()(*MobileAppsItemAssignRe
 func (m *MobileAppsMobileAppItemRequestBuilder) Assignments()(*MobileAppsItemAssignmentsRequestBuilder) {
     return NewMobileAppsItemAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AssignmentsById provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.
-func (m *MobileAppsMobileAppItemRequestBuilder) AssignmentsById(id string)(*MobileAppsItemAssignmentsMobileAppAssignmentItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["mobileAppAssignment%2Did"] = id
-    }
-    return NewMobileAppsItemAssignmentsMobileAppAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Categories provides operations to manage the categories property of the microsoft.graph.mobileApp entity.
 func (m *MobileAppsMobileAppItemRequestBuilder) Categories()(*MobileAppsItemCategoriesRequestBuilder) {
     return NewMobileAppsItemCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// CategoriesById provides operations to manage the categories property of the microsoft.graph.mobileApp entity.
-func (m *MobileAppsMobileAppItemRequestBuilder) CategoriesById(id string)(*MobileAppsItemCategoriesMobileAppCategoryItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["mobileAppCategory%2Did"] = id
-    }
-    return NewMobileAppsItemCategoriesMobileAppCategoryItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewMobileAppsMobileAppItemRequestBuilderInternal instantiates a new MobileAppItemRequestBuilder and sets the default values.
 func NewMobileAppsMobileAppItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsMobileAppItemRequestBuilder) {

@@ -45,17 +45,6 @@ type AppConsentRequestBuilderPatchRequestConfiguration struct {
 func (m *AppConsentRequestBuilder) AppConsentRequests()(*AppConsentAppConsentRequestsRequestBuilder) {
     return NewAppConsentAppConsentRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AppConsentRequestsById provides operations to manage the appConsentRequests property of the microsoft.graph.appConsentApprovalRoute entity.
-func (m *AppConsentRequestBuilder) AppConsentRequestsById(id string)(*AppConsentAppConsentRequestsAppConsentRequestItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["appConsentRequest%2Did"] = id
-    }
-    return NewAppConsentAppConsentRequestsAppConsentRequestItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewAppConsentRequestBuilderInternal instantiates a new AppConsentRequestBuilder and sets the default values.
 func NewAppConsentRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AppConsentRequestBuilder) {
     m := &AppConsentRequestBuilder{

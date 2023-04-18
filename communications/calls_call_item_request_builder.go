@@ -53,17 +53,6 @@ func (m *CallsCallItemRequestBuilder) Answer()(*CallsItemAnswerRequestBuilder) {
 func (m *CallsCallItemRequestBuilder) AudioRoutingGroups()(*CallsItemAudioRoutingGroupsRequestBuilder) {
     return NewCallsItemAudioRoutingGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AudioRoutingGroupsById provides operations to manage the audioRoutingGroups property of the microsoft.graph.call entity.
-func (m *CallsCallItemRequestBuilder) AudioRoutingGroupsById(id string)(*CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["audioRoutingGroup%2Did"] = id
-    }
-    return NewCallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // CancelMediaProcessing provides operations to call the cancelMediaProcessing method.
 func (m *CallsCallItemRequestBuilder) CancelMediaProcessing()(*CallsItemCancelMediaProcessingRequestBuilder) {
     return NewCallsItemCancelMediaProcessingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -88,17 +77,6 @@ func NewCallsCallItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 // ContentSharingSessions provides operations to manage the contentSharingSessions property of the microsoft.graph.call entity.
 func (m *CallsCallItemRequestBuilder) ContentSharingSessions()(*CallsItemContentSharingSessionsRequestBuilder) {
     return NewCallsItemContentSharingSessionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// ContentSharingSessionsById provides operations to manage the contentSharingSessions property of the microsoft.graph.call entity.
-func (m *CallsCallItemRequestBuilder) ContentSharingSessionsById(id string)(*CallsItemContentSharingSessionsContentSharingSessionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["contentSharingSession%2Did"] = id
-    }
-    return NewCallsItemContentSharingSessionsContentSharingSessionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property calls for communications
 func (m *CallsCallItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CallsCallItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -147,31 +125,9 @@ func (m *CallsCallItemRequestBuilder) Mute()(*CallsItemMuteRequestBuilder) {
 func (m *CallsCallItemRequestBuilder) Operations()(*CallsItemOperationsRequestBuilder) {
     return NewCallsItemOperationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// OperationsById provides operations to manage the operations property of the microsoft.graph.call entity.
-func (m *CallsCallItemRequestBuilder) OperationsById(id string)(*CallsItemOperationsCommsOperationItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["commsOperation%2Did"] = id
-    }
-    return NewCallsItemOperationsCommsOperationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Participants provides operations to manage the participants property of the microsoft.graph.call entity.
 func (m *CallsCallItemRequestBuilder) Participants()(*CallsItemParticipantsRequestBuilder) {
     return NewCallsItemParticipantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// ParticipantsById provides operations to manage the participants property of the microsoft.graph.call entity.
-func (m *CallsCallItemRequestBuilder) ParticipantsById(id string)(*CallsItemParticipantsParticipantItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["participant%2Did"] = id
-    }
-    return NewCallsItemParticipantsParticipantItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property calls in communications
 func (m *CallsCallItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Callable, requestConfiguration *CallsCallItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Callable, error) {

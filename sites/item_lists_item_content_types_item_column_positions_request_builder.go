@@ -39,6 +39,17 @@ type ItemListsItemContentTypesItemColumnPositionsRequestBuilderGetRequestConfigu
     // Request query parameters
     QueryParameters *ItemListsItemContentTypesItemColumnPositionsRequestBuilderGetQueryParameters
 }
+// ByColumnDefinitionId provides operations to manage the columnPositions property of the microsoft.graph.contentType entity.
+func (m *ItemListsItemContentTypesItemColumnPositionsRequestBuilder) ByColumnDefinitionId(columnDefinitionId string)(*ItemListsItemContentTypesItemColumnPositionsColumnDefinitionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if columnDefinitionId != "" {
+        urlTplParams["columnDefinition%2Did"] = columnDefinitionId
+    }
+    return NewItemListsItemContentTypesItemColumnPositionsColumnDefinitionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemListsItemContentTypesItemColumnPositionsRequestBuilderInternal instantiates a new ColumnPositionsRequestBuilder and sets the default values.
 func NewItemListsItemContentTypesItemColumnPositionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListsItemContentTypesItemColumnPositionsRequestBuilder) {
     m := &ItemListsItemContentTypesItemColumnPositionsRequestBuilder{

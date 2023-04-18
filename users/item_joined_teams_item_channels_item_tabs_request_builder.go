@@ -46,6 +46,17 @@ type ItemJoinedTeamsItemChannelsItemTabsRequestBuilderPostRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByTeamsTabId provides operations to manage the tabs property of the microsoft.graph.channel entity.
+func (m *ItemJoinedTeamsItemChannelsItemTabsRequestBuilder) ByTeamsTabId(teamsTabId string)(*ItemJoinedTeamsItemChannelsItemTabsTeamsTabItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if teamsTabId != "" {
+        urlTplParams["teamsTab%2Did"] = teamsTabId
+    }
+    return NewItemJoinedTeamsItemChannelsItemTabsTeamsTabItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemJoinedTeamsItemChannelsItemTabsRequestBuilderInternal instantiates a new TabsRequestBuilder and sets the default values.
 func NewItemJoinedTeamsItemChannelsItemTabsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemJoinedTeamsItemChannelsItemTabsRequestBuilder) {
     m := &ItemJoinedTeamsItemChannelsItemTabsRequestBuilder{

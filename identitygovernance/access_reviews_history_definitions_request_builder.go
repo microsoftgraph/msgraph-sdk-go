@@ -46,6 +46,17 @@ type AccessReviewsHistoryDefinitionsRequestBuilderPostRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByAccessReviewHistoryDefinitionId provides operations to manage the historyDefinitions property of the microsoft.graph.accessReviewSet entity.
+func (m *AccessReviewsHistoryDefinitionsRequestBuilder) ByAccessReviewHistoryDefinitionId(accessReviewHistoryDefinitionId string)(*AccessReviewsHistoryDefinitionsAccessReviewHistoryDefinitionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if accessReviewHistoryDefinitionId != "" {
+        urlTplParams["accessReviewHistoryDefinition%2Did"] = accessReviewHistoryDefinitionId
+    }
+    return NewAccessReviewsHistoryDefinitionsAccessReviewHistoryDefinitionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewAccessReviewsHistoryDefinitionsRequestBuilderInternal instantiates a new HistoryDefinitionsRequestBuilder and sets the default values.
 func NewAccessReviewsHistoryDefinitionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AccessReviewsHistoryDefinitionsRequestBuilder) {
     m := &AccessReviewsHistoryDefinitionsRequestBuilder{

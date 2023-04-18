@@ -39,6 +39,17 @@ type SharesItemAllowedUsersRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *SharesItemAllowedUsersRequestBuilderGetQueryParameters
 }
+// ByUserId gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.print.shares.item.allowedUsers.item collection
+func (m *SharesItemAllowedUsersRequestBuilder) ByUserId(userId string)(*SharesItemAllowedUsersUserItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if userId != "" {
+        urlTplParams["user%2Did"] = userId
+    }
+    return NewSharesItemAllowedUsersUserItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewSharesItemAllowedUsersRequestBuilderInternal instantiates a new AllowedUsersRequestBuilder and sets the default values.
 func NewSharesItemAllowedUsersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SharesItemAllowedUsersRequestBuilder) {
     m := &SharesItemAllowedUsersRequestBuilder{

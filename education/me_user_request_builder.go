@@ -62,6 +62,10 @@ func (m *MeUserRequestBuilder) Get(ctx context.Context, requestConfiguration *Me
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable), nil
 }
+// MailboxSettings the mailboxSettings property
+func (m *MeUserRequestBuilder) MailboxSettings()(*MeUserMailboxSettingsRequestBuilder) {
+    return NewMeUserMailboxSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation retrieve the simple directory **user** that corresponds to this **educationUser**.
 func (m *MeUserRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MeUserRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

@@ -112,17 +112,6 @@ func (m *AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBui
 func (m *AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilder) Runs()(*AttackSimulationSimulationAutomationsItemRunsRequestBuilder) {
     return NewAttackSimulationSimulationAutomationsItemRunsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// RunsById provides operations to manage the runs property of the microsoft.graph.simulationAutomation entity.
-func (m *AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilder) RunsById(id string)(*AttackSimulationSimulationAutomationsItemRunsSimulationAutomationRunItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["simulationAutomationRun%2Did"] = id
-    }
-    return NewAttackSimulationSimulationAutomationsItemRunsSimulationAutomationRunItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property simulationAutomations for security
 func (m *AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

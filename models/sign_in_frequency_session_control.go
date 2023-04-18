@@ -7,8 +7,6 @@ import (
 // SignInFrequencySessionControl 
 type SignInFrequencySessionControl struct {
     ConditionalAccessSessionControl
-    // Possible values are: days, hours.
-    TypeEscaped *SigninFrequencyType
 }
 // NewSignInFrequencySessionControl instantiates a new SignInFrequencySessionControl and sets the default values.
 func NewSignInFrequencySessionControl()(*SignInFrequencySessionControl) {

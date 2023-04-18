@@ -46,6 +46,17 @@ type CasesEdiscoveryCasesItemReviewSetsItemQueriesRequestBuilderPostRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByEdiscoveryReviewSetQueryId provides operations to manage the queries property of the microsoft.graph.security.ediscoveryReviewSet entity.
+func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesRequestBuilder) ByEdiscoveryReviewSetQueryId(ediscoveryReviewSetQueryId string)(*CasesEdiscoveryCasesItemReviewSetsItemQueriesEdiscoveryReviewSetQueryItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if ediscoveryReviewSetQueryId != "" {
+        urlTplParams["ediscoveryReviewSetQuery%2Did"] = ediscoveryReviewSetQueryId
+    }
+    return NewCasesEdiscoveryCasesItemReviewSetsItemQueriesEdiscoveryReviewSetQueryItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCasesEdiscoveryCasesItemReviewSetsItemQueriesRequestBuilderInternal instantiates a new QueriesRequestBuilder and sets the default values.
 func NewCasesEdiscoveryCasesItemReviewSetsItemQueriesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CasesEdiscoveryCasesItemReviewSetsItemQueriesRequestBuilder) {
     m := &CasesEdiscoveryCasesItemReviewSetsItemQueriesRequestBuilder{

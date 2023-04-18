@@ -18,7 +18,7 @@ type DriveItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DriveItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a Drive resource. A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
+// DriveItemRequestBuilderGetQueryParameters get entity from drives by key
 type DriveItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -44,17 +44,6 @@ type DriveItemRequestBuilderPatchRequestConfiguration struct {
 // Bundles provides operations to manage the bundles property of the microsoft.graph.drive entity.
 func (m *DriveItemRequestBuilder) Bundles()(*ItemBundlesRequestBuilder) {
     return NewItemBundlesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// BundlesById provides operations to manage the bundles property of the microsoft.graph.drive entity.
-func (m *DriveItemRequestBuilder) BundlesById(id string)(*ItemBundlesDriveItemItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["driveItem%2Did"] = id
-    }
-    return NewItemBundlesDriveItemItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewDriveItemRequestBuilderInternal instantiates a new DriveItemRequestBuilder and sets the default values.
 func NewDriveItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DriveItemRequestBuilder) {
@@ -89,21 +78,7 @@ func (m *DriveItemRequestBuilder) Delete(ctx context.Context, requestConfigurati
 func (m *DriveItemRequestBuilder) Following()(*ItemFollowingRequestBuilder) {
     return NewItemFollowingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// FollowingById provides operations to manage the following property of the microsoft.graph.drive entity.
-func (m *DriveItemRequestBuilder) FollowingById(id string)(*ItemFollowingDriveItemItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["driveItem%2Did"] = id
-    }
-    return NewItemFollowingDriveItemItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
-// Get retrieve the properties and relationships of a Drive resource. A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/drive-get?view=graph-rest-1.0
+// Get get entity from drives by key
 func (m *DriveItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DriveItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Driveable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -125,17 +100,6 @@ func (m *DriveItemRequestBuilder) Get(ctx context.Context, requestConfiguration 
 // Items provides operations to manage the items property of the microsoft.graph.drive entity.
 func (m *DriveItemRequestBuilder) Items()(*ItemItemsRequestBuilder) {
     return NewItemItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// ItemsById provides operations to manage the items property of the microsoft.graph.drive entity.
-func (m *DriveItemRequestBuilder) ItemsById(id string)(*ItemItemsDriveItemItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["driveItem%2Did"] = id
-    }
-    return NewItemItemsDriveItemItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // List provides operations to manage the list property of the microsoft.graph.drive entity.
 func (m *DriveItemRequestBuilder) List()(*ItemListRequestBuilder) {
@@ -180,17 +144,6 @@ func (m *DriveItemRequestBuilder) SharedWithMe()(*ItemSharedWithMeRequestBuilder
 func (m *DriveItemRequestBuilder) Special()(*ItemSpecialRequestBuilder) {
     return NewItemSpecialRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// SpecialById provides operations to manage the special property of the microsoft.graph.drive entity.
-func (m *DriveItemRequestBuilder) SpecialById(id string)(*ItemSpecialDriveItemItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["driveItem%2Did"] = id
-    }
-    return NewItemSpecialDriveItemItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete entity from drives
 func (m *DriveItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DriveItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
@@ -203,7 +156,7 @@ func (m *DriveItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a Drive resource. A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
+// ToGetRequestInformation get entity from drives by key
 func (m *DriveItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DriveItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

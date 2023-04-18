@@ -46,6 +46,17 @@ type ItemTodoListsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByTodoTaskListId provides operations to manage the lists property of the microsoft.graph.todo entity.
+func (m *ItemTodoListsRequestBuilder) ByTodoTaskListId(todoTaskListId string)(*ItemTodoListsTodoTaskListItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if todoTaskListId != "" {
+        urlTplParams["todoTaskList%2Did"] = todoTaskListId
+    }
+    return NewItemTodoListsTodoTaskListItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemTodoListsRequestBuilderInternal instantiates a new ListsRequestBuilder and sets the default values.
 func NewItemTodoListsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTodoListsRequestBuilder) {
     m := &ItemTodoListsRequestBuilder{

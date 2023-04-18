@@ -46,6 +46,17 @@ type ItemTeamChannelsItemMessagesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByChatMessageId provides operations to manage the messages property of the microsoft.graph.channel entity.
+func (m *ItemTeamChannelsItemMessagesRequestBuilder) ByChatMessageId(chatMessageId string)(*ItemTeamChannelsItemMessagesChatMessageItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if chatMessageId != "" {
+        urlTplParams["chatMessage%2Did"] = chatMessageId
+    }
+    return NewItemTeamChannelsItemMessagesChatMessageItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemTeamChannelsItemMessagesRequestBuilderInternal instantiates a new MessagesRequestBuilder and sets the default values.
 func NewItemTeamChannelsItemMessagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamChannelsItemMessagesRequestBuilder) {
     m := &ItemTeamChannelsItemMessagesRequestBuilder{

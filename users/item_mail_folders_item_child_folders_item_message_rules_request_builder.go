@@ -42,6 +42,17 @@ type ItemMailFoldersItemChildFoldersItemMessageRulesRequestBuilderPostRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByMessageRuleId provides operations to manage the messageRules property of the microsoft.graph.mailFolder entity.
+func (m *ItemMailFoldersItemChildFoldersItemMessageRulesRequestBuilder) ByMessageRuleId(messageRuleId string)(*ItemMailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if messageRuleId != "" {
+        urlTplParams["messageRule%2Did"] = messageRuleId
+    }
+    return NewItemMailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemMailFoldersItemChildFoldersItemMessageRulesRequestBuilderInternal instantiates a new MessageRulesRequestBuilder and sets the default values.
 func NewItemMailFoldersItemChildFoldersItemMessageRulesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMailFoldersItemChildFoldersItemMessageRulesRequestBuilder) {
     m := &ItemMailFoldersItemChildFoldersItemMessageRulesRequestBuilder{

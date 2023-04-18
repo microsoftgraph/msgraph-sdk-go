@@ -46,6 +46,17 @@ type DeviceCompliancePoliciesItemDeviceStatusesRequestBuilderPostRequestConfigur
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceComplianceDeviceStatusId provides operations to manage the deviceStatuses property of the microsoft.graph.deviceCompliancePolicy entity.
+func (m *DeviceCompliancePoliciesItemDeviceStatusesRequestBuilder) ByDeviceComplianceDeviceStatusId(deviceComplianceDeviceStatusId string)(*DeviceCompliancePoliciesItemDeviceStatusesDeviceComplianceDeviceStatusItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceComplianceDeviceStatusId != "" {
+        urlTplParams["deviceComplianceDeviceStatus%2Did"] = deviceComplianceDeviceStatusId
+    }
+    return NewDeviceCompliancePoliciesItemDeviceStatusesDeviceComplianceDeviceStatusItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewDeviceCompliancePoliciesItemDeviceStatusesRequestBuilderInternal instantiates a new DeviceStatusesRequestBuilder and sets the default values.
 func NewDeviceCompliancePoliciesItemDeviceStatusesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceCompliancePoliciesItemDeviceStatusesRequestBuilder) {
     m := &DeviceCompliancePoliciesItemDeviceStatusesRequestBuilder{

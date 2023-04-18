@@ -93,17 +93,6 @@ func (m *InformationProtectionRequestBuilder) Patch(ctx context.Context, body ia
 func (m *InformationProtectionRequestBuilder) ThreatAssessmentRequests()(*ThreatAssessmentRequestsRequestBuilder) {
     return NewThreatAssessmentRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ThreatAssessmentRequestsById provides operations to manage the threatAssessmentRequests property of the microsoft.graph.informationProtection entity.
-func (m *InformationProtectionRequestBuilder) ThreatAssessmentRequestsById(id string)(*ThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["threatAssessmentRequest%2Did"] = id
-    }
-    return NewThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToGetRequestInformation get informationProtection
 func (m *InformationProtectionRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *InformationProtectionRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

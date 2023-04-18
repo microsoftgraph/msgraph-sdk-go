@@ -46,6 +46,17 @@ type CallRecordsItemSessionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// BySessionId provides operations to manage the sessions property of the microsoft.graph.callRecords.callRecord entity.
+func (m *CallRecordsItemSessionsRequestBuilder) BySessionId(sessionId string)(*CallRecordsItemSessionsSessionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if sessionId != "" {
+        urlTplParams["session%2Did"] = sessionId
+    }
+    return NewCallRecordsItemSessionsSessionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCallRecordsItemSessionsRequestBuilderInternal instantiates a new SessionsRequestBuilder and sets the default values.
 func NewCallRecordsItemSessionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallRecordsItemSessionsRequestBuilder) {
     m := &CallRecordsItemSessionsRequestBuilder{

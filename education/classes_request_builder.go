@@ -46,6 +46,17 @@ type ClassesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByEducationClassId provides operations to manage the classes property of the microsoft.graph.educationRoot entity.
+func (m *ClassesRequestBuilder) ByEducationClassId(educationClassId string)(*ClassesEducationClassItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if educationClassId != "" {
+        urlTplParams["educationClass%2Did"] = educationClassId
+    }
+    return NewClassesEducationClassItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewClassesRequestBuilderInternal instantiates a new ClassesRequestBuilder and sets the default values.
 func NewClassesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ClassesRequestBuilder) {
     m := &ClassesRequestBuilder{

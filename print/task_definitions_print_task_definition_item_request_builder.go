@@ -112,17 +112,6 @@ func (m *TaskDefinitionsPrintTaskDefinitionItemRequestBuilder) Patch(ctx context
 func (m *TaskDefinitionsPrintTaskDefinitionItemRequestBuilder) Tasks()(*TaskDefinitionsItemTasksRequestBuilder) {
     return NewTaskDefinitionsItemTasksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// TasksById provides operations to manage the tasks property of the microsoft.graph.printTaskDefinition entity.
-func (m *TaskDefinitionsPrintTaskDefinitionItemRequestBuilder) TasksById(id string)(*TaskDefinitionsItemTasksPrintTaskItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["printTask%2Did"] = id
-    }
-    return NewTaskDefinitionsItemTasksPrintTaskItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property taskDefinitions for print
 func (m *TaskDefinitionsPrintTaskDefinitionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TaskDefinitionsPrintTaskDefinitionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

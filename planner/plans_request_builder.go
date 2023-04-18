@@ -46,6 +46,17 @@ type PlansRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByPlannerPlanId provides operations to manage the plans property of the microsoft.graph.planner entity.
+func (m *PlansRequestBuilder) ByPlannerPlanId(plannerPlanId string)(*PlansPlannerPlanItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if plannerPlanId != "" {
+        urlTplParams["plannerPlan%2Did"] = plannerPlanId
+    }
+    return NewPlansPlannerPlanItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewPlansRequestBuilderInternal instantiates a new PlansRequestBuilder and sets the default values.
 func NewPlansRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PlansRequestBuilder) {
     m := &PlansRequestBuilder{

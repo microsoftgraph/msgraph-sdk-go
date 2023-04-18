@@ -46,6 +46,17 @@ type WindowsInformationProtectionAppLearningSummariesRequestBuilderPostRequestCo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByWindowsInformationProtectionAppLearningSummaryId provides operations to manage the windowsInformationProtectionAppLearningSummaries property of the microsoft.graph.deviceManagement entity.
+func (m *WindowsInformationProtectionAppLearningSummariesRequestBuilder) ByWindowsInformationProtectionAppLearningSummaryId(windowsInformationProtectionAppLearningSummaryId string)(*WindowsInformationProtectionAppLearningSummariesWindowsInformationProtectionAppLearningSummaryItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if windowsInformationProtectionAppLearningSummaryId != "" {
+        urlTplParams["windowsInformationProtectionAppLearningSummary%2Did"] = windowsInformationProtectionAppLearningSummaryId
+    }
+    return NewWindowsInformationProtectionAppLearningSummariesWindowsInformationProtectionAppLearningSummaryItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewWindowsInformationProtectionAppLearningSummariesRequestBuilderInternal instantiates a new WindowsInformationProtectionAppLearningSummariesRequestBuilder and sets the default values.
 func NewWindowsInformationProtectionAppLearningSummariesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsInformationProtectionAppLearningSummariesRequestBuilder) {
     m := &WindowsInformationProtectionAppLearningSummariesRequestBuilder{

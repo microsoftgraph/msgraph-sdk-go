@@ -45,17 +45,6 @@ type DeletedTeamsDeletedTeamItemRequestBuilderPatchRequestConfiguration struct {
 func (m *DeletedTeamsDeletedTeamItemRequestBuilder) Channels()(*DeletedTeamsItemChannelsRequestBuilder) {
     return NewDeletedTeamsItemChannelsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ChannelsById provides operations to manage the channels property of the microsoft.graph.deletedTeam entity.
-func (m *DeletedTeamsDeletedTeamItemRequestBuilder) ChannelsById(id string)(*DeletedTeamsItemChannelsChannelItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["channel%2Did"] = id
-    }
-    return NewDeletedTeamsItemChannelsChannelItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewDeletedTeamsDeletedTeamItemRequestBuilderInternal instantiates a new DeletedTeamItemRequestBuilder and sets the default values.
 func NewDeletedTeamsDeletedTeamItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeletedTeamsDeletedTeamItemRequestBuilder) {
     m := &DeletedTeamsDeletedTeamItemRequestBuilder{

@@ -7,8 +7,6 @@ import (
 // RichLongRunningOperation 
 type RichLongRunningOperation struct {
     LongRunningOperation
-    // The type of the operation.
-    TypeEscaped *string
 }
 // NewRichLongRunningOperation instantiates a new RichLongRunningOperation and sets the default values.
 func NewRichLongRunningOperation()(*RichLongRunningOperation) {

@@ -93,17 +93,6 @@ func (m *ItemJoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) G
 func (m *ItemJoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) HostedContents()(*ItemJoinedTeamsItemChannelsItemMessagesItemHostedContentsRequestBuilder) {
     return NewItemJoinedTeamsItemChannelsItemMessagesItemHostedContentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// HostedContentsById provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.
-func (m *ItemJoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) HostedContentsById(id string)(*ItemJoinedTeamsItemChannelsItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["chatMessageHostedContent%2Did"] = id
-    }
-    return NewItemJoinedTeamsItemChannelsItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property messages in users
 func (m *ItemJoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable, requestConfiguration *ItemJoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -126,17 +115,6 @@ func (m *ItemJoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) P
 // Replies provides operations to manage the replies property of the microsoft.graph.chatMessage entity.
 func (m *ItemJoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) Replies()(*ItemJoinedTeamsItemChannelsItemMessagesItemRepliesRequestBuilder) {
     return NewItemJoinedTeamsItemChannelsItemMessagesItemRepliesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// RepliesById provides operations to manage the replies property of the microsoft.graph.chatMessage entity.
-func (m *ItemJoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) RepliesById(id string)(*ItemJoinedTeamsItemChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["chatMessage%2Did1"] = id
-    }
-    return NewItemJoinedTeamsItemChannelsItemMessagesItemRepliesChatMessageItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // SoftDelete provides operations to call the softDelete method.
 func (m *ItemJoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) SoftDelete()(*ItemJoinedTeamsItemChannelsItemMessagesItemSoftDeleteRequestBuilder) {

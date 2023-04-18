@@ -112,17 +112,6 @@ func (m *EdgeInternetExplorerModeRequestBuilder) Patch(ctx context.Context, body
 func (m *EdgeInternetExplorerModeRequestBuilder) SiteLists()(*EdgeInternetExplorerModeSiteListsRequestBuilder) {
     return NewEdgeInternetExplorerModeSiteListsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// SiteListsById provides operations to manage the siteLists property of the microsoft.graph.internetExplorerMode entity.
-func (m *EdgeInternetExplorerModeRequestBuilder) SiteListsById(id string)(*EdgeInternetExplorerModeSiteListsBrowserSiteListItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["browserSiteList%2Did"] = id
-    }
-    return NewEdgeInternetExplorerModeSiteListsBrowserSiteListItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property internetExplorerMode for admin
 func (m *EdgeInternetExplorerModeRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EdgeInternetExplorerModeRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

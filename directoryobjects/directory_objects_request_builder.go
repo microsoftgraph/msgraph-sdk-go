@@ -46,6 +46,17 @@ type DirectoryObjectsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDirectoryObjectId provides operations to manage the collection of directoryObject entities.
+func (m *DirectoryObjectsRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*DirectoryObjectItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if directoryObjectId != "" {
+        urlTplParams["directoryObject%2Did"] = directoryObjectId
+    }
+    return NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewDirectoryObjectsRequestBuilderInternal instantiates a new DirectoryObjectsRequestBuilder and sets the default values.
 func NewDirectoryObjectsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryObjectsRequestBuilder) {
     m := &DirectoryObjectsRequestBuilder{

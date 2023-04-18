@@ -46,6 +46,17 @@ type ItemJoinedTeamsItemOperationsRequestBuilderPostRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByTeamsAsyncOperationId provides operations to manage the operations property of the microsoft.graph.team entity.
+func (m *ItemJoinedTeamsItemOperationsRequestBuilder) ByTeamsAsyncOperationId(teamsAsyncOperationId string)(*ItemJoinedTeamsItemOperationsTeamsAsyncOperationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if teamsAsyncOperationId != "" {
+        urlTplParams["teamsAsyncOperation%2Did"] = teamsAsyncOperationId
+    }
+    return NewItemJoinedTeamsItemOperationsTeamsAsyncOperationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemJoinedTeamsItemOperationsRequestBuilderInternal instantiates a new OperationsRequestBuilder and sets the default values.
 func NewItemJoinedTeamsItemOperationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemJoinedTeamsItemOperationsRequestBuilder) {
     m := &ItemJoinedTeamsItemOperationsRequestBuilder{

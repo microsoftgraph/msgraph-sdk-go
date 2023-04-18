@@ -45,17 +45,6 @@ type AppManagementPoliciesAppManagementPolicyItemRequestBuilderPatchRequestConfi
 func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) AppliesTo()(*AppManagementPoliciesItemAppliesToRequestBuilder) {
     return NewAppManagementPoliciesItemAppliesToRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AppliesToById provides operations to manage the appliesTo property of the microsoft.graph.appManagementPolicy entity.
-func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) AppliesToById(id string)(*AppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["directoryObject%2Did"] = id
-    }
-    return NewAppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewAppManagementPoliciesAppManagementPolicyItemRequestBuilderInternal instantiates a new AppManagementPolicyItemRequestBuilder and sets the default values.
 func NewAppManagementPoliciesAppManagementPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AppManagementPoliciesAppManagementPolicyItemRequestBuilder) {
     m := &AppManagementPoliciesAppManagementPolicyItemRequestBuilder{

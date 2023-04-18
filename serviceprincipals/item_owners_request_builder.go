@@ -39,6 +39,17 @@ type ItemOwnersRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemOwnersRequestBuilderGetQueryParameters
 }
+// ByDirectoryObjectId gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.servicePrincipals.item.owners.item collection
+func (m *ItemOwnersRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemOwnersDirectoryObjectItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if directoryObjectId != "" {
+        urlTplParams["directoryObject%2Did"] = directoryObjectId
+    }
+    return NewItemOwnersDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemOwnersRequestBuilderInternal instantiates a new OwnersRequestBuilder and sets the default values.
 func NewItemOwnersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOwnersRequestBuilder) {
     m := &ItemOwnersRequestBuilder{

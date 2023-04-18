@@ -89,17 +89,6 @@ func (m *AppCatalogsRequestBuilder) Patch(ctx context.Context, body iadcd8112441
 func (m *AppCatalogsRequestBuilder) TeamsApps()(*TeamsAppsRequestBuilder) {
     return NewTeamsAppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// TeamsAppsById provides operations to manage the teamsApps property of the microsoft.graph.appCatalogs entity.
-func (m *AppCatalogsRequestBuilder) TeamsAppsById(id string)(*TeamsAppsTeamsAppItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["teamsApp%2Did"] = id
-    }
-    return NewTeamsAppsTeamsAppItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToGetRequestInformation get appCatalogs
 func (m *AppCatalogsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AppCatalogsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

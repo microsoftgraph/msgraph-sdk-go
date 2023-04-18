@@ -46,6 +46,17 @@ type ManagedEBooksItemDeviceStatesRequestBuilderPostRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceInstallStateId provides operations to manage the deviceStates property of the microsoft.graph.managedEBook entity.
+func (m *ManagedEBooksItemDeviceStatesRequestBuilder) ByDeviceInstallStateId(deviceInstallStateId string)(*ManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceInstallStateId != "" {
+        urlTplParams["deviceInstallState%2Did"] = deviceInstallStateId
+    }
+    return NewManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewManagedEBooksItemDeviceStatesRequestBuilderInternal instantiates a new DeviceStatesRequestBuilder and sets the default values.
 func NewManagedEBooksItemDeviceStatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedEBooksItemDeviceStatesRequestBuilder) {
     m := &ManagedEBooksItemDeviceStatesRequestBuilder{

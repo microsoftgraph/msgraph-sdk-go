@@ -46,6 +46,17 @@ type MobileAppConfigurationsItemAssignmentsRequestBuilderPostRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByManagedDeviceMobileAppConfigurationAssignmentId provides operations to manage the assignments property of the microsoft.graph.managedDeviceMobileAppConfiguration entity.
+func (m *MobileAppConfigurationsItemAssignmentsRequestBuilder) ByManagedDeviceMobileAppConfigurationAssignmentId(managedDeviceMobileAppConfigurationAssignmentId string)(*MobileAppConfigurationsItemAssignmentsManagedDeviceMobileAppConfigurationAssignmentItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if managedDeviceMobileAppConfigurationAssignmentId != "" {
+        urlTplParams["managedDeviceMobileAppConfigurationAssignment%2Did"] = managedDeviceMobileAppConfigurationAssignmentId
+    }
+    return NewMobileAppConfigurationsItemAssignmentsManagedDeviceMobileAppConfigurationAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewMobileAppConfigurationsItemAssignmentsRequestBuilderInternal instantiates a new AssignmentsRequestBuilder and sets the default values.
 func NewMobileAppConfigurationsItemAssignmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppConfigurationsItemAssignmentsRequestBuilder) {
     m := &MobileAppConfigurationsItemAssignmentsRequestBuilder{

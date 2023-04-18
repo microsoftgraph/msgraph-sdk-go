@@ -39,6 +39,17 @@ type ItemAuthenticationSoftwareOathMethodsRequestBuilderGetRequestConfiguration 
     // Request query parameters
     QueryParameters *ItemAuthenticationSoftwareOathMethodsRequestBuilderGetQueryParameters
 }
+// BySoftwareOathAuthenticationMethodId provides operations to manage the softwareOathMethods property of the microsoft.graph.authentication entity.
+func (m *ItemAuthenticationSoftwareOathMethodsRequestBuilder) BySoftwareOathAuthenticationMethodId(softwareOathAuthenticationMethodId string)(*ItemAuthenticationSoftwareOathMethodsSoftwareOathAuthenticationMethodItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if softwareOathAuthenticationMethodId != "" {
+        urlTplParams["softwareOathAuthenticationMethod%2Did"] = softwareOathAuthenticationMethodId
+    }
+    return NewItemAuthenticationSoftwareOathMethodsSoftwareOathAuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemAuthenticationSoftwareOathMethodsRequestBuilderInternal instantiates a new SoftwareOathMethodsRequestBuilder and sets the default values.
 func NewItemAuthenticationSoftwareOathMethodsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAuthenticationSoftwareOathMethodsRequestBuilder) {
     m := &ItemAuthenticationSoftwareOathMethodsRequestBuilder{

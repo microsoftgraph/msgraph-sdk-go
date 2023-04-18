@@ -46,6 +46,17 @@ type ManagedEBooksItemUserStateSummaryItemDeviceStatesRequestBuilderPostRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceInstallStateId provides operations to manage the deviceStates property of the microsoft.graph.userInstallStateSummary entity.
+func (m *ManagedEBooksItemUserStateSummaryItemDeviceStatesRequestBuilder) ByDeviceInstallStateId(deviceInstallStateId string)(*ManagedEBooksItemUserStateSummaryItemDeviceStatesDeviceInstallStateItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceInstallStateId != "" {
+        urlTplParams["deviceInstallState%2Did"] = deviceInstallStateId
+    }
+    return NewManagedEBooksItemUserStateSummaryItemDeviceStatesDeviceInstallStateItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewManagedEBooksItemUserStateSummaryItemDeviceStatesRequestBuilderInternal instantiates a new DeviceStatesRequestBuilder and sets the default values.
 func NewManagedEBooksItemUserStateSummaryItemDeviceStatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedEBooksItemUserStateSummaryItemDeviceStatesRequestBuilder) {
     m := &ManagedEBooksItemUserStateSummaryItemDeviceStatesRequestBuilder{

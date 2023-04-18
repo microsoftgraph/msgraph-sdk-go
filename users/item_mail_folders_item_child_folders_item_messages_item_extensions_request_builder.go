@@ -44,6 +44,17 @@ type ItemMailFoldersItemChildFoldersItemMessagesItemExtensionsRequestBuilderPost
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByExtensionId provides operations to manage the extensions property of the microsoft.graph.message entity.
+func (m *ItemMailFoldersItemChildFoldersItemMessagesItemExtensionsRequestBuilder) ByExtensionId(extensionId string)(*ItemMailFoldersItemChildFoldersItemMessagesItemExtensionsExtensionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if extensionId != "" {
+        urlTplParams["extension%2Did"] = extensionId
+    }
+    return NewItemMailFoldersItemChildFoldersItemMessagesItemExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemMailFoldersItemChildFoldersItemMessagesItemExtensionsRequestBuilderInternal instantiates a new ExtensionsRequestBuilder and sets the default values.
 func NewItemMailFoldersItemChildFoldersItemMessagesItemExtensionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMailFoldersItemChildFoldersItemMessagesItemExtensionsRequestBuilder) {
     m := &ItemMailFoldersItemChildFoldersItemMessagesItemExtensionsRequestBuilder{

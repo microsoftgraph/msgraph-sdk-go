@@ -46,6 +46,17 @@ type ItemFederatedIdentityCredentialsRequestBuilderPostRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByFederatedIdentityCredentialId provides operations to manage the federatedIdentityCredentials property of the microsoft.graph.servicePrincipal entity.
+func (m *ItemFederatedIdentityCredentialsRequestBuilder) ByFederatedIdentityCredentialId(federatedIdentityCredentialId string)(*ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if federatedIdentityCredentialId != "" {
+        urlTplParams["federatedIdentityCredential%2Did"] = federatedIdentityCredentialId
+    }
+    return NewItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemFederatedIdentityCredentialsRequestBuilderInternal instantiates a new FederatedIdentityCredentialsRequestBuilder and sets the default values.
 func NewItemFederatedIdentityCredentialsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemFederatedIdentityCredentialsRequestBuilder) {
     m := &ItemFederatedIdentityCredentialsRequestBuilder{

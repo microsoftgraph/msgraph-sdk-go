@@ -42,6 +42,17 @@ type ItemCalendarCalendarPermissionsRequestBuilderPostRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByCalendarPermissionId provides operations to manage the calendarPermissions property of the microsoft.graph.calendar entity.
+func (m *ItemCalendarCalendarPermissionsRequestBuilder) ByCalendarPermissionId(calendarPermissionId string)(*ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if calendarPermissionId != "" {
+        urlTplParams["calendarPermission%2Did"] = calendarPermissionId
+    }
+    return NewItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemCalendarCalendarPermissionsRequestBuilderInternal instantiates a new CalendarPermissionsRequestBuilder and sets the default values.
 func NewItemCalendarCalendarPermissionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarCalendarPermissionsRequestBuilder) {
     m := &ItemCalendarCalendarPermissionsRequestBuilder{

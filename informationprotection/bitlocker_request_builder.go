@@ -63,17 +63,6 @@ func (m *BitlockerRequestBuilder) Get(ctx context.Context, requestConfiguration 
 func (m *BitlockerRequestBuilder) RecoveryKeys()(*BitlockerRecoveryKeysRequestBuilder) {
     return NewBitlockerRecoveryKeysRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// RecoveryKeysById provides operations to manage the recoveryKeys property of the microsoft.graph.bitlocker entity.
-func (m *BitlockerRequestBuilder) RecoveryKeysById(id string)(*BitlockerRecoveryKeysBitlockerRecoveryKeyItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["bitlockerRecoveryKey%2Did"] = id
-    }
-    return NewBitlockerRecoveryKeysBitlockerRecoveryKeyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToGetRequestInformation get bitlocker from informationProtection
 func (m *BitlockerRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BitlockerRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

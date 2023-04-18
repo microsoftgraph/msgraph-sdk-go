@@ -46,6 +46,17 @@ type GroupSettingTemplatesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByGroupSettingTemplateId provides operations to manage the collection of groupSettingTemplate entities.
+func (m *GroupSettingTemplatesRequestBuilder) ByGroupSettingTemplateId(groupSettingTemplateId string)(*GroupSettingTemplateItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if groupSettingTemplateId != "" {
+        urlTplParams["groupSettingTemplate%2Did"] = groupSettingTemplateId
+    }
+    return NewGroupSettingTemplateItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewGroupSettingTemplatesRequestBuilderInternal instantiates a new GroupSettingTemplatesRequestBuilder and sets the default values.
 func NewGroupSettingTemplatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupSettingTemplatesRequestBuilder) {
     m := &GroupSettingTemplatesRequestBuilder{

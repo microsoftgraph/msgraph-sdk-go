@@ -46,6 +46,17 @@ type ItemListsItemOperationsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByRichLongRunningOperationId provides operations to manage the operations property of the microsoft.graph.list entity.
+func (m *ItemListsItemOperationsRequestBuilder) ByRichLongRunningOperationId(richLongRunningOperationId string)(*ItemListsItemOperationsRichLongRunningOperationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if richLongRunningOperationId != "" {
+        urlTplParams["richLongRunningOperation%2Did"] = richLongRunningOperationId
+    }
+    return NewItemListsItemOperationsRichLongRunningOperationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemListsItemOperationsRequestBuilderInternal instantiates a new OperationsRequestBuilder and sets the default values.
 func NewItemListsItemOperationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListsItemOperationsRequestBuilder) {
     m := &ItemListsItemOperationsRequestBuilder{

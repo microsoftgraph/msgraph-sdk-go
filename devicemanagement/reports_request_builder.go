@@ -74,17 +74,6 @@ func (m *ReportsRequestBuilder) Delete(ctx context.Context, requestConfiguration
 func (m *ReportsRequestBuilder) ExportJobs()(*ReportsExportJobsRequestBuilder) {
     return NewReportsExportJobsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ExportJobsById provides operations to manage the exportJobs property of the microsoft.graph.deviceManagementReports entity.
-func (m *ReportsRequestBuilder) ExportJobsById(id string)(*ReportsExportJobsDeviceManagementExportJobItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["deviceManagementExportJob%2Did"] = id
-    }
-    return NewReportsExportJobsDeviceManagementExportJobItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get reports singleton
 func (m *ReportsRequestBuilder) Get(ctx context.Context, requestConfiguration *ReportsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementReportsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);

@@ -46,6 +46,17 @@ type ThreatAssessmentRequestsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByThreatAssessmentRequestId provides operations to manage the threatAssessmentRequests property of the microsoft.graph.informationProtection entity.
+func (m *ThreatAssessmentRequestsRequestBuilder) ByThreatAssessmentRequestId(threatAssessmentRequestId string)(*ThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if threatAssessmentRequestId != "" {
+        urlTplParams["threatAssessmentRequest%2Did"] = threatAssessmentRequestId
+    }
+    return NewThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewThreatAssessmentRequestsRequestBuilderInternal instantiates a new ThreatAssessmentRequestsRequestBuilder and sets the default values.
 func NewThreatAssessmentRequestsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatAssessmentRequestsRequestBuilder) {
     m := &ThreatAssessmentRequestsRequestBuilder{

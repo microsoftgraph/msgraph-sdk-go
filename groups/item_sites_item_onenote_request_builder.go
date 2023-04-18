@@ -93,46 +93,13 @@ func (m *ItemSitesItemOnenoteRequestBuilder) Get(ctx context.Context, requestCon
 func (m *ItemSitesItemOnenoteRequestBuilder) Notebooks()(*ItemSitesItemOnenoteNotebooksRequestBuilder) {
     return NewItemSitesItemOnenoteNotebooksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// NotebooksById provides operations to manage the notebooks property of the microsoft.graph.onenote entity.
-func (m *ItemSitesItemOnenoteRequestBuilder) NotebooksById(id string)(*ItemSitesItemOnenoteNotebooksNotebookItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["notebook%2Did"] = id
-    }
-    return NewItemSitesItemOnenoteNotebooksNotebookItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Operations provides operations to manage the operations property of the microsoft.graph.onenote entity.
 func (m *ItemSitesItemOnenoteRequestBuilder) Operations()(*ItemSitesItemOnenoteOperationsRequestBuilder) {
     return NewItemSitesItemOnenoteOperationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// OperationsById provides operations to manage the operations property of the microsoft.graph.onenote entity.
-func (m *ItemSitesItemOnenoteRequestBuilder) OperationsById(id string)(*ItemSitesItemOnenoteOperationsOnenoteOperationItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["onenoteOperation%2Did"] = id
-    }
-    return NewItemSitesItemOnenoteOperationsOnenoteOperationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Pages provides operations to manage the pages property of the microsoft.graph.onenote entity.
 func (m *ItemSitesItemOnenoteRequestBuilder) Pages()(*ItemSitesItemOnenotePagesRequestBuilder) {
     return NewItemSitesItemOnenotePagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// PagesById provides operations to manage the pages property of the microsoft.graph.onenote entity.
-func (m *ItemSitesItemOnenoteRequestBuilder) PagesById(id string)(*ItemSitesItemOnenotePagesOnenotePageItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["onenotePage%2Did"] = id
-    }
-    return NewItemSitesItemOnenotePagesOnenotePageItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property onenote in groups
 func (m *ItemSitesItemOnenoteRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Onenoteable, requestConfiguration *ItemSitesItemOnenoteRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Onenoteable, error) {
@@ -157,46 +124,13 @@ func (m *ItemSitesItemOnenoteRequestBuilder) Patch(ctx context.Context, body iad
 func (m *ItemSitesItemOnenoteRequestBuilder) Resources()(*ItemSitesItemOnenoteResourcesRequestBuilder) {
     return NewItemSitesItemOnenoteResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ResourcesById provides operations to manage the resources property of the microsoft.graph.onenote entity.
-func (m *ItemSitesItemOnenoteRequestBuilder) ResourcesById(id string)(*ItemSitesItemOnenoteResourcesOnenoteResourceItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["onenoteResource%2Did"] = id
-    }
-    return NewItemSitesItemOnenoteResourcesOnenoteResourceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // SectionGroups provides operations to manage the sectionGroups property of the microsoft.graph.onenote entity.
 func (m *ItemSitesItemOnenoteRequestBuilder) SectionGroups()(*ItemSitesItemOnenoteSectionGroupsRequestBuilder) {
     return NewItemSitesItemOnenoteSectionGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// SectionGroupsById provides operations to manage the sectionGroups property of the microsoft.graph.onenote entity.
-func (m *ItemSitesItemOnenoteRequestBuilder) SectionGroupsById(id string)(*ItemSitesItemOnenoteSectionGroupsSectionGroupItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["sectionGroup%2Did"] = id
-    }
-    return NewItemSitesItemOnenoteSectionGroupsSectionGroupItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Sections provides operations to manage the sections property of the microsoft.graph.onenote entity.
 func (m *ItemSitesItemOnenoteRequestBuilder) Sections()(*ItemSitesItemOnenoteSectionsRequestBuilder) {
     return NewItemSitesItemOnenoteSectionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// SectionsById provides operations to manage the sections property of the microsoft.graph.onenote entity.
-func (m *ItemSitesItemOnenoteRequestBuilder) SectionsById(id string)(*ItemSitesItemOnenoteSectionsOnenoteSectionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["onenoteSection%2Did"] = id
-    }
-    return NewItemSitesItemOnenoteSectionsOnenoteSectionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property onenote for groups
 func (m *ItemSitesItemOnenoteRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemOnenoteRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

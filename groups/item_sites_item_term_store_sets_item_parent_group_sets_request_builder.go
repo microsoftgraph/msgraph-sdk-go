@@ -46,6 +46,17 @@ type ItemSitesItemTermStoreSetsItemParentGroupSetsRequestBuilderPostRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// BySetId1 provides operations to manage the sets property of the microsoft.graph.termStore.group entity.
+func (m *ItemSitesItemTermStoreSetsItemParentGroupSetsRequestBuilder) BySetId1(setId1 string)(*ItemSitesItemTermStoreSetsItemParentGroupSetsSetItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if setId1 != "" {
+        urlTplParams["set%2Did1"] = setId1
+    }
+    return NewItemSitesItemTermStoreSetsItemParentGroupSetsSetItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemSitesItemTermStoreSetsItemParentGroupSetsRequestBuilderInternal instantiates a new SetsRequestBuilder and sets the default values.
 func NewItemSitesItemTermStoreSetsItemParentGroupSetsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemTermStoreSetsItemParentGroupSetsRequestBuilder) {
     m := &ItemSitesItemTermStoreSetsItemParentGroupSetsRequestBuilder{

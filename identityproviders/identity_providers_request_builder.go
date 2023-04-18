@@ -50,6 +50,17 @@ type IdentityProvidersRequestBuilderPostRequestConfiguration struct {
 func (m *IdentityProvidersRequestBuilder) AvailableProviderTypes()(*AvailableProviderTypesRequestBuilder) {
     return NewAvailableProviderTypesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ByIdentityProviderId provides operations to manage the collection of identityProvider entities.
+func (m *IdentityProvidersRequestBuilder) ByIdentityProviderId(identityProviderId string)(*IdentityProviderItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if identityProviderId != "" {
+        urlTplParams["identityProvider%2Did"] = identityProviderId
+    }
+    return NewIdentityProviderItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewIdentityProvidersRequestBuilderInternal instantiates a new IdentityProvidersRequestBuilder and sets the default values.
 func NewIdentityProvidersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IdentityProvidersRequestBuilder) {
     m := &IdentityProvidersRequestBuilder{

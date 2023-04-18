@@ -39,6 +39,17 @@ type ItemCalendarViewRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemCalendarViewRequestBuilderGetQueryParameters
 }
+// ByEventId provides operations to manage the calendarView property of the microsoft.graph.group entity.
+func (m *ItemCalendarViewRequestBuilder) ByEventId(eventId string)(*ItemCalendarViewEventItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if eventId != "" {
+        urlTplParams["event%2Did"] = eventId
+    }
+    return NewItemCalendarViewEventItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemCalendarViewRequestBuilderInternal instantiates a new CalendarViewRequestBuilder and sets the default values.
 func NewItemCalendarViewRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarViewRequestBuilder) {
     m := &ItemCalendarViewRequestBuilder{

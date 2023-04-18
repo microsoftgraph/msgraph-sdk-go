@@ -46,6 +46,17 @@ type CallsItemContentSharingSessionsRequestBuilderPostRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByContentSharingSessionId provides operations to manage the contentSharingSessions property of the microsoft.graph.call entity.
+func (m *CallsItemContentSharingSessionsRequestBuilder) ByContentSharingSessionId(contentSharingSessionId string)(*CallsItemContentSharingSessionsContentSharingSessionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if contentSharingSessionId != "" {
+        urlTplParams["contentSharingSession%2Did"] = contentSharingSessionId
+    }
+    return NewCallsItemContentSharingSessionsContentSharingSessionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCallsItemContentSharingSessionsRequestBuilderInternal instantiates a new ContentSharingSessionsRequestBuilder and sets the default values.
 func NewCallsItemContentSharingSessionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallsItemContentSharingSessionsRequestBuilder) {
     m := &CallsItemContentSharingSessionsRequestBuilder{

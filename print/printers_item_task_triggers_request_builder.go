@@ -46,6 +46,17 @@ type PrintersItemTaskTriggersRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByPrintTaskTriggerId provides operations to manage the taskTriggers property of the microsoft.graph.printer entity.
+func (m *PrintersItemTaskTriggersRequestBuilder) ByPrintTaskTriggerId(printTaskTriggerId string)(*PrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if printTaskTriggerId != "" {
+        urlTplParams["printTaskTrigger%2Did"] = printTaskTriggerId
+    }
+    return NewPrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewPrintersItemTaskTriggersRequestBuilderInternal instantiates a new TaskTriggersRequestBuilder and sets the default values.
 func NewPrintersItemTaskTriggersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrintersItemTaskTriggersRequestBuilder) {
     m := &PrintersItemTaskTriggersRequestBuilder{

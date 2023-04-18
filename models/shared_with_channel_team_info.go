@@ -8,7 +8,7 @@ import (
 type SharedWithChannelTeamInfo struct {
     TeamInfo
 }
-// NewSharedWithChannelTeamInfo instantiates a new sharedWithChannelTeamInfo and sets the default values.
+// NewSharedWithChannelTeamInfo instantiates a new SharedWithChannelTeamInfo and sets the default values.
 func NewSharedWithChannelTeamInfo()(*SharedWithChannelTeamInfo) {
     m := &SharedWithChannelTeamInfo{
         TeamInfo: *NewTeamInfo(),

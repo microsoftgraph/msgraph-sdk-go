@@ -46,6 +46,17 @@ type ItemConversationsItemThreadsItemPostsItemSingleValueExtendedPropertiesReque
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// BySingleValueLegacyExtendedPropertyId provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.post entity.
+func (m *ItemConversationsItemThreadsItemPostsItemSingleValueExtendedPropertiesRequestBuilder) BySingleValueLegacyExtendedPropertyId(singleValueLegacyExtendedPropertyId string)(*ItemConversationsItemThreadsItemPostsItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if singleValueLegacyExtendedPropertyId != "" {
+        urlTplParams["singleValueLegacyExtendedProperty%2Did"] = singleValueLegacyExtendedPropertyId
+    }
+    return NewItemConversationsItemThreadsItemPostsItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemConversationsItemThreadsItemPostsItemSingleValueExtendedPropertiesRequestBuilderInternal instantiates a new SingleValueExtendedPropertiesRequestBuilder and sets the default values.
 func NewItemConversationsItemThreadsItemPostsItemSingleValueExtendedPropertiesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConversationsItemThreadsItemPostsItemSingleValueExtendedPropertiesRequestBuilder) {
     m := &ItemConversationsItemThreadsItemPostsItemSingleValueExtendedPropertiesRequestBuilder{

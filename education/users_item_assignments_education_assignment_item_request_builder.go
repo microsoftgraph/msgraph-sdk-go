@@ -45,17 +45,6 @@ type UsersItemAssignmentsEducationAssignmentItemRequestBuilderPatchRequestConfig
 func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) Categories()(*UsersItemAssignmentsItemCategoriesRequestBuilder) {
     return NewUsersItemAssignmentsItemCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// CategoriesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.users.item.assignments.item.categories.item collection
-func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) CategoriesById(id string)(*UsersItemAssignmentsItemCategoriesEducationCategoryItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["educationCategory%2Did"] = id
-    }
-    return NewUsersItemAssignmentsItemCategoriesEducationCategoryItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewUsersItemAssignmentsEducationAssignmentItemRequestBuilderInternal instantiates a new EducationAssignmentItemRequestBuilder and sets the default values.
 func NewUsersItemAssignmentsEducationAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UsersItemAssignmentsEducationAssignmentItemRequestBuilder) {
     m := &UsersItemAssignmentsEducationAssignmentItemRequestBuilder{
@@ -131,17 +120,6 @@ func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) Publish()(*U
 func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) Resources()(*UsersItemAssignmentsItemResourcesRequestBuilder) {
     return NewUsersItemAssignmentsItemResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ResourcesById provides operations to manage the resources property of the microsoft.graph.educationAssignment entity.
-func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) ResourcesById(id string)(*UsersItemAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["educationAssignmentResource%2Did"] = id
-    }
-    return NewUsersItemAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Rubric provides operations to manage the rubric property of the microsoft.graph.educationAssignment entity.
 func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) Rubric()(*UsersItemAssignmentsItemRubricRequestBuilder) {
     return NewUsersItemAssignmentsItemRubricRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -157,17 +135,6 @@ func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) SetUpResourc
 // Submissions provides operations to manage the submissions property of the microsoft.graph.educationAssignment entity.
 func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) Submissions()(*UsersItemAssignmentsItemSubmissionsRequestBuilder) {
     return NewUsersItemAssignmentsItemSubmissionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// SubmissionsById provides operations to manage the submissions property of the microsoft.graph.educationAssignment entity.
-func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) SubmissionsById(id string)(*UsersItemAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["educationSubmission%2Did"] = id
-    }
-    return NewUsersItemAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property assignments for education
 func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *UsersItemAssignmentsEducationAssignmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

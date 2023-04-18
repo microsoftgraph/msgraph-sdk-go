@@ -54,6 +54,17 @@ func (m *ItemItemsItemWorkbookWorksheetsItemNamesRequestBuilder) Add()(*ItemItem
 func (m *ItemItemsItemWorkbookWorksheetsItemNamesRequestBuilder) AddFormulaLocal()(*ItemItemsItemWorkbookWorksheetsItemNamesAddFormulaLocalRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemNamesAddFormulaLocalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ByWorkbookNamedItemId provides operations to manage the names property of the microsoft.graph.workbookWorksheet entity.
+func (m *ItemItemsItemWorkbookWorksheetsItemNamesRequestBuilder) ByWorkbookNamedItemId(workbookNamedItemId string)(*ItemItemsItemWorkbookWorksheetsItemNamesWorkbookNamedItemItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if workbookNamedItemId != "" {
+        urlTplParams["workbookNamedItem%2Did"] = workbookNamedItemId
+    }
+    return NewItemItemsItemWorkbookWorksheetsItemNamesWorkbookNamedItemItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemItemsItemWorkbookWorksheetsItemNamesRequestBuilderInternal instantiates a new NamesRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsItemNamesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookWorksheetsItemNamesRequestBuilder) {
     m := &ItemItemsItemWorkbookWorksheetsItemNamesRequestBuilder{

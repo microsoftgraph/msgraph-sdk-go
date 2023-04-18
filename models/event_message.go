@@ -7,8 +7,6 @@ import (
 // EventMessage 
 type EventMessage struct {
     Message
-    // The type property
-    TypeEscaped *EventType
 }
 // NewEventMessage instantiates a new EventMessage and sets the default values.
 func NewEventMessage()(*EventMessage) {

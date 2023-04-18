@@ -93,17 +93,6 @@ func (m *ItemSitesItemTermStoresStoreItemRequestBuilder) Get(ctx context.Context
 func (m *ItemSitesItemTermStoresStoreItemRequestBuilder) Groups()(*ItemSitesItemTermStoresItemGroupsRequestBuilder) {
     return NewItemSitesItemTermStoresItemGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// GroupsById provides operations to manage the groups property of the microsoft.graph.termStore.store entity.
-func (m *ItemSitesItemTermStoresStoreItemRequestBuilder) GroupsById(id string)(*ItemSitesItemTermStoresItemGroupsGroupItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["group%2Did1"] = id
-    }
-    return NewItemSitesItemTermStoresItemGroupsGroupItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property termStores in groups
 func (m *ItemSitesItemTermStoresStoreItemRequestBuilder) Patch(ctx context.Context, body ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Storeable, requestConfiguration *ItemSitesItemTermStoresStoreItemRequestBuilderPatchRequestConfiguration)(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Storeable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -126,17 +115,6 @@ func (m *ItemSitesItemTermStoresStoreItemRequestBuilder) Patch(ctx context.Conte
 // Sets provides operations to manage the sets property of the microsoft.graph.termStore.store entity.
 func (m *ItemSitesItemTermStoresStoreItemRequestBuilder) Sets()(*ItemSitesItemTermStoresItemSetsRequestBuilder) {
     return NewItemSitesItemTermStoresItemSetsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// SetsById provides operations to manage the sets property of the microsoft.graph.termStore.store entity.
-func (m *ItemSitesItemTermStoresStoreItemRequestBuilder) SetsById(id string)(*ItemSitesItemTermStoresItemSetsSetItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["set%2Did"] = id
-    }
-    return NewItemSitesItemTermStoresItemSetsSetItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property termStores for groups
 func (m *ItemSitesItemTermStoresStoreItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemTermStoresStoreItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

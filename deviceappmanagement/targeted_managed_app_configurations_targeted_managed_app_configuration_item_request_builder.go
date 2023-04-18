@@ -45,17 +45,6 @@ type TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestB
 func (m *TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilder) Apps()(*TargetedManagedAppConfigurationsItemAppsRequestBuilder) {
     return NewTargetedManagedAppConfigurationsItemAppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AppsById provides operations to manage the apps property of the microsoft.graph.targetedManagedAppConfiguration entity.
-func (m *TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilder) AppsById(id string)(*TargetedManagedAppConfigurationsItemAppsManagedMobileAppItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["managedMobileApp%2Did"] = id
-    }
-    return NewTargetedManagedAppConfigurationsItemAppsManagedMobileAppItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Assign provides operations to call the assign method.
 func (m *TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilder) Assign()(*TargetedManagedAppConfigurationsItemAssignRequestBuilder) {
     return NewTargetedManagedAppConfigurationsItemAssignRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -63,17 +52,6 @@ func (m *TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequ
 // Assignments provides operations to manage the assignments property of the microsoft.graph.targetedManagedAppConfiguration entity.
 func (m *TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilder) Assignments()(*TargetedManagedAppConfigurationsItemAssignmentsRequestBuilder) {
     return NewTargetedManagedAppConfigurationsItemAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// AssignmentsById provides operations to manage the assignments property of the microsoft.graph.targetedManagedAppConfiguration entity.
-func (m *TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilder) AssignmentsById(id string)(*TargetedManagedAppConfigurationsItemAssignmentsTargetedManagedAppPolicyAssignmentItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["targetedManagedAppPolicyAssignment%2Did"] = id
-    }
-    return NewTargetedManagedAppConfigurationsItemAssignmentsTargetedManagedAppPolicyAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewTargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilderInternal instantiates a new TargetedManagedAppConfigurationItemRequestBuilder and sets the default values.
 func NewTargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilder) {

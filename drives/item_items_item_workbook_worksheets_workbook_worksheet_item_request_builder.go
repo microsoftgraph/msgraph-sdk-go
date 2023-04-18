@@ -49,17 +49,6 @@ func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) Cel
 func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) Charts()(*ItemItemsItemWorkbookWorksheetsItemChartsRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemChartsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ChartsById provides operations to manage the charts property of the microsoft.graph.workbookWorksheet entity.
-func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) ChartsById(id string)(*ItemItemsItemWorkbookWorksheetsItemChartsWorkbookChartItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["workbookChart%2Did"] = id
-    }
-    return NewItemItemsItemWorkbookWorksheetsItemChartsWorkbookChartItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilderInternal instantiates a new WorkbookWorksheetItemRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) {
     m := &ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder{
@@ -112,17 +101,6 @@ func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) Get
 func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) Names()(*ItemItemsItemWorkbookWorksheetsItemNamesRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemNamesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// NamesById provides operations to manage the names property of the microsoft.graph.workbookWorksheet entity.
-func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) NamesById(id string)(*ItemItemsItemWorkbookWorksheetsItemNamesWorkbookNamedItemItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["workbookNamedItem%2Did"] = id
-    }
-    return NewItemItemsItemWorkbookWorksheetsItemNamesWorkbookNamedItemItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property worksheets in drives
 func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookWorksheetable, requestConfiguration *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookWorksheetable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -146,17 +124,6 @@ func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) Pat
 func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) PivotTables()(*ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// PivotTablesById provides operations to manage the pivotTables property of the microsoft.graph.workbookWorksheet entity.
-func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) PivotTablesById(id string)(*ItemItemsItemWorkbookWorksheetsItemPivotTablesWorkbookPivotTableItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["workbookPivotTable%2Did"] = id
-    }
-    return NewItemItemsItemWorkbookWorksheetsItemPivotTablesWorkbookPivotTableItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Protection provides operations to manage the protection property of the microsoft.graph.workbookWorksheet entity.
 func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) Protection()(*ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -172,17 +139,6 @@ func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) Ran
 // Tables provides operations to manage the tables property of the microsoft.graph.workbookWorksheet entity.
 func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) Tables()(*ItemItemsItemWorkbookWorksheetsItemTablesRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemTablesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// TablesById provides operations to manage the tables property of the microsoft.graph.workbookWorksheet entity.
-func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) TablesById(id string)(*ItemItemsItemWorkbookWorksheetsItemTablesWorkbookTableItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["workbookTable%2Did"] = id
-    }
-    return NewItemItemsItemWorkbookWorksheetsItemTablesWorkbookTableItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property worksheets for drives
 func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -39,6 +39,17 @@ type ItemItemsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemItemsRequestBuilderGetQueryParameters
 }
+// ByBaseItemId provides operations to manage the items property of the microsoft.graph.site entity.
+func (m *ItemItemsRequestBuilder) ByBaseItemId(baseItemId string)(*ItemItemsBaseItemItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if baseItemId != "" {
+        urlTplParams["baseItem%2Did"] = baseItemId
+    }
+    return NewItemItemsBaseItemItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemItemsRequestBuilderInternal instantiates a new ItemsRequestBuilder and sets the default values.
 func NewItemItemsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsRequestBuilder) {
     m := &ItemItemsRequestBuilder{

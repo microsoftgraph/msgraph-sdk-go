@@ -46,6 +46,17 @@ type DomainsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDomainId provides operations to manage the collection of domain entities.
+func (m *DomainsRequestBuilder) ByDomainId(domainId string)(*DomainItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if domainId != "" {
+        urlTplParams["domain%2Did"] = domainId
+    }
+    return NewDomainItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewDomainsRequestBuilderInternal instantiates a new DomainsRequestBuilder and sets the default values.
 func NewDomainsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DomainsRequestBuilder) {
     m := &DomainsRequestBuilder{

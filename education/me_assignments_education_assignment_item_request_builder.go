@@ -45,17 +45,6 @@ type MeAssignmentsEducationAssignmentItemRequestBuilderPatchRequestConfiguration
 func (m *MeAssignmentsEducationAssignmentItemRequestBuilder) Categories()(*MeAssignmentsItemCategoriesRequestBuilder) {
     return NewMeAssignmentsItemCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// CategoriesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.me.assignments.item.categories.item collection
-func (m *MeAssignmentsEducationAssignmentItemRequestBuilder) CategoriesById(id string)(*MeAssignmentsItemCategoriesEducationCategoryItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["educationCategory%2Did"] = id
-    }
-    return NewMeAssignmentsItemCategoriesEducationCategoryItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewMeAssignmentsEducationAssignmentItemRequestBuilderInternal instantiates a new EducationAssignmentItemRequestBuilder and sets the default values.
 func NewMeAssignmentsEducationAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MeAssignmentsEducationAssignmentItemRequestBuilder) {
     m := &MeAssignmentsEducationAssignmentItemRequestBuilder{
@@ -131,17 +120,6 @@ func (m *MeAssignmentsEducationAssignmentItemRequestBuilder) Publish()(*MeAssign
 func (m *MeAssignmentsEducationAssignmentItemRequestBuilder) Resources()(*MeAssignmentsItemResourcesRequestBuilder) {
     return NewMeAssignmentsItemResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ResourcesById provides operations to manage the resources property of the microsoft.graph.educationAssignment entity.
-func (m *MeAssignmentsEducationAssignmentItemRequestBuilder) ResourcesById(id string)(*MeAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["educationAssignmentResource%2Did"] = id
-    }
-    return NewMeAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Rubric provides operations to manage the rubric property of the microsoft.graph.educationAssignment entity.
 func (m *MeAssignmentsEducationAssignmentItemRequestBuilder) Rubric()(*MeAssignmentsItemRubricRequestBuilder) {
     return NewMeAssignmentsItemRubricRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -157,17 +135,6 @@ func (m *MeAssignmentsEducationAssignmentItemRequestBuilder) SetUpResourcesFolde
 // Submissions provides operations to manage the submissions property of the microsoft.graph.educationAssignment entity.
 func (m *MeAssignmentsEducationAssignmentItemRequestBuilder) Submissions()(*MeAssignmentsItemSubmissionsRequestBuilder) {
     return NewMeAssignmentsItemSubmissionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// SubmissionsById provides operations to manage the submissions property of the microsoft.graph.educationAssignment entity.
-func (m *MeAssignmentsEducationAssignmentItemRequestBuilder) SubmissionsById(id string)(*MeAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["educationSubmission%2Did"] = id
-    }
-    return NewMeAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property assignments for education
 func (m *MeAssignmentsEducationAssignmentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *MeAssignmentsEducationAssignmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

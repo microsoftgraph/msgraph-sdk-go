@@ -39,6 +39,17 @@ type ItemOauth2PermissionGrantsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemOauth2PermissionGrantsRequestBuilderGetQueryParameters
 }
+// ByOAuth2PermissionGrantId provides operations to manage the oauth2PermissionGrants property of the microsoft.graph.servicePrincipal entity.
+func (m *ItemOauth2PermissionGrantsRequestBuilder) ByOAuth2PermissionGrantId(oAuth2PermissionGrantId string)(*ItemOauth2PermissionGrantsOAuth2PermissionGrantItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if oAuth2PermissionGrantId != "" {
+        urlTplParams["oAuth2PermissionGrant%2Did"] = oAuth2PermissionGrantId
+    }
+    return NewItemOauth2PermissionGrantsOAuth2PermissionGrantItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemOauth2PermissionGrantsRequestBuilderInternal instantiates a new Oauth2PermissionGrantsRequestBuilder and sets the default values.
 func NewItemOauth2PermissionGrantsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOauth2PermissionGrantsRequestBuilder) {
     m := &ItemOauth2PermissionGrantsRequestBuilder{

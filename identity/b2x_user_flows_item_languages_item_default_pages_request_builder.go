@@ -46,6 +46,17 @@ type B2xUserFlowsItemLanguagesItemDefaultPagesRequestBuilderPostRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUserFlowLanguagePageId provides operations to manage the defaultPages property of the microsoft.graph.userFlowLanguageConfiguration entity.
+func (m *B2xUserFlowsItemLanguagesItemDefaultPagesRequestBuilder) ByUserFlowLanguagePageId(userFlowLanguagePageId string)(*B2xUserFlowsItemLanguagesItemDefaultPagesUserFlowLanguagePageItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if userFlowLanguagePageId != "" {
+        urlTplParams["userFlowLanguagePage%2Did"] = userFlowLanguagePageId
+    }
+    return NewB2xUserFlowsItemLanguagesItemDefaultPagesUserFlowLanguagePageItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewB2xUserFlowsItemLanguagesItemDefaultPagesRequestBuilderInternal instantiates a new DefaultPagesRequestBuilder and sets the default values.
 func NewB2xUserFlowsItemLanguagesItemDefaultPagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*B2xUserFlowsItemLanguagesItemDefaultPagesRequestBuilder) {
     m := &B2xUserFlowsItemLanguagesItemDefaultPagesRequestBuilder{

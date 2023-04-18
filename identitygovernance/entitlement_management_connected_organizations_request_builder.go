@@ -46,6 +46,17 @@ type EntitlementManagementConnectedOrganizationsRequestBuilderPostRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByConnectedOrganizationId provides operations to manage the connectedOrganizations property of the microsoft.graph.entitlementManagement entity.
+func (m *EntitlementManagementConnectedOrganizationsRequestBuilder) ByConnectedOrganizationId(connectedOrganizationId string)(*EntitlementManagementConnectedOrganizationsConnectedOrganizationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if connectedOrganizationId != "" {
+        urlTplParams["connectedOrganization%2Did"] = connectedOrganizationId
+    }
+    return NewEntitlementManagementConnectedOrganizationsConnectedOrganizationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewEntitlementManagementConnectedOrganizationsRequestBuilderInternal instantiates a new ConnectedOrganizationsRequestBuilder and sets the default values.
 func NewEntitlementManagementConnectedOrganizationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementConnectedOrganizationsRequestBuilder) {
     m := &EntitlementManagementConnectedOrganizationsRequestBuilder{

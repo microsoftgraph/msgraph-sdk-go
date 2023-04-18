@@ -50,6 +50,17 @@ type FederationConfigurationsRequestBuilderPostRequestConfiguration struct {
 func (m *FederationConfigurationsRequestBuilder) AvailableProviderTypes()(*FederationConfigurationsAvailableProviderTypesRequestBuilder) {
     return NewFederationConfigurationsAvailableProviderTypesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ByIdentityProviderBaseId provides operations to manage the federationConfigurations property of the microsoft.graph.directory entity.
+func (m *FederationConfigurationsRequestBuilder) ByIdentityProviderBaseId(identityProviderBaseId string)(*FederationConfigurationsIdentityProviderBaseItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if identityProviderBaseId != "" {
+        urlTplParams["identityProviderBase%2Did"] = identityProviderBaseId
+    }
+    return NewFederationConfigurationsIdentityProviderBaseItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewFederationConfigurationsRequestBuilderInternal instantiates a new FederationConfigurationsRequestBuilder and sets the default values.
 func NewFederationConfigurationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FederationConfigurationsRequestBuilder) {
     m := &FederationConfigurationsRequestBuilder{

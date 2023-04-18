@@ -39,6 +39,17 @@ type ItemItemsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemItemsRequestBuilderGetQueryParameters
 }
+// ByDriveItemId provides operations to manage the items property of the microsoft.graph.sharedDriveItem entity.
+func (m *ItemItemsRequestBuilder) ByDriveItemId(driveItemId string)(*ItemItemsDriveItemItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if driveItemId != "" {
+        urlTplParams["driveItem%2Did"] = driveItemId
+    }
+    return NewItemItemsDriveItemItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemItemsRequestBuilderInternal instantiates a new ItemsRequestBuilder and sets the default values.
 func NewItemItemsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsRequestBuilder) {
     m := &ItemItemsRequestBuilder{

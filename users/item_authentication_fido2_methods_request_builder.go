@@ -39,6 +39,17 @@ type ItemAuthenticationFido2MethodsRequestBuilderGetRequestConfiguration struct 
     // Request query parameters
     QueryParameters *ItemAuthenticationFido2MethodsRequestBuilderGetQueryParameters
 }
+// ByFido2AuthenticationMethodId provides operations to manage the fido2Methods property of the microsoft.graph.authentication entity.
+func (m *ItemAuthenticationFido2MethodsRequestBuilder) ByFido2AuthenticationMethodId(fido2AuthenticationMethodId string)(*ItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if fido2AuthenticationMethodId != "" {
+        urlTplParams["fido2AuthenticationMethod%2Did"] = fido2AuthenticationMethodId
+    }
+    return NewItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemAuthenticationFido2MethodsRequestBuilderInternal instantiates a new Fido2MethodsRequestBuilder and sets the default values.
 func NewItemAuthenticationFido2MethodsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAuthenticationFido2MethodsRequestBuilder) {
     m := &ItemAuthenticationFido2MethodsRequestBuilder{

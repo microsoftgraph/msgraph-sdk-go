@@ -47,31 +47,9 @@ func (m *ItemCalendarGroupsItemCalendarsCalendarItemRequestBuilder) AllowedCalen
 func (m *ItemCalendarGroupsItemCalendarsCalendarItemRequestBuilder) CalendarPermissions()(*ItemCalendarGroupsItemCalendarsItemCalendarPermissionsRequestBuilder) {
     return NewItemCalendarGroupsItemCalendarsItemCalendarPermissionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// CalendarPermissionsById provides operations to manage the calendarPermissions property of the microsoft.graph.calendar entity.
-func (m *ItemCalendarGroupsItemCalendarsCalendarItemRequestBuilder) CalendarPermissionsById(id string)(*ItemCalendarGroupsItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["calendarPermission%2Did"] = id
-    }
-    return NewItemCalendarGroupsItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // CalendarView provides operations to manage the calendarView property of the microsoft.graph.calendar entity.
 func (m *ItemCalendarGroupsItemCalendarsCalendarItemRequestBuilder) CalendarView()(*ItemCalendarGroupsItemCalendarsItemCalendarViewRequestBuilder) {
     return NewItemCalendarGroupsItemCalendarsItemCalendarViewRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// CalendarViewById provides operations to manage the calendarView property of the microsoft.graph.calendar entity.
-func (m *ItemCalendarGroupsItemCalendarsCalendarItemRequestBuilder) CalendarViewById(id string)(*ItemCalendarGroupsItemCalendarsItemCalendarViewEventItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["event%2Did"] = id
-    }
-    return NewItemCalendarGroupsItemCalendarsItemCalendarViewEventItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewItemCalendarGroupsItemCalendarsCalendarItemRequestBuilderInternal instantiates a new CalendarItemRequestBuilder and sets the default values.
 func NewItemCalendarGroupsItemCalendarsCalendarItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarGroupsItemCalendarsCalendarItemRequestBuilder) {
@@ -106,17 +84,6 @@ func (m *ItemCalendarGroupsItemCalendarsCalendarItemRequestBuilder) Delete(ctx c
 func (m *ItemCalendarGroupsItemCalendarsCalendarItemRequestBuilder) Events()(*ItemCalendarGroupsItemCalendarsItemEventsRequestBuilder) {
     return NewItemCalendarGroupsItemCalendarsItemEventsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// EventsById provides operations to manage the events property of the microsoft.graph.calendar entity.
-func (m *ItemCalendarGroupsItemCalendarsCalendarItemRequestBuilder) EventsById(id string)(*ItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["event%2Did"] = id
-    }
-    return NewItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get the calendars in the calendar group. Navigation property. Read-only. Nullable.
 func (m *ItemCalendarGroupsItemCalendarsCalendarItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarGroupsItemCalendarsCalendarItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Calendarable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -144,17 +111,6 @@ func (m *ItemCalendarGroupsItemCalendarsCalendarItemRequestBuilder) GetSchedule(
 func (m *ItemCalendarGroupsItemCalendarsCalendarItemRequestBuilder) MultiValueExtendedProperties()(*ItemCalendarGroupsItemCalendarsItemMultiValueExtendedPropertiesRequestBuilder) {
     return NewItemCalendarGroupsItemCalendarsItemMultiValueExtendedPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// MultiValueExtendedPropertiesById provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.calendar entity.
-func (m *ItemCalendarGroupsItemCalendarsCalendarItemRequestBuilder) MultiValueExtendedPropertiesById(id string)(*ItemCalendarGroupsItemCalendarsItemMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["multiValueLegacyExtendedProperty%2Did"] = id
-    }
-    return NewItemCalendarGroupsItemCalendarsItemMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property calendars in users
 func (m *ItemCalendarGroupsItemCalendarsCalendarItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Calendarable, requestConfiguration *ItemCalendarGroupsItemCalendarsCalendarItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Calendarable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -177,17 +133,6 @@ func (m *ItemCalendarGroupsItemCalendarsCalendarItemRequestBuilder) Patch(ctx co
 // SingleValueExtendedProperties provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.calendar entity.
 func (m *ItemCalendarGroupsItemCalendarsCalendarItemRequestBuilder) SingleValueExtendedProperties()(*ItemCalendarGroupsItemCalendarsItemSingleValueExtendedPropertiesRequestBuilder) {
     return NewItemCalendarGroupsItemCalendarsItemSingleValueExtendedPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// SingleValueExtendedPropertiesById provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.calendar entity.
-func (m *ItemCalendarGroupsItemCalendarsCalendarItemRequestBuilder) SingleValueExtendedPropertiesById(id string)(*ItemCalendarGroupsItemCalendarsItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["singleValueLegacyExtendedProperty%2Did"] = id
-    }
-    return NewItemCalendarGroupsItemCalendarsItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property calendars for users
 func (m *ItemCalendarGroupsItemCalendarsCalendarItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarGroupsItemCalendarsCalendarItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

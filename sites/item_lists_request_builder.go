@@ -46,6 +46,17 @@ type ItemListsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByListId provides operations to manage the lists property of the microsoft.graph.site entity.
+func (m *ItemListsRequestBuilder) ByListId(listId string)(*ItemListsListItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if listId != "" {
+        urlTplParams["list%2Did"] = listId
+    }
+    return NewItemListsListItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemListsRequestBuilderInternal instantiates a new ListsRequestBuilder and sets the default values.
 func NewItemListsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListsRequestBuilder) {
     m := &ItemListsRequestBuilder{

@@ -45,17 +45,6 @@ type TeamsAppsTeamsAppItemRequestBuilderPatchRequestConfiguration struct {
 func (m *TeamsAppsTeamsAppItemRequestBuilder) AppDefinitions()(*TeamsAppsItemAppDefinitionsRequestBuilder) {
     return NewTeamsAppsItemAppDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AppDefinitionsById provides operations to manage the appDefinitions property of the microsoft.graph.teamsApp entity.
-func (m *TeamsAppsTeamsAppItemRequestBuilder) AppDefinitionsById(id string)(*TeamsAppsItemAppDefinitionsTeamsAppDefinitionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["teamsAppDefinition%2Did"] = id
-    }
-    return NewTeamsAppsItemAppDefinitionsTeamsAppDefinitionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewTeamsAppsTeamsAppItemRequestBuilderInternal instantiates a new TeamsAppItemRequestBuilder and sets the default values.
 func NewTeamsAppsTeamsAppItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamsAppsTeamsAppItemRequestBuilder) {
     m := &TeamsAppsTeamsAppItemRequestBuilder{

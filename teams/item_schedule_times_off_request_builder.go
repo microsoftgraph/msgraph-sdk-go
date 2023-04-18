@@ -44,6 +44,17 @@ type ItemScheduleTimesOffRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByTimeOffId provides operations to manage the timesOff property of the microsoft.graph.schedule entity.
+func (m *ItemScheduleTimesOffRequestBuilder) ByTimeOffId(timeOffId string)(*ItemScheduleTimesOffTimeOffItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if timeOffId != "" {
+        urlTplParams["timeOff%2Did"] = timeOffId
+    }
+    return NewItemScheduleTimesOffTimeOffItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemScheduleTimesOffRequestBuilderInternal instantiates a new TimesOffRequestBuilder and sets the default values.
 func NewItemScheduleTimesOffRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemScheduleTimesOffRequestBuilder) {
     m := &ItemScheduleTimesOffRequestBuilder{

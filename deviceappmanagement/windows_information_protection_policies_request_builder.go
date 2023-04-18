@@ -46,6 +46,17 @@ type WindowsInformationProtectionPoliciesRequestBuilderPostRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByWindowsInformationProtectionPolicyId provides operations to manage the windowsInformationProtectionPolicies property of the microsoft.graph.deviceAppManagement entity.
+func (m *WindowsInformationProtectionPoliciesRequestBuilder) ByWindowsInformationProtectionPolicyId(windowsInformationProtectionPolicyId string)(*WindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if windowsInformationProtectionPolicyId != "" {
+        urlTplParams["windowsInformationProtectionPolicy%2Did"] = windowsInformationProtectionPolicyId
+    }
+    return NewWindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewWindowsInformationProtectionPoliciesRequestBuilderInternal instantiates a new WindowsInformationProtectionPoliciesRequestBuilder and sets the default values.
 func NewWindowsInformationProtectionPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsInformationProtectionPoliciesRequestBuilder) {
     m := &WindowsInformationProtectionPoliciesRequestBuilder{

@@ -273,6 +273,20 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["messageHistory"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateChatMessageHistoryItemFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ChatMessageHistoryItemable, len(val))
+            for i, v := range val {
+                res[i] = v.(ChatMessageHistoryItemable)
+            }
+            m.SetMessageHistory(res)
+        }
+        return nil
+    }
     res["messageType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseChatMessageType)
         if err != nil {
@@ -437,6 +451,17 @@ func (m *ChatMessage) GetMentions()([]ChatMessageMentionable) {
     }
     if val != nil {
         return val.([]ChatMessageMentionable)
+    }
+    return nil
+}
+// GetMessageHistory gets the messageHistory property value. The messageHistory property
+func (m *ChatMessage) GetMessageHistory()([]ChatMessageHistoryItemable) {
+    val, err := m.GetBackingStore().Get("messageHistory")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ChatMessageHistoryItemable)
     }
     return nil
 }
@@ -637,6 +662,16 @@ func (m *ChatMessage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    if m.GetMessageHistory() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMessageHistory()))
+        for i, v := range m.GetMessageHistory() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("messageHistory", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetMessageType() != nil {
         cast := (*m.GetMessageType()).String()
         err = writer.WriteStringValue("messageType", &cast)
@@ -801,6 +836,13 @@ func (m *ChatMessage) SetMentions(value []ChatMessageMentionable)() {
         panic(err)
     }
 }
+// SetMessageHistory sets the messageHistory property value. The messageHistory property
+func (m *ChatMessage) SetMessageHistory(value []ChatMessageHistoryItemable)() {
+    err := m.GetBackingStore().Set("messageHistory", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetMessageType sets the messageType property value. The messageType property
 func (m *ChatMessage) SetMessageType(value *ChatMessageType)() {
     err := m.GetBackingStore().Set("messageType", value)
@@ -876,6 +918,7 @@ type ChatMessageable interface {
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLocale()(*string)
     GetMentions()([]ChatMessageMentionable)
+    GetMessageHistory()([]ChatMessageHistoryItemable)
     GetMessageType()(*ChatMessageType)
     GetPolicyViolation()(ChatMessagePolicyViolationable)
     GetReactions()([]ChatMessageReactionable)
@@ -899,6 +942,7 @@ type ChatMessageable interface {
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLocale(value *string)()
     SetMentions(value []ChatMessageMentionable)()
+    SetMessageHistory(value []ChatMessageHistoryItemable)()
     SetMessageType(value *ChatMessageType)()
     SetPolicyViolation(value ChatMessagePolicyViolationable)()
     SetReactions(value []ChatMessageReactionable)()

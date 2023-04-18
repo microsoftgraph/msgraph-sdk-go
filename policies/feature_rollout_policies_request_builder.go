@@ -46,6 +46,17 @@ type FeatureRolloutPoliciesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByFeatureRolloutPolicyId provides operations to manage the featureRolloutPolicies property of the microsoft.graph.policyRoot entity.
+func (m *FeatureRolloutPoliciesRequestBuilder) ByFeatureRolloutPolicyId(featureRolloutPolicyId string)(*FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if featureRolloutPolicyId != "" {
+        urlTplParams["featureRolloutPolicy%2Did"] = featureRolloutPolicyId
+    }
+    return NewFeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewFeatureRolloutPoliciesRequestBuilderInternal instantiates a new FeatureRolloutPoliciesRequestBuilder and sets the default values.
 func NewFeatureRolloutPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FeatureRolloutPoliciesRequestBuilder) {
     m := &FeatureRolloutPoliciesRequestBuilder{

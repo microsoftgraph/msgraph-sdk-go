@@ -39,6 +39,17 @@ type ItemTeamPrimaryChannelSharedWithTeamsItemAllowedMembersRequestBuilderGetReq
     // Request query parameters
     QueryParameters *ItemTeamPrimaryChannelSharedWithTeamsItemAllowedMembersRequestBuilderGetQueryParameters
 }
+// ByConversationMemberId provides operations to manage the allowedMembers property of the microsoft.graph.sharedWithChannelTeamInfo entity.
+func (m *ItemTeamPrimaryChannelSharedWithTeamsItemAllowedMembersRequestBuilder) ByConversationMemberId(conversationMemberId string)(*ItemTeamPrimaryChannelSharedWithTeamsItemAllowedMembersConversationMemberItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if conversationMemberId != "" {
+        urlTplParams["conversationMember%2Did"] = conversationMemberId
+    }
+    return NewItemTeamPrimaryChannelSharedWithTeamsItemAllowedMembersConversationMemberItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemTeamPrimaryChannelSharedWithTeamsItemAllowedMembersRequestBuilderInternal instantiates a new AllowedMembersRequestBuilder and sets the default values.
 func NewItemTeamPrimaryChannelSharedWithTeamsItemAllowedMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamPrimaryChannelSharedWithTeamsItemAllowedMembersRequestBuilder) {
     m := &ItemTeamPrimaryChannelSharedWithTeamsItemAllowedMembersRequestBuilder{

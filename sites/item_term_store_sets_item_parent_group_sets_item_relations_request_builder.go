@@ -46,6 +46,17 @@ type ItemTermStoreSetsItemParentGroupSetsItemRelationsRequestBuilderPostRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByRelationId provides operations to manage the relations property of the microsoft.graph.termStore.set entity.
+func (m *ItemTermStoreSetsItemParentGroupSetsItemRelationsRequestBuilder) ByRelationId(relationId string)(*ItemTermStoreSetsItemParentGroupSetsItemRelationsRelationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if relationId != "" {
+        urlTplParams["relation%2Did"] = relationId
+    }
+    return NewItemTermStoreSetsItemParentGroupSetsItemRelationsRelationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemTermStoreSetsItemParentGroupSetsItemRelationsRequestBuilderInternal instantiates a new RelationsRequestBuilder and sets the default values.
 func NewItemTermStoreSetsItemParentGroupSetsItemRelationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTermStoreSetsItemParentGroupSetsItemRelationsRequestBuilder) {
     m := &ItemTermStoreSetsItemParentGroupSetsItemRelationsRequestBuilder{

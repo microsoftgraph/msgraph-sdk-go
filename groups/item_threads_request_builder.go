@@ -42,6 +42,17 @@ type ItemThreadsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByConversationThreadId provides operations to manage the threads property of the microsoft.graph.group entity.
+func (m *ItemThreadsRequestBuilder) ByConversationThreadId(conversationThreadId string)(*ItemThreadsConversationThreadItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if conversationThreadId != "" {
+        urlTplParams["conversationThread%2Did"] = conversationThreadId
+    }
+    return NewItemThreadsConversationThreadItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemThreadsRequestBuilderInternal instantiates a new ThreadsRequestBuilder and sets the default values.
 func NewItemThreadsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemThreadsRequestBuilder) {
     m := &ItemThreadsRequestBuilder{

@@ -46,6 +46,17 @@ type ItemSitesItemListsItemItemsItemVersionsRequestBuilderPostRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByListItemVersionId provides operations to manage the versions property of the microsoft.graph.listItem entity.
+func (m *ItemSitesItemListsItemItemsItemVersionsRequestBuilder) ByListItemVersionId(listItemVersionId string)(*ItemSitesItemListsItemItemsItemVersionsListItemVersionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if listItemVersionId != "" {
+        urlTplParams["listItemVersion%2Did"] = listItemVersionId
+    }
+    return NewItemSitesItemListsItemItemsItemVersionsListItemVersionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemSitesItemListsItemItemsItemVersionsRequestBuilderInternal instantiates a new VersionsRequestBuilder and sets the default values.
 func NewItemSitesItemListsItemItemsItemVersionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemListsItemItemsItemVersionsRequestBuilder) {
     m := &ItemSitesItemListsItemItemsItemVersionsRequestBuilder{

@@ -46,6 +46,17 @@ type VppTokensRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByVppTokenId provides operations to manage the vppTokens property of the microsoft.graph.deviceAppManagement entity.
+func (m *VppTokensRequestBuilder) ByVppTokenId(vppTokenId string)(*VppTokensVppTokenItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if vppTokenId != "" {
+        urlTplParams["vppToken%2Did"] = vppTokenId
+    }
+    return NewVppTokensVppTokenItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewVppTokensRequestBuilderInternal instantiates a new VppTokensRequestBuilder and sets the default values.
 func NewVppTokensRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VppTokensRequestBuilder) {
     m := &VppTokensRequestBuilder{

@@ -46,6 +46,17 @@ type TermsAndConditionsItemAssignmentsRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByTermsAndConditionsAssignmentId provides operations to manage the assignments property of the microsoft.graph.termsAndConditions entity.
+func (m *TermsAndConditionsItemAssignmentsRequestBuilder) ByTermsAndConditionsAssignmentId(termsAndConditionsAssignmentId string)(*TermsAndConditionsItemAssignmentsTermsAndConditionsAssignmentItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if termsAndConditionsAssignmentId != "" {
+        urlTplParams["termsAndConditionsAssignment%2Did"] = termsAndConditionsAssignmentId
+    }
+    return NewTermsAndConditionsItemAssignmentsTermsAndConditionsAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewTermsAndConditionsItemAssignmentsRequestBuilderInternal instantiates a new AssignmentsRequestBuilder and sets the default values.
 func NewTermsAndConditionsItemAssignmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TermsAndConditionsItemAssignmentsRequestBuilder) {
     m := &TermsAndConditionsItemAssignmentsRequestBuilder{

@@ -120,17 +120,6 @@ func (m *EntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyIte
 func (m *EntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilder) Questions()(*EntitlementManagementAssignmentPoliciesItemQuestionsRequestBuilder) {
     return NewEntitlementManagementAssignmentPoliciesItemQuestionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// QuestionsById provides operations to manage the questions property of the microsoft.graph.accessPackageAssignmentPolicy entity.
-func (m *EntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilder) QuestionsById(id string)(*EntitlementManagementAssignmentPoliciesItemQuestionsAccessPackageQuestionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["accessPackageQuestion%2Did"] = id
-    }
-    return NewEntitlementManagementAssignmentPoliciesItemQuestionsAccessPackageQuestionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property assignmentPolicies for identityGovernance
 func (m *EntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

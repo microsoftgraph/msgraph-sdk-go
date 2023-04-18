@@ -107,17 +107,6 @@ func (m *ItemBrandingRequestBuilder) Get(ctx context.Context, requestConfigurati
 func (m *ItemBrandingRequestBuilder) Localizations()(*ItemBrandingLocalizationsRequestBuilder) {
     return NewItemBrandingLocalizationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// LocalizationsById provides operations to manage the localizations property of the microsoft.graph.organizationalBranding entity.
-func (m *ItemBrandingRequestBuilder) LocalizationsById(id string)(*ItemBrandingLocalizationsOrganizationalBrandingLocalizationItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["organizationalBrandingLocalization%2Did"] = id
-    }
-    return NewItemBrandingLocalizationsOrganizationalBrandingLocalizationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the properties of the default branding object specified by the organizationalBranding resource.
 // [Find more info here]
 // 

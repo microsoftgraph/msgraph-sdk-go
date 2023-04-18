@@ -51,17 +51,6 @@ func NewTeamworkRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 func (m *TeamworkRequestBuilder) DeletedTeams()(*DeletedTeamsRequestBuilder) {
     return NewDeletedTeamsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// DeletedTeamsById provides operations to manage the deletedTeams property of the microsoft.graph.teamwork entity.
-func (m *TeamworkRequestBuilder) DeletedTeamsById(id string)(*DeletedTeamsDeletedTeamItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["deletedTeam%2Did"] = id
-    }
-    return NewDeletedTeamsDeletedTeamItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get get teamwork
 func (m *TeamworkRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamworkRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamworkable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -140,15 +129,4 @@ func (m *TeamworkRequestBuilder) ToPatchRequestInformation(ctx context.Context, 
 // WorkforceIntegrations provides operations to manage the workforceIntegrations property of the microsoft.graph.teamwork entity.
 func (m *TeamworkRequestBuilder) WorkforceIntegrations()(*WorkforceIntegrationsRequestBuilder) {
     return NewWorkforceIntegrationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// WorkforceIntegrationsById provides operations to manage the workforceIntegrations property of the microsoft.graph.teamwork entity.
-func (m *TeamworkRequestBuilder) WorkforceIntegrationsById(id string)(*WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["workforceIntegration%2Did"] = id
-    }
-    return NewWorkforceIntegrationsWorkforceIntegrationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }

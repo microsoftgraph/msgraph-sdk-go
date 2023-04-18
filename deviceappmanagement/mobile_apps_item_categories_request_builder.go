@@ -39,6 +39,17 @@ type MobileAppsItemCategoriesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *MobileAppsItemCategoriesRequestBuilderGetQueryParameters
 }
+// ByMobileAppCategoryId provides operations to manage the categories property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemCategoriesRequestBuilder) ByMobileAppCategoryId(mobileAppCategoryId string)(*MobileAppsItemCategoriesMobileAppCategoryItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if mobileAppCategoryId != "" {
+        urlTplParams["mobileAppCategory%2Did"] = mobileAppCategoryId
+    }
+    return NewMobileAppsItemCategoriesMobileAppCategoryItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewMobileAppsItemCategoriesRequestBuilderInternal instantiates a new CategoriesRequestBuilder and sets the default values.
 func NewMobileAppsItemCategoriesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemCategoriesRequestBuilder) {
     m := &MobileAppsItemCategoriesRequestBuilder{

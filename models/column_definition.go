@@ -7,8 +7,6 @@ import (
 // ColumnDefinition 
 type ColumnDefinition struct {
     Entity
-    // For site columns, the type of column. Read-only.
-    TypeEscaped *ColumnTypes
 }
 // NewColumnDefinition instantiates a new columnDefinition and sets the default values.
 func NewColumnDefinition()(*ColumnDefinition) {

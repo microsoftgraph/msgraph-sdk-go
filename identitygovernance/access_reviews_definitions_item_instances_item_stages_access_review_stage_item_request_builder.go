@@ -58,17 +58,6 @@ func NewAccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequ
 func (m *AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequestBuilder) Decisions()(*AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsRequestBuilder) {
     return NewAccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// DecisionsById provides operations to manage the decisions property of the microsoft.graph.accessReviewStage entity.
-func (m *AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequestBuilder) DecisionsById(id string)(*AccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsAccessReviewInstanceDecisionItemItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["accessReviewInstanceDecisionItem%2Did"] = id
-    }
-    return NewAccessReviewsDefinitionsItemInstancesItemStagesItemDecisionsAccessReviewInstanceDecisionItemItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Delete delete navigation property stages for identityGovernance
 func (m *AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);

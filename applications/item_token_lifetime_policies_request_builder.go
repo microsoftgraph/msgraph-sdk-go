@@ -39,6 +39,17 @@ type ItemTokenLifetimePoliciesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemTokenLifetimePoliciesRequestBuilderGetQueryParameters
 }
+// ByTokenLifetimePolicyId gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.applications.item.tokenLifetimePolicies.item collection
+func (m *ItemTokenLifetimePoliciesRequestBuilder) ByTokenLifetimePolicyId(tokenLifetimePolicyId string)(*ItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if tokenLifetimePolicyId != "" {
+        urlTplParams["tokenLifetimePolicy%2Did"] = tokenLifetimePolicyId
+    }
+    return NewItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemTokenLifetimePoliciesRequestBuilderInternal instantiates a new TokenLifetimePoliciesRequestBuilder and sets the default values.
 func NewItemTokenLifetimePoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTokenLifetimePoliciesRequestBuilder) {
     m := &ItemTokenLifetimePoliciesRequestBuilder{

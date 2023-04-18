@@ -112,17 +112,6 @@ func (m *EntitlementManagementAccessPackageAssignmentApprovalsApprovalItemReques
 func (m *EntitlementManagementAccessPackageAssignmentApprovalsApprovalItemRequestBuilder) Stages()(*EntitlementManagementAccessPackageAssignmentApprovalsItemStagesRequestBuilder) {
     return NewEntitlementManagementAccessPackageAssignmentApprovalsItemStagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// StagesById provides operations to manage the stages property of the microsoft.graph.approval entity.
-func (m *EntitlementManagementAccessPackageAssignmentApprovalsApprovalItemRequestBuilder) StagesById(id string)(*EntitlementManagementAccessPackageAssignmentApprovalsItemStagesApprovalStageItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["approvalStage%2Did"] = id
-    }
-    return NewEntitlementManagementAccessPackageAssignmentApprovalsItemStagesApprovalStageItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property accessPackageAssignmentApprovals for identityGovernance
 func (m *EntitlementManagementAccessPackageAssignmentApprovalsApprovalItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentApprovalsApprovalItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

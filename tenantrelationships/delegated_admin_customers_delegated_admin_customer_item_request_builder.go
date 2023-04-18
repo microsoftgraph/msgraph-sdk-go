@@ -112,17 +112,6 @@ func (m *DelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilder) Patch(
 func (m *DelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilder) ServiceManagementDetails()(*DelegatedAdminCustomersItemServiceManagementDetailsRequestBuilder) {
     return NewDelegatedAdminCustomersItemServiceManagementDetailsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ServiceManagementDetailsById provides operations to manage the serviceManagementDetails property of the microsoft.graph.delegatedAdminCustomer entity.
-func (m *DelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilder) ServiceManagementDetailsById(id string)(*DelegatedAdminCustomersItemServiceManagementDetailsDelegatedAdminServiceManagementDetailItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["delegatedAdminServiceManagementDetail%2Did"] = id
-    }
-    return NewDelegatedAdminCustomersItemServiceManagementDetailsDelegatedAdminServiceManagementDetailItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property delegatedAdminCustomers for tenantRelationships
 func (m *DelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

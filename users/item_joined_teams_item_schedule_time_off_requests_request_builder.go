@@ -44,6 +44,17 @@ type ItemJoinedTeamsItemScheduleTimeOffRequestsRequestBuilderPostRequestConfigur
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByTimeOffRequestId provides operations to manage the timeOffRequests property of the microsoft.graph.schedule entity.
+func (m *ItemJoinedTeamsItemScheduleTimeOffRequestsRequestBuilder) ByTimeOffRequestId(timeOffRequestId string)(*ItemJoinedTeamsItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if timeOffRequestId != "" {
+        urlTplParams["timeOffRequest%2Did"] = timeOffRequestId
+    }
+    return NewItemJoinedTeamsItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemJoinedTeamsItemScheduleTimeOffRequestsRequestBuilderInternal instantiates a new TimeOffRequestsRequestBuilder and sets the default values.
 func NewItemJoinedTeamsItemScheduleTimeOffRequestsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemJoinedTeamsItemScheduleTimeOffRequestsRequestBuilder) {
     m := &ItemJoinedTeamsItemScheduleTimeOffRequestsRequestBuilder{

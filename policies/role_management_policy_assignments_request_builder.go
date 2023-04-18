@@ -46,6 +46,17 @@ type RoleManagementPolicyAssignmentsRequestBuilderPostRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUnifiedRoleManagementPolicyAssignmentId provides operations to manage the roleManagementPolicyAssignments property of the microsoft.graph.policyRoot entity.
+func (m *RoleManagementPolicyAssignmentsRequestBuilder) ByUnifiedRoleManagementPolicyAssignmentId(unifiedRoleManagementPolicyAssignmentId string)(*RoleManagementPolicyAssignmentsUnifiedRoleManagementPolicyAssignmentItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if unifiedRoleManagementPolicyAssignmentId != "" {
+        urlTplParams["unifiedRoleManagementPolicyAssignment%2Did"] = unifiedRoleManagementPolicyAssignmentId
+    }
+    return NewRoleManagementPolicyAssignmentsUnifiedRoleManagementPolicyAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewRoleManagementPolicyAssignmentsRequestBuilderInternal instantiates a new RoleManagementPolicyAssignmentsRequestBuilder and sets the default values.
 func NewRoleManagementPolicyAssignmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RoleManagementPolicyAssignmentsRequestBuilder) {
     m := &RoleManagementPolicyAssignmentsRequestBuilder{

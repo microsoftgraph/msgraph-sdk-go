@@ -46,6 +46,17 @@ type ReportsExportJobsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceManagementExportJobId provides operations to manage the exportJobs property of the microsoft.graph.deviceManagementReports entity.
+func (m *ReportsExportJobsRequestBuilder) ByDeviceManagementExportJobId(deviceManagementExportJobId string)(*ReportsExportJobsDeviceManagementExportJobItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceManagementExportJobId != "" {
+        urlTplParams["deviceManagementExportJob%2Did"] = deviceManagementExportJobId
+    }
+    return NewReportsExportJobsDeviceManagementExportJobItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewReportsExportJobsRequestBuilderInternal instantiates a new ExportJobsRequestBuilder and sets the default values.
 func NewReportsExportJobsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReportsExportJobsRequestBuilder) {
     m := &ReportsExportJobsRequestBuilder{

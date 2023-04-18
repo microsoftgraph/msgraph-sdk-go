@@ -36,6 +36,17 @@ type SubscribedSkusRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// BySubscribedSkuId provides operations to manage the collection of subscribedSku entities.
+func (m *SubscribedSkusRequestBuilder) BySubscribedSkuId(subscribedSkuId string)(*SubscribedSkuItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if subscribedSkuId != "" {
+        urlTplParams["subscribedSku%2Did"] = subscribedSkuId
+    }
+    return NewSubscribedSkuItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewSubscribedSkusRequestBuilderInternal instantiates a new SubscribedSkusRequestBuilder and sets the default values.
 func NewSubscribedSkusRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SubscribedSkusRequestBuilder) {
     m := &SubscribedSkusRequestBuilder{

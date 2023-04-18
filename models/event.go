@@ -8,8 +8,6 @@ import (
 // Event 
 type Event struct {
     OutlookItem
-    // The type property
-    TypeEscaped *EventType
 }
 // NewEvent instantiates a new Event and sets the default values.
 func NewEvent()(*Event) {

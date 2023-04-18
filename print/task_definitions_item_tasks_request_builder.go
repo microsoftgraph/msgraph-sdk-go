@@ -46,6 +46,17 @@ type TaskDefinitionsItemTasksRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByPrintTaskId provides operations to manage the tasks property of the microsoft.graph.printTaskDefinition entity.
+func (m *TaskDefinitionsItemTasksRequestBuilder) ByPrintTaskId(printTaskId string)(*TaskDefinitionsItemTasksPrintTaskItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if printTaskId != "" {
+        urlTplParams["printTask%2Did"] = printTaskId
+    }
+    return NewTaskDefinitionsItemTasksPrintTaskItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewTaskDefinitionsItemTasksRequestBuilderInternal instantiates a new TasksRequestBuilder and sets the default values.
 func NewTaskDefinitionsItemTasksRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TaskDefinitionsItemTasksRequestBuilder) {
     m := &TaskDefinitionsItemTasksRequestBuilder{

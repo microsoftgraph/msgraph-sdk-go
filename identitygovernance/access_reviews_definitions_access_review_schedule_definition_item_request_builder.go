@@ -93,17 +93,6 @@ func (m *AccessReviewsDefinitionsAccessReviewScheduleDefinitionItemRequestBuilde
 func (m *AccessReviewsDefinitionsAccessReviewScheduleDefinitionItemRequestBuilder) Instances()(*AccessReviewsDefinitionsItemInstancesRequestBuilder) {
     return NewAccessReviewsDefinitionsItemInstancesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// InstancesById provides operations to manage the instances property of the microsoft.graph.accessReviewScheduleDefinition entity.
-func (m *AccessReviewsDefinitionsAccessReviewScheduleDefinitionItemRequestBuilder) InstancesById(id string)(*AccessReviewsDefinitionsItemInstancesAccessReviewInstanceItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["accessReviewInstance%2Did"] = id
-    }
-    return NewAccessReviewsDefinitionsItemInstancesAccessReviewInstanceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property definitions in identityGovernance
 func (m *AccessReviewsDefinitionsAccessReviewScheduleDefinitionItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewScheduleDefinitionable, requestConfiguration *AccessReviewsDefinitionsAccessReviewScheduleDefinitionItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewScheduleDefinitionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);

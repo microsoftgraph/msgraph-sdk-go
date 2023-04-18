@@ -18,6 +18,17 @@ type TeamsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByTeamId provides operations to manage the collection of team entities.
+func (m *TeamsRequestBuilder) ByTeamId(teamId string)(*TeamItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if teamId != "" {
+        urlTplParams["team%2Did"] = teamId
+    }
+    return NewTeamItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewTeamsRequestBuilderInternal instantiates a new TeamsRequestBuilder and sets the default values.
 func NewTeamsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamsRequestBuilder) {
     m := &TeamsRequestBuilder{

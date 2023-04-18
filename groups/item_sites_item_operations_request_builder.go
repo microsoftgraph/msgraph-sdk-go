@@ -46,6 +46,17 @@ type ItemSitesItemOperationsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByRichLongRunningOperationId provides operations to manage the operations property of the microsoft.graph.site entity.
+func (m *ItemSitesItemOperationsRequestBuilder) ByRichLongRunningOperationId(richLongRunningOperationId string)(*ItemSitesItemOperationsRichLongRunningOperationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if richLongRunningOperationId != "" {
+        urlTplParams["richLongRunningOperation%2Did"] = richLongRunningOperationId
+    }
+    return NewItemSitesItemOperationsRichLongRunningOperationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemSitesItemOperationsRequestBuilderInternal instantiates a new OperationsRequestBuilder and sets the default values.
 func NewItemSitesItemOperationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemOperationsRequestBuilder) {
     m := &ItemSitesItemOperationsRequestBuilder{

@@ -42,6 +42,17 @@ type ItemCalendarGroupsItemCalendarsRequestBuilderPostRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByCalendarId provides operations to manage the calendars property of the microsoft.graph.calendarGroup entity.
+func (m *ItemCalendarGroupsItemCalendarsRequestBuilder) ByCalendarId(calendarId string)(*ItemCalendarGroupsItemCalendarsCalendarItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if calendarId != "" {
+        urlTplParams["calendar%2Did"] = calendarId
+    }
+    return NewItemCalendarGroupsItemCalendarsCalendarItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemCalendarGroupsItemCalendarsRequestBuilderInternal instantiates a new CalendarsRequestBuilder and sets the default values.
 func NewItemCalendarGroupsItemCalendarsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarGroupsItemCalendarsRequestBuilder) {
     m := &ItemCalendarGroupsItemCalendarsRequestBuilder{

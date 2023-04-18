@@ -45,31 +45,9 @@ type MeRequestBuilderPatchRequestConfiguration struct {
 func (m *MeRequestBuilder) Assignments()(*MeAssignmentsRequestBuilder) {
     return NewMeAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AssignmentsById provides operations to manage the assignments property of the microsoft.graph.educationUser entity.
-func (m *MeRequestBuilder) AssignmentsById(id string)(*MeAssignmentsEducationAssignmentItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["educationAssignment%2Did"] = id
-    }
-    return NewMeAssignmentsEducationAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Classes provides operations to manage the classes property of the microsoft.graph.educationUser entity.
 func (m *MeRequestBuilder) Classes()(*MeClassesRequestBuilder) {
     return NewMeClassesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// ClassesById provides operations to manage the classes property of the microsoft.graph.educationUser entity.
-func (m *MeRequestBuilder) ClassesById(id string)(*MeClassesEducationClassItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["educationClass%2Did"] = id
-    }
-    return NewMeClassesEducationClassItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewMeRequestBuilderInternal instantiates a new MeRequestBuilder and sets the default values.
 func NewMeRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MeRequestBuilder) {
@@ -142,46 +120,13 @@ func (m *MeRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e6472
 func (m *MeRequestBuilder) Rubrics()(*MeRubricsRequestBuilder) {
     return NewMeRubricsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// RubricsById provides operations to manage the rubrics property of the microsoft.graph.educationUser entity.
-func (m *MeRequestBuilder) RubricsById(id string)(*MeRubricsEducationRubricItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["educationRubric%2Did"] = id
-    }
-    return NewMeRubricsEducationRubricItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Schools provides operations to manage the schools property of the microsoft.graph.educationUser entity.
 func (m *MeRequestBuilder) Schools()(*MeSchoolsRequestBuilder) {
     return NewMeSchoolsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// SchoolsById provides operations to manage the schools property of the microsoft.graph.educationUser entity.
-func (m *MeRequestBuilder) SchoolsById(id string)(*MeSchoolsEducationSchoolItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["educationSchool%2Did"] = id
-    }
-    return NewMeSchoolsEducationSchoolItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // TaughtClasses provides operations to manage the taughtClasses property of the microsoft.graph.educationUser entity.
 func (m *MeRequestBuilder) TaughtClasses()(*MeTaughtClassesRequestBuilder) {
     return NewMeTaughtClassesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// TaughtClassesById provides operations to manage the taughtClasses property of the microsoft.graph.educationUser entity.
-func (m *MeRequestBuilder) TaughtClassesById(id string)(*MeTaughtClassesEducationClassItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["educationClass%2Did"] = id
-    }
-    return NewMeTaughtClassesEducationClassItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property me for education
 func (m *MeRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *MeRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -100,17 +100,6 @@ func (m *CrossTenantAccessPolicyRequestBuilder) Get(ctx context.Context, request
 func (m *CrossTenantAccessPolicyRequestBuilder) Partners()(*CrossTenantAccessPolicyPartnersRequestBuilder) {
     return NewCrossTenantAccessPolicyPartnersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// PartnersById provides operations to manage the partners property of the microsoft.graph.crossTenantAccessPolicy entity.
-func (m *CrossTenantAccessPolicyRequestBuilder) PartnersById(id string)(*CrossTenantAccessPolicyPartnersCrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["crossTenantAccessPolicyConfigurationPartner%2DtenantId"] = id
-    }
-    return NewCrossTenantAccessPolicyPartnersCrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the properties of a cross-tenant access policy.
 // [Find more info here]
 // 

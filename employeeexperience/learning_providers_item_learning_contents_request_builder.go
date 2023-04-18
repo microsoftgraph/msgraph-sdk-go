@@ -46,6 +46,17 @@ type LearningProvidersItemLearningContentsRequestBuilderPostRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByLearningContentId provides operations to manage the learningContents property of the microsoft.graph.learningProvider entity.
+func (m *LearningProvidersItemLearningContentsRequestBuilder) ByLearningContentId(learningContentId string)(*LearningProvidersItemLearningContentsLearningContentItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if learningContentId != "" {
+        urlTplParams["learningContent%2Did"] = learningContentId
+    }
+    return NewLearningProvidersItemLearningContentsLearningContentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewLearningProvidersItemLearningContentsRequestBuilderInternal instantiates a new LearningContentsRequestBuilder and sets the default values.
 func NewLearningProvidersItemLearningContentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LearningProvidersItemLearningContentsRequestBuilder) {
     m := &LearningProvidersItemLearningContentsRequestBuilder{

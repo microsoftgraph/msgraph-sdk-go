@@ -46,6 +46,17 @@ type ItemSitesItemOnenotePagesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByOnenotePageId provides operations to manage the pages property of the microsoft.graph.onenote entity.
+func (m *ItemSitesItemOnenotePagesRequestBuilder) ByOnenotePageId(onenotePageId string)(*ItemSitesItemOnenotePagesOnenotePageItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if onenotePageId != "" {
+        urlTplParams["onenotePage%2Did"] = onenotePageId
+    }
+    return NewItemSitesItemOnenotePagesOnenotePageItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemSitesItemOnenotePagesRequestBuilderInternal instantiates a new PagesRequestBuilder and sets the default values.
 func NewItemSitesItemOnenotePagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemOnenotePagesRequestBuilder) {
     m := &ItemSitesItemOnenotePagesRequestBuilder{

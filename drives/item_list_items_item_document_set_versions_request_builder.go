@@ -46,6 +46,17 @@ type ItemListItemsItemDocumentSetVersionsRequestBuilderPostRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDocumentSetVersionId provides operations to manage the documentSetVersions property of the microsoft.graph.listItem entity.
+func (m *ItemListItemsItemDocumentSetVersionsRequestBuilder) ByDocumentSetVersionId(documentSetVersionId string)(*ItemListItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if documentSetVersionId != "" {
+        urlTplParams["documentSetVersion%2Did"] = documentSetVersionId
+    }
+    return NewItemListItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemListItemsItemDocumentSetVersionsRequestBuilderInternal instantiates a new DocumentSetVersionsRequestBuilder and sets the default values.
 func NewItemListItemsItemDocumentSetVersionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListItemsItemDocumentSetVersionsRequestBuilder) {
     m := &ItemListItemsItemDocumentSetVersionsRequestBuilder{

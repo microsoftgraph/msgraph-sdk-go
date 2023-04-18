@@ -10,8 +10,6 @@ import (
 type RemoteItem struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
-    // If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
-    PackageEscaped PackageEscapedable
 }
 // NewRemoteItem instantiates a new remoteItem and sets the default values.
 func NewRemoteItem()(*RemoteItem) {

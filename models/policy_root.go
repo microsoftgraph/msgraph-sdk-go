@@ -74,6 +74,17 @@ func (m *PolicyRoot) GetAuthenticationMethodsPolicy()(AuthenticationMethodsPolic
     }
     return nil
 }
+// GetAuthenticationStrengthPolicies gets the authenticationStrengthPolicies property value. The authenticationStrengthPolicies property
+func (m *PolicyRoot) GetAuthenticationStrengthPolicies()([]AuthenticationStrengthPolicyable) {
+    val, err := m.GetBackingStore().Get("authenticationStrengthPolicies")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AuthenticationStrengthPolicyable)
+    }
+    return nil
+}
 // GetAuthorizationPolicy gets the authorizationPolicy property value. The policy that controls Azure AD authorization settings.
 func (m *PolicyRoot) GetAuthorizationPolicy()(AuthorizationPolicyable) {
     val, err := m.GetBackingStore().Get("authorizationPolicy")
@@ -198,6 +209,20 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         if val != nil {
             m.SetAuthenticationMethodsPolicy(val.(AuthenticationMethodsPolicyable))
+        }
+        return nil
+    }
+    res["authenticationStrengthPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAuthenticationStrengthPolicyFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AuthenticationStrengthPolicyable, len(val))
+            for i, v := range val {
+                res[i] = v.(AuthenticationStrengthPolicyable)
+            }
+            m.SetAuthenticationStrengthPolicies(res)
         }
         return nil
     }
@@ -490,6 +515,16 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    if m.GetAuthenticationStrengthPolicies() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAuthenticationStrengthPolicies()))
+        for i, v := range m.GetAuthenticationStrengthPolicies() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("authenticationStrengthPolicies", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("authorizationPolicy", m.GetAuthorizationPolicy())
         if err != nil {
@@ -641,6 +676,13 @@ func (m *PolicyRoot) SetAuthenticationMethodsPolicy(value AuthenticationMethodsP
         panic(err)
     }
 }
+// SetAuthenticationStrengthPolicies sets the authenticationStrengthPolicies property value. The authenticationStrengthPolicies property
+func (m *PolicyRoot) SetAuthenticationStrengthPolicies(value []AuthenticationStrengthPolicyable)() {
+    err := m.GetBackingStore().Set("authenticationStrengthPolicies", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetAuthorizationPolicy sets the authorizationPolicy property value. The policy that controls Azure AD authorization settings.
 func (m *PolicyRoot) SetAuthorizationPolicy(value AuthorizationPolicyable)() {
     err := m.GetBackingStore().Set("authorizationPolicy", value)
@@ -741,6 +783,7 @@ type PolicyRootable interface {
     GetAppManagementPolicies()([]AppManagementPolicyable)
     GetAuthenticationFlowsPolicy()(AuthenticationFlowsPolicyable)
     GetAuthenticationMethodsPolicy()(AuthenticationMethodsPolicyable)
+    GetAuthenticationStrengthPolicies()([]AuthenticationStrengthPolicyable)
     GetAuthorizationPolicy()(AuthorizationPolicyable)
     GetClaimsMappingPolicies()([]ClaimsMappingPolicyable)
     GetConditionalAccessPolicies()([]ConditionalAccessPolicyable)
@@ -759,6 +802,7 @@ type PolicyRootable interface {
     SetAppManagementPolicies(value []AppManagementPolicyable)()
     SetAuthenticationFlowsPolicy(value AuthenticationFlowsPolicyable)()
     SetAuthenticationMethodsPolicy(value AuthenticationMethodsPolicyable)()
+    SetAuthenticationStrengthPolicies(value []AuthenticationStrengthPolicyable)()
     SetAuthorizationPolicy(value AuthorizationPolicyable)()
     SetClaimsMappingPolicies(value []ClaimsMappingPolicyable)()
     SetConditionalAccessPolicies(value []ConditionalAccessPolicyable)()

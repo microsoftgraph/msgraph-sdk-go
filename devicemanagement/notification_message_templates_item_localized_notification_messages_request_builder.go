@@ -46,6 +46,17 @@ type NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilder
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByLocalizedNotificationMessageId provides operations to manage the localizedNotificationMessages property of the microsoft.graph.notificationMessageTemplate entity.
+func (m *NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilder) ByLocalizedNotificationMessageId(localizedNotificationMessageId string)(*NotificationMessageTemplatesItemLocalizedNotificationMessagesLocalizedNotificationMessageItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if localizedNotificationMessageId != "" {
+        urlTplParams["localizedNotificationMessage%2Did"] = localizedNotificationMessageId
+    }
+    return NewNotificationMessageTemplatesItemLocalizedNotificationMessagesLocalizedNotificationMessageItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewNotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilderInternal instantiates a new LocalizedNotificationMessagesRequestBuilder and sets the default values.
 func NewNotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilder) {
     m := &NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilder{

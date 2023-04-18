@@ -46,6 +46,17 @@ type ManagedAppPoliciesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByManagedAppPolicyId provides operations to manage the managedAppPolicies property of the microsoft.graph.deviceAppManagement entity.
+func (m *ManagedAppPoliciesRequestBuilder) ByManagedAppPolicyId(managedAppPolicyId string)(*ManagedAppPoliciesManagedAppPolicyItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if managedAppPolicyId != "" {
+        urlTplParams["managedAppPolicy%2Did"] = managedAppPolicyId
+    }
+    return NewManagedAppPoliciesManagedAppPolicyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewManagedAppPoliciesRequestBuilderInternal instantiates a new ManagedAppPoliciesRequestBuilder and sets the default values.
 func NewManagedAppPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedAppPoliciesRequestBuilder) {
     m := &ManagedAppPoliciesRequestBuilder{

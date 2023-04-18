@@ -46,6 +46,17 @@ type ItemTeamworkInstalledAppsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUserScopeTeamsAppInstallationId provides operations to manage the installedApps property of the microsoft.graph.userTeamwork entity.
+func (m *ItemTeamworkInstalledAppsRequestBuilder) ByUserScopeTeamsAppInstallationId(userScopeTeamsAppInstallationId string)(*ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if userScopeTeamsAppInstallationId != "" {
+        urlTplParams["userScopeTeamsAppInstallation%2Did"] = userScopeTeamsAppInstallationId
+    }
+    return NewItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemTeamworkInstalledAppsRequestBuilderInternal instantiates a new InstalledAppsRequestBuilder and sets the default values.
 func NewItemTeamworkInstalledAppsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamworkInstalledAppsRequestBuilder) {
     m := &ItemTeamworkInstalledAppsRequestBuilder{

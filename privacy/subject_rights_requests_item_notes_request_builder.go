@@ -46,6 +46,17 @@ type SubjectRightsRequestsItemNotesRequestBuilderPostRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByAuthoredNoteId provides operations to manage the notes property of the microsoft.graph.subjectRightsRequest entity.
+func (m *SubjectRightsRequestsItemNotesRequestBuilder) ByAuthoredNoteId(authoredNoteId string)(*SubjectRightsRequestsItemNotesAuthoredNoteItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if authoredNoteId != "" {
+        urlTplParams["authoredNote%2Did"] = authoredNoteId
+    }
+    return NewSubjectRightsRequestsItemNotesAuthoredNoteItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewSubjectRightsRequestsItemNotesRequestBuilderInternal instantiates a new NotesRequestBuilder and sets the default values.
 func NewSubjectRightsRequestsItemNotesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SubjectRightsRequestsItemNotesRequestBuilder) {
     m := &SubjectRightsRequestsItemNotesRequestBuilder{

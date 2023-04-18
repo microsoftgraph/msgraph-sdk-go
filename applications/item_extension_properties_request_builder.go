@@ -46,6 +46,17 @@ type ItemExtensionPropertiesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByExtensionPropertyId provides operations to manage the extensionProperties property of the microsoft.graph.application entity.
+func (m *ItemExtensionPropertiesRequestBuilder) ByExtensionPropertyId(extensionPropertyId string)(*ItemExtensionPropertiesExtensionPropertyItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if extensionPropertyId != "" {
+        urlTplParams["extensionProperty%2Did"] = extensionPropertyId
+    }
+    return NewItemExtensionPropertiesExtensionPropertyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemExtensionPropertiesRequestBuilderInternal instantiates a new ExtensionPropertiesRequestBuilder and sets the default values.
 func NewItemExtensionPropertiesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemExtensionPropertiesRequestBuilder) {
     m := &ItemExtensionPropertiesRequestBuilder{

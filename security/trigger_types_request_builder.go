@@ -112,17 +112,6 @@ func (m *TriggerTypesRequestBuilder) Patch(ctx context.Context, body idd6d442c3c
 func (m *TriggerTypesRequestBuilder) RetentionEventTypes()(*TriggerTypesRetentionEventTypesRequestBuilder) {
     return NewTriggerTypesRetentionEventTypesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// RetentionEventTypesById provides operations to manage the retentionEventTypes property of the microsoft.graph.security.triggerTypesRoot entity.
-func (m *TriggerTypesRequestBuilder) RetentionEventTypesById(id string)(*TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["retentionEventType%2Did"] = id
-    }
-    return NewTriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property triggerTypes for security
 func (m *TriggerTypesRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TriggerTypesRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

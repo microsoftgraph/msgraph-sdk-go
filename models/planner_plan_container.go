@@ -9,8 +9,6 @@ import (
 type PlannerPlanContainer struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
-    // The type of the resource that contains the plan. For supported types, see the previous table. Possible values are: group, unknownFutureValue, roster. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster. Optional.
-    TypeEscaped *PlannerContainerType
 }
 // NewPlannerPlanContainer instantiates a new plannerPlanContainer and sets the default values.
 func NewPlannerPlanContainer()(*PlannerPlanContainer) {

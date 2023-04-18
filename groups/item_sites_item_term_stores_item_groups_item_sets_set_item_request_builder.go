@@ -45,17 +45,6 @@ type ItemSitesItemTermStoresItemGroupsItemSetsSetItemRequestBuilderPatchRequestC
 func (m *ItemSitesItemTermStoresItemGroupsItemSetsSetItemRequestBuilder) Children()(*ItemSitesItemTermStoresItemGroupsItemSetsItemChildrenRequestBuilder) {
     return NewItemSitesItemTermStoresItemGroupsItemSetsItemChildrenRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ChildrenById provides operations to manage the children property of the microsoft.graph.termStore.set entity.
-func (m *ItemSitesItemTermStoresItemGroupsItemSetsSetItemRequestBuilder) ChildrenById(id string)(*ItemSitesItemTermStoresItemGroupsItemSetsItemChildrenTermItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["term%2Did"] = id
-    }
-    return NewItemSitesItemTermStoresItemGroupsItemSetsItemChildrenTermItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewItemSitesItemTermStoresItemGroupsItemSetsSetItemRequestBuilderInternal instantiates a new SetItemRequestBuilder and sets the default values.
 func NewItemSitesItemTermStoresItemGroupsItemSetsSetItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemTermStoresItemGroupsItemSetsSetItemRequestBuilder) {
     m := &ItemSitesItemTermStoresItemGroupsItemSetsSetItemRequestBuilder{
@@ -131,31 +120,9 @@ func (m *ItemSitesItemTermStoresItemGroupsItemSetsSetItemRequestBuilder) Patch(c
 func (m *ItemSitesItemTermStoresItemGroupsItemSetsSetItemRequestBuilder) Relations()(*ItemSitesItemTermStoresItemGroupsItemSetsItemRelationsRequestBuilder) {
     return NewItemSitesItemTermStoresItemGroupsItemSetsItemRelationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// RelationsById provides operations to manage the relations property of the microsoft.graph.termStore.set entity.
-func (m *ItemSitesItemTermStoresItemGroupsItemSetsSetItemRequestBuilder) RelationsById(id string)(*ItemSitesItemTermStoresItemGroupsItemSetsItemRelationsRelationItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["relation%2Did"] = id
-    }
-    return NewItemSitesItemTermStoresItemGroupsItemSetsItemRelationsRelationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Terms provides operations to manage the terms property of the microsoft.graph.termStore.set entity.
 func (m *ItemSitesItemTermStoresItemGroupsItemSetsSetItemRequestBuilder) Terms()(*ItemSitesItemTermStoresItemGroupsItemSetsItemTermsRequestBuilder) {
     return NewItemSitesItemTermStoresItemGroupsItemSetsItemTermsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// TermsById provides operations to manage the terms property of the microsoft.graph.termStore.set entity.
-func (m *ItemSitesItemTermStoresItemGroupsItemSetsSetItemRequestBuilder) TermsById(id string)(*ItemSitesItemTermStoresItemGroupsItemSetsItemTermsTermItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["term%2Did"] = id
-    }
-    return NewItemSitesItemTermStoresItemGroupsItemSetsItemTermsTermItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property sets for groups
 func (m *ItemSitesItemTermStoresItemGroupsItemSetsSetItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemTermStoresItemGroupsItemSetsSetItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

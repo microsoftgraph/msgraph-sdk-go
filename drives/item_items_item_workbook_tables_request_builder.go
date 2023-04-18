@@ -50,6 +50,17 @@ type ItemItemsItemWorkbookTablesRequestBuilderPostRequestConfiguration struct {
 func (m *ItemItemsItemWorkbookTablesRequestBuilder) Add()(*ItemItemsItemWorkbookTablesAddRequestBuilder) {
     return NewItemItemsItemWorkbookTablesAddRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ByWorkbookTableId provides operations to manage the tables property of the microsoft.graph.workbook entity.
+func (m *ItemItemsItemWorkbookTablesRequestBuilder) ByWorkbookTableId(workbookTableId string)(*ItemItemsItemWorkbookTablesWorkbookTableItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if workbookTableId != "" {
+        urlTplParams["workbookTable%2Did"] = workbookTableId
+    }
+    return NewItemItemsItemWorkbookTablesWorkbookTableItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemItemsItemWorkbookTablesRequestBuilderInternal instantiates a new TablesRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookTablesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookTablesRequestBuilder) {
     m := &ItemItemsItemWorkbookTablesRequestBuilder{

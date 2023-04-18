@@ -46,6 +46,17 @@ type ItemTeamworkAssociatedTeamsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByAssociatedTeamInfoId provides operations to manage the associatedTeams property of the microsoft.graph.userTeamwork entity.
+func (m *ItemTeamworkAssociatedTeamsRequestBuilder) ByAssociatedTeamInfoId(associatedTeamInfoId string)(*ItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if associatedTeamInfoId != "" {
+        urlTplParams["associatedTeamInfo%2Did"] = associatedTeamInfoId
+    }
+    return NewItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemTeamworkAssociatedTeamsRequestBuilderInternal instantiates a new AssociatedTeamsRequestBuilder and sets the default values.
 func NewItemTeamworkAssociatedTeamsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamworkAssociatedTeamsRequestBuilder) {
     m := &ItemTeamworkAssociatedTeamsRequestBuilder{

@@ -46,6 +46,17 @@ type ApplicationsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByApplicationId provides operations to manage the collection of application entities.
+func (m *ApplicationsRequestBuilder) ByApplicationId(applicationId string)(*ApplicationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if applicationId != "" {
+        urlTplParams["application%2Did"] = applicationId
+    }
+    return NewApplicationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewApplicationsRequestBuilderInternal instantiates a new ApplicationsRequestBuilder and sets the default values.
 func NewApplicationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ApplicationsRequestBuilder) {
     m := &ApplicationsRequestBuilder{

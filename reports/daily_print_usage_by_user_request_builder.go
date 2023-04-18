@@ -46,6 +46,17 @@ type DailyPrintUsageByUserRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByPrintUsageByUserId provides operations to manage the dailyPrintUsageByUser property of the microsoft.graph.reportRoot entity.
+func (m *DailyPrintUsageByUserRequestBuilder) ByPrintUsageByUserId(printUsageByUserId string)(*DailyPrintUsageByUserPrintUsageByUserItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if printUsageByUserId != "" {
+        urlTplParams["printUsageByUser%2Did"] = printUsageByUserId
+    }
+    return NewDailyPrintUsageByUserPrintUsageByUserItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewDailyPrintUsageByUserRequestBuilderInternal instantiates a new DailyPrintUsageByUserRequestBuilder and sets the default values.
 func NewDailyPrintUsageByUserRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DailyPrintUsageByUserRequestBuilder) {
     m := &DailyPrintUsageByUserRequestBuilder{

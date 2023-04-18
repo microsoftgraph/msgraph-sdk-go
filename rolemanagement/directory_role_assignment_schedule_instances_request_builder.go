@@ -46,6 +46,17 @@ type DirectoryRoleAssignmentScheduleInstancesRequestBuilderPostRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUnifiedRoleAssignmentScheduleInstanceId provides operations to manage the roleAssignmentScheduleInstances property of the microsoft.graph.rbacApplication entity.
+func (m *DirectoryRoleAssignmentScheduleInstancesRequestBuilder) ByUnifiedRoleAssignmentScheduleInstanceId(unifiedRoleAssignmentScheduleInstanceId string)(*DirectoryRoleAssignmentScheduleInstancesUnifiedRoleAssignmentScheduleInstanceItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if unifiedRoleAssignmentScheduleInstanceId != "" {
+        urlTplParams["unifiedRoleAssignmentScheduleInstance%2Did"] = unifiedRoleAssignmentScheduleInstanceId
+    }
+    return NewDirectoryRoleAssignmentScheduleInstancesUnifiedRoleAssignmentScheduleInstanceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewDirectoryRoleAssignmentScheduleInstancesRequestBuilderInternal instantiates a new RoleAssignmentScheduleInstancesRequestBuilder and sets the default values.
 func NewDirectoryRoleAssignmentScheduleInstancesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryRoleAssignmentScheduleInstancesRequestBuilder) {
     m := &DirectoryRoleAssignmentScheduleInstancesRequestBuilder{

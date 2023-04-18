@@ -46,6 +46,17 @@ type ItemPinnedMessagesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByPinnedChatMessageInfoId provides operations to manage the pinnedMessages property of the microsoft.graph.chat entity.
+func (m *ItemPinnedMessagesRequestBuilder) ByPinnedChatMessageInfoId(pinnedChatMessageInfoId string)(*ItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if pinnedChatMessageInfoId != "" {
+        urlTplParams["pinnedChatMessageInfo%2Did"] = pinnedChatMessageInfoId
+    }
+    return NewItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemPinnedMessagesRequestBuilderInternal instantiates a new PinnedMessagesRequestBuilder and sets the default values.
 func NewItemPinnedMessagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPinnedMessagesRequestBuilder) {
     m := &ItemPinnedMessagesRequestBuilder{

@@ -46,6 +46,17 @@ type ClassesItemAssignmentsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByEducationAssignmentId provides operations to manage the assignments property of the microsoft.graph.educationClass entity.
+func (m *ClassesItemAssignmentsRequestBuilder) ByEducationAssignmentId(educationAssignmentId string)(*ClassesItemAssignmentsEducationAssignmentItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if educationAssignmentId != "" {
+        urlTplParams["educationAssignment%2Did"] = educationAssignmentId
+    }
+    return NewClassesItemAssignmentsEducationAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewClassesItemAssignmentsRequestBuilderInternal instantiates a new AssignmentsRequestBuilder and sets the default values.
 func NewClassesItemAssignmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ClassesItemAssignmentsRequestBuilder) {
     m := &ClassesItemAssignmentsRequestBuilder{

@@ -43,6 +43,17 @@ type ItemSitesRequestBuilderGetRequestConfiguration struct {
 func (m *ItemSitesRequestBuilder) Add()(*ItemSitesAddRequestBuilder) {
     return NewItemSitesAddRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// BySiteId provides operations to manage the sites property of the microsoft.graph.group entity.
+func (m *ItemSitesRequestBuilder) BySiteId(siteId string)(*ItemSitesSiteItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if siteId != "" {
+        urlTplParams["site%2Did"] = siteId
+    }
+    return NewItemSitesSiteItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemSitesRequestBuilderInternal instantiates a new SitesRequestBuilder and sets the default values.
 func NewItemSitesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesRequestBuilder) {
     m := &ItemSitesRequestBuilder{

@@ -85,17 +85,6 @@ func (m *DeviceItemRequestBuilder) Delete(ctx context.Context, requestConfigurat
 func (m *DeviceItemRequestBuilder) Extensions()(*ItemExtensionsRequestBuilder) {
     return NewItemExtensionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ExtensionsById provides operations to manage the extensions property of the microsoft.graph.device entity.
-func (m *DeviceItemRequestBuilder) ExtensionsById(id string)(*ItemExtensionsExtensionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["extension%2Did"] = id
-    }
-    return NewItemExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get get the properties and relationships of a device object.
 // [Find more info here]
 // 
@@ -130,17 +119,6 @@ func (m *DeviceItemRequestBuilder) GetMemberObjects()(*ItemGetMemberObjectsReque
 func (m *DeviceItemRequestBuilder) MemberOf()(*ItemMemberOfRequestBuilder) {
     return NewItemMemberOfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// MemberOfById provides operations to manage the memberOf property of the microsoft.graph.device entity.
-func (m *DeviceItemRequestBuilder) MemberOfById(id string)(*ItemMemberOfDirectoryObjectItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["directoryObject%2Did"] = id
-    }
-    return NewItemMemberOfDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the properties of a registered device. Only certain properties of a device can be updated through approved Mobile Device Managment (MDM) apps.
 // [Find more info here]
 // 
@@ -167,31 +145,9 @@ func (m *DeviceItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412
 func (m *DeviceItemRequestBuilder) RegisteredOwners()(*ItemRegisteredOwnersRequestBuilder) {
     return NewItemRegisteredOwnersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// RegisteredOwnersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.devices.item.registeredOwners.item collection
-func (m *DeviceItemRequestBuilder) RegisteredOwnersById(id string)(*ItemRegisteredOwnersDirectoryObjectItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["directoryObject%2Did"] = id
-    }
-    return NewItemRegisteredOwnersDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // RegisteredUsers provides operations to manage the registeredUsers property of the microsoft.graph.device entity.
 func (m *DeviceItemRequestBuilder) RegisteredUsers()(*ItemRegisteredUsersRequestBuilder) {
     return NewItemRegisteredUsersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// RegisteredUsersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.devices.item.registeredUsers.item collection
-func (m *DeviceItemRequestBuilder) RegisteredUsersById(id string)(*ItemRegisteredUsersDirectoryObjectItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["directoryObject%2Did"] = id
-    }
-    return NewItemRegisteredUsersDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Restore provides operations to call the restore method.
 func (m *DeviceItemRequestBuilder) Restore()(*ItemRestoreRequestBuilder) {
@@ -245,15 +201,4 @@ func (m *DeviceItemRequestBuilder) ToPatchRequestInformation(ctx context.Context
 // TransitiveMemberOf provides operations to manage the transitiveMemberOf property of the microsoft.graph.device entity.
 func (m *DeviceItemRequestBuilder) TransitiveMemberOf()(*ItemTransitiveMemberOfRequestBuilder) {
     return NewItemTransitiveMemberOfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// TransitiveMemberOfById provides operations to manage the transitiveMemberOf property of the microsoft.graph.device entity.
-func (m *DeviceItemRequestBuilder) TransitiveMemberOfById(id string)(*ItemTransitiveMemberOfDirectoryObjectItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["directoryObject%2Did"] = id
-    }
-    return NewItemTransitiveMemberOfDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }

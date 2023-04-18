@@ -46,6 +46,17 @@ type RiskyServicePrincipalsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByRiskyServicePrincipalId provides operations to manage the riskyServicePrincipals property of the microsoft.graph.identityProtectionRoot entity.
+func (m *RiskyServicePrincipalsRequestBuilder) ByRiskyServicePrincipalId(riskyServicePrincipalId string)(*RiskyServicePrincipalsRiskyServicePrincipalItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if riskyServicePrincipalId != "" {
+        urlTplParams["riskyServicePrincipal%2Did"] = riskyServicePrincipalId
+    }
+    return NewRiskyServicePrincipalsRiskyServicePrincipalItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // ConfirmCompromised provides operations to call the confirmCompromised method.
 func (m *RiskyServicePrincipalsRequestBuilder) ConfirmCompromised()(*RiskyServicePrincipalsConfirmCompromisedRequestBuilder) {
     return NewRiskyServicePrincipalsConfirmCompromisedRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

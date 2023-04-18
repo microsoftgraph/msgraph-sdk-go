@@ -97,17 +97,6 @@ func (m *ItemItemsItemAnalyticsRequestBuilder) Get(ctx context.Context, requestC
 func (m *ItemItemsItemAnalyticsRequestBuilder) ItemActivityStats()(*ItemItemsItemAnalyticsItemActivityStatsRequestBuilder) {
     return NewItemItemsItemAnalyticsItemActivityStatsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ItemActivityStatsById provides operations to manage the itemActivityStats property of the microsoft.graph.itemAnalytics entity.
-func (m *ItemItemsItemAnalyticsRequestBuilder) ItemActivityStatsById(id string)(*ItemItemsItemAnalyticsItemActivityStatsItemActivityStatItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["itemActivityStat%2Did"] = id
-    }
-    return NewItemItemsItemAnalyticsItemActivityStatsItemActivityStatItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // LastSevenDays provides operations to manage the lastSevenDays property of the microsoft.graph.itemAnalytics entity.
 func (m *ItemItemsItemAnalyticsRequestBuilder) LastSevenDays()(*ItemItemsItemAnalyticsLastSevenDaysRequestBuilder) {
     return NewItemItemsItemAnalyticsLastSevenDaysRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

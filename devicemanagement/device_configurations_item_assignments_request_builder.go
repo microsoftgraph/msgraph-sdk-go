@@ -46,6 +46,17 @@ type DeviceConfigurationsItemAssignmentsRequestBuilderPostRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceConfigurationAssignmentId provides operations to manage the assignments property of the microsoft.graph.deviceConfiguration entity.
+func (m *DeviceConfigurationsItemAssignmentsRequestBuilder) ByDeviceConfigurationAssignmentId(deviceConfigurationAssignmentId string)(*DeviceConfigurationsItemAssignmentsDeviceConfigurationAssignmentItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceConfigurationAssignmentId != "" {
+        urlTplParams["deviceConfigurationAssignment%2Did"] = deviceConfigurationAssignmentId
+    }
+    return NewDeviceConfigurationsItemAssignmentsDeviceConfigurationAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewDeviceConfigurationsItemAssignmentsRequestBuilderInternal instantiates a new AssignmentsRequestBuilder and sets the default values.
 func NewDeviceConfigurationsItemAssignmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceConfigurationsItemAssignmentsRequestBuilder) {
     m := &DeviceConfigurationsItemAssignmentsRequestBuilder{

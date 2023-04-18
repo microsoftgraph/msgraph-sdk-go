@@ -42,6 +42,17 @@ type ItemOutlookMasterCategoriesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByOutlookCategoryId provides operations to manage the masterCategories property of the microsoft.graph.outlookUser entity.
+func (m *ItemOutlookMasterCategoriesRequestBuilder) ByOutlookCategoryId(outlookCategoryId string)(*ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if outlookCategoryId != "" {
+        urlTplParams["outlookCategory%2Did"] = outlookCategoryId
+    }
+    return NewItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemOutlookMasterCategoriesRequestBuilderInternal instantiates a new MasterCategoriesRequestBuilder and sets the default values.
 func NewItemOutlookMasterCategoriesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOutlookMasterCategoriesRequestBuilder) {
     m := &ItemOutlookMasterCategoriesRequestBuilder{

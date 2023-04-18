@@ -8,8 +8,6 @@ import (
 // DeviceManagementExportJob entity representing a job to export a report
 type DeviceManagementExportJob struct {
     Entity
-    // Columns selected from the report
-    SelectEscaped []string
 }
 // NewDeviceManagementExportJob instantiates a new deviceManagementExportJob and sets the default values.
 func NewDeviceManagementExportJob()(*DeviceManagementExportJob) {

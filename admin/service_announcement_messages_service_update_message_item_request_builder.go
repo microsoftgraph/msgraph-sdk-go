@@ -49,17 +49,6 @@ func (m *ServiceAnnouncementMessagesServiceUpdateMessageItemRequestBuilder) Atta
 func (m *ServiceAnnouncementMessagesServiceUpdateMessageItemRequestBuilder) AttachmentsArchive()(*ServiceAnnouncementMessagesItemAttachmentsArchiveRequestBuilder) {
     return NewServiceAnnouncementMessagesItemAttachmentsArchiveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AttachmentsById provides operations to manage the attachments property of the microsoft.graph.serviceUpdateMessage entity.
-func (m *ServiceAnnouncementMessagesServiceUpdateMessageItemRequestBuilder) AttachmentsById(id string)(*ServiceAnnouncementMessagesItemAttachmentsServiceAnnouncementAttachmentItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["serviceAnnouncementAttachment%2Did"] = id
-    }
-    return NewServiceAnnouncementMessagesItemAttachmentsServiceAnnouncementAttachmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewServiceAnnouncementMessagesServiceUpdateMessageItemRequestBuilderInternal instantiates a new ServiceUpdateMessageItemRequestBuilder and sets the default values.
 func NewServiceAnnouncementMessagesServiceUpdateMessageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ServiceAnnouncementMessagesServiceUpdateMessageItemRequestBuilder) {
     m := &ServiceAnnouncementMessagesServiceUpdateMessageItemRequestBuilder{

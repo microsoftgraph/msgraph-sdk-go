@@ -39,6 +39,17 @@ type AppManagementPoliciesItemAppliesToRequestBuilderGetRequestConfiguration str
     // Request query parameters
     QueryParameters *AppManagementPoliciesItemAppliesToRequestBuilderGetQueryParameters
 }
+// ByDirectoryObjectId provides operations to manage the appliesTo property of the microsoft.graph.appManagementPolicy entity.
+func (m *AppManagementPoliciesItemAppliesToRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*AppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if directoryObjectId != "" {
+        urlTplParams["directoryObject%2Did"] = directoryObjectId
+    }
+    return NewAppManagementPoliciesItemAppliesToDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewAppManagementPoliciesItemAppliesToRequestBuilderInternal instantiates a new AppliesToRequestBuilder and sets the default values.
 func NewAppManagementPoliciesItemAppliesToRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AppManagementPoliciesItemAppliesToRequestBuilder) {
     m := &AppManagementPoliciesItemAppliesToRequestBuilder{
