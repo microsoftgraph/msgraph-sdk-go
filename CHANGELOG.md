@@ -11,6 +11,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+## [0.63.0] - 2023-04-18
+
+### Changed
+
+- BREAKING: `client.UsersById("id").MessagesById("id").Get(context.Background())` now becomes `client.Users().ByUserId("id").Messages().ByMessageId("id").Get(context.Background())`
+- Weekly generation.
+
 ## [0.62.0] - 2023-04-11
 
 ### Changed
