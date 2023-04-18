@@ -11,7 +11,7 @@ import (
 type RiskyUsersItemHistoryRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// RiskyUsersItemHistoryRequestBuilderGetQueryParameters get the riskyUserHistoryItems from the history navigation property.
+// RiskyUsersItemHistoryRequestBuilderGetQueryParameters read the properties and relationships of a riskyUserHistoryItem object.
 type RiskyUsersItemHistoryRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -46,6 +46,17 @@ type RiskyUsersItemHistoryRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByRiskyUserHistoryItemId provides operations to manage the history property of the microsoft.graph.riskyUser entity.
+func (m *RiskyUsersItemHistoryRequestBuilder) ByRiskyUserHistoryItemId(riskyUserHistoryItemId string)(*RiskyUsersItemHistoryRiskyUserHistoryItemItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if riskyUserHistoryItemId != "" {
+        urlTplParams["riskyUserHistoryItem%2Did"] = riskyUserHistoryItemId
+    }
+    return NewRiskyUsersItemHistoryRiskyUserHistoryItemItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewRiskyUsersItemHistoryRequestBuilderInternal instantiates a new HistoryRequestBuilder and sets the default values.
 func NewRiskyUsersItemHistoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RiskyUsersItemHistoryRequestBuilder) {
     m := &RiskyUsersItemHistoryRequestBuilder{
@@ -63,10 +74,10 @@ func NewRiskyUsersItemHistoryRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *RiskyUsersItemHistoryRequestBuilder) Count()(*RiskyUsersItemHistoryCountRequestBuilder) {
     return NewRiskyUsersItemHistoryCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the riskyUserHistoryItems from the history navigation property.
+// Get read the properties and relationships of a riskyUserHistoryItem object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/riskyuser-list-history?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/riskyuser-get-riskyuserhistoryitem?view=graph-rest-1.0
 func (m *RiskyUsersItemHistoryRequestBuilder) Get(ctx context.Context, requestConfiguration *RiskyUsersItemHistoryRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RiskyUserHistoryItemCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -104,7 +115,7 @@ func (m *RiskyUsersItemHistoryRequestBuilder) Post(ctx context.Context, body iad
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RiskyUserHistoryItemable), nil
 }
-// ToGetRequestInformation get the riskyUserHistoryItems from the history navigation property.
+// ToGetRequestInformation read the properties and relationships of a riskyUserHistoryItem object.
 func (m *RiskyUsersItemHistoryRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RiskyUsersItemHistoryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

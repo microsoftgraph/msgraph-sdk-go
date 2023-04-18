@@ -35,6 +35,17 @@ type ItemTodoListsItemTasksItemAttachmentSessionsRequestBuilderGetRequestConfigu
     // Request query parameters
     QueryParameters *ItemTodoListsItemTasksItemAttachmentSessionsRequestBuilderGetQueryParameters
 }
+// ByAttachmentSessionId provides operations to manage the attachmentSessions property of the microsoft.graph.todoTask entity.
+func (m *ItemTodoListsItemTasksItemAttachmentSessionsRequestBuilder) ByAttachmentSessionId(attachmentSessionId string)(*ItemTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if attachmentSessionId != "" {
+        urlTplParams["attachmentSession%2Did"] = attachmentSessionId
+    }
+    return NewItemTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemTodoListsItemTasksItemAttachmentSessionsRequestBuilderInternal instantiates a new AttachmentSessionsRequestBuilder and sets the default values.
 func NewItemTodoListsItemTasksItemAttachmentSessionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTodoListsItemTasksItemAttachmentSessionsRequestBuilder) {
     m := &ItemTodoListsItemTasksItemAttachmentSessionsRequestBuilder{

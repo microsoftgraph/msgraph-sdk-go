@@ -46,6 +46,17 @@ type DomainDnsRecordsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDomainDnsRecordId provides operations to manage the collection of domainDnsRecord entities.
+func (m *DomainDnsRecordsRequestBuilder) ByDomainDnsRecordId(domainDnsRecordId string)(*DomainDnsRecordItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if domainDnsRecordId != "" {
+        urlTplParams["domainDnsRecord%2Did"] = domainDnsRecordId
+    }
+    return NewDomainDnsRecordItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewDomainDnsRecordsRequestBuilderInternal instantiates a new DomainDnsRecordsRequestBuilder and sets the default values.
 func NewDomainDnsRecordsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DomainDnsRecordsRequestBuilder) {
     m := &DomainDnsRecordsRequestBuilder{

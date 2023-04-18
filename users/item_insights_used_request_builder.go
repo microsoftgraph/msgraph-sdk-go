@@ -46,6 +46,17 @@ type ItemInsightsUsedRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUsedInsightId provides operations to manage the used property of the microsoft.graph.officeGraphInsights entity.
+func (m *ItemInsightsUsedRequestBuilder) ByUsedInsightId(usedInsightId string)(*ItemInsightsUsedUsedInsightItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if usedInsightId != "" {
+        urlTplParams["usedInsight%2Did"] = usedInsightId
+    }
+    return NewItemInsightsUsedUsedInsightItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemInsightsUsedRequestBuilderInternal instantiates a new UsedRequestBuilder and sets the default values.
 func NewItemInsightsUsedRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInsightsUsedRequestBuilder) {
     m := &ItemInsightsUsedRequestBuilder{

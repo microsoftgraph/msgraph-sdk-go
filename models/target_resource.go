@@ -9,8 +9,6 @@ import (
 type TargetResource struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
-    // Describes the resource type.  Example values include Application, Group, ServicePrincipal, and User.
-    TypeEscaped *string
 }
 // NewTargetResource instantiates a new targetResource and sets the default values.
 func NewTargetResource()(*TargetResource) {

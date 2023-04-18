@@ -46,6 +46,17 @@ type EntitlementManagementRoleDefinitionsRequestBuilderPostRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUnifiedRoleDefinitionId provides operations to manage the roleDefinitions property of the microsoft.graph.rbacApplication entity.
+func (m *EntitlementManagementRoleDefinitionsRequestBuilder) ByUnifiedRoleDefinitionId(unifiedRoleDefinitionId string)(*EntitlementManagementRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if unifiedRoleDefinitionId != "" {
+        urlTplParams["unifiedRoleDefinition%2Did"] = unifiedRoleDefinitionId
+    }
+    return NewEntitlementManagementRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewEntitlementManagementRoleDefinitionsRequestBuilderInternal instantiates a new RoleDefinitionsRequestBuilder and sets the default values.
 func NewEntitlementManagementRoleDefinitionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementRoleDefinitionsRequestBuilder) {
     m := &EntitlementManagementRoleDefinitionsRequestBuilder{

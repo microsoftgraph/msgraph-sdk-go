@@ -11,7 +11,7 @@ import (
 type ItemSitesItemDrivesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSitesItemDrivesRequestBuilderGetQueryParameters retrieve the list of Drive resources available for a target User, Group, or Site.
+// ItemSitesItemDrivesRequestBuilderGetQueryParameters the collection of drives (document libraries) under this site.
 type ItemSitesItemDrivesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -39,6 +39,17 @@ type ItemSitesItemDrivesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemSitesItemDrivesRequestBuilderGetQueryParameters
 }
+// ByDriveId provides operations to manage the drives property of the microsoft.graph.site entity.
+func (m *ItemSitesItemDrivesRequestBuilder) ByDriveId(driveId string)(*ItemSitesItemDrivesDriveItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if driveId != "" {
+        urlTplParams["drive%2Did"] = driveId
+    }
+    return NewItemSitesItemDrivesDriveItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemSitesItemDrivesRequestBuilderInternal instantiates a new DrivesRequestBuilder and sets the default values.
 func NewItemSitesItemDrivesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemDrivesRequestBuilder) {
     m := &ItemSitesItemDrivesRequestBuilder{
@@ -56,10 +67,7 @@ func NewItemSitesItemDrivesRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *ItemSitesItemDrivesRequestBuilder) Count()(*ItemSitesItemDrivesCountRequestBuilder) {
     return NewItemSitesItemDrivesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the list of Drive resources available for a target User, Group, or Site.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/drive-list?view=graph-rest-1.0
+// Get the collection of drives (document libraries) under this site.
 func (m *ItemSitesItemDrivesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemDrivesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,7 +86,7 @@ func (m *ItemSitesItemDrivesRequestBuilder) Get(ctx context.Context, requestConf
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveCollectionResponseable), nil
 }
-// ToGetRequestInformation retrieve the list of Drive resources available for a target User, Group, or Site.
+// ToGetRequestInformation the collection of drives (document libraries) under this site.
 func (m *ItemSitesItemDrivesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemDrivesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -45,46 +45,13 @@ type ItemTodoListsItemTasksTodoTaskItemRequestBuilderPatchRequestConfiguration s
 func (m *ItemTodoListsItemTasksTodoTaskItemRequestBuilder) Attachments()(*ItemTodoListsItemTasksItemAttachmentsRequestBuilder) {
     return NewItemTodoListsItemTasksItemAttachmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AttachmentsById provides operations to manage the attachments property of the microsoft.graph.todoTask entity.
-func (m *ItemTodoListsItemTasksTodoTaskItemRequestBuilder) AttachmentsById(id string)(*ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["attachmentBase%2Did"] = id
-    }
-    return NewItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // AttachmentSessions provides operations to manage the attachmentSessions property of the microsoft.graph.todoTask entity.
 func (m *ItemTodoListsItemTasksTodoTaskItemRequestBuilder) AttachmentSessions()(*ItemTodoListsItemTasksItemAttachmentSessionsRequestBuilder) {
     return NewItemTodoListsItemTasksItemAttachmentSessionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AttachmentSessionsById provides operations to manage the attachmentSessions property of the microsoft.graph.todoTask entity.
-func (m *ItemTodoListsItemTasksTodoTaskItemRequestBuilder) AttachmentSessionsById(id string)(*ItemTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["attachmentSession%2Did"] = id
-    }
-    return NewItemTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ChecklistItems provides operations to manage the checklistItems property of the microsoft.graph.todoTask entity.
 func (m *ItemTodoListsItemTasksTodoTaskItemRequestBuilder) ChecklistItems()(*ItemTodoListsItemTasksItemChecklistItemsRequestBuilder) {
     return NewItemTodoListsItemTasksItemChecklistItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// ChecklistItemsById provides operations to manage the checklistItems property of the microsoft.graph.todoTask entity.
-func (m *ItemTodoListsItemTasksTodoTaskItemRequestBuilder) ChecklistItemsById(id string)(*ItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["checklistItem%2Did"] = id
-    }
-    return NewItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewItemTodoListsItemTasksTodoTaskItemRequestBuilderInternal instantiates a new TodoTaskItemRequestBuilder and sets the default values.
 func NewItemTodoListsItemTasksTodoTaskItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTodoListsItemTasksTodoTaskItemRequestBuilder) {
@@ -119,17 +86,6 @@ func (m *ItemTodoListsItemTasksTodoTaskItemRequestBuilder) Delete(ctx context.Co
 func (m *ItemTodoListsItemTasksTodoTaskItemRequestBuilder) Extensions()(*ItemTodoListsItemTasksItemExtensionsRequestBuilder) {
     return NewItemTodoListsItemTasksItemExtensionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ExtensionsById provides operations to manage the extensions property of the microsoft.graph.todoTask entity.
-func (m *ItemTodoListsItemTasksTodoTaskItemRequestBuilder) ExtensionsById(id string)(*ItemTodoListsItemTasksItemExtensionsExtensionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["extension%2Did"] = id
-    }
-    return NewItemTodoListsItemTasksItemExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get the tasks in this task list. Read-only. Nullable.
 func (m *ItemTodoListsItemTasksTodoTaskItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksTodoTaskItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TodoTaskable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -152,17 +108,6 @@ func (m *ItemTodoListsItemTasksTodoTaskItemRequestBuilder) Get(ctx context.Conte
 // LinkedResources provides operations to manage the linkedResources property of the microsoft.graph.todoTask entity.
 func (m *ItemTodoListsItemTasksTodoTaskItemRequestBuilder) LinkedResources()(*ItemTodoListsItemTasksItemLinkedResourcesRequestBuilder) {
     return NewItemTodoListsItemTasksItemLinkedResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// LinkedResourcesById provides operations to manage the linkedResources property of the microsoft.graph.todoTask entity.
-func (m *ItemTodoListsItemTasksTodoTaskItemRequestBuilder) LinkedResourcesById(id string)(*ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["linkedResource%2Did"] = id
-    }
-    return NewItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property tasks in users
 func (m *ItemTodoListsItemTasksTodoTaskItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TodoTaskable, requestConfiguration *ItemTodoListsItemTasksTodoTaskItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TodoTaskable, error) {

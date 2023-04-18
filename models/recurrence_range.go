@@ -9,8 +9,6 @@ import (
 type RecurrenceRange struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
-    // The recurrence range. The possible values are: endDate, noEnd, numbered. Required.
-    TypeEscaped *RecurrenceRangeType
 }
 // NewRecurrenceRange instantiates a new recurrenceRange and sets the default values.
 func NewRecurrenceRange()(*RecurrenceRange) {

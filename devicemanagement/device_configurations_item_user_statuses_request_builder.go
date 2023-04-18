@@ -46,6 +46,17 @@ type DeviceConfigurationsItemUserStatusesRequestBuilderPostRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceConfigurationUserStatusId provides operations to manage the userStatuses property of the microsoft.graph.deviceConfiguration entity.
+func (m *DeviceConfigurationsItemUserStatusesRequestBuilder) ByDeviceConfigurationUserStatusId(deviceConfigurationUserStatusId string)(*DeviceConfigurationsItemUserStatusesDeviceConfigurationUserStatusItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceConfigurationUserStatusId != "" {
+        urlTplParams["deviceConfigurationUserStatus%2Did"] = deviceConfigurationUserStatusId
+    }
+    return NewDeviceConfigurationsItemUserStatusesDeviceConfigurationUserStatusItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewDeviceConfigurationsItemUserStatusesRequestBuilderInternal instantiates a new UserStatusesRequestBuilder and sets the default values.
 func NewDeviceConfigurationsItemUserStatusesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceConfigurationsItemUserStatusesRequestBuilder) {
     m := &DeviceConfigurationsItemUserStatusesRequestBuilder{

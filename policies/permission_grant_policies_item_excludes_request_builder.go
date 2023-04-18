@@ -46,6 +46,17 @@ type PermissionGrantPoliciesItemExcludesRequestBuilderPostRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByPermissionGrantConditionSetId provides operations to manage the excludes property of the microsoft.graph.permissionGrantPolicy entity.
+func (m *PermissionGrantPoliciesItemExcludesRequestBuilder) ByPermissionGrantConditionSetId(permissionGrantConditionSetId string)(*PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if permissionGrantConditionSetId != "" {
+        urlTplParams["permissionGrantConditionSet%2Did"] = permissionGrantConditionSetId
+    }
+    return NewPermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewPermissionGrantPoliciesItemExcludesRequestBuilderInternal instantiates a new ExcludesRequestBuilder and sets the default values.
 func NewPermissionGrantPoliciesItemExcludesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PermissionGrantPoliciesItemExcludesRequestBuilder) {
     m := &PermissionGrantPoliciesItemExcludesRequestBuilder{

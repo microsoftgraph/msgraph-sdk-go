@@ -45,17 +45,6 @@ type EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilderPatchReq
 func (m *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) AccessPackages()(*EntitlementManagementCatalogsItemAccessPackagesRequestBuilder) {
     return NewEntitlementManagementCatalogsItemAccessPackagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AccessPackagesById provides operations to manage the accessPackages property of the microsoft.graph.accessPackageCatalog entity.
-func (m *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) AccessPackagesById(id string)(*EntitlementManagementCatalogsItemAccessPackagesAccessPackageItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["accessPackage%2Did"] = id
-    }
-    return NewEntitlementManagementCatalogsItemAccessPackagesAccessPackageItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewEntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilderInternal instantiates a new AccessPackageCatalogItemRequestBuilder and sets the default values.
 func NewEntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) {
     m := &EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder{

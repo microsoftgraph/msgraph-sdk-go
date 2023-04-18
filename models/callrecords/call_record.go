@@ -9,10 +9,8 @@ import (
 // CallRecord 
 type CallRecord struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
-    // The type property
-    TypeEscaped *CallType
 }
-// NewCallRecord instantiates a new callRecord and sets the default values.
+// NewCallRecord instantiates a new CallRecord and sets the default values.
 func NewCallRecord()(*CallRecord) {
     m := &CallRecord{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),

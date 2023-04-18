@@ -39,6 +39,17 @@ type ItemCreatedObjectsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemCreatedObjectsRequestBuilderGetQueryParameters
 }
+// ByDirectoryObjectId provides operations to manage the createdObjects property of the microsoft.graph.servicePrincipal entity.
+func (m *ItemCreatedObjectsRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemCreatedObjectsDirectoryObjectItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if directoryObjectId != "" {
+        urlTplParams["directoryObject%2Did"] = directoryObjectId
+    }
+    return NewItemCreatedObjectsDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemCreatedObjectsRequestBuilderInternal instantiates a new CreatedObjectsRequestBuilder and sets the default values.
 func NewItemCreatedObjectsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCreatedObjectsRequestBuilder) {
     m := &ItemCreatedObjectsRequestBuilder{

@@ -46,6 +46,17 @@ type CallsItemAudioRoutingGroupsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByAudioRoutingGroupId provides operations to manage the audioRoutingGroups property of the microsoft.graph.call entity.
+func (m *CallsItemAudioRoutingGroupsRequestBuilder) ByAudioRoutingGroupId(audioRoutingGroupId string)(*CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if audioRoutingGroupId != "" {
+        urlTplParams["audioRoutingGroup%2Did"] = audioRoutingGroupId
+    }
+    return NewCallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCallsItemAudioRoutingGroupsRequestBuilderInternal instantiates a new AudioRoutingGroupsRequestBuilder and sets the default values.
 func NewCallsItemAudioRoutingGroupsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallsItemAudioRoutingGroupsRequestBuilder) {
     m := &CallsItemAudioRoutingGroupsRequestBuilder{

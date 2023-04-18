@@ -112,17 +112,6 @@ func (m *RoleDefinitionsRoleDefinitionItemRequestBuilder) Patch(ctx context.Cont
 func (m *RoleDefinitionsRoleDefinitionItemRequestBuilder) RoleAssignments()(*RoleDefinitionsItemRoleAssignmentsRequestBuilder) {
     return NewRoleDefinitionsItemRoleAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// RoleAssignmentsById provides operations to manage the roleAssignments property of the microsoft.graph.roleDefinition entity.
-func (m *RoleDefinitionsRoleDefinitionItemRequestBuilder) RoleAssignmentsById(id string)(*RoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["roleAssignment%2Did"] = id
-    }
-    return NewRoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property roleDefinitions for deviceManagement
 func (m *RoleDefinitionsRoleDefinitionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *RoleDefinitionsRoleDefinitionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

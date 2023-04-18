@@ -93,17 +93,6 @@ func (m *ItemTagsTeamworkTagItemRequestBuilder) Get(ctx context.Context, request
 func (m *ItemTagsTeamworkTagItemRequestBuilder) Members()(*ItemTagsItemMembersRequestBuilder) {
     return NewItemTagsItemMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// MembersById provides operations to manage the members property of the microsoft.graph.teamworkTag entity.
-func (m *ItemTagsTeamworkTagItemRequestBuilder) MembersById(id string)(*ItemTagsItemMembersTeamworkTagMemberItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["teamworkTagMember%2Did"] = id
-    }
-    return NewItemTagsItemMembersTeamworkTagMemberItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property tags in teams
 func (m *ItemTagsTeamworkTagItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagable, requestConfiguration *ItemTagsTeamworkTagItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);

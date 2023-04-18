@@ -44,6 +44,17 @@ type ItemContactFoldersItemChildFoldersItemContactsRequestBuilderPostRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByContactId provides operations to manage the contacts property of the microsoft.graph.contactFolder entity.
+func (m *ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) ByContactId(contactId string)(*ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if contactId != "" {
+        urlTplParams["contact%2Did"] = contactId
+    }
+    return NewItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemContactFoldersItemChildFoldersItemContactsRequestBuilderInternal instantiates a new ContactsRequestBuilder and sets the default values.
 func NewItemContactFoldersItemChildFoldersItemContactsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) {
     m := &ItemContactFoldersItemChildFoldersItemContactsRequestBuilder{

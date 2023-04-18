@@ -74,17 +74,6 @@ func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) Delete(
 func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) Excludes()(*PermissionGrantPoliciesItemExcludesRequestBuilder) {
     return NewPermissionGrantPoliciesItemExcludesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ExcludesById provides operations to manage the excludes property of the microsoft.graph.permissionGrantPolicy entity.
-func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) ExcludesById(id string)(*PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["permissionGrantConditionSet%2Did"] = id
-    }
-    return NewPermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get the policy that specifies the conditions under which consent can be granted.
 func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PermissionGrantPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -107,17 +96,6 @@ func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) Get(ctx
 // Includes provides operations to manage the includes property of the microsoft.graph.permissionGrantPolicy entity.
 func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) Includes()(*PermissionGrantPoliciesItemIncludesRequestBuilder) {
     return NewPermissionGrantPoliciesItemIncludesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// IncludesById provides operations to manage the includes property of the microsoft.graph.permissionGrantPolicy entity.
-func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) IncludesById(id string)(*PermissionGrantPoliciesItemIncludesPermissionGrantConditionSetItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["permissionGrantConditionSet%2Did"] = id
-    }
-    return NewPermissionGrantPoliciesItemIncludesPermissionGrantConditionSetItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property permissionGrantPolicies in policies
 func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PermissionGrantPolicyable, requestConfiguration *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PermissionGrantPolicyable, error) {

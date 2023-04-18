@@ -46,6 +46,17 @@ type RoleDefinitionsItemRoleAssignmentsRequestBuilderPostRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByRoleAssignmentId provides operations to manage the roleAssignments property of the microsoft.graph.roleDefinition entity.
+func (m *RoleDefinitionsItemRoleAssignmentsRequestBuilder) ByRoleAssignmentId(roleAssignmentId string)(*RoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if roleAssignmentId != "" {
+        urlTplParams["roleAssignment%2Did"] = roleAssignmentId
+    }
+    return NewRoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewRoleDefinitionsItemRoleAssignmentsRequestBuilderInternal instantiates a new RoleAssignmentsRequestBuilder and sets the default values.
 func NewRoleDefinitionsItemRoleAssignmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RoleDefinitionsItemRoleAssignmentsRequestBuilder) {
     m := &RoleDefinitionsItemRoleAssignmentsRequestBuilder{

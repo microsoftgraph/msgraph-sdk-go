@@ -46,6 +46,17 @@ type EdgeInternetExplorerModeSiteListsItemSharedCookiesRequestBuilderPostRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByBrowserSharedCookieId provides operations to manage the sharedCookies property of the microsoft.graph.browserSiteList entity.
+func (m *EdgeInternetExplorerModeSiteListsItemSharedCookiesRequestBuilder) ByBrowserSharedCookieId(browserSharedCookieId string)(*EdgeInternetExplorerModeSiteListsItemSharedCookiesBrowserSharedCookieItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if browserSharedCookieId != "" {
+        urlTplParams["browserSharedCookie%2Did"] = browserSharedCookieId
+    }
+    return NewEdgeInternetExplorerModeSiteListsItemSharedCookiesBrowserSharedCookieItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewEdgeInternetExplorerModeSiteListsItemSharedCookiesRequestBuilderInternal instantiates a new SharedCookiesRequestBuilder and sets the default values.
 func NewEdgeInternetExplorerModeSiteListsItemSharedCookiesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdgeInternetExplorerModeSiteListsItemSharedCookiesRequestBuilder) {
     m := &EdgeInternetExplorerModeSiteListsItemSharedCookiesRequestBuilder{

@@ -46,6 +46,17 @@ type EntitlementManagementAccessPackagesItemAssignmentPoliciesItemQuestionsReque
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByAccessPackageQuestionId provides operations to manage the questions property of the microsoft.graph.accessPackageAssignmentPolicy entity.
+func (m *EntitlementManagementAccessPackagesItemAssignmentPoliciesItemQuestionsRequestBuilder) ByAccessPackageQuestionId(accessPackageQuestionId string)(*EntitlementManagementAccessPackagesItemAssignmentPoliciesItemQuestionsAccessPackageQuestionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if accessPackageQuestionId != "" {
+        urlTplParams["accessPackageQuestion%2Did"] = accessPackageQuestionId
+    }
+    return NewEntitlementManagementAccessPackagesItemAssignmentPoliciesItemQuestionsAccessPackageQuestionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewEntitlementManagementAccessPackagesItemAssignmentPoliciesItemQuestionsRequestBuilderInternal instantiates a new QuestionsRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackagesItemAssignmentPoliciesItemQuestionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackagesItemAssignmentPoliciesItemQuestionsRequestBuilder) {
     m := &EntitlementManagementAccessPackagesItemAssignmentPoliciesItemQuestionsRequestBuilder{

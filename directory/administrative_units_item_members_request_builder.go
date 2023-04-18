@@ -39,6 +39,17 @@ type AdministrativeUnitsItemMembersRequestBuilderGetRequestConfiguration struct 
     // Request query parameters
     QueryParameters *AdministrativeUnitsItemMembersRequestBuilderGetQueryParameters
 }
+// ByDirectoryObjectId gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.directory.administrativeUnits.item.members.item collection
+func (m *AdministrativeUnitsItemMembersRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*AdministrativeUnitsItemMembersDirectoryObjectItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if directoryObjectId != "" {
+        urlTplParams["directoryObject%2Did"] = directoryObjectId
+    }
+    return NewAdministrativeUnitsItemMembersDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewAdministrativeUnitsItemMembersRequestBuilderInternal instantiates a new MembersRequestBuilder and sets the default values.
 func NewAdministrativeUnitsItemMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AdministrativeUnitsItemMembersRequestBuilder) {
     m := &AdministrativeUnitsItemMembersRequestBuilder{

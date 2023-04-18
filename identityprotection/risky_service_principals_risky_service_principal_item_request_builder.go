@@ -93,17 +93,6 @@ func (m *RiskyServicePrincipalsRiskyServicePrincipalItemRequestBuilder) Get(ctx 
 func (m *RiskyServicePrincipalsRiskyServicePrincipalItemRequestBuilder) History()(*RiskyServicePrincipalsItemHistoryRequestBuilder) {
     return NewRiskyServicePrincipalsItemHistoryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// HistoryById provides operations to manage the history property of the microsoft.graph.riskyServicePrincipal entity.
-func (m *RiskyServicePrincipalsRiskyServicePrincipalItemRequestBuilder) HistoryById(id string)(*RiskyServicePrincipalsItemHistoryRiskyServicePrincipalHistoryItemItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["riskyServicePrincipalHistoryItem%2Did"] = id
-    }
-    return NewRiskyServicePrincipalsItemHistoryRiskyServicePrincipalHistoryItemItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property riskyServicePrincipals in identityProtection
 func (m *RiskyServicePrincipalsRiskyServicePrincipalItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RiskyServicePrincipalable, requestConfiguration *RiskyServicePrincipalsRiskyServicePrincipalItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RiskyServicePrincipalable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);

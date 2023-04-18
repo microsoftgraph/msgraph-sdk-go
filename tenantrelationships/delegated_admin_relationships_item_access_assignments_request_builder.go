@@ -46,6 +46,17 @@ type DelegatedAdminRelationshipsItemAccessAssignmentsRequestBuilderPostRequestCo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDelegatedAdminAccessAssignmentId provides operations to manage the accessAssignments property of the microsoft.graph.delegatedAdminRelationship entity.
+func (m *DelegatedAdminRelationshipsItemAccessAssignmentsRequestBuilder) ByDelegatedAdminAccessAssignmentId(delegatedAdminAccessAssignmentId string)(*DelegatedAdminRelationshipsItemAccessAssignmentsDelegatedAdminAccessAssignmentItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if delegatedAdminAccessAssignmentId != "" {
+        urlTplParams["delegatedAdminAccessAssignment%2Did"] = delegatedAdminAccessAssignmentId
+    }
+    return NewDelegatedAdminRelationshipsItemAccessAssignmentsDelegatedAdminAccessAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewDelegatedAdminRelationshipsItemAccessAssignmentsRequestBuilderInternal instantiates a new AccessAssignmentsRequestBuilder and sets the default values.
 func NewDelegatedAdminRelationshipsItemAccessAssignmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DelegatedAdminRelationshipsItemAccessAssignmentsRequestBuilder) {
     m := &DelegatedAdminRelationshipsItemAccessAssignmentsRequestBuilder{

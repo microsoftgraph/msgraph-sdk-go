@@ -112,17 +112,6 @@ func (m *TriggersRequestBuilder) Patch(ctx context.Context, body idd6d442c3cc83a
 func (m *TriggersRequestBuilder) RetentionEvents()(*TriggersRetentionEventsRequestBuilder) {
     return NewTriggersRetentionEventsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// RetentionEventsById provides operations to manage the retentionEvents property of the microsoft.graph.security.triggersRoot entity.
-func (m *TriggersRequestBuilder) RetentionEventsById(id string)(*TriggersRetentionEventsRetentionEventItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["retentionEvent%2Did"] = id
-    }
-    return NewTriggersRetentionEventsRetentionEventItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property triggers for security
 func (m *TriggersRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TriggersRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

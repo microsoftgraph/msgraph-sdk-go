@@ -46,6 +46,17 @@ type TargetedManagedAppConfigurationsItemAssignmentsRequestBuilderPostRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByTargetedManagedAppPolicyAssignmentId provides operations to manage the assignments property of the microsoft.graph.targetedManagedAppConfiguration entity.
+func (m *TargetedManagedAppConfigurationsItemAssignmentsRequestBuilder) ByTargetedManagedAppPolicyAssignmentId(targetedManagedAppPolicyAssignmentId string)(*TargetedManagedAppConfigurationsItemAssignmentsTargetedManagedAppPolicyAssignmentItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if targetedManagedAppPolicyAssignmentId != "" {
+        urlTplParams["targetedManagedAppPolicyAssignment%2Did"] = targetedManagedAppPolicyAssignmentId
+    }
+    return NewTargetedManagedAppConfigurationsItemAssignmentsTargetedManagedAppPolicyAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewTargetedManagedAppConfigurationsItemAssignmentsRequestBuilderInternal instantiates a new AssignmentsRequestBuilder and sets the default values.
 func NewTargetedManagedAppConfigurationsItemAssignmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TargetedManagedAppConfigurationsItemAssignmentsRequestBuilder) {
     m := &TargetedManagedAppConfigurationsItemAssignmentsRequestBuilder{

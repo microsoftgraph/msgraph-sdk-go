@@ -93,17 +93,6 @@ func (m *MeAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilder) Get(
 func (m *MeAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilder) Outcomes()(*MeAssignmentsItemSubmissionsItemOutcomesRequestBuilder) {
     return NewMeAssignmentsItemSubmissionsItemOutcomesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// OutcomesById provides operations to manage the outcomes property of the microsoft.graph.educationSubmission entity.
-func (m *MeAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilder) OutcomesById(id string)(*MeAssignmentsItemSubmissionsItemOutcomesEducationOutcomeItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["educationOutcome%2Did"] = id
-    }
-    return NewMeAssignmentsItemSubmissionsItemOutcomesEducationOutcomeItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property submissions in education
 func (m *MeAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationSubmissionable, requestConfiguration *MeAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationSubmissionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -131,17 +120,6 @@ func (m *MeAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilder) Reas
 func (m *MeAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilder) Resources()(*MeAssignmentsItemSubmissionsItemResourcesRequestBuilder) {
     return NewMeAssignmentsItemSubmissionsItemResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ResourcesById provides operations to manage the resources property of the microsoft.graph.educationSubmission entity.
-func (m *MeAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilder) ResourcesById(id string)(*MeAssignmentsItemSubmissionsItemResourcesEducationSubmissionResourceItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["educationSubmissionResource%2Did"] = id
-    }
-    return NewMeAssignmentsItemSubmissionsItemResourcesEducationSubmissionResourceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ReturnEscaped provides operations to call the return method.
 func (m *MeAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilder) ReturnEscaped()(*MeAssignmentsItemSubmissionsItemReturnRequestBuilder) {
     return NewMeAssignmentsItemSubmissionsItemReturnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -157,17 +135,6 @@ func (m *MeAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilder) Subm
 // SubmittedResources provides operations to manage the submittedResources property of the microsoft.graph.educationSubmission entity.
 func (m *MeAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilder) SubmittedResources()(*MeAssignmentsItemSubmissionsItemSubmittedResourcesRequestBuilder) {
     return NewMeAssignmentsItemSubmissionsItemSubmittedResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// SubmittedResourcesById provides operations to manage the submittedResources property of the microsoft.graph.educationSubmission entity.
-func (m *MeAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilder) SubmittedResourcesById(id string)(*MeAssignmentsItemSubmissionsItemSubmittedResourcesEducationSubmissionResourceItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["educationSubmissionResource%2Did"] = id
-    }
-    return NewMeAssignmentsItemSubmissionsItemSubmittedResourcesEducationSubmissionResourceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property submissions for education
 func (m *MeAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *MeAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

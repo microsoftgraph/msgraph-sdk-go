@@ -46,6 +46,17 @@ type ItemCalendarViewItemInstancesItemMultiValueExtendedPropertiesRequestBuilder
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByMultiValueLegacyExtendedPropertyId provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.event entity.
+func (m *ItemCalendarViewItemInstancesItemMultiValueExtendedPropertiesRequestBuilder) ByMultiValueLegacyExtendedPropertyId(multiValueLegacyExtendedPropertyId string)(*ItemCalendarViewItemInstancesItemMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if multiValueLegacyExtendedPropertyId != "" {
+        urlTplParams["multiValueLegacyExtendedProperty%2Did"] = multiValueLegacyExtendedPropertyId
+    }
+    return NewItemCalendarViewItemInstancesItemMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemCalendarViewItemInstancesItemMultiValueExtendedPropertiesRequestBuilderInternal instantiates a new MultiValueExtendedPropertiesRequestBuilder and sets the default values.
 func NewItemCalendarViewItemInstancesItemMultiValueExtendedPropertiesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarViewItemInstancesItemMultiValueExtendedPropertiesRequestBuilder) {
     m := &ItemCalendarViewItemInstancesItemMultiValueExtendedPropertiesRequestBuilder{

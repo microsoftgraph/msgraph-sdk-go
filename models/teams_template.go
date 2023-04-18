@@ -8,7 +8,7 @@ import (
 type TeamsTemplate struct {
     Entity
 }
-// NewTeamsTemplate instantiates a new TeamsTemplate and sets the default values.
+// NewTeamsTemplate instantiates a new teamsTemplate and sets the default values.
 func NewTeamsTemplate()(*TeamsTemplate) {
     m := &TeamsTemplate{
         Entity: *NewEntity(),

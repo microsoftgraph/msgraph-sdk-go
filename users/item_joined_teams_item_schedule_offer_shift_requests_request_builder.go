@@ -46,6 +46,17 @@ type ItemJoinedTeamsItemScheduleOfferShiftRequestsRequestBuilderPostRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByOfferShiftRequestId provides operations to manage the offerShiftRequests property of the microsoft.graph.schedule entity.
+func (m *ItemJoinedTeamsItemScheduleOfferShiftRequestsRequestBuilder) ByOfferShiftRequestId(offerShiftRequestId string)(*ItemJoinedTeamsItemScheduleOfferShiftRequestsOfferShiftRequestItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if offerShiftRequestId != "" {
+        urlTplParams["offerShiftRequest%2Did"] = offerShiftRequestId
+    }
+    return NewItemJoinedTeamsItemScheduleOfferShiftRequestsOfferShiftRequestItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemJoinedTeamsItemScheduleOfferShiftRequestsRequestBuilderInternal instantiates a new OfferShiftRequestsRequestBuilder and sets the default values.
 func NewItemJoinedTeamsItemScheduleOfferShiftRequestsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemJoinedTeamsItemScheduleOfferShiftRequestsRequestBuilder) {
     m := &ItemJoinedTeamsItemScheduleOfferShiftRequestsRequestBuilder{

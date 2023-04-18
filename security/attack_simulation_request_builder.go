@@ -112,31 +112,9 @@ func (m *AttackSimulationRequestBuilder) Patch(ctx context.Context, body iadcd81
 func (m *AttackSimulationRequestBuilder) SimulationAutomations()(*AttackSimulationSimulationAutomationsRequestBuilder) {
     return NewAttackSimulationSimulationAutomationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// SimulationAutomationsById provides operations to manage the simulationAutomations property of the microsoft.graph.attackSimulationRoot entity.
-func (m *AttackSimulationRequestBuilder) SimulationAutomationsById(id string)(*AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["simulationAutomation%2Did"] = id
-    }
-    return NewAttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Simulations provides operations to manage the simulations property of the microsoft.graph.attackSimulationRoot entity.
 func (m *AttackSimulationRequestBuilder) Simulations()(*AttackSimulationSimulationsRequestBuilder) {
     return NewAttackSimulationSimulationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// SimulationsById provides operations to manage the simulations property of the microsoft.graph.attackSimulationRoot entity.
-func (m *AttackSimulationRequestBuilder) SimulationsById(id string)(*AttackSimulationSimulationsSimulationItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["simulation%2Did"] = id
-    }
-    return NewAttackSimulationSimulationsSimulationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property attackSimulation for security
 func (m *AttackSimulationRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

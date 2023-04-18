@@ -46,6 +46,17 @@ type TermsAndConditionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByTermsAndConditionsId provides operations to manage the termsAndConditions property of the microsoft.graph.deviceManagement entity.
+func (m *TermsAndConditionsRequestBuilder) ByTermsAndConditionsId(termsAndConditionsId string)(*TermsAndConditionsTermsAndConditionsItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if termsAndConditionsId != "" {
+        urlTplParams["termsAndConditions%2Did"] = termsAndConditionsId
+    }
+    return NewTermsAndConditionsTermsAndConditionsItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewTermsAndConditionsRequestBuilderInternal instantiates a new TermsAndConditionsRequestBuilder and sets the default values.
 func NewTermsAndConditionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TermsAndConditionsRequestBuilder) {
     m := &TermsAndConditionsRequestBuilder{

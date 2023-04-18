@@ -46,6 +46,17 @@ type ItemOnenoteNotebooksRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByNotebookId provides operations to manage the notebooks property of the microsoft.graph.onenote entity.
+func (m *ItemOnenoteNotebooksRequestBuilder) ByNotebookId(notebookId string)(*ItemOnenoteNotebooksNotebookItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if notebookId != "" {
+        urlTplParams["notebook%2Did"] = notebookId
+    }
+    return NewItemOnenoteNotebooksNotebookItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemOnenoteNotebooksRequestBuilderInternal instantiates a new NotebooksRequestBuilder and sets the default values.
 func NewItemOnenoteNotebooksRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOnenoteNotebooksRequestBuilder) {
     m := &ItemOnenoteNotebooksRequestBuilder{

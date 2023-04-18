@@ -46,6 +46,17 @@ type ItemAppRoleAssignmentsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByAppRoleAssignmentId provides operations to manage the appRoleAssignments property of the microsoft.graph.servicePrincipal entity.
+func (m *ItemAppRoleAssignmentsRequestBuilder) ByAppRoleAssignmentId(appRoleAssignmentId string)(*ItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if appRoleAssignmentId != "" {
+        urlTplParams["appRoleAssignment%2Did"] = appRoleAssignmentId
+    }
+    return NewItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemAppRoleAssignmentsRequestBuilderInternal instantiates a new AppRoleAssignmentsRequestBuilder and sets the default values.
 func NewItemAppRoleAssignmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAppRoleAssignmentsRequestBuilder) {
     m := &ItemAppRoleAssignmentsRequestBuilder{

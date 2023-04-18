@@ -53,17 +53,6 @@ func (m *ApplicationItemRequestBuilder) AddPassword()(*ItemAddPasswordRequestBui
 func (m *ApplicationItemRequestBuilder) AppManagementPolicies()(*ItemAppManagementPoliciesRequestBuilder) {
     return NewItemAppManagementPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AppManagementPoliciesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.applications.item.appManagementPolicies.item collection
-func (m *ApplicationItemRequestBuilder) AppManagementPoliciesById(id string)(*ItemAppManagementPoliciesAppManagementPolicyItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["appManagementPolicy%2Did"] = id
-    }
-    return NewItemAppManagementPoliciesAppManagementPolicyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // CheckMemberGroups provides operations to call the checkMemberGroups method.
 func (m *ApplicationItemRequestBuilder) CheckMemberGroups()(*ItemCheckMemberGroupsRequestBuilder) {
     return NewItemCheckMemberGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -112,31 +101,9 @@ func (m *ApplicationItemRequestBuilder) Delete(ctx context.Context, requestConfi
 func (m *ApplicationItemRequestBuilder) ExtensionProperties()(*ItemExtensionPropertiesRequestBuilder) {
     return NewItemExtensionPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ExtensionPropertiesById provides operations to manage the extensionProperties property of the microsoft.graph.application entity.
-func (m *ApplicationItemRequestBuilder) ExtensionPropertiesById(id string)(*ItemExtensionPropertiesExtensionPropertyItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["extensionProperty%2Did"] = id
-    }
-    return NewItemExtensionPropertiesExtensionPropertyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // FederatedIdentityCredentials provides operations to manage the federatedIdentityCredentials property of the microsoft.graph.application entity.
 func (m *ApplicationItemRequestBuilder) FederatedIdentityCredentials()(*ItemFederatedIdentityCredentialsRequestBuilder) {
     return NewItemFederatedIdentityCredentialsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// FederatedIdentityCredentialsById provides operations to manage the federatedIdentityCredentials property of the microsoft.graph.application entity.
-func (m *ApplicationItemRequestBuilder) FederatedIdentityCredentialsById(id string)(*ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["federatedIdentityCredential%2Did"] = id
-    }
-    return NewItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the properties and relationships of an application object.
 // [Find more info here]
@@ -172,17 +139,6 @@ func (m *ApplicationItemRequestBuilder) GetMemberObjects()(*ItemGetMemberObjects
 func (m *ApplicationItemRequestBuilder) HomeRealmDiscoveryPolicies()(*ItemHomeRealmDiscoveryPoliciesRequestBuilder) {
     return NewItemHomeRealmDiscoveryPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// HomeRealmDiscoveryPoliciesById provides operations to manage the homeRealmDiscoveryPolicies property of the microsoft.graph.application entity.
-func (m *ApplicationItemRequestBuilder) HomeRealmDiscoveryPoliciesById(id string)(*ItemHomeRealmDiscoveryPoliciesHomeRealmDiscoveryPolicyItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["homeRealmDiscoveryPolicy%2Did"] = id
-    }
-    return NewItemHomeRealmDiscoveryPoliciesHomeRealmDiscoveryPolicyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Logo provides operations to manage the media for the application entity.
 func (m *ApplicationItemRequestBuilder) Logo()(*ItemLogoRequestBuilder) {
     return NewItemLogoRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -190,17 +146,6 @@ func (m *ApplicationItemRequestBuilder) Logo()(*ItemLogoRequestBuilder) {
 // Owners provides operations to manage the owners property of the microsoft.graph.application entity.
 func (m *ApplicationItemRequestBuilder) Owners()(*ItemOwnersRequestBuilder) {
     return NewItemOwnersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// OwnersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.applications.item.owners.item collection
-func (m *ApplicationItemRequestBuilder) OwnersById(id string)(*ItemOwnersDirectoryObjectItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["directoryObject%2Did"] = id
-    }
-    return NewItemOwnersDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the properties of an application object.
 // [Find more info here]
@@ -272,31 +217,9 @@ func (m *ApplicationItemRequestBuilder) ToGetRequestInformation(ctx context.Cont
 func (m *ApplicationItemRequestBuilder) TokenIssuancePolicies()(*ItemTokenIssuancePoliciesRequestBuilder) {
     return NewItemTokenIssuancePoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// TokenIssuancePoliciesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.applications.item.tokenIssuancePolicies.item collection
-func (m *ApplicationItemRequestBuilder) TokenIssuancePoliciesById(id string)(*ItemTokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["tokenIssuancePolicy%2Did"] = id
-    }
-    return NewItemTokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // TokenLifetimePolicies provides operations to manage the tokenLifetimePolicies property of the microsoft.graph.application entity.
 func (m *ApplicationItemRequestBuilder) TokenLifetimePolicies()(*ItemTokenLifetimePoliciesRequestBuilder) {
     return NewItemTokenLifetimePoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// TokenLifetimePoliciesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.applications.item.tokenLifetimePolicies.item collection
-func (m *ApplicationItemRequestBuilder) TokenLifetimePoliciesById(id string)(*ItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["tokenLifetimePolicy%2Did"] = id
-    }
-    return NewItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToPatchRequestInformation update the properties of an application object.
 func (m *ApplicationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Applicationable, requestConfiguration *ApplicationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

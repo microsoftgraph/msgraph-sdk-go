@@ -46,6 +46,17 @@ type UserFlowAttributesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByIdentityUserFlowAttributeId provides operations to manage the userFlowAttributes property of the microsoft.graph.identityContainer entity.
+func (m *UserFlowAttributesRequestBuilder) ByIdentityUserFlowAttributeId(identityUserFlowAttributeId string)(*UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if identityUserFlowAttributeId != "" {
+        urlTplParams["identityUserFlowAttribute%2Did"] = identityUserFlowAttributeId
+    }
+    return NewUserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewUserFlowAttributesRequestBuilderInternal instantiates a new UserFlowAttributesRequestBuilder and sets the default values.
 func NewUserFlowAttributesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserFlowAttributesRequestBuilder) {
     m := &UserFlowAttributesRequestBuilder{

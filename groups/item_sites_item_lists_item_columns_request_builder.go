@@ -46,6 +46,17 @@ type ItemSitesItemListsItemColumnsRequestBuilderPostRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByColumnDefinitionId provides operations to manage the columns property of the microsoft.graph.list entity.
+func (m *ItemSitesItemListsItemColumnsRequestBuilder) ByColumnDefinitionId(columnDefinitionId string)(*ItemSitesItemListsItemColumnsColumnDefinitionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if columnDefinitionId != "" {
+        urlTplParams["columnDefinition%2Did"] = columnDefinitionId
+    }
+    return NewItemSitesItemListsItemColumnsColumnDefinitionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemSitesItemListsItemColumnsRequestBuilderInternal instantiates a new ColumnsRequestBuilder and sets the default values.
 func NewItemSitesItemListsItemColumnsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemListsItemColumnsRequestBuilder) {
     m := &ItemSitesItemListsItemColumnsRequestBuilder{

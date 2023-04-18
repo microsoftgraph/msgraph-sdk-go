@@ -68,17 +68,6 @@ func (m *ItemInferenceClassificationRequestBuilder) Get(ctx context.Context, req
 func (m *ItemInferenceClassificationRequestBuilder) Overrides()(*ItemInferenceClassificationOverridesRequestBuilder) {
     return NewItemInferenceClassificationOverridesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// OverridesById provides operations to manage the overrides property of the microsoft.graph.inferenceClassification entity.
-func (m *ItemInferenceClassificationRequestBuilder) OverridesById(id string)(*ItemInferenceClassificationOverridesInferenceClassificationOverrideItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["inferenceClassificationOverride%2Did"] = id
-    }
-    return NewItemInferenceClassificationOverridesInferenceClassificationOverrideItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property inferenceClassification in users
 func (m *ItemInferenceClassificationRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InferenceClassificationable, requestConfiguration *ItemInferenceClassificationRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InferenceClassificationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);

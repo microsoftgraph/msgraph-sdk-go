@@ -39,6 +39,17 @@ type EntitlementManagementAccessPackagesItemAccessPackagesIncompatibleWithReques
     // Request query parameters
     QueryParameters *EntitlementManagementAccessPackagesItemAccessPackagesIncompatibleWithRequestBuilderGetQueryParameters
 }
+// ByAccessPackageId1 provides operations to manage the accessPackagesIncompatibleWith property of the microsoft.graph.accessPackage entity.
+func (m *EntitlementManagementAccessPackagesItemAccessPackagesIncompatibleWithRequestBuilder) ByAccessPackageId1(accessPackageId1 string)(*EntitlementManagementAccessPackagesItemAccessPackagesIncompatibleWithAccessPackageItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if accessPackageId1 != "" {
+        urlTplParams["accessPackage%2Did1"] = accessPackageId1
+    }
+    return NewEntitlementManagementAccessPackagesItemAccessPackagesIncompatibleWithAccessPackageItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewEntitlementManagementAccessPackagesItemAccessPackagesIncompatibleWithRequestBuilderInternal instantiates a new AccessPackagesIncompatibleWithRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackagesItemAccessPackagesIncompatibleWithRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackagesItemAccessPackagesIncompatibleWithRequestBuilder) {
     m := &EntitlementManagementAccessPackagesItemAccessPackagesIncompatibleWithRequestBuilder{

@@ -39,6 +39,17 @@ type B2xUserFlowsItemUserFlowIdentityProvidersRequestBuilderGetRequestConfigurat
     // Request query parameters
     QueryParameters *B2xUserFlowsItemUserFlowIdentityProvidersRequestBuilderGetQueryParameters
 }
+// ByIdentityProviderBaseId gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identity.b2xUserFlows.item.userFlowIdentityProviders.item collection
+func (m *B2xUserFlowsItemUserFlowIdentityProvidersRequestBuilder) ByIdentityProviderBaseId(identityProviderBaseId string)(*B2xUserFlowsItemUserFlowIdentityProvidersIdentityProviderBaseItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if identityProviderBaseId != "" {
+        urlTplParams["identityProviderBase%2Did"] = identityProviderBaseId
+    }
+    return NewB2xUserFlowsItemUserFlowIdentityProvidersIdentityProviderBaseItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewB2xUserFlowsItemUserFlowIdentityProvidersRequestBuilderInternal instantiates a new UserFlowIdentityProvidersRequestBuilder and sets the default values.
 func NewB2xUserFlowsItemUserFlowIdentityProvidersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*B2xUserFlowsItemUserFlowIdentityProvidersRequestBuilder) {
     m := &B2xUserFlowsItemUserFlowIdentityProvidersRequestBuilder{

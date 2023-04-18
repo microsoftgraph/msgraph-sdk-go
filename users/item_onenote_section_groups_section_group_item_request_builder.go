@@ -120,31 +120,9 @@ func (m *ItemOnenoteSectionGroupsSectionGroupItemRequestBuilder) Patch(ctx conte
 func (m *ItemOnenoteSectionGroupsSectionGroupItemRequestBuilder) SectionGroups()(*ItemOnenoteSectionGroupsItemSectionGroupsRequestBuilder) {
     return NewItemOnenoteSectionGroupsItemSectionGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// SectionGroupsById provides operations to manage the sectionGroups property of the microsoft.graph.sectionGroup entity.
-func (m *ItemOnenoteSectionGroupsSectionGroupItemRequestBuilder) SectionGroupsById(id string)(*ItemOnenoteSectionGroupsItemSectionGroupsSectionGroupItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["sectionGroup%2Did1"] = id
-    }
-    return NewItemOnenoteSectionGroupsItemSectionGroupsSectionGroupItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Sections provides operations to manage the sections property of the microsoft.graph.sectionGroup entity.
 func (m *ItemOnenoteSectionGroupsSectionGroupItemRequestBuilder) Sections()(*ItemOnenoteSectionGroupsItemSectionsRequestBuilder) {
     return NewItemOnenoteSectionGroupsItemSectionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// SectionsById provides operations to manage the sections property of the microsoft.graph.sectionGroup entity.
-func (m *ItemOnenoteSectionGroupsSectionGroupItemRequestBuilder) SectionsById(id string)(*ItemOnenoteSectionGroupsItemSectionsOnenoteSectionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["onenoteSection%2Did"] = id
-    }
-    return NewItemOnenoteSectionGroupsItemSectionsOnenoteSectionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property sectionGroups for users
 func (m *ItemOnenoteSectionGroupsSectionGroupItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemOnenoteSectionGroupsSectionGroupItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

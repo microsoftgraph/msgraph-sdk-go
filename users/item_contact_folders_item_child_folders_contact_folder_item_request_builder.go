@@ -58,17 +58,6 @@ func NewItemContactFoldersItemChildFoldersContactFolderItemRequestBuilder(rawUrl
 func (m *ItemContactFoldersItemChildFoldersContactFolderItemRequestBuilder) Contacts()(*ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) {
     return NewItemContactFoldersItemChildFoldersItemContactsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ContactsById provides operations to manage the contacts property of the microsoft.graph.contactFolder entity.
-func (m *ItemContactFoldersItemChildFoldersContactFolderItemRequestBuilder) ContactsById(id string)(*ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["contact%2Did"] = id
-    }
-    return NewItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Delete delete navigation property childFolders for users
 func (m *ItemContactFoldersItemChildFoldersContactFolderItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemContactFoldersItemChildFoldersContactFolderItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -108,17 +97,6 @@ func (m *ItemContactFoldersItemChildFoldersContactFolderItemRequestBuilder) Get(
 func (m *ItemContactFoldersItemChildFoldersContactFolderItemRequestBuilder) MultiValueExtendedProperties()(*ItemContactFoldersItemChildFoldersItemMultiValueExtendedPropertiesRequestBuilder) {
     return NewItemContactFoldersItemChildFoldersItemMultiValueExtendedPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// MultiValueExtendedPropertiesById provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.contactFolder entity.
-func (m *ItemContactFoldersItemChildFoldersContactFolderItemRequestBuilder) MultiValueExtendedPropertiesById(id string)(*ItemContactFoldersItemChildFoldersItemMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["multiValueLegacyExtendedProperty%2Did"] = id
-    }
-    return NewItemContactFoldersItemChildFoldersItemMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property childFolders in users
 func (m *ItemContactFoldersItemChildFoldersContactFolderItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContactFolderable, requestConfiguration *ItemContactFoldersItemChildFoldersContactFolderItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContactFolderable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -141,17 +119,6 @@ func (m *ItemContactFoldersItemChildFoldersContactFolderItemRequestBuilder) Patc
 // SingleValueExtendedProperties provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.contactFolder entity.
 func (m *ItemContactFoldersItemChildFoldersContactFolderItemRequestBuilder) SingleValueExtendedProperties()(*ItemContactFoldersItemChildFoldersItemSingleValueExtendedPropertiesRequestBuilder) {
     return NewItemContactFoldersItemChildFoldersItemSingleValueExtendedPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// SingleValueExtendedPropertiesById provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.contactFolder entity.
-func (m *ItemContactFoldersItemChildFoldersContactFolderItemRequestBuilder) SingleValueExtendedPropertiesById(id string)(*ItemContactFoldersItemChildFoldersItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["singleValueLegacyExtendedProperty%2Did"] = id
-    }
-    return NewItemContactFoldersItemChildFoldersItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property childFolders for users
 func (m *ItemContactFoldersItemChildFoldersContactFolderItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemContactFoldersItemChildFoldersContactFolderItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

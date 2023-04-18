@@ -46,6 +46,17 @@ type TeamsTemplatesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByTeamsTemplateId provides operations to manage the collection of teamsTemplate entities.
+func (m *TeamsTemplatesRequestBuilder) ByTeamsTemplateId(teamsTemplateId string)(*TeamsTemplateItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if teamsTemplateId != "" {
+        urlTplParams["teamsTemplate%2Did"] = teamsTemplateId
+    }
+    return NewTeamsTemplateItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewTeamsTemplatesRequestBuilderInternal instantiates a new TeamsTemplatesRequestBuilder and sets the default values.
 func NewTeamsTemplatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamsTemplatesRequestBuilder) {
     m := &TeamsTemplatesRequestBuilder{

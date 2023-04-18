@@ -46,6 +46,17 @@ type SchemaExtensionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// BySchemaExtensionId provides operations to manage the collection of schemaExtension entities.
+func (m *SchemaExtensionsRequestBuilder) BySchemaExtensionId(schemaExtensionId string)(*SchemaExtensionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if schemaExtensionId != "" {
+        urlTplParams["schemaExtension%2Did"] = schemaExtensionId
+    }
+    return NewSchemaExtensionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewSchemaExtensionsRequestBuilderInternal instantiates a new SchemaExtensionsRequestBuilder and sets the default values.
 func NewSchemaExtensionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SchemaExtensionsRequestBuilder) {
     m := &SchemaExtensionsRequestBuilder{

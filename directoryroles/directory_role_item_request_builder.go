@@ -112,17 +112,6 @@ func (m *DirectoryRoleItemRequestBuilder) GetMemberObjects()(*ItemGetMemberObjec
 func (m *DirectoryRoleItemRequestBuilder) Members()(*ItemMembersRequestBuilder) {
     return NewItemMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// MembersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.directoryRoles.item.members.item collection
-func (m *DirectoryRoleItemRequestBuilder) MembersById(id string)(*ItemMembersDirectoryObjectItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["directoryObject%2Did"] = id
-    }
-    return NewItemMembersDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update entity in directoryRoles
 func (m *DirectoryRoleItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryRoleable, requestConfiguration *DirectoryRoleItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryRoleable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -149,17 +138,6 @@ func (m *DirectoryRoleItemRequestBuilder) Restore()(*ItemRestoreRequestBuilder) 
 // ScopedMembers provides operations to manage the scopedMembers property of the microsoft.graph.directoryRole entity.
 func (m *DirectoryRoleItemRequestBuilder) ScopedMembers()(*ItemScopedMembersRequestBuilder) {
     return NewItemScopedMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// ScopedMembersById provides operations to manage the scopedMembers property of the microsoft.graph.directoryRole entity.
-func (m *DirectoryRoleItemRequestBuilder) ScopedMembersById(id string)(*ItemScopedMembersScopedRoleMembershipItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["scopedRoleMembership%2Did"] = id
-    }
-    return NewItemScopedMembersScopedRoleMembershipItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete entity from directoryRoles
 func (m *DirectoryRoleItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DirectoryRoleItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

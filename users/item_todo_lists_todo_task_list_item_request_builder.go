@@ -74,17 +74,6 @@ func (m *ItemTodoListsTodoTaskListItemRequestBuilder) Delete(ctx context.Context
 func (m *ItemTodoListsTodoTaskListItemRequestBuilder) Extensions()(*ItemTodoListsItemExtensionsRequestBuilder) {
     return NewItemTodoListsItemExtensionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ExtensionsById provides operations to manage the extensions property of the microsoft.graph.todoTaskList entity.
-func (m *ItemTodoListsTodoTaskListItemRequestBuilder) ExtensionsById(id string)(*ItemTodoListsItemExtensionsExtensionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["extension%2Did"] = id
-    }
-    return NewItemTodoListsItemExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get the task lists in the users mailbox.
 func (m *ItemTodoListsTodoTaskListItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTodoListsTodoTaskListItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TodoTaskListable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -126,17 +115,6 @@ func (m *ItemTodoListsTodoTaskListItemRequestBuilder) Patch(ctx context.Context,
 // Tasks provides operations to manage the tasks property of the microsoft.graph.todoTaskList entity.
 func (m *ItemTodoListsTodoTaskListItemRequestBuilder) Tasks()(*ItemTodoListsItemTasksRequestBuilder) {
     return NewItemTodoListsItemTasksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// TasksById provides operations to manage the tasks property of the microsoft.graph.todoTaskList entity.
-func (m *ItemTodoListsTodoTaskListItemRequestBuilder) TasksById(id string)(*ItemTodoListsItemTasksTodoTaskItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["todoTask%2Did"] = id
-    }
-    return NewItemTodoListsItemTasksTodoTaskItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property lists for users
 func (m *ItemTodoListsTodoTaskListItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTodoListsTodoTaskListItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

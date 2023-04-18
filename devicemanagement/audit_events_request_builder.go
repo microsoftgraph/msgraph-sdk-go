@@ -46,6 +46,17 @@ type AuditEventsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByAuditEventId provides operations to manage the auditEvents property of the microsoft.graph.deviceManagement entity.
+func (m *AuditEventsRequestBuilder) ByAuditEventId(auditEventId string)(*AuditEventsAuditEventItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if auditEventId != "" {
+        urlTplParams["auditEvent%2Did"] = auditEventId
+    }
+    return NewAuditEventsAuditEventItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewAuditEventsRequestBuilderInternal instantiates a new AuditEventsRequestBuilder and sets the default values.
 func NewAuditEventsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuditEventsRequestBuilder) {
     m := &AuditEventsRequestBuilder{

@@ -39,6 +39,17 @@ type ConditionalAccessTemplatesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ConditionalAccessTemplatesRequestBuilderGetQueryParameters
 }
+// ByConditionalAccessTemplateId provides operations to manage the templates property of the microsoft.graph.conditionalAccessRoot entity.
+func (m *ConditionalAccessTemplatesRequestBuilder) ByConditionalAccessTemplateId(conditionalAccessTemplateId string)(*ConditionalAccessTemplatesConditionalAccessTemplateItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if conditionalAccessTemplateId != "" {
+        urlTplParams["conditionalAccessTemplate%2Did"] = conditionalAccessTemplateId
+    }
+    return NewConditionalAccessTemplatesConditionalAccessTemplateItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewConditionalAccessTemplatesRequestBuilderInternal instantiates a new TemplatesRequestBuilder and sets the default values.
 func NewConditionalAccessTemplatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConditionalAccessTemplatesRequestBuilder) {
     m := &ConditionalAccessTemplatesRequestBuilder{

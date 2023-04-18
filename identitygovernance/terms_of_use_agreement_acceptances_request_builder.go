@@ -46,6 +46,17 @@ type TermsOfUseAgreementAcceptancesRequestBuilderPostRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByAgreementAcceptanceId provides operations to manage the agreementAcceptances property of the microsoft.graph.termsOfUseContainer entity.
+func (m *TermsOfUseAgreementAcceptancesRequestBuilder) ByAgreementAcceptanceId(agreementAcceptanceId string)(*TermsOfUseAgreementAcceptancesAgreementAcceptanceItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if agreementAcceptanceId != "" {
+        urlTplParams["agreementAcceptance%2Did"] = agreementAcceptanceId
+    }
+    return NewTermsOfUseAgreementAcceptancesAgreementAcceptanceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewTermsOfUseAgreementAcceptancesRequestBuilderInternal instantiates a new AgreementAcceptancesRequestBuilder and sets the default values.
 func NewTermsOfUseAgreementAcceptancesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TermsOfUseAgreementAcceptancesRequestBuilder) {
     m := &TermsOfUseAgreementAcceptancesRequestBuilder{

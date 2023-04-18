@@ -39,6 +39,17 @@ type UsersItemSchoolsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *UsersItemSchoolsRequestBuilderGetQueryParameters
 }
+// ByEducationSchoolId provides operations to manage the schools property of the microsoft.graph.educationUser entity.
+func (m *UsersItemSchoolsRequestBuilder) ByEducationSchoolId(educationSchoolId string)(*UsersItemSchoolsEducationSchoolItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if educationSchoolId != "" {
+        urlTplParams["educationSchool%2Did"] = educationSchoolId
+    }
+    return NewUsersItemSchoolsEducationSchoolItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewUsersItemSchoolsRequestBuilderInternal instantiates a new SchoolsRequestBuilder and sets the default values.
 func NewUsersItemSchoolsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UsersItemSchoolsRequestBuilder) {
     m := &UsersItemSchoolsRequestBuilder{

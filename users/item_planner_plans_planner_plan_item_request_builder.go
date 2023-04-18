@@ -45,17 +45,6 @@ type ItemPlannerPlansPlannerPlanItemRequestBuilderPatchRequestConfiguration stru
 func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) Buckets()(*ItemPlannerPlansItemBucketsRequestBuilder) {
     return NewItemPlannerPlansItemBucketsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// BucketsById provides operations to manage the buckets property of the microsoft.graph.plannerPlan entity.
-func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) BucketsById(id string)(*ItemPlannerPlansItemBucketsPlannerBucketItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["plannerBucket%2Did"] = id
-    }
-    return NewItemPlannerPlansItemBucketsPlannerBucketItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewItemPlannerPlansPlannerPlanItemRequestBuilderInternal instantiates a new PlannerPlanItemRequestBuilder and sets the default values.
 func NewItemPlannerPlansPlannerPlanItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPlannerPlansPlannerPlanItemRequestBuilder) {
     m := &ItemPlannerPlansPlannerPlanItemRequestBuilder{
@@ -130,17 +119,6 @@ func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) Patch(ctx context.Contex
 // Tasks provides operations to manage the tasks property of the microsoft.graph.plannerPlan entity.
 func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) Tasks()(*ItemPlannerPlansItemTasksRequestBuilder) {
     return NewItemPlannerPlansItemTasksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// TasksById provides operations to manage the tasks property of the microsoft.graph.plannerPlan entity.
-func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) TasksById(id string)(*ItemPlannerPlansItemTasksPlannerTaskItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["plannerTask%2Did"] = id
-    }
-    return NewItemPlannerPlansItemTasksPlannerTaskItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property plans for users
 func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemPlannerPlansPlannerPlanItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

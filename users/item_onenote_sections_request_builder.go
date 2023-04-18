@@ -46,6 +46,17 @@ type ItemOnenoteSectionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByOnenoteSectionId provides operations to manage the sections property of the microsoft.graph.onenote entity.
+func (m *ItemOnenoteSectionsRequestBuilder) ByOnenoteSectionId(onenoteSectionId string)(*ItemOnenoteSectionsOnenoteSectionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if onenoteSectionId != "" {
+        urlTplParams["onenoteSection%2Did"] = onenoteSectionId
+    }
+    return NewItemOnenoteSectionsOnenoteSectionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemOnenoteSectionsRequestBuilderInternal instantiates a new SectionsRequestBuilder and sets the default values.
 func NewItemOnenoteSectionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOnenoteSectionsRequestBuilder) {
     m := &ItemOnenoteSectionsRequestBuilder{

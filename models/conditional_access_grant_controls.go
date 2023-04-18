@@ -34,6 +34,17 @@ func (m *ConditionalAccessGrantControls) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
+// GetAuthenticationStrength gets the authenticationStrength property value. The authenticationStrength property
+func (m *ConditionalAccessGrantControls) GetAuthenticationStrength()(AuthenticationStrengthPolicyable) {
+    val, err := m.GetBackingStore().Get("authenticationStrength")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AuthenticationStrengthPolicyable)
+    }
+    return nil
+}
 // GetBackingStore gets the backingStore property value. Stores model information.
 func (m *ConditionalAccessGrantControls) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
@@ -63,6 +74,16 @@ func (m *ConditionalAccessGrantControls) GetCustomAuthenticationFactors()([]stri
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConditionalAccessGrantControls) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["authenticationStrength"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateAuthenticationStrengthPolicyFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAuthenticationStrength(val.(AuthenticationStrengthPolicyable))
+        }
+        return nil
+    }
     res["builtInControls"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParseConditionalAccessGrantControl)
         if err != nil {
@@ -162,6 +183,12 @@ func (m *ConditionalAccessGrantControls) GetTermsOfUse()([]string) {
 }
 // Serialize serializes information the current object
 func (m *ConditionalAccessGrantControls) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteObjectValue("authenticationStrength", m.GetAuthenticationStrength())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetBuiltInControls() != nil {
         err := writer.WriteCollectionOfStringValues("builtInControls", SerializeConditionalAccessGrantControl(m.GetBuiltInControls()))
         if err != nil {
@@ -203,6 +230,13 @@ func (m *ConditionalAccessGrantControls) Serialize(writer i878a80d2330e89d268963
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessGrantControls) SetAdditionalData(value map[string]any)() {
     err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAuthenticationStrength sets the authenticationStrength property value. The authenticationStrength property
+func (m *ConditionalAccessGrantControls) SetAuthenticationStrength(value AuthenticationStrengthPolicyable)() {
+    err := m.GetBackingStore().Set("authenticationStrength", value)
     if err != nil {
         panic(err)
     }
@@ -251,12 +285,14 @@ type ConditionalAccessGrantControlsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAuthenticationStrength()(AuthenticationStrengthPolicyable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetBuiltInControls()([]ConditionalAccessGrantControl)
     GetCustomAuthenticationFactors()([]string)
     GetOdataType()(*string)
     GetOperator()(*string)
     GetTermsOfUse()([]string)
+    SetAuthenticationStrength(value AuthenticationStrengthPolicyable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetBuiltInControls(value []ConditionalAccessGrantControl)()
     SetCustomAuthenticationFactors(value []string)()

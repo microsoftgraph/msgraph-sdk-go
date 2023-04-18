@@ -39,6 +39,17 @@ type PrintersItemSharesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *PrintersItemSharesRequestBuilderGetQueryParameters
 }
+// ByPrinterShareId provides operations to manage the shares property of the microsoft.graph.printer entity.
+func (m *PrintersItemSharesRequestBuilder) ByPrinterShareId(printerShareId string)(*PrintersItemSharesPrinterShareItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if printerShareId != "" {
+        urlTplParams["printerShare%2Did"] = printerShareId
+    }
+    return NewPrintersItemSharesPrinterShareItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewPrintersItemSharesRequestBuilderInternal instantiates a new SharesRequestBuilder and sets the default values.
 func NewPrintersItemSharesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrintersItemSharesRequestBuilder) {
     m := &PrintersItemSharesRequestBuilder{

@@ -101,17 +101,6 @@ func (m *ItemSitesItemOnenoteNotebooksItemSectionsOnenoteSectionItemRequestBuild
 func (m *ItemSitesItemOnenoteNotebooksItemSectionsOnenoteSectionItemRequestBuilder) Pages()(*ItemSitesItemOnenoteNotebooksItemSectionsItemPagesRequestBuilder) {
     return NewItemSitesItemOnenoteNotebooksItemSectionsItemPagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// PagesById provides operations to manage the pages property of the microsoft.graph.onenoteSection entity.
-func (m *ItemSitesItemOnenoteNotebooksItemSectionsOnenoteSectionItemRequestBuilder) PagesById(id string)(*ItemSitesItemOnenoteNotebooksItemSectionsItemPagesOnenotePageItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["onenotePage%2Did"] = id
-    }
-    return NewItemSitesItemOnenoteNotebooksItemSectionsItemPagesOnenotePageItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ParentNotebook provides operations to manage the parentNotebook property of the microsoft.graph.onenoteSection entity.
 func (m *ItemSitesItemOnenoteNotebooksItemSectionsOnenoteSectionItemRequestBuilder) ParentNotebook()(*ItemSitesItemOnenoteNotebooksItemSectionsItemParentNotebookRequestBuilder) {
     return NewItemSitesItemOnenoteNotebooksItemSectionsItemParentNotebookRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

@@ -51,31 +51,9 @@ func NewTenantRelationshipsRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *TenantRelationshipsRequestBuilder) DelegatedAdminCustomers()(*DelegatedAdminCustomersRequestBuilder) {
     return NewDelegatedAdminCustomersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// DelegatedAdminCustomersById provides operations to manage the delegatedAdminCustomers property of the microsoft.graph.tenantRelationship entity.
-func (m *TenantRelationshipsRequestBuilder) DelegatedAdminCustomersById(id string)(*DelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["delegatedAdminCustomer%2Did"] = id
-    }
-    return NewDelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // DelegatedAdminRelationships provides operations to manage the delegatedAdminRelationships property of the microsoft.graph.tenantRelationship entity.
 func (m *TenantRelationshipsRequestBuilder) DelegatedAdminRelationships()(*DelegatedAdminRelationshipsRequestBuilder) {
     return NewDelegatedAdminRelationshipsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// DelegatedAdminRelationshipsById provides operations to manage the delegatedAdminRelationships property of the microsoft.graph.tenantRelationship entity.
-func (m *TenantRelationshipsRequestBuilder) DelegatedAdminRelationshipsById(id string)(*DelegatedAdminRelationshipsDelegatedAdminRelationshipItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["delegatedAdminRelationship%2Did"] = id
-    }
-    return NewDelegatedAdminRelationshipsDelegatedAdminRelationshipItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get tenantRelationships
 func (m *TenantRelationshipsRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantRelationshipsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TenantRelationshipable, error) {

@@ -38,6 +38,17 @@ type ItemItemsItemWorkbookOperationsRequestBuilderPostRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByWorkbookOperationId provides operations to manage the operations property of the microsoft.graph.workbook entity.
+func (m *ItemItemsItemWorkbookOperationsRequestBuilder) ByWorkbookOperationId(workbookOperationId string)(*ItemItemsItemWorkbookOperationsWorkbookOperationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if workbookOperationId != "" {
+        urlTplParams["workbookOperation%2Did"] = workbookOperationId
+    }
+    return NewItemItemsItemWorkbookOperationsWorkbookOperationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemItemsItemWorkbookOperationsRequestBuilderInternal instantiates a new OperationsRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookOperationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookOperationsRequestBuilder) {
     m := &ItemItemsItemWorkbookOperationsRequestBuilder{

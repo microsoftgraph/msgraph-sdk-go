@@ -93,46 +93,13 @@ func (m *ExternalConnectionItemRequestBuilder) Get(ctx context.Context, requestC
 func (m *ExternalConnectionItemRequestBuilder) Groups()(*ItemGroupsRequestBuilder) {
     return NewItemGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// GroupsById provides operations to manage the groups property of the microsoft.graph.externalConnectors.externalConnection entity.
-func (m *ExternalConnectionItemRequestBuilder) GroupsById(id string)(*ItemGroupsExternalGroupItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["externalGroup%2Did"] = id
-    }
-    return NewItemGroupsExternalGroupItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Items provides operations to manage the items property of the microsoft.graph.externalConnectors.externalConnection entity.
 func (m *ExternalConnectionItemRequestBuilder) Items()(*ItemItemsRequestBuilder) {
     return NewItemItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ItemsById provides operations to manage the items property of the microsoft.graph.externalConnectors.externalConnection entity.
-func (m *ExternalConnectionItemRequestBuilder) ItemsById(id string)(*ItemItemsExternalItemItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["externalItem%2Did"] = id
-    }
-    return NewItemItemsExternalItemItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Operations provides operations to manage the operations property of the microsoft.graph.externalConnectors.externalConnection entity.
 func (m *ExternalConnectionItemRequestBuilder) Operations()(*ItemOperationsRequestBuilder) {
     return NewItemOperationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// OperationsById provides operations to manage the operations property of the microsoft.graph.externalConnectors.externalConnection entity.
-func (m *ExternalConnectionItemRequestBuilder) OperationsById(id string)(*ItemOperationsConnectionOperationItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["connectionOperation%2Did"] = id
-    }
-    return NewItemOperationsConnectionOperationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update entity in connections
 func (m *ExternalConnectionItemRequestBuilder) Patch(ctx context.Context, body i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalConnectionable, requestConfiguration *ExternalConnectionItemRequestBuilderPatchRequestConfiguration)(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalConnectionable, error) {

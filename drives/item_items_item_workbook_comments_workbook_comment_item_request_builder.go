@@ -112,17 +112,6 @@ func (m *ItemItemsItemWorkbookCommentsWorkbookCommentItemRequestBuilder) Patch(c
 func (m *ItemItemsItemWorkbookCommentsWorkbookCommentItemRequestBuilder) Replies()(*ItemItemsItemWorkbookCommentsItemRepliesRequestBuilder) {
     return NewItemItemsItemWorkbookCommentsItemRepliesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// RepliesById provides operations to manage the replies property of the microsoft.graph.workbookComment entity.
-func (m *ItemItemsItemWorkbookCommentsWorkbookCommentItemRequestBuilder) RepliesById(id string)(*ItemItemsItemWorkbookCommentsItemRepliesWorkbookCommentReplyItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["workbookCommentReply%2Did"] = id
-    }
-    return NewItemItemsItemWorkbookCommentsItemRepliesWorkbookCommentReplyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property comments for drives
 func (m *ItemItemsItemWorkbookCommentsWorkbookCommentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookCommentsWorkbookCommentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

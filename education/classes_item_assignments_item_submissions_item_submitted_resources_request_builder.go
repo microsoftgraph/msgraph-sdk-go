@@ -46,6 +46,17 @@ type ClassesItemAssignmentsItemSubmissionsItemSubmittedResourcesRequestBuilderPo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByEducationSubmissionResourceId provides operations to manage the submittedResources property of the microsoft.graph.educationSubmission entity.
+func (m *ClassesItemAssignmentsItemSubmissionsItemSubmittedResourcesRequestBuilder) ByEducationSubmissionResourceId(educationSubmissionResourceId string)(*ClassesItemAssignmentsItemSubmissionsItemSubmittedResourcesEducationSubmissionResourceItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if educationSubmissionResourceId != "" {
+        urlTplParams["educationSubmissionResource%2Did"] = educationSubmissionResourceId
+    }
+    return NewClassesItemAssignmentsItemSubmissionsItemSubmittedResourcesEducationSubmissionResourceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewClassesItemAssignmentsItemSubmissionsItemSubmittedResourcesRequestBuilderInternal instantiates a new SubmittedResourcesRequestBuilder and sets the default values.
 func NewClassesItemAssignmentsItemSubmissionsItemSubmittedResourcesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ClassesItemAssignmentsItemSubmissionsItemSubmittedResourcesRequestBuilder) {
     m := &ClassesItemAssignmentsItemSubmissionsItemSubmittedResourcesRequestBuilder{

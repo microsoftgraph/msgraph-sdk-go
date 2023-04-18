@@ -44,6 +44,17 @@ type DirectoryRolesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDirectoryRoleId provides operations to manage the collection of directoryRole entities.
+func (m *DirectoryRolesRequestBuilder) ByDirectoryRoleId(directoryRoleId string)(*DirectoryRoleItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if directoryRoleId != "" {
+        urlTplParams["directoryRole%2Did"] = directoryRoleId
+    }
+    return NewDirectoryRoleItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewDirectoryRolesRequestBuilderInternal instantiates a new DirectoryRolesRequestBuilder and sets the default values.
 func NewDirectoryRolesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryRolesRequestBuilder) {
     m := &DirectoryRolesRequestBuilder{

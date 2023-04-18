@@ -39,6 +39,17 @@ type ItemOwnedDevicesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemOwnedDevicesRequestBuilderGetQueryParameters
 }
+// ByDirectoryObjectId provides operations to manage the ownedDevices property of the microsoft.graph.user entity.
+func (m *ItemOwnedDevicesRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemOwnedDevicesDirectoryObjectItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if directoryObjectId != "" {
+        urlTplParams["directoryObject%2Did"] = directoryObjectId
+    }
+    return NewItemOwnedDevicesDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemOwnedDevicesRequestBuilderInternal instantiates a new OwnedDevicesRequestBuilder and sets the default values.
 func NewItemOwnedDevicesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOwnedDevicesRequestBuilder) {
     m := &ItemOwnedDevicesRequestBuilder{

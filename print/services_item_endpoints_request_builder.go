@@ -46,6 +46,17 @@ type ServicesItemEndpointsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByPrintServiceEndpointId provides operations to manage the endpoints property of the microsoft.graph.printService entity.
+func (m *ServicesItemEndpointsRequestBuilder) ByPrintServiceEndpointId(printServiceEndpointId string)(*ServicesItemEndpointsPrintServiceEndpointItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if printServiceEndpointId != "" {
+        urlTplParams["printServiceEndpoint%2Did"] = printServiceEndpointId
+    }
+    return NewServicesItemEndpointsPrintServiceEndpointItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewServicesItemEndpointsRequestBuilderInternal instantiates a new EndpointsRequestBuilder and sets the default values.
 func NewServicesItemEndpointsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ServicesItemEndpointsRequestBuilder) {
     m := &ServicesItemEndpointsRequestBuilder{

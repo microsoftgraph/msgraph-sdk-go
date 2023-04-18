@@ -46,6 +46,17 @@ type MobileAppConfigurationsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByManagedDeviceMobileAppConfigurationId provides operations to manage the mobileAppConfigurations property of the microsoft.graph.deviceAppManagement entity.
+func (m *MobileAppConfigurationsRequestBuilder) ByManagedDeviceMobileAppConfigurationId(managedDeviceMobileAppConfigurationId string)(*MobileAppConfigurationsManagedDeviceMobileAppConfigurationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if managedDeviceMobileAppConfigurationId != "" {
+        urlTplParams["managedDeviceMobileAppConfiguration%2Did"] = managedDeviceMobileAppConfigurationId
+    }
+    return NewMobileAppConfigurationsManagedDeviceMobileAppConfigurationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewMobileAppConfigurationsRequestBuilderInternal instantiates a new MobileAppConfigurationsRequestBuilder and sets the default values.
 func NewMobileAppConfigurationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppConfigurationsRequestBuilder) {
     m := &MobileAppConfigurationsRequestBuilder{

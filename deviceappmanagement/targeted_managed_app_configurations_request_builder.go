@@ -46,6 +46,17 @@ type TargetedManagedAppConfigurationsRequestBuilderPostRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByTargetedManagedAppConfigurationId provides operations to manage the targetedManagedAppConfigurations property of the microsoft.graph.deviceAppManagement entity.
+func (m *TargetedManagedAppConfigurationsRequestBuilder) ByTargetedManagedAppConfigurationId(targetedManagedAppConfigurationId string)(*TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if targetedManagedAppConfigurationId != "" {
+        urlTplParams["targetedManagedAppConfiguration%2Did"] = targetedManagedAppConfigurationId
+    }
+    return NewTargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewTargetedManagedAppConfigurationsRequestBuilderInternal instantiates a new TargetedManagedAppConfigurationsRequestBuilder and sets the default values.
 func NewTargetedManagedAppConfigurationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TargetedManagedAppConfigurationsRequestBuilder) {
     m := &TargetedManagedAppConfigurationsRequestBuilder{

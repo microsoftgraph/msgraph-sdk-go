@@ -46,6 +46,17 @@ type ItemAuthenticationTemporaryAccessPassMethodsRequestBuilderPostRequestConfig
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByTemporaryAccessPassAuthenticationMethodId provides operations to manage the temporaryAccessPassMethods property of the microsoft.graph.authentication entity.
+func (m *ItemAuthenticationTemporaryAccessPassMethodsRequestBuilder) ByTemporaryAccessPassAuthenticationMethodId(temporaryAccessPassAuthenticationMethodId string)(*ItemAuthenticationTemporaryAccessPassMethodsTemporaryAccessPassAuthenticationMethodItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if temporaryAccessPassAuthenticationMethodId != "" {
+        urlTplParams["temporaryAccessPassAuthenticationMethod%2Did"] = temporaryAccessPassAuthenticationMethodId
+    }
+    return NewItemAuthenticationTemporaryAccessPassMethodsTemporaryAccessPassAuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemAuthenticationTemporaryAccessPassMethodsRequestBuilderInternal instantiates a new TemporaryAccessPassMethodsRequestBuilder and sets the default values.
 func NewItemAuthenticationTemporaryAccessPassMethodsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAuthenticationTemporaryAccessPassMethodsRequestBuilder) {
     m := &ItemAuthenticationTemporaryAccessPassMethodsRequestBuilder{

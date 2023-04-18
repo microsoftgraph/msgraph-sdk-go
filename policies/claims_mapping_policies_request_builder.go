@@ -46,6 +46,17 @@ type ClaimsMappingPoliciesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByClaimsMappingPolicyId provides operations to manage the claimsMappingPolicies property of the microsoft.graph.policyRoot entity.
+func (m *ClaimsMappingPoliciesRequestBuilder) ByClaimsMappingPolicyId(claimsMappingPolicyId string)(*ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if claimsMappingPolicyId != "" {
+        urlTplParams["claimsMappingPolicy%2Did"] = claimsMappingPolicyId
+    }
+    return NewClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewClaimsMappingPoliciesRequestBuilderInternal instantiates a new ClaimsMappingPoliciesRequestBuilder and sets the default values.
 func NewClaimsMappingPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ClaimsMappingPoliciesRequestBuilder) {
     m := &ClaimsMappingPoliciesRequestBuilder{

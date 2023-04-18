@@ -46,6 +46,17 @@ type RiskyUsersRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByRiskyUserId provides operations to manage the riskyUsers property of the microsoft.graph.identityProtectionRoot entity.
+func (m *RiskyUsersRequestBuilder) ByRiskyUserId(riskyUserId string)(*RiskyUsersRiskyUserItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if riskyUserId != "" {
+        urlTplParams["riskyUser%2Did"] = riskyUserId
+    }
+    return NewRiskyUsersRiskyUserItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // ConfirmCompromised provides operations to call the confirmCompromised method.
 func (m *RiskyUsersRequestBuilder) ConfirmCompromised()(*RiskyUsersConfirmCompromisedRequestBuilder) {
     return NewRiskyUsersConfirmCompromisedRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

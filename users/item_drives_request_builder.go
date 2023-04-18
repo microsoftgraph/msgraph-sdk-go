@@ -39,6 +39,17 @@ type ItemDrivesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemDrivesRequestBuilderGetQueryParameters
 }
+// ByDriveId provides operations to manage the drives property of the microsoft.graph.user entity.
+func (m *ItemDrivesRequestBuilder) ByDriveId(driveId string)(*ItemDrivesDriveItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if driveId != "" {
+        urlTplParams["drive%2Did"] = driveId
+    }
+    return NewItemDrivesDriveItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemDrivesRequestBuilderInternal instantiates a new DrivesRequestBuilder and sets the default values.
 func NewItemDrivesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDrivesRequestBuilder) {
     m := &ItemDrivesRequestBuilder{

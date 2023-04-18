@@ -46,6 +46,17 @@ type ItemAuthenticationPhoneMethodsRequestBuilderPostRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByPhoneAuthenticationMethodId provides operations to manage the phoneMethods property of the microsoft.graph.authentication entity.
+func (m *ItemAuthenticationPhoneMethodsRequestBuilder) ByPhoneAuthenticationMethodId(phoneAuthenticationMethodId string)(*ItemAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if phoneAuthenticationMethodId != "" {
+        urlTplParams["phoneAuthenticationMethod%2Did"] = phoneAuthenticationMethodId
+    }
+    return NewItemAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemAuthenticationPhoneMethodsRequestBuilderInternal instantiates a new PhoneMethodsRequestBuilder and sets the default values.
 func NewItemAuthenticationPhoneMethodsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAuthenticationPhoneMethodsRequestBuilder) {
     m := &ItemAuthenticationPhoneMethodsRequestBuilder{

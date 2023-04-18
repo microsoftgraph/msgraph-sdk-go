@@ -10,8 +10,6 @@ import (
 type ResourceAccess struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
-    // Specifies whether the id property references a delegated permission or an app role (application permission). The possible values are: Scope (for delegated permissions) or Role (for app roles).
-    TypeEscaped *string
 }
 // NewResourceAccess instantiates a new resourceAccess and sets the default values.
 func NewResourceAccess()(*ResourceAccess) {

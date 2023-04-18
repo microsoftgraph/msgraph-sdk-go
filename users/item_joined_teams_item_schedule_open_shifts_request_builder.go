@@ -46,6 +46,17 @@ type ItemJoinedTeamsItemScheduleOpenShiftsRequestBuilderPostRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByOpenShiftId provides operations to manage the openShifts property of the microsoft.graph.schedule entity.
+func (m *ItemJoinedTeamsItemScheduleOpenShiftsRequestBuilder) ByOpenShiftId(openShiftId string)(*ItemJoinedTeamsItemScheduleOpenShiftsOpenShiftItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if openShiftId != "" {
+        urlTplParams["openShift%2Did"] = openShiftId
+    }
+    return NewItemJoinedTeamsItemScheduleOpenShiftsOpenShiftItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemJoinedTeamsItemScheduleOpenShiftsRequestBuilderInternal instantiates a new OpenShiftsRequestBuilder and sets the default values.
 func NewItemJoinedTeamsItemScheduleOpenShiftsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemJoinedTeamsItemScheduleOpenShiftsRequestBuilder) {
     m := &ItemJoinedTeamsItemScheduleOpenShiftsRequestBuilder{
@@ -85,7 +96,10 @@ func (m *ItemJoinedTeamsItemScheduleOpenShiftsRequestBuilder) Get(ctx context.Co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OpenShiftCollectionResponseable), nil
 }
-// Post create new navigation property to openShifts for users
+// Post create an instance of an openShift object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/openshift-post?view=graph-rest-1.0
 func (m *ItemJoinedTeamsItemScheduleOpenShiftsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OpenShiftable, requestConfiguration *ItemJoinedTeamsItemScheduleOpenShiftsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OpenShiftable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -120,7 +134,7 @@ func (m *ItemJoinedTeamsItemScheduleOpenShiftsRequestBuilder) ToGetRequestInform
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to openShifts for users
+// ToPostRequestInformation create an instance of an openShift object.
 func (m *ItemJoinedTeamsItemScheduleOpenShiftsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OpenShiftable, requestConfiguration *ItemJoinedTeamsItemScheduleOpenShiftsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

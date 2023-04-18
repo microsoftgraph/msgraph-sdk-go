@@ -46,6 +46,17 @@ type ItemAuthenticationOperationsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByLongRunningOperationId provides operations to manage the operations property of the microsoft.graph.authentication entity.
+func (m *ItemAuthenticationOperationsRequestBuilder) ByLongRunningOperationId(longRunningOperationId string)(*ItemAuthenticationOperationsLongRunningOperationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if longRunningOperationId != "" {
+        urlTplParams["longRunningOperation%2Did"] = longRunningOperationId
+    }
+    return NewItemAuthenticationOperationsLongRunningOperationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemAuthenticationOperationsRequestBuilderInternal instantiates a new OperationsRequestBuilder and sets the default values.
 func NewItemAuthenticationOperationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAuthenticationOperationsRequestBuilder) {
     m := &ItemAuthenticationOperationsRequestBuilder{

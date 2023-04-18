@@ -46,6 +46,17 @@ type ItemInsightsSharedRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// BySharedInsightId provides operations to manage the shared property of the microsoft.graph.officeGraphInsights entity.
+func (m *ItemInsightsSharedRequestBuilder) BySharedInsightId(sharedInsightId string)(*ItemInsightsSharedSharedInsightItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if sharedInsightId != "" {
+        urlTplParams["sharedInsight%2Did"] = sharedInsightId
+    }
+    return NewItemInsightsSharedSharedInsightItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemInsightsSharedRequestBuilderInternal instantiates a new SharedRequestBuilder and sets the default values.
 func NewItemInsightsSharedRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInsightsSharedRequestBuilder) {
     m := &ItemInsightsSharedRequestBuilder{

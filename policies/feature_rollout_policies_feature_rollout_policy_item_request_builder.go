@@ -45,17 +45,6 @@ type FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilderPatchRequestCon
 func (m *FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder) AppliesTo()(*FeatureRolloutPoliciesItemAppliesToRequestBuilder) {
     return NewFeatureRolloutPoliciesItemAppliesToRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AppliesToById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.policies.featureRolloutPolicies.item.appliesTo.item collection
-func (m *FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder) AppliesToById(id string)(*FeatureRolloutPoliciesItemAppliesToDirectoryObjectItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["directoryObject%2Did"] = id
-    }
-    return NewFeatureRolloutPoliciesItemAppliesToDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewFeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilderInternal instantiates a new FeatureRolloutPolicyItemRequestBuilder and sets the default values.
 func NewFeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder) {
     m := &FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder{

@@ -46,6 +46,17 @@ type ItemFederationConfigurationRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByInternalDomainFederationId provides operations to manage the federationConfiguration property of the microsoft.graph.domain entity.
+func (m *ItemFederationConfigurationRequestBuilder) ByInternalDomainFederationId(internalDomainFederationId string)(*ItemFederationConfigurationInternalDomainFederationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if internalDomainFederationId != "" {
+        urlTplParams["internalDomainFederation%2Did"] = internalDomainFederationId
+    }
+    return NewItemFederationConfigurationInternalDomainFederationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemFederationConfigurationRequestBuilderInternal instantiates a new FederationConfigurationRequestBuilder and sets the default values.
 func NewItemFederationConfigurationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemFederationConfigurationRequestBuilder) {
     m := &ItemFederationConfigurationRequestBuilder{

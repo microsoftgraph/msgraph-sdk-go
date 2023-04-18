@@ -46,6 +46,17 @@ type SharesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// BySharedDriveItemId provides operations to manage the collection of sharedDriveItem entities.
+func (m *SharesRequestBuilder) BySharedDriveItemId(sharedDriveItemId string)(*SharedDriveItemItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if sharedDriveItemId != "" {
+        urlTplParams["sharedDriveItem%2Did"] = sharedDriveItemId
+    }
+    return NewSharedDriveItemItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewSharesRequestBuilderInternal instantiates a new SharesRequestBuilder and sets the default values.
 func NewSharesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SharesRequestBuilder) {
     m := &SharesRequestBuilder{

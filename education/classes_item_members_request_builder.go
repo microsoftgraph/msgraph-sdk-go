@@ -39,6 +39,17 @@ type ClassesItemMembersRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ClassesItemMembersRequestBuilderGetQueryParameters
 }
+// ByEducationUserId gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.classes.item.members.item collection
+func (m *ClassesItemMembersRequestBuilder) ByEducationUserId(educationUserId string)(*ClassesItemMembersEducationUserItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if educationUserId != "" {
+        urlTplParams["educationUser%2Did"] = educationUserId
+    }
+    return NewClassesItemMembersEducationUserItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewClassesItemMembersRequestBuilderInternal instantiates a new MembersRequestBuilder and sets the default values.
 func NewClassesItemMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ClassesItemMembersRequestBuilder) {
     m := &ClassesItemMembersRequestBuilder{

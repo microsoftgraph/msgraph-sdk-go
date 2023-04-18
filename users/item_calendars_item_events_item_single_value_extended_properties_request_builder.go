@@ -46,6 +46,17 @@ type ItemCalendarsItemEventsItemSingleValueExtendedPropertiesRequestBuilderPostR
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// BySingleValueLegacyExtendedPropertyId provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.event entity.
+func (m *ItemCalendarsItemEventsItemSingleValueExtendedPropertiesRequestBuilder) BySingleValueLegacyExtendedPropertyId(singleValueLegacyExtendedPropertyId string)(*ItemCalendarsItemEventsItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if singleValueLegacyExtendedPropertyId != "" {
+        urlTplParams["singleValueLegacyExtendedProperty%2Did"] = singleValueLegacyExtendedPropertyId
+    }
+    return NewItemCalendarsItemEventsItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemCalendarsItemEventsItemSingleValueExtendedPropertiesRequestBuilderInternal instantiates a new SingleValueExtendedPropertiesRequestBuilder and sets the default values.
 func NewItemCalendarsItemEventsItemSingleValueExtendedPropertiesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarsItemEventsItemSingleValueExtendedPropertiesRequestBuilder) {
     m := &ItemCalendarsItemEventsItemSingleValueExtendedPropertiesRequestBuilder{

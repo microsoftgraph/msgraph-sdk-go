@@ -21,6 +21,10 @@ func NewSharesItemAllowedUsersUserItemRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewSharesItemAllowedUsersUserItemRequestBuilderInternal(urlParams, requestAdapter)
 }
+// MailboxSettings the mailboxSettings property
+func (m *SharesItemAllowedUsersUserItemRequestBuilder) MailboxSettings()(*SharesItemAllowedUsersItemMailboxSettingsRequestBuilder) {
+    return NewSharesItemAllowedUsersItemMailboxSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Ref provides operations to manage the collection of print entities.
 func (m *SharesItemAllowedUsersUserItemRequestBuilder) Ref()(*SharesItemAllowedUsersItemRefRequestBuilder) {
     return NewSharesItemAllowedUsersItemRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

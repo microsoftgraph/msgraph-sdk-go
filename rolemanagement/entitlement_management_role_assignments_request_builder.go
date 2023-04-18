@@ -46,6 +46,17 @@ type EntitlementManagementRoleAssignmentsRequestBuilderPostRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUnifiedRoleAssignmentId provides operations to manage the roleAssignments property of the microsoft.graph.rbacApplication entity.
+func (m *EntitlementManagementRoleAssignmentsRequestBuilder) ByUnifiedRoleAssignmentId(unifiedRoleAssignmentId string)(*EntitlementManagementRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if unifiedRoleAssignmentId != "" {
+        urlTplParams["unifiedRoleAssignment%2Did"] = unifiedRoleAssignmentId
+    }
+    return NewEntitlementManagementRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewEntitlementManagementRoleAssignmentsRequestBuilderInternal instantiates a new RoleAssignmentsRequestBuilder and sets the default values.
 func NewEntitlementManagementRoleAssignmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementRoleAssignmentsRequestBuilder) {
     m := &EntitlementManagementRoleAssignmentsRequestBuilder{

@@ -45,17 +45,6 @@ type ClassesEducationClassItemRequestBuilderPatchRequestConfiguration struct {
 func (m *ClassesEducationClassItemRequestBuilder) AssignmentCategories()(*ClassesItemAssignmentCategoriesRequestBuilder) {
     return NewClassesItemAssignmentCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AssignmentCategoriesById provides operations to manage the assignmentCategories property of the microsoft.graph.educationClass entity.
-func (m *ClassesEducationClassItemRequestBuilder) AssignmentCategoriesById(id string)(*ClassesItemAssignmentCategoriesEducationCategoryItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["educationCategory%2Did"] = id
-    }
-    return NewClassesItemAssignmentCategoriesEducationCategoryItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // AssignmentDefaults provides operations to manage the assignmentDefaults property of the microsoft.graph.educationClass entity.
 func (m *ClassesEducationClassItemRequestBuilder) AssignmentDefaults()(*ClassesItemAssignmentDefaultsRequestBuilder) {
     return NewClassesItemAssignmentDefaultsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -63,17 +52,6 @@ func (m *ClassesEducationClassItemRequestBuilder) AssignmentDefaults()(*ClassesI
 // Assignments provides operations to manage the assignments property of the microsoft.graph.educationClass entity.
 func (m *ClassesEducationClassItemRequestBuilder) Assignments()(*ClassesItemAssignmentsRequestBuilder) {
     return NewClassesItemAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// AssignmentsById provides operations to manage the assignments property of the microsoft.graph.educationClass entity.
-func (m *ClassesEducationClassItemRequestBuilder) AssignmentsById(id string)(*ClassesItemAssignmentsEducationAssignmentItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["educationAssignment%2Did"] = id
-    }
-    return NewClassesItemAssignmentsEducationAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // AssignmentSettings provides operations to manage the assignmentSettings property of the microsoft.graph.educationClass entity.
 func (m *ClassesEducationClassItemRequestBuilder) AssignmentSettings()(*ClassesItemAssignmentSettingsRequestBuilder) {
@@ -135,17 +113,6 @@ func (m *ClassesEducationClassItemRequestBuilder) Group()(*ClassesItemGroupReque
 func (m *ClassesEducationClassItemRequestBuilder) Members()(*ClassesItemMembersRequestBuilder) {
     return NewClassesItemMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// MembersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.classes.item.members.item collection
-func (m *ClassesEducationClassItemRequestBuilder) MembersById(id string)(*ClassesItemMembersEducationUserItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["educationUser%2Did"] = id
-    }
-    return NewClassesItemMembersEducationUserItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property classes in education
 func (m *ClassesEducationClassItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationClassable, requestConfiguration *ClassesEducationClassItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationClassable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -169,31 +136,9 @@ func (m *ClassesEducationClassItemRequestBuilder) Patch(ctx context.Context, bod
 func (m *ClassesEducationClassItemRequestBuilder) Schools()(*ClassesItemSchoolsRequestBuilder) {
     return NewClassesItemSchoolsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// SchoolsById provides operations to manage the schools property of the microsoft.graph.educationClass entity.
-func (m *ClassesEducationClassItemRequestBuilder) SchoolsById(id string)(*ClassesItemSchoolsEducationSchoolItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["educationSchool%2Did"] = id
-    }
-    return NewClassesItemSchoolsEducationSchoolItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Teachers provides operations to manage the teachers property of the microsoft.graph.educationClass entity.
 func (m *ClassesEducationClassItemRequestBuilder) Teachers()(*ClassesItemTeachersRequestBuilder) {
     return NewClassesItemTeachersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// TeachersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.classes.item.teachers.item collection
-func (m *ClassesEducationClassItemRequestBuilder) TeachersById(id string)(*ClassesItemTeachersEducationUserItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["educationUser%2Did"] = id
-    }
-    return NewClassesItemTeachersEducationUserItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property classes for education
 func (m *ClassesEducationClassItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ClassesEducationClassItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

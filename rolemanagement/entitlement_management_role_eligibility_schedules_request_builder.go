@@ -46,6 +46,17 @@ type EntitlementManagementRoleEligibilitySchedulesRequestBuilderPostRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUnifiedRoleEligibilityScheduleId provides operations to manage the roleEligibilitySchedules property of the microsoft.graph.rbacApplication entity.
+func (m *EntitlementManagementRoleEligibilitySchedulesRequestBuilder) ByUnifiedRoleEligibilityScheduleId(unifiedRoleEligibilityScheduleId string)(*EntitlementManagementRoleEligibilitySchedulesUnifiedRoleEligibilityScheduleItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if unifiedRoleEligibilityScheduleId != "" {
+        urlTplParams["unifiedRoleEligibilitySchedule%2Did"] = unifiedRoleEligibilityScheduleId
+    }
+    return NewEntitlementManagementRoleEligibilitySchedulesUnifiedRoleEligibilityScheduleItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewEntitlementManagementRoleEligibilitySchedulesRequestBuilderInternal instantiates a new RoleEligibilitySchedulesRequestBuilder and sets the default values.
 func NewEntitlementManagementRoleEligibilitySchedulesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementRoleEligibilitySchedulesRequestBuilder) {
     m := &EntitlementManagementRoleEligibilitySchedulesRequestBuilder{

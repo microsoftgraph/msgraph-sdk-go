@@ -39,6 +39,17 @@ type ItemRegisteredDevicesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemRegisteredDevicesRequestBuilderGetQueryParameters
 }
+// ByDirectoryObjectId provides operations to manage the registeredDevices property of the microsoft.graph.user entity.
+func (m *ItemRegisteredDevicesRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemRegisteredDevicesDirectoryObjectItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if directoryObjectId != "" {
+        urlTplParams["directoryObject%2Did"] = directoryObjectId
+    }
+    return NewItemRegisteredDevicesDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemRegisteredDevicesRequestBuilderInternal instantiates a new RegisteredDevicesRequestBuilder and sets the default values.
 func NewItemRegisteredDevicesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemRegisteredDevicesRequestBuilder) {
     m := &ItemRegisteredDevicesRequestBuilder{

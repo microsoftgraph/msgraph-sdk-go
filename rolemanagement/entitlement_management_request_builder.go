@@ -112,136 +112,37 @@ func (m *EntitlementManagementRequestBuilder) Patch(ctx context.Context, body ia
 func (m *EntitlementManagementRequestBuilder) ResourceNamespaces()(*EntitlementManagementResourceNamespacesRequestBuilder) {
     return NewEntitlementManagementResourceNamespacesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ResourceNamespacesById provides operations to manage the resourceNamespaces property of the microsoft.graph.rbacApplication entity.
-func (m *EntitlementManagementRequestBuilder) ResourceNamespacesById(id string)(*EntitlementManagementResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["unifiedRbacResourceNamespace%2Did"] = id
-    }
-    return NewEntitlementManagementResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // RoleAssignments provides operations to manage the roleAssignments property of the microsoft.graph.rbacApplication entity.
 func (m *EntitlementManagementRequestBuilder) RoleAssignments()(*EntitlementManagementRoleAssignmentsRequestBuilder) {
     return NewEntitlementManagementRoleAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// RoleAssignmentsById provides operations to manage the roleAssignments property of the microsoft.graph.rbacApplication entity.
-func (m *EntitlementManagementRequestBuilder) RoleAssignmentsById(id string)(*EntitlementManagementRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["unifiedRoleAssignment%2Did"] = id
-    }
-    return NewEntitlementManagementRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // RoleAssignmentScheduleInstances provides operations to manage the roleAssignmentScheduleInstances property of the microsoft.graph.rbacApplication entity.
 func (m *EntitlementManagementRequestBuilder) RoleAssignmentScheduleInstances()(*EntitlementManagementRoleAssignmentScheduleInstancesRequestBuilder) {
     return NewEntitlementManagementRoleAssignmentScheduleInstancesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// RoleAssignmentScheduleInstancesById provides operations to manage the roleAssignmentScheduleInstances property of the microsoft.graph.rbacApplication entity.
-func (m *EntitlementManagementRequestBuilder) RoleAssignmentScheduleInstancesById(id string)(*EntitlementManagementRoleAssignmentScheduleInstancesUnifiedRoleAssignmentScheduleInstanceItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["unifiedRoleAssignmentScheduleInstance%2Did"] = id
-    }
-    return NewEntitlementManagementRoleAssignmentScheduleInstancesUnifiedRoleAssignmentScheduleInstanceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // RoleAssignmentScheduleRequests provides operations to manage the roleAssignmentScheduleRequests property of the microsoft.graph.rbacApplication entity.
 func (m *EntitlementManagementRequestBuilder) RoleAssignmentScheduleRequests()(*EntitlementManagementRoleAssignmentScheduleRequestsRequestBuilder) {
     return NewEntitlementManagementRoleAssignmentScheduleRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// RoleAssignmentScheduleRequestsById provides operations to manage the roleAssignmentScheduleRequests property of the microsoft.graph.rbacApplication entity.
-func (m *EntitlementManagementRequestBuilder) RoleAssignmentScheduleRequestsById(id string)(*EntitlementManagementRoleAssignmentScheduleRequestsUnifiedRoleAssignmentScheduleRequestItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["unifiedRoleAssignmentScheduleRequest%2Did"] = id
-    }
-    return NewEntitlementManagementRoleAssignmentScheduleRequestsUnifiedRoleAssignmentScheduleRequestItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // RoleAssignmentSchedules provides operations to manage the roleAssignmentSchedules property of the microsoft.graph.rbacApplication entity.
 func (m *EntitlementManagementRequestBuilder) RoleAssignmentSchedules()(*EntitlementManagementRoleAssignmentSchedulesRequestBuilder) {
     return NewEntitlementManagementRoleAssignmentSchedulesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// RoleAssignmentSchedulesById provides operations to manage the roleAssignmentSchedules property of the microsoft.graph.rbacApplication entity.
-func (m *EntitlementManagementRequestBuilder) RoleAssignmentSchedulesById(id string)(*EntitlementManagementRoleAssignmentSchedulesUnifiedRoleAssignmentScheduleItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["unifiedRoleAssignmentSchedule%2Did"] = id
-    }
-    return NewEntitlementManagementRoleAssignmentSchedulesUnifiedRoleAssignmentScheduleItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // RoleDefinitions provides operations to manage the roleDefinitions property of the microsoft.graph.rbacApplication entity.
 func (m *EntitlementManagementRequestBuilder) RoleDefinitions()(*EntitlementManagementRoleDefinitionsRequestBuilder) {
     return NewEntitlementManagementRoleDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// RoleDefinitionsById provides operations to manage the roleDefinitions property of the microsoft.graph.rbacApplication entity.
-func (m *EntitlementManagementRequestBuilder) RoleDefinitionsById(id string)(*EntitlementManagementRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["unifiedRoleDefinition%2Did"] = id
-    }
-    return NewEntitlementManagementRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // RoleEligibilityScheduleInstances provides operations to manage the roleEligibilityScheduleInstances property of the microsoft.graph.rbacApplication entity.
 func (m *EntitlementManagementRequestBuilder) RoleEligibilityScheduleInstances()(*EntitlementManagementRoleEligibilityScheduleInstancesRequestBuilder) {
     return NewEntitlementManagementRoleEligibilityScheduleInstancesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// RoleEligibilityScheduleInstancesById provides operations to manage the roleEligibilityScheduleInstances property of the microsoft.graph.rbacApplication entity.
-func (m *EntitlementManagementRequestBuilder) RoleEligibilityScheduleInstancesById(id string)(*EntitlementManagementRoleEligibilityScheduleInstancesUnifiedRoleEligibilityScheduleInstanceItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["unifiedRoleEligibilityScheduleInstance%2Did"] = id
-    }
-    return NewEntitlementManagementRoleEligibilityScheduleInstancesUnifiedRoleEligibilityScheduleInstanceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // RoleEligibilityScheduleRequests provides operations to manage the roleEligibilityScheduleRequests property of the microsoft.graph.rbacApplication entity.
 func (m *EntitlementManagementRequestBuilder) RoleEligibilityScheduleRequests()(*EntitlementManagementRoleEligibilityScheduleRequestsRequestBuilder) {
     return NewEntitlementManagementRoleEligibilityScheduleRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// RoleEligibilityScheduleRequestsById provides operations to manage the roleEligibilityScheduleRequests property of the microsoft.graph.rbacApplication entity.
-func (m *EntitlementManagementRequestBuilder) RoleEligibilityScheduleRequestsById(id string)(*EntitlementManagementRoleEligibilityScheduleRequestsUnifiedRoleEligibilityScheduleRequestItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["unifiedRoleEligibilityScheduleRequest%2Did"] = id
-    }
-    return NewEntitlementManagementRoleEligibilityScheduleRequestsUnifiedRoleEligibilityScheduleRequestItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // RoleEligibilitySchedules provides operations to manage the roleEligibilitySchedules property of the microsoft.graph.rbacApplication entity.
 func (m *EntitlementManagementRequestBuilder) RoleEligibilitySchedules()(*EntitlementManagementRoleEligibilitySchedulesRequestBuilder) {
     return NewEntitlementManagementRoleEligibilitySchedulesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// RoleEligibilitySchedulesById provides operations to manage the roleEligibilitySchedules property of the microsoft.graph.rbacApplication entity.
-func (m *EntitlementManagementRequestBuilder) RoleEligibilitySchedulesById(id string)(*EntitlementManagementRoleEligibilitySchedulesUnifiedRoleEligibilityScheduleItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["unifiedRoleEligibilitySchedule%2Did"] = id
-    }
-    return NewEntitlementManagementRoleEligibilitySchedulesUnifiedRoleEligibilityScheduleItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property entitlementManagement for roleManagement
 func (m *EntitlementManagementRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

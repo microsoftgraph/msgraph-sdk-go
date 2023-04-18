@@ -9,8 +9,6 @@ import (
 type RecurrencePattern struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
-    // The recurrence pattern type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly. Required. For more information, see values of type property.
-    TypeEscaped *RecurrencePatternType
 }
 // NewRecurrencePattern instantiates a new recurrencePattern and sets the default values.
 func NewRecurrencePattern()(*RecurrencePattern) {

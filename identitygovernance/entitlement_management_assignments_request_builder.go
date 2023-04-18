@@ -54,6 +54,17 @@ func (m *EntitlementManagementAssignmentsRequestBuilder) AdditionalAccess()(*Ent
 func (m *EntitlementManagementAssignmentsRequestBuilder) AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageId(accessPackageId *string, incompatibleAccessPackageId *string)(*EntitlementManagementAssignmentsAdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilder) {
     return NewEntitlementManagementAssignmentsAdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, accessPackageId, incompatibleAccessPackageId)
 }
+// ByAccessPackageAssignmentId provides operations to manage the assignments property of the microsoft.graph.entitlementManagement entity.
+func (m *EntitlementManagementAssignmentsRequestBuilder) ByAccessPackageAssignmentId(accessPackageAssignmentId string)(*EntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if accessPackageAssignmentId != "" {
+        urlTplParams["accessPackageAssignment%2Did"] = accessPackageAssignmentId
+    }
+    return NewEntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewEntitlementManagementAssignmentsRequestBuilderInternal instantiates a new AssignmentsRequestBuilder and sets the default values.
 func NewEntitlementManagementAssignmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAssignmentsRequestBuilder) {
     m := &EntitlementManagementAssignmentsRequestBuilder{

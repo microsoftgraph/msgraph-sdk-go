@@ -101,17 +101,6 @@ func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) GetFinalRe
 func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) Notes()(*SubjectRightsRequestsItemNotesRequestBuilder) {
     return NewSubjectRightsRequestsItemNotesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// NotesById provides operations to manage the notes property of the microsoft.graph.subjectRightsRequest entity.
-func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) NotesById(id string)(*SubjectRightsRequestsItemNotesAuthoredNoteItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["authoredNote%2Did"] = id
-    }
-    return NewSubjectRightsRequestsItemNotesAuthoredNoteItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property subjectRightsRequests in privacy
 func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubjectRightsRequestable, requestConfiguration *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubjectRightsRequestable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);

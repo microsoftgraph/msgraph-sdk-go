@@ -45,17 +45,6 @@ type IosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilderPatchReque
 func (m *IosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilder) Apps()(*IosManagedAppProtectionsItemAppsRequestBuilder) {
     return NewIosManagedAppProtectionsItemAppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AppsById provides operations to manage the apps property of the microsoft.graph.iosManagedAppProtection entity.
-func (m *IosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilder) AppsById(id string)(*IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["managedMobileApp%2Did"] = id
-    }
-    return NewIosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewIosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilderInternal instantiates a new IosManagedAppProtectionItemRequestBuilder and sets the default values.
 func NewIosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilder) {
     m := &IosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilder{

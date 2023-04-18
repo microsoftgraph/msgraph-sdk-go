@@ -74,17 +74,6 @@ func (m *CasesRequestBuilder) Delete(ctx context.Context, requestConfiguration *
 func (m *CasesRequestBuilder) EdiscoveryCases()(*CasesEdiscoveryCasesRequestBuilder) {
     return NewCasesEdiscoveryCasesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// EdiscoveryCasesById provides operations to manage the ediscoveryCases property of the microsoft.graph.security.casesRoot entity.
-func (m *CasesRequestBuilder) EdiscoveryCasesById(id string)(*CasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["ediscoveryCase%2Did"] = id
-    }
-    return NewCasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get get cases from security
 func (m *CasesRequestBuilder) Get(ctx context.Context, requestConfiguration *CasesRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.CasesRootable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);

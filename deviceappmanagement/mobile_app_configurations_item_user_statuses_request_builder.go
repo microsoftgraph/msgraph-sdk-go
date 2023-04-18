@@ -46,6 +46,17 @@ type MobileAppConfigurationsItemUserStatusesRequestBuilderPostRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByManagedDeviceMobileAppConfigurationUserStatusId provides operations to manage the userStatuses property of the microsoft.graph.managedDeviceMobileAppConfiguration entity.
+func (m *MobileAppConfigurationsItemUserStatusesRequestBuilder) ByManagedDeviceMobileAppConfigurationUserStatusId(managedDeviceMobileAppConfigurationUserStatusId string)(*MobileAppConfigurationsItemUserStatusesManagedDeviceMobileAppConfigurationUserStatusItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if managedDeviceMobileAppConfigurationUserStatusId != "" {
+        urlTplParams["managedDeviceMobileAppConfigurationUserStatus%2Did"] = managedDeviceMobileAppConfigurationUserStatusId
+    }
+    return NewMobileAppConfigurationsItemUserStatusesManagedDeviceMobileAppConfigurationUserStatusItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewMobileAppConfigurationsItemUserStatusesRequestBuilderInternal instantiates a new UserStatusesRequestBuilder and sets the default values.
 func NewMobileAppConfigurationsItemUserStatusesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppConfigurationsItemUserStatusesRequestBuilder) {
     m := &MobileAppConfigurationsItemUserStatusesRequestBuilder{

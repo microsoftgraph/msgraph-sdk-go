@@ -46,6 +46,17 @@ type ContactsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByOrgContactId provides operations to manage the collection of orgContact entities.
+func (m *ContactsRequestBuilder) ByOrgContactId(orgContactId string)(*OrgContactItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if orgContactId != "" {
+        urlTplParams["orgContact%2Did"] = orgContactId
+    }
+    return NewOrgContactItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewContactsRequestBuilderInternal instantiates a new ContactsRequestBuilder and sets the default values.
 func NewContactsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ContactsRequestBuilder) {
     m := &ContactsRequestBuilder{

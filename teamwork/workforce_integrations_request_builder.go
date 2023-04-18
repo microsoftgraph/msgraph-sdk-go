@@ -46,6 +46,17 @@ type WorkforceIntegrationsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByWorkforceIntegrationId provides operations to manage the workforceIntegrations property of the microsoft.graph.teamwork entity.
+func (m *WorkforceIntegrationsRequestBuilder) ByWorkforceIntegrationId(workforceIntegrationId string)(*WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if workforceIntegrationId != "" {
+        urlTplParams["workforceIntegration%2Did"] = workforceIntegrationId
+    }
+    return NewWorkforceIntegrationsWorkforceIntegrationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewWorkforceIntegrationsRequestBuilderInternal instantiates a new WorkforceIntegrationsRequestBuilder and sets the default values.
 func NewWorkforceIntegrationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WorkforceIntegrationsRequestBuilder) {
     m := &WorkforceIntegrationsRequestBuilder{

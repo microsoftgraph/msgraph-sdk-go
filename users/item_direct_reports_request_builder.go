@@ -39,6 +39,17 @@ type ItemDirectReportsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemDirectReportsRequestBuilderGetQueryParameters
 }
+// ByDirectoryObjectId provides operations to manage the directReports property of the microsoft.graph.user entity.
+func (m *ItemDirectReportsRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemDirectReportsDirectoryObjectItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if directoryObjectId != "" {
+        urlTplParams["directoryObject%2Did"] = directoryObjectId
+    }
+    return NewItemDirectReportsDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemDirectReportsRequestBuilderInternal instantiates a new DirectReportsRequestBuilder and sets the default values.
 func NewItemDirectReportsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDirectReportsRequestBuilder) {
     m := &ItemDirectReportsRequestBuilder{

@@ -7,8 +7,6 @@ import (
 // IdentityProvider 
 type IdentityProvider struct {
     Entity
-    // The identity provider type is a required field. For B2B scenario: Google, Facebook. For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo, QQ, WeChat, OpenIDConnect. Not nullable.
-    TypeEscaped *string
 }
 // NewIdentityProvider instantiates a new identityProvider and sets the default values.
 func NewIdentityProvider()(*IdentityProvider) {

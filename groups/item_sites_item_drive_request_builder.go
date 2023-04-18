@@ -11,7 +11,7 @@ import (
 type ItemSitesItemDriveRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSitesItemDriveRequestBuilderGetQueryParameters retrieve the properties and relationships of a Drive resource. A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
+// ItemSitesItemDriveRequestBuilderGetQueryParameters the default drive (document library) for this site.
 type ItemSitesItemDriveRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,10 +40,7 @@ func NewItemSitesItemDriveRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemDriveRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get retrieve the properties and relationships of a Drive resource. A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/drive-get?view=graph-rest-1.0
+// Get the default drive (document library) for this site.
 func (m *ItemSitesItemDriveRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemDriveRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Driveable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -62,7 +59,7 @@ func (m *ItemSitesItemDriveRequestBuilder) Get(ctx context.Context, requestConfi
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Driveable), nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a Drive resource. A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
+// ToGetRequestInformation the default drive (document library) for this site.
 func (m *ItemSitesItemDriveRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemDriveRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

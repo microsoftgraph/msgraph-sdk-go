@@ -46,6 +46,17 @@ type AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStagesReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByApprovalStageId provides operations to manage the stages property of the microsoft.graph.approval entity.
+func (m *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStagesRequestBuilder) ByApprovalStageId(approvalStageId string)(*AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStagesApprovalStageItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if approvalStageId != "" {
+        urlTplParams["approvalStage%2Did"] = approvalStageId
+    }
+    return NewAppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStagesApprovalStageItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewAppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStagesRequestBuilderInternal instantiates a new StagesRequestBuilder and sets the default values.
 func NewAppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStagesRequestBuilder) {
     m := &AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStagesRequestBuilder{

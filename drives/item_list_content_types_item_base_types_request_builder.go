@@ -39,6 +39,17 @@ type ItemListContentTypesItemBaseTypesRequestBuilderGetRequestConfiguration stru
     // Request query parameters
     QueryParameters *ItemListContentTypesItemBaseTypesRequestBuilderGetQueryParameters
 }
+// ByContentTypeId1 provides operations to manage the baseTypes property of the microsoft.graph.contentType entity.
+func (m *ItemListContentTypesItemBaseTypesRequestBuilder) ByContentTypeId1(contentTypeId1 string)(*ItemListContentTypesItemBaseTypesContentTypeItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if contentTypeId1 != "" {
+        urlTplParams["contentType%2Did1"] = contentTypeId1
+    }
+    return NewItemListContentTypesItemBaseTypesContentTypeItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemListContentTypesItemBaseTypesRequestBuilderInternal instantiates a new BaseTypesRequestBuilder and sets the default values.
 func NewItemListContentTypesItemBaseTypesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListContentTypesItemBaseTypesRequestBuilder) {
     m := &ItemListContentTypesItemBaseTypesRequestBuilder{

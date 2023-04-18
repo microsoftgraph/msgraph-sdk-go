@@ -46,6 +46,17 @@ type ItemListsItemContentTypesItemColumnLinksRequestBuilderPostRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByColumnLinkId provides operations to manage the columnLinks property of the microsoft.graph.contentType entity.
+func (m *ItemListsItemContentTypesItemColumnLinksRequestBuilder) ByColumnLinkId(columnLinkId string)(*ItemListsItemContentTypesItemColumnLinksColumnLinkItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if columnLinkId != "" {
+        urlTplParams["columnLink%2Did"] = columnLinkId
+    }
+    return NewItemListsItemContentTypesItemColumnLinksColumnLinkItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemListsItemContentTypesItemColumnLinksRequestBuilderInternal instantiates a new ColumnLinksRequestBuilder and sets the default values.
 func NewItemListsItemContentTypesItemColumnLinksRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListsItemContentTypesItemColumnLinksRequestBuilder) {
     m := &ItemListsItemContentTypesItemColumnLinksRequestBuilder{

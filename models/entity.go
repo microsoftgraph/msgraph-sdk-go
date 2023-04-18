@@ -160,6 +160,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewAuditLogRoot(), nil
                     case "#microsoft.graph.authentication":
                         return NewAuthentication(), nil
+                    case "#microsoft.graph.authenticationCombinationConfiguration":
+                        return NewAuthenticationCombinationConfiguration(), nil
                     case "#microsoft.graph.authenticationContextClassReference":
                         return NewAuthenticationContextClassReference(), nil
                     case "#microsoft.graph.authenticationFlowsPolicy":
@@ -168,10 +170,16 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewAuthenticationMethod(), nil
                     case "#microsoft.graph.authenticationMethodConfiguration":
                         return NewAuthenticationMethodConfiguration(), nil
+                    case "#microsoft.graph.authenticationMethodModeDetail":
+                        return NewAuthenticationMethodModeDetail(), nil
                     case "#microsoft.graph.authenticationMethodsPolicy":
                         return NewAuthenticationMethodsPolicy(), nil
                     case "#microsoft.graph.authenticationMethodTarget":
                         return NewAuthenticationMethodTarget(), nil
+                    case "#microsoft.graph.authenticationStrengthPolicy":
+                        return NewAuthenticationStrengthPolicy(), nil
+                    case "#microsoft.graph.authenticationStrengthRoot":
+                        return NewAuthenticationStrengthRoot(), nil
                     case "#microsoft.graph.authoredNote":
                         return NewAuthoredNote(), nil
                     case "#microsoft.graph.authorizationPolicy":
@@ -490,6 +498,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewFido2AuthenticationMethod(), nil
                     case "#microsoft.graph.fido2AuthenticationMethodConfiguration":
                         return NewFido2AuthenticationMethodConfiguration(), nil
+                    case "#microsoft.graph.fido2CombinationConfiguration":
+                        return NewFido2CombinationConfiguration(), nil
                     case "#microsoft.graph.fieldValueSet":
                         return NewFieldValueSet(), nil
                     case "#microsoft.graph.fileAssessmentRequest":

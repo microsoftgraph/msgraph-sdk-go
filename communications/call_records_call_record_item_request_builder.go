@@ -112,17 +112,6 @@ func (m *CallRecordsCallRecordItemRequestBuilder) Patch(ctx context.Context, bod
 func (m *CallRecordsCallRecordItemRequestBuilder) Sessions()(*CallRecordsItemSessionsRequestBuilder) {
     return NewCallRecordsItemSessionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// SessionsById provides operations to manage the sessions property of the microsoft.graph.callRecords.callRecord entity.
-func (m *CallRecordsCallRecordItemRequestBuilder) SessionsById(id string)(*CallRecordsItemSessionsSessionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["session%2Did"] = id
-    }
-    return NewCallRecordsItemSessionsSessionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property callRecords for communications
 func (m *CallRecordsCallRecordItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CallRecordsCallRecordItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

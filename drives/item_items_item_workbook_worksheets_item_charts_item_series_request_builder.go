@@ -46,6 +46,17 @@ type ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesRequestBuilderPostReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByWorkbookChartSeriesId provides operations to manage the series property of the microsoft.graph.workbookChart entity.
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesRequestBuilder) ByWorkbookChartSeriesId(workbookChartSeriesId string)(*ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesWorkbookChartSeriesItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if workbookChartSeriesId != "" {
+        urlTplParams["workbookChartSeries%2Did"] = workbookChartSeriesId
+    }
+    return NewItemItemsItemWorkbookWorksheetsItemChartsItemSeriesWorkbookChartSeriesItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemItemsItemWorkbookWorksheetsItemChartsItemSeriesRequestBuilderInternal instantiates a new SeriesRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsItemChartsItemSeriesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesRequestBuilder) {
     m := &ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesRequestBuilder{

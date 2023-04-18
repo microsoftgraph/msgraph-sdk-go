@@ -44,6 +44,17 @@ type ItemCalendarViewItemAttachmentsRequestBuilderPostRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByAttachmentId provides operations to manage the attachments property of the microsoft.graph.event entity.
+func (m *ItemCalendarViewItemAttachmentsRequestBuilder) ByAttachmentId(attachmentId string)(*ItemCalendarViewItemAttachmentsAttachmentItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if attachmentId != "" {
+        urlTplParams["attachment%2Did"] = attachmentId
+    }
+    return NewItemCalendarViewItemAttachmentsAttachmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemCalendarViewItemAttachmentsRequestBuilderInternal instantiates a new AttachmentsRequestBuilder and sets the default values.
 func NewItemCalendarViewItemAttachmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarViewItemAttachmentsRequestBuilder) {
     m := &ItemCalendarViewItemAttachmentsRequestBuilder{

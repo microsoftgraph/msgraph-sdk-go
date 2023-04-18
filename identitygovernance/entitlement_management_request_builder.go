@@ -45,106 +45,29 @@ type EntitlementManagementRequestBuilderPatchRequestConfiguration struct {
 func (m *EntitlementManagementRequestBuilder) AccessPackageAssignmentApprovals()(*EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilder) {
     return NewEntitlementManagementAccessPackageAssignmentApprovalsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AccessPackageAssignmentApprovalsById provides operations to manage the accessPackageAssignmentApprovals property of the microsoft.graph.entitlementManagement entity.
-func (m *EntitlementManagementRequestBuilder) AccessPackageAssignmentApprovalsById(id string)(*EntitlementManagementAccessPackageAssignmentApprovalsApprovalItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["approval%2Did"] = id
-    }
-    return NewEntitlementManagementAccessPackageAssignmentApprovalsApprovalItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // AccessPackages provides operations to manage the accessPackages property of the microsoft.graph.entitlementManagement entity.
 func (m *EntitlementManagementRequestBuilder) AccessPackages()(*EntitlementManagementAccessPackagesRequestBuilder) {
     return NewEntitlementManagementAccessPackagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// AccessPackagesById provides operations to manage the accessPackages property of the microsoft.graph.entitlementManagement entity.
-func (m *EntitlementManagementRequestBuilder) AccessPackagesById(id string)(*EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["accessPackage%2Did"] = id
-    }
-    return NewEntitlementManagementAccessPackagesAccessPackageItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // AssignmentPolicies provides operations to manage the assignmentPolicies property of the microsoft.graph.entitlementManagement entity.
 func (m *EntitlementManagementRequestBuilder) AssignmentPolicies()(*EntitlementManagementAssignmentPoliciesRequestBuilder) {
     return NewEntitlementManagementAssignmentPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AssignmentPoliciesById provides operations to manage the assignmentPolicies property of the microsoft.graph.entitlementManagement entity.
-func (m *EntitlementManagementRequestBuilder) AssignmentPoliciesById(id string)(*EntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["accessPackageAssignmentPolicy%2Did"] = id
-    }
-    return NewEntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // AssignmentRequests provides operations to manage the assignmentRequests property of the microsoft.graph.entitlementManagement entity.
 func (m *EntitlementManagementRequestBuilder) AssignmentRequests()(*EntitlementManagementAssignmentRequestsRequestBuilder) {
     return NewEntitlementManagementAssignmentRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// AssignmentRequestsById provides operations to manage the assignmentRequests property of the microsoft.graph.entitlementManagement entity.
-func (m *EntitlementManagementRequestBuilder) AssignmentRequestsById(id string)(*EntitlementManagementAssignmentRequestsAccessPackageAssignmentRequestItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["accessPackageAssignmentRequest%2Did"] = id
-    }
-    return NewEntitlementManagementAssignmentRequestsAccessPackageAssignmentRequestItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Assignments provides operations to manage the assignments property of the microsoft.graph.entitlementManagement entity.
 func (m *EntitlementManagementRequestBuilder) Assignments()(*EntitlementManagementAssignmentsRequestBuilder) {
     return NewEntitlementManagementAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AssignmentsById provides operations to manage the assignments property of the microsoft.graph.entitlementManagement entity.
-func (m *EntitlementManagementRequestBuilder) AssignmentsById(id string)(*EntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["accessPackageAssignment%2Did"] = id
-    }
-    return NewEntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Catalogs provides operations to manage the catalogs property of the microsoft.graph.entitlementManagement entity.
 func (m *EntitlementManagementRequestBuilder) Catalogs()(*EntitlementManagementCatalogsRequestBuilder) {
     return NewEntitlementManagementCatalogsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// CatalogsById provides operations to manage the catalogs property of the microsoft.graph.entitlementManagement entity.
-func (m *EntitlementManagementRequestBuilder) CatalogsById(id string)(*EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["accessPackageCatalog%2Did"] = id
-    }
-    return NewEntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ConnectedOrganizations provides operations to manage the connectedOrganizations property of the microsoft.graph.entitlementManagement entity.
 func (m *EntitlementManagementRequestBuilder) ConnectedOrganizations()(*EntitlementManagementConnectedOrganizationsRequestBuilder) {
     return NewEntitlementManagementConnectedOrganizationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// ConnectedOrganizationsById provides operations to manage the connectedOrganizations property of the microsoft.graph.entitlementManagement entity.
-func (m *EntitlementManagementRequestBuilder) ConnectedOrganizationsById(id string)(*EntitlementManagementConnectedOrganizationsConnectedOrganizationItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["connectedOrganization%2Did"] = id
-    }
-    return NewEntitlementManagementConnectedOrganizationsConnectedOrganizationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewEntitlementManagementRequestBuilderInternal instantiates a new EntitlementManagementRequestBuilder and sets the default values.
 func NewEntitlementManagementRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementRequestBuilder) {

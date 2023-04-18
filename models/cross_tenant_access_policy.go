@@ -7,8 +7,6 @@ import (
 // CrossTenantAccessPolicy 
 type CrossTenantAccessPolicy struct {
     PolicyBase
-    // Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
-    DefaultEscaped CrossTenantAccessPolicyConfigurationDefaultable
 }
 // NewCrossTenantAccessPolicy instantiates a new CrossTenantAccessPolicy and sets the default values.
 func NewCrossTenantAccessPolicy()(*CrossTenantAccessPolicy) {

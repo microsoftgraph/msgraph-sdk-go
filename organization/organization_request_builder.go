@@ -46,6 +46,17 @@ type OrganizationRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByOrganizationId provides operations to manage the collection of organization entities.
+func (m *OrganizationRequestBuilder) ByOrganizationId(organizationId string)(*OrganizationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if organizationId != "" {
+        urlTplParams["organization%2Did"] = organizationId
+    }
+    return NewOrganizationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewOrganizationRequestBuilderInternal instantiates a new OrganizationRequestBuilder and sets the default values.
 func NewOrganizationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OrganizationRequestBuilder) {
     m := &OrganizationRequestBuilder{

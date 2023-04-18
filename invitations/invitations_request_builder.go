@@ -46,6 +46,17 @@ type InvitationsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByInvitationId provides operations to manage the collection of invitation entities.
+func (m *InvitationsRequestBuilder) ByInvitationId(invitationId string)(*InvitationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if invitationId != "" {
+        urlTplParams["invitation%2Did"] = invitationId
+    }
+    return NewInvitationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewInvitationsRequestBuilderInternal instantiates a new InvitationsRequestBuilder and sets the default values.
 func NewInvitationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*InvitationsRequestBuilder) {
     m := &InvitationsRequestBuilder{

@@ -54,6 +54,17 @@ func (m *ItemSitesItemContentTypesRequestBuilder) AddCopy()(*ItemSitesItemConten
 func (m *ItemSitesItemContentTypesRequestBuilder) AddCopyFromContentTypeHub()(*ItemSitesItemContentTypesAddCopyFromContentTypeHubRequestBuilder) {
     return NewItemSitesItemContentTypesAddCopyFromContentTypeHubRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ByContentTypeId provides operations to manage the contentTypes property of the microsoft.graph.site entity.
+func (m *ItemSitesItemContentTypesRequestBuilder) ByContentTypeId(contentTypeId string)(*ItemSitesItemContentTypesContentTypeItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if contentTypeId != "" {
+        urlTplParams["contentType%2Did"] = contentTypeId
+    }
+    return NewItemSitesItemContentTypesContentTypeItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemSitesItemContentTypesRequestBuilderInternal instantiates a new ContentTypesRequestBuilder and sets the default values.
 func NewItemSitesItemContentTypesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemContentTypesRequestBuilder) {
     m := &ItemSitesItemContentTypesRequestBuilder{

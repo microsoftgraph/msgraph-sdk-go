@@ -46,6 +46,17 @@ type ManagedEBooksRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByManagedEBookId provides operations to manage the managedEBooks property of the microsoft.graph.deviceAppManagement entity.
+func (m *ManagedEBooksRequestBuilder) ByManagedEBookId(managedEBookId string)(*ManagedEBooksManagedEBookItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if managedEBookId != "" {
+        urlTplParams["managedEBook%2Did"] = managedEBookId
+    }
+    return NewManagedEBooksManagedEBookItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewManagedEBooksRequestBuilderInternal instantiates a new ManagedEBooksRequestBuilder and sets the default values.
 func NewManagedEBooksRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedEBooksRequestBuilder) {
     m := &ManagedEBooksRequestBuilder{

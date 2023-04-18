@@ -39,6 +39,17 @@ type ItemAppManagementPoliciesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemAppManagementPoliciesRequestBuilderGetQueryParameters
 }
+// ByAppManagementPolicyId provides operations to manage the appManagementPolicies property of the microsoft.graph.servicePrincipal entity.
+func (m *ItemAppManagementPoliciesRequestBuilder) ByAppManagementPolicyId(appManagementPolicyId string)(*ItemAppManagementPoliciesAppManagementPolicyItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if appManagementPolicyId != "" {
+        urlTplParams["appManagementPolicy%2Did"] = appManagementPolicyId
+    }
+    return NewItemAppManagementPoliciesAppManagementPolicyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemAppManagementPoliciesRequestBuilderInternal instantiates a new AppManagementPoliciesRequestBuilder and sets the default values.
 func NewItemAppManagementPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAppManagementPoliciesRequestBuilder) {
     m := &ItemAppManagementPoliciesRequestBuilder{

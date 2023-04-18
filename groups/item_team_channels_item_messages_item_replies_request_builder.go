@@ -46,6 +46,17 @@ type ItemTeamChannelsItemMessagesItemRepliesRequestBuilderPostRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByChatMessageId1 provides operations to manage the replies property of the microsoft.graph.chatMessage entity.
+func (m *ItemTeamChannelsItemMessagesItemRepliesRequestBuilder) ByChatMessageId1(chatMessageId1 string)(*ItemTeamChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if chatMessageId1 != "" {
+        urlTplParams["chatMessage%2Did1"] = chatMessageId1
+    }
+    return NewItemTeamChannelsItemMessagesItemRepliesChatMessageItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemTeamChannelsItemMessagesItemRepliesRequestBuilderInternal instantiates a new RepliesRequestBuilder and sets the default values.
 func NewItemTeamChannelsItemMessagesItemRepliesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamChannelsItemMessagesItemRepliesRequestBuilder) {
     m := &ItemTeamChannelsItemMessagesItemRepliesRequestBuilder{
@@ -89,10 +100,10 @@ func (m *ItemTeamChannelsItemMessagesItemRepliesRequestBuilder) Get(ctx context.
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageCollectionResponseable), nil
 }
-// Post send a new reply to a chatMessage in a specified channel.
+// Post create a new reply to a chatMessage in a specified channel.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
 func (m *ItemTeamChannelsItemMessagesItemRepliesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable, requestConfiguration *ItemTeamChannelsItemMessagesItemRepliesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -127,7 +138,7 @@ func (m *ItemTeamChannelsItemMessagesItemRepliesRequestBuilder) ToGetRequestInfo
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation send a new reply to a chatMessage in a specified channel.
+// ToPostRequestInformation create a new reply to a chatMessage in a specified channel.
 func (m *ItemTeamChannelsItemMessagesItemRepliesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable, requestConfiguration *ItemTeamChannelsItemMessagesItemRepliesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

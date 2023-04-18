@@ -70,17 +70,6 @@ func (m *EmployeeExperienceRequestBuilder) Get(ctx context.Context, requestConfi
 func (m *EmployeeExperienceRequestBuilder) LearningProviders()(*LearningProvidersRequestBuilder) {
     return NewLearningProvidersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// LearningProvidersById provides operations to manage the learningProviders property of the microsoft.graph.employeeExperience entity.
-func (m *EmployeeExperienceRequestBuilder) LearningProvidersById(id string)(*LearningProvidersLearningProviderItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["learningProvider%2Did"] = id
-    }
-    return NewLearningProvidersLearningProviderItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update employeeExperience
 func (m *EmployeeExperienceRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EmployeeExperienceable, requestConfiguration *EmployeeExperienceRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EmployeeExperienceable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);

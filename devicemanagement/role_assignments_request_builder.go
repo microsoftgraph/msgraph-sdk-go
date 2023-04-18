@@ -46,6 +46,17 @@ type RoleAssignmentsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceAndAppManagementRoleAssignmentId provides operations to manage the roleAssignments property of the microsoft.graph.deviceManagement entity.
+func (m *RoleAssignmentsRequestBuilder) ByDeviceAndAppManagementRoleAssignmentId(deviceAndAppManagementRoleAssignmentId string)(*RoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceAndAppManagementRoleAssignmentId != "" {
+        urlTplParams["deviceAndAppManagementRoleAssignment%2Did"] = deviceAndAppManagementRoleAssignmentId
+    }
+    return NewRoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewRoleAssignmentsRequestBuilderInternal instantiates a new RoleAssignmentsRequestBuilder and sets the default values.
 func NewRoleAssignmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RoleAssignmentsRequestBuilder) {
     m := &RoleAssignmentsRequestBuilder{

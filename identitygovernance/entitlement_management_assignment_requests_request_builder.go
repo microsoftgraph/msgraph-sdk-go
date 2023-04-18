@@ -46,6 +46,17 @@ type EntitlementManagementAssignmentRequestsRequestBuilderPostRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByAccessPackageAssignmentRequestId provides operations to manage the assignmentRequests property of the microsoft.graph.entitlementManagement entity.
+func (m *EntitlementManagementAssignmentRequestsRequestBuilder) ByAccessPackageAssignmentRequestId(accessPackageAssignmentRequestId string)(*EntitlementManagementAssignmentRequestsAccessPackageAssignmentRequestItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if accessPackageAssignmentRequestId != "" {
+        urlTplParams["accessPackageAssignmentRequest%2Did"] = accessPackageAssignmentRequestId
+    }
+    return NewEntitlementManagementAssignmentRequestsAccessPackageAssignmentRequestItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewEntitlementManagementAssignmentRequestsRequestBuilderInternal instantiates a new AssignmentRequestsRequestBuilder and sets the default values.
 func NewEntitlementManagementAssignmentRequestsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAssignmentRequestsRequestBuilder) {
     m := &EntitlementManagementAssignmentRequestsRequestBuilder{

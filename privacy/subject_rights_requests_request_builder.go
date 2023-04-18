@@ -46,6 +46,17 @@ type SubjectRightsRequestsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// BySubjectRightsRequestId provides operations to manage the subjectRightsRequests property of the microsoft.graph.privacy entity.
+func (m *SubjectRightsRequestsRequestBuilder) BySubjectRightsRequestId(subjectRightsRequestId string)(*SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if subjectRightsRequestId != "" {
+        urlTplParams["subjectRightsRequest%2Did"] = subjectRightsRequestId
+    }
+    return NewSubjectRightsRequestsSubjectRightsRequestItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewSubjectRightsRequestsRequestBuilderInternal instantiates a new SubjectRightsRequestsRequestBuilder and sets the default values.
 func NewSubjectRightsRequestsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SubjectRightsRequestsRequestBuilder) {
     m := &SubjectRightsRequestsRequestBuilder{

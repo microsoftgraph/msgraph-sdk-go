@@ -46,6 +46,17 @@ type ItemMessagesItemRepliesItemHostedContentsRequestBuilderPostRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByChatMessageHostedContentId provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.
+func (m *ItemMessagesItemRepliesItemHostedContentsRequestBuilder) ByChatMessageHostedContentId(chatMessageHostedContentId string)(*ItemMessagesItemRepliesItemHostedContentsChatMessageHostedContentItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if chatMessageHostedContentId != "" {
+        urlTplParams["chatMessageHostedContent%2Did"] = chatMessageHostedContentId
+    }
+    return NewItemMessagesItemRepliesItemHostedContentsChatMessageHostedContentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemMessagesItemRepliesItemHostedContentsRequestBuilderInternal instantiates a new HostedContentsRequestBuilder and sets the default values.
 func NewItemMessagesItemRepliesItemHostedContentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMessagesItemRepliesItemHostedContentsRequestBuilder) {
     m := &ItemMessagesItemRepliesItemHostedContentsRequestBuilder{

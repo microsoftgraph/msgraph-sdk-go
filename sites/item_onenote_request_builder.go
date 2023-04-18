@@ -93,46 +93,13 @@ func (m *ItemOnenoteRequestBuilder) Get(ctx context.Context, requestConfiguratio
 func (m *ItemOnenoteRequestBuilder) Notebooks()(*ItemOnenoteNotebooksRequestBuilder) {
     return NewItemOnenoteNotebooksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// NotebooksById provides operations to manage the notebooks property of the microsoft.graph.onenote entity.
-func (m *ItemOnenoteRequestBuilder) NotebooksById(id string)(*ItemOnenoteNotebooksNotebookItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["notebook%2Did"] = id
-    }
-    return NewItemOnenoteNotebooksNotebookItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Operations provides operations to manage the operations property of the microsoft.graph.onenote entity.
 func (m *ItemOnenoteRequestBuilder) Operations()(*ItemOnenoteOperationsRequestBuilder) {
     return NewItemOnenoteOperationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// OperationsById provides operations to manage the operations property of the microsoft.graph.onenote entity.
-func (m *ItemOnenoteRequestBuilder) OperationsById(id string)(*ItemOnenoteOperationsOnenoteOperationItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["onenoteOperation%2Did"] = id
-    }
-    return NewItemOnenoteOperationsOnenoteOperationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Pages provides operations to manage the pages property of the microsoft.graph.onenote entity.
 func (m *ItemOnenoteRequestBuilder) Pages()(*ItemOnenotePagesRequestBuilder) {
     return NewItemOnenotePagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// PagesById provides operations to manage the pages property of the microsoft.graph.onenote entity.
-func (m *ItemOnenoteRequestBuilder) PagesById(id string)(*ItemOnenotePagesOnenotePageItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["onenotePage%2Did"] = id
-    }
-    return NewItemOnenotePagesOnenotePageItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property onenote in sites
 func (m *ItemOnenoteRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Onenoteable, requestConfiguration *ItemOnenoteRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Onenoteable, error) {
@@ -157,46 +124,13 @@ func (m *ItemOnenoteRequestBuilder) Patch(ctx context.Context, body iadcd8112441
 func (m *ItemOnenoteRequestBuilder) Resources()(*ItemOnenoteResourcesRequestBuilder) {
     return NewItemOnenoteResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ResourcesById provides operations to manage the resources property of the microsoft.graph.onenote entity.
-func (m *ItemOnenoteRequestBuilder) ResourcesById(id string)(*ItemOnenoteResourcesOnenoteResourceItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["onenoteResource%2Did"] = id
-    }
-    return NewItemOnenoteResourcesOnenoteResourceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // SectionGroups provides operations to manage the sectionGroups property of the microsoft.graph.onenote entity.
 func (m *ItemOnenoteRequestBuilder) SectionGroups()(*ItemOnenoteSectionGroupsRequestBuilder) {
     return NewItemOnenoteSectionGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// SectionGroupsById provides operations to manage the sectionGroups property of the microsoft.graph.onenote entity.
-func (m *ItemOnenoteRequestBuilder) SectionGroupsById(id string)(*ItemOnenoteSectionGroupsSectionGroupItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["sectionGroup%2Did"] = id
-    }
-    return NewItemOnenoteSectionGroupsSectionGroupItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Sections provides operations to manage the sections property of the microsoft.graph.onenote entity.
 func (m *ItemOnenoteRequestBuilder) Sections()(*ItemOnenoteSectionsRequestBuilder) {
     return NewItemOnenoteSectionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// SectionsById provides operations to manage the sections property of the microsoft.graph.onenote entity.
-func (m *ItemOnenoteRequestBuilder) SectionsById(id string)(*ItemOnenoteSectionsOnenoteSectionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["onenoteSection%2Did"] = id
-    }
-    return NewItemOnenoteSectionsOnenoteSectionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property onenote for sites
 func (m *ItemOnenoteRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemOnenoteRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

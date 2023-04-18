@@ -46,6 +46,17 @@ type DeviceManagementPartnersRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceManagementPartnerId provides operations to manage the deviceManagementPartners property of the microsoft.graph.deviceManagement entity.
+func (m *DeviceManagementPartnersRequestBuilder) ByDeviceManagementPartnerId(deviceManagementPartnerId string)(*DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceManagementPartnerId != "" {
+        urlTplParams["deviceManagementPartner%2Did"] = deviceManagementPartnerId
+    }
+    return NewDeviceManagementPartnersDeviceManagementPartnerItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewDeviceManagementPartnersRequestBuilderInternal instantiates a new DeviceManagementPartnersRequestBuilder and sets the default values.
 func NewDeviceManagementPartnersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceManagementPartnersRequestBuilder) {
     m := &DeviceManagementPartnersRequestBuilder{

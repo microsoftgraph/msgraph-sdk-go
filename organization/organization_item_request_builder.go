@@ -49,17 +49,6 @@ func (m *OrganizationItemRequestBuilder) Branding()(*ItemBrandingRequestBuilder)
 func (m *OrganizationItemRequestBuilder) CertificateBasedAuthConfiguration()(*ItemCertificateBasedAuthConfigurationRequestBuilder) {
     return NewItemCertificateBasedAuthConfigurationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// CertificateBasedAuthConfigurationById provides operations to manage the certificateBasedAuthConfiguration property of the microsoft.graph.organization entity.
-func (m *OrganizationItemRequestBuilder) CertificateBasedAuthConfigurationById(id string)(*ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["certificateBasedAuthConfiguration%2Did"] = id
-    }
-    return NewItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // CheckMemberGroups provides operations to call the checkMemberGroups method.
 func (m *OrganizationItemRequestBuilder) CheckMemberGroups()(*ItemCheckMemberGroupsRequestBuilder) {
     return NewItemCheckMemberGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -100,17 +89,6 @@ func (m *OrganizationItemRequestBuilder) Delete(ctx context.Context, requestConf
 // Extensions provides operations to manage the extensions property of the microsoft.graph.organization entity.
 func (m *OrganizationItemRequestBuilder) Extensions()(*ItemExtensionsRequestBuilder) {
     return NewItemExtensionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// ExtensionsById provides operations to manage the extensions property of the microsoft.graph.organization entity.
-func (m *OrganizationItemRequestBuilder) ExtensionsById(id string)(*ItemExtensionsExtensionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["extension%2Did"] = id
-    }
-    return NewItemExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the properties and relationships of the currently authenticated organization. Since the **organization** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in an **organization** instance.
 // [Find more info here]

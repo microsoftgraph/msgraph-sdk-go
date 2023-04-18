@@ -45,17 +45,6 @@ type OnlineMeetingsOnlineMeetingItemRequestBuilderPatchRequestConfiguration stru
 func (m *OnlineMeetingsOnlineMeetingItemRequestBuilder) AttendanceReports()(*OnlineMeetingsItemAttendanceReportsRequestBuilder) {
     return NewOnlineMeetingsItemAttendanceReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AttendanceReportsById provides operations to manage the attendanceReports property of the microsoft.graph.onlineMeeting entity.
-func (m *OnlineMeetingsOnlineMeetingItemRequestBuilder) AttendanceReportsById(id string)(*OnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["meetingAttendanceReport%2Did"] = id
-    }
-    return NewOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // AttendeeReport provides operations to manage the media for the cloudCommunications entity.
 func (m *OnlineMeetingsOnlineMeetingItemRequestBuilder) AttendeeReport()(*OnlineMeetingsItemAttendeeReportRequestBuilder) {
     return NewOnlineMeetingsItemAttendeeReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

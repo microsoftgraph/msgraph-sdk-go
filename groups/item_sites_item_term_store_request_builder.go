@@ -96,17 +96,6 @@ func (m *ItemSitesItemTermStoreRequestBuilder) Get(ctx context.Context, requestC
 func (m *ItemSitesItemTermStoreRequestBuilder) Groups()(*ItemSitesItemTermStoreGroupsRequestBuilder) {
     return NewItemSitesItemTermStoreGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// GroupsById provides operations to manage the groups property of the microsoft.graph.termStore.store entity.
-func (m *ItemSitesItemTermStoreRequestBuilder) GroupsById(id string)(*ItemSitesItemTermStoreGroupsGroupItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["group%2Did1"] = id
-    }
-    return NewItemSitesItemTermStoreGroupsGroupItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the properties of a store object.
 // [Find more info here]
 // 
@@ -132,17 +121,6 @@ func (m *ItemSitesItemTermStoreRequestBuilder) Patch(ctx context.Context, body i
 // Sets provides operations to manage the sets property of the microsoft.graph.termStore.store entity.
 func (m *ItemSitesItemTermStoreRequestBuilder) Sets()(*ItemSitesItemTermStoreSetsRequestBuilder) {
     return NewItemSitesItemTermStoreSetsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// SetsById provides operations to manage the sets property of the microsoft.graph.termStore.store entity.
-func (m *ItemSitesItemTermStoreRequestBuilder) SetsById(id string)(*ItemSitesItemTermStoreSetsSetItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["set%2Did"] = id
-    }
-    return NewItemSitesItemTermStoreSetsSetItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property termStore for groups
 func (m *ItemSitesItemTermStoreRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemTermStoreRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

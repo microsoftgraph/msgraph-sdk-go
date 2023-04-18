@@ -46,6 +46,17 @@ type ItemEventsItemSingleValueExtendedPropertiesRequestBuilderPostRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// BySingleValueLegacyExtendedPropertyId provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.event entity.
+func (m *ItemEventsItemSingleValueExtendedPropertiesRequestBuilder) BySingleValueLegacyExtendedPropertyId(singleValueLegacyExtendedPropertyId string)(*ItemEventsItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if singleValueLegacyExtendedPropertyId != "" {
+        urlTplParams["singleValueLegacyExtendedProperty%2Did"] = singleValueLegacyExtendedPropertyId
+    }
+    return NewItemEventsItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemEventsItemSingleValueExtendedPropertiesRequestBuilderInternal instantiates a new SingleValueExtendedPropertiesRequestBuilder and sets the default values.
 func NewItemEventsItemSingleValueExtendedPropertiesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemEventsItemSingleValueExtendedPropertiesRequestBuilder) {
     m := &ItemEventsItemSingleValueExtendedPropertiesRequestBuilder{

@@ -50,6 +50,17 @@ type ItemItemsItemWorkbookWorksheetsRequestBuilderPostRequestConfiguration struc
 func (m *ItemItemsItemWorkbookWorksheetsRequestBuilder) Add()(*ItemItemsItemWorkbookWorksheetsAddRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsAddRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ByWorkbookWorksheetId provides operations to manage the worksheets property of the microsoft.graph.workbook entity.
+func (m *ItemItemsItemWorkbookWorksheetsRequestBuilder) ByWorkbookWorksheetId(workbookWorksheetId string)(*ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if workbookWorksheetId != "" {
+        urlTplParams["workbookWorksheet%2Did"] = workbookWorksheetId
+    }
+    return NewItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemItemsItemWorkbookWorksheetsRequestBuilderInternal instantiates a new WorksheetsRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookWorksheetsRequestBuilder) {
     m := &ItemItemsItemWorkbookWorksheetsRequestBuilder{

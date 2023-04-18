@@ -46,6 +46,17 @@ type ItemGroupLifecyclePoliciesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByGroupLifecyclePolicyId provides operations to manage the groupLifecyclePolicies property of the microsoft.graph.group entity.
+func (m *ItemGroupLifecyclePoliciesRequestBuilder) ByGroupLifecyclePolicyId(groupLifecyclePolicyId string)(*ItemGroupLifecyclePoliciesGroupLifecyclePolicyItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if groupLifecyclePolicyId != "" {
+        urlTplParams["groupLifecyclePolicy%2Did"] = groupLifecyclePolicyId
+    }
+    return NewItemGroupLifecyclePoliciesGroupLifecyclePolicyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemGroupLifecyclePoliciesRequestBuilderInternal instantiates a new GroupLifecyclePoliciesRequestBuilder and sets the default values.
 func NewItemGroupLifecyclePoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemGroupLifecyclePoliciesRequestBuilder) {
     m := &ItemGroupLifecyclePoliciesRequestBuilder{

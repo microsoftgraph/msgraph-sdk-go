@@ -46,6 +46,17 @@ type TermsOfUseAgreementsItemFileLocalizationsRequestBuilderPostRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByAgreementFileLocalizationId provides operations to manage the localizations property of the microsoft.graph.agreementFile entity.
+func (m *TermsOfUseAgreementsItemFileLocalizationsRequestBuilder) ByAgreementFileLocalizationId(agreementFileLocalizationId string)(*TermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if agreementFileLocalizationId != "" {
+        urlTplParams["agreementFileLocalization%2Did"] = agreementFileLocalizationId
+    }
+    return NewTermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewTermsOfUseAgreementsItemFileLocalizationsRequestBuilderInternal instantiates a new LocalizationsRequestBuilder and sets the default values.
 func NewTermsOfUseAgreementsItemFileLocalizationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TermsOfUseAgreementsItemFileLocalizationsRequestBuilder) {
     m := &TermsOfUseAgreementsItemFileLocalizationsRequestBuilder{

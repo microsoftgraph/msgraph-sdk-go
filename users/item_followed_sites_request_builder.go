@@ -39,6 +39,17 @@ type ItemFollowedSitesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemFollowedSitesRequestBuilderGetQueryParameters
 }
+// BySiteId provides operations to manage the followedSites property of the microsoft.graph.user entity.
+func (m *ItemFollowedSitesRequestBuilder) BySiteId(siteId string)(*ItemFollowedSitesSiteItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if siteId != "" {
+        urlTplParams["site%2Did"] = siteId
+    }
+    return NewItemFollowedSitesSiteItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemFollowedSitesRequestBuilderInternal instantiates a new FollowedSitesRequestBuilder and sets the default values.
 func NewItemFollowedSitesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemFollowedSitesRequestBuilder) {
     m := &ItemFollowedSitesRequestBuilder{

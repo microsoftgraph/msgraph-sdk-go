@@ -46,6 +46,17 @@ type ItemAcceptancesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByAgreementAcceptanceId provides operations to manage the acceptances property of the microsoft.graph.agreement entity.
+func (m *ItemAcceptancesRequestBuilder) ByAgreementAcceptanceId(agreementAcceptanceId string)(*ItemAcceptancesAgreementAcceptanceItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if agreementAcceptanceId != "" {
+        urlTplParams["agreementAcceptance%2Did"] = agreementAcceptanceId
+    }
+    return NewItemAcceptancesAgreementAcceptanceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemAcceptancesRequestBuilderInternal instantiates a new AcceptancesRequestBuilder and sets the default values.
 func NewItemAcceptancesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAcceptancesRequestBuilder) {
     m := &ItemAcceptancesRequestBuilder{

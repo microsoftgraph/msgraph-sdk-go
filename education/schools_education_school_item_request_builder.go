@@ -49,17 +49,6 @@ func (m *SchoolsEducationSchoolItemRequestBuilder) AdministrativeUnit()(*Schools
 func (m *SchoolsEducationSchoolItemRequestBuilder) Classes()(*SchoolsItemClassesRequestBuilder) {
     return NewSchoolsItemClassesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ClassesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.schools.item.classes.item collection
-func (m *SchoolsEducationSchoolItemRequestBuilder) ClassesById(id string)(*SchoolsItemClassesEducationClassItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["educationClass%2Did"] = id
-    }
-    return NewSchoolsItemClassesEducationClassItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewSchoolsEducationSchoolItemRequestBuilderInternal instantiates a new EducationSchoolItemRequestBuilder and sets the default values.
 func NewSchoolsEducationSchoolItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SchoolsEducationSchoolItemRequestBuilder) {
     m := &SchoolsEducationSchoolItemRequestBuilder{
@@ -175,15 +164,4 @@ func (m *SchoolsEducationSchoolItemRequestBuilder) ToPatchRequestInformation(ctx
 // Users provides operations to manage the users property of the microsoft.graph.educationSchool entity.
 func (m *SchoolsEducationSchoolItemRequestBuilder) Users()(*SchoolsItemUsersRequestBuilder) {
     return NewSchoolsItemUsersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// UsersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.schools.item.users.item collection
-func (m *SchoolsEducationSchoolItemRequestBuilder) UsersById(id string)(*SchoolsItemUsersEducationUserItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["educationUser%2Did"] = id
-    }
-    return NewSchoolsItemUsersEducationUserItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }

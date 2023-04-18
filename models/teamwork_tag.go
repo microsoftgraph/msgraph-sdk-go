@@ -8,7 +8,7 @@ import (
 type TeamworkTag struct {
     Entity
 }
-// NewTeamworkTag instantiates a new TeamworkTag and sets the default values.
+// NewTeamworkTag instantiates a new teamworkTag and sets the default values.
 func NewTeamworkTag()(*TeamworkTag) {
     m := &TeamworkTag{
         Entity: *NewEntity(),

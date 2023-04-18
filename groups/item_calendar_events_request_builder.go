@@ -44,6 +44,17 @@ type ItemCalendarEventsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByEventId provides operations to manage the events property of the microsoft.graph.calendar entity.
+func (m *ItemCalendarEventsRequestBuilder) ByEventId(eventId string)(*ItemCalendarEventsEventItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if eventId != "" {
+        urlTplParams["event%2Did"] = eventId
+    }
+    return NewItemCalendarEventsEventItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemCalendarEventsRequestBuilderInternal instantiates a new EventsRequestBuilder and sets the default values.
 func NewItemCalendarEventsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarEventsRequestBuilder) {
     m := &ItemCalendarEventsRequestBuilder{

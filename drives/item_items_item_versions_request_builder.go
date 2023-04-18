@@ -46,6 +46,17 @@ type ItemItemsItemVersionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDriveItemVersionId provides operations to manage the versions property of the microsoft.graph.driveItem entity.
+func (m *ItemItemsItemVersionsRequestBuilder) ByDriveItemVersionId(driveItemVersionId string)(*ItemItemsItemVersionsDriveItemVersionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if driveItemVersionId != "" {
+        urlTplParams["driveItemVersion%2Did"] = driveItemVersionId
+    }
+    return NewItemItemsItemVersionsDriveItemVersionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemItemsItemVersionsRequestBuilderInternal instantiates a new VersionsRequestBuilder and sets the default values.
 func NewItemItemsItemVersionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemVersionsRequestBuilder) {
     m := &ItemItemsItemVersionsRequestBuilder{

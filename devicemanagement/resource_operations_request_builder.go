@@ -46,6 +46,17 @@ type ResourceOperationsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByResourceOperationId provides operations to manage the resourceOperations property of the microsoft.graph.deviceManagement entity.
+func (m *ResourceOperationsRequestBuilder) ByResourceOperationId(resourceOperationId string)(*ResourceOperationsResourceOperationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if resourceOperationId != "" {
+        urlTplParams["resourceOperation%2Did"] = resourceOperationId
+    }
+    return NewResourceOperationsResourceOperationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewResourceOperationsRequestBuilderInternal instantiates a new ResourceOperationsRequestBuilder and sets the default values.
 func NewResourceOperationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ResourceOperationsRequestBuilder) {
     m := &ResourceOperationsRequestBuilder{

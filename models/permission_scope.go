@@ -10,8 +10,6 @@ import (
 type PermissionScope struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
-    // The possible values are: User and Admin. Specifies whether this delegated permission should be considered safe for non-admin users to consent to on behalf of themselves, or whether an administrator consent should always be required. While Microsoft Graph defines the default consent requirement for each permission, the tenant administrator may override the behavior in their organization (by allowing, restricting, or limiting user consent to this delegated permission). For more information, see Configure how users consent to applications.
-    TypeEscaped *string
 }
 // NewPermissionScope instantiates a new permissionScope and sets the default values.
 func NewPermissionScope()(*PermissionScope) {

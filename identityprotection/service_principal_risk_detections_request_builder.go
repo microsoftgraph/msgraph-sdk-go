@@ -46,6 +46,17 @@ type ServicePrincipalRiskDetectionsRequestBuilderPostRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByServicePrincipalRiskDetectionId provides operations to manage the servicePrincipalRiskDetections property of the microsoft.graph.identityProtectionRoot entity.
+func (m *ServicePrincipalRiskDetectionsRequestBuilder) ByServicePrincipalRiskDetectionId(servicePrincipalRiskDetectionId string)(*ServicePrincipalRiskDetectionsServicePrincipalRiskDetectionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if servicePrincipalRiskDetectionId != "" {
+        urlTplParams["servicePrincipalRiskDetection%2Did"] = servicePrincipalRiskDetectionId
+    }
+    return NewServicePrincipalRiskDetectionsServicePrincipalRiskDetectionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewServicePrincipalRiskDetectionsRequestBuilderInternal instantiates a new ServicePrincipalRiskDetectionsRequestBuilder and sets the default values.
 func NewServicePrincipalRiskDetectionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ServicePrincipalRiskDetectionsRequestBuilder) {
     m := &ServicePrincipalRiskDetectionsRequestBuilder{

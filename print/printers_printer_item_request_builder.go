@@ -45,17 +45,6 @@ type PrintersPrinterItemRequestBuilderPatchRequestConfiguration struct {
 func (m *PrintersPrinterItemRequestBuilder) Connectors()(*PrintersItemConnectorsRequestBuilder) {
     return NewPrintersItemConnectorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ConnectorsById provides operations to manage the connectors property of the microsoft.graph.printer entity.
-func (m *PrintersPrinterItemRequestBuilder) ConnectorsById(id string)(*PrintersItemConnectorsPrintConnectorItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["printConnector%2Did"] = id
-    }
-    return NewPrintersItemConnectorsPrintConnectorItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewPrintersPrinterItemRequestBuilderInternal instantiates a new PrinterItemRequestBuilder and sets the default values.
 func NewPrintersPrinterItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrintersPrinterItemRequestBuilder) {
     m := &PrintersPrinterItemRequestBuilder{
@@ -131,31 +120,9 @@ func (m *PrintersPrinterItemRequestBuilder) RestoreFactoryDefaults()(*PrintersIt
 func (m *PrintersPrinterItemRequestBuilder) Shares()(*PrintersItemSharesRequestBuilder) {
     return NewPrintersItemSharesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// SharesById provides operations to manage the shares property of the microsoft.graph.printer entity.
-func (m *PrintersPrinterItemRequestBuilder) SharesById(id string)(*PrintersItemSharesPrinterShareItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["printerShare%2Did"] = id
-    }
-    return NewPrintersItemSharesPrinterShareItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // TaskTriggers provides operations to manage the taskTriggers property of the microsoft.graph.printer entity.
 func (m *PrintersPrinterItemRequestBuilder) TaskTriggers()(*PrintersItemTaskTriggersRequestBuilder) {
     return NewPrintersItemTaskTriggersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// TaskTriggersById provides operations to manage the taskTriggers property of the microsoft.graph.printer entity.
-func (m *PrintersPrinterItemRequestBuilder) TaskTriggersById(id string)(*PrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["printTaskTrigger%2Did"] = id
-    }
-    return NewPrintersItemTaskTriggersPrintTaskTriggerItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property printers for print
 func (m *PrintersPrinterItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PrintersPrinterItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -10,8 +10,6 @@ import (
 type ItemItemsItemWorkbookFunctionsIpmtPostRequestBody struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
-    // The type property
-    TypeEscaped iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable
 }
 // NewItemItemsItemWorkbookFunctionsIpmtPostRequestBody instantiates a new ItemItemsItemWorkbookFunctionsIpmtPostRequestBody and sets the default values.
 func NewItemItemsItemWorkbookFunctionsIpmtPostRequestBody()(*ItemItemsItemWorkbookFunctionsIpmtPostRequestBody) {

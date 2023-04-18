@@ -46,6 +46,17 @@ type DirectoryAuditsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDirectoryAuditId provides operations to manage the directoryAudits property of the microsoft.graph.auditLogRoot entity.
+func (m *DirectoryAuditsRequestBuilder) ByDirectoryAuditId(directoryAuditId string)(*DirectoryAuditsDirectoryAuditItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if directoryAuditId != "" {
+        urlTplParams["directoryAudit%2Did"] = directoryAuditId
+    }
+    return NewDirectoryAuditsDirectoryAuditItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewDirectoryAuditsRequestBuilderInternal instantiates a new DirectoryAuditsRequestBuilder and sets the default values.
 func NewDirectoryAuditsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryAuditsRequestBuilder) {
     m := &DirectoryAuditsRequestBuilder{

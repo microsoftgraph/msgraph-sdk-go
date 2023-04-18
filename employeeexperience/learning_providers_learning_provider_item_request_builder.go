@@ -93,17 +93,6 @@ func (m *LearningProvidersLearningProviderItemRequestBuilder) Get(ctx context.Co
 func (m *LearningProvidersLearningProviderItemRequestBuilder) LearningContents()(*LearningProvidersItemLearningContentsRequestBuilder) {
     return NewLearningProvidersItemLearningContentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// LearningContentsById provides operations to manage the learningContents property of the microsoft.graph.learningProvider entity.
-func (m *LearningProvidersLearningProviderItemRequestBuilder) LearningContentsById(id string)(*LearningProvidersItemLearningContentsLearningContentItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["learningContent%2Did"] = id
-    }
-    return NewLearningProvidersItemLearningContentsLearningContentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property learningProviders in employeeExperience
 func (m *LearningProvidersLearningProviderItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LearningProviderable, requestConfiguration *LearningProvidersLearningProviderItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LearningProviderable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);

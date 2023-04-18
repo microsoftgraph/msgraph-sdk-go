@@ -46,6 +46,17 @@ type ItemDelegatedPermissionClassificationsRequestBuilderPostRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDelegatedPermissionClassificationId provides operations to manage the delegatedPermissionClassifications property of the microsoft.graph.servicePrincipal entity.
+func (m *ItemDelegatedPermissionClassificationsRequestBuilder) ByDelegatedPermissionClassificationId(delegatedPermissionClassificationId string)(*ItemDelegatedPermissionClassificationsDelegatedPermissionClassificationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if delegatedPermissionClassificationId != "" {
+        urlTplParams["delegatedPermissionClassification%2Did"] = delegatedPermissionClassificationId
+    }
+    return NewItemDelegatedPermissionClassificationsDelegatedPermissionClassificationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemDelegatedPermissionClassificationsRequestBuilderInternal instantiates a new DelegatedPermissionClassificationsRequestBuilder and sets the default values.
 func NewItemDelegatedPermissionClassificationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDelegatedPermissionClassificationsRequestBuilder) {
     m := &ItemDelegatedPermissionClassificationsRequestBuilder{

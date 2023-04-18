@@ -39,6 +39,17 @@ type ItemMembersWithLicenseErrorsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemMembersWithLicenseErrorsRequestBuilderGetQueryParameters
 }
+// ByDirectoryObjectId provides operations to manage the membersWithLicenseErrors property of the microsoft.graph.group entity.
+func (m *ItemMembersWithLicenseErrorsRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemMembersWithLicenseErrorsDirectoryObjectItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if directoryObjectId != "" {
+        urlTplParams["directoryObject%2Did"] = directoryObjectId
+    }
+    return NewItemMembersWithLicenseErrorsDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemMembersWithLicenseErrorsRequestBuilderInternal instantiates a new MembersWithLicenseErrorsRequestBuilder and sets the default values.
 func NewItemMembersWithLicenseErrorsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMembersWithLicenseErrorsRequestBuilder) {
     m := &ItemMembersWithLicenseErrorsRequestBuilder{

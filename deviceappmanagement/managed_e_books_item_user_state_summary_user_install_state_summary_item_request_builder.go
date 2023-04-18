@@ -74,17 +74,6 @@ func (m *ManagedEBooksItemUserStateSummaryUserInstallStateSummaryItemRequestBuil
 func (m *ManagedEBooksItemUserStateSummaryUserInstallStateSummaryItemRequestBuilder) DeviceStates()(*ManagedEBooksItemUserStateSummaryItemDeviceStatesRequestBuilder) {
     return NewManagedEBooksItemUserStateSummaryItemDeviceStatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// DeviceStatesById provides operations to manage the deviceStates property of the microsoft.graph.userInstallStateSummary entity.
-func (m *ManagedEBooksItemUserStateSummaryUserInstallStateSummaryItemRequestBuilder) DeviceStatesById(id string)(*ManagedEBooksItemUserStateSummaryItemDeviceStatesDeviceInstallStateItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["deviceInstallState%2Did"] = id
-    }
-    return NewManagedEBooksItemUserStateSummaryItemDeviceStatesDeviceInstallStateItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get the list of installation states for this eBook.
 func (m *ManagedEBooksItemUserStateSummaryUserInstallStateSummaryItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedEBooksItemUserStateSummaryUserInstallStateSummaryItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserInstallStateSummaryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);

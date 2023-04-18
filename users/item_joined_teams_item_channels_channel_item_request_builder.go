@@ -105,31 +105,9 @@ func (m *ItemJoinedTeamsItemChannelsChannelItemRequestBuilder) Get(ctx context.C
 func (m *ItemJoinedTeamsItemChannelsChannelItemRequestBuilder) Members()(*ItemJoinedTeamsItemChannelsItemMembersRequestBuilder) {
     return NewItemJoinedTeamsItemChannelsItemMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// MembersById provides operations to manage the members property of the microsoft.graph.channel entity.
-func (m *ItemJoinedTeamsItemChannelsChannelItemRequestBuilder) MembersById(id string)(*ItemJoinedTeamsItemChannelsItemMembersConversationMemberItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["conversationMember%2Did"] = id
-    }
-    return NewItemJoinedTeamsItemChannelsItemMembersConversationMemberItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Messages provides operations to manage the messages property of the microsoft.graph.channel entity.
 func (m *ItemJoinedTeamsItemChannelsChannelItemRequestBuilder) Messages()(*ItemJoinedTeamsItemChannelsItemMessagesRequestBuilder) {
     return NewItemJoinedTeamsItemChannelsItemMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// MessagesById provides operations to manage the messages property of the microsoft.graph.channel entity.
-func (m *ItemJoinedTeamsItemChannelsChannelItemRequestBuilder) MessagesById(id string)(*ItemJoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["chatMessage%2Did"] = id
-    }
-    return NewItemJoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property channels in users
 func (m *ItemJoinedTeamsItemChannelsChannelItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Channelable, requestConfiguration *ItemJoinedTeamsItemChannelsChannelItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Channelable, error) {
@@ -162,31 +140,9 @@ func (m *ItemJoinedTeamsItemChannelsChannelItemRequestBuilder) RemoveEmail()(*It
 func (m *ItemJoinedTeamsItemChannelsChannelItemRequestBuilder) SharedWithTeams()(*ItemJoinedTeamsItemChannelsItemSharedWithTeamsRequestBuilder) {
     return NewItemJoinedTeamsItemChannelsItemSharedWithTeamsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// SharedWithTeamsById provides operations to manage the sharedWithTeams property of the microsoft.graph.channel entity.
-func (m *ItemJoinedTeamsItemChannelsChannelItemRequestBuilder) SharedWithTeamsById(id string)(*ItemJoinedTeamsItemChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["sharedWithChannelTeamInfo%2Did"] = id
-    }
-    return NewItemJoinedTeamsItemChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Tabs provides operations to manage the tabs property of the microsoft.graph.channel entity.
 func (m *ItemJoinedTeamsItemChannelsChannelItemRequestBuilder) Tabs()(*ItemJoinedTeamsItemChannelsItemTabsRequestBuilder) {
     return NewItemJoinedTeamsItemChannelsItemTabsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// TabsById provides operations to manage the tabs property of the microsoft.graph.channel entity.
-func (m *ItemJoinedTeamsItemChannelsChannelItemRequestBuilder) TabsById(id string)(*ItemJoinedTeamsItemChannelsItemTabsTeamsTabItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["teamsTab%2Did"] = id
-    }
-    return NewItemJoinedTeamsItemChannelsItemTabsTeamsTabItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property channels for users
 func (m *ItemJoinedTeamsItemChannelsChannelItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemChannelsChannelItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -112,31 +112,9 @@ func (m *ItemPlannerRequestBuilder) Patch(ctx context.Context, body iadcd8112441
 func (m *ItemPlannerRequestBuilder) Plans()(*ItemPlannerPlansRequestBuilder) {
     return NewItemPlannerPlansRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// PlansById provides operations to manage the plans property of the microsoft.graph.plannerUser entity.
-func (m *ItemPlannerRequestBuilder) PlansById(id string)(*ItemPlannerPlansPlannerPlanItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["plannerPlan%2Did"] = id
-    }
-    return NewItemPlannerPlansPlannerPlanItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Tasks provides operations to manage the tasks property of the microsoft.graph.plannerUser entity.
 func (m *ItemPlannerRequestBuilder) Tasks()(*ItemPlannerTasksRequestBuilder) {
     return NewItemPlannerTasksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// TasksById provides operations to manage the tasks property of the microsoft.graph.plannerUser entity.
-func (m *ItemPlannerRequestBuilder) TasksById(id string)(*ItemPlannerTasksPlannerTaskItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["plannerTask%2Did"] = id
-    }
-    return NewItemPlannerTasksPlannerTaskItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property planner for users
 func (m *ItemPlannerRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemPlannerRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

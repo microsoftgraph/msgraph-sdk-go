@@ -21,7 +21,7 @@ func NewAppManagementPolicy()(*AppManagementPolicy) {
 func CreateAppManagementPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAppManagementPolicy(), nil
 }
-// GetAppliesTo gets the appliesTo property value. The appliesTo property
+// GetAppliesTo gets the appliesTo property value. Collection of applications and service principals to which the policy is applied.
 func (m *AppManagementPolicy) GetAppliesTo()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("appliesTo")
     if err != nil {
@@ -71,7 +71,7 @@ func (m *AppManagementPolicy) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetIsEnabled gets the isEnabled property value. The isEnabled property
+// GetIsEnabled gets the isEnabled property value. Denotes whether the policy is enabled.
 func (m *AppManagementPolicy) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
     if err != nil {
@@ -82,7 +82,7 @@ func (m *AppManagementPolicy) GetIsEnabled()(*bool) {
     }
     return nil
 }
-// GetRestrictions gets the restrictions property value. The restrictions property
+// GetRestrictions gets the restrictions property value. Restrictions that apply to an application or service principal object.
 func (m *AppManagementPolicy) GetRestrictions()(AppManagementConfigurationable) {
     val, err := m.GetBackingStore().Get("restrictions")
     if err != nil {
@@ -123,21 +123,21 @@ func (m *AppManagementPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetAppliesTo sets the appliesTo property value. The appliesTo property
+// SetAppliesTo sets the appliesTo property value. Collection of applications and service principals to which the policy is applied.
 func (m *AppManagementPolicy) SetAppliesTo(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("appliesTo", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsEnabled sets the isEnabled property value. The isEnabled property
+// SetIsEnabled sets the isEnabled property value. Denotes whether the policy is enabled.
 func (m *AppManagementPolicy) SetIsEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRestrictions sets the restrictions property value. The restrictions property
+// SetRestrictions sets the restrictions property value. Restrictions that apply to an application or service principal object.
 func (m *AppManagementPolicy) SetRestrictions(value AppManagementConfigurationable)() {
     err := m.GetBackingStore().Set("restrictions", value)
     if err != nil {

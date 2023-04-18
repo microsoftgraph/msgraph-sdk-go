@@ -39,6 +39,17 @@ type ItemSpecialRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemSpecialRequestBuilderGetQueryParameters
 }
+// ByDriveItemId provides operations to manage the special property of the microsoft.graph.drive entity.
+func (m *ItemSpecialRequestBuilder) ByDriveItemId(driveItemId string)(*ItemSpecialDriveItemItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if driveItemId != "" {
+        urlTplParams["driveItem%2Did"] = driveItemId
+    }
+    return NewItemSpecialDriveItemItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemSpecialRequestBuilderInternal instantiates a new SpecialRequestBuilder and sets the default values.
 func NewItemSpecialRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSpecialRequestBuilder) {
     m := &ItemSpecialRequestBuilder{

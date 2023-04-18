@@ -46,6 +46,17 @@ type DeviceConfigurationsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDeviceConfigurationId provides operations to manage the deviceConfigurations property of the microsoft.graph.deviceManagement entity.
+func (m *DeviceConfigurationsRequestBuilder) ByDeviceConfigurationId(deviceConfigurationId string)(*DeviceConfigurationsDeviceConfigurationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if deviceConfigurationId != "" {
+        urlTplParams["deviceConfiguration%2Did"] = deviceConfigurationId
+    }
+    return NewDeviceConfigurationsDeviceConfigurationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewDeviceConfigurationsRequestBuilderInternal instantiates a new DeviceConfigurationsRequestBuilder and sets the default values.
 func NewDeviceConfigurationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceConfigurationsRequestBuilder) {
     m := &DeviceConfigurationsRequestBuilder{

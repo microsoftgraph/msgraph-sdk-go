@@ -39,6 +39,17 @@ type ItemCertificateBasedAuthConfigurationRequestBuilderGetRequestConfiguration 
     // Request query parameters
     QueryParameters *ItemCertificateBasedAuthConfigurationRequestBuilderGetQueryParameters
 }
+// ByCertificateBasedAuthConfigurationId provides operations to manage the certificateBasedAuthConfiguration property of the microsoft.graph.organization entity.
+func (m *ItemCertificateBasedAuthConfigurationRequestBuilder) ByCertificateBasedAuthConfigurationId(certificateBasedAuthConfigurationId string)(*ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if certificateBasedAuthConfigurationId != "" {
+        urlTplParams["certificateBasedAuthConfiguration%2Did"] = certificateBasedAuthConfigurationId
+    }
+    return NewItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemCertificateBasedAuthConfigurationRequestBuilderInternal instantiates a new CertificateBasedAuthConfigurationRequestBuilder and sets the default values.
 func NewItemCertificateBasedAuthConfigurationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCertificateBasedAuthConfigurationRequestBuilder) {
     m := &ItemCertificateBasedAuthConfigurationRequestBuilder{

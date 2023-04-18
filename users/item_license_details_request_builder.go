@@ -46,6 +46,17 @@ type ItemLicenseDetailsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByLicenseDetailsId provides operations to manage the licenseDetails property of the microsoft.graph.user entity.
+func (m *ItemLicenseDetailsRequestBuilder) ByLicenseDetailsId(licenseDetailsId string)(*ItemLicenseDetailsLicenseDetailsItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if licenseDetailsId != "" {
+        urlTplParams["licenseDetails%2Did"] = licenseDetailsId
+    }
+    return NewItemLicenseDetailsLicenseDetailsItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemLicenseDetailsRequestBuilderInternal instantiates a new LicenseDetailsRequestBuilder and sets the default values.
 func NewItemLicenseDetailsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemLicenseDetailsRequestBuilder) {
     m := &ItemLicenseDetailsRequestBuilder{

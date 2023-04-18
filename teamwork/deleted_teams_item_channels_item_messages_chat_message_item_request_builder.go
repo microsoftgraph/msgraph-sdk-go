@@ -93,17 +93,6 @@ func (m *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) Get(
 func (m *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) HostedContents()(*DeletedTeamsItemChannelsItemMessagesItemHostedContentsRequestBuilder) {
     return NewDeletedTeamsItemChannelsItemMessagesItemHostedContentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// HostedContentsById provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.
-func (m *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) HostedContentsById(id string)(*DeletedTeamsItemChannelsItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["chatMessageHostedContent%2Did"] = id
-    }
-    return NewDeletedTeamsItemChannelsItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property messages in teamwork
 func (m *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable, requestConfiguration *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -126,17 +115,6 @@ func (m *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) Patc
 // Replies provides operations to manage the replies property of the microsoft.graph.chatMessage entity.
 func (m *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) Replies()(*DeletedTeamsItemChannelsItemMessagesItemRepliesRequestBuilder) {
     return NewDeletedTeamsItemChannelsItemMessagesItemRepliesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// RepliesById provides operations to manage the replies property of the microsoft.graph.chatMessage entity.
-func (m *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) RepliesById(id string)(*DeletedTeamsItemChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["chatMessage%2Did1"] = id
-    }
-    return NewDeletedTeamsItemChannelsItemMessagesItemRepliesChatMessageItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // SoftDelete provides operations to call the softDelete method.
 func (m *DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) SoftDelete()(*DeletedTeamsItemChannelsItemMessagesItemSoftDeleteRequestBuilder) {

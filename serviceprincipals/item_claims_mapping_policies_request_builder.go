@@ -39,6 +39,17 @@ type ItemClaimsMappingPoliciesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemClaimsMappingPoliciesRequestBuilderGetQueryParameters
 }
+// ByClaimsMappingPolicyId gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.servicePrincipals.item.claimsMappingPolicies.item collection
+func (m *ItemClaimsMappingPoliciesRequestBuilder) ByClaimsMappingPolicyId(claimsMappingPolicyId string)(*ItemClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if claimsMappingPolicyId != "" {
+        urlTplParams["claimsMappingPolicy%2Did"] = claimsMappingPolicyId
+    }
+    return NewItemClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemClaimsMappingPoliciesRequestBuilderInternal instantiates a new ClaimsMappingPoliciesRequestBuilder and sets the default values.
 func NewItemClaimsMappingPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemClaimsMappingPoliciesRequestBuilder) {
     m := &ItemClaimsMappingPoliciesRequestBuilder{

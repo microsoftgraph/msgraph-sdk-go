@@ -46,6 +46,17 @@ type ItemItemsItemPermissionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByPermissionId provides operations to manage the permissions property of the microsoft.graph.driveItem entity.
+func (m *ItemItemsItemPermissionsRequestBuilder) ByPermissionId(permissionId string)(*ItemItemsItemPermissionsPermissionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if permissionId != "" {
+        urlTplParams["permission%2Did"] = permissionId
+    }
+    return NewItemItemsItemPermissionsPermissionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemItemsItemPermissionsRequestBuilderInternal instantiates a new PermissionsRequestBuilder and sets the default values.
 func NewItemItemsItemPermissionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemPermissionsRequestBuilder) {
     m := &ItemItemsItemPermissionsRequestBuilder{

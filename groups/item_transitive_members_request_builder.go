@@ -39,6 +39,17 @@ type ItemTransitiveMembersRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemTransitiveMembersRequestBuilderGetQueryParameters
 }
+// ByDirectoryObjectId provides operations to manage the transitiveMembers property of the microsoft.graph.group entity.
+func (m *ItemTransitiveMembersRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemTransitiveMembersDirectoryObjectItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if directoryObjectId != "" {
+        urlTplParams["directoryObject%2Did"] = directoryObjectId
+    }
+    return NewItemTransitiveMembersDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemTransitiveMembersRequestBuilderInternal instantiates a new TransitiveMembersRequestBuilder and sets the default values.
 func NewItemTransitiveMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTransitiveMembersRequestBuilder) {
     m := &ItemTransitiveMembersRequestBuilder{

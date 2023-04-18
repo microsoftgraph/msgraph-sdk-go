@@ -39,6 +39,17 @@ type ItemAuthenticationMicrosoftAuthenticatorMethodsRequestBuilderGetRequestConf
     // Request query parameters
     QueryParameters *ItemAuthenticationMicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters
 }
+// ByMicrosoftAuthenticatorAuthenticationMethodId provides operations to manage the microsoftAuthenticatorMethods property of the microsoft.graph.authentication entity.
+func (m *ItemAuthenticationMicrosoftAuthenticatorMethodsRequestBuilder) ByMicrosoftAuthenticatorAuthenticationMethodId(microsoftAuthenticatorAuthenticationMethodId string)(*ItemAuthenticationMicrosoftAuthenticatorMethodsMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if microsoftAuthenticatorAuthenticationMethodId != "" {
+        urlTplParams["microsoftAuthenticatorAuthenticationMethod%2Did"] = microsoftAuthenticatorAuthenticationMethodId
+    }
+    return NewItemAuthenticationMicrosoftAuthenticatorMethodsMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemAuthenticationMicrosoftAuthenticatorMethodsRequestBuilderInternal instantiates a new MicrosoftAuthenticatorMethodsRequestBuilder and sets the default values.
 func NewItemAuthenticationMicrosoftAuthenticatorMethodsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAuthenticationMicrosoftAuthenticatorMethodsRequestBuilder) {
     m := &ItemAuthenticationMicrosoftAuthenticatorMethodsRequestBuilder{

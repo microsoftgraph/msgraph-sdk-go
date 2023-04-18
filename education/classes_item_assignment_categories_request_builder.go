@@ -46,6 +46,17 @@ type ClassesItemAssignmentCategoriesRequestBuilderPostRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByEducationCategoryId provides operations to manage the assignmentCategories property of the microsoft.graph.educationClass entity.
+func (m *ClassesItemAssignmentCategoriesRequestBuilder) ByEducationCategoryId(educationCategoryId string)(*ClassesItemAssignmentCategoriesEducationCategoryItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if educationCategoryId != "" {
+        urlTplParams["educationCategory%2Did"] = educationCategoryId
+    }
+    return NewClassesItemAssignmentCategoriesEducationCategoryItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewClassesItemAssignmentCategoriesRequestBuilderInternal instantiates a new AssignmentCategoriesRequestBuilder and sets the default values.
 func NewClassesItemAssignmentCategoriesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ClassesItemAssignmentCategoriesRequestBuilder) {
     m := &ClassesItemAssignmentCategoriesRequestBuilder{

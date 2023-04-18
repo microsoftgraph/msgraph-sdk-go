@@ -46,6 +46,17 @@ type BookingBusinessesItemStaffMembersRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByBookingStaffMemberBaseId provides operations to manage the staffMembers property of the microsoft.graph.bookingBusiness entity.
+func (m *BookingBusinessesItemStaffMembersRequestBuilder) ByBookingStaffMemberBaseId(bookingStaffMemberBaseId string)(*BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if bookingStaffMemberBaseId != "" {
+        urlTplParams["bookingStaffMemberBase%2Did"] = bookingStaffMemberBaseId
+    }
+    return NewBookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewBookingBusinessesItemStaffMembersRequestBuilderInternal instantiates a new StaffMembersRequestBuilder and sets the default values.
 func NewBookingBusinessesItemStaffMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BookingBusinessesItemStaffMembersRequestBuilder) {
     m := &BookingBusinessesItemStaffMembersRequestBuilder{

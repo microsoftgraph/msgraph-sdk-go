@@ -112,17 +112,6 @@ func (m *DirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuild
 func (m *DirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) ResourceActions()(*DirectoryResourceNamespacesItemResourceActionsRequestBuilder) {
     return NewDirectoryResourceNamespacesItemResourceActionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ResourceActionsById provides operations to manage the resourceActions property of the microsoft.graph.unifiedRbacResourceNamespace entity.
-func (m *DirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) ResourceActionsById(id string)(*DirectoryResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["unifiedRbacResourceAction%2Did"] = id
-    }
-    return NewDirectoryResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property resourceNamespaces for roleManagement
 func (m *DirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

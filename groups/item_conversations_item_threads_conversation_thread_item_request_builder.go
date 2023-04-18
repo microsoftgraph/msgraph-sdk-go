@@ -112,17 +112,6 @@ func (m *ItemConversationsItemThreadsConversationThreadItemRequestBuilder) Patch
 func (m *ItemConversationsItemThreadsConversationThreadItemRequestBuilder) Posts()(*ItemConversationsItemThreadsItemPostsRequestBuilder) {
     return NewItemConversationsItemThreadsItemPostsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// PostsById provides operations to manage the posts property of the microsoft.graph.conversationThread entity.
-func (m *ItemConversationsItemThreadsConversationThreadItemRequestBuilder) PostsById(id string)(*ItemConversationsItemThreadsItemPostsPostItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["post%2Did"] = id
-    }
-    return NewItemConversationsItemThreadsItemPostsPostItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // Reply provides operations to call the reply method.
 func (m *ItemConversationsItemThreadsConversationThreadItemRequestBuilder) Reply()(*ItemConversationsItemThreadsItemReplyRequestBuilder) {
     return NewItemConversationsItemThreadsItemReplyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

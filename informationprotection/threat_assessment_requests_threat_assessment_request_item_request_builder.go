@@ -112,17 +112,6 @@ func (m *ThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilder) Patc
 func (m *ThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilder) Results()(*ThreatAssessmentRequestsItemResultsRequestBuilder) {
     return NewThreatAssessmentRequestsItemResultsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ResultsById provides operations to manage the results property of the microsoft.graph.threatAssessmentRequest entity.
-func (m *ThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilder) ResultsById(id string)(*ThreatAssessmentRequestsItemResultsThreatAssessmentResultItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["threatAssessmentResult%2Did"] = id
-    }
-    return NewThreatAssessmentRequestsItemResultsThreatAssessmentResultItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property threatAssessmentRequests for informationProtection
 func (m *ThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

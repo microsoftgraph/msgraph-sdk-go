@@ -46,6 +46,17 @@ type ServiceAnnouncementIssuesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByServiceHealthIssueId provides operations to manage the issues property of the microsoft.graph.serviceAnnouncement entity.
+func (m *ServiceAnnouncementIssuesRequestBuilder) ByServiceHealthIssueId(serviceHealthIssueId string)(*ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if serviceHealthIssueId != "" {
+        urlTplParams["serviceHealthIssue%2Did"] = serviceHealthIssueId
+    }
+    return NewServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewServiceAnnouncementIssuesRequestBuilderInternal instantiates a new IssuesRequestBuilder and sets the default values.
 func NewServiceAnnouncementIssuesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ServiceAnnouncementIssuesRequestBuilder) {
     m := &ServiceAnnouncementIssuesRequestBuilder{

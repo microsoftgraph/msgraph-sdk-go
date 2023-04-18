@@ -38,17 +38,6 @@ type EducationRequestBuilderPatchRequestConfiguration struct {
 func (m *EducationRequestBuilder) Classes()(*ClassesRequestBuilder) {
     return NewClassesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ClassesById provides operations to manage the classes property of the microsoft.graph.educationRoot entity.
-func (m *EducationRequestBuilder) ClassesById(id string)(*ClassesEducationClassItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["educationClass%2Did"] = id
-    }
-    return NewClassesEducationClassItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewEducationRequestBuilderInternal instantiates a new EducationRequestBuilder and sets the default values.
 func NewEducationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EducationRequestBuilder) {
     m := &EducationRequestBuilder{
@@ -108,17 +97,6 @@ func (m *EducationRequestBuilder) Patch(ctx context.Context, body iadcd81124412c
 func (m *EducationRequestBuilder) Schools()(*SchoolsRequestBuilder) {
     return NewSchoolsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// SchoolsById provides operations to manage the schools property of the microsoft.graph.educationRoot entity.
-func (m *EducationRequestBuilder) SchoolsById(id string)(*SchoolsEducationSchoolItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["educationSchool%2Did"] = id
-    }
-    return NewSchoolsEducationSchoolItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToGetRequestInformation get education
 func (m *EducationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EducationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
@@ -155,15 +133,4 @@ func (m *EducationRequestBuilder) ToPatchRequestInformation(ctx context.Context,
 // Users provides operations to manage the users property of the microsoft.graph.educationRoot entity.
 func (m *EducationRequestBuilder) Users()(*UsersRequestBuilder) {
     return NewUsersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// UsersById provides operations to manage the users property of the microsoft.graph.educationRoot entity.
-func (m *EducationRequestBuilder) UsersById(id string)(*UsersEducationUserItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["educationUser%2Did"] = id
-    }
-    return NewUsersEducationUserItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }

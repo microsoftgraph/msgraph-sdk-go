@@ -11,7 +11,7 @@ import (
 type DrivesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DrivesRequestBuilderGetQueryParameters retrieve the properties and relationships of a Drive resource. A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
+// DrivesRequestBuilderGetQueryParameters get entities from drives
 type DrivesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -46,6 +46,17 @@ type DrivesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByDriveId provides operations to manage the collection of drive entities.
+func (m *DrivesRequestBuilder) ByDriveId(driveId string)(*DriveItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if driveId != "" {
+        urlTplParams["drive%2Did"] = driveId
+    }
+    return NewDriveItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewDrivesRequestBuilderInternal instantiates a new DrivesRequestBuilder and sets the default values.
 func NewDrivesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DrivesRequestBuilder) {
     m := &DrivesRequestBuilder{
@@ -63,7 +74,7 @@ func NewDrivesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
 func (m *DrivesRequestBuilder) Count()(*CountRequestBuilder) {
     return NewCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the properties and relationships of a Drive resource. A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
+// Get get entities from drives
 func (m *DrivesRequestBuilder) Get(ctx context.Context, requestConfiguration *DrivesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -101,7 +112,7 @@ func (m *DrivesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e6
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Driveable), nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a Drive resource. A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
+// ToGetRequestInformation get entities from drives
 func (m *DrivesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DrivesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

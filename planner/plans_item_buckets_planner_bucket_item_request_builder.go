@@ -112,17 +112,6 @@ func (m *PlansItemBucketsPlannerBucketItemRequestBuilder) Patch(ctx context.Cont
 func (m *PlansItemBucketsPlannerBucketItemRequestBuilder) Tasks()(*PlansItemBucketsItemTasksRequestBuilder) {
     return NewPlansItemBucketsItemTasksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// TasksById provides operations to manage the tasks property of the microsoft.graph.plannerBucket entity.
-func (m *PlansItemBucketsPlannerBucketItemRequestBuilder) TasksById(id string)(*PlansItemBucketsItemTasksPlannerTaskItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["plannerTask%2Did"] = id
-    }
-    return NewPlansItemBucketsItemTasksPlannerTaskItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property buckets for planner
 func (m *PlansItemBucketsPlannerBucketItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PlansItemBucketsPlannerBucketItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

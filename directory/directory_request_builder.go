@@ -38,17 +38,6 @@ type DirectoryRequestBuilderPatchRequestConfiguration struct {
 func (m *DirectoryRequestBuilder) AdministrativeUnits()(*AdministrativeUnitsRequestBuilder) {
     return NewAdministrativeUnitsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// AdministrativeUnitsById provides operations to manage the administrativeUnits property of the microsoft.graph.directory entity.
-func (m *DirectoryRequestBuilder) AdministrativeUnitsById(id string)(*AdministrativeUnitsAdministrativeUnitItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["administrativeUnit%2Did"] = id
-    }
-    return NewAdministrativeUnitsAdministrativeUnitItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewDirectoryRequestBuilderInternal instantiates a new DirectoryRequestBuilder and sets the default values.
 func NewDirectoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryRequestBuilder) {
     m := &DirectoryRequestBuilder{
@@ -66,31 +55,9 @@ func NewDirectoryRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 func (m *DirectoryRequestBuilder) DeletedItems()(*DeletedItemsRequestBuilder) {
     return NewDeletedItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// DeletedItemsById provides operations to manage the deletedItems property of the microsoft.graph.directory entity.
-func (m *DirectoryRequestBuilder) DeletedItemsById(id string)(*DeletedItemsDirectoryObjectItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["directoryObject%2Did"] = id
-    }
-    return NewDeletedItemsDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // FederationConfigurations provides operations to manage the federationConfigurations property of the microsoft.graph.directory entity.
 func (m *DirectoryRequestBuilder) FederationConfigurations()(*FederationConfigurationsRequestBuilder) {
     return NewFederationConfigurationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// FederationConfigurationsById provides operations to manage the federationConfigurations property of the microsoft.graph.directory entity.
-func (m *DirectoryRequestBuilder) FederationConfigurationsById(id string)(*FederationConfigurationsIdentityProviderBaseItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["identityProviderBase%2Did"] = id
-    }
-    return NewFederationConfigurationsIdentityProviderBaseItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get directory
 func (m *DirectoryRequestBuilder) Get(ctx context.Context, requestConfiguration *DirectoryRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Directoryable, error) {
@@ -114,17 +81,6 @@ func (m *DirectoryRequestBuilder) Get(ctx context.Context, requestConfiguration 
 // OnPremisesSynchronization provides operations to manage the onPremisesSynchronization property of the microsoft.graph.directory entity.
 func (m *DirectoryRequestBuilder) OnPremisesSynchronization()(*OnPremisesSynchronizationRequestBuilder) {
     return NewOnPremisesSynchronizationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// OnPremisesSynchronizationById provides operations to manage the onPremisesSynchronization property of the microsoft.graph.directory entity.
-func (m *DirectoryRequestBuilder) OnPremisesSynchronizationById(id string)(*OnPremisesSynchronizationOnPremisesDirectorySynchronizationItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["onPremisesDirectorySynchronization%2Did"] = id
-    }
-    return NewOnPremisesSynchronizationOnPremisesDirectorySynchronizationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update directory
 func (m *DirectoryRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Directoryable, requestConfiguration *DirectoryRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Directoryable, error) {

@@ -37,6 +37,17 @@ type ItemPeopleRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemPeopleRequestBuilderGetQueryParameters
 }
+// ByPersonId provides operations to manage the people property of the microsoft.graph.user entity.
+func (m *ItemPeopleRequestBuilder) ByPersonId(personId string)(*ItemPeoplePersonItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if personId != "" {
+        urlTplParams["person%2Did"] = personId
+    }
+    return NewItemPeoplePersonItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemPeopleRequestBuilderInternal instantiates a new PeopleRequestBuilder and sets the default values.
 func NewItemPeopleRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPeopleRequestBuilder) {
     m := &ItemPeopleRequestBuilder{

@@ -39,6 +39,17 @@ type IncidentsItemAlertsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *IncidentsItemAlertsRequestBuilderGetQueryParameters
 }
+// ByAlertId provides operations to manage the alerts property of the microsoft.graph.security.incident entity.
+func (m *IncidentsItemAlertsRequestBuilder) ByAlertId(alertId string)(*IncidentsItemAlertsAlertItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if alertId != "" {
+        urlTplParams["alert%2Did"] = alertId
+    }
+    return NewIncidentsItemAlertsAlertItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewIncidentsItemAlertsRequestBuilderInternal instantiates a new AlertsRequestBuilder and sets the default values.
 func NewIncidentsItemAlertsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IncidentsItemAlertsRequestBuilder) {
     m := &IncidentsItemAlertsRequestBuilder{

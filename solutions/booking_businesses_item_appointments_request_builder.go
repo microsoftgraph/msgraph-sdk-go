@@ -46,6 +46,17 @@ type BookingBusinessesItemAppointmentsRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByBookingAppointmentId provides operations to manage the appointments property of the microsoft.graph.bookingBusiness entity.
+func (m *BookingBusinessesItemAppointmentsRequestBuilder) ByBookingAppointmentId(bookingAppointmentId string)(*BookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if bookingAppointmentId != "" {
+        urlTplParams["bookingAppointment%2Did"] = bookingAppointmentId
+    }
+    return NewBookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewBookingBusinessesItemAppointmentsRequestBuilderInternal instantiates a new AppointmentsRequestBuilder and sets the default values.
 func NewBookingBusinessesItemAppointmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BookingBusinessesItemAppointmentsRequestBuilder) {
     m := &BookingBusinessesItemAppointmentsRequestBuilder{

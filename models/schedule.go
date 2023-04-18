@@ -8,7 +8,7 @@ import (
 type Schedule struct {
     Entity
 }
-// NewSchedule instantiates a new Schedule and sets the default values.
+// NewSchedule instantiates a new schedule and sets the default values.
 func NewSchedule()(*Schedule) {
     m := &Schedule{
         Entity: *NewEntity(),
@@ -287,7 +287,7 @@ func (m *Schedule) GetOfferShiftRequestsEnabled()(*bool) {
     }
     return nil
 }
-// GetOpenShiftChangeRequests gets the openShiftChangeRequests property value. The openShiftChangeRequests property
+// GetOpenShiftChangeRequests gets the openShiftChangeRequests property value. The open shift requests in the schedule.
 func (m *Schedule) GetOpenShiftChangeRequests()([]OpenShiftChangeRequestable) {
     val, err := m.GetBackingStore().Get("openShiftChangeRequests")
     if err != nil {
@@ -298,7 +298,7 @@ func (m *Schedule) GetOpenShiftChangeRequests()([]OpenShiftChangeRequestable) {
     }
     return nil
 }
-// GetOpenShifts gets the openShifts property value. The openShifts property
+// GetOpenShifts gets the openShifts property value. The set of open shifts in a scheduling group in the schedule.
 func (m *Schedule) GetOpenShifts()([]OpenShiftable) {
     val, err := m.GetBackingStore().Get("openShifts")
     if err != nil {
@@ -630,14 +630,14 @@ func (m *Schedule) SetOfferShiftRequestsEnabled(value *bool)() {
         panic(err)
     }
 }
-// SetOpenShiftChangeRequests sets the openShiftChangeRequests property value. The openShiftChangeRequests property
+// SetOpenShiftChangeRequests sets the openShiftChangeRequests property value. The open shift requests in the schedule.
 func (m *Schedule) SetOpenShiftChangeRequests(value []OpenShiftChangeRequestable)() {
     err := m.GetBackingStore().Set("openShiftChangeRequests", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOpenShifts sets the openShifts property value. The openShifts property
+// SetOpenShifts sets the openShifts property value. The set of open shifts in a scheduling group in the schedule.
 func (m *Schedule) SetOpenShifts(value []OpenShiftable)() {
     err := m.GetBackingStore().Set("openShifts", value)
     if err != nil {

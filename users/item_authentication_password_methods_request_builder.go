@@ -46,6 +46,17 @@ type ItemAuthenticationPasswordMethodsRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByPasswordAuthenticationMethodId provides operations to manage the passwordMethods property of the microsoft.graph.authentication entity.
+func (m *ItemAuthenticationPasswordMethodsRequestBuilder) ByPasswordAuthenticationMethodId(passwordAuthenticationMethodId string)(*ItemAuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if passwordAuthenticationMethodId != "" {
+        urlTplParams["passwordAuthenticationMethod%2Did"] = passwordAuthenticationMethodId
+    }
+    return NewItemAuthenticationPasswordMethodsPasswordAuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemAuthenticationPasswordMethodsRequestBuilderInternal instantiates a new PasswordMethodsRequestBuilder and sets the default values.
 func NewItemAuthenticationPasswordMethodsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAuthenticationPasswordMethodsRequestBuilder) {
     m := &ItemAuthenticationPasswordMethodsRequestBuilder{

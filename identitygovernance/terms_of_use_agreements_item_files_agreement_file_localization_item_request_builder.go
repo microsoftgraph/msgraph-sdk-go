@@ -157,14 +157,3 @@ func (m *TermsOfUseAgreementsItemFilesAgreementFileLocalizationItemRequestBuilde
 func (m *TermsOfUseAgreementsItemFilesAgreementFileLocalizationItemRequestBuilder) Versions()(*TermsOfUseAgreementsItemFilesItemVersionsRequestBuilder) {
     return NewTermsOfUseAgreementsItemFilesItemVersionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// VersionsById provides operations to manage the versions property of the microsoft.graph.agreementFileLocalization entity.
-func (m *TermsOfUseAgreementsItemFilesAgreementFileLocalizationItemRequestBuilder) VersionsById(id string)(*TermsOfUseAgreementsItemFilesItemVersionsAgreementFileVersionItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["agreementFileVersion%2Did"] = id
-    }
-    return NewTermsOfUseAgreementsItemFilesItemVersionsAgreementFileVersionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}

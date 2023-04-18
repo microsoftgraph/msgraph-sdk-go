@@ -46,6 +46,17 @@ type ItemSitesItemTermStoreGroupsItemSetsItemTermsItemChildrenRequestBuilderPost
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByTermId1 provides operations to manage the children property of the microsoft.graph.termStore.term entity.
+func (m *ItemSitesItemTermStoreGroupsItemSetsItemTermsItemChildrenRequestBuilder) ByTermId1(termId1 string)(*ItemSitesItemTermStoreGroupsItemSetsItemTermsItemChildrenTermItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if termId1 != "" {
+        urlTplParams["term%2Did1"] = termId1
+    }
+    return NewItemSitesItemTermStoreGroupsItemSetsItemTermsItemChildrenTermItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemSitesItemTermStoreGroupsItemSetsItemTermsItemChildrenRequestBuilderInternal instantiates a new ChildrenRequestBuilder and sets the default values.
 func NewItemSitesItemTermStoreGroupsItemSetsItemTermsItemChildrenRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemTermStoreGroupsItemSetsItemTermsItemChildrenRequestBuilder) {
     m := &ItemSitesItemTermStoreGroupsItemSetsItemTermsItemChildrenRequestBuilder{

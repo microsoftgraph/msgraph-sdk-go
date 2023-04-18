@@ -46,6 +46,17 @@ type CallRecordsItemSessionsItemSegmentsRequestBuilderPostRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// BySegmentId provides operations to manage the segments property of the microsoft.graph.callRecords.session entity.
+func (m *CallRecordsItemSessionsItemSegmentsRequestBuilder) BySegmentId(segmentId string)(*CallRecordsItemSessionsItemSegmentsSegmentItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if segmentId != "" {
+        urlTplParams["segment%2Did"] = segmentId
+    }
+    return NewCallRecordsItemSessionsItemSegmentsSegmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCallRecordsItemSessionsItemSegmentsRequestBuilderInternal instantiates a new SegmentsRequestBuilder and sets the default values.
 func NewCallRecordsItemSessionsItemSegmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallRecordsItemSessionsItemSegmentsRequestBuilder) {
     m := &CallRecordsItemSessionsItemSegmentsRequestBuilder{

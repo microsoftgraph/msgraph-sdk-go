@@ -18,7 +18,7 @@ type ItemTeamScheduleOpenShiftsOpenShiftItemRequestBuilderDeleteRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTeamScheduleOpenShiftsOpenShiftItemRequestBuilderGetQueryParameters get openShifts from groups
+// ItemTeamScheduleOpenShiftsOpenShiftItemRequestBuilderGetQueryParameters the set of open shifts in a scheduling group in the schedule.
 type ItemTeamScheduleOpenShiftsOpenShiftItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ItemTeamScheduleOpenShiftsOpenShiftItemRequestBuilder) Delete(ctx conte
     }
     return nil
 }
-// Get get openShifts from groups
+// Get the set of open shifts in a scheduling group in the schedule.
 func (m *ItemTeamScheduleOpenShiftsOpenShiftItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamScheduleOpenShiftsOpenShiftItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OpenShiftable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +120,7 @@ func (m *ItemTeamScheduleOpenShiftsOpenShiftItemRequestBuilder) ToDeleteRequestI
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get openShifts from groups
+// ToGetRequestInformation the set of open shifts in a scheduling group in the schedule.
 func (m *ItemTeamScheduleOpenShiftsOpenShiftItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamScheduleOpenShiftsOpenShiftItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -50,6 +50,17 @@ type BookingBusinessesItemCalendarViewRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByBookingAppointmentId provides operations to manage the calendarView property of the microsoft.graph.bookingBusiness entity.
+func (m *BookingBusinessesItemCalendarViewRequestBuilder) ByBookingAppointmentId(bookingAppointmentId string)(*BookingBusinessesItemCalendarViewBookingAppointmentItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if bookingAppointmentId != "" {
+        urlTplParams["bookingAppointment%2Did"] = bookingAppointmentId
+    }
+    return NewBookingBusinessesItemCalendarViewBookingAppointmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewBookingBusinessesItemCalendarViewRequestBuilderInternal instantiates a new CalendarViewRequestBuilder and sets the default values.
 func NewBookingBusinessesItemCalendarViewRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BookingBusinessesItemCalendarViewRequestBuilder) {
     m := &BookingBusinessesItemCalendarViewRequestBuilder{

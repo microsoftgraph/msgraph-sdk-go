@@ -46,6 +46,17 @@ type WindowsAutopilotDeviceIdentitiesRequestBuilderPostRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByWindowsAutopilotDeviceIdentityId provides operations to manage the windowsAutopilotDeviceIdentities property of the microsoft.graph.deviceManagement entity.
+func (m *WindowsAutopilotDeviceIdentitiesRequestBuilder) ByWindowsAutopilotDeviceIdentityId(windowsAutopilotDeviceIdentityId string)(*WindowsAutopilotDeviceIdentitiesWindowsAutopilotDeviceIdentityItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if windowsAutopilotDeviceIdentityId != "" {
+        urlTplParams["windowsAutopilotDeviceIdentity%2Did"] = windowsAutopilotDeviceIdentityId
+    }
+    return NewWindowsAutopilotDeviceIdentitiesWindowsAutopilotDeviceIdentityItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewWindowsAutopilotDeviceIdentitiesRequestBuilderInternal instantiates a new WindowsAutopilotDeviceIdentitiesRequestBuilder and sets the default values.
 func NewWindowsAutopilotDeviceIdentitiesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsAutopilotDeviceIdentitiesRequestBuilder) {
     m := &WindowsAutopilotDeviceIdentitiesRequestBuilder{

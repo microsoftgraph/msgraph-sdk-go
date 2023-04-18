@@ -46,6 +46,17 @@ type ManagedAppStatusesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByManagedAppStatusId provides operations to manage the managedAppStatuses property of the microsoft.graph.deviceAppManagement entity.
+func (m *ManagedAppStatusesRequestBuilder) ByManagedAppStatusId(managedAppStatusId string)(*ManagedAppStatusesManagedAppStatusItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if managedAppStatusId != "" {
+        urlTplParams["managedAppStatus%2Did"] = managedAppStatusId
+    }
+    return NewManagedAppStatusesManagedAppStatusItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewManagedAppStatusesRequestBuilderInternal instantiates a new ManagedAppStatusesRequestBuilder and sets the default values.
 func NewManagedAppStatusesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedAppStatusesRequestBuilder) {
     m := &ManagedAppStatusesRequestBuilder{

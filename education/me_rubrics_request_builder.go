@@ -46,6 +46,17 @@ type MeRubricsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByEducationRubricId provides operations to manage the rubrics property of the microsoft.graph.educationUser entity.
+func (m *MeRubricsRequestBuilder) ByEducationRubricId(educationRubricId string)(*MeRubricsEducationRubricItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if educationRubricId != "" {
+        urlTplParams["educationRubric%2Did"] = educationRubricId
+    }
+    return NewMeRubricsEducationRubricItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewMeRubricsRequestBuilderInternal instantiates a new RubricsRequestBuilder and sets the default values.
 func NewMeRubricsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MeRubricsRequestBuilder) {
     m := &MeRubricsRequestBuilder{

@@ -46,6 +46,17 @@ type ServiceAnnouncementHealthOverviewsRequestBuilderPostRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByServiceHealthId provides operations to manage the healthOverviews property of the microsoft.graph.serviceAnnouncement entity.
+func (m *ServiceAnnouncementHealthOverviewsRequestBuilder) ByServiceHealthId(serviceHealthId string)(*ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if serviceHealthId != "" {
+        urlTplParams["serviceHealth%2Did"] = serviceHealthId
+    }
+    return NewServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewServiceAnnouncementHealthOverviewsRequestBuilderInternal instantiates a new HealthOverviewsRequestBuilder and sets the default values.
 func NewServiceAnnouncementHealthOverviewsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ServiceAnnouncementHealthOverviewsRequestBuilder) {
     m := &ServiceAnnouncementHealthOverviewsRequestBuilder{

@@ -46,6 +46,17 @@ type ItemSitesItemTermStoresItemGroupsRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByGroupId1 provides operations to manage the groups property of the microsoft.graph.termStore.store entity.
+func (m *ItemSitesItemTermStoresItemGroupsRequestBuilder) ByGroupId1(groupId1 string)(*ItemSitesItemTermStoresItemGroupsGroupItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if groupId1 != "" {
+        urlTplParams["group%2Did1"] = groupId1
+    }
+    return NewItemSitesItemTermStoresItemGroupsGroupItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemSitesItemTermStoresItemGroupsRequestBuilderInternal instantiates a new GroupsRequestBuilder and sets the default values.
 func NewItemSitesItemTermStoresItemGroupsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemTermStoresItemGroupsRequestBuilder) {
     m := &ItemSitesItemTermStoresItemGroupsRequestBuilder{

@@ -112,17 +112,6 @@ func (m *CallRecordsItemSessionsSessionItemRequestBuilder) Patch(ctx context.Con
 func (m *CallRecordsItemSessionsSessionItemRequestBuilder) Segments()(*CallRecordsItemSessionsItemSegmentsRequestBuilder) {
     return NewCallRecordsItemSessionsItemSegmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// SegmentsById provides operations to manage the segments property of the microsoft.graph.callRecords.session entity.
-func (m *CallRecordsItemSessionsSessionItemRequestBuilder) SegmentsById(id string)(*CallRecordsItemSessionsItemSegmentsSegmentItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["segment%2Did"] = id
-    }
-    return NewCallRecordsItemSessionsItemSegmentsSegmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property sessions for communications
 func (m *CallRecordsItemSessionsSessionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CallRecordsItemSessionsSessionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

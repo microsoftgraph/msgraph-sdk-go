@@ -39,6 +39,17 @@ type B2xUserFlowsItemIdentityProvidersRequestBuilderGetRequestConfiguration stru
     // Request query parameters
     QueryParameters *B2xUserFlowsItemIdentityProvidersRequestBuilderGetQueryParameters
 }
+// ByIdentityProviderId provides operations to manage the identityProviders property of the microsoft.graph.b2xIdentityUserFlow entity.
+func (m *B2xUserFlowsItemIdentityProvidersRequestBuilder) ByIdentityProviderId(identityProviderId string)(*B2xUserFlowsItemIdentityProvidersIdentityProviderItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if identityProviderId != "" {
+        urlTplParams["identityProvider%2Did"] = identityProviderId
+    }
+    return NewB2xUserFlowsItemIdentityProvidersIdentityProviderItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewB2xUserFlowsItemIdentityProvidersRequestBuilderInternal instantiates a new IdentityProvidersRequestBuilder and sets the default values.
 func NewB2xUserFlowsItemIdentityProvidersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*B2xUserFlowsItemIdentityProvidersRequestBuilder) {
     m := &B2xUserFlowsItemIdentityProvidersRequestBuilder{

@@ -46,6 +46,17 @@ type B2xUserFlowsItemLanguagesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByUserFlowLanguageConfigurationId provides operations to manage the languages property of the microsoft.graph.b2xIdentityUserFlow entity.
+func (m *B2xUserFlowsItemLanguagesRequestBuilder) ByUserFlowLanguageConfigurationId(userFlowLanguageConfigurationId string)(*B2xUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if userFlowLanguageConfigurationId != "" {
+        urlTplParams["userFlowLanguageConfiguration%2Did"] = userFlowLanguageConfigurationId
+    }
+    return NewB2xUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewB2xUserFlowsItemLanguagesRequestBuilderInternal instantiates a new LanguagesRequestBuilder and sets the default values.
 func NewB2xUserFlowsItemLanguagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*B2xUserFlowsItemLanguagesRequestBuilder) {
     m := &B2xUserFlowsItemLanguagesRequestBuilder{

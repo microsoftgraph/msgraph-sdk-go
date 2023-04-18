@@ -46,6 +46,17 @@ type AdministrativeUnitsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ByAdministrativeUnitId provides operations to manage the administrativeUnits property of the microsoft.graph.directory entity.
+func (m *AdministrativeUnitsRequestBuilder) ByAdministrativeUnitId(administrativeUnitId string)(*AdministrativeUnitsAdministrativeUnitItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if administrativeUnitId != "" {
+        urlTplParams["administrativeUnit%2Did"] = administrativeUnitId
+    }
+    return NewAdministrativeUnitsAdministrativeUnitItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewAdministrativeUnitsRequestBuilderInternal instantiates a new AdministrativeUnitsRequestBuilder and sets the default values.
 func NewAdministrativeUnitsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AdministrativeUnitsRequestBuilder) {
     m := &AdministrativeUnitsRequestBuilder{
