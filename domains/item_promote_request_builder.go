@@ -30,10 +30,7 @@ func NewItemPromoteRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewItemPromoteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post promote a verified subdomain to the root domain. A verified domain has its **isVerified** property set to `true`.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/domain-promote?view=graph-rest-1.0
+// Post invoke action promote
 func (m *ItemPromoteRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemPromoteRequestBuilderPostRequestConfiguration)(ItemPromoteResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -52,7 +49,7 @@ func (m *ItemPromoteRequestBuilder) Post(ctx context.Context, requestConfigurati
     }
     return res.(ItemPromoteResponseable), nil
 }
-// ToPostRequestInformation promote a verified subdomain to the root domain. A verified domain has its **isVerified** property set to `true`.
+// ToPostRequestInformation invoke action promote
 func (m *ItemPromoteRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemPromoteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -31,10 +31,7 @@ func NewItemListsItemContentTypesAddCopyRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewItemListsItemContentTypesAddCopyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post add a copy of a [content type][contentType] from a [site][site] to a [list][list].
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/contenttype-addcopy?view=graph-rest-1.0
+// Post invoke action addCopy
 func (m *ItemListsItemContentTypesAddCopyRequestBuilder) Post(ctx context.Context, body ItemListsItemContentTypesAddCopyPostRequestBodyable, requestConfiguration *ItemListsItemContentTypesAddCopyRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -53,7 +50,7 @@ func (m *ItemListsItemContentTypesAddCopyRequestBuilder) Post(ctx context.Contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeable), nil
 }
-// ToPostRequestInformation add a copy of a [content type][contentType] from a [site][site] to a [list][list].
+// ToPostRequestInformation invoke action addCopy
 func (m *ItemListsItemContentTypesAddCopyRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemListsItemContentTypesAddCopyPostRequestBodyable, requestConfiguration *ItemListsItemContentTypesAddCopyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

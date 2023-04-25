@@ -31,10 +31,7 @@ func NewItemFindMeetingTimesRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewItemFindMeetingTimesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post suggest meeting times and locations based on organizer and attendee availability, and time or location constraints specified as parameters. If **findMeetingTimes** cannot return any meeting suggestions, the response would indicate a reason in the **emptySuggestionsReason** property. Based on this value, you can better adjust the parameters and call **findMeetingTimes** again. The algorithm used to suggest meeting times and locations undergoes fine-tuning from time to time. In scenarios like test environments where the input parameters and calendar data remain static, expect that the suggested results may differ over time.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/user-findmeetingtimes?view=graph-rest-1.0
+// Post invoke action findMeetingTimes
 func (m *ItemFindMeetingTimesRequestBuilder) Post(ctx context.Context, body ItemFindMeetingTimesPostRequestBodyable, requestConfiguration *ItemFindMeetingTimesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MeetingTimeSuggestionsResultable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -53,7 +50,7 @@ func (m *ItemFindMeetingTimesRequestBuilder) Post(ctx context.Context, body Item
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MeetingTimeSuggestionsResultable), nil
 }
-// ToPostRequestInformation suggest meeting times and locations based on organizer and attendee availability, and time or location constraints specified as parameters. If **findMeetingTimes** cannot return any meeting suggestions, the response would indicate a reason in the **emptySuggestionsReason** property. Based on this value, you can better adjust the parameters and call **findMeetingTimes** again. The algorithm used to suggest meeting times and locations undergoes fine-tuning from time to time. In scenarios like test environments where the input parameters and calendar data remain static, expect that the suggested results may differ over time.
+// ToPostRequestInformation invoke action findMeetingTimes
 func (m *ItemFindMeetingTimesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemFindMeetingTimesPostRequestBodyable, requestConfiguration *ItemFindMeetingTimesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

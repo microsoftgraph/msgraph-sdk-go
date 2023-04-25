@@ -30,10 +30,7 @@ func NewItemPresenceClearUserPreferredPresenceRequestBuilder(rawUrl string, requ
     urlParams["request-raw-url"] = rawUrl
     return NewItemPresenceClearUserPreferredPresenceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post clear the preferred availability and activity status for a user.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/presence-clearuserpreferredpresence?view=graph-rest-1.0
+// Post invoke action clearUserPreferredPresence
 func (m *ItemPresenceClearUserPreferredPresenceRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemPresenceClearUserPreferredPresenceRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *ItemPresenceClearUserPreferredPresenceRequestBuilder) Post(ctx context.
     }
     return nil
 }
-// ToPostRequestInformation clear the preferred availability and activity status for a user.
+// ToPostRequestInformation invoke action clearUserPreferredPresence
 func (m *ItemPresenceClearUserPreferredPresenceRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemPresenceClearUserPreferredPresenceRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

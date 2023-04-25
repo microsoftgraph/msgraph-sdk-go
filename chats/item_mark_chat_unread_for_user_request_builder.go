@@ -30,10 +30,7 @@ func NewItemMarkChatUnreadForUserRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewItemMarkChatUnreadForUserRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post mark a chat as unread for a user.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/chat-markchatunreadforuser?view=graph-rest-1.0
+// Post invoke action markChatUnreadForUser
 func (m *ItemMarkChatUnreadForUserRequestBuilder) Post(ctx context.Context, body ItemMarkChatUnreadForUserPostRequestBodyable, requestConfiguration *ItemMarkChatUnreadForUserRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *ItemMarkChatUnreadForUserRequestBuilder) Post(ctx context.Context, body
     }
     return nil
 }
-// ToPostRequestInformation mark a chat as unread for a user.
+// ToPostRequestInformation invoke action markChatUnreadForUser
 func (m *ItemMarkChatUnreadForUserRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemMarkChatUnreadForUserPostRequestBodyable, requestConfiguration *ItemMarkChatUnreadForUserRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -30,10 +30,7 @@ func NewItemListContentTypesItemCopyToDefaultContentLocationRequestBuilder(rawUr
     urlParams["request-raw-url"] = rawUrl
     return NewItemListContentTypesItemCopyToDefaultContentLocationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post copy a file to a default content location in a [content type][contentType]. The file can then be added as a default file or template via a POST operation.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/contenttype-copytodefaultcontentlocation?view=graph-rest-1.0
+// Post invoke action copyToDefaultContentLocation
 func (m *ItemListContentTypesItemCopyToDefaultContentLocationRequestBuilder) Post(ctx context.Context, body ItemListContentTypesItemCopyToDefaultContentLocationPostRequestBodyable, requestConfiguration *ItemListContentTypesItemCopyToDefaultContentLocationRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *ItemListContentTypesItemCopyToDefaultContentLocationRequestBuilder) Pos
     }
     return nil
 }
-// ToPostRequestInformation copy a file to a default content location in a [content type][contentType]. The file can then be added as a default file or template via a POST operation.
+// ToPostRequestInformation invoke action copyToDefaultContentLocation
 func (m *ItemListContentTypesItemCopyToDefaultContentLocationRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemListContentTypesItemCopyToDefaultContentLocationPostRequestBodyable, requestConfiguration *ItemListContentTypesItemCopyToDefaultContentLocationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type ClassesItemTeachersRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ClassesItemTeachersRefRequestBuilderGetQueryParameters retrieve a list teachers for a class. Delegated tokens must be members of the class to get the teacher list.
+// ClassesItemTeachersRefRequestBuilderGetQueryParameters all teachers in the class. Nullable.
 type ClassesItemTeachersRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -55,10 +55,7 @@ func NewClassesItemTeachersRefRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewClassesItemTeachersRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get retrieve a list teachers for a class. Delegated tokens must be members of the class to get the teacher list.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationclass-list-teachers?view=graph-rest-1.0
+// Get all teachers in the class. Nullable.
 func (m *ClassesItemTeachersRefRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassesItemTeachersRefRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +90,7 @@ func (m *ClassesItemTeachersRefRequestBuilder) Post(ctx context.Context, body ia
     }
     return nil
 }
-// ToGetRequestInformation retrieve a list teachers for a class. Delegated tokens must be members of the class to get the teacher list.
+// ToGetRequestInformation all teachers in the class. Nullable.
 func (m *ClassesItemTeachersRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClassesItemTeachersRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type DailyPrintUsageByPrinterRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DailyPrintUsageByPrinterRequestBuilderGetQueryParameters retrieve a list of daily print usage summaries, grouped by printer.
+// DailyPrintUsageByPrinterRequestBuilderGetQueryParameters get dailyPrintUsageByPrinter from reports
 type DailyPrintUsageByPrinterRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewDailyPrintUsageByPrinterRequestBuilder(rawUrl string, requestAdapter i2a
 func (m *DailyPrintUsageByPrinterRequestBuilder) Count()(*DailyPrintUsageByPrinterCountRequestBuilder) {
     return NewDailyPrintUsageByPrinterCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of daily print usage summaries, grouped by printer.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/reportroot-list-dailyprintusagebyprinter?view=graph-rest-1.0
+// Get get dailyPrintUsageByPrinter from reports
 func (m *DailyPrintUsageByPrinterRequestBuilder) Get(ctx context.Context, requestConfiguration *DailyPrintUsageByPrinterRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintUsageByPrinterCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +112,7 @@ func (m *DailyPrintUsageByPrinterRequestBuilder) Post(ctx context.Context, body 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintUsageByPrinterable), nil
 }
-// ToGetRequestInformation retrieve a list of daily print usage summaries, grouped by printer.
+// ToGetRequestInformation get dailyPrintUsageByPrinter from reports
 func (m *DailyPrintUsageByPrinterRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DailyPrintUsageByPrinterRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

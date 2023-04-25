@@ -30,7 +30,7 @@ func (m *AuthenticationMethodModeDetail) GetAuthenticationMethod()(*BaseAuthenti
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name of this mode
 func (m *AuthenticationMethodModeDetail) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -94,7 +94,7 @@ func (m *AuthenticationMethodModeDetail) SetAuthenticationMethod(value *BaseAuth
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name of this mode
 func (m *AuthenticationMethodModeDetail) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {

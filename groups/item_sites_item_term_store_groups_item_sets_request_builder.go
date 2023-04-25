@@ -11,7 +11,7 @@ import (
 type ItemSitesItemTermStoreGroupsItemSetsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSitesItemTermStoreGroupsItemSetsRequestBuilderGetQueryParameters get a list of the set objects and their properties.
+// ItemSitesItemTermStoreGroupsItemSetsRequestBuilderGetQueryParameters all sets under the group in a term [store].
 type ItemSitesItemTermStoreGroupsItemSetsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewItemSitesItemTermStoreGroupsItemSetsRequestBuilder(rawUrl string, reques
 func (m *ItemSitesItemTermStoreGroupsItemSetsRequestBuilder) Count()(*ItemSitesItemTermStoreGroupsItemSetsCountRequestBuilder) {
     return NewItemSitesItemTermStoreGroupsItemSetsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the set objects and their properties.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/termstore-group-list-sets?view=graph-rest-1.0
+// Get all sets under the group in a term [store].
 func (m *ItemSitesItemTermStoreGroupsItemSetsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemTermStoreGroupsItemSetsRequestBuilderGetRequestConfiguration)(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.SetCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +112,7 @@ func (m *ItemSitesItemTermStoreGroupsItemSetsRequestBuilder) Post(ctx context.Co
     }
     return res.(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Setable), nil
 }
-// ToGetRequestInformation get a list of the set objects and their properties.
+// ToGetRequestInformation all sets under the group in a term [store].
 func (m *ItemSitesItemTermStoreGroupsItemSetsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemTermStoreGroupsItemSetsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

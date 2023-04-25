@@ -11,7 +11,7 @@ import (
 type DailyPrintUsageByUserRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DailyPrintUsageByUserRequestBuilderGetQueryParameters retrieve a list of daily print usage summaries, grouped by user.
+// DailyPrintUsageByUserRequestBuilderGetQueryParameters get dailyPrintUsageByUser from reports
 type DailyPrintUsageByUserRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewDailyPrintUsageByUserRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *DailyPrintUsageByUserRequestBuilder) Count()(*DailyPrintUsageByUserCountRequestBuilder) {
     return NewDailyPrintUsageByUserCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of daily print usage summaries, grouped by user.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/reportroot-list-dailyprintusagebyuser?view=graph-rest-1.0
+// Get get dailyPrintUsageByUser from reports
 func (m *DailyPrintUsageByUserRequestBuilder) Get(ctx context.Context, requestConfiguration *DailyPrintUsageByUserRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintUsageByUserCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +112,7 @@ func (m *DailyPrintUsageByUserRequestBuilder) Post(ctx context.Context, body iad
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintUsageByUserable), nil
 }
-// ToGetRequestInformation retrieve a list of daily print usage summaries, grouped by user.
+// ToGetRequestInformation get dailyPrintUsageByUser from reports
 func (m *DailyPrintUsageByUserRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DailyPrintUsageByUserRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

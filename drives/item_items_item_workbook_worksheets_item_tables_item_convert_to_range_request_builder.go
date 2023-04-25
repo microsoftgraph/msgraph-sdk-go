@@ -31,10 +31,7 @@ func NewItemItemsItemWorkbookWorksheetsItemTablesItemConvertToRangeRequestBuilde
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookWorksheetsItemTablesItemConvertToRangeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post converts the table into a normal range of cells. All data is preserved.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/table-converttorange?view=graph-rest-1.0
+// Post invoke action convertToRange
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemConvertToRangeRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTablesItemConvertToRangeRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookRangeable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -53,7 +50,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemConvertToRangeRequestBuild
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookRangeable), nil
 }
-// ToPostRequestInformation converts the table into a normal range of cells. All data is preserved.
+// ToPostRequestInformation invoke action convertToRange
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemConvertToRangeRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTablesItemConvertToRangeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

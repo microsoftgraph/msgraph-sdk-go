@@ -39,9 +39,6 @@ func NewItemDriveItemContentRequestBuilder(rawUrl string, requestAdapter i2ae418
     return NewItemDriveItemContentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the content stream, if the item represents a file.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/shares-get?view=graph-rest-1.0
 func (m *ItemDriveItemContentRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemDriveItemContentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

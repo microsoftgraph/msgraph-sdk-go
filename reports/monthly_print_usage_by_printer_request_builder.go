@@ -11,7 +11,7 @@ import (
 type MonthlyPrintUsageByPrinterRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// MonthlyPrintUsageByPrinterRequestBuilderGetQueryParameters retrieve a list of monthly print usage summaries, grouped by printer.
+// MonthlyPrintUsageByPrinterRequestBuilderGetQueryParameters get monthlyPrintUsageByPrinter from reports
 type MonthlyPrintUsageByPrinterRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewMonthlyPrintUsageByPrinterRequestBuilder(rawUrl string, requestAdapter i
 func (m *MonthlyPrintUsageByPrinterRequestBuilder) Count()(*MonthlyPrintUsageByPrinterCountRequestBuilder) {
     return NewMonthlyPrintUsageByPrinterCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of monthly print usage summaries, grouped by printer.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/reportroot-list-monthlyprintusagebyprinter?view=graph-rest-1.0
+// Get get monthlyPrintUsageByPrinter from reports
 func (m *MonthlyPrintUsageByPrinterRequestBuilder) Get(ctx context.Context, requestConfiguration *MonthlyPrintUsageByPrinterRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintUsageByPrinterCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +112,7 @@ func (m *MonthlyPrintUsageByPrinterRequestBuilder) Post(ctx context.Context, bod
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintUsageByPrinterable), nil
 }
-// ToGetRequestInformation retrieve a list of monthly print usage summaries, grouped by printer.
+// ToGetRequestInformation get monthlyPrintUsageByPrinter from reports
 func (m *MonthlyPrintUsageByPrinterRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MonthlyPrintUsageByPrinterRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

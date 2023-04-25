@@ -11,7 +11,7 @@ import (
 type SchoolsItemClassesRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SchoolsItemClassesRefRequestBuilderGetQueryParameters get the educationClass resources owned by an educationSchool.
+// SchoolsItemClassesRefRequestBuilderGetQueryParameters classes taught at the school. Nullable.
 type SchoolsItemClassesRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -55,10 +55,7 @@ func NewSchoolsItemClassesRefRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewSchoolsItemClassesRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get the educationClass resources owned by an educationSchool.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationschool-list-classes?view=graph-rest-1.0
+// Get classes taught at the school. Nullable.
 func (m *SchoolsItemClassesRefRequestBuilder) Get(ctx context.Context, requestConfiguration *SchoolsItemClassesRefRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +90,7 @@ func (m *SchoolsItemClassesRefRequestBuilder) Post(ctx context.Context, body iad
     }
     return nil
 }
-// ToGetRequestInformation get the educationClass resources owned by an educationSchool.
+// ToGetRequestInformation classes taught at the school. Nullable.
 func (m *SchoolsItemClassesRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SchoolsItemClassesRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

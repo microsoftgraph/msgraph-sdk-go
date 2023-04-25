@@ -30,10 +30,7 @@ func NewCallsItemTransferRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewCallsItemTransferRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post transfer an active peer-to-peer call or group call. A consultative transfer means that the transferor can inform the person they want to transfer the call to (the transferee), before the transfer is made. This is opposed to transfering the call directly.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/call-transfer?view=graph-rest-1.0
+// Post invoke action transfer
 func (m *CallsItemTransferRequestBuilder) Post(ctx context.Context, body CallsItemTransferPostRequestBodyable, requestConfiguration *CallsItemTransferRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *CallsItemTransferRequestBuilder) Post(ctx context.Context, body CallsIt
     }
     return nil
 }
-// ToPostRequestInformation transfer an active peer-to-peer call or group call. A consultative transfer means that the transferor can inform the person they want to transfer the call to (the transferee), before the transfer is made. This is opposed to transfering the call directly.
+// ToPostRequestInformation invoke action transfer
 func (m *CallsItemTransferRequestBuilder) ToPostRequestInformation(ctx context.Context, body CallsItemTransferPostRequestBodyable, requestConfiguration *CallsItemTransferRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -34,7 +34,7 @@ func (m *UpdateAllowedCombinationsResult) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAdditionalInformation gets the additionalInformation property value. The additionalInformation property
+// GetAdditionalInformation gets the additionalInformation property value. Information about why the updateAllowedCombinations action was successful or failed.
 func (m *UpdateAllowedCombinationsResult) GetAdditionalInformation()(*string) {
     val, err := m.GetBackingStore().Get("additionalInformation")
     if err != nil {
@@ -49,7 +49,7 @@ func (m *UpdateAllowedCombinationsResult) GetAdditionalInformation()(*string) {
 func (m *UpdateAllowedCombinationsResult) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetConditionalAccessReferences gets the conditionalAccessReferences property value. The conditionalAccessReferences property
+// GetConditionalAccessReferences gets the conditionalAccessReferences property value. References to existing Conditional Access policies that use this authentication strength.
 func (m *UpdateAllowedCombinationsResult) GetConditionalAccessReferences()([]string) {
     val, err := m.GetBackingStore().Get("conditionalAccessReferences")
     if err != nil {
@@ -60,7 +60,7 @@ func (m *UpdateAllowedCombinationsResult) GetConditionalAccessReferences()([]str
     }
     return nil
 }
-// GetCurrentCombinations gets the currentCombinations property value. The currentCombinations property
+// GetCurrentCombinations gets the currentCombinations property value. The list of current authentication method combinations allowed by the authentication strength.
 func (m *UpdateAllowedCombinationsResult) GetCurrentCombinations()([]AuthenticationMethodModes) {
     val, err := m.GetBackingStore().Get("currentCombinations")
     if err != nil {
@@ -149,7 +149,7 @@ func (m *UpdateAllowedCombinationsResult) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPreviousCombinations gets the previousCombinations property value. The previousCombinations property
+// GetPreviousCombinations gets the previousCombinations property value. The list of former authentication method combinations allowed by the authentication strength before they were updated through the updateAllowedCombinations action.
 func (m *UpdateAllowedCombinationsResult) GetPreviousCombinations()([]AuthenticationMethodModes) {
     val, err := m.GetBackingStore().Get("previousCombinations")
     if err != nil {
@@ -207,7 +207,7 @@ func (m *UpdateAllowedCombinationsResult) SetAdditionalData(value map[string]any
         panic(err)
     }
 }
-// SetAdditionalInformation sets the additionalInformation property value. The additionalInformation property
+// SetAdditionalInformation sets the additionalInformation property value. Information about why the updateAllowedCombinations action was successful or failed.
 func (m *UpdateAllowedCombinationsResult) SetAdditionalInformation(value *string)() {
     err := m.GetBackingStore().Set("additionalInformation", value)
     if err != nil {
@@ -218,14 +218,14 @@ func (m *UpdateAllowedCombinationsResult) SetAdditionalInformation(value *string
 func (m *UpdateAllowedCombinationsResult) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetConditionalAccessReferences sets the conditionalAccessReferences property value. The conditionalAccessReferences property
+// SetConditionalAccessReferences sets the conditionalAccessReferences property value. References to existing Conditional Access policies that use this authentication strength.
 func (m *UpdateAllowedCombinationsResult) SetConditionalAccessReferences(value []string)() {
     err := m.GetBackingStore().Set("conditionalAccessReferences", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCurrentCombinations sets the currentCombinations property value. The currentCombinations property
+// SetCurrentCombinations sets the currentCombinations property value. The list of current authentication method combinations allowed by the authentication strength.
 func (m *UpdateAllowedCombinationsResult) SetCurrentCombinations(value []AuthenticationMethodModes)() {
     err := m.GetBackingStore().Set("currentCombinations", value)
     if err != nil {
@@ -239,7 +239,7 @@ func (m *UpdateAllowedCombinationsResult) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPreviousCombinations sets the previousCombinations property value. The previousCombinations property
+// SetPreviousCombinations sets the previousCombinations property value. The list of former authentication method combinations allowed by the authentication strength before they were updated through the updateAllowedCombinations action.
 func (m *UpdateAllowedCombinationsResult) SetPreviousCombinations(value []AuthenticationMethodModes)() {
     err := m.GetBackingStore().Set("previousCombinations", value)
     if err != nil {

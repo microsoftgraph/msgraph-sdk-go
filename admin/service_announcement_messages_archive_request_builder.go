@@ -30,10 +30,7 @@ func NewServiceAnnouncementMessagesArchiveRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewServiceAnnouncementMessagesArchiveRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post archive a list of serviceUpdateMessages for the signed in user.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/serviceupdatemessage-archive?view=graph-rest-1.0
+// Post invoke action archive
 func (m *ServiceAnnouncementMessagesArchiveRequestBuilder) Post(ctx context.Context, body ServiceAnnouncementMessagesArchivePostRequestBodyable, requestConfiguration *ServiceAnnouncementMessagesArchiveRequestBuilderPostRequestConfiguration)(ServiceAnnouncementMessagesArchiveResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -52,7 +49,7 @@ func (m *ServiceAnnouncementMessagesArchiveRequestBuilder) Post(ctx context.Cont
     }
     return res.(ServiceAnnouncementMessagesArchiveResponseable), nil
 }
-// ToPostRequestInformation archive a list of serviceUpdateMessages for the signed in user.
+// ToPostRequestInformation invoke action archive
 func (m *ServiceAnnouncementMessagesArchiveRequestBuilder) ToPostRequestInformation(ctx context.Context, body ServiceAnnouncementMessagesArchivePostRequestBodyable, requestConfiguration *ServiceAnnouncementMessagesArchiveRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

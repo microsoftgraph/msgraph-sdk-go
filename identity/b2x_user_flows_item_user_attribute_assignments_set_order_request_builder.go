@@ -30,10 +30,7 @@ func NewB2xUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilder(rawUrl st
     urlParams["request-raw-url"] = rawUrl
     return NewB2xUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post set the order of identityUserFlowAttributeAssignments being collected within a user flow.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/identityuserflowattributeassignment-setorder?view=graph-rest-1.0
+// Post invoke action setOrder
 func (m *B2xUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilder) Post(ctx context.Context, body B2xUserFlowsItemUserAttributeAssignmentsSetOrderPostRequestBodyable, requestConfiguration *B2xUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *B2xUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilder) Post(ct
     }
     return nil
 }
-// ToPostRequestInformation set the order of identityUserFlowAttributeAssignments being collected within a user flow.
+// ToPostRequestInformation invoke action setOrder
 func (m *B2xUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilder) ToPostRequestInformation(ctx context.Context, body B2xUserFlowsItemUserAttributeAssignmentsSetOrderPostRequestBodyable, requestConfiguration *B2xUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

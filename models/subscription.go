@@ -286,7 +286,7 @@ func (m *Subscription) GetNotificationQueryOptions()(*string) {
     }
     return nil
 }
-// GetNotificationUrl gets the notificationUrl property value. Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol.
+// GetNotificationUrl gets the notificationUrl property value. Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property will be included in the HTTP POST request when Microsoft Graph sends the change notifications.
 func (m *Subscription) GetNotificationUrl()(*string) {
     val, err := m.GetBackingStore().Get("notificationUrl")
     if err != nil {
@@ -488,7 +488,7 @@ func (m *Subscription) SetNotificationQueryOptions(value *string)() {
         panic(err)
     }
 }
-// SetNotificationUrl sets the notificationUrl property value. Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol.
+// SetNotificationUrl sets the notificationUrl property value. Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property will be included in the HTTP POST request when Microsoft Graph sends the change notifications.
 func (m *Subscription) SetNotificationUrl(value *string)() {
     err := m.GetBackingStore().Set("notificationUrl", value)
     if err != nil {

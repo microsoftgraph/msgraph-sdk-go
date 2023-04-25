@@ -37,7 +37,7 @@ func CreateAuthenticationCombinationConfigurationFromDiscriminatorValue(parseNod
     }
     return NewAuthenticationCombinationConfiguration(), nil
 }
-// GetAppliesToCombinations gets the appliesToCombinations property value. The appliesToCombinations property
+// GetAppliesToCombinations gets the appliesToCombinations property value. Which authentication method combinations this configuration applies to. Must be an allowedCombinations object that's defined for the authenticationStrengthPolicy. The only possible value for fido2combinationConfigurations is 'fido2'.
 func (m *AuthenticationCombinationConfiguration) GetAppliesToCombinations()([]AuthenticationMethodModes) {
     val, err := m.GetBackingStore().Get("appliesToCombinations")
     if err != nil {
@@ -81,7 +81,7 @@ func (m *AuthenticationCombinationConfiguration) Serialize(writer i878a80d2330e8
     }
     return nil
 }
-// SetAppliesToCombinations sets the appliesToCombinations property value. The appliesToCombinations property
+// SetAppliesToCombinations sets the appliesToCombinations property value. Which authentication method combinations this configuration applies to. Must be an allowedCombinations object that's defined for the authenticationStrengthPolicy. The only possible value for fido2combinationConfigurations is 'fido2'.
 func (m *AuthenticationCombinationConfiguration) SetAppliesToCombinations(value []AuthenticationMethodModes)() {
     err := m.GetBackingStore().Set("appliesToCombinations", value)
     if err != nil {

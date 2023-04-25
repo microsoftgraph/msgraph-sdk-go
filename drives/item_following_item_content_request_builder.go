@@ -39,9 +39,6 @@ func NewItemFollowingItemContentRequestBuilder(rawUrl string, requestAdapter i2a
     return NewItemFollowingItemContentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the content stream, if the item represents a file.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/drive-list-following?view=graph-rest-1.0
 func (m *ItemFollowingItemContentRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemFollowingItemContentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

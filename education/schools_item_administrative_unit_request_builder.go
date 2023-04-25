@@ -11,7 +11,7 @@ import (
 type SchoolsItemAdministrativeUnitRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SchoolsItemAdministrativeUnitRequestBuilderGetQueryParameters get a list of **administrativeUnits** associated with an educationSchool object.
+// SchoolsItemAdministrativeUnitRequestBuilderGetQueryParameters the underlying administrativeUnit for this school.
 type SchoolsItemAdministrativeUnitRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -47,10 +47,7 @@ func NewSchoolsItemAdministrativeUnitRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewSchoolsItemAdministrativeUnitRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get a list of **administrativeUnits** associated with an educationSchool object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationschool-list-administrativeunit?view=graph-rest-1.0
+// Get the underlying administrativeUnit for this school.
 func (m *SchoolsItemAdministrativeUnitRequestBuilder) Get(ctx context.Context, requestConfiguration *SchoolsItemAdministrativeUnitRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AdministrativeUnitable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -88,7 +85,7 @@ func (m *SchoolsItemAdministrativeUnitRequestBuilder) Patch(ctx context.Context,
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AdministrativeUnitable), nil
 }
-// ToGetRequestInformation get a list of **administrativeUnits** associated with an educationSchool object.
+// ToGetRequestInformation the underlying administrativeUnit for this school.
 func (m *SchoolsItemAdministrativeUnitRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SchoolsItemAdministrativeUnitRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

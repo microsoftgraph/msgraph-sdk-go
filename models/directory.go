@@ -30,6 +30,28 @@ func (m *Directory) GetAdministrativeUnits()([]AdministrativeUnitable) {
     }
     return nil
 }
+// GetAttributeSets gets the attributeSets property value. The attributeSets property
+func (m *Directory) GetAttributeSets()([]AttributeSetable) {
+    val, err := m.GetBackingStore().Get("attributeSets")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AttributeSetable)
+    }
+    return nil
+}
+// GetCustomSecurityAttributeDefinitions gets the customSecurityAttributeDefinitions property value. The customSecurityAttributeDefinitions property
+func (m *Directory) GetCustomSecurityAttributeDefinitions()([]CustomSecurityAttributeDefinitionable) {
+    val, err := m.GetBackingStore().Get("customSecurityAttributeDefinitions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CustomSecurityAttributeDefinitionable)
+    }
+    return nil
+}
 // GetDeletedItems gets the deletedItems property value. Recently deleted items. Read-only. Nullable.
 func (m *Directory) GetDeletedItems()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("deletedItems")
@@ -66,6 +88,34 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
                 res[i] = v.(AdministrativeUnitable)
             }
             m.SetAdministrativeUnits(res)
+        }
+        return nil
+    }
+    res["attributeSets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAttributeSetFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AttributeSetable, len(val))
+            for i, v := range val {
+                res[i] = v.(AttributeSetable)
+            }
+            m.SetAttributeSets(res)
+        }
+        return nil
+    }
+    res["customSecurityAttributeDefinitions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCustomSecurityAttributeDefinitionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CustomSecurityAttributeDefinitionable, len(val))
+            for i, v := range val {
+                res[i] = v.(CustomSecurityAttributeDefinitionable)
+            }
+            m.SetCustomSecurityAttributeDefinitions(res)
         }
         return nil
     }
@@ -140,6 +190,26 @@ func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
+    if m.GetAttributeSets() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAttributeSets()))
+        for i, v := range m.GetAttributeSets() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("attributeSets", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetCustomSecurityAttributeDefinitions() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomSecurityAttributeDefinitions()))
+        for i, v := range m.GetCustomSecurityAttributeDefinitions() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("customSecurityAttributeDefinitions", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetDeletedItems() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeletedItems()))
         for i, v := range m.GetDeletedItems() {
@@ -179,6 +249,20 @@ func (m *Directory) SetAdministrativeUnits(value []AdministrativeUnitable)() {
         panic(err)
     }
 }
+// SetAttributeSets sets the attributeSets property value. The attributeSets property
+func (m *Directory) SetAttributeSets(value []AttributeSetable)() {
+    err := m.GetBackingStore().Set("attributeSets", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetCustomSecurityAttributeDefinitions sets the customSecurityAttributeDefinitions property value. The customSecurityAttributeDefinitions property
+func (m *Directory) SetCustomSecurityAttributeDefinitions(value []CustomSecurityAttributeDefinitionable)() {
+    err := m.GetBackingStore().Set("customSecurityAttributeDefinitions", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDeletedItems sets the deletedItems property value. Recently deleted items. Read-only. Nullable.
 func (m *Directory) SetDeletedItems(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("deletedItems", value)
@@ -205,10 +289,14 @@ type Directoryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAdministrativeUnits()([]AdministrativeUnitable)
+    GetAttributeSets()([]AttributeSetable)
+    GetCustomSecurityAttributeDefinitions()([]CustomSecurityAttributeDefinitionable)
     GetDeletedItems()([]DirectoryObjectable)
     GetFederationConfigurations()([]IdentityProviderBaseable)
     GetOnPremisesSynchronization()([]OnPremisesDirectorySynchronizationable)
     SetAdministrativeUnits(value []AdministrativeUnitable)()
+    SetAttributeSets(value []AttributeSetable)()
+    SetCustomSecurityAttributeDefinitions(value []CustomSecurityAttributeDefinitionable)()
     SetDeletedItems(value []DirectoryObjectable)()
     SetFederationConfigurations(value []IdentityProviderBaseable)()
     SetOnPremisesSynchronization(value []OnPremisesDirectorySynchronizationable)()

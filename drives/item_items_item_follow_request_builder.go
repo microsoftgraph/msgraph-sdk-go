@@ -31,10 +31,7 @@ func NewItemItemsItemFollowRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemFollowRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post follow a driveItem.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/driveitem-follow?view=graph-rest-1.0
+// Post invoke action follow
 func (m *ItemItemsItemFollowRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemItemsItemFollowRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -53,7 +50,7 @@ func (m *ItemItemsItemFollowRequestBuilder) Post(ctx context.Context, requestCon
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable), nil
 }
-// ToPostRequestInformation follow a driveItem.
+// ToPostRequestInformation invoke action follow
 func (m *ItemItemsItemFollowRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemFollowRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

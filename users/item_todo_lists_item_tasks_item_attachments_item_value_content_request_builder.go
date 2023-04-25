@@ -38,9 +38,6 @@ func NewItemTodoListsItemTasksItemAttachmentsItemValueContentRequestBuilder(rawU
     return NewItemTodoListsItemTasksItemAttachmentsItemValueContentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get media content for the navigation property attachments from users
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/todotask-list-attachments?view=graph-rest-1.0
 func (m *ItemTodoListsItemTasksItemAttachmentsItemValueContentRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemAttachmentsItemValueContentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

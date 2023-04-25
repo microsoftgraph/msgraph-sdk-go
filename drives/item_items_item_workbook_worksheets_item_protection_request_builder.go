@@ -18,7 +18,7 @@ type ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilderDeleteRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilderGetQueryParameters retrieve the properties and relationships of worksheetprotection object.
+// ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilderGetQueryParameters returns sheet protection object for a worksheet. Read-only.
 type ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,10 +70,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilder) Delete(ctx
     }
     return nil
 }
-// Get retrieve the properties and relationships of worksheetprotection object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/worksheetprotection-get?view=graph-rest-1.0
+// Get returns sheet protection object for a worksheet. Read-only.
 func (m *ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookWorksheetProtectionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -127,7 +124,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilder) ToDeleteRe
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of worksheetprotection object.
+// ToGetRequestInformation returns sheet protection object for a worksheet. Read-only.
 func (m *ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -56,7 +56,7 @@ func (m *DefaultUserRolePermissions) GetAllowedToCreateSecurityGroups()(*bool) {
     }
     return nil
 }
-// GetAllowedToReadBitlockerKeysForOwnedDevice gets the allowedToReadBitlockerKeysForOwnedDevice property value. The allowedToReadBitlockerKeysForOwnedDevice property
+// GetAllowedToReadBitlockerKeysForOwnedDevice gets the allowedToReadBitlockerKeysForOwnedDevice property value. Indicates whether the registered owners of a device can read their own BitLocker recovery keys with default user role.
 func (m *DefaultUserRolePermissions) GetAllowedToReadBitlockerKeysForOwnedDevice()(*bool) {
     val, err := m.GetBackingStore().Get("allowedToReadBitlockerKeysForOwnedDevice")
     if err != nil {
@@ -240,7 +240,7 @@ func (m *DefaultUserRolePermissions) SetAllowedToCreateSecurityGroups(value *boo
         panic(err)
     }
 }
-// SetAllowedToReadBitlockerKeysForOwnedDevice sets the allowedToReadBitlockerKeysForOwnedDevice property value. The allowedToReadBitlockerKeysForOwnedDevice property
+// SetAllowedToReadBitlockerKeysForOwnedDevice sets the allowedToReadBitlockerKeysForOwnedDevice property value. Indicates whether the registered owners of a device can read their own BitLocker recovery keys with default user role.
 func (m *DefaultUserRolePermissions) SetAllowedToReadBitlockerKeysForOwnedDevice(value *bool)() {
     err := m.GetBackingStore().Set("allowedToReadBitlockerKeysForOwnedDevice", value)
     if err != nil {

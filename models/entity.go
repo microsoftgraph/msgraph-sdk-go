@@ -92,6 +92,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewAgreementFileVersion(), nil
                     case "#microsoft.graph.alert":
                         return NewAlert(), nil
+                    case "#microsoft.graph.allowedValue":
+                        return NewAllowedValue(), nil
                     case "#microsoft.graph.androidCompliancePolicy":
                         return NewAndroidCompliancePolicy(), nil
                     case "#microsoft.graph.androidCustomConfiguration":
@@ -152,6 +154,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewAttackSimulationRoot(), nil
                     case "#microsoft.graph.attendanceRecord":
                         return NewAttendanceRecord(), nil
+                    case "#microsoft.graph.attributeSet":
+                        return NewAttributeSet(), nil
                     case "#microsoft.graph.audioRoutingGroup":
                         return NewAudioRoutingGroup(), nil
                     case "#microsoft.graph.auditEvent":
@@ -290,6 +294,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCrossTenantAccessPolicy(), nil
                     case "#microsoft.graph.crossTenantAccessPolicyConfigurationDefault":
                         return NewCrossTenantAccessPolicyConfigurationDefault(), nil
+                    case "#microsoft.graph.customSecurityAttributeDefinition":
+                        return NewCustomSecurityAttributeDefinition(), nil
                     case "#microsoft.graph.dataPolicyOperation":
                         return NewDataPolicyOperation(), nil
                     case "#microsoft.graph.defaultManagedAppProtection":

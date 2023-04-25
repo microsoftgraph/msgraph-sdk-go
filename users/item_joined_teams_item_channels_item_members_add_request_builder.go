@@ -30,10 +30,7 @@ func NewItemJoinedTeamsItemChannelsItemMembersAddRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewItemJoinedTeamsItemChannelsItemMembersAddRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
+// Post invoke action add
 func (m *ItemJoinedTeamsItemChannelsItemMembersAddRequestBuilder) Post(ctx context.Context, body ItemJoinedTeamsItemChannelsItemMembersAddPostRequestBodyable, requestConfiguration *ItemJoinedTeamsItemChannelsItemMembersAddRequestBuilderPostRequestConfiguration)(ItemJoinedTeamsItemChannelsItemMembersAddResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -52,7 +49,7 @@ func (m *ItemJoinedTeamsItemChannelsItemMembersAddRequestBuilder) Post(ctx conte
     }
     return res.(ItemJoinedTeamsItemChannelsItemMembersAddResponseable), nil
 }
-// ToPostRequestInformation add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
+// ToPostRequestInformation invoke action add
 func (m *ItemJoinedTeamsItemChannelsItemMembersAddRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemJoinedTeamsItemChannelsItemMembersAddPostRequestBodyable, requestConfiguration *ItemJoinedTeamsItemChannelsItemMembersAddRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

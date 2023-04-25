@@ -31,10 +31,7 @@ func NewItemItemsItemWorkbookTablesItemColumnsAddRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookTablesItemColumnsAddRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post adds a new column to the table.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/tablecolumncollection-add?view=graph-rest-1.0
+// Post invoke action add
 func (m *ItemItemsItemWorkbookTablesItemColumnsAddRequestBuilder) Post(ctx context.Context, body ItemItemsItemWorkbookTablesItemColumnsAddPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookTablesItemColumnsAddRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableColumnable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -53,7 +50,7 @@ func (m *ItemItemsItemWorkbookTablesItemColumnsAddRequestBuilder) Post(ctx conte
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableColumnable), nil
 }
-// ToPostRequestInformation adds a new column to the table.
+// ToPostRequestInformation invoke action add
 func (m *ItemItemsItemWorkbookTablesItemColumnsAddRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemsItemWorkbookTablesItemColumnsAddPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookTablesItemColumnsAddRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -30,10 +30,7 @@ func NewItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatFillClearRe
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatFillClearRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post clear the fill color of a chart element.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/chartfill-clear?view=graph-rest-1.0
+// Post invoke action clear
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatFillClearRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatFillClearRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatFillClearR
     }
     return nil
 }
-// ToPostRequestInformation clear the fill color of a chart element.
+// ToPostRequestInformation invoke action clear
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatFillClearRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemDataLabelsFormatFillClearRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -56,9 +56,6 @@ func NewItemRegisteredUsersRefRequestBuilder(rawUrl string, requestAdapter i2ae4
     return NewItemRegisteredUsersRefRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/device-list-registeredusers?view=graph-rest-1.0
 func (m *ItemRegisteredUsersRefRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemRegisteredUsersRefRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

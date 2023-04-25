@@ -30,10 +30,7 @@ func NewItemCalendarGetScheduleRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewItemCalendarGetScheduleRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/calendar-getschedule?view=graph-rest-1.0
+// Post invoke action getSchedule
 func (m *ItemCalendarGetScheduleRequestBuilder) Post(ctx context.Context, body ItemCalendarGetSchedulePostRequestBodyable, requestConfiguration *ItemCalendarGetScheduleRequestBuilderPostRequestConfiguration)(ItemCalendarGetScheduleResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -52,7 +49,7 @@ func (m *ItemCalendarGetScheduleRequestBuilder) Post(ctx context.Context, body I
     }
     return res.(ItemCalendarGetScheduleResponseable), nil
 }
-// ToPostRequestInformation get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period.
+// ToPostRequestInformation invoke action getSchedule
 func (m *ItemCalendarGetScheduleRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemCalendarGetSchedulePostRequestBodyable, requestConfiguration *ItemCalendarGetScheduleRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

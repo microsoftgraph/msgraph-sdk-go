@@ -11,7 +11,7 @@ import (
 type ItemSitesItemTermStoresItemGroupsItemSetsItemChildrenRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSitesItemTermStoresItemGroupsItemSetsItemChildrenRequestBuilderGetQueryParameters get the first level children of a [set] or [term] resource using the children navigation property.
+// ItemSitesItemTermStoresItemGroupsItemSetsItemChildrenRequestBuilderGetQueryParameters children terms of set in term [store].
 type ItemSitesItemTermStoresItemGroupsItemSetsItemChildrenRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewItemSitesItemTermStoresItemGroupsItemSetsItemChildrenRequestBuilder(rawU
 func (m *ItemSitesItemTermStoresItemGroupsItemSetsItemChildrenRequestBuilder) Count()(*ItemSitesItemTermStoresItemGroupsItemSetsItemChildrenCountRequestBuilder) {
     return NewItemSitesItemTermStoresItemGroupsItemSetsItemChildrenCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the first level children of a [set] or [term] resource using the children navigation property.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/termstore-term-list-children?view=graph-rest-1.0
+// Get children terms of set in term [store].
 func (m *ItemSitesItemTermStoresItemGroupsItemSetsItemChildrenRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemTermStoresItemGroupsItemSetsItemChildrenRequestBuilderGetRequestConfiguration)(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.TermCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,10 +93,7 @@ func (m *ItemSitesItemTermStoresItemGroupsItemSetsItemChildrenRequestBuilder) Ge
     }
     return res.(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.TermCollectionResponseable), nil
 }
-// Post create a new term object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/termstore-term-post?view=graph-rest-1.0
+// Post create new navigation property to children for groups
 func (m *ItemSitesItemTermStoresItemGroupsItemSetsItemChildrenRequestBuilder) Post(ctx context.Context, body ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Termable, requestConfiguration *ItemSitesItemTermStoresItemGroupsItemSetsItemChildrenRequestBuilderPostRequestConfiguration)(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Termable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +112,7 @@ func (m *ItemSitesItemTermStoresItemGroupsItemSetsItemChildrenRequestBuilder) Po
     }
     return res.(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Termable), nil
 }
-// ToGetRequestInformation get the first level children of a [set] or [term] resource using the children navigation property.
+// ToGetRequestInformation children terms of set in term [store].
 func (m *ItemSitesItemTermStoresItemGroupsItemSetsItemChildrenRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemTermStoresItemGroupsItemSetsItemChildrenRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +128,7 @@ func (m *ItemSitesItemTermStoresItemGroupsItemSetsItemChildrenRequestBuilder) To
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new term object.
+// ToPostRequestInformation create new navigation property to children for groups
 func (m *ItemSitesItemTermStoresItemGroupsItemSetsItemChildrenRequestBuilder) ToPostRequestInformation(ctx context.Context, body ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Termable, requestConfiguration *ItemSitesItemTermStoresItemGroupsItemSetsItemChildrenRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

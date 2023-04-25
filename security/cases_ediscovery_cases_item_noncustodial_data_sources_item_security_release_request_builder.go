@@ -30,10 +30,7 @@ func NewCasesEdiscoveryCasesItemNoncustodialDataSourcesItemSecurityReleaseReques
     urlParams["request-raw-url"] = rawUrl
     return NewCasesEdiscoveryCasesItemNoncustodialDataSourcesItemSecurityReleaseRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post release the non-custodial data source from the case.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-ediscoverynoncustodialdatasource-release?view=graph-rest-1.0
+// Post invoke action release
 func (m *CasesEdiscoveryCasesItemNoncustodialDataSourcesItemSecurityReleaseRequestBuilder) Post(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemNoncustodialDataSourcesItemSecurityReleaseRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *CasesEdiscoveryCasesItemNoncustodialDataSourcesItemSecurityReleaseReque
     }
     return nil
 }
-// ToPostRequestInformation release the non-custodial data source from the case.
+// ToPostRequestInformation invoke action release
 func (m *CasesEdiscoveryCasesItemNoncustodialDataSourcesItemSecurityReleaseRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemNoncustodialDataSourcesItemSecurityReleaseRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type ItemHomeRealmDiscoveryPoliciesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemHomeRealmDiscoveryPoliciesRequestBuilderGetQueryParameters list the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
+// ItemHomeRealmDiscoveryPoliciesRequestBuilderGetQueryParameters the homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
 type ItemHomeRealmDiscoveryPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,10 +67,7 @@ func NewItemHomeRealmDiscoveryPoliciesRequestBuilder(rawUrl string, requestAdapt
 func (m *ItemHomeRealmDiscoveryPoliciesRequestBuilder) Count()(*ItemHomeRealmDiscoveryPoliciesCountRequestBuilder) {
     return NewItemHomeRealmDiscoveryPoliciesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/serviceprincipal-list-homerealmdiscoverypolicies?view=graph-rest-1.0
+// Get the homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
 func (m *ItemHomeRealmDiscoveryPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemHomeRealmDiscoveryPoliciesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.HomeRealmDiscoveryPolicyCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +90,7 @@ func (m *ItemHomeRealmDiscoveryPoliciesRequestBuilder) Get(ctx context.Context, 
 func (m *ItemHomeRealmDiscoveryPoliciesRequestBuilder) Ref()(*ItemHomeRealmDiscoveryPoliciesRefRequestBuilder) {
     return NewItemHomeRealmDiscoveryPoliciesRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation list the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
+// ToGetRequestInformation the homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
 func (m *ItemHomeRealmDiscoveryPoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemHomeRealmDiscoveryPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

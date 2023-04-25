@@ -30,10 +30,7 @@ func NewPresencesItemClearPresenceRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewPresencesItemClearPresenceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post clear the application's presence session for a user. If it is the user's only presence session, the user's presence will change to `Offline/Offline`. For details about presences sessions, see presence: setPresence.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/presence-clearpresence?view=graph-rest-1.0
+// Post invoke action clearPresence
 func (m *PresencesItemClearPresenceRequestBuilder) Post(ctx context.Context, body PresencesItemClearPresencePostRequestBodyable, requestConfiguration *PresencesItemClearPresenceRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *PresencesItemClearPresenceRequestBuilder) Post(ctx context.Context, bod
     }
     return nil
 }
-// ToPostRequestInformation clear the application's presence session for a user. If it is the user's only presence session, the user's presence will change to `Offline/Offline`. For details about presences sessions, see presence: setPresence.
+// ToPostRequestInformation invoke action clearPresence
 func (m *PresencesItemClearPresenceRequestBuilder) ToPostRequestInformation(ctx context.Context, body PresencesItemClearPresencePostRequestBodyable, requestConfiguration *PresencesItemClearPresenceRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

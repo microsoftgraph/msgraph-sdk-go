@@ -30,10 +30,7 @@ func NewBookingBusinessesItemGetStaffAvailabilityRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewBookingBusinessesItemGetStaffAvailabilityRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post get the availability information of staff members of a Microsoft Bookings calendar.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/bookingbusiness-getstaffavailability?view=graph-rest-1.0
+// Post invoke action getStaffAvailability
 func (m *BookingBusinessesItemGetStaffAvailabilityRequestBuilder) Post(ctx context.Context, body BookingBusinessesItemGetStaffAvailabilityPostRequestBodyable, requestConfiguration *BookingBusinessesItemGetStaffAvailabilityRequestBuilderPostRequestConfiguration)(BookingBusinessesItemGetStaffAvailabilityResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -52,7 +49,7 @@ func (m *BookingBusinessesItemGetStaffAvailabilityRequestBuilder) Post(ctx conte
     }
     return res.(BookingBusinessesItemGetStaffAvailabilityResponseable), nil
 }
-// ToPostRequestInformation get the availability information of staff members of a Microsoft Bookings calendar.
+// ToPostRequestInformation invoke action getStaffAvailability
 func (m *BookingBusinessesItemGetStaffAvailabilityRequestBuilder) ToPostRequestInformation(ctx context.Context, body BookingBusinessesItemGetStaffAvailabilityPostRequestBodyable, requestConfiguration *BookingBusinessesItemGetStaffAvailabilityRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

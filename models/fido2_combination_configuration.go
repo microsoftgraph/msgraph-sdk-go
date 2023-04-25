@@ -21,7 +21,7 @@ func NewFido2CombinationConfiguration()(*Fido2CombinationConfiguration) {
 func CreateFido2CombinationConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFido2CombinationConfiguration(), nil
 }
-// GetAllowedAAGUIDs gets the allowedAAGUIDs property value. The allowedAAGUIDs property
+// GetAllowedAAGUIDs gets the allowedAAGUIDs property value. A list of AAGUIDs allowed to be used as part of the specified authentication method combinations.
 func (m *Fido2CombinationConfiguration) GetAllowedAAGUIDs()([]string) {
     val, err := m.GetBackingStore().Get("allowedAAGUIDs")
     if err != nil {
@@ -65,7 +65,7 @@ func (m *Fido2CombinationConfiguration) Serialize(writer i878a80d2330e89d2689638
     }
     return nil
 }
-// SetAllowedAAGUIDs sets the allowedAAGUIDs property value. The allowedAAGUIDs property
+// SetAllowedAAGUIDs sets the allowedAAGUIDs property value. A list of AAGUIDs allowed to be used as part of the specified authentication method combinations.
 func (m *Fido2CombinationConfiguration) SetAllowedAAGUIDs(value []string)() {
     err := m.GetBackingStore().Set("allowedAAGUIDs", value)
     if err != nil {
