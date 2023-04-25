@@ -30,10 +30,7 @@ func NewDeletedItemsGetByIdsRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewDeletedItemsGetByIdsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post return the directory objects specified in a list of IDs. Some common uses for this function are to:
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
+// Post invoke action getByIds
 func (m *DeletedItemsGetByIdsRequestBuilder) Post(ctx context.Context, body DeletedItemsGetByIdsPostRequestBodyable, requestConfiguration *DeletedItemsGetByIdsRequestBuilderPostRequestConfiguration)(DeletedItemsGetByIdsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -52,7 +49,7 @@ func (m *DeletedItemsGetByIdsRequestBuilder) Post(ctx context.Context, body Dele
     }
     return res.(DeletedItemsGetByIdsResponseable), nil
 }
-// ToPostRequestInformation return the directory objects specified in a list of IDs. Some common uses for this function are to:
+// ToPostRequestInformation invoke action getByIds
 func (m *DeletedItemsGetByIdsRequestBuilder) ToPostRequestInformation(ctx context.Context, body DeletedItemsGetByIdsPostRequestBodyable, requestConfiguration *DeletedItemsGetByIdsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

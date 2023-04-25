@@ -11,7 +11,7 @@ import (
 type EntitlementManagementCatalogsItemAccessPackagesItemIncompatibleGroupsRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementCatalogsItemAccessPackagesItemIncompatibleGroupsRefRequestBuilderGetQueryParameters retrieve a list of the group objects that have been marked as incompatible on an accessPackage.  
+// EntitlementManagementCatalogsItemAccessPackagesItemIncompatibleGroupsRefRequestBuilderGetQueryParameters the groups whose members are ineligible to be assigned this access package.
 type EntitlementManagementCatalogsItemAccessPackagesItemIncompatibleGroupsRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -55,10 +55,7 @@ func NewEntitlementManagementCatalogsItemAccessPackagesItemIncompatibleGroupsRef
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementCatalogsItemAccessPackagesItemIncompatibleGroupsRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get retrieve a list of the group objects that have been marked as incompatible on an accessPackage.  
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/accesspackage-list-incompatiblegroups?view=graph-rest-1.0
+// Get the groups whose members are ineligible to be assigned this access package.
 func (m *EntitlementManagementCatalogsItemAccessPackagesItemIncompatibleGroupsRefRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementCatalogsItemAccessPackagesItemIncompatibleGroupsRefRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +90,7 @@ func (m *EntitlementManagementCatalogsItemAccessPackagesItemIncompatibleGroupsRe
     }
     return nil
 }
-// ToGetRequestInformation retrieve a list of the group objects that have been marked as incompatible on an accessPackage.  
+// ToGetRequestInformation the groups whose members are ineligible to be assigned this access package.
 func (m *EntitlementManagementCatalogsItemAccessPackagesItemIncompatibleGroupsRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementCatalogsItemAccessPackagesItemIncompatibleGroupsRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

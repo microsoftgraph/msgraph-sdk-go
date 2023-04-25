@@ -93,10 +93,7 @@ func (m *ItemFederationConfigurationRequestBuilder) Get(ctx context.Context, req
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InternalDomainFederationCollectionResponseable), nil
 }
-// Post create a new internalDomainFederation object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/domain-post-federationconfiguration?view=graph-rest-1.0
+// Post create new navigation property to federationConfiguration for domains
 func (m *ItemFederationConfigurationRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InternalDomainFederationable, requestConfiguration *ItemFederationConfigurationRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InternalDomainFederationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -131,7 +128,7 @@ func (m *ItemFederationConfigurationRequestBuilder) ToGetRequestInformation(ctx 
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new internalDomainFederation object.
+// ToPostRequestInformation create new navigation property to federationConfiguration for domains
 func (m *ItemFederationConfigurationRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InternalDomainFederationable, requestConfiguration *ItemFederationConfigurationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

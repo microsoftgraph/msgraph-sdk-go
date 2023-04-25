@@ -30,10 +30,7 @@ func NewGetPresencesByUserIdRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewGetPresencesByUserIdRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post get the presence information for multiple users.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/cloudcommunications-getpresencesbyuserid?view=graph-rest-1.0
+// Post invoke action getPresencesByUserId
 func (m *GetPresencesByUserIdRequestBuilder) Post(ctx context.Context, body GetPresencesByUserIdPostRequestBodyable, requestConfiguration *GetPresencesByUserIdRequestBuilderPostRequestConfiguration)(GetPresencesByUserIdResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -52,7 +49,7 @@ func (m *GetPresencesByUserIdRequestBuilder) Post(ctx context.Context, body GetP
     }
     return res.(GetPresencesByUserIdResponseable), nil
 }
-// ToPostRequestInformation get the presence information for multiple users.
+// ToPostRequestInformation invoke action getPresencesByUserId
 func (m *GetPresencesByUserIdRequestBuilder) ToPostRequestInformation(ctx context.Context, body GetPresencesByUserIdPostRequestBodyable, requestConfiguration *GetPresencesByUserIdRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

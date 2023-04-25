@@ -11,7 +11,7 @@ import (
 type AccessReviewsDefinitionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AccessReviewsDefinitionsRequestBuilderGetQueryParameters get a list of the accessReviewScheduleDefinition objects and their properties.
+// AccessReviewsDefinitionsRequestBuilderGetQueryParameters represents the template and scheduling for an access review.
 type AccessReviewsDefinitionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,10 +78,7 @@ func (m *AccessReviewsDefinitionsRequestBuilder) Count()(*AccessReviewsDefinitio
 func (m *AccessReviewsDefinitionsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*AccessReviewsDefinitionsFilterByCurrentUserWithOnRequestBuilder) {
     return NewAccessReviewsDefinitionsFilterByCurrentUserWithOnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, on)
 }
-// Get get a list of the accessReviewScheduleDefinition objects and their properties.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/accessreviewset-list-definitions?view=graph-rest-1.0
+// Get represents the template and scheduling for an access review.
 func (m *AccessReviewsDefinitionsRequestBuilder) Get(ctx context.Context, requestConfiguration *AccessReviewsDefinitionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewScheduleDefinitionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -100,10 +97,7 @@ func (m *AccessReviewsDefinitionsRequestBuilder) Get(ctx context.Context, reques
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewScheduleDefinitionCollectionResponseable), nil
 }
-// Post create a new accessReviewScheduleDefinition object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/accessreviewset-post-definitions?view=graph-rest-1.0
+// Post create new navigation property to definitions for identityGovernance
 func (m *AccessReviewsDefinitionsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewScheduleDefinitionable, requestConfiguration *AccessReviewsDefinitionsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewScheduleDefinitionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *AccessReviewsDefinitionsRequestBuilder) Post(ctx context.Context, body 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewScheduleDefinitionable), nil
 }
-// ToGetRequestInformation get a list of the accessReviewScheduleDefinition objects and their properties.
+// ToGetRequestInformation represents the template and scheduling for an access review.
 func (m *AccessReviewsDefinitionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AccessReviewsDefinitionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -138,7 +132,7 @@ func (m *AccessReviewsDefinitionsRequestBuilder) ToGetRequestInformation(ctx con
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new accessReviewScheduleDefinition object.
+// ToPostRequestInformation create new navigation property to definitions for identityGovernance
 func (m *AccessReviewsDefinitionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewScheduleDefinitionable, requestConfiguration *AccessReviewsDefinitionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

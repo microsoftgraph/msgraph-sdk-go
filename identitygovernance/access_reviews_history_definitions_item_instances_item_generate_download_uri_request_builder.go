@@ -31,10 +31,7 @@ func NewAccessReviewsHistoryDefinitionsItemInstancesItemGenerateDownloadUriReque
     urlParams["request-raw-url"] = rawUrl
     return NewAccessReviewsHistoryDefinitionsItemInstancesItemGenerateDownloadUriRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post generates a URI for an accessReviewHistoryInstance object the **status** for which is `done`. Each URI can be used to retrieve the instance's review history data. Each URI is valid for 24 hours and can be retrieved by fetching the **downloadUri** property from the accessReviewHistoryInstance object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/accessreviewhistoryinstance-generatedownloaduri?view=graph-rest-1.0
+// Post invoke action generateDownloadUri
 func (m *AccessReviewsHistoryDefinitionsItemInstancesItemGenerateDownloadUriRequestBuilder) Post(ctx context.Context, requestConfiguration *AccessReviewsHistoryDefinitionsItemInstancesItemGenerateDownloadUriRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewHistoryInstanceable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -53,7 +50,7 @@ func (m *AccessReviewsHistoryDefinitionsItemInstancesItemGenerateDownloadUriRequ
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewHistoryInstanceable), nil
 }
-// ToPostRequestInformation generates a URI for an accessReviewHistoryInstance object the **status** for which is `done`. Each URI can be used to retrieve the instance's review history data. Each URI is valid for 24 hours and can be retrieved by fetching the **downloadUri** property from the accessReviewHistoryInstance object.
+// ToPostRequestInformation invoke action generateDownloadUri
 func (m *AccessReviewsHistoryDefinitionsItemInstancesItemGenerateDownloadUriRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *AccessReviewsHistoryDefinitionsItemInstancesItemGenerateDownloadUriRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -30,10 +30,7 @@ func NewItemChatsItemSendActivityNotificationRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewItemChatsItemSendActivityNotificationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post send an activity feed notification in scope of a chat. For more details about sending notifications and the requirements for doing so, see sending Teams activity notifications.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/chat-sendactivitynotification?view=graph-rest-1.0
+// Post invoke action sendActivityNotification
 func (m *ItemChatsItemSendActivityNotificationRequestBuilder) Post(ctx context.Context, body ItemChatsItemSendActivityNotificationPostRequestBodyable, requestConfiguration *ItemChatsItemSendActivityNotificationRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *ItemChatsItemSendActivityNotificationRequestBuilder) Post(ctx context.C
     }
     return nil
 }
-// ToPostRequestInformation send an activity feed notification in scope of a chat. For more details about sending notifications and the requirements for doing so, see sending Teams activity notifications.
+// ToPostRequestInformation invoke action sendActivityNotification
 func (m *ItemChatsItemSendActivityNotificationRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemChatsItemSendActivityNotificationPostRequestBodyable, requestConfiguration *ItemChatsItemSendActivityNotificationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

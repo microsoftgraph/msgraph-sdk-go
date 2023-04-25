@@ -18,7 +18,7 @@ type ItemPlannerPlansItemTasksItemBucketTaskBoardFormatRequestBuilderDeleteReque
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemPlannerPlansItemTasksItemBucketTaskBoardFormatRequestBuilderGetQueryParameters retrieve the properties and relationships of **plannerBucketTaskBoardTaskFormat** object.
+// ItemPlannerPlansItemTasksItemBucketTaskBoardFormatRequestBuilderGetQueryParameters read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
 type ItemPlannerPlansItemTasksItemBucketTaskBoardFormatRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,10 +70,7 @@ func (m *ItemPlannerPlansItemTasksItemBucketTaskBoardFormatRequestBuilder) Delet
     }
     return nil
 }
-// Get retrieve the properties and relationships of **plannerBucketTaskBoardTaskFormat** object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-get?view=graph-rest-1.0
+// Get read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
 func (m *ItemPlannerPlansItemTasksItemBucketTaskBoardFormatRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPlannerPlansItemTasksItemBucketTaskBoardFormatRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerBucketTaskBoardTaskFormatable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,9 +90,6 @@ func (m *ItemPlannerPlansItemTasksItemBucketTaskBoardFormatRequestBuilder) Get(c
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerBucketTaskBoardTaskFormatable), nil
 }
 // Patch update the navigation property bucketTaskBoardFormat in groups
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-update?view=graph-rest-1.0
 func (m *ItemPlannerPlansItemTasksItemBucketTaskBoardFormatRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerBucketTaskBoardTaskFormatable, requestConfiguration *ItemPlannerPlansItemTasksItemBucketTaskBoardFormatRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerBucketTaskBoardTaskFormatable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -126,7 +120,7 @@ func (m *ItemPlannerPlansItemTasksItemBucketTaskBoardFormatRequestBuilder) ToDel
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of **plannerBucketTaskBoardTaskFormat** object.
+// ToGetRequestInformation read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
 func (m *ItemPlannerPlansItemTasksItemBucketTaskBoardFormatRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPlannerPlansItemTasksItemBucketTaskBoardFormatRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

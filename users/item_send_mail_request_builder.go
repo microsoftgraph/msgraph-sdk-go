@@ -30,10 +30,7 @@ func NewItemSendMailRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewItemSendMailRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post send the message specified in the request body using either JSON or MIME format. When using JSON format you can include a file attachment in the same **sendMail** action call. When using MIME format:- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.- Add any attachments and S/MIME properties to the MIME content. This method saves the message in the **Sent Items** folder. Alternatively, create a draft message to send later. To learn more about the steps involved in the backend before a mail is delivered to recipients, see here.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/user-sendmail?view=graph-rest-1.0
+// Post invoke action sendMail
 func (m *ItemSendMailRequestBuilder) Post(ctx context.Context, body ItemSendMailPostRequestBodyable, requestConfiguration *ItemSendMailRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *ItemSendMailRequestBuilder) Post(ctx context.Context, body ItemSendMail
     }
     return nil
 }
-// ToPostRequestInformation send the message specified in the request body using either JSON or MIME format. When using JSON format you can include a file attachment in the same **sendMail** action call. When using MIME format:- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.- Add any attachments and S/MIME properties to the MIME content. This method saves the message in the **Sent Items** folder. Alternatively, create a draft message to send later. To learn more about the steps involved in the backend before a mail is delivered to recipients, see here.
+// ToPostRequestInformation invoke action sendMail
 func (m *ItemSendMailRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemSendMailPostRequestBodyable, requestConfiguration *ItemSendMailRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

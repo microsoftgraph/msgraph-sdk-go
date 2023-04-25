@@ -10,7 +10,7 @@ import (
 type ItemMailFoldersDeltaRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemMailFoldersDeltaRequestBuilderGetQueryParameters get a set of mail folders that have been added, deleted, or removed from the user's mailbox. A **delta** function call for mail folders in a mailbox is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the mail folders. This allows you to maintain and synchronize a local store of a user's mail folders without having to fetch all the mail folders of that mailbox from the server every time.
+// ItemMailFoldersDeltaRequestBuilderGetQueryParameters invoke function delta
 type ItemMailFoldersDeltaRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -49,10 +49,7 @@ func NewItemMailFoldersDeltaRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewItemMailFoldersDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get a set of mail folders that have been added, deleted, or removed from the user's mailbox. A **delta** function call for mail folders in a mailbox is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the mail folders. This allows you to maintain and synchronize a local store of a user's mail folders without having to fetch all the mail folders of that mailbox from the server every time.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/mailfolder-delta?view=graph-rest-1.0
+// Get invoke function delta
 func (m *ItemMailFoldersDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMailFoldersDeltaRequestBuilderGetRequestConfiguration)(ItemMailFoldersDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -71,7 +68,7 @@ func (m *ItemMailFoldersDeltaRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(ItemMailFoldersDeltaResponseable), nil
 }
-// ToGetRequestInformation get a set of mail folders that have been added, deleted, or removed from the user's mailbox. A **delta** function call for mail folders in a mailbox is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the mail folders. This allows you to maintain and synchronize a local store of a user's mail folders without having to fetch all the mail folders of that mailbox from the server every time.
+// ToGetRequestInformation invoke function delta
 func (m *ItemMailFoldersDeltaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMailFoldersDeltaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

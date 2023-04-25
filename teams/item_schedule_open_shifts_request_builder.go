@@ -11,7 +11,7 @@ import (
 type ItemScheduleOpenShiftsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemScheduleOpenShiftsRequestBuilderGetQueryParameters list openShift objects in a team.
+// ItemScheduleOpenShiftsRequestBuilderGetQueryParameters the set of open shifts in a scheduling group in the schedule.
 type ItemScheduleOpenShiftsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewItemScheduleOpenShiftsRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *ItemScheduleOpenShiftsRequestBuilder) Count()(*ItemScheduleOpenShiftsCountRequestBuilder) {
     return NewItemScheduleOpenShiftsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list openShift objects in a team.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/openshift-list?view=graph-rest-1.0
+// Get the set of open shifts in a scheduling group in the schedule.
 func (m *ItemScheduleOpenShiftsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemScheduleOpenShiftsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OpenShiftCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,10 +93,7 @@ func (m *ItemScheduleOpenShiftsRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OpenShiftCollectionResponseable), nil
 }
-// Post create an instance of an openShift object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/openshift-post?view=graph-rest-1.0
+// Post create new navigation property to openShifts for teams
 func (m *ItemScheduleOpenShiftsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OpenShiftable, requestConfiguration *ItemScheduleOpenShiftsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OpenShiftable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +112,7 @@ func (m *ItemScheduleOpenShiftsRequestBuilder) Post(ctx context.Context, body ia
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OpenShiftable), nil
 }
-// ToGetRequestInformation list openShift objects in a team.
+// ToGetRequestInformation the set of open shifts in a scheduling group in the schedule.
 func (m *ItemScheduleOpenShiftsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemScheduleOpenShiftsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +128,7 @@ func (m *ItemScheduleOpenShiftsRequestBuilder) ToGetRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create an instance of an openShift object.
+// ToPostRequestInformation create new navigation property to openShifts for teams
 func (m *ItemScheduleOpenShiftsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OpenShiftable, requestConfiguration *ItemScheduleOpenShiftsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

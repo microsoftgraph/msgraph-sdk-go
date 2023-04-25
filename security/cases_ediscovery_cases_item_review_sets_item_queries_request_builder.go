@@ -11,7 +11,7 @@ import (
 type CasesEdiscoveryCasesItemReviewSetsItemQueriesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CasesEdiscoveryCasesItemReviewSetsItemQueriesRequestBuilderGetQueryParameters get the list of queries associated with an eDiscovery review set.
+// CasesEdiscoveryCasesItemReviewSetsItemQueriesRequestBuilderGetQueryParameters represents queries within the review set.
 type CasesEdiscoveryCasesItemReviewSetsItemQueriesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewCasesEdiscoveryCasesItemReviewSetsItemQueriesRequestBuilder(rawUrl strin
 func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesRequestBuilder) Count()(*CasesEdiscoveryCasesItemReviewSetsItemQueriesCountRequestBuilder) {
     return NewCasesEdiscoveryCasesItemReviewSetsItemQueriesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of queries associated with an eDiscovery review set.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-ediscoveryreviewset-list-queries?view=graph-rest-1.0
+// Get represents queries within the review set.
 func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesRequestBuilder) Get(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemReviewSetsItemQueriesRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewSetQueryCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,10 +93,7 @@ func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesRequestBuilder) Get(ctx co
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewSetQueryCollectionResponseable), nil
 }
-// Post create a new ediscoveryReviewSetQuery object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-ediscoveryreviewset-post-queries?view=graph-rest-1.0
+// Post create new navigation property to queries for security
 func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesRequestBuilder) Post(ctx context.Context, body idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewSetQueryable, requestConfiguration *CasesEdiscoveryCasesItemReviewSetsItemQueriesRequestBuilderPostRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewSetQueryable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +112,7 @@ func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesRequestBuilder) Post(ctx c
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewSetQueryable), nil
 }
-// ToGetRequestInformation get the list of queries associated with an eDiscovery review set.
+// ToGetRequestInformation represents queries within the review set.
 func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemReviewSetsItemQueriesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +128,7 @@ func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesRequestBuilder) ToGetReque
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new ediscoveryReviewSetQuery object.
+// ToPostRequestInformation create new navigation property to queries for security
 func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesRequestBuilder) ToPostRequestInformation(ctx context.Context, body idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewSetQueryable, requestConfiguration *CasesEdiscoveryCasesItemReviewSetsItemQueriesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

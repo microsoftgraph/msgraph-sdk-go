@@ -30,10 +30,7 @@ func NewItemContentTypesItemPublishRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewItemContentTypesItemPublishRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post publishes a [contentType][] present in the content type hub site.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/contenttype-publish?view=graph-rest-1.0
+// Post invoke action publish
 func (m *ItemContentTypesItemPublishRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemContentTypesItemPublishRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *ItemContentTypesItemPublishRequestBuilder) Post(ctx context.Context, re
     }
     return nil
 }
-// ToPostRequestInformation publishes a [contentType][] present in the content type hub site.
+// ToPostRequestInformation invoke action publish
 func (m *ItemContentTypesItemPublishRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemContentTypesItemPublishRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

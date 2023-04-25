@@ -11,7 +11,7 @@ import (
 type ItemScheduleOfferShiftRequestsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemScheduleOfferShiftRequestsRequestBuilderGetQueryParameters retrieve the properties and relationships of all offerShiftRequest objects in a team.
+// ItemScheduleOfferShiftRequestsRequestBuilderGetQueryParameters get offerShiftRequests from teams
 type ItemScheduleOfferShiftRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewItemScheduleOfferShiftRequestsRequestBuilder(rawUrl string, requestAdapt
 func (m *ItemScheduleOfferShiftRequestsRequestBuilder) Count()(*ItemScheduleOfferShiftRequestsCountRequestBuilder) {
     return NewItemScheduleOfferShiftRequestsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the properties and relationships of all offerShiftRequest objects in a team.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/offershiftrequest-list?view=graph-rest-1.0
+// Get get offerShiftRequests from teams
 func (m *ItemScheduleOfferShiftRequestsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemScheduleOfferShiftRequestsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OfferShiftRequestCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +112,7 @@ func (m *ItemScheduleOfferShiftRequestsRequestBuilder) Post(ctx context.Context,
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OfferShiftRequestable), nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of all offerShiftRequest objects in a team.
+// ToGetRequestInformation get offerShiftRequests from teams
 func (m *ItemScheduleOfferShiftRequestsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemScheduleOfferShiftRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

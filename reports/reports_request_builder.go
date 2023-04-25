@@ -376,6 +376,26 @@ func (m *ReportsRequestBuilder) GetTeamsDeviceUsageUserDetailWithDate(date *i878
 func (m *ReportsRequestBuilder) GetTeamsDeviceUsageUserDetailWithPeriod(period *string)(*GetTeamsDeviceUsageUserDetailWithPeriodRequestBuilder) {
     return NewGetTeamsDeviceUsageUserDetailWithPeriodRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, period)
 }
+// GetTeamsTeamActivityCountsWithPeriod provides operations to call the getTeamsTeamActivityCounts method.
+func (m *ReportsRequestBuilder) GetTeamsTeamActivityCountsWithPeriod(period *string)(*GetTeamsTeamActivityCountsWithPeriodRequestBuilder) {
+    return NewGetTeamsTeamActivityCountsWithPeriodRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, period)
+}
+// GetTeamsTeamActivityDetailWithDate provides operations to call the getTeamsTeamActivityDetail method.
+func (m *ReportsRequestBuilder) GetTeamsTeamActivityDetailWithDate(date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)(*GetTeamsTeamActivityDetailWithDateRequestBuilder) {
+    return NewGetTeamsTeamActivityDetailWithDateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, date)
+}
+// GetTeamsTeamActivityDetailWithPeriod provides operations to call the getTeamsTeamActivityDetail method.
+func (m *ReportsRequestBuilder) GetTeamsTeamActivityDetailWithPeriod(period *string)(*GetTeamsTeamActivityDetailWithPeriodRequestBuilder) {
+    return NewGetTeamsTeamActivityDetailWithPeriodRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, period)
+}
+// GetTeamsTeamActivityDistributionCountsWithPeriod provides operations to call the getTeamsTeamActivityDistributionCounts method.
+func (m *ReportsRequestBuilder) GetTeamsTeamActivityDistributionCountsWithPeriod(period *string)(*GetTeamsTeamActivityDistributionCountsWithPeriodRequestBuilder) {
+    return NewGetTeamsTeamActivityDistributionCountsWithPeriodRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, period)
+}
+// GetTeamsTeamCountsWithPeriod provides operations to call the getTeamsTeamCounts method.
+func (m *ReportsRequestBuilder) GetTeamsTeamCountsWithPeriod(period *string)(*GetTeamsTeamCountsWithPeriodRequestBuilder) {
+    return NewGetTeamsTeamCountsWithPeriodRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, period)
+}
 // GetTeamsUserActivityCountsWithPeriod provides operations to call the getTeamsUserActivityCounts method.
 func (m *ReportsRequestBuilder) GetTeamsUserActivityCountsWithPeriod(period *string)(*GetTeamsUserActivityCountsWithPeriodRequestBuilder) {
     return NewGetTeamsUserActivityCountsWithPeriodRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, period)

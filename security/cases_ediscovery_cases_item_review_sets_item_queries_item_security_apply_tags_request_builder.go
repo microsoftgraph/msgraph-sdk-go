@@ -30,10 +30,7 @@ func NewCasesEdiscoveryCasesItemReviewSetsItemQueriesItemSecurityApplyTagsReques
     urlParams["request-raw-url"] = rawUrl
     return NewCasesEdiscoveryCasesItemReviewSetsItemQueriesItemSecurityApplyTagsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post apply tags to files in an eDiscovery review set. For details, see Tag documents in a review set in eDiscovery.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-ediscoveryreviewsetquery-applytags?view=graph-rest-1.0
+// Post invoke action applyTags
 func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesItemSecurityApplyTagsRequestBuilder) Post(ctx context.Context, body CasesEdiscoveryCasesItemReviewSetsItemQueriesItemSecurityApplyTagsApplyTagsPostRequestBodyable, requestConfiguration *CasesEdiscoveryCasesItemReviewSetsItemQueriesItemSecurityApplyTagsRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesItemSecurityApplyTagsReque
     }
     return nil
 }
-// ToPostRequestInformation apply tags to files in an eDiscovery review set. For details, see Tag documents in a review set in eDiscovery.
+// ToPostRequestInformation invoke action applyTags
 func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesItemSecurityApplyTagsRequestBuilder) ToPostRequestInformation(ctx context.Context, body CasesEdiscoveryCasesItemReviewSetsItemQueriesItemSecurityApplyTagsApplyTagsPostRequestBodyable, requestConfiguration *CasesEdiscoveryCasesItemReviewSetsItemQueriesItemSecurityApplyTagsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

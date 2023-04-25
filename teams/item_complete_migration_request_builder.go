@@ -30,10 +30,7 @@ func NewItemCompleteMigrationRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewItemCompleteMigrationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post complete the message migration process by removing `migration mode` from a team. `Migration mode` is a special state where certain operations are barred, like message POST and membership operations during the data migration process. After a **completeMigration** request is made, you cannot import additional messages into the team. You can add members to the team after the request returns a successful response.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/team-completemigration?view=graph-rest-1.0
+// Post invoke action completeMigration
 func (m *ItemCompleteMigrationRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemCompleteMigrationRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *ItemCompleteMigrationRequestBuilder) Post(ctx context.Context, requestC
     }
     return nil
 }
-// ToPostRequestInformation complete the message migration process by removing `migration mode` from a team. `Migration mode` is a special state where certain operations are barred, like message POST and membership operations during the data migration process. After a **completeMigration** request is made, you cannot import additional messages into the team. You can add members to the team after the request returns a successful response.
+// ToPostRequestInformation invoke action completeMigration
 func (m *ItemCompleteMigrationRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemCompleteMigrationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

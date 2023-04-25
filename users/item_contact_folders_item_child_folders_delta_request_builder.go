@@ -10,7 +10,7 @@ import (
 type ItemContactFoldersItemChildFoldersDeltaRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemContactFoldersItemChildFoldersDeltaRequestBuilderGetQueryParameters get a set of contact folders that have been added, deleted, or removed from the user's mailbox. A **delta** function call for contact folders in a mailbox is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the contact folders. This allows you to maintain and synchronize a local store of a user's contact folders without having to fetch all the contact folders of that mailbox from the server every time.
+// ItemContactFoldersItemChildFoldersDeltaRequestBuilderGetQueryParameters invoke function delta
 type ItemContactFoldersItemChildFoldersDeltaRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -49,10 +49,7 @@ func NewItemContactFoldersItemChildFoldersDeltaRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewItemContactFoldersItemChildFoldersDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get a set of contact folders that have been added, deleted, or removed from the user's mailbox. A **delta** function call for contact folders in a mailbox is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the contact folders. This allows you to maintain and synchronize a local store of a user's contact folders without having to fetch all the contact folders of that mailbox from the server every time.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/contactfolder-delta?view=graph-rest-1.0
+// Get invoke function delta
 func (m *ItemContactFoldersItemChildFoldersDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemContactFoldersItemChildFoldersDeltaRequestBuilderGetRequestConfiguration)(ItemContactFoldersItemChildFoldersDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -71,7 +68,7 @@ func (m *ItemContactFoldersItemChildFoldersDeltaRequestBuilder) Get(ctx context.
     }
     return res.(ItemContactFoldersItemChildFoldersDeltaResponseable), nil
 }
-// ToGetRequestInformation get a set of contact folders that have been added, deleted, or removed from the user's mailbox. A **delta** function call for contact folders in a mailbox is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the contact folders. This allows you to maintain and synchronize a local store of a user's contact folders without having to fetch all the contact folders of that mailbox from the server every time.
+// ToGetRequestInformation invoke function delta
 func (m *ItemContactFoldersItemChildFoldersDeltaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemContactFoldersItemChildFoldersDeltaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

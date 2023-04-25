@@ -11,7 +11,7 @@ import (
 type HomeRealmDiscoveryPoliciesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// HomeRealmDiscoveryPoliciesRequestBuilderGetQueryParameters get a list of homeRealmDiscoveryPolicy objects.
+// HomeRealmDiscoveryPoliciesRequestBuilderGetQueryParameters the policy to control Azure AD authentication behavior for federated users.
 type HomeRealmDiscoveryPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewHomeRealmDiscoveryPoliciesRequestBuilder(rawUrl string, requestAdapter i
 func (m *HomeRealmDiscoveryPoliciesRequestBuilder) Count()(*HomeRealmDiscoveryPoliciesCountRequestBuilder) {
     return NewHomeRealmDiscoveryPoliciesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of homeRealmDiscoveryPolicy objects.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/homerealmdiscoverypolicy-list?view=graph-rest-1.0
+// Get the policy to control Azure AD authentication behavior for federated users.
 func (m *HomeRealmDiscoveryPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *HomeRealmDiscoveryPoliciesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.HomeRealmDiscoveryPolicyCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,10 +93,7 @@ func (m *HomeRealmDiscoveryPoliciesRequestBuilder) Get(ctx context.Context, requ
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.HomeRealmDiscoveryPolicyCollectionResponseable), nil
 }
-// Post create a new homeRealmDiscoveryPolicy object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/homerealmdiscoverypolicy-post-homerealmdiscoverypolicies?view=graph-rest-1.0
+// Post create new navigation property to homeRealmDiscoveryPolicies for policies
 func (m *HomeRealmDiscoveryPoliciesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.HomeRealmDiscoveryPolicyable, requestConfiguration *HomeRealmDiscoveryPoliciesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.HomeRealmDiscoveryPolicyable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +112,7 @@ func (m *HomeRealmDiscoveryPoliciesRequestBuilder) Post(ctx context.Context, bod
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.HomeRealmDiscoveryPolicyable), nil
 }
-// ToGetRequestInformation get a list of homeRealmDiscoveryPolicy objects.
+// ToGetRequestInformation the policy to control Azure AD authentication behavior for federated users.
 func (m *HomeRealmDiscoveryPoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *HomeRealmDiscoveryPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +128,7 @@ func (m *HomeRealmDiscoveryPoliciesRequestBuilder) ToGetRequestInformation(ctx c
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new homeRealmDiscoveryPolicy object.
+// ToPostRequestInformation create new navigation property to homeRealmDiscoveryPolicies for policies
 func (m *HomeRealmDiscoveryPoliciesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.HomeRealmDiscoveryPolicyable, requestConfiguration *HomeRealmDiscoveryPoliciesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -20,7 +20,7 @@ func NewAuthenticationStrengthPolicy()(*AuthenticationStrengthPolicy) {
 func CreateAuthenticationStrengthPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuthenticationStrengthPolicy(), nil
 }
-// GetAllowedCombinations gets the allowedCombinations property value. The allowedCombinations property
+// GetAllowedCombinations gets the allowedCombinations property value. A collection of authentication method modes that are required be used to satify this authentication strength.
 func (m *AuthenticationStrengthPolicy) GetAllowedCombinations()([]AuthenticationMethodModes) {
     val, err := m.GetBackingStore().Get("allowedCombinations")
     if err != nil {
@@ -31,7 +31,7 @@ func (m *AuthenticationStrengthPolicy) GetAllowedCombinations()([]Authentication
     }
     return nil
 }
-// GetCombinationConfigurations gets the combinationConfigurations property value. The combinationConfigurations property
+// GetCombinationConfigurations gets the combinationConfigurations property value. Settings that may be used to require specific types or instances of an authentication method to be used when authenticating with a specified combination of authentication methods.
 func (m *AuthenticationStrengthPolicy) GetCombinationConfigurations()([]AuthenticationCombinationConfigurationable) {
     val, err := m.GetBackingStore().Get("combinationConfigurations")
     if err != nil {
@@ -42,7 +42,7 @@ func (m *AuthenticationStrengthPolicy) GetCombinationConfigurations()([]Authenti
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The datetime when this policy was created.
 func (m *AuthenticationStrengthPolicy) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -53,7 +53,7 @@ func (m *AuthenticationStrengthPolicy) GetCreatedDateTime()(*i336074805fc853987a
     }
     return nil
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. The human-readable description of this policy.
 func (m *AuthenticationStrengthPolicy) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -64,7 +64,7 @@ func (m *AuthenticationStrengthPolicy) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The human-readable display name of this policy. Supports $filter (eq, ne, not , and in).
 func (m *AuthenticationStrengthPolicy) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -168,7 +168,7 @@ func (m *AuthenticationStrengthPolicy) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetModifiedDateTime gets the modifiedDateTime property value. The modifiedDateTime property
+// GetModifiedDateTime gets the modifiedDateTime property value. The datetime when this policy was last modified.
 func (m *AuthenticationStrengthPolicy) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("modifiedDateTime")
     if err != nil {
@@ -263,42 +263,42 @@ func (m *AuthenticationStrengthPolicy) Serialize(writer i878a80d2330e89d26896388
     }
     return nil
 }
-// SetAllowedCombinations sets the allowedCombinations property value. The allowedCombinations property
+// SetAllowedCombinations sets the allowedCombinations property value. A collection of authentication method modes that are required be used to satify this authentication strength.
 func (m *AuthenticationStrengthPolicy) SetAllowedCombinations(value []AuthenticationMethodModes)() {
     err := m.GetBackingStore().Set("allowedCombinations", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCombinationConfigurations sets the combinationConfigurations property value. The combinationConfigurations property
+// SetCombinationConfigurations sets the combinationConfigurations property value. Settings that may be used to require specific types or instances of an authentication method to be used when authenticating with a specified combination of authentication methods.
 func (m *AuthenticationStrengthPolicy) SetCombinationConfigurations(value []AuthenticationCombinationConfigurationable)() {
     err := m.GetBackingStore().Set("combinationConfigurations", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The datetime when this policy was created.
 func (m *AuthenticationStrengthPolicy) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. The human-readable description of this policy.
 func (m *AuthenticationStrengthPolicy) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The human-readable display name of this policy. Supports $filter (eq, ne, not , and in).
 func (m *AuthenticationStrengthPolicy) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetModifiedDateTime sets the modifiedDateTime property value. The modifiedDateTime property
+// SetModifiedDateTime sets the modifiedDateTime property value. The datetime when this policy was last modified.
 func (m *AuthenticationStrengthPolicy) SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("modifiedDateTime", value)
     if err != nil {

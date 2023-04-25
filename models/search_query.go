@@ -95,7 +95,7 @@ func (m *SearchQuery) GetQueryString()(*string) {
     }
     return nil
 }
-// GetQueryTemplate gets the queryTemplate property value. The queryTemplate property
+// GetQueryTemplate gets the queryTemplate property value. Provides a way to decorate the query string. Supports both KQL and query variables. Optional.
 func (m *SearchQuery) GetQueryTemplate()(*string) {
     val, err := m.GetBackingStore().Get("queryTemplate")
     if err != nil {
@@ -159,7 +159,7 @@ func (m *SearchQuery) SetQueryString(value *string)() {
         panic(err)
     }
 }
-// SetQueryTemplate sets the queryTemplate property value. The queryTemplate property
+// SetQueryTemplate sets the queryTemplate property value. Provides a way to decorate the query string. Supports both KQL and query variables. Optional.
 func (m *SearchQuery) SetQueryTemplate(value *string)() {
     err := m.GetBackingStore().Set("queryTemplate", value)
     if err != nil {

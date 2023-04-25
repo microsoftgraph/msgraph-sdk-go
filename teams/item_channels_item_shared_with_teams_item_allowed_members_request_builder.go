@@ -11,7 +11,7 @@ import (
 type ItemChannelsItemSharedWithTeamsItemAllowedMembersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemChannelsItemSharedWithTeamsItemAllowedMembersRequestBuilderGetQueryParameters get the list of conversationMembers who can access a shared channel. This method does not return the following conversationMembers from the team:- Users with `Guest` role- Users who are externally authenticated in the tenant
+// ItemChannelsItemSharedWithTeamsItemAllowedMembersRequestBuilderGetQueryParameters a collection of team members who have access to the shared channel.
 type ItemChannelsItemSharedWithTeamsItemAllowedMembersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,10 +67,7 @@ func NewItemChannelsItemSharedWithTeamsItemAllowedMembersRequestBuilder(rawUrl s
 func (m *ItemChannelsItemSharedWithTeamsItemAllowedMembersRequestBuilder) Count()(*ItemChannelsItemSharedWithTeamsItemAllowedMembersCountRequestBuilder) {
     return NewItemChannelsItemSharedWithTeamsItemAllowedMembersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of conversationMembers who can access a shared channel. This method does not return the following conversationMembers from the team:- Users with `Guest` role- Users who are externally authenticated in the tenant
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/sharedwithchannelteaminfo-list-allowedmembers?view=graph-rest-1.0
+// Get a collection of team members who have access to the shared channel.
 func (m *ItemChannelsItemSharedWithTeamsItemAllowedMembersRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemChannelsItemSharedWithTeamsItemAllowedMembersRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +86,7 @@ func (m *ItemChannelsItemSharedWithTeamsItemAllowedMembersRequestBuilder) Get(ct
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberCollectionResponseable), nil
 }
-// ToGetRequestInformation get the list of conversationMembers who can access a shared channel. This method does not return the following conversationMembers from the team:- Users with `Guest` role- Users who are externally authenticated in the tenant
+// ToGetRequestInformation a collection of team members who have access to the shared channel.
 func (m *ItemChannelsItemSharedWithTeamsItemAllowedMembersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemChannelsItemSharedWithTeamsItemAllowedMembersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

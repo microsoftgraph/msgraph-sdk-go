@@ -11,7 +11,7 @@ import (
 type AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilderGetQueryParameters retrieve the stages in a multi-stage access review instance.
+// AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilderGetQueryParameters if the instance has multiple stages, this returns the collection of stages. A new stage will only be created when the previous stage ends. The existence, number, and settings of stages on a review instance are created based on the accessReviewStageSettings on the parent accessReviewScheduleDefinition.
 type AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,10 +78,7 @@ func (m *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder) Count()(
 func (m *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*AccessReviewsDefinitionsItemInstancesItemStagesFilterByCurrentUserWithOnRequestBuilder) {
     return NewAccessReviewsDefinitionsItemInstancesItemStagesFilterByCurrentUserWithOnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, on)
 }
-// Get retrieve the stages in a multi-stage access review instance.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/accessreviewinstance-list-stages?view=graph-rest-1.0
+// Get if the instance has multiple stages, this returns the collection of stages. A new stage will only be created when the previous stage ends. The existence, number, and settings of stages on a review instance are created based on the accessReviewStageSettings on the parent accessReviewScheduleDefinition.
 func (m *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder) Get(ctx context.Context, requestConfiguration *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewStageCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +116,7 @@ func (m *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder) Post(ctx
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewStageable), nil
 }
-// ToGetRequestInformation retrieve the stages in a multi-stage access review instance.
+// ToGetRequestInformation if the instance has multiple stages, this returns the collection of stages. A new stage will only be created when the previous stage ends. The existence, number, and settings of stages on a review instance are created based on the accessReviewStageSettings on the parent accessReviewScheduleDefinition.
 func (m *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

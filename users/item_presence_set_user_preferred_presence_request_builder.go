@@ -30,10 +30,7 @@ func NewItemPresenceSetUserPreferredPresenceRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewItemPresenceSetUserPreferredPresenceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post set the preferred availability and activity status for a user. If the preferred presence of a user is set, the user's presence shows as the preferred status. Preferred presence takes effect only when at least one presence session exists for the user. Otherwise, the user's presence shows as `Offline`. A presence session is created as a result of a successful setPresence operation, or if the user is signed in on a Microsoft Teams client. For more details, see presence sessions and time-out and expiration.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/presence-setuserpreferredpresence?view=graph-rest-1.0
+// Post invoke action setUserPreferredPresence
 func (m *ItemPresenceSetUserPreferredPresenceRequestBuilder) Post(ctx context.Context, body ItemPresenceSetUserPreferredPresencePostRequestBodyable, requestConfiguration *ItemPresenceSetUserPreferredPresenceRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *ItemPresenceSetUserPreferredPresenceRequestBuilder) Post(ctx context.Co
     }
     return nil
 }
-// ToPostRequestInformation set the preferred availability and activity status for a user. If the preferred presence of a user is set, the user's presence shows as the preferred status. Preferred presence takes effect only when at least one presence session exists for the user. Otherwise, the user's presence shows as `Offline`. A presence session is created as a result of a successful setPresence operation, or if the user is signed in on a Microsoft Teams client. For more details, see presence sessions and time-out and expiration.
+// ToPostRequestInformation invoke action setUserPreferredPresence
 func (m *ItemPresenceSetUserPreferredPresenceRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemPresenceSetUserPreferredPresencePostRequestBodyable, requestConfiguration *ItemPresenceSetUserPreferredPresenceRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

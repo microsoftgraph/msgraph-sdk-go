@@ -31,10 +31,7 @@ func NewCallsItemRecordResponseRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewCallsItemRecordResponseRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post records a short audio response from the caller.A bot can utilize this to capture a voice response from a caller after they are prompted for a response. For further information on how to handle operations, please review commsOperation This action is not intended to record the entire call. The maximum length of recording is 2 minutes. The recording is not saved permanently by the Cloud Communications Platform and is discarded shortly after the call ends. The bot must download the recording promptly after the recording operation finishes by using the recordingLocation value that's given in the completed notification.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/call-record?view=graph-rest-1.0
+// Post invoke action recordResponse
 func (m *CallsItemRecordResponseRequestBuilder) Post(ctx context.Context, body CallsItemRecordResponsePostRequestBodyable, requestConfiguration *CallsItemRecordResponseRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RecordOperationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -53,7 +50,7 @@ func (m *CallsItemRecordResponseRequestBuilder) Post(ctx context.Context, body C
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RecordOperationable), nil
 }
-// ToPostRequestInformation records a short audio response from the caller.A bot can utilize this to capture a voice response from a caller after they are prompted for a response. For further information on how to handle operations, please review commsOperation This action is not intended to record the entire call. The maximum length of recording is 2 minutes. The recording is not saved permanently by the Cloud Communications Platform and is discarded shortly after the call ends. The bot must download the recording promptly after the recording operation finishes by using the recordingLocation value that's given in the completed notification.
+// ToPostRequestInformation invoke action recordResponse
 func (m *CallsItemRecordResponseRequestBuilder) ToPostRequestInformation(ctx context.Context, body CallsItemRecordResponsePostRequestBodyable, requestConfiguration *CallsItemRecordResponseRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

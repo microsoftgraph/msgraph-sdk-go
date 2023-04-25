@@ -11,7 +11,7 @@ import (
 type UsersItemAssignmentsItemCategoriesRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// UsersItemAssignmentsItemCategoriesRefRequestBuilderGetQueryParameters list all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+// UsersItemAssignmentsItemCategoriesRefRequestBuilderGetQueryParameters when set, enables users to easily find assignments of a given type.  Read-only. Nullable.
 type UsersItemAssignmentsItemCategoriesRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -55,10 +55,7 @@ func NewUsersItemAssignmentsItemCategoriesRefRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewUsersItemAssignmentsItemCategoriesRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get list all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-1.0
+// Get when set, enables users to easily find assignments of a given type.  Read-only. Nullable.
 func (m *UsersItemAssignmentsItemCategoriesRefRequestBuilder) Get(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemCategoriesRefRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +90,7 @@ func (m *UsersItemAssignmentsItemCategoriesRefRequestBuilder) Post(ctx context.C
     }
     return nil
 }
-// ToGetRequestInformation list all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+// ToGetRequestInformation when set, enables users to easily find assignments of a given type.  Read-only. Nullable.
 func (m *UsersItemAssignmentsItemCategoriesRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemCategoriesRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

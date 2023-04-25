@@ -30,10 +30,7 @@ func NewItemPermissionGrantsGetAvailableExtensionPropertiesRequestBuilder(rawUrl
     urlParams["request-raw-url"] = rawUrl
     return NewItemPermissionGrantsGetAvailableExtensionPropertiesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:+ user+ group+ administrativeUnit+ application+ device+ organization
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
+// Post invoke action getAvailableExtensionProperties
 func (m *ItemPermissionGrantsGetAvailableExtensionPropertiesRequestBuilder) Post(ctx context.Context, body ItemPermissionGrantsGetAvailableExtensionPropertiesPostRequestBodyable, requestConfiguration *ItemPermissionGrantsGetAvailableExtensionPropertiesRequestBuilderPostRequestConfiguration)(ItemPermissionGrantsGetAvailableExtensionPropertiesResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -52,7 +49,7 @@ func (m *ItemPermissionGrantsGetAvailableExtensionPropertiesRequestBuilder) Post
     }
     return res.(ItemPermissionGrantsGetAvailableExtensionPropertiesResponseable), nil
 }
-// ToPostRequestInformation return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:+ user+ group+ administrativeUnit+ application+ device+ organization
+// ToPostRequestInformation invoke action getAvailableExtensionProperties
 func (m *ItemPermissionGrantsGetAvailableExtensionPropertiesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemPermissionGrantsGetAvailableExtensionPropertiesPostRequestBodyable, requestConfiguration *ItemPermissionGrantsGetAvailableExtensionPropertiesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

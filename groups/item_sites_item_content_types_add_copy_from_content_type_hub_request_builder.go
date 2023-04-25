@@ -31,10 +31,7 @@ func NewItemSitesItemContentTypesAddCopyFromContentTypeHubRequestBuilder(rawUrl 
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemContentTypesAddCopyFromContentTypeHubRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post add or sync a copy of a published content type from the content type hub to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a 'push everywhere' to 'pull as needed' approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see contentType: getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/contenttype-addcopyfromcontenttypehub?view=graph-rest-1.0
+// Post invoke action addCopyFromContentTypeHub
 func (m *ItemSitesItemContentTypesAddCopyFromContentTypeHubRequestBuilder) Post(ctx context.Context, body ItemSitesItemContentTypesAddCopyFromContentTypeHubPostRequestBodyable, requestConfiguration *ItemSitesItemContentTypesAddCopyFromContentTypeHubRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -53,7 +50,7 @@ func (m *ItemSitesItemContentTypesAddCopyFromContentTypeHubRequestBuilder) Post(
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeable), nil
 }
-// ToPostRequestInformation add or sync a copy of a published content type from the content type hub to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a 'push everywhere' to 'pull as needed' approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see contentType: getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.
+// ToPostRequestInformation invoke action addCopyFromContentTypeHub
 func (m *ItemSitesItemContentTypesAddCopyFromContentTypeHubRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemSitesItemContentTypesAddCopyFromContentTypeHubPostRequestBodyable, requestConfiguration *ItemSitesItemContentTypesAddCopyFromContentTypeHubRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

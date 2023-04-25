@@ -30,10 +30,7 @@ func NewItemChatsItemHideForUserRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewItemChatsItemHideForUserRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post hide a chat for a user.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/chat-hideforuser?view=graph-rest-1.0
+// Post invoke action hideForUser
 func (m *ItemChatsItemHideForUserRequestBuilder) Post(ctx context.Context, body ItemChatsItemHideForUserPostRequestBodyable, requestConfiguration *ItemChatsItemHideForUserRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *ItemChatsItemHideForUserRequestBuilder) Post(ctx context.Context, body 
     }
     return nil
 }
-// ToPostRequestInformation hide a chat for a user.
+// ToPostRequestInformation invoke action hideForUser
 func (m *ItemChatsItemHideForUserRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemChatsItemHideForUserPostRequestBodyable, requestConfiguration *ItemChatsItemHideForUserRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

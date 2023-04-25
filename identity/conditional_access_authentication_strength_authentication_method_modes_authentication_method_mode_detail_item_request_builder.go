@@ -18,7 +18,7 @@ type ConditionalAccessAuthenticationStrengthAuthenticationMethodModesAuthenticat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConditionalAccessAuthenticationStrengthAuthenticationMethodModesAuthenticationMethodModeDetailItemRequestBuilderGetQueryParameters get authenticationMethodModes from identity
+// ConditionalAccessAuthenticationStrengthAuthenticationMethodModesAuthenticationMethodModeDetailItemRequestBuilderGetQueryParameters names and descriptions of all valid authentication method modes in the system.
 type ConditionalAccessAuthenticationStrengthAuthenticationMethodModesAuthenticationMethodModeDetailItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ConditionalAccessAuthenticationStrengthAuthenticationMethodModesAuthent
     }
     return nil
 }
-// Get get authenticationMethodModes from identity
+// Get names and descriptions of all valid authentication method modes in the system.
 func (m *ConditionalAccessAuthenticationStrengthAuthenticationMethodModesAuthenticationMethodModeDetailItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConditionalAccessAuthenticationStrengthAuthenticationMethodModesAuthenticationMethodModeDetailItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationMethodModeDetailable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +120,7 @@ func (m *ConditionalAccessAuthenticationStrengthAuthenticationMethodModesAuthent
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get authenticationMethodModes from identity
+// ToGetRequestInformation names and descriptions of all valid authentication method modes in the system.
 func (m *ConditionalAccessAuthenticationStrengthAuthenticationMethodModesAuthenticationMethodModeDetailItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessAuthenticationStrengthAuthenticationMethodModesAuthenticationMethodModeDetailItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

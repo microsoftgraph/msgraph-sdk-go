@@ -11,7 +11,7 @@ import (
 type BitlockerRecoveryKeysRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// BitlockerRecoveryKeysRequestBuilderGetQueryParameters get a list of the bitlockerRecoveryKey objects and their properties.  This operation does not return the **key** property. For information about how to read the **key** property, see Get bitlockerRecoveryKey.
+// BitlockerRecoveryKeysRequestBuilderGetQueryParameters the recovery keys associated with the bitlocker entity.
 type BitlockerRecoveryKeysRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,10 +67,7 @@ func NewBitlockerRecoveryKeysRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *BitlockerRecoveryKeysRequestBuilder) Count()(*BitlockerRecoveryKeysCountRequestBuilder) {
     return NewBitlockerRecoveryKeysCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the bitlockerRecoveryKey objects and their properties.  This operation does not return the **key** property. For information about how to read the **key** property, see Get bitlockerRecoveryKey.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/bitlocker-list-recoverykeys?view=graph-rest-1.0
+// Get the recovery keys associated with the bitlocker entity.
 func (m *BitlockerRecoveryKeysRequestBuilder) Get(ctx context.Context, requestConfiguration *BitlockerRecoveryKeysRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BitlockerRecoveryKeyCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +86,7 @@ func (m *BitlockerRecoveryKeysRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BitlockerRecoveryKeyCollectionResponseable), nil
 }
-// ToGetRequestInformation get a list of the bitlockerRecoveryKey objects and their properties.  This operation does not return the **key** property. For information about how to read the **key** property, see Get bitlockerRecoveryKey.
+// ToGetRequestInformation the recovery keys associated with the bitlocker entity.
 func (m *BitlockerRecoveryKeysRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BitlockerRecoveryKeysRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

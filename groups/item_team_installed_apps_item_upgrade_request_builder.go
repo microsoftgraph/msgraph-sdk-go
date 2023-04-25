@@ -30,10 +30,7 @@ func NewItemTeamInstalledAppsItemUpgradeRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamInstalledAppsItemUpgradeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post upgrade an app installation within a chat.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/chat-teamsappinstallation-upgrade?view=graph-rest-1.0
+// Post invoke action upgrade
 func (m *ItemTeamInstalledAppsItemUpgradeRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemTeamInstalledAppsItemUpgradeRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *ItemTeamInstalledAppsItemUpgradeRequestBuilder) Post(ctx context.Contex
     }
     return nil
 }
-// ToPostRequestInformation upgrade an app installation within a chat.
+// ToPostRequestInformation invoke action upgrade
 func (m *ItemTeamInstalledAppsItemUpgradeRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemTeamInstalledAppsItemUpgradeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

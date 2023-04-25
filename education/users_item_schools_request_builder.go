@@ -11,7 +11,7 @@ import (
 type UsersItemSchoolsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// UsersItemSchoolsRequestBuilderGetQueryParameters retrieve a list of schools for a user.
+// UsersItemSchoolsRequestBuilderGetQueryParameters schools to which the user belongs. Nullable.
 type UsersItemSchoolsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,10 +67,7 @@ func NewUsersItemSchoolsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 func (m *UsersItemSchoolsRequestBuilder) Count()(*UsersItemSchoolsCountRequestBuilder) {
     return NewUsersItemSchoolsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of schools for a user.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationuser-list-schools?view=graph-rest-1.0
+// Get schools to which the user belongs. Nullable.
 func (m *UsersItemSchoolsRequestBuilder) Get(ctx context.Context, requestConfiguration *UsersItemSchoolsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationSchoolCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +86,7 @@ func (m *UsersItemSchoolsRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationSchoolCollectionResponseable), nil
 }
-// ToGetRequestInformation retrieve a list of schools for a user.
+// ToGetRequestInformation schools to which the user belongs. Nullable.
 func (m *UsersItemSchoolsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UsersItemSchoolsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

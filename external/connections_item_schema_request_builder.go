@@ -18,7 +18,7 @@ type ConnectionsItemSchemaRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConnectionsItemSchemaRequestBuilderGetQueryParameters read the properties and relationships of a schema object.
+// ConnectionsItemSchemaRequestBuilderGetQueryParameters get schema from external
 type ConnectionsItemSchemaRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,10 +70,7 @@ func (m *ConnectionsItemSchemaRequestBuilder) Delete(ctx context.Context, reques
     }
     return nil
 }
-// Get read the properties and relationships of a schema object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/externalconnectors-schema-get?view=graph-rest-1.0
+// Get get schema from external
 func (m *ConnectionsItemSchemaRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectionsItemSchemaRequestBuilderGetRequestConfiguration)(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.Schemaable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -123,7 +120,7 @@ func (m *ConnectionsItemSchemaRequestBuilder) ToDeleteRequestInformation(ctx con
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a schema object.
+// ToGetRequestInformation get schema from external
 func (m *ConnectionsItemSchemaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectionsItemSchemaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

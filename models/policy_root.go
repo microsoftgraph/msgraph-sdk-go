@@ -63,7 +63,7 @@ func (m *PolicyRoot) GetAuthenticationFlowsPolicy()(AuthenticationFlowsPolicyabl
     }
     return nil
 }
-// GetAuthenticationMethodsPolicy gets the authenticationMethodsPolicy property value. The authentication methods and the users that are allowed to use them to sign in and perform multi-factor authentication (MFA) in Azure Active Directory (Azure AD).
+// GetAuthenticationMethodsPolicy gets the authenticationMethodsPolicy property value. The authentication methods and the users that are allowed to use them to sign in and perform multifactor authentication (MFA) in Azure Active Directory (Azure AD).
 func (m *PolicyRoot) GetAuthenticationMethodsPolicy()(AuthenticationMethodsPolicyable) {
     val, err := m.GetBackingStore().Get("authenticationMethodsPolicy")
     if err != nil {
@@ -74,7 +74,7 @@ func (m *PolicyRoot) GetAuthenticationMethodsPolicy()(AuthenticationMethodsPolic
     }
     return nil
 }
-// GetAuthenticationStrengthPolicies gets the authenticationStrengthPolicies property value. The authenticationStrengthPolicies property
+// GetAuthenticationStrengthPolicies gets the authenticationStrengthPolicies property value. The authentication method combinations that are to be used in scenarios defined by Azure AD Conditional Access.
 func (m *PolicyRoot) GetAuthenticationStrengthPolicies()([]AuthenticationStrengthPolicyable) {
     val, err := m.GetBackingStore().Get("authenticationStrengthPolicies")
     if err != nil {
@@ -669,14 +669,14 @@ func (m *PolicyRoot) SetAuthenticationFlowsPolicy(value AuthenticationFlowsPolic
         panic(err)
     }
 }
-// SetAuthenticationMethodsPolicy sets the authenticationMethodsPolicy property value. The authentication methods and the users that are allowed to use them to sign in and perform multi-factor authentication (MFA) in Azure Active Directory (Azure AD).
+// SetAuthenticationMethodsPolicy sets the authenticationMethodsPolicy property value. The authentication methods and the users that are allowed to use them to sign in and perform multifactor authentication (MFA) in Azure Active Directory (Azure AD).
 func (m *PolicyRoot) SetAuthenticationMethodsPolicy(value AuthenticationMethodsPolicyable)() {
     err := m.GetBackingStore().Set("authenticationMethodsPolicy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAuthenticationStrengthPolicies sets the authenticationStrengthPolicies property value. The authenticationStrengthPolicies property
+// SetAuthenticationStrengthPolicies sets the authenticationStrengthPolicies property value. The authentication method combinations that are to be used in scenarios defined by Azure AD Conditional Access.
 func (m *PolicyRoot) SetAuthenticationStrengthPolicies(value []AuthenticationStrengthPolicyable)() {
     err := m.GetBackingStore().Set("authenticationStrengthPolicies", value)
     if err != nil {

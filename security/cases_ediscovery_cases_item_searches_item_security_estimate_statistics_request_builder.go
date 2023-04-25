@@ -30,10 +30,7 @@ func NewCasesEdiscoveryCasesItemSearchesItemSecurityEstimateStatisticsRequestBui
     urlParams["request-raw-url"] = rawUrl
     return NewCasesEdiscoveryCasesItemSearchesItemSecurityEstimateStatisticsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post run an estimate of the number of emails and documents in the eDiscovery search. To learn more about searches in eDiscovery, see Collect data for a case in eDiscovery (Premium).
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-ediscoverysearch-estimatestatistics?view=graph-rest-1.0
+// Post invoke action estimateStatistics
 func (m *CasesEdiscoveryCasesItemSearchesItemSecurityEstimateStatisticsRequestBuilder) Post(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemSearchesItemSecurityEstimateStatisticsRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *CasesEdiscoveryCasesItemSearchesItemSecurityEstimateStatisticsRequestBu
     }
     return nil
 }
-// ToPostRequestInformation run an estimate of the number of emails and documents in the eDiscovery search. To learn more about searches in eDiscovery, see Collect data for a case in eDiscovery (Premium).
+// ToPostRequestInformation invoke action estimateStatistics
 func (m *CasesEdiscoveryCasesItemSearchesItemSecurityEstimateStatisticsRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemSearchesItemSecurityEstimateStatisticsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

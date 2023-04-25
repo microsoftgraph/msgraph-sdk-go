@@ -30,10 +30,7 @@ func NewItemCalendarViewItemTentativelyAcceptRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewItemCalendarViewItemTentativelyAcceptRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post tentatively accept the specified event in a user calendar. If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
+// Post invoke action tentativelyAccept
 func (m *ItemCalendarViewItemTentativelyAcceptRequestBuilder) Post(ctx context.Context, body ItemCalendarViewItemTentativelyAcceptPostRequestBodyable, requestConfiguration *ItemCalendarViewItemTentativelyAcceptRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *ItemCalendarViewItemTentativelyAcceptRequestBuilder) Post(ctx context.C
     }
     return nil
 }
-// ToPostRequestInformation tentatively accept the specified event in a user calendar. If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.
+// ToPostRequestInformation invoke action tentativelyAccept
 func (m *ItemCalendarViewItemTentativelyAcceptRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemCalendarViewItemTentativelyAcceptPostRequestBodyable, requestConfiguration *ItemCalendarViewItemTentativelyAcceptRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

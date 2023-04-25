@@ -30,10 +30,7 @@ func NewItemCalendarsItemEventsItemDeclineRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewItemCalendarsItemEventsItemDeclineRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post decline invitation to the specified event in a user calendar. If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
+// Post invoke action decline
 func (m *ItemCalendarsItemEventsItemDeclineRequestBuilder) Post(ctx context.Context, body ItemCalendarsItemEventsItemDeclinePostRequestBodyable, requestConfiguration *ItemCalendarsItemEventsItemDeclineRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *ItemCalendarsItemEventsItemDeclineRequestBuilder) Post(ctx context.Cont
     }
     return nil
 }
-// ToPostRequestInformation decline invitation to the specified event in a user calendar. If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.
+// ToPostRequestInformation invoke action decline
 func (m *ItemCalendarsItemEventsItemDeclineRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemCalendarsItemEventsItemDeclinePostRequestBodyable, requestConfiguration *ItemCalendarsItemEventsItemDeclineRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

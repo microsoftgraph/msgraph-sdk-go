@@ -30,10 +30,7 @@ func NewItemItemsItemWorkbookTablesItemSortClearRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookTablesItemSortClearRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post clears the sorting that is currently on the table. While this doesn't modify the table's ordering, it clears the state of the header buttons.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/tablesort-clear?view=graph-rest-1.0
+// Post invoke action clear
 func (m *ItemItemsItemWorkbookTablesItemSortClearRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemSortClearRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *ItemItemsItemWorkbookTablesItemSortClearRequestBuilder) Post(ctx contex
     }
     return nil
 }
-// ToPostRequestInformation clears the sorting that is currently on the table. While this doesn't modify the table's ordering, it clears the state of the header buttons.
+// ToPostRequestInformation invoke action clear
 func (m *ItemItemsItemWorkbookTablesItemSortClearRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemSortClearRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

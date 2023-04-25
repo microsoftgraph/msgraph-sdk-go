@@ -11,7 +11,7 @@ import (
 type TermsOfUseAgreementsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TermsOfUseAgreementsRequestBuilderGetQueryParameters retrieve a list of agreement objects.
+// TermsOfUseAgreementsRequestBuilderGetQueryParameters represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
 type TermsOfUseAgreementsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewTermsOfUseAgreementsRequestBuilder(rawUrl string, requestAdapter i2ae418
 func (m *TermsOfUseAgreementsRequestBuilder) Count()(*TermsOfUseAgreementsCountRequestBuilder) {
     return NewTermsOfUseAgreementsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of agreement objects.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/termsofusecontainer-list-agreements?view=graph-rest-1.0
+// Get represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
 func (m *TermsOfUseAgreementsRequestBuilder) Get(ctx context.Context, requestConfiguration *TermsOfUseAgreementsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AgreementCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,10 +93,7 @@ func (m *TermsOfUseAgreementsRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AgreementCollectionResponseable), nil
 }
-// Post create a new agreement object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/termsofusecontainer-post-agreements?view=graph-rest-1.0
+// Post create new navigation property to agreements for identityGovernance
 func (m *TermsOfUseAgreementsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Agreementable, requestConfiguration *TermsOfUseAgreementsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Agreementable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +112,7 @@ func (m *TermsOfUseAgreementsRequestBuilder) Post(ctx context.Context, body iadc
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Agreementable), nil
 }
-// ToGetRequestInformation retrieve a list of agreement objects.
+// ToGetRequestInformation represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
 func (m *TermsOfUseAgreementsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TermsOfUseAgreementsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +128,7 @@ func (m *TermsOfUseAgreementsRequestBuilder) ToGetRequestInformation(ctx context
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new agreement object.
+// ToPostRequestInformation create new navigation property to agreements for identityGovernance
 func (m *TermsOfUseAgreementsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Agreementable, requestConfiguration *TermsOfUseAgreementsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

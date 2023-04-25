@@ -18,7 +18,7 @@ type ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisTitleRequestBuil
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisTitleRequestBuilderGetQueryParameters retrieve the properties and relationships of chartaxistitle object.
+// ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisTitleRequestBuilderGetQueryParameters represents the axis title. Read-only.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisTitleRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,10 +74,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisTitleRequest
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisTitleRequestBuilder) Format()(*ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisTitleFormatRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisTitleFormatRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the properties and relationships of chartaxistitle object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/chartaxistitle-get?view=graph-rest-1.0
+// Get represents the axis title. Read-only.
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisTitleRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisTitleRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartAxisTitleable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,10 +93,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisTitleRequest
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartAxisTitleable), nil
 }
-// Patch update the properties of chartaxistitle object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/chartaxistitle-update?view=graph-rest-1.0
+// Patch update the navigation property title in drives
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisTitleRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartAxisTitleable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisTitleRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartAxisTitleable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -130,7 +124,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisTitleRequest
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of chartaxistitle object.
+// ToGetRequestInformation represents the axis title. Read-only.
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisTitleRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisTitleRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -146,7 +140,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisTitleRequest
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of chartaxistitle object.
+// ToPatchRequestInformation update the navigation property title in drives
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisTitleRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartAxisTitleable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisTitleRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

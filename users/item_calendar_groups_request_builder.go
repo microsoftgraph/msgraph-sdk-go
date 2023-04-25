@@ -11,7 +11,7 @@ import (
 type ItemCalendarGroupsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemCalendarGroupsRequestBuilderGetQueryParameters get the user's calendar groups.
+// ItemCalendarGroupsRequestBuilderGetQueryParameters the user's calendar groups. Read-only. Nullable.
 type ItemCalendarGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -70,10 +70,7 @@ func NewItemCalendarGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *ItemCalendarGroupsRequestBuilder) Count()(*ItemCalendarGroupsCountRequestBuilder) {
     return NewItemCalendarGroupsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the user's calendar groups.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/user-list-calendargroups?view=graph-rest-1.0
+// Get the user's calendar groups. Read-only. Nullable.
 func (m *ItemCalendarGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarGroupsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarGroupCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,10 +89,7 @@ func (m *ItemCalendarGroupsRequestBuilder) Get(ctx context.Context, requestConfi
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarGroupCollectionResponseable), nil
 }
-// Post use this API to create a new CalendarGroup.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/user-post-calendargroups?view=graph-rest-1.0
+// Post create new navigation property to calendarGroups for users
 func (m *ItemCalendarGroupsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarGroupable, requestConfiguration *ItemCalendarGroupsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarGroupable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -114,7 +108,7 @@ func (m *ItemCalendarGroupsRequestBuilder) Post(ctx context.Context, body iadcd8
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarGroupable), nil
 }
-// ToGetRequestInformation get the user's calendar groups.
+// ToGetRequestInformation the user's calendar groups. Read-only. Nullable.
 func (m *ItemCalendarGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -130,7 +124,7 @@ func (m *ItemCalendarGroupsRequestBuilder) ToGetRequestInformation(ctx context.C
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation use this API to create a new CalendarGroup.
+// ToPostRequestInformation create new navigation property to calendarGroups for users
 func (m *ItemCalendarGroupsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarGroupable, requestConfiguration *ItemCalendarGroupsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type ItemCalendarViewItemAttachmentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemCalendarViewItemAttachmentsRequestBuilderGetQueryParameters retrieve a list of attachment objects attached to an event.
+// ItemCalendarViewItemAttachmentsRequestBuilderGetQueryParameters the collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.
 type ItemCalendarViewItemAttachmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,10 +76,7 @@ func (m *ItemCalendarViewItemAttachmentsRequestBuilder) Count()(*ItemCalendarVie
 func (m *ItemCalendarViewItemAttachmentsRequestBuilder) CreateUploadSession()(*ItemCalendarViewItemAttachmentsCreateUploadSessionRequestBuilder) {
     return NewItemCalendarViewItemAttachmentsCreateUploadSessionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of attachment objects attached to an event.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
+// Get the collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.
 func (m *ItemCalendarViewItemAttachmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarViewItemAttachmentsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,10 +95,7 @@ func (m *ItemCalendarViewItemAttachmentsRequestBuilder) Get(ctx context.Context,
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentCollectionResponseable), nil
 }
-// Post use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
+// Post create new navigation property to attachments for groups
 func (m *ItemCalendarViewItemAttachmentsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Attachmentable, requestConfiguration *ItemCalendarViewItemAttachmentsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Attachmentable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -120,7 +114,7 @@ func (m *ItemCalendarViewItemAttachmentsRequestBuilder) Post(ctx context.Context
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Attachmentable), nil
 }
-// ToGetRequestInformation retrieve a list of attachment objects attached to an event.
+// ToGetRequestInformation the collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.
 func (m *ItemCalendarViewItemAttachmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarViewItemAttachmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +130,7 @@ func (m *ItemCalendarViewItemAttachmentsRequestBuilder) ToGetRequestInformation(
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
+// ToPostRequestInformation create new navigation property to attachments for groups
 func (m *ItemCalendarViewItemAttachmentsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Attachmentable, requestConfiguration *ItemCalendarViewItemAttachmentsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

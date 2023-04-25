@@ -11,7 +11,7 @@ import (
 type ConnectorsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ConnectorsRequestBuilderGetQueryParameters retrieve a list of print connectors.
+// ConnectorsRequestBuilderGetQueryParameters the list of available print connectors.
 type ConnectorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewConnectorsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 func (m *ConnectorsRequestBuilder) Count()(*ConnectorsCountRequestBuilder) {
     return NewConnectorsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of print connectors.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/print-list-connectors?view=graph-rest-1.0
+// Get the list of available print connectors.
 func (m *ConnectorsRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectorsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintConnectorCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +112,7 @@ func (m *ConnectorsRequestBuilder) Post(ctx context.Context, body iadcd81124412c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintConnectorable), nil
 }
-// ToGetRequestInformation retrieve a list of print connectors.
+// ToGetRequestInformation the list of available print connectors.
 func (m *ConnectorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

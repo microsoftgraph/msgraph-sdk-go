@@ -30,10 +30,7 @@ func NewItemEventsItemAcceptRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewItemEventsItemAcceptRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post accept the specified event in a user calendar.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
+// Post invoke action accept
 func (m *ItemEventsItemAcceptRequestBuilder) Post(ctx context.Context, body ItemEventsItemAcceptPostRequestBodyable, requestConfiguration *ItemEventsItemAcceptRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *ItemEventsItemAcceptRequestBuilder) Post(ctx context.Context, body Item
     }
     return nil
 }
-// ToPostRequestInformation accept the specified event in a user calendar.
+// ToPostRequestInformation invoke action accept
 func (m *ItemEventsItemAcceptRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemEventsItemAcceptPostRequestBodyable, requestConfiguration *ItemEventsItemAcceptRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

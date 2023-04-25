@@ -30,10 +30,7 @@ func NewItemCalendarEventsItemForwardRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewItemCalendarEventsItemForwardRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post this action allows the organizer or attendee of a meeting event to forward the meeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action also sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's copy of the meeting event. This convenience is not available when forwarding from an Outlook.com account.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
+// Post invoke action forward
 func (m *ItemCalendarEventsItemForwardRequestBuilder) Post(ctx context.Context, body ItemCalendarEventsItemForwardPostRequestBodyable, requestConfiguration *ItemCalendarEventsItemForwardRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *ItemCalendarEventsItemForwardRequestBuilder) Post(ctx context.Context, 
     }
     return nil
 }
-// ToPostRequestInformation this action allows the organizer or attendee of a meeting event to forward the meeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action also sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's copy of the meeting event. This convenience is not available when forwarding from an Outlook.com account.
+// ToPostRequestInformation invoke action forward
 func (m *ItemCalendarEventsItemForwardRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemCalendarEventsItemForwardPostRequestBodyable, requestConfiguration *ItemCalendarEventsItemForwardRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

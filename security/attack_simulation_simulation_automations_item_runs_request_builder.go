@@ -11,7 +11,7 @@ import (
 type AttackSimulationSimulationAutomationsItemRunsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AttackSimulationSimulationAutomationsItemRunsRequestBuilderGetQueryParameters get a list of the attack simulation automation runs for a tenant.
+// AttackSimulationSimulationAutomationsItemRunsRequestBuilderGetQueryParameters a collection of simulation automation runs.
 type AttackSimulationSimulationAutomationsItemRunsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewAttackSimulationSimulationAutomationsItemRunsRequestBuilder(rawUrl strin
 func (m *AttackSimulationSimulationAutomationsItemRunsRequestBuilder) Count()(*AttackSimulationSimulationAutomationsItemRunsCountRequestBuilder) {
     return NewAttackSimulationSimulationAutomationsItemRunsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the attack simulation automation runs for a tenant.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/simulationautomation-list-runs?view=graph-rest-1.0
+// Get a collection of simulation automation runs.
 func (m *AttackSimulationSimulationAutomationsItemRunsRequestBuilder) Get(ctx context.Context, requestConfiguration *AttackSimulationSimulationAutomationsItemRunsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SimulationAutomationRunCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +112,7 @@ func (m *AttackSimulationSimulationAutomationsItemRunsRequestBuilder) Post(ctx c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SimulationAutomationRunable), nil
 }
-// ToGetRequestInformation get a list of the attack simulation automation runs for a tenant.
+// ToGetRequestInformation a collection of simulation automation runs.
 func (m *AttackSimulationSimulationAutomationsItemRunsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationSimulationAutomationsItemRunsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

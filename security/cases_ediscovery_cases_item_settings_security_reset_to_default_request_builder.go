@@ -30,10 +30,7 @@ func NewCasesEdiscoveryCasesItemSettingsSecurityResetToDefaultRequestBuilder(raw
     urlParams["request-raw-url"] = rawUrl
     return NewCasesEdiscoveryCasesItemSettingsSecurityResetToDefaultRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post reset a caseSettings object to the default values.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-ediscoverycasesettings-resettodefault?view=graph-rest-1.0
+// Post invoke action resetToDefault
 func (m *CasesEdiscoveryCasesItemSettingsSecurityResetToDefaultRequestBuilder) Post(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemSettingsSecurityResetToDefaultRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *CasesEdiscoveryCasesItemSettingsSecurityResetToDefaultRequestBuilder) P
     }
     return nil
 }
-// ToPostRequestInformation reset a caseSettings object to the default values.
+// ToPostRequestInformation invoke action resetToDefault
 func (m *CasesEdiscoveryCasesItemSettingsSecurityResetToDefaultRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemSettingsSecurityResetToDefaultRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

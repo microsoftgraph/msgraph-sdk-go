@@ -11,7 +11,7 @@ import (
 type EntitlementManagementConnectedOrganizationsItemExternalSponsorsRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementConnectedOrganizationsItemExternalSponsorsRefRequestBuilderGetQueryParameters retrieve a list of a connectedOrganization's external sponsors.  The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+// EntitlementManagementConnectedOrganizationsItemExternalSponsorsRefRequestBuilderGetQueryParameters get ref of externalSponsors from identityGovernance
 type EntitlementManagementConnectedOrganizationsItemExternalSponsorsRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -55,10 +55,7 @@ func NewEntitlementManagementConnectedOrganizationsItemExternalSponsorsRefReques
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementConnectedOrganizationsItemExternalSponsorsRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get retrieve a list of a connectedOrganization's external sponsors.  The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/connectedorganization-list-externalsponsors?view=graph-rest-1.0
+// Get get ref of externalSponsors from identityGovernance
 func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsRefRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementConnectedOrganizationsItemExternalSponsorsRefRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +90,7 @@ func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsRefReque
     }
     return nil
 }
-// ToGetRequestInformation retrieve a list of a connectedOrganization's external sponsors.  The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+// ToGetRequestInformation get ref of externalSponsors from identityGovernance
 func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementConnectedOrganizationsItemExternalSponsorsRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

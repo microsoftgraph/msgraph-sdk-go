@@ -11,7 +11,7 @@ import (
 type CallsItemContentSharingSessionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CallsItemContentSharingSessionsRequestBuilderGetQueryParameters retrieve a list of contentSharingSession objects in a call.
+// CallsItemContentSharingSessionsRequestBuilderGetQueryParameters get contentSharingSessions from communications
 type CallsItemContentSharingSessionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewCallsItemContentSharingSessionsRequestBuilder(rawUrl string, requestAdap
 func (m *CallsItemContentSharingSessionsRequestBuilder) Count()(*CallsItemContentSharingSessionsCountRequestBuilder) {
     return NewCallsItemContentSharingSessionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of contentSharingSession objects in a call.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/call-list-contentsharingsessions?view=graph-rest-1.0
+// Get get contentSharingSessions from communications
 func (m *CallsItemContentSharingSessionsRequestBuilder) Get(ctx context.Context, requestConfiguration *CallsItemContentSharingSessionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentSharingSessionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +112,7 @@ func (m *CallsItemContentSharingSessionsRequestBuilder) Post(ctx context.Context
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentSharingSessionable), nil
 }
-// ToGetRequestInformation retrieve a list of contentSharingSession objects in a call.
+// ToGetRequestInformation get contentSharingSessions from communications
 func (m *CallsItemContentSharingSessionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CallsItemContentSharingSessionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

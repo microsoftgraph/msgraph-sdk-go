@@ -19,7 +19,7 @@ func NewAuthenticationStrengthRoot()(*AuthenticationStrengthRoot) {
 func CreateAuthenticationStrengthRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuthenticationStrengthRoot(), nil
 }
-// GetAuthenticationMethodModes gets the authenticationMethodModes property value. The authenticationMethodModes property
+// GetAuthenticationMethodModes gets the authenticationMethodModes property value. Names and descriptions of all valid authentication method modes in the system.
 func (m *AuthenticationStrengthRoot) GetAuthenticationMethodModes()([]AuthenticationMethodModeDetailable) {
     val, err := m.GetBackingStore().Get("authenticationMethodModes")
     if err != nil {
@@ -88,7 +88,7 @@ func (m *AuthenticationStrengthRoot) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetPolicies gets the policies property value. The policies property
+// GetPolicies gets the policies property value. A collection of authentication strength policies that exist for this tenant, including both built-in and custom policies.
 func (m *AuthenticationStrengthRoot) GetPolicies()([]AuthenticationStrengthPolicyable) {
     val, err := m.GetBackingStore().Get("policies")
     if err != nil {
@@ -133,7 +133,7 @@ func (m *AuthenticationStrengthRoot) Serialize(writer i878a80d2330e89d26896388a3
     }
     return nil
 }
-// SetAuthenticationMethodModes sets the authenticationMethodModes property value. The authenticationMethodModes property
+// SetAuthenticationMethodModes sets the authenticationMethodModes property value. Names and descriptions of all valid authentication method modes in the system.
 func (m *AuthenticationStrengthRoot) SetAuthenticationMethodModes(value []AuthenticationMethodModeDetailable)() {
     err := m.GetBackingStore().Set("authenticationMethodModes", value)
     if err != nil {
@@ -147,7 +147,7 @@ func (m *AuthenticationStrengthRoot) SetCombinations(value []AuthenticationMetho
         panic(err)
     }
 }
-// SetPolicies sets the policies property value. The policies property
+// SetPolicies sets the policies property value. A collection of authentication strength policies that exist for this tenant, including both built-in and custom policies.
 func (m *AuthenticationStrengthRoot) SetPolicies(value []AuthenticationStrengthPolicyable)() {
     err := m.GetBackingStore().Set("policies", value)
     if err != nil {

@@ -18,7 +18,7 @@ type CasesEdiscoveryCasesItemSettingsRequestBuilderDeleteRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CasesEdiscoveryCasesItemSettingsRequestBuilderGetQueryParameters read the properties and relationships of an ediscoveryCaseSettings object.
+// CasesEdiscoveryCasesItemSettingsRequestBuilderGetQueryParameters returns a list of eDIscoverySettings objects in the case.
 type CasesEdiscoveryCasesItemSettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,10 +70,7 @@ func (m *CasesEdiscoveryCasesItemSettingsRequestBuilder) Delete(ctx context.Cont
     }
     return nil
 }
-// Get read the properties and relationships of an ediscoveryCaseSettings object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-ediscoverycasesettings-get?view=graph-rest-1.0
+// Get returns a list of eDIscoverySettings objects in the case.
 func (m *CasesEdiscoveryCasesItemSettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemSettingsRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryCaseSettingsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,10 +89,7 @@ func (m *CasesEdiscoveryCasesItemSettingsRequestBuilder) Get(ctx context.Context
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryCaseSettingsable), nil
 }
-// Patch update the properties of an ediscoveryCaseSettings object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-ediscoverycasesettings-update?view=graph-rest-1.0
+// Patch update the navigation property settings in security
 func (m *CasesEdiscoveryCasesItemSettingsRequestBuilder) Patch(ctx context.Context, body idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryCaseSettingsable, requestConfiguration *CasesEdiscoveryCasesItemSettingsRequestBuilderPatchRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryCaseSettingsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -130,7 +124,7 @@ func (m *CasesEdiscoveryCasesItemSettingsRequestBuilder) ToDeleteRequestInformat
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of an ediscoveryCaseSettings object.
+// ToGetRequestInformation returns a list of eDIscoverySettings objects in the case.
 func (m *CasesEdiscoveryCasesItemSettingsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemSettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -146,7 +140,7 @@ func (m *CasesEdiscoveryCasesItemSettingsRequestBuilder) ToGetRequestInformation
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an ediscoveryCaseSettings object.
+// ToPatchRequestInformation update the navigation property settings in security
 func (m *CasesEdiscoveryCasesItemSettingsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryCaseSettingsable, requestConfiguration *CasesEdiscoveryCasesItemSettingsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -30,10 +30,7 @@ func NewCasesEdiscoveryCasesItemReviewSetsItemSecurityAddToReviewSetRequestBuild
     urlParams["request-raw-url"] = rawUrl
     return NewCasesEdiscoveryCasesItemReviewSetsItemSecurityAddToReviewSetRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post start the process of adding a collection from Microsoft 365 services to a review set. After the operation is created, you can get the status of the operation by retrieving the `Location` parameter from the response headers. The location provides a URL that will return a Add to review set operation.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-ediscoveryreviewset-addtoreviewset?view=graph-rest-1.0
+// Post invoke action addToReviewSet
 func (m *CasesEdiscoveryCasesItemReviewSetsItemSecurityAddToReviewSetRequestBuilder) Post(ctx context.Context, body CasesEdiscoveryCasesItemReviewSetsItemSecurityAddToReviewSetAddToReviewSetPostRequestBodyable, requestConfiguration *CasesEdiscoveryCasesItemReviewSetsItemSecurityAddToReviewSetRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *CasesEdiscoveryCasesItemReviewSetsItemSecurityAddToReviewSetRequestBuil
     }
     return nil
 }
-// ToPostRequestInformation start the process of adding a collection from Microsoft 365 services to a review set. After the operation is created, you can get the status of the operation by retrieving the `Location` parameter from the response headers. The location provides a URL that will return a Add to review set operation.
+// ToPostRequestInformation invoke action addToReviewSet
 func (m *CasesEdiscoveryCasesItemReviewSetsItemSecurityAddToReviewSetRequestBuilder) ToPostRequestInformation(ctx context.Context, body CasesEdiscoveryCasesItemReviewSetsItemSecurityAddToReviewSetAddToReviewSetPostRequestBodyable, requestConfiguration *CasesEdiscoveryCasesItemReviewSetsItemSecurityAddToReviewSetRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

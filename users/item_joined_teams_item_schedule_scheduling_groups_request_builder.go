@@ -11,7 +11,7 @@ import (
 type ItemJoinedTeamsItemScheduleSchedulingGroupsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemJoinedTeamsItemScheduleSchedulingGroupsRequestBuilderGetQueryParameters get the list of schedulingGroups in this schedule.
+// ItemJoinedTeamsItemScheduleSchedulingGroupsRequestBuilderGetQueryParameters the logical grouping of users in the schedule (usually by role).
 type ItemJoinedTeamsItemScheduleSchedulingGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -72,10 +72,7 @@ func NewItemJoinedTeamsItemScheduleSchedulingGroupsRequestBuilder(rawUrl string,
 func (m *ItemJoinedTeamsItemScheduleSchedulingGroupsRequestBuilder) Count()(*ItemJoinedTeamsItemScheduleSchedulingGroupsCountRequestBuilder) {
     return NewItemJoinedTeamsItemScheduleSchedulingGroupsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of schedulingGroups in this schedule.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/schedule-list-schedulinggroups?view=graph-rest-1.0
+// Get the logical grouping of users in the schedule (usually by role).
 func (m *ItemJoinedTeamsItemScheduleSchedulingGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemScheduleSchedulingGroupsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SchedulingGroupCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -94,10 +91,7 @@ func (m *ItemJoinedTeamsItemScheduleSchedulingGroupsRequestBuilder) Get(ctx cont
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SchedulingGroupCollectionResponseable), nil
 }
-// Post create a new schedulingGroup.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/schedule-post-schedulinggroups?view=graph-rest-1.0
+// Post create new navigation property to schedulingGroups for users
 func (m *ItemJoinedTeamsItemScheduleSchedulingGroupsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SchedulingGroupable, requestConfiguration *ItemJoinedTeamsItemScheduleSchedulingGroupsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SchedulingGroupable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +110,7 @@ func (m *ItemJoinedTeamsItemScheduleSchedulingGroupsRequestBuilder) Post(ctx con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SchedulingGroupable), nil
 }
-// ToGetRequestInformation get the list of schedulingGroups in this schedule.
+// ToGetRequestInformation the logical grouping of users in the schedule (usually by role).
 func (m *ItemJoinedTeamsItemScheduleSchedulingGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemScheduleSchedulingGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -132,7 +126,7 @@ func (m *ItemJoinedTeamsItemScheduleSchedulingGroupsRequestBuilder) ToGetRequest
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new schedulingGroup.
+// ToPostRequestInformation create new navigation property to schedulingGroups for users
 func (m *ItemJoinedTeamsItemScheduleSchedulingGroupsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SchedulingGroupable, requestConfiguration *ItemJoinedTeamsItemScheduleSchedulingGroupsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

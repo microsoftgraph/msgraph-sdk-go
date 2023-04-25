@@ -97,10 +97,7 @@ func (m *CallsRequestBuilder) Get(ctx context.Context, requestConfiguration *Cal
 func (m *CallsRequestBuilder) LogTeleconferenceDeviceQuality()(*CallsLogTeleconferenceDeviceQualityRequestBuilder) {
     return NewCallsLogTeleconferenceDeviceQualityRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Post create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting. You will need to register the calling bot and go through the list of permissions needed as mentioned below.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/application-post-calls?view=graph-rest-1.0
+// Post create new navigation property to calls for communications
 func (m *CallsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Callable, requestConfiguration *CallsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Callable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -135,7 +132,7 @@ func (m *CallsRequestBuilder) ToGetRequestInformation(ctx context.Context, reque
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting. You will need to register the calling bot and go through the list of permissions needed as mentioned below.
+// ToPostRequestInformation create new navigation property to calls for communications
 func (m *CallsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Callable, requestConfiguration *CallsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -68,9 +68,6 @@ func (m *ItemOwnedDevicesRequestBuilder) Count()(*ItemOwnedDevicesCountRequestBu
     return NewItemOwnedDevicesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get devices that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/user-list-owneddevices?view=graph-rest-1.0
 func (m *ItemOwnedDevicesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOwnedDevicesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

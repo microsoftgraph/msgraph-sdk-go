@@ -30,10 +30,7 @@ func NewBookingBusinessesItemAppointmentsItemCancelRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewBookingBusinessesItemAppointmentsItemCancelRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post cancel the specified bookingAppointment in the specified bookingBusiness and send a message to the involved customer and staff members.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-1.0
+// Post cancels the giving booking appointment, sending a message to the involved parties.
 func (m *BookingBusinessesItemAppointmentsItemCancelRequestBuilder) Post(ctx context.Context, body BookingBusinessesItemAppointmentsItemCancelPostRequestBodyable, requestConfiguration *BookingBusinessesItemAppointmentsItemCancelRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *BookingBusinessesItemAppointmentsItemCancelRequestBuilder) Post(ctx con
     }
     return nil
 }
-// ToPostRequestInformation cancel the specified bookingAppointment in the specified bookingBusiness and send a message to the involved customer and staff members.
+// ToPostRequestInformation cancels the giving booking appointment, sending a message to the involved parties.
 func (m *BookingBusinessesItemAppointmentsItemCancelRequestBuilder) ToPostRequestInformation(ctx context.Context, body BookingBusinessesItemAppointmentsItemCancelPostRequestBodyable, requestConfiguration *BookingBusinessesItemAppointmentsItemCancelRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

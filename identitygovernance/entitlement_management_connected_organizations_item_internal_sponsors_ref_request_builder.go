@@ -11,7 +11,7 @@ import (
 type EntitlementManagementConnectedOrganizationsItemInternalSponsorsRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementConnectedOrganizationsItemInternalSponsorsRefRequestBuilderGetQueryParameters retrieve a list of a connectedOrganization's internal sponsors.  The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+// EntitlementManagementConnectedOrganizationsItemInternalSponsorsRefRequestBuilderGetQueryParameters get ref of internalSponsors from identityGovernance
 type EntitlementManagementConnectedOrganizationsItemInternalSponsorsRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -55,10 +55,7 @@ func NewEntitlementManagementConnectedOrganizationsItemInternalSponsorsRefReques
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementConnectedOrganizationsItemInternalSponsorsRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get retrieve a list of a connectedOrganization's internal sponsors.  The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/connectedorganization-list-internalsponsors?view=graph-rest-1.0
+// Get get ref of internalSponsors from identityGovernance
 func (m *EntitlementManagementConnectedOrganizationsItemInternalSponsorsRefRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementConnectedOrganizationsItemInternalSponsorsRefRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +90,7 @@ func (m *EntitlementManagementConnectedOrganizationsItemInternalSponsorsRefReque
     }
     return nil
 }
-// ToGetRequestInformation retrieve a list of a connectedOrganization's internal sponsors.  The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+// ToGetRequestInformation get ref of internalSponsors from identityGovernance
 func (m *EntitlementManagementConnectedOrganizationsItemInternalSponsorsRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementConnectedOrganizationsItemInternalSponsorsRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

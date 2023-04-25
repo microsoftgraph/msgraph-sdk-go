@@ -11,7 +11,7 @@ import (
 type ConditionalAccessAuthenticationStrengthAuthenticationMethodModesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ConditionalAccessAuthenticationStrengthAuthenticationMethodModesRequestBuilderGetQueryParameters get authenticationMethodModes from identity
+// ConditionalAccessAuthenticationStrengthAuthenticationMethodModesRequestBuilderGetQueryParameters names and descriptions of all valid authentication method modes in the system.
 type ConditionalAccessAuthenticationStrengthAuthenticationMethodModesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewConditionalAccessAuthenticationStrengthAuthenticationMethodModesRequestB
 func (m *ConditionalAccessAuthenticationStrengthAuthenticationMethodModesRequestBuilder) Count()(*ConditionalAccessAuthenticationStrengthAuthenticationMethodModesCountRequestBuilder) {
     return NewConditionalAccessAuthenticationStrengthAuthenticationMethodModesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get authenticationMethodModes from identity
+// Get names and descriptions of all valid authentication method modes in the system.
 func (m *ConditionalAccessAuthenticationStrengthAuthenticationMethodModesRequestBuilder) Get(ctx context.Context, requestConfiguration *ConditionalAccessAuthenticationStrengthAuthenticationMethodModesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationMethodModeDetailCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *ConditionalAccessAuthenticationStrengthAuthenticationMethodModesRequest
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationMethodModeDetailable), nil
 }
-// ToGetRequestInformation get authenticationMethodModes from identity
+// ToGetRequestInformation names and descriptions of all valid authentication method modes in the system.
 func (m *ConditionalAccessAuthenticationStrengthAuthenticationMethodModesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessAuthenticationStrengthAuthenticationMethodModesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

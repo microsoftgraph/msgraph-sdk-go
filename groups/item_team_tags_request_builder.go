@@ -11,7 +11,7 @@ import (
 type ItemTeamTagsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTeamTagsRequestBuilderGetQueryParameters get a list of the tag objects and their properties.
+// ItemTeamTagsRequestBuilderGetQueryParameters the tags associated with the team.
 type ItemTeamTagsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewItemTeamTagsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *ItemTeamTagsRequestBuilder) Count()(*ItemTeamTagsCountRequestBuilder) {
     return NewItemTeamTagsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the tag objects and their properties.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/teamworktag-list?view=graph-rest-1.0
+// Get the tags associated with the team.
 func (m *ItemTeamTagsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamTagsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,10 +93,7 @@ func (m *ItemTeamTagsRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagCollectionResponseable), nil
 }
-// Post create a standard tag for members in a team.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/teamworktag-post?view=graph-rest-1.0
+// Post create new navigation property to tags for groups
 func (m *ItemTeamTagsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagable, requestConfiguration *ItemTeamTagsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +112,7 @@ func (m *ItemTeamTagsRequestBuilder) Post(ctx context.Context, body iadcd8112441
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagable), nil
 }
-// ToGetRequestInformation get a list of the tag objects and their properties.
+// ToGetRequestInformation the tags associated with the team.
 func (m *ItemTeamTagsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamTagsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +128,7 @@ func (m *ItemTeamTagsRequestBuilder) ToGetRequestInformation(ctx context.Context
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a standard tag for members in a team.
+// ToPostRequestInformation create new navigation property to tags for groups
 func (m *ItemTeamTagsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagable, requestConfiguration *ItemTeamTagsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

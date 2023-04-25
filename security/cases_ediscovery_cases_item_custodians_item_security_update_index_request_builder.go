@@ -30,10 +30,7 @@ func NewCasesEdiscoveryCasesItemCustodiansItemSecurityUpdateIndexRequestBuilder(
     urlParams["request-raw-url"] = rawUrl
     return NewCasesEdiscoveryCasesItemCustodiansItemSecurityUpdateIndexRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post trigger an indexOperation to make a custodian and associated sources searchable.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-updateindex?view=graph-rest-1.0
+// Post invoke action updateIndex
 func (m *CasesEdiscoveryCasesItemCustodiansItemSecurityUpdateIndexRequestBuilder) Post(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemCustodiansItemSecurityUpdateIndexRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *CasesEdiscoveryCasesItemCustodiansItemSecurityUpdateIndexRequestBuilder
     }
     return nil
 }
-// ToPostRequestInformation trigger an indexOperation to make a custodian and associated sources searchable.
+// ToPostRequestInformation invoke action updateIndex
 func (m *CasesEdiscoveryCasesItemCustodiansItemSecurityUpdateIndexRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemCustodiansItemSecurityUpdateIndexRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

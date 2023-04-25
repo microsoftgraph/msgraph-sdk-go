@@ -18,7 +18,7 @@ type ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatLineRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatLineRequestBuilderGetQueryParameters retrieve the properties and relationships of chartlineformat object.
+// ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatLineRequestBuilderGetQueryParameters represents chart line formatting. Read-only.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatLineRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,10 +74,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatLineReq
     }
     return nil
 }
-// Get retrieve the properties and relationships of chartlineformat object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/chartlineformat-get?view=graph-rest-1.0
+// Get represents chart line formatting. Read-only.
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatLineRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatLineRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartLineFormatable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,10 +93,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatLineReq
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartLineFormatable), nil
 }
-// Patch update the properties of chartlineformat object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/chartlineformat-update?view=graph-rest-1.0
+// Patch update the navigation property line in drives
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatLineRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartLineFormatable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatLineRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartLineFormatable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -130,7 +124,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatLineReq
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of chartlineformat object.
+// ToGetRequestInformation represents chart line formatting. Read-only.
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatLineRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatLineRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -146,7 +140,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatLineReq
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of chartlineformat object.
+// ToPatchRequestInformation update the navigation property line in drives
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatLineRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartLineFormatable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatLineRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

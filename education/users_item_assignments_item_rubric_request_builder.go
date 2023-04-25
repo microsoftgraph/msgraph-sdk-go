@@ -18,7 +18,7 @@ type UsersItemAssignmentsItemRubricRequestBuilderDeleteRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// UsersItemAssignmentsItemRubricRequestBuilderGetQueryParameters get the educationRubric object attached to an educationAssignment, if one exists. Only teachers, students, and applications with application permissions can perform this operation.
+// UsersItemAssignmentsItemRubricRequestBuilderGetQueryParameters when set, the grading rubric attached to this assignment.
 type UsersItemAssignmentsItemRubricRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,10 +70,7 @@ func (m *UsersItemAssignmentsItemRubricRequestBuilder) Delete(ctx context.Contex
     }
     return nil
 }
-// Get get the educationRubric object attached to an educationAssignment, if one exists. Only teachers, students, and applications with application permissions can perform this operation.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationassignment-get-rubric?view=graph-rest-1.0
+// Get when set, the grading rubric attached to this assignment.
 func (m *UsersItemAssignmentsItemRubricRequestBuilder) Get(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemRubricRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationRubricable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -127,7 +124,7 @@ func (m *UsersItemAssignmentsItemRubricRequestBuilder) ToDeleteRequestInformatio
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the educationRubric object attached to an educationAssignment, if one exists. Only teachers, students, and applications with application permissions can perform this operation.
+// ToGetRequestInformation when set, the grading rubric attached to this assignment.
 func (m *UsersItemAssignmentsItemRubricRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemRubricRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

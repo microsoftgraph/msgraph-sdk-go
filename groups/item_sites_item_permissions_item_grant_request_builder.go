@@ -30,10 +30,7 @@ func NewItemSitesItemPermissionsItemGrantRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemPermissionsItemGrantRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post grant users access to a link represented by a [permission][].
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0
+// Post invoke action grant
 func (m *ItemSitesItemPermissionsItemGrantRequestBuilder) Post(ctx context.Context, body ItemSitesItemPermissionsItemGrantPostRequestBodyable, requestConfiguration *ItemSitesItemPermissionsItemGrantRequestBuilderPostRequestConfiguration)(ItemSitesItemPermissionsItemGrantResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -52,7 +49,7 @@ func (m *ItemSitesItemPermissionsItemGrantRequestBuilder) Post(ctx context.Conte
     }
     return res.(ItemSitesItemPermissionsItemGrantResponseable), nil
 }
-// ToPostRequestInformation grant users access to a link represented by a [permission][].
+// ToPostRequestInformation invoke action grant
 func (m *ItemSitesItemPermissionsItemGrantRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemSitesItemPermissionsItemGrantPostRequestBodyable, requestConfiguration *ItemSitesItemPermissionsItemGrantRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

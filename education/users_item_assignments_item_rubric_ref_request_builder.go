@@ -61,10 +61,7 @@ func (m *UsersItemAssignmentsItemRubricRefRequestBuilder) Delete(ctx context.Con
     }
     return nil
 }
-// Get get the educationRubric object attached to an educationAssignment, if one exists. Only teachers, students, and applications with application permissions can perform this operation.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationassignment-get-rubric?view=graph-rest-1.0
+// Get when set, the grading rubric attached to this assignment.
 func (m *UsersItemAssignmentsItemRubricRefRequestBuilder) Get(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemRubricRefRequestBuilderGetRequestConfiguration)(*string, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -111,7 +108,7 @@ func (m *UsersItemAssignmentsItemRubricRefRequestBuilder) ToDeleteRequestInforma
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the educationRubric object attached to an educationAssignment, if one exists. Only teachers, students, and applications with application permissions can perform this operation.
+// ToGetRequestInformation when set, the grading rubric attached to this assignment.
 func (m *UsersItemAssignmentsItemRubricRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemRubricRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

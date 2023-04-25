@@ -11,7 +11,7 @@ import (
 type CasesEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CasesEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilderGetQueryParameters get a list of the ediscoveryIndexOperations associated with an ediscoveryCustodian.
+// CasesEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilderGetQueryParameters operation entity that represents the latest indexing for the custodian.
 type CasesEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,10 +40,7 @@ func NewCasesEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilder(r
     urlParams["request-raw-url"] = rawUrl
     return NewCasesEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get a list of the ediscoveryIndexOperations associated with an ediscoveryCustodian.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-list-lastindexoperation?view=graph-rest-1.0
+// Get operation entity that represents the latest indexing for the custodian.
 func (m *CasesEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilder) Get(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryIndexOperationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -62,7 +59,7 @@ func (m *CasesEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilder)
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryIndexOperationable), nil
 }
-// ToGetRequestInformation get a list of the ediscoveryIndexOperations associated with an ediscoveryCustodian.
+// ToGetRequestInformation operation entity that represents the latest indexing for the custodian.
 func (m *CasesEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type ConditionalAccessAuthenticationStrengthPoliciesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ConditionalAccessAuthenticationStrengthPoliciesRequestBuilderGetQueryParameters get policies from identity
+// ConditionalAccessAuthenticationStrengthPoliciesRequestBuilderGetQueryParameters a collection of authentication strength policies that exist for this tenant, including both built-in and custom policies.
 type ConditionalAccessAuthenticationStrengthPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewConditionalAccessAuthenticationStrengthPoliciesRequestBuilder(rawUrl str
 func (m *ConditionalAccessAuthenticationStrengthPoliciesRequestBuilder) Count()(*ConditionalAccessAuthenticationStrengthPoliciesCountRequestBuilder) {
     return NewConditionalAccessAuthenticationStrengthPoliciesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get policies from identity
+// Get a collection of authentication strength policies that exist for this tenant, including both built-in and custom policies.
 func (m *ConditionalAccessAuthenticationStrengthPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *ConditionalAccessAuthenticationStrengthPoliciesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationStrengthPolicyCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *ConditionalAccessAuthenticationStrengthPoliciesRequestBuilder) Post(ctx
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationStrengthPolicyable), nil
 }
-// ToGetRequestInformation get policies from identity
+// ToGetRequestInformation a collection of authentication strength policies that exist for this tenant, including both built-in and custom policies.
 func (m *ConditionalAccessAuthenticationStrengthPoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessAuthenticationStrengthPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

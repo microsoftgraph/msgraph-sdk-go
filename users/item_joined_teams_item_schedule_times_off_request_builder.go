@@ -11,7 +11,7 @@ import (
 type ItemJoinedTeamsItemScheduleTimesOffRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemJoinedTeamsItemScheduleTimesOffRequestBuilderGetQueryParameters get the list of timeOff instances in a schedule.
+// ItemJoinedTeamsItemScheduleTimesOffRequestBuilderGetQueryParameters the instances of times off in the schedule.
 type ItemJoinedTeamsItemScheduleTimesOffRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -72,10 +72,7 @@ func NewItemJoinedTeamsItemScheduleTimesOffRequestBuilder(rawUrl string, request
 func (m *ItemJoinedTeamsItemScheduleTimesOffRequestBuilder) Count()(*ItemJoinedTeamsItemScheduleTimesOffCountRequestBuilder) {
     return NewItemJoinedTeamsItemScheduleTimesOffCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of timeOff instances in a schedule.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/schedule-list-timesoff?view=graph-rest-1.0
+// Get the instances of times off in the schedule.
 func (m *ItemJoinedTeamsItemScheduleTimesOffRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemScheduleTimesOffRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeOffCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -94,10 +91,7 @@ func (m *ItemJoinedTeamsItemScheduleTimesOffRequestBuilder) Get(ctx context.Cont
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeOffCollectionResponseable), nil
 }
-// Post create a new timeOff instance in a schedule.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/schedule-post-timesoff?view=graph-rest-1.0
+// Post create new navigation property to timesOff for users
 func (m *ItemJoinedTeamsItemScheduleTimesOffRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeOffable, requestConfiguration *ItemJoinedTeamsItemScheduleTimesOffRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeOffable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +110,7 @@ func (m *ItemJoinedTeamsItemScheduleTimesOffRequestBuilder) Post(ctx context.Con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeOffable), nil
 }
-// ToGetRequestInformation get the list of timeOff instances in a schedule.
+// ToGetRequestInformation the instances of times off in the schedule.
 func (m *ItemJoinedTeamsItemScheduleTimesOffRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemScheduleTimesOffRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -132,7 +126,7 @@ func (m *ItemJoinedTeamsItemScheduleTimesOffRequestBuilder) ToGetRequestInformat
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new timeOff instance in a schedule.
+// ToPostRequestInformation create new navigation property to timesOff for users
 func (m *ItemJoinedTeamsItemScheduleTimesOffRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeOffable, requestConfiguration *ItemJoinedTeamsItemScheduleTimesOffRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

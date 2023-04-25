@@ -30,10 +30,7 @@ func NewItemRemovePasswordRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewItemRemovePasswordRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post remove a password from an application.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/application-removepassword?view=graph-rest-1.0
+// Post invoke action removePassword
 func (m *ItemRemovePasswordRequestBuilder) Post(ctx context.Context, body ItemRemovePasswordPostRequestBodyable, requestConfiguration *ItemRemovePasswordRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *ItemRemovePasswordRequestBuilder) Post(ctx context.Context, body ItemRe
     }
     return nil
 }
-// ToPostRequestInformation remove a password from an application.
+// ToPostRequestInformation invoke action removePassword
 func (m *ItemRemovePasswordRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemRemovePasswordPostRequestBodyable, requestConfiguration *ItemRemovePasswordRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -18,7 +18,7 @@ type ItemItemsItemWorkbookWorksheetsItemChartsItemAxesCategoryAxisFormatFontRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemItemsItemWorkbookWorksheetsItemChartsItemAxesCategoryAxisFormatFontRequestBuilderGetQueryParameters retrieve the properties and relationships of chartfont object.
+// ItemItemsItemWorkbookWorksheetsItemChartsItemAxesCategoryAxisFormatFontRequestBuilderGetQueryParameters represents the font attributes (font name, font size, color, etc.) for a chart axis element. Read-only.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemAxesCategoryAxisFormatFontRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,10 +70,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesCategoryAxisFormatFont
     }
     return nil
 }
-// Get retrieve the properties and relationships of chartfont object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/chartfont-get?view=graph-rest-1.0
+// Get represents the font attributes (font name, font size, color, etc.) for a chart axis element. Read-only.
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesCategoryAxisFormatFontRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesCategoryAxisFormatFontRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartFontable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,10 +89,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesCategoryAxisFormatFont
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartFontable), nil
 }
-// Patch update the properties of chartfont object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/chartfont-update?view=graph-rest-1.0
+// Patch update the navigation property font in drives
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesCategoryAxisFormatFontRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartFontable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesCategoryAxisFormatFontRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartFontable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -126,7 +120,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesCategoryAxisFormatFont
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of chartfont object.
+// ToGetRequestInformation represents the font attributes (font name, font size, color, etc.) for a chart axis element. Read-only.
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesCategoryAxisFormatFontRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesCategoryAxisFormatFontRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +136,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesCategoryAxisFormatFont
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of chartfont object.
+// ToPatchRequestInformation update the navigation property font in drives
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesCategoryAxisFormatFontRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartFontable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesCategoryAxisFormatFontRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type ConditionalAccessNamedLocationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ConditionalAccessNamedLocationsRequestBuilderGetQueryParameters get a list of namedLocation objects.
+// ConditionalAccessNamedLocationsRequestBuilderGetQueryParameters read-only. Nullable. Returns a collection of the specified named locations.
 type ConditionalAccessNamedLocationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,7 @@ func NewConditionalAccessNamedLocationsRequestBuilder(rawUrl string, requestAdap
 func (m *ConditionalAccessNamedLocationsRequestBuilder) Count()(*ConditionalAccessNamedLocationsCountRequestBuilder) {
     return NewConditionalAccessNamedLocationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of namedLocation objects.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/conditionalaccessroot-list-namedlocations?view=graph-rest-1.0
+// Get read-only. Nullable. Returns a collection of the specified named locations.
 func (m *ConditionalAccessNamedLocationsRequestBuilder) Get(ctx context.Context, requestConfiguration *ConditionalAccessNamedLocationsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NamedLocationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,10 +93,7 @@ func (m *ConditionalAccessNamedLocationsRequestBuilder) Get(ctx context.Context,
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NamedLocationCollectionResponseable), nil
 }
-// Post create a new namedLocation object. Named locations can be either ipNamedLocation or countryNamedLocation objects.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/conditionalaccessroot-post-namedlocations?view=graph-rest-1.0
+// Post create new navigation property to namedLocations for identity
 func (m *ConditionalAccessNamedLocationsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NamedLocationable, requestConfiguration *ConditionalAccessNamedLocationsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NamedLocationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +112,7 @@ func (m *ConditionalAccessNamedLocationsRequestBuilder) Post(ctx context.Context
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NamedLocationable), nil
 }
-// ToGetRequestInformation get a list of namedLocation objects.
+// ToGetRequestInformation read-only. Nullable. Returns a collection of the specified named locations.
 func (m *ConditionalAccessNamedLocationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessNamedLocationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +128,7 @@ func (m *ConditionalAccessNamedLocationsRequestBuilder) ToGetRequestInformation(
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new namedLocation object. Named locations can be either ipNamedLocation or countryNamedLocation objects.
+// ToPostRequestInformation create new navigation property to namedLocations for identity
 func (m *ConditionalAccessNamedLocationsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NamedLocationable, requestConfiguration *ConditionalAccessNamedLocationsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

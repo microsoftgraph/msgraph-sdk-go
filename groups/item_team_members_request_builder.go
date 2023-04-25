@@ -11,7 +11,7 @@ import (
 type ItemTeamMembersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTeamMembersRequestBuilderGetQueryParameters get the conversationMember collection of a team.
+// ItemTeamMembersRequestBuilderGetQueryParameters members and owners of the team.
 type ItemTeamMembersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,10 +78,7 @@ func NewItemTeamMembersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 func (m *ItemTeamMembersRequestBuilder) Count()(*ItemTeamMembersCountRequestBuilder) {
     return NewItemTeamMembersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the conversationMember collection of a team.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/team-list-members?view=graph-rest-1.0
+// Get members and owners of the team.
 func (m *ItemTeamMembersRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamMembersRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -100,10 +97,7 @@ func (m *ItemTeamMembersRequestBuilder) Get(ctx context.Context, requestConfigur
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberCollectionResponseable), nil
 }
-// Post add a new conversationMember to a team.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/team-post-members?view=graph-rest-1.0
+// Post create new navigation property to members for groups
 func (m *ItemTeamMembersRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberable, requestConfiguration *ItemTeamMembersRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *ItemTeamMembersRequestBuilder) Post(ctx context.Context, body iadcd8112
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberable), nil
 }
-// ToGetRequestInformation get the conversationMember collection of a team.
+// ToGetRequestInformation members and owners of the team.
 func (m *ItemTeamMembersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamMembersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -138,7 +132,7 @@ func (m *ItemTeamMembersRequestBuilder) ToGetRequestInformation(ctx context.Cont
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation add a new conversationMember to a team.
+// ToPostRequestInformation create new navigation property to members for groups
 func (m *ItemTeamMembersRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberable, requestConfiguration *ItemTeamMembersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

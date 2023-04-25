@@ -11,7 +11,7 @@ import (
 type ItemClaimsMappingPoliciesRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemClaimsMappingPoliciesRefRequestBuilderGetQueryParameters list the claimsMappingPolicy objects that are assigned to a servicePrincipal.
+// ItemClaimsMappingPoliciesRefRequestBuilderGetQueryParameters the claimsMappingPolicies assigned to this service principal. Supports $expand.
 type ItemClaimsMappingPoliciesRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -55,10 +55,7 @@ func NewItemClaimsMappingPoliciesRefRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewItemClaimsMappingPoliciesRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get list the claimsMappingPolicy objects that are assigned to a servicePrincipal.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/serviceprincipal-list-claimsmappingpolicies?view=graph-rest-1.0
+// Get the claimsMappingPolicies assigned to this service principal. Supports $expand.
 func (m *ItemClaimsMappingPoliciesRefRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemClaimsMappingPoliciesRefRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +90,7 @@ func (m *ItemClaimsMappingPoliciesRefRequestBuilder) Post(ctx context.Context, b
     }
     return nil
 }
-// ToGetRequestInformation list the claimsMappingPolicy objects that are assigned to a servicePrincipal.
+// ToGetRequestInformation the claimsMappingPolicies assigned to this service principal. Supports $expand.
 func (m *ItemClaimsMappingPoliciesRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemClaimsMappingPoliciesRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

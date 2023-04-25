@@ -30,10 +30,7 @@ func NewItemSitesItemListsItemItemsItemDocumentSetVersionsItemRestoreRequestBuil
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemListsItemItemsItemDocumentSetVersionsItemRestoreRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post restore a document set version.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-1.0
+// Post invoke action restore
 func (m *ItemSitesItemListsItemItemsItemDocumentSetVersionsItemRestoreRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemSitesItemListsItemItemsItemDocumentSetVersionsItemRestoreRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *ItemSitesItemListsItemItemsItemDocumentSetVersionsItemRestoreRequestBui
     }
     return nil
 }
-// ToPostRequestInformation restore a document set version.
+// ToPostRequestInformation invoke action restore
 func (m *ItemSitesItemListsItemItemsItemDocumentSetVersionsItemRestoreRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemListsItemItemsItemDocumentSetVersionsItemRestoreRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
