@@ -9,7 +9,7 @@ import (
 type RiskDetection struct {
     Entity
 }
-// NewRiskDetection instantiates a new RiskDetection and sets the default values.
+// NewRiskDetection instantiates a new riskDetection and sets the default values.
 func NewRiskDetection()(*RiskDetection) {
     m := &RiskDetection{
         Entity: *NewEntity(),

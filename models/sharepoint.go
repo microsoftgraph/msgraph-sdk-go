@@ -8,7 +8,7 @@ import (
 type Sharepoint struct {
     Entity
 }
-// NewSharepoint instantiates a new sharepoint and sets the default values.
+// NewSharepoint instantiates a new Sharepoint and sets the default values.
 func NewSharepoint()(*Sharepoint) {
     m := &Sharepoint{
         Entity: *NewEntity(),

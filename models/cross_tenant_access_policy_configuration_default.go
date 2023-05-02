@@ -19,6 +19,17 @@ func NewCrossTenantAccessPolicyConfigurationDefault()(*CrossTenantAccessPolicyCo
 func CreateCrossTenantAccessPolicyConfigurationDefaultFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCrossTenantAccessPolicyConfigurationDefault(), nil
 }
+// GetAutomaticUserConsentSettings gets the automaticUserConsentSettings property value. The automaticUserConsentSettings property
+func (m *CrossTenantAccessPolicyConfigurationDefault) GetAutomaticUserConsentSettings()(InboundOutboundPolicyConfigurationable) {
+    val, err := m.GetBackingStore().Get("automaticUserConsentSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(InboundOutboundPolicyConfigurationable)
+    }
+    return nil
+}
 // GetB2bCollaborationInbound gets the b2bCollaborationInbound property value. Defines your default configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.
 func (m *CrossTenantAccessPolicyConfigurationDefault) GetB2bCollaborationInbound()(CrossTenantAccessPolicyB2BSettingable) {
     val, err := m.GetBackingStore().Get("b2bCollaborationInbound")
@@ -66,6 +77,16 @@ func (m *CrossTenantAccessPolicyConfigurationDefault) GetB2bDirectConnectOutboun
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CrossTenantAccessPolicyConfigurationDefault) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["automaticUserConsentSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateInboundOutboundPolicyConfigurationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAutomaticUserConsentSettings(val.(InboundOutboundPolicyConfigurationable))
+        }
+        return nil
+    }
     res["b2bCollaborationInbound"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCrossTenantAccessPolicyB2BSettingFromDiscriminatorValue)
         if err != nil {
@@ -157,6 +178,12 @@ func (m *CrossTenantAccessPolicyConfigurationDefault) Serialize(writer i878a80d2
         return err
     }
     {
+        err = writer.WriteObjectValue("automaticUserConsentSettings", m.GetAutomaticUserConsentSettings())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("b2bCollaborationInbound", m.GetB2bCollaborationInbound())
         if err != nil {
             return err
@@ -193,6 +220,13 @@ func (m *CrossTenantAccessPolicyConfigurationDefault) Serialize(writer i878a80d2
         }
     }
     return nil
+}
+// SetAutomaticUserConsentSettings sets the automaticUserConsentSettings property value. The automaticUserConsentSettings property
+func (m *CrossTenantAccessPolicyConfigurationDefault) SetAutomaticUserConsentSettings(value InboundOutboundPolicyConfigurationable)() {
+    err := m.GetBackingStore().Set("automaticUserConsentSettings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetB2bCollaborationInbound sets the b2bCollaborationInbound property value. Defines your default configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.
 func (m *CrossTenantAccessPolicyConfigurationDefault) SetB2bCollaborationInbound(value CrossTenantAccessPolicyB2BSettingable)() {
@@ -240,12 +274,14 @@ func (m *CrossTenantAccessPolicyConfigurationDefault) SetIsServiceDefault(value 
 type CrossTenantAccessPolicyConfigurationDefaultable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAutomaticUserConsentSettings()(InboundOutboundPolicyConfigurationable)
     GetB2bCollaborationInbound()(CrossTenantAccessPolicyB2BSettingable)
     GetB2bCollaborationOutbound()(CrossTenantAccessPolicyB2BSettingable)
     GetB2bDirectConnectInbound()(CrossTenantAccessPolicyB2BSettingable)
     GetB2bDirectConnectOutbound()(CrossTenantAccessPolicyB2BSettingable)
     GetInboundTrust()(CrossTenantAccessPolicyInboundTrustable)
     GetIsServiceDefault()(*bool)
+    SetAutomaticUserConsentSettings(value InboundOutboundPolicyConfigurationable)()
     SetB2bCollaborationInbound(value CrossTenantAccessPolicyB2BSettingable)()
     SetB2bCollaborationOutbound(value CrossTenantAccessPolicyB2BSettingable)()
     SetB2bDirectConnectInbound(value CrossTenantAccessPolicyB2BSettingable)()

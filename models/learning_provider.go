@@ -8,7 +8,7 @@ import (
 type LearningProvider struct {
     Entity
 }
-// NewLearningProvider instantiates a new LearningProvider and sets the default values.
+// NewLearningProvider instantiates a new learningProvider and sets the default values.
 func NewLearningProvider()(*LearningProvider) {
     m := &LearningProvider{
         Entity: *NewEntity(),
