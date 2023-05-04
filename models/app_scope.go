@@ -8,7 +8,7 @@ import (
 type AppScope struct {
     Entity
 }
-// NewAppScope instantiates a new AppScope and sets the default values.
+// NewAppScope instantiates a new appScope and sets the default values.
 func NewAppScope()(*AppScope) {
     m := &AppScope{
         Entity: *NewEntity(),

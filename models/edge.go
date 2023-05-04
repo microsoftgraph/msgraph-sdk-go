@@ -8,7 +8,7 @@ import (
 type Edge struct {
     Entity
 }
-// NewEdge instantiates a new edge and sets the default values.
+// NewEdge instantiates a new Edge and sets the default values.
 func NewEdge()(*Edge) {
     m := &Edge{
         Entity: *NewEntity(),

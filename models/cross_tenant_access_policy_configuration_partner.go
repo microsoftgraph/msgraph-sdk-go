@@ -34,6 +34,17 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) GetAdditionalData()(map[st
     }
     return val.(map[string]any)
 }
+// GetAutomaticUserConsentSettings gets the automaticUserConsentSettings property value. The automaticUserConsentSettings property
+func (m *CrossTenantAccessPolicyConfigurationPartner) GetAutomaticUserConsentSettings()(InboundOutboundPolicyConfigurationable) {
+    val, err := m.GetBackingStore().Get("automaticUserConsentSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(InboundOutboundPolicyConfigurationable)
+    }
+    return nil
+}
 // GetB2bCollaborationInbound gets the b2bCollaborationInbound property value. Defines your partner-specific configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.
 func (m *CrossTenantAccessPolicyConfigurationPartner) GetB2bCollaborationInbound()(CrossTenantAccessPolicyB2BSettingable) {
     val, err := m.GetBackingStore().Get("b2bCollaborationInbound")
@@ -85,6 +96,16 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) GetBackingStore()(ie8677ce
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CrossTenantAccessPolicyConfigurationPartner) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["automaticUserConsentSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateInboundOutboundPolicyConfigurationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAutomaticUserConsentSettings(val.(InboundOutboundPolicyConfigurationable))
+        }
+        return nil
+    }
     res["b2bCollaborationInbound"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCrossTenantAccessPolicyB2BSettingFromDiscriminatorValue)
         if err != nil {
@@ -214,6 +235,12 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) GetTenantId()(*string) {
 // Serialize serializes information the current object
 func (m *CrossTenantAccessPolicyConfigurationPartner) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
+        err := writer.WriteObjectValue("automaticUserConsentSettings", m.GetAutomaticUserConsentSettings())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteObjectValue("b2bCollaborationInbound", m.GetB2bCollaborationInbound())
         if err != nil {
             return err
@@ -272,6 +299,13 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) Serialize(writer i878a80d2
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CrossTenantAccessPolicyConfigurationPartner) SetAdditionalData(value map[string]any)() {
     err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAutomaticUserConsentSettings sets the automaticUserConsentSettings property value. The automaticUserConsentSettings property
+func (m *CrossTenantAccessPolicyConfigurationPartner) SetAutomaticUserConsentSettings(value InboundOutboundPolicyConfigurationable)() {
+    err := m.GetBackingStore().Set("automaticUserConsentSettings", value)
     if err != nil {
         panic(err)
     }
@@ -341,6 +375,7 @@ type CrossTenantAccessPolicyConfigurationPartnerable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAutomaticUserConsentSettings()(InboundOutboundPolicyConfigurationable)
     GetB2bCollaborationInbound()(CrossTenantAccessPolicyB2BSettingable)
     GetB2bCollaborationOutbound()(CrossTenantAccessPolicyB2BSettingable)
     GetB2bDirectConnectInbound()(CrossTenantAccessPolicyB2BSettingable)
@@ -350,6 +385,7 @@ type CrossTenantAccessPolicyConfigurationPartnerable interface {
     GetIsServiceProvider()(*bool)
     GetOdataType()(*string)
     GetTenantId()(*string)
+    SetAutomaticUserConsentSettings(value InboundOutboundPolicyConfigurationable)()
     SetB2bCollaborationInbound(value CrossTenantAccessPolicyB2BSettingable)()
     SetB2bCollaborationOutbound(value CrossTenantAccessPolicyB2BSettingable)()
     SetB2bDirectConnectInbound(value CrossTenantAccessPolicyB2BSettingable)()

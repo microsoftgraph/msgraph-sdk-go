@@ -34,7 +34,7 @@ func (m *AccessPackageAssignmentRequestorSettings) GetAdditionalData()(map[strin
     }
     return val.(map[string]any)
 }
-// GetAllowCustomAssignmentSchedule gets the allowCustomAssignmentSchedule property value. If false, the requestor is not permitted to include a schedule in their request.
+// GetAllowCustomAssignmentSchedule gets the allowCustomAssignmentSchedule property value. False indicates that the requestor is not permitted to include a schedule in their request.
 func (m *AccessPackageAssignmentRequestorSettings) GetAllowCustomAssignmentSchedule()(*bool) {
     val, err := m.GetBackingStore().Get("allowCustomAssignmentSchedule")
     if err != nil {
@@ -49,7 +49,7 @@ func (m *AccessPackageAssignmentRequestorSettings) GetAllowCustomAssignmentSched
 func (m *AccessPackageAssignmentRequestorSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetEnableOnBehalfRequestorsToAddAccess gets the enableOnBehalfRequestorsToAddAccess property value. If true, allows on-behalf-of requestors to create a request to add access for another principal.
+// GetEnableOnBehalfRequestorsToAddAccess gets the enableOnBehalfRequestorsToAddAccess property value. True allows on-behalf-of requestors to create a request to add access for another principal.
 func (m *AccessPackageAssignmentRequestorSettings) GetEnableOnBehalfRequestorsToAddAccess()(*bool) {
     val, err := m.GetBackingStore().Get("enableOnBehalfRequestorsToAddAccess")
     if err != nil {
@@ -60,7 +60,7 @@ func (m *AccessPackageAssignmentRequestorSettings) GetEnableOnBehalfRequestorsTo
     }
     return nil
 }
-// GetEnableOnBehalfRequestorsToRemoveAccess gets the enableOnBehalfRequestorsToRemoveAccess property value. If true, allows on-behalf-of requestors to create a request to remove access for another principal.
+// GetEnableOnBehalfRequestorsToRemoveAccess gets the enableOnBehalfRequestorsToRemoveAccess property value. True allows on-behalf-of requestors to create a request to remove access for another principal.
 func (m *AccessPackageAssignmentRequestorSettings) GetEnableOnBehalfRequestorsToRemoveAccess()(*bool) {
     val, err := m.GetBackingStore().Get("enableOnBehalfRequestorsToRemoveAccess")
     if err != nil {
@@ -71,7 +71,7 @@ func (m *AccessPackageAssignmentRequestorSettings) GetEnableOnBehalfRequestorsTo
     }
     return nil
 }
-// GetEnableOnBehalfRequestorsToUpdateAccess gets the enableOnBehalfRequestorsToUpdateAccess property value. If true, allows on-behalf-of requestors to create a request to update access for another principal.
+// GetEnableOnBehalfRequestorsToUpdateAccess gets the enableOnBehalfRequestorsToUpdateAccess property value. True allows on-behalf-of requestors to create a request to update access for another principal.
 func (m *AccessPackageAssignmentRequestorSettings) GetEnableOnBehalfRequestorsToUpdateAccess()(*bool) {
     val, err := m.GetBackingStore().Get("enableOnBehalfRequestorsToUpdateAccess")
     if err != nil {
@@ -82,7 +82,7 @@ func (m *AccessPackageAssignmentRequestorSettings) GetEnableOnBehalfRequestorsTo
     }
     return nil
 }
-// GetEnableTargetsToSelfAddAccess gets the enableTargetsToSelfAddAccess property value. If true, allows requestors to create a request to add access for themselves.
+// GetEnableTargetsToSelfAddAccess gets the enableTargetsToSelfAddAccess property value. True allows requestors to create a request to add access for themselves.
 func (m *AccessPackageAssignmentRequestorSettings) GetEnableTargetsToSelfAddAccess()(*bool) {
     val, err := m.GetBackingStore().Get("enableTargetsToSelfAddAccess")
     if err != nil {
@@ -93,7 +93,7 @@ func (m *AccessPackageAssignmentRequestorSettings) GetEnableTargetsToSelfAddAcce
     }
     return nil
 }
-// GetEnableTargetsToSelfRemoveAccess gets the enableTargetsToSelfRemoveAccess property value. If true, allows requestors to create a request to remove their access.
+// GetEnableTargetsToSelfRemoveAccess gets the enableTargetsToSelfRemoveAccess property value. True allows requestors to create a request to remove their access.
 func (m *AccessPackageAssignmentRequestorSettings) GetEnableTargetsToSelfRemoveAccess()(*bool) {
     val, err := m.GetBackingStore().Get("enableTargetsToSelfRemoveAccess")
     if err != nil {
@@ -104,7 +104,7 @@ func (m *AccessPackageAssignmentRequestorSettings) GetEnableTargetsToSelfRemoveA
     }
     return nil
 }
-// GetEnableTargetsToSelfUpdateAccess gets the enableTargetsToSelfUpdateAccess property value. If true, allows requestors to create a request to update their access.
+// GetEnableTargetsToSelfUpdateAccess gets the enableTargetsToSelfUpdateAccess property value. True allows requestors to create a request to update their access.
 func (m *AccessPackageAssignmentRequestorSettings) GetEnableTargetsToSelfUpdateAccess()(*bool) {
     val, err := m.GetBackingStore().Get("enableTargetsToSelfUpdateAccess")
     if err != nil {
@@ -311,7 +311,7 @@ func (m *AccessPackageAssignmentRequestorSettings) SetAdditionalData(value map[s
         panic(err)
     }
 }
-// SetAllowCustomAssignmentSchedule sets the allowCustomAssignmentSchedule property value. If false, the requestor is not permitted to include a schedule in their request.
+// SetAllowCustomAssignmentSchedule sets the allowCustomAssignmentSchedule property value. False indicates that the requestor is not permitted to include a schedule in their request.
 func (m *AccessPackageAssignmentRequestorSettings) SetAllowCustomAssignmentSchedule(value *bool)() {
     err := m.GetBackingStore().Set("allowCustomAssignmentSchedule", value)
     if err != nil {
@@ -322,42 +322,42 @@ func (m *AccessPackageAssignmentRequestorSettings) SetAllowCustomAssignmentSched
 func (m *AccessPackageAssignmentRequestorSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetEnableOnBehalfRequestorsToAddAccess sets the enableOnBehalfRequestorsToAddAccess property value. If true, allows on-behalf-of requestors to create a request to add access for another principal.
+// SetEnableOnBehalfRequestorsToAddAccess sets the enableOnBehalfRequestorsToAddAccess property value. True allows on-behalf-of requestors to create a request to add access for another principal.
 func (m *AccessPackageAssignmentRequestorSettings) SetEnableOnBehalfRequestorsToAddAccess(value *bool)() {
     err := m.GetBackingStore().Set("enableOnBehalfRequestorsToAddAccess", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEnableOnBehalfRequestorsToRemoveAccess sets the enableOnBehalfRequestorsToRemoveAccess property value. If true, allows on-behalf-of requestors to create a request to remove access for another principal.
+// SetEnableOnBehalfRequestorsToRemoveAccess sets the enableOnBehalfRequestorsToRemoveAccess property value. True allows on-behalf-of requestors to create a request to remove access for another principal.
 func (m *AccessPackageAssignmentRequestorSettings) SetEnableOnBehalfRequestorsToRemoveAccess(value *bool)() {
     err := m.GetBackingStore().Set("enableOnBehalfRequestorsToRemoveAccess", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEnableOnBehalfRequestorsToUpdateAccess sets the enableOnBehalfRequestorsToUpdateAccess property value. If true, allows on-behalf-of requestors to create a request to update access for another principal.
+// SetEnableOnBehalfRequestorsToUpdateAccess sets the enableOnBehalfRequestorsToUpdateAccess property value. True allows on-behalf-of requestors to create a request to update access for another principal.
 func (m *AccessPackageAssignmentRequestorSettings) SetEnableOnBehalfRequestorsToUpdateAccess(value *bool)() {
     err := m.GetBackingStore().Set("enableOnBehalfRequestorsToUpdateAccess", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEnableTargetsToSelfAddAccess sets the enableTargetsToSelfAddAccess property value. If true, allows requestors to create a request to add access for themselves.
+// SetEnableTargetsToSelfAddAccess sets the enableTargetsToSelfAddAccess property value. True allows requestors to create a request to add access for themselves.
 func (m *AccessPackageAssignmentRequestorSettings) SetEnableTargetsToSelfAddAccess(value *bool)() {
     err := m.GetBackingStore().Set("enableTargetsToSelfAddAccess", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEnableTargetsToSelfRemoveAccess sets the enableTargetsToSelfRemoveAccess property value. If true, allows requestors to create a request to remove their access.
+// SetEnableTargetsToSelfRemoveAccess sets the enableTargetsToSelfRemoveAccess property value. True allows requestors to create a request to remove their access.
 func (m *AccessPackageAssignmentRequestorSettings) SetEnableTargetsToSelfRemoveAccess(value *bool)() {
     err := m.GetBackingStore().Set("enableTargetsToSelfRemoveAccess", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEnableTargetsToSelfUpdateAccess sets the enableTargetsToSelfUpdateAccess property value. If true, allows requestors to create a request to update their access.
+// SetEnableTargetsToSelfUpdateAccess sets the enableTargetsToSelfUpdateAccess property value. True allows requestors to create a request to update their access.
 func (m *AccessPackageAssignmentRequestorSettings) SetEnableTargetsToSelfUpdateAccess(value *bool)() {
     err := m.GetBackingStore().Set("enableTargetsToSelfUpdateAccess", value)
     if err != nil {
