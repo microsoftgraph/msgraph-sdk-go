@@ -62,6 +62,10 @@ func NewItemListRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 func (m *ItemListRequestBuilder) ContentTypes()(*ItemListContentTypesRequestBuilder) {
     return NewItemListContentTypesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// CreatedByUser provides operations to manage the createdByUser property of the microsoft.graph.baseItem entity.
+func (m *ItemListRequestBuilder) CreatedByUser()(*ItemListCreatedByUserRequestBuilder) {
+    return NewItemListCreatedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Delete delete navigation property list for shares
 func (m *ItemListRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemListRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -104,6 +108,10 @@ func (m *ItemListRequestBuilder) Get(ctx context.Context, requestConfiguration *
 // Items provides operations to manage the items property of the microsoft.graph.list entity.
 func (m *ItemListRequestBuilder) Items()(*ItemListItemsRequestBuilder) {
     return NewItemListItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// LastModifiedByUser provides operations to manage the lastModifiedByUser property of the microsoft.graph.baseItem entity.
+func (m *ItemListRequestBuilder) LastModifiedByUser()(*ItemListLastModifiedByUserRequestBuilder) {
+    return NewItemListLastModifiedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Operations provides operations to manage the operations property of the microsoft.graph.list entity.
 func (m *ItemListRequestBuilder) Operations()(*ItemListOperationsRequestBuilder) {

@@ -54,6 +54,10 @@ func NewSharedDriveItemItemRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewSharedDriveItemItemRequestBuilderInternal(urlParams, requestAdapter)
 }
+// CreatedByUser provides operations to manage the createdByUser property of the microsoft.graph.baseItem entity.
+func (m *SharedDriveItemItemRequestBuilder) CreatedByUser()(*ItemCreatedByUserRequestBuilder) {
+    return NewItemCreatedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Delete delete entity from shares
 func (m *SharedDriveItemItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *SharedDriveItemItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -99,6 +103,10 @@ func (m *SharedDriveItemItemRequestBuilder) Get(ctx context.Context, requestConf
 // Items provides operations to manage the items property of the microsoft.graph.sharedDriveItem entity.
 func (m *SharedDriveItemItemRequestBuilder) Items()(*ItemItemsRequestBuilder) {
     return NewItemItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// LastModifiedByUser provides operations to manage the lastModifiedByUser property of the microsoft.graph.baseItem entity.
+func (m *SharedDriveItemItemRequestBuilder) LastModifiedByUser()(*ItemLastModifiedByUserRequestBuilder) {
+    return NewItemLastModifiedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // List provides operations to manage the list property of the microsoft.graph.sharedDriveItem entity.
 func (m *SharedDriveItemItemRequestBuilder) List()(*ItemListRequestBuilder) {

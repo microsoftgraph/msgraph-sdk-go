@@ -41,6 +41,10 @@ type TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderPatchRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// AppliesTo provides operations to manage the appliesTo property of the microsoft.graph.stsPolicy entity.
+func (m *TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) AppliesTo()(*TokenLifetimePoliciesItemAppliesToRequestBuilder) {
+    return NewTokenLifetimePoliciesItemAppliesToRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderInternal instantiates a new TokenLifetimePolicyItemRequestBuilder and sets the default values.
 func NewTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) {
     m := &TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder{

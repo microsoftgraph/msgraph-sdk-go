@@ -105,13 +105,25 @@ func (m *DeletedItemsRequestBuilder) GetAvailableExtensionProperties()(*DeletedI
 func (m *DeletedItemsRequestBuilder) GetByIds()(*DeletedItemsGetByIdsRequestBuilder) {
     return NewDeletedItemsGetByIdsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// GraphAdministrativeUnit casts the previous resource to administrativeUnit.
+func (m *DeletedItemsRequestBuilder) GraphAdministrativeUnit()(*DeletedItemsGraphAdministrativeUnitRequestBuilder) {
+    return NewDeletedItemsGraphAdministrativeUnitRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // GraphApplication casts the previous resource to application.
 func (m *DeletedItemsRequestBuilder) GraphApplication()(*DeletedItemsGraphApplicationRequestBuilder) {
     return NewDeletedItemsGraphApplicationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// GraphDevice casts the previous resource to device.
+func (m *DeletedItemsRequestBuilder) GraphDevice()(*DeletedItemsGraphDeviceRequestBuilder) {
+    return NewDeletedItemsGraphDeviceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // GraphGroup casts the previous resource to group.
 func (m *DeletedItemsRequestBuilder) GraphGroup()(*DeletedItemsGraphGroupRequestBuilder) {
     return NewDeletedItemsGraphGroupRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphServicePrincipal casts the previous resource to servicePrincipal.
+func (m *DeletedItemsRequestBuilder) GraphServicePrincipal()(*DeletedItemsGraphServicePrincipalRequestBuilder) {
+    return NewDeletedItemsGraphServicePrincipalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GraphUser casts the previous resource to user.
 func (m *DeletedItemsRequestBuilder) GraphUser()(*DeletedItemsGraphUserRequestBuilder) {

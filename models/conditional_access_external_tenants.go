@@ -83,7 +83,7 @@ func (m *ConditionalAccessExternalTenants) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetMembershipKind gets the membershipKind property value. The membershipKind property
+// GetMembershipKind gets the membershipKind property value. The membership kind. Possible values are: all, enumerated, unknownFutureValue. The enumerated member references an conditionalAccessEnumeratedExternalTenants object.
 func (m *ConditionalAccessExternalTenants) GetMembershipKind()(*ConditionalAccessExternalTenantsMembershipKind) {
     val, err := m.GetBackingStore().Get("membershipKind")
     if err != nil {
@@ -139,7 +139,7 @@ func (m *ConditionalAccessExternalTenants) SetAdditionalData(value map[string]an
 func (m *ConditionalAccessExternalTenants) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetMembershipKind sets the membershipKind property value. The membershipKind property
+// SetMembershipKind sets the membershipKind property value. The membership kind. Possible values are: all, enumerated, unknownFutureValue. The enumerated member references an conditionalAccessEnumeratedExternalTenants object.
 func (m *ConditionalAccessExternalTenants) SetMembershipKind(value *ConditionalAccessExternalTenantsMembershipKind)() {
     err := m.GetBackingStore().Set("membershipKind", value)
     if err != nil {

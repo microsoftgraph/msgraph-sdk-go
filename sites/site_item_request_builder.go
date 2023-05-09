@@ -59,6 +59,10 @@ func NewSiteItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 func (m *SiteItemRequestBuilder) ContentTypes()(*ItemContentTypesRequestBuilder) {
     return NewItemContentTypesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// CreatedByUser provides operations to manage the createdByUser property of the microsoft.graph.baseItem entity.
+func (m *SiteItemRequestBuilder) CreatedByUser()(*ItemCreatedByUserRequestBuilder) {
+    return NewItemCreatedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Drive provides operations to manage the drive property of the microsoft.graph.site entity.
 func (m *SiteItemRequestBuilder) Drive()(*ItemDriveRequestBuilder) {
     return NewItemDriveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -112,6 +116,10 @@ func (m *SiteItemRequestBuilder) GetByPathWithPath(path *string)(*ItemGetByPathW
 // Items provides operations to manage the items property of the microsoft.graph.site entity.
 func (m *SiteItemRequestBuilder) Items()(*ItemItemsRequestBuilder) {
     return NewItemItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// LastModifiedByUser provides operations to manage the lastModifiedByUser property of the microsoft.graph.baseItem entity.
+func (m *SiteItemRequestBuilder) LastModifiedByUser()(*ItemLastModifiedByUserRequestBuilder) {
+    return NewItemLastModifiedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Lists provides operations to manage the lists property of the microsoft.graph.site entity.
 func (m *SiteItemRequestBuilder) Lists()(*ItemListsRequestBuilder) {

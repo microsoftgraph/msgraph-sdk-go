@@ -146,6 +146,16 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) GetFieldDeserializers()(ma
         }
         return nil
     }
+    res["identitySynchronization"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCrossTenantIdentitySyncPolicyPartnerFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIdentitySynchronization(val.(CrossTenantIdentitySyncPolicyPartnerable))
+        }
+        return nil
+    }
     res["inboundTrust"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCrossTenantAccessPolicyInboundTrustFromDiscriminatorValue)
         if err != nil {
@@ -187,6 +197,17 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) GetFieldDeserializers()(ma
         return nil
     }
     return res
+}
+// GetIdentitySynchronization gets the identitySynchronization property value. The identitySynchronization property
+func (m *CrossTenantAccessPolicyConfigurationPartner) GetIdentitySynchronization()(CrossTenantIdentitySyncPolicyPartnerable) {
+    val, err := m.GetBackingStore().Get("identitySynchronization")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CrossTenantIdentitySyncPolicyPartnerable)
+    }
+    return nil
 }
 // GetInboundTrust gets the inboundTrust property value. Determines the partner-specific configuration for trusting other Conditional Access claims from external Azure AD organizations.
 func (m *CrossTenantAccessPolicyConfigurationPartner) GetInboundTrust()(CrossTenantAccessPolicyInboundTrustable) {
@@ -260,6 +281,12 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) Serialize(writer i878a80d2
     }
     {
         err := writer.WriteObjectValue("b2bDirectConnectOutbound", m.GetB2bDirectConnectOutbound())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("identitySynchronization", m.GetIdentitySynchronization())
         if err != nil {
             return err
         }
@@ -342,6 +369,13 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) SetB2bDirectConnectOutboun
 func (m *CrossTenantAccessPolicyConfigurationPartner) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
+// SetIdentitySynchronization sets the identitySynchronization property value. The identitySynchronization property
+func (m *CrossTenantAccessPolicyConfigurationPartner) SetIdentitySynchronization(value CrossTenantIdentitySyncPolicyPartnerable)() {
+    err := m.GetBackingStore().Set("identitySynchronization", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetInboundTrust sets the inboundTrust property value. Determines the partner-specific configuration for trusting other Conditional Access claims from external Azure AD organizations.
 func (m *CrossTenantAccessPolicyConfigurationPartner) SetInboundTrust(value CrossTenantAccessPolicyInboundTrustable)() {
     err := m.GetBackingStore().Set("inboundTrust", value)
@@ -381,6 +415,7 @@ type CrossTenantAccessPolicyConfigurationPartnerable interface {
     GetB2bDirectConnectInbound()(CrossTenantAccessPolicyB2BSettingable)
     GetB2bDirectConnectOutbound()(CrossTenantAccessPolicyB2BSettingable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetIdentitySynchronization()(CrossTenantIdentitySyncPolicyPartnerable)
     GetInboundTrust()(CrossTenantAccessPolicyInboundTrustable)
     GetIsServiceProvider()(*bool)
     GetOdataType()(*string)
@@ -391,6 +426,7 @@ type CrossTenantAccessPolicyConfigurationPartnerable interface {
     SetB2bDirectConnectInbound(value CrossTenantAccessPolicyB2BSettingable)()
     SetB2bDirectConnectOutbound(value CrossTenantAccessPolicyB2BSettingable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetIdentitySynchronization(value CrossTenantIdentitySyncPolicyPartnerable)()
     SetInboundTrust(value CrossTenantAccessPolicyInboundTrustable)()
     SetIsServiceProvider(value *bool)()
     SetOdataType(value *string)()

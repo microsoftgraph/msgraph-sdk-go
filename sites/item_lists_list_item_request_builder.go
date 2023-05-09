@@ -62,6 +62,10 @@ func NewItemListsListItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *ItemListsListItemRequestBuilder) ContentTypes()(*ItemListsItemContentTypesRequestBuilder) {
     return NewItemListsItemContentTypesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// CreatedByUser provides operations to manage the createdByUser property of the microsoft.graph.baseItem entity.
+func (m *ItemListsListItemRequestBuilder) CreatedByUser()(*ItemListsItemCreatedByUserRequestBuilder) {
+    return NewItemListsItemCreatedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Delete delete navigation property lists for sites
 func (m *ItemListsListItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemListsListItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -104,6 +108,10 @@ func (m *ItemListsListItemRequestBuilder) Get(ctx context.Context, requestConfig
 // Items provides operations to manage the items property of the microsoft.graph.list entity.
 func (m *ItemListsListItemRequestBuilder) Items()(*ItemListsItemItemsRequestBuilder) {
     return NewItemListsItemItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// LastModifiedByUser provides operations to manage the lastModifiedByUser property of the microsoft.graph.baseItem entity.
+func (m *ItemListsListItemRequestBuilder) LastModifiedByUser()(*ItemListsItemLastModifiedByUserRequestBuilder) {
+    return NewItemListsItemLastModifiedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Operations provides operations to manage the operations property of the microsoft.graph.list entity.
 func (m *ItemListsListItemRequestBuilder) Operations()(*ItemListsItemOperationsRequestBuilder) {

@@ -83,7 +83,7 @@ func (m *IdleSessionSignOut) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetIsEnabled gets the isEnabled property value. The isEnabled property
+// GetIsEnabled gets the isEnabled property value. Indicates whether the idle session sign-out policy is enabled.
 func (m *IdleSessionSignOut) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
     if err != nil {
@@ -105,7 +105,7 @@ func (m *IdleSessionSignOut) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSignOutAfterInSeconds gets the signOutAfterInSeconds property value. The signOutAfterInSeconds property
+// GetSignOutAfterInSeconds gets the signOutAfterInSeconds property value. Number of seconds of inactivity after which a user is signed out.
 func (m *IdleSessionSignOut) GetSignOutAfterInSeconds()(*int64) {
     val, err := m.GetBackingStore().Get("signOutAfterInSeconds")
     if err != nil {
@@ -116,7 +116,7 @@ func (m *IdleSessionSignOut) GetSignOutAfterInSeconds()(*int64) {
     }
     return nil
 }
-// GetWarnAfterInSeconds gets the warnAfterInSeconds property value. The warnAfterInSeconds property
+// GetWarnAfterInSeconds gets the warnAfterInSeconds property value. Number of seconds of inactivity after which a user is notified that they'll be signed out.
 func (m *IdleSessionSignOut) GetWarnAfterInSeconds()(*int64) {
     val, err := m.GetBackingStore().Get("warnAfterInSeconds")
     if err != nil {
@@ -172,7 +172,7 @@ func (m *IdleSessionSignOut) SetAdditionalData(value map[string]any)() {
 func (m *IdleSessionSignOut) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIsEnabled sets the isEnabled property value. The isEnabled property
+// SetIsEnabled sets the isEnabled property value. Indicates whether the idle session sign-out policy is enabled.
 func (m *IdleSessionSignOut) SetIsEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isEnabled", value)
     if err != nil {
@@ -186,14 +186,14 @@ func (m *IdleSessionSignOut) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSignOutAfterInSeconds sets the signOutAfterInSeconds property value. The signOutAfterInSeconds property
+// SetSignOutAfterInSeconds sets the signOutAfterInSeconds property value. Number of seconds of inactivity after which a user is signed out.
 func (m *IdleSessionSignOut) SetSignOutAfterInSeconds(value *int64)() {
     err := m.GetBackingStore().Set("signOutAfterInSeconds", value)
     if err != nil {
         panic(err)
     }
 }
-// SetWarnAfterInSeconds sets the warnAfterInSeconds property value. The warnAfterInSeconds property
+// SetWarnAfterInSeconds sets the warnAfterInSeconds property value. Number of seconds of inactivity after which a user is notified that they'll be signed out.
 func (m *IdleSessionSignOut) SetWarnAfterInSeconds(value *int64)() {
     err := m.GetBackingStore().Set("warnAfterInSeconds", value)
     if err != nil {

@@ -41,6 +41,10 @@ type ActivityBasedTimeoutPoliciesActivityBasedTimeoutPolicyItemRequestBuilderPat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// AppliesTo provides operations to manage the appliesTo property of the microsoft.graph.stsPolicy entity.
+func (m *ActivityBasedTimeoutPoliciesActivityBasedTimeoutPolicyItemRequestBuilder) AppliesTo()(*ActivityBasedTimeoutPoliciesItemAppliesToRequestBuilder) {
+    return NewActivityBasedTimeoutPoliciesItemAppliesToRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewActivityBasedTimeoutPoliciesActivityBasedTimeoutPolicyItemRequestBuilderInternal instantiates a new ActivityBasedTimeoutPolicyItemRequestBuilder and sets the default values.
 func NewActivityBasedTimeoutPoliciesActivityBasedTimeoutPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ActivityBasedTimeoutPoliciesActivityBasedTimeoutPolicyItemRequestBuilder) {
     m := &ActivityBasedTimeoutPoliciesActivityBasedTimeoutPolicyItemRequestBuilder{

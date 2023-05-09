@@ -49,7 +49,7 @@ func (m *ConditionalAccessUsers) GetExcludeGroups()([]string) {
     }
     return nil
 }
-// GetExcludeGuestsOrExternalUsers gets the excludeGuestsOrExternalUsers property value. The excludeGuestsOrExternalUsers property
+// GetExcludeGuestsOrExternalUsers gets the excludeGuestsOrExternalUsers property value. Internal guests or external users excluded from the policy scope. Optionally populated.
 func (m *ConditionalAccessUsers) GetExcludeGuestsOrExternalUsers()(ConditionalAccessGuestsOrExternalUsersable) {
     val, err := m.GetBackingStore().Get("excludeGuestsOrExternalUsers")
     if err != nil {
@@ -212,7 +212,7 @@ func (m *ConditionalAccessUsers) GetIncludeGroups()([]string) {
     }
     return nil
 }
-// GetIncludeGuestsOrExternalUsers gets the includeGuestsOrExternalUsers property value. The includeGuestsOrExternalUsers property
+// GetIncludeGuestsOrExternalUsers gets the includeGuestsOrExternalUsers property value. Internal guests or external users included in the policy scope. Optionally populated.
 func (m *ConditionalAccessUsers) GetIncludeGuestsOrExternalUsers()(ConditionalAccessGuestsOrExternalUsersable) {
     val, err := m.GetBackingStore().Get("includeGuestsOrExternalUsers")
     if err != nil {
@@ -338,7 +338,7 @@ func (m *ConditionalAccessUsers) SetExcludeGroups(value []string)() {
         panic(err)
     }
 }
-// SetExcludeGuestsOrExternalUsers sets the excludeGuestsOrExternalUsers property value. The excludeGuestsOrExternalUsers property
+// SetExcludeGuestsOrExternalUsers sets the excludeGuestsOrExternalUsers property value. Internal guests or external users excluded from the policy scope. Optionally populated.
 func (m *ConditionalAccessUsers) SetExcludeGuestsOrExternalUsers(value ConditionalAccessGuestsOrExternalUsersable)() {
     err := m.GetBackingStore().Set("excludeGuestsOrExternalUsers", value)
     if err != nil {
@@ -366,7 +366,7 @@ func (m *ConditionalAccessUsers) SetIncludeGroups(value []string)() {
         panic(err)
     }
 }
-// SetIncludeGuestsOrExternalUsers sets the includeGuestsOrExternalUsers property value. The includeGuestsOrExternalUsers property
+// SetIncludeGuestsOrExternalUsers sets the includeGuestsOrExternalUsers property value. Internal guests or external users included in the policy scope. Optionally populated.
 func (m *ConditionalAccessUsers) SetIncludeGuestsOrExternalUsers(value ConditionalAccessGuestsOrExternalUsersable)() {
     err := m.GetBackingStore().Set("includeGuestsOrExternalUsers", value)
     if err != nil {

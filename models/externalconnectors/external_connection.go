@@ -9,7 +9,7 @@ import (
 type ExternalConnection struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
 }
-// NewExternalConnection instantiates a new externalConnection and sets the default values.
+// NewExternalConnection instantiates a new ExternalConnection and sets the default values.
 func NewExternalConnection()(*ExternalConnection) {
     m := &ExternalConnection{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
@@ -19,6 +19,17 @@ func NewExternalConnection()(*ExternalConnection) {
 // CreateExternalConnectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateExternalConnectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewExternalConnection(), nil
+}
+// GetActivitySettings gets the activitySettings property value. Collects configurable settings related to activities involving connector content.
+func (m *ExternalConnection) GetActivitySettings()(ActivitySettingsable) {
+    val, err := m.GetBackingStore().Get("activitySettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ActivitySettingsable)
+    }
+    return nil
 }
 // GetConfiguration gets the configuration property value. Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.
 func (m *ExternalConnection) GetConfiguration()(Configurationable) {
@@ -45,6 +56,16 @@ func (m *ExternalConnection) GetDescription()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["activitySettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateActivitySettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetActivitySettings(val.(ActivitySettingsable))
+        }
+        return nil
+    }
     res["configuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateConfigurationFromDiscriminatorValue)
         if err != nil {
@@ -127,6 +148,16 @@ func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["searchSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateSearchSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSearchSettings(val.(SearchSettingsable))
+        }
+        return nil
+    }
     res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseConnectionState)
         if err != nil {
@@ -194,6 +225,17 @@ func (m *ExternalConnection) GetSchema()(Schemaable) {
     }
     return nil
 }
+// GetSearchSettings gets the searchSettings property value. The settings configuring the search experience for content in this connection, such as the display templates for search results.
+func (m *ExternalConnection) GetSearchSettings()(SearchSettingsable) {
+    val, err := m.GetBackingStore().Get("searchSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SearchSettingsable)
+    }
+    return nil
+}
 // GetState gets the state property value. Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.
 func (m *ExternalConnection) GetState()(*ConnectionState) {
     val, err := m.GetBackingStore().Get("state")
@@ -210,6 +252,12 @@ func (m *ExternalConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     err := m.Entity.Serialize(writer)
     if err != nil {
         return err
+    }
+    {
+        err = writer.WriteObjectValue("activitySettings", m.GetActivitySettings())
+        if err != nil {
+            return err
+        }
     }
     {
         err = writer.WriteObjectValue("configuration", m.GetConfiguration())
@@ -265,7 +313,20 @@ func (m *ExternalConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("searchSettings", m.GetSearchSettings())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetActivitySettings sets the activitySettings property value. Collects configurable settings related to activities involving connector content.
+func (m *ExternalConnection) SetActivitySettings(value ActivitySettingsable)() {
+    err := m.GetBackingStore().Set("activitySettings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConfiguration sets the configuration property value. Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.
 func (m *ExternalConnection) SetConfiguration(value Configurationable)() {
@@ -316,6 +377,13 @@ func (m *ExternalConnection) SetSchema(value Schemaable)() {
         panic(err)
     }
 }
+// SetSearchSettings sets the searchSettings property value. The settings configuring the search experience for content in this connection, such as the display templates for search results.
+func (m *ExternalConnection) SetSearchSettings(value SearchSettingsable)() {
+    err := m.GetBackingStore().Set("searchSettings", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetState sets the state property value. Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.
 func (m *ExternalConnection) SetState(value *ConnectionState)() {
     err := m.GetBackingStore().Set("state", value)
@@ -327,6 +395,7 @@ func (m *ExternalConnection) SetState(value *ConnectionState)() {
 type ExternalConnectionable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetActivitySettings()(ActivitySettingsable)
     GetConfiguration()(Configurationable)
     GetDescription()(*string)
     GetGroups()([]ExternalGroupable)
@@ -334,7 +403,9 @@ type ExternalConnectionable interface {
     GetName()(*string)
     GetOperations()([]ConnectionOperationable)
     GetSchema()(Schemaable)
+    GetSearchSettings()(SearchSettingsable)
     GetState()(*ConnectionState)
+    SetActivitySettings(value ActivitySettingsable)()
     SetConfiguration(value Configurationable)()
     SetDescription(value *string)()
     SetGroups(value []ExternalGroupable)()
@@ -342,5 +413,6 @@ type ExternalConnectionable interface {
     SetName(value *string)()
     SetOperations(value []ConnectionOperationable)()
     SetSchema(value Schemaable)()
+    SetSearchSettings(value SearchSettingsable)()
     SetState(value *ConnectionState)()
 }

@@ -9,7 +9,7 @@ import (
 type SubjectRightsRequest struct {
     Entity
 }
-// NewSubjectRightsRequest instantiates a new subjectRightsRequest and sets the default values.
+// NewSubjectRightsRequest instantiates a new SubjectRightsRequest and sets the default values.
 func NewSubjectRightsRequest()(*SubjectRightsRequest) {
     m := &SubjectRightsRequest{
         Entity: *NewEntity(),
