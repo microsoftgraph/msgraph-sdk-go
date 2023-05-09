@@ -45,6 +45,10 @@ type DirectoryRoleAssignmentSchedulesUnifiedRoleAssignmentScheduleItemRequestBui
 func (m *DirectoryRoleAssignmentSchedulesUnifiedRoleAssignmentScheduleItemRequestBuilder) ActivatedUsing()(*DirectoryRoleAssignmentSchedulesItemActivatedUsingRequestBuilder) {
     return NewDirectoryRoleAssignmentSchedulesItemActivatedUsingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// AppScope provides operations to manage the appScope property of the microsoft.graph.unifiedRoleScheduleBase entity.
+func (m *DirectoryRoleAssignmentSchedulesUnifiedRoleAssignmentScheduleItemRequestBuilder) AppScope()(*DirectoryRoleAssignmentSchedulesItemAppScopeRequestBuilder) {
+    return NewDirectoryRoleAssignmentSchedulesItemAppScopeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewDirectoryRoleAssignmentSchedulesUnifiedRoleAssignmentScheduleItemRequestBuilderInternal instantiates a new UnifiedRoleAssignmentScheduleItemRequestBuilder and sets the default values.
 func NewDirectoryRoleAssignmentSchedulesUnifiedRoleAssignmentScheduleItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryRoleAssignmentSchedulesUnifiedRoleAssignmentScheduleItemRequestBuilder) {
     m := &DirectoryRoleAssignmentSchedulesUnifiedRoleAssignmentScheduleItemRequestBuilder{
@@ -73,6 +77,10 @@ func (m *DirectoryRoleAssignmentSchedulesUnifiedRoleAssignmentScheduleItemReques
         return err
     }
     return nil
+}
+// DirectoryScope provides operations to manage the directoryScope property of the microsoft.graph.unifiedRoleScheduleBase entity.
+func (m *DirectoryRoleAssignmentSchedulesUnifiedRoleAssignmentScheduleItemRequestBuilder) DirectoryScope()(*DirectoryRoleAssignmentSchedulesItemDirectoryScopeRequestBuilder) {
+    return NewDirectoryRoleAssignmentSchedulesItemDirectoryScopeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get schedules for active role assignment operations.
 func (m *DirectoryRoleAssignmentSchedulesUnifiedRoleAssignmentScheduleItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DirectoryRoleAssignmentSchedulesUnifiedRoleAssignmentScheduleItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleAssignmentScheduleable, error) {
@@ -111,6 +119,14 @@ func (m *DirectoryRoleAssignmentSchedulesUnifiedRoleAssignmentScheduleItemReques
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleAssignmentScheduleable), nil
+}
+// Principal provides operations to manage the principal property of the microsoft.graph.unifiedRoleScheduleBase entity.
+func (m *DirectoryRoleAssignmentSchedulesUnifiedRoleAssignmentScheduleItemRequestBuilder) Principal()(*DirectoryRoleAssignmentSchedulesItemPrincipalRequestBuilder) {
+    return NewDirectoryRoleAssignmentSchedulesItemPrincipalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// RoleDefinition provides operations to manage the roleDefinition property of the microsoft.graph.unifiedRoleScheduleBase entity.
+func (m *DirectoryRoleAssignmentSchedulesUnifiedRoleAssignmentScheduleItemRequestBuilder) RoleDefinition()(*DirectoryRoleAssignmentSchedulesItemRoleDefinitionRequestBuilder) {
+    return NewDirectoryRoleAssignmentSchedulesItemRoleDefinitionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property roleAssignmentSchedules for roleManagement
 func (m *DirectoryRoleAssignmentSchedulesUnifiedRoleAssignmentScheduleItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DirectoryRoleAssignmentSchedulesUnifiedRoleAssignmentScheduleItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

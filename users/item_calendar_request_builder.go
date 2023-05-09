@@ -84,10 +84,6 @@ func (m *ItemCalendarRequestBuilder) Get(ctx context.Context, requestConfigurati
 func (m *ItemCalendarRequestBuilder) GetSchedule()(*ItemCalendarGetScheduleRequestBuilder) {
     return NewItemCalendarGetScheduleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.calendar entity.
-func (m *ItemCalendarRequestBuilder) MultiValueExtendedProperties()(*ItemCalendarMultiValueExtendedPropertiesRequestBuilder) {
-    return NewItemCalendarMultiValueExtendedPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property calendar in users
 func (m *ItemCalendarRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Calendarable, requestConfiguration *ItemCalendarRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Calendarable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -106,10 +102,6 @@ func (m *ItemCalendarRequestBuilder) Patch(ctx context.Context, body iadcd811244
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Calendarable), nil
-}
-// SingleValueExtendedProperties provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.calendar entity.
-func (m *ItemCalendarRequestBuilder) SingleValueExtendedProperties()(*ItemCalendarSingleValueExtendedPropertiesRequestBuilder) {
-    return NewItemCalendarSingleValueExtendedPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation the user's primary calendar. Read-only.
 func (m *ItemCalendarRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

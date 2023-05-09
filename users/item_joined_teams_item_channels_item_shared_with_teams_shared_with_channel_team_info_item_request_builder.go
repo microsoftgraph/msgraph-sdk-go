@@ -112,6 +112,10 @@ func (m *ItemJoinedTeamsItemChannelsItemSharedWithTeamsSharedWithChannelTeamInfo
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SharedWithChannelTeamInfoable), nil
 }
+// Team provides operations to manage the team property of the microsoft.graph.teamInfo entity.
+func (m *ItemJoinedTeamsItemChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilder) Team()(*ItemJoinedTeamsItemChannelsItemSharedWithTeamsItemTeamRequestBuilder) {
+    return NewItemJoinedTeamsItemChannelsItemSharedWithTeamsItemTeamRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property sharedWithTeams for users
 func (m *ItemJoinedTeamsItemChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

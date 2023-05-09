@@ -99,14 +99,6 @@ func (m *ItemCalendarViewEventItemRequestBuilder) Get(ctx context.Context, reque
 func (m *ItemCalendarViewEventItemRequestBuilder) Instances()(*ItemCalendarViewItemInstancesRequestBuilder) {
     return NewItemCalendarViewItemInstancesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.event entity.
-func (m *ItemCalendarViewEventItemRequestBuilder) MultiValueExtendedProperties()(*ItemCalendarViewItemMultiValueExtendedPropertiesRequestBuilder) {
-    return NewItemCalendarViewItemMultiValueExtendedPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// SingleValueExtendedProperties provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.event entity.
-func (m *ItemCalendarViewEventItemRequestBuilder) SingleValueExtendedProperties()(*ItemCalendarViewItemSingleValueExtendedPropertiesRequestBuilder) {
-    return NewItemCalendarViewItemSingleValueExtendedPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // SnoozeReminder provides operations to call the snoozeReminder method.
 func (m *ItemCalendarViewEventItemRequestBuilder) SnoozeReminder()(*ItemCalendarViewItemSnoozeReminderRequestBuilder) {
     return NewItemCalendarViewItemSnoozeReminderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

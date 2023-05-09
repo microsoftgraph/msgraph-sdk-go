@@ -77,14 +77,6 @@ func (m *ItemCalendarRequestBuilder) Get(ctx context.Context, requestConfigurati
 func (m *ItemCalendarRequestBuilder) GetSchedule()(*ItemCalendarGetScheduleRequestBuilder) {
     return NewItemCalendarGetScheduleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.calendar entity.
-func (m *ItemCalendarRequestBuilder) MultiValueExtendedProperties()(*ItemCalendarMultiValueExtendedPropertiesRequestBuilder) {
-    return NewItemCalendarMultiValueExtendedPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// SingleValueExtendedProperties provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.calendar entity.
-func (m *ItemCalendarRequestBuilder) SingleValueExtendedProperties()(*ItemCalendarSingleValueExtendedPropertiesRequestBuilder) {
-    return NewItemCalendarSingleValueExtendedPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToGetRequestInformation the group's calendar. Read-only.
 func (m *ItemCalendarRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

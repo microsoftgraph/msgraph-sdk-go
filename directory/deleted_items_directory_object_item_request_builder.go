@@ -105,13 +105,25 @@ func (m *DeletedItemsDirectoryObjectItemRequestBuilder) GetMemberGroups()(*Delet
 func (m *DeletedItemsDirectoryObjectItemRequestBuilder) GetMemberObjects()(*DeletedItemsItemGetMemberObjectsRequestBuilder) {
     return NewDeletedItemsItemGetMemberObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// GraphAdministrativeUnit casts the previous resource to administrativeUnit.
+func (m *DeletedItemsDirectoryObjectItemRequestBuilder) GraphAdministrativeUnit()(*DeletedItemsItemGraphAdministrativeUnitRequestBuilder) {
+    return NewDeletedItemsItemGraphAdministrativeUnitRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // GraphApplication casts the previous resource to application.
 func (m *DeletedItemsDirectoryObjectItemRequestBuilder) GraphApplication()(*DeletedItemsItemGraphApplicationRequestBuilder) {
     return NewDeletedItemsItemGraphApplicationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// GraphDevice casts the previous resource to device.
+func (m *DeletedItemsDirectoryObjectItemRequestBuilder) GraphDevice()(*DeletedItemsItemGraphDeviceRequestBuilder) {
+    return NewDeletedItemsItemGraphDeviceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // GraphGroup casts the previous resource to group.
 func (m *DeletedItemsDirectoryObjectItemRequestBuilder) GraphGroup()(*DeletedItemsItemGraphGroupRequestBuilder) {
     return NewDeletedItemsItemGraphGroupRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphServicePrincipal casts the previous resource to servicePrincipal.
+func (m *DeletedItemsDirectoryObjectItemRequestBuilder) GraphServicePrincipal()(*DeletedItemsItemGraphServicePrincipalRequestBuilder) {
+    return NewDeletedItemsItemGraphServicePrincipalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GraphUser casts the previous resource to user.
 func (m *DeletedItemsDirectoryObjectItemRequestBuilder) GraphUser()(*DeletedItemsItemGraphUserRequestBuilder) {

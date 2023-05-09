@@ -62,6 +62,10 @@ func NewItemSitesItemListsListItemRequestBuilder(rawUrl string, requestAdapter i
 func (m *ItemSitesItemListsListItemRequestBuilder) ContentTypes()(*ItemSitesItemListsItemContentTypesRequestBuilder) {
     return NewItemSitesItemListsItemContentTypesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// CreatedByUser provides operations to manage the createdByUser property of the microsoft.graph.baseItem entity.
+func (m *ItemSitesItemListsListItemRequestBuilder) CreatedByUser()(*ItemSitesItemListsItemCreatedByUserRequestBuilder) {
+    return NewItemSitesItemListsItemCreatedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Delete delete navigation property lists for groups
 func (m *ItemSitesItemListsListItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSitesItemListsListItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -104,6 +108,10 @@ func (m *ItemSitesItemListsListItemRequestBuilder) Get(ctx context.Context, requ
 // Items provides operations to manage the items property of the microsoft.graph.list entity.
 func (m *ItemSitesItemListsListItemRequestBuilder) Items()(*ItemSitesItemListsItemItemsRequestBuilder) {
     return NewItemSitesItemListsItemItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// LastModifiedByUser provides operations to manage the lastModifiedByUser property of the microsoft.graph.baseItem entity.
+func (m *ItemSitesItemListsListItemRequestBuilder) LastModifiedByUser()(*ItemSitesItemListsItemLastModifiedByUserRequestBuilder) {
+    return NewItemSitesItemListsItemLastModifiedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Operations provides operations to manage the operations property of the microsoft.graph.list entity.
 func (m *ItemSitesItemListsListItemRequestBuilder) Operations()(*ItemSitesItemListsItemOperationsRequestBuilder) {

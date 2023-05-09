@@ -93,10 +93,6 @@ func (m *ItemContactFoldersItemContactsContactItemRequestBuilder) Get(ctx contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Contactable), nil
 }
-// MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.contact entity.
-func (m *ItemContactFoldersItemContactsContactItemRequestBuilder) MultiValueExtendedProperties()(*ItemContactFoldersItemContactsItemMultiValueExtendedPropertiesRequestBuilder) {
-    return NewItemContactFoldersItemContactsItemMultiValueExtendedPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property contacts in users
 func (m *ItemContactFoldersItemContactsContactItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Contactable, requestConfiguration *ItemContactFoldersItemContactsContactItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Contactable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -119,10 +115,6 @@ func (m *ItemContactFoldersItemContactsContactItemRequestBuilder) Patch(ctx cont
 // Photo provides operations to manage the photo property of the microsoft.graph.contact entity.
 func (m *ItemContactFoldersItemContactsContactItemRequestBuilder) Photo()(*ItemContactFoldersItemContactsItemPhotoRequestBuilder) {
     return NewItemContactFoldersItemContactsItemPhotoRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// SingleValueExtendedProperties provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.contact entity.
-func (m *ItemContactFoldersItemContactsContactItemRequestBuilder) SingleValueExtendedProperties()(*ItemContactFoldersItemContactsItemSingleValueExtendedPropertiesRequestBuilder) {
-    return NewItemContactFoldersItemContactsItemSingleValueExtendedPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property contacts for users
 func (m *ItemContactFoldersItemContactsContactItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemContactFoldersItemContactsContactItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

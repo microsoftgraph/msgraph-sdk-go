@@ -20,7 +20,7 @@ func NewSharepointSettings()(*SharepointSettings) {
 func CreateSharepointSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSharepointSettings(), nil
 }
-// GetAllowedDomainGuidsForSyncApp gets the allowedDomainGuidsForSyncApp property value. The allowedDomainGuidsForSyncApp property
+// GetAllowedDomainGuidsForSyncApp gets the allowedDomainGuidsForSyncApp property value. Collection of trusted domain GUIDs for the OneDrive sync app.
 func (m *SharepointSettings) GetAllowedDomainGuidsForSyncApp()([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("allowedDomainGuidsForSyncApp")
     if err != nil {
@@ -31,7 +31,7 @@ func (m *SharepointSettings) GetAllowedDomainGuidsForSyncApp()([]i561e97a8befe76
     }
     return nil
 }
-// GetAvailableManagedPathsForSiteCreation gets the availableManagedPathsForSiteCreation property value. The availableManagedPathsForSiteCreation property
+// GetAvailableManagedPathsForSiteCreation gets the availableManagedPathsForSiteCreation property value. Collection of managed paths available for site creation. Read-only.
 func (m *SharepointSettings) GetAvailableManagedPathsForSiteCreation()([]string) {
     val, err := m.GetBackingStore().Get("availableManagedPathsForSiteCreation")
     if err != nil {
@@ -42,7 +42,7 @@ func (m *SharepointSettings) GetAvailableManagedPathsForSiteCreation()([]string)
     }
     return nil
 }
-// GetDeletedUserPersonalSiteRetentionPeriodInDays gets the deletedUserPersonalSiteRetentionPeriodInDays property value. The deletedUserPersonalSiteRetentionPeriodInDays property
+// GetDeletedUserPersonalSiteRetentionPeriodInDays gets the deletedUserPersonalSiteRetentionPeriodInDays property value. The number of days for preserving a deleted user's OneDrive.
 func (m *SharepointSettings) GetDeletedUserPersonalSiteRetentionPeriodInDays()(*int32) {
     val, err := m.GetBackingStore().Get("deletedUserPersonalSiteRetentionPeriodInDays")
     if err != nil {
@@ -53,7 +53,7 @@ func (m *SharepointSettings) GetDeletedUserPersonalSiteRetentionPeriodInDays()(*
     }
     return nil
 }
-// GetExcludedFileExtensionsForSyncApp gets the excludedFileExtensionsForSyncApp property value. The excludedFileExtensionsForSyncApp property
+// GetExcludedFileExtensionsForSyncApp gets the excludedFileExtensionsForSyncApp property value. Collection of file extensions not uploaded by the OneDrive sync app.
 func (m *SharepointSettings) GetExcludedFileExtensionsForSyncApp()([]string) {
     val, err := m.GetBackingStore().Get("excludedFileExtensionsForSyncApp")
     if err != nil {
@@ -379,7 +379,7 @@ func (m *SharepointSettings) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetIdleSessionSignOut gets the idleSessionSignOut property value. The idleSessionSignOut property
+// GetIdleSessionSignOut gets the idleSessionSignOut property value. Specifies the idle session sign-out policies for the tenant.
 func (m *SharepointSettings) GetIdleSessionSignOut()(IdleSessionSignOutable) {
     val, err := m.GetBackingStore().Get("idleSessionSignOut")
     if err != nil {
@@ -390,7 +390,7 @@ func (m *SharepointSettings) GetIdleSessionSignOut()(IdleSessionSignOutable) {
     }
     return nil
 }
-// GetImageTaggingOption gets the imageTaggingOption property value. The imageTaggingOption property
+// GetImageTaggingOption gets the imageTaggingOption property value. Specifies the image tagging option for the tenant. Possible values are: disabled, basic, enhanced.
 func (m *SharepointSettings) GetImageTaggingOption()(*ImageTaggingChoice) {
     val, err := m.GetBackingStore().Get("imageTaggingOption")
     if err != nil {
@@ -401,7 +401,7 @@ func (m *SharepointSettings) GetImageTaggingOption()(*ImageTaggingChoice) {
     }
     return nil
 }
-// GetIsCommentingOnSitePagesEnabled gets the isCommentingOnSitePagesEnabled property value. The isCommentingOnSitePagesEnabled property
+// GetIsCommentingOnSitePagesEnabled gets the isCommentingOnSitePagesEnabled property value. Indicates whether comments are allowed on modern site pages in SharePoint.
 func (m *SharepointSettings) GetIsCommentingOnSitePagesEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isCommentingOnSitePagesEnabled")
     if err != nil {
@@ -412,7 +412,7 @@ func (m *SharepointSettings) GetIsCommentingOnSitePagesEnabled()(*bool) {
     }
     return nil
 }
-// GetIsFileActivityNotificationEnabled gets the isFileActivityNotificationEnabled property value. The isFileActivityNotificationEnabled property
+// GetIsFileActivityNotificationEnabled gets the isFileActivityNotificationEnabled property value. Indicates whether push notifications are enabled for OneDrive events.
 func (m *SharepointSettings) GetIsFileActivityNotificationEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isFileActivityNotificationEnabled")
     if err != nil {
@@ -423,7 +423,7 @@ func (m *SharepointSettings) GetIsFileActivityNotificationEnabled()(*bool) {
     }
     return nil
 }
-// GetIsLegacyAuthProtocolsEnabled gets the isLegacyAuthProtocolsEnabled property value. The isLegacyAuthProtocolsEnabled property
+// GetIsLegacyAuthProtocolsEnabled gets the isLegacyAuthProtocolsEnabled property value. Indicates whether legacy authentication protocols are enabled for the tenant.
 func (m *SharepointSettings) GetIsLegacyAuthProtocolsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isLegacyAuthProtocolsEnabled")
     if err != nil {
@@ -434,7 +434,7 @@ func (m *SharepointSettings) GetIsLegacyAuthProtocolsEnabled()(*bool) {
     }
     return nil
 }
-// GetIsLoopEnabled gets the isLoopEnabled property value. The isLoopEnabled property
+// GetIsLoopEnabled gets the isLoopEnabled property value. Indicates whether if Fluid Framework is allowed on SharePoint sites.
 func (m *SharepointSettings) GetIsLoopEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isLoopEnabled")
     if err != nil {
@@ -445,7 +445,7 @@ func (m *SharepointSettings) GetIsLoopEnabled()(*bool) {
     }
     return nil
 }
-// GetIsMacSyncAppEnabled gets the isMacSyncAppEnabled property value. The isMacSyncAppEnabled property
+// GetIsMacSyncAppEnabled gets the isMacSyncAppEnabled property value. Indicates whether files can be synced using the OneDrive sync app for Mac.
 func (m *SharepointSettings) GetIsMacSyncAppEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isMacSyncAppEnabled")
     if err != nil {
@@ -456,7 +456,7 @@ func (m *SharepointSettings) GetIsMacSyncAppEnabled()(*bool) {
     }
     return nil
 }
-// GetIsRequireAcceptingUserToMatchInvitedUserEnabled gets the isRequireAcceptingUserToMatchInvitedUserEnabled property value. The isRequireAcceptingUserToMatchInvitedUserEnabled property
+// GetIsRequireAcceptingUserToMatchInvitedUserEnabled gets the isRequireAcceptingUserToMatchInvitedUserEnabled property value. Indicates whether guests must sign in using the same account to which sharing invitations are sent.
 func (m *SharepointSettings) GetIsRequireAcceptingUserToMatchInvitedUserEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isRequireAcceptingUserToMatchInvitedUserEnabled")
     if err != nil {
@@ -467,7 +467,7 @@ func (m *SharepointSettings) GetIsRequireAcceptingUserToMatchInvitedUserEnabled(
     }
     return nil
 }
-// GetIsResharingByExternalUsersEnabled gets the isResharingByExternalUsersEnabled property value. The isResharingByExternalUsersEnabled property
+// GetIsResharingByExternalUsersEnabled gets the isResharingByExternalUsersEnabled property value. Indicates whether guests are allowed to reshare files, folders, and sites they don't own.
 func (m *SharepointSettings) GetIsResharingByExternalUsersEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isResharingByExternalUsersEnabled")
     if err != nil {
@@ -478,7 +478,7 @@ func (m *SharepointSettings) GetIsResharingByExternalUsersEnabled()(*bool) {
     }
     return nil
 }
-// GetIsSharePointMobileNotificationEnabled gets the isSharePointMobileNotificationEnabled property value. The isSharePointMobileNotificationEnabled property
+// GetIsSharePointMobileNotificationEnabled gets the isSharePointMobileNotificationEnabled property value. Indicates whether mobile push notifications are enabled for SharePoint.
 func (m *SharepointSettings) GetIsSharePointMobileNotificationEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isSharePointMobileNotificationEnabled")
     if err != nil {
@@ -489,7 +489,7 @@ func (m *SharepointSettings) GetIsSharePointMobileNotificationEnabled()(*bool) {
     }
     return nil
 }
-// GetIsSharePointNewsfeedEnabled gets the isSharePointNewsfeedEnabled property value. The isSharePointNewsfeedEnabled property
+// GetIsSharePointNewsfeedEnabled gets the isSharePointNewsfeedEnabled property value. Indicates whether the newsfeed is allowed on the modern site pages in SharePoint.
 func (m *SharepointSettings) GetIsSharePointNewsfeedEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isSharePointNewsfeedEnabled")
     if err != nil {
@@ -500,7 +500,7 @@ func (m *SharepointSettings) GetIsSharePointNewsfeedEnabled()(*bool) {
     }
     return nil
 }
-// GetIsSiteCreationEnabled gets the isSiteCreationEnabled property value. The isSiteCreationEnabled property
+// GetIsSiteCreationEnabled gets the isSiteCreationEnabled property value. Indicates whether users are allowed to create sites.
 func (m *SharepointSettings) GetIsSiteCreationEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isSiteCreationEnabled")
     if err != nil {
@@ -511,7 +511,7 @@ func (m *SharepointSettings) GetIsSiteCreationEnabled()(*bool) {
     }
     return nil
 }
-// GetIsSiteCreationUIEnabled gets the isSiteCreationUIEnabled property value. The isSiteCreationUIEnabled property
+// GetIsSiteCreationUIEnabled gets the isSiteCreationUIEnabled property value. Indicates whether the UI commands for creating sites are shown.
 func (m *SharepointSettings) GetIsSiteCreationUIEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isSiteCreationUIEnabled")
     if err != nil {
@@ -522,7 +522,7 @@ func (m *SharepointSettings) GetIsSiteCreationUIEnabled()(*bool) {
     }
     return nil
 }
-// GetIsSitePagesCreationEnabled gets the isSitePagesCreationEnabled property value. The isSitePagesCreationEnabled property
+// GetIsSitePagesCreationEnabled gets the isSitePagesCreationEnabled property value. Indicates whether creating new modern pages is allowed on SharePoint sites.
 func (m *SharepointSettings) GetIsSitePagesCreationEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isSitePagesCreationEnabled")
     if err != nil {
@@ -533,7 +533,7 @@ func (m *SharepointSettings) GetIsSitePagesCreationEnabled()(*bool) {
     }
     return nil
 }
-// GetIsSitesStorageLimitAutomatic gets the isSitesStorageLimitAutomatic property value. The isSitesStorageLimitAutomatic property
+// GetIsSitesStorageLimitAutomatic gets the isSitesStorageLimitAutomatic property value. Indicates whether site storage space is automatically managed or if specific storage limits are set per site.
 func (m *SharepointSettings) GetIsSitesStorageLimitAutomatic()(*bool) {
     val, err := m.GetBackingStore().Get("isSitesStorageLimitAutomatic")
     if err != nil {
@@ -544,7 +544,7 @@ func (m *SharepointSettings) GetIsSitesStorageLimitAutomatic()(*bool) {
     }
     return nil
 }
-// GetIsSyncButtonHiddenOnPersonalSite gets the isSyncButtonHiddenOnPersonalSite property value. The isSyncButtonHiddenOnPersonalSite property
+// GetIsSyncButtonHiddenOnPersonalSite gets the isSyncButtonHiddenOnPersonalSite property value. Indicates whether the sync button in OneDrive is hidden.
 func (m *SharepointSettings) GetIsSyncButtonHiddenOnPersonalSite()(*bool) {
     val, err := m.GetBackingStore().Get("isSyncButtonHiddenOnPersonalSite")
     if err != nil {
@@ -555,7 +555,7 @@ func (m *SharepointSettings) GetIsSyncButtonHiddenOnPersonalSite()(*bool) {
     }
     return nil
 }
-// GetIsUnmanagedSyncAppForTenantRestricted gets the isUnmanagedSyncAppForTenantRestricted property value. The isUnmanagedSyncAppForTenantRestricted property
+// GetIsUnmanagedSyncAppForTenantRestricted gets the isUnmanagedSyncAppForTenantRestricted property value. Indicates whether users are allowed to sync files only on PCs joined to specific domains.
 func (m *SharepointSettings) GetIsUnmanagedSyncAppForTenantRestricted()(*bool) {
     val, err := m.GetBackingStore().Get("isUnmanagedSyncAppForTenantRestricted")
     if err != nil {
@@ -566,7 +566,7 @@ func (m *SharepointSettings) GetIsUnmanagedSyncAppForTenantRestricted()(*bool) {
     }
     return nil
 }
-// GetPersonalSiteDefaultStorageLimitInMB gets the personalSiteDefaultStorageLimitInMB property value. The personalSiteDefaultStorageLimitInMB property
+// GetPersonalSiteDefaultStorageLimitInMB gets the personalSiteDefaultStorageLimitInMB property value. The default OneDrive storage limit for all new and existing users who are assigned a qualifying license. Measured in megabytes (MB).
 func (m *SharepointSettings) GetPersonalSiteDefaultStorageLimitInMB()(*int64) {
     val, err := m.GetBackingStore().Get("personalSiteDefaultStorageLimitInMB")
     if err != nil {
@@ -577,7 +577,7 @@ func (m *SharepointSettings) GetPersonalSiteDefaultStorageLimitInMB()(*int64) {
     }
     return nil
 }
-// GetSharingAllowedDomainList gets the sharingAllowedDomainList property value. The sharingAllowedDomainList property
+// GetSharingAllowedDomainList gets the sharingAllowedDomainList property value. Collection of email domains that are allowed for sharing outside the organization.
 func (m *SharepointSettings) GetSharingAllowedDomainList()([]string) {
     val, err := m.GetBackingStore().Get("sharingAllowedDomainList")
     if err != nil {
@@ -588,7 +588,7 @@ func (m *SharepointSettings) GetSharingAllowedDomainList()([]string) {
     }
     return nil
 }
-// GetSharingBlockedDomainList gets the sharingBlockedDomainList property value. The sharingBlockedDomainList property
+// GetSharingBlockedDomainList gets the sharingBlockedDomainList property value. Collection of email domains that are blocked for sharing outside the organization.
 func (m *SharepointSettings) GetSharingBlockedDomainList()([]string) {
     val, err := m.GetBackingStore().Get("sharingBlockedDomainList")
     if err != nil {
@@ -599,7 +599,7 @@ func (m *SharepointSettings) GetSharingBlockedDomainList()([]string) {
     }
     return nil
 }
-// GetSharingCapability gets the sharingCapability property value. The sharingCapability property
+// GetSharingCapability gets the sharingCapability property value. Sharing capability for the tenant. Possible values are: disabled, externalUserSharingOnly, externalUserAndGuestSharing, existingExternalUserSharingOnly.
 func (m *SharepointSettings) GetSharingCapability()(*SharingCapabilities) {
     val, err := m.GetBackingStore().Get("sharingCapability")
     if err != nil {
@@ -610,7 +610,7 @@ func (m *SharepointSettings) GetSharingCapability()(*SharingCapabilities) {
     }
     return nil
 }
-// GetSharingDomainRestrictionMode gets the sharingDomainRestrictionMode property value. The sharingDomainRestrictionMode property
+// GetSharingDomainRestrictionMode gets the sharingDomainRestrictionMode property value. Specifies the external sharing mode for domains. Possible values are: none, allowList, blockList.
 func (m *SharepointSettings) GetSharingDomainRestrictionMode()(*SharingDomainRestrictionMode) {
     val, err := m.GetBackingStore().Get("sharingDomainRestrictionMode")
     if err != nil {
@@ -621,7 +621,7 @@ func (m *SharepointSettings) GetSharingDomainRestrictionMode()(*SharingDomainRes
     }
     return nil
 }
-// GetSiteCreationDefaultManagedPath gets the siteCreationDefaultManagedPath property value. The siteCreationDefaultManagedPath property
+// GetSiteCreationDefaultManagedPath gets the siteCreationDefaultManagedPath property value. The value of the team site managed path. This is the path under which new team sites will be created.
 func (m *SharepointSettings) GetSiteCreationDefaultManagedPath()(*string) {
     val, err := m.GetBackingStore().Get("siteCreationDefaultManagedPath")
     if err != nil {
@@ -632,7 +632,7 @@ func (m *SharepointSettings) GetSiteCreationDefaultManagedPath()(*string) {
     }
     return nil
 }
-// GetSiteCreationDefaultStorageLimitInMB gets the siteCreationDefaultStorageLimitInMB property value. The siteCreationDefaultStorageLimitInMB property
+// GetSiteCreationDefaultStorageLimitInMB gets the siteCreationDefaultStorageLimitInMB property value. The default storage quota for a new site upon creation. Measured in megabytes (MB).
 func (m *SharepointSettings) GetSiteCreationDefaultStorageLimitInMB()(*int32) {
     val, err := m.GetBackingStore().Get("siteCreationDefaultStorageLimitInMB")
     if err != nil {
@@ -643,7 +643,7 @@ func (m *SharepointSettings) GetSiteCreationDefaultStorageLimitInMB()(*int32) {
     }
     return nil
 }
-// GetTenantDefaultTimezone gets the tenantDefaultTimezone property value. The tenantDefaultTimezone property
+// GetTenantDefaultTimezone gets the tenantDefaultTimezone property value. The default timezone of a tenant for newly created sites. For a list of possible values, see SPRegionalSettings.TimeZones property.
 func (m *SharepointSettings) GetTenantDefaultTimezone()(*string) {
     val, err := m.GetBackingStore().Get("tenantDefaultTimezone")
     if err != nil {
@@ -839,203 +839,203 @@ func (m *SharepointSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetAllowedDomainGuidsForSyncApp sets the allowedDomainGuidsForSyncApp property value. The allowedDomainGuidsForSyncApp property
+// SetAllowedDomainGuidsForSyncApp sets the allowedDomainGuidsForSyncApp property value. Collection of trusted domain GUIDs for the OneDrive sync app.
 func (m *SharepointSettings) SetAllowedDomainGuidsForSyncApp(value []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     err := m.GetBackingStore().Set("allowedDomainGuidsForSyncApp", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAvailableManagedPathsForSiteCreation sets the availableManagedPathsForSiteCreation property value. The availableManagedPathsForSiteCreation property
+// SetAvailableManagedPathsForSiteCreation sets the availableManagedPathsForSiteCreation property value. Collection of managed paths available for site creation. Read-only.
 func (m *SharepointSettings) SetAvailableManagedPathsForSiteCreation(value []string)() {
     err := m.GetBackingStore().Set("availableManagedPathsForSiteCreation", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDeletedUserPersonalSiteRetentionPeriodInDays sets the deletedUserPersonalSiteRetentionPeriodInDays property value. The deletedUserPersonalSiteRetentionPeriodInDays property
+// SetDeletedUserPersonalSiteRetentionPeriodInDays sets the deletedUserPersonalSiteRetentionPeriodInDays property value. The number of days for preserving a deleted user's OneDrive.
 func (m *SharepointSettings) SetDeletedUserPersonalSiteRetentionPeriodInDays(value *int32)() {
     err := m.GetBackingStore().Set("deletedUserPersonalSiteRetentionPeriodInDays", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExcludedFileExtensionsForSyncApp sets the excludedFileExtensionsForSyncApp property value. The excludedFileExtensionsForSyncApp property
+// SetExcludedFileExtensionsForSyncApp sets the excludedFileExtensionsForSyncApp property value. Collection of file extensions not uploaded by the OneDrive sync app.
 func (m *SharepointSettings) SetExcludedFileExtensionsForSyncApp(value []string)() {
     err := m.GetBackingStore().Set("excludedFileExtensionsForSyncApp", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIdleSessionSignOut sets the idleSessionSignOut property value. The idleSessionSignOut property
+// SetIdleSessionSignOut sets the idleSessionSignOut property value. Specifies the idle session sign-out policies for the tenant.
 func (m *SharepointSettings) SetIdleSessionSignOut(value IdleSessionSignOutable)() {
     err := m.GetBackingStore().Set("idleSessionSignOut", value)
     if err != nil {
         panic(err)
     }
 }
-// SetImageTaggingOption sets the imageTaggingOption property value. The imageTaggingOption property
+// SetImageTaggingOption sets the imageTaggingOption property value. Specifies the image tagging option for the tenant. Possible values are: disabled, basic, enhanced.
 func (m *SharepointSettings) SetImageTaggingOption(value *ImageTaggingChoice)() {
     err := m.GetBackingStore().Set("imageTaggingOption", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsCommentingOnSitePagesEnabled sets the isCommentingOnSitePagesEnabled property value. The isCommentingOnSitePagesEnabled property
+// SetIsCommentingOnSitePagesEnabled sets the isCommentingOnSitePagesEnabled property value. Indicates whether comments are allowed on modern site pages in SharePoint.
 func (m *SharepointSettings) SetIsCommentingOnSitePagesEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isCommentingOnSitePagesEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsFileActivityNotificationEnabled sets the isFileActivityNotificationEnabled property value. The isFileActivityNotificationEnabled property
+// SetIsFileActivityNotificationEnabled sets the isFileActivityNotificationEnabled property value. Indicates whether push notifications are enabled for OneDrive events.
 func (m *SharepointSettings) SetIsFileActivityNotificationEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isFileActivityNotificationEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsLegacyAuthProtocolsEnabled sets the isLegacyAuthProtocolsEnabled property value. The isLegacyAuthProtocolsEnabled property
+// SetIsLegacyAuthProtocolsEnabled sets the isLegacyAuthProtocolsEnabled property value. Indicates whether legacy authentication protocols are enabled for the tenant.
 func (m *SharepointSettings) SetIsLegacyAuthProtocolsEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isLegacyAuthProtocolsEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsLoopEnabled sets the isLoopEnabled property value. The isLoopEnabled property
+// SetIsLoopEnabled sets the isLoopEnabled property value. Indicates whether if Fluid Framework is allowed on SharePoint sites.
 func (m *SharepointSettings) SetIsLoopEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isLoopEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsMacSyncAppEnabled sets the isMacSyncAppEnabled property value. The isMacSyncAppEnabled property
+// SetIsMacSyncAppEnabled sets the isMacSyncAppEnabled property value. Indicates whether files can be synced using the OneDrive sync app for Mac.
 func (m *SharepointSettings) SetIsMacSyncAppEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isMacSyncAppEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsRequireAcceptingUserToMatchInvitedUserEnabled sets the isRequireAcceptingUserToMatchInvitedUserEnabled property value. The isRequireAcceptingUserToMatchInvitedUserEnabled property
+// SetIsRequireAcceptingUserToMatchInvitedUserEnabled sets the isRequireAcceptingUserToMatchInvitedUserEnabled property value. Indicates whether guests must sign in using the same account to which sharing invitations are sent.
 func (m *SharepointSettings) SetIsRequireAcceptingUserToMatchInvitedUserEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isRequireAcceptingUserToMatchInvitedUserEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsResharingByExternalUsersEnabled sets the isResharingByExternalUsersEnabled property value. The isResharingByExternalUsersEnabled property
+// SetIsResharingByExternalUsersEnabled sets the isResharingByExternalUsersEnabled property value. Indicates whether guests are allowed to reshare files, folders, and sites they don't own.
 func (m *SharepointSettings) SetIsResharingByExternalUsersEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isResharingByExternalUsersEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsSharePointMobileNotificationEnabled sets the isSharePointMobileNotificationEnabled property value. The isSharePointMobileNotificationEnabled property
+// SetIsSharePointMobileNotificationEnabled sets the isSharePointMobileNotificationEnabled property value. Indicates whether mobile push notifications are enabled for SharePoint.
 func (m *SharepointSettings) SetIsSharePointMobileNotificationEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isSharePointMobileNotificationEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsSharePointNewsfeedEnabled sets the isSharePointNewsfeedEnabled property value. The isSharePointNewsfeedEnabled property
+// SetIsSharePointNewsfeedEnabled sets the isSharePointNewsfeedEnabled property value. Indicates whether the newsfeed is allowed on the modern site pages in SharePoint.
 func (m *SharepointSettings) SetIsSharePointNewsfeedEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isSharePointNewsfeedEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsSiteCreationEnabled sets the isSiteCreationEnabled property value. The isSiteCreationEnabled property
+// SetIsSiteCreationEnabled sets the isSiteCreationEnabled property value. Indicates whether users are allowed to create sites.
 func (m *SharepointSettings) SetIsSiteCreationEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isSiteCreationEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsSiteCreationUIEnabled sets the isSiteCreationUIEnabled property value. The isSiteCreationUIEnabled property
+// SetIsSiteCreationUIEnabled sets the isSiteCreationUIEnabled property value. Indicates whether the UI commands for creating sites are shown.
 func (m *SharepointSettings) SetIsSiteCreationUIEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isSiteCreationUIEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsSitePagesCreationEnabled sets the isSitePagesCreationEnabled property value. The isSitePagesCreationEnabled property
+// SetIsSitePagesCreationEnabled sets the isSitePagesCreationEnabled property value. Indicates whether creating new modern pages is allowed on SharePoint sites.
 func (m *SharepointSettings) SetIsSitePagesCreationEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isSitePagesCreationEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsSitesStorageLimitAutomatic sets the isSitesStorageLimitAutomatic property value. The isSitesStorageLimitAutomatic property
+// SetIsSitesStorageLimitAutomatic sets the isSitesStorageLimitAutomatic property value. Indicates whether site storage space is automatically managed or if specific storage limits are set per site.
 func (m *SharepointSettings) SetIsSitesStorageLimitAutomatic(value *bool)() {
     err := m.GetBackingStore().Set("isSitesStorageLimitAutomatic", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsSyncButtonHiddenOnPersonalSite sets the isSyncButtonHiddenOnPersonalSite property value. The isSyncButtonHiddenOnPersonalSite property
+// SetIsSyncButtonHiddenOnPersonalSite sets the isSyncButtonHiddenOnPersonalSite property value. Indicates whether the sync button in OneDrive is hidden.
 func (m *SharepointSettings) SetIsSyncButtonHiddenOnPersonalSite(value *bool)() {
     err := m.GetBackingStore().Set("isSyncButtonHiddenOnPersonalSite", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsUnmanagedSyncAppForTenantRestricted sets the isUnmanagedSyncAppForTenantRestricted property value. The isUnmanagedSyncAppForTenantRestricted property
+// SetIsUnmanagedSyncAppForTenantRestricted sets the isUnmanagedSyncAppForTenantRestricted property value. Indicates whether users are allowed to sync files only on PCs joined to specific domains.
 func (m *SharepointSettings) SetIsUnmanagedSyncAppForTenantRestricted(value *bool)() {
     err := m.GetBackingStore().Set("isUnmanagedSyncAppForTenantRestricted", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPersonalSiteDefaultStorageLimitInMB sets the personalSiteDefaultStorageLimitInMB property value. The personalSiteDefaultStorageLimitInMB property
+// SetPersonalSiteDefaultStorageLimitInMB sets the personalSiteDefaultStorageLimitInMB property value. The default OneDrive storage limit for all new and existing users who are assigned a qualifying license. Measured in megabytes (MB).
 func (m *SharepointSettings) SetPersonalSiteDefaultStorageLimitInMB(value *int64)() {
     err := m.GetBackingStore().Set("personalSiteDefaultStorageLimitInMB", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSharingAllowedDomainList sets the sharingAllowedDomainList property value. The sharingAllowedDomainList property
+// SetSharingAllowedDomainList sets the sharingAllowedDomainList property value. Collection of email domains that are allowed for sharing outside the organization.
 func (m *SharepointSettings) SetSharingAllowedDomainList(value []string)() {
     err := m.GetBackingStore().Set("sharingAllowedDomainList", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSharingBlockedDomainList sets the sharingBlockedDomainList property value. The sharingBlockedDomainList property
+// SetSharingBlockedDomainList sets the sharingBlockedDomainList property value. Collection of email domains that are blocked for sharing outside the organization.
 func (m *SharepointSettings) SetSharingBlockedDomainList(value []string)() {
     err := m.GetBackingStore().Set("sharingBlockedDomainList", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSharingCapability sets the sharingCapability property value. The sharingCapability property
+// SetSharingCapability sets the sharingCapability property value. Sharing capability for the tenant. Possible values are: disabled, externalUserSharingOnly, externalUserAndGuestSharing, existingExternalUserSharingOnly.
 func (m *SharepointSettings) SetSharingCapability(value *SharingCapabilities)() {
     err := m.GetBackingStore().Set("sharingCapability", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSharingDomainRestrictionMode sets the sharingDomainRestrictionMode property value. The sharingDomainRestrictionMode property
+// SetSharingDomainRestrictionMode sets the sharingDomainRestrictionMode property value. Specifies the external sharing mode for domains. Possible values are: none, allowList, blockList.
 func (m *SharepointSettings) SetSharingDomainRestrictionMode(value *SharingDomainRestrictionMode)() {
     err := m.GetBackingStore().Set("sharingDomainRestrictionMode", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSiteCreationDefaultManagedPath sets the siteCreationDefaultManagedPath property value. The siteCreationDefaultManagedPath property
+// SetSiteCreationDefaultManagedPath sets the siteCreationDefaultManagedPath property value. The value of the team site managed path. This is the path under which new team sites will be created.
 func (m *SharepointSettings) SetSiteCreationDefaultManagedPath(value *string)() {
     err := m.GetBackingStore().Set("siteCreationDefaultManagedPath", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSiteCreationDefaultStorageLimitInMB sets the siteCreationDefaultStorageLimitInMB property value. The siteCreationDefaultStorageLimitInMB property
+// SetSiteCreationDefaultStorageLimitInMB sets the siteCreationDefaultStorageLimitInMB property value. The default storage quota for a new site upon creation. Measured in megabytes (MB).
 func (m *SharepointSettings) SetSiteCreationDefaultStorageLimitInMB(value *int32)() {
     err := m.GetBackingStore().Set("siteCreationDefaultStorageLimitInMB", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTenantDefaultTimezone sets the tenantDefaultTimezone property value. The tenantDefaultTimezone property
+// SetTenantDefaultTimezone sets the tenantDefaultTimezone property value. The default timezone of a tenant for newly created sites. For a list of possible values, see SPRegionalSettings.TimeZones property.
 func (m *SharepointSettings) SetTenantDefaultTimezone(value *string)() {
     err := m.GetBackingStore().Set("tenantDefaultTimezone", value)
     if err != nil {

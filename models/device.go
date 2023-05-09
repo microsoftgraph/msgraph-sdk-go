@@ -66,6 +66,17 @@ func (m *Device) GetComplianceExpirationDateTime()(*i336074805fc853987abe6f7fe3a
     }
     return nil
 }
+// GetDeviceCategory gets the deviceCategory property value. User-defined property set by Intune to automatically add devices to groups and simplify managing devices.
+func (m *Device) GetDeviceCategory()(*string) {
+    val, err := m.GetBackingStore().Get("deviceCategory")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetDeviceId gets the deviceId property value. Unique identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Supports $filter (eq, ne, not, startsWith).
 func (m *Device) GetDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("deviceId")
@@ -88,6 +99,17 @@ func (m *Device) GetDeviceMetadata()(*string) {
     }
     return nil
 }
+// GetDeviceOwnership gets the deviceOwnership property value. Ownership of the device. This property is set by Intune. Possible values are: unknown, company, personal.
+func (m *Device) GetDeviceOwnership()(*string) {
+    val, err := m.GetBackingStore().Get("deviceOwnership")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetDeviceVersion gets the deviceVersion property value. For internal use only.
 func (m *Device) GetDeviceVersion()(*int32) {
     val, err := m.GetBackingStore().Get("deviceVersion")
@@ -102,6 +124,17 @@ func (m *Device) GetDeviceVersion()(*int32) {
 // GetDisplayName gets the displayName property value. The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
 func (m *Device) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetEnrollmentProfileName gets the enrollmentProfileName property value. Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. This property is set by Intune.
+func (m *Device) GetEnrollmentProfileName()(*string) {
+    val, err := m.GetBackingStore().Get("enrollmentProfileName")
     if err != nil {
         panic(err)
     }
@@ -168,6 +201,16 @@ func (m *Device) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         return nil
     }
+    res["deviceCategory"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeviceCategory(val)
+        }
+        return nil
+    }
     res["deviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -188,6 +231,16 @@ func (m *Device) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         return nil
     }
+    res["deviceOwnership"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeviceOwnership(val)
+        }
+        return nil
+    }
     res["deviceVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -205,6 +258,16 @@ func (m *Device) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         if val != nil {
             m.SetDisplayName(val)
+        }
+        return nil
+    }
+    res["enrollmentProfileName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEnrollmentProfileName(val)
         }
         return nil
     }
@@ -355,6 +418,16 @@ func (m *Device) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
                 res[i] = v.(DirectoryObjectable)
             }
             m.SetRegisteredUsers(res)
+        }
+        return nil
+    }
+    res["registrationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRegistrationDateTime(val)
         }
         return nil
     }
@@ -530,6 +603,17 @@ func (m *Device) GetRegisteredUsers()([]DirectoryObjectable) {
     }
     return nil
 }
+// GetRegistrationDateTime gets the registrationDateTime property value. Date and time of when the device was registered. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+func (m *Device) GetRegistrationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("registrationDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
 // GetSystemLabels gets the systemLabels property value. List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).
 func (m *Device) GetSystemLabels()([]string) {
     val, err := m.GetBackingStore().Get("systemLabels")
@@ -598,6 +682,12 @@ func (m *Device) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
         }
     }
     {
+        err = writer.WriteStringValue("deviceCategory", m.GetDeviceCategory())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("deviceId", m.GetDeviceId())
         if err != nil {
             return err
@@ -610,6 +700,12 @@ func (m *Device) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
         }
     }
     {
+        err = writer.WriteStringValue("deviceOwnership", m.GetDeviceOwnership())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("deviceVersion", m.GetDeviceVersion())
         if err != nil {
             return err
@@ -617,6 +713,12 @@ func (m *Device) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     }
     {
         err = writer.WriteStringValue("displayName", m.GetDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("enrollmentProfileName", m.GetEnrollmentProfileName())
         if err != nil {
             return err
         }
@@ -715,6 +817,12 @@ func (m *Device) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
             return err
         }
     }
+    {
+        err = writer.WriteTimeValue("registrationDateTime", m.GetRegistrationDateTime())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSystemLabels() != nil {
         err = writer.WriteCollectionOfStringValues("systemLabels", m.GetSystemLabels())
         if err != nil {
@@ -767,6 +875,13 @@ func (m *Device) SetComplianceExpirationDateTime(value *i336074805fc853987abe6f7
         panic(err)
     }
 }
+// SetDeviceCategory sets the deviceCategory property value. User-defined property set by Intune to automatically add devices to groups and simplify managing devices.
+func (m *Device) SetDeviceCategory(value *string)() {
+    err := m.GetBackingStore().Set("deviceCategory", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDeviceId sets the deviceId property value. Unique identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Supports $filter (eq, ne, not, startsWith).
 func (m *Device) SetDeviceId(value *string)() {
     err := m.GetBackingStore().Set("deviceId", value)
@@ -781,6 +896,13 @@ func (m *Device) SetDeviceMetadata(value *string)() {
         panic(err)
     }
 }
+// SetDeviceOwnership sets the deviceOwnership property value. Ownership of the device. This property is set by Intune. Possible values are: unknown, company, personal.
+func (m *Device) SetDeviceOwnership(value *string)() {
+    err := m.GetBackingStore().Set("deviceOwnership", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDeviceVersion sets the deviceVersion property value. For internal use only.
 func (m *Device) SetDeviceVersion(value *int32)() {
     err := m.GetBackingStore().Set("deviceVersion", value)
@@ -791,6 +913,13 @@ func (m *Device) SetDeviceVersion(value *int32)() {
 // SetDisplayName sets the displayName property value. The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
 func (m *Device) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetEnrollmentProfileName sets the enrollmentProfileName property value. Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. This property is set by Intune.
+func (m *Device) SetEnrollmentProfileName(value *string)() {
+    err := m.GetBackingStore().Set("enrollmentProfileName", value)
     if err != nil {
         panic(err)
     }
@@ -886,6 +1015,13 @@ func (m *Device) SetRegisteredUsers(value []DirectoryObjectable)() {
         panic(err)
     }
 }
+// SetRegistrationDateTime sets the registrationDateTime property value. Date and time of when the device was registered. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+func (m *Device) SetRegistrationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("registrationDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSystemLabels sets the systemLabels property value. List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).
 func (m *Device) SetSystemLabels(value []string)() {
     err := m.GetBackingStore().Set("systemLabels", value)
@@ -915,10 +1051,13 @@ type Deviceable interface {
     GetAlternativeSecurityIds()([]AlternativeSecurityIdable)
     GetApproximateLastSignInDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetComplianceExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDeviceCategory()(*string)
     GetDeviceId()(*string)
     GetDeviceMetadata()(*string)
+    GetDeviceOwnership()(*string)
     GetDeviceVersion()(*int32)
     GetDisplayName()(*string)
+    GetEnrollmentProfileName()(*string)
     GetExtensions()([]Extensionable)
     GetIsCompliant()(*bool)
     GetIsManaged()(*bool)
@@ -932,6 +1071,7 @@ type Deviceable interface {
     GetProfileType()(*string)
     GetRegisteredOwners()([]DirectoryObjectable)
     GetRegisteredUsers()([]DirectoryObjectable)
+    GetRegistrationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetSystemLabels()([]string)
     GetTransitiveMemberOf()([]DirectoryObjectable)
     GetTrustType()(*string)
@@ -939,10 +1079,13 @@ type Deviceable interface {
     SetAlternativeSecurityIds(value []AlternativeSecurityIdable)()
     SetApproximateLastSignInDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetComplianceExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDeviceCategory(value *string)()
     SetDeviceId(value *string)()
     SetDeviceMetadata(value *string)()
+    SetDeviceOwnership(value *string)()
     SetDeviceVersion(value *int32)()
     SetDisplayName(value *string)()
+    SetEnrollmentProfileName(value *string)()
     SetExtensions(value []Extensionable)()
     SetIsCompliant(value *bool)()
     SetIsManaged(value *bool)()
@@ -956,6 +1099,7 @@ type Deviceable interface {
     SetProfileType(value *string)()
     SetRegisteredOwners(value []DirectoryObjectable)()
     SetRegisteredUsers(value []DirectoryObjectable)()
+    SetRegistrationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetSystemLabels(value []string)()
     SetTransitiveMemberOf(value []DirectoryObjectable)()
     SetTrustType(value *string)()

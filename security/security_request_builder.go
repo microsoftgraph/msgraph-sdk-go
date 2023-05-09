@@ -86,6 +86,10 @@ func (m *SecurityRequestBuilder) Get(ctx context.Context, requestConfiguration *
 func (m *SecurityRequestBuilder) Incidents()(*IncidentsRequestBuilder) {
     return NewIncidentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// MicrosoftGraphSecurityRunHuntingQuery provides operations to call the runHuntingQuery method.
+func (m *SecurityRequestBuilder) MicrosoftGraphSecurityRunHuntingQuery()(*MicrosoftGraphSecurityRunHuntingQueryRequestBuilder) {
+    return NewMicrosoftGraphSecurityRunHuntingQueryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update security
 func (m *SecurityRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Securityable, requestConfiguration *SecurityRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Securityable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -112,10 +116,6 @@ func (m *SecurityRequestBuilder) SecureScoreControlProfiles()(*SecureScoreContro
 // SecureScores provides operations to manage the secureScores property of the microsoft.graph.security entity.
 func (m *SecurityRequestBuilder) SecureScores()(*SecureScoresRequestBuilder) {
     return NewSecureScoresRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// SecurityRunHuntingQuery provides operations to call the runHuntingQuery method.
-func (m *SecurityRequestBuilder) SecurityRunHuntingQuery()(*SecurityRunHuntingQueryRequestBuilder) {
-    return NewSecurityRunHuntingQueryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get security
 func (m *SecurityRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SecurityRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

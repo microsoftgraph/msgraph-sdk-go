@@ -70,6 +70,10 @@ func (m *ItemSitesItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionIte
     }
     return nil
 }
+// Fields provides operations to manage the fields property of the microsoft.graph.listItemVersion entity.
+func (m *ItemSitesItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilder) Fields()(*ItemSitesItemListsItemItemsItemDocumentSetVersionsItemFieldsRequestBuilder) {
+    return NewItemSitesItemListsItemItemsItemDocumentSetVersionsItemFieldsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get version information for a document set version created by a user.
 func (m *ItemSitesItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DocumentSetVersionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);

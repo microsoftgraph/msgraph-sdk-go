@@ -93,6 +93,10 @@ func (m *PrintersPrinterItemRequestBuilder) Get(ctx context.Context, requestConf
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Printerable), nil
 }
+// Jobs provides operations to manage the jobs property of the microsoft.graph.printerBase entity.
+func (m *PrintersPrinterItemRequestBuilder) Jobs()(*PrintersItemJobsRequestBuilder) {
+    return NewPrintersItemJobsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the navigation property printers in print
 func (m *PrintersPrinterItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Printerable, requestConfiguration *PrintersPrinterItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Printerable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);

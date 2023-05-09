@@ -93,10 +93,6 @@ func (m *ItemContactsContactItemRequestBuilder) Get(ctx context.Context, request
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Contactable), nil
 }
-// MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.contact entity.
-func (m *ItemContactsContactItemRequestBuilder) MultiValueExtendedProperties()(*ItemContactsItemMultiValueExtendedPropertiesRequestBuilder) {
-    return NewItemContactsItemMultiValueExtendedPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property contacts in users
 func (m *ItemContactsContactItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Contactable, requestConfiguration *ItemContactsContactItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Contactable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -119,10 +115,6 @@ func (m *ItemContactsContactItemRequestBuilder) Patch(ctx context.Context, body 
 // Photo provides operations to manage the photo property of the microsoft.graph.contact entity.
 func (m *ItemContactsContactItemRequestBuilder) Photo()(*ItemContactsItemPhotoRequestBuilder) {
     return NewItemContactsItemPhotoRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// SingleValueExtendedProperties provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.contact entity.
-func (m *ItemContactsContactItemRequestBuilder) SingleValueExtendedProperties()(*ItemContactsItemSingleValueExtendedPropertiesRequestBuilder) {
-    return NewItemContactsItemSingleValueExtendedPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property contacts for users
 func (m *ItemContactsContactItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemContactsContactItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

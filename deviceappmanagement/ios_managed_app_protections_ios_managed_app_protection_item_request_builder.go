@@ -45,6 +45,10 @@ type IosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilderPatchReque
 func (m *IosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilder) Apps()(*IosManagedAppProtectionsItemAppsRequestBuilder) {
     return NewIosManagedAppProtectionsItemAppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Assignments provides operations to manage the assignments property of the microsoft.graph.targetedManagedAppProtection entity.
+func (m *IosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilder) Assignments()(*IosManagedAppProtectionsItemAssignmentsRequestBuilder) {
+    return NewIosManagedAppProtectionsItemAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewIosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilderInternal instantiates a new IosManagedAppProtectionItemRequestBuilder and sets the default values.
 func NewIosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilder) {
     m := &IosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilder{

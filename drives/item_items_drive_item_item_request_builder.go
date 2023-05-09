@@ -78,6 +78,10 @@ func (m *ItemItemsDriveItemItemRequestBuilder) Content()(*ItemItemsItemContentRe
 func (m *ItemItemsDriveItemItemRequestBuilder) Copy()(*ItemItemsItemCopyRequestBuilder) {
     return NewItemItemsItemCopyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// CreatedByUser provides operations to manage the createdByUser property of the microsoft.graph.baseItem entity.
+func (m *ItemItemsDriveItemItemRequestBuilder) CreatedByUser()(*ItemItemsItemCreatedByUserRequestBuilder) {
+    return NewItemItemsItemCreatedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // CreateLink provides operations to call the createLink method.
 func (m *ItemItemsDriveItemItemRequestBuilder) CreateLink()(*ItemItemsItemCreateLinkRequestBuilder) {
     return NewItemItemsItemCreateLinkRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -144,6 +148,10 @@ func (m *ItemItemsDriveItemItemRequestBuilder) GetActivitiesByIntervalWithStartD
 // Invite provides operations to call the invite method.
 func (m *ItemItemsDriveItemItemRequestBuilder) Invite()(*ItemItemsItemInviteRequestBuilder) {
     return NewItemItemsItemInviteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// LastModifiedByUser provides operations to manage the lastModifiedByUser property of the microsoft.graph.baseItem entity.
+func (m *ItemItemsDriveItemItemRequestBuilder) LastModifiedByUser()(*ItemItemsItemLastModifiedByUserRequestBuilder) {
+    return NewItemItemsItemLastModifiedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ListItem provides operations to manage the listItem property of the microsoft.graph.driveItem entity.
 func (m *ItemItemsDriveItemItemRequestBuilder) ListItem()(*ItemItemsItemListItemRequestBuilder) {

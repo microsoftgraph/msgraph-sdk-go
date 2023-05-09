@@ -125,10 +125,6 @@ func (m *ItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilder) Get(c
 func (m *ItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilder) Instances()(*ItemCalendarGroupsItemCalendarsItemEventsItemInstancesRequestBuilder) {
     return NewItemCalendarGroupsItemCalendarsItemEventsItemInstancesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.event entity.
-func (m *ItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilder) MultiValueExtendedProperties()(*ItemCalendarGroupsItemCalendarsItemEventsItemMultiValueExtendedPropertiesRequestBuilder) {
-    return NewItemCalendarGroupsItemCalendarsItemEventsItemMultiValueExtendedPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property events in users
 func (m *ItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Eventable, requestConfiguration *ItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Eventable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -147,10 +143,6 @@ func (m *ItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilder) Patch
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Eventable), nil
-}
-// SingleValueExtendedProperties provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.event entity.
-func (m *ItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilder) SingleValueExtendedProperties()(*ItemCalendarGroupsItemCalendarsItemEventsItemSingleValueExtendedPropertiesRequestBuilder) {
-    return NewItemCalendarGroupsItemCalendarsItemEventsItemSingleValueExtendedPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SnoozeReminder provides operations to call the snoozeReminder method.
 func (m *ItemCalendarGroupsItemCalendarsItemEventsEventItemRequestBuilder) SnoozeReminder()(*ItemCalendarGroupsItemCalendarsItemEventsItemSnoozeReminderRequestBuilder) {

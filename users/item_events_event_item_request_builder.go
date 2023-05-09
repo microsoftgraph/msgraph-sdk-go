@@ -125,10 +125,6 @@ func (m *ItemEventsEventItemRequestBuilder) Get(ctx context.Context, requestConf
 func (m *ItemEventsEventItemRequestBuilder) Instances()(*ItemEventsItemInstancesRequestBuilder) {
     return NewItemEventsItemInstancesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.event entity.
-func (m *ItemEventsEventItemRequestBuilder) MultiValueExtendedProperties()(*ItemEventsItemMultiValueExtendedPropertiesRequestBuilder) {
-    return NewItemEventsItemMultiValueExtendedPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property events in users
 func (m *ItemEventsEventItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Eventable, requestConfiguration *ItemEventsEventItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Eventable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -147,10 +143,6 @@ func (m *ItemEventsEventItemRequestBuilder) Patch(ctx context.Context, body iadc
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Eventable), nil
-}
-// SingleValueExtendedProperties provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.event entity.
-func (m *ItemEventsEventItemRequestBuilder) SingleValueExtendedProperties()(*ItemEventsItemSingleValueExtendedPropertiesRequestBuilder) {
-    return NewItemEventsItemSingleValueExtendedPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SnoozeReminder provides operations to call the snoozeReminder method.
 func (m *ItemEventsEventItemRequestBuilder) SnoozeReminder()(*ItemEventsItemSnoozeReminderRequestBuilder) {

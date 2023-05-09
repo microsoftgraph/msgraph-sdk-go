@@ -45,6 +45,10 @@ type AndroidManagedAppProtectionsAndroidManagedAppProtectionItemRequestBuilderPa
 func (m *AndroidManagedAppProtectionsAndroidManagedAppProtectionItemRequestBuilder) Apps()(*AndroidManagedAppProtectionsItemAppsRequestBuilder) {
     return NewAndroidManagedAppProtectionsItemAppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Assignments provides operations to manage the assignments property of the microsoft.graph.targetedManagedAppProtection entity.
+func (m *AndroidManagedAppProtectionsAndroidManagedAppProtectionItemRequestBuilder) Assignments()(*AndroidManagedAppProtectionsItemAssignmentsRequestBuilder) {
+    return NewAndroidManagedAppProtectionsItemAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewAndroidManagedAppProtectionsAndroidManagedAppProtectionItemRequestBuilderInternal instantiates a new AndroidManagedAppProtectionItemRequestBuilder and sets the default values.
 func NewAndroidManagedAppProtectionsAndroidManagedAppProtectionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AndroidManagedAppProtectionsAndroidManagedAppProtectionItemRequestBuilder) {
     m := &AndroidManagedAppProtectionsAndroidManagedAppProtectionItemRequestBuilder{

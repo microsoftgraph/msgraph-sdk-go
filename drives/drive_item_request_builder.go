@@ -58,6 +58,10 @@ func NewDriveItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewDriveItemRequestBuilderInternal(urlParams, requestAdapter)
 }
+// CreatedByUser provides operations to manage the createdByUser property of the microsoft.graph.baseItem entity.
+func (m *DriveItemRequestBuilder) CreatedByUser()(*ItemCreatedByUserRequestBuilder) {
+    return NewItemCreatedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Delete delete entity from drives
 func (m *DriveItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DriveItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -100,6 +104,10 @@ func (m *DriveItemRequestBuilder) Get(ctx context.Context, requestConfiguration 
 // Items provides operations to manage the items property of the microsoft.graph.drive entity.
 func (m *DriveItemRequestBuilder) Items()(*ItemItemsRequestBuilder) {
     return NewItemItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// LastModifiedByUser provides operations to manage the lastModifiedByUser property of the microsoft.graph.baseItem entity.
+func (m *DriveItemRequestBuilder) LastModifiedByUser()(*ItemLastModifiedByUserRequestBuilder) {
+    return NewItemLastModifiedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // List provides operations to manage the list property of the microsoft.graph.drive entity.
 func (m *DriveItemRequestBuilder) List()(*ItemListRequestBuilder) {

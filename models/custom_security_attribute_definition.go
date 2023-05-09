@@ -8,7 +8,7 @@ import (
 type CustomSecurityAttributeDefinition struct {
     Entity
 }
-// NewCustomSecurityAttributeDefinition instantiates a new CustomSecurityAttributeDefinition and sets the default values.
+// NewCustomSecurityAttributeDefinition instantiates a new customSecurityAttributeDefinition and sets the default values.
 func NewCustomSecurityAttributeDefinition()(*CustomSecurityAttributeDefinition) {
     m := &CustomSecurityAttributeDefinition{
         Entity: *NewEntity(),

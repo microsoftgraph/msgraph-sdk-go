@@ -8,7 +8,7 @@ import (
 type VoiceAuthenticationMethodConfiguration struct {
     AuthenticationMethodConfiguration
 }
-// NewVoiceAuthenticationMethodConfiguration instantiates a new voiceAuthenticationMethodConfiguration and sets the default values.
+// NewVoiceAuthenticationMethodConfiguration instantiates a new VoiceAuthenticationMethodConfiguration and sets the default values.
 func NewVoiceAuthenticationMethodConfiguration()(*VoiceAuthenticationMethodConfiguration) {
     m := &VoiceAuthenticationMethodConfiguration{
         AuthenticationMethodConfiguration: *NewAuthenticationMethodConfiguration(),

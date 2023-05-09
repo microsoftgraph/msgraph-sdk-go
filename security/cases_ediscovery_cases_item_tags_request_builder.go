@@ -93,6 +93,10 @@ func (m *CasesEdiscoveryCasesItemTagsRequestBuilder) Get(ctx context.Context, re
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewTagCollectionResponseable), nil
 }
+// MicrosoftGraphSecurityAsHierarchy provides operations to call the asHierarchy method.
+func (m *CasesEdiscoveryCasesItemTagsRequestBuilder) MicrosoftGraphSecurityAsHierarchy()(*CasesEdiscoveryCasesItemTagsMicrosoftGraphSecurityAsHierarchyRequestBuilder) {
+    return NewCasesEdiscoveryCasesItemTagsMicrosoftGraphSecurityAsHierarchyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Post create new navigation property to tags for security
 func (m *CasesEdiscoveryCasesItemTagsRequestBuilder) Post(ctx context.Context, body idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewTagable, requestConfiguration *CasesEdiscoveryCasesItemTagsRequestBuilderPostRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewTagable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
@@ -111,10 +115,6 @@ func (m *CasesEdiscoveryCasesItemTagsRequestBuilder) Post(ctx context.Context, b
         return nil, nil
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewTagable), nil
-}
-// SecurityAsHierarchy provides operations to call the asHierarchy method.
-func (m *CasesEdiscoveryCasesItemTagsRequestBuilder) SecurityAsHierarchy()(*CasesEdiscoveryCasesItemTagsSecurityAsHierarchyRequestBuilder) {
-    return NewCasesEdiscoveryCasesItemTagsSecurityAsHierarchyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation returns a list of ediscoveryReviewTag objects associated to this case.
 func (m *CasesEdiscoveryCasesItemTagsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemTagsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
