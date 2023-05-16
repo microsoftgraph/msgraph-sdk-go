@@ -31,7 +31,10 @@ func NewItemReprocessLicenseAssignmentRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewItemReprocessLicenseAssignmentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action reprocessLicenseAssignment
+// Post reprocess all group-based license assignments for the user. To learn more about group-based licensing, see What is group-based licensing in Azure Active Directory. Also see Identify and resolve license assignment problems for a group in Azure Active Directory for more details.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/user-reprocesslicenseassignment?view=graph-rest-1.0
 func (m *ItemReprocessLicenseAssignmentRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemReprocessLicenseAssignmentRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -50,7 +53,7 @@ func (m *ItemReprocessLicenseAssignmentRequestBuilder) Post(ctx context.Context,
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable), nil
 }
-// ToPostRequestInformation invoke action reprocessLicenseAssignment
+// ToPostRequestInformation reprocess all group-based license assignments for the user. To learn more about group-based licensing, see What is group-based licensing in Azure Active Directory. Also see Identify and resolve license assignment problems for a group in Azure Active Directory for more details.
 func (m *ItemReprocessLicenseAssignmentRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemReprocessLicenseAssignmentRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

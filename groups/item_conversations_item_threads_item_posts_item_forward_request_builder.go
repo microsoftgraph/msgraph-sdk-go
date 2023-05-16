@@ -30,7 +30,10 @@ func NewItemConversationsItemThreadsItemPostsItemForwardRequestBuilder(rawUrl st
     urlParams["request-raw-url"] = rawUrl
     return NewItemConversationsItemThreadsItemPostsItemForwardRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action forward
+// Post forward a post to a recipient. You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation. 
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/post-forward?view=graph-rest-1.0
 func (m *ItemConversationsItemThreadsItemPostsItemForwardRequestBuilder) Post(ctx context.Context, body ItemConversationsItemThreadsItemPostsItemForwardPostRequestBodyable, requestConfiguration *ItemConversationsItemThreadsItemPostsItemForwardRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *ItemConversationsItemThreadsItemPostsItemForwardRequestBuilder) Post(ct
     }
     return nil
 }
-// ToPostRequestInformation invoke action forward
+// ToPostRequestInformation forward a post to a recipient. You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation. 
 func (m *ItemConversationsItemThreadsItemPostsItemForwardRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemConversationsItemThreadsItemPostsItemForwardPostRequestBodyable, requestConfiguration *ItemConversationsItemThreadsItemPostsItemForwardRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

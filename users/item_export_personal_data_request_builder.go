@@ -30,7 +30,10 @@ func NewItemExportPersonalDataRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewItemExportPersonalDataRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action exportPersonalData
+// Post submit a data policy operation request from a company administrator or an application to export an organizational user's data. This data includes the user's data stored in OneDrive and their activity reports. For more guidance about exporting data while complying with regulations, see Data Subject Requests and the GDPR and CCPA.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/user-exportpersonaldata?view=graph-rest-1.0
 func (m *ItemExportPersonalDataRequestBuilder) Post(ctx context.Context, body ItemExportPersonalDataPostRequestBodyable, requestConfiguration *ItemExportPersonalDataRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *ItemExportPersonalDataRequestBuilder) Post(ctx context.Context, body It
     }
     return nil
 }
-// ToPostRequestInformation invoke action exportPersonalData
+// ToPostRequestInformation submit a data policy operation request from a company administrator or an application to export an organizational user's data. This data includes the user's data stored in OneDrive and their activity reports. For more guidance about exporting data while complying with regulations, see Data Subject Requests and the GDPR and CCPA.
 func (m *ItemExportPersonalDataRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemExportPersonalDataPostRequestBodyable, requestConfiguration *ItemExportPersonalDataRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

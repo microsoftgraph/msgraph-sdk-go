@@ -11,7 +11,7 @@ import (
 type ItemContentTypesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemContentTypesRequestBuilderGetQueryParameters the collection of content types defined for this site.
+// ItemContentTypesRequestBuilderGetQueryParameters get the collection of [contentType][contentType] resources in a [site][].
 type ItemContentTypesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -82,7 +82,10 @@ func NewItemContentTypesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 func (m *ItemContentTypesRequestBuilder) Count()(*ItemContentTypesCountRequestBuilder) {
     return NewItemContentTypesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the collection of content types defined for this site.
+// Get get the collection of [contentType][contentType] resources in a [site][].
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/site-list-contenttypes?view=graph-rest-1.0
 func (m *ItemContentTypesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemContentTypesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -105,7 +108,10 @@ func (m *ItemContentTypesRequestBuilder) Get(ctx context.Context, requestConfigu
 func (m *ItemContentTypesRequestBuilder) GetCompatibleHubContentTypes()(*ItemContentTypesGetCompatibleHubContentTypesRequestBuilder) {
     return NewItemContentTypesGetCompatibleHubContentTypesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Post create new navigation property to contentTypes for sites
+// Post create a new [contentType][] in a [site][].
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/site-post-contenttypes?view=graph-rest-1.0
 func (m *ItemContentTypesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeable, requestConfiguration *ItemContentTypesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -124,7 +130,7 @@ func (m *ItemContentTypesRequestBuilder) Post(ctx context.Context, body iadcd811
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeable), nil
 }
-// ToGetRequestInformation the collection of content types defined for this site.
+// ToGetRequestInformation get the collection of [contentType][contentType] resources in a [site][].
 func (m *ItemContentTypesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemContentTypesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -140,7 +146,7 @@ func (m *ItemContentTypesRequestBuilder) ToGetRequestInformation(ctx context.Con
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to contentTypes for sites
+// ToPostRequestInformation create a new [contentType][] in a [site][].
 func (m *ItemContentTypesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeable, requestConfiguration *ItemContentTypesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

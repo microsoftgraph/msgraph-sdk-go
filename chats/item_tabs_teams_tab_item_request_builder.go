@@ -18,7 +18,7 @@ type ItemTabsTeamsTabItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTabsTeamsTabItemRequestBuilderGetQueryParameters a collection of all the tabs in the chat. Nullable.
+// ItemTabsTeamsTabItemRequestBuilderGetQueryParameters retrieve the properties and relationships of the specified tab in a chat. 
 type ItemTabsTeamsTabItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewItemTabsTeamsTabItemRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewItemTabsTeamsTabItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property tabs for chats
+// Delete remove (unpin) a tab from the specified chat. 
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/chat-delete-tabs?view=graph-rest-1.0
 func (m *ItemTabsTeamsTabItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTabsTeamsTabItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *ItemTabsTeamsTabItemRequestBuilder) Delete(ctx context.Context, request
     }
     return nil
 }
-// Get a collection of all the tabs in the chat. Nullable.
+// Get retrieve the properties and relationships of the specified tab in a chat. 
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/chat-get-tabs?view=graph-rest-1.0
 func (m *ItemTabsTeamsTabItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTabsTeamsTabItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *ItemTabsTeamsTabItemRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabable), nil
 }
-// Patch update the navigation property tabs in chats
+// Patch update the properties of the specified tab in a chat. This can be used to configure the content of the tab.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/chat-patch-tabs?view=graph-rest-1.0
 func (m *ItemTabsTeamsTabItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabable, requestConfiguration *ItemTabsTeamsTabItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +121,7 @@ func (m *ItemTabsTeamsTabItemRequestBuilder) Patch(ctx context.Context, body iad
 func (m *ItemTabsTeamsTabItemRequestBuilder) TeamsApp()(*ItemTabsItemTeamsAppRequestBuilder) {
     return NewItemTabsItemTeamsAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete navigation property tabs for chats
+// ToDeleteRequestInformation remove (unpin) a tab from the specified chat. 
 func (m *ItemTabsTeamsTabItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTabsTeamsTabItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -124,7 +133,7 @@ func (m *ItemTabsTeamsTabItemRequestBuilder) ToDeleteRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation a collection of all the tabs in the chat. Nullable.
+// ToGetRequestInformation retrieve the properties and relationships of the specified tab in a chat. 
 func (m *ItemTabsTeamsTabItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTabsTeamsTabItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -140,7 +149,7 @@ func (m *ItemTabsTeamsTabItemRequestBuilder) ToGetRequestInformation(ctx context
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property tabs in chats
+// ToPatchRequestInformation update the properties of the specified tab in a chat. This can be used to configure the content of the tab.
 func (m *ItemTabsTeamsTabItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabable, requestConfiguration *ItemTabsTeamsTabItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

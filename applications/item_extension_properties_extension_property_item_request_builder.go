@@ -18,7 +18,7 @@ type ItemExtensionPropertiesExtensionPropertyItemRequestBuilderDeleteRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemExtensionPropertiesExtensionPropertyItemRequestBuilderGetQueryParameters read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).
+// ItemExtensionPropertiesExtensionPropertyItemRequestBuilderGetQueryParameters read a directory extension definition represented by an extensionProperty object.
 type ItemExtensionPropertiesExtensionPropertyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewItemExtensionPropertiesExtensionPropertyItemRequestBuilder(rawUrl string
     urlParams["request-raw-url"] = rawUrl
     return NewItemExtensionPropertiesExtensionPropertyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property extensionProperties for applications
+// Delete delete a directory extension definition represented by an extensionProperty object. You can delete only directory extensions that aren't synced from on-premises active directory (AD).
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/extensionproperty-delete?view=graph-rest-1.0
 func (m *ItemExtensionPropertiesExtensionPropertyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemExtensionPropertiesExtensionPropertyItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *ItemExtensionPropertiesExtensionPropertyItemRequestBuilder) Delete(ctx 
     }
     return nil
 }
-// Get read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).
+// Get read a directory extension definition represented by an extensionProperty object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/extensionproperty-get?view=graph-rest-1.0
 func (m *ItemExtensionPropertiesExtensionPropertyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemExtensionPropertiesExtensionPropertyItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ExtensionPropertyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -108,7 +114,7 @@ func (m *ItemExtensionPropertiesExtensionPropertyItemRequestBuilder) Patch(ctx c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ExtensionPropertyable), nil
 }
-// ToDeleteRequestInformation delete navigation property extensionProperties for applications
+// ToDeleteRequestInformation delete a directory extension definition represented by an extensionProperty object. You can delete only directory extensions that aren't synced from on-premises active directory (AD).
 func (m *ItemExtensionPropertiesExtensionPropertyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemExtensionPropertiesExtensionPropertyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +126,7 @@ func (m *ItemExtensionPropertiesExtensionPropertyItemRequestBuilder) ToDeleteReq
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).
+// ToGetRequestInformation read a directory extension definition represented by an extensionProperty object.
 func (m *ItemExtensionPropertiesExtensionPropertyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemExtensionPropertiesExtensionPropertyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -18,7 +18,7 @@ type ItemJoinedTeamsItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuilderD
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemJoinedTeamsItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuilderGetQueryParameters get timeOffRequests from users
+// ItemJoinedTeamsItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a timeoffrequest object.
 type ItemJoinedTeamsItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
@@ -52,7 +52,10 @@ func NewItemJoinedTeamsItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuild
     urlParams["request-raw-url"] = rawUrl
     return NewItemJoinedTeamsItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property timeOffRequests for users
+// Delete delete a timeOffRequest object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/timeoffrequest-delete?view=graph-rest-1.0
 func (m *ItemJoinedTeamsItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -68,7 +71,10 @@ func (m *ItemJoinedTeamsItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuil
     }
     return nil
 }
-// Get get timeOffRequests from users
+// Get retrieve the properties and relationships of a timeoffrequest object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/timeoffrequest-get?view=graph-rest-1.0
 func (m *ItemJoinedTeamsItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeOffRequestable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -106,7 +112,7 @@ func (m *ItemJoinedTeamsItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeOffRequestable), nil
 }
-// ToDeleteRequestInformation delete navigation property timeOffRequests for users
+// ToDeleteRequestInformation delete a timeOffRequest object.
 func (m *ItemJoinedTeamsItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -118,7 +124,7 @@ func (m *ItemJoinedTeamsItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuil
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get timeOffRequests from users
+// ToGetRequestInformation retrieve the properties and relationships of a timeoffrequest object.
 func (m *ItemJoinedTeamsItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

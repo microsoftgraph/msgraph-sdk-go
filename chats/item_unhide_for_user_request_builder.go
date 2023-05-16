@@ -30,7 +30,10 @@ func NewItemUnhideForUserRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewItemUnhideForUserRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action unhideForUser
+// Post unhide a chat for a user.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/chat-unhideforuser?view=graph-rest-1.0
 func (m *ItemUnhideForUserRequestBuilder) Post(ctx context.Context, body ItemUnhideForUserPostRequestBodyable, requestConfiguration *ItemUnhideForUserRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *ItemUnhideForUserRequestBuilder) Post(ctx context.Context, body ItemUnh
     }
     return nil
 }
-// ToPostRequestInformation invoke action unhideForUser
+// ToPostRequestInformation unhide a chat for a user.
 func (m *ItemUnhideForUserRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemUnhideForUserPostRequestBodyable, requestConfiguration *ItemUnhideForUserRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

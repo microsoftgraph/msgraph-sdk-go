@@ -18,7 +18,7 @@ type ItemSitesItemTermStoreSetsItemParentGroupSetsItemTermsTermItemRequestBuilde
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSitesItemTermStoreSetsItemParentGroupSetsItemTermsTermItemRequestBuilderGetQueryParameters all the terms under the set.
+// ItemSitesItemTermStoreSetsItemParentGroupSetsItemTermsTermItemRequestBuilderGetQueryParameters read the properties and relationships of a term object.
 type ItemSitesItemTermStoreSetsItemParentGroupSetsItemTermsTermItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -58,7 +58,10 @@ func NewItemSitesItemTermStoreSetsItemParentGroupSetsItemTermsTermItemRequestBui
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemTermStoreSetsItemParentGroupSetsItemTermsTermItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property terms for groups
+// Delete delete a term object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/termstore-term-delete?view=graph-rest-1.0
 func (m *ItemSitesItemTermStoreSetsItemParentGroupSetsItemTermsTermItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSitesItemTermStoreSetsItemParentGroupSetsItemTermsTermItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -74,7 +77,10 @@ func (m *ItemSitesItemTermStoreSetsItemParentGroupSetsItemTermsTermItemRequestBu
     }
     return nil
 }
-// Get all the terms under the set.
+// Get read the properties and relationships of a term object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/termstore-term-get?view=graph-rest-1.0
 func (m *ItemSitesItemTermStoreSetsItemParentGroupSetsItemTermsTermItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemTermStoreSetsItemParentGroupSetsItemTermsTermItemRequestBuilderGetRequestConfiguration)(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Termable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +99,10 @@ func (m *ItemSitesItemTermStoreSetsItemParentGroupSetsItemTermsTermItemRequestBu
     }
     return res.(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Termable), nil
 }
-// Patch update the navigation property terms in groups
+// Patch update the properties of a term object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/termstore-term-update?view=graph-rest-1.0
 func (m *ItemSitesItemTermStoreSetsItemParentGroupSetsItemTermsTermItemRequestBuilder) Patch(ctx context.Context, body ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Termable, requestConfiguration *ItemSitesItemTermStoreSetsItemParentGroupSetsItemTermsTermItemRequestBuilderPatchRequestConfiguration)(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Termable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -120,7 +129,7 @@ func (m *ItemSitesItemTermStoreSetsItemParentGroupSetsItemTermsTermItemRequestBu
 func (m *ItemSitesItemTermStoreSetsItemParentGroupSetsItemTermsTermItemRequestBuilder) Set()(*ItemSitesItemTermStoreSetsItemParentGroupSetsItemTermsItemSetRequestBuilder) {
     return NewItemSitesItemTermStoreSetsItemParentGroupSetsItemTermsItemSetRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete navigation property terms for groups
+// ToDeleteRequestInformation delete a term object.
 func (m *ItemSitesItemTermStoreSetsItemParentGroupSetsItemTermsTermItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemTermStoreSetsItemParentGroupSetsItemTermsTermItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -132,7 +141,7 @@ func (m *ItemSitesItemTermStoreSetsItemParentGroupSetsItemTermsTermItemRequestBu
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation all the terms under the set.
+// ToGetRequestInformation read the properties and relationships of a term object.
 func (m *ItemSitesItemTermStoreSetsItemParentGroupSetsItemTermsTermItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemTermStoreSetsItemParentGroupSetsItemTermsTermItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -148,7 +157,7 @@ func (m *ItemSitesItemTermStoreSetsItemParentGroupSetsItemTermsTermItemRequestBu
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property terms in groups
+// ToPatchRequestInformation update the properties of a term object.
 func (m *ItemSitesItemTermStoreSetsItemParentGroupSetsItemTermsTermItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Termable, requestConfiguration *ItemSitesItemTermStoreSetsItemParentGroupSetsItemTermsTermItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

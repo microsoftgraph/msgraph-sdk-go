@@ -18,7 +18,7 @@ type BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuilderDe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuilderGetQueryParameters all the staff members that provide services in this business. Read-only. Nullable.
+// BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuilderGetQueryParameters get the properties and relationships of a bookingStaffMember in the specified bookingBusiness.
 type BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewBookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuilde
     urlParams["request-raw-url"] = rawUrl
     return NewBookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property staffMembers for solutions
+// Delete delete a bookingStaffMember in the specified bookingBusiness.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/bookingstaffmember-delete?view=graph-rest-1.0
 func (m *BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuild
     }
     return nil
 }
-// Get all the staff members that provide services in this business. Read-only. Nullable.
+// Get get the properties and relationships of a bookingStaffMember in the specified bookingBusiness.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/bookingstaffmember-get?view=graph-rest-1.0
 func (m *BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingStaffMemberBaseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuild
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingStaffMemberBaseable), nil
 }
-// Patch update the navigation property staffMembers in solutions
+// Patch update the properties of a bookingStaffMember in the specified bookingBusiness.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/bookingstaffmember-update?view=graph-rest-1.0
 func (m *BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingStaffMemberBaseable, requestConfiguration *BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingStaffMemberBaseable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -108,7 +117,7 @@ func (m *BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuild
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingStaffMemberBaseable), nil
 }
-// ToDeleteRequestInformation delete navigation property staffMembers for solutions
+// ToDeleteRequestInformation delete a bookingStaffMember in the specified bookingBusiness.
 func (m *BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +129,7 @@ func (m *BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuild
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation all the staff members that provide services in this business. Read-only. Nullable.
+// ToGetRequestInformation get the properties and relationships of a bookingStaffMember in the specified bookingBusiness.
 func (m *BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +145,7 @@ func (m *BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuild
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property staffMembers in solutions
+// ToPatchRequestInformation update the properties of a bookingStaffMember in the specified bookingBusiness.
 func (m *BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingStaffMemberBaseable, requestConfiguration *BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

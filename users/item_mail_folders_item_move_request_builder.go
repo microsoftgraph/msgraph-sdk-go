@@ -31,7 +31,10 @@ func NewItemMailFoldersItemMoveRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewItemMailFoldersItemMoveRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action move
+// Post move a mailfolder and its contents to another mailfolder.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/mailfolder-move?view=graph-rest-1.0
 func (m *ItemMailFoldersItemMoveRequestBuilder) Post(ctx context.Context, body ItemMailFoldersItemMovePostRequestBodyable, requestConfiguration *ItemMailFoldersItemMoveRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailFolderable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -50,7 +53,7 @@ func (m *ItemMailFoldersItemMoveRequestBuilder) Post(ctx context.Context, body I
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailFolderable), nil
 }
-// ToPostRequestInformation invoke action move
+// ToPostRequestInformation move a mailfolder and its contents to another mailfolder.
 func (m *ItemMailFoldersItemMoveRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemMailFoldersItemMovePostRequestBodyable, requestConfiguration *ItemMailFoldersItemMoveRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

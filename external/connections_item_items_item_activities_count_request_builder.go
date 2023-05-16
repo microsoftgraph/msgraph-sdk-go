@@ -1,4 +1,4 @@
-package groups
+package external
 
 import (
     "context"
@@ -6,41 +6,41 @@ import (
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
 
-// ItemSitesItemListsItemItemsCountRequestBuilder provides operations to count the resources in the collection.
-type ItemSitesItemListsItemItemsCountRequestBuilder struct {
+// ConnectionsItemItemsItemActivitiesCountRequestBuilder provides operations to count the resources in the collection.
+type ConnectionsItemItemsItemActivitiesCountRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSitesItemListsItemItemsCountRequestBuilderGetQueryParameters get the number of the resource
-type ItemSitesItemListsItemItemsCountRequestBuilderGetQueryParameters struct {
+// ConnectionsItemItemsItemActivitiesCountRequestBuilderGetQueryParameters get the number of the resource
+type ConnectionsItemItemsItemActivitiesCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
     // Search items by search phrases
     Search *string `uriparametername:"%24search"`
 }
-// ItemSitesItemListsItemItemsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemSitesItemListsItemItemsCountRequestBuilderGetRequestConfiguration struct {
+// ConnectionsItemItemsItemActivitiesCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type ConnectionsItemItemsItemActivitiesCountRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *ItemSitesItemListsItemItemsCountRequestBuilderGetQueryParameters
+    QueryParameters *ConnectionsItemItemsItemActivitiesCountRequestBuilderGetQueryParameters
 }
-// NewItemSitesItemListsItemItemsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
-func NewItemSitesItemListsItemItemsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemListsItemItemsCountRequestBuilder) {
-    m := &ItemSitesItemListsItemItemsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/lists/{list%2Did}/items/$count{?%24search,%24filter}", pathParameters),
+// NewConnectionsItemItemsItemActivitiesCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
+func NewConnectionsItemItemsItemActivitiesCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConnectionsItemItemsItemActivitiesCountRequestBuilder) {
+    m := &ConnectionsItemItemsItemActivitiesCountRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/connections/{externalConnection%2Did}/items/{externalItem%2Did}/activities/$count{?%24search,%24filter}", pathParameters),
     }
     return m
 }
-// NewItemSitesItemListsItemItemsCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
-func NewItemSitesItemListsItemItemsCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemListsItemItemsCountRequestBuilder) {
+// NewConnectionsItemItemsItemActivitiesCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
+func NewConnectionsItemItemsItemActivitiesCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConnectionsItemItemsItemActivitiesCountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewItemSitesItemListsItemItemsCountRequestBuilderInternal(urlParams, requestAdapter)
+    return NewConnectionsItemItemsItemActivitiesCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
-func (m *ItemSitesItemListsItemItemsCountRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemListsItemItemsCountRequestBuilderGetRequestConfiguration)(*int32, error) {
+func (m *ConnectionsItemItemsItemActivitiesCountRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectionsItemItemsItemActivitiesCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -59,7 +59,7 @@ func (m *ItemSitesItemListsItemItemsCountRequestBuilder) Get(ctx context.Context
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
-func (m *ItemSitesItemListsItemItemsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemListsItemItemsCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ConnectionsItemItemsItemActivitiesCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectionsItemItemsItemActivitiesCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters

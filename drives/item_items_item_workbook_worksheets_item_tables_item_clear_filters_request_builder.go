@@ -30,7 +30,10 @@ func NewItemItemsItemWorkbookWorksheetsItemTablesItemClearFiltersRequestBuilder(
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookWorksheetsItemTablesItemClearFiltersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action clearFilters
+// Post clears all the filters currently applied on the table.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/table-clearfilters?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemClearFiltersRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTablesItemClearFiltersRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemClearFiltersRequestBuilder
     }
     return nil
 }
-// ToPostRequestInformation invoke action clearFilters
+// ToPostRequestInformation clears all the filters currently applied on the table.
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemClearFiltersRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTablesItemClearFiltersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

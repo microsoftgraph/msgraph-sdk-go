@@ -11,7 +11,7 @@ import (
 type ItemListsItemContentTypesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemListsItemContentTypesRequestBuilderGetQueryParameters the collection of content types present in this list.
+// ItemListsItemContentTypesRequestBuilderGetQueryParameters get the collection of [contentType][contentType] resources in a [list][].
 type ItemListsItemContentTypesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -82,7 +82,10 @@ func NewItemListsItemContentTypesRequestBuilder(rawUrl string, requestAdapter i2
 func (m *ItemListsItemContentTypesRequestBuilder) Count()(*ItemListsItemContentTypesCountRequestBuilder) {
     return NewItemListsItemContentTypesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the collection of content types present in this list.
+// Get get the collection of [contentType][contentType] resources in a [list][].
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/list-list-contenttypes?view=graph-rest-1.0
 func (m *ItemListsItemContentTypesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemListsItemContentTypesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +127,7 @@ func (m *ItemListsItemContentTypesRequestBuilder) Post(ctx context.Context, body
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeable), nil
 }
-// ToGetRequestInformation the collection of content types present in this list.
+// ToGetRequestInformation get the collection of [contentType][contentType] resources in a [list][].
 func (m *ItemListsItemContentTypesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemListsItemContentTypesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -13,8 +13,6 @@ type DrivesRequestBuilder struct {
 }
 // DrivesRequestBuilderGetQueryParameters get entities from drives
 type DrivesRequestBuilderGetQueryParameters struct {
-    // Include count of items
-    Count *bool `uriparametername:"%24count"`
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
     // Filter items by property values
@@ -60,7 +58,7 @@ func (m *DrivesRequestBuilder) ByDriveId(driveId string)(*DriveItemRequestBuilde
 // NewDrivesRequestBuilderInternal instantiates a new DrivesRequestBuilder and sets the default values.
 func NewDrivesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DrivesRequestBuilder) {
     m := &DrivesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives{?%24top,%24skip,%24search,%24filter,%24orderby,%24select,%24expand}", pathParameters),
     }
     return m
 }
@@ -69,10 +67,6 @@ func NewDrivesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDrivesRequestBuilderInternal(urlParams, requestAdapter)
-}
-// Count provides operations to count the resources in the collection.
-func (m *DrivesRequestBuilder) Count()(*CountRequestBuilder) {
-    return NewCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get entities from drives
 func (m *DrivesRequestBuilder) Get(ctx context.Context, requestConfiguration *DrivesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveCollectionResponseable, error) {

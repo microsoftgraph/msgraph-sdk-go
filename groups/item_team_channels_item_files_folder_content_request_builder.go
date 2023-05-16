@@ -39,6 +39,9 @@ func NewItemTeamChannelsItemFilesFolderContentRequestBuilder(rawUrl string, requ
     return NewItemTeamChannelsItemFilesFolderContentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the content stream, if the item represents a file.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/channel-get-filesfolder?view=graph-rest-1.0
 func (m *ItemTeamChannelsItemFilesFolderContentRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamChannelsItemFilesFolderContentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

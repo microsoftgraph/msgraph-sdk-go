@@ -11,7 +11,7 @@ import (
 type ItemOnenoteSectionGroupsItemSectionGroupsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemOnenoteSectionGroupsItemSectionGroupsRequestBuilderGetQueryParameters the section groups in the section. Read-only. Nullable.
+// ItemOnenoteSectionGroupsItemSectionGroupsRequestBuilderGetQueryParameters retrieve a list of section groups from the specified section group.
 type ItemOnenoteSectionGroupsItemSectionGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,10 @@ func NewItemOnenoteSectionGroupsItemSectionGroupsRequestBuilder(rawUrl string, r
 func (m *ItemOnenoteSectionGroupsItemSectionGroupsRequestBuilder) Count()(*ItemOnenoteSectionGroupsItemSectionGroupsCountRequestBuilder) {
     return NewItemOnenoteSectionGroupsItemSectionGroupsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the section groups in the section. Read-only. Nullable.
+// Get retrieve a list of section groups from the specified section group.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/sectiongroup-list-sectiongroups?view=graph-rest-1.0
 func (m *ItemOnenoteSectionGroupsItemSectionGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnenoteSectionGroupsItemSectionGroupsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SectionGroupCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -86,7 +89,7 @@ func (m *ItemOnenoteSectionGroupsItemSectionGroupsRequestBuilder) Get(ctx contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SectionGroupCollectionResponseable), nil
 }
-// ToGetRequestInformation the section groups in the section. Read-only. Nullable.
+// ToGetRequestInformation retrieve a list of section groups from the specified section group.
 func (m *ItemOnenoteSectionGroupsItemSectionGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnenoteSectionGroupsItemSectionGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

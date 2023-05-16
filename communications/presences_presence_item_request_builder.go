@@ -18,7 +18,7 @@ type PresencesPresenceItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PresencesPresenceItemRequestBuilderGetQueryParameters get presences from communications
+// PresencesPresenceItemRequestBuilderGetQueryParameters get a user's presence information.
 type PresencesPresenceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -78,7 +78,10 @@ func (m *PresencesPresenceItemRequestBuilder) Delete(ctx context.Context, reques
     }
     return nil
 }
-// Get get presences from communications
+// Get get a user's presence information.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/presence-get?view=graph-rest-1.0
 func (m *PresencesPresenceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *PresencesPresenceItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Presenceable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -136,7 +139,7 @@ func (m *PresencesPresenceItemRequestBuilder) ToDeleteRequestInformation(ctx con
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get presences from communications
+// ToGetRequestInformation get a user's presence information.
 func (m *PresencesPresenceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PresencesPresenceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -8,7 +8,7 @@ import (
 type AuthenticationMethodModeDetail struct {
     Entity
 }
-// NewAuthenticationMethodModeDetail instantiates a new authenticationMethodModeDetail and sets the default values.
+// NewAuthenticationMethodModeDetail instantiates a new AuthenticationMethodModeDetail and sets the default values.
 func NewAuthenticationMethodModeDetail()(*AuthenticationMethodModeDetail) {
     m := &AuthenticationMethodModeDetail{
         Entity: *NewEntity(),

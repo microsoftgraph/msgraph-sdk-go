@@ -30,7 +30,10 @@ func NewItemItemsItemWorkbookCloseSessionRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookCloseSessionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action closeSession
+// Post use this API to close an existing workbook session.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/workbook-closesession?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookCloseSessionRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookCloseSessionRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *ItemItemsItemWorkbookCloseSessionRequestBuilder) Post(ctx context.Conte
     }
     return nil
 }
-// ToPostRequestInformation invoke action closeSession
+// ToPostRequestInformation use this API to close an existing workbook session.
 func (m *ItemItemsItemWorkbookCloseSessionRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookCloseSessionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

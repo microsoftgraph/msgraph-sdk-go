@@ -10,7 +10,7 @@ import (
 type ClassesItemMembersItemRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ClassesItemMembersItemRefRequestBuilderDeleteQueryParameters delete ref of navigation property members for education
+// ClassesItemMembersItemRefRequestBuilderDeleteQueryParameters remove an educationUser from an educationClass.
 type ClassesItemMembersItemRefRequestBuilderDeleteQueryParameters struct {
     // Delete Uri
     Id *string `uriparametername:"%40id"`
@@ -37,7 +37,10 @@ func NewClassesItemMembersItemRefRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewClassesItemMembersItemRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete ref of navigation property members for education
+// Delete remove an educationUser from an educationClass.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/educationclass-delete-members?view=graph-rest-1.0
 func (m *ClassesItemMembersItemRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *ClassesItemMembersItemRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -53,7 +56,7 @@ func (m *ClassesItemMembersItemRefRequestBuilder) Delete(ctx context.Context, re
     }
     return nil
 }
-// ToDeleteRequestInformation delete ref of navigation property members for education
+// ToDeleteRequestInformation remove an educationUser from an educationClass.
 func (m *ClassesItemMembersItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ClassesItemMembersItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -8,7 +8,7 @@ import (
 type Drive struct {
     BaseItem
 }
-// NewDrive instantiates a new Drive and sets the default values.
+// NewDrive instantiates a new drive and sets the default values.
 func NewDrive()(*Drive) {
     m := &Drive{
         BaseItem: *NewBaseItem(),

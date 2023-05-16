@@ -30,7 +30,10 @@ func NewPrintersItemJobsItemCancelRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewPrintersItemJobsItemCancelRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action cancel
+// Post cancel a print job. Print jobs can be canceled only on behalf of a user, using delegated permissions.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/printjob-cancel?view=graph-rest-1.0
 func (m *PrintersItemJobsItemCancelRequestBuilder) Post(ctx context.Context, requestConfiguration *PrintersItemJobsItemCancelRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *PrintersItemJobsItemCancelRequestBuilder) Post(ctx context.Context, req
     }
     return nil
 }
-// ToPostRequestInformation invoke action cancel
+// ToPostRequestInformation cancel a print job. Print jobs can be canceled only on behalf of a user, using delegated permissions.
 func (m *PrintersItemJobsItemCancelRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *PrintersItemJobsItemCancelRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -18,7 +18,7 @@ type ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilderDe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilderGetQueryParameters a collection of resources linked to the task.
+// ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilderGetQueryParameters read the properties and relationships of a linkedResource object.
 type ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilde
     urlParams["request-raw-url"] = rawUrl
     return NewItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property linkedResources for users
+// Delete deletes a linkedResource object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/linkedresource-delete?view=graph-rest-1.0
 func (m *ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuild
     }
     return nil
 }
-// Get a collection of resources linked to the task.
+// Get read the properties and relationships of a linkedResource object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/linkedresource-get?view=graph-rest-1.0
 func (m *ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LinkedResourceable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuild
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LinkedResourceable), nil
 }
-// Patch update the navigation property linkedResources in users
+// Patch update the properties of a linkedResource object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/linkedresource-update?view=graph-rest-1.0
 func (m *ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LinkedResourceable, requestConfiguration *ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LinkedResourceable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -108,7 +117,7 @@ func (m *ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuild
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LinkedResourceable), nil
 }
-// ToDeleteRequestInformation delete navigation property linkedResources for users
+// ToDeleteRequestInformation deletes a linkedResource object.
 func (m *ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +129,7 @@ func (m *ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuild
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation a collection of resources linked to the task.
+// ToGetRequestInformation read the properties and relationships of a linkedResource object.
 func (m *ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +145,7 @@ func (m *ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuild
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property linkedResources in users
+// ToPatchRequestInformation update the properties of a linkedResource object.
 func (m *ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LinkedResourceable, requestConfiguration *ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

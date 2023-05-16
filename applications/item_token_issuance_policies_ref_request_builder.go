@@ -11,7 +11,7 @@ import (
 type ItemTokenIssuancePoliciesRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTokenIssuancePoliciesRefRequestBuilderGetQueryParameters get ref of tokenIssuancePolicies from applications
+// ItemTokenIssuancePoliciesRefRequestBuilderGetQueryParameters list the tokenIssuancePolicy objects that are assigned to an application.
 type ItemTokenIssuancePoliciesRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -55,7 +55,10 @@ func NewItemTokenIssuancePoliciesRefRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewItemTokenIssuancePoliciesRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get ref of tokenIssuancePolicies from applications
+// Get list the tokenIssuancePolicy objects that are assigned to an application.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/application-list-tokenissuancepolicies?view=graph-rest-1.0
 func (m *ItemTokenIssuancePoliciesRefRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTokenIssuancePoliciesRefRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -74,7 +77,10 @@ func (m *ItemTokenIssuancePoliciesRefRequestBuilder) Get(ctx context.Context, re
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable), nil
 }
-// Post create new navigation property ref to tokenIssuancePolicies for applications
+// Post assign a tokenIssuancePolicy to an application.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/application-post-tokenissuancepolicies?view=graph-rest-1.0
 func (m *ItemTokenIssuancePoliciesRefRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *ItemTokenIssuancePoliciesRefRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -90,7 +96,7 @@ func (m *ItemTokenIssuancePoliciesRefRequestBuilder) Post(ctx context.Context, b
     }
     return nil
 }
-// ToGetRequestInformation get ref of tokenIssuancePolicies from applications
+// ToGetRequestInformation list the tokenIssuancePolicy objects that are assigned to an application.
 func (m *ItemTokenIssuancePoliciesRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTokenIssuancePoliciesRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -106,7 +112,7 @@ func (m *ItemTokenIssuancePoliciesRefRequestBuilder) ToGetRequestInformation(ctx
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property ref to tokenIssuancePolicies for applications
+// ToPostRequestInformation assign a tokenIssuancePolicy to an application.
 func (m *ItemTokenIssuancePoliciesRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *ItemTokenIssuancePoliciesRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

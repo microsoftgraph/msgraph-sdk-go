@@ -30,7 +30,10 @@ func NewDeletedItemsItemGetMemberGroupsRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewDeletedItemsItemGetMemberGroupsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action getMemberGroups
+// Post return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
 func (m *DeletedItemsItemGetMemberGroupsRequestBuilder) Post(ctx context.Context, body DeletedItemsItemGetMemberGroupsPostRequestBodyable, requestConfiguration *DeletedItemsItemGetMemberGroupsRequestBuilderPostRequestConfiguration)(DeletedItemsItemGetMemberGroupsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +52,7 @@ func (m *DeletedItemsItemGetMemberGroupsRequestBuilder) Post(ctx context.Context
     }
     return res.(DeletedItemsItemGetMemberGroupsResponseable), nil
 }
-// ToPostRequestInformation invoke action getMemberGroups
+// ToPostRequestInformation return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.
 func (m *DeletedItemsItemGetMemberGroupsRequestBuilder) ToPostRequestInformation(ctx context.Context, body DeletedItemsItemGetMemberGroupsPostRequestBodyable, requestConfiguration *DeletedItemsItemGetMemberGroupsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

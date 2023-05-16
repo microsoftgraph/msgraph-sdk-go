@@ -11,7 +11,7 @@ import (
 type ItemSitesItemTermStoresItemSetsItemParentGroupSetsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSitesItemTermStoresItemSetsItemParentGroupSetsRequestBuilderGetQueryParameters all sets under the group in a term [store].
+// ItemSitesItemTermStoresItemSetsItemParentGroupSetsRequestBuilderGetQueryParameters get a list of the set objects and their properties.
 type ItemSitesItemTermStoresItemSetsItemParentGroupSetsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewItemSitesItemTermStoresItemSetsItemParentGroupSetsRequestBuilder(rawUrl 
 func (m *ItemSitesItemTermStoresItemSetsItemParentGroupSetsRequestBuilder) Count()(*ItemSitesItemTermStoresItemSetsItemParentGroupSetsCountRequestBuilder) {
     return NewItemSitesItemTermStoresItemSetsItemParentGroupSetsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get all sets under the group in a term [store].
+// Get get a list of the set objects and their properties.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/termstore-group-list-sets?view=graph-rest-1.0
 func (m *ItemSitesItemTermStoresItemSetsItemParentGroupSetsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemTermStoresItemSetsItemParentGroupSetsRequestBuilderGetRequestConfiguration)(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.SetCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +115,7 @@ func (m *ItemSitesItemTermStoresItemSetsItemParentGroupSetsRequestBuilder) Post(
     }
     return res.(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Setable), nil
 }
-// ToGetRequestInformation all sets under the group in a term [store].
+// ToGetRequestInformation get a list of the set objects and their properties.
 func (m *ItemSitesItemTermStoresItemSetsItemParentGroupSetsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemTermStoresItemSetsItemParentGroupSetsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -18,7 +18,7 @@ type ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuild
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilderGetQueryParameters federated identities for applications. Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).
+// ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilderGetQueryParameters read the properties and relationships of a federatedIdentityCredential object.
 type ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBu
     urlParams["request-raw-url"] = rawUrl
     return NewItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property federatedIdentityCredentials for applications
+// Delete delete a federatedIdentityCredential object from an application.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/federatedidentitycredential-delete?view=graph-rest-1.0
 func (m *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestB
     }
     return nil
 }
-// Get federated identities for applications. Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).
+// Get read the properties and relationships of a federatedIdentityCredential object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/federatedidentitycredential-get?view=graph-rest-1.0
 func (m *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FederatedIdentityCredentialable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestB
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FederatedIdentityCredentialable), nil
 }
-// Patch update the navigation property federatedIdentityCredentials in applications
+// Patch update the properties of a federatedIdentityCredential object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/federatedidentitycredential-update?view=graph-rest-1.0
 func (m *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FederatedIdentityCredentialable, requestConfiguration *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FederatedIdentityCredentialable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -108,7 +117,7 @@ func (m *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestB
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FederatedIdentityCredentialable), nil
 }
-// ToDeleteRequestInformation delete navigation property federatedIdentityCredentials for applications
+// ToDeleteRequestInformation delete a federatedIdentityCredential object from an application.
 func (m *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +129,7 @@ func (m *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestB
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation federated identities for applications. Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).
+// ToGetRequestInformation read the properties and relationships of a federatedIdentityCredential object.
 func (m *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +145,7 @@ func (m *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestB
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property federatedIdentityCredentials in applications
+// ToPatchRequestInformation update the properties of a federatedIdentityCredential object.
 func (m *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FederatedIdentityCredentialable, requestConfiguration *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -10,7 +10,7 @@ import (
 type ItemMembersItemRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemMembersItemRefRequestBuilderDeleteQueryParameters delete ref of navigation property members for groups
+// ItemMembersItemRefRequestBuilderDeleteQueryParameters remove a member from a group via the **members** navigation property. You can't remove a member from groups with dynamic memberships.
 type ItemMembersItemRefRequestBuilderDeleteQueryParameters struct {
     // Delete Uri
     Id *string `uriparametername:"%40id"`
@@ -37,7 +37,10 @@ func NewItemMembersItemRefRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewItemMembersItemRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete ref of navigation property members for groups
+// Delete remove a member from a group via the **members** navigation property. You can't remove a member from groups with dynamic memberships.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/group-delete-members?view=graph-rest-1.0
 func (m *ItemMembersItemRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemMembersItemRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -53,7 +56,7 @@ func (m *ItemMembersItemRefRequestBuilder) Delete(ctx context.Context, requestCo
     }
     return nil
 }
-// ToDeleteRequestInformation delete ref of navigation property members for groups
+// ToDeleteRequestInformation remove a member from a group via the **members** navigation property. You can't remove a member from groups with dynamic memberships.
 func (m *ItemMembersItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemMembersItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

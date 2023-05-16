@@ -38,6 +38,9 @@ func NewLocalizationsItemSquareLogoRequestBuilder(rawUrl string, requestAdapter 
     return NewLocalizationsItemSquareLogoRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get a square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG no larger than 240 x 240 pixels and no more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
 func (m *LocalizationsItemSquareLogoRequestBuilder) Get(ctx context.Context, requestConfiguration *LocalizationsItemSquareLogoRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

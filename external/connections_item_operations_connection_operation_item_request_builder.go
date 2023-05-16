@@ -18,7 +18,7 @@ type ConnectionsItemOperationsConnectionOperationItemRequestBuilderDeleteRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConnectionsItemOperationsConnectionOperationItemRequestBuilderGetQueryParameters get operations from external
+// ConnectionsItemOperationsConnectionOperationItemRequestBuilderGetQueryParameters read the properties and relationships of a connectionOperation object.
 type ConnectionsItemOperationsConnectionOperationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *ConnectionsItemOperationsConnectionOperationItemRequestBuilder) Delete(
     }
     return nil
 }
-// Get get operations from external
+// Get read the properties and relationships of a connectionOperation object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/externalconnectors-connectionoperation-get?view=graph-rest-1.0
 func (m *ConnectionsItemOperationsConnectionOperationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectionsItemOperationsConnectionOperationItemRequestBuilderGetRequestConfiguration)(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ConnectionOperationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +123,7 @@ func (m *ConnectionsItemOperationsConnectionOperationItemRequestBuilder) ToDelet
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get operations from external
+// ToGetRequestInformation read the properties and relationships of a connectionOperation object.
 func (m *ConnectionsItemOperationsConnectionOperationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectionsItemOperationsConnectionOperationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

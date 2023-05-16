@@ -18,7 +18,7 @@ type OperationsPrintOperationItemRequestBuilderDeleteRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// OperationsPrintOperationItemRequestBuilderGetQueryParameters the list of print long running operations.
+// OperationsPrintOperationItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a printOperation object.
 type OperationsPrintOperationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *OperationsPrintOperationItemRequestBuilder) Delete(ctx context.Context,
     }
     return nil
 }
-// Get the list of print long running operations.
+// Get retrieve the properties and relationships of a printOperation object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/printoperation-get?view=graph-rest-1.0
 func (m *OperationsPrintOperationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *OperationsPrintOperationItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintOperationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +123,7 @@ func (m *OperationsPrintOperationItemRequestBuilder) ToDeleteRequestInformation(
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the list of print long running operations.
+// ToGetRequestInformation retrieve the properties and relationships of a printOperation object.
 func (m *OperationsPrintOperationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OperationsPrintOperationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

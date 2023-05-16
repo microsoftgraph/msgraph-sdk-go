@@ -30,7 +30,10 @@ func NewRiskyUsersConfirmCompromisedRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewRiskyUsersConfirmCompromisedRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action confirmCompromised
+// Post confirm one or more riskyUser objects as compromised. This action sets the targeted user's risk level to high.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/riskyuser-confirmcompromised?view=graph-rest-1.0
 func (m *RiskyUsersConfirmCompromisedRequestBuilder) Post(ctx context.Context, body RiskyUsersConfirmCompromisedPostRequestBodyable, requestConfiguration *RiskyUsersConfirmCompromisedRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *RiskyUsersConfirmCompromisedRequestBuilder) Post(ctx context.Context, b
     }
     return nil
 }
-// ToPostRequestInformation invoke action confirmCompromised
+// ToPostRequestInformation confirm one or more riskyUser objects as compromised. This action sets the targeted user's risk level to high.
 func (m *RiskyUsersConfirmCompromisedRequestBuilder) ToPostRequestInformation(ctx context.Context, body RiskyUsersConfirmCompromisedPostRequestBodyable, requestConfiguration *RiskyUsersConfirmCompromisedRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type SharesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SharesRequestBuilderGetQueryParameters the list of printer shares registered in the tenant.
+// SharesRequestBuilderGetQueryParameters retrieve a list of **printerShares**.
 type SharesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewSharesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
 func (m *SharesRequestBuilder) Count()(*SharesCountRequestBuilder) {
     return NewSharesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the list of printer shares registered in the tenant.
+// Get retrieve a list of **printerShares**.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/print-list-shares?view=graph-rest-1.0
 func (m *SharesRequestBuilder) Get(ctx context.Context, requestConfiguration *SharesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrinterShareCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *SharesRequestBuilder) Get(ctx context.Context, requestConfiguration *Sh
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrinterShareCollectionResponseable), nil
 }
-// Post create new navigation property to shares for print
+// Post create a new **printerShare** for the specified printer.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/print-post-shares?view=graph-rest-1.0
 func (m *SharesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrinterShareable, requestConfiguration *SharesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrinterShareable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *SharesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e6
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrinterShareable), nil
 }
-// ToGetRequestInformation the list of printer shares registered in the tenant.
+// ToGetRequestInformation retrieve a list of **printerShares**.
 func (m *SharesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SharesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *SharesRequestBuilder) ToGetRequestInformation(ctx context.Context, requ
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to shares for print
+// ToPostRequestInformation create a new **printerShare** for the specified printer.
 func (m *SharesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrinterShareable, requestConfiguration *SharesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

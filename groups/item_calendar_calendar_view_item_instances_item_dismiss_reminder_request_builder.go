@@ -30,7 +30,10 @@ func NewItemCalendarCalendarViewItemInstancesItemDismissReminderRequestBuilder(r
     urlParams["request-raw-url"] = rawUrl
     return NewItemCalendarCalendarViewItemInstancesItemDismissReminderRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action dismissReminder
+// Post dismiss a reminder that has been triggered for an event in a user calendar.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
 func (m *ItemCalendarCalendarViewItemInstancesItemDismissReminderRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemCalendarCalendarViewItemInstancesItemDismissReminderRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *ItemCalendarCalendarViewItemInstancesItemDismissReminderRequestBuilder)
     }
     return nil
 }
-// ToPostRequestInformation invoke action dismissReminder
+// ToPostRequestInformation dismiss a reminder that has been triggered for an event in a user calendar.
 func (m *ItemCalendarCalendarViewItemInstancesItemDismissReminderRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarCalendarViewItemInstancesItemDismissReminderRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

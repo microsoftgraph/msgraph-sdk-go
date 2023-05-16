@@ -30,7 +30,10 @@ func NewItemSitesRemoveRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesRemoveRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action remove
+// Post unfollow a user's site or multiple sites.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/site-unfollow?view=graph-rest-1.0
 func (m *ItemSitesRemoveRequestBuilder) Post(ctx context.Context, body ItemSitesRemovePostRequestBodyable, requestConfiguration *ItemSitesRemoveRequestBuilderPostRequestConfiguration)(ItemSitesRemoveResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +52,7 @@ func (m *ItemSitesRemoveRequestBuilder) Post(ctx context.Context, body ItemSites
     }
     return res.(ItemSitesRemoveResponseable), nil
 }
-// ToPostRequestInformation invoke action remove
+// ToPostRequestInformation unfollow a user's site or multiple sites.
 func (m *ItemSitesRemoveRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemSitesRemovePostRequestBodyable, requestConfiguration *ItemSitesRemoveRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -18,7 +18,7 @@ type EntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuilderDe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuilderGetQueryParameters the assignment of an access package to a subject for a period of time.
+// EntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuilderGetQueryParameters in Azure AD entitlement management, retrieve the properties and relationships of an accessPackageAssignment object.
 type EntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -78,7 +78,10 @@ func (m *EntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuild
     }
     return nil
 }
-// Get the assignment of an access package to a subject for a period of time.
+// Get in Azure AD entitlement management, retrieve the properties and relationships of an accessPackageAssignment object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/accesspackageassignment-get?view=graph-rest-1.0
 func (m *EntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageAssignmentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -136,7 +139,7 @@ func (m *EntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuild
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the assignment of an access package to a subject for a period of time.
+// ToGetRequestInformation in Azure AD entitlement management, retrieve the properties and relationships of an accessPackageAssignment object.
 func (m *EntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

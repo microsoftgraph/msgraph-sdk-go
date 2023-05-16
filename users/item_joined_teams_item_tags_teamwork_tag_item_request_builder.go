@@ -18,7 +18,7 @@ type ItemJoinedTeamsItemTagsTeamworkTagItemRequestBuilderDeleteRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemJoinedTeamsItemTagsTeamworkTagItemRequestBuilderGetQueryParameters the tags associated with the team.
+// ItemJoinedTeamsItemTagsTeamworkTagItemRequestBuilderGetQueryParameters read the properties and relationships of a tag object.
 type ItemJoinedTeamsItemTagsTeamworkTagItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewItemJoinedTeamsItemTagsTeamworkTagItemRequestBuilder(rawUrl string, requ
     urlParams["request-raw-url"] = rawUrl
     return NewItemJoinedTeamsItemTagsTeamworkTagItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property tags for users
+// Delete delete a tag object permanently.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/teamworktag-delete?view=graph-rest-1.0
 func (m *ItemJoinedTeamsItemTagsTeamworkTagItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemTagsTeamworkTagItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *ItemJoinedTeamsItemTagsTeamworkTagItemRequestBuilder) Delete(ctx contex
     }
     return nil
 }
-// Get the tags associated with the team.
+// Get read the properties and relationships of a tag object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/teamworktag-get?view=graph-rest-1.0
 func (m *ItemJoinedTeamsItemTagsTeamworkTagItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemTagsTeamworkTagItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +99,10 @@ func (m *ItemJoinedTeamsItemTagsTeamworkTagItemRequestBuilder) Get(ctx context.C
 func (m *ItemJoinedTeamsItemTagsTeamworkTagItemRequestBuilder) Members()(*ItemJoinedTeamsItemTagsItemMembersRequestBuilder) {
     return NewItemJoinedTeamsItemTagsItemMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the navigation property tags in users
+// Patch update the properties of a tag object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/teamworktag-update?view=graph-rest-1.0
 func (m *ItemJoinedTeamsItemTagsTeamworkTagItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagable, requestConfiguration *ItemJoinedTeamsItemTagsTeamworkTagItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +121,7 @@ func (m *ItemJoinedTeamsItemTagsTeamworkTagItemRequestBuilder) Patch(ctx context
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagable), nil
 }
-// ToDeleteRequestInformation delete navigation property tags for users
+// ToDeleteRequestInformation delete a tag object permanently.
 func (m *ItemJoinedTeamsItemTagsTeamworkTagItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemTagsTeamworkTagItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -124,7 +133,7 @@ func (m *ItemJoinedTeamsItemTagsTeamworkTagItemRequestBuilder) ToDeleteRequestIn
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the tags associated with the team.
+// ToGetRequestInformation read the properties and relationships of a tag object.
 func (m *ItemJoinedTeamsItemTagsTeamworkTagItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemTagsTeamworkTagItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -140,7 +149,7 @@ func (m *ItemJoinedTeamsItemTagsTeamworkTagItemRequestBuilder) ToGetRequestInfor
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property tags in users
+// ToPatchRequestInformation update the properties of a tag object.
 func (m *ItemJoinedTeamsItemTagsTeamworkTagItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagable, requestConfiguration *ItemJoinedTeamsItemTagsTeamworkTagItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

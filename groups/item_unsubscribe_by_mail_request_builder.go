@@ -30,7 +30,10 @@ func NewItemUnsubscribeByMailRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewItemUnsubscribeByMailRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action unsubscribeByMail
+// Post calling this method will prevent the current user from receiving email notifications for this group about new posts, events, and files in that group. Supported for Microsoft 365 groups only.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/group-unsubscribebymail?view=graph-rest-1.0
 func (m *ItemUnsubscribeByMailRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemUnsubscribeByMailRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *ItemUnsubscribeByMailRequestBuilder) Post(ctx context.Context, requestC
     }
     return nil
 }
-// ToPostRequestInformation invoke action unsubscribeByMail
+// ToPostRequestInformation calling this method will prevent the current user from receiving email notifications for this group about new posts, events, and files in that group. Supported for Microsoft 365 groups only.
 func (m *ItemUnsubscribeByMailRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemUnsubscribeByMailRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

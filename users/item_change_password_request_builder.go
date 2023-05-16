@@ -30,7 +30,10 @@ func NewItemChangePasswordRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewItemChangePasswordRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action changePassword
+// Post enable the user to update their password. Any user can update their password without belonging to any administrator role.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/user-changepassword?view=graph-rest-1.0
 func (m *ItemChangePasswordRequestBuilder) Post(ctx context.Context, body ItemChangePasswordPostRequestBodyable, requestConfiguration *ItemChangePasswordRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *ItemChangePasswordRequestBuilder) Post(ctx context.Context, body ItemCh
     }
     return nil
 }
-// ToPostRequestInformation invoke action changePassword
+// ToPostRequestInformation enable the user to update their password. Any user can update their password without belonging to any administrator role.
 func (m *ItemChangePasswordRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemChangePasswordPostRequestBodyable, requestConfiguration *ItemChangePasswordRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

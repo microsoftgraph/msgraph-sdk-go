@@ -73,7 +73,7 @@ func (m *InboundOutboundPolicyConfiguration) GetFieldDeserializers()(map[string]
     }
     return res
 }
-// GetInboundAllowed gets the inboundAllowed property value. The inboundAllowed property
+// GetInboundAllowed gets the inboundAllowed property value. Defines whether external users coming inbound are allowed.
 func (m *InboundOutboundPolicyConfiguration) GetInboundAllowed()(*bool) {
     val, err := m.GetBackingStore().Get("inboundAllowed")
     if err != nil {
@@ -95,7 +95,7 @@ func (m *InboundOutboundPolicyConfiguration) GetOdataType()(*string) {
     }
     return nil
 }
-// GetOutboundAllowed gets the outboundAllowed property value. The outboundAllowed property
+// GetOutboundAllowed gets the outboundAllowed property value. Defines whether internal users are allowed to go outbound.
 func (m *InboundOutboundPolicyConfiguration) GetOutboundAllowed()(*bool) {
     val, err := m.GetBackingStore().Get("outboundAllowed")
     if err != nil {
@@ -145,7 +145,7 @@ func (m *InboundOutboundPolicyConfiguration) SetAdditionalData(value map[string]
 func (m *InboundOutboundPolicyConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetInboundAllowed sets the inboundAllowed property value. The inboundAllowed property
+// SetInboundAllowed sets the inboundAllowed property value. Defines whether external users coming inbound are allowed.
 func (m *InboundOutboundPolicyConfiguration) SetInboundAllowed(value *bool)() {
     err := m.GetBackingStore().Set("inboundAllowed", value)
     if err != nil {
@@ -159,7 +159,7 @@ func (m *InboundOutboundPolicyConfiguration) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetOutboundAllowed sets the outboundAllowed property value. The outboundAllowed property
+// SetOutboundAllowed sets the outboundAllowed property value. Defines whether internal users are allowed to go outbound.
 func (m *InboundOutboundPolicyConfiguration) SetOutboundAllowed(value *bool)() {
     err := m.GetBackingStore().Set("outboundAllowed", value)
     if err != nil {

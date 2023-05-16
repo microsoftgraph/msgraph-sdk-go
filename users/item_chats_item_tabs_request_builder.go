@@ -11,7 +11,7 @@ import (
 type ItemChatsItemTabsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemChatsItemTabsRequestBuilderGetQueryParameters a collection of all the tabs in the chat. Nullable.
+// ItemChatsItemTabsRequestBuilderGetQueryParameters retrieve the list of tabs in the specified chat.
 type ItemChatsItemTabsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewItemChatsItemTabsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *ItemChatsItemTabsRequestBuilder) Count()(*ItemChatsItemTabsCountRequestBuilder) {
     return NewItemChatsItemTabsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get a collection of all the tabs in the chat. Nullable.
+// Get retrieve the list of tabs in the specified chat.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/chat-list-tabs?view=graph-rest-1.0
 func (m *ItemChatsItemTabsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemChatsItemTabsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *ItemChatsItemTabsRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabCollectionResponseable), nil
 }
-// Post create new navigation property to tabs for users
+// Post add (pin) a tab to the specified chat. The corresponding app must already be installed in the chat.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/chat-post-tabs?view=graph-rest-1.0
 func (m *ItemChatsItemTabsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabable, requestConfiguration *ItemChatsItemTabsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *ItemChatsItemTabsRequestBuilder) Post(ctx context.Context, body iadcd81
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabable), nil
 }
-// ToGetRequestInformation a collection of all the tabs in the chat. Nullable.
+// ToGetRequestInformation retrieve the list of tabs in the specified chat.
 func (m *ItemChatsItemTabsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemChatsItemTabsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *ItemChatsItemTabsRequestBuilder) ToGetRequestInformation(ctx context.Co
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to tabs for users
+// ToPostRequestInformation add (pin) a tab to the specified chat. The corresponding app must already be installed in the chat.
 func (m *ItemChatsItemTabsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabable, requestConfiguration *ItemChatsItemTabsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -31,6 +31,17 @@ func (m *ExternalItem) GetAcl()([]Aclable) {
     }
     return nil
 }
+// GetActivities gets the activities property value. Returns a list of activities performed on the item. Write-only.
+func (m *ExternalItem) GetActivities()([]ExternalActivityable) {
+    val, err := m.GetBackingStore().Get("activities")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ExternalActivityable)
+    }
+    return nil
+}
 // GetContent gets the content property value. A plain-text  representation of the contents of the item. The text in this property is full-text indexed. Optional.
 func (m *ExternalItem) GetContent()(ExternalItemContentable) {
     val, err := m.GetBackingStore().Get("content")
@@ -56,6 +67,20 @@ func (m *ExternalItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
                 res[i] = v.(Aclable)
             }
             m.SetAcl(res)
+        }
+        return nil
+    }
+    res["activities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateExternalActivityFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ExternalActivityable, len(val))
+            for i, v := range val {
+                res[i] = v.(ExternalActivityable)
+            }
+            m.SetActivities(res)
         }
         return nil
     }
@@ -108,6 +133,16 @@ func (m *ExternalItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
             return err
         }
     }
+    if m.GetActivities() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetActivities()))
+        for i, v := range m.GetActivities() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("activities", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("content", m.GetContent())
         if err != nil {
@@ -125,6 +160,13 @@ func (m *ExternalItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 // SetAcl sets the acl property value. An array of access control entries. Each entry specifies the access granted to a user or group. Required.
 func (m *ExternalItem) SetAcl(value []Aclable)() {
     err := m.GetBackingStore().Set("acl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetActivities sets the activities property value. Returns a list of activities performed on the item. Write-only.
+func (m *ExternalItem) SetActivities(value []ExternalActivityable)() {
+    err := m.GetBackingStore().Set("activities", value)
     if err != nil {
         panic(err)
     }
@@ -148,9 +190,11 @@ type ExternalItemable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAcl()([]Aclable)
+    GetActivities()([]ExternalActivityable)
     GetContent()(ExternalItemContentable)
     GetProperties()(Propertiesable)
     SetAcl(value []Aclable)()
+    SetActivities(value []ExternalActivityable)()
     SetContent(value ExternalItemContentable)()
     SetProperties(value Propertiesable)()
 }

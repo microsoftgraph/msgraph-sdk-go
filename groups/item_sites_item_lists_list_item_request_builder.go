@@ -18,7 +18,7 @@ type ItemSitesItemListsListItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSitesItemListsListItemRequestBuilderGetQueryParameters the collection of lists under this site.
+// ItemSitesItemListsListItemRequestBuilderGetQueryParameters returns the metadata for a [list][].
 type ItemSitesItemListsListItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -86,7 +86,10 @@ func (m *ItemSitesItemListsListItemRequestBuilder) Delete(ctx context.Context, r
 func (m *ItemSitesItemListsListItemRequestBuilder) Drive()(*ItemSitesItemListsItemDriveRequestBuilder) {
     return NewItemSitesItemListsItemDriveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the collection of lists under this site.
+// Get returns the metadata for a [list][].
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/list-get?view=graph-rest-1.0
 func (m *ItemSitesItemListsListItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemListsListItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Listable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -152,7 +155,7 @@ func (m *ItemSitesItemListsListItemRequestBuilder) ToDeleteRequestInformation(ct
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the collection of lists under this site.
+// ToGetRequestInformation returns the metadata for a [list][].
 func (m *ItemSitesItemListsListItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemListsListItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

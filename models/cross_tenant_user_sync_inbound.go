@@ -63,7 +63,7 @@ func (m *CrossTenantUserSyncInbound) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetIsSyncAllowed gets the isSyncAllowed property value. The isSyncAllowed property
+// GetIsSyncAllowed gets the isSyncAllowed property value. Defines whether user objects should be synchronized from the partner tenant. false causes any current user synchronization from the source tenant to the target tenant to stop. This property has no impact on existing users who have already been synchronized.
 func (m *CrossTenantUserSyncInbound) GetIsSyncAllowed()(*bool) {
     val, err := m.GetBackingStore().Get("isSyncAllowed")
     if err != nil {
@@ -118,7 +118,7 @@ func (m *CrossTenantUserSyncInbound) SetAdditionalData(value map[string]any)() {
 func (m *CrossTenantUserSyncInbound) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIsSyncAllowed sets the isSyncAllowed property value. The isSyncAllowed property
+// SetIsSyncAllowed sets the isSyncAllowed property value. Defines whether user objects should be synchronized from the partner tenant. false causes any current user synchronization from the source tenant to the target tenant to stop. This property has no impact on existing users who have already been synchronized.
 func (m *CrossTenantUserSyncInbound) SetIsSyncAllowed(value *bool)() {
     err := m.GetBackingStore().Set("isSyncAllowed", value)
     if err != nil {

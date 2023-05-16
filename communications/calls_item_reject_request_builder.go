@@ -30,7 +30,10 @@ func NewCallsItemRejectRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewCallsItemRejectRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action reject
+// Post enable a bot to reject an incoming call. The incoming call request can be an invite from a participant in a group call or a peer-to-peer call. If an invite to a group call is received, the notification will contain the **chatInfo** and **meetingInfo** parameters. The bot is expected to answer or reject the call before the call times out. The current timeout value is 15 seconds. This API does not end existing calls that have already been answered. Use delete call to end a call.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/call-reject?view=graph-rest-1.0
 func (m *CallsItemRejectRequestBuilder) Post(ctx context.Context, body CallsItemRejectPostRequestBodyable, requestConfiguration *CallsItemRejectRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *CallsItemRejectRequestBuilder) Post(ctx context.Context, body CallsItem
     }
     return nil
 }
-// ToPostRequestInformation invoke action reject
+// ToPostRequestInformation enable a bot to reject an incoming call. The incoming call request can be an invite from a participant in a group call or a peer-to-peer call. If an invite to a group call is received, the notification will contain the **chatInfo** and **meetingInfo** parameters. The bot is expected to answer or reject the call before the call times out. The current timeout value is 15 seconds. This API does not end existing calls that have already been answered. Use delete call to end a call.
 func (m *CallsItemRejectRequestBuilder) ToPostRequestInformation(ctx context.Context, body CallsItemRejectPostRequestBodyable, requestConfiguration *CallsItemRejectRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

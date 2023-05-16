@@ -18,7 +18,7 @@ type ItemSitesItemPermissionsPermissionItemRequestBuilderDeleteRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSitesItemPermissionsPermissionItemRequestBuilderGetQueryParameters the permissions associated with the site. Nullable.
+// ItemSitesItemPermissionsPermissionItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a permission object on a site.
 type ItemSitesItemPermissionsPermissionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewItemSitesItemPermissionsPermissionItemRequestBuilder(rawUrl string, requ
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemPermissionsPermissionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property permissions for groups
+// Delete delete a permission object on a site.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/site-delete-permission?view=graph-rest-1.0
 func (m *ItemSitesItemPermissionsPermissionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSitesItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *ItemSitesItemPermissionsPermissionItemRequestBuilder) Delete(ctx contex
     }
     return nil
 }
-// Get the permissions associated with the site. Nullable.
+// Get retrieve the properties and relationships of a permission object on a site.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/site-get-permission?view=graph-rest-1.0
 func (m *ItemSitesItemPermissionsPermissionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemPermissionsPermissionItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +99,10 @@ func (m *ItemSitesItemPermissionsPermissionItemRequestBuilder) Get(ctx context.C
 func (m *ItemSitesItemPermissionsPermissionItemRequestBuilder) Grant()(*ItemSitesItemPermissionsItemGrantRequestBuilder) {
     return NewItemSitesItemPermissionsItemGrantRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the navigation property permissions in groups
+// Patch update an application permission object on a site. 
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/site-update-permission?view=graph-rest-1.0
 func (m *ItemSitesItemPermissionsPermissionItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable, requestConfiguration *ItemSitesItemPermissionsPermissionItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +121,7 @@ func (m *ItemSitesItemPermissionsPermissionItemRequestBuilder) Patch(ctx context
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable), nil
 }
-// ToDeleteRequestInformation delete navigation property permissions for groups
+// ToDeleteRequestInformation delete a permission object on a site.
 func (m *ItemSitesItemPermissionsPermissionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -124,7 +133,7 @@ func (m *ItemSitesItemPermissionsPermissionItemRequestBuilder) ToDeleteRequestIn
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the permissions associated with the site. Nullable.
+// ToGetRequestInformation retrieve the properties and relationships of a permission object on a site.
 func (m *ItemSitesItemPermissionsPermissionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemPermissionsPermissionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -140,7 +149,7 @@ func (m *ItemSitesItemPermissionsPermissionItemRequestBuilder) ToGetRequestInfor
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property permissions in groups
+// ToPatchRequestInformation update an application permission object on a site. 
 func (m *ItemSitesItemPermissionsPermissionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable, requestConfiguration *ItemSitesItemPermissionsPermissionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

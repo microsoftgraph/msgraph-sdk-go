@@ -11,7 +11,7 @@ import (
 type ItemOnenoteNotebooksItemSectionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemOnenoteNotebooksItemSectionsRequestBuilderGetQueryParameters the sections in the notebook. Read-only. Nullable.
+// ItemOnenoteNotebooksItemSectionsRequestBuilderGetQueryParameters retrieve a list of onenoteSection objects from the specified notebook.
 type ItemOnenoteNotebooksItemSectionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewItemOnenoteNotebooksItemSectionsRequestBuilder(rawUrl string, requestAda
 func (m *ItemOnenoteNotebooksItemSectionsRequestBuilder) Count()(*ItemOnenoteNotebooksItemSectionsCountRequestBuilder) {
     return NewItemOnenoteNotebooksItemSectionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the sections in the notebook. Read-only. Nullable.
+// Get retrieve a list of onenoteSection objects from the specified notebook.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/notebook-list-sections?view=graph-rest-1.0
 func (m *ItemOnenoteNotebooksItemSectionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnenoteNotebooksItemSectionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenoteSectionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *ItemOnenoteNotebooksItemSectionsRequestBuilder) Get(ctx context.Context
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenoteSectionCollectionResponseable), nil
 }
-// Post create new navigation property to sections for sites
+// Post create a new onenoteSection in the specified notebook.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/notebook-post-sections?view=graph-rest-1.0
 func (m *ItemOnenoteNotebooksItemSectionsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenoteSectionable, requestConfiguration *ItemOnenoteNotebooksItemSectionsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenoteSectionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *ItemOnenoteNotebooksItemSectionsRequestBuilder) Post(ctx context.Contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenoteSectionable), nil
 }
-// ToGetRequestInformation the sections in the notebook. Read-only. Nullable.
+// ToGetRequestInformation retrieve a list of onenoteSection objects from the specified notebook.
 func (m *ItemOnenoteNotebooksItemSectionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnenoteNotebooksItemSectionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *ItemOnenoteNotebooksItemSectionsRequestBuilder) ToGetRequestInformation
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to sections for sites
+// ToPostRequestInformation create a new onenoteSection in the specified notebook.
 func (m *ItemOnenoteNotebooksItemSectionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenoteSectionable, requestConfiguration *ItemOnenoteNotebooksItemSectionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

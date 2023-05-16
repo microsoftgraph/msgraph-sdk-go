@@ -11,7 +11,7 @@ import (
 type ItemFederationConfigurationRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemFederationConfigurationRequestBuilderGetQueryParameters domain settings configured by a customer when federated with Azure AD. Supports $expand.
+// ItemFederationConfigurationRequestBuilderGetQueryParameters read the properties and relationships of an internalDomainFederation object.
 type ItemFederationConfigurationRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemFederationConfigurationRequestBuilder(rawUrl string, requestAdapter 
 func (m *ItemFederationConfigurationRequestBuilder) Count()(*ItemFederationConfigurationCountRequestBuilder) {
     return NewItemFederationConfigurationCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get domain settings configured by a customer when federated with Azure AD. Supports $expand.
+// Get read the properties and relationships of an internalDomainFederation object.
 func (m *ItemFederationConfigurationRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemFederationConfigurationRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InternalDomainFederationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +93,10 @@ func (m *ItemFederationConfigurationRequestBuilder) Get(ctx context.Context, req
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InternalDomainFederationCollectionResponseable), nil
 }
-// Post create new navigation property to federationConfiguration for domains
+// Post create a new internalDomainFederation object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/domain-post-federationconfiguration?view=graph-rest-1.0
 func (m *ItemFederationConfigurationRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InternalDomainFederationable, requestConfiguration *ItemFederationConfigurationRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InternalDomainFederationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +115,7 @@ func (m *ItemFederationConfigurationRequestBuilder) Post(ctx context.Context, bo
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InternalDomainFederationable), nil
 }
-// ToGetRequestInformation domain settings configured by a customer when federated with Azure AD. Supports $expand.
+// ToGetRequestInformation read the properties and relationships of an internalDomainFederation object.
 func (m *ItemFederationConfigurationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemFederationConfigurationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +131,7 @@ func (m *ItemFederationConfigurationRequestBuilder) ToGetRequestInformation(ctx 
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to federationConfiguration for domains
+// ToPostRequestInformation create a new internalDomainFederation object.
 func (m *ItemFederationConfigurationRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InternalDomainFederationable, requestConfiguration *ItemFederationConfigurationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

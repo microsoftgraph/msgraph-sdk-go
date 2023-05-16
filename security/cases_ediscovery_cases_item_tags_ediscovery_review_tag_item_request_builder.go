@@ -18,7 +18,7 @@ type CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilderDeleteRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilderGetQueryParameters returns a list of ediscoveryReviewTag objects associated to this case.
+// CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilderGetQueryParameters read the properties and relationships of an ediscoveryReviewTag object.
 type CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -58,7 +58,10 @@ func NewCasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilder(rawUrl
     urlParams["request-raw-url"] = rawUrl
     return NewCasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property tags for security
+// Delete remove an ediscoveryReviewTag object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/security-ediscoverycase-delete-tags?view=graph-rest-1.0
 func (m *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -74,7 +77,10 @@ func (m *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilder) Dele
     }
     return nil
 }
-// Get returns a list of ediscoveryReviewTag objects associated to this case.
+// Get read the properties and relationships of an ediscoveryReviewTag object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/security-ediscoveryreviewtag-get?view=graph-rest-1.0
 func (m *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewTagable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -97,7 +103,10 @@ func (m *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilder) Get(
 func (m *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilder) Parent()(*CasesEdiscoveryCasesItemTagsItemParentRequestBuilder) {
     return NewCasesEdiscoveryCasesItemTagsItemParentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the navigation property tags in security
+// Patch update the properties of an ediscoveryReviewTag object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/security-ediscoveryreviewtag-update?view=graph-rest-1.0
 func (m *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilder) Patch(ctx context.Context, body idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewTagable, requestConfiguration *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilderPatchRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewTagable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +125,7 @@ func (m *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilder) Patc
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewTagable), nil
 }
-// ToDeleteRequestInformation delete navigation property tags for security
+// ToDeleteRequestInformation remove an ediscoveryReviewTag object.
 func (m *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +137,7 @@ func (m *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilder) ToDe
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation returns a list of ediscoveryReviewTag objects associated to this case.
+// ToGetRequestInformation read the properties and relationships of an ediscoveryReviewTag object.
 func (m *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -144,7 +153,7 @@ func (m *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilder) ToGe
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property tags in security
+// ToPatchRequestInformation update the properties of an ediscoveryReviewTag object.
 func (m *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewTagable, requestConfiguration *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

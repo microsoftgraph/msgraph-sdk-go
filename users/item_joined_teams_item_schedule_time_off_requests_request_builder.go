@@ -11,7 +11,7 @@ import (
 type ItemJoinedTeamsItemScheduleTimeOffRequestsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemJoinedTeamsItemScheduleTimeOffRequestsRequestBuilderGetQueryParameters get timeOffRequests from users
+// ItemJoinedTeamsItemScheduleTimeOffRequestsRequestBuilderGetQueryParameters retrieve a list of timeOffRequest objects in the team.
 type ItemJoinedTeamsItemScheduleTimeOffRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -72,7 +72,10 @@ func NewItemJoinedTeamsItemScheduleTimeOffRequestsRequestBuilder(rawUrl string, 
 func (m *ItemJoinedTeamsItemScheduleTimeOffRequestsRequestBuilder) Count()(*ItemJoinedTeamsItemScheduleTimeOffRequestsCountRequestBuilder) {
     return NewItemJoinedTeamsItemScheduleTimeOffRequestsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get timeOffRequests from users
+// Get retrieve a list of timeOffRequest objects in the team.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/timeoffrequest-list?view=graph-rest-1.0
 func (m *ItemJoinedTeamsItemScheduleTimeOffRequestsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemScheduleTimeOffRequestsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeOffRequestCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -110,7 +113,7 @@ func (m *ItemJoinedTeamsItemScheduleTimeOffRequestsRequestBuilder) Post(ctx cont
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeOffRequestable), nil
 }
-// ToGetRequestInformation get timeOffRequests from users
+// ToGetRequestInformation retrieve a list of timeOffRequest objects in the team.
 func (m *ItemJoinedTeamsItemScheduleTimeOffRequestsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemScheduleTimeOffRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

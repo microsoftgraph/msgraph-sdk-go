@@ -30,7 +30,10 @@ func NewItemItemsItemWorkbookWorksheetsItemPivotTablesItemRefreshRequestBuilder(
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookWorksheetsItemPivotTablesItemRefreshRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action refresh
+// Post refreshes the PivotTable.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/workbookpivottable-refresh?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesItemRefreshRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemPivotTablesItemRefreshRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesItemRefreshRequestBuilder
     }
     return nil
 }
-// ToPostRequestInformation invoke action refresh
+// ToPostRequestInformation refreshes the PivotTable.
 func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesItemRefreshRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemPivotTablesItemRefreshRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -45,7 +45,10 @@ func NewItemConversationsConversationItemRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewItemConversationsConversationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property conversations for groups
+// Delete delete conversation.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/group-delete-conversation?view=graph-rest-1.0
 func (m *ItemConversationsConversationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemConversationsConversationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -62,6 +65,9 @@ func (m *ItemConversationsConversationItemRequestBuilder) Delete(ctx context.Con
     return nil
 }
 // Get the group's conversations.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/group-get-conversation?view=graph-rest-1.0
 func (m *ItemConversationsConversationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemConversationsConversationItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Conversationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -84,7 +90,7 @@ func (m *ItemConversationsConversationItemRequestBuilder) Get(ctx context.Contex
 func (m *ItemConversationsConversationItemRequestBuilder) Threads()(*ItemConversationsItemThreadsRequestBuilder) {
     return NewItemConversationsItemThreadsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete navigation property conversations for groups
+// ToDeleteRequestInformation delete conversation.
 func (m *ItemConversationsConversationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemConversationsConversationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -54,7 +54,10 @@ func NewFederationConfigurationsIdentityProviderBaseItemRequestBuilder(rawUrl st
     urlParams["request-raw-url"] = rawUrl
     return NewFederationConfigurationsIdentityProviderBaseItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property federationConfigurations for directory
+// Delete delete a samlOrWsFedExternalDomainFederation object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/samlorwsfedexternaldomainfederation-delete?view=graph-rest-1.0
 func (m *FederationConfigurationsIdentityProviderBaseItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *FederationConfigurationsIdentityProviderBaseItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -108,7 +111,7 @@ func (m *FederationConfigurationsIdentityProviderBaseItemRequestBuilder) Patch(c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProviderBaseable), nil
 }
-// ToDeleteRequestInformation delete navigation property federationConfigurations for directory
+// ToDeleteRequestInformation delete a samlOrWsFedExternalDomainFederation object.
 func (m *FederationConfigurationsIdentityProviderBaseItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *FederationConfigurationsIdentityProviderBaseItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type ItemSitesItemTermStoresItemSetsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSitesItemTermStoresItemSetsRequestBuilderGetQueryParameters collection of all sets available in the term store. This relationship can only be used to load a specific term set.
+// ItemSitesItemTermStoresItemSetsRequestBuilderGetQueryParameters read the properties and relationships of a set object.
 type ItemSitesItemTermStoresItemSetsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemSitesItemTermStoresItemSetsRequestBuilder(rawUrl string, requestAdap
 func (m *ItemSitesItemTermStoresItemSetsRequestBuilder) Count()(*ItemSitesItemTermStoresItemSetsCountRequestBuilder) {
     return NewItemSitesItemTermStoresItemSetsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get collection of all sets available in the term store. This relationship can only be used to load a specific term set.
+// Get read the properties and relationships of a set object.
 func (m *ItemSitesItemTermStoresItemSetsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemTermStoresItemSetsRequestBuilderGetRequestConfiguration)(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.SetCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *ItemSitesItemTermStoresItemSetsRequestBuilder) Post(ctx context.Context
     }
     return res.(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Setable), nil
 }
-// ToGetRequestInformation collection of all sets available in the term store. This relationship can only be used to load a specific term set.
+// ToGetRequestInformation read the properties and relationships of a set object.
 func (m *ItemSitesItemTermStoresItemSetsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemTermStoresItemSetsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

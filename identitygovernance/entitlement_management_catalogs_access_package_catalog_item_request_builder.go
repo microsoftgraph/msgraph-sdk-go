@@ -18,7 +18,7 @@ type EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilderDeleteRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilderGetQueryParameters a container for access packages.
+// EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an accessPackageCatalog object.
 type EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -58,7 +58,10 @@ func NewEntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder(rawU
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property catalogs for identityGovernance
+// Delete delete an accessPackageCatalog.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/accesspackagecatalog-delete?view=graph-rest-1.0
 func (m *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -74,7 +77,10 @@ func (m *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) De
     }
     return nil
 }
-// Get a container for access packages.
+// Get retrieve the properties and relationships of an accessPackageCatalog object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/accesspackagecatalog-get?view=graph-rest-1.0
 func (m *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageCatalogable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +99,10 @@ func (m *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) Ge
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageCatalogable), nil
 }
-// Patch update the navigation property catalogs in identityGovernance
+// Patch update an existing accessPackageCatalog object to change one or more of its properties, such as the display name or description.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/accesspackagecatalog-update?view=graph-rest-1.0
 func (m *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageCatalogable, requestConfiguration *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageCatalogable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +121,7 @@ func (m *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) Pa
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageCatalogable), nil
 }
-// ToDeleteRequestInformation delete navigation property catalogs for identityGovernance
+// ToDeleteRequestInformation delete an accessPackageCatalog.
 func (m *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -124,7 +133,7 @@ func (m *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) To
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation a container for access packages.
+// ToGetRequestInformation retrieve the properties and relationships of an accessPackageCatalog object.
 func (m *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -140,7 +149,7 @@ func (m *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) To
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property catalogs in identityGovernance
+// ToPatchRequestInformation update an existing accessPackageCatalog object to change one or more of its properties, such as the display name or description.
 func (m *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageCatalogable, requestConfiguration *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

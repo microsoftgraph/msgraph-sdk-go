@@ -8,7 +8,7 @@ import (
 type PlannerUser struct {
     Entity
 }
-// NewPlannerUser instantiates a new plannerUser and sets the default values.
+// NewPlannerUser instantiates a new PlannerUser and sets the default values.
 func NewPlannerUser()(*PlannerUser) {
     m := &PlannerUser{
         Entity: *NewEntity(),
