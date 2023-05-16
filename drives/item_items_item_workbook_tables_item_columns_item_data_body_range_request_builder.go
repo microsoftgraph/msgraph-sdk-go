@@ -31,7 +31,10 @@ func NewItemItemsItemWorkbookTablesItemColumnsItemDataBodyRangeRequestBuilder(ra
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookTablesItemColumnsItemDataBodyRangeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function dataBodyRange
+// Get gets the range object associated with the data body of the column.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/tablecolumn-databodyrange?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookTablesItemColumnsItemDataBodyRangeRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemColumnsItemDataBodyRangeRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookRangeable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -50,7 +53,7 @@ func (m *ItemItemsItemWorkbookTablesItemColumnsItemDataBodyRangeRequestBuilder) 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookRangeable), nil
 }
-// ToGetRequestInformation invoke function dataBodyRange
+// ToGetRequestInformation gets the range object associated with the data body of the column.
 func (m *ItemItemsItemWorkbookTablesItemColumnsItemDataBodyRangeRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemColumnsItemDataBodyRangeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

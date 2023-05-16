@@ -31,7 +31,10 @@ func NewItemOnenotePagesItemCopyToSectionRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewItemOnenotePagesItemCopyToSectionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action copyToSection
+// Post copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
 func (m *ItemOnenotePagesItemCopyToSectionRequestBuilder) Post(ctx context.Context, body ItemOnenotePagesItemCopyToSectionPostRequestBodyable, requestConfiguration *ItemOnenotePagesItemCopyToSectionRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenoteOperationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -50,7 +53,7 @@ func (m *ItemOnenotePagesItemCopyToSectionRequestBuilder) Post(ctx context.Conte
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenoteOperationable), nil
 }
-// ToPostRequestInformation invoke action copyToSection
+// ToPostRequestInformation copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
 func (m *ItemOnenotePagesItemCopyToSectionRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemOnenotePagesItemCopyToSectionPostRequestBodyable, requestConfiguration *ItemOnenotePagesItemCopyToSectionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

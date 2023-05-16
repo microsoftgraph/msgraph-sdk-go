@@ -11,7 +11,7 @@ import (
 type DelegatedAdminRelationshipsItemOperationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DelegatedAdminRelationshipsItemOperationsRequestBuilderGetQueryParameters the long running operations associated with the delegated admin relationship.
+// DelegatedAdminRelationshipsItemOperationsRequestBuilderGetQueryParameters get a list of the delegatedAdminRelationshipOperation objects and their properties.
 type DelegatedAdminRelationshipsItemOperationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewDelegatedAdminRelationshipsItemOperationsRequestBuilder(rawUrl string, r
 func (m *DelegatedAdminRelationshipsItemOperationsRequestBuilder) Count()(*DelegatedAdminRelationshipsItemOperationsCountRequestBuilder) {
     return NewDelegatedAdminRelationshipsItemOperationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the long running operations associated with the delegated admin relationship.
+// Get get a list of the delegatedAdminRelationshipOperation objects and their properties.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/delegatedadminrelationship-list-operations?view=graph-rest-1.0
 func (m *DelegatedAdminRelationshipsItemOperationsRequestBuilder) Get(ctx context.Context, requestConfiguration *DelegatedAdminRelationshipsItemOperationsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DelegatedAdminRelationshipOperationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +115,7 @@ func (m *DelegatedAdminRelationshipsItemOperationsRequestBuilder) Post(ctx conte
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DelegatedAdminRelationshipOperationable), nil
 }
-// ToGetRequestInformation the long running operations associated with the delegated admin relationship.
+// ToGetRequestInformation get a list of the delegatedAdminRelationshipOperation objects and their properties.
 func (m *DelegatedAdminRelationshipsItemOperationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DelegatedAdminRelationshipsItemOperationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

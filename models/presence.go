@@ -8,7 +8,7 @@ import (
 type Presence struct {
     Entity
 }
-// NewPresence instantiates a new presence and sets the default values.
+// NewPresence instantiates a new Presence and sets the default values.
 func NewPresence()(*Presence) {
     m := &Presence{
         Entity: *NewEntity(),

@@ -10,7 +10,7 @@ import (
 type ItemAcceptedSendersItemRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemAcceptedSendersItemRefRequestBuilderDeleteQueryParameters delete ref of navigation property acceptedSenders for groups
+// ItemAcceptedSendersItemRefRequestBuilderDeleteQueryParameters remove acceptedSender
 type ItemAcceptedSendersItemRefRequestBuilderDeleteQueryParameters struct {
     // Delete Uri
     Id *string `uriparametername:"%40id"`
@@ -37,7 +37,10 @@ func NewItemAcceptedSendersItemRefRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewItemAcceptedSendersItemRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete ref of navigation property acceptedSenders for groups
+// Delete remove acceptedSender
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/group-delete-acceptedsenders?view=graph-rest-1.0
 func (m *ItemAcceptedSendersItemRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemAcceptedSendersItemRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -53,7 +56,7 @@ func (m *ItemAcceptedSendersItemRefRequestBuilder) Delete(ctx context.Context, r
     }
     return nil
 }
-// ToDeleteRequestInformation delete ref of navigation property acceptedSenders for groups
+// ToDeleteRequestInformation remove acceptedSender
 func (m *ItemAcceptedSendersItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemAcceptedSendersItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

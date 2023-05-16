@@ -30,7 +30,10 @@ func NewItemTranslateExchangeIdsRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewItemTranslateExchangeIdsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action translateExchangeIds
+// Post translate identifiers of Outlook-related resources between formats.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/user-translateexchangeids?view=graph-rest-1.0
 func (m *ItemTranslateExchangeIdsRequestBuilder) Post(ctx context.Context, body ItemTranslateExchangeIdsPostRequestBodyable, requestConfiguration *ItemTranslateExchangeIdsRequestBuilderPostRequestConfiguration)(ItemTranslateExchangeIdsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +52,7 @@ func (m *ItemTranslateExchangeIdsRequestBuilder) Post(ctx context.Context, body 
     }
     return res.(ItemTranslateExchangeIdsResponseable), nil
 }
-// ToPostRequestInformation invoke action translateExchangeIds
+// ToPostRequestInformation translate identifiers of Outlook-related resources between formats.
 func (m *ItemTranslateExchangeIdsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemTranslateExchangeIdsPostRequestBodyable, requestConfiguration *ItemTranslateExchangeIdsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

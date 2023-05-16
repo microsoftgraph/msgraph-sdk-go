@@ -54,7 +54,10 @@ func NewItemActivitiesUserActivityItemRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewItemActivitiesUserActivityItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property activities for users
+// Delete delete an existing user activity for your app.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/projectrome-delete-activity?view=graph-rest-1.0
 func (m *ItemActivitiesUserActivityItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemActivitiesUserActivityItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +115,7 @@ func (m *ItemActivitiesUserActivityItemRequestBuilder) Patch(ctx context.Context
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserActivityable), nil
 }
-// ToDeleteRequestInformation delete navigation property activities for users
+// ToDeleteRequestInformation delete an existing user activity for your app.
 func (m *ItemActivitiesUserActivityItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemActivitiesUserActivityItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

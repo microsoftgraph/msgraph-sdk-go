@@ -30,7 +30,10 @@ func NewItemItemsItemWorkbookWorksheetsItemProtectionUnprotectRequestBuilder(raw
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookWorksheetsItemProtectionUnprotectRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action unprotect
+// Post unprotect a worksheet
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/worksheetprotection-unprotect?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsItemProtectionUnprotectRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemProtectionUnprotectRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemProtectionUnprotectRequestBuilder) P
     }
     return nil
 }
-// ToPostRequestInformation invoke action unprotect
+// ToPostRequestInformation unprotect a worksheet
 func (m *ItemItemsItemWorkbookWorksheetsItemProtectionUnprotectRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemProtectionUnprotectRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

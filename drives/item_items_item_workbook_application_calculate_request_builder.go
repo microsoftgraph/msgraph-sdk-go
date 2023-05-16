@@ -30,7 +30,10 @@ func NewItemItemsItemWorkbookApplicationCalculateRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookApplicationCalculateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action calculate
+// Post recalculate all currently opened workbooks in Excel.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/workbookapplication-calculate?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookApplicationCalculateRequestBuilder) Post(ctx context.Context, body ItemItemsItemWorkbookApplicationCalculatePostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookApplicationCalculateRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *ItemItemsItemWorkbookApplicationCalculateRequestBuilder) Post(ctx conte
     }
     return nil
 }
-// ToPostRequestInformation invoke action calculate
+// ToPostRequestInformation recalculate all currently opened workbooks in Excel.
 func (m *ItemItemsItemWorkbookApplicationCalculateRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemsItemWorkbookApplicationCalculatePostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookApplicationCalculateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

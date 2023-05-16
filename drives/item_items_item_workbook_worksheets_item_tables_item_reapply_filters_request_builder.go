@@ -30,7 +30,10 @@ func NewItemItemsItemWorkbookWorksheetsItemTablesItemReapplyFiltersRequestBuilde
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookWorksheetsItemTablesItemReapplyFiltersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action reapplyFilters
+// Post reapplies all the filters currently on the table.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/table-reapplyfilters?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemReapplyFiltersRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTablesItemReapplyFiltersRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemReapplyFiltersRequestBuild
     }
     return nil
 }
-// ToPostRequestInformation invoke action reapplyFilters
+// ToPostRequestInformation reapplies all the filters currently on the table.
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemReapplyFiltersRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTablesItemReapplyFiltersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

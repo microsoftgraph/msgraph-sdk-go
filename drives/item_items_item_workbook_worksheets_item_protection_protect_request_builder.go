@@ -30,7 +30,10 @@ func NewItemItemsItemWorkbookWorksheetsItemProtectionProtectRequestBuilder(rawUr
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookWorksheetsItemProtectionProtectRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action protect
+// Post protect a worksheet. It throws if the worksheet has been protected.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/worksheetprotection-protect?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsItemProtectionProtectRequestBuilder) Post(ctx context.Context, body ItemItemsItemWorkbookWorksheetsItemProtectionProtectPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemProtectionProtectRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemProtectionProtectRequestBuilder) Pos
     }
     return nil
 }
-// ToPostRequestInformation invoke action protect
+// ToPostRequestInformation protect a worksheet. It throws if the worksheet has been protected.
 func (m *ItemItemsItemWorkbookWorksheetsItemProtectionProtectRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemsItemWorkbookWorksheetsItemProtectionProtectPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemProtectionProtectRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

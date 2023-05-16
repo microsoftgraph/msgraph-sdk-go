@@ -18,7 +18,7 @@ type DelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilderDeleteReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilderGetQueryParameters the customer who has a delegated admin relationship with a Microsoft partner.
+// DelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilderGetQueryParameters read the properties of a delegatedAdminCustomer object.
 type DelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *DelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilder) Delete
     }
     return nil
 }
-// Get the customer who has a delegated admin relationship with a Microsoft partner.
+// Get read the properties of a delegatedAdminCustomer object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/delegatedadmincustomer-get?view=graph-rest-1.0
 func (m *DelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DelegatedAdminCustomerable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +127,7 @@ func (m *DelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilder) ToDele
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the customer who has a delegated admin relationship with a Microsoft partner.
+// ToGetRequestInformation read the properties of a delegatedAdminCustomer object.
 func (m *DelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

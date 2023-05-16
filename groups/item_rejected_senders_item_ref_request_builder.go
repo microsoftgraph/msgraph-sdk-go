@@ -10,7 +10,7 @@ import (
 type ItemRejectedSendersItemRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemRejectedSendersItemRefRequestBuilderDeleteQueryParameters delete ref of navigation property rejectedSenders for groups
+// ItemRejectedSendersItemRefRequestBuilderDeleteQueryParameters remove rejectedSender
 type ItemRejectedSendersItemRefRequestBuilderDeleteQueryParameters struct {
     // Delete Uri
     Id *string `uriparametername:"%40id"`
@@ -37,7 +37,10 @@ func NewItemRejectedSendersItemRefRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewItemRejectedSendersItemRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete ref of navigation property rejectedSenders for groups
+// Delete remove rejectedSender
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/group-delete-rejectedsenders?view=graph-rest-1.0
 func (m *ItemRejectedSendersItemRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemRejectedSendersItemRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -53,7 +56,7 @@ func (m *ItemRejectedSendersItemRefRequestBuilder) Delete(ctx context.Context, r
     }
     return nil
 }
-// ToDeleteRequestInformation delete ref of navigation property rejectedSenders for groups
+// ToDeleteRequestInformation remove rejectedSender
 func (m *ItemRejectedSendersItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemRejectedSendersItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

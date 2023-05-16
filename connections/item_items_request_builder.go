@@ -11,7 +11,7 @@ import (
 type ItemItemsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemsRequestBuilderGetQueryParameters get items from connections
+// ItemItemsRequestBuilderGetQueryParameters read the properties and relationships of an externalItem object.
 type ItemItemsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemItemsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 func (m *ItemItemsRequestBuilder) Count()(*ItemItemsCountRequestBuilder) {
     return NewItemItemsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get items from connections
+// Get read the properties and relationships of an externalItem object.
 func (m *ItemItemsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsRequestBuilderGetRequestConfiguration)(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalItemCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *ItemItemsRequestBuilder) Post(ctx context.Context, body i648e92ed229992
     }
     return res.(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalItemable), nil
 }
-// ToGetRequestInformation get items from connections
+// ToGetRequestInformation read the properties and relationships of an externalItem object.
 func (m *ItemItemsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

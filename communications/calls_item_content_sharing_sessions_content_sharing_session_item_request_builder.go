@@ -18,7 +18,7 @@ type CallsItemContentSharingSessionsContentSharingSessionItemRequestBuilderDelet
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CallsItemContentSharingSessionsContentSharingSessionItemRequestBuilderGetQueryParameters get contentSharingSessions from communications
+// CallsItemContentSharingSessionsContentSharingSessionItemRequestBuilderGetQueryParameters retrieve the properties of a contentSharingSession object in a call.
 type CallsItemContentSharingSessionsContentSharingSessionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *CallsItemContentSharingSessionsContentSharingSessionItemRequestBuilder)
     }
     return nil
 }
-// Get get contentSharingSessions from communications
+// Get retrieve the properties of a contentSharingSession object in a call.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/contentsharingsession-get?view=graph-rest-1.0
 func (m *CallsItemContentSharingSessionsContentSharingSessionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CallsItemContentSharingSessionsContentSharingSessionItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentSharingSessionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +123,7 @@ func (m *CallsItemContentSharingSessionsContentSharingSessionItemRequestBuilder)
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get contentSharingSessions from communications
+// ToGetRequestInformation retrieve the properties of a contentSharingSession object in a call.
 func (m *CallsItemContentSharingSessionsContentSharingSessionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CallsItemContentSharingSessionsContentSharingSessionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

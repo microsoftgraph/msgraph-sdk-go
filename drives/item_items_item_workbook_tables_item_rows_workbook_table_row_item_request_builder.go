@@ -18,7 +18,7 @@ type ItemItemsItemWorkbookTablesItemRowsWorkbookTableRowItemRequestBuilderDelete
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemItemsItemWorkbookTablesItemRowsWorkbookTableRowItemRequestBuilderGetQueryParameters represents a collection of all the rows in the table. Read-only.
+// ItemItemsItemWorkbookTablesItemRowsWorkbookTableRowItemRequestBuilderGetQueryParameters retrieve the properties and relationships of tablerow object.
 type ItemItemsItemWorkbookTablesItemRowsWorkbookTableRowItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewItemItemsItemWorkbookTablesItemRowsWorkbookTableRowItemRequestBuilder(ra
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookTablesItemRowsWorkbookTableRowItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property rows for drives
+// Delete deletes the row from the table.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/tablerow-delete?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookTablesItemRowsWorkbookTableRowItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemRowsWorkbookTableRowItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *ItemItemsItemWorkbookTablesItemRowsWorkbookTableRowItemRequestBuilder) 
     }
     return nil
 }
-// Get represents a collection of all the rows in the table. Read-only.
+// Get retrieve the properties and relationships of tablerow object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/tablerow-get?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookTablesItemRowsWorkbookTableRowItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemRowsWorkbookTableRowItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableRowable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *ItemItemsItemWorkbookTablesItemRowsWorkbookTableRowItemRequestBuilder) 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableRowable), nil
 }
-// Patch update the navigation property rows in drives
+// Patch update the properties of tablerow object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/tablerow-update?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookTablesItemRowsWorkbookTableRowItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableRowable, requestConfiguration *ItemItemsItemWorkbookTablesItemRowsWorkbookTableRowItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableRowable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +121,7 @@ func (m *ItemItemsItemWorkbookTablesItemRowsWorkbookTableRowItemRequestBuilder) 
 func (m *ItemItemsItemWorkbookTablesItemRowsWorkbookTableRowItemRequestBuilder) RangeEscaped()(*ItemItemsItemWorkbookTablesItemRowsItemRangeRequestBuilder) {
     return NewItemItemsItemWorkbookTablesItemRowsItemRangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete navigation property rows for drives
+// ToDeleteRequestInformation deletes the row from the table.
 func (m *ItemItemsItemWorkbookTablesItemRowsWorkbookTableRowItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemRowsWorkbookTableRowItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -124,7 +133,7 @@ func (m *ItemItemsItemWorkbookTablesItemRowsWorkbookTableRowItemRequestBuilder) 
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation represents a collection of all the rows in the table. Read-only.
+// ToGetRequestInformation retrieve the properties and relationships of tablerow object.
 func (m *ItemItemsItemWorkbookTablesItemRowsWorkbookTableRowItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemRowsWorkbookTableRowItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -140,7 +149,7 @@ func (m *ItemItemsItemWorkbookTablesItemRowsWorkbookTableRowItemRequestBuilder) 
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property rows in drives
+// ToPatchRequestInformation update the properties of tablerow object.
 func (m *ItemItemsItemWorkbookTablesItemRowsWorkbookTableRowItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableRowable, requestConfiguration *ItemItemsItemWorkbookTablesItemRowsWorkbookTableRowItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

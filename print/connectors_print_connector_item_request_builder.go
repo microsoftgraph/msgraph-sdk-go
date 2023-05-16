@@ -18,7 +18,7 @@ type ConnectorsPrintConnectorItemRequestBuilderDeleteRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConnectorsPrintConnectorItemRequestBuilderGetQueryParameters the list of available print connectors.
+// ConnectorsPrintConnectorItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a **printConnector** object.
 type ConnectorsPrintConnectorItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewConnectorsPrintConnectorItemRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewConnectorsPrintConnectorItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property connectors for print
+// Delete delete (unregister) a **printConnector**.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/printconnector-delete?view=graph-rest-1.0
 func (m *ConnectorsPrintConnectorItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConnectorsPrintConnectorItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *ConnectorsPrintConnectorItemRequestBuilder) Delete(ctx context.Context,
     }
     return nil
 }
-// Get the list of available print connectors.
+// Get retrieve the properties and relationships of a **printConnector** object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/printconnector-get?view=graph-rest-1.0
 func (m *ConnectorsPrintConnectorItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectorsPrintConnectorItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintConnectorable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *ConnectorsPrintConnectorItemRequestBuilder) Get(ctx context.Context, re
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintConnectorable), nil
 }
-// Patch update the navigation property connectors in print
+// Patch update the properties of a **printConnector** object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/printconnector-update?view=graph-rest-1.0
 func (m *ConnectorsPrintConnectorItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintConnectorable, requestConfiguration *ConnectorsPrintConnectorItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintConnectorable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -108,7 +117,7 @@ func (m *ConnectorsPrintConnectorItemRequestBuilder) Patch(ctx context.Context, 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintConnectorable), nil
 }
-// ToDeleteRequestInformation delete navigation property connectors for print
+// ToDeleteRequestInformation delete (unregister) a **printConnector**.
 func (m *ConnectorsPrintConnectorItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConnectorsPrintConnectorItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +129,7 @@ func (m *ConnectorsPrintConnectorItemRequestBuilder) ToDeleteRequestInformation(
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the list of available print connectors.
+// ToGetRequestInformation retrieve the properties and relationships of a **printConnector** object.
 func (m *ConnectorsPrintConnectorItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectorsPrintConnectorItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +145,7 @@ func (m *ConnectorsPrintConnectorItemRequestBuilder) ToGetRequestInformation(ctx
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property connectors in print
+// ToPatchRequestInformation update the properties of a **printConnector** object.
 func (m *ConnectorsPrintConnectorItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintConnectorable, requestConfiguration *ConnectorsPrintConnectorItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

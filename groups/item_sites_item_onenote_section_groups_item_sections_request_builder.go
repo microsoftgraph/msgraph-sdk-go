@@ -11,7 +11,7 @@ import (
 type ItemSitesItemOnenoteSectionGroupsItemSectionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSitesItemOnenoteSectionGroupsItemSectionsRequestBuilderGetQueryParameters the sections in the section group. Read-only. Nullable.
+// ItemSitesItemOnenoteSectionGroupsItemSectionsRequestBuilderGetQueryParameters retrieve a list of onenoteSection objects from the specified section group.
 type ItemSitesItemOnenoteSectionGroupsItemSectionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewItemSitesItemOnenoteSectionGroupsItemSectionsRequestBuilder(rawUrl strin
 func (m *ItemSitesItemOnenoteSectionGroupsItemSectionsRequestBuilder) Count()(*ItemSitesItemOnenoteSectionGroupsItemSectionsCountRequestBuilder) {
     return NewItemSitesItemOnenoteSectionGroupsItemSectionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the sections in the section group. Read-only. Nullable.
+// Get retrieve a list of onenoteSection objects from the specified section group.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/sectiongroup-list-sections?view=graph-rest-1.0
 func (m *ItemSitesItemOnenoteSectionGroupsItemSectionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemOnenoteSectionGroupsItemSectionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenoteSectionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *ItemSitesItemOnenoteSectionGroupsItemSectionsRequestBuilder) Get(ctx co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenoteSectionCollectionResponseable), nil
 }
-// Post create new navigation property to sections for groups
+// Post create a new onenoteSection in the specified section group.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/sectiongroup-post-sections?view=graph-rest-1.0
 func (m *ItemSitesItemOnenoteSectionGroupsItemSectionsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenoteSectionable, requestConfiguration *ItemSitesItemOnenoteSectionGroupsItemSectionsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenoteSectionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *ItemSitesItemOnenoteSectionGroupsItemSectionsRequestBuilder) Post(ctx c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenoteSectionable), nil
 }
-// ToGetRequestInformation the sections in the section group. Read-only. Nullable.
+// ToGetRequestInformation retrieve a list of onenoteSection objects from the specified section group.
 func (m *ItemSitesItemOnenoteSectionGroupsItemSectionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemOnenoteSectionGroupsItemSectionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *ItemSitesItemOnenoteSectionGroupsItemSectionsRequestBuilder) ToGetReque
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to sections for groups
+// ToPostRequestInformation create a new onenoteSection in the specified section group.
 func (m *ItemSitesItemOnenoteSectionGroupsItemSectionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenoteSectionable, requestConfiguration *ItemSitesItemOnenoteSectionGroupsItemSectionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

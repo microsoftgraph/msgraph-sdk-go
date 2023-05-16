@@ -11,7 +11,7 @@ import (
 type ItemJoinedTeamsItemIncomingChannelsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemJoinedTeamsItemIncomingChannelsRequestBuilderGetQueryParameters list of channels shared with the team.
+// ItemJoinedTeamsItemIncomingChannelsRequestBuilderGetQueryParameters get the list of incoming channels (channels shared with a team).
 type ItemJoinedTeamsItemIncomingChannelsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,10 @@ func NewItemJoinedTeamsItemIncomingChannelsRequestBuilder(rawUrl string, request
 func (m *ItemJoinedTeamsItemIncomingChannelsRequestBuilder) Count()(*ItemJoinedTeamsItemIncomingChannelsCountRequestBuilder) {
     return NewItemJoinedTeamsItemIncomingChannelsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list of channels shared with the team.
+// Get get the list of incoming channels (channels shared with a team).
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/team-list-incomingchannels?view=graph-rest-1.0
 func (m *ItemJoinedTeamsItemIncomingChannelsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemIncomingChannelsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChannelCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -86,7 +89,7 @@ func (m *ItemJoinedTeamsItemIncomingChannelsRequestBuilder) Get(ctx context.Cont
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChannelCollectionResponseable), nil
 }
-// ToGetRequestInformation list of channels shared with the team.
+// ToGetRequestInformation get the list of incoming channels (channels shared with a team).
 func (m *ItemJoinedTeamsItemIncomingChannelsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemIncomingChannelsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

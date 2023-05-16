@@ -18,7 +18,7 @@ type CallRecordsCallRecordItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CallRecordsCallRecordItemRequestBuilderGetQueryParameters get callRecords from communications
+// CallRecordsCallRecordItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a callRecord object. There are two ways to get the **id** of a **callRecord**:
 type CallRecordsCallRecordItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *CallRecordsCallRecordItemRequestBuilder) Delete(ctx context.Context, re
     }
     return nil
 }
-// Get get callRecords from communications
+// Get retrieve the properties and relationships of a callRecord object. There are two ways to get the **id** of a **callRecord**:
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/callrecords-callrecord-get?view=graph-rest-1.0
 func (m *CallRecordsCallRecordItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CallRecordsCallRecordItemRequestBuilderGetRequestConfiguration)(iaf7085b34cf3df74d75420043707a37fee7e9a355a2db4b4b46244736f7f1d19.CallRecordable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +127,7 @@ func (m *CallRecordsCallRecordItemRequestBuilder) ToDeleteRequestInformation(ctx
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get callRecords from communications
+// ToGetRequestInformation retrieve the properties and relationships of a callRecord object. There are two ways to get the **id** of a **callRecord**:
 func (m *CallRecordsCallRecordItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CallRecordsCallRecordItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

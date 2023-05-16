@@ -31,7 +31,10 @@ func NewCallsItemParticipantsItemMuteRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewCallsItemParticipantsItemMuteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action mute
+// Post mute a specific participant in the call. This is a server mute, meaning that the server will drop all audio packets for this participant, even if the participant continues to stream audio. For more information about how to handle mute operations, see muteParticipantOperation.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/participant-mute?view=graph-rest-1.0
 func (m *CallsItemParticipantsItemMuteRequestBuilder) Post(ctx context.Context, body CallsItemParticipantsItemMutePostRequestBodyable, requestConfiguration *CallsItemParticipantsItemMuteRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MuteParticipantOperationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -50,7 +53,7 @@ func (m *CallsItemParticipantsItemMuteRequestBuilder) Post(ctx context.Context, 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MuteParticipantOperationable), nil
 }
-// ToPostRequestInformation invoke action mute
+// ToPostRequestInformation mute a specific participant in the call. This is a server mute, meaning that the server will drop all audio packets for this participant, even if the participant continues to stream audio. For more information about how to handle mute operations, see muteParticipantOperation.
 func (m *CallsItemParticipantsItemMuteRequestBuilder) ToPostRequestInformation(ctx context.Context, body CallsItemParticipantsItemMutePostRequestBodyable, requestConfiguration *CallsItemParticipantsItemMuteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

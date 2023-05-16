@@ -10,7 +10,7 @@ import (
 type ClassesItemTeachersItemRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ClassesItemTeachersItemRefRequestBuilderDeleteQueryParameters delete ref of navigation property teachers for education
+// ClassesItemTeachersItemRefRequestBuilderDeleteQueryParameters remove teacher from an educationClass.
 type ClassesItemTeachersItemRefRequestBuilderDeleteQueryParameters struct {
     // Delete Uri
     Id *string `uriparametername:"%40id"`
@@ -37,7 +37,10 @@ func NewClassesItemTeachersItemRefRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewClassesItemTeachersItemRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete ref of navigation property teachers for education
+// Delete remove teacher from an educationClass.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/educationclass-delete-teachers?view=graph-rest-1.0
 func (m *ClassesItemTeachersItemRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *ClassesItemTeachersItemRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -53,7 +56,7 @@ func (m *ClassesItemTeachersItemRefRequestBuilder) Delete(ctx context.Context, r
     }
     return nil
 }
-// ToDeleteRequestInformation delete ref of navigation property teachers for education
+// ToDeleteRequestInformation remove teacher from an educationClass.
 func (m *ClassesItemTeachersItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ClassesItemTeachersItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

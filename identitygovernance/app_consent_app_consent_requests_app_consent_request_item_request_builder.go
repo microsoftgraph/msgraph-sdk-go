@@ -18,7 +18,7 @@ type AppConsentAppConsentRequestsAppConsentRequestItemRequestBuilderDeleteReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AppConsentAppConsentRequestsAppConsentRequestItemRequestBuilderGetQueryParameters a collection of userConsentRequest objects for a specific application.
+// AppConsentAppConsentRequestsAppConsentRequestItemRequestBuilderGetQueryParameters read the properties and relationships of an appConsentRequest object.
 type AppConsentAppConsentRequestsAppConsentRequestItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *AppConsentAppConsentRequestsAppConsentRequestItemRequestBuilder) Delete
     }
     return nil
 }
-// Get a collection of userConsentRequest objects for a specific application.
+// Get read the properties and relationships of an appConsentRequest object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/appconsentrequest-get?view=graph-rest-1.0
 func (m *AppConsentAppConsentRequestsAppConsentRequestItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AppConsentAppConsentRequestsAppConsentRequestItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AppConsentRequestable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +123,7 @@ func (m *AppConsentAppConsentRequestsAppConsentRequestItemRequestBuilder) ToDele
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation a collection of userConsentRequest objects for a specific application.
+// ToGetRequestInformation read the properties and relationships of an appConsentRequest object.
 func (m *AppConsentAppConsentRequestsAppConsentRequestItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AppConsentAppConsentRequestsAppConsentRequestItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

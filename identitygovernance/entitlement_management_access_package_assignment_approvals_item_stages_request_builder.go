@@ -11,7 +11,7 @@ import (
 type EntitlementManagementAccessPackageAssignmentApprovalsItemStagesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementAccessPackageAssignmentApprovalsItemStagesRequestBuilderGetQueryParameters a collection of stages in the approval decision.
+// EntitlementManagementAccessPackageAssignmentApprovalsItemStagesRequestBuilderGetQueryParameters in Azure AD entitlement management, list the approvalStage objects associated with an approval object. This call can be made by an approver, providing the identifier of the access package assignment request.
 type EntitlementManagementAccessPackageAssignmentApprovalsItemStagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewEntitlementManagementAccessPackageAssignmentApprovalsItemStagesRequestBu
 func (m *EntitlementManagementAccessPackageAssignmentApprovalsItemStagesRequestBuilder) Count()(*EntitlementManagementAccessPackageAssignmentApprovalsItemStagesCountRequestBuilder) {
     return NewEntitlementManagementAccessPackageAssignmentApprovalsItemStagesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get a collection of stages in the approval decision.
+// Get in Azure AD entitlement management, list the approvalStage objects associated with an approval object. This call can be made by an approver, providing the identifier of the access package assignment request.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/approval-list-stages?view=graph-rest-1.0
 func (m *EntitlementManagementAccessPackageAssignmentApprovalsItemStagesRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentApprovalsItemStagesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApprovalStageCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +115,7 @@ func (m *EntitlementManagementAccessPackageAssignmentApprovalsItemStagesRequestB
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApprovalStageable), nil
 }
-// ToGetRequestInformation a collection of stages in the approval decision.
+// ToGetRequestInformation in Azure AD entitlement management, list the approvalStage objects associated with an approval object. This call can be made by an approver, providing the identifier of the access package assignment request.
 func (m *EntitlementManagementAccessPackageAssignmentApprovalsItemStagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentApprovalsItemStagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -30,7 +30,10 @@ func NewRiskyUsersDismissRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewRiskyUsersDismissRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action dismiss
+// Post dismiss the risk of one or more riskyUser objects. This action sets the targeted user's risk level to none.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/riskyuser-dismiss?view=graph-rest-1.0
 func (m *RiskyUsersDismissRequestBuilder) Post(ctx context.Context, body RiskyUsersDismissPostRequestBodyable, requestConfiguration *RiskyUsersDismissRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *RiskyUsersDismissRequestBuilder) Post(ctx context.Context, body RiskyUs
     }
     return nil
 }
-// ToPostRequestInformation invoke action dismiss
+// ToPostRequestInformation dismiss the risk of one or more riskyUser objects. This action sets the targeted user's risk level to none.
 func (m *RiskyUsersDismissRequestBuilder) ToPostRequestInformation(ctx context.Context, body RiskyUsersDismissPostRequestBodyable, requestConfiguration *RiskyUsersDismissRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

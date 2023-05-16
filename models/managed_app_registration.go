@@ -5,11 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ManagedAppRegistration the ManagedAppEntity is the base entity type for all other entity types under app management workflow.
+// ManagedAppRegistration 
 type ManagedAppRegistration struct {
     Entity
 }
-// NewManagedAppRegistration instantiates a new managedAppRegistration and sets the default values.
+// NewManagedAppRegistration instantiates a new ManagedAppRegistration and sets the default values.
 func NewManagedAppRegistration()(*ManagedAppRegistration) {
     m := &ManagedAppRegistration{
         Entity: *NewEntity(),

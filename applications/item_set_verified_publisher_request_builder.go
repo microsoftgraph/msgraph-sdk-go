@@ -30,7 +30,10 @@ func NewItemSetVerifiedPublisherRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewItemSetVerifiedPublisherRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action setVerifiedPublisher
+// Post set the verifiedPublisher on an application. For more information, including prerequisites to setting a verified publisher, see Publisher verification.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/application-setverifiedpublisher?view=graph-rest-1.0
 func (m *ItemSetVerifiedPublisherRequestBuilder) Post(ctx context.Context, body ItemSetVerifiedPublisherPostRequestBodyable, requestConfiguration *ItemSetVerifiedPublisherRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *ItemSetVerifiedPublisherRequestBuilder) Post(ctx context.Context, body 
     }
     return nil
 }
-// ToPostRequestInformation invoke action setVerifiedPublisher
+// ToPostRequestInformation set the verifiedPublisher on an application. For more information, including prerequisites to setting a verified publisher, see Publisher verification.
 func (m *ItemSetVerifiedPublisherRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemSetVerifiedPublisherPostRequestBodyable, requestConfiguration *ItemSetVerifiedPublisherRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

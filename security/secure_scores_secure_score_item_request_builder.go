@@ -18,7 +18,7 @@ type SecureScoresSecureScoreItemRequestBuilderDeleteRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// SecureScoresSecureScoreItemRequestBuilderGetQueryParameters get secureScores from security
+// SecureScoresSecureScoreItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a secureScore object.
 type SecureScoresSecureScoreItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *SecureScoresSecureScoreItemRequestBuilder) Delete(ctx context.Context, 
     }
     return nil
 }
-// Get get secureScores from security
+// Get retrieve the properties and relationships of a secureScore object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/securescore-get?view=graph-rest-1.0
 func (m *SecureScoresSecureScoreItemRequestBuilder) Get(ctx context.Context, requestConfiguration *SecureScoresSecureScoreItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SecureScoreable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +123,7 @@ func (m *SecureScoresSecureScoreItemRequestBuilder) ToDeleteRequestInformation(c
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get secureScores from security
+// ToGetRequestInformation retrieve the properties and relationships of a secureScore object.
 func (m *SecureScoresSecureScoreItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SecureScoresSecureScoreItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

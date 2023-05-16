@@ -8,7 +8,7 @@ import (
 type UserSettings struct {
     Entity
 }
-// NewUserSettings instantiates a new userSettings and sets the default values.
+// NewUserSettings instantiates a new UserSettings and sets the default values.
 func NewUserSettings()(*UserSettings) {
     m := &UserSettings{
         Entity: *NewEntity(),

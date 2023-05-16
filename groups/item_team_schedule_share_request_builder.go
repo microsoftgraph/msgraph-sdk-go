@@ -30,7 +30,10 @@ func NewItemTeamScheduleShareRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamScheduleShareRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action share
+// Post share a schedule time range with schedule members.Make the collections of shift, openshift and timeOff items in the specified time range of the schedule viewable by the specified team members, including employees and managers.Each shift, openshift and timeOff instance in a schedule supports a draft version and a shared version of the item. The draft version is viewable by only managers, and the shared version is viewable by employees and managers. For each shift, openshift and timeOff instance in the specified time range, the share action updates the shared version from the draft version, so that in addition to managers, employees can also view the most current information about the item. The **notifyTeam** parameter further specifies which employees can view the item.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/schedule-share?view=graph-rest-1.0
 func (m *ItemTeamScheduleShareRequestBuilder) Post(ctx context.Context, body ItemTeamScheduleSharePostRequestBodyable, requestConfiguration *ItemTeamScheduleShareRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *ItemTeamScheduleShareRequestBuilder) Post(ctx context.Context, body Ite
     }
     return nil
 }
-// ToPostRequestInformation invoke action share
+// ToPostRequestInformation share a schedule time range with schedule members.Make the collections of shift, openshift and timeOff items in the specified time range of the schedule viewable by the specified team members, including employees and managers.Each shift, openshift and timeOff instance in a schedule supports a draft version and a shared version of the item. The draft version is viewable by only managers, and the shared version is viewable by employees and managers. For each shift, openshift and timeOff instance in the specified time range, the share action updates the shared version from the draft version, so that in addition to managers, employees can also view the most current information about the item. The **notifyTeam** parameter further specifies which employees can view the item.
 func (m *ItemTeamScheduleShareRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemTeamScheduleSharePostRequestBodyable, requestConfiguration *ItemTeamScheduleShareRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

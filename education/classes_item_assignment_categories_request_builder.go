@@ -11,7 +11,7 @@ import (
 type ClassesItemAssignmentCategoriesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ClassesItemAssignmentCategoriesRequestBuilderGetQueryParameters all categories associated with this class. Nullable.
+// ClassesItemAssignmentCategoriesRequestBuilderGetQueryParameters retrieve a list of educationCategory objects. Only teachers can perform this operation.
 type ClassesItemAssignmentCategoriesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,7 +78,10 @@ func (m *ClassesItemAssignmentCategoriesRequestBuilder) Count()(*ClassesItemAssi
 func (m *ClassesItemAssignmentCategoriesRequestBuilder) Delta()(*ClassesItemAssignmentCategoriesDeltaRequestBuilder) {
     return NewClassesItemAssignmentCategoriesDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get all categories associated with this class. Nullable.
+// Get retrieve a list of educationCategory objects. Only teachers can perform this operation.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/educationclass-list-categories?view=graph-rest-1.0
 func (m *ClassesItemAssignmentCategoriesRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassesItemAssignmentCategoriesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationCategoryCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -97,7 +100,10 @@ func (m *ClassesItemAssignmentCategoriesRequestBuilder) Get(ctx context.Context,
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationCategoryCollectionResponseable), nil
 }
-// Post create new navigation property to assignmentCategories for education
+// Post creates a new educationCategory on an educationClass. Only teachers can perform this operation.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/educationclass-post-category?view=graph-rest-1.0
 func (m *ClassesItemAssignmentCategoriesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationCategoryable, requestConfiguration *ClassesItemAssignmentCategoriesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationCategoryable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +122,7 @@ func (m *ClassesItemAssignmentCategoriesRequestBuilder) Post(ctx context.Context
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationCategoryable), nil
 }
-// ToGetRequestInformation all categories associated with this class. Nullable.
+// ToGetRequestInformation retrieve a list of educationCategory objects. Only teachers can perform this operation.
 func (m *ClassesItemAssignmentCategoriesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClassesItemAssignmentCategoriesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -132,7 +138,7 @@ func (m *ClassesItemAssignmentCategoriesRequestBuilder) ToGetRequestInformation(
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to assignmentCategories for education
+// ToPostRequestInformation creates a new educationCategory on an educationClass. Only teachers can perform this operation.
 func (m *ClassesItemAssignmentCategoriesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationCategoryable, requestConfiguration *ClassesItemAssignmentCategoriesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

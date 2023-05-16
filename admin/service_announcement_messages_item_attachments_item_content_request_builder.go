@@ -39,6 +39,9 @@ func NewServiceAnnouncementMessagesItemAttachmentsItemContentRequestBuilder(rawU
     return NewServiceAnnouncementMessagesItemAttachmentsItemContentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the attachment content.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/serviceupdatemessage-list-attachments?view=graph-rest-1.0
 func (m *ServiceAnnouncementMessagesItemAttachmentsItemContentRequestBuilder) Get(ctx context.Context, requestConfiguration *ServiceAnnouncementMessagesItemAttachmentsItemContentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

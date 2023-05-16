@@ -30,7 +30,10 @@ func NewItemListItemsItemVersionsItemRestoreVersionRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewItemListItemsItemVersionsItemRestoreVersionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action restoreVersion
+// Post restore a previous version of a ListItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the item.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/listitemversion-restore?view=graph-rest-1.0
 func (m *ItemListItemsItemVersionsItemRestoreVersionRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemListItemsItemVersionsItemRestoreVersionRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *ItemListItemsItemVersionsItemRestoreVersionRequestBuilder) Post(ctx con
     }
     return nil
 }
-// ToPostRequestInformation invoke action restoreVersion
+// ToPostRequestInformation restore a previous version of a ListItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the item.
 func (m *ItemListItemsItemVersionsItemRestoreVersionRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemListItemsItemVersionsItemRestoreVersionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

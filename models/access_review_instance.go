@@ -9,7 +9,7 @@ import (
 type AccessReviewInstance struct {
     Entity
 }
-// NewAccessReviewInstance instantiates a new AccessReviewInstance and sets the default values.
+// NewAccessReviewInstance instantiates a new accessReviewInstance and sets the default values.
 func NewAccessReviewInstance()(*AccessReviewInstance) {
     m := &AccessReviewInstance{
         Entity: *NewEntity(),

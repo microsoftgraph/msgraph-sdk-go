@@ -18,7 +18,7 @@ type AdministrativeUnitsItemScopedRoleMembersScopedRoleMembershipItemRequestBuil
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AdministrativeUnitsItemScopedRoleMembersScopedRoleMembershipItemRequestBuilderGetQueryParameters scoped-role members of this administrative unit.
+// AdministrativeUnitsItemScopedRoleMembersScopedRoleMembershipItemRequestBuilderGetQueryParameters get an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
 type AdministrativeUnitsItemScopedRoleMembersScopedRoleMembershipItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewAdministrativeUnitsItemScopedRoleMembersScopedRoleMembershipItemRequestB
     urlParams["request-raw-url"] = rawUrl
     return NewAdministrativeUnitsItemScopedRoleMembersScopedRoleMembershipItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property scopedRoleMembers for directory
+// Delete remove an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/administrativeunit-delete-scopedrolemembers?view=graph-rest-1.0
 func (m *AdministrativeUnitsItemScopedRoleMembersScopedRoleMembershipItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AdministrativeUnitsItemScopedRoleMembersScopedRoleMembershipItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *AdministrativeUnitsItemScopedRoleMembersScopedRoleMembershipItemRequest
     }
     return nil
 }
-// Get scoped-role members of this administrative unit.
+// Get get an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/administrativeunit-get-scopedrolemembers?view=graph-rest-1.0
 func (m *AdministrativeUnitsItemScopedRoleMembersScopedRoleMembershipItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AdministrativeUnitsItemScopedRoleMembersScopedRoleMembershipItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ScopedRoleMembershipable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -108,7 +114,7 @@ func (m *AdministrativeUnitsItemScopedRoleMembersScopedRoleMembershipItemRequest
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ScopedRoleMembershipable), nil
 }
-// ToDeleteRequestInformation delete navigation property scopedRoleMembers for directory
+// ToDeleteRequestInformation remove an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
 func (m *AdministrativeUnitsItemScopedRoleMembersScopedRoleMembershipItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AdministrativeUnitsItemScopedRoleMembersScopedRoleMembershipItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +126,7 @@ func (m *AdministrativeUnitsItemScopedRoleMembersScopedRoleMembershipItemRequest
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation scoped-role members of this administrative unit.
+// ToGetRequestInformation get an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
 func (m *AdministrativeUnitsItemScopedRoleMembersScopedRoleMembershipItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AdministrativeUnitsItemScopedRoleMembersScopedRoleMembershipItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type ItemItemsItemWorkbookWorksheetsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemsItemWorkbookWorksheetsRequestBuilderGetQueryParameters represents a collection of worksheets associated with the workbook. Read-only.
+// ItemItemsItemWorkbookWorksheetsRequestBuilderGetQueryParameters retrieve a list of worksheet objects.
 type ItemItemsItemWorkbookWorksheetsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,7 +78,10 @@ func NewItemItemsItemWorkbookWorksheetsRequestBuilder(rawUrl string, requestAdap
 func (m *ItemItemsItemWorkbookWorksheetsRequestBuilder) Count()(*ItemItemsItemWorkbookWorksheetsCountRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get represents a collection of worksheets associated with the workbook. Read-only.
+// Get retrieve a list of worksheet objects.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/workbook-list-worksheets?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookWorksheetCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *ItemItemsItemWorkbookWorksheetsRequestBuilder) Post(ctx context.Context
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookWorksheetable), nil
 }
-// ToGetRequestInformation represents a collection of worksheets associated with the workbook. Read-only.
+// ToGetRequestInformation retrieve a list of worksheet objects.
 func (m *ItemItemsItemWorkbookWorksheetsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

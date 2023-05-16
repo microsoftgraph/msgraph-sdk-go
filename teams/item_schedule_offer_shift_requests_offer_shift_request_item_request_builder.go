@@ -18,7 +18,7 @@ type ItemScheduleOfferShiftRequestsOfferShiftRequestItemRequestBuilderDeleteRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemScheduleOfferShiftRequestsOfferShiftRequestItemRequestBuilderGetQueryParameters get offerShiftRequests from teams
+// ItemScheduleOfferShiftRequestsOfferShiftRequestItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an offerShiftRequest object.
 type ItemScheduleOfferShiftRequestsOfferShiftRequestItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *ItemScheduleOfferShiftRequestsOfferShiftRequestItemRequestBuilder) Dele
     }
     return nil
 }
-// Get get offerShiftRequests from teams
+// Get retrieve the properties and relationships of an offerShiftRequest object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/offershiftrequest-get?view=graph-rest-1.0
 func (m *ItemScheduleOfferShiftRequestsOfferShiftRequestItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemScheduleOfferShiftRequestsOfferShiftRequestItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OfferShiftRequestable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +123,7 @@ func (m *ItemScheduleOfferShiftRequestsOfferShiftRequestItemRequestBuilder) ToDe
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get offerShiftRequests from teams
+// ToGetRequestInformation retrieve the properties and relationships of an offerShiftRequest object.
 func (m *ItemScheduleOfferShiftRequestsOfferShiftRequestItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemScheduleOfferShiftRequestsOfferShiftRequestItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

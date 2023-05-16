@@ -30,7 +30,10 @@ func NewCallsItemChangeScreenSharingRoleRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewCallsItemChangeScreenSharingRoleRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action changeScreenSharingRole
+// Post allow applications to share screen content with the participants of a group call.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/call-changescreensharingrole?view=graph-rest-1.0
 func (m *CallsItemChangeScreenSharingRoleRequestBuilder) Post(ctx context.Context, body CallsItemChangeScreenSharingRolePostRequestBodyable, requestConfiguration *CallsItemChangeScreenSharingRoleRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *CallsItemChangeScreenSharingRoleRequestBuilder) Post(ctx context.Contex
     }
     return nil
 }
-// ToPostRequestInformation invoke action changeScreenSharingRole
+// ToPostRequestInformation allow applications to share screen content with the participants of a group call.
 func (m *CallsItemChangeScreenSharingRoleRequestBuilder) ToPostRequestInformation(ctx context.Context, body CallsItemChangeScreenSharingRolePostRequestBodyable, requestConfiguration *CallsItemChangeScreenSharingRoleRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -18,7 +18,7 @@ type RiskyServicePrincipalsRiskyServicePrincipalItemRequestBuilderDeleteRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// RiskyServicePrincipalsRiskyServicePrincipalItemRequestBuilderGetQueryParameters azure AD service principals that are at risk.
+// RiskyServicePrincipalsRiskyServicePrincipalItemRequestBuilderGetQueryParameters read the properties and relationships of a riskyServicePrincipal object.
 type RiskyServicePrincipalsRiskyServicePrincipalItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *RiskyServicePrincipalsRiskyServicePrincipalItemRequestBuilder) Delete(c
     }
     return nil
 }
-// Get azure AD service principals that are at risk.
+// Get read the properties and relationships of a riskyServicePrincipal object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/riskyserviceprincipal-get?view=graph-rest-1.0
 func (m *RiskyServicePrincipalsRiskyServicePrincipalItemRequestBuilder) Get(ctx context.Context, requestConfiguration *RiskyServicePrincipalsRiskyServicePrincipalItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RiskyServicePrincipalable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +127,7 @@ func (m *RiskyServicePrincipalsRiskyServicePrincipalItemRequestBuilder) ToDelete
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation azure AD service principals that are at risk.
+// ToGetRequestInformation read the properties and relationships of a riskyServicePrincipal object.
 func (m *RiskyServicePrincipalsRiskyServicePrincipalItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RiskyServicePrincipalsRiskyServicePrincipalItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

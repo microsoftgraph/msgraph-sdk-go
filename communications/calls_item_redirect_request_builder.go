@@ -30,7 +30,10 @@ func NewCallsItemRedirectRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewCallsItemRedirectRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action redirect
+// Post redirect an incoming call that hasn't been answered or rejected yet. The terms 'redirecting' and 'forwarding' a call are used interchangeably. The bot is expected to redirect the call before the call times out. The current timeout value is 15 seconds.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/call-redirect?view=graph-rest-1.0
 func (m *CallsItemRedirectRequestBuilder) Post(ctx context.Context, body CallsItemRedirectPostRequestBodyable, requestConfiguration *CallsItemRedirectRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *CallsItemRedirectRequestBuilder) Post(ctx context.Context, body CallsIt
     }
     return nil
 }
-// ToPostRequestInformation invoke action redirect
+// ToPostRequestInformation redirect an incoming call that hasn't been answered or rejected yet. The terms 'redirecting' and 'forwarding' a call are used interchangeably. The bot is expected to redirect the call before the call times out. The current timeout value is 15 seconds.
 func (m *CallsItemRedirectRequestBuilder) ToPostRequestInformation(ctx context.Context, body CallsItemRedirectPostRequestBodyable, requestConfiguration *CallsItemRedirectRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

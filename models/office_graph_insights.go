@@ -8,7 +8,7 @@ import (
 type OfficeGraphInsights struct {
     Entity
 }
-// NewOfficeGraphInsights instantiates a new officeGraphInsights and sets the default values.
+// NewOfficeGraphInsights instantiates a new OfficeGraphInsights and sets the default values.
 func NewOfficeGraphInsights()(*OfficeGraphInsights) {
     m := &OfficeGraphInsights{
         Entity: *NewEntity(),

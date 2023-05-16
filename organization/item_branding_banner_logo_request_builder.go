@@ -38,6 +38,9 @@ func NewItemBrandingBannerLogoRequestBuilder(rawUrl string, requestAdapter i2ae4
     return NewItemBrandingBannerLogoRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get a banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG no larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
 func (m *ItemBrandingBannerLogoRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemBrandingBannerLogoRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

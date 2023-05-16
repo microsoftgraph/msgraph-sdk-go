@@ -33,7 +33,7 @@ func (m *AuthorizationPolicy) GetAllowedToSignUpEmailBasedSubscriptions()(*bool)
     }
     return nil
 }
-// GetAllowedToUseSSPR gets the allowedToUseSSPR property value. Indicates whether the Self-Serve Password Reset feature can be used by users on the tenant.
+// GetAllowedToUseSSPR gets the allowedToUseSSPR property value. Indicates whether users can use the Self-Serve Password Reset feature on the tenant.
 func (m *AuthorizationPolicy) GetAllowedToUseSSPR()(*bool) {
     val, err := m.GetBackingStore().Get("allowedToUseSSPR")
     if err != nil {
@@ -55,7 +55,7 @@ func (m *AuthorizationPolicy) GetAllowEmailVerifiedUsersToJoinOrganization()(*bo
     }
     return nil
 }
-// GetAllowInvitesFrom gets the allowInvitesFrom property value. Indicates who can invite external users to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone.  everyone is the default setting for all cloud environments except US Government. See more in the table below.
+// GetAllowInvitesFrom gets the allowInvitesFrom property value. Indicates who can invite external users to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone.  everyone is the default setting for all cloud environments except US Government. For more details, see allowInvitesFrom values.
 func (m *AuthorizationPolicy) GetAllowInvitesFrom()(*AllowInvitesFrom) {
     val, err := m.GetBackingStore().Get("allowInvitesFrom")
     if err != nil {
@@ -66,7 +66,7 @@ func (m *AuthorizationPolicy) GetAllowInvitesFrom()(*AllowInvitesFrom) {
     }
     return nil
 }
-// GetAllowUserConsentForRiskyApps gets the allowUserConsentForRiskyApps property value. The allowUserConsentForRiskyApps property
+// GetAllowUserConsentForRiskyApps gets the allowUserConsentForRiskyApps property value. Indicates whether user consent for risky apps is allowed. We recommend to keep this as false. Default value is false.
 func (m *AuthorizationPolicy) GetAllowUserConsentForRiskyApps()(*bool) {
     val, err := m.GetBackingStore().Get("allowUserConsentForRiskyApps")
     if err != nil {
@@ -77,7 +77,7 @@ func (m *AuthorizationPolicy) GetAllowUserConsentForRiskyApps()(*bool) {
     }
     return nil
 }
-// GetBlockMsolPowerShell gets the blockMsolPowerShell property value. To disable the use of MSOL PowerShell set this property to true. This will also disable user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure AD Connect or Microsoft Graph.
+// GetBlockMsolPowerShell gets the blockMsolPowerShell property value. To disable the use of MSOL PowerShell, set this property to true. This also disables user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure Active Directory Connect or Microsoft Graph.
 func (m *AuthorizationPolicy) GetBlockMsolPowerShell()(*bool) {
     val, err := m.GetBackingStore().Get("blockMsolPowerShell")
     if err != nil {
@@ -259,7 +259,7 @@ func (m *AuthorizationPolicy) SetAllowedToSignUpEmailBasedSubscriptions(value *b
         panic(err)
     }
 }
-// SetAllowedToUseSSPR sets the allowedToUseSSPR property value. Indicates whether the Self-Serve Password Reset feature can be used by users on the tenant.
+// SetAllowedToUseSSPR sets the allowedToUseSSPR property value. Indicates whether users can use the Self-Serve Password Reset feature on the tenant.
 func (m *AuthorizationPolicy) SetAllowedToUseSSPR(value *bool)() {
     err := m.GetBackingStore().Set("allowedToUseSSPR", value)
     if err != nil {
@@ -273,21 +273,21 @@ func (m *AuthorizationPolicy) SetAllowEmailVerifiedUsersToJoinOrganization(value
         panic(err)
     }
 }
-// SetAllowInvitesFrom sets the allowInvitesFrom property value. Indicates who can invite external users to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone.  everyone is the default setting for all cloud environments except US Government. See more in the table below.
+// SetAllowInvitesFrom sets the allowInvitesFrom property value. Indicates who can invite external users to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone.  everyone is the default setting for all cloud environments except US Government. For more details, see allowInvitesFrom values.
 func (m *AuthorizationPolicy) SetAllowInvitesFrom(value *AllowInvitesFrom)() {
     err := m.GetBackingStore().Set("allowInvitesFrom", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAllowUserConsentForRiskyApps sets the allowUserConsentForRiskyApps property value. The allowUserConsentForRiskyApps property
+// SetAllowUserConsentForRiskyApps sets the allowUserConsentForRiskyApps property value. Indicates whether user consent for risky apps is allowed. We recommend to keep this as false. Default value is false.
 func (m *AuthorizationPolicy) SetAllowUserConsentForRiskyApps(value *bool)() {
     err := m.GetBackingStore().Set("allowUserConsentForRiskyApps", value)
     if err != nil {
         panic(err)
     }
 }
-// SetBlockMsolPowerShell sets the blockMsolPowerShell property value. To disable the use of MSOL PowerShell set this property to true. This will also disable user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure AD Connect or Microsoft Graph.
+// SetBlockMsolPowerShell sets the blockMsolPowerShell property value. To disable the use of MSOL PowerShell, set this property to true. This also disables user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure Active Directory Connect or Microsoft Graph.
 func (m *AuthorizationPolicy) SetBlockMsolPowerShell(value *bool)() {
     err := m.GetBackingStore().Set("blockMsolPowerShell", value)
     if err != nil {

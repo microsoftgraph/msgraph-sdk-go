@@ -11,7 +11,7 @@ import (
 type ItemManagerRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemManagerRequestBuilderGetQueryParameters get manager from contacts
+// ItemManagerRequestBuilderGetQueryParameters get this organizational contact's manager.
 type ItemManagerRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,10 @@ func NewItemManagerRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewItemManagerRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get manager from contacts
+// Get get this organizational contact's manager.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/orgcontact-get-manager?view=graph-rest-1.0
 func (m *ItemManagerRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemManagerRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,7 +62,7 @@ func (m *ItemManagerRequestBuilder) Get(ctx context.Context, requestConfiguratio
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable), nil
 }
-// ToGetRequestInformation get manager from contacts
+// ToGetRequestInformation get this organizational contact's manager.
 func (m *ItemManagerRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemManagerRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

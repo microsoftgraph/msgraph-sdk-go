@@ -10,7 +10,7 @@ import (
 type AdministrativeUnitsItemMembersItemRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AdministrativeUnitsItemMembersItemRefRequestBuilderDeleteQueryParameters delete ref of navigation property members for directory
+// AdministrativeUnitsItemMembersItemRefRequestBuilderDeleteQueryParameters use this API to remove a member (user, group, or device) from an administrative unit.
 type AdministrativeUnitsItemMembersItemRefRequestBuilderDeleteQueryParameters struct {
     // Delete Uri
     Id *string `uriparametername:"%40id"`
@@ -37,7 +37,10 @@ func NewAdministrativeUnitsItemMembersItemRefRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewAdministrativeUnitsItemMembersItemRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete ref of navigation property members for directory
+// Delete use this API to remove a member (user, group, or device) from an administrative unit.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/administrativeunit-delete-members?view=graph-rest-1.0
 func (m *AdministrativeUnitsItemMembersItemRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *AdministrativeUnitsItemMembersItemRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -53,7 +56,7 @@ func (m *AdministrativeUnitsItemMembersItemRefRequestBuilder) Delete(ctx context
     }
     return nil
 }
-// ToDeleteRequestInformation delete ref of navigation property members for directory
+// ToDeleteRequestInformation use this API to remove a member (user, group, or device) from an administrative unit.
 func (m *AdministrativeUnitsItemMembersItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AdministrativeUnitsItemMembersItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -45,7 +45,7 @@ func (m *DefaultUserRolePermissions) GetAllowedToCreateApps()(*bool) {
     }
     return nil
 }
-// GetAllowedToCreateSecurityGroups gets the allowedToCreateSecurityGroups property value. Indicates whether the default user role can create security groups.
+// GetAllowedToCreateSecurityGroups gets the allowedToCreateSecurityGroups property value. Indicates whether the default user role can create security groups. This setting corresponds to the The Users can create security groups in Azure portals, API or PowerShell setting in the group settings menu in the Azure portal.
 func (m *DefaultUserRolePermissions) GetAllowedToCreateSecurityGroups()(*bool) {
     val, err := m.GetBackingStore().Get("allowedToCreateSecurityGroups")
     if err != nil {
@@ -233,7 +233,7 @@ func (m *DefaultUserRolePermissions) SetAllowedToCreateApps(value *bool)() {
         panic(err)
     }
 }
-// SetAllowedToCreateSecurityGroups sets the allowedToCreateSecurityGroups property value. Indicates whether the default user role can create security groups.
+// SetAllowedToCreateSecurityGroups sets the allowedToCreateSecurityGroups property value. Indicates whether the default user role can create security groups. This setting corresponds to the The Users can create security groups in Azure portals, API or PowerShell setting in the group settings menu in the Azure portal.
 func (m *DefaultUserRolePermissions) SetAllowedToCreateSecurityGroups(value *bool)() {
     err := m.GetBackingStore().Set("allowedToCreateSecurityGroups", value)
     if err != nil {

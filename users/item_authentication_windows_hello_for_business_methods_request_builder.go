@@ -11,7 +11,7 @@ import (
 type ItemAuthenticationWindowsHelloForBusinessMethodsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemAuthenticationWindowsHelloForBusinessMethodsRequestBuilderGetQueryParameters represents the Windows Hello for Business authentication method registered to a user for authentication.
+// ItemAuthenticationWindowsHelloForBusinessMethodsRequestBuilderGetQueryParameters get a list of the windowsHelloForBusinessAuthenticationMethod objects and their properties.
 type ItemAuthenticationWindowsHelloForBusinessMethodsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,10 @@ func NewItemAuthenticationWindowsHelloForBusinessMethodsRequestBuilder(rawUrl st
 func (m *ItemAuthenticationWindowsHelloForBusinessMethodsRequestBuilder) Count()(*ItemAuthenticationWindowsHelloForBusinessMethodsCountRequestBuilder) {
     return NewItemAuthenticationWindowsHelloForBusinessMethodsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get represents the Windows Hello for Business authentication method registered to a user for authentication.
+// Get get a list of the windowsHelloForBusinessAuthenticationMethod objects and their properties.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/windowshelloforbusinessauthenticationmethod-list?view=graph-rest-1.0
 func (m *ItemAuthenticationWindowsHelloForBusinessMethodsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAuthenticationWindowsHelloForBusinessMethodsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsHelloForBusinessAuthenticationMethodCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -86,7 +89,7 @@ func (m *ItemAuthenticationWindowsHelloForBusinessMethodsRequestBuilder) Get(ctx
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsHelloForBusinessAuthenticationMethodCollectionResponseable), nil
 }
-// ToGetRequestInformation represents the Windows Hello for Business authentication method registered to a user for authentication.
+// ToGetRequestInformation get a list of the windowsHelloForBusinessAuthenticationMethod objects and their properties.
 func (m *ItemAuthenticationWindowsHelloForBusinessMethodsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationWindowsHelloForBusinessMethodsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

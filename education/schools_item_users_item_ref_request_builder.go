@@ -10,7 +10,7 @@ import (
 type SchoolsItemUsersItemRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SchoolsItemUsersItemRefRequestBuilderDeleteQueryParameters delete ref of navigation property users for education
+// SchoolsItemUsersItemRefRequestBuilderDeleteQueryParameters delete a user from a school.
 type SchoolsItemUsersItemRefRequestBuilderDeleteQueryParameters struct {
     // Delete Uri
     Id *string `uriparametername:"%40id"`
@@ -37,7 +37,10 @@ func NewSchoolsItemUsersItemRefRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewSchoolsItemUsersItemRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete ref of navigation property users for education
+// Delete delete a user from a school.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/educationschool-delete-users?view=graph-rest-1.0
 func (m *SchoolsItemUsersItemRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *SchoolsItemUsersItemRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -53,7 +56,7 @@ func (m *SchoolsItemUsersItemRefRequestBuilder) Delete(ctx context.Context, requ
     }
     return nil
 }
-// ToDeleteRequestInformation delete ref of navigation property users for education
+// ToDeleteRequestInformation delete a user from a school.
 func (m *SchoolsItemUsersItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *SchoolsItemUsersItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
