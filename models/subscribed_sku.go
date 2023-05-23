@@ -9,7 +9,7 @@ import (
 type SubscribedSku struct {
     Entity
 }
-// NewSubscribedSku instantiates a new subscribedSku and sets the default values.
+// NewSubscribedSku instantiates a new SubscribedSku and sets the default values.
 func NewSubscribedSku()(*SubscribedSku) {
     m := &SubscribedSku{
         Entity: *NewEntity(),
@@ -19,6 +19,28 @@ func NewSubscribedSku()(*SubscribedSku) {
 // CreateSubscribedSkuFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateSubscribedSkuFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSubscribedSku(), nil
+}
+// GetAccountId gets the accountId property value. The accountId property
+func (m *SubscribedSku) GetAccountId()(*string) {
+    val, err := m.GetBackingStore().Get("accountId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetAccountName gets the accountName property value. The accountName property
+func (m *SubscribedSku) GetAccountName()(*string) {
+    val, err := m.GetBackingStore().Get("accountName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetAppliesTo gets the appliesTo property value. For example, 'User' or 'Company'.
 func (m *SubscribedSku) GetAppliesTo()(*string) {
@@ -56,6 +78,26 @@ func (m *SubscribedSku) GetConsumedUnits()(*int32) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SubscribedSku) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["accountId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAccountId(val)
+        }
+        return nil
+    }
+    res["accountName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAccountName(val)
+        }
+        return nil
+    }
     res["appliesTo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -130,6 +172,20 @@ func (m *SubscribedSku) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["subscriptionIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetSubscriptionIds(res)
+        }
+        return nil
+    }
     return res
 }
 // GetPrepaidUnits gets the prepaidUnits property value. Information about the number and status of prepaid licenses.
@@ -176,11 +232,34 @@ func (m *SubscribedSku) GetSkuPartNumber()(*string) {
     }
     return nil
 }
+// GetSubscriptionIds gets the subscriptionIds property value. The subscriptionIds property
+func (m *SubscribedSku) GetSubscriptionIds()([]string) {
+    val, err := m.GetBackingStore().Get("subscriptionIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *SubscribedSku) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
         return err
+    }
+    {
+        err = writer.WriteStringValue("accountId", m.GetAccountId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("accountName", m.GetAccountName())
+        if err != nil {
+            return err
+        }
     }
     {
         err = writer.WriteStringValue("appliesTo", m.GetAppliesTo())
@@ -228,7 +307,27 @@ func (m *SubscribedSku) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    if m.GetSubscriptionIds() != nil {
+        err = writer.WriteCollectionOfStringValues("subscriptionIds", m.GetSubscriptionIds())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAccountId sets the accountId property value. The accountId property
+func (m *SubscribedSku) SetAccountId(value *string)() {
+    err := m.GetBackingStore().Set("accountId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAccountName sets the accountName property value. The accountName property
+func (m *SubscribedSku) SetAccountName(value *string)() {
+    err := m.GetBackingStore().Set("accountName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppliesTo sets the appliesTo property value. For example, 'User' or 'Company'.
 func (m *SubscribedSku) SetAppliesTo(value *string)() {
@@ -279,10 +378,19 @@ func (m *SubscribedSku) SetSkuPartNumber(value *string)() {
         panic(err)
     }
 }
+// SetSubscriptionIds sets the subscriptionIds property value. The subscriptionIds property
+func (m *SubscribedSku) SetSubscriptionIds(value []string)() {
+    err := m.GetBackingStore().Set("subscriptionIds", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SubscribedSkuable 
 type SubscribedSkuable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAccountId()(*string)
+    GetAccountName()(*string)
     GetAppliesTo()(*string)
     GetCapabilityStatus()(*string)
     GetConsumedUnits()(*int32)
@@ -290,6 +398,9 @@ type SubscribedSkuable interface {
     GetServicePlans()([]ServicePlanInfoable)
     GetSkuId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetSkuPartNumber()(*string)
+    GetSubscriptionIds()([]string)
+    SetAccountId(value *string)()
+    SetAccountName(value *string)()
     SetAppliesTo(value *string)()
     SetCapabilityStatus(value *string)()
     SetConsumedUnits(value *int32)()
@@ -297,4 +408,5 @@ type SubscribedSkuable interface {
     SetServicePlans(value []ServicePlanInfoable)()
     SetSkuId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetSkuPartNumber(value *string)()
+    SetSubscriptionIds(value []string)()
 }

@@ -185,6 +185,10 @@ func (m *ApplicationItemRequestBuilder) Restore()(*ItemRestoreRequestBuilder) {
 func (m *ApplicationItemRequestBuilder) SetVerifiedPublisher()(*ItemSetVerifiedPublisherRequestBuilder) {
     return NewItemSetVerifiedPublisherRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Synchronization provides operations to manage the synchronization property of the microsoft.graph.application entity.
+func (m *ApplicationItemRequestBuilder) Synchronization()(*ItemSynchronizationRequestBuilder) {
+    return NewItemSynchronizationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete an application object. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted.
 func (m *ApplicationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ApplicationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

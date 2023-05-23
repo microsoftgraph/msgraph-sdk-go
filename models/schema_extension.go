@@ -8,7 +8,7 @@ import (
 type SchemaExtension struct {
     Entity
 }
-// NewSchemaExtension instantiates a new SchemaExtension and sets the default values.
+// NewSchemaExtension instantiates a new schemaExtension and sets the default values.
 func NewSchemaExtension()(*SchemaExtension) {
     m := &SchemaExtension{
         Entity: *NewEntity(),

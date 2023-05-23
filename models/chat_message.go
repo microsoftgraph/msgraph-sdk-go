@@ -454,7 +454,7 @@ func (m *ChatMessage) GetMentions()([]ChatMessageMentionable) {
     }
     return nil
 }
-// GetMessageHistory gets the messageHistory property value. The messageHistory property
+// GetMessageHistory gets the messageHistory property value. List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
 func (m *ChatMessage) GetMessageHistory()([]ChatMessageHistoryItemable) {
     val, err := m.GetBackingStore().Get("messageHistory")
     if err != nil {
@@ -836,7 +836,7 @@ func (m *ChatMessage) SetMentions(value []ChatMessageMentionable)() {
         panic(err)
     }
 }
-// SetMessageHistory sets the messageHistory property value. The messageHistory property
+// SetMessageHistory sets the messageHistory property value. List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
 func (m *ChatMessage) SetMessageHistory(value []ChatMessageHistoryItemable)() {
     err := m.GetBackingStore().Set("messageHistory", value)
     if err != nil {

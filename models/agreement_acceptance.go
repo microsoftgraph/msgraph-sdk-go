@@ -9,7 +9,7 @@ import (
 type AgreementAcceptance struct {
     Entity
 }
-// NewAgreementAcceptance instantiates a new AgreementAcceptance and sets the default values.
+// NewAgreementAcceptance instantiates a new agreementAcceptance and sets the default values.
 func NewAgreementAcceptance()(*AgreementAcceptance) {
     m := &AgreementAcceptance{
         Entity: *NewEntity(),
