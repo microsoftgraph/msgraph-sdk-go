@@ -34,6 +34,7 @@ import (
     i663c30678b300c2c4b619c4964b4326e471e4da61a44d7c39f752349da7a468e "github.com/microsoftgraph/msgraph-sdk-go/identityprotection"
     i6bf2d83eea06710580ad0d54b886ac4e14cbab0d1d84937f340f02b99f8f5738 "github.com/microsoftgraph/msgraph-sdk-go/reports"
     i738daeb889f22c1e163aee5a37a094b55b1d815dc76d4802d64e4e1b2e44206c "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement"
+    i79097987e7b906ad07243b816ec81a9897e342c7f4eaff9e5dd8a8fcce18e841 "github.com/microsoftgraph/msgraph-sdk-go/functions"
     i79ca23a9ac0659e1330dd29e049fe157787d5af6695ead2ff8263396db68d027 "github.com/microsoftgraph/msgraph-sdk-go/identity"
     i7c9d1b36ac198368c1d8bed014b43e2a518b170ee45bf02c8bbe64544a50539a "github.com/microsoftgraph/msgraph-sdk-go/admin"
     i7d140130aac6882792a019b5ebe51fe8d69dfd63ec213c2e3cd98282ce2d0428 "github.com/microsoftgraph/msgraph-sdk-go/appcatalogs"
@@ -74,6 +75,7 @@ import (
     if5372351befdb652f617b1ee71fbf092fa8dd2a161ba9c021bc265628b6ea82b "github.com/microsoftgraph/msgraph-sdk-go/sites"
     if5555fa41b6637688bcf8c25c62a041258f4dc6eacb38ad42d91c66f222ee182 "github.com/microsoftgraph/msgraph-sdk-go/rolemanagement"
     if6ffd1464db2d9c22e351b03e4c00ebd24a5353cd70ffb7f56cfad1c3ceec329 "github.com/microsoftgraph/msgraph-sdk-go/users"
+    ifd912bc64ceed11eb9b85cc55c2e7c7a17f682cfe222749139d43f75cf28642a "github.com/microsoftgraph/msgraph-sdk-go/filteroperators"
 )
 
 // GraphBaseServiceClient the main entry point of the SDK, exposes the configuration and the fluent API.
@@ -221,6 +223,14 @@ func (m *GraphBaseServiceClient) EmployeeExperience()(*ib908319c645932a2c2abf7ce
 // External provides operations to manage the external singleton.
 func (m *GraphBaseServiceClient) External()(*ib3217193884e00033cb8182cac52178dfa3b20ce9c4eb48e37a6217882d956ae.ExternalRequestBuilder) {
     return ib3217193884e00033cb8182cac52178dfa3b20ce9c4eb48e37a6217882d956ae.NewExternalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// FilterOperators provides operations to manage the collection of filterOperatorSchema entities.
+func (m *GraphBaseServiceClient) FilterOperators()(*ifd912bc64ceed11eb9b85cc55c2e7c7a17f682cfe222749139d43f75cf28642a.FilterOperatorsRequestBuilder) {
+    return ifd912bc64ceed11eb9b85cc55c2e7c7a17f682cfe222749139d43f75cf28642a.NewFilterOperatorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Functions provides operations to manage the collection of attributeMappingFunctionSchema entities.
+func (m *GraphBaseServiceClient) Functions()(*i79097987e7b906ad07243b816ec81a9897e342c7f4eaff9e5dd8a8fcce18e841.FunctionsRequestBuilder) {
+    return i79097987e7b906ad07243b816ec81a9897e342c7f4eaff9e5dd8a8fcce18e841.NewFunctionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GroupLifecyclePolicies provides operations to manage the collection of groupLifecyclePolicy entities.
 func (m *GraphBaseServiceClient) GroupLifecyclePolicies()(*i1d6652ecc686b20c37a9a3448b26db8187e284e1a4017cab8876b02b97557436.GroupLifecyclePoliciesRequestBuilder) {

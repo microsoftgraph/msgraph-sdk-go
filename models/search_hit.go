@@ -72,6 +72,16 @@ func (m *SearchHit) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
+    res["isCollapsed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsCollapsed(val)
+        }
+        return nil
+    }
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -132,6 +142,17 @@ func (m *SearchHit) GetHitId()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetIsCollapsed gets the isCollapsed property value. The isCollapsed property
+func (m *SearchHit) GetIsCollapsed()(*bool) {
+    val, err := m.GetBackingStore().Get("isCollapsed")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
     }
     return nil
 }
@@ -205,6 +226,12 @@ func (m *SearchHit) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
         }
     }
     {
+        err := writer.WriteBoolValue("isCollapsed", m.GetIsCollapsed())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
@@ -267,6 +294,13 @@ func (m *SearchHit) SetHitId(value *string)() {
         panic(err)
     }
 }
+// SetIsCollapsed sets the isCollapsed property value. The isCollapsed property
+func (m *SearchHit) SetIsCollapsed(value *bool)() {
+    err := m.GetBackingStore().Set("isCollapsed", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SearchHit) SetOdataType(value *string)() {
     err := m.GetBackingStore().Set("odataType", value)
@@ -310,6 +344,7 @@ type SearchHitable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetContentSource()(*string)
     GetHitId()(*string)
+    GetIsCollapsed()(*bool)
     GetOdataType()(*string)
     GetRank()(*int32)
     GetResource()(Entityable)
@@ -318,6 +353,7 @@ type SearchHitable interface {
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetContentSource(value *string)()
     SetHitId(value *string)()
+    SetIsCollapsed(value *bool)()
     SetOdataType(value *string)()
     SetRank(value *int32)()
     SetResource(value Entityable)()

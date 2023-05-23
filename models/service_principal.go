@@ -778,6 +778,16 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["synchronization"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateSynchronizationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSynchronization(val.(Synchronizationable))
+        }
+        return nil
+    }
     res["tags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -1095,6 +1105,17 @@ func (m *ServicePrincipal) GetSignInAudience()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetSynchronization gets the synchronization property value. The synchronization property
+func (m *ServicePrincipal) GetSynchronization()(Synchronizationable) {
+    val, err := m.GetBackingStore().Get("synchronization")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Synchronizationable)
     }
     return nil
 }
@@ -1504,6 +1525,12 @@ func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("synchronization", m.GetSynchronization())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetTags() != nil {
         err = writer.WriteCollectionOfStringValues("tags", m.GetTags())
         if err != nil {
@@ -1855,6 +1882,13 @@ func (m *ServicePrincipal) SetSignInAudience(value *string)() {
         panic(err)
     }
 }
+// SetSynchronization sets the synchronization property value. The synchronization property
+func (m *ServicePrincipal) SetSynchronization(value Synchronizationable)() {
+    err := m.GetBackingStore().Set("synchronization", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTags sets the tags property value. Custom strings that can be used to categorize and identify the service principal. Not nullable. The value is the union of strings set here and on the associated application entity's tags property.Supports $filter (eq, not, ge, le, startsWith).
 func (m *ServicePrincipal) SetTags(value []string)() {
     err := m.GetBackingStore().Set("tags", value)
@@ -1944,6 +1978,7 @@ type ServicePrincipalable interface {
     GetServicePrincipalNames()([]string)
     GetServicePrincipalType()(*string)
     GetSignInAudience()(*string)
+    GetSynchronization()(Synchronizationable)
     GetTags()([]string)
     GetTokenEncryptionKeyId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetTokenIssuancePolicies()([]TokenIssuancePolicyable)
@@ -1993,6 +2028,7 @@ type ServicePrincipalable interface {
     SetServicePrincipalNames(value []string)()
     SetServicePrincipalType(value *string)()
     SetSignInAudience(value *string)()
+    SetSynchronization(value Synchronizationable)()
     SetTags(value []string)()
     SetTokenEncryptionKeyId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetTokenIssuancePolicies(value []TokenIssuancePolicyable)()

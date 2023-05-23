@@ -154,6 +154,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewAttackSimulationRoot(), nil
                     case "#microsoft.graph.attendanceRecord":
                         return NewAttendanceRecord(), nil
+                    case "#microsoft.graph.attributeMappingFunctionSchema":
+                        return NewAttributeMappingFunctionSchema(), nil
                     case "#microsoft.graph.attributeSet":
                         return NewAttributeSet(), nil
                     case "#microsoft.graph.audioRoutingGroup":
@@ -394,6 +396,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewDirectory(), nil
                     case "#microsoft.graph.directoryAudit":
                         return NewDirectoryAudit(), nil
+                    case "#microsoft.graph.directoryDefinition":
+                        return NewDirectoryDefinition(), nil
                     case "#microsoft.graph.directoryObject":
                         return NewDirectoryObject(), nil
                     case "#microsoft.graph.directoryObjectPartnerReference":
@@ -512,6 +516,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewFileAssessmentRequest(), nil
                     case "#microsoft.graph.fileAttachment":
                         return NewFileAttachment(), nil
+                    case "#microsoft.graph.filterOperatorSchema":
+                        return NewFilterOperatorSchema(), nil
                     case "#microsoft.graph.group":
                         return NewGroup(), nil
                     case "#microsoft.graph.groupLifecyclePolicy":
@@ -1014,6 +1020,14 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewSubscription(), nil
                     case "#microsoft.graph.swapShiftsChangeRequest":
                         return NewSwapShiftsChangeRequest(), nil
+                    case "#microsoft.graph.synchronization":
+                        return NewSynchronization(), nil
+                    case "#microsoft.graph.synchronizationJob":
+                        return NewSynchronizationJob(), nil
+                    case "#microsoft.graph.synchronizationSchema":
+                        return NewSynchronizationSchema(), nil
+                    case "#microsoft.graph.synchronizationTemplate":
+                        return NewSynchronizationTemplate(), nil
                     case "#microsoft.graph.targetedManagedAppConfiguration":
                         return NewTargetedManagedAppConfiguration(), nil
                     case "#microsoft.graph.targetedManagedAppPolicyAssignment":

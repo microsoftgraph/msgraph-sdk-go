@@ -9,7 +9,7 @@ import (
 type UserActivity struct {
     Entity
 }
-// NewUserActivity instantiates a new UserActivity and sets the default values.
+// NewUserActivity instantiates a new userActivity and sets the default values.
 func NewUserActivity()(*UserActivity) {
     m := &UserActivity{
         Entity: *NewEntity(),

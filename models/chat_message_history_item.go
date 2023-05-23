@@ -95,7 +95,7 @@ func (m *ChatMessageHistoryItem) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetModifiedDateTime gets the modifiedDateTime property value. The modifiedDateTime property
+// GetModifiedDateTime gets the modifiedDateTime property value. The date and time when the message was modified.
 func (m *ChatMessageHistoryItem) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("modifiedDateTime")
     if err != nil {
@@ -117,7 +117,7 @@ func (m *ChatMessageHistoryItem) GetOdataType()(*string) {
     }
     return nil
 }
-// GetReaction gets the reaction property value. The reaction property
+// GetReaction gets the reaction property value. The reaction in the modified message.
 func (m *ChatMessageHistoryItem) GetReaction()(ChatMessageReactionable) {
     val, err := m.GetBackingStore().Get("reaction")
     if err != nil {
@@ -181,7 +181,7 @@ func (m *ChatMessageHistoryItem) SetAdditionalData(value map[string]any)() {
 func (m *ChatMessageHistoryItem) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetModifiedDateTime sets the modifiedDateTime property value. The modifiedDateTime property
+// SetModifiedDateTime sets the modifiedDateTime property value. The date and time when the message was modified.
 func (m *ChatMessageHistoryItem) SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("modifiedDateTime", value)
     if err != nil {
@@ -195,7 +195,7 @@ func (m *ChatMessageHistoryItem) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetReaction sets the reaction property value. The reaction property
+// SetReaction sets the reaction property value. The reaction in the modified message.
 func (m *ChatMessageHistoryItem) SetReaction(value ChatMessageReactionable)() {
     err := m.GetBackingStore().Set("reaction", value)
     if err != nil {

@@ -605,6 +605,16 @@ func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["synchronization"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateSynchronizationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSynchronization(val.(Synchronizationable))
+        }
+        return nil
+    }
     res["tags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -918,6 +928,17 @@ func (m *Application) GetSpa()(SpaApplicationable) {
     }
     if val != nil {
         return val.(SpaApplicationable)
+    }
+    return nil
+}
+// GetSynchronization gets the synchronization property value. The synchronization property
+func (m *Application) GetSynchronization()(Synchronizationable) {
+    val, err := m.GetBackingStore().Get("synchronization")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Synchronizationable)
     }
     return nil
 }
@@ -1255,6 +1276,12 @@ func (m *Application) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("synchronization", m.GetSynchronization())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetTags() != nil {
         err = writer.WriteCollectionOfStringValues("tags", m.GetTags())
         if err != nil {
@@ -1560,6 +1587,13 @@ func (m *Application) SetSpa(value SpaApplicationable)() {
         panic(err)
     }
 }
+// SetSynchronization sets the synchronization property value. The synchronization property
+func (m *Application) SetSynchronization(value Synchronizationable)() {
+    err := m.GetBackingStore().Set("synchronization", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTags sets the tags property value. Custom strings that can be used to categorize and identify the application. Not nullable. Strings added here will also appear in the tags property of any associated service principals.Supports $filter (eq, not, ge, le, startsWith) and $search.
 func (m *Application) SetTags(value []string)() {
     err := m.GetBackingStore().Set("tags", value)
@@ -1643,6 +1677,7 @@ type Applicationable interface {
     GetServiceManagementReference()(*string)
     GetSignInAudience()(*string)
     GetSpa()(SpaApplicationable)
+    GetSynchronization()(Synchronizationable)
     GetTags()([]string)
     GetTokenEncryptionKeyId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetTokenIssuancePolicies()([]TokenIssuancePolicyable)
@@ -1686,6 +1721,7 @@ type Applicationable interface {
     SetServiceManagementReference(value *string)()
     SetSignInAudience(value *string)()
     SetSpa(value SpaApplicationable)()
+    SetSynchronization(value Synchronizationable)()
     SetTags(value []string)()
     SetTokenEncryptionKeyId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetTokenIssuancePolicies(value []TokenIssuancePolicyable)()

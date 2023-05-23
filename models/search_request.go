@@ -60,6 +60,17 @@ func (m *SearchRequest) GetAggregations()([]AggregationOptionable) {
 func (m *SearchRequest) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
+// GetCollapseProperties gets the collapseProperties property value. The collapseProperties property
+func (m *SearchRequest) GetCollapseProperties()([]CollapsePropertyable) {
+    val, err := m.GetBackingStore().Get("collapseProperties")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CollapsePropertyable)
+    }
+    return nil
+}
 // GetContentSources gets the contentSources property value. The contentSources property
 func (m *SearchRequest) GetContentSources()([]string) {
     val, err := m.GetBackingStore().Get("contentSources")
@@ -121,6 +132,20 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
                 res[i] = v.(AggregationOptionable)
             }
             m.SetAggregations(res)
+        }
+        return nil
+    }
+    res["collapseProperties"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCollapsePropertyFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CollapsePropertyable, len(val))
+            for i, v := range val {
+                res[i] = v.(CollapsePropertyable)
+            }
+            m.SetCollapseProperties(res)
         }
         return nil
     }
@@ -400,6 +425,16 @@ func (m *SearchRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    if m.GetCollapseProperties() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCollapseProperties()))
+        for i, v := range m.GetCollapseProperties() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err := writer.WriteCollectionOfObjectValues("collapseProperties", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetContentSources() != nil {
         err := writer.WriteCollectionOfStringValues("contentSources", m.GetContentSources())
         if err != nil {
@@ -515,6 +550,13 @@ func (m *SearchRequest) SetAggregations(value []AggregationOptionable)() {
 func (m *SearchRequest) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
+// SetCollapseProperties sets the collapseProperties property value. The collapseProperties property
+func (m *SearchRequest) SetCollapseProperties(value []CollapsePropertyable)() {
+    err := m.GetBackingStore().Set("collapseProperties", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetContentSources sets the contentSources property value. The contentSources property
 func (m *SearchRequest) SetContentSources(value []string)() {
     err := m.GetBackingStore().Set("contentSources", value)
@@ -614,6 +656,7 @@ type SearchRequestable interface {
     GetAggregationFilters()([]string)
     GetAggregations()([]AggregationOptionable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetCollapseProperties()([]CollapsePropertyable)
     GetContentSources()([]string)
     GetEnableTopResults()(*bool)
     GetEntityTypes()([]EntityType)
@@ -630,6 +673,7 @@ type SearchRequestable interface {
     SetAggregationFilters(value []string)()
     SetAggregations(value []AggregationOptionable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetCollapseProperties(value []CollapsePropertyable)()
     SetContentSources(value []string)()
     SetEnableTopResults(value *bool)()
     SetEntityTypes(value []EntityType)()
