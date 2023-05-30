@@ -168,7 +168,7 @@ func (m *KeyCredential) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetKey gets the key property value. The certificate's raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.
+// GetKey gets the key property value. The certificate's raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.  From a .cer certificate, you can read the key using the Convert.ToBase64String() method. For more information, see Get the certificate key.
 func (m *KeyCredential) GetKey()([]byte) {
     val, err := m.GetBackingStore().Get("key")
     if err != nil {
@@ -330,7 +330,7 @@ func (m *KeyCredential) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a
         panic(err)
     }
 }
-// SetKey sets the key property value. The certificate's raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.
+// SetKey sets the key property value. The certificate's raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.  From a .cer certificate, you can read the key using the Convert.ToBase64String() method. For more information, see Get the certificate key.
 func (m *KeyCredential) SetKey(value []byte)() {
     err := m.GetBackingStore().Set("key", value)
     if err != nil {

@@ -381,7 +381,7 @@ func (m *SecureScoreControlProfile) GetService()(*string) {
     }
     return nil
 }
-// GetThreats gets the threats property value. List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,
+// GetThreats gets the threats property value. List of threats the control mitigates (accountBreach, dataDeletion, dataExfiltration, dataSpillage,
 func (m *SecureScoreControlProfile) GetThreats()([]string) {
     val, err := m.GetBackingStore().Get("threats")
     if err != nil {
@@ -664,7 +664,7 @@ func (m *SecureScoreControlProfile) SetService(value *string)() {
         panic(err)
     }
 }
-// SetThreats sets the threats property value. List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,
+// SetThreats sets the threats property value. List of threats the control mitigates (accountBreach, dataDeletion, dataExfiltration, dataSpillage,
 func (m *SecureScoreControlProfile) SetThreats(value []string)() {
     err := m.GetBackingStore().Set("threats", value)
     if err != nil {

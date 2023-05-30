@@ -9,7 +9,7 @@ import (
 type AccessReviewHistoryDefinition struct {
     Entity
 }
-// NewAccessReviewHistoryDefinition instantiates a new accessReviewHistoryDefinition and sets the default values.
+// NewAccessReviewHistoryDefinition instantiates a new AccessReviewHistoryDefinition and sets the default values.
 func NewAccessReviewHistoryDefinition()(*AccessReviewHistoryDefinition) {
     m := &AccessReviewHistoryDefinition{
         Entity: *NewEntity(),
