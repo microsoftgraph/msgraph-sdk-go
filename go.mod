@@ -10,7 +10,7 @@ require (
 	github.com/microsoft/kiota-serialization-json-go v1.0.1
 	github.com/microsoft/kiota-serialization-text-go v1.0.0
 	github.com/microsoftgraph/msgraph-sdk-go-core v1.0.0
-	github.com/stretchr/testify v1.8.3
+	github.com/stretchr/testify v1.8.4
 )
 
 require (
