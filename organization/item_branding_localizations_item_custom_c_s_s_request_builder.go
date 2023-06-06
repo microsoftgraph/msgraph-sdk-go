@@ -1,4 +1,4 @@
-package branding
+package organization
 
 import (
     "context"
@@ -6,39 +6,42 @@ import (
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
 
-// BannerLogoRequestBuilder provides operations to manage the media for the organizationalBranding entity.
-type BannerLogoRequestBuilder struct {
+// ItemBrandingLocalizationsItemCustomCSSRequestBuilder provides operations to manage the media for the organization entity.
+type ItemBrandingLocalizationsItemCustomCSSRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// BannerLogoRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type BannerLogoRequestBuilderGetRequestConfiguration struct {
+// ItemBrandingLocalizationsItemCustomCSSRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type ItemBrandingLocalizationsItemCustomCSSRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BannerLogoRequestBuilderPutRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type BannerLogoRequestBuilderPutRequestConfiguration struct {
+// ItemBrandingLocalizationsItemCustomCSSRequestBuilderPutRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type ItemBrandingLocalizationsItemCustomCSSRequestBuilderPutRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewBannerLogoRequestBuilderInternal instantiates a new BannerLogoRequestBuilder and sets the default values.
-func NewBannerLogoRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BannerLogoRequestBuilder) {
-    m := &BannerLogoRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/branding/bannerLogo", pathParameters),
+// NewItemBrandingLocalizationsItemCustomCSSRequestBuilderInternal instantiates a new CustomCSSRequestBuilder and sets the default values.
+func NewItemBrandingLocalizationsItemCustomCSSRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemBrandingLocalizationsItemCustomCSSRequestBuilder) {
+    m := &ItemBrandingLocalizationsItemCustomCSSRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/organization/{organization%2Did}/branding/localizations/{organizationalBrandingLocalization%2Did}/customCSS", pathParameters),
     }
     return m
 }
-// NewBannerLogoRequestBuilder instantiates a new BannerLogoRequestBuilder and sets the default values.
-func NewBannerLogoRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BannerLogoRequestBuilder) {
+// NewItemBrandingLocalizationsItemCustomCSSRequestBuilder instantiates a new CustomCSSRequestBuilder and sets the default values.
+func NewItemBrandingLocalizationsItemCustomCSSRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemBrandingLocalizationsItemCustomCSSRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewBannerLogoRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemBrandingLocalizationsItemCustomCSSRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get a banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG no larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
-func (m *BannerLogoRequestBuilder) Get(ctx context.Context, requestConfiguration *BannerLogoRequestBuilderGetRequestConfiguration)([]byte, error) {
+// Get get customCSS for the navigation property localizations from organization
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
+func (m *ItemBrandingLocalizationsItemCustomCSSRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemBrandingLocalizationsItemCustomCSSRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -56,8 +59,8 @@ func (m *BannerLogoRequestBuilder) Get(ctx context.Context, requestConfiguration
     }
     return res.([]byte), nil
 }
-// Put a banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG no larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
-func (m *BannerLogoRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *BannerLogoRequestBuilderPutRequestConfiguration)([]byte, error) {
+// Put update customCSS for the navigation property localizations in organization
+func (m *ItemBrandingLocalizationsItemCustomCSSRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *ItemBrandingLocalizationsItemCustomCSSRequestBuilderPutRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -75,8 +78,8 @@ func (m *BannerLogoRequestBuilder) Put(ctx context.Context, body []byte, request
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation a banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG no larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
-func (m *BannerLogoRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BannerLogoRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// ToGetRequestInformation get customCSS for the navigation property localizations from organization
+func (m *ItemBrandingLocalizationsItemCustomCSSRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemBrandingLocalizationsItemCustomCSSRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
@@ -87,8 +90,8 @@ func (m *BannerLogoRequestBuilder) ToGetRequestInformation(ctx context.Context, 
     }
     return requestInfo, nil
 }
-// ToPutRequestInformation a banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG no larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
-func (m *BannerLogoRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *BannerLogoRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// ToPutRequestInformation update customCSS for the navigation property localizations in organization
+func (m *ItemBrandingLocalizationsItemCustomCSSRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *ItemBrandingLocalizationsItemCustomCSSRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters

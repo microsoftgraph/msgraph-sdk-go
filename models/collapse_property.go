@@ -77,7 +77,7 @@ func (m *CollapseProperty) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetFields gets the fields property value. The fields property
+// GetFields gets the fields property value. Defines the collapse group to trim results. The properties in this collection must be sortable/refinable properties. Required.
 func (m *CollapseProperty) GetFields()([]string) {
     val, err := m.GetBackingStore().Get("fields")
     if err != nil {
@@ -88,7 +88,7 @@ func (m *CollapseProperty) GetFields()([]string) {
     }
     return nil
 }
-// GetLimit gets the limit property value. The limit property
+// GetLimit gets the limit property value. Defines a maximum limit count for this field. This numeric value must be a positive integer. Required.
 func (m *CollapseProperty) GetLimit()(*int32) {
     val, err := m.GetBackingStore().Get("limit")
     if err != nil {
@@ -149,14 +149,14 @@ func (m *CollapseProperty) SetAdditionalData(value map[string]any)() {
 func (m *CollapseProperty) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetFields sets the fields property value. The fields property
+// SetFields sets the fields property value. Defines the collapse group to trim results. The properties in this collection must be sortable/refinable properties. Required.
 func (m *CollapseProperty) SetFields(value []string)() {
     err := m.GetBackingStore().Set("fields", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLimit sets the limit property value. The limit property
+// SetLimit sets the limit property value. Defines a maximum limit count for this field. This numeric value must be a positive integer. Required.
 func (m *CollapseProperty) SetLimit(value *int32)() {
     err := m.GetBackingStore().Set("limit", value)
     if err != nil {

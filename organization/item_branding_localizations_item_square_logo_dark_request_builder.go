@@ -1,4 +1,4 @@
-package branding
+package organization
 
 import (
     "context"
@@ -6,42 +6,42 @@ import (
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
 
-// LocalizationsItemBannerLogoRequestBuilder provides operations to manage the media for the organizationalBranding entity.
-type LocalizationsItemBannerLogoRequestBuilder struct {
+// ItemBrandingLocalizationsItemSquareLogoDarkRequestBuilder provides operations to manage the media for the organization entity.
+type ItemBrandingLocalizationsItemSquareLogoDarkRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// LocalizationsItemBannerLogoRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type LocalizationsItemBannerLogoRequestBuilderGetRequestConfiguration struct {
+// ItemBrandingLocalizationsItemSquareLogoDarkRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type ItemBrandingLocalizationsItemSquareLogoDarkRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// LocalizationsItemBannerLogoRequestBuilderPutRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type LocalizationsItemBannerLogoRequestBuilderPutRequestConfiguration struct {
+// ItemBrandingLocalizationsItemSquareLogoDarkRequestBuilderPutRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type ItemBrandingLocalizationsItemSquareLogoDarkRequestBuilderPutRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewLocalizationsItemBannerLogoRequestBuilderInternal instantiates a new BannerLogoRequestBuilder and sets the default values.
-func NewLocalizationsItemBannerLogoRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LocalizationsItemBannerLogoRequestBuilder) {
-    m := &LocalizationsItemBannerLogoRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/branding/localizations/{organizationalBrandingLocalization%2Did}/bannerLogo", pathParameters),
+// NewItemBrandingLocalizationsItemSquareLogoDarkRequestBuilderInternal instantiates a new SquareLogoDarkRequestBuilder and sets the default values.
+func NewItemBrandingLocalizationsItemSquareLogoDarkRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemBrandingLocalizationsItemSquareLogoDarkRequestBuilder) {
+    m := &ItemBrandingLocalizationsItemSquareLogoDarkRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/organization/{organization%2Did}/branding/localizations/{organizationalBrandingLocalization%2Did}/squareLogoDark", pathParameters),
     }
     return m
 }
-// NewLocalizationsItemBannerLogoRequestBuilder instantiates a new BannerLogoRequestBuilder and sets the default values.
-func NewLocalizationsItemBannerLogoRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LocalizationsItemBannerLogoRequestBuilder) {
+// NewItemBrandingLocalizationsItemSquareLogoDarkRequestBuilder instantiates a new SquareLogoDarkRequestBuilder and sets the default values.
+func NewItemBrandingLocalizationsItemSquareLogoDarkRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemBrandingLocalizationsItemSquareLogoDarkRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewLocalizationsItemBannerLogoRequestBuilderInternal(urlParams, requestAdapter)
+    return NewItemBrandingLocalizationsItemSquareLogoDarkRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get a banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG no larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
+// Get get squareLogoDark for the navigation property localizations from organization
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
-func (m *LocalizationsItemBannerLogoRequestBuilder) Get(ctx context.Context, requestConfiguration *LocalizationsItemBannerLogoRequestBuilderGetRequestConfiguration)([]byte, error) {
+func (m *ItemBrandingLocalizationsItemSquareLogoDarkRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemBrandingLocalizationsItemSquareLogoDarkRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -59,8 +59,8 @@ func (m *LocalizationsItemBannerLogoRequestBuilder) Get(ctx context.Context, req
     }
     return res.([]byte), nil
 }
-// Put a banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG no larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
-func (m *LocalizationsItemBannerLogoRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *LocalizationsItemBannerLogoRequestBuilderPutRequestConfiguration)([]byte, error) {
+// Put update squareLogoDark for the navigation property localizations in organization
+func (m *ItemBrandingLocalizationsItemSquareLogoDarkRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *ItemBrandingLocalizationsItemSquareLogoDarkRequestBuilderPutRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -78,8 +78,8 @@ func (m *LocalizationsItemBannerLogoRequestBuilder) Put(ctx context.Context, bod
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation a banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG no larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
-func (m *LocalizationsItemBannerLogoRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LocalizationsItemBannerLogoRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// ToGetRequestInformation get squareLogoDark for the navigation property localizations from organization
+func (m *ItemBrandingLocalizationsItemSquareLogoDarkRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemBrandingLocalizationsItemSquareLogoDarkRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
@@ -90,8 +90,8 @@ func (m *LocalizationsItemBannerLogoRequestBuilder) ToGetRequestInformation(ctx 
     }
     return requestInfo, nil
 }
-// ToPutRequestInformation a banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG no larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
-func (m *LocalizationsItemBannerLogoRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *LocalizationsItemBannerLogoRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// ToPutRequestInformation update squareLogoDark for the navigation property localizations in organization
+func (m *ItemBrandingLocalizationsItemSquareLogoDarkRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *ItemBrandingLocalizationsItemSquareLogoDarkRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters

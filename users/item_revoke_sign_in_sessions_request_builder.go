@@ -30,7 +30,10 @@ func NewItemRevokeSignInSessionsRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewItemRevokeSignInSessionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action revokeSignInSessions
+// Post invalidates all the refresh tokens issued to applications for a user (as well as session cookies in a user's browser), by resetting the **signInSessionsValidFromDateTime** user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device. This operation prevents access to the organization's data through applications on the device by requiring the user to sign in again to all applications that they have previously consented to, independent of device.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/user-revokesigninsessions?view=graph-rest-1.0
 func (m *ItemRevokeSignInSessionsRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemRevokeSignInSessionsRequestBuilderPostRequestConfiguration)(ItemRevokeSignInSessionsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -49,7 +52,7 @@ func (m *ItemRevokeSignInSessionsRequestBuilder) Post(ctx context.Context, reque
     }
     return res.(ItemRevokeSignInSessionsResponseable), nil
 }
-// ToPostRequestInformation invoke action revokeSignInSessions
+// ToPostRequestInformation invalidates all the refresh tokens issued to applications for a user (as well as session cookies in a user's browser), by resetting the **signInSessionsValidFromDateTime** user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device. This operation prevents access to the organization's data through applications on the device by requiring the user to sign in again to all applications that they have previously consented to, independent of device.
 func (m *ItemRevokeSignInSessionsRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemRevokeSignInSessionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

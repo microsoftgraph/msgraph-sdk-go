@@ -16,10 +16,11 @@ const (
     MICROSOFTAPPGOVERNANCE_SERVICESOURCE
     DATALOSSPREVENTION_SERVICESOURCE
     UNKNOWNFUTUREVALUE_SERVICESOURCE
+    MICROSOFTDEFENDERFORCLOUD_SERVICESOURCE
 )
 
 func (i ServiceSource) String() string {
-    return []string{"unknown", "microsoftDefenderForEndpoint", "microsoftDefenderForIdentity", "microsoftDefenderForCloudApps", "microsoftDefenderForOffice365", "microsoft365Defender", "azureAdIdentityProtection", "microsoftAppGovernance", "dataLossPrevention", "unknownFutureValue"}[i]
+    return []string{"unknown", "microsoftDefenderForEndpoint", "microsoftDefenderForIdentity", "microsoftDefenderForCloudApps", "microsoftDefenderForOffice365", "microsoft365Defender", "azureAdIdentityProtection", "microsoftAppGovernance", "dataLossPrevention", "unknownFutureValue", "microsoftDefenderForCloud"}[i]
 }
 func ParseServiceSource(v string) (any, error) {
     result := UNKNOWN_SERVICESOURCE
@@ -44,6 +45,8 @@ func ParseServiceSource(v string) (any, error) {
             result = DATALOSSPREVENTION_SERVICESOURCE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SERVICESOURCE
+        case "microsoftDefenderForCloud":
+            result = MICROSOFTDEFENDERFORCLOUD_SERVICESOURCE
         default:
             return 0, errors.New("Unknown ServiceSource value: " + v)
     }

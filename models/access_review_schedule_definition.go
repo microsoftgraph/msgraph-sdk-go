@@ -9,7 +9,7 @@ import (
 type AccessReviewScheduleDefinition struct {
     Entity
 }
-// NewAccessReviewScheduleDefinition instantiates a new accessReviewScheduleDefinition and sets the default values.
+// NewAccessReviewScheduleDefinition instantiates a new AccessReviewScheduleDefinition and sets the default values.
 func NewAccessReviewScheduleDefinition()(*AccessReviewScheduleDefinition) {
     m := &AccessReviewScheduleDefinition{
         Entity: *NewEntity(),

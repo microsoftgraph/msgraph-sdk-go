@@ -109,7 +109,7 @@ func (m *Alert) GetDescription()(*string) {
     }
     return nil
 }
-// GetDetectionSource gets the detectionSource property value. Detection technology or sensor that identified the notable component or activity.
+// GetDetectionSource gets the detectionSource property value. Detection technology or sensor that identified the notable component or activity. Possible values are: unknown, microsoftDefenderForEndpoint, antivirus, smartScreen, customTi, microsoftDefenderForOffice365, automatedInvestigation, microsoftThreatExperts, customDetection, microsoftDefenderForIdentity, cloudAppSecurity, microsoft365Defender, azureAdIdentityProtection, manual, microsoftDataLossPrevention, appGovernancePolicy, appGovernanceDetection, unknownFutureValue, microsoftDefenderForCloud. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: microsoftDefenderForCloud.
 func (m *Alert) GetDetectionSource()(*DetectionSource) {
     val, err := m.GetBackingStore().Get("detectionSource")
     if err != nil {
@@ -872,7 +872,7 @@ func (m *Alert) SetDescription(value *string)() {
         panic(err)
     }
 }
-// SetDetectionSource sets the detectionSource property value. Detection technology or sensor that identified the notable component or activity.
+// SetDetectionSource sets the detectionSource property value. Detection technology or sensor that identified the notable component or activity. Possible values are: unknown, microsoftDefenderForEndpoint, antivirus, smartScreen, customTi, microsoftDefenderForOffice365, automatedInvestigation, microsoftThreatExperts, customDetection, microsoftDefenderForIdentity, cloudAppSecurity, microsoft365Defender, azureAdIdentityProtection, manual, microsoftDataLossPrevention, appGovernancePolicy, appGovernanceDetection, unknownFutureValue, microsoftDefenderForCloud. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: microsoftDefenderForCloud.
 func (m *Alert) SetDetectionSource(value *DetectionSource)() {
     err := m.GetBackingStore().Set("detectionSource", value)
     if err != nil {

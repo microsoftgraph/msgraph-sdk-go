@@ -62,6 +62,10 @@ func NewOrganizationalBrandingLocalizationItemRequestBuilder(rawUrl string, requ
     urlParams["request-raw-url"] = rawUrl
     return NewOrganizationalBrandingLocalizationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
+// CustomCSS provides operations to manage the media for the organizationalBrandingLocalization entity.
+func (m *OrganizationalBrandingLocalizationItemRequestBuilder) CustomCSS()(*ItemCustomCSSRequestBuilder) {
+    return NewItemCustomCSSRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Delete delete entity from localizations
 func (m *OrganizationalBrandingLocalizationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *OrganizationalBrandingLocalizationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -77,6 +81,10 @@ func (m *OrganizationalBrandingLocalizationItemRequestBuilder) Delete(ctx contex
         return err
     }
     return nil
+}
+// Favicon provides operations to manage the media for the organizationalBrandingLocalization entity.
+func (m *OrganizationalBrandingLocalizationItemRequestBuilder) Favicon()(*ItemFaviconRequestBuilder) {
+    return NewItemFaviconRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get entity from localizations by key
 func (m *OrganizationalBrandingLocalizationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *OrganizationalBrandingLocalizationItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OrganizationalBrandingLocalizationable, error) {
@@ -96,6 +104,10 @@ func (m *OrganizationalBrandingLocalizationItemRequestBuilder) Get(ctx context.C
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OrganizationalBrandingLocalizationable), nil
+}
+// HeaderLogo provides operations to manage the media for the organizationalBrandingLocalization entity.
+func (m *OrganizationalBrandingLocalizationItemRequestBuilder) HeaderLogo()(*ItemHeaderLogoRequestBuilder) {
+    return NewItemHeaderLogoRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update entity in localizations
 func (m *OrganizationalBrandingLocalizationItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OrganizationalBrandingLocalizationable, requestConfiguration *OrganizationalBrandingLocalizationItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OrganizationalBrandingLocalizationable, error) {
@@ -119,6 +131,10 @@ func (m *OrganizationalBrandingLocalizationItemRequestBuilder) Patch(ctx context
 // SquareLogo provides operations to manage the media for the organizationalBrandingLocalization entity.
 func (m *OrganizationalBrandingLocalizationItemRequestBuilder) SquareLogo()(*ItemSquareLogoRequestBuilder) {
     return NewItemSquareLogoRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// SquareLogoDark provides operations to manage the media for the organizationalBrandingLocalization entity.
+func (m *OrganizationalBrandingLocalizationItemRequestBuilder) SquareLogoDark()(*ItemSquareLogoDarkRequestBuilder) {
+    return NewItemSquareLogoDarkRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete entity from localizations
 func (m *OrganizationalBrandingLocalizationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *OrganizationalBrandingLocalizationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

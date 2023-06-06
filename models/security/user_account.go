@@ -22,7 +22,7 @@ func NewUserAccount()(*UserAccount) {
 func CreateUserAccountFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserAccount(), nil
 }
-// GetAccountName gets the accountName property value. The user account's displayed name.
+// GetAccountName gets the accountName property value. The displayed name of the user account.
 func (m *UserAccount) GetAccountName()(*string) {
     val, err := m.GetBackingStore().Get("accountName")
     if err != nil {
@@ -45,7 +45,7 @@ func (m *UserAccount) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAzureAdUserId gets the azureAdUserId property value. The user object identifier in Azure AD.
+// GetAzureAdUserId gets the azureAdUserId property value. The user object identifier in Azure Active Directory (Azure AD).
 func (m *UserAccount) GetAzureAdUserId()(*string) {
     val, err := m.GetBackingStore().Get("azureAdUserId")
     if err != nil {
@@ -60,7 +60,7 @@ func (m *UserAccount) GetAzureAdUserId()(*string) {
 func (m *UserAccount) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The user display name in Azure AD.
 func (m *UserAccount) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -242,7 +242,7 @@ func (m *UserAccount) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetAccountName sets the accountName property value. The user account's displayed name.
+// SetAccountName sets the accountName property value. The displayed name of the user account.
 func (m *UserAccount) SetAccountName(value *string)() {
     err := m.GetBackingStore().Set("accountName", value)
     if err != nil {
@@ -256,7 +256,7 @@ func (m *UserAccount) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAzureAdUserId sets the azureAdUserId property value. The user object identifier in Azure AD.
+// SetAzureAdUserId sets the azureAdUserId property value. The user object identifier in Azure Active Directory (Azure AD).
 func (m *UserAccount) SetAzureAdUserId(value *string)() {
     err := m.GetBackingStore().Set("azureAdUserId", value)
     if err != nil {
@@ -267,7 +267,7 @@ func (m *UserAccount) SetAzureAdUserId(value *string)() {
 func (m *UserAccount) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The user display name in Azure AD.
 func (m *UserAccount) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {

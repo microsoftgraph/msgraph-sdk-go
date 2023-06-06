@@ -24,10 +24,11 @@ const (
     APPGOVERNANCEPOLICY_DETECTIONSOURCE
     APPGOVERNANCEDETECTION_DETECTIONSOURCE
     UNKNOWNFUTUREVALUE_DETECTIONSOURCE
+    MICROSOFTDEFENDERFORCLOUD_DETECTIONSOURCE
 )
 
 func (i DetectionSource) String() string {
-    return []string{"unknown", "microsoftDefenderForEndpoint", "antivirus", "smartScreen", "customTi", "microsoftDefenderForOffice365", "automatedInvestigation", "microsoftThreatExperts", "customDetection", "microsoftDefenderForIdentity", "cloudAppSecurity", "microsoft365Defender", "azureAdIdentityProtection", "manual", "microsoftDataLossPrevention", "appGovernancePolicy", "appGovernanceDetection", "unknownFutureValue"}[i]
+    return []string{"unknown", "microsoftDefenderForEndpoint", "antivirus", "smartScreen", "customTi", "microsoftDefenderForOffice365", "automatedInvestigation", "microsoftThreatExperts", "customDetection", "microsoftDefenderForIdentity", "cloudAppSecurity", "microsoft365Defender", "azureAdIdentityProtection", "manual", "microsoftDataLossPrevention", "appGovernancePolicy", "appGovernanceDetection", "unknownFutureValue", "microsoftDefenderForCloud"}[i]
 }
 func ParseDetectionSource(v string) (any, error) {
     result := UNKNOWN_DETECTIONSOURCE
@@ -68,6 +69,8 @@ func ParseDetectionSource(v string) (any, error) {
             result = APPGOVERNANCEDETECTION_DETECTIONSOURCE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DETECTIONSOURCE
+        case "microsoftDefenderForCloud":
+            result = MICROSOFTDEFENDERFORCLOUD_DETECTIONSOURCE
         default:
             return 0, errors.New("Unknown DetectionSource value: " + v)
     }
