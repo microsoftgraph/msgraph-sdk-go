@@ -5,11 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceAppManagement singleton entity that acts as a container for all device app management functionality.
+// DeviceAppManagement 
 type DeviceAppManagement struct {
     Entity
 }
-// NewDeviceAppManagement instantiates a new deviceAppManagement and sets the default values.
+// NewDeviceAppManagement instantiates a new DeviceAppManagement and sets the default values.
 func NewDeviceAppManagement()(*DeviceAppManagement) {
     m := &DeviceAppManagement{
         Entity: *NewEntity(),

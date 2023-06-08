@@ -22,6 +22,16 @@ func CreateRegistryValueEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RegistryValueEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AlertEvidence.GetFieldDeserializers()
+    res["mdeDeviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMdeDeviceId(val)
+        }
+        return nil
+    }
     res["registryHive"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -73,6 +83,17 @@ func (m *RegistryValueEvidence) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     return res
+}
+// GetMdeDeviceId gets the mdeDeviceId property value. The mdeDeviceId property
+func (m *RegistryValueEvidence) GetMdeDeviceId()(*string) {
+    val, err := m.GetBackingStore().Get("mdeDeviceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRegistryHive gets the registryHive property value. Registry hive of the key that the recorded action was applied to.
 func (m *RegistryValueEvidence) GetRegistryHive()(*string) {
@@ -136,6 +157,12 @@ func (m *RegistryValueEvidence) Serialize(writer i878a80d2330e89d26896388a3f487e
         return err
     }
     {
+        err = writer.WriteStringValue("mdeDeviceId", m.GetMdeDeviceId())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("registryHive", m.GetRegistryHive())
         if err != nil {
             return err
@@ -166,6 +193,13 @@ func (m *RegistryValueEvidence) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     return nil
+}
+// SetMdeDeviceId sets the mdeDeviceId property value. The mdeDeviceId property
+func (m *RegistryValueEvidence) SetMdeDeviceId(value *string)() {
+    err := m.GetBackingStore().Set("mdeDeviceId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRegistryHive sets the registryHive property value. Registry hive of the key that the recorded action was applied to.
 func (m *RegistryValueEvidence) SetRegistryHive(value *string)() {
@@ -206,11 +240,13 @@ func (m *RegistryValueEvidence) SetRegistryValueType(value *string)() {
 type RegistryValueEvidenceable interface {
     AlertEvidenceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetMdeDeviceId()(*string)
     GetRegistryHive()(*string)
     GetRegistryKey()(*string)
     GetRegistryValue()(*string)
     GetRegistryValueName()(*string)
     GetRegistryValueType()(*string)
+    SetMdeDeviceId(value *string)()
     SetRegistryHive(value *string)()
     SetRegistryKey(value *string)()
     SetRegistryValue(value *string)()

@@ -11,7 +11,7 @@ import (
 type CustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilderGetQueryParameters get allowedValues from directory
+// CustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilderGetQueryParameters get a list of the allowedValue objects and their properties.
 type CustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewCustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilder(rawUrl
 func (m *CustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilder) Count()(*CustomSecurityAttributeDefinitionsItemAllowedValuesCountRequestBuilder) {
     return NewCustomSecurityAttributeDefinitionsItemAllowedValuesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get allowedValues from directory
+// Get get a list of the allowedValue objects and their properties.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/customsecurityattributedefinition-list-allowedvalues?view=graph-rest-1.0
 func (m *CustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilder) Get(ctx context.Context, requestConfiguration *CustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AllowedValueCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *CustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilder) Get(
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AllowedValueCollectionResponseable), nil
 }
-// Post create new navigation property to allowedValues for directory
+// Post create a new allowedValue object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/customsecurityattributedefinition-post-allowedvalues?view=graph-rest-1.0
 func (m *CustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AllowedValueable, requestConfiguration *CustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AllowedValueable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *CustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilder) Post
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AllowedValueable), nil
 }
-// ToGetRequestInformation get allowedValues from directory
+// ToGetRequestInformation get a list of the allowedValue objects and their properties.
 func (m *CustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *CustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilder) ToGe
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to allowedValues for directory
+// ToPostRequestInformation create a new allowedValue object.
 func (m *CustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AllowedValueable, requestConfiguration *CustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

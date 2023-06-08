@@ -11,10 +11,11 @@ const (
     INPROGRESS_INCIDENTSTATUS
     REDIRECTED_INCIDENTSTATUS
     UNKNOWNFUTUREVALUE_INCIDENTSTATUS
+    AWAITINGACTION_INCIDENTSTATUS
 )
 
 func (i IncidentStatus) String() string {
-    return []string{"active", "resolved", "inProgress", "redirected", "unknownFutureValue"}[i]
+    return []string{"active", "resolved", "inProgress", "redirected", "unknownFutureValue", "awaitingAction"}[i]
 }
 func ParseIncidentStatus(v string) (any, error) {
     result := ACTIVE_INCIDENTSTATUS
@@ -29,6 +30,8 @@ func ParseIncidentStatus(v string) (any, error) {
             result = REDIRECTED_INCIDENTSTATUS
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_INCIDENTSTATUS
+        case "awaitingAction":
+            result = AWAITINGACTION_INCIDENTSTATUS
         default:
             return 0, errors.New("Unknown IncidentStatus value: " + v)
     }

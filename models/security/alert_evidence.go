@@ -33,14 +33,20 @@ func CreateAlertEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.security.amazonResourceEvidence":
+                        return NewAmazonResourceEvidence(), nil
                     case "#microsoft.graph.security.analyzedMessageEvidence":
                         return NewAnalyzedMessageEvidence(), nil
+                    case "#microsoft.graph.security.azureResourceEvidence":
+                        return NewAzureResourceEvidence(), nil
                     case "#microsoft.graph.security.cloudApplicationEvidence":
                         return NewCloudApplicationEvidence(), nil
                     case "#microsoft.graph.security.deviceEvidence":
                         return NewDeviceEvidence(), nil
                     case "#microsoft.graph.security.fileEvidence":
                         return NewFileEvidence(), nil
+                    case "#microsoft.graph.security.googleCloudResourceEvidence":
+                        return NewGoogleCloudResourceEvidence(), nil
                     case "#microsoft.graph.security.ipEvidence":
                         return NewIpEvidence(), nil
                     case "#microsoft.graph.security.mailboxEvidence":
@@ -83,7 +89,7 @@ func (m *AlertEvidence) GetAdditionalData()(map[string]any) {
 func (m *AlertEvidence) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCreatedDateTime gets the createdDateTime property value. The time the evidence was created and added to the alert.
+// GetCreatedDateTime gets the createdDateTime property value. The date and time when the evidence was created and added to the alert. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *AlertEvidence) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -91,6 +97,17 @@ func (m *AlertEvidence) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetDetailedRoles gets the detailedRoles property value. The detailedRoles property
+func (m *AlertEvidence) GetDetailedRoles()([]string) {
+    val, err := m.GetBackingStore().Get("detailedRoles")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
     }
     return nil
 }
@@ -104,6 +121,20 @@ func (m *AlertEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         if val != nil {
             m.SetCreatedDateTime(val)
+        }
+        return nil
+    }
+    res["detailedRoles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetDetailedRoles(res)
         }
         return nil
     }
@@ -210,7 +241,7 @@ func (m *AlertEvidence) GetRemediationStatusDetails()(*string) {
     }
     return nil
 }
-// GetRoles gets the roles property value. The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role 'Attacker'.
+// GetRoles gets the roles property value. One or more roles that an evidence entity represents in an alert. For example, an IP address that is associated with an attacker has the evidence role Attacker.
 func (m *AlertEvidence) GetRoles()([]EvidenceRole) {
     val, err := m.GetBackingStore().Get("roles")
     if err != nil {
@@ -221,7 +252,7 @@ func (m *AlertEvidence) GetRoles()([]EvidenceRole) {
     }
     return nil
 }
-// GetTags gets the tags property value. Array of custom tags associated with an evidence instance, for example to denote a group of devices, high value assets, etc.
+// GetTags gets the tags property value. Array of custom tags associated with an evidence instance. For example, to denote a group of devices or high value assets.
 func (m *AlertEvidence) GetTags()([]string) {
     val, err := m.GetBackingStore().Get("tags")
     if err != nil {
@@ -247,6 +278,12 @@ func (m *AlertEvidence) GetVerdict()(*EvidenceVerdict) {
 func (m *AlertEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetDetailedRoles() != nil {
+        err := writer.WriteCollectionOfStringValues("detailedRoles", m.GetDetailedRoles())
         if err != nil {
             return err
         }
@@ -308,9 +345,16 @@ func (m *AlertEvidence) SetAdditionalData(value map[string]any)() {
 func (m *AlertEvidence) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCreatedDateTime sets the createdDateTime property value. The time the evidence was created and added to the alert.
+// SetCreatedDateTime sets the createdDateTime property value. The date and time when the evidence was created and added to the alert. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *AlertEvidence) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDetailedRoles sets the detailedRoles property value. The detailedRoles property
+func (m *AlertEvidence) SetDetailedRoles(value []string)() {
+    err := m.GetBackingStore().Set("detailedRoles", value)
     if err != nil {
         panic(err)
     }
@@ -336,14 +380,14 @@ func (m *AlertEvidence) SetRemediationStatusDetails(value *string)() {
         panic(err)
     }
 }
-// SetRoles sets the roles property value. The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role 'Attacker'.
+// SetRoles sets the roles property value. One or more roles that an evidence entity represents in an alert. For example, an IP address that is associated with an attacker has the evidence role Attacker.
 func (m *AlertEvidence) SetRoles(value []EvidenceRole)() {
     err := m.GetBackingStore().Set("roles", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTags sets the tags property value. Array of custom tags associated with an evidence instance, for example to denote a group of devices, high value assets, etc.
+// SetTags sets the tags property value. Array of custom tags associated with an evidence instance. For example, to denote a group of devices or high value assets.
 func (m *AlertEvidence) SetTags(value []string)() {
     err := m.GetBackingStore().Set("tags", value)
     if err != nil {
@@ -364,6 +408,7 @@ type AlertEvidenceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDetailedRoles()([]string)
     GetOdataType()(*string)
     GetRemediationStatus()(*EvidenceRemediationStatus)
     GetRemediationStatusDetails()(*string)
@@ -372,6 +417,7 @@ type AlertEvidenceable interface {
     GetVerdict()(*EvidenceVerdict)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDetailedRoles(value []string)()
     SetOdataType(value *string)()
     SetRemediationStatus(value *EvidenceRemediationStatus)()
     SetRemediationStatusDetails(value *string)()

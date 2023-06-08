@@ -9,7 +9,7 @@ import (
 type PrintConnector struct {
     Entity
 }
-// NewPrintConnector instantiates a new PrintConnector and sets the default values.
+// NewPrintConnector instantiates a new printConnector and sets the default values.
 func NewPrintConnector()(*PrintConnector) {
     m := &PrintConnector{
         Entity: *NewEntity(),

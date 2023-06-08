@@ -106,6 +106,20 @@ func (m *DeviceEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["ipInterfaces"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetIpInterfaces(res)
+        }
+        return nil
+    }
     res["loggedOnUsers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateLoggedOnUserFromDiscriminatorValue)
         if err != nil {
@@ -231,6 +245,17 @@ func (m *DeviceEvidence) GetHealthStatus()(*DeviceHealthStatus) {
     }
     if val != nil {
         return val.(*DeviceHealthStatus)
+    }
+    return nil
+}
+// GetIpInterfaces gets the ipInterfaces property value. The ipInterfaces property
+func (m *DeviceEvidence) GetIpInterfaces()([]string) {
+    val, err := m.GetBackingStore().Get("ipInterfaces")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
     }
     return nil
 }
@@ -382,6 +407,12 @@ func (m *DeviceEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    if m.GetIpInterfaces() != nil {
+        err = writer.WriteCollectionOfStringValues("ipInterfaces", m.GetIpInterfaces())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetLoggedOnUsers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLoggedOnUsers()))
         for i, v := range m.GetLoggedOnUsers() {
@@ -485,6 +516,13 @@ func (m *DeviceEvidence) SetHealthStatus(value *DeviceHealthStatus)() {
         panic(err)
     }
 }
+// SetIpInterfaces sets the ipInterfaces property value. The ipInterfaces property
+func (m *DeviceEvidence) SetIpInterfaces(value []string)() {
+    err := m.GetBackingStore().Set("ipInterfaces", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetLoggedOnUsers sets the loggedOnUsers property value. Users that were logged on the machine during the time of the alert.
 func (m *DeviceEvidence) SetLoggedOnUsers(value []LoggedOnUserable)() {
     err := m.GetBackingStore().Set("loggedOnUsers", value)
@@ -564,6 +602,7 @@ type DeviceEvidenceable interface {
     GetDeviceDnsName()(*string)
     GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetHealthStatus()(*DeviceHealthStatus)
+    GetIpInterfaces()([]string)
     GetLoggedOnUsers()([]LoggedOnUserable)
     GetMdeDeviceId()(*string)
     GetOnboardingStatus()(*OnboardingStatus)
@@ -579,6 +618,7 @@ type DeviceEvidenceable interface {
     SetDeviceDnsName(value *string)()
     SetFirstSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetHealthStatus(value *DeviceHealthStatus)()
+    SetIpInterfaces(value []string)()
     SetLoggedOnUsers(value []LoggedOnUserable)()
     SetMdeDeviceId(value *string)()
     SetOnboardingStatus(value *OnboardingStatus)()

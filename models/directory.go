@@ -30,7 +30,7 @@ func (m *Directory) GetAdministrativeUnits()([]AdministrativeUnitable) {
     }
     return nil
 }
-// GetAttributeSets gets the attributeSets property value. The attributeSets property
+// GetAttributeSets gets the attributeSets property value. Group of related custom security attribute definitions.
 func (m *Directory) GetAttributeSets()([]AttributeSetable) {
     val, err := m.GetBackingStore().Get("attributeSets")
     if err != nil {
@@ -41,7 +41,7 @@ func (m *Directory) GetAttributeSets()([]AttributeSetable) {
     }
     return nil
 }
-// GetCustomSecurityAttributeDefinitions gets the customSecurityAttributeDefinitions property value. The customSecurityAttributeDefinitions property
+// GetCustomSecurityAttributeDefinitions gets the customSecurityAttributeDefinitions property value. Schema of a custom security attributes (key-value pairs).
 func (m *Directory) GetCustomSecurityAttributeDefinitions()([]CustomSecurityAttributeDefinitionable) {
     val, err := m.GetBackingStore().Get("customSecurityAttributeDefinitions")
     if err != nil {
@@ -249,14 +249,14 @@ func (m *Directory) SetAdministrativeUnits(value []AdministrativeUnitable)() {
         panic(err)
     }
 }
-// SetAttributeSets sets the attributeSets property value. The attributeSets property
+// SetAttributeSets sets the attributeSets property value. Group of related custom security attribute definitions.
 func (m *Directory) SetAttributeSets(value []AttributeSetable)() {
     err := m.GetBackingStore().Set("attributeSets", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCustomSecurityAttributeDefinitions sets the customSecurityAttributeDefinitions property value. The customSecurityAttributeDefinitions property
+// SetCustomSecurityAttributeDefinitions sets the customSecurityAttributeDefinitions property value. Schema of a custom security attributes (key-value pairs).
 func (m *Directory) SetCustomSecurityAttributeDefinitions(value []CustomSecurityAttributeDefinitionable)() {
     err := m.GetBackingStore().Set("customSecurityAttributeDefinitions", value)
     if err != nil {

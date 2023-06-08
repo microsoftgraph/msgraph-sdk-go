@@ -8,7 +8,7 @@ import (
 type PrintUsage struct {
     Entity
 }
-// NewPrintUsage instantiates a new PrintUsage and sets the default values.
+// NewPrintUsage instantiates a new printUsage and sets the default values.
 func NewPrintUsage()(*PrintUsage) {
     m := &PrintUsage{
         Entity: *NewEntity(),

@@ -34,7 +34,7 @@ func (m *AllowedValue) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetIsActive gets the isActive property value. The isActive property
+// GetIsActive gets the isActive property value. Indicates whether the predefined value is active or deactivated. If set to false, this predefined value cannot be assigned to any additional supported directory objects.
 func (m *AllowedValue) GetIsActive()(*bool) {
     val, err := m.GetBackingStore().Get("isActive")
     if err != nil {
@@ -59,7 +59,7 @@ func (m *AllowedValue) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     return nil
 }
-// SetIsActive sets the isActive property value. The isActive property
+// SetIsActive sets the isActive property value. Indicates whether the predefined value is active or deactivated. If set to false, this predefined value cannot be assigned to any additional supported directory objects.
 func (m *AllowedValue) SetIsActive(value *bool)() {
     err := m.GetBackingStore().Set("isActive", value)
     if err != nil {

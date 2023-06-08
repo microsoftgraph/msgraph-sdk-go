@@ -9,7 +9,7 @@ import (
 type DelegatedAdminRelationship struct {
     Entity
 }
-// NewDelegatedAdminRelationship instantiates a new DelegatedAdminRelationship and sets the default values.
+// NewDelegatedAdminRelationship instantiates a new delegatedAdminRelationship and sets the default values.
 func NewDelegatedAdminRelationship()(*DelegatedAdminRelationship) {
     m := &DelegatedAdminRelationship{
         Entity: *NewEntity(),
