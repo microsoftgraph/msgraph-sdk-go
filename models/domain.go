@@ -8,7 +8,7 @@ import (
 type Domain struct {
     Entity
 }
-// NewDomain instantiates a new Domain and sets the default values.
+// NewDomain instantiates a new domain and sets the default values.
 func NewDomain()(*Domain) {
     m := &Domain{
         Entity: *NewEntity(),

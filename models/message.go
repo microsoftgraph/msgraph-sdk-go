@@ -9,7 +9,7 @@ import (
 type Message struct {
     OutlookItem
 }
-// NewMessage instantiates a new message and sets the default values.
+// NewMessage instantiates a new Message and sets the default values.
 func NewMessage()(*Message) {
     m := &Message{
         OutlookItem: *NewOutlookItem(),

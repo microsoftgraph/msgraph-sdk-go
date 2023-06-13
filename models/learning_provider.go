@@ -8,7 +8,7 @@ import (
 type LearningProvider struct {
     Entity
 }
-// NewLearningProvider instantiates a new LearningProvider and sets the default values.
+// NewLearningProvider instantiates a new learningProvider and sets the default values.
 func NewLearningProvider()(*LearningProvider) {
     m := &LearningProvider{
         Entity: *NewEntity(),
@@ -40,6 +40,16 @@ func (m *LearningProvider) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         if val != nil {
             m.SetDisplayName(val)
+        }
+        return nil
+    }
+    res["isCourseActivitySyncEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsCourseActivitySyncEnabled(val)
         }
         return nil
     }
@@ -108,6 +118,17 @@ func (m *LearningProvider) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     return res
+}
+// GetIsCourseActivitySyncEnabled gets the isCourseActivitySyncEnabled property value. Indicates whether a provider can ingest learning course activity records. The default value is false. Set to true to make learningCourseActivities available for this provider.
+func (m *LearningProvider) GetIsCourseActivitySyncEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("isCourseActivitySyncEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLearningContents gets the learningContents property value. Learning catalog items for the provider.
 func (m *LearningProvider) GetLearningContents()([]LearningContentable) {
@@ -187,6 +208,12 @@ func (m *LearningProvider) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    {
+        err = writer.WriteBoolValue("isCourseActivitySyncEnabled", m.GetIsCourseActivitySyncEnabled())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetLearningContents() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLearningContents()))
         for i, v := range m.GetLearningContents() {
@@ -232,6 +259,13 @@ func (m *LearningProvider) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 // SetDisplayName sets the displayName property value. The display name that appears in Viva Learning. Required.
 func (m *LearningProvider) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetIsCourseActivitySyncEnabled sets the isCourseActivitySyncEnabled property value. Indicates whether a provider can ingest learning course activity records. The default value is false. Set to true to make learningCourseActivities available for this provider.
+func (m *LearningProvider) SetIsCourseActivitySyncEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("isCourseActivitySyncEnabled", value)
     if err != nil {
         panic(err)
     }
@@ -283,6 +317,7 @@ type LearningProviderable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDisplayName()(*string)
+    GetIsCourseActivitySyncEnabled()(*bool)
     GetLearningContents()([]LearningContentable)
     GetLoginWebUrl()(*string)
     GetLongLogoWebUrlForDarkTheme()(*string)
@@ -290,6 +325,7 @@ type LearningProviderable interface {
     GetSquareLogoWebUrlForDarkTheme()(*string)
     GetSquareLogoWebUrlForLightTheme()(*string)
     SetDisplayName(value *string)()
+    SetIsCourseActivitySyncEnabled(value *bool)()
     SetLearningContents(value []LearningContentable)()
     SetLoginWebUrl(value *string)()
     SetLongLogoWebUrlForDarkTheme(value *string)()

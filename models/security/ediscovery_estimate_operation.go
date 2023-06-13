@@ -8,7 +8,7 @@ import (
 type EdiscoveryEstimateOperation struct {
     CaseOperation
 }
-// NewEdiscoveryEstimateOperation instantiates a new EdiscoveryEstimateOperation and sets the default values.
+// NewEdiscoveryEstimateOperation instantiates a new ediscoveryEstimateOperation and sets the default values.
 func NewEdiscoveryEstimateOperation()(*EdiscoveryEstimateOperation) {
     m := &EdiscoveryEstimateOperation{
         CaseOperation: *NewCaseOperation(),

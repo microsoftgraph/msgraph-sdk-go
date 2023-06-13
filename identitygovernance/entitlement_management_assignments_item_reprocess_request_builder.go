@@ -30,7 +30,10 @@ func NewEntitlementManagementAssignmentsItemReprocessRequestBuilder(rawUrl strin
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementAssignmentsItemReprocessRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action reprocess
+// Post in Azure AD entitlement management, callers can automatically reevaluate and enforce an accessPackageAssignment object of a user’s assignments for a specific access package. The **state** of the access package assignment must be `Delivered` for the administrator to reprocess the user's assignment. Only admins with the Access Package Assignment Manager role, or higher, in Azure AD entitlement management can perform this action.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/accesspackageassignment-reprocess?view=graph-rest-1.0
 func (m *EntitlementManagementAssignmentsItemReprocessRequestBuilder) Post(ctx context.Context, requestConfiguration *EntitlementManagementAssignmentsItemReprocessRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *EntitlementManagementAssignmentsItemReprocessRequestBuilder) Post(ctx c
     }
     return nil
 }
-// ToPostRequestInformation invoke action reprocess
+// ToPostRequestInformation in Azure AD entitlement management, callers can automatically reevaluate and enforce an accessPackageAssignment object of a user’s assignments for a specific access package. The **state** of the access package assignment must be `Delivered` for the administrator to reprocess the user's assignment. Only admins with the Access Package Assignment Manager role, or higher, in Azure AD entitlement management can perform this action.
 func (m *EntitlementManagementAssignmentsItemReprocessRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAssignmentsItemReprocessRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
