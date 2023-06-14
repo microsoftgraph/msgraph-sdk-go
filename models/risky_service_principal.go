@@ -9,7 +9,7 @@ import (
 type RiskyServicePrincipal struct {
     Entity
 }
-// NewRiskyServicePrincipal instantiates a new RiskyServicePrincipal and sets the default values.
+// NewRiskyServicePrincipal instantiates a new riskyServicePrincipal and sets the default values.
 func NewRiskyServicePrincipal()(*RiskyServicePrincipal) {
     m := &RiskyServicePrincipal{
         Entity: *NewEntity(),

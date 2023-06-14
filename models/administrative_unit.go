@@ -8,7 +8,7 @@ import (
 type AdministrativeUnit struct {
     DirectoryObject
 }
-// NewAdministrativeUnit instantiates a new AdministrativeUnit and sets the default values.
+// NewAdministrativeUnit instantiates a new administrativeUnit and sets the default values.
 func NewAdministrativeUnit()(*AdministrativeUnit) {
     m := &AdministrativeUnit{
         DirectoryObject: *NewDirectoryObject(),

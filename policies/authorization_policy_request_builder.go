@@ -18,7 +18,7 @@ type AuthorizationPolicyRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AuthorizationPolicyRequestBuilderGetQueryParameters the policy that controls Azure AD authorization settings.
+// AuthorizationPolicyRequestBuilderGetQueryParameters retrieve the properties of an authorizationPolicy object.
 type AuthorizationPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *AuthorizationPolicyRequestBuilder) Delete(ctx context.Context, requestC
     }
     return nil
 }
-// Get the policy that controls Azure AD authorization settings.
+// Get retrieve the properties of an authorizationPolicy object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/authorizationpolicy-get?view=graph-rest-1.0
 func (m *AuthorizationPolicyRequestBuilder) Get(ctx context.Context, requestConfiguration *AuthorizationPolicyRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthorizationPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -123,7 +126,7 @@ func (m *AuthorizationPolicyRequestBuilder) ToDeleteRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the policy that controls Azure AD authorization settings.
+// ToGetRequestInformation retrieve the properties of an authorizationPolicy object.
 func (m *AuthorizationPolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuthorizationPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

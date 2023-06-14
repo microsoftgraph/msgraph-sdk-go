@@ -18,7 +18,7 @@ type TeamItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TeamItemRequestBuilderGetQueryParameters get entity from teams by key
+// TeamItemRequestBuilderGetQueryParameters retrieve the properties and relationships of the specified team.
 type TeamItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -90,7 +90,7 @@ func (m *TeamItemRequestBuilder) Delete(ctx context.Context, requestConfiguratio
     }
     return nil
 }
-// Get get entity from teams by key
+// Get retrieve the properties and relationships of the specified team.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/team-get?view=graph-rest-1.0
@@ -190,7 +190,7 @@ func (m *TeamItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context,
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get entity from teams by key
+// ToGetRequestInformation retrieve the properties and relationships of the specified team.
 func (m *TeamItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -8,7 +8,7 @@ import (
 type AccessPackageSubject struct {
     Entity
 }
-// NewAccessPackageSubject instantiates a new accessPackageSubject and sets the default values.
+// NewAccessPackageSubject instantiates a new AccessPackageSubject and sets the default values.
 func NewAccessPackageSubject()(*AccessPackageSubject) {
     m := &AccessPackageSubject{
         Entity: *NewEntity(),
