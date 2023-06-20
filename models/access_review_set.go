@@ -41,7 +41,9 @@ func (m *AccessReviewSet) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         if val != nil {
             res := make([]AccessReviewScheduleDefinitionable, len(val))
             for i, v := range val {
-                res[i] = v.(AccessReviewScheduleDefinitionable)
+                if v != nil {
+                    res[i] = v.(AccessReviewScheduleDefinitionable)
+                }
             }
             m.SetDefinitions(res)
         }
@@ -55,7 +57,9 @@ func (m *AccessReviewSet) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         if val != nil {
             res := make([]AccessReviewHistoryDefinitionable, len(val))
             for i, v := range val {
-                res[i] = v.(AccessReviewHistoryDefinitionable)
+                if v != nil {
+                    res[i] = v.(AccessReviewHistoryDefinitionable)
+                }
             }
             m.SetHistoryDefinitions(res)
         }
@@ -83,7 +87,9 @@ func (m *AccessReviewSet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if m.GetDefinitions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDefinitions()))
         for i, v := range m.GetDefinitions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("definitions", cast)
         if err != nil {
@@ -93,7 +99,9 @@ func (m *AccessReviewSet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if m.GetHistoryDefinitions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetHistoryDefinitions()))
         for i, v := range m.GetHistoryDefinitions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("historyDefinitions", cast)
         if err != nil {

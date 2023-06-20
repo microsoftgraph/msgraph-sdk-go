@@ -91,7 +91,9 @@ func (m *AuditResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]AuditPropertyable, len(val))
             for i, v := range val {
-                res[i] = v.(AuditPropertyable)
+                if v != nil {
+                    res[i] = v.(AuditPropertyable)
+                }
             }
             m.SetModifiedProperties(res)
         }
@@ -169,7 +171,9 @@ func (m *AuditResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetModifiedProperties() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetModifiedProperties()))
         for i, v := range m.GetModifiedProperties() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("modifiedProperties", cast)
         if err != nil {

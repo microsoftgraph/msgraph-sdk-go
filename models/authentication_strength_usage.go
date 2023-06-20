@@ -49,7 +49,9 @@ func (m *AuthenticationStrengthUsage) GetFieldDeserializers()(map[string]func(i8
         if val != nil {
             res := make([]ConditionalAccessPolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(ConditionalAccessPolicyable)
+                if v != nil {
+                    res[i] = v.(ConditionalAccessPolicyable)
+                }
             }
             m.SetMfa(res)
         }
@@ -63,7 +65,9 @@ func (m *AuthenticationStrengthUsage) GetFieldDeserializers()(map[string]func(i8
         if val != nil {
             res := make([]ConditionalAccessPolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(ConditionalAccessPolicyable)
+                if v != nil {
+                    res[i] = v.(ConditionalAccessPolicyable)
+                }
             }
             m.SetNone(res)
         }
@@ -119,7 +123,9 @@ func (m *AuthenticationStrengthUsage) Serialize(writer i878a80d2330e89d26896388a
     if m.GetMfa() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMfa()))
         for i, v := range m.GetMfa() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("mfa", cast)
         if err != nil {
@@ -129,7 +135,9 @@ func (m *AuthenticationStrengthUsage) Serialize(writer i878a80d2330e89d26896388a
     if m.GetNone() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetNone()))
         for i, v := range m.GetNone() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("none", cast)
         if err != nil {

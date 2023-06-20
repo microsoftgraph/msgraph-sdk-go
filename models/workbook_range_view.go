@@ -8,7 +8,7 @@ import (
 type WorkbookRangeView struct {
     Entity
 }
-// NewWorkbookRangeView instantiates a new workbookRangeView and sets the default values.
+// NewWorkbookRangeView instantiates a new WorkbookRangeView and sets the default values.
 func NewWorkbookRangeView()(*WorkbookRangeView) {
     m := &WorkbookRangeView{
         Entity: *NewEntity(),
@@ -132,7 +132,9 @@ func (m *WorkbookRangeView) GetFieldDeserializers()(map[string]func(i878a80d2330
         if val != nil {
             res := make([]WorkbookRangeViewable, len(val))
             for i, v := range val {
-                res[i] = v.(WorkbookRangeViewable)
+                if v != nil {
+                    res[i] = v.(WorkbookRangeViewable)
+                }
             }
             m.SetRows(res)
         }
@@ -337,7 +339,9 @@ func (m *WorkbookRangeView) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     if m.GetRows() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRows()))
         for i, v := range m.GetRows() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("rows", cast)
         if err != nil {

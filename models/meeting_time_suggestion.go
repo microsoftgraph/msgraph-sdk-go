@@ -10,7 +10,7 @@ type MeetingTimeSuggestion struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewMeetingTimeSuggestion instantiates a new meetingTimeSuggestion and sets the default values.
+// NewMeetingTimeSuggestion instantiates a new MeetingTimeSuggestion and sets the default values.
 func NewMeetingTimeSuggestion()(*MeetingTimeSuggestion) {
     m := &MeetingTimeSuggestion{
     }
@@ -71,7 +71,9 @@ func (m *MeetingTimeSuggestion) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]AttendeeAvailabilityable, len(val))
             for i, v := range val {
-                res[i] = v.(AttendeeAvailabilityable)
+                if v != nil {
+                    res[i] = v.(AttendeeAvailabilityable)
+                }
             }
             m.SetAttendeeAvailability(res)
         }
@@ -95,7 +97,9 @@ func (m *MeetingTimeSuggestion) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]Locationable, len(val))
             for i, v := range val {
-                res[i] = v.(Locationable)
+                if v != nil {
+                    res[i] = v.(Locationable)
+                }
             }
             m.SetLocations(res)
         }
@@ -224,7 +228,9 @@ func (m *MeetingTimeSuggestion) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetAttendeeAvailability() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAttendeeAvailability()))
         for i, v := range m.GetAttendeeAvailability() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("attendeeAvailability", cast)
         if err != nil {
@@ -240,7 +246,9 @@ func (m *MeetingTimeSuggestion) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetLocations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLocations()))
         for i, v := range m.GetLocations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("locations", cast)
         if err != nil {

@@ -82,7 +82,9 @@ func (m *MessageRuleActions) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetAssignCategories(res)
         }
@@ -116,7 +118,9 @@ func (m *MessageRuleActions) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]Recipientable, len(val))
             for i, v := range val {
-                res[i] = v.(Recipientable)
+                if v != nil {
+                    res[i] = v.(Recipientable)
+                }
             }
             m.SetForwardAsAttachmentTo(res)
         }
@@ -130,7 +134,9 @@ func (m *MessageRuleActions) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]Recipientable, len(val))
             for i, v := range val {
-                res[i] = v.(Recipientable)
+                if v != nil {
+                    res[i] = v.(Recipientable)
+                }
             }
             m.SetForwardTo(res)
         }
@@ -194,7 +200,9 @@ func (m *MessageRuleActions) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]Recipientable, len(val))
             for i, v := range val {
-                res[i] = v.(Recipientable)
+                if v != nil {
+                    res[i] = v.(Recipientable)
+                }
             }
             m.SetRedirectTo(res)
         }
@@ -334,7 +342,9 @@ func (m *MessageRuleActions) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetForwardAsAttachmentTo() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetForwardAsAttachmentTo()))
         for i, v := range m.GetForwardAsAttachmentTo() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("forwardAsAttachmentTo", cast)
         if err != nil {
@@ -344,7 +354,9 @@ func (m *MessageRuleActions) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetForwardTo() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetForwardTo()))
         for i, v := range m.GetForwardTo() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("forwardTo", cast)
         if err != nil {
@@ -385,7 +397,9 @@ func (m *MessageRuleActions) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetRedirectTo() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRedirectTo()))
         for i, v := range m.GetRedirectTo() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("redirectTo", cast)
         if err != nil {

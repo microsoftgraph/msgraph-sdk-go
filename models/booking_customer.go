@@ -65,7 +65,9 @@ func (m *BookingCustomer) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         if val != nil {
             res := make([]PhysicalAddressable, len(val))
             for i, v := range val {
-                res[i] = v.(PhysicalAddressable)
+                if v != nil {
+                    res[i] = v.(PhysicalAddressable)
+                }
             }
             m.SetAddresses(res)
         }
@@ -99,7 +101,9 @@ func (m *BookingCustomer) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         if val != nil {
             res := make([]Phoneable, len(val))
             for i, v := range val {
-                res[i] = v.(Phoneable)
+                if v != nil {
+                    res[i] = v.(Phoneable)
+                }
             }
             m.SetPhones(res)
         }
@@ -127,7 +131,9 @@ func (m *BookingCustomer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if m.GetAddresses() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAddresses()))
         for i, v := range m.GetAddresses() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("addresses", cast)
         if err != nil {
@@ -149,7 +155,9 @@ func (m *BookingCustomer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if m.GetPhones() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPhones()))
         for i, v := range m.GetPhones() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("phones", cast)
         if err != nil {

@@ -85,7 +85,9 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         if val != nil {
             res := make([]AdministrativeUnitable, len(val))
             for i, v := range val {
-                res[i] = v.(AdministrativeUnitable)
+                if v != nil {
+                    res[i] = v.(AdministrativeUnitable)
+                }
             }
             m.SetAdministrativeUnits(res)
         }
@@ -99,7 +101,9 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         if val != nil {
             res := make([]AttributeSetable, len(val))
             for i, v := range val {
-                res[i] = v.(AttributeSetable)
+                if v != nil {
+                    res[i] = v.(AttributeSetable)
+                }
             }
             m.SetAttributeSets(res)
         }
@@ -113,7 +117,9 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         if val != nil {
             res := make([]CustomSecurityAttributeDefinitionable, len(val))
             for i, v := range val {
-                res[i] = v.(CustomSecurityAttributeDefinitionable)
+                if v != nil {
+                    res[i] = v.(CustomSecurityAttributeDefinitionable)
+                }
             }
             m.SetCustomSecurityAttributeDefinitions(res)
         }
@@ -127,7 +133,9 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         if val != nil {
             res := make([]DirectoryObjectable, len(val))
             for i, v := range val {
-                res[i] = v.(DirectoryObjectable)
+                if v != nil {
+                    res[i] = v.(DirectoryObjectable)
+                }
             }
             m.SetDeletedItems(res)
         }
@@ -141,7 +149,9 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         if val != nil {
             res := make([]IdentityProviderBaseable, len(val))
             for i, v := range val {
-                res[i] = v.(IdentityProviderBaseable)
+                if v != nil {
+                    res[i] = v.(IdentityProviderBaseable)
+                }
             }
             m.SetFederationConfigurations(res)
         }
@@ -155,7 +165,9 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         if val != nil {
             res := make([]OnPremisesDirectorySynchronizationable, len(val))
             for i, v := range val {
-                res[i] = v.(OnPremisesDirectorySynchronizationable)
+                if v != nil {
+                    res[i] = v.(OnPremisesDirectorySynchronizationable)
+                }
             }
             m.SetOnPremisesSynchronization(res)
         }
@@ -183,7 +195,9 @@ func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     if m.GetAdministrativeUnits() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAdministrativeUnits()))
         for i, v := range m.GetAdministrativeUnits() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("administrativeUnits", cast)
         if err != nil {
@@ -193,7 +207,9 @@ func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     if m.GetAttributeSets() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAttributeSets()))
         for i, v := range m.GetAttributeSets() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("attributeSets", cast)
         if err != nil {
@@ -203,7 +219,9 @@ func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     if m.GetCustomSecurityAttributeDefinitions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomSecurityAttributeDefinitions()))
         for i, v := range m.GetCustomSecurityAttributeDefinitions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("customSecurityAttributeDefinitions", cast)
         if err != nil {
@@ -213,7 +231,9 @@ func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     if m.GetDeletedItems() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeletedItems()))
         for i, v := range m.GetDeletedItems() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("deletedItems", cast)
         if err != nil {
@@ -223,7 +243,9 @@ func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     if m.GetFederationConfigurations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFederationConfigurations()))
         for i, v := range m.GetFederationConfigurations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("federationConfigurations", cast)
         if err != nil {
@@ -233,7 +255,9 @@ func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     if m.GetOnPremisesSynchronization() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOnPremisesSynchronization()))
         for i, v := range m.GetOnPremisesSynchronization() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("onPremisesSynchronization", cast)
         if err != nil {

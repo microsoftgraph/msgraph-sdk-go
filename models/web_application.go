@@ -89,7 +89,9 @@ func (m *WebApplication) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetRedirectUris(res)
         }
@@ -103,7 +105,9 @@ func (m *WebApplication) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         if val != nil {
             res := make([]RedirectUriSettingsable, len(val))
             for i, v := range val {
-                res[i] = v.(RedirectUriSettingsable)
+                if v != nil {
+                    res[i] = v.(RedirectUriSettingsable)
+                }
             }
             m.SetRedirectUriSettings(res)
         }
@@ -212,7 +216,9 @@ func (m *WebApplication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if m.GetRedirectUriSettings() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRedirectUriSettings()))
         for i, v := range m.GetRedirectUriSettings() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("redirectUriSettings", cast)
         if err != nil {

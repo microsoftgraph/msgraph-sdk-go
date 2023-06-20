@@ -10,7 +10,7 @@ type PrintCertificateSigningRequest struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewPrintCertificateSigningRequest instantiates a new printCertificateSigningRequest and sets the default values.
+// NewPrintCertificateSigningRequest instantiates a new PrintCertificateSigningRequest and sets the default values.
 func NewPrintCertificateSigningRequest()(*PrintCertificateSigningRequest) {
     m := &PrintCertificateSigningRequest{
     }

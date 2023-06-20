@@ -105,7 +105,9 @@ func (m *ConnectedOrganization) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]DirectoryObjectable, len(val))
             for i, v := range val {
-                res[i] = v.(DirectoryObjectable)
+                if v != nil {
+                    res[i] = v.(DirectoryObjectable)
+                }
             }
             m.SetExternalSponsors(res)
         }
@@ -119,7 +121,9 @@ func (m *ConnectedOrganization) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]IdentitySourceable, len(val))
             for i, v := range val {
-                res[i] = v.(IdentitySourceable)
+                if v != nil {
+                    res[i] = v.(IdentitySourceable)
+                }
             }
             m.SetIdentitySources(res)
         }
@@ -133,7 +137,9 @@ func (m *ConnectedOrganization) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]DirectoryObjectable, len(val))
             for i, v := range val {
-                res[i] = v.(DirectoryObjectable)
+                if v != nil {
+                    res[i] = v.(DirectoryObjectable)
+                }
             }
             m.SetInternalSponsors(res)
         }
@@ -232,7 +238,9 @@ func (m *ConnectedOrganization) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetExternalSponsors() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExternalSponsors()))
         for i, v := range m.GetExternalSponsors() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("externalSponsors", cast)
         if err != nil {
@@ -242,7 +250,9 @@ func (m *ConnectedOrganization) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetIdentitySources() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetIdentitySources()))
         for i, v := range m.GetIdentitySources() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("identitySources", cast)
         if err != nil {
@@ -252,7 +262,9 @@ func (m *ConnectedOrganization) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetInternalSponsors() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetInternalSponsors()))
         for i, v := range m.GetInternalSponsors() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("internalSponsors", cast)
         if err != nil {

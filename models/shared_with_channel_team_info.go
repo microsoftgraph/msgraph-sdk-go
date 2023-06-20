@@ -41,7 +41,9 @@ func (m *SharedWithChannelTeamInfo) GetFieldDeserializers()(map[string]func(i878
         if val != nil {
             res := make([]ConversationMemberable, len(val))
             for i, v := range val {
-                res[i] = v.(ConversationMemberable)
+                if v != nil {
+                    res[i] = v.(ConversationMemberable)
+                }
             }
             m.SetAllowedMembers(res)
         }
@@ -79,7 +81,9 @@ func (m *SharedWithChannelTeamInfo) Serialize(writer i878a80d2330e89d26896388a3f
     if m.GetAllowedMembers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAllowedMembers()))
         for i, v := range m.GetAllowedMembers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("allowedMembers", cast)
         if err != nil {

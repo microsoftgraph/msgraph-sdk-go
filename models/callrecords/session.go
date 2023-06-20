@@ -108,6 +108,16 @@ func (m *Session) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         return nil
     }
+    res["isTest"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsTest(val)
+        }
+        return nil
+    }
     res["modalities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParseModality)
         if err != nil {
@@ -116,7 +126,9 @@ func (m *Session) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]Modality, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Modality))
+                if v != nil {
+                    res[i] = *(v.(*Modality))
+                }
             }
             m.SetModalities(res)
         }
@@ -130,7 +142,9 @@ func (m *Session) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]Segmentable, len(val))
             for i, v := range val {
-                res[i] = v.(Segmentable)
+                if v != nil {
+                    res[i] = v.(Segmentable)
+                }
             }
             m.SetSegments(res)
         }
@@ -147,6 +161,17 @@ func (m *Session) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         return nil
     }
     return res
+}
+// GetIsTest gets the isTest property value. Specifies whether the session is a test.
+func (m *Session) GetIsTest()(*bool) {
+    val, err := m.GetBackingStore().Get("isTest")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetModalities gets the modalities property value. List of modalities present in the session. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
 func (m *Session) GetModalities()([]Modality) {
@@ -211,6 +236,12 @@ func (m *Session) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             return err
         }
     }
+    {
+        err = writer.WriteBoolValue("isTest", m.GetIsTest())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetModalities() != nil {
         err = writer.WriteCollectionOfStringValues("modalities", SerializeModality(m.GetModalities()))
         if err != nil {
@@ -220,7 +251,9 @@ func (m *Session) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetSegments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSegments()))
         for i, v := range m.GetSegments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("segments", cast)
         if err != nil {
@@ -263,6 +296,13 @@ func (m *Session) SetFailureInfo(value FailureInfoable)() {
         panic(err)
     }
 }
+// SetIsTest sets the isTest property value. Specifies whether the session is a test.
+func (m *Session) SetIsTest(value *bool)() {
+    err := m.GetBackingStore().Set("isTest", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetModalities sets the modalities property value. List of modalities present in the session. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
 func (m *Session) SetModalities(value []Modality)() {
     err := m.GetBackingStore().Set("modalities", value)
@@ -292,6 +332,7 @@ type Sessionable interface {
     GetCaller()(Endpointable)
     GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetFailureInfo()(FailureInfoable)
+    GetIsTest()(*bool)
     GetModalities()([]Modality)
     GetSegments()([]Segmentable)
     GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -299,6 +340,7 @@ type Sessionable interface {
     SetCaller(value Endpointable)()
     SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetFailureInfo(value FailureInfoable)()
+    SetIsTest(value *bool)()
     SetModalities(value []Modality)()
     SetSegments(value []Segmentable)()
     SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()

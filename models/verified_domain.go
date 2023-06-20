@@ -10,7 +10,7 @@ type VerifiedDomain struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewVerifiedDomain instantiates a new verifiedDomain and sets the default values.
+// NewVerifiedDomain instantiates a new VerifiedDomain and sets the default values.
 func NewVerifiedDomain()(*VerifiedDomain) {
     m := &VerifiedDomain{
     }

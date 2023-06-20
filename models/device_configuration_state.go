@@ -71,7 +71,9 @@ func (m *DeviceConfigurationState) GetFieldDeserializers()(map[string]func(i878a
         if val != nil {
             res := make([]DeviceConfigurationSettingStateable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceConfigurationSettingStateable)
+                if v != nil {
+                    res[i] = v.(DeviceConfigurationSettingStateable)
+                }
             }
             m.SetSettingStates(res)
         }
@@ -182,7 +184,9 @@ func (m *DeviceConfigurationState) Serialize(writer i878a80d2330e89d26896388a3f4
     if m.GetSettingStates() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSettingStates()))
         for i, v := range m.GetSettingStates() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("settingStates", cast)
         if err != nil {

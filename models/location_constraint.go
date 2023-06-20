@@ -59,7 +59,9 @@ func (m *LocationConstraint) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]LocationConstraintItemable, len(val))
             for i, v := range val {
-                res[i] = v.(LocationConstraintItemable)
+                if v != nil {
+                    res[i] = v.(LocationConstraintItemable)
+                }
             }
             m.SetLocations(res)
         }
@@ -142,7 +144,9 @@ func (m *LocationConstraint) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetLocations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLocations()))
         for i, v := range m.GetLocations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("locations", cast)
         if err != nil {

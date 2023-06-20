@@ -72,7 +72,9 @@ func (m *PrintTaskDefinition) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]PrintTaskable, len(val))
             for i, v := range val {
-                res[i] = v.(PrintTaskable)
+                if v != nil {
+                    res[i] = v.(PrintTaskable)
+                }
             }
             m.SetTasks(res)
         }
@@ -112,7 +114,9 @@ func (m *PrintTaskDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetTasks() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTasks()))
         for i, v := range m.GetTasks() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("tasks", cast)
         if err != nil {

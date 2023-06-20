@@ -52,7 +52,9 @@ func (m *Store) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         if val != nil {
             res := make([]Groupable, len(val))
             for i, v := range val {
-                res[i] = v.(Groupable)
+                if v != nil {
+                    res[i] = v.(Groupable)
+                }
             }
             m.SetGroups(res)
         }
@@ -66,7 +68,9 @@ func (m *Store) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetLanguageTags(res)
         }
@@ -80,7 +84,9 @@ func (m *Store) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         if val != nil {
             res := make([]Setable, len(val))
             for i, v := range val {
-                res[i] = v.(Setable)
+                if v != nil {
+                    res[i] = v.(Setable)
+                }
             }
             m.SetSets(res)
         }
@@ -136,7 +142,9 @@ func (m *Store) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
     if m.GetGroups() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetGroups()))
         for i, v := range m.GetGroups() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("groups", cast)
         if err != nil {
@@ -152,7 +160,9 @@ func (m *Store) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
     if m.GetSets() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSets()))
         for i, v := range m.GetSets() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("sets", cast)
         if err != nil {

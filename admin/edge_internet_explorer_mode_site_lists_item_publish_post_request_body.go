@@ -60,7 +60,9 @@ func (m *EdgeInternetExplorerModeSiteListsItemPublishPostRequestBody) GetFieldDe
         if val != nil {
             res := make([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BrowserSharedCookieable, len(val))
             for i, v := range val {
-                res[i] = v.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BrowserSharedCookieable)
+                if v != nil {
+                    res[i] = v.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BrowserSharedCookieable)
+                }
             }
             m.SetSharedCookies(res)
         }
@@ -74,7 +76,9 @@ func (m *EdgeInternetExplorerModeSiteListsItemPublishPostRequestBody) GetFieldDe
         if val != nil {
             res := make([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BrowserSiteable, len(val))
             for i, v := range val {
-                res[i] = v.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BrowserSiteable)
+                if v != nil {
+                    res[i] = v.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BrowserSiteable)
+                }
             }
             m.SetSites(res)
         }
@@ -126,7 +130,9 @@ func (m *EdgeInternetExplorerModeSiteListsItemPublishPostRequestBody) Serialize(
     if m.GetSharedCookies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSharedCookies()))
         for i, v := range m.GetSharedCookies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("sharedCookies", cast)
         if err != nil {
@@ -136,7 +142,9 @@ func (m *EdgeInternetExplorerModeSiteListsItemPublishPostRequestBody) Serialize(
     if m.GetSites() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSites()))
         for i, v := range m.GetSites() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("sites", cast)
         if err != nil {

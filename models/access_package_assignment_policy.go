@@ -209,7 +209,9 @@ func (m *AccessPackageAssignmentPolicy) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]AccessPackageQuestionable, len(val))
             for i, v := range val {
-                res[i] = v.(AccessPackageQuestionable)
+                if v != nil {
+                    res[i] = v.(AccessPackageQuestionable)
+                }
             }
             m.SetQuestions(res)
         }
@@ -253,7 +255,9 @@ func (m *AccessPackageAssignmentPolicy) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]SubjectSetable, len(val))
             for i, v := range val {
-                res[i] = v.(SubjectSetable)
+                if v != nil {
+                    res[i] = v.(SubjectSetable)
+                }
             }
             m.SetSpecificAllowedTargets(res)
         }
@@ -391,7 +395,9 @@ func (m *AccessPackageAssignmentPolicy) Serialize(writer i878a80d2330e89d2689638
     if m.GetQuestions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetQuestions()))
         for i, v := range m.GetQuestions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("questions", cast)
         if err != nil {
@@ -419,7 +425,9 @@ func (m *AccessPackageAssignmentPolicy) Serialize(writer i878a80d2330e89d2689638
     if m.GetSpecificAllowedTargets() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSpecificAllowedTargets()))
         for i, v := range m.GetSpecificAllowedTargets() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("specificAllowedTargets", cast)
         if err != nil {

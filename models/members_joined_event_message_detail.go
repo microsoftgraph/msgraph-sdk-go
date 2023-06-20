@@ -42,7 +42,9 @@ func (m *MembersJoinedEventMessageDetail) GetFieldDeserializers()(map[string]fun
         if val != nil {
             res := make([]TeamworkUserIdentityable, len(val))
             for i, v := range val {
-                res[i] = v.(TeamworkUserIdentityable)
+                if v != nil {
+                    res[i] = v.(TeamworkUserIdentityable)
+                }
             }
             m.SetMembers(res)
         }
@@ -87,7 +89,9 @@ func (m *MembersJoinedEventMessageDetail) Serialize(writer i878a80d2330e89d26896
     if m.GetMembers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMembers()))
         for i, v := range m.GetMembers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("members", cast)
         if err != nil {

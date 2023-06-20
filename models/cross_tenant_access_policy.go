@@ -54,7 +54,9 @@ func (m *CrossTenantAccessPolicy) GetFieldDeserializers()(map[string]func(i878a8
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetAllowedCloudEndpoints(res)
         }
@@ -78,7 +80,9 @@ func (m *CrossTenantAccessPolicy) GetFieldDeserializers()(map[string]func(i878a8
         if val != nil {
             res := make([]CrossTenantAccessPolicyConfigurationPartnerable, len(val))
             for i, v := range val {
-                res[i] = v.(CrossTenantAccessPolicyConfigurationPartnerable)
+                if v != nil {
+                    res[i] = v.(CrossTenantAccessPolicyConfigurationPartnerable)
+                }
             }
             m.SetPartners(res)
         }
@@ -118,7 +122,9 @@ func (m *CrossTenantAccessPolicy) Serialize(writer i878a80d2330e89d26896388a3f48
     if m.GetPartners() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPartners()))
         for i, v := range m.GetPartners() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("partners", cast)
         if err != nil {

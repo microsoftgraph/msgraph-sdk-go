@@ -8,7 +8,7 @@ import (
 type EducationAssignmentDefaults struct {
     Entity
 }
-// NewEducationAssignmentDefaults instantiates a new educationAssignmentDefaults and sets the default values.
+// NewEducationAssignmentDefaults instantiates a new EducationAssignmentDefaults and sets the default values.
 func NewEducationAssignmentDefaults()(*EducationAssignmentDefaults) {
     m := &EducationAssignmentDefaults{
         Entity: *NewEntity(),

@@ -30,7 +30,9 @@ func (m *Bitlocker) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         if val != nil {
             res := make([]BitlockerRecoveryKeyable, len(val))
             for i, v := range val {
-                res[i] = v.(BitlockerRecoveryKeyable)
+                if v != nil {
+                    res[i] = v.(BitlockerRecoveryKeyable)
+                }
             }
             m.SetRecoveryKeys(res)
         }
@@ -58,7 +60,9 @@ func (m *Bitlocker) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     if m.GetRecoveryKeys() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRecoveryKeys()))
         for i, v := range m.GetRecoveryKeys() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("recoveryKeys", cast)
         if err != nil {

@@ -50,7 +50,9 @@ func (m *ItemTeamMembersAddPostRequestBody) GetFieldDeserializers()(map[string]f
         if val != nil {
             res := make([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberable, len(val))
             for i, v := range val {
-                res[i] = v.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberable)
+                if v != nil {
+                    res[i] = v.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberable)
+                }
             }
             m.SetValues(res)
         }
@@ -74,7 +76,9 @@ func (m *ItemTeamMembersAddPostRequestBody) Serialize(writer i878a80d2330e89d268
     if m.GetValues() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetValues()))
         for i, v := range m.GetValues() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("values", cast)
         if err != nil {

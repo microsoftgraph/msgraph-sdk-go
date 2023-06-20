@@ -123,7 +123,9 @@ func (m *BrowserSiteList) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         if val != nil {
             res := make([]BrowserSharedCookieable, len(val))
             for i, v := range val {
-                res[i] = v.(BrowserSharedCookieable)
+                if v != nil {
+                    res[i] = v.(BrowserSharedCookieable)
+                }
             }
             m.SetSharedCookies(res)
         }
@@ -137,7 +139,9 @@ func (m *BrowserSiteList) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         if val != nil {
             res := make([]BrowserSiteable, len(val))
             for i, v := range val {
-                res[i] = v.(BrowserSiteable)
+                if v != nil {
+                    res[i] = v.(BrowserSiteable)
+                }
             }
             m.SetSites(res)
         }
@@ -294,7 +298,9 @@ func (m *BrowserSiteList) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if m.GetSharedCookies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSharedCookies()))
         for i, v := range m.GetSharedCookies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("sharedCookies", cast)
         if err != nil {
@@ -304,7 +310,9 @@ func (m *BrowserSiteList) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if m.GetSites() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSites()))
         for i, v := range m.GetSites() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("sites", cast)
         if err != nil {

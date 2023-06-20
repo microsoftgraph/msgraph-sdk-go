@@ -974,7 +974,9 @@ func (m *Windows10GeneralConfiguration) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetBluetoothAllowedServices(res)
         }
@@ -1148,7 +1150,9 @@ func (m *Windows10GeneralConfiguration) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetDefenderFileExtensionsToExclude(res)
         }
@@ -1162,7 +1166,9 @@ func (m *Windows10GeneralConfiguration) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetDefenderFilesAndFoldersToExclude(res)
         }
@@ -1186,7 +1192,9 @@ func (m *Windows10GeneralConfiguration) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetDefenderProcessesToExclude(res)
         }
@@ -1630,7 +1638,9 @@ func (m *Windows10GeneralConfiguration) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetEdgeHomepageUrls(res)
         }

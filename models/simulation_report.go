@@ -69,7 +69,9 @@ func (m *SimulationReport) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]UserSimulationDetailsable, len(val))
             for i, v := range val {
-                res[i] = v.(UserSimulationDetailsable)
+                if v != nil {
+                    res[i] = v.(UserSimulationDetailsable)
+                }
             }
             m.SetSimulationUsers(res)
         }
@@ -127,7 +129,9 @@ func (m *SimulationReport) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetSimulationUsers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSimulationUsers()))
         for i, v := range m.GetSimulationUsers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("simulationUsers", cast)
         if err != nil {

@@ -73,7 +73,9 @@ func (m *CallRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         if val != nil {
             res := make([]Modality, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Modality))
+                if v != nil {
+                    res[i] = *(v.(*Modality))
+                }
             }
             m.SetModalities(res)
         }
@@ -97,7 +99,9 @@ func (m *CallRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         if val != nil {
             res := make([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable, len(val))
             for i, v := range val {
-                res[i] = v.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable)
+                if v != nil {
+                    res[i] = v.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable)
+                }
             }
             m.SetParticipants(res)
         }
@@ -111,7 +115,9 @@ func (m *CallRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         if val != nil {
             res := make([]Sessionable, len(val))
             for i, v := range val {
-                res[i] = v.(Sessionable)
+                if v != nil {
+                    res[i] = v.(Sessionable)
+                }
             }
             m.SetSessions(res)
         }
@@ -287,7 +293,9 @@ func (m *CallRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     if m.GetParticipants() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetParticipants()))
         for i, v := range m.GetParticipants() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("participants", cast)
         if err != nil {
@@ -297,7 +305,9 @@ func (m *CallRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     if m.GetSessions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSessions()))
         for i, v := range m.GetSessions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("sessions", cast)
         if err != nil {

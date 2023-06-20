@@ -106,7 +106,9 @@ func (m *CallEndedEventMessageDetail) GetFieldDeserializers()(map[string]func(i8
         if val != nil {
             res := make([]CallParticipantInfoable, len(val))
             for i, v := range val {
-                res[i] = v.(CallParticipantInfoable)
+                if v != nil {
+                    res[i] = v.(CallParticipantInfoable)
+                }
             }
             m.SetCallParticipants(res)
         }
@@ -163,7 +165,9 @@ func (m *CallEndedEventMessageDetail) Serialize(writer i878a80d2330e89d26896388a
     if m.GetCallParticipants() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCallParticipants()))
         for i, v := range m.GetCallParticipants() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("callParticipants", cast)
         if err != nil {

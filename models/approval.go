@@ -30,7 +30,9 @@ func (m *Approval) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]ApprovalStageable, len(val))
             for i, v := range val {
-                res[i] = v.(ApprovalStageable)
+                if v != nil {
+                    res[i] = v.(ApprovalStageable)
+                }
             }
             m.SetStages(res)
         }
@@ -58,7 +60,9 @@ func (m *Approval) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if m.GetStages() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetStages()))
         for i, v := range m.GetStages() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("stages", cast)
         if err != nil {

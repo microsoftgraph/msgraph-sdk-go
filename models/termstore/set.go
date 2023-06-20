@@ -65,7 +65,9 @@ func (m *Set) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3
         if val != nil {
             res := make([]Termable, len(val))
             for i, v := range val {
-                res[i] = v.(Termable)
+                if v != nil {
+                    res[i] = v.(Termable)
+                }
             }
             m.SetChildren(res)
         }
@@ -99,7 +101,9 @@ func (m *Set) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3
         if val != nil {
             res := make([]LocalizedNameable, len(val))
             for i, v := range val {
-                res[i] = v.(LocalizedNameable)
+                if v != nil {
+                    res[i] = v.(LocalizedNameable)
+                }
             }
             m.SetLocalizedNames(res)
         }
@@ -123,7 +127,9 @@ func (m *Set) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3
         if val != nil {
             res := make([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.KeyValueable, len(val))
             for i, v := range val {
-                res[i] = v.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.KeyValueable)
+                if v != nil {
+                    res[i] = v.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.KeyValueable)
+                }
             }
             m.SetProperties(res)
         }
@@ -137,7 +143,9 @@ func (m *Set) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3
         if val != nil {
             res := make([]Relationable, len(val))
             for i, v := range val {
-                res[i] = v.(Relationable)
+                if v != nil {
+                    res[i] = v.(Relationable)
+                }
             }
             m.SetRelations(res)
         }
@@ -151,7 +159,9 @@ func (m *Set) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3
         if val != nil {
             res := make([]Termable, len(val))
             for i, v := range val {
-                res[i] = v.(Termable)
+                if v != nil {
+                    res[i] = v.(Termable)
+                }
             }
             m.SetTerms(res)
         }
@@ -223,7 +233,9 @@ func (m *Set) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493
     if m.GetChildren() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetChildren()))
         for i, v := range m.GetChildren() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("children", cast)
         if err != nil {
@@ -245,7 +257,9 @@ func (m *Set) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493
     if m.GetLocalizedNames() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLocalizedNames()))
         for i, v := range m.GetLocalizedNames() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("localizedNames", cast)
         if err != nil {
@@ -261,7 +275,9 @@ func (m *Set) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493
     if m.GetProperties() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetProperties()))
         for i, v := range m.GetProperties() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("properties", cast)
         if err != nil {
@@ -271,7 +287,9 @@ func (m *Set) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493
     if m.GetRelations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRelations()))
         for i, v := range m.GetRelations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("relations", cast)
         if err != nil {
@@ -281,7 +299,9 @@ func (m *Set) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493
     if m.GetTerms() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTerms()))
         for i, v := range m.GetTerms() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("terms", cast)
         if err != nil {

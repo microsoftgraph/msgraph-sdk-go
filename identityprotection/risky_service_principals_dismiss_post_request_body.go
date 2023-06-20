@@ -49,7 +49,9 @@ func (m *RiskyServicePrincipalsDismissPostRequestBody) GetFieldDeserializers()(m
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetServicePrincipalIds(res)
         }

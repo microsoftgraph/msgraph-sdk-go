@@ -96,7 +96,9 @@ func (m *DocumentSetVersion) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]DocumentSetVersionItemable, len(val))
             for i, v := range val {
-                res[i] = v.(DocumentSetVersionItemable)
+                if v != nil {
+                    res[i] = v.(DocumentSetVersionItemable)
+                }
             }
             m.SetItems(res)
         }
@@ -163,7 +165,9 @@ func (m *DocumentSetVersion) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetItems() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetItems()))
         for i, v := range m.GetItems() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("items", cast)
         if err != nil {

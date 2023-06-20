@@ -52,7 +52,9 @@ func (m *CalendarPermission) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]CalendarRoleType, len(val))
             for i, v := range val {
-                res[i] = *(v.(*CalendarRoleType))
+                if v != nil {
+                    res[i] = *(v.(*CalendarRoleType))
+                }
             }
             m.SetAllowedRoles(res)
         }

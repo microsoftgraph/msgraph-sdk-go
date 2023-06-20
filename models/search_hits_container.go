@@ -10,7 +10,7 @@ type SearchHitsContainer struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewSearchHitsContainer instantiates a new searchHitsContainer and sets the default values.
+// NewSearchHitsContainer instantiates a new SearchHitsContainer and sets the default values.
 func NewSearchHitsContainer()(*SearchHitsContainer) {
     m := &SearchHitsContainer{
     }
@@ -60,7 +60,9 @@ func (m *SearchHitsContainer) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]SearchAggregationable, len(val))
             for i, v := range val {
-                res[i] = v.(SearchAggregationable)
+                if v != nil {
+                    res[i] = v.(SearchAggregationable)
+                }
             }
             m.SetAggregations(res)
         }
@@ -74,7 +76,9 @@ func (m *SearchHitsContainer) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]SearchHitable, len(val))
             for i, v := range val {
-                res[i] = v.(SearchHitable)
+                if v != nil {
+                    res[i] = v.(SearchHitable)
+                }
             }
             m.SetHits(res)
         }
@@ -161,7 +165,9 @@ func (m *SearchHitsContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetAggregations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAggregations()))
         for i, v := range m.GetAggregations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("aggregations", cast)
         if err != nil {
@@ -171,7 +177,9 @@ func (m *SearchHitsContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetHits() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetHits()))
         for i, v := range m.GetHits() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("hits", cast)
         if err != nil {

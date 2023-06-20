@@ -10,7 +10,7 @@ type CollapseProperty struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewCollapseProperty instantiates a new collapseProperty and sets the default values.
+// NewCollapseProperty instantiates a new CollapseProperty and sets the default values.
 func NewCollapseProperty()(*CollapseProperty) {
     m := &CollapseProperty{
     }
@@ -49,7 +49,9 @@ func (m *CollapseProperty) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetFields(res)
         }

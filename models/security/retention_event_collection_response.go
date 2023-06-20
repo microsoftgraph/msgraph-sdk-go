@@ -31,7 +31,9 @@ func (m *RetentionEventCollectionResponse) GetFieldDeserializers()(map[string]fu
         if val != nil {
             res := make([]RetentionEventable, len(val))
             for i, v := range val {
-                res[i] = v.(RetentionEventable)
+                if v != nil {
+                    res[i] = v.(RetentionEventable)
+                }
             }
             m.SetValue(res)
         }
@@ -59,7 +61,9 @@ func (m *RetentionEventCollectionResponse) Serialize(writer i878a80d2330e89d2689
     if m.GetValue() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetValue()))
         for i, v := range m.GetValue() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("value", cast)
         if err != nil {

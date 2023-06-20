@@ -199,7 +199,9 @@ func (m *SubjectRightsRequest) GetFieldDeserializers()(map[string]func(i878a80d2
         if val != nil {
             res := make([]SubjectRightsRequestHistoryable, len(val))
             for i, v := range val {
-                res[i] = v.(SubjectRightsRequestHistoryable)
+                if v != nil {
+                    res[i] = v.(SubjectRightsRequestHistoryable)
+                }
             }
             m.SetHistory(res)
         }
@@ -253,7 +255,9 @@ func (m *SubjectRightsRequest) GetFieldDeserializers()(map[string]func(i878a80d2
         if val != nil {
             res := make([]AuthoredNoteable, len(val))
             for i, v := range val {
-                res[i] = v.(AuthoredNoteable)
+                if v != nil {
+                    res[i] = v.(AuthoredNoteable)
+                }
             }
             m.SetNotes(res)
         }
@@ -267,7 +271,9 @@ func (m *SubjectRightsRequest) GetFieldDeserializers()(map[string]func(i878a80d2
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetRegulations(res)
         }
@@ -281,7 +287,9 @@ func (m *SubjectRightsRequest) GetFieldDeserializers()(map[string]func(i878a80d2
         if val != nil {
             res := make([]SubjectRightsRequestStageDetailable, len(val))
             for i, v := range val {
-                res[i] = v.(SubjectRightsRequestStageDetailable)
+                if v != nil {
+                    res[i] = v.(SubjectRightsRequestStageDetailable)
+                }
             }
             m.SetStages(res)
         }
@@ -498,7 +506,9 @@ func (m *SubjectRightsRequest) Serialize(writer i878a80d2330e89d26896388a3f487ee
     if m.GetHistory() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetHistory()))
         for i, v := range m.GetHistory() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("history", cast)
         if err != nil {
@@ -532,7 +542,9 @@ func (m *SubjectRightsRequest) Serialize(writer i878a80d2330e89d26896388a3f487ee
     if m.GetNotes() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetNotes()))
         for i, v := range m.GetNotes() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("notes", cast)
         if err != nil {
@@ -548,7 +560,9 @@ func (m *SubjectRightsRequest) Serialize(writer i878a80d2330e89d26896388a3f487ee
     if m.GetStages() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetStages()))
         for i, v := range m.GetStages() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("stages", cast)
         if err != nil {

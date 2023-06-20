@@ -52,7 +52,9 @@ func (m *SectionGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         if val != nil {
             res := make([]SectionGroupable, len(val))
             for i, v := range val {
-                res[i] = v.(SectionGroupable)
+                if v != nil {
+                    res[i] = v.(SectionGroupable)
+                }
             }
             m.SetSectionGroups(res)
         }
@@ -76,7 +78,9 @@ func (m *SectionGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         if val != nil {
             res := make([]OnenoteSectionable, len(val))
             for i, v := range val {
-                res[i] = v.(OnenoteSectionable)
+                if v != nil {
+                    res[i] = v.(OnenoteSectionable)
+                }
             }
             m.SetSections(res)
         }
@@ -181,7 +185,9 @@ func (m *SectionGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     if m.GetSectionGroups() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSectionGroups()))
         for i, v := range m.GetSectionGroups() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("sectionGroups", cast)
         if err != nil {
@@ -197,7 +203,9 @@ func (m *SectionGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     if m.GetSections() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSections()))
         for i, v := range m.GetSections() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("sections", cast)
         if err != nil {

@@ -96,7 +96,9 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         if val != nil {
             res := make([]AccessPackageAnswerable, len(val))
             for i, v := range val {
-                res[i] = v.(AccessPackageAnswerable)
+                if v != nil {
+                    res[i] = v.(AccessPackageAnswerable)
+                }
             }
             m.SetAnswers(res)
         }
@@ -254,7 +256,9 @@ func (m *AccessPackageAssignmentRequest) Serialize(writer i878a80d2330e89d268963
     if m.GetAnswers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAnswers()))
         for i, v := range m.GetAnswers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("answers", cast)
         if err != nil {

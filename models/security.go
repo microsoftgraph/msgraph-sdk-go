@@ -52,7 +52,9 @@ func (m *Security) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]Alertable, len(val))
             for i, v := range val {
-                res[i] = v.(Alertable)
+                if v != nil {
+                    res[i] = v.(Alertable)
+                }
             }
             m.SetAlerts(res)
         }
@@ -76,7 +78,9 @@ func (m *Security) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]SecureScoreControlProfileable, len(val))
             for i, v := range val {
-                res[i] = v.(SecureScoreControlProfileable)
+                if v != nil {
+                    res[i] = v.(SecureScoreControlProfileable)
+                }
             }
             m.SetSecureScoreControlProfiles(res)
         }
@@ -90,7 +94,9 @@ func (m *Security) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]SecureScoreable, len(val))
             for i, v := range val {
-                res[i] = v.(SecureScoreable)
+                if v != nil {
+                    res[i] = v.(SecureScoreable)
+                }
             }
             m.SetSecureScores(res)
         }
@@ -129,7 +135,9 @@ func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if m.GetAlerts() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAlerts()))
         for i, v := range m.GetAlerts() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("alerts", cast)
         if err != nil {
@@ -145,7 +153,9 @@ func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if m.GetSecureScoreControlProfiles() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSecureScoreControlProfiles()))
         for i, v := range m.GetSecureScoreControlProfiles() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("secureScoreControlProfiles", cast)
         if err != nil {
@@ -155,7 +165,9 @@ func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if m.GetSecureScores() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSecureScores()))
         for i, v := range m.GetSecureScores() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("secureScores", cast)
         if err != nil {

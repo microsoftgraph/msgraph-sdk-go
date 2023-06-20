@@ -123,7 +123,9 @@ func (m *PrinterBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         if val != nil {
             res := make([]PrintJobable, len(val))
             for i, v := range val {
-                res[i] = v.(PrintJobable)
+                if v != nil {
+                    res[i] = v.(PrintJobable)
+                }
             }
             m.SetJobs(res)
         }
@@ -270,7 +272,9 @@ func (m *PrinterBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     if m.GetJobs() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetJobs()))
         for i, v := range m.GetJobs() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("jobs", cast)
         if err != nil {

@@ -75,7 +75,9 @@ func (m *SharepointSettings) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID, len(val))
             for i, v := range val {
-                res[i] = *(v.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID))
+                if v != nil {
+                    res[i] = *(v.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID))
+                }
             }
             m.SetAllowedDomainGuidsForSyncApp(res)
         }
@@ -89,7 +91,9 @@ func (m *SharepointSettings) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetAvailableManagedPathsForSiteCreation(res)
         }
@@ -113,7 +117,9 @@ func (m *SharepointSettings) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetExcludedFileExtensionsForSyncApp(res)
         }
@@ -307,7 +313,9 @@ func (m *SharepointSettings) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetSharingAllowedDomainList(res)
         }
@@ -321,7 +329,9 @@ func (m *SharepointSettings) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetSharingBlockedDomainList(res)
         }

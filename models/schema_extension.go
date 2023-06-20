@@ -61,7 +61,9 @@ func (m *SchemaExtension) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         if val != nil {
             res := make([]ExtensionSchemaPropertyable, len(val))
             for i, v := range val {
-                res[i] = v.(ExtensionSchemaPropertyable)
+                if v != nil {
+                    res[i] = v.(ExtensionSchemaPropertyable)
+                }
             }
             m.SetProperties(res)
         }
@@ -85,7 +87,9 @@ func (m *SchemaExtension) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetTargetTypes(res)
         }
@@ -158,7 +162,9 @@ func (m *SchemaExtension) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if m.GetProperties() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetProperties()))
         for i, v := range m.GetProperties() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("properties", cast)
         if err != nil {

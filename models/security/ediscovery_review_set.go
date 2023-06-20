@@ -32,7 +32,9 @@ func (m *EdiscoveryReviewSet) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]EdiscoveryReviewSetQueryable, len(val))
             for i, v := range val {
-                res[i] = v.(EdiscoveryReviewSetQueryable)
+                if v != nil {
+                    res[i] = v.(EdiscoveryReviewSetQueryable)
+                }
             }
             m.SetQueries(res)
         }
@@ -60,7 +62,9 @@ func (m *EdiscoveryReviewSet) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetQueries() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetQueries()))
         for i, v := range m.GetQueries() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("queries", cast)
         if err != nil {

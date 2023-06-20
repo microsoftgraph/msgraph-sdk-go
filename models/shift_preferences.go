@@ -43,7 +43,9 @@ func (m *ShiftPreferences) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]ShiftAvailabilityable, len(val))
             for i, v := range val {
-                res[i] = v.(ShiftAvailabilityable)
+                if v != nil {
+                    res[i] = v.(ShiftAvailabilityable)
+                }
             }
             m.SetAvailability(res)
         }
@@ -60,7 +62,9 @@ func (m *ShiftPreferences) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetAvailability() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAvailability()))
         for i, v := range m.GetAvailability() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("availability", cast)
         if err != nil {

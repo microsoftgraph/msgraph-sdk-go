@@ -137,7 +137,9 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]int32, len(val))
             for i, v := range val {
-                res[i] = *(v.(*int32))
+                if v != nil {
+                    res[i] = *(v.(*int32))
+                }
             }
             m.SetBottomMargins(res)
         }
@@ -161,7 +163,9 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]PrintColorMode, len(val))
             for i, v := range val {
-                res[i] = *(v.(*PrintColorMode))
+                if v != nil {
+                    res[i] = *(v.(*PrintColorMode))
+                }
             }
             m.SetColorModes(res)
         }
@@ -175,7 +179,9 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetContentTypes(res)
         }
@@ -199,7 +205,9 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]int32, len(val))
             for i, v := range val {
-                res[i] = *(v.(*int32))
+                if v != nil {
+                    res[i] = *(v.(*int32))
+                }
             }
             m.SetDpis(res)
         }
@@ -213,7 +221,9 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]PrintDuplexMode, len(val))
             for i, v := range val {
-                res[i] = *(v.(*PrintDuplexMode))
+                if v != nil {
+                    res[i] = *(v.(*PrintDuplexMode))
+                }
             }
             m.SetDuplexModes(res)
         }
@@ -227,7 +237,9 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]PrinterFeedOrientation, len(val))
             for i, v := range val {
-                res[i] = *(v.(*PrinterFeedOrientation))
+                if v != nil {
+                    res[i] = *(v.(*PrinterFeedOrientation))
+                }
             }
             m.SetFeedOrientations(res)
         }
@@ -241,7 +253,9 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]PrintFinishing, len(val))
             for i, v := range val {
-                res[i] = *(v.(*PrintFinishing))
+                if v != nil {
+                    res[i] = *(v.(*PrintFinishing))
+                }
             }
             m.SetFinishings(res)
         }
@@ -255,7 +269,9 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetInputBins(res)
         }
@@ -289,7 +305,9 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]int32, len(val))
             for i, v := range val {
-                res[i] = *(v.(*int32))
+                if v != nil {
+                    res[i] = *(v.(*int32))
+                }
             }
             m.SetLeftMargins(res)
         }
@@ -303,7 +321,9 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetMediaColors(res)
         }
@@ -317,7 +337,9 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetMediaSizes(res)
         }
@@ -331,7 +353,9 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetMediaTypes(res)
         }
@@ -345,7 +369,9 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]PrintMultipageLayout, len(val))
             for i, v := range val {
-                res[i] = *(v.(*PrintMultipageLayout))
+                if v != nil {
+                    res[i] = *(v.(*PrintMultipageLayout))
+                }
             }
             m.SetMultipageLayouts(res)
         }
@@ -369,7 +395,9 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]PrintOrientation, len(val))
             for i, v := range val {
-                res[i] = *(v.(*PrintOrientation))
+                if v != nil {
+                    res[i] = *(v.(*PrintOrientation))
+                }
             }
             m.SetOrientations(res)
         }
@@ -383,7 +411,9 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetOutputBins(res)
         }
@@ -397,7 +427,9 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]int32, len(val))
             for i, v := range val {
-                res[i] = *(v.(*int32))
+                if v != nil {
+                    res[i] = *(v.(*int32))
+                }
             }
             m.SetPagesPerSheet(res)
         }
@@ -411,7 +443,9 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]PrintQuality, len(val))
             for i, v := range val {
-                res[i] = *(v.(*PrintQuality))
+                if v != nil {
+                    res[i] = *(v.(*PrintQuality))
+                }
             }
             m.SetQualities(res)
         }
@@ -425,7 +459,9 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]int32, len(val))
             for i, v := range val {
-                res[i] = *(v.(*int32))
+                if v != nil {
+                    res[i] = *(v.(*int32))
+                }
             }
             m.SetRightMargins(res)
         }
@@ -439,7 +475,9 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]PrintScaling, len(val))
             for i, v := range val {
-                res[i] = *(v.(*PrintScaling))
+                if v != nil {
+                    res[i] = *(v.(*PrintScaling))
+                }
             }
             m.SetScalings(res)
         }
@@ -463,7 +501,9 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]int32, len(val))
             for i, v := range val {
-                res[i] = *(v.(*int32))
+                if v != nil {
+                    res[i] = *(v.(*int32))
+                }
             }
             m.SetTopMargins(res)
         }

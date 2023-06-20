@@ -61,7 +61,9 @@ func (m *ItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesAddActivities
         if val != nil {
             res := make([]i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalActivityable, len(val))
             for i, v := range val {
-                res[i] = v.(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalActivityable)
+                if v != nil {
+                    res[i] = v.(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalActivityable)
+                }
             }
             m.SetActivities(res)
         }
@@ -74,7 +76,9 @@ func (m *ItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesAddActivities
     if m.GetActivities() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetActivities()))
         for i, v := range m.GetActivities() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("activities", cast)
         if err != nil {

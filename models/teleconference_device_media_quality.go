@@ -10,7 +10,7 @@ type TeleconferenceDeviceMediaQuality struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewTeleconferenceDeviceMediaQuality instantiates a new teleconferenceDeviceMediaQuality and sets the default values.
+// NewTeleconferenceDeviceMediaQuality instantiates a new TeleconferenceDeviceMediaQuality and sets the default values.
 func NewTeleconferenceDeviceMediaQuality()(*TeleconferenceDeviceMediaQuality) {
     m := &TeleconferenceDeviceMediaQuality{
     }

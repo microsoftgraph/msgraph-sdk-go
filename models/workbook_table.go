@@ -41,7 +41,9 @@ func (m *WorkbookTable) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]WorkbookTableColumnable, len(val))
             for i, v := range val {
-                res[i] = v.(WorkbookTableColumnable)
+                if v != nil {
+                    res[i] = v.(WorkbookTableColumnable)
+                }
             }
             m.SetColumns(res)
         }
@@ -95,7 +97,9 @@ func (m *WorkbookTable) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]WorkbookTableRowable, len(val))
             for i, v := range val {
-                res[i] = v.(WorkbookTableRowable)
+                if v != nil {
+                    res[i] = v.(WorkbookTableRowable)
+                }
             }
             m.SetRows(res)
         }
@@ -335,7 +339,9 @@ func (m *WorkbookTable) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetColumns() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetColumns()))
         for i, v := range m.GetColumns() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("columns", cast)
         if err != nil {
@@ -369,7 +375,9 @@ func (m *WorkbookTable) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetRows() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRows()))
         for i, v := range m.GetRows() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("rows", cast)
         if err != nil {

@@ -214,7 +214,9 @@ func (m *Alert) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         if val != nil {
             res := make([]AlertCommentable, len(val))
             for i, v := range val {
-                res[i] = v.(AlertCommentable)
+                if v != nil {
+                    res[i] = v.(AlertCommentable)
+                }
             }
             m.SetComments(res)
         }
@@ -278,7 +280,9 @@ func (m *Alert) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         if val != nil {
             res := make([]AlertEvidenceable, len(val))
             for i, v := range val {
-                res[i] = v.(AlertEvidenceable)
+                if v != nil {
+                    res[i] = v.(AlertEvidenceable)
+                }
             }
             m.SetEvidence(res)
         }
@@ -342,7 +346,9 @@ func (m *Alert) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetMitreTechniques(res)
         }
@@ -666,7 +672,9 @@ func (m *Alert) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
     if m.GetComments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetComments()))
         for i, v := range m.GetComments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("comments", cast)
         if err != nil {
@@ -708,7 +716,9 @@ func (m *Alert) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
     if m.GetEvidence() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEvidence()))
         for i, v := range m.GetEvidence() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("evidence", cast)
         if err != nil {

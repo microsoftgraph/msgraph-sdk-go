@@ -11,7 +11,7 @@ type PermissionScope struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewPermissionScope instantiates a new permissionScope and sets the default values.
+// NewPermissionScope instantiates a new PermissionScope and sets the default values.
 func NewPermissionScope()(*PermissionScope) {
     m := &PermissionScope{
     }

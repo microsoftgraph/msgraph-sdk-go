@@ -10,7 +10,7 @@ type EventPropagationResult struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewEventPropagationResult instantiates a new eventPropagationResult and sets the default values.
+// NewEventPropagationResult instantiates a new EventPropagationResult and sets the default values.
 func NewEventPropagationResult()(*EventPropagationResult) {
     m := &EventPropagationResult{
     }

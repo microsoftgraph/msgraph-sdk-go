@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TermsAndConditions 
+// TermsAndConditions a termsAndConditions entity represents the metadata and contents of a given Terms and Conditions (T&C) policy. T&C policies’ contents are presented to users upon their first attempt to enroll into Intune and subsequently upon edits where an administrator has required re-acceptance. They enable administrators to communicate the provisions to which a user must agree in order to have devices enrolled into Intune.
 type TermsAndConditions struct {
     Entity
 }
@@ -118,7 +118,9 @@ func (m *TermsAndConditions) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]TermsAndConditionsAcceptanceStatusable, len(val))
             for i, v := range val {
-                res[i] = v.(TermsAndConditionsAcceptanceStatusable)
+                if v != nil {
+                    res[i] = v.(TermsAndConditionsAcceptanceStatusable)
+                }
             }
             m.SetAcceptanceStatuses(res)
         }
@@ -132,7 +134,9 @@ func (m *TermsAndConditions) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]TermsAndConditionsAssignmentable, len(val))
             for i, v := range val {
-                res[i] = v.(TermsAndConditionsAssignmentable)
+                if v != nil {
+                    res[i] = v.(TermsAndConditionsAssignmentable)
+                }
             }
             m.SetAssignments(res)
         }
@@ -258,7 +262,9 @@ func (m *TermsAndConditions) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetAcceptanceStatuses() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAcceptanceStatuses()))
         for i, v := range m.GetAcceptanceStatuses() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("acceptanceStatuses", cast)
         if err != nil {
@@ -268,7 +274,9 @@ func (m *TermsAndConditions) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetAssignments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {

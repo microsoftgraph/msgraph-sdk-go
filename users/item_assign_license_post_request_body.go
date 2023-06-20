@@ -62,7 +62,9 @@ func (m *ItemAssignLicensePostRequestBody) GetFieldDeserializers()(map[string]fu
         if val != nil {
             res := make([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AssignedLicenseable, len(val))
             for i, v := range val {
-                res[i] = v.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AssignedLicenseable)
+                if v != nil {
+                    res[i] = v.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AssignedLicenseable)
+                }
             }
             m.SetAddLicenses(res)
         }
@@ -76,7 +78,9 @@ func (m *ItemAssignLicensePostRequestBody) GetFieldDeserializers()(map[string]fu
         if val != nil {
             res := make([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID, len(val))
             for i, v := range val {
-                res[i] = *(v.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID))
+                if v != nil {
+                    res[i] = *(v.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID))
+                }
             }
             m.SetRemoveLicenses(res)
         }
@@ -100,7 +104,9 @@ func (m *ItemAssignLicensePostRequestBody) Serialize(writer i878a80d2330e89d2689
     if m.GetAddLicenses() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAddLicenses()))
         for i, v := range m.GetAddLicenses() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("addLicenses", cast)
         if err != nil {

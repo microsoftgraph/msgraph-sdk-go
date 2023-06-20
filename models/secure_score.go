@@ -118,7 +118,9 @@ func (m *SecureScore) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         if val != nil {
             res := make([]AverageComparativeScoreable, len(val))
             for i, v := range val {
-                res[i] = v.(AverageComparativeScoreable)
+                if v != nil {
+                    res[i] = v.(AverageComparativeScoreable)
+                }
             }
             m.SetAverageComparativeScores(res)
         }
@@ -142,7 +144,9 @@ func (m *SecureScore) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         if val != nil {
             res := make([]ControlScoreable, len(val))
             for i, v := range val {
-                res[i] = v.(ControlScoreable)
+                if v != nil {
+                    res[i] = v.(ControlScoreable)
+                }
             }
             m.SetControlScores(res)
         }
@@ -176,7 +180,9 @@ func (m *SecureScore) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetEnabledServices(res)
         }
@@ -262,7 +268,9 @@ func (m *SecureScore) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     if m.GetAverageComparativeScores() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAverageComparativeScores()))
         for i, v := range m.GetAverageComparativeScores() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("averageComparativeScores", cast)
         if err != nil {
@@ -278,7 +286,9 @@ func (m *SecureScore) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     if m.GetControlScores() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetControlScores()))
         for i, v := range m.GetControlScores() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("controlScores", cast)
         if err != nil {

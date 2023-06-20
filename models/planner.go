@@ -41,7 +41,9 @@ func (m *Planner) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]PlannerBucketable, len(val))
             for i, v := range val {
-                res[i] = v.(PlannerBucketable)
+                if v != nil {
+                    res[i] = v.(PlannerBucketable)
+                }
             }
             m.SetBuckets(res)
         }
@@ -55,7 +57,9 @@ func (m *Planner) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]PlannerPlanable, len(val))
             for i, v := range val {
-                res[i] = v.(PlannerPlanable)
+                if v != nil {
+                    res[i] = v.(PlannerPlanable)
+                }
             }
             m.SetPlans(res)
         }
@@ -69,7 +73,9 @@ func (m *Planner) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]PlannerTaskable, len(val))
             for i, v := range val {
-                res[i] = v.(PlannerTaskable)
+                if v != nil {
+                    res[i] = v.(PlannerTaskable)
+                }
             }
             m.SetTasks(res)
         }
@@ -108,7 +114,9 @@ func (m *Planner) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetBuckets() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetBuckets()))
         for i, v := range m.GetBuckets() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("buckets", cast)
         if err != nil {
@@ -118,7 +126,9 @@ func (m *Planner) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetPlans() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPlans()))
         for i, v := range m.GetPlans() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("plans", cast)
         if err != nil {
@@ -128,7 +138,9 @@ func (m *Planner) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetTasks() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTasks()))
         for i, v := range m.GetTasks() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("tasks", cast)
         if err != nil {

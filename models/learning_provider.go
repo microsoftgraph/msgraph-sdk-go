@@ -8,7 +8,7 @@ import (
 type LearningProvider struct {
     Entity
 }
-// NewLearningProvider instantiates a new learningProvider and sets the default values.
+// NewLearningProvider instantiates a new LearningProvider and sets the default values.
 func NewLearningProvider()(*LearningProvider) {
     m := &LearningProvider{
         Entity: *NewEntity(),
@@ -61,7 +61,9 @@ func (m *LearningProvider) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]LearningContentable, len(val))
             for i, v := range val {
-                res[i] = v.(LearningContentable)
+                if v != nil {
+                    res[i] = v.(LearningContentable)
+                }
             }
             m.SetLearningContents(res)
         }
@@ -217,7 +219,9 @@ func (m *LearningProvider) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetLearningContents() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLearningContents()))
         for i, v := range m.GetLearningContents() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("learningContents", cast)
         if err != nil {

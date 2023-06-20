@@ -170,7 +170,9 @@ func (m *ThreatAssessmentRequest) GetFieldDeserializers()(map[string]func(i878a8
         if val != nil {
             res := make([]ThreatAssessmentResultable, len(val))
             for i, v := range val {
-                res[i] = v.(ThreatAssessmentResultable)
+                if v != nil {
+                    res[i] = v.(ThreatAssessmentResultable)
+                }
             }
             m.SetResults(res)
         }
@@ -270,7 +272,9 @@ func (m *ThreatAssessmentRequest) Serialize(writer i878a80d2330e89d26896388a3f48
     if m.GetResults() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetResults()))
         for i, v := range m.GetResults() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("results", cast)
         if err != nil {

@@ -90,7 +90,9 @@ func (m *OnlineMeetingInfo) GetFieldDeserializers()(map[string]func(i878a80d2330
         if val != nil {
             res := make([]Phoneable, len(val))
             for i, v := range val {
-                res[i] = v.(Phoneable)
+                if v != nil {
+                    res[i] = v.(Phoneable)
+                }
             }
             m.SetPhones(res)
         }
@@ -114,7 +116,9 @@ func (m *OnlineMeetingInfo) GetFieldDeserializers()(map[string]func(i878a80d2330
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetTollFreeNumbers(res)
         }
@@ -221,7 +225,9 @@ func (m *OnlineMeetingInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     if m.GetPhones() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPhones()))
         for i, v := range m.GetPhones() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("phones", cast)
         if err != nil {

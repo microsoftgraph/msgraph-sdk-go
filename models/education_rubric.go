@@ -145,7 +145,9 @@ func (m *EducationRubric) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         if val != nil {
             res := make([]RubricLevelable, len(val))
             for i, v := range val {
-                res[i] = v.(RubricLevelable)
+                if v != nil {
+                    res[i] = v.(RubricLevelable)
+                }
             }
             m.SetLevels(res)
         }
@@ -159,7 +161,9 @@ func (m *EducationRubric) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         if val != nil {
             res := make([]RubricQualityable, len(val))
             for i, v := range val {
-                res[i] = v.(RubricQualityable)
+                if v != nil {
+                    res[i] = v.(RubricQualityable)
+                }
             }
             m.SetQualities(res)
         }
@@ -249,7 +253,9 @@ func (m *EducationRubric) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if m.GetLevels() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLevels()))
         for i, v := range m.GetLevels() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("levels", cast)
         if err != nil {
@@ -259,7 +265,9 @@ func (m *EducationRubric) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if m.GetQualities() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetQualities()))
         for i, v := range m.GetQualities() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("qualities", cast)
         if err != nil {

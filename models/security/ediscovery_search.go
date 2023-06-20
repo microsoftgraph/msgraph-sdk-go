@@ -76,7 +76,9 @@ func (m *EdiscoverySearch) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]DataSourceable, len(val))
             for i, v := range val {
-                res[i] = v.(DataSourceable)
+                if v != nil {
+                    res[i] = v.(DataSourceable)
+                }
             }
             m.SetAdditionalSources(res)
         }
@@ -100,7 +102,9 @@ func (m *EdiscoverySearch) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]DataSourceable, len(val))
             for i, v := range val {
-                res[i] = v.(DataSourceable)
+                if v != nil {
+                    res[i] = v.(DataSourceable)
+                }
             }
             m.SetCustodianSources(res)
         }
@@ -134,7 +138,9 @@ func (m *EdiscoverySearch) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]EdiscoveryNoncustodialDataSourceable, len(val))
             for i, v := range val {
-                res[i] = v.(EdiscoveryNoncustodialDataSourceable)
+                if v != nil {
+                    res[i] = v.(EdiscoveryNoncustodialDataSourceable)
+                }
             }
             m.SetNoncustodialSources(res)
         }
@@ -173,7 +179,9 @@ func (m *EdiscoverySearch) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetAdditionalSources() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAdditionalSources()))
         for i, v := range m.GetAdditionalSources() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("additionalSources", cast)
         if err != nil {
@@ -189,7 +197,9 @@ func (m *EdiscoverySearch) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetCustodianSources() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustodianSources()))
         for i, v := range m.GetCustodianSources() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("custodianSources", cast)
         if err != nil {
@@ -212,7 +222,9 @@ func (m *EdiscoverySearch) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetNoncustodialSources() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetNoncustodialSources()))
         for i, v := range m.GetNoncustodialSources() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("noncustodialSources", cast)
         if err != nil {

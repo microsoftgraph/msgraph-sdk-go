@@ -119,7 +119,9 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         if val != nil {
             res := make([]ChatMessageAttachmentable, len(val))
             for i, v := range val {
-                res[i] = v.(ChatMessageAttachmentable)
+                if v != nil {
+                    res[i] = v.(ChatMessageAttachmentable)
+                }
             }
             m.SetAttachments(res)
         }
@@ -213,7 +215,9 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         if val != nil {
             res := make([]ChatMessageHostedContentable, len(val))
             for i, v := range val {
-                res[i] = v.(ChatMessageHostedContentable)
+                if v != nil {
+                    res[i] = v.(ChatMessageHostedContentable)
+                }
             }
             m.SetHostedContents(res)
         }
@@ -267,7 +271,9 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         if val != nil {
             res := make([]ChatMessageMentionable, len(val))
             for i, v := range val {
-                res[i] = v.(ChatMessageMentionable)
+                if v != nil {
+                    res[i] = v.(ChatMessageMentionable)
+                }
             }
             m.SetMentions(res)
         }
@@ -281,7 +287,9 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         if val != nil {
             res := make([]ChatMessageHistoryItemable, len(val))
             for i, v := range val {
-                res[i] = v.(ChatMessageHistoryItemable)
+                if v != nil {
+                    res[i] = v.(ChatMessageHistoryItemable)
+                }
             }
             m.SetMessageHistory(res)
         }
@@ -315,7 +323,9 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         if val != nil {
             res := make([]ChatMessageReactionable, len(val))
             for i, v := range val {
-                res[i] = v.(ChatMessageReactionable)
+                if v != nil {
+                    res[i] = v.(ChatMessageReactionable)
+                }
             }
             m.SetReactions(res)
         }
@@ -329,7 +339,9 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         if val != nil {
             res := make([]ChatMessageable, len(val))
             for i, v := range val {
-                res[i] = v.(ChatMessageable)
+                if v != nil {
+                    res[i] = v.(ChatMessageable)
+                }
             }
             m.SetReplies(res)
         }
@@ -562,7 +574,9 @@ func (m *ChatMessage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     if m.GetAttachments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAttachments()))
         for i, v := range m.GetAttachments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("attachments", cast)
         if err != nil {
@@ -620,7 +634,9 @@ func (m *ChatMessage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     if m.GetHostedContents() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetHostedContents()))
         for i, v := range m.GetHostedContents() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("hostedContents", cast)
         if err != nil {
@@ -655,7 +671,9 @@ func (m *ChatMessage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     if m.GetMentions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMentions()))
         for i, v := range m.GetMentions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("mentions", cast)
         if err != nil {
@@ -665,7 +683,9 @@ func (m *ChatMessage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     if m.GetMessageHistory() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMessageHistory()))
         for i, v := range m.GetMessageHistory() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("messageHistory", cast)
         if err != nil {
@@ -688,7 +708,9 @@ func (m *ChatMessage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     if m.GetReactions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetReactions()))
         for i, v := range m.GetReactions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("reactions", cast)
         if err != nil {
@@ -698,7 +720,9 @@ func (m *ChatMessage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     if m.GetReplies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetReplies()))
         for i, v := range m.GetReplies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("replies", cast)
         if err != nil {

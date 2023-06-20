@@ -71,7 +71,9 @@ func (m *InvitedUserMessageInfo) GetFieldDeserializers()(map[string]func(i878a80
         if val != nil {
             res := make([]Recipientable, len(val))
             for i, v := range val {
-                res[i] = v.(Recipientable)
+                if v != nil {
+                    res[i] = v.(Recipientable)
+                }
             }
             m.SetCcRecipients(res)
         }
@@ -136,7 +138,9 @@ func (m *InvitedUserMessageInfo) Serialize(writer i878a80d2330e89d26896388a3f487
     if m.GetCcRecipients() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCcRecipients()))
         for i, v := range m.GetCcRecipients() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("ccRecipients", cast)
         if err != nil {

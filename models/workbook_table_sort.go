@@ -30,7 +30,9 @@ func (m *WorkbookTableSort) GetFieldDeserializers()(map[string]func(i878a80d2330
         if val != nil {
             res := make([]WorkbookSortFieldable, len(val))
             for i, v := range val {
-                res[i] = v.(WorkbookSortFieldable)
+                if v != nil {
+                    res[i] = v.(WorkbookSortFieldable)
+                }
             }
             m.SetFields(res)
         }
@@ -100,7 +102,9 @@ func (m *WorkbookTableSort) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     if m.GetFields() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFields()))
         for i, v := range m.GetFields() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("fields", cast)
         if err != nil {

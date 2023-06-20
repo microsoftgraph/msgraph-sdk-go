@@ -87,7 +87,9 @@ func (m *PrinterShare) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         if val != nil {
             res := make([]Groupable, len(val))
             for i, v := range val {
-                res[i] = v.(Groupable)
+                if v != nil {
+                    res[i] = v.(Groupable)
+                }
             }
             m.SetAllowedGroups(res)
         }
@@ -101,7 +103,9 @@ func (m *PrinterShare) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         if val != nil {
             res := make([]Userable, len(val))
             for i, v := range val {
-                res[i] = v.(Userable)
+                if v != nil {
+                    res[i] = v.(Userable)
+                }
             }
             m.SetAllowedUsers(res)
         }
@@ -155,7 +159,9 @@ func (m *PrinterShare) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     if m.GetAllowedGroups() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAllowedGroups()))
         for i, v := range m.GetAllowedGroups() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("allowedGroups", cast)
         if err != nil {
@@ -165,7 +171,9 @@ func (m *PrinterShare) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     if m.GetAllowedUsers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAllowedUsers()))
         for i, v := range m.GetAllowedUsers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("allowedUsers", cast)
         if err != nil {

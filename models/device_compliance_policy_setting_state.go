@@ -152,7 +152,9 @@ func (m *DeviceCompliancePolicySettingState) GetFieldDeserializers()(map[string]
         if val != nil {
             res := make([]SettingSourceable, len(val))
             for i, v := range val {
-                res[i] = v.(SettingSourceable)
+                if v != nil {
+                    res[i] = v.(SettingSourceable)
+                }
             }
             m.SetSources(res)
         }
@@ -367,7 +369,9 @@ func (m *DeviceCompliancePolicySettingState) Serialize(writer i878a80d2330e89d26
     if m.GetSources() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSources()))
         for i, v := range m.GetSources() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("sources", cast)
         if err != nil {

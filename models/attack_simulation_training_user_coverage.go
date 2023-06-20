@@ -80,7 +80,9 @@ func (m *AttackSimulationTrainingUserCoverage) GetFieldDeserializers()(map[strin
         if val != nil {
             res := make([]UserTrainingStatusInfoable, len(val))
             for i, v := range val {
-                res[i] = v.(UserTrainingStatusInfoable)
+                if v != nil {
+                    res[i] = v.(UserTrainingStatusInfoable)
+                }
             }
             m.SetUserTrainings(res)
         }
@@ -127,7 +129,9 @@ func (m *AttackSimulationTrainingUserCoverage) Serialize(writer i878a80d2330e89d
     if m.GetUserTrainings() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserTrainings()))
         for i, v := range m.GetUserTrainings() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("userTrainings", cast)
         if err != nil {

@@ -141,7 +141,9 @@ func (m *TodoTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]AttachmentBaseable, len(val))
             for i, v := range val {
-                res[i] = v.(AttachmentBaseable)
+                if v != nil {
+                    res[i] = v.(AttachmentBaseable)
+                }
             }
             m.SetAttachments(res)
         }
@@ -155,7 +157,9 @@ func (m *TodoTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]AttachmentSessionable, len(val))
             for i, v := range val {
-                res[i] = v.(AttachmentSessionable)
+                if v != nil {
+                    res[i] = v.(AttachmentSessionable)
+                }
             }
             m.SetAttachmentSessions(res)
         }
@@ -189,7 +193,9 @@ func (m *TodoTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetCategories(res)
         }
@@ -203,7 +209,9 @@ func (m *TodoTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]ChecklistItemable, len(val))
             for i, v := range val {
-                res[i] = v.(ChecklistItemable)
+                if v != nil {
+                    res[i] = v.(ChecklistItemable)
+                }
             }
             m.SetChecklistItems(res)
         }
@@ -247,7 +255,9 @@ func (m *TodoTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]Extensionable, len(val))
             for i, v := range val {
-                res[i] = v.(Extensionable)
+                if v != nil {
+                    res[i] = v.(Extensionable)
+                }
             }
             m.SetExtensions(res)
         }
@@ -301,7 +311,9 @@ func (m *TodoTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]LinkedResourceable, len(val))
             for i, v := range val {
-                res[i] = v.(LinkedResourceable)
+                if v != nil {
+                    res[i] = v.(LinkedResourceable)
+                }
             }
             m.SetLinkedResources(res)
         }
@@ -478,7 +490,9 @@ func (m *TodoTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if m.GetAttachments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAttachments()))
         for i, v := range m.GetAttachments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("attachments", cast)
         if err != nil {
@@ -488,7 +502,9 @@ func (m *TodoTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if m.GetAttachmentSessions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAttachmentSessions()))
         for i, v := range m.GetAttachmentSessions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("attachmentSessions", cast)
         if err != nil {
@@ -516,7 +532,9 @@ func (m *TodoTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if m.GetChecklistItems() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetChecklistItems()))
         for i, v := range m.GetChecklistItems() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("checklistItems", cast)
         if err != nil {
@@ -544,7 +562,9 @@ func (m *TodoTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if m.GetExtensions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExtensions()))
         for i, v := range m.GetExtensions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("extensions", cast)
         if err != nil {
@@ -579,7 +599,9 @@ func (m *TodoTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if m.GetLinkedResources() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLinkedResources()))
         for i, v := range m.GetLinkedResources() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("linkedResources", cast)
         if err != nil {

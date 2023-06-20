@@ -64,7 +64,9 @@ func (m *ComplianceManagementPartner) GetFieldDeserializers()(map[string]func(i8
         if val != nil {
             res := make([]ComplianceManagementPartnerAssignmentable, len(val))
             for i, v := range val {
-                res[i] = v.(ComplianceManagementPartnerAssignmentable)
+                if v != nil {
+                    res[i] = v.(ComplianceManagementPartnerAssignmentable)
+                }
             }
             m.SetAndroidEnrollmentAssignments(res)
         }
@@ -98,7 +100,9 @@ func (m *ComplianceManagementPartner) GetFieldDeserializers()(map[string]func(i8
         if val != nil {
             res := make([]ComplianceManagementPartnerAssignmentable, len(val))
             for i, v := range val {
-                res[i] = v.(ComplianceManagementPartnerAssignmentable)
+                if v != nil {
+                    res[i] = v.(ComplianceManagementPartnerAssignmentable)
+                }
             }
             m.SetIosEnrollmentAssignments(res)
         }
@@ -132,7 +136,9 @@ func (m *ComplianceManagementPartner) GetFieldDeserializers()(map[string]func(i8
         if val != nil {
             res := make([]ComplianceManagementPartnerAssignmentable, len(val))
             for i, v := range val {
-                res[i] = v.(ComplianceManagementPartnerAssignmentable)
+                if v != nil {
+                    res[i] = v.(ComplianceManagementPartnerAssignmentable)
+                }
             }
             m.SetMacOsEnrollmentAssignments(res)
         }
@@ -235,7 +241,9 @@ func (m *ComplianceManagementPartner) Serialize(writer i878a80d2330e89d26896388a
     if m.GetAndroidEnrollmentAssignments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAndroidEnrollmentAssignments()))
         for i, v := range m.GetAndroidEnrollmentAssignments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("androidEnrollmentAssignments", cast)
         if err != nil {
@@ -257,7 +265,9 @@ func (m *ComplianceManagementPartner) Serialize(writer i878a80d2330e89d26896388a
     if m.GetIosEnrollmentAssignments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetIosEnrollmentAssignments()))
         for i, v := range m.GetIosEnrollmentAssignments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("iosEnrollmentAssignments", cast)
         if err != nil {
@@ -279,7 +289,9 @@ func (m *ComplianceManagementPartner) Serialize(writer i878a80d2330e89d26896388a
     if m.GetMacOsEnrollmentAssignments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMacOsEnrollmentAssignments()))
         for i, v := range m.GetMacOsEnrollmentAssignments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("macOsEnrollmentAssignments", cast)
         if err != nil {

@@ -98,7 +98,9 @@ func (m *EdiscoveryCase) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         if val != nil {
             res := make([]EdiscoveryCustodianable, len(val))
             for i, v := range val {
-                res[i] = v.(EdiscoveryCustodianable)
+                if v != nil {
+                    res[i] = v.(EdiscoveryCustodianable)
+                }
             }
             m.SetCustodians(res)
         }
@@ -122,7 +124,9 @@ func (m *EdiscoveryCase) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         if val != nil {
             res := make([]EdiscoveryNoncustodialDataSourceable, len(val))
             for i, v := range val {
-                res[i] = v.(EdiscoveryNoncustodialDataSourceable)
+                if v != nil {
+                    res[i] = v.(EdiscoveryNoncustodialDataSourceable)
+                }
             }
             m.SetNoncustodialDataSources(res)
         }
@@ -136,7 +140,9 @@ func (m *EdiscoveryCase) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         if val != nil {
             res := make([]CaseOperationable, len(val))
             for i, v := range val {
-                res[i] = v.(CaseOperationable)
+                if v != nil {
+                    res[i] = v.(CaseOperationable)
+                }
             }
             m.SetOperations(res)
         }
@@ -150,7 +156,9 @@ func (m *EdiscoveryCase) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         if val != nil {
             res := make([]EdiscoveryReviewSetable, len(val))
             for i, v := range val {
-                res[i] = v.(EdiscoveryReviewSetable)
+                if v != nil {
+                    res[i] = v.(EdiscoveryReviewSetable)
+                }
             }
             m.SetReviewSets(res)
         }
@@ -164,7 +172,9 @@ func (m *EdiscoveryCase) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         if val != nil {
             res := make([]EdiscoverySearchable, len(val))
             for i, v := range val {
-                res[i] = v.(EdiscoverySearchable)
+                if v != nil {
+                    res[i] = v.(EdiscoverySearchable)
+                }
             }
             m.SetSearches(res)
         }
@@ -188,7 +198,9 @@ func (m *EdiscoveryCase) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         if val != nil {
             res := make([]EdiscoveryReviewTagable, len(val))
             for i, v := range val {
-                res[i] = v.(EdiscoveryReviewTagable)
+                if v != nil {
+                    res[i] = v.(EdiscoveryReviewTagable)
+                }
             }
             m.SetTags(res)
         }
@@ -283,7 +295,9 @@ func (m *EdiscoveryCase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if m.GetCustodians() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustodians()))
         for i, v := range m.GetCustodians() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("custodians", cast)
         if err != nil {
@@ -299,7 +313,9 @@ func (m *EdiscoveryCase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if m.GetNoncustodialDataSources() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetNoncustodialDataSources()))
         for i, v := range m.GetNoncustodialDataSources() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("noncustodialDataSources", cast)
         if err != nil {
@@ -309,7 +325,9 @@ func (m *EdiscoveryCase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if m.GetOperations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOperations()))
         for i, v := range m.GetOperations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("operations", cast)
         if err != nil {
@@ -319,7 +337,9 @@ func (m *EdiscoveryCase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if m.GetReviewSets() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetReviewSets()))
         for i, v := range m.GetReviewSets() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("reviewSets", cast)
         if err != nil {
@@ -329,7 +349,9 @@ func (m *EdiscoveryCase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if m.GetSearches() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSearches()))
         for i, v := range m.GetSearches() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("searches", cast)
         if err != nil {
@@ -345,7 +367,9 @@ func (m *EdiscoveryCase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if m.GetTags() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTags()))
         for i, v := range m.GetTags() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("tags", cast)
         if err != nil {

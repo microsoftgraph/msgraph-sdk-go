@@ -10,7 +10,7 @@ type PrinterStatus struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewPrinterStatus instantiates a new printerStatus and sets the default values.
+// NewPrinterStatus instantiates a new PrinterStatus and sets the default values.
 func NewPrinterStatus()(*PrinterStatus) {
     m := &PrinterStatus{
     }
@@ -81,7 +81,9 @@ func (m *PrinterStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]PrinterProcessingStateDetail, len(val))
             for i, v := range val {
-                res[i] = *(v.(*PrinterProcessingStateDetail))
+                if v != nil {
+                    res[i] = *(v.(*PrinterProcessingStateDetail))
+                }
             }
             m.SetDetails(res)
         }

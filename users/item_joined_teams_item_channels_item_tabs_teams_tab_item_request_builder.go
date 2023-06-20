@@ -18,7 +18,7 @@ type ItemJoinedTeamsItemChannelsItemTabsTeamsTabItemRequestBuilderDeleteRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemJoinedTeamsItemChannelsItemTabsTeamsTabItemRequestBuilderGetQueryParameters a collection of all the tabs in the channel. A navigation property.
+// ItemJoinedTeamsItemChannelsItemTabsTeamsTabItemRequestBuilderGetQueryParameters retrieve the properties and relationships of the specified tab in a channel within a team. 
 type ItemJoinedTeamsItemChannelsItemTabsTeamsTabItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewItemJoinedTeamsItemChannelsItemTabsTeamsTabItemRequestBuilder(rawUrl str
     urlParams["request-raw-url"] = rawUrl
     return NewItemJoinedTeamsItemChannelsItemTabsTeamsTabItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property tabs for users
+// Delete removes (unpins) a tab from the specified channel within a team. 
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/channel-delete-tabs?view=graph-rest-1.0
 func (m *ItemJoinedTeamsItemChannelsItemTabsTeamsTabItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemChannelsItemTabsTeamsTabItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *ItemJoinedTeamsItemChannelsItemTabsTeamsTabItemRequestBuilder) Delete(c
     }
     return nil
 }
-// Get a collection of all the tabs in the channel. A navigation property.
+// Get retrieve the properties and relationships of the specified tab in a channel within a team. 
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/channel-get-tabs?view=graph-rest-1.0
 func (m *ItemJoinedTeamsItemChannelsItemTabsTeamsTabItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemChannelsItemTabsTeamsTabItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *ItemJoinedTeamsItemChannelsItemTabsTeamsTabItemRequestBuilder) Get(ctx 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabable), nil
 }
-// Patch update the navigation property tabs in users
+// Patch update the properties of the specified tab.This can be used to configure the content of the tab.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/channel-patch-tabs?view=graph-rest-1.0
 func (m *ItemJoinedTeamsItemChannelsItemTabsTeamsTabItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabable, requestConfiguration *ItemJoinedTeamsItemChannelsItemTabsTeamsTabItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +121,7 @@ func (m *ItemJoinedTeamsItemChannelsItemTabsTeamsTabItemRequestBuilder) Patch(ct
 func (m *ItemJoinedTeamsItemChannelsItemTabsTeamsTabItemRequestBuilder) TeamsApp()(*ItemJoinedTeamsItemChannelsItemTabsItemTeamsAppRequestBuilder) {
     return NewItemJoinedTeamsItemChannelsItemTabsItemTeamsAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete navigation property tabs for users
+// ToDeleteRequestInformation removes (unpins) a tab from the specified channel within a team. 
 func (m *ItemJoinedTeamsItemChannelsItemTabsTeamsTabItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemChannelsItemTabsTeamsTabItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -124,7 +133,7 @@ func (m *ItemJoinedTeamsItemChannelsItemTabsTeamsTabItemRequestBuilder) ToDelete
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation a collection of all the tabs in the channel. A navigation property.
+// ToGetRequestInformation retrieve the properties and relationships of the specified tab in a channel within a team. 
 func (m *ItemJoinedTeamsItemChannelsItemTabsTeamsTabItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemChannelsItemTabsTeamsTabItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -140,7 +149,7 @@ func (m *ItemJoinedTeamsItemChannelsItemTabsTeamsTabItemRequestBuilder) ToGetReq
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property tabs in users
+// ToPatchRequestInformation update the properties of the specified tab.This can be used to configure the content of the tab.
 func (m *ItemJoinedTeamsItemChannelsItemTabsTeamsTabItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabable, requestConfiguration *ItemJoinedTeamsItemChannelsItemTabsTeamsTabItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

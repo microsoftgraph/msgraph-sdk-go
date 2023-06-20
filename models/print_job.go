@@ -105,7 +105,9 @@ func (m *PrintJob) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]PrintDocumentable, len(val))
             for i, v := range val {
-                res[i] = v.(PrintDocumentable)
+                if v != nil {
+                    res[i] = v.(PrintDocumentable)
+                }
             }
             m.SetDocuments(res)
         }
@@ -159,7 +161,9 @@ func (m *PrintJob) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]PrintTaskable, len(val))
             for i, v := range val {
-                res[i] = v.(PrintTaskable)
+                if v != nil {
+                    res[i] = v.(PrintTaskable)
+                }
             }
             m.SetTasks(res)
         }
@@ -249,7 +253,9 @@ func (m *PrintJob) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if m.GetDocuments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDocuments()))
         for i, v := range m.GetDocuments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("documents", cast)
         if err != nil {
@@ -283,7 +289,9 @@ func (m *PrintJob) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if m.GetTasks() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTasks()))
         for i, v := range m.GetTasks() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("tasks", cast)
         if err != nil {

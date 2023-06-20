@@ -49,7 +49,9 @@ func (m *AppManagementConfiguration) GetFieldDeserializers()(map[string]func(i87
         if val != nil {
             res := make([]KeyCredentialConfigurationable, len(val))
             for i, v := range val {
-                res[i] = v.(KeyCredentialConfigurationable)
+                if v != nil {
+                    res[i] = v.(KeyCredentialConfigurationable)
+                }
             }
             m.SetKeyCredentials(res)
         }
@@ -73,7 +75,9 @@ func (m *AppManagementConfiguration) GetFieldDeserializers()(map[string]func(i87
         if val != nil {
             res := make([]PasswordCredentialConfigurationable, len(val))
             for i, v := range val {
-                res[i] = v.(PasswordCredentialConfigurationable)
+                if v != nil {
+                    res[i] = v.(PasswordCredentialConfigurationable)
+                }
             }
             m.SetPasswordCredentials(res)
         }
@@ -119,7 +123,9 @@ func (m *AppManagementConfiguration) Serialize(writer i878a80d2330e89d26896388a3
     if m.GetKeyCredentials() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetKeyCredentials()))
         for i, v := range m.GetKeyCredentials() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("keyCredentials", cast)
         if err != nil {
@@ -135,7 +141,9 @@ func (m *AppManagementConfiguration) Serialize(writer i878a80d2330e89d26896388a3
     if m.GetPasswordCredentials() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPasswordCredentials()))
         for i, v := range m.GetPasswordCredentials() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("passwordCredentials", cast)
         if err != nil {

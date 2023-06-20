@@ -106,7 +106,9 @@ func (m *DirectoryAudit) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         if val != nil {
             res := make([]KeyValueable, len(val))
             for i, v := range val {
-                res[i] = v.(KeyValueable)
+                if v != nil {
+                    res[i] = v.(KeyValueable)
+                }
             }
             m.SetAdditionalDetails(res)
         }
@@ -190,7 +192,9 @@ func (m *DirectoryAudit) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         if val != nil {
             res := make([]TargetResourceable, len(val))
             for i, v := range val {
-                res[i] = v.(TargetResourceable)
+                if v != nil {
+                    res[i] = v.(TargetResourceable)
+                }
             }
             m.SetTargetResources(res)
         }
@@ -285,7 +289,9 @@ func (m *DirectoryAudit) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if m.GetAdditionalDetails() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAdditionalDetails()))
         for i, v := range m.GetAdditionalDetails() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("additionalDetails", cast)
         if err != nil {
@@ -338,7 +344,9 @@ func (m *DirectoryAudit) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if m.GetTargetResources() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTargetResources()))
         for i, v := range m.GetTargetResources() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("targetResources", cast)
         if err != nil {

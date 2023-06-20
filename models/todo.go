@@ -30,7 +30,9 @@ func (m *Todo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         if val != nil {
             res := make([]TodoTaskListable, len(val))
             for i, v := range val {
-                res[i] = v.(TodoTaskListable)
+                if v != nil {
+                    res[i] = v.(TodoTaskListable)
+                }
             }
             m.SetLists(res)
         }
@@ -58,7 +60,9 @@ func (m *Todo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     if m.GetLists() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLists()))
         for i, v := range m.GetLists() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("lists", cast)
         if err != nil {

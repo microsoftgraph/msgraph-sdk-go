@@ -10,7 +10,7 @@ type DelegatedAdminAccessDetails struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewDelegatedAdminAccessDetails instantiates a new delegatedAdminAccessDetails and sets the default values.
+// NewDelegatedAdminAccessDetails instantiates a new DelegatedAdminAccessDetails and sets the default values.
 func NewDelegatedAdminAccessDetails()(*DelegatedAdminAccessDetails) {
     m := &DelegatedAdminAccessDetails{
     }
@@ -59,7 +59,9 @@ func (m *DelegatedAdminAccessDetails) GetFieldDeserializers()(map[string]func(i8
         if val != nil {
             res := make([]UnifiedRoleable, len(val))
             for i, v := range val {
-                res[i] = v.(UnifiedRoleable)
+                if v != nil {
+                    res[i] = v.(UnifiedRoleable)
+                }
             }
             m.SetUnifiedRoles(res)
         }
@@ -100,7 +102,9 @@ func (m *DelegatedAdminAccessDetails) Serialize(writer i878a80d2330e89d26896388a
     if m.GetUnifiedRoles() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUnifiedRoles()))
         for i, v := range m.GetUnifiedRoles() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("unifiedRoles", cast)
         if err != nil {

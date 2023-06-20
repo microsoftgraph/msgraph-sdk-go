@@ -74,7 +74,9 @@ func (m *ManagedAppPolicyDeploymentSummary) GetFieldDeserializers()(map[string]f
         if val != nil {
             res := make([]ManagedAppPolicyDeploymentSummaryPerAppable, len(val))
             for i, v := range val {
-                res[i] = v.(ManagedAppPolicyDeploymentSummaryPerAppable)
+                if v != nil {
+                    res[i] = v.(ManagedAppPolicyDeploymentSummaryPerAppable)
+                }
             }
             m.SetConfigurationDeploymentSummaryPerApp(res)
         }
@@ -149,7 +151,9 @@ func (m *ManagedAppPolicyDeploymentSummary) Serialize(writer i878a80d2330e89d268
     if m.GetConfigurationDeploymentSummaryPerApp() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetConfigurationDeploymentSummaryPerApp()))
         for i, v := range m.GetConfigurationDeploymentSummaryPerApp() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("configurationDeploymentSummaryPerApp", cast)
         if err != nil {

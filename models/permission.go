@@ -62,7 +62,9 @@ func (m *Permission) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         if val != nil {
             res := make([]IdentitySetable, len(val))
             for i, v := range val {
-                res[i] = v.(IdentitySetable)
+                if v != nil {
+                    res[i] = v.(IdentitySetable)
+                }
             }
             m.SetGrantedToIdentities(res)
         }
@@ -76,7 +78,9 @@ func (m *Permission) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         if val != nil {
             res := make([]SharePointIdentitySetable, len(val))
             for i, v := range val {
-                res[i] = v.(SharePointIdentitySetable)
+                if v != nil {
+                    res[i] = v.(SharePointIdentitySetable)
+                }
             }
             m.SetGrantedToIdentitiesV2(res)
         }
@@ -140,7 +144,9 @@ func (m *Permission) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetRoles(res)
         }
@@ -289,7 +295,9 @@ func (m *Permission) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     if m.GetGrantedToIdentities() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetGrantedToIdentities()))
         for i, v := range m.GetGrantedToIdentities() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("grantedToIdentities", cast)
         if err != nil {
@@ -299,7 +307,9 @@ func (m *Permission) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     if m.GetGrantedToIdentitiesV2() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetGrantedToIdentitiesV2()))
         for i, v := range m.GetGrantedToIdentitiesV2() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("grantedToIdentitiesV2", cast)
         if err != nil {

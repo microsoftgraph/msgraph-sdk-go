@@ -111,7 +111,9 @@ func (m *SynchronizationRule) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]StringKeyStringValuePairable, len(val))
             for i, v := range val {
-                res[i] = v.(StringKeyStringValuePairable)
+                if v != nil {
+                    res[i] = v.(StringKeyStringValuePairable)
+                }
             }
             m.SetMetadata(res)
         }
@@ -135,7 +137,9 @@ func (m *SynchronizationRule) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]ObjectMappingable, len(val))
             for i, v := range val {
-                res[i] = v.(ObjectMappingable)
+                if v != nil {
+                    res[i] = v.(ObjectMappingable)
+                }
             }
             m.SetObjectMappings(res)
         }
@@ -311,7 +315,9 @@ func (m *SynchronizationRule) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetMetadata() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMetadata()))
         for i, v := range m.GetMetadata() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("metadata", cast)
         if err != nil {
@@ -327,7 +333,9 @@ func (m *SynchronizationRule) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetObjectMappings() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetObjectMappings()))
         for i, v := range m.GetObjectMappings() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("objectMappings", cast)
         if err != nil {

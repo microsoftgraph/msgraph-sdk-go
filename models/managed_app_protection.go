@@ -144,7 +144,9 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(i878a80d2
         if val != nil {
             res := make([]ManagedAppDataStorageLocation, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ManagedAppDataStorageLocation))
+                if v != nil {
+                    res[i] = *(v.(*ManagedAppDataStorageLocation))
+                }
             }
             m.SetAllowedDataStorageLocations(res)
         }

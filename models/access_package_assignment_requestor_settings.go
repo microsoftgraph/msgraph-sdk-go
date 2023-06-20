@@ -206,7 +206,9 @@ func (m *AccessPackageAssignmentRequestorSettings) GetFieldDeserializers()(map[s
         if val != nil {
             res := make([]SubjectSetable, len(val))
             for i, v := range val {
-                res[i] = v.(SubjectSetable)
+                if v != nil {
+                    res[i] = v.(SubjectSetable)
+                }
             }
             m.SetOnBehalfRequestors(res)
         }
@@ -289,7 +291,9 @@ func (m *AccessPackageAssignmentRequestorSettings) Serialize(writer i878a80d2330
     if m.GetOnBehalfRequestors() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOnBehalfRequestors()))
         for i, v := range m.GetOnBehalfRequestors() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("onBehalfRequestors", cast)
         if err != nil {

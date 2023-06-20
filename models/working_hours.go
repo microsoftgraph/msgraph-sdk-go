@@ -71,7 +71,9 @@ func (m *WorkingHours) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         if val != nil {
             res := make([]DayOfWeek, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DayOfWeek))
+                if v != nil {
+                    res[i] = *(v.(*DayOfWeek))
+                }
             }
             m.SetDaysOfWeek(res)
         }

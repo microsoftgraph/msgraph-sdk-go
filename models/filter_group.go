@@ -60,7 +60,9 @@ func (m *FilterGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         if val != nil {
             res := make([]FilterClauseable, len(val))
             for i, v := range val {
-                res[i] = v.(FilterClauseable)
+                if v != nil {
+                    res[i] = v.(FilterClauseable)
+                }
             }
             m.SetClauses(res)
         }
@@ -115,7 +117,9 @@ func (m *FilterGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     if m.GetClauses() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetClauses()))
         for i, v := range m.GetClauses() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("clauses", cast)
         if err != nil {

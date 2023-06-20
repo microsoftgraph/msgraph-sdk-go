@@ -10,7 +10,7 @@ type PrintJobStatus struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewPrintJobStatus instantiates a new printJobStatus and sets the default values.
+// NewPrintJobStatus instantiates a new PrintJobStatus and sets the default values.
 func NewPrintJobStatus()(*PrintJobStatus) {
     m := &PrintJobStatus{
     }
@@ -81,7 +81,9 @@ func (m *PrintJobStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         if val != nil {
             res := make([]PrintJobStateDetail, len(val))
             for i, v := range val {
-                res[i] = *(v.(*PrintJobStateDetail))
+                if v != nil {
+                    res[i] = *(v.(*PrintJobStateDetail))
+                }
             }
             m.SetDetails(res)
         }

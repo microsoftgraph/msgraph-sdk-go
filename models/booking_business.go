@@ -150,7 +150,9 @@ func (m *BookingBusiness) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         if val != nil {
             res := make([]BookingAppointmentable, len(val))
             for i, v := range val {
-                res[i] = v.(BookingAppointmentable)
+                if v != nil {
+                    res[i] = v.(BookingAppointmentable)
+                }
             }
             m.SetAppointments(res)
         }
@@ -164,7 +166,9 @@ func (m *BookingBusiness) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         if val != nil {
             res := make([]BookingWorkHoursable, len(val))
             for i, v := range val {
-                res[i] = v.(BookingWorkHoursable)
+                if v != nil {
+                    res[i] = v.(BookingWorkHoursable)
+                }
             }
             m.SetBusinessHours(res)
         }
@@ -188,7 +192,9 @@ func (m *BookingBusiness) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         if val != nil {
             res := make([]BookingAppointmentable, len(val))
             for i, v := range val {
-                res[i] = v.(BookingAppointmentable)
+                if v != nil {
+                    res[i] = v.(BookingAppointmentable)
+                }
             }
             m.SetCalendarView(res)
         }
@@ -202,7 +208,9 @@ func (m *BookingBusiness) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         if val != nil {
             res := make([]BookingCustomerBaseable, len(val))
             for i, v := range val {
-                res[i] = v.(BookingCustomerBaseable)
+                if v != nil {
+                    res[i] = v.(BookingCustomerBaseable)
+                }
             }
             m.SetCustomers(res)
         }
@@ -216,7 +224,9 @@ func (m *BookingBusiness) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         if val != nil {
             res := make([]BookingCustomQuestionable, len(val))
             for i, v := range val {
-                res[i] = v.(BookingCustomQuestionable)
+                if v != nil {
+                    res[i] = v.(BookingCustomQuestionable)
+                }
             }
             m.SetCustomQuestions(res)
         }
@@ -310,7 +320,9 @@ func (m *BookingBusiness) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         if val != nil {
             res := make([]BookingServiceable, len(val))
             for i, v := range val {
-                res[i] = v.(BookingServiceable)
+                if v != nil {
+                    res[i] = v.(BookingServiceable)
+                }
             }
             m.SetServices(res)
         }
@@ -324,7 +336,9 @@ func (m *BookingBusiness) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         if val != nil {
             res := make([]BookingStaffMemberBaseable, len(val))
             for i, v := range val {
-                res[i] = v.(BookingStaffMemberBaseable)
+                if v != nil {
+                    res[i] = v.(BookingStaffMemberBaseable)
+                }
             }
             m.SetStaffMembers(res)
         }
@@ -445,7 +459,9 @@ func (m *BookingBusiness) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if m.GetAppointments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAppointments()))
         for i, v := range m.GetAppointments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("appointments", cast)
         if err != nil {
@@ -455,7 +471,9 @@ func (m *BookingBusiness) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if m.GetBusinessHours() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetBusinessHours()))
         for i, v := range m.GetBusinessHours() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("businessHours", cast)
         if err != nil {
@@ -471,7 +489,9 @@ func (m *BookingBusiness) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if m.GetCalendarView() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCalendarView()))
         for i, v := range m.GetCalendarView() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("calendarView", cast)
         if err != nil {
@@ -481,7 +501,9 @@ func (m *BookingBusiness) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if m.GetCustomers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomers()))
         for i, v := range m.GetCustomers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("customers", cast)
         if err != nil {
@@ -491,7 +513,9 @@ func (m *BookingBusiness) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if m.GetCustomQuestions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomQuestions()))
         for i, v := range m.GetCustomQuestions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("customQuestions", cast)
         if err != nil {
@@ -537,7 +561,9 @@ func (m *BookingBusiness) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if m.GetServices() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetServices()))
         for i, v := range m.GetServices() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("services", cast)
         if err != nil {
@@ -547,7 +573,9 @@ func (m *BookingBusiness) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if m.GetStaffMembers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetStaffMembers()))
         for i, v := range m.GetStaffMembers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("staffMembers", cast)
         if err != nil {

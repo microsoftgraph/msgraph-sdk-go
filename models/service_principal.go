@@ -274,7 +274,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]AddInable, len(val))
             for i, v := range val {
-                res[i] = v.(AddInable)
+                if v != nil {
+                    res[i] = v.(AddInable)
+                }
             }
             m.SetAddIns(res)
         }
@@ -288,7 +290,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetAlternativeNames(res)
         }
@@ -342,7 +346,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]AppManagementPolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(AppManagementPolicyable)
+                if v != nil {
+                    res[i] = v.(AppManagementPolicyable)
+                }
             }
             m.SetAppManagementPolicies(res)
         }
@@ -366,7 +372,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]AppRoleAssignmentable, len(val))
             for i, v := range val {
-                res[i] = v.(AppRoleAssignmentable)
+                if v != nil {
+                    res[i] = v.(AppRoleAssignmentable)
+                }
             }
             m.SetAppRoleAssignedTo(res)
         }
@@ -390,7 +398,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]AppRoleAssignmentable, len(val))
             for i, v := range val {
-                res[i] = v.(AppRoleAssignmentable)
+                if v != nil {
+                    res[i] = v.(AppRoleAssignmentable)
+                }
             }
             m.SetAppRoleAssignments(res)
         }
@@ -404,7 +414,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]AppRoleable, len(val))
             for i, v := range val {
-                res[i] = v.(AppRoleable)
+                if v != nil {
+                    res[i] = v.(AppRoleable)
+                }
             }
             m.SetAppRoles(res)
         }
@@ -418,7 +430,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]ClaimsMappingPolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(ClaimsMappingPolicyable)
+                if v != nil {
+                    res[i] = v.(ClaimsMappingPolicyable)
+                }
             }
             m.SetClaimsMappingPolicies(res)
         }
@@ -432,7 +446,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]DirectoryObjectable, len(val))
             for i, v := range val {
-                res[i] = v.(DirectoryObjectable)
+                if v != nil {
+                    res[i] = v.(DirectoryObjectable)
+                }
             }
             m.SetCreatedObjects(res)
         }
@@ -446,7 +462,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]DelegatedPermissionClassificationable, len(val))
             for i, v := range val {
-                res[i] = v.(DelegatedPermissionClassificationable)
+                if v != nil {
+                    res[i] = v.(DelegatedPermissionClassificationable)
+                }
             }
             m.SetDelegatedPermissionClassifications(res)
         }
@@ -490,7 +508,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]Endpointable, len(val))
             for i, v := range val {
-                res[i] = v.(Endpointable)
+                if v != nil {
+                    res[i] = v.(Endpointable)
+                }
             }
             m.SetEndpoints(res)
         }
@@ -504,7 +524,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]FederatedIdentityCredentialable, len(val))
             for i, v := range val {
-                res[i] = v.(FederatedIdentityCredentialable)
+                if v != nil {
+                    res[i] = v.(FederatedIdentityCredentialable)
+                }
             }
             m.SetFederatedIdentityCredentials(res)
         }
@@ -528,7 +550,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]HomeRealmDiscoveryPolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(HomeRealmDiscoveryPolicyable)
+                if v != nil {
+                    res[i] = v.(HomeRealmDiscoveryPolicyable)
+                }
             }
             m.SetHomeRealmDiscoveryPolicies(res)
         }
@@ -552,7 +576,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]KeyCredentialable, len(val))
             for i, v := range val {
-                res[i] = v.(KeyCredentialable)
+                if v != nil {
+                    res[i] = v.(KeyCredentialable)
+                }
             }
             m.SetKeyCredentials(res)
         }
@@ -586,7 +612,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]DirectoryObjectable, len(val))
             for i, v := range val {
-                res[i] = v.(DirectoryObjectable)
+                if v != nil {
+                    res[i] = v.(DirectoryObjectable)
+                }
             }
             m.SetMemberOf(res)
         }
@@ -610,7 +638,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetNotificationEmailAddresses(res)
         }
@@ -624,7 +654,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]OAuth2PermissionGrantable, len(val))
             for i, v := range val {
-                res[i] = v.(OAuth2PermissionGrantable)
+                if v != nil {
+                    res[i] = v.(OAuth2PermissionGrantable)
+                }
             }
             m.SetOauth2PermissionGrants(res)
         }
@@ -638,7 +670,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]PermissionScopeable, len(val))
             for i, v := range val {
-                res[i] = v.(PermissionScopeable)
+                if v != nil {
+                    res[i] = v.(PermissionScopeable)
+                }
             }
             m.SetOauth2PermissionScopes(res)
         }
@@ -652,7 +686,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]DirectoryObjectable, len(val))
             for i, v := range val {
-                res[i] = v.(DirectoryObjectable)
+                if v != nil {
+                    res[i] = v.(DirectoryObjectable)
+                }
             }
             m.SetOwnedObjects(res)
         }
@@ -666,7 +702,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]DirectoryObjectable, len(val))
             for i, v := range val {
-                res[i] = v.(DirectoryObjectable)
+                if v != nil {
+                    res[i] = v.(DirectoryObjectable)
+                }
             }
             m.SetOwners(res)
         }
@@ -680,7 +718,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]PasswordCredentialable, len(val))
             for i, v := range val {
-                res[i] = v.(PasswordCredentialable)
+                if v != nil {
+                    res[i] = v.(PasswordCredentialable)
+                }
             }
             m.SetPasswordCredentials(res)
         }
@@ -714,7 +754,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetReplyUrls(res)
         }
@@ -728,7 +770,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]ResourceSpecificPermissionable, len(val))
             for i, v := range val {
-                res[i] = v.(ResourceSpecificPermissionable)
+                if v != nil {
+                    res[i] = v.(ResourceSpecificPermissionable)
+                }
             }
             m.SetResourceSpecificApplicationPermissions(res)
         }
@@ -752,7 +796,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetServicePrincipalNames(res)
         }
@@ -796,7 +842,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetTags(res)
         }
@@ -820,7 +868,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]TokenIssuancePolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(TokenIssuancePolicyable)
+                if v != nil {
+                    res[i] = v.(TokenIssuancePolicyable)
+                }
             }
             m.SetTokenIssuancePolicies(res)
         }
@@ -834,7 +884,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]TokenLifetimePolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(TokenLifetimePolicyable)
+                if v != nil {
+                    res[i] = v.(TokenLifetimePolicyable)
+                }
             }
             m.SetTokenLifetimePolicies(res)
         }
@@ -848,7 +900,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]DirectoryObjectable, len(val))
             for i, v := range val {
-                res[i] = v.(DirectoryObjectable)
+                if v != nil {
+                    res[i] = v.(DirectoryObjectable)
+                }
             }
             m.SetTransitiveMemberOf(res)
         }
@@ -1200,7 +1254,9 @@ func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetAddIns() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAddIns()))
         for i, v := range m.GetAddIns() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("addIns", cast)
         if err != nil {
@@ -1240,7 +1296,9 @@ func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetAppManagementPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAppManagementPolicies()))
         for i, v := range m.GetAppManagementPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("appManagementPolicies", cast)
         if err != nil {
@@ -1256,7 +1314,9 @@ func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetAppRoleAssignedTo() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAppRoleAssignedTo()))
         for i, v := range m.GetAppRoleAssignedTo() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("appRoleAssignedTo", cast)
         if err != nil {
@@ -1272,7 +1332,9 @@ func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetAppRoleAssignments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAppRoleAssignments()))
         for i, v := range m.GetAppRoleAssignments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("appRoleAssignments", cast)
         if err != nil {
@@ -1282,7 +1344,9 @@ func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetAppRoles() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAppRoles()))
         for i, v := range m.GetAppRoles() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("appRoles", cast)
         if err != nil {
@@ -1292,7 +1356,9 @@ func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetClaimsMappingPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetClaimsMappingPolicies()))
         for i, v := range m.GetClaimsMappingPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("claimsMappingPolicies", cast)
         if err != nil {
@@ -1302,7 +1368,9 @@ func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetCreatedObjects() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCreatedObjects()))
         for i, v := range m.GetCreatedObjects() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("createdObjects", cast)
         if err != nil {
@@ -1312,7 +1380,9 @@ func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetDelegatedPermissionClassifications() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDelegatedPermissionClassifications()))
         for i, v := range m.GetDelegatedPermissionClassifications() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("delegatedPermissionClassifications", cast)
         if err != nil {
@@ -1340,7 +1410,9 @@ func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetEndpoints() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEndpoints()))
         for i, v := range m.GetEndpoints() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("endpoints", cast)
         if err != nil {
@@ -1350,7 +1422,9 @@ func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetFederatedIdentityCredentials() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFederatedIdentityCredentials()))
         for i, v := range m.GetFederatedIdentityCredentials() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("federatedIdentityCredentials", cast)
         if err != nil {
@@ -1366,7 +1440,9 @@ func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetHomeRealmDiscoveryPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetHomeRealmDiscoveryPolicies()))
         for i, v := range m.GetHomeRealmDiscoveryPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("homeRealmDiscoveryPolicies", cast)
         if err != nil {
@@ -1382,7 +1458,9 @@ func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetKeyCredentials() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetKeyCredentials()))
         for i, v := range m.GetKeyCredentials() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("keyCredentials", cast)
         if err != nil {
@@ -1404,7 +1482,9 @@ func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetMemberOf() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMemberOf()))
         for i, v := range m.GetMemberOf() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("memberOf", cast)
         if err != nil {
@@ -1426,7 +1506,9 @@ func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetOauth2PermissionGrants() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOauth2PermissionGrants()))
         for i, v := range m.GetOauth2PermissionGrants() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("oauth2PermissionGrants", cast)
         if err != nil {
@@ -1436,7 +1518,9 @@ func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetOauth2PermissionScopes() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOauth2PermissionScopes()))
         for i, v := range m.GetOauth2PermissionScopes() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("oauth2PermissionScopes", cast)
         if err != nil {
@@ -1446,7 +1530,9 @@ func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetOwnedObjects() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOwnedObjects()))
         for i, v := range m.GetOwnedObjects() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("ownedObjects", cast)
         if err != nil {
@@ -1456,7 +1542,9 @@ func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetOwners() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOwners()))
         for i, v := range m.GetOwners() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("owners", cast)
         if err != nil {
@@ -1466,7 +1554,9 @@ func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetPasswordCredentials() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPasswordCredentials()))
         for i, v := range m.GetPasswordCredentials() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("passwordCredentials", cast)
         if err != nil {
@@ -1494,7 +1584,9 @@ func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetResourceSpecificApplicationPermissions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetResourceSpecificApplicationPermissions()))
         for i, v := range m.GetResourceSpecificApplicationPermissions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("resourceSpecificApplicationPermissions", cast)
         if err != nil {
@@ -1546,7 +1638,9 @@ func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetTokenIssuancePolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTokenIssuancePolicies()))
         for i, v := range m.GetTokenIssuancePolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("tokenIssuancePolicies", cast)
         if err != nil {
@@ -1556,7 +1650,9 @@ func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetTokenLifetimePolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTokenLifetimePolicies()))
         for i, v := range m.GetTokenLifetimePolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("tokenLifetimePolicies", cast)
         if err != nil {
@@ -1566,7 +1662,9 @@ func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetTransitiveMemberOf() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTransitiveMemberOf()))
         for i, v := range m.GetTransitiveMemberOf() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("transitiveMemberOf", cast)
         if err != nil {

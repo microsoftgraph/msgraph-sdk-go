@@ -11,7 +11,7 @@ type MediaStream struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewMediaStream instantiates a new mediaStream and sets the default values.
+// NewMediaStream instantiates a new MediaStream and sets the default values.
 func NewMediaStream()(*MediaStream) {
     m := &MediaStream{
     }
@@ -76,6 +76,17 @@ func (m *MediaStream) GetAverageBandwidthEstimate()(*int64) {
     }
     if val != nil {
         return val.(*int64)
+    }
+    return nil
+}
+// GetAverageFreezeDuration gets the averageFreezeDuration property value. Average duration of the received freezing time in the video stream.
+func (m *MediaStream) GetAverageFreezeDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
+    val, err := m.GetBackingStore().Get("averageFreezeDuration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
     }
     return nil
 }
@@ -225,6 +236,16 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["averageFreezeDuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetISODurationValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAverageFreezeDuration(val)
+        }
+        return nil
+    }
     res["averageJitter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
@@ -312,6 +333,16 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         if val != nil {
             m.SetEndDateTime(val)
+        }
+        return nil
+    }
+    res["isAudioForwardErrorCorrectionUsed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsAudioForwardErrorCorrectionUsed(val)
         }
         return nil
     }
@@ -415,6 +446,16 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["rmsFreezeDuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetISODurationValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRmsFreezeDuration(val)
+        }
+        return nil
+    }
     res["startDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -466,6 +507,17 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         return nil
     }
     return res
+}
+// GetIsAudioForwardErrorCorrectionUsed gets the isAudioForwardErrorCorrectionUsed property value. Indicates whether the forward error correction (FEC) was used at some point during the session. The default value is null.
+func (m *MediaStream) GetIsAudioForwardErrorCorrectionUsed()(*bool) {
+    val, err := m.GetBackingStore().Get("isAudioForwardErrorCorrectionUsed")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLowFrameRateRatio gets the lowFrameRateRatio property value. Fraction of the call where frame rate is less than 7.5 frames per second.
 func (m *MediaStream) GetLowFrameRateRatio()(*float32) {
@@ -577,6 +629,17 @@ func (m *MediaStream) GetPostForwardErrorCorrectionPacketLossRate()(*float32) {
     }
     return nil
 }
+// GetRmsFreezeDuration gets the rmsFreezeDuration property value. Average duration of the received freezing time in the video stream represented in root mean square.
+func (m *MediaStream) GetRmsFreezeDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
+    val, err := m.GetBackingStore().Get("rmsFreezeDuration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
+    }
+    return nil
+}
 // GetStartDateTime gets the startDateTime property value. UTC time when the stream started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *MediaStream) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
@@ -660,6 +723,12 @@ func (m *MediaStream) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err := writer.WriteISODurationValue("averageFreezeDuration", m.GetAverageFreezeDuration())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteISODurationValue("averageJitter", m.GetAverageJitter())
         if err != nil {
             return err
@@ -709,6 +778,12 @@ func (m *MediaStream) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     {
         err := writer.WriteTimeValue("endDateTime", m.GetEndDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteBoolValue("isAudioForwardErrorCorrectionUsed", m.GetIsAudioForwardErrorCorrectionUsed())
         if err != nil {
             return err
         }
@@ -769,6 +844,12 @@ func (m *MediaStream) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     {
         err := writer.WriteFloat32Value("postForwardErrorCorrectionPacketLossRate", m.GetPostForwardErrorCorrectionPacketLossRate())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteISODurationValue("rmsFreezeDuration", m.GetRmsFreezeDuration())
         if err != nil {
             return err
         }
@@ -848,6 +929,13 @@ func (m *MediaStream) SetAverageBandwidthEstimate(value *int64)() {
         panic(err)
     }
 }
+// SetAverageFreezeDuration sets the averageFreezeDuration property value. Average duration of the received freezing time in the video stream.
+func (m *MediaStream) SetAverageFreezeDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
+    err := m.GetBackingStore().Set("averageFreezeDuration", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetAverageJitter sets the averageJitter property value. Average jitter for the stream computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
 func (m *MediaStream) SetAverageJitter(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     err := m.GetBackingStore().Set("averageJitter", value)
@@ -911,6 +999,13 @@ func (m *MediaStream) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d4118
 // SetEndDateTime sets the endDateTime property value. UTC time when the stream ended. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *MediaStream) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("endDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetIsAudioForwardErrorCorrectionUsed sets the isAudioForwardErrorCorrectionUsed property value. Indicates whether the forward error correction (FEC) was used at some point during the session. The default value is null.
+func (m *MediaStream) SetIsAudioForwardErrorCorrectionUsed(value *bool)() {
+    err := m.GetBackingStore().Set("isAudioForwardErrorCorrectionUsed", value)
     if err != nil {
         panic(err)
     }
@@ -985,6 +1080,13 @@ func (m *MediaStream) SetPostForwardErrorCorrectionPacketLossRate(value *float32
         panic(err)
     }
 }
+// SetRmsFreezeDuration sets the rmsFreezeDuration property value. Average duration of the received freezing time in the video stream represented in root mean square.
+func (m *MediaStream) SetRmsFreezeDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
+    err := m.GetBackingStore().Set("rmsFreezeDuration", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetStartDateTime sets the startDateTime property value. UTC time when the stream started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *MediaStream) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("startDateTime", value)
@@ -1029,6 +1131,7 @@ type MediaStreamable interface {
     GetAverageAudioDegradation()(*float32)
     GetAverageAudioNetworkJitter()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
     GetAverageBandwidthEstimate()(*int64)
+    GetAverageFreezeDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
     GetAverageJitter()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
     GetAveragePacketLossRate()(*float32)
     GetAverageRatioOfConcealedSamples()(*float32)
@@ -1039,6 +1142,7 @@ type MediaStreamable interface {
     GetAverageVideoPacketLossRate()(*float32)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetIsAudioForwardErrorCorrectionUsed()(*bool)
     GetLowFrameRateRatio()(*float32)
     GetLowVideoProcessingCapabilityRatio()(*float32)
     GetMaxAudioNetworkJitter()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
@@ -1049,6 +1153,7 @@ type MediaStreamable interface {
     GetOdataType()(*string)
     GetPacketUtilization()(*int64)
     GetPostForwardErrorCorrectionPacketLossRate()(*float32)
+    GetRmsFreezeDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
     GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetStreamDirection()(*MediaStreamDirection)
     GetStreamId()(*string)
@@ -1058,6 +1163,7 @@ type MediaStreamable interface {
     SetAverageAudioDegradation(value *float32)()
     SetAverageAudioNetworkJitter(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
     SetAverageBandwidthEstimate(value *int64)()
+    SetAverageFreezeDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
     SetAverageJitter(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
     SetAveragePacketLossRate(value *float32)()
     SetAverageRatioOfConcealedSamples(value *float32)()
@@ -1068,6 +1174,7 @@ type MediaStreamable interface {
     SetAverageVideoPacketLossRate(value *float32)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetIsAudioForwardErrorCorrectionUsed(value *bool)()
     SetLowFrameRateRatio(value *float32)()
     SetLowVideoProcessingCapabilityRatio(value *float32)()
     SetMaxAudioNetworkJitter(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
@@ -1078,6 +1185,7 @@ type MediaStreamable interface {
     SetOdataType(value *string)()
     SetPacketUtilization(value *int64)()
     SetPostForwardErrorCorrectionPacketLossRate(value *float32)()
+    SetRmsFreezeDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
     SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetStreamDirection(value *MediaStreamDirection)()
     SetStreamId(value *string)()

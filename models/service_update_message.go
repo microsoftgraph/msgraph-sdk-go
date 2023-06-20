@@ -98,7 +98,9 @@ func (m *ServiceUpdateMessage) GetFieldDeserializers()(map[string]func(i878a80d2
         if val != nil {
             res := make([]ServiceAnnouncementAttachmentable, len(val))
             for i, v := range val {
-                res[i] = v.(ServiceAnnouncementAttachmentable)
+                if v != nil {
+                    res[i] = v.(ServiceAnnouncementAttachmentable)
+                }
             }
             m.SetAttachments(res)
         }
@@ -162,7 +164,9 @@ func (m *ServiceUpdateMessage) GetFieldDeserializers()(map[string]func(i878a80d2
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetServices(res)
         }
@@ -186,7 +190,9 @@ func (m *ServiceUpdateMessage) GetFieldDeserializers()(map[string]func(i878a80d2
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetTags(res)
         }
@@ -285,7 +291,9 @@ func (m *ServiceUpdateMessage) Serialize(writer i878a80d2330e89d26896388a3f487ee
     if m.GetAttachments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAttachments()))
         for i, v := range m.GetAttachments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("attachments", cast)
         if err != nil {

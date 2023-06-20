@@ -41,7 +41,9 @@ func (m *MobileAppContent) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]MobileContainedAppable, len(val))
             for i, v := range val {
-                res[i] = v.(MobileContainedAppable)
+                if v != nil {
+                    res[i] = v.(MobileContainedAppable)
+                }
             }
             m.SetContainedApps(res)
         }
@@ -55,7 +57,9 @@ func (m *MobileAppContent) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]MobileAppContentFileable, len(val))
             for i, v := range val {
-                res[i] = v.(MobileAppContentFileable)
+                if v != nil {
+                    res[i] = v.(MobileAppContentFileable)
+                }
             }
             m.SetFiles(res)
         }
@@ -83,7 +87,9 @@ func (m *MobileAppContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetContainedApps() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetContainedApps()))
         for i, v := range m.GetContainedApps() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("containedApps", cast)
         if err != nil {
@@ -93,7 +99,9 @@ func (m *MobileAppContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetFiles() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFiles()))
         for i, v := range m.GetFiles() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("files", cast)
         if err != nil {

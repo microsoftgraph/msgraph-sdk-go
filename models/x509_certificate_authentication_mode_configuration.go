@@ -59,7 +59,9 @@ func (m *X509CertificateAuthenticationModeConfiguration) GetFieldDeserializers()
         if val != nil {
             res := make([]X509CertificateRuleable, len(val))
             for i, v := range val {
-                res[i] = v.(X509CertificateRuleable)
+                if v != nil {
+                    res[i] = v.(X509CertificateRuleable)
+                }
             }
             m.SetRules(res)
         }
@@ -121,7 +123,9 @@ func (m *X509CertificateAuthenticationModeConfiguration) Serialize(writer i878a8
     if m.GetRules() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRules()))
         for i, v := range m.GetRules() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("rules", cast)
         if err != nil {

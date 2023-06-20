@@ -11,7 +11,7 @@ type AssignedLicense struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAssignedLicense instantiates a new assignedLicense and sets the default values.
+// NewAssignedLicense instantiates a new AssignedLicense and sets the default values.
 func NewAssignedLicense()(*AssignedLicense) {
     m := &AssignedLicense{
     }
@@ -61,7 +61,9 @@ func (m *AssignedLicense) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         if val != nil {
             res := make([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID, len(val))
             for i, v := range val {
-                res[i] = *(v.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID))
+                if v != nil {
+                    res[i] = *(v.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID))
+                }
             }
             m.SetDisabledPlans(res)
         }

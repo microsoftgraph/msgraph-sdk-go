@@ -30,7 +30,10 @@ func NewItemGroupLifecyclePoliciesItemRemoveGroupRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewItemGroupLifecyclePoliciesItemRemoveGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action removeGroup
+// Post removes a group from a lifecycle policy.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/grouplifecyclepolicy-removegroup?view=graph-rest-1.0
 func (m *ItemGroupLifecyclePoliciesItemRemoveGroupRequestBuilder) Post(ctx context.Context, body ItemGroupLifecyclePoliciesItemRemoveGroupPostRequestBodyable, requestConfiguration *ItemGroupLifecyclePoliciesItemRemoveGroupRequestBuilderPostRequestConfiguration)(ItemGroupLifecyclePoliciesItemRemoveGroupResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +52,7 @@ func (m *ItemGroupLifecyclePoliciesItemRemoveGroupRequestBuilder) Post(ctx conte
     }
     return res.(ItemGroupLifecyclePoliciesItemRemoveGroupResponseable), nil
 }
-// ToPostRequestInformation invoke action removeGroup
+// ToPostRequestInformation removes a group from a lifecycle policy.
 func (m *ItemGroupLifecyclePoliciesItemRemoveGroupRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemGroupLifecyclePoliciesItemRemoveGroupPostRequestBodyable, requestConfiguration *ItemGroupLifecyclePoliciesItemRemoveGroupRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

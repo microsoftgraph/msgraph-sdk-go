@@ -162,7 +162,9 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         if val != nil {
             res := make([]ActivityBasedTimeoutPolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(ActivityBasedTimeoutPolicyable)
+                if v != nil {
+                    res[i] = v.(ActivityBasedTimeoutPolicyable)
+                }
             }
             m.SetActivityBasedTimeoutPolicies(res)
         }
@@ -186,7 +188,9 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         if val != nil {
             res := make([]AppManagementPolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(AppManagementPolicyable)
+                if v != nil {
+                    res[i] = v.(AppManagementPolicyable)
+                }
             }
             m.SetAppManagementPolicies(res)
         }
@@ -220,7 +224,9 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         if val != nil {
             res := make([]AuthenticationStrengthPolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(AuthenticationStrengthPolicyable)
+                if v != nil {
+                    res[i] = v.(AuthenticationStrengthPolicyable)
+                }
             }
             m.SetAuthenticationStrengthPolicies(res)
         }
@@ -244,7 +250,9 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         if val != nil {
             res := make([]ClaimsMappingPolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(ClaimsMappingPolicyable)
+                if v != nil {
+                    res[i] = v.(ClaimsMappingPolicyable)
+                }
             }
             m.SetClaimsMappingPolicies(res)
         }
@@ -258,7 +266,9 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         if val != nil {
             res := make([]ConditionalAccessPolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(ConditionalAccessPolicyable)
+                if v != nil {
+                    res[i] = v.(ConditionalAccessPolicyable)
+                }
             }
             m.SetConditionalAccessPolicies(res)
         }
@@ -292,7 +302,9 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         if val != nil {
             res := make([]FeatureRolloutPolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(FeatureRolloutPolicyable)
+                if v != nil {
+                    res[i] = v.(FeatureRolloutPolicyable)
+                }
             }
             m.SetFeatureRolloutPolicies(res)
         }
@@ -306,7 +318,9 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         if val != nil {
             res := make([]HomeRealmDiscoveryPolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(HomeRealmDiscoveryPolicyable)
+                if v != nil {
+                    res[i] = v.(HomeRealmDiscoveryPolicyable)
+                }
             }
             m.SetHomeRealmDiscoveryPolicies(res)
         }
@@ -330,7 +344,9 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         if val != nil {
             res := make([]PermissionGrantPolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(PermissionGrantPolicyable)
+                if v != nil {
+                    res[i] = v.(PermissionGrantPolicyable)
+                }
             }
             m.SetPermissionGrantPolicies(res)
         }
@@ -344,7 +360,9 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         if val != nil {
             res := make([]UnifiedRoleManagementPolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(UnifiedRoleManagementPolicyable)
+                if v != nil {
+                    res[i] = v.(UnifiedRoleManagementPolicyable)
+                }
             }
             m.SetRoleManagementPolicies(res)
         }
@@ -358,7 +376,9 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         if val != nil {
             res := make([]UnifiedRoleManagementPolicyAssignmentable, len(val))
             for i, v := range val {
-                res[i] = v.(UnifiedRoleManagementPolicyAssignmentable)
+                if v != nil {
+                    res[i] = v.(UnifiedRoleManagementPolicyAssignmentable)
+                }
             }
             m.SetRoleManagementPolicyAssignments(res)
         }
@@ -372,7 +392,9 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         if val != nil {
             res := make([]TokenIssuancePolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(TokenIssuancePolicyable)
+                if v != nil {
+                    res[i] = v.(TokenIssuancePolicyable)
+                }
             }
             m.SetTokenIssuancePolicies(res)
         }
@@ -386,7 +408,9 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         if val != nil {
             res := make([]TokenLifetimePolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(TokenLifetimePolicyable)
+                if v != nil {
+                    res[i] = v.(TokenLifetimePolicyable)
+                }
             }
             m.SetTokenLifetimePolicies(res)
         }
@@ -480,7 +504,9 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     if m.GetActivityBasedTimeoutPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetActivityBasedTimeoutPolicies()))
         for i, v := range m.GetActivityBasedTimeoutPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("activityBasedTimeoutPolicies", cast)
         if err != nil {
@@ -496,7 +522,9 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     if m.GetAppManagementPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAppManagementPolicies()))
         for i, v := range m.GetAppManagementPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("appManagementPolicies", cast)
         if err != nil {
@@ -518,7 +546,9 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     if m.GetAuthenticationStrengthPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAuthenticationStrengthPolicies()))
         for i, v := range m.GetAuthenticationStrengthPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("authenticationStrengthPolicies", cast)
         if err != nil {
@@ -534,7 +564,9 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     if m.GetClaimsMappingPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetClaimsMappingPolicies()))
         for i, v := range m.GetClaimsMappingPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("claimsMappingPolicies", cast)
         if err != nil {
@@ -544,7 +576,9 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     if m.GetConditionalAccessPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetConditionalAccessPolicies()))
         for i, v := range m.GetConditionalAccessPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("conditionalAccessPolicies", cast)
         if err != nil {
@@ -566,7 +600,9 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     if m.GetFeatureRolloutPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFeatureRolloutPolicies()))
         for i, v := range m.GetFeatureRolloutPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("featureRolloutPolicies", cast)
         if err != nil {
@@ -576,7 +612,9 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     if m.GetHomeRealmDiscoveryPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetHomeRealmDiscoveryPolicies()))
         for i, v := range m.GetHomeRealmDiscoveryPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("homeRealmDiscoveryPolicies", cast)
         if err != nil {
@@ -592,7 +630,9 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     if m.GetPermissionGrantPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPermissionGrantPolicies()))
         for i, v := range m.GetPermissionGrantPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("permissionGrantPolicies", cast)
         if err != nil {
@@ -602,7 +642,9 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     if m.GetRoleManagementPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRoleManagementPolicies()))
         for i, v := range m.GetRoleManagementPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("roleManagementPolicies", cast)
         if err != nil {
@@ -612,7 +654,9 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     if m.GetRoleManagementPolicyAssignments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRoleManagementPolicyAssignments()))
         for i, v := range m.GetRoleManagementPolicyAssignments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("roleManagementPolicyAssignments", cast)
         if err != nil {
@@ -622,7 +666,9 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     if m.GetTokenIssuancePolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTokenIssuancePolicies()))
         for i, v := range m.GetTokenIssuancePolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("tokenIssuancePolicies", cast)
         if err != nil {
@@ -632,7 +678,9 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     if m.GetTokenLifetimePolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTokenLifetimePolicies()))
         for i, v := range m.GetTokenLifetimePolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("tokenLifetimePolicies", cast)
         if err != nil {

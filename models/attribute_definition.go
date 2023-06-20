@@ -103,7 +103,9 @@ func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]StringKeyStringValuePairable, len(val))
             for i, v := range val {
-                res[i] = v.(StringKeyStringValuePairable)
+                if v != nil {
+                    res[i] = v.(StringKeyStringValuePairable)
+                }
             }
             m.SetApiExpressions(res)
         }
@@ -147,7 +149,9 @@ func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]AttributeDefinitionMetadataEntryable, len(val))
             for i, v := range val {
-                res[i] = v.(AttributeDefinitionMetadataEntryable)
+                if v != nil {
+                    res[i] = v.(AttributeDefinitionMetadataEntryable)
+                }
             }
             m.SetMetadata(res)
         }
@@ -201,7 +205,9 @@ func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]ReferencedObjectable, len(val))
             for i, v := range val {
-                res[i] = v.(ReferencedObjectable)
+                if v != nil {
+                    res[i] = v.(ReferencedObjectable)
+                }
             }
             m.SetReferencedObjects(res)
         }
@@ -339,7 +345,9 @@ func (m *AttributeDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetApiExpressions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetApiExpressions()))
         for i, v := range m.GetApiExpressions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("apiExpressions", cast)
         if err != nil {
@@ -367,7 +375,9 @@ func (m *AttributeDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetMetadata() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMetadata()))
         for i, v := range m.GetMetadata() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("metadata", cast)
         if err != nil {
@@ -402,7 +412,9 @@ func (m *AttributeDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetReferencedObjects() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetReferencedObjects()))
         for i, v := range m.GetReferencedObjects() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("referencedObjects", cast)
         if err != nil {
