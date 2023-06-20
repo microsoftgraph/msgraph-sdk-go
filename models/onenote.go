@@ -30,7 +30,9 @@ func (m *Onenote) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]Notebookable, len(val))
             for i, v := range val {
-                res[i] = v.(Notebookable)
+                if v != nil {
+                    res[i] = v.(Notebookable)
+                }
             }
             m.SetNotebooks(res)
         }
@@ -44,7 +46,9 @@ func (m *Onenote) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]OnenoteOperationable, len(val))
             for i, v := range val {
-                res[i] = v.(OnenoteOperationable)
+                if v != nil {
+                    res[i] = v.(OnenoteOperationable)
+                }
             }
             m.SetOperations(res)
         }
@@ -58,7 +62,9 @@ func (m *Onenote) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]OnenotePageable, len(val))
             for i, v := range val {
-                res[i] = v.(OnenotePageable)
+                if v != nil {
+                    res[i] = v.(OnenotePageable)
+                }
             }
             m.SetPages(res)
         }
@@ -72,7 +78,9 @@ func (m *Onenote) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]OnenoteResourceable, len(val))
             for i, v := range val {
-                res[i] = v.(OnenoteResourceable)
+                if v != nil {
+                    res[i] = v.(OnenoteResourceable)
+                }
             }
             m.SetResources(res)
         }
@@ -86,7 +94,9 @@ func (m *Onenote) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]SectionGroupable, len(val))
             for i, v := range val {
-                res[i] = v.(SectionGroupable)
+                if v != nil {
+                    res[i] = v.(SectionGroupable)
+                }
             }
             m.SetSectionGroups(res)
         }
@@ -100,7 +110,9 @@ func (m *Onenote) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]OnenoteSectionable, len(val))
             for i, v := range val {
-                res[i] = v.(OnenoteSectionable)
+                if v != nil {
+                    res[i] = v.(OnenoteSectionable)
+                }
             }
             m.SetSections(res)
         }
@@ -183,7 +195,9 @@ func (m *Onenote) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetNotebooks() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetNotebooks()))
         for i, v := range m.GetNotebooks() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("notebooks", cast)
         if err != nil {
@@ -193,7 +207,9 @@ func (m *Onenote) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetOperations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOperations()))
         for i, v := range m.GetOperations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("operations", cast)
         if err != nil {
@@ -203,7 +219,9 @@ func (m *Onenote) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetPages() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPages()))
         for i, v := range m.GetPages() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("pages", cast)
         if err != nil {
@@ -213,7 +231,9 @@ func (m *Onenote) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetResources() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetResources()))
         for i, v := range m.GetResources() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("resources", cast)
         if err != nil {
@@ -223,7 +243,9 @@ func (m *Onenote) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetSectionGroups() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSectionGroups()))
         for i, v := range m.GetSectionGroups() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("sectionGroups", cast)
         if err != nil {
@@ -233,7 +255,9 @@ func (m *Onenote) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetSections() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSections()))
         for i, v := range m.GetSections() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("sections", cast)
         if err != nil {

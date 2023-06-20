@@ -107,7 +107,9 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]Approvalable, len(val))
             for i, v := range val {
-                res[i] = v.(Approvalable)
+                if v != nil {
+                    res[i] = v.(Approvalable)
+                }
             }
             m.SetAccessPackageAssignmentApprovals(res)
         }
@@ -121,7 +123,9 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]AccessPackageable, len(val))
             for i, v := range val {
-                res[i] = v.(AccessPackageable)
+                if v != nil {
+                    res[i] = v.(AccessPackageable)
+                }
             }
             m.SetAccessPackages(res)
         }
@@ -135,7 +139,9 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]AccessPackageAssignmentPolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(AccessPackageAssignmentPolicyable)
+                if v != nil {
+                    res[i] = v.(AccessPackageAssignmentPolicyable)
+                }
             }
             m.SetAssignmentPolicies(res)
         }
@@ -149,7 +155,9 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]AccessPackageAssignmentRequestable, len(val))
             for i, v := range val {
-                res[i] = v.(AccessPackageAssignmentRequestable)
+                if v != nil {
+                    res[i] = v.(AccessPackageAssignmentRequestable)
+                }
             }
             m.SetAssignmentRequests(res)
         }
@@ -163,7 +171,9 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]AccessPackageAssignmentable, len(val))
             for i, v := range val {
-                res[i] = v.(AccessPackageAssignmentable)
+                if v != nil {
+                    res[i] = v.(AccessPackageAssignmentable)
+                }
             }
             m.SetAssignments(res)
         }
@@ -177,7 +187,9 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]AccessPackageCatalogable, len(val))
             for i, v := range val {
-                res[i] = v.(AccessPackageCatalogable)
+                if v != nil {
+                    res[i] = v.(AccessPackageCatalogable)
+                }
             }
             m.SetCatalogs(res)
         }
@@ -191,7 +203,9 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]ConnectedOrganizationable, len(val))
             for i, v := range val {
-                res[i] = v.(ConnectedOrganizationable)
+                if v != nil {
+                    res[i] = v.(ConnectedOrganizationable)
+                }
             }
             m.SetConnectedOrganizations(res)
         }
@@ -229,7 +243,9 @@ func (m *EntitlementManagement) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetAccessPackageAssignmentApprovals() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAccessPackageAssignmentApprovals()))
         for i, v := range m.GetAccessPackageAssignmentApprovals() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("accessPackageAssignmentApprovals", cast)
         if err != nil {
@@ -239,7 +255,9 @@ func (m *EntitlementManagement) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetAccessPackages() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAccessPackages()))
         for i, v := range m.GetAccessPackages() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("accessPackages", cast)
         if err != nil {
@@ -249,7 +267,9 @@ func (m *EntitlementManagement) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetAssignmentPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignmentPolicies()))
         for i, v := range m.GetAssignmentPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("assignmentPolicies", cast)
         if err != nil {
@@ -259,7 +279,9 @@ func (m *EntitlementManagement) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetAssignmentRequests() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignmentRequests()))
         for i, v := range m.GetAssignmentRequests() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("assignmentRequests", cast)
         if err != nil {
@@ -269,7 +291,9 @@ func (m *EntitlementManagement) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetAssignments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -279,7 +303,9 @@ func (m *EntitlementManagement) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetCatalogs() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCatalogs()))
         for i, v := range m.GetCatalogs() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("catalogs", cast)
         if err != nil {
@@ -289,7 +315,9 @@ func (m *EntitlementManagement) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetConnectedOrganizations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetConnectedOrganizations()))
         for i, v := range m.GetConnectedOrganizations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("connectedOrganizations", cast)
         if err != nil {

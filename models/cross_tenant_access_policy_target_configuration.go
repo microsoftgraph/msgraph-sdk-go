@@ -80,7 +80,9 @@ func (m *CrossTenantAccessPolicyTargetConfiguration) GetFieldDeserializers()(map
         if val != nil {
             res := make([]CrossTenantAccessPolicyTargetable, len(val))
             for i, v := range val {
-                res[i] = v.(CrossTenantAccessPolicyTargetable)
+                if v != nil {
+                    res[i] = v.(CrossTenantAccessPolicyTargetable)
+                }
             }
             m.SetTargets(res)
         }
@@ -128,7 +130,9 @@ func (m *CrossTenantAccessPolicyTargetConfiguration) Serialize(writer i878a80d23
     if m.GetTargets() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTargets()))
         for i, v := range m.GetTargets() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("targets", cast)
         if err != nil {

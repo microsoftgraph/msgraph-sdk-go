@@ -71,7 +71,9 @@ func (m *ReportRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         if val != nil {
             res := make([]PrintUsageByPrinterable, len(val))
             for i, v := range val {
-                res[i] = v.(PrintUsageByPrinterable)
+                if v != nil {
+                    res[i] = v.(PrintUsageByPrinterable)
+                }
             }
             m.SetDailyPrintUsageByPrinter(res)
         }
@@ -85,7 +87,9 @@ func (m *ReportRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         if val != nil {
             res := make([]PrintUsageByUserable, len(val))
             for i, v := range val {
-                res[i] = v.(PrintUsageByUserable)
+                if v != nil {
+                    res[i] = v.(PrintUsageByUserable)
+                }
             }
             m.SetDailyPrintUsageByUser(res)
         }
@@ -99,7 +103,9 @@ func (m *ReportRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         if val != nil {
             res := make([]PrintUsageByPrinterable, len(val))
             for i, v := range val {
-                res[i] = v.(PrintUsageByPrinterable)
+                if v != nil {
+                    res[i] = v.(PrintUsageByPrinterable)
+                }
             }
             m.SetMonthlyPrintUsageByPrinter(res)
         }
@@ -113,7 +119,9 @@ func (m *ReportRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         if val != nil {
             res := make([]PrintUsageByUserable, len(val))
             for i, v := range val {
-                res[i] = v.(PrintUsageByUserable)
+                if v != nil {
+                    res[i] = v.(PrintUsageByUserable)
+                }
             }
             m.SetMonthlyPrintUsageByUser(res)
         }
@@ -190,7 +198,9 @@ func (m *ReportRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     if m.GetDailyPrintUsageByPrinter() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDailyPrintUsageByPrinter()))
         for i, v := range m.GetDailyPrintUsageByPrinter() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("dailyPrintUsageByPrinter", cast)
         if err != nil {
@@ -200,7 +210,9 @@ func (m *ReportRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     if m.GetDailyPrintUsageByUser() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDailyPrintUsageByUser()))
         for i, v := range m.GetDailyPrintUsageByUser() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("dailyPrintUsageByUser", cast)
         if err != nil {
@@ -210,7 +222,9 @@ func (m *ReportRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     if m.GetMonthlyPrintUsageByPrinter() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMonthlyPrintUsageByPrinter()))
         for i, v := range m.GetMonthlyPrintUsageByPrinter() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("monthlyPrintUsageByPrinter", cast)
         if err != nil {
@@ -220,7 +234,9 @@ func (m *ReportRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     if m.GetMonthlyPrintUsageByUser() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMonthlyPrintUsageByUser()))
         for i, v := range m.GetMonthlyPrintUsageByUser() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("monthlyPrintUsageByUser", cast)
         if err != nil {

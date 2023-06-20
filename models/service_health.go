@@ -30,7 +30,9 @@ func (m *ServiceHealth) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]ServiceHealthIssueable, len(val))
             for i, v := range val {
-                res[i] = v.(ServiceHealthIssueable)
+                if v != nil {
+                    res[i] = v.(ServiceHealthIssueable)
+                }
             }
             m.SetIssues(res)
         }
@@ -100,7 +102,9 @@ func (m *ServiceHealth) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetIssues() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetIssues()))
         for i, v := range m.GetIssues() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("issues", cast)
         if err != nil {

@@ -40,7 +40,9 @@ func (m *DeviceComplianceScheduledActionForRule) GetFieldDeserializers()(map[str
         if val != nil {
             res := make([]DeviceComplianceActionItemable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceComplianceActionItemable)
+                if v != nil {
+                    res[i] = v.(DeviceComplianceActionItemable)
+                }
             }
             m.SetScheduledActionConfigurations(res)
         }
@@ -85,7 +87,9 @@ func (m *DeviceComplianceScheduledActionForRule) Serialize(writer i878a80d2330e8
     if m.GetScheduledActionConfigurations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetScheduledActionConfigurations()))
         for i, v := range m.GetScheduledActionConfigurations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("scheduledActionConfigurations", cast)
         if err != nil {

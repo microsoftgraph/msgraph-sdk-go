@@ -249,7 +249,9 @@ func (m *AndroidGeneralDeviceConfiguration) GetFieldDeserializers()(map[string]f
         if val != nil {
             res := make([]AppListItemable, len(val))
             for i, v := range val {
-                res[i] = v.(AppListItemable)
+                if v != nil {
+                    res[i] = v.(AppListItemable)
+                }
             }
             m.SetAppsHideList(res)
         }
@@ -263,7 +265,9 @@ func (m *AndroidGeneralDeviceConfiguration) GetFieldDeserializers()(map[string]f
         if val != nil {
             res := make([]AppListItemable, len(val))
             for i, v := range val {
-                res[i] = v.(AppListItemable)
+                if v != nil {
+                    res[i] = v.(AppListItemable)
+                }
             }
             m.SetAppsInstallAllowList(res)
         }
@@ -277,7 +281,9 @@ func (m *AndroidGeneralDeviceConfiguration) GetFieldDeserializers()(map[string]f
         if val != nil {
             res := make([]AppListItemable, len(val))
             for i, v := range val {
-                res[i] = v.(AppListItemable)
+                if v != nil {
+                    res[i] = v.(AppListItemable)
+                }
             }
             m.SetAppsLaunchBlockList(res)
         }
@@ -361,7 +367,9 @@ func (m *AndroidGeneralDeviceConfiguration) GetFieldDeserializers()(map[string]f
         if val != nil {
             res := make([]AppListItemable, len(val))
             for i, v := range val {
-                res[i] = v.(AppListItemable)
+                if v != nil {
+                    res[i] = v.(AppListItemable)
+                }
             }
             m.SetCompliantAppsList(res)
         }
@@ -425,7 +433,9 @@ func (m *AndroidGeneralDeviceConfiguration) GetFieldDeserializers()(map[string]f
         if val != nil {
             res := make([]AppListItemable, len(val))
             for i, v := range val {
-                res[i] = v.(AppListItemable)
+                if v != nil {
+                    res[i] = v.(AppListItemable)
+                }
             }
             m.SetKioskModeApps(res)
         }
@@ -1081,7 +1091,9 @@ func (m *AndroidGeneralDeviceConfiguration) Serialize(writer i878a80d2330e89d268
     if m.GetAppsHideList() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAppsHideList()))
         for i, v := range m.GetAppsHideList() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("appsHideList", cast)
         if err != nil {
@@ -1091,7 +1103,9 @@ func (m *AndroidGeneralDeviceConfiguration) Serialize(writer i878a80d2330e89d268
     if m.GetAppsInstallAllowList() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAppsInstallAllowList()))
         for i, v := range m.GetAppsInstallAllowList() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("appsInstallAllowList", cast)
         if err != nil {
@@ -1101,7 +1115,9 @@ func (m *AndroidGeneralDeviceConfiguration) Serialize(writer i878a80d2330e89d268
     if m.GetAppsLaunchBlockList() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAppsLaunchBlockList()))
         for i, v := range m.GetAppsLaunchBlockList() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("appsLaunchBlockList", cast)
         if err != nil {
@@ -1154,7 +1170,9 @@ func (m *AndroidGeneralDeviceConfiguration) Serialize(writer i878a80d2330e89d268
     if m.GetCompliantAppsList() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCompliantAppsList()))
         for i, v := range m.GetCompliantAppsList() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("compliantAppsList", cast)
         if err != nil {
@@ -1194,7 +1212,9 @@ func (m *AndroidGeneralDeviceConfiguration) Serialize(writer i878a80d2330e89d268
     if m.GetKioskModeApps() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetKioskModeApps()))
         for i, v := range m.GetKioskModeApps() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("kioskModeApps", cast)
         if err != nil {

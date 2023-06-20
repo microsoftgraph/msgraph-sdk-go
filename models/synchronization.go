@@ -30,7 +30,9 @@ func (m *Synchronization) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         if val != nil {
             res := make([]SynchronizationJobable, len(val))
             for i, v := range val {
-                res[i] = v.(SynchronizationJobable)
+                if v != nil {
+                    res[i] = v.(SynchronizationJobable)
+                }
             }
             m.SetJobs(res)
         }
@@ -44,7 +46,9 @@ func (m *Synchronization) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         if val != nil {
             res := make([]SynchronizationSecretKeyStringValuePairable, len(val))
             for i, v := range val {
-                res[i] = v.(SynchronizationSecretKeyStringValuePairable)
+                if v != nil {
+                    res[i] = v.(SynchronizationSecretKeyStringValuePairable)
+                }
             }
             m.SetSecrets(res)
         }
@@ -58,7 +62,9 @@ func (m *Synchronization) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         if val != nil {
             res := make([]SynchronizationTemplateable, len(val))
             for i, v := range val {
-                res[i] = v.(SynchronizationTemplateable)
+                if v != nil {
+                    res[i] = v.(SynchronizationTemplateable)
+                }
             }
             m.SetTemplates(res)
         }
@@ -108,7 +114,9 @@ func (m *Synchronization) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if m.GetJobs() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetJobs()))
         for i, v := range m.GetJobs() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("jobs", cast)
         if err != nil {
@@ -118,7 +126,9 @@ func (m *Synchronization) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if m.GetSecrets() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSecrets()))
         for i, v := range m.GetSecrets() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("secrets", cast)
         if err != nil {
@@ -128,7 +138,9 @@ func (m *Synchronization) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if m.GetTemplates() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTemplates()))
         for i, v := range m.GetTemplates() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("templates", cast)
         if err != nil {

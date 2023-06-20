@@ -52,7 +52,9 @@ func (m *FederatedIdentityCredential) GetFieldDeserializers()(map[string]func(i8
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetAudiences(res)
         }

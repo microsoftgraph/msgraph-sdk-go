@@ -39,6 +39,9 @@ func NewItemOnenoteSectionsItemPagesItemContentRequestBuilder(rawUrl string, req
     return NewItemOnenoteSectionsItemPagesItemContentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the page's HTML content.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
 func (m *ItemOnenoteSectionsItemPagesItemContentRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnenoteSectionsItemPagesItemContentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

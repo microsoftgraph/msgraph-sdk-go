@@ -71,7 +71,9 @@ func (m *TenantRelationship) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]DelegatedAdminCustomerable, len(val))
             for i, v := range val {
-                res[i] = v.(DelegatedAdminCustomerable)
+                if v != nil {
+                    res[i] = v.(DelegatedAdminCustomerable)
+                }
             }
             m.SetDelegatedAdminCustomers(res)
         }
@@ -85,7 +87,9 @@ func (m *TenantRelationship) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]DelegatedAdminRelationshipable, len(val))
             for i, v := range val {
-                res[i] = v.(DelegatedAdminRelationshipable)
+                if v != nil {
+                    res[i] = v.(DelegatedAdminRelationshipable)
+                }
             }
             m.SetDelegatedAdminRelationships(res)
         }
@@ -119,7 +123,9 @@ func (m *TenantRelationship) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetDelegatedAdminCustomers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDelegatedAdminCustomers()))
         for i, v := range m.GetDelegatedAdminCustomers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("delegatedAdminCustomers", cast)
         if err != nil {
@@ -129,7 +135,9 @@ func (m *TenantRelationship) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetDelegatedAdminRelationships() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDelegatedAdminRelationships()))
         for i, v := range m.GetDelegatedAdminRelationships() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("delegatedAdminRelationships", cast)
         if err != nil {

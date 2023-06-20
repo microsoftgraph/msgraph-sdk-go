@@ -60,7 +60,9 @@ func (m *AuthenticationMethodsRegistrationCampaign) GetFieldDeserializers()(map[
         if val != nil {
             res := make([]ExcludeTargetable, len(val))
             for i, v := range val {
-                res[i] = v.(ExcludeTargetable)
+                if v != nil {
+                    res[i] = v.(ExcludeTargetable)
+                }
             }
             m.SetExcludeTargets(res)
         }
@@ -74,7 +76,9 @@ func (m *AuthenticationMethodsRegistrationCampaign) GetFieldDeserializers()(map[
         if val != nil {
             res := make([]AuthenticationMethodsRegistrationCampaignIncludeTargetable, len(val))
             for i, v := range val {
-                res[i] = v.(AuthenticationMethodsRegistrationCampaignIncludeTargetable)
+                if v != nil {
+                    res[i] = v.(AuthenticationMethodsRegistrationCampaignIncludeTargetable)
+                }
             }
             m.SetIncludeTargets(res)
         }
@@ -161,7 +165,9 @@ func (m *AuthenticationMethodsRegistrationCampaign) Serialize(writer i878a80d233
     if m.GetExcludeTargets() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExcludeTargets()))
         for i, v := range m.GetExcludeTargets() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("excludeTargets", cast)
         if err != nil {
@@ -171,7 +177,9 @@ func (m *AuthenticationMethodsRegistrationCampaign) Serialize(writer i878a80d233
     if m.GetIncludeTargets() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetIncludeTargets()))
         for i, v := range m.GetIncludeTargets() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("includeTargets", cast)
         if err != nil {

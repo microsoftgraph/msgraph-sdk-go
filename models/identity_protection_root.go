@@ -59,7 +59,9 @@ func (m *IdentityProtectionRoot) GetFieldDeserializers()(map[string]func(i878a80
         if val != nil {
             res := make([]RiskDetectionable, len(val))
             for i, v := range val {
-                res[i] = v.(RiskDetectionable)
+                if v != nil {
+                    res[i] = v.(RiskDetectionable)
+                }
             }
             m.SetRiskDetections(res)
         }
@@ -73,7 +75,9 @@ func (m *IdentityProtectionRoot) GetFieldDeserializers()(map[string]func(i878a80
         if val != nil {
             res := make([]RiskyServicePrincipalable, len(val))
             for i, v := range val {
-                res[i] = v.(RiskyServicePrincipalable)
+                if v != nil {
+                    res[i] = v.(RiskyServicePrincipalable)
+                }
             }
             m.SetRiskyServicePrincipals(res)
         }
@@ -87,7 +91,9 @@ func (m *IdentityProtectionRoot) GetFieldDeserializers()(map[string]func(i878a80
         if val != nil {
             res := make([]RiskyUserable, len(val))
             for i, v := range val {
-                res[i] = v.(RiskyUserable)
+                if v != nil {
+                    res[i] = v.(RiskyUserable)
+                }
             }
             m.SetRiskyUsers(res)
         }
@@ -101,7 +107,9 @@ func (m *IdentityProtectionRoot) GetFieldDeserializers()(map[string]func(i878a80
         if val != nil {
             res := make([]ServicePrincipalRiskDetectionable, len(val))
             for i, v := range val {
-                res[i] = v.(ServicePrincipalRiskDetectionable)
+                if v != nil {
+                    res[i] = v.(ServicePrincipalRiskDetectionable)
+                }
             }
             m.SetServicePrincipalRiskDetections(res)
         }
@@ -175,7 +183,9 @@ func (m *IdentityProtectionRoot) Serialize(writer i878a80d2330e89d26896388a3f487
     if m.GetRiskDetections() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRiskDetections()))
         for i, v := range m.GetRiskDetections() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("riskDetections", cast)
         if err != nil {
@@ -185,7 +195,9 @@ func (m *IdentityProtectionRoot) Serialize(writer i878a80d2330e89d26896388a3f487
     if m.GetRiskyServicePrincipals() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRiskyServicePrincipals()))
         for i, v := range m.GetRiskyServicePrincipals() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("riskyServicePrincipals", cast)
         if err != nil {
@@ -195,7 +207,9 @@ func (m *IdentityProtectionRoot) Serialize(writer i878a80d2330e89d26896388a3f487
     if m.GetRiskyUsers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRiskyUsers()))
         for i, v := range m.GetRiskyUsers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("riskyUsers", cast)
         if err != nil {
@@ -205,7 +219,9 @@ func (m *IdentityProtectionRoot) Serialize(writer i878a80d2330e89d26896388a3f487
     if m.GetServicePrincipalRiskDetections() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetServicePrincipalRiskDetections()))
         for i, v := range m.GetServicePrincipalRiskDetections() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("servicePrincipalRiskDetections", cast)
         if err != nil {

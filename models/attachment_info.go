@@ -10,7 +10,7 @@ type AttachmentInfo struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAttachmentInfo instantiates a new attachmentInfo and sets the default values.
+// NewAttachmentInfo instantiates a new AttachmentInfo and sets the default values.
 func NewAttachmentInfo()(*AttachmentInfo) {
     m := &AttachmentInfo{
     }

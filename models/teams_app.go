@@ -74,7 +74,9 @@ func (m *TeamsApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]TeamsAppDefinitionable, len(val))
             for i, v := range val {
-                res[i] = v.(TeamsAppDefinitionable)
+                if v != nil {
+                    res[i] = v.(TeamsAppDefinitionable)
+                }
             }
             m.SetAppDefinitions(res)
         }
@@ -121,7 +123,9 @@ func (m *TeamsApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if m.GetAppDefinitions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAppDefinitions()))
         for i, v := range m.GetAppDefinitions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("appDefinitions", cast)
         if err != nil {

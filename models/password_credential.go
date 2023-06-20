@@ -12,7 +12,7 @@ type PasswordCredential struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewPasswordCredential instantiates a new passwordCredential and sets the default values.
+// NewPasswordCredential instantiates a new PasswordCredential and sets the default values.
 func NewPasswordCredential()(*PasswordCredential) {
     m := &PasswordCredential{
     }

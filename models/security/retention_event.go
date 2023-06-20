@@ -160,7 +160,9 @@ func (m *RetentionEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         if val != nil {
             res := make([]EventPropagationResultable, len(val))
             for i, v := range val {
-                res[i] = v.(EventPropagationResultable)
+                if v != nil {
+                    res[i] = v.(EventPropagationResultable)
+                }
             }
             m.SetEventPropagationResults(res)
         }
@@ -174,7 +176,9 @@ func (m *RetentionEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         if val != nil {
             res := make([]EventQueryable, len(val))
             for i, v := range val {
-                res[i] = v.(EventQueryable)
+                if v != nil {
+                    res[i] = v.(EventQueryable)
+                }
             }
             m.SetEventQueries(res)
         }
@@ -319,7 +323,9 @@ func (m *RetentionEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if m.GetEventPropagationResults() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEventPropagationResults()))
         for i, v := range m.GetEventPropagationResults() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("eventPropagationResults", cast)
         if err != nil {
@@ -329,7 +335,9 @@ func (m *RetentionEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if m.GetEventQueries() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEventQueries()))
         for i, v := range m.GetEventQueries() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("eventQueries", cast)
         if err != nil {

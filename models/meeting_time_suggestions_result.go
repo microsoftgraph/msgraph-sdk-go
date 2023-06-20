@@ -70,7 +70,9 @@ func (m *MeetingTimeSuggestionsResult) GetFieldDeserializers()(map[string]func(i
         if val != nil {
             res := make([]MeetingTimeSuggestionable, len(val))
             for i, v := range val {
-                res[i] = v.(MeetingTimeSuggestionable)
+                if v != nil {
+                    res[i] = v.(MeetingTimeSuggestionable)
+                }
             }
             m.SetMeetingTimeSuggestions(res)
         }
@@ -121,7 +123,9 @@ func (m *MeetingTimeSuggestionsResult) Serialize(writer i878a80d2330e89d26896388
     if m.GetMeetingTimeSuggestions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMeetingTimeSuggestions()))
         for i, v := range m.GetMeetingTimeSuggestions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("meetingTimeSuggestions", cast)
         if err != nil {

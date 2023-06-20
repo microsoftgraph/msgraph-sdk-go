@@ -42,7 +42,9 @@ func (m *ConversationThread) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]Recipientable, len(val))
             for i, v := range val {
-                res[i] = v.(Recipientable)
+                if v != nil {
+                    res[i] = v.(Recipientable)
+                }
             }
             m.SetCcRecipients(res)
         }
@@ -86,7 +88,9 @@ func (m *ConversationThread) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]Postable, len(val))
             for i, v := range val {
-                res[i] = v.(Postable)
+                if v != nil {
+                    res[i] = v.(Postable)
+                }
             }
             m.SetPosts(res)
         }
@@ -120,7 +124,9 @@ func (m *ConversationThread) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]Recipientable, len(val))
             for i, v := range val {
-                res[i] = v.(Recipientable)
+                if v != nil {
+                    res[i] = v.(Recipientable)
+                }
             }
             m.SetToRecipients(res)
         }
@@ -134,7 +140,9 @@ func (m *ConversationThread) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetUniqueSenders(res)
         }
@@ -239,7 +247,9 @@ func (m *ConversationThread) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetCcRecipients() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCcRecipients()))
         for i, v := range m.GetCcRecipients() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("ccRecipients", cast)
         if err != nil {
@@ -267,7 +277,9 @@ func (m *ConversationThread) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetPosts() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPosts()))
         for i, v := range m.GetPosts() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("posts", cast)
         if err != nil {
@@ -289,7 +301,9 @@ func (m *ConversationThread) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetToRecipients() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetToRecipients()))
         for i, v := range m.GetToRecipients() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("toRecipients", cast)
         if err != nil {

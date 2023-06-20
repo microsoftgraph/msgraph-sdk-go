@@ -62,7 +62,9 @@ func (m *Workbook) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]WorkbookCommentable, len(val))
             for i, v := range val {
-                res[i] = v.(WorkbookCommentable)
+                if v != nil {
+                    res[i] = v.(WorkbookCommentable)
+                }
             }
             m.SetComments(res)
         }
@@ -86,7 +88,9 @@ func (m *Workbook) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]WorkbookNamedItemable, len(val))
             for i, v := range val {
-                res[i] = v.(WorkbookNamedItemable)
+                if v != nil {
+                    res[i] = v.(WorkbookNamedItemable)
+                }
             }
             m.SetNames(res)
         }
@@ -100,7 +104,9 @@ func (m *Workbook) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]WorkbookOperationable, len(val))
             for i, v := range val {
-                res[i] = v.(WorkbookOperationable)
+                if v != nil {
+                    res[i] = v.(WorkbookOperationable)
+                }
             }
             m.SetOperations(res)
         }
@@ -114,7 +120,9 @@ func (m *Workbook) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]WorkbookTableable, len(val))
             for i, v := range val {
-                res[i] = v.(WorkbookTableable)
+                if v != nil {
+                    res[i] = v.(WorkbookTableable)
+                }
             }
             m.SetTables(res)
         }
@@ -128,7 +136,9 @@ func (m *Workbook) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]WorkbookWorksheetable, len(val))
             for i, v := range val {
-                res[i] = v.(WorkbookWorksheetable)
+                if v != nil {
+                    res[i] = v.(WorkbookWorksheetable)
+                }
             }
             m.SetWorksheets(res)
         }
@@ -206,7 +216,9 @@ func (m *Workbook) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if m.GetComments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetComments()))
         for i, v := range m.GetComments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("comments", cast)
         if err != nil {
@@ -222,7 +234,9 @@ func (m *Workbook) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if m.GetNames() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetNames()))
         for i, v := range m.GetNames() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("names", cast)
         if err != nil {
@@ -232,7 +246,9 @@ func (m *Workbook) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if m.GetOperations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOperations()))
         for i, v := range m.GetOperations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("operations", cast)
         if err != nil {
@@ -242,7 +258,9 @@ func (m *Workbook) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if m.GetTables() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTables()))
         for i, v := range m.GetTables() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("tables", cast)
         if err != nil {
@@ -252,7 +270,9 @@ func (m *Workbook) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if m.GetWorksheets() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWorksheets()))
         for i, v := range m.GetWorksheets() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("worksheets", cast)
         if err != nil {

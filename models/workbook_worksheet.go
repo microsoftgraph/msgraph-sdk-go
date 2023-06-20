@@ -41,7 +41,9 @@ func (m *WorkbookWorksheet) GetFieldDeserializers()(map[string]func(i878a80d2330
         if val != nil {
             res := make([]WorkbookChartable, len(val))
             for i, v := range val {
-                res[i] = v.(WorkbookChartable)
+                if v != nil {
+                    res[i] = v.(WorkbookChartable)
+                }
             }
             m.SetCharts(res)
         }
@@ -65,7 +67,9 @@ func (m *WorkbookWorksheet) GetFieldDeserializers()(map[string]func(i878a80d2330
         if val != nil {
             res := make([]WorkbookNamedItemable, len(val))
             for i, v := range val {
-                res[i] = v.(WorkbookNamedItemable)
+                if v != nil {
+                    res[i] = v.(WorkbookNamedItemable)
+                }
             }
             m.SetNames(res)
         }
@@ -79,7 +83,9 @@ func (m *WorkbookWorksheet) GetFieldDeserializers()(map[string]func(i878a80d2330
         if val != nil {
             res := make([]WorkbookPivotTableable, len(val))
             for i, v := range val {
-                res[i] = v.(WorkbookPivotTableable)
+                if v != nil {
+                    res[i] = v.(WorkbookPivotTableable)
+                }
             }
             m.SetPivotTables(res)
         }
@@ -113,7 +119,9 @@ func (m *WorkbookWorksheet) GetFieldDeserializers()(map[string]func(i878a80d2330
         if val != nil {
             res := make([]WorkbookTableable, len(val))
             for i, v := range val {
-                res[i] = v.(WorkbookTableable)
+                if v != nil {
+                    res[i] = v.(WorkbookTableable)
+                }
             }
             m.SetTables(res)
         }
@@ -217,7 +225,9 @@ func (m *WorkbookWorksheet) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     if m.GetCharts() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCharts()))
         for i, v := range m.GetCharts() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("charts", cast)
         if err != nil {
@@ -233,7 +243,9 @@ func (m *WorkbookWorksheet) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     if m.GetNames() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetNames()))
         for i, v := range m.GetNames() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("names", cast)
         if err != nil {
@@ -243,7 +255,9 @@ func (m *WorkbookWorksheet) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     if m.GetPivotTables() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPivotTables()))
         for i, v := range m.GetPivotTables() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("pivotTables", cast)
         if err != nil {
@@ -265,7 +279,9 @@ func (m *WorkbookWorksheet) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     if m.GetTables() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTables()))
         for i, v := range m.GetTables() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("tables", cast)
         if err != nil {

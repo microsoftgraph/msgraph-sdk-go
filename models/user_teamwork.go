@@ -41,7 +41,9 @@ func (m *UserTeamwork) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         if val != nil {
             res := make([]AssociatedTeamInfoable, len(val))
             for i, v := range val {
-                res[i] = v.(AssociatedTeamInfoable)
+                if v != nil {
+                    res[i] = v.(AssociatedTeamInfoable)
+                }
             }
             m.SetAssociatedTeams(res)
         }
@@ -55,7 +57,9 @@ func (m *UserTeamwork) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         if val != nil {
             res := make([]UserScopeTeamsAppInstallationable, len(val))
             for i, v := range val {
-                res[i] = v.(UserScopeTeamsAppInstallationable)
+                if v != nil {
+                    res[i] = v.(UserScopeTeamsAppInstallationable)
+                }
             }
             m.SetInstalledApps(res)
         }
@@ -83,7 +87,9 @@ func (m *UserTeamwork) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     if m.GetAssociatedTeams() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssociatedTeams()))
         for i, v := range m.GetAssociatedTeams() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("associatedTeams", cast)
         if err != nil {
@@ -93,7 +99,9 @@ func (m *UserTeamwork) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     if m.GetInstalledApps() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetInstalledApps()))
         for i, v := range m.GetInstalledApps() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("installedApps", cast)
         if err != nil {

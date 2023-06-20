@@ -8,7 +8,7 @@ import (
 type FilterOperatorSchema struct {
     Entity
 }
-// NewFilterOperatorSchema instantiates a new filterOperatorSchema and sets the default values.
+// NewFilterOperatorSchema instantiates a new FilterOperatorSchema and sets the default values.
 func NewFilterOperatorSchema()(*FilterOperatorSchema) {
     m := &FilterOperatorSchema{
         Entity: *NewEntity(),
@@ -61,7 +61,9 @@ func (m *FilterOperatorSchema) GetFieldDeserializers()(map[string]func(i878a80d2
         if val != nil {
             res := make([]AttributeType, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AttributeType))
+                if v != nil {
+                    res[i] = *(v.(*AttributeType))
+                }
             }
             m.SetSupportedAttributeTypes(res)
         }

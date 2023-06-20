@@ -81,7 +81,9 @@ func (m *SimulationEventsContent) GetFieldDeserializers()(map[string]func(i878a8
         if val != nil {
             res := make([]SimulationEventable, len(val))
             for i, v := range val {
-                res[i] = v.(SimulationEventable)
+                if v != nil {
+                    res[i] = v.(SimulationEventable)
+                }
             }
             m.SetEvents(res)
         }
@@ -121,7 +123,9 @@ func (m *SimulationEventsContent) Serialize(writer i878a80d2330e89d26896388a3f48
     if m.GetEvents() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEvents()))
         for i, v := range m.GetEvents() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("events", cast)
         if err != nil {

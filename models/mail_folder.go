@@ -91,7 +91,9 @@ func (m *MailFolder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         if val != nil {
             res := make([]MailFolderable, len(val))
             for i, v := range val {
-                res[i] = v.(MailFolderable)
+                if v != nil {
+                    res[i] = v.(MailFolderable)
+                }
             }
             m.SetChildFolders(res)
         }
@@ -125,7 +127,9 @@ func (m *MailFolder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         if val != nil {
             res := make([]MessageRuleable, len(val))
             for i, v := range val {
-                res[i] = v.(MessageRuleable)
+                if v != nil {
+                    res[i] = v.(MessageRuleable)
+                }
             }
             m.SetMessageRules(res)
         }
@@ -139,7 +143,9 @@ func (m *MailFolder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         if val != nil {
             res := make([]Messageable, len(val))
             for i, v := range val {
-                res[i] = v.(Messageable)
+                if v != nil {
+                    res[i] = v.(Messageable)
+                }
             }
             m.SetMessages(res)
         }
@@ -153,7 +159,9 @@ func (m *MailFolder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         if val != nil {
             res := make([]MultiValueLegacyExtendedPropertyable, len(val))
             for i, v := range val {
-                res[i] = v.(MultiValueLegacyExtendedPropertyable)
+                if v != nil {
+                    res[i] = v.(MultiValueLegacyExtendedPropertyable)
+                }
             }
             m.SetMultiValueExtendedProperties(res)
         }
@@ -177,7 +185,9 @@ func (m *MailFolder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         if val != nil {
             res := make([]SingleValueLegacyExtendedPropertyable, len(val))
             for i, v := range val {
-                res[i] = v.(SingleValueLegacyExtendedPropertyable)
+                if v != nil {
+                    res[i] = v.(SingleValueLegacyExtendedPropertyable)
+                }
             }
             m.SetSingleValueExtendedProperties(res)
         }
@@ -308,7 +318,9 @@ func (m *MailFolder) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     if m.GetChildFolders() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetChildFolders()))
         for i, v := range m.GetChildFolders() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("childFolders", cast)
         if err != nil {
@@ -330,7 +342,9 @@ func (m *MailFolder) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     if m.GetMessageRules() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMessageRules()))
         for i, v := range m.GetMessageRules() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("messageRules", cast)
         if err != nil {
@@ -340,7 +354,9 @@ func (m *MailFolder) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     if m.GetMessages() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMessages()))
         for i, v := range m.GetMessages() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("messages", cast)
         if err != nil {
@@ -350,7 +366,9 @@ func (m *MailFolder) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     if m.GetMultiValueExtendedProperties() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMultiValueExtendedProperties()))
         for i, v := range m.GetMultiValueExtendedProperties() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("multiValueExtendedProperties", cast)
         if err != nil {
@@ -366,7 +384,9 @@ func (m *MailFolder) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     if m.GetSingleValueExtendedProperties() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSingleValueExtendedProperties()))
         for i, v := range m.GetSingleValueExtendedProperties() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("singleValueExtendedProperties", cast)
         if err != nil {

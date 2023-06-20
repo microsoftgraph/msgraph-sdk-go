@@ -59,7 +59,9 @@ func (m *SimulationReportOverview) GetFieldDeserializers()(map[string]func(i878a
         if val != nil {
             res := make([]RecommendedActionable, len(val))
             for i, v := range val {
-                res[i] = v.(RecommendedActionable)
+                if v != nil {
+                    res[i] = v.(RecommendedActionable)
+                }
             }
             m.SetRecommendedActions(res)
         }
@@ -163,7 +165,9 @@ func (m *SimulationReportOverview) Serialize(writer i878a80d2330e89d26896388a3f4
     if m.GetRecommendedActions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRecommendedActions()))
         for i, v := range m.GetRecommendedActions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("recommendedActions", cast)
         if err != nil {

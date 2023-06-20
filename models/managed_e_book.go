@@ -104,7 +104,9 @@ func (m *ManagedEBook) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         if val != nil {
             res := make([]ManagedEBookAssignmentable, len(val))
             for i, v := range val {
-                res[i] = v.(ManagedEBookAssignmentable)
+                if v != nil {
+                    res[i] = v.(ManagedEBookAssignmentable)
+                }
             }
             m.SetAssignments(res)
         }
@@ -138,7 +140,9 @@ func (m *ManagedEBook) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         if val != nil {
             res := make([]DeviceInstallStateable, len(val))
             for i, v := range val {
-                res[i] = v.(DeviceInstallStateable)
+                if v != nil {
+                    res[i] = v.(DeviceInstallStateable)
+                }
             }
             m.SetDeviceStates(res)
         }
@@ -232,7 +236,9 @@ func (m *ManagedEBook) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         if val != nil {
             res := make([]UserInstallStateSummaryable, len(val))
             for i, v := range val {
-                res[i] = v.(UserInstallStateSummaryable)
+                if v != nil {
+                    res[i] = v.(UserInstallStateSummaryable)
+                }
             }
             m.SetUserStateSummary(res)
         }
@@ -337,7 +343,9 @@ func (m *ManagedEBook) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     if m.GetAssignments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
         if err != nil {
@@ -359,7 +367,9 @@ func (m *ManagedEBook) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     if m.GetDeviceStates() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeviceStates()))
         for i, v := range m.GetDeviceStates() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("deviceStates", cast)
         if err != nil {
@@ -417,7 +427,9 @@ func (m *ManagedEBook) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     if m.GetUserStateSummary() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserStateSummary()))
         for i, v := range m.GetUserStateSummary() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("userStateSummary", cast)
         if err != nil {

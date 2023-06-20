@@ -9,7 +9,7 @@ import (
 type AuthenticationStrengthPolicy struct {
     Entity
 }
-// NewAuthenticationStrengthPolicy instantiates a new authenticationStrengthPolicy and sets the default values.
+// NewAuthenticationStrengthPolicy instantiates a new AuthenticationStrengthPolicy and sets the default values.
 func NewAuthenticationStrengthPolicy()(*AuthenticationStrengthPolicy) {
     m := &AuthenticationStrengthPolicy{
         Entity: *NewEntity(),
@@ -86,7 +86,9 @@ func (m *AuthenticationStrengthPolicy) GetFieldDeserializers()(map[string]func(i
         if val != nil {
             res := make([]AuthenticationMethodModes, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AuthenticationMethodModes))
+                if v != nil {
+                    res[i] = *(v.(*AuthenticationMethodModes))
+                }
             }
             m.SetAllowedCombinations(res)
         }
@@ -100,7 +102,9 @@ func (m *AuthenticationStrengthPolicy) GetFieldDeserializers()(map[string]func(i
         if val != nil {
             res := make([]AuthenticationCombinationConfigurationable, len(val))
             for i, v := range val {
-                res[i] = v.(AuthenticationCombinationConfigurationable)
+                if v != nil {
+                    res[i] = v.(AuthenticationCombinationConfigurationable)
+                }
             }
             m.SetCombinationConfigurations(res)
         }
@@ -216,7 +220,9 @@ func (m *AuthenticationStrengthPolicy) Serialize(writer i878a80d2330e89d26896388
     if m.GetCombinationConfigurations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCombinationConfigurations()))
         for i, v := range m.GetCombinationConfigurations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("combinationConfigurations", cast)
         if err != nil {

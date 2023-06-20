@@ -73,7 +73,9 @@ func (m *ServiceAnnouncementBase) GetFieldDeserializers()(map[string]func(i878a8
         if val != nil {
             res := make([]KeyValuePairable, len(val))
             for i, v := range val {
-                res[i] = v.(KeyValuePairable)
+                if v != nil {
+                    res[i] = v.(KeyValuePairable)
+                }
             }
             m.SetDetails(res)
         }
@@ -163,7 +165,9 @@ func (m *ServiceAnnouncementBase) Serialize(writer i878a80d2330e89d26896388a3f48
     if m.GetDetails() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDetails()))
         for i, v := range m.GetDetails() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("details", cast)
         if err != nil {

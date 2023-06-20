@@ -154,7 +154,9 @@ func (m *PrinterDefaults) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         if val != nil {
             res := make([]PrintFinishing, len(val))
             for i, v := range val {
-                res[i] = *(v.(*PrintFinishing))
+                if v != nil {
+                    res[i] = *(v.(*PrintFinishing))
+                }
             }
             m.SetFinishings(res)
         }

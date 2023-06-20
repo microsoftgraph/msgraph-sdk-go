@@ -139,7 +139,9 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         if val != nil {
             res := make([]BookingQuestionAssignmentable, len(val))
             for i, v := range val {
-                res[i] = v.(BookingQuestionAssignmentable)
+                if v != nil {
+                    res[i] = v.(BookingQuestionAssignmentable)
+                }
             }
             m.SetCustomQuestions(res)
         }
@@ -193,7 +195,9 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         if val != nil {
             res := make([]BookingReminderable, len(val))
             for i, v := range val {
-                res[i] = v.(BookingReminderable)
+                if v != nil {
+                    res[i] = v.(BookingReminderable)
+                }
             }
             m.SetDefaultReminders(res)
         }
@@ -327,7 +331,9 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetStaffMemberIds(res)
         }
@@ -492,7 +498,9 @@ func (m *BookingService) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if m.GetCustomQuestions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomQuestions()))
         for i, v := range m.GetCustomQuestions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("customQuestions", cast)
         if err != nil {
@@ -527,7 +535,9 @@ func (m *BookingService) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if m.GetDefaultReminders() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDefaultReminders()))
         for i, v := range m.GetDefaultReminders() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("defaultReminders", cast)
         if err != nil {

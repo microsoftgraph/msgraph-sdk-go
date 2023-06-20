@@ -11,7 +11,7 @@ import (
 type ItemInsightsTrendingRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemInsightsTrendingRequestBuilderGetQueryParameters calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user's closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
+// ItemInsightsTrendingRequestBuilderGetQueryParameters calculated insight that includes a list of documents trending around the user.
 type ItemInsightsTrendingRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewItemInsightsTrendingRequestBuilder(rawUrl string, requestAdapter i2ae418
 func (m *ItemInsightsTrendingRequestBuilder) Count()(*ItemInsightsTrendingCountRequestBuilder) {
     return NewItemInsightsTrendingCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user's closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
+// Get calculated insight that includes a list of documents trending around the user.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/insights-list-trending?view=graph-rest-1.0
 func (m *ItemInsightsTrendingRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemInsightsTrendingRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TrendingCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +115,7 @@ func (m *ItemInsightsTrendingRequestBuilder) Post(ctx context.Context, body iadc
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Trendingable), nil
 }
-// ToGetRequestInformation calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user's closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
+// ToGetRequestInformation calculated insight that includes a list of documents trending around the user.
 func (m *ItemInsightsTrendingRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemInsightsTrendingRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

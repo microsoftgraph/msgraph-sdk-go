@@ -60,7 +60,9 @@ func (m *ObjectDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]AttributeDefinitionable, len(val))
             for i, v := range val {
-                res[i] = v.(AttributeDefinitionable)
+                if v != nil {
+                    res[i] = v.(AttributeDefinitionable)
+                }
             }
             m.SetAttributes(res)
         }
@@ -74,7 +76,9 @@ func (m *ObjectDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]ObjectDefinitionMetadataEntryable, len(val))
             for i, v := range val {
-                res[i] = v.(ObjectDefinitionMetadataEntryable)
+                if v != nil {
+                    res[i] = v.(ObjectDefinitionMetadataEntryable)
+                }
             }
             m.SetMetadata(res)
         }
@@ -108,7 +112,9 @@ func (m *ObjectDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetSupportedApis(res)
         }
@@ -165,7 +171,9 @@ func (m *ObjectDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetAttributes() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAttributes()))
         for i, v := range m.GetAttributes() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("attributes", cast)
         if err != nil {
@@ -175,7 +183,9 @@ func (m *ObjectDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetMetadata() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMetadata()))
         for i, v := range m.GetMetadata() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("metadata", cast)
         if err != nil {

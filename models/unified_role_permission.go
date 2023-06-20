@@ -10,7 +10,7 @@ type UnifiedRolePermission struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewUnifiedRolePermission instantiates a new unifiedRolePermission and sets the default values.
+// NewUnifiedRolePermission instantiates a new UnifiedRolePermission and sets the default values.
 func NewUnifiedRolePermission()(*UnifiedRolePermission) {
     m := &UnifiedRolePermission{
     }
@@ -82,7 +82,9 @@ func (m *UnifiedRolePermission) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetAllowedResourceActions(res)
         }
@@ -106,7 +108,9 @@ func (m *UnifiedRolePermission) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetExcludedResourceActions(res)
         }

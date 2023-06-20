@@ -81,7 +81,9 @@ func (m *IdentityUserFlowAttributeAssignment) GetFieldDeserializers()(map[string
         if val != nil {
             res := make([]UserAttributeValuesItemable, len(val))
             for i, v := range val {
-                res[i] = v.(UserAttributeValuesItemable)
+                if v != nil {
+                    res[i] = v.(UserAttributeValuesItemable)
+                }
             }
             m.SetUserAttributeValues(res)
         }
@@ -187,7 +189,9 @@ func (m *IdentityUserFlowAttributeAssignment) Serialize(writer i878a80d2330e89d2
     if m.GetUserAttributeValues() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserAttributeValues()))
         for i, v := range m.GetUserAttributeValues() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("userAttributeValues", cast)
         if err != nil {

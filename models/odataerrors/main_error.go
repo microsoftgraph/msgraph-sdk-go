@@ -81,19 +81,21 @@ func (m *MainError) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         if val != nil {
             res := make([]ErrorDetailsable, len(val))
             for i, v := range val {
-                res[i] = v.(ErrorDetailsable)
+                if v != nil {
+                    res[i] = v.(ErrorDetailsable)
+                }
             }
             m.SetDetails(res)
         }
         return nil
     }
-    res["innererror"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["innerError"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateInnerErrorFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetInnererror(val.(InnerErrorable))
+            m.SetInnerError(val.(InnerErrorable))
         }
         return nil
     }
@@ -119,9 +121,9 @@ func (m *MainError) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     }
     return res
 }
-// GetInnererror gets the innererror property value. The innererror property
-func (m *MainError) GetInnererror()(InnerErrorable) {
-    val, err := m.GetBackingStore().Get("innererror")
+// GetInnerError gets the innerError property value. The innerError property
+func (m *MainError) GetInnerError()(InnerErrorable) {
+    val, err := m.GetBackingStore().Get("innerError")
     if err != nil {
         panic(err)
     }
@@ -163,7 +165,9 @@ func (m *MainError) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     if m.GetDetails() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDetails()))
         for i, v := range m.GetDetails() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("details", cast)
         if err != nil {
@@ -171,7 +175,7 @@ func (m *MainError) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
         }
     }
     {
-        err := writer.WriteObjectValue("innererror", m.GetInnererror())
+        err := writer.WriteObjectValue("innerError", m.GetInnerError())
         if err != nil {
             return err
         }
@@ -221,9 +225,9 @@ func (m *MainError) SetDetails(value []ErrorDetailsable)() {
         panic(err)
     }
 }
-// SetInnererror sets the innererror property value. The innererror property
-func (m *MainError) SetInnererror(value InnerErrorable)() {
-    err := m.GetBackingStore().Set("innererror", value)
+// SetInnerError sets the innerError property value. The innerError property
+func (m *MainError) SetInnerError(value InnerErrorable)() {
+    err := m.GetBackingStore().Set("innerError", value)
     if err != nil {
         panic(err)
     }
@@ -250,13 +254,13 @@ type MainErrorable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetCode()(*string)
     GetDetails()([]ErrorDetailsable)
-    GetInnererror()(InnerErrorable)
+    GetInnerError()(InnerErrorable)
     GetMessage()(*string)
     GetTarget()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCode(value *string)()
     SetDetails(value []ErrorDetailsable)()
-    SetInnererror(value InnerErrorable)()
+    SetInnerError(value InnerErrorable)()
     SetMessage(value *string)()
     SetTarget(value *string)()
 }

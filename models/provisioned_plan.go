@@ -10,7 +10,7 @@ type ProvisionedPlan struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewProvisionedPlan instantiates a new provisionedPlan and sets the default values.
+// NewProvisionedPlan instantiates a new ProvisionedPlan and sets the default values.
 func NewProvisionedPlan()(*ProvisionedPlan) {
     m := &ProvisionedPlan{
     }

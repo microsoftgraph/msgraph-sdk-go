@@ -32,7 +32,9 @@ func (m *SmsAuthenticationMethodConfiguration) GetFieldDeserializers()(map[strin
         if val != nil {
             res := make([]SmsAuthenticationMethodTargetable, len(val))
             for i, v := range val {
-                res[i] = v.(SmsAuthenticationMethodTargetable)
+                if v != nil {
+                    res[i] = v.(SmsAuthenticationMethodTargetable)
+                }
             }
             m.SetIncludeTargets(res)
         }
@@ -60,7 +62,9 @@ func (m *SmsAuthenticationMethodConfiguration) Serialize(writer i878a80d2330e89d
     if m.GetIncludeTargets() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetIncludeTargets()))
         for i, v := range m.GetIncludeTargets() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("includeTargets", cast)
         if err != nil {

@@ -55,7 +55,7 @@ func NewItemThreadsConversationThreadItemRequestBuilder(rawUrl string, requestAd
 // Delete delete conversationThread.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/conversationthread-delete?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/group-delete-thread?view=graph-rest-1.0
 func (m *ItemThreadsConversationThreadItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemThreadsConversationThreadItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {

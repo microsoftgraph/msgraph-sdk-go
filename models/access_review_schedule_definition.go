@@ -108,7 +108,9 @@ func (m *AccessReviewScheduleDefinition) GetFieldDeserializers()(map[string]func
         if val != nil {
             res := make([]AccessReviewNotificationRecipientItemable, len(val))
             for i, v := range val {
-                res[i] = v.(AccessReviewNotificationRecipientItemable)
+                if v != nil {
+                    res[i] = v.(AccessReviewNotificationRecipientItemable)
+                }
             }
             m.SetAdditionalNotificationRecipients(res)
         }
@@ -172,7 +174,9 @@ func (m *AccessReviewScheduleDefinition) GetFieldDeserializers()(map[string]func
         if val != nil {
             res := make([]AccessReviewReviewerScopeable, len(val))
             for i, v := range val {
-                res[i] = v.(AccessReviewReviewerScopeable)
+                if v != nil {
+                    res[i] = v.(AccessReviewReviewerScopeable)
+                }
             }
             m.SetFallbackReviewers(res)
         }
@@ -196,7 +200,9 @@ func (m *AccessReviewScheduleDefinition) GetFieldDeserializers()(map[string]func
         if val != nil {
             res := make([]AccessReviewInstanceable, len(val))
             for i, v := range val {
-                res[i] = v.(AccessReviewInstanceable)
+                if v != nil {
+                    res[i] = v.(AccessReviewInstanceable)
+                }
             }
             m.SetInstances(res)
         }
@@ -220,7 +226,9 @@ func (m *AccessReviewScheduleDefinition) GetFieldDeserializers()(map[string]func
         if val != nil {
             res := make([]AccessReviewReviewerScopeable, len(val))
             for i, v := range val {
-                res[i] = v.(AccessReviewReviewerScopeable)
+                if v != nil {
+                    res[i] = v.(AccessReviewReviewerScopeable)
+                }
             }
             m.SetReviewers(res)
         }
@@ -254,7 +262,9 @@ func (m *AccessReviewScheduleDefinition) GetFieldDeserializers()(map[string]func
         if val != nil {
             res := make([]AccessReviewStageSettingsable, len(val))
             for i, v := range val {
-                res[i] = v.(AccessReviewStageSettingsable)
+                if v != nil {
+                    res[i] = v.(AccessReviewStageSettingsable)
+                }
             }
             m.SetStageSettings(res)
         }
@@ -369,7 +379,9 @@ func (m *AccessReviewScheduleDefinition) Serialize(writer i878a80d2330e89d268963
     if m.GetAdditionalNotificationRecipients() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAdditionalNotificationRecipients()))
         for i, v := range m.GetAdditionalNotificationRecipients() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("additionalNotificationRecipients", cast)
         if err != nil {
@@ -409,7 +421,9 @@ func (m *AccessReviewScheduleDefinition) Serialize(writer i878a80d2330e89d268963
     if m.GetFallbackReviewers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFallbackReviewers()))
         for i, v := range m.GetFallbackReviewers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("fallbackReviewers", cast)
         if err != nil {
@@ -425,7 +439,9 @@ func (m *AccessReviewScheduleDefinition) Serialize(writer i878a80d2330e89d268963
     if m.GetInstances() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetInstances()))
         for i, v := range m.GetInstances() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("instances", cast)
         if err != nil {
@@ -441,7 +457,9 @@ func (m *AccessReviewScheduleDefinition) Serialize(writer i878a80d2330e89d268963
     if m.GetReviewers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetReviewers()))
         for i, v := range m.GetReviewers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("reviewers", cast)
         if err != nil {
@@ -463,7 +481,9 @@ func (m *AccessReviewScheduleDefinition) Serialize(writer i878a80d2330e89d268963
     if m.GetStageSettings() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetStageSettings()))
         for i, v := range m.GetStageSettings() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("stageSettings", cast)
         if err != nil {

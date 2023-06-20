@@ -59,7 +59,9 @@ func (m *AuthenticationCombinationConfiguration) GetFieldDeserializers()(map[str
         if val != nil {
             res := make([]AuthenticationMethodModes, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AuthenticationMethodModes))
+                if v != nil {
+                    res[i] = *(v.(*AuthenticationMethodModes))
+                }
             }
             m.SetAppliesToCombinations(res)
         }

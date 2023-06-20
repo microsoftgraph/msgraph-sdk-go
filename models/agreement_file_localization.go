@@ -30,7 +30,9 @@ func (m *AgreementFileLocalization) GetFieldDeserializers()(map[string]func(i878
         if val != nil {
             res := make([]AgreementFileVersionable, len(val))
             for i, v := range val {
-                res[i] = v.(AgreementFileVersionable)
+                if v != nil {
+                    res[i] = v.(AgreementFileVersionable)
+                }
             }
             m.SetVersions(res)
         }
@@ -58,7 +60,9 @@ func (m *AgreementFileLocalization) Serialize(writer i878a80d2330e89d26896388a3f
     if m.GetVersions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetVersions()))
         for i, v := range m.GetVersions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("versions", cast)
         if err != nil {

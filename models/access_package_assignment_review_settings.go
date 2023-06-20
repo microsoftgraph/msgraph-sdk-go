@@ -81,7 +81,9 @@ func (m *AccessPackageAssignmentReviewSettings) GetFieldDeserializers()(map[stri
         if val != nil {
             res := make([]SubjectSetable, len(val))
             for i, v := range val {
-                res[i] = v.(SubjectSetable)
+                if v != nil {
+                    res[i] = v.(SubjectSetable)
+                }
             }
             m.SetFallbackReviewers(res)
         }
@@ -145,7 +147,9 @@ func (m *AccessPackageAssignmentReviewSettings) GetFieldDeserializers()(map[stri
         if val != nil {
             res := make([]SubjectSetable, len(val))
             for i, v := range val {
-                res[i] = v.(SubjectSetable)
+                if v != nil {
+                    res[i] = v.(SubjectSetable)
+                }
             }
             m.SetPrimaryReviewers(res)
         }
@@ -252,7 +256,9 @@ func (m *AccessPackageAssignmentReviewSettings) Serialize(writer i878a80d2330e89
     if m.GetFallbackReviewers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFallbackReviewers()))
         for i, v := range m.GetFallbackReviewers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("fallbackReviewers", cast)
         if err != nil {
@@ -292,7 +298,9 @@ func (m *AccessPackageAssignmentReviewSettings) Serialize(writer i878a80d2330e89
     if m.GetPrimaryReviewers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPrimaryReviewers()))
         for i, v := range m.GetPrimaryReviewers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("primaryReviewers", cast)
         if err != nil {

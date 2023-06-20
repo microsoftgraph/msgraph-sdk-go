@@ -10,7 +10,7 @@ type SinglePropertySchema struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewSinglePropertySchema instantiates a new singlePropertySchema and sets the default values.
+// NewSinglePropertySchema instantiates a new SinglePropertySchema and sets the default values.
 func NewSinglePropertySchema()(*SinglePropertySchema) {
     m := &SinglePropertySchema{
     }

@@ -92,7 +92,9 @@ func (m *ConditionalAccessGrantControls) GetFieldDeserializers()(map[string]func
         if val != nil {
             res := make([]ConditionalAccessGrantControl, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ConditionalAccessGrantControl))
+                if v != nil {
+                    res[i] = *(v.(*ConditionalAccessGrantControl))
+                }
             }
             m.SetBuiltInControls(res)
         }
@@ -106,7 +108,9 @@ func (m *ConditionalAccessGrantControls) GetFieldDeserializers()(map[string]func
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetCustomAuthenticationFactors(res)
         }
@@ -140,7 +144,9 @@ func (m *ConditionalAccessGrantControls) GetFieldDeserializers()(map[string]func
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetTermsOfUse(res)
         }

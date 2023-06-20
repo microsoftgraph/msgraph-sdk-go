@@ -31,7 +31,9 @@ func (m *LicenseDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         if val != nil {
             res := make([]ServicePlanInfoable, len(val))
             for i, v := range val {
-                res[i] = v.(ServicePlanInfoable)
+                if v != nil {
+                    res[i] = v.(ServicePlanInfoable)
+                }
             }
             m.SetServicePlans(res)
         }
@@ -101,7 +103,9 @@ func (m *LicenseDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if m.GetServicePlans() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetServicePlans()))
         for i, v := range m.GetServicePlans() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("servicePlans", cast)
         if err != nil {

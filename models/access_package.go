@@ -97,7 +97,9 @@ func (m *AccessPackage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]AccessPackageable, len(val))
             for i, v := range val {
-                res[i] = v.(AccessPackageable)
+                if v != nil {
+                    res[i] = v.(AccessPackageable)
+                }
             }
             m.SetAccessPackagesIncompatibleWith(res)
         }
@@ -111,7 +113,9 @@ func (m *AccessPackage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]AccessPackageAssignmentPolicyable, len(val))
             for i, v := range val {
-                res[i] = v.(AccessPackageAssignmentPolicyable)
+                if v != nil {
+                    res[i] = v.(AccessPackageAssignmentPolicyable)
+                }
             }
             m.SetAssignmentPolicies(res)
         }
@@ -165,7 +169,9 @@ func (m *AccessPackage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]AccessPackageable, len(val))
             for i, v := range val {
-                res[i] = v.(AccessPackageable)
+                if v != nil {
+                    res[i] = v.(AccessPackageable)
+                }
             }
             m.SetIncompatibleAccessPackages(res)
         }
@@ -179,7 +185,9 @@ func (m *AccessPackage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]Groupable, len(val))
             for i, v := range val {
-                res[i] = v.(Groupable)
+                if v != nil {
+                    res[i] = v.(Groupable)
+                }
             }
             m.SetIncompatibleGroups(res)
         }
@@ -260,7 +268,9 @@ func (m *AccessPackage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetAccessPackagesIncompatibleWith() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAccessPackagesIncompatibleWith()))
         for i, v := range m.GetAccessPackagesIncompatibleWith() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("accessPackagesIncompatibleWith", cast)
         if err != nil {
@@ -270,7 +280,9 @@ func (m *AccessPackage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetAssignmentPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignmentPolicies()))
         for i, v := range m.GetAssignmentPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("assignmentPolicies", cast)
         if err != nil {
@@ -304,7 +316,9 @@ func (m *AccessPackage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetIncompatibleAccessPackages() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetIncompatibleAccessPackages()))
         for i, v := range m.GetIncompatibleAccessPackages() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("incompatibleAccessPackages", cast)
         if err != nil {
@@ -314,7 +328,9 @@ func (m *AccessPackage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetIncompatibleGroups() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetIncompatibleGroups()))
         for i, v := range m.GetIncompatibleGroups() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("incompatibleGroups", cast)
         if err != nil {

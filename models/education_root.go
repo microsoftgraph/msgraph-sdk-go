@@ -60,7 +60,9 @@ func (m *EducationRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]EducationClassable, len(val))
             for i, v := range val {
-                res[i] = v.(EducationClassable)
+                if v != nil {
+                    res[i] = v.(EducationClassable)
+                }
             }
             m.SetClasses(res)
         }
@@ -94,7 +96,9 @@ func (m *EducationRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]EducationSchoolable, len(val))
             for i, v := range val {
-                res[i] = v.(EducationSchoolable)
+                if v != nil {
+                    res[i] = v.(EducationSchoolable)
+                }
             }
             m.SetSchools(res)
         }
@@ -108,7 +112,9 @@ func (m *EducationRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]EducationUserable, len(val))
             for i, v := range val {
-                res[i] = v.(EducationUserable)
+                if v != nil {
+                    res[i] = v.(EducationUserable)
+                }
             }
             m.SetUsers(res)
         }
@@ -165,7 +171,9 @@ func (m *EducationRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetClasses() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetClasses()))
         for i, v := range m.GetClasses() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("classes", cast)
         if err != nil {
@@ -187,7 +195,9 @@ func (m *EducationRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetSchools() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSchools()))
         for i, v := range m.GetSchools() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("schools", cast)
         if err != nil {
@@ -197,7 +207,9 @@ func (m *EducationRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetUsers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUsers()))
         for i, v := range m.GetUsers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("users", cast)
         if err != nil {

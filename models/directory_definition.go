@@ -83,7 +83,9 @@ func (m *DirectoryDefinition) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]ObjectDefinitionable, len(val))
             for i, v := range val {
-                res[i] = v.(ObjectDefinitionable)
+                if v != nil {
+                    res[i] = v.(ObjectDefinitionable)
+                }
             }
             m.SetObjects(res)
         }
@@ -183,7 +185,9 @@ func (m *DirectoryDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetObjects() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetObjects()))
         for i, v := range m.GetObjects() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("objects", cast)
         if err != nil {

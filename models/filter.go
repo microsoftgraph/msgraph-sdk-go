@@ -60,7 +60,9 @@ func (m *Filter) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         if val != nil {
             res := make([]FilterGroupable, len(val))
             for i, v := range val {
-                res[i] = v.(FilterGroupable)
+                if v != nil {
+                    res[i] = v.(FilterGroupable)
+                }
             }
             m.SetCategoryFilterGroups(res)
         }
@@ -74,7 +76,9 @@ func (m *Filter) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         if val != nil {
             res := make([]FilterGroupable, len(val))
             for i, v := range val {
-                res[i] = v.(FilterGroupable)
+                if v != nil {
+                    res[i] = v.(FilterGroupable)
+                }
             }
             m.SetGroups(res)
         }
@@ -88,7 +92,9 @@ func (m *Filter) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         if val != nil {
             res := make([]FilterGroupable, len(val))
             for i, v := range val {
-                res[i] = v.(FilterGroupable)
+                if v != nil {
+                    res[i] = v.(FilterGroupable)
+                }
             }
             m.SetInputFilterGroups(res)
         }
@@ -144,7 +150,9 @@ func (m *Filter) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     if m.GetCategoryFilterGroups() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCategoryFilterGroups()))
         for i, v := range m.GetCategoryFilterGroups() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("categoryFilterGroups", cast)
         if err != nil {
@@ -154,7 +162,9 @@ func (m *Filter) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     if m.GetGroups() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetGroups()))
         for i, v := range m.GetGroups() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("groups", cast)
         if err != nil {
@@ -164,7 +174,9 @@ func (m *Filter) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     if m.GetInputFilterGroups() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetInputFilterGroups()))
         for i, v := range m.GetInputFilterGroups() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("inputFilterGroups", cast)
         if err != nil {

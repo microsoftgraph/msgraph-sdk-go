@@ -31,7 +31,9 @@ func (m *TriggerTypesRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]RetentionEventTypeable, len(val))
             for i, v := range val {
-                res[i] = v.(RetentionEventTypeable)
+                if v != nil {
+                    res[i] = v.(RetentionEventTypeable)
+                }
             }
             m.SetRetentionEventTypes(res)
         }
@@ -59,7 +61,9 @@ func (m *TriggerTypesRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetRetentionEventTypes() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRetentionEventTypes()))
         for i, v := range m.GetRetentionEventTypes() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("retentionEventTypes", cast)
         if err != nil {

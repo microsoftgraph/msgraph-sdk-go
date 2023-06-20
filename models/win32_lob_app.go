@@ -133,7 +133,9 @@ func (m *Win32LobApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         if val != nil {
             res := make([]Win32LobAppReturnCodeable, len(val))
             for i, v := range val {
-                res[i] = v.(Win32LobAppReturnCodeable)
+                if v != nil {
+                    res[i] = v.(Win32LobAppReturnCodeable)
+                }
             }
             m.SetReturnCodes(res)
         }
@@ -147,7 +149,9 @@ func (m *Win32LobApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         if val != nil {
             res := make([]Win32LobAppRuleable, len(val))
             for i, v := range val {
-                res[i] = v.(Win32LobAppRuleable)
+                if v != nil {
+                    res[i] = v.(Win32LobAppRuleable)
+                }
             }
             m.SetRules(res)
         }
@@ -371,7 +375,9 @@ func (m *Win32LobApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     if m.GetReturnCodes() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetReturnCodes()))
         for i, v := range m.GetReturnCodes() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("returnCodes", cast)
         if err != nil {
@@ -381,7 +387,9 @@ func (m *Win32LobApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     if m.GetRules() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRules()))
         for i, v := range m.GetRules() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("rules", cast)
         if err != nil {

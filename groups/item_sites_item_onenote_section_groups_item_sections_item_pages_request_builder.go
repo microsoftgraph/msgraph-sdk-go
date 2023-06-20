@@ -11,7 +11,7 @@ import (
 type ItemSitesItemOnenoteSectionGroupsItemSectionsItemPagesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSitesItemOnenoteSectionGroupsItemSectionsItemPagesRequestBuilderGetQueryParameters the collection of pages in the section.  Read-only. Nullable.
+// ItemSitesItemOnenoteSectionGroupsItemSectionsItemPagesRequestBuilderGetQueryParameters retrieve a list of page objects from the specified section.
 type ItemSitesItemOnenoteSectionGroupsItemSectionsItemPagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewItemSitesItemOnenoteSectionGroupsItemSectionsItemPagesRequestBuilder(raw
 func (m *ItemSitesItemOnenoteSectionGroupsItemSectionsItemPagesRequestBuilder) Count()(*ItemSitesItemOnenoteSectionGroupsItemSectionsItemPagesCountRequestBuilder) {
     return NewItemSitesItemOnenoteSectionGroupsItemSectionsItemPagesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the collection of pages in the section.  Read-only. Nullable.
+// Get retrieve a list of page objects from the specified section.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
 func (m *ItemSitesItemOnenoteSectionGroupsItemSectionsItemPagesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemOnenoteSectionGroupsItemSectionsItemPagesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenotePageCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *ItemSitesItemOnenoteSectionGroupsItemSectionsItemPagesRequestBuilder) G
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenotePageCollectionResponseable), nil
 }
-// Post create new navigation property to pages for groups
+// Post create a new page in the specified section.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/section-post-pages?view=graph-rest-1.0
 func (m *ItemSitesItemOnenoteSectionGroupsItemSectionsItemPagesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenotePageable, requestConfiguration *ItemSitesItemOnenoteSectionGroupsItemSectionsItemPagesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenotePageable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *ItemSitesItemOnenoteSectionGroupsItemSectionsItemPagesRequestBuilder) P
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenotePageable), nil
 }
-// ToGetRequestInformation the collection of pages in the section.  Read-only. Nullable.
+// ToGetRequestInformation retrieve a list of page objects from the specified section.
 func (m *ItemSitesItemOnenoteSectionGroupsItemSectionsItemPagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemOnenoteSectionGroupsItemSectionsItemPagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *ItemSitesItemOnenoteSectionGroupsItemSectionsItemPagesRequestBuilder) T
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to pages for groups
+// ToPostRequestInformation create a new page in the specified section.
 func (m *ItemSitesItemOnenoteSectionGroupsItemSectionsItemPagesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenotePageable, requestConfiguration *ItemSitesItemOnenoteSectionGroupsItemSectionsItemPagesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

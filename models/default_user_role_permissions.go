@@ -10,7 +10,7 @@ type DefaultUserRolePermissions struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewDefaultUserRolePermissions instantiates a new defaultUserRolePermissions and sets the default values.
+// NewDefaultUserRolePermissions instantiates a new DefaultUserRolePermissions and sets the default values.
 func NewDefaultUserRolePermissions()(*DefaultUserRolePermissions) {
     m := &DefaultUserRolePermissions{
     }
@@ -164,7 +164,9 @@ func (m *DefaultUserRolePermissions) GetFieldDeserializers()(map[string]func(i87
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetPermissionGrantPoliciesAssigned(res)
         }

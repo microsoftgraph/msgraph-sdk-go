@@ -140,7 +140,9 @@ func (m *Calendar) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]OnlineMeetingProviderType, len(val))
             for i, v := range val {
-                res[i] = *(v.(*OnlineMeetingProviderType))
+                if v != nil {
+                    res[i] = *(v.(*OnlineMeetingProviderType))
+                }
             }
             m.SetAllowedOnlineMeetingProviders(res)
         }
@@ -154,7 +156,9 @@ func (m *Calendar) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]CalendarPermissionable, len(val))
             for i, v := range val {
-                res[i] = v.(CalendarPermissionable)
+                if v != nil {
+                    res[i] = v.(CalendarPermissionable)
+                }
             }
             m.SetCalendarPermissions(res)
         }
@@ -168,7 +172,9 @@ func (m *Calendar) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]Eventable, len(val))
             for i, v := range val {
-                res[i] = v.(Eventable)
+                if v != nil {
+                    res[i] = v.(Eventable)
+                }
             }
             m.SetCalendarView(res)
         }
@@ -242,7 +248,9 @@ func (m *Calendar) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]Eventable, len(val))
             for i, v := range val {
-                res[i] = v.(Eventable)
+                if v != nil {
+                    res[i] = v.(Eventable)
+                }
             }
             m.SetEvents(res)
         }
@@ -296,7 +304,9 @@ func (m *Calendar) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]MultiValueLegacyExtendedPropertyable, len(val))
             for i, v := range val {
-                res[i] = v.(MultiValueLegacyExtendedPropertyable)
+                if v != nil {
+                    res[i] = v.(MultiValueLegacyExtendedPropertyable)
+                }
             }
             m.SetMultiValueExtendedProperties(res)
         }
@@ -330,7 +340,9 @@ func (m *Calendar) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]SingleValueLegacyExtendedPropertyable, len(val))
             for i, v := range val {
-                res[i] = v.(SingleValueLegacyExtendedPropertyable)
+                if v != nil {
+                    res[i] = v.(SingleValueLegacyExtendedPropertyable)
+                }
             }
             m.SetSingleValueExtendedProperties(res)
         }
@@ -441,7 +453,9 @@ func (m *Calendar) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if m.GetCalendarPermissions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCalendarPermissions()))
         for i, v := range m.GetCalendarPermissions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("calendarPermissions", cast)
         if err != nil {
@@ -451,7 +465,9 @@ func (m *Calendar) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if m.GetCalendarView() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCalendarView()))
         for i, v := range m.GetCalendarView() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("calendarView", cast)
         if err != nil {
@@ -499,7 +515,9 @@ func (m *Calendar) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if m.GetEvents() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEvents()))
         for i, v := range m.GetEvents() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("events", cast)
         if err != nil {
@@ -533,7 +551,9 @@ func (m *Calendar) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if m.GetMultiValueExtendedProperties() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMultiValueExtendedProperties()))
         for i, v := range m.GetMultiValueExtendedProperties() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("multiValueExtendedProperties", cast)
         if err != nil {
@@ -555,7 +575,9 @@ func (m *Calendar) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if m.GetSingleValueExtendedProperties() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSingleValueExtendedProperties()))
         for i, v := range m.GetSingleValueExtendedProperties() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("singleValueExtendedProperties", cast)
         if err != nil {

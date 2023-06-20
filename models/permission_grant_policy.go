@@ -43,7 +43,9 @@ func (m *PermissionGrantPolicy) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]PermissionGrantConditionSetable, len(val))
             for i, v := range val {
-                res[i] = v.(PermissionGrantConditionSetable)
+                if v != nil {
+                    res[i] = v.(PermissionGrantConditionSetable)
+                }
             }
             m.SetExcludes(res)
         }
@@ -57,7 +59,9 @@ func (m *PermissionGrantPolicy) GetFieldDeserializers()(map[string]func(i878a80d
         if val != nil {
             res := make([]PermissionGrantConditionSetable, len(val))
             for i, v := range val {
-                res[i] = v.(PermissionGrantConditionSetable)
+                if v != nil {
+                    res[i] = v.(PermissionGrantConditionSetable)
+                }
             }
             m.SetIncludes(res)
         }
@@ -85,7 +89,9 @@ func (m *PermissionGrantPolicy) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetExcludes() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExcludes()))
         for i, v := range m.GetExcludes() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("excludes", cast)
         if err != nil {
@@ -95,7 +101,9 @@ func (m *PermissionGrantPolicy) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetIncludes() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetIncludes()))
         for i, v := range m.GetIncludes() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("includes", cast)
         if err != nil {

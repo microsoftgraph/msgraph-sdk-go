@@ -10,7 +10,7 @@ type BookingCustomerInformationBase struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewBookingCustomerInformationBase instantiates a new bookingCustomerInformationBase and sets the default values.
+// NewBookingCustomerInformationBase instantiates a new BookingCustomerInformationBase and sets the default values.
 func NewBookingCustomerInformationBase()(*BookingCustomerInformationBase) {
     m := &BookingCustomerInformationBase{
     }

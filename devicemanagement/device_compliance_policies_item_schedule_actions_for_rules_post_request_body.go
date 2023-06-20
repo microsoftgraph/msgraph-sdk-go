@@ -61,7 +61,9 @@ func (m *DeviceCompliancePoliciesItemScheduleActionsForRulesPostRequestBody) Get
         if val != nil {
             res := make([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceComplianceScheduledActionForRuleable, len(val))
             for i, v := range val {
-                res[i] = v.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceComplianceScheduledActionForRuleable)
+                if v != nil {
+                    res[i] = v.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceComplianceScheduledActionForRuleable)
+                }
             }
             m.SetDeviceComplianceScheduledActionForRules(res)
         }
@@ -74,7 +76,9 @@ func (m *DeviceCompliancePoliciesItemScheduleActionsForRulesPostRequestBody) Ser
     if m.GetDeviceComplianceScheduledActionForRules() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeviceComplianceScheduledActionForRules()))
         for i, v := range m.GetDeviceComplianceScheduledActionForRules() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("deviceComplianceScheduledActionForRules", cast)
         if err != nil {

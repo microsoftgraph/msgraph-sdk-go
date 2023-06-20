@@ -53,7 +53,9 @@ func (m *IosDeviceFeaturesConfiguration) GetFieldDeserializers()(map[string]func
         if val != nil {
             res := make([]IosHomeScreenItemable, len(val))
             for i, v := range val {
-                res[i] = v.(IosHomeScreenItemable)
+                if v != nil {
+                    res[i] = v.(IosHomeScreenItemable)
+                }
             }
             m.SetHomeScreenDockIcons(res)
         }
@@ -67,7 +69,9 @@ func (m *IosDeviceFeaturesConfiguration) GetFieldDeserializers()(map[string]func
         if val != nil {
             res := make([]IosHomeScreenPageable, len(val))
             for i, v := range val {
-                res[i] = v.(IosHomeScreenPageable)
+                if v != nil {
+                    res[i] = v.(IosHomeScreenPageable)
+                }
             }
             m.SetHomeScreenPages(res)
         }
@@ -91,7 +95,9 @@ func (m *IosDeviceFeaturesConfiguration) GetFieldDeserializers()(map[string]func
         if val != nil {
             res := make([]IosNotificationSettingsable, len(val))
             for i, v := range val {
-                res[i] = v.(IosNotificationSettingsable)
+                if v != nil {
+                    res[i] = v.(IosNotificationSettingsable)
+                }
             }
             m.SetNotificationSettings(res)
         }
@@ -158,7 +164,9 @@ func (m *IosDeviceFeaturesConfiguration) Serialize(writer i878a80d2330e89d268963
     if m.GetHomeScreenDockIcons() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetHomeScreenDockIcons()))
         for i, v := range m.GetHomeScreenDockIcons() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("homeScreenDockIcons", cast)
         if err != nil {
@@ -168,7 +176,9 @@ func (m *IosDeviceFeaturesConfiguration) Serialize(writer i878a80d2330e89d268963
     if m.GetHomeScreenPages() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetHomeScreenPages()))
         for i, v := range m.GetHomeScreenPages() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("homeScreenPages", cast)
         if err != nil {
@@ -184,7 +194,9 @@ func (m *IosDeviceFeaturesConfiguration) Serialize(writer i878a80d2330e89d268963
     if m.GetNotificationSettings() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetNotificationSettings()))
         for i, v := range m.GetNotificationSettings() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("notificationSettings", cast)
         if err != nil {

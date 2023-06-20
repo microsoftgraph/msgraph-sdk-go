@@ -92,7 +92,9 @@ func (m *UnifiedApprovalStage) GetFieldDeserializers()(map[string]func(i878a80d2
         if val != nil {
             res := make([]SubjectSetable, len(val))
             for i, v := range val {
-                res[i] = v.(SubjectSetable)
+                if v != nil {
+                    res[i] = v.(SubjectSetable)
+                }
             }
             m.SetEscalationApprovers(res)
         }
@@ -146,7 +148,9 @@ func (m *UnifiedApprovalStage) GetFieldDeserializers()(map[string]func(i878a80d2
         if val != nil {
             res := make([]SubjectSetable, len(val))
             for i, v := range val {
-                res[i] = v.(SubjectSetable)
+                if v != nil {
+                    res[i] = v.(SubjectSetable)
+                }
             }
             m.SetPrimaryApprovers(res)
         }
@@ -209,7 +213,9 @@ func (m *UnifiedApprovalStage) Serialize(writer i878a80d2330e89d26896388a3f487ee
     if m.GetEscalationApprovers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEscalationApprovers()))
         for i, v := range m.GetEscalationApprovers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("escalationApprovers", cast)
         if err != nil {
@@ -243,7 +249,9 @@ func (m *UnifiedApprovalStage) Serialize(writer i878a80d2330e89d26896388a3f487ee
     if m.GetPrimaryApprovers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPrimaryApprovers()))
         for i, v := range m.GetPrimaryApprovers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("primaryApprovers", cast)
         if err != nil {

@@ -153,7 +153,9 @@ func (m *Media) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         if val != nil {
             res := make([]MediaStreamable, len(val))
             for i, v := range val {
-                res[i] = v.(MediaStreamable)
+                if v != nil {
+                    res[i] = v.(MediaStreamable)
+                }
             }
             m.SetStreams(res)
         }
@@ -235,7 +237,9 @@ func (m *Media) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
     if m.GetStreams() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetStreams()))
         for i, v := range m.GetStreams() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("streams", cast)
         if err != nil {

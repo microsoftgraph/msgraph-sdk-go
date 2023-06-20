@@ -60,7 +60,9 @@ func (m *ConditionalAccessApplications) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetExcludeApplications(res)
         }
@@ -74,7 +76,9 @@ func (m *ConditionalAccessApplications) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetIncludeApplications(res)
         }
@@ -88,7 +92,9 @@ func (m *ConditionalAccessApplications) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetIncludeAuthenticationContextClassReferences(res)
         }
@@ -102,7 +108,9 @@ func (m *ConditionalAccessApplications) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetIncludeUserActions(res)
         }

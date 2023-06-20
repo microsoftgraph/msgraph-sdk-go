@@ -63,7 +63,9 @@ func (m *OnPremisesConditionalAccessSettings) GetFieldDeserializers()(map[string
         if val != nil {
             res := make([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID, len(val))
             for i, v := range val {
-                res[i] = *(v.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID))
+                if v != nil {
+                    res[i] = *(v.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID))
+                }
             }
             m.SetExcludedGroups(res)
         }
@@ -77,7 +79,9 @@ func (m *OnPremisesConditionalAccessSettings) GetFieldDeserializers()(map[string
         if val != nil {
             res := make([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID, len(val))
             for i, v := range val {
-                res[i] = *(v.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID))
+                if v != nil {
+                    res[i] = *(v.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID))
+                }
             }
             m.SetIncludedGroups(res)
         }

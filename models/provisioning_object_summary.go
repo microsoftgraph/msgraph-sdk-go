@@ -135,7 +135,9 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(i878
         if val != nil {
             res := make([]ModifiedPropertyable, len(val))
             for i, v := range val {
-                res[i] = v.(ModifiedPropertyable)
+                if v != nil {
+                    res[i] = v.(ModifiedPropertyable)
+                }
             }
             m.SetModifiedProperties(res)
         }
@@ -169,7 +171,9 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(i878
         if val != nil {
             res := make([]ProvisioningStepable, len(val))
             for i, v := range val {
-                res[i] = v.(ProvisioningStepable)
+                if v != nil {
+                    res[i] = v.(ProvisioningStepable)
+                }
             }
             m.SetProvisioningSteps(res)
         }
@@ -414,7 +418,9 @@ func (m *ProvisioningObjectSummary) Serialize(writer i878a80d2330e89d26896388a3f
     if m.GetModifiedProperties() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetModifiedProperties()))
         for i, v := range m.GetModifiedProperties() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("modifiedProperties", cast)
         if err != nil {
@@ -437,7 +443,9 @@ func (m *ProvisioningObjectSummary) Serialize(writer i878a80d2330e89d26896388a3f
     if m.GetProvisioningSteps() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetProvisioningSteps()))
         for i, v := range m.GetProvisioningSteps() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("provisioningSteps", cast)
         if err != nil {

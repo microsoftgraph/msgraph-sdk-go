@@ -61,7 +61,9 @@ func (m *GroupSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         if val != nil {
             res := make([]SettingValueable, len(val))
             for i, v := range val {
-                res[i] = v.(SettingValueable)
+                if v != nil {
+                    res[i] = v.(SettingValueable)
+                }
             }
             m.SetValues(res)
         }
@@ -112,7 +114,9 @@ func (m *GroupSetting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     if m.GetValues() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetValues()))
         for i, v := range m.GetValues() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("values", cast)
         if err != nil {

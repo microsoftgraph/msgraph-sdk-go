@@ -75,7 +75,9 @@ func (m *MacOSGeneralDeviceConfiguration) GetFieldDeserializers()(map[string]fun
         if val != nil {
             res := make([]AppListItemable, len(val))
             for i, v := range val {
-                res[i] = v.(AppListItemable)
+                if v != nil {
+                    res[i] = v.(AppListItemable)
+                }
             }
             m.SetCompliantAppsList(res)
         }
@@ -89,7 +91,9 @@ func (m *MacOSGeneralDeviceConfiguration) GetFieldDeserializers()(map[string]fun
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetEmailInDomainSuffixes(res)
         }
@@ -302,7 +306,9 @@ func (m *MacOSGeneralDeviceConfiguration) Serialize(writer i878a80d2330e89d26896
     if m.GetCompliantAppsList() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCompliantAppsList()))
         for i, v := range m.GetCompliantAppsList() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("compliantAppsList", cast)
         if err != nil {

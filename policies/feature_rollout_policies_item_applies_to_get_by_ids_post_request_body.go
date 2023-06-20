@@ -49,7 +49,9 @@ func (m *FeatureRolloutPoliciesItemAppliesToGetByIdsPostRequestBody) GetFieldDes
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetIds(res)
         }
@@ -63,7 +65,9 @@ func (m *FeatureRolloutPoliciesItemAppliesToGetByIdsPostRequestBody) GetFieldDes
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetTypes(res)
         }

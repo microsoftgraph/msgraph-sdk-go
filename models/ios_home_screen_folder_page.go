@@ -10,7 +10,7 @@ type IosHomeScreenFolderPage struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewIosHomeScreenFolderPage instantiates a new iosHomeScreenFolderPage and sets the default values.
+// NewIosHomeScreenFolderPage instantiates a new IosHomeScreenFolderPage and sets the default values.
 func NewIosHomeScreenFolderPage()(*IosHomeScreenFolderPage) {
     m := &IosHomeScreenFolderPage{
     }
@@ -71,7 +71,9 @@ func (m *IosHomeScreenFolderPage) GetFieldDeserializers()(map[string]func(i878a8
         if val != nil {
             res := make([]IosHomeScreenAppable, len(val))
             for i, v := range val {
-                res[i] = v.(IosHomeScreenAppable)
+                if v != nil {
+                    res[i] = v.(IosHomeScreenAppable)
+                }
             }
             m.SetApps(res)
         }
@@ -115,7 +117,9 @@ func (m *IosHomeScreenFolderPage) Serialize(writer i878a80d2330e89d26896388a3f48
     if m.GetApps() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetApps()))
         for i, v := range m.GetApps() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("apps", cast)
         if err != nil {

@@ -52,7 +52,9 @@ func (m *UserFlowLanguageConfiguration) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]UserFlowLanguagePageable, len(val))
             for i, v := range val {
-                res[i] = v.(UserFlowLanguagePageable)
+                if v != nil {
+                    res[i] = v.(UserFlowLanguagePageable)
+                }
             }
             m.SetDefaultPages(res)
         }
@@ -86,7 +88,9 @@ func (m *UserFlowLanguageConfiguration) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]UserFlowLanguagePageable, len(val))
             for i, v := range val {
-                res[i] = v.(UserFlowLanguagePageable)
+                if v != nil {
+                    res[i] = v.(UserFlowLanguagePageable)
+                }
             }
             m.SetOverridesPages(res)
         }
@@ -125,7 +129,9 @@ func (m *UserFlowLanguageConfiguration) Serialize(writer i878a80d2330e89d2689638
     if m.GetDefaultPages() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDefaultPages()))
         for i, v := range m.GetDefaultPages() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("defaultPages", cast)
         if err != nil {
@@ -147,7 +153,9 @@ func (m *UserFlowLanguageConfiguration) Serialize(writer i878a80d2330e89d2689638
     if m.GetOverridesPages() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOverridesPages()))
         for i, v := range m.GetOverridesPages() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("overridesPages", cast)
         if err != nil {

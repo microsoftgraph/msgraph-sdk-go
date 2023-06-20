@@ -61,7 +61,9 @@ func (m *Conversation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         if val != nil {
             res := make([]ConversationThreadable, len(val))
             for i, v := range val {
-                res[i] = v.(ConversationThreadable)
+                if v != nil {
+                    res[i] = v.(ConversationThreadable)
+                }
             }
             m.SetThreads(res)
         }
@@ -85,7 +87,9 @@ func (m *Conversation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetUniqueSenders(res)
         }
@@ -186,7 +190,9 @@ func (m *Conversation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     if m.GetThreads() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetThreads()))
         for i, v := range m.GetThreads() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("threads", cast)
         if err != nil {

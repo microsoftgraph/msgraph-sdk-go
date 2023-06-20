@@ -119,7 +119,9 @@ func (m *DelegatedAdminRelationship) GetFieldDeserializers()(map[string]func(i87
         if val != nil {
             res := make([]DelegatedAdminAccessAssignmentable, len(val))
             for i, v := range val {
-                res[i] = v.(DelegatedAdminAccessAssignmentable)
+                if v != nil {
+                    res[i] = v.(DelegatedAdminAccessAssignmentable)
+                }
             }
             m.SetAccessAssignments(res)
         }
@@ -213,7 +215,9 @@ func (m *DelegatedAdminRelationship) GetFieldDeserializers()(map[string]func(i87
         if val != nil {
             res := make([]DelegatedAdminRelationshipOperationable, len(val))
             for i, v := range val {
-                res[i] = v.(DelegatedAdminRelationshipOperationable)
+                if v != nil {
+                    res[i] = v.(DelegatedAdminRelationshipOperationable)
+                }
             }
             m.SetOperations(res)
         }
@@ -227,7 +231,9 @@ func (m *DelegatedAdminRelationship) GetFieldDeserializers()(map[string]func(i87
         if val != nil {
             res := make([]DelegatedAdminRelationshipRequestable, len(val))
             for i, v := range val {
-                res[i] = v.(DelegatedAdminRelationshipRequestable)
+                if v != nil {
+                    res[i] = v.(DelegatedAdminRelationshipRequestable)
+                }
             }
             m.SetRequests(res)
         }
@@ -298,7 +304,9 @@ func (m *DelegatedAdminRelationship) Serialize(writer i878a80d2330e89d26896388a3
     if m.GetAccessAssignments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAccessAssignments()))
         for i, v := range m.GetAccessAssignments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("accessAssignments", cast)
         if err != nil {
@@ -356,7 +364,9 @@ func (m *DelegatedAdminRelationship) Serialize(writer i878a80d2330e89d26896388a3
     if m.GetOperations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOperations()))
         for i, v := range m.GetOperations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("operations", cast)
         if err != nil {
@@ -366,7 +376,9 @@ func (m *DelegatedAdminRelationship) Serialize(writer i878a80d2330e89d26896388a3
     if m.GetRequests() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRequests()))
         for i, v := range m.GetRequests() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("requests", cast)
         if err != nil {

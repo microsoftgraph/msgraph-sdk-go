@@ -81,7 +81,9 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) GetFieldDeserializers()(map[stri
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetEnforcedSettings(res)
         }
@@ -95,7 +97,9 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) GetFieldDeserializers()(map[stri
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetInheritableSettings(res)
         }
@@ -129,7 +133,9 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) GetFieldDeserializers()(map[stri
         if val != nil {
             res := make([]UnifiedRoleManagementPolicyRuleTargetOperations, len(val))
             for i, v := range val {
-                res[i] = *(v.(*UnifiedRoleManagementPolicyRuleTargetOperations))
+                if v != nil {
+                    res[i] = *(v.(*UnifiedRoleManagementPolicyRuleTargetOperations))
+                }
             }
             m.SetOperations(res)
         }
@@ -143,7 +149,9 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) GetFieldDeserializers()(map[stri
         if val != nil {
             res := make([]DirectoryObjectable, len(val))
             for i, v := range val {
-                res[i] = v.(DirectoryObjectable)
+                if v != nil {
+                    res[i] = v.(DirectoryObjectable)
+                }
             }
             m.SetTargetObjects(res)
         }
@@ -247,7 +255,9 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) Serialize(writer i878a80d2330e89
     if m.GetTargetObjects() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTargetObjects()))
         for i, v := range m.GetTargetObjects() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("targetObjects", cast)
         if err != nil {

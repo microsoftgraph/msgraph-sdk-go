@@ -11,7 +11,7 @@ type AppRole struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAppRole instantiates a new appRole and sets the default values.
+// NewAppRole instantiates a new AppRole and sets the default values.
 func NewAppRole()(*AppRole) {
     m := &AppRole{
     }
@@ -83,7 +83,9 @@ func (m *AppRole) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetAllowedMemberTypes(res)
         }

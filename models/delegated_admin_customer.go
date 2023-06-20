@@ -8,7 +8,7 @@ import (
 type DelegatedAdminCustomer struct {
     Entity
 }
-// NewDelegatedAdminCustomer instantiates a new delegatedAdminCustomer and sets the default values.
+// NewDelegatedAdminCustomer instantiates a new DelegatedAdminCustomer and sets the default values.
 func NewDelegatedAdminCustomer()(*DelegatedAdminCustomer) {
     m := &DelegatedAdminCustomer{
         Entity: *NewEntity(),
@@ -51,7 +51,9 @@ func (m *DelegatedAdminCustomer) GetFieldDeserializers()(map[string]func(i878a80
         if val != nil {
             res := make([]DelegatedAdminServiceManagementDetailable, len(val))
             for i, v := range val {
-                res[i] = v.(DelegatedAdminServiceManagementDetailable)
+                if v != nil {
+                    res[i] = v.(DelegatedAdminServiceManagementDetailable)
+                }
             }
             m.SetServiceManagementDetails(res)
         }
@@ -106,7 +108,9 @@ func (m *DelegatedAdminCustomer) Serialize(writer i878a80d2330e89d26896388a3f487
     if m.GetServiceManagementDetails() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetServiceManagementDetails()))
         for i, v := range m.GetServiceManagementDetails() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("serviceManagementDetails", cast)
         if err != nil {

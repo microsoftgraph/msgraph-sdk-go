@@ -71,7 +71,9 @@ func (m *ApiApplication) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         if val != nil {
             res := make([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID, len(val))
             for i, v := range val {
-                res[i] = *(v.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID))
+                if v != nil {
+                    res[i] = *(v.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID))
+                }
             }
             m.SetKnownClientApplications(res)
         }
@@ -85,7 +87,9 @@ func (m *ApiApplication) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         if val != nil {
             res := make([]PermissionScopeable, len(val))
             for i, v := range val {
-                res[i] = v.(PermissionScopeable)
+                if v != nil {
+                    res[i] = v.(PermissionScopeable)
+                }
             }
             m.SetOauth2PermissionScopes(res)
         }
@@ -109,7 +113,9 @@ func (m *ApiApplication) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         if val != nil {
             res := make([]PreAuthorizedApplicationable, len(val))
             for i, v := range val {
-                res[i] = v.(PreAuthorizedApplicationable)
+                if v != nil {
+                    res[i] = v.(PreAuthorizedApplicationable)
+                }
             }
             m.SetPreAuthorizedApplications(res)
         }
@@ -199,7 +205,9 @@ func (m *ApiApplication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if m.GetOauth2PermissionScopes() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOauth2PermissionScopes()))
         for i, v := range m.GetOauth2PermissionScopes() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("oauth2PermissionScopes", cast)
         if err != nil {
@@ -215,7 +223,9 @@ func (m *ApiApplication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if m.GetPreAuthorizedApplications() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPreAuthorizedApplications()))
         for i, v := range m.GetPreAuthorizedApplications() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("preAuthorizedApplications", cast)
         if err != nil {

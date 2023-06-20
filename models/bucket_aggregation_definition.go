@@ -10,7 +10,7 @@ type BucketAggregationDefinition struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewBucketAggregationDefinition instantiates a new bucketAggregationDefinition and sets the default values.
+// NewBucketAggregationDefinition instantiates a new BucketAggregationDefinition and sets the default values.
 func NewBucketAggregationDefinition()(*BucketAggregationDefinition) {
     m := &BucketAggregationDefinition{
     }
@@ -89,7 +89,9 @@ func (m *BucketAggregationDefinition) GetFieldDeserializers()(map[string]func(i8
         if val != nil {
             res := make([]BucketAggregationRangeable, len(val))
             for i, v := range val {
-                res[i] = v.(BucketAggregationRangeable)
+                if v != nil {
+                    res[i] = v.(BucketAggregationRangeable)
+                }
             }
             m.SetRanges(res)
         }
@@ -202,7 +204,9 @@ func (m *BucketAggregationDefinition) Serialize(writer i878a80d2330e89d26896388a
     if m.GetRanges() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRanges()))
         for i, v := range m.GetRanges() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("ranges", cast)
         if err != nil {

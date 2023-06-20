@@ -132,7 +132,9 @@ func (m *AlertEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetDetailedRoles(res)
         }
@@ -176,7 +178,9 @@ func (m *AlertEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]EvidenceRole, len(val))
             for i, v := range val {
-                res[i] = *(v.(*EvidenceRole))
+                if v != nil {
+                    res[i] = *(v.(*EvidenceRole))
+                }
             }
             m.SetRoles(res)
         }
@@ -190,7 +194,9 @@ func (m *AlertEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetTags(res)
         }

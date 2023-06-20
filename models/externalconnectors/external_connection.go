@@ -9,7 +9,7 @@ import (
 type ExternalConnection struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
 }
-// NewExternalConnection instantiates a new ExternalConnection and sets the default values.
+// NewExternalConnection instantiates a new externalConnection and sets the default values.
 func NewExternalConnection()(*ExternalConnection) {
     m := &ExternalConnection{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
@@ -94,7 +94,9 @@ func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]ExternalGroupable, len(val))
             for i, v := range val {
-                res[i] = v.(ExternalGroupable)
+                if v != nil {
+                    res[i] = v.(ExternalGroupable)
+                }
             }
             m.SetGroups(res)
         }
@@ -108,7 +110,9 @@ func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]ExternalItemable, len(val))
             for i, v := range val {
-                res[i] = v.(ExternalItemable)
+                if v != nil {
+                    res[i] = v.(ExternalItemable)
+                }
             }
             m.SetItems(res)
         }
@@ -132,7 +136,9 @@ func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(i878a80d233
         if val != nil {
             res := make([]ConnectionOperationable, len(val))
             for i, v := range val {
-                res[i] = v.(ConnectionOperationable)
+                if v != nil {
+                    res[i] = v.(ConnectionOperationable)
+                }
             }
             m.SetOperations(res)
         }
@@ -274,7 +280,9 @@ func (m *ExternalConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetGroups() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetGroups()))
         for i, v := range m.GetGroups() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("groups", cast)
         if err != nil {
@@ -284,7 +292,9 @@ func (m *ExternalConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetItems() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetItems()))
         for i, v := range m.GetItems() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("items", cast)
         if err != nil {
@@ -300,7 +310,9 @@ func (m *ExternalConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetOperations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOperations()))
         for i, v := range m.GetOperations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("operations", cast)
         if err != nil {

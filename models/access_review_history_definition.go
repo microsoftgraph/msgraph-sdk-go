@@ -95,7 +95,9 @@ func (m *AccessReviewHistoryDefinition) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]AccessReviewHistoryDecisionFilter, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AccessReviewHistoryDecisionFilter))
+                if v != nil {
+                    res[i] = *(v.(*AccessReviewHistoryDecisionFilter))
+                }
             }
             m.SetDecisions(res)
         }
@@ -119,7 +121,9 @@ func (m *AccessReviewHistoryDefinition) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]AccessReviewHistoryInstanceable, len(val))
             for i, v := range val {
-                res[i] = v.(AccessReviewHistoryInstanceable)
+                if v != nil {
+                    res[i] = v.(AccessReviewHistoryInstanceable)
+                }
             }
             m.SetInstances(res)
         }
@@ -163,7 +167,9 @@ func (m *AccessReviewHistoryDefinition) GetFieldDeserializers()(map[string]func(
         if val != nil {
             res := make([]AccessReviewScopeable, len(val))
             for i, v := range val {
-                res[i] = v.(AccessReviewScopeable)
+                if v != nil {
+                    res[i] = v.(AccessReviewScopeable)
+                }
             }
             m.SetScopes(res)
         }
@@ -280,7 +286,9 @@ func (m *AccessReviewHistoryDefinition) Serialize(writer i878a80d2330e89d2689638
     if m.GetInstances() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetInstances()))
         for i, v := range m.GetInstances() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("instances", cast)
         if err != nil {
@@ -308,7 +316,9 @@ func (m *AccessReviewHistoryDefinition) Serialize(writer i878a80d2330e89d2689638
     if m.GetScopes() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetScopes()))
         for i, v := range m.GetScopes() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("scopes", cast)
         if err != nil {

@@ -11,7 +11,7 @@ import (
 type ItemCalendarGroupsItemCalendarsItemCalendarPermissionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemCalendarGroupsItemCalendarsItemCalendarPermissionsRequestBuilderGetQueryParameters get the specified permissions object of a user or group calendar that has been shared.
+// ItemCalendarGroupsItemCalendarsItemCalendarPermissionsRequestBuilderGetQueryParameters get a collection of calendarPermission resources that describe the identity and roles of users with whom the specified calendar has been shared or delegated. Here, the calendar can be a user calendar or group calendar.
 type ItemCalendarGroupsItemCalendarsItemCalendarPermissionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -70,7 +70,10 @@ func NewItemCalendarGroupsItemCalendarsItemCalendarPermissionsRequestBuilder(raw
 func (m *ItemCalendarGroupsItemCalendarsItemCalendarPermissionsRequestBuilder) Count()(*ItemCalendarGroupsItemCalendarsItemCalendarPermissionsCountRequestBuilder) {
     return NewItemCalendarGroupsItemCalendarsItemCalendarPermissionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the specified permissions object of a user or group calendar that has been shared.
+// Get get a collection of calendarPermission resources that describe the identity and roles of users with whom the specified calendar has been shared or delegated. Here, the calendar can be a user calendar or group calendar.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/calendar-list-calendarpermissions?view=graph-rest-1.0
 func (m *ItemCalendarGroupsItemCalendarsItemCalendarPermissionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarGroupsItemCalendarsItemCalendarPermissionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarPermissionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -111,7 +114,7 @@ func (m *ItemCalendarGroupsItemCalendarsItemCalendarPermissionsRequestBuilder) P
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarPermissionable), nil
 }
-// ToGetRequestInformation get the specified permissions object of a user or group calendar that has been shared.
+// ToGetRequestInformation get a collection of calendarPermission resources that describe the identity and roles of users with whom the specified calendar has been shared or delegated. Here, the calendar can be a user calendar or group calendar.
 func (m *ItemCalendarGroupsItemCalendarsItemCalendarPermissionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarGroupsItemCalendarsItemCalendarPermissionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

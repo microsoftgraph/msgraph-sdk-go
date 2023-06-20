@@ -10,7 +10,7 @@ type Property struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewProperty instantiates a new property and sets the default values.
+// NewProperty instantiates a new Property and sets the default values.
 func NewProperty()(*Property) {
     m := &Property{
     }
@@ -60,7 +60,9 @@ func (m *Property) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetAliases(res)
         }
@@ -114,7 +116,9 @@ func (m *Property) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         if val != nil {
             res := make([]Label, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Label))
+                if v != nil {
+                    res[i] = *(v.(*Label))
+                }
             }
             m.SetLabels(res)
         }

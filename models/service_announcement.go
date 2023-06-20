@@ -30,7 +30,9 @@ func (m *ServiceAnnouncement) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]ServiceHealthable, len(val))
             for i, v := range val {
-                res[i] = v.(ServiceHealthable)
+                if v != nil {
+                    res[i] = v.(ServiceHealthable)
+                }
             }
             m.SetHealthOverviews(res)
         }
@@ -44,7 +46,9 @@ func (m *ServiceAnnouncement) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]ServiceHealthIssueable, len(val))
             for i, v := range val {
-                res[i] = v.(ServiceHealthIssueable)
+                if v != nil {
+                    res[i] = v.(ServiceHealthIssueable)
+                }
             }
             m.SetIssues(res)
         }
@@ -58,7 +62,9 @@ func (m *ServiceAnnouncement) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]ServiceUpdateMessageable, len(val))
             for i, v := range val {
-                res[i] = v.(ServiceUpdateMessageable)
+                if v != nil {
+                    res[i] = v.(ServiceUpdateMessageable)
+                }
             }
             m.SetMessages(res)
         }
@@ -108,7 +114,9 @@ func (m *ServiceAnnouncement) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetHealthOverviews() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetHealthOverviews()))
         for i, v := range m.GetHealthOverviews() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("healthOverviews", cast)
         if err != nil {
@@ -118,7 +126,9 @@ func (m *ServiceAnnouncement) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetIssues() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetIssues()))
         for i, v := range m.GetIssues() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("issues", cast)
         if err != nil {
@@ -128,7 +138,9 @@ func (m *ServiceAnnouncement) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetMessages() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMessages()))
         for i, v := range m.GetMessages() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("messages", cast)
         if err != nil {

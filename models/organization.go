@@ -154,7 +154,9 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         if val != nil {
             res := make([]AssignedPlanable, len(val))
             for i, v := range val {
-                res[i] = v.(AssignedPlanable)
+                if v != nil {
+                    res[i] = v.(AssignedPlanable)
+                }
             }
             m.SetAssignedPlans(res)
         }
@@ -178,7 +180,9 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetBusinessPhones(res)
         }
@@ -192,7 +196,9 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         if val != nil {
             res := make([]CertificateBasedAuthConfigurationable, len(val))
             for i, v := range val {
-                res[i] = v.(CertificateBasedAuthConfigurationable)
+                if v != nil {
+                    res[i] = v.(CertificateBasedAuthConfigurationable)
+                }
             }
             m.SetCertificateBasedAuthConfiguration(res)
         }
@@ -266,7 +272,9 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         if val != nil {
             res := make([]Extensionable, len(val))
             for i, v := range val {
-                res[i] = v.(Extensionable)
+                if v != nil {
+                    res[i] = v.(Extensionable)
+                }
             }
             m.SetExtensions(res)
         }
@@ -280,7 +288,9 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetMarketingNotificationEmails(res)
         }
@@ -364,7 +374,9 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         if val != nil {
             res := make([]ProvisionedPlanable, len(val))
             for i, v := range val {
-                res[i] = v.(ProvisionedPlanable)
+                if v != nil {
+                    res[i] = v.(ProvisionedPlanable)
+                }
             }
             m.SetProvisionedPlans(res)
         }
@@ -378,7 +390,9 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetSecurityComplianceNotificationMails(res)
         }
@@ -392,7 +406,9 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetSecurityComplianceNotificationPhones(res)
         }
@@ -426,7 +442,9 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         if val != nil {
             res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
             }
             m.SetTechnicalNotificationMails(res)
         }
@@ -450,7 +468,9 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         if val != nil {
             res := make([]VerifiedDomainable, len(val))
             for i, v := range val {
-                res[i] = v.(VerifiedDomainable)
+                if v != nil {
+                    res[i] = v.(VerifiedDomainable)
+                }
             }
             m.SetVerifiedDomains(res)
         }
@@ -643,7 +663,9 @@ func (m *Organization) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     if m.GetAssignedPlans() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignedPlans()))
         for i, v := range m.GetAssignedPlans() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("assignedPlans", cast)
         if err != nil {
@@ -665,7 +687,9 @@ func (m *Organization) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     if m.GetCertificateBasedAuthConfiguration() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCertificateBasedAuthConfiguration()))
         for i, v := range m.GetCertificateBasedAuthConfiguration() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("certificateBasedAuthConfiguration", cast)
         if err != nil {
@@ -711,7 +735,9 @@ func (m *Organization) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     if m.GetExtensions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExtensions()))
         for i, v := range m.GetExtensions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("extensions", cast)
         if err != nil {
@@ -771,7 +797,9 @@ func (m *Organization) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     if m.GetProvisionedPlans() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetProvisionedPlans()))
         for i, v := range m.GetProvisionedPlans() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("provisionedPlans", cast)
         if err != nil {
@@ -817,7 +845,9 @@ func (m *Organization) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     if m.GetVerifiedDomains() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetVerifiedDomains()))
         for i, v := range m.GetVerifiedDomains() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("verifiedDomains", cast)
         if err != nil {

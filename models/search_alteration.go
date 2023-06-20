@@ -102,7 +102,9 @@ func (m *SearchAlteration) GetFieldDeserializers()(map[string]func(i878a80d2330e
         if val != nil {
             res := make([]AlteredQueryTokenable, len(val))
             for i, v := range val {
-                res[i] = v.(AlteredQueryTokenable)
+                if v != nil {
+                    res[i] = v.(AlteredQueryTokenable)
+                }
             }
             m.SetAlteredQueryTokens(res)
         }
@@ -148,7 +150,9 @@ func (m *SearchAlteration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if m.GetAlteredQueryTokens() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAlteredQueryTokens()))
         for i, v := range m.GetAlteredQueryTokens() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("alteredQueryTokens", cast)
         if err != nil {

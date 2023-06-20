@@ -80,7 +80,9 @@ func (m *SharedInsight) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         if val != nil {
             res := make([]SharingDetailable, len(val))
             for i, v := range val {
-                res[i] = v.(SharingDetailable)
+                if v != nil {
+                    res[i] = v.(SharingDetailable)
+                }
             }
             m.SetSharingHistory(res)
         }
@@ -181,7 +183,9 @@ func (m *SharedInsight) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetSharingHistory() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSharingHistory()))
         for i, v := range m.GetSharingHistory() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("sharingHistory", cast)
         if err != nil {

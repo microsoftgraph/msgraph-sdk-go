@@ -100,7 +100,9 @@ func (m *RoleDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         if val != nil {
             res := make([]RoleAssignmentable, len(val))
             for i, v := range val {
-                res[i] = v.(RoleAssignmentable)
+                if v != nil {
+                    res[i] = v.(RoleAssignmentable)
+                }
             }
             m.SetRoleAssignments(res)
         }
@@ -114,7 +116,9 @@ func (m *RoleDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         if val != nil {
             res := make([]RolePermissionable, len(val))
             for i, v := range val {
-                res[i] = v.(RolePermissionable)
+                if v != nil {
+                    res[i] = v.(RolePermissionable)
+                }
             }
             m.SetRolePermissions(res)
         }
@@ -182,7 +186,9 @@ func (m *RoleDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if m.GetRoleAssignments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRoleAssignments()))
         for i, v := range m.GetRoleAssignments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("roleAssignments", cast)
         if err != nil {
@@ -192,7 +198,9 @@ func (m *RoleDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if m.GetRolePermissions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRolePermissions()))
         for i, v := range m.GetRolePermissions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("rolePermissions", cast)
         if err != nil {

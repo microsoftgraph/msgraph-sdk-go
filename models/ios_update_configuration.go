@@ -74,7 +74,9 @@ func (m *IosUpdateConfiguration) GetFieldDeserializers()(map[string]func(i878a80
         if val != nil {
             res := make([]DayOfWeek, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DayOfWeek))
+                if v != nil {
+                    res[i] = *(v.(*DayOfWeek))
+                }
             }
             m.SetScheduledInstallDays(res)
         }

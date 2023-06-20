@@ -80,7 +80,9 @@ func (m *WindowsInformationProtectionIPRangeCollection) GetFieldDeserializers()(
         if val != nil {
             res := make([]IpRangeable, len(val))
             for i, v := range val {
-                res[i] = v.(IpRangeable)
+                if v != nil {
+                    res[i] = v.(IpRangeable)
+                }
             }
             m.SetRanges(res)
         }
@@ -127,7 +129,9 @@ func (m *WindowsInformationProtectionIPRangeCollection) Serialize(writer i878a80
     if m.GetRanges() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRanges()))
         for i, v := range m.GetRanges() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err := writer.WriteCollectionOfObjectValues("ranges", cast)
         if err != nil {

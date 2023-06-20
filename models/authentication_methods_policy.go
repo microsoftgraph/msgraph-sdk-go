@@ -64,7 +64,9 @@ func (m *AuthenticationMethodsPolicy) GetFieldDeserializers()(map[string]func(i8
         if val != nil {
             res := make([]AuthenticationMethodConfigurationable, len(val))
             for i, v := range val {
-                res[i] = v.(AuthenticationMethodConfigurationable)
+                if v != nil {
+                    res[i] = v.(AuthenticationMethodConfigurationable)
+                }
             }
             m.SetAuthenticationMethodConfigurations(res)
         }
@@ -206,7 +208,9 @@ func (m *AuthenticationMethodsPolicy) Serialize(writer i878a80d2330e89d26896388a
     if m.GetAuthenticationMethodConfigurations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAuthenticationMethodConfigurations()))
         for i, v := range m.GetAuthenticationMethodConfigurations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("authenticationMethodConfigurations", cast)
         if err != nil {

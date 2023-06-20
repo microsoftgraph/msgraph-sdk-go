@@ -50,7 +50,9 @@ func (m *WorkbookChartSeries) GetFieldDeserializers()(map[string]func(i878a80d23
         if val != nil {
             res := make([]WorkbookChartPointable, len(val))
             for i, v := range val {
-                res[i] = v.(WorkbookChartPointable)
+                if v != nil {
+                    res[i] = v.(WorkbookChartPointable)
+                }
             }
             m.SetPoints(res)
         }
@@ -112,7 +114,9 @@ func (m *WorkbookChartSeries) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetPoints() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPoints()))
         for i, v := range m.GetPoints() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
         err = writer.WriteCollectionOfObjectValues("points", cast)
         if err != nil {
