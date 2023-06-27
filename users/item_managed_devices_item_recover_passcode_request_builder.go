@@ -31,6 +31,9 @@ func NewItemManagedDevicesItemRecoverPasscodeRequestBuilder(rawUrl string, reque
     return NewItemManagedDevicesItemRecoverPasscodeRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post recover passcode
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-devices-manageddevice-recoverpasscode?view=graph-rest-1.0
 func (m *ItemManagedDevicesItemRecoverPasscodeRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemManagedDevicesItemRecoverPasscodeRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

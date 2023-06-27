@@ -8,7 +8,7 @@ import (
 type Place struct {
     Entity
 }
-// NewPlace instantiates a new Place and sets the default values.
+// NewPlace instantiates a new place and sets the default values.
 func NewPlace()(*Place) {
     m := &Place{
         Entity: *NewEntity(),

@@ -30,7 +30,7 @@ func (m *Workbook) GetApplication()(WorkbookApplicationable) {
     }
     return nil
 }
-// GetComments gets the comments property value. The comments property
+// GetComments gets the comments property value. Represents a collection of comments in a workbook.
 func (m *Workbook) GetComments()([]WorkbookCommentable) {
     val, err := m.GetBackingStore().Get("comments")
     if err != nil {
@@ -288,7 +288,7 @@ func (m *Workbook) SetApplication(value WorkbookApplicationable)() {
         panic(err)
     }
 }
-// SetComments sets the comments property value. The comments property
+// SetComments sets the comments property value. Represents a collection of comments in a workbook.
 func (m *Workbook) SetComments(value []WorkbookCommentable)() {
     err := m.GetBackingStore().Set("comments", value)
     if err != nil {

@@ -296,6 +296,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCrossTenantAccessPolicy(), nil
                     case "#microsoft.graph.crossTenantAccessPolicyConfigurationDefault":
                         return NewCrossTenantAccessPolicyConfigurationDefault(), nil
+                    case "#microsoft.graph.customCalloutExtension":
+                        return NewCustomCalloutExtension(), nil
                     case "#microsoft.graph.customSecurityAttributeDefinition":
                         return NewCustomSecurityAttributeDefinition(), nil
                     case "#microsoft.graph.dataPolicyOperation":
@@ -316,6 +318,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewDelegatedAdminServiceManagementDetail(), nil
                     case "#microsoft.graph.delegatedPermissionClassification":
                         return NewDelegatedPermissionClassification(), nil
+                    case "#microsoft.graph.deletedItemContainer":
+                        return NewDeletedItemContainer(), nil
                     case "#microsoft.graph.deletedTeam":
                         return NewDeletedTeam(), nil
                     case "#microsoft.graph.detectedApp":
@@ -518,6 +522,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewFileAttachment(), nil
                     case "#microsoft.graph.filterOperatorSchema":
                         return NewFilterOperatorSchema(), nil
+                    case "#microsoft.graph.governanceInsight":
+                        return NewGovernanceInsight(), nil
                     case "#microsoft.graph.group":
                         return NewGroup(), nil
                     case "#microsoft.graph.groupLifecyclePolicy":
@@ -1168,6 +1174,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewUserScopeTeamsAppInstallation(), nil
                     case "#microsoft.graph.userSettings":
                         return NewUserSettings(), nil
+                    case "#microsoft.graph.userSignInInsight":
+                        return NewUserSignInInsight(), nil
                     case "#microsoft.graph.userTeamwork":
                         return NewUserTeamwork(), nil
                     case "#microsoft.graph.voiceAuthenticationMethodConfiguration":

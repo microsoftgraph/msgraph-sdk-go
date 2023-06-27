@@ -30,7 +30,10 @@ func NewManagedDevicesItemSyncDeviceRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewManagedDevicesItemSyncDeviceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action syncDevice
+// Post not yet documented
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-devices-manageddevice-syncdevice?view=graph-rest-1.0
 func (m *ManagedDevicesItemSyncDeviceRequestBuilder) Post(ctx context.Context, requestConfiguration *ManagedDevicesItemSyncDeviceRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *ManagedDevicesItemSyncDeviceRequestBuilder) Post(ctx context.Context, r
     }
     return nil
 }
-// ToPostRequestInformation invoke action syncDevice
+// ToPostRequestInformation not yet documented
 func (m *ManagedDevicesItemSyncDeviceRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ManagedDevicesItemSyncDeviceRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -192,6 +192,32 @@ func (m *AccessReviewScheduleSettings) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["recommendationInsightSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAccessReviewRecommendationInsightSettingFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AccessReviewRecommendationInsightSettingable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(AccessReviewRecommendationInsightSettingable)
+                }
+            }
+            m.SetRecommendationInsightSettings(res)
+        }
+        return nil
+    }
+    res["recommendationLookBackDuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetISODurationValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRecommendationLookBackDuration(val)
+        }
+        return nil
+    }
     res["recommendationsEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -265,6 +291,28 @@ func (m *AccessReviewScheduleSettings) GetOdataType()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetRecommendationInsightSettings gets the recommendationInsightSettings property value. The recommendationInsightSettings property
+func (m *AccessReviewScheduleSettings) GetRecommendationInsightSettings()([]AccessReviewRecommendationInsightSettingable) {
+    val, err := m.GetBackingStore().Get("recommendationInsightSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AccessReviewRecommendationInsightSettingable)
+    }
+    return nil
+}
+// GetRecommendationLookBackDuration gets the recommendationLookBackDuration property value. The recommendationLookBackDuration property
+func (m *AccessReviewScheduleSettings) GetRecommendationLookBackDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
+    val, err := m.GetBackingStore().Get("recommendationLookBackDuration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
     }
     return nil
 }
@@ -359,6 +407,24 @@ func (m *AccessReviewScheduleSettings) Serialize(writer i878a80d2330e89d26896388
     }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetRecommendationInsightSettings() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRecommendationInsightSettings()))
+        for i, v := range m.GetRecommendationInsightSettings() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err := writer.WriteCollectionOfObjectValues("recommendationInsightSettings", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteISODurationValue("recommendationLookBackDuration", m.GetRecommendationLookBackDuration())
         if err != nil {
             return err
         }
@@ -463,6 +529,20 @@ func (m *AccessReviewScheduleSettings) SetOdataType(value *string)() {
         panic(err)
     }
 }
+// SetRecommendationInsightSettings sets the recommendationInsightSettings property value. The recommendationInsightSettings property
+func (m *AccessReviewScheduleSettings) SetRecommendationInsightSettings(value []AccessReviewRecommendationInsightSettingable)() {
+    err := m.GetBackingStore().Set("recommendationInsightSettings", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetRecommendationLookBackDuration sets the recommendationLookBackDuration property value. The recommendationLookBackDuration property
+func (m *AccessReviewScheduleSettings) SetRecommendationLookBackDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
+    err := m.GetBackingStore().Set("recommendationLookBackDuration", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRecommendationsEnabled sets the recommendationsEnabled property value. Indicates whether decision recommendations are enabled or disabled. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationsEnabled setting will be used instead of the value of this property.
 func (m *AccessReviewScheduleSettings) SetRecommendationsEnabled(value *bool)() {
     err := m.GetBackingStore().Set("recommendationsEnabled", value)
@@ -499,6 +579,8 @@ type AccessReviewScheduleSettingsable interface {
     GetJustificationRequiredOnApproval()(*bool)
     GetMailNotificationsEnabled()(*bool)
     GetOdataType()(*string)
+    GetRecommendationInsightSettings()([]AccessReviewRecommendationInsightSettingable)
+    GetRecommendationLookBackDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
     GetRecommendationsEnabled()(*bool)
     GetRecurrence()(PatternedRecurrenceable)
     GetReminderNotificationsEnabled()(*bool)
@@ -512,6 +594,8 @@ type AccessReviewScheduleSettingsable interface {
     SetJustificationRequiredOnApproval(value *bool)()
     SetMailNotificationsEnabled(value *bool)()
     SetOdataType(value *string)()
+    SetRecommendationInsightSettings(value []AccessReviewRecommendationInsightSettingable)()
+    SetRecommendationLookBackDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
     SetRecommendationsEnabled(value *bool)()
     SetRecurrence(value PatternedRecurrenceable)()
     SetReminderNotificationsEnabled(value *bool)()

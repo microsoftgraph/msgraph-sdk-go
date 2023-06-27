@@ -9,7 +9,7 @@ import (
 type Printer struct {
     PrinterBase
 }
-// NewPrinter instantiates a new Printer and sets the default values.
+// NewPrinter instantiates a new printer and sets the default values.
 func NewPrinter()(*Printer) {
     m := &Printer{
         PrinterBase: *NewPrinterBase(),

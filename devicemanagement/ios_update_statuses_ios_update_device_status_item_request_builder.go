@@ -18,7 +18,7 @@ type IosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilderDeleteRequestConfig
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// IosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilderGetQueryParameters the IOS software update installation statuses for this account.
+// IosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilderGetQueryParameters read properties and relationships of the iosUpdateDeviceStatus object.
 type IosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewIosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewIosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property iosUpdateStatuses for deviceManagement
+// Delete deletes a iosUpdateDeviceStatus.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-deviceconfig-iosupdatedevicestatus-delete?view=graph-rest-1.0
 func (m *IosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *IosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *IosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilder) Delete(ctx co
     }
     return nil
 }
-// Get the IOS software update installation statuses for this account.
+// Get read properties and relationships of the iosUpdateDeviceStatus object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-deviceconfig-iosupdatedevicestatus-get?view=graph-rest-1.0
 func (m *IosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilder) Get(ctx context.Context, requestConfiguration *IosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IosUpdateDeviceStatusable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *IosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilder) Get(ctx conte
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IosUpdateDeviceStatusable), nil
 }
-// Patch update the navigation property iosUpdateStatuses in deviceManagement
+// Patch update the properties of a iosUpdateDeviceStatus object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-deviceconfig-iosupdatedevicestatus-update?view=graph-rest-1.0
 func (m *IosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IosUpdateDeviceStatusable, requestConfiguration *IosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IosUpdateDeviceStatusable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -108,7 +117,7 @@ func (m *IosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilder) Patch(ctx con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IosUpdateDeviceStatusable), nil
 }
-// ToDeleteRequestInformation delete navigation property iosUpdateStatuses for deviceManagement
+// ToDeleteRequestInformation deletes a iosUpdateDeviceStatus.
 func (m *IosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *IosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +129,7 @@ func (m *IosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilder) ToDeleteReque
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the IOS software update installation statuses for this account.
+// ToGetRequestInformation read properties and relationships of the iosUpdateDeviceStatus object.
 func (m *IosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +145,7 @@ func (m *IosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilder) ToGetRequestI
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property iosUpdateStatuses in deviceManagement
+// ToPatchRequestInformation update the properties of a iosUpdateDeviceStatus object.
 func (m *IosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IosUpdateDeviceStatusable, requestConfiguration *IosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type WindowsInformationProtectionNetworkLearningSummariesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// WindowsInformationProtectionNetworkLearningSummariesRequestBuilderGetQueryParameters the windows information protection network learning summaries.
+// WindowsInformationProtectionNetworkLearningSummariesRequestBuilderGetQueryParameters list properties and relationships of the windowsInformationProtectionNetworkLearningSummary objects.
 type WindowsInformationProtectionNetworkLearningSummariesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewWindowsInformationProtectionNetworkLearningSummariesRequestBuilder(rawUr
 func (m *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) Count()(*WindowsInformationProtectionNetworkLearningSummariesCountRequestBuilder) {
     return NewWindowsInformationProtectionNetworkLearningSummariesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the windows information protection network learning summaries.
+// Get list properties and relationships of the windowsInformationProtectionNetworkLearningSummary objects.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-wip-windowsinformationprotectionnetworklearningsummary-list?view=graph-rest-1.0
 func (m *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsInformationProtectionNetworkLearningSummariesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsInformationProtectionNetworkLearningSummaryCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) Get
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsInformationProtectionNetworkLearningSummaryCollectionResponseable), nil
 }
-// Post create new navigation property to windowsInformationProtectionNetworkLearningSummaries for deviceManagement
+// Post create a new windowsInformationProtectionNetworkLearningSummary object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-wip-windowsinformationprotectionnetworklearningsummary-create?view=graph-rest-1.0
 func (m *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsInformationProtectionNetworkLearningSummaryable, requestConfiguration *WindowsInformationProtectionNetworkLearningSummariesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsInformationProtectionNetworkLearningSummaryable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) Pos
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsInformationProtectionNetworkLearningSummaryable), nil
 }
-// ToGetRequestInformation the windows information protection network learning summaries.
+// ToGetRequestInformation list properties and relationships of the windowsInformationProtectionNetworkLearningSummary objects.
 func (m *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsInformationProtectionNetworkLearningSummariesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) ToG
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to windowsInformationProtectionNetworkLearningSummaries for deviceManagement
+// ToPostRequestInformation create a new windowsInformationProtectionNetworkLearningSummary object.
 func (m *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsInformationProtectionNetworkLearningSummaryable, requestConfiguration *WindowsInformationProtectionNetworkLearningSummariesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

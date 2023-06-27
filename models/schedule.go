@@ -285,7 +285,7 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetOfferShiftRequests gets the offerShiftRequests property value. The offerShiftRequests property
+// GetOfferShiftRequests gets the offerShiftRequests property value. The offer requests for shifts in the schedule.
 func (m *Schedule) GetOfferShiftRequests()([]OfferShiftRequestable) {
     val, err := m.GetBackingStore().Get("offerShiftRequests")
     if err != nil {
@@ -384,7 +384,7 @@ func (m *Schedule) GetShifts()([]Shiftable) {
     }
     return nil
 }
-// GetSwapShiftsChangeRequests gets the swapShiftsChangeRequests property value. The swapShiftsChangeRequests property
+// GetSwapShiftsChangeRequests gets the swapShiftsChangeRequests property value. The swap requests for shifts in the schedule.
 func (m *Schedule) GetSwapShiftsChangeRequests()([]SwapShiftsChangeRequestable) {
     val, err := m.GetBackingStore().Get("swapShiftsChangeRequests")
     if err != nil {
@@ -428,7 +428,7 @@ func (m *Schedule) GetTimeOffReasons()([]TimeOffReasonable) {
     }
     return nil
 }
-// GetTimeOffRequests gets the timeOffRequests property value. The timeOffRequests property
+// GetTimeOffRequests gets the timeOffRequests property value. The time off requests in the schedule.
 func (m *Schedule) GetTimeOffRequests()([]TimeOffRequestable) {
     val, err := m.GetBackingStore().Get("timeOffRequests")
     if err != nil {
@@ -654,7 +654,7 @@ func (m *Schedule) SetEnabled(value *bool)() {
         panic(err)
     }
 }
-// SetOfferShiftRequests sets the offerShiftRequests property value. The offerShiftRequests property
+// SetOfferShiftRequests sets the offerShiftRequests property value. The offer requests for shifts in the schedule.
 func (m *Schedule) SetOfferShiftRequests(value []OfferShiftRequestable)() {
     err := m.GetBackingStore().Set("offerShiftRequests", value)
     if err != nil {
@@ -717,7 +717,7 @@ func (m *Schedule) SetShifts(value []Shiftable)() {
         panic(err)
     }
 }
-// SetSwapShiftsChangeRequests sets the swapShiftsChangeRequests property value. The swapShiftsChangeRequests property
+// SetSwapShiftsChangeRequests sets the swapShiftsChangeRequests property value. The swap requests for shifts in the schedule.
 func (m *Schedule) SetSwapShiftsChangeRequests(value []SwapShiftsChangeRequestable)() {
     err := m.GetBackingStore().Set("swapShiftsChangeRequests", value)
     if err != nil {
@@ -745,7 +745,7 @@ func (m *Schedule) SetTimeOffReasons(value []TimeOffReasonable)() {
         panic(err)
     }
 }
-// SetTimeOffRequests sets the timeOffRequests property value. The timeOffRequests property
+// SetTimeOffRequests sets the timeOffRequests property value. The time off requests in the schedule.
 func (m *Schedule) SetTimeOffRequests(value []TimeOffRequestable)() {
     err := m.GetBackingStore().Set("timeOffRequests", value)
     if err != nil {
