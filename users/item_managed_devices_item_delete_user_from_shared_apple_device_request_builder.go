@@ -31,6 +31,9 @@ func NewItemManagedDevicesItemDeleteUserFromSharedAppleDeviceRequestBuilder(rawU
     return NewItemManagedDevicesItemDeleteUserFromSharedAppleDeviceRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post delete user from shared Apple device
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-devices-manageddevice-deleteuserfromsharedappledevice?view=graph-rest-1.0
 func (m *ItemManagedDevicesItemDeleteUserFromSharedAppleDeviceRequestBuilder) Post(ctx context.Context, body ItemManagedDevicesItemDeleteUserFromSharedAppleDevicePostRequestBodyable, requestConfiguration *ItemManagedDevicesItemDeleteUserFromSharedAppleDeviceRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

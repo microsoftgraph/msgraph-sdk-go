@@ -31,6 +31,9 @@ func NewItemManagedDevicesItemRebootNowRequestBuilder(rawUrl string, requestAdap
     return NewItemManagedDevicesItemRebootNowRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post reboot device
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-devices-manageddevice-rebootnow?view=graph-rest-1.0
 func (m *ItemManagedDevicesItemRebootNowRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemManagedDevicesItemRebootNowRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

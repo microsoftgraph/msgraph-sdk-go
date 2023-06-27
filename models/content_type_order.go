@@ -38,7 +38,7 @@ func (m *ContentTypeOrder) GetAdditionalData()(map[string]any) {
 func (m *ContentTypeOrder) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDefault gets the default property value. Whether this is the default Content Type
+// GetDefault gets the default property value. Indicates whether this is the default content type
 func (m *ContentTypeOrder) GetDefault()(*bool) {
     val, err := m.GetBackingStore().Get("defaultEscaped")
     if err != nil {
@@ -95,7 +95,7 @@ func (m *ContentTypeOrder) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPosition gets the position property value. Specifies the position in which the Content Type appears in the selection UI.
+// GetPosition gets the position property value. Specifies the position in which the content type appears in the selection UI.
 func (m *ContentTypeOrder) GetPosition()(*int32) {
     val, err := m.GetBackingStore().Get("position")
     if err != nil {
@@ -145,7 +145,7 @@ func (m *ContentTypeOrder) SetAdditionalData(value map[string]any)() {
 func (m *ContentTypeOrder) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDefault sets the default property value. Whether this is the default Content Type
+// SetDefault sets the default property value. Indicates whether this is the default content type
 func (m *ContentTypeOrder) SetDefault(value *bool)() {
     err := m.GetBackingStore().Set("defaultEscaped", value)
     if err != nil {
@@ -159,7 +159,7 @@ func (m *ContentTypeOrder) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPosition sets the position property value. Specifies the position in which the Content Type appears in the selection UI.
+// SetPosition sets the position property value. Specifies the position in which the content type appears in the selection UI.
 func (m *ContentTypeOrder) SetPosition(value *int32)() {
     err := m.GetBackingStore().Set("position", value)
     if err != nil {

@@ -9,7 +9,7 @@ import (
 type Contract struct {
     DirectoryObject
 }
-// NewContract instantiates a new contract and sets the default values.
+// NewContract instantiates a new Contract and sets the default values.
 func NewContract()(*Contract) {
     m := &Contract{
         DirectoryObject: *NewDirectoryObject(),

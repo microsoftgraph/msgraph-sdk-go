@@ -18,7 +18,7 @@ type ItemItemsItemWorkbookCommentsWorkbookCommentItemRequestBuilderDeleteRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemItemsItemWorkbookCommentsWorkbookCommentItemRequestBuilderGetQueryParameters get comments from drives
+// ItemItemsItemWorkbookCommentsWorkbookCommentItemRequestBuilderGetQueryParameters represents a collection of comments in a workbook.
 type ItemItemsItemWorkbookCommentsWorkbookCommentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ItemItemsItemWorkbookCommentsWorkbookCommentItemRequestBuilder) Delete(
     }
     return nil
 }
-// Get get comments from drives
+// Get represents a collection of comments in a workbook.
 func (m *ItemItemsItemWorkbookCommentsWorkbookCommentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookCommentsWorkbookCommentItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookCommentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +124,7 @@ func (m *ItemItemsItemWorkbookCommentsWorkbookCommentItemRequestBuilder) ToDelet
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get comments from drives
+// ToGetRequestInformation represents a collection of comments in a workbook.
 func (m *ItemItemsItemWorkbookCommentsWorkbookCommentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookCommentsWorkbookCommentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

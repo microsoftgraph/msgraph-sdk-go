@@ -18,7 +18,7 @@ type ItemTeamworkRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTeamworkRequestBuilderGetQueryParameters get teamwork from users
+// ItemTeamworkRequestBuilderGetQueryParameters a container for Microsoft Teams features available for the user. Read-only. Nullable.
 type ItemTeamworkRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,7 @@ func (m *ItemTeamworkRequestBuilder) Delete(ctx context.Context, requestConfigur
     }
     return nil
 }
-// Get get teamwork from users
+// Get a container for Microsoft Teams features available for the user. Read-only. Nullable.
 func (m *ItemTeamworkRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamworkRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserTeamworkable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *ItemTeamworkRequestBuilder) ToDeleteRequestInformation(ctx context.Cont
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get teamwork from users
+// ToGetRequestInformation a container for Microsoft Teams features available for the user. Read-only. Nullable.
 func (m *ItemTeamworkRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamworkRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

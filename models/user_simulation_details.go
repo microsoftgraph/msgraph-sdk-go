@@ -11,7 +11,7 @@ type UserSimulationDetails struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewUserSimulationDetails instantiates a new UserSimulationDetails and sets the default values.
+// NewUserSimulationDetails instantiates a new userSimulationDetails and sets the default values.
 func NewUserSimulationDetails()(*UserSimulationDetails) {
     m := &UserSimulationDetails{
     }

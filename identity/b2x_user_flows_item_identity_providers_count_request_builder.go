@@ -40,6 +40,7 @@ func NewB2xUserFlowsItemIdentityProvidersCountRequestBuilder(rawUrl string, requ
     return NewB2xUserFlowsItemIdentityProvidersCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15
 func (m *B2xUserFlowsItemIdentityProvidersCountRequestBuilder) Get(ctx context.Context, requestConfiguration *B2xUserFlowsItemIdentityProvidersCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,6 +60,7 @@ func (m *B2xUserFlowsItemIdentityProvidersCountRequestBuilder) Get(ctx context.C
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15
 func (m *B2xUserFlowsItemIdentityProvidersCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *B2xUserFlowsItemIdentityProvidersCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

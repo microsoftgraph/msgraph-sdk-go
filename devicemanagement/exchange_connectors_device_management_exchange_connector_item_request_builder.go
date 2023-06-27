@@ -18,7 +18,7 @@ type ExchangeConnectorsDeviceManagementExchangeConnectorItemRequestBuilderDelete
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ExchangeConnectorsDeviceManagementExchangeConnectorItemRequestBuilderGetQueryParameters the list of Exchange Connectors configured by the tenant.
+// ExchangeConnectorsDeviceManagementExchangeConnectorItemRequestBuilderGetQueryParameters read properties and relationships of the deviceManagementExchangeConnector object.
 type ExchangeConnectorsDeviceManagementExchangeConnectorItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewExchangeConnectorsDeviceManagementExchangeConnectorItemRequestBuilder(ra
     urlParams["request-raw-url"] = rawUrl
     return NewExchangeConnectorsDeviceManagementExchangeConnectorItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property exchangeConnectors for deviceManagement
+// Delete deletes a deviceManagementExchangeConnector.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-onboarding-devicemanagementexchangeconnector-delete?view=graph-rest-1.0
 func (m *ExchangeConnectorsDeviceManagementExchangeConnectorItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ExchangeConnectorsDeviceManagementExchangeConnectorItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *ExchangeConnectorsDeviceManagementExchangeConnectorItemRequestBuilder) 
     }
     return nil
 }
-// Get the list of Exchange Connectors configured by the tenant.
+// Get read properties and relationships of the deviceManagementExchangeConnector object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-onboarding-devicemanagementexchangeconnector-get?view=graph-rest-1.0
 func (m *ExchangeConnectorsDeviceManagementExchangeConnectorItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ExchangeConnectorsDeviceManagementExchangeConnectorItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementExchangeConnectorable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *ExchangeConnectorsDeviceManagementExchangeConnectorItemRequestBuilder) 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementExchangeConnectorable), nil
 }
-// Patch update the navigation property exchangeConnectors in deviceManagement
+// Patch update the properties of a deviceManagementExchangeConnector object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-onboarding-devicemanagementexchangeconnector-update?view=graph-rest-1.0
 func (m *ExchangeConnectorsDeviceManagementExchangeConnectorItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementExchangeConnectorable, requestConfiguration *ExchangeConnectorsDeviceManagementExchangeConnectorItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementExchangeConnectorable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +121,7 @@ func (m *ExchangeConnectorsDeviceManagementExchangeConnectorItemRequestBuilder) 
 func (m *ExchangeConnectorsDeviceManagementExchangeConnectorItemRequestBuilder) Sync()(*ExchangeConnectorsItemSyncRequestBuilder) {
     return NewExchangeConnectorsItemSyncRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete navigation property exchangeConnectors for deviceManagement
+// ToDeleteRequestInformation deletes a deviceManagementExchangeConnector.
 func (m *ExchangeConnectorsDeviceManagementExchangeConnectorItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ExchangeConnectorsDeviceManagementExchangeConnectorItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -124,7 +133,7 @@ func (m *ExchangeConnectorsDeviceManagementExchangeConnectorItemRequestBuilder) 
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the list of Exchange Connectors configured by the tenant.
+// ToGetRequestInformation read properties and relationships of the deviceManagementExchangeConnector object.
 func (m *ExchangeConnectorsDeviceManagementExchangeConnectorItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ExchangeConnectorsDeviceManagementExchangeConnectorItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -140,7 +149,7 @@ func (m *ExchangeConnectorsDeviceManagementExchangeConnectorItemRequestBuilder) 
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property exchangeConnectors in deviceManagement
+// ToPatchRequestInformation update the properties of a deviceManagementExchangeConnector object.
 func (m *ExchangeConnectorsDeviceManagementExchangeConnectorItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementExchangeConnectorable, requestConfiguration *ExchangeConnectorsDeviceManagementExchangeConnectorItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

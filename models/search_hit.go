@@ -145,7 +145,7 @@ func (m *SearchHit) GetHitId()(*string) {
     }
     return nil
 }
-// GetIsCollapsed gets the isCollapsed property value. Indicates whether the current result is collapsed when the collapseProperties property is used.
+// GetIsCollapsed gets the isCollapsed property value. Indicates whether the current result is collapsed when the collapseProperties property in the searchRequest is used.
 func (m *SearchHit) GetIsCollapsed()(*bool) {
     val, err := m.GetBackingStore().Get("isCollapsed")
     if err != nil {
@@ -294,7 +294,7 @@ func (m *SearchHit) SetHitId(value *string)() {
         panic(err)
     }
 }
-// SetIsCollapsed sets the isCollapsed property value. Indicates whether the current result is collapsed when the collapseProperties property is used.
+// SetIsCollapsed sets the isCollapsed property value. Indicates whether the current result is collapsed when the collapseProperties property in the searchRequest is used.
 func (m *SearchHit) SetIsCollapsed(value *bool)() {
     err := m.GetBackingStore().Set("isCollapsed", value)
     if err != nil {

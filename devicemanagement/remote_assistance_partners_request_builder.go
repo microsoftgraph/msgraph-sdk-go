@@ -11,7 +11,7 @@ import (
 type RemoteAssistancePartnersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// RemoteAssistancePartnersRequestBuilderGetQueryParameters the remote assist partners.
+// RemoteAssistancePartnersRequestBuilderGetQueryParameters list properties and relationships of the remoteAssistancePartner objects.
 type RemoteAssistancePartnersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewRemoteAssistancePartnersRequestBuilder(rawUrl string, requestAdapter i2a
 func (m *RemoteAssistancePartnersRequestBuilder) Count()(*RemoteAssistancePartnersCountRequestBuilder) {
     return NewRemoteAssistancePartnersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the remote assist partners.
+// Get list properties and relationships of the remoteAssistancePartner objects.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-list?view=graph-rest-1.0
 func (m *RemoteAssistancePartnersRequestBuilder) Get(ctx context.Context, requestConfiguration *RemoteAssistancePartnersRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RemoteAssistancePartnerCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *RemoteAssistancePartnersRequestBuilder) Get(ctx context.Context, reques
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RemoteAssistancePartnerCollectionResponseable), nil
 }
-// Post create new navigation property to remoteAssistancePartners for deviceManagement
+// Post create a new remoteAssistancePartner object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-create?view=graph-rest-1.0
 func (m *RemoteAssistancePartnersRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RemoteAssistancePartnerable, requestConfiguration *RemoteAssistancePartnersRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RemoteAssistancePartnerable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *RemoteAssistancePartnersRequestBuilder) Post(ctx context.Context, body 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RemoteAssistancePartnerable), nil
 }
-// ToGetRequestInformation the remote assist partners.
+// ToGetRequestInformation list properties and relationships of the remoteAssistancePartner objects.
 func (m *RemoteAssistancePartnersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RemoteAssistancePartnersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *RemoteAssistancePartnersRequestBuilder) ToGetRequestInformation(ctx con
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to remoteAssistancePartners for deviceManagement
+// ToPostRequestInformation create a new remoteAssistancePartner object.
 func (m *RemoteAssistancePartnersRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RemoteAssistancePartnerable, requestConfiguration *RemoteAssistancePartnersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

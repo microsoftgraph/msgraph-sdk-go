@@ -10,7 +10,7 @@ type IntegerRange struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewIntegerRange instantiates a new IntegerRange and sets the default values.
+// NewIntegerRange instantiates a new integerRange and sets the default values.
 func NewIntegerRange()(*IntegerRange) {
     m := &IntegerRange{
     }

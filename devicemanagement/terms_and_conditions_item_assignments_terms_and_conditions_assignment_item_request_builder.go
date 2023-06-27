@@ -18,7 +18,7 @@ type TermsAndConditionsItemAssignmentsTermsAndConditionsAssignmentItemRequestBui
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TermsAndConditionsItemAssignmentsTermsAndConditionsAssignmentItemRequestBuilderGetQueryParameters the list of assignments for this T&C policy.
+// TermsAndConditionsItemAssignmentsTermsAndConditionsAssignmentItemRequestBuilderGetQueryParameters read properties and relationships of the termsAndConditionsAssignment object.
 type TermsAndConditionsItemAssignmentsTermsAndConditionsAssignmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewTermsAndConditionsItemAssignmentsTermsAndConditionsAssignmentItemRequest
     urlParams["request-raw-url"] = rawUrl
     return NewTermsAndConditionsItemAssignmentsTermsAndConditionsAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property assignments for deviceManagement
+// Delete deletes a termsAndConditionsAssignment.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-companyterms-termsandconditionsassignment-delete?view=graph-rest-1.0
 func (m *TermsAndConditionsItemAssignmentsTermsAndConditionsAssignmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TermsAndConditionsItemAssignmentsTermsAndConditionsAssignmentItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *TermsAndConditionsItemAssignmentsTermsAndConditionsAssignmentItemReques
     }
     return nil
 }
-// Get the list of assignments for this T&C policy.
+// Get read properties and relationships of the termsAndConditionsAssignment object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-companyterms-termsandconditionsassignment-get?view=graph-rest-1.0
 func (m *TermsAndConditionsItemAssignmentsTermsAndConditionsAssignmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TermsAndConditionsItemAssignmentsTermsAndConditionsAssignmentItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TermsAndConditionsAssignmentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *TermsAndConditionsItemAssignmentsTermsAndConditionsAssignmentItemReques
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TermsAndConditionsAssignmentable), nil
 }
-// Patch update the navigation property assignments in deviceManagement
+// Patch update the properties of a termsAndConditionsAssignment object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-companyterms-termsandconditionsassignment-update?view=graph-rest-1.0
 func (m *TermsAndConditionsItemAssignmentsTermsAndConditionsAssignmentItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TermsAndConditionsAssignmentable, requestConfiguration *TermsAndConditionsItemAssignmentsTermsAndConditionsAssignmentItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TermsAndConditionsAssignmentable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -108,7 +117,7 @@ func (m *TermsAndConditionsItemAssignmentsTermsAndConditionsAssignmentItemReques
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TermsAndConditionsAssignmentable), nil
 }
-// ToDeleteRequestInformation delete navigation property assignments for deviceManagement
+// ToDeleteRequestInformation deletes a termsAndConditionsAssignment.
 func (m *TermsAndConditionsItemAssignmentsTermsAndConditionsAssignmentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TermsAndConditionsItemAssignmentsTermsAndConditionsAssignmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +129,7 @@ func (m *TermsAndConditionsItemAssignmentsTermsAndConditionsAssignmentItemReques
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the list of assignments for this T&C policy.
+// ToGetRequestInformation read properties and relationships of the termsAndConditionsAssignment object.
 func (m *TermsAndConditionsItemAssignmentsTermsAndConditionsAssignmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TermsAndConditionsItemAssignmentsTermsAndConditionsAssignmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +145,7 @@ func (m *TermsAndConditionsItemAssignmentsTermsAndConditionsAssignmentItemReques
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property assignments in deviceManagement
+// ToPatchRequestInformation update the properties of a termsAndConditionsAssignment object.
 func (m *TermsAndConditionsItemAssignmentsTermsAndConditionsAssignmentItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TermsAndConditionsAssignmentable, requestConfiguration *TermsAndConditionsItemAssignmentsTermsAndConditionsAssignmentItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

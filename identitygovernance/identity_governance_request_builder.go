@@ -78,6 +78,10 @@ func (m *IdentityGovernanceRequestBuilder) Get(ctx context.Context, requestConfi
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityGovernanceable), nil
 }
+// LifecycleWorkflows provides operations to manage the lifecycleWorkflows property of the microsoft.graph.identityGovernance entity.
+func (m *IdentityGovernanceRequestBuilder) LifecycleWorkflows()(*LifecycleWorkflowsRequestBuilder) {
+    return NewLifecycleWorkflowsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update identityGovernance
 func (m *IdentityGovernanceRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityGovernanceable, requestConfiguration *IdentityGovernanceRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityGovernanceable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
