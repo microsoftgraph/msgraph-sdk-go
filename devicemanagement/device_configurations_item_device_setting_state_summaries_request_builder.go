@@ -11,7 +11,7 @@ import (
 type DeviceConfigurationsItemDeviceSettingStateSummariesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DeviceConfigurationsItemDeviceSettingStateSummariesRequestBuilderGetQueryParameters device Configuration Setting State Device Summary
+// DeviceConfigurationsItemDeviceSettingStateSummariesRequestBuilderGetQueryParameters list properties and relationships of the settingStateDeviceSummary objects.
 type DeviceConfigurationsItemDeviceSettingStateSummariesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewDeviceConfigurationsItemDeviceSettingStateSummariesRequestBuilder(rawUrl
 func (m *DeviceConfigurationsItemDeviceSettingStateSummariesRequestBuilder) Count()(*DeviceConfigurationsItemDeviceSettingStateSummariesCountRequestBuilder) {
     return NewDeviceConfigurationsItemDeviceSettingStateSummariesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get device Configuration Setting State Device Summary
+// Get list properties and relationships of the settingStateDeviceSummary objects.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-deviceconfig-settingstatedevicesummary-list?view=graph-rest-1.0
 func (m *DeviceConfigurationsItemDeviceSettingStateSummariesRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceConfigurationsItemDeviceSettingStateSummariesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SettingStateDeviceSummaryCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *DeviceConfigurationsItemDeviceSettingStateSummariesRequestBuilder) Get(
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SettingStateDeviceSummaryCollectionResponseable), nil
 }
-// Post create new navigation property to deviceSettingStateSummaries for deviceManagement
+// Post create a new settingStateDeviceSummary object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-deviceconfig-settingstatedevicesummary-create?view=graph-rest-1.0
 func (m *DeviceConfigurationsItemDeviceSettingStateSummariesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SettingStateDeviceSummaryable, requestConfiguration *DeviceConfigurationsItemDeviceSettingStateSummariesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SettingStateDeviceSummaryable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *DeviceConfigurationsItemDeviceSettingStateSummariesRequestBuilder) Post
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SettingStateDeviceSummaryable), nil
 }
-// ToGetRequestInformation device Configuration Setting State Device Summary
+// ToGetRequestInformation list properties and relationships of the settingStateDeviceSummary objects.
 func (m *DeviceConfigurationsItemDeviceSettingStateSummariesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceConfigurationsItemDeviceSettingStateSummariesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *DeviceConfigurationsItemDeviceSettingStateSummariesRequestBuilder) ToGe
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to deviceSettingStateSummaries for deviceManagement
+// ToPostRequestInformation create a new settingStateDeviceSummary object.
 func (m *DeviceConfigurationsItemDeviceSettingStateSummariesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SettingStateDeviceSummaryable, requestConfiguration *DeviceConfigurationsItemDeviceSettingStateSummariesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

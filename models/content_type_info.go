@@ -73,7 +73,7 @@ func (m *ContentTypeInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetId gets the id property value. The id of the content type.
+// GetId gets the id property value. The ID of the content type.
 func (m *ContentTypeInfo) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -145,7 +145,7 @@ func (m *ContentTypeInfo) SetAdditionalData(value map[string]any)() {
 func (m *ContentTypeInfo) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetId sets the id property value. The id of the content type.
+// SetId sets the id property value. The ID of the content type.
 func (m *ContentTypeInfo) SetId(value *string)() {
     err := m.GetBackingStore().Set("id", value)
     if err != nil {

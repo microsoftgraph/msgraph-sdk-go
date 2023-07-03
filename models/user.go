@@ -1722,6 +1722,16 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["print"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateUserPrintFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPrint(val.(UserPrintable))
+        }
+        return nil
+    }
     res["provisionedPlans"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateProvisionedPlanFromDiscriminatorValue)
         if err != nil {
@@ -2301,7 +2311,7 @@ func (m *User) GetOnenote()(Onenoteable) {
     }
     return nil
 }
-// GetOnlineMeetings gets the onlineMeetings property value. The onlineMeetings property
+// GetOnlineMeetings gets the onlineMeetings property value. Information about a meeting, including the URL used to join a meeting, the attendees' list, and the description.
 func (m *User) GetOnlineMeetings()([]OnlineMeetingable) {
     val, err := m.GetBackingStore().Get("onlineMeetings")
     if err != nil {
@@ -2598,6 +2608,17 @@ func (m *User) GetPresence()(Presenceable) {
     }
     return nil
 }
+// GetPrint gets the print property value. The print property
+func (m *User) GetPrint()(UserPrintable) {
+    val, err := m.GetBackingStore().Get("print")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(UserPrintable)
+    }
+    return nil
+}
 // GetProvisionedPlans gets the provisionedPlans property value. The plans that are provisioned for the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le).
 func (m *User) GetProvisionedPlans()([]ProvisionedPlanable) {
     val, err := m.GetBackingStore().Get("provisionedPlans")
@@ -2763,7 +2784,7 @@ func (m *User) GetSurname()(*string) {
     }
     return nil
 }
-// GetTeamwork gets the teamwork property value. The teamwork property
+// GetTeamwork gets the teamwork property value. A container for Microsoft Teams features available for the user. Read-only. Nullable.
 func (m *User) GetTeamwork()(UserTeamworkable) {
     val, err := m.GetBackingStore().Get("teamwork")
     if err != nil {
@@ -3633,6 +3654,12 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("print", m.GetPrint())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetProvisionedPlans() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetProvisionedPlans()))
         for i, v := range m.GetProvisionedPlans() {
@@ -4289,7 +4316,7 @@ func (m *User) SetOnenote(value Onenoteable)() {
         panic(err)
     }
 }
-// SetOnlineMeetings sets the onlineMeetings property value. The onlineMeetings property
+// SetOnlineMeetings sets the onlineMeetings property value. Information about a meeting, including the URL used to join a meeting, the attendees' list, and the description.
 func (m *User) SetOnlineMeetings(value []OnlineMeetingable)() {
     err := m.GetBackingStore().Set("onlineMeetings", value)
     if err != nil {
@@ -4478,6 +4505,13 @@ func (m *User) SetPresence(value Presenceable)() {
         panic(err)
     }
 }
+// SetPrint sets the print property value. The print property
+func (m *User) SetPrint(value UserPrintable)() {
+    err := m.GetBackingStore().Set("print", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetProvisionedPlans sets the provisionedPlans property value. The plans that are provisioned for the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le).
 func (m *User) SetProvisionedPlans(value []ProvisionedPlanable)() {
     err := m.GetBackingStore().Set("provisionedPlans", value)
@@ -4583,7 +4617,7 @@ func (m *User) SetSurname(value *string)() {
         panic(err)
     }
 }
-// SetTeamwork sets the teamwork property value. The teamwork property
+// SetTeamwork sets the teamwork property value. A container for Microsoft Teams features available for the user. Read-only. Nullable.
 func (m *User) SetTeamwork(value UserTeamworkable)() {
     err := m.GetBackingStore().Set("teamwork", value)
     if err != nil {
@@ -4728,6 +4762,7 @@ type Userable interface {
     GetPreferredLanguage()(*string)
     GetPreferredName()(*string)
     GetPresence()(Presenceable)
+    GetPrint()(UserPrintable)
     GetProvisionedPlans()([]ProvisionedPlanable)
     GetProxyAddresses()([]string)
     GetRegisteredDevices()([]DirectoryObjectable)
@@ -4848,6 +4883,7 @@ type Userable interface {
     SetPreferredLanguage(value *string)()
     SetPreferredName(value *string)()
     SetPresence(value Presenceable)()
+    SetPrint(value UserPrintable)()
     SetProvisionedPlans(value []ProvisionedPlanable)()
     SetProxyAddresses(value []string)()
     SetRegisteredDevices(value []DirectoryObjectable)()

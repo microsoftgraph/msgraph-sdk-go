@@ -30,7 +30,10 @@ func NewReportsGetCachedReportRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewReportsGetCachedReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action getCachedReport
+// Post not yet documented
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getcachedreport?view=graph-rest-1.0
 func (m *ReportsGetCachedReportRequestBuilder) Post(ctx context.Context, body ReportsGetCachedReportPostRequestBodyable, requestConfiguration *ReportsGetCachedReportRequestBuilderPostRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +52,7 @@ func (m *ReportsGetCachedReportRequestBuilder) Post(ctx context.Context, body Re
     }
     return res.([]byte), nil
 }
-// ToPostRequestInformation invoke action getCachedReport
+// ToPostRequestInformation not yet documented
 func (m *ReportsGetCachedReportRequestBuilder) ToPostRequestInformation(ctx context.Context, body ReportsGetCachedReportPostRequestBodyable, requestConfiguration *ReportsGetCachedReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

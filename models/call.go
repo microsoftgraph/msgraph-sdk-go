@@ -8,7 +8,7 @@ import (
 type Call struct {
     Entity
 }
-// NewCall instantiates a new Call and sets the default values.
+// NewCall instantiates a new call and sets the default values.
 func NewCall()(*Call) {
     m := &Call{
         Entity: *NewEntity(),

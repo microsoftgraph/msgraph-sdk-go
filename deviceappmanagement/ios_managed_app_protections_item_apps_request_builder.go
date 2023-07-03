@@ -11,7 +11,7 @@ import (
 type IosManagedAppProtectionsItemAppsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// IosManagedAppProtectionsItemAppsRequestBuilderGetQueryParameters list of apps to which the policy is deployed.
+// IosManagedAppProtectionsItemAppsRequestBuilderGetQueryParameters list properties and relationships of the managedMobileApp objects.
 type IosManagedAppProtectionsItemAppsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewIosManagedAppProtectionsItemAppsRequestBuilder(rawUrl string, requestAda
 func (m *IosManagedAppProtectionsItemAppsRequestBuilder) Count()(*IosManagedAppProtectionsItemAppsCountRequestBuilder) {
     return NewIosManagedAppProtectionsItemAppsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list of apps to which the policy is deployed.
+// Get list properties and relationships of the managedMobileApp objects.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-mam-managedmobileapp-list?view=graph-rest-1.0
 func (m *IosManagedAppProtectionsItemAppsRequestBuilder) Get(ctx context.Context, requestConfiguration *IosManagedAppProtectionsItemAppsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedMobileAppCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *IosManagedAppProtectionsItemAppsRequestBuilder) Get(ctx context.Context
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedMobileAppCollectionResponseable), nil
 }
-// Post create new navigation property to apps for deviceAppManagement
+// Post create a new managedMobileApp object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-mam-managedmobileapp-create?view=graph-rest-1.0
 func (m *IosManagedAppProtectionsItemAppsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedMobileAppable, requestConfiguration *IosManagedAppProtectionsItemAppsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedMobileAppable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *IosManagedAppProtectionsItemAppsRequestBuilder) Post(ctx context.Contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedMobileAppable), nil
 }
-// ToGetRequestInformation list of apps to which the policy is deployed.
+// ToGetRequestInformation list properties and relationships of the managedMobileApp objects.
 func (m *IosManagedAppProtectionsItemAppsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IosManagedAppProtectionsItemAppsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *IosManagedAppProtectionsItemAppsRequestBuilder) ToGetRequestInformation
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to apps for deviceAppManagement
+// ToPostRequestInformation create a new managedMobileApp object.
 func (m *IosManagedAppProtectionsItemAppsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedMobileAppable, requestConfiguration *IosManagedAppProtectionsItemAppsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

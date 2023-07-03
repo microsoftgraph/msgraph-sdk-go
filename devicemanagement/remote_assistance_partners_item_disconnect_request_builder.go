@@ -31,6 +31,9 @@ func NewRemoteAssistancePartnersItemDisconnectRequestBuilder(rawUrl string, requ
     return NewRemoteAssistancePartnersItemDisconnectRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post a request to remove the active TeamViewer connector
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-disconnect?view=graph-rest-1.0
 func (m *RemoteAssistancePartnersItemDisconnectRequestBuilder) Post(ctx context.Context, requestConfiguration *RemoteAssistancePartnersItemDisconnectRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

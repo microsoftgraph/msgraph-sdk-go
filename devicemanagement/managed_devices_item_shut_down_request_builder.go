@@ -31,6 +31,9 @@ func NewManagedDevicesItemShutDownRequestBuilder(rawUrl string, requestAdapter i
     return NewManagedDevicesItemShutDownRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post shut down device
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-devices-manageddevice-shutdown?view=graph-rest-1.0
 func (m *ManagedDevicesItemShutDownRequestBuilder) Post(ctx context.Context, requestConfiguration *ManagedDevicesItemShutDownRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

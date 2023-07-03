@@ -577,7 +577,7 @@ func (m *Organization) GetProvisionedPlans()([]ProvisionedPlanable) {
     }
     return nil
 }
-// GetSecurityComplianceNotificationMails gets the securityComplianceNotificationMails property value. The securityComplianceNotificationMails property
+// GetSecurityComplianceNotificationMails gets the securityComplianceNotificationMails property value. Not nullable.
 func (m *Organization) GetSecurityComplianceNotificationMails()([]string) {
     val, err := m.GetBackingStore().Get("securityComplianceNotificationMails")
     if err != nil {
@@ -588,7 +588,7 @@ func (m *Organization) GetSecurityComplianceNotificationMails()([]string) {
     }
     return nil
 }
-// GetSecurityComplianceNotificationPhones gets the securityComplianceNotificationPhones property value. The securityComplianceNotificationPhones property
+// GetSecurityComplianceNotificationPhones gets the securityComplianceNotificationPhones property value. Not nullable.
 func (m *Organization) GetSecurityComplianceNotificationPhones()([]string) {
     val, err := m.GetBackingStore().Get("securityComplianceNotificationPhones")
     if err != nil {
@@ -996,14 +996,14 @@ func (m *Organization) SetProvisionedPlans(value []ProvisionedPlanable)() {
         panic(err)
     }
 }
-// SetSecurityComplianceNotificationMails sets the securityComplianceNotificationMails property value. The securityComplianceNotificationMails property
+// SetSecurityComplianceNotificationMails sets the securityComplianceNotificationMails property value. Not nullable.
 func (m *Organization) SetSecurityComplianceNotificationMails(value []string)() {
     err := m.GetBackingStore().Set("securityComplianceNotificationMails", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSecurityComplianceNotificationPhones sets the securityComplianceNotificationPhones property value. The securityComplianceNotificationPhones property
+// SetSecurityComplianceNotificationPhones sets the securityComplianceNotificationPhones property value. Not nullable.
 func (m *Organization) SetSecurityComplianceNotificationPhones(value []string)() {
     err := m.GetBackingStore().Set("securityComplianceNotificationPhones", value)
     if err != nil {

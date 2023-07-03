@@ -73,7 +73,7 @@ func (m *DefaultColumnValue) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetFormula gets the formula property value. The formula used to compute the default value for this column.
+// GetFormula gets the formula property value. The formula used to compute the default value for the column.
 func (m *DefaultColumnValue) GetFormula()(*string) {
     val, err := m.GetBackingStore().Get("formula")
     if err != nil {
@@ -95,7 +95,7 @@ func (m *DefaultColumnValue) GetOdataType()(*string) {
     }
     return nil
 }
-// GetValue gets the value property value. The direct value to use as the default value for this column.
+// GetValue gets the value property value. The direct value to use as the default value for the column.
 func (m *DefaultColumnValue) GetValue()(*string) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -145,7 +145,7 @@ func (m *DefaultColumnValue) SetAdditionalData(value map[string]any)() {
 func (m *DefaultColumnValue) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetFormula sets the formula property value. The formula used to compute the default value for this column.
+// SetFormula sets the formula property value. The formula used to compute the default value for the column.
 func (m *DefaultColumnValue) SetFormula(value *string)() {
     err := m.GetBackingStore().Set("formula", value)
     if err != nil {
@@ -159,7 +159,7 @@ func (m *DefaultColumnValue) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetValue sets the value property value. The direct value to use as the default value for this column.
+// SetValue sets the value property value. The direct value to use as the default value for the column.
 func (m *DefaultColumnValue) SetValue(value *string)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {

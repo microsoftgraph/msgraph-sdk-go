@@ -83,7 +83,7 @@ func (m *AlternativeSecurityId) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetIdentityProvider gets the identityProvider property value. For internal use only
+// GetIdentityProvider gets the identityProvider property value. For internal use only.
 func (m *AlternativeSecurityId) GetIdentityProvider()(*string) {
     val, err := m.GetBackingStore().Get("identityProvider")
     if err != nil {
@@ -94,7 +94,7 @@ func (m *AlternativeSecurityId) GetIdentityProvider()(*string) {
     }
     return nil
 }
-// GetKey gets the key property value. For internal use only
+// GetKey gets the key property value. For internal use only.
 func (m *AlternativeSecurityId) GetKey()([]byte) {
     val, err := m.GetBackingStore().Get("key")
     if err != nil {
@@ -116,7 +116,7 @@ func (m *AlternativeSecurityId) GetOdataType()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. For internal use only
+// GetType gets the type property value. For internal use only.
 func (m *AlternativeSecurityId) GetType()(*int32) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -172,14 +172,14 @@ func (m *AlternativeSecurityId) SetAdditionalData(value map[string]any)() {
 func (m *AlternativeSecurityId) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIdentityProvider sets the identityProvider property value. For internal use only
+// SetIdentityProvider sets the identityProvider property value. For internal use only.
 func (m *AlternativeSecurityId) SetIdentityProvider(value *string)() {
     err := m.GetBackingStore().Set("identityProvider", value)
     if err != nil {
         panic(err)
     }
 }
-// SetKey sets the key property value. For internal use only
+// SetKey sets the key property value. For internal use only.
 func (m *AlternativeSecurityId) SetKey(value []byte)() {
     err := m.GetBackingStore().Set("key", value)
     if err != nil {
@@ -193,7 +193,7 @@ func (m *AlternativeSecurityId) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. For internal use only
+// SetType sets the type property value. For internal use only.
 func (m *AlternativeSecurityId) SetType(value *int32)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
