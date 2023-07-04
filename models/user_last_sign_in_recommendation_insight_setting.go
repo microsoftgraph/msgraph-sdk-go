@@ -46,7 +46,7 @@ func (m *UserLastSignInRecommendationInsightSetting) GetFieldDeserializers()(map
     }
     return res
 }
-// GetRecommendationLookBackDuration gets the recommendationLookBackDuration property value. The recommendationLookBackDuration property
+// GetRecommendationLookBackDuration gets the recommendationLookBackDuration property value. Optional. Indicates the time period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look-back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days.
 func (m *UserLastSignInRecommendationInsightSetting) GetRecommendationLookBackDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("recommendationLookBackDuration")
     if err != nil {
@@ -57,7 +57,7 @@ func (m *UserLastSignInRecommendationInsightSetting) GetRecommendationLookBackDu
     }
     return nil
 }
-// GetSignInScope gets the signInScope property value. The signInScope property
+// GetSignInScope gets the signInScope property value. Indicates whether inactivity is calculated based on the user's inactivity in the tenant or in the application. The possible values are tenant, application, unknownFutureValue. application is only relevant when the access review is a review of an assignment to an application.
 func (m *UserLastSignInRecommendationInsightSetting) GetSignInScope()(*UserSignInRecommendationScope) {
     val, err := m.GetBackingStore().Get("signInScope")
     if err != nil {
@@ -89,14 +89,14 @@ func (m *UserLastSignInRecommendationInsightSetting) Serialize(writer i878a80d23
     }
     return nil
 }
-// SetRecommendationLookBackDuration sets the recommendationLookBackDuration property value. The recommendationLookBackDuration property
+// SetRecommendationLookBackDuration sets the recommendationLookBackDuration property value. Optional. Indicates the time period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look-back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days.
 func (m *UserLastSignInRecommendationInsightSetting) SetRecommendationLookBackDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     err := m.GetBackingStore().Set("recommendationLookBackDuration", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSignInScope sets the signInScope property value. The signInScope property
+// SetSignInScope sets the signInScope property value. Indicates whether inactivity is calculated based on the user's inactivity in the tenant or in the application. The possible values are tenant, application, unknownFutureValue. application is only relevant when the access review is a review of an assignment to an application.
 func (m *UserLastSignInRecommendationInsightSetting) SetSignInScope(value *UserSignInRecommendationScope)() {
     err := m.GetBackingStore().Set("signInScope", value)
     if err != nil {

@@ -38,6 +38,9 @@ func NewItemJoinedTeamsItemPhotoValueContentRequestBuilder(rawUrl string, reques
     return NewItemJoinedTeamsItemPhotoValueContentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get media content for the navigation property photo from users
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0
 func (m *ItemJoinedTeamsItemPhotoValueContentRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemPhotoValueContentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

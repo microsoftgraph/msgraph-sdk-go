@@ -9,7 +9,7 @@ import (
 type AuthenticationStrengthPolicy struct {
     Entity
 }
-// NewAuthenticationStrengthPolicy instantiates a new authenticationStrengthPolicy and sets the default values.
+// NewAuthenticationStrengthPolicy instantiates a new AuthenticationStrengthPolicy and sets the default values.
 func NewAuthenticationStrengthPolicy()(*AuthenticationStrengthPolicy) {
     m := &AuthenticationStrengthPolicy{
         Entity: *NewEntity(),

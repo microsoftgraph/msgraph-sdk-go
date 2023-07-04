@@ -9,7 +9,7 @@ import (
 type GovernanceInsight struct {
     Entity
 }
-// NewGovernanceInsight instantiates a new GovernanceInsight and sets the default values.
+// NewGovernanceInsight instantiates a new governanceInsight and sets the default values.
 func NewGovernanceInsight()(*GovernanceInsight) {
     m := &GovernanceInsight{
         Entity: *NewEntity(),
@@ -30,6 +30,8 @@ func CreateGovernanceInsightFromDiscriminatorValue(parseNode i878a80d2330e89d268
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.membershipOutlierInsight":
+                        return NewMembershipOutlierInsight(), nil
                     case "#microsoft.graph.userSignInInsight":
                         return NewUserSignInInsight(), nil
                 }
@@ -53,7 +55,7 @@ func (m *GovernanceInsight) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetInsightCreatedDateTime gets the insightCreatedDateTime property value. The insightCreatedDateTime property
+// GetInsightCreatedDateTime gets the insightCreatedDateTime property value. Indicates when the insight was created.
 func (m *GovernanceInsight) GetInsightCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("insightCreatedDateTime")
     if err != nil {
@@ -78,7 +80,7 @@ func (m *GovernanceInsight) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetInsightCreatedDateTime sets the insightCreatedDateTime property value. The insightCreatedDateTime property
+// SetInsightCreatedDateTime sets the insightCreatedDateTime property value. Indicates when the insight was created.
 func (m *GovernanceInsight) SetInsightCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("insightCreatedDateTime", value)
     if err != nil {

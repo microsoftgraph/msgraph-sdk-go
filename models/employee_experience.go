@@ -41,6 +41,22 @@ func (m *EmployeeExperience) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d4
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EmployeeExperience) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["learningCourseActivities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateLearningCourseActivityFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]LearningCourseActivityable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(LearningCourseActivityable)
+                }
+            }
+            m.SetLearningCourseActivities(res)
+        }
+        return nil
+    }
     res["learningProviders"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateLearningProviderFromDiscriminatorValue)
         if err != nil {
@@ -69,6 +85,17 @@ func (m *EmployeeExperience) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
+// GetLearningCourseActivities gets the learningCourseActivities property value. The learningCourseActivities property
+func (m *EmployeeExperience) GetLearningCourseActivities()([]LearningCourseActivityable) {
+    val, err := m.GetBackingStore().Get("learningCourseActivities")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]LearningCourseActivityable)
+    }
+    return nil
+}
 // GetLearningProviders gets the learningProviders property value. A collection of learning providers.
 func (m *EmployeeExperience) GetLearningProviders()([]LearningProviderable) {
     val, err := m.GetBackingStore().Get("learningProviders")
@@ -93,6 +120,18 @@ func (m *EmployeeExperience) GetOdataType()(*string) {
 }
 // Serialize serializes information the current object
 func (m *EmployeeExperience) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetLearningCourseActivities() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLearningCourseActivities()))
+        for i, v := range m.GetLearningCourseActivities() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err := writer.WriteCollectionOfObjectValues("learningCourseActivities", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetLearningProviders() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLearningProviders()))
         for i, v := range m.GetLearningProviders() {
@@ -130,6 +169,13 @@ func (m *EmployeeExperience) SetAdditionalData(value map[string]any)() {
 func (m *EmployeeExperience) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
+// SetLearningCourseActivities sets the learningCourseActivities property value. The learningCourseActivities property
+func (m *EmployeeExperience) SetLearningCourseActivities(value []LearningCourseActivityable)() {
+    err := m.GetBackingStore().Set("learningCourseActivities", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetLearningProviders sets the learningProviders property value. A collection of learning providers.
 func (m *EmployeeExperience) SetLearningProviders(value []LearningProviderable)() {
     err := m.GetBackingStore().Set("learningProviders", value)
@@ -150,9 +196,11 @@ type EmployeeExperienceable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetLearningCourseActivities()([]LearningCourseActivityable)
     GetLearningProviders()([]LearningProviderable)
     GetOdataType()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetLearningCourseActivities(value []LearningCourseActivityable)()
     SetLearningProviders(value []LearningProviderable)()
     SetOdataType(value *string)()
 }

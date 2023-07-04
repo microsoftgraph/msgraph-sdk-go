@@ -28,10 +28,12 @@ const (
     ANDROIDWORKPROFILE_DETECTEDAPPPLATFORMTYPE
     // Indicates that the platform of the detected application is Android dedicated and fully managed.
     ANDROIDDEDICATEDANDFULLYMANAGED_DETECTEDAPPPLATFORMTYPE
+    // Evolvable enumeration sentinel value. Do not use.
+    UNKNOWNFUTUREVALUE_DETECTEDAPPPLATFORMTYPE
 )
 
 func (i DetectedAppPlatformType) String() string {
-    return []string{"unknown", "windows", "windowsMobile", "windowsHolographic", "ios", "macOS", "chromeOS", "androidOSP", "androidDeviceAdministrator", "androidWorkProfile", "androidDedicatedAndFullyManaged"}[i]
+    return []string{"unknown", "windows", "windowsMobile", "windowsHolographic", "ios", "macOS", "chromeOS", "androidOSP", "androidDeviceAdministrator", "androidWorkProfile", "androidDedicatedAndFullyManaged", "unknownFutureValue"}[i]
 }
 func ParseDetectedAppPlatformType(v string) (any, error) {
     result := UNKNOWN_DETECTEDAPPPLATFORMTYPE
@@ -58,6 +60,8 @@ func ParseDetectedAppPlatformType(v string) (any, error) {
             result = ANDROIDWORKPROFILE_DETECTEDAPPPLATFORMTYPE
         case "androidDedicatedAndFullyManaged":
             result = ANDROIDDEDICATEDANDFULLYMANAGED_DETECTEDAPPPLATFORMTYPE
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_DETECTEDAPPPLATFORMTYPE
         default:
             return 0, errors.New("Unknown DetectedAppPlatformType value: " + v)
     }

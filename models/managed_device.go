@@ -636,6 +636,22 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["logCollectionRequests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceLogCollectionResponseFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DeviceLogCollectionResponseable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(DeviceLogCollectionResponseable)
+                }
+            }
+            m.SetLogCollectionRequests(res)
+        }
+        return nil
+    }
     res["managedDeviceName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -892,6 +908,16 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["windowsProtectionState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateWindowsProtectionStateFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWindowsProtectionState(val.(WindowsProtectionStateable))
+        }
+        return nil
+    }
     return res
 }
 // GetFreeStorageSpaceInBytes gets the freeStorageSpaceInBytes property value. Free Storage in Bytes. Default value is 0. Read-only. This property is read-only.
@@ -968,6 +994,17 @@ func (m *ManagedDevice) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetLogCollectionRequests gets the logCollectionRequests property value. List of log collection requests
+func (m *ManagedDevice) GetLogCollectionRequests()([]DeviceLogCollectionResponseable) {
+    val, err := m.GetBackingStore().Get("logCollectionRequests")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceLogCollectionResponseable)
     }
     return nil
 }
@@ -1246,6 +1283,17 @@ func (m *ManagedDevice) GetWiFiMacAddress()(*string) {
     }
     return nil
 }
+// GetWindowsProtectionState gets the windowsProtectionState property value. The device protection status. This property is read-only.
+func (m *ManagedDevice) GetWindowsProtectionState()(WindowsProtectionStateable) {
+    val, err := m.GetBackingStore().Get("windowsProtectionState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WindowsProtectionStateable)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *ManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
@@ -1317,6 +1365,18 @@ func (m *ManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    if m.GetLogCollectionRequests() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLogCollectionRequests()))
+        for i, v := range m.GetLogCollectionRequests() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("logCollectionRequests", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("managedDeviceName", m.GetManagedDeviceName())
         if err != nil {
@@ -1358,6 +1418,12 @@ func (m *ManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             }
         }
         err = writer.WriteCollectionOfObjectValues("users", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("windowsProtectionState", m.GetWindowsProtectionState())
         if err != nil {
             return err
         }
@@ -1588,6 +1654,13 @@ func (m *ManagedDevice) SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad
         panic(err)
     }
 }
+// SetLogCollectionRequests sets the logCollectionRequests property value. List of log collection requests
+func (m *ManagedDevice) SetLogCollectionRequests(value []DeviceLogCollectionResponseable)() {
+    err := m.GetBackingStore().Set("logCollectionRequests", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetManagedDeviceName sets the managedDeviceName property value. Automatically generated name to identify a device. Can be overwritten to a user friendly name.
 func (m *ManagedDevice) SetManagedDeviceName(value *string)() {
     err := m.GetBackingStore().Set("managedDeviceName", value)
@@ -1763,6 +1836,13 @@ func (m *ManagedDevice) SetWiFiMacAddress(value *string)() {
         panic(err)
     }
 }
+// SetWindowsProtectionState sets the windowsProtectionState property value. The device protection status. This property is read-only.
+func (m *ManagedDevice) SetWindowsProtectionState(value WindowsProtectionStateable)() {
+    err := m.GetBackingStore().Set("windowsProtectionState", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // ManagedDeviceable 
 type ManagedDeviceable interface {
     Entityable
@@ -1799,6 +1879,7 @@ type ManagedDeviceable interface {
     GetIsSupervised()(*bool)
     GetJailBroken()(*string)
     GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetLogCollectionRequests()([]DeviceLogCollectionResponseable)
     GetManagedDeviceName()(*string)
     GetManagedDeviceOwnerType()(*ManagedDeviceOwnerType)
     GetManagementAgent()(*ManagementAgentType)
@@ -1824,6 +1905,7 @@ type ManagedDeviceable interface {
     GetUserPrincipalName()(*string)
     GetUsers()([]Userable)
     GetWiFiMacAddress()(*string)
+    GetWindowsProtectionState()(WindowsProtectionStateable)
     SetActivationLockBypassCode(value *string)()
     SetAndroidSecurityPatchLevel(value *string)()
     SetAzureADDeviceId(value *string)()
@@ -1856,6 +1938,7 @@ type ManagedDeviceable interface {
     SetIsSupervised(value *bool)()
     SetJailBroken(value *string)()
     SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetLogCollectionRequests(value []DeviceLogCollectionResponseable)()
     SetManagedDeviceName(value *string)()
     SetManagedDeviceOwnerType(value *ManagedDeviceOwnerType)()
     SetManagementAgent(value *ManagementAgentType)()
@@ -1881,4 +1964,5 @@ type ManagedDeviceable interface {
     SetUserPrincipalName(value *string)()
     SetUsers(value []Userable)()
     SetWiFiMacAddress(value *string)()
+    SetWindowsProtectionState(value WindowsProtectionStateable)()
 }
