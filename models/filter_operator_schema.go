@@ -8,7 +8,7 @@ import (
 type FilterOperatorSchema struct {
     Entity
 }
-// NewFilterOperatorSchema instantiates a new filterOperatorSchema and sets the default values.
+// NewFilterOperatorSchema instantiates a new FilterOperatorSchema and sets the default values.
 func NewFilterOperatorSchema()(*FilterOperatorSchema) {
     m := &FilterOperatorSchema{
         Entity: *NewEntity(),

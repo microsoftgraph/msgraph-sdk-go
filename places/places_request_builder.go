@@ -40,3 +40,7 @@ func (m *PlacesRequestBuilder) Count()(*CountRequestBuilder) {
 func (m *PlacesRequestBuilder) GraphRoom()(*GraphRoomRequestBuilder) {
     return NewGraphRoomRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// GraphRoomList casts the previous resource to roomList.
+func (m *PlacesRequestBuilder) GraphRoomList()(*GraphRoomListRequestBuilder) {
+    return NewGraphRoomListRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}

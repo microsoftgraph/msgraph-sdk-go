@@ -128,6 +128,22 @@ func (m *AccessReviewInstanceDecisionItem) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
+    res["insights"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateGovernanceInsightFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]GovernanceInsightable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(GovernanceInsightable)
+                }
+            }
+            m.SetInsights(res)
+        }
+        return nil
+    }
     res["justification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -209,6 +225,17 @@ func (m *AccessReviewInstanceDecisionItem) GetFieldDeserializers()(map[string]fu
         return nil
     }
     return res
+}
+// GetInsights gets the insights property value. Insights are recommendations to reviewers on whether to approve or deny a decision. There can be multiple insights associated with an accessReviewInstanceDecisionItem.
+func (m *AccessReviewInstanceDecisionItem) GetInsights()([]GovernanceInsightable) {
+    val, err := m.GetBackingStore().Get("insights")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]GovernanceInsightable)
+    }
+    return nil
 }
 // GetJustification gets the justification property value. Justification left by the reviewer when they made the decision.
 func (m *AccessReviewInstanceDecisionItem) GetJustification()(*string) {
@@ -334,6 +361,18 @@ func (m *AccessReviewInstanceDecisionItem) Serialize(writer i878a80d2330e89d2689
             return err
         }
     }
+    if m.GetInsights() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetInsights()))
+        for i, v := range m.GetInsights() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("insights", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("justification", m.GetJustification())
         if err != nil {
@@ -419,6 +458,13 @@ func (m *AccessReviewInstanceDecisionItem) SetDecision(value *string)() {
         panic(err)
     }
 }
+// SetInsights sets the insights property value. Insights are recommendations to reviewers on whether to approve or deny a decision. There can be multiple insights associated with an accessReviewInstanceDecisionItem.
+func (m *AccessReviewInstanceDecisionItem) SetInsights(value []GovernanceInsightable)() {
+    err := m.GetBackingStore().Set("insights", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetJustification sets the justification property value. Justification left by the reviewer when they made the decision.
 func (m *AccessReviewInstanceDecisionItem) SetJustification(value *string)() {
     err := m.GetBackingStore().Set("justification", value)
@@ -484,6 +530,7 @@ type AccessReviewInstanceDecisionItemable interface {
     GetAppliedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetApplyResult()(*string)
     GetDecision()(*string)
+    GetInsights()([]GovernanceInsightable)
     GetJustification()(*string)
     GetPrincipal()(Identityable)
     GetPrincipalLink()(*string)
@@ -497,6 +544,7 @@ type AccessReviewInstanceDecisionItemable interface {
     SetAppliedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetApplyResult(value *string)()
     SetDecision(value *string)()
+    SetInsights(value []GovernanceInsightable)()
     SetJustification(value *string)()
     SetPrincipal(value Identityable)()
     SetPrincipalLink(value *string)()

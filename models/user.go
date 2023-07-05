@@ -9,7 +9,7 @@ import (
 type User struct {
     DirectoryObject
 }
-// NewUser instantiates a new User and sets the default values.
+// NewUser instantiates a new user and sets the default values.
 func NewUser()(*User) {
     m := &User{
         DirectoryObject: *NewDirectoryObject(),
@@ -382,6 +382,17 @@ func (m *User) GetDrives()([]Driveable) {
     }
     if val != nil {
         return val.([]Driveable)
+    }
+    return nil
+}
+// GetEmployeeExperience gets the employeeExperience property value. The employeeExperience property
+func (m *User) GetEmployeeExperience()(EmployeeExperienceUserable) {
+    val, err := m.GetBackingStore().Get("employeeExperience")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(EmployeeExperienceUserable)
     }
     return nil
 }
@@ -921,6 +932,16 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
                 }
             }
             m.SetDrives(res)
+        }
+        return nil
+    }
+    res["employeeExperience"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateEmployeeExperienceUserFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEmployeeExperience(val.(EmployeeExperienceUserable))
         }
         return nil
     }
@@ -3145,6 +3166,12 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     {
+        err = writer.WriteObjectValue("employeeExperience", m.GetEmployeeExperience())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteTimeValue("employeeHireDate", m.GetEmployeeHireDate())
         if err != nil {
             return err
@@ -4043,6 +4070,13 @@ func (m *User) SetDrives(value []Driveable)() {
         panic(err)
     }
 }
+// SetEmployeeExperience sets the employeeExperience property value. The employeeExperience property
+func (m *User) SetEmployeeExperience(value EmployeeExperienceUserable)() {
+    err := m.GetBackingStore().Set("employeeExperience", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetEmployeeHireDate sets the employeeHireDate property value. The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
 func (m *User) SetEmployeeHireDate(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("employeeHireDate", value)
@@ -4696,6 +4730,7 @@ type Userable interface {
     GetDisplayName()(*string)
     GetDrive()(Driveable)
     GetDrives()([]Driveable)
+    GetEmployeeExperience()(EmployeeExperienceUserable)
     GetEmployeeHireDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetEmployeeId()(*string)
     GetEmployeeLeaveDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -4817,6 +4852,7 @@ type Userable interface {
     SetDisplayName(value *string)()
     SetDrive(value Driveable)()
     SetDrives(value []Driveable)()
+    SetEmployeeExperience(value EmployeeExperienceUserable)()
     SetEmployeeHireDate(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetEmployeeId(value *string)()
     SetEmployeeLeaveDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()

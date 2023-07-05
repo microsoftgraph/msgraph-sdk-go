@@ -37,7 +37,7 @@ func (m *UserSignInInsight) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetLastSignInDateTime gets the lastSignInDateTime property value. The lastSignInDateTime property
+// GetLastSignInDateTime gets the lastSignInDateTime property value. Indicates when the user last signed in.
 func (m *UserSignInInsight) GetLastSignInDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSignInDateTime")
     if err != nil {
@@ -62,7 +62,7 @@ func (m *UserSignInInsight) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetLastSignInDateTime sets the lastSignInDateTime property value. The lastSignInDateTime property
+// SetLastSignInDateTime sets the lastSignInDateTime property value. Indicates when the user last signed in.
 func (m *UserSignInInsight) SetLastSignInDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastSignInDateTime", value)
     if err != nil {

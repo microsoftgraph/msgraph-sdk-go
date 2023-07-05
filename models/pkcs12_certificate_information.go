@@ -10,7 +10,7 @@ type Pkcs12CertificateInformation struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewPkcs12CertificateInformation instantiates a new pkcs12CertificateInformation and sets the default values.
+// NewPkcs12CertificateInformation instantiates a new Pkcs12CertificateInformation and sets the default values.
 func NewPkcs12CertificateInformation()(*Pkcs12CertificateInformation) {
     m := &Pkcs12CertificateInformation{
     }
