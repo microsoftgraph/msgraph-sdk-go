@@ -7,8 +7,10 @@ import (
 // ParticipantLeftNotification 
 type ParticipantLeftNotification struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewParticipantLeftNotification instantiates a new ParticipantLeftNotification and sets the default values.
+// NewParticipantLeftNotification instantiates a new participantLeftNotification and sets the default values.
 func NewParticipantLeftNotification()(*ParticipantLeftNotification) {
     m := &ParticipantLeftNotification{
         Entity: *NewEntity(),

@@ -8,7 +8,7 @@ import (
 type SimulationAutomationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewSimulationAutomationCollectionResponse instantiates a new SimulationAutomationCollectionResponse and sets the default values.
+// NewSimulationAutomationCollectionResponse instantiates a new simulationAutomationCollectionResponse and sets the default values.
 func NewSimulationAutomationCollectionResponse()(*SimulationAutomationCollectionResponse) {
     m := &SimulationAutomationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

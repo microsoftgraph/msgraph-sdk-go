@@ -8,7 +8,7 @@ import (
 type SharedInsightCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewSharedInsightCollectionResponse instantiates a new SharedInsightCollectionResponse and sets the default values.
+// NewSharedInsightCollectionResponse instantiates a new sharedInsightCollectionResponse and sets the default values.
 func NewSharedInsightCollectionResponse()(*SharedInsightCollectionResponse) {
     m := &SharedInsightCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -8,7 +8,7 @@ import (
 type WorkforceIntegration struct {
     ChangeTrackedEntity
 }
-// NewWorkforceIntegration instantiates a new WorkforceIntegration and sets the default values.
+// NewWorkforceIntegration instantiates a new workforceIntegration and sets the default values.
 func NewWorkforceIntegration()(*WorkforceIntegration) {
     m := &WorkforceIntegration{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),

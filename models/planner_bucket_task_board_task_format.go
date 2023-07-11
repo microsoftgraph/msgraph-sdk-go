@@ -7,6 +7,8 @@ import (
 // PlannerBucketTaskBoardTaskFormat 
 type PlannerBucketTaskBoardTaskFormat struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewPlannerBucketTaskBoardTaskFormat instantiates a new plannerBucketTaskBoardTaskFormat and sets the default values.
 func NewPlannerBucketTaskBoardTaskFormat()(*PlannerBucketTaskBoardTaskFormat) {

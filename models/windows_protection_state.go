@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsProtectionState 
+// WindowsProtectionState device protection status entity.
 type WindowsProtectionState struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewWindowsProtectionState instantiates a new windowsProtectionState and sets the default values.
 func NewWindowsProtectionState()(*WindowsProtectionState) {
@@ -42,7 +44,7 @@ func (m *WindowsProtectionState) GetDetectedMalwareState()([]WindowsDeviceMalwar
     }
     return nil
 }
-// GetDeviceState gets the deviceState property value. Computer's state (like clean or pending full scan or pending reboot etc). Possible values are: clean, fullScanPending, rebootPending, manualStepsPending, offlineScanPending, critical.
+// GetDeviceState gets the deviceState property value. Indicates device's health state. Possible values are: clean, fullScanPending, rebootPending, manualStepsPending, offlineScanPending, critical. Possible values are: clean, fullScanPending, rebootPending, manualStepsPending, offlineScanPending, critical.
 func (m *WindowsProtectionState) GetDeviceState()(*WindowsDeviceHealthState) {
     val, err := m.GetBackingStore().Get("deviceState")
     if err != nil {
@@ -285,7 +287,7 @@ func (m *WindowsProtectionState) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetFullScanOverdue gets the fullScanOverdue property value. Full scan overdue or not?
+// GetFullScanOverdue gets the fullScanOverdue property value. When TRUE indicates full scan is overdue, when FALSE indicates full scan is not overdue. Defaults to setting on client device.
 func (m *WindowsProtectionState) GetFullScanOverdue()(*bool) {
     val, err := m.GetBackingStore().Get("fullScanOverdue")
     if err != nil {
@@ -296,7 +298,7 @@ func (m *WindowsProtectionState) GetFullScanOverdue()(*bool) {
     }
     return nil
 }
-// GetFullScanRequired gets the fullScanRequired property value. Full scan required or not?
+// GetFullScanRequired gets the fullScanRequired property value. When TRUE indicates full scan is required, when FALSE indicates full scan is not required. Defaults to setting on client device.
 func (m *WindowsProtectionState) GetFullScanRequired()(*bool) {
     val, err := m.GetBackingStore().Get("fullScanRequired")
     if err != nil {
@@ -307,7 +309,7 @@ func (m *WindowsProtectionState) GetFullScanRequired()(*bool) {
     }
     return nil
 }
-// GetIsVirtualMachine gets the isVirtualMachine property value. Indicates whether the device is a virtual machine.
+// GetIsVirtualMachine gets the isVirtualMachine property value. When TRUE indicates the device is a virtual machine, when FALSE indicates the device is not a virtual machine. Defaults to setting on client device.
 func (m *WindowsProtectionState) GetIsVirtualMachine()(*bool) {
     val, err := m.GetBackingStore().Get("isVirtualMachine")
     if err != nil {
@@ -373,7 +375,7 @@ func (m *WindowsProtectionState) GetLastReportedDateTime()(*i336074805fc853987ab
     }
     return nil
 }
-// GetMalwareProtectionEnabled gets the malwareProtectionEnabled property value. Anti malware is enabled or not
+// GetMalwareProtectionEnabled gets the malwareProtectionEnabled property value. When TRUE indicates anti malware is enabled when FALSE indicates anti malware is not enabled.
 func (m *WindowsProtectionState) GetMalwareProtectionEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("malwareProtectionEnabled")
     if err != nil {
@@ -384,7 +386,7 @@ func (m *WindowsProtectionState) GetMalwareProtectionEnabled()(*bool) {
     }
     return nil
 }
-// GetNetworkInspectionSystemEnabled gets the networkInspectionSystemEnabled property value. Network inspection system enabled or not?
+// GetNetworkInspectionSystemEnabled gets the networkInspectionSystemEnabled property value. When TRUE indicates network inspection system enabled, when FALSE indicates network inspection system is not enabled. Defaults to setting on client device.
 func (m *WindowsProtectionState) GetNetworkInspectionSystemEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("networkInspectionSystemEnabled")
     if err != nil {
@@ -395,7 +397,7 @@ func (m *WindowsProtectionState) GetNetworkInspectionSystemEnabled()(*bool) {
     }
     return nil
 }
-// GetProductStatus gets the productStatus property value. Product Status of Windows Defender Antivirus. Possible values are: noStatus, serviceNotRunning, serviceStartedWithoutMalwareProtection, pendingFullScanDueToThreatAction, pendingRebootDueToThreatAction, pendingManualStepsDueToThreatAction, avSignaturesOutOfDate, asSignaturesOutOfDate, noQuickScanHappenedForSpecifiedPeriod, noFullScanHappenedForSpecifiedPeriod, systemInitiatedScanInProgress, systemInitiatedCleanInProgress, samplesPendingSubmission, productRunningInEvaluationMode, productRunningInNonGenuineMode, productExpired, offlineScanRequired, serviceShutdownAsPartOfSystemShutdown, threatRemediationFailedCritically, threatRemediationFailedNonCritically, noStatusFlagsSet, platformOutOfDate, platformUpdateInProgress, platformAboutToBeOutdated, signatureOrPlatformEndOfLifeIsPastOrIsImpending, windowsSModeSignaturesInUseOnNonWin10SInstall.
+// GetProductStatus gets the productStatus property value. Product Status of Windows Defender Antivirus. Possible values are: noStatus, serviceNotRunning, serviceStartedWithoutMalwareProtection, pendingFullScanDueToThreatAction, pendingRebootDueToThreatAction, pendingManualStepsDueToThreatAction, avSignaturesOutOfDate, asSignaturesOutOfDate, noQuickScanHappenedForSpecifiedPeriod, noFullScanHappenedForSpecifiedPeriod, systemInitiatedScanInProgress, systemInitiatedCleanInProgress, samplesPendingSubmission, productRunningInEvaluationMode, productRunningInNonGenuineMode, productExpired, offlineScanRequired, serviceShutdownAsPartOfSystemShutdown, threatRemediationFailedCritically, threatRemediationFailedNonCritically, noStatusFlagsSet, platformOutOfDate, platformUpdateInProgress, platformAboutToBeOutdated, signatureOrPlatformEndOfLifeIsPastOrIsImpending, windowsSModeSignaturesInUseOnNonWin10SInstall. Possible values are: noStatus, serviceNotRunning, serviceStartedWithoutMalwareProtection, pendingFullScanDueToThreatAction, pendingRebootDueToThreatAction, pendingManualStepsDueToThreatAction, avSignaturesOutOfDate, asSignaturesOutOfDate, noQuickScanHappenedForSpecifiedPeriod, noFullScanHappenedForSpecifiedPeriod, systemInitiatedScanInProgress, systemInitiatedCleanInProgress, samplesPendingSubmission, productRunningInEvaluationMode, productRunningInNonGenuineMode, productExpired, offlineScanRequired, serviceShutdownAsPartOfSystemShutdown, threatRemediationFailedCritically, threatRemediationFailedNonCritically, noStatusFlagsSet, platformOutOfDate, platformUpdateInProgress, platformAboutToBeOutdated, signatureOrPlatformEndOfLifeIsPastOrIsImpending, windowsSModeSignaturesInUseOnNonWin10SInstall.
 func (m *WindowsProtectionState) GetProductStatus()(*WindowsDefenderProductStatus) {
     val, err := m.GetBackingStore().Get("productStatus")
     if err != nil {
@@ -406,7 +408,7 @@ func (m *WindowsProtectionState) GetProductStatus()(*WindowsDefenderProductStatu
     }
     return nil
 }
-// GetQuickScanOverdue gets the quickScanOverdue property value. Quick scan overdue or not?
+// GetQuickScanOverdue gets the quickScanOverdue property value. When TRUE indicates quick scan is overdue, when FALSE indicates quick scan is not overdue. Defaults to setting on client device.
 func (m *WindowsProtectionState) GetQuickScanOverdue()(*bool) {
     val, err := m.GetBackingStore().Get("quickScanOverdue")
     if err != nil {
@@ -417,7 +419,7 @@ func (m *WindowsProtectionState) GetQuickScanOverdue()(*bool) {
     }
     return nil
 }
-// GetRealTimeProtectionEnabled gets the realTimeProtectionEnabled property value. Real time protection is enabled or not?
+// GetRealTimeProtectionEnabled gets the realTimeProtectionEnabled property value. When TRUE indicates real time protection is enabled, when FALSE indicates real time protection is not enabled. Defaults to setting on client device.
 func (m *WindowsProtectionState) GetRealTimeProtectionEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("realTimeProtectionEnabled")
     if err != nil {
@@ -428,7 +430,7 @@ func (m *WindowsProtectionState) GetRealTimeProtectionEnabled()(*bool) {
     }
     return nil
 }
-// GetRebootRequired gets the rebootRequired property value. Reboot required or not?
+// GetRebootRequired gets the rebootRequired property value. When TRUE indicates reboot is required, when FALSE indicates when TRUE indicates reboot is not required. Defaults to setting on client device.
 func (m *WindowsProtectionState) GetRebootRequired()(*bool) {
     val, err := m.GetBackingStore().Get("rebootRequired")
     if err != nil {
@@ -439,7 +441,7 @@ func (m *WindowsProtectionState) GetRebootRequired()(*bool) {
     }
     return nil
 }
-// GetSignatureUpdateOverdue gets the signatureUpdateOverdue property value. Signature out of date or not?
+// GetSignatureUpdateOverdue gets the signatureUpdateOverdue property value. When TRUE indicates signature is out of date, when FALSE indicates signature is not out of date. Defaults to setting on client device.
 func (m *WindowsProtectionState) GetSignatureUpdateOverdue()(*bool) {
     val, err := m.GetBackingStore().Get("signatureUpdateOverdue")
     if err != nil {
@@ -461,7 +463,7 @@ func (m *WindowsProtectionState) GetSignatureVersion()(*string) {
     }
     return nil
 }
-// GetTamperProtectionEnabled gets the tamperProtectionEnabled property value. Indicates whether the Windows Defender tamper protection feature is enabled.
+// GetTamperProtectionEnabled gets the tamperProtectionEnabled property value. When TRUE indicates the Windows Defender tamper protection feature is enabled, when FALSE indicates the Windows Defender tamper protection feature is not enabled. Defaults to setting on client device.
 func (m *WindowsProtectionState) GetTamperProtectionEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("tamperProtectionEnabled")
     if err != nil {
@@ -628,7 +630,7 @@ func (m *WindowsProtectionState) SetDetectedMalwareState(value []WindowsDeviceMa
         panic(err)
     }
 }
-// SetDeviceState sets the deviceState property value. Computer's state (like clean or pending full scan or pending reboot etc). Possible values are: clean, fullScanPending, rebootPending, manualStepsPending, offlineScanPending, critical.
+// SetDeviceState sets the deviceState property value. Indicates device's health state. Possible values are: clean, fullScanPending, rebootPending, manualStepsPending, offlineScanPending, critical. Possible values are: clean, fullScanPending, rebootPending, manualStepsPending, offlineScanPending, critical.
 func (m *WindowsProtectionState) SetDeviceState(value *WindowsDeviceHealthState)() {
     err := m.GetBackingStore().Set("deviceState", value)
     if err != nil {
@@ -642,21 +644,21 @@ func (m *WindowsProtectionState) SetEngineVersion(value *string)() {
         panic(err)
     }
 }
-// SetFullScanOverdue sets the fullScanOverdue property value. Full scan overdue or not?
+// SetFullScanOverdue sets the fullScanOverdue property value. When TRUE indicates full scan is overdue, when FALSE indicates full scan is not overdue. Defaults to setting on client device.
 func (m *WindowsProtectionState) SetFullScanOverdue(value *bool)() {
     err := m.GetBackingStore().Set("fullScanOverdue", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFullScanRequired sets the fullScanRequired property value. Full scan required or not?
+// SetFullScanRequired sets the fullScanRequired property value. When TRUE indicates full scan is required, when FALSE indicates full scan is not required. Defaults to setting on client device.
 func (m *WindowsProtectionState) SetFullScanRequired(value *bool)() {
     err := m.GetBackingStore().Set("fullScanRequired", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsVirtualMachine sets the isVirtualMachine property value. Indicates whether the device is a virtual machine.
+// SetIsVirtualMachine sets the isVirtualMachine property value. When TRUE indicates the device is a virtual machine, when FALSE indicates the device is not a virtual machine. Defaults to setting on client device.
 func (m *WindowsProtectionState) SetIsVirtualMachine(value *bool)() {
     err := m.GetBackingStore().Set("isVirtualMachine", value)
     if err != nil {
@@ -698,49 +700,49 @@ func (m *WindowsProtectionState) SetLastReportedDateTime(value *i336074805fc8539
         panic(err)
     }
 }
-// SetMalwareProtectionEnabled sets the malwareProtectionEnabled property value. Anti malware is enabled or not
+// SetMalwareProtectionEnabled sets the malwareProtectionEnabled property value. When TRUE indicates anti malware is enabled when FALSE indicates anti malware is not enabled.
 func (m *WindowsProtectionState) SetMalwareProtectionEnabled(value *bool)() {
     err := m.GetBackingStore().Set("malwareProtectionEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetNetworkInspectionSystemEnabled sets the networkInspectionSystemEnabled property value. Network inspection system enabled or not?
+// SetNetworkInspectionSystemEnabled sets the networkInspectionSystemEnabled property value. When TRUE indicates network inspection system enabled, when FALSE indicates network inspection system is not enabled. Defaults to setting on client device.
 func (m *WindowsProtectionState) SetNetworkInspectionSystemEnabled(value *bool)() {
     err := m.GetBackingStore().Set("networkInspectionSystemEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetProductStatus sets the productStatus property value. Product Status of Windows Defender Antivirus. Possible values are: noStatus, serviceNotRunning, serviceStartedWithoutMalwareProtection, pendingFullScanDueToThreatAction, pendingRebootDueToThreatAction, pendingManualStepsDueToThreatAction, avSignaturesOutOfDate, asSignaturesOutOfDate, noQuickScanHappenedForSpecifiedPeriod, noFullScanHappenedForSpecifiedPeriod, systemInitiatedScanInProgress, systemInitiatedCleanInProgress, samplesPendingSubmission, productRunningInEvaluationMode, productRunningInNonGenuineMode, productExpired, offlineScanRequired, serviceShutdownAsPartOfSystemShutdown, threatRemediationFailedCritically, threatRemediationFailedNonCritically, noStatusFlagsSet, platformOutOfDate, platformUpdateInProgress, platformAboutToBeOutdated, signatureOrPlatformEndOfLifeIsPastOrIsImpending, windowsSModeSignaturesInUseOnNonWin10SInstall.
+// SetProductStatus sets the productStatus property value. Product Status of Windows Defender Antivirus. Possible values are: noStatus, serviceNotRunning, serviceStartedWithoutMalwareProtection, pendingFullScanDueToThreatAction, pendingRebootDueToThreatAction, pendingManualStepsDueToThreatAction, avSignaturesOutOfDate, asSignaturesOutOfDate, noQuickScanHappenedForSpecifiedPeriod, noFullScanHappenedForSpecifiedPeriod, systemInitiatedScanInProgress, systemInitiatedCleanInProgress, samplesPendingSubmission, productRunningInEvaluationMode, productRunningInNonGenuineMode, productExpired, offlineScanRequired, serviceShutdownAsPartOfSystemShutdown, threatRemediationFailedCritically, threatRemediationFailedNonCritically, noStatusFlagsSet, platformOutOfDate, platformUpdateInProgress, platformAboutToBeOutdated, signatureOrPlatformEndOfLifeIsPastOrIsImpending, windowsSModeSignaturesInUseOnNonWin10SInstall. Possible values are: noStatus, serviceNotRunning, serviceStartedWithoutMalwareProtection, pendingFullScanDueToThreatAction, pendingRebootDueToThreatAction, pendingManualStepsDueToThreatAction, avSignaturesOutOfDate, asSignaturesOutOfDate, noQuickScanHappenedForSpecifiedPeriod, noFullScanHappenedForSpecifiedPeriod, systemInitiatedScanInProgress, systemInitiatedCleanInProgress, samplesPendingSubmission, productRunningInEvaluationMode, productRunningInNonGenuineMode, productExpired, offlineScanRequired, serviceShutdownAsPartOfSystemShutdown, threatRemediationFailedCritically, threatRemediationFailedNonCritically, noStatusFlagsSet, platformOutOfDate, platformUpdateInProgress, platformAboutToBeOutdated, signatureOrPlatformEndOfLifeIsPastOrIsImpending, windowsSModeSignaturesInUseOnNonWin10SInstall.
 func (m *WindowsProtectionState) SetProductStatus(value *WindowsDefenderProductStatus)() {
     err := m.GetBackingStore().Set("productStatus", value)
     if err != nil {
         panic(err)
     }
 }
-// SetQuickScanOverdue sets the quickScanOverdue property value. Quick scan overdue or not?
+// SetQuickScanOverdue sets the quickScanOverdue property value. When TRUE indicates quick scan is overdue, when FALSE indicates quick scan is not overdue. Defaults to setting on client device.
 func (m *WindowsProtectionState) SetQuickScanOverdue(value *bool)() {
     err := m.GetBackingStore().Set("quickScanOverdue", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRealTimeProtectionEnabled sets the realTimeProtectionEnabled property value. Real time protection is enabled or not?
+// SetRealTimeProtectionEnabled sets the realTimeProtectionEnabled property value. When TRUE indicates real time protection is enabled, when FALSE indicates real time protection is not enabled. Defaults to setting on client device.
 func (m *WindowsProtectionState) SetRealTimeProtectionEnabled(value *bool)() {
     err := m.GetBackingStore().Set("realTimeProtectionEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRebootRequired sets the rebootRequired property value. Reboot required or not?
+// SetRebootRequired sets the rebootRequired property value. When TRUE indicates reboot is required, when FALSE indicates when TRUE indicates reboot is not required. Defaults to setting on client device.
 func (m *WindowsProtectionState) SetRebootRequired(value *bool)() {
     err := m.GetBackingStore().Set("rebootRequired", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSignatureUpdateOverdue sets the signatureUpdateOverdue property value. Signature out of date or not?
+// SetSignatureUpdateOverdue sets the signatureUpdateOverdue property value. When TRUE indicates signature is out of date, when FALSE indicates signature is not out of date. Defaults to setting on client device.
 func (m *WindowsProtectionState) SetSignatureUpdateOverdue(value *bool)() {
     err := m.GetBackingStore().Set("signatureUpdateOverdue", value)
     if err != nil {
@@ -754,7 +756,7 @@ func (m *WindowsProtectionState) SetSignatureVersion(value *string)() {
         panic(err)
     }
 }
-// SetTamperProtectionEnabled sets the tamperProtectionEnabled property value. Indicates whether the Windows Defender tamper protection feature is enabled.
+// SetTamperProtectionEnabled sets the tamperProtectionEnabled property value. When TRUE indicates the Windows Defender tamper protection feature is enabled, when FALSE indicates the Windows Defender tamper protection feature is not enabled. Defaults to setting on client device.
 func (m *WindowsProtectionState) SetTamperProtectionEnabled(value *bool)() {
     err := m.GetBackingStore().Set("tamperProtectionEnabled", value)
     if err != nil {

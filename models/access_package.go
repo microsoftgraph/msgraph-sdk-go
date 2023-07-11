@@ -8,6 +8,8 @@ import (
 // AccessPackage 
 type AccessPackage struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewAccessPackage instantiates a new accessPackage and sets the default values.
 func NewAccessPackage()(*AccessPackage) {
@@ -213,6 +215,22 @@ func (m *AccessPackage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["resourceRoleScopes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageResourceRoleScopeFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AccessPackageResourceRoleScopeable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(AccessPackageResourceRoleScopeable)
+                }
+            }
+            m.SetResourceRoleScopes(res)
+        }
+        return nil
+    }
     return res
 }
 // GetIncompatibleAccessPackages gets the incompatibleAccessPackages property value. The access packages whose assigned users are ineligible to be assigned this access package.
@@ -256,6 +274,17 @@ func (m *AccessPackage) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetResourceRoleScopes gets the resourceRoleScopes property value. The resourceRoleScopes property
+func (m *AccessPackage) GetResourceRoleScopes()([]AccessPackageResourceRoleScopeable) {
+    val, err := m.GetBackingStore().Get("resourceRoleScopes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AccessPackageResourceRoleScopeable)
     }
     return nil
 }
@@ -349,6 +378,18 @@ func (m *AccessPackage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    if m.GetResourceRoleScopes() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetResourceRoleScopes()))
+        for i, v := range m.GetResourceRoleScopes() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("resourceRoleScopes", cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccessPackagesIncompatibleWith sets the accessPackagesIncompatibleWith property value. The access packages that are incompatible with this package. Read-only.
@@ -421,6 +462,13 @@ func (m *AccessPackage) SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad
         panic(err)
     }
 }
+// SetResourceRoleScopes sets the resourceRoleScopes property value. The resourceRoleScopes property
+func (m *AccessPackage) SetResourceRoleScopes(value []AccessPackageResourceRoleScopeable)() {
+    err := m.GetBackingStore().Set("resourceRoleScopes", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // AccessPackageable 
 type AccessPackageable interface {
     Entityable
@@ -435,6 +483,7 @@ type AccessPackageable interface {
     GetIncompatibleGroups()([]Groupable)
     GetIsHidden()(*bool)
     GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetResourceRoleScopes()([]AccessPackageResourceRoleScopeable)
     SetAccessPackagesIncompatibleWith(value []AccessPackageable)()
     SetAssignmentPolicies(value []AccessPackageAssignmentPolicyable)()
     SetCatalog(value AccessPackageCatalogable)()
@@ -445,4 +494,5 @@ type AccessPackageable interface {
     SetIncompatibleGroups(value []Groupable)()
     SetIsHidden(value *bool)()
     SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetResourceRoleScopes(value []AccessPackageResourceRoleScopeable)()
 }

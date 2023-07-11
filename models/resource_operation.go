@@ -7,6 +7,8 @@ import (
 // ResourceOperation describes the resourceOperation resource (entity) of the Microsoft Graph API (REST), which supports Intune workflows related to role-based access control (RBAC).
 type ResourceOperation struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewResourceOperation instantiates a new resourceOperation and sets the default values.
 func NewResourceOperation()(*ResourceOperation) {

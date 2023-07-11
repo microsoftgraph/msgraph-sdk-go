@@ -8,6 +8,8 @@ import (
 // ChangeTrackedEntity 
 type ChangeTrackedEntity struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewChangeTrackedEntity instantiates a new changeTrackedEntity and sets the default values.
 func NewChangeTrackedEntity()(*ChangeTrackedEntity) {

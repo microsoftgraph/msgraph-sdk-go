@@ -42,6 +42,16 @@ func (m *WorkbookChartSeriesFormat) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetFill gets the fill property value. Represents the fill format of a chart series, which includes background formating information. Read-only.
@@ -66,6 +76,17 @@ func (m *WorkbookChartSeriesFormat) GetLine()(WorkbookChartLineFormatable) {
     }
     return nil
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WorkbookChartSeriesFormat) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *WorkbookChartSeriesFormat) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
@@ -80,6 +101,12 @@ func (m *WorkbookChartSeriesFormat) Serialize(writer i878a80d2330e89d26896388a3f
     }
     {
         err = writer.WriteObjectValue("line", m.GetLine())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -100,12 +127,21 @@ func (m *WorkbookChartSeriesFormat) SetLine(value WorkbookChartLineFormatable)()
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WorkbookChartSeriesFormat) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // WorkbookChartSeriesFormatable 
 type WorkbookChartSeriesFormatable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetFill()(WorkbookChartFillable)
     GetLine()(WorkbookChartLineFormatable)
+    GetOdataType()(*string)
     SetFill(value WorkbookChartFillable)()
     SetLine(value WorkbookChartLineFormatable)()
+    SetOdataType(value *string)()
 }

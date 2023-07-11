@@ -8,7 +8,7 @@ import (
 type ManagedEBookCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewManagedEBookCollectionResponse instantiates a new ManagedEBookCollectionResponse and sets the default values.
+// NewManagedEBookCollectionResponse instantiates a new managedEBookCollectionResponse and sets the default values.
 func NewManagedEBookCollectionResponse()(*ManagedEBookCollectionResponse) {
     m := &ManagedEBookCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

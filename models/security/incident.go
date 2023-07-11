@@ -9,6 +9,8 @@ import (
 // Incident 
 type Incident struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewIncident instantiates a new incident and sets the default values.
 func NewIncident()(*Incident) {

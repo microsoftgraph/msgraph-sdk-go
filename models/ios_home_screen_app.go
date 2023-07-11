@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosHomeScreenApp 
+// IosHomeScreenApp represents an item on the iOS Home Screen
 type IosHomeScreenApp struct {
     IosHomeScreenItem
+    // The OdataType property
+    OdataType *string
 }
-// NewIosHomeScreenApp instantiates a new IosHomeScreenApp and sets the default values.
+// NewIosHomeScreenApp instantiates a new iosHomeScreenApp and sets the default values.
 func NewIosHomeScreenApp()(*IosHomeScreenApp) {
     m := &IosHomeScreenApp{
         IosHomeScreenItem: *NewIosHomeScreenItem(),

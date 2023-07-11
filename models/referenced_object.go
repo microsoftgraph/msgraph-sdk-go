@@ -84,7 +84,7 @@ func (m *ReferencedObject) GetOdataType()(*string) {
     }
     return nil
 }
-// GetReferencedObjectName gets the referencedObjectName property value. The referencedObjectName property
+// GetReferencedObjectName gets the referencedObjectName property value. Name of the referenced object. Must match one of the objects in the directory definition.
 func (m *ReferencedObject) GetReferencedObjectName()(*string) {
     val, err := m.GetBackingStore().Get("referencedObjectName")
     if err != nil {
@@ -95,7 +95,7 @@ func (m *ReferencedObject) GetReferencedObjectName()(*string) {
     }
     return nil
 }
-// GetReferencedProperty gets the referencedProperty property value. The referencedProperty property
+// GetReferencedProperty gets the referencedProperty property value. Currently not supported. Name of the property in the referenced object, the value for which is used as the reference.
 func (m *ReferencedObject) GetReferencedProperty()(*string) {
     val, err := m.GetBackingStore().Get("referencedProperty")
     if err != nil {
@@ -152,14 +152,14 @@ func (m *ReferencedObject) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetReferencedObjectName sets the referencedObjectName property value. The referencedObjectName property
+// SetReferencedObjectName sets the referencedObjectName property value. Name of the referenced object. Must match one of the objects in the directory definition.
 func (m *ReferencedObject) SetReferencedObjectName(value *string)() {
     err := m.GetBackingStore().Set("referencedObjectName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetReferencedProperty sets the referencedProperty property value. The referencedProperty property
+// SetReferencedProperty sets the referencedProperty property value. Currently not supported. Name of the property in the referenced object, the value for which is used as the reference.
 func (m *ReferencedObject) SetReferencedProperty(value *string)() {
     err := m.GetBackingStore().Set("referencedProperty", value)
     if err != nil {

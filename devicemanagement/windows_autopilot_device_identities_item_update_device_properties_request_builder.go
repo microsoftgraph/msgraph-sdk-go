@@ -31,9 +31,6 @@ func NewWindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesRequestBuilder
     return NewWindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post updates properties on Autopilot devices.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-enrollment-windowsautopilotdeviceidentity-updatedeviceproperties?view=graph-rest-1.0
 func (m *WindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesRequestBuilder) Post(ctx context.Context, body WindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesPostRequestBodyable, requestConfiguration *WindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

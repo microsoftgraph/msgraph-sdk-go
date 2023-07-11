@@ -74,6 +74,16 @@ func (m *AuthenticationContextClassReference) GetFieldDeserializers()(map[string
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsAvailable gets the isAvailable property value. Indicates whether the authenticationContextClassReference has been published by the security admin and is ready for use by apps. When it is set to false, it should not be shown in authentication context selection UX, or used to protect app resources. It will be shown and available for Conditional Access policy authoring. The default value is false.  Supports $filter (eq).
@@ -84,6 +94,17 @@ func (m *AuthenticationContextClassReference) GetIsAvailable()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AuthenticationContextClassReference) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -111,6 +132,12 @@ func (m *AuthenticationContextClassReference) Serialize(writer i878a80d2330e89d2
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDescription sets the description property value. A short explanation of the policies that are enforced by authenticationContextClassReference. This value should be used to provide secondary text to describe the authentication context class reference when building user-facing admin experiences. For example, a selection UX.
@@ -134,6 +161,13 @@ func (m *AuthenticationContextClassReference) SetIsAvailable(value *bool)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AuthenticationContextClassReference) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // AuthenticationContextClassReferenceable 
 type AuthenticationContextClassReferenceable interface {
     Entityable
@@ -141,7 +175,9 @@ type AuthenticationContextClassReferenceable interface {
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetIsAvailable()(*bool)
+    GetOdataType()(*string)
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetIsAvailable(value *bool)()
+    SetOdataType(value *string)()
 }

@@ -7,6 +7,8 @@ import (
 // TeamInfo 
 type TeamInfo struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewTeamInfo instantiates a new teamInfo and sets the default values.
 func NewTeamInfo()(*TeamInfo) {

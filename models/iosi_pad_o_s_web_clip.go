@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosiPadOSWebClip 
+// IosiPadOSWebClip contains properties and inherited properties for iOS web apps.
 type IosiPadOSWebClip struct {
     MobileApp
+    // The OdataType property
+    OdataType *string
 }
-// NewIosiPadOSWebClip instantiates a new IosiPadOSWebClip and sets the default values.
+// NewIosiPadOSWebClip instantiates a new iosiPadOSWebClip and sets the default values.
 func NewIosiPadOSWebClip()(*IosiPadOSWebClip) {
     m := &IosiPadOSWebClip{
         MobileApp: *NewMobileApp(),

@@ -8,6 +8,8 @@ import (
 // LocalizedNotificationMessage the text content of a Notification Message Template for the specified locale.
 type LocalizedNotificationMessage struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewLocalizedNotificationMessage instantiates a new localizedNotificationMessage and sets the default values.
 func NewLocalizedNotificationMessage()(*LocalizedNotificationMessage) {

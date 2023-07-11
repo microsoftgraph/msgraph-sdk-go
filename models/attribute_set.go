@@ -7,8 +7,10 @@ import (
 // AttributeSet 
 type AttributeSet struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewAttributeSet instantiates a new AttributeSet and sets the default values.
+// NewAttributeSet instantiates a new attributeSet and sets the default values.
 func NewAttributeSet()(*AttributeSet) {
     m := &AttributeSet{
         Entity: *NewEntity(),

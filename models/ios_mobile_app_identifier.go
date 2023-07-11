@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosMobileAppIdentifier 
+// IosMobileAppIdentifier the identifier for a mobile app.
 type IosMobileAppIdentifier struct {
     MobileAppIdentifier
+    // The OdataType property
+    OdataType *string
 }
-// NewIosMobileAppIdentifier instantiates a new IosMobileAppIdentifier and sets the default values.
+// NewIosMobileAppIdentifier instantiates a new iosMobileAppIdentifier and sets the default values.
 func NewIosMobileAppIdentifier()(*IosMobileAppIdentifier) {
     m := &IosMobileAppIdentifier{
         MobileAppIdentifier: *NewMobileAppIdentifier(),

@@ -38,6 +38,16 @@ func (m *Synchronization) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["secrets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSynchronizationSecretKeyStringValuePairFromDiscriminatorValue)
         if err != nil {
@@ -72,7 +82,7 @@ func (m *Synchronization) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetJobs gets the jobs property value. The jobs property
+// GetJobs gets the jobs property value. Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 func (m *Synchronization) GetJobs()([]SynchronizationJobable) {
     val, err := m.GetBackingStore().Get("jobs")
     if err != nil {
@@ -83,7 +93,18 @@ func (m *Synchronization) GetJobs()([]SynchronizationJobable) {
     }
     return nil
 }
-// GetSecrets gets the secrets property value. The secrets property
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Synchronization) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetSecrets gets the secrets property value. Represents a collection of credentials to access provisioned cloud applications.
 func (m *Synchronization) GetSecrets()([]SynchronizationSecretKeyStringValuePairable) {
     val, err := m.GetBackingStore().Get("secrets")
     if err != nil {
@@ -94,7 +115,7 @@ func (m *Synchronization) GetSecrets()([]SynchronizationSecretKeyStringValuePair
     }
     return nil
 }
-// GetTemplates gets the templates property value. The templates property
+// GetTemplates gets the templates property value. Pre-configured synchronization settings for a particular application.
 func (m *Synchronization) GetTemplates()([]SynchronizationTemplateable) {
     val, err := m.GetBackingStore().Get("templates")
     if err != nil {
@@ -119,6 +140,12 @@ func (m *Synchronization) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             }
         }
         err = writer.WriteCollectionOfObjectValues("jobs", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -149,21 +176,28 @@ func (m *Synchronization) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// SetJobs sets the jobs property value. The jobs property
+// SetJobs sets the jobs property value. Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 func (m *Synchronization) SetJobs(value []SynchronizationJobable)() {
     err := m.GetBackingStore().Set("jobs", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSecrets sets the secrets property value. The secrets property
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Synchronization) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetSecrets sets the secrets property value. Represents a collection of credentials to access provisioned cloud applications.
 func (m *Synchronization) SetSecrets(value []SynchronizationSecretKeyStringValuePairable)() {
     err := m.GetBackingStore().Set("secrets", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTemplates sets the templates property value. The templates property
+// SetTemplates sets the templates property value. Pre-configured synchronization settings for a particular application.
 func (m *Synchronization) SetTemplates(value []SynchronizationTemplateable)() {
     err := m.GetBackingStore().Set("templates", value)
     if err != nil {
@@ -175,9 +209,11 @@ type Synchronizationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetJobs()([]SynchronizationJobable)
+    GetOdataType()(*string)
     GetSecrets()([]SynchronizationSecretKeyStringValuePairable)
     GetTemplates()([]SynchronizationTemplateable)
     SetJobs(value []SynchronizationJobable)()
+    SetOdataType(value *string)()
     SetSecrets(value []SynchronizationSecretKeyStringValuePairable)()
     SetTemplates(value []SynchronizationTemplateable)()
 }

@@ -7,6 +7,8 @@ import (
 // AppScope 
 type AppScope struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewAppScope instantiates a new appScope and sets the default values.
 func NewAppScope()(*AppScope) {

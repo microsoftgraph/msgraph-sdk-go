@@ -18,7 +18,7 @@ type ItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestB
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilderGetQueryParameters get directories from servicePrincipals
+// ItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilderGetQueryParameters contains the collection of directories and all of their objects.
 type ItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,7 @@ func (m *ItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequ
 func (m *ItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilder) Discover()(*ItemSynchronizationJobsItemSchemaDirectoriesItemDiscoverRequestBuilder) {
     return NewItemSynchronizationJobsItemSchemaDirectoriesItemDiscoverRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get directories from servicePrincipals
+// Get contains the collection of directories and all of their objects.
 func (m *ItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryDefinitionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +124,7 @@ func (m *ItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequ
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get directories from servicePrincipals
+// ToGetRequestInformation contains the collection of directories and all of their objects.
 func (m *ItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSynchronizationJobsItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

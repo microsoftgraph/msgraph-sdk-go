@@ -7,8 +7,10 @@ import (
 // MailAssessmentRequest 
 type MailAssessmentRequest struct {
     ThreatAssessmentRequest
+    // The OdataType property
+    OdataType *string
 }
-// NewMailAssessmentRequest instantiates a new MailAssessmentRequest and sets the default values.
+// NewMailAssessmentRequest instantiates a new mailAssessmentRequest and sets the default values.
 func NewMailAssessmentRequest()(*MailAssessmentRequest) {
     m := &MailAssessmentRequest{
         ThreatAssessmentRequest: *NewThreatAssessmentRequest(),

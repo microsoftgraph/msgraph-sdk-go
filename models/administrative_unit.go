@@ -7,8 +7,10 @@ import (
 // AdministrativeUnit 
 type AdministrativeUnit struct {
     DirectoryObject
+    // The OdataType property
+    OdataType *string
 }
-// NewAdministrativeUnit instantiates a new AdministrativeUnit and sets the default values.
+// NewAdministrativeUnit instantiates a new administrativeUnit and sets the default values.
 func NewAdministrativeUnit()(*AdministrativeUnit) {
     m := &AdministrativeUnit{
         DirectoryObject: *NewDirectoryObject(),

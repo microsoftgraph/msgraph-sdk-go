@@ -124,6 +124,16 @@ func (m *PermissionGrantConditionSet) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["permissionClassification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -171,6 +181,17 @@ func (m *PermissionGrantConditionSet) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PermissionGrantConditionSet) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPermissionClassification gets the permissionClassification property value. The permission classification for the permission being granted, or all to match with any permission classification (including permissions which are not classified). Default is all.
 func (m *PermissionGrantConditionSet) GetPermissionClassification()(*string) {
@@ -247,6 +268,12 @@ func (m *PermissionGrantConditionSet) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("permissionClassification", m.GetPermissionClassification())
         if err != nil {
             return err
@@ -301,6 +328,13 @@ func (m *PermissionGrantConditionSet) SetClientApplicationTenantIds(value []stri
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PermissionGrantConditionSet) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPermissionClassification sets the permissionClassification property value. The permission classification for the permission being granted, or all to match with any permission classification (including permissions which are not classified). Default is all.
 func (m *PermissionGrantConditionSet) SetPermissionClassification(value *string)() {
     err := m.GetBackingStore().Set("permissionClassification", value)
@@ -337,6 +371,7 @@ type PermissionGrantConditionSetable interface {
     GetClientApplicationPublisherIds()([]string)
     GetClientApplicationsFromVerifiedPublisherOnly()(*bool)
     GetClientApplicationTenantIds()([]string)
+    GetOdataType()(*string)
     GetPermissionClassification()(*string)
     GetPermissions()([]string)
     GetPermissionType()(*PermissionType)
@@ -345,6 +380,7 @@ type PermissionGrantConditionSetable interface {
     SetClientApplicationPublisherIds(value []string)()
     SetClientApplicationsFromVerifiedPublisherOnly(value *bool)()
     SetClientApplicationTenantIds(value []string)()
+    SetOdataType(value *string)()
     SetPermissionClassification(value *string)()
     SetPermissions(value []string)()
     SetPermissionType(value *PermissionType)()

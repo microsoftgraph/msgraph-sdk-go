@@ -7,6 +7,8 @@ import (
 // DelegatedAdminServiceManagementDetail 
 type DelegatedAdminServiceManagementDetail struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDelegatedAdminServiceManagementDetail instantiates a new delegatedAdminServiceManagementDetail and sets the default values.
 func NewDelegatedAdminServiceManagementDetail()(*DelegatedAdminServiceManagementDetail) {

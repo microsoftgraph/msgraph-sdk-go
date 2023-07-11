@@ -7,6 +7,8 @@ import (
 // EducationCategory 
 type EducationCategory struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewEducationCategory instantiates a new educationCategory and sets the default values.
 func NewEducationCategory()(*EducationCategory) {

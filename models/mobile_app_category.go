@@ -8,6 +8,8 @@ import (
 // MobileAppCategory contains properties for a single Intune app category.
 type MobileAppCategory struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewMobileAppCategory instantiates a new mobileAppCategory and sets the default values.
 func NewMobileAppCategory()(*MobileAppCategory) {

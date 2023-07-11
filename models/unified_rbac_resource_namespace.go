@@ -32,6 +32,16 @@ func (m *UnifiedRbacResourceNamespace) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["resourceActions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUnifiedRbacResourceActionFromDiscriminatorValue)
         if err != nil {
@@ -53,6 +63,17 @@ func (m *UnifiedRbacResourceNamespace) GetFieldDeserializers()(map[string]func(i
 // GetName gets the name property value. The name property
 func (m *UnifiedRbacResourceNamespace) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UnifiedRbacResourceNamespace) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -84,6 +105,12 @@ func (m *UnifiedRbacResourceNamespace) Serialize(writer i878a80d2330e89d26896388
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetResourceActions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetResourceActions()))
         for i, v := range m.GetResourceActions() {
@@ -105,6 +132,13 @@ func (m *UnifiedRbacResourceNamespace) SetName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UnifiedRbacResourceNamespace) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetResourceActions sets the resourceActions property value. The resourceActions property
 func (m *UnifiedRbacResourceNamespace) SetResourceActions(value []UnifiedRbacResourceActionable)() {
     err := m.GetBackingStore().Set("resourceActions", value)
@@ -117,7 +151,9 @@ type UnifiedRbacResourceNamespaceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetName()(*string)
+    GetOdataType()(*string)
     GetResourceActions()([]UnifiedRbacResourceActionable)
     SetName(value *string)()
+    SetOdataType(value *string)()
     SetResourceActions(value []UnifiedRbacResourceActionable)()
 }

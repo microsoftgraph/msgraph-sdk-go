@@ -8,6 +8,8 @@ import (
 // ActivityHistoryItem 
 type ActivityHistoryItem struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewActivityHistoryItem instantiates a new activityHistoryItem and sets the default values.
 func NewActivityHistoryItem()(*ActivityHistoryItem) {

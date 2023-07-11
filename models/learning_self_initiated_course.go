@@ -8,8 +8,10 @@ import (
 // LearningSelfInitiatedCourse 
 type LearningSelfInitiatedCourse struct {
     LearningCourseActivity
+    // The OdataType property
+    OdataType *string
 }
-// NewLearningSelfInitiatedCourse instantiates a new LearningSelfInitiatedCourse and sets the default values.
+// NewLearningSelfInitiatedCourse instantiates a new learningSelfInitiatedCourse and sets the default values.
 func NewLearningSelfInitiatedCourse()(*LearningSelfInitiatedCourse) {
     m := &LearningSelfInitiatedCourse{
         LearningCourseActivity: *NewLearningCourseActivity(),

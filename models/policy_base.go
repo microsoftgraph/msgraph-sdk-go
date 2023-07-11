@@ -7,6 +7,8 @@ import (
 // PolicyBase 
 type PolicyBase struct {
     DirectoryObject
+    // The OdataType property
+    OdataType *string
 }
 // NewPolicyBase instantiates a new policyBase and sets the default values.
 func NewPolicyBase()(*PolicyBase) {

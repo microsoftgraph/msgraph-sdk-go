@@ -10,7 +10,7 @@ type Admin struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAdmin instantiates a new Admin and sets the default values.
+// NewAdmin instantiates a new admin and sets the default values.
 func NewAdmin()(*Admin) {
     m := &Admin{
     }

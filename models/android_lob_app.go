@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidLobApp 
+// AndroidLobApp contains properties and inherited properties for Android Line Of Business apps.
 type AndroidLobApp struct {
     MobileLobApp
 }
-// NewAndroidLobApp instantiates a new AndroidLobApp and sets the default values.
+// NewAndroidLobApp instantiates a new androidLobApp and sets the default values.
 func NewAndroidLobApp()(*AndroidLobApp) {
     m := &AndroidLobApp{
         MobileLobApp: *NewMobileLobApp(),

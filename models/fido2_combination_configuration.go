@@ -8,7 +8,7 @@ import (
 type Fido2CombinationConfiguration struct {
     AuthenticationCombinationConfiguration
 }
-// NewFido2CombinationConfiguration instantiates a new Fido2CombinationConfiguration and sets the default values.
+// NewFido2CombinationConfiguration instantiates a new fido2CombinationConfiguration and sets the default values.
 func NewFido2CombinationConfiguration()(*Fido2CombinationConfiguration) {
     m := &Fido2CombinationConfiguration{
         AuthenticationCombinationConfiguration: *NewAuthenticationCombinationConfiguration(),

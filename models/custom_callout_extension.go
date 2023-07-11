@@ -7,6 +7,8 @@ import (
 // CustomCalloutExtension 
 type CustomCalloutExtension struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewCustomCalloutExtension instantiates a new customCalloutExtension and sets the default values.
 func NewCustomCalloutExtension()(*CustomCalloutExtension) {
@@ -17,6 +19,26 @@ func NewCustomCalloutExtension()(*CustomCalloutExtension) {
 }
 // CreateCustomCalloutExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateCustomCalloutExtensionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                switch *mappingValue {
+                    case "#microsoft.graph.accessPackageAssignmentRequestWorkflowExtension":
+                        return NewAccessPackageAssignmentRequestWorkflowExtension(), nil
+                    case "#microsoft.graph.accessPackageAssignmentWorkflowExtension":
+                        return NewAccessPackageAssignmentWorkflowExtension(), nil
+                }
+            }
+        }
+    }
     return NewCustomCalloutExtension(), nil
 }
 // GetAuthenticationConfiguration gets the authenticationConfiguration property value. Configuration for securing the API call to the logic app. For example, using OAuth client credentials flow.

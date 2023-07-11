@@ -7,6 +7,8 @@ import (
 // TeamsAppInstallation 
 type TeamsAppInstallation struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewTeamsAppInstallation instantiates a new teamsAppInstallation and sets the default values.
 func NewTeamsAppInstallation()(*TeamsAppInstallation) {
@@ -37,7 +39,7 @@ func CreateTeamsAppInstallationFromDiscriminatorValue(parseNode i878a80d2330e89d
     }
     return NewTeamsAppInstallation(), nil
 }
-// GetConsentedPermissionSet gets the consentedPermissionSet property value. The consentedPermissionSet property
+// GetConsentedPermissionSet gets the consentedPermissionSet property value. The set of resource-specific permissions consented to while installing or upgrading the teamsApp.
 func (m *TeamsAppInstallation) GetConsentedPermissionSet()(TeamsAppPermissionSetable) {
     val, err := m.GetBackingStore().Get("consentedPermissionSet")
     if err != nil {
@@ -131,7 +133,7 @@ func (m *TeamsAppInstallation) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetConsentedPermissionSet sets the consentedPermissionSet property value. The consentedPermissionSet property
+// SetConsentedPermissionSet sets the consentedPermissionSet property value. The set of resource-specific permissions consented to while installing or upgrading the teamsApp.
 func (m *TeamsAppInstallation) SetConsentedPermissionSet(value TeamsAppPermissionSetable)() {
     err := m.GetBackingStore().Set("consentedPermissionSet", value)
     if err != nil {

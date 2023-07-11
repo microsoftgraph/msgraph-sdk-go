@@ -7,6 +7,8 @@ import (
 // WorkbookFilter 
 type WorkbookFilter struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewWorkbookFilter instantiates a new workbookFilter and sets the default values.
 func NewWorkbookFilter()(*WorkbookFilter) {

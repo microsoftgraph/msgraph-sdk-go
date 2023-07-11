@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsInformationProtectionDesktopApp 
+// WindowsInformationProtectionDesktopApp app for Windows information protection
 type WindowsInformationProtectionDesktopApp struct {
     WindowsInformationProtectionApp
+    // The OdataType property
+    OdataType *string
 }
-// NewWindowsInformationProtectionDesktopApp instantiates a new WindowsInformationProtectionDesktopApp and sets the default values.
+// NewWindowsInformationProtectionDesktopApp instantiates a new windowsInformationProtectionDesktopApp and sets the default values.
 func NewWindowsInformationProtectionDesktopApp()(*WindowsInformationProtectionDesktopApp) {
     m := &WindowsInformationProtectionDesktopApp{
         WindowsInformationProtectionApp: *NewWindowsInformationProtectionApp(),

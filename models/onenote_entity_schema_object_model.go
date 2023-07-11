@@ -8,8 +8,10 @@ import (
 // OnenoteEntitySchemaObjectModel 
 type OnenoteEntitySchemaObjectModel struct {
     OnenoteEntityBaseModel
+    // The OdataType property
+    OdataType *string
 }
-// NewOnenoteEntitySchemaObjectModel instantiates a new OnenoteEntitySchemaObjectModel and sets the default values.
+// NewOnenoteEntitySchemaObjectModel instantiates a new onenoteEntitySchemaObjectModel and sets the default values.
 func NewOnenoteEntitySchemaObjectModel()(*OnenoteEntitySchemaObjectModel) {
     m := &OnenoteEntitySchemaObjectModel{
         OnenoteEntityBaseModel: *NewOnenoteEntityBaseModel(),

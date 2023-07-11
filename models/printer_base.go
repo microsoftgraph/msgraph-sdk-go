@@ -7,6 +7,8 @@ import (
 // PrinterBase 
 type PrinterBase struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewPrinterBase instantiates a new printerBase and sets the default values.
 func NewPrinterBase()(*PrinterBase) {

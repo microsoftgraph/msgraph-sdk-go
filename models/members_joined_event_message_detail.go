@@ -8,7 +8,7 @@ import (
 type MembersJoinedEventMessageDetail struct {
     EventMessageDetail
 }
-// NewMembersJoinedEventMessageDetail instantiates a new MembersJoinedEventMessageDetail and sets the default values.
+// NewMembersJoinedEventMessageDetail instantiates a new membersJoinedEventMessageDetail and sets the default values.
 func NewMembersJoinedEventMessageDetail()(*MembersJoinedEventMessageDetail) {
     m := &MembersJoinedEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),
@@ -50,6 +50,16 @@ func (m *MembersJoinedEventMessageDetail) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetInitiator gets the initiator property value. Initiator of the event.
@@ -71,6 +81,17 @@ func (m *MembersJoinedEventMessageDetail) GetMembers()([]TeamworkUserIdentityabl
     }
     if val != nil {
         return val.([]TeamworkUserIdentityable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MembersJoinedEventMessageDetail) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -98,6 +119,12 @@ func (m *MembersJoinedEventMessageDetail) Serialize(writer i878a80d2330e89d26896
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetInitiator sets the initiator property value. Initiator of the event.
@@ -114,12 +141,21 @@ func (m *MembersJoinedEventMessageDetail) SetMembers(value []TeamworkUserIdentit
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MembersJoinedEventMessageDetail) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // MembersJoinedEventMessageDetailable 
 type MembersJoinedEventMessageDetailable interface {
     EventMessageDetailable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetInitiator()(IdentitySetable)
     GetMembers()([]TeamworkUserIdentityable)
+    GetOdataType()(*string)
     SetInitiator(value IdentitySetable)()
     SetMembers(value []TeamworkUserIdentityable)()
+    SetOdataType(value *string)()
 }

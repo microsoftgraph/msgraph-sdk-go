@@ -9,7 +9,7 @@ import (
 type AlertCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
 }
-// NewAlertCollectionResponse instantiates a new AlertCollectionResponse and sets the default values.
+// NewAlertCollectionResponse instantiates a new alertCollectionResponse and sets the default values.
 func NewAlertCollectionResponse()(*AlertCollectionResponse) {
     m := &AlertCollectionResponse{
         BaseCollectionPaginationCountResponse: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewBaseCollectionPaginationCountResponse(),

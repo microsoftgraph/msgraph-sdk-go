@@ -9,7 +9,7 @@ import (
 type HostCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
 }
-// NewHostCollectionResponse instantiates a new HostCollectionResponse and sets the default values.
+// NewHostCollectionResponse instantiates a new hostCollectionResponse and sets the default values.
 func NewHostCollectionResponse()(*HostCollectionResponse) {
     m := &HostCollectionResponse{
         BaseCollectionPaginationCountResponse: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewBaseCollectionPaginationCountResponse(),

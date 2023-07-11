@@ -7,8 +7,10 @@ import (
 // ApplicationTemplate 
 type ApplicationTemplate struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewApplicationTemplate instantiates a new ApplicationTemplate and sets the default values.
+// NewApplicationTemplate instantiates a new applicationTemplate and sets the default values.
 func NewApplicationTemplate()(*ApplicationTemplate) {
     m := &ApplicationTemplate{
         Entity: *NewEntity(),

@@ -8,7 +8,7 @@ import (
 type ServicePrincipalCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewServicePrincipalCollectionResponse instantiates a new ServicePrincipalCollectionResponse and sets the default values.
+// NewServicePrincipalCollectionResponse instantiates a new servicePrincipalCollectionResponse and sets the default values.
 func NewServicePrincipalCollectionResponse()(*ServicePrincipalCollectionResponse) {
     m := &ServicePrincipalCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

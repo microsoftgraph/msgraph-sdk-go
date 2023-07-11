@@ -7,8 +7,10 @@ import (
 // RemoveAccessApplyAction 
 type RemoveAccessApplyAction struct {
     AccessReviewApplyAction
+    // The OdataType property
+    OdataType *string
 }
-// NewRemoveAccessApplyAction instantiates a new RemoveAccessApplyAction and sets the default values.
+// NewRemoveAccessApplyAction instantiates a new removeAccessApplyAction and sets the default values.
 func NewRemoveAccessApplyAction()(*RemoveAccessApplyAction) {
     m := &RemoveAccessApplyAction{
         AccessReviewApplyAction: *NewAccessReviewApplyAction(),

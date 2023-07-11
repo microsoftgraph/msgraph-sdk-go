@@ -8,6 +8,8 @@ import (
 // TeamsAsyncOperation 
 type TeamsAsyncOperation struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewTeamsAsyncOperation instantiates a new teamsAsyncOperation and sets the default values.
 func NewTeamsAsyncOperation()(*TeamsAsyncOperation) {

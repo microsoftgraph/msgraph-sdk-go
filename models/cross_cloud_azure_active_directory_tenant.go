@@ -8,7 +8,7 @@ import (
 type CrossCloudAzureActiveDirectoryTenant struct {
     IdentitySource
 }
-// NewCrossCloudAzureActiveDirectoryTenant instantiates a new CrossCloudAzureActiveDirectoryTenant and sets the default values.
+// NewCrossCloudAzureActiveDirectoryTenant instantiates a new crossCloudAzureActiveDirectoryTenant and sets the default values.
 func NewCrossCloudAzureActiveDirectoryTenant()(*CrossCloudAzureActiveDirectoryTenant) {
     m := &CrossCloudAzureActiveDirectoryTenant{
         IdentitySource: *NewIdentitySource(),
@@ -66,6 +66,16 @@ func (m *CrossCloudAzureActiveDirectoryTenant) GetFieldDeserializers()(map[strin
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["tenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -77,6 +87,17 @@ func (m *CrossCloudAzureActiveDirectoryTenant) GetFieldDeserializers()(map[strin
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CrossCloudAzureActiveDirectoryTenant) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTenantId gets the tenantId property value. The ID of the Azure Active Directory tenant. Read only.
 func (m *CrossCloudAzureActiveDirectoryTenant) GetTenantId()(*string) {
@@ -108,6 +129,12 @@ func (m *CrossCloudAzureActiveDirectoryTenant) Serialize(writer i878a80d2330e89d
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("tenantId", m.GetTenantId())
         if err != nil {
             return err
@@ -129,6 +156,13 @@ func (m *CrossCloudAzureActiveDirectoryTenant) SetDisplayName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CrossCloudAzureActiveDirectoryTenant) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTenantId sets the tenantId property value. The ID of the Azure Active Directory tenant. Read only.
 func (m *CrossCloudAzureActiveDirectoryTenant) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
@@ -142,8 +176,10 @@ type CrossCloudAzureActiveDirectoryTenantable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCloudInstance()(*string)
     GetDisplayName()(*string)
+    GetOdataType()(*string)
     GetTenantId()(*string)
     SetCloudInstance(value *string)()
     SetDisplayName(value *string)()
+    SetOdataType(value *string)()
     SetTenantId(value *string)()
 }

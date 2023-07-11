@@ -7,8 +7,10 @@ import (
 // GroupSettingTemplate 
 type GroupSettingTemplate struct {
     DirectoryObject
+    // The OdataType property
+    OdataType *string
 }
-// NewGroupSettingTemplate instantiates a new GroupSettingTemplate and sets the default values.
+// NewGroupSettingTemplate instantiates a new groupSettingTemplate and sets the default values.
 func NewGroupSettingTemplate()(*GroupSettingTemplate) {
     m := &GroupSettingTemplate{
         DirectoryObject: *NewDirectoryObject(),

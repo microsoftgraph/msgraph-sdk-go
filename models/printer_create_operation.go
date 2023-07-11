@@ -7,8 +7,10 @@ import (
 // PrinterCreateOperation 
 type PrinterCreateOperation struct {
     PrintOperation
+    // The OdataType property
+    OdataType *string
 }
-// NewPrinterCreateOperation instantiates a new PrinterCreateOperation and sets the default values.
+// NewPrinterCreateOperation instantiates a new printerCreateOperation and sets the default values.
 func NewPrinterCreateOperation()(*PrinterCreateOperation) {
     m := &PrinterCreateOperation{
         PrintOperation: *NewPrintOperation(),

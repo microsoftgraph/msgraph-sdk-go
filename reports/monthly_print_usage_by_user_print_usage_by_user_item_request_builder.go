@@ -18,7 +18,7 @@ type MonthlyPrintUsageByUserPrintUsageByUserItemRequestBuilderDeleteRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// MonthlyPrintUsageByUserPrintUsageByUserItemRequestBuilderGetQueryParameters get monthlyPrintUsageByUser from reports
+// MonthlyPrintUsageByUserPrintUsageByUserItemRequestBuilderGetQueryParameters retrieve a list of monthly print usage summaries, grouped by user.
 type MonthlyPrintUsageByUserPrintUsageByUserItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *MonthlyPrintUsageByUserPrintUsageByUserItemRequestBuilder) Delete(ctx c
     }
     return nil
 }
-// Get get monthlyPrintUsageByUser from reports
+// Get retrieve a list of monthly print usage summaries, grouped by user.
 func (m *MonthlyPrintUsageByUserPrintUsageByUserItemRequestBuilder) Get(ctx context.Context, requestConfiguration *MonthlyPrintUsageByUserPrintUsageByUserItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintUsageByUserable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +120,7 @@ func (m *MonthlyPrintUsageByUserPrintUsageByUserItemRequestBuilder) ToDeleteRequ
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get monthlyPrintUsageByUser from reports
+// ToGetRequestInformation retrieve a list of monthly print usage summaries, grouped by user.
 func (m *MonthlyPrintUsageByUserPrintUsageByUserItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MonthlyPrintUsageByUserPrintUsageByUserItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

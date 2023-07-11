@@ -125,6 +125,16 @@ func (m *UserExperienceAnalyticsModelScores) GetFieldDeserializers()(map[string]
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["startupPerformanceScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
@@ -188,6 +198,17 @@ func (m *UserExperienceAnalyticsModelScores) GetModelDeviceCount()(*int64) {
     }
     if val != nil {
         return val.(*int64)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UserExperienceAnalyticsModelScores) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -263,6 +284,12 @@ func (m *UserExperienceAnalyticsModelScores) Serialize(writer i878a80d2330e89d26
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteFloat64Value("startupPerformanceScore", m.GetStartupPerformanceScore())
         if err != nil {
             return err
@@ -325,6 +352,13 @@ func (m *UserExperienceAnalyticsModelScores) SetModelDeviceCount(value *int64)()
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UserExperienceAnalyticsModelScores) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetStartupPerformanceScore sets the startupPerformanceScore property value. Indicates a weighted average of boot score and logon score used for measuring startup performance. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsModelScores) SetStartupPerformanceScore(value *float64)() {
     err := m.GetBackingStore().Set("startupPerformanceScore", value)
@@ -350,6 +384,7 @@ type UserExperienceAnalyticsModelScoresable interface {
     GetManufacturer()(*string)
     GetModel()(*string)
     GetModelDeviceCount()(*int64)
+    GetOdataType()(*string)
     GetStartupPerformanceScore()(*float64)
     GetWorkFromAnywhereScore()(*float64)
     SetAppReliabilityScore(value *float64)()
@@ -359,6 +394,7 @@ type UserExperienceAnalyticsModelScoresable interface {
     SetManufacturer(value *string)()
     SetModel(value *string)()
     SetModelDeviceCount(value *int64)()
+    SetOdataType(value *string)()
     SetStartupPerformanceScore(value *float64)()
     SetWorkFromAnywhereScore(value *float64)()
 }

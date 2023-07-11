@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosGeneralDeviceConfiguration 
+// IosGeneralDeviceConfiguration this topic provides descriptions of the declared methods, properties and relationships exposed by the iosGeneralDeviceConfiguration resource.
 type IosGeneralDeviceConfiguration struct {
     DeviceConfiguration
 }
-// NewIosGeneralDeviceConfiguration instantiates a new IosGeneralDeviceConfiguration and sets the default values.
+// NewIosGeneralDeviceConfiguration instantiates a new iosGeneralDeviceConfiguration and sets the default values.
 func NewIosGeneralDeviceConfiguration()(*IosGeneralDeviceConfiguration) {
     m := &IosGeneralDeviceConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),

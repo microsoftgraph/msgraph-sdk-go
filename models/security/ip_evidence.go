@@ -7,8 +7,10 @@ import (
 // IpEvidence 
 type IpEvidence struct {
     AlertEvidence
+    // The OdataType property
+    OdataType *string
 }
-// NewIpEvidence instantiates a new IpEvidence and sets the default values.
+// NewIpEvidence instantiates a new ipEvidence and sets the default values.
 func NewIpEvidence()(*IpEvidence) {
     m := &IpEvidence{
         AlertEvidence: *NewAlertEvidence(),

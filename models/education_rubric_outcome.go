@@ -7,8 +7,10 @@ import (
 // EducationRubricOutcome 
 type EducationRubricOutcome struct {
     EducationOutcome
+    // The OdataType property
+    OdataType *string
 }
-// NewEducationRubricOutcome instantiates a new EducationRubricOutcome and sets the default values.
+// NewEducationRubricOutcome instantiates a new educationRubricOutcome and sets the default values.
 func NewEducationRubricOutcome()(*EducationRubricOutcome) {
     m := &EducationRubricOutcome{
         EducationOutcome: *NewEducationOutcome(),

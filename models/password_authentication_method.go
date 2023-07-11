@@ -8,8 +8,10 @@ import (
 // PasswordAuthenticationMethod 
 type PasswordAuthenticationMethod struct {
     AuthenticationMethod
+    // The OdataType property
+    OdataType *string
 }
-// NewPasswordAuthenticationMethod instantiates a new PasswordAuthenticationMethod and sets the default values.
+// NewPasswordAuthenticationMethod instantiates a new passwordAuthenticationMethod and sets the default values.
 func NewPasswordAuthenticationMethod()(*PasswordAuthenticationMethod) {
     m := &PasswordAuthenticationMethod{
         AuthenticationMethod: *NewAuthenticationMethod(),

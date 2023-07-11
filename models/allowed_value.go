@@ -7,8 +7,10 @@ import (
 // AllowedValue 
 type AllowedValue struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewAllowedValue instantiates a new AllowedValue and sets the default values.
+// NewAllowedValue instantiates a new allowedValue and sets the default values.
 func NewAllowedValue()(*AllowedValue) {
     m := &AllowedValue{
         Entity: *NewEntity(),

@@ -22,6 +22,16 @@ func CreatePlannerAssignedToTaskBoardTaskFormatFromDiscriminatorValue(parseNode 
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PlannerAssignedToTaskBoardTaskFormat) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["orderHintsByAssignee"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePlannerOrderHintsByAssigneeFromDiscriminatorValue)
         if err != nil {
@@ -43,6 +53,17 @@ func (m *PlannerAssignedToTaskBoardTaskFormat) GetFieldDeserializers()(map[strin
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PlannerAssignedToTaskBoardTaskFormat) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOrderHintsByAssignee gets the orderHintsByAssignee property value. Dictionary of hints used to order tasks on the AssignedTo view of the Task Board. The key of each entry is one of the users the task is assigned to and the value is the order hint. The format of each value is defined as outlined here.
 func (m *PlannerAssignedToTaskBoardTaskFormat) GetOrderHintsByAssignee()(PlannerOrderHintsByAssigneeable) {
@@ -73,6 +94,12 @@ func (m *PlannerAssignedToTaskBoardTaskFormat) Serialize(writer i878a80d2330e89d
         return err
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("orderHintsByAssignee", m.GetOrderHintsByAssignee())
         if err != nil {
             return err
@@ -85,6 +112,13 @@ func (m *PlannerAssignedToTaskBoardTaskFormat) Serialize(writer i878a80d2330e89d
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PlannerAssignedToTaskBoardTaskFormat) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOrderHintsByAssignee sets the orderHintsByAssignee property value. Dictionary of hints used to order tasks on the AssignedTo view of the Task Board. The key of each entry is one of the users the task is assigned to and the value is the order hint. The format of each value is defined as outlined here.
 func (m *PlannerAssignedToTaskBoardTaskFormat) SetOrderHintsByAssignee(value PlannerOrderHintsByAssigneeable)() {
@@ -104,8 +138,10 @@ func (m *PlannerAssignedToTaskBoardTaskFormat) SetUnassignedOrderHint(value *str
 type PlannerAssignedToTaskBoardTaskFormatable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetOrderHintsByAssignee()(PlannerOrderHintsByAssigneeable)
     GetUnassignedOrderHint()(*string)
+    SetOdataType(value *string)()
     SetOrderHintsByAssignee(value PlannerOrderHintsByAssigneeable)()
     SetUnassignedOrderHint(value *string)()
 }

@@ -8,7 +8,7 @@ import (
 type UnclassifiedArtifact struct {
     Artifact
 }
-// NewUnclassifiedArtifact instantiates a new UnclassifiedArtifact and sets the default values.
+// NewUnclassifiedArtifact instantiates a new unclassifiedArtifact and sets the default values.
 func NewUnclassifiedArtifact()(*UnclassifiedArtifact) {
     m := &UnclassifiedArtifact{
         Artifact: *NewArtifact(),

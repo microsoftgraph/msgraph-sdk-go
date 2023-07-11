@@ -7,6 +7,8 @@ import (
 // PlannerBucket 
 type PlannerBucket struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewPlannerBucket instantiates a new plannerBucket and sets the default values.
 func NewPlannerBucket()(*PlannerBucket) {

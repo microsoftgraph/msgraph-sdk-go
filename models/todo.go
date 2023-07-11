@@ -38,6 +38,16 @@ func (m *Todo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLists gets the lists property value. The task lists in the users mailbox.
@@ -48,6 +58,17 @@ func (m *Todo) GetLists()([]TodoTaskListable) {
     }
     if val != nil {
         return val.([]TodoTaskListable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Todo) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -69,6 +90,12 @@ func (m *Todo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetLists sets the lists property value. The task lists in the users mailbox.
@@ -78,10 +105,19 @@ func (m *Todo) SetLists(value []TodoTaskListable)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Todo) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // Todoable 
 type Todoable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetLists()([]TodoTaskListable)
+    GetOdataType()(*string)
     SetLists(value []TodoTaskListable)()
+    SetOdataType(value *string)()
 }

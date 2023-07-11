@@ -7,6 +7,8 @@ import (
 // Site 
 type Site struct {
     BaseItem
+    // The OdataType property
+    OdataType *string
 }
 // NewSite instantiates a new site and sets the default values.
 func NewSite()(*Site) {

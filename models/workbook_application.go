@@ -7,6 +7,8 @@ import (
 // WorkbookApplication 
 type WorkbookApplication struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewWorkbookApplication instantiates a new workbookApplication and sets the default values.
 func NewWorkbookApplication()(*WorkbookApplication) {

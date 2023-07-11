@@ -7,6 +7,8 @@ import (
 // OAuth2PermissionGrant 
 type OAuth2PermissionGrant struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewOAuth2PermissionGrant instantiates a new oAuth2PermissionGrant and sets the default values.
 func NewOAuth2PermissionGrant()(*OAuth2PermissionGrant) {

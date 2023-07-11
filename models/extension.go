@@ -7,6 +7,8 @@ import (
 // Extension 
 type Extension struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewExtension instantiates a new extension and sets the default values.
 func NewExtension()(*Extension) {

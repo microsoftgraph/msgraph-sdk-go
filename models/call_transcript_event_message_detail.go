@@ -7,8 +7,10 @@ import (
 // CallTranscriptEventMessageDetail 
 type CallTranscriptEventMessageDetail struct {
     EventMessageDetail
+    // The OdataType property
+    OdataType *string
 }
-// NewCallTranscriptEventMessageDetail instantiates a new CallTranscriptEventMessageDetail and sets the default values.
+// NewCallTranscriptEventMessageDetail instantiates a new callTranscriptEventMessageDetail and sets the default values.
 func NewCallTranscriptEventMessageDetail()(*CallTranscriptEventMessageDetail) {
     m := &CallTranscriptEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),

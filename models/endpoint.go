@@ -7,6 +7,8 @@ import (
 // Endpoint 
 type Endpoint struct {
     DirectoryObject
+    // The OdataType property
+    OdataType *string
 }
 // NewEndpoint instantiates a new endpoint and sets the default values.
 func NewEndpoint()(*Endpoint) {

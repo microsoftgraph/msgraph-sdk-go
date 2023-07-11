@@ -8,7 +8,7 @@ import (
 type DataPolicyOperationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDataPolicyOperationCollectionResponse instantiates a new DataPolicyOperationCollectionResponse and sets the default values.
+// NewDataPolicyOperationCollectionResponse instantiates a new dataPolicyOperationCollectionResponse and sets the default values.
 func NewDataPolicyOperationCollectionResponse()(*DataPolicyOperationCollectionResponse) {
     m := &DataPolicyOperationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

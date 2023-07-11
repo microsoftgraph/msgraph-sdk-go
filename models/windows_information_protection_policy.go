@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsInformationProtectionPolicy 
+// WindowsInformationProtectionPolicy policy for Windows information protection without MDM
 type WindowsInformationProtectionPolicy struct {
     WindowsInformationProtection
 }
-// NewWindowsInformationProtectionPolicy instantiates a new WindowsInformationProtectionPolicy and sets the default values.
+// NewWindowsInformationProtectionPolicy instantiates a new windowsInformationProtectionPolicy and sets the default values.
 func NewWindowsInformationProtectionPolicy()(*WindowsInformationProtectionPolicy) {
     m := &WindowsInformationProtectionPolicy{
         WindowsInformationProtection: *NewWindowsInformationProtection(),

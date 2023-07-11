@@ -7,8 +7,10 @@ import (
 // SignInFrequencySessionControl 
 type SignInFrequencySessionControl struct {
     ConditionalAccessSessionControl
+    // The OdataType property
+    OdataType *string
 }
-// NewSignInFrequencySessionControl instantiates a new SignInFrequencySessionControl and sets the default values.
+// NewSignInFrequencySessionControl instantiates a new signInFrequencySessionControl and sets the default values.
 func NewSignInFrequencySessionControl()(*SignInFrequencySessionControl) {
     m := &SignInFrequencySessionControl{
         ConditionalAccessSessionControl: *NewConditionalAccessSessionControl(),

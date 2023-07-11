@@ -8,7 +8,7 @@ import (
 type ManagedAppStatusCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewManagedAppStatusCollectionResponse instantiates a new ManagedAppStatusCollectionResponse and sets the default values.
+// NewManagedAppStatusCollectionResponse instantiates a new managedAppStatusCollectionResponse and sets the default values.
 func NewManagedAppStatusCollectionResponse()(*ManagedAppStatusCollectionResponse) {
     m := &ManagedAppStatusCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

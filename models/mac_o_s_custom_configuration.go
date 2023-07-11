@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MacOSCustomConfiguration 
+// MacOSCustomConfiguration this topic provides descriptions of the declared methods, properties and relationships exposed by the macOSCustomConfiguration resource.
 type MacOSCustomConfiguration struct {
     DeviceConfiguration
 }
-// NewMacOSCustomConfiguration instantiates a new MacOSCustomConfiguration and sets the default values.
+// NewMacOSCustomConfiguration instantiates a new macOSCustomConfiguration and sets the default values.
 func NewMacOSCustomConfiguration()(*MacOSCustomConfiguration) {
     m := &MacOSCustomConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),

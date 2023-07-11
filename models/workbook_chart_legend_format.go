@@ -7,6 +7,8 @@ import (
 // WorkbookChartLegendFormat 
 type WorkbookChartLegendFormat struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewWorkbookChartLegendFormat instantiates a new workbookChartLegendFormat and sets the default values.
 func NewWorkbookChartLegendFormat()(*WorkbookChartLegendFormat) {

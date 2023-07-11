@@ -7,8 +7,10 @@ import (
 // EducationAssignmentPointsGrade 
 type EducationAssignmentPointsGrade struct {
     EducationAssignmentGrade
+    // The OdataType property
+    OdataType *string
 }
-// NewEducationAssignmentPointsGrade instantiates a new EducationAssignmentPointsGrade and sets the default values.
+// NewEducationAssignmentPointsGrade instantiates a new educationAssignmentPointsGrade and sets the default values.
 func NewEducationAssignmentPointsGrade()(*EducationAssignmentPointsGrade) {
     m := &EducationAssignmentPointsGrade{
         EducationAssignmentGrade: *NewEducationAssignmentGrade(),

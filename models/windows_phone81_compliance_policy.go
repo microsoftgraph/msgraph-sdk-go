@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsPhone81CompliancePolicy 
+// WindowsPhone81CompliancePolicy this class contains compliance settings for Windows 8.1 Mobile.
 type WindowsPhone81CompliancePolicy struct {
     DeviceCompliancePolicy
 }
-// NewWindowsPhone81CompliancePolicy instantiates a new WindowsPhone81CompliancePolicy and sets the default values.
+// NewWindowsPhone81CompliancePolicy instantiates a new windowsPhone81CompliancePolicy and sets the default values.
 func NewWindowsPhone81CompliancePolicy()(*WindowsPhone81CompliancePolicy) {
     m := &WindowsPhone81CompliancePolicy{
         DeviceCompliancePolicy: *NewDeviceCompliancePolicy(),

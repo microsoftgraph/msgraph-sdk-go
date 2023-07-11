@@ -7,6 +7,8 @@ import (
 // SettingStateDeviceSummary device Compilance Policy and Configuration for a Setting State summary
 type SettingStateDeviceSummary struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewSettingStateDeviceSummary instantiates a new settingStateDeviceSummary and sets the default values.
 func NewSettingStateDeviceSummary()(*SettingStateDeviceSummary) {

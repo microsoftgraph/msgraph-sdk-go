@@ -8,7 +8,7 @@ import (
 type Domain struct {
     Entity
 }
-// NewDomain instantiates a new Domain and sets the default values.
+// NewDomain instantiates a new domain and sets the default values.
 func NewDomain()(*Domain) {
     m := &Domain{
         Entity: *NewEntity(),
@@ -188,6 +188,16 @@ func (m *Domain) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["passwordNotificationWindowInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -337,6 +347,17 @@ func (m *Domain) GetManufacturer()(*string) {
 // GetModel gets the model property value. The model property
 func (m *Domain) GetModel()(*string) {
     val, err := m.GetBackingStore().Get("model")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Domain) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -496,6 +517,12 @@ func (m *Domain) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("passwordNotificationWindowInDays", m.GetPasswordNotificationWindowInDays())
         if err != nil {
             return err
@@ -622,6 +649,13 @@ func (m *Domain) SetModel(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Domain) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPasswordNotificationWindowInDays sets the passwordNotificationWindowInDays property value. Specifies the number of days before a user receives notification that their password will expire. If the property is not set, a default value of 14 days will be used.
 func (m *Domain) SetPasswordNotificationWindowInDays(value *int32)() {
     err := m.GetBackingStore().Set("passwordNotificationWindowInDays", value)
@@ -679,6 +713,7 @@ type Domainable interface {
     GetIsVerified()(*bool)
     GetManufacturer()(*string)
     GetModel()(*string)
+    GetOdataType()(*string)
     GetPasswordNotificationWindowInDays()(*int32)
     GetPasswordValidityPeriodInDays()(*int32)
     GetServiceConfigurationRecords()([]DomainDnsRecordable)
@@ -696,6 +731,7 @@ type Domainable interface {
     SetIsVerified(value *bool)()
     SetManufacturer(value *string)()
     SetModel(value *string)()
+    SetOdataType(value *string)()
     SetPasswordNotificationWindowInDays(value *int32)()
     SetPasswordValidityPeriodInDays(value *int32)()
     SetServiceConfigurationRecords(value []DomainDnsRecordable)()

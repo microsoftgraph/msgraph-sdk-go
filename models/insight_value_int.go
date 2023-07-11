@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// InsightValueInt 
+// InsightValueInt the value in an user experience analytics insight.
 type InsightValueInt struct {
     UserExperienceAnalyticsInsightValue
+    // The OdataType property
+    OdataType *string
 }
-// NewInsightValueInt instantiates a new InsightValueInt and sets the default values.
+// NewInsightValueInt instantiates a new insightValueInt and sets the default values.
 func NewInsightValueInt()(*InsightValueInt) {
     m := &InsightValueInt{
         UserExperienceAnalyticsInsightValue: *NewUserExperienceAnalyticsInsightValue(),

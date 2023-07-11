@@ -8,6 +8,8 @@ import (
 // TeamsAppDefinition 
 type TeamsAppDefinition struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewTeamsAppDefinition instantiates a new teamsAppDefinition and sets the default values.
 func NewTeamsAppDefinition()(*TeamsAppDefinition) {
@@ -20,7 +22,7 @@ func NewTeamsAppDefinition()(*TeamsAppDefinition) {
 func CreateTeamsAppDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamsAppDefinition(), nil
 }
-// GetAuthorization gets the authorization property value. The authorization property
+// GetAuthorization gets the authorization property value. Authorization requirements specified in the Teams app manifest.
 func (m *TeamsAppDefinition) GetAuthorization()(TeamsAppAuthorizationable) {
     val, err := m.GetBackingStore().Get("authorization")
     if err != nil {
@@ -304,7 +306,7 @@ func (m *TeamsAppDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetAuthorization sets the authorization property value. The authorization property
+// SetAuthorization sets the authorization property value. Authorization requirements specified in the Teams app manifest.
 func (m *TeamsAppDefinition) SetAuthorization(value TeamsAppAuthorizationable)() {
     err := m.GetBackingStore().Set("authorization", value)
     if err != nil {

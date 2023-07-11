@@ -8,7 +8,7 @@ import (
 type UserIdentity struct {
     Identity
 }
-// NewUserIdentity instantiates a new UserIdentity and sets the default values.
+// NewUserIdentity instantiates a new userIdentity and sets the default values.
 func NewUserIdentity()(*UserIdentity) {
     m := &UserIdentity{
         Identity: *NewIdentity(),
@@ -34,6 +34,16 @@ func (m *UserIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -49,6 +59,17 @@ func (m *UserIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 // GetIpAddress gets the ipAddress property value. Indicates the client IP address used by user performing the activity (audit log only).
 func (m *UserIdentity) GetIpAddress()(*string) {
     val, err := m.GetBackingStore().Get("ipAddress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UserIdentity) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -81,6 +102,12 @@ func (m *UserIdentity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("userPrincipalName", m.GetUserPrincipalName())
         if err != nil {
             return err
@@ -91,6 +118,13 @@ func (m *UserIdentity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 // SetIpAddress sets the ipAddress property value. Indicates the client IP address used by user performing the activity (audit log only).
 func (m *UserIdentity) SetIpAddress(value *string)() {
     err := m.GetBackingStore().Set("ipAddress", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UserIdentity) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -107,7 +141,9 @@ type UserIdentityable interface {
     Identityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetIpAddress()(*string)
+    GetOdataType()(*string)
     GetUserPrincipalName()(*string)
     SetIpAddress(value *string)()
+    SetOdataType(value *string)()
     SetUserPrincipalName(value *string)()
 }

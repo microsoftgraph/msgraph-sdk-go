@@ -8,8 +8,10 @@ import (
 // EducationAssignment 
 type EducationAssignment struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewEducationAssignment instantiates a new EducationAssignment and sets the default values.
+// NewEducationAssignment instantiates a new educationAssignment and sets the default values.
 func NewEducationAssignment()(*EducationAssignment) {
     m := &EducationAssignment{
         Entity: *NewEntity(),

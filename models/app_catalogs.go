@@ -7,8 +7,10 @@ import (
 // AppCatalogs 
 type AppCatalogs struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewAppCatalogs instantiates a new AppCatalogs and sets the default values.
+// NewAppCatalogs instantiates a new appCatalogs and sets the default values.
 func NewAppCatalogs()(*AppCatalogs) {
     m := &AppCatalogs{
         Entity: *NewEntity(),

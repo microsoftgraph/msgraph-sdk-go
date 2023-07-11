@@ -7,8 +7,10 @@ import (
 // PhoneAuthenticationMethod 
 type PhoneAuthenticationMethod struct {
     AuthenticationMethod
+    // The OdataType property
+    OdataType *string
 }
-// NewPhoneAuthenticationMethod instantiates a new PhoneAuthenticationMethod and sets the default values.
+// NewPhoneAuthenticationMethod instantiates a new phoneAuthenticationMethod and sets the default values.
 func NewPhoneAuthenticationMethod()(*PhoneAuthenticationMethod) {
     m := &PhoneAuthenticationMethod{
         AuthenticationMethod: *NewAuthenticationMethod(),

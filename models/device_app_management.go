@@ -5,11 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceAppManagement 
+// DeviceAppManagement singleton entity that acts as a container for all device app management functionality.
 type DeviceAppManagement struct {
     Entity
 }
-// NewDeviceAppManagement instantiates a new DeviceAppManagement and sets the default values.
+// NewDeviceAppManagement instantiates a new deviceAppManagement and sets the default values.
 func NewDeviceAppManagement()(*DeviceAppManagement) {
     m := &DeviceAppManagement{
         Entity: *NewEntity(),
@@ -261,6 +261,16 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["targetedManagedAppConfigurations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTargetedManagedAppConfigurationFromDiscriminatorValue)
         if err != nil {
@@ -451,6 +461,17 @@ func (m *DeviceAppManagement) GetMobileApps()([]MobileAppable) {
     }
     if val != nil {
         return val.([]MobileAppable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceAppManagement) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -649,6 +670,12 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetTargetedManagedAppConfigurations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTargetedManagedAppConfigurations()))
         for i, v := range m.GetTargetedManagedAppConfigurations() {
@@ -792,6 +819,13 @@ func (m *DeviceAppManagement) SetMobileApps(value []MobileAppable)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceAppManagement) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTargetedManagedAppConfigurations sets the targetedManagedAppConfigurations property value. Targeted managed app configurations.
 func (m *DeviceAppManagement) SetTargetedManagedAppConfigurations(value []TargetedManagedAppConfigurationable)() {
     err := m.GetBackingStore().Set("targetedManagedAppConfigurations", value)
@@ -832,6 +866,7 @@ type DeviceAppManagementable interface {
     GetMobileAppCategories()([]MobileAppCategoryable)
     GetMobileAppConfigurations()([]ManagedDeviceMobileAppConfigurationable)
     GetMobileApps()([]MobileAppable)
+    GetOdataType()(*string)
     GetTargetedManagedAppConfigurations()([]TargetedManagedAppConfigurationable)
     GetVppTokens()([]VppTokenable)
     GetWindowsInformationProtectionPolicies()([]WindowsInformationProtectionPolicyable)
@@ -850,6 +885,7 @@ type DeviceAppManagementable interface {
     SetMobileAppCategories(value []MobileAppCategoryable)()
     SetMobileAppConfigurations(value []ManagedDeviceMobileAppConfigurationable)()
     SetMobileApps(value []MobileAppable)()
+    SetOdataType(value *string)()
     SetTargetedManagedAppConfigurations(value []TargetedManagedAppConfigurationable)()
     SetVppTokens(value []VppTokenable)()
     SetWindowsInformationProtectionPolicies(value []WindowsInformationProtectionPolicyable)()

@@ -8,6 +8,8 @@ import (
 // SynchronizationTemplate 
 type SynchronizationTemplate struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewSynchronizationTemplate instantiates a new synchronizationTemplate and sets the default values.
 func NewSynchronizationTemplate()(*SynchronizationTemplate) {
@@ -20,7 +22,7 @@ func NewSynchronizationTemplate()(*SynchronizationTemplate) {
 func CreateSynchronizationTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSynchronizationTemplate(), nil
 }
-// GetApplicationId gets the applicationId property value. The applicationId property
+// GetApplicationId gets the applicationId property value. Identifier of the application this template belongs to.
 func (m *SynchronizationTemplate) GetApplicationId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("applicationId")
     if err != nil {
@@ -31,7 +33,7 @@ func (m *SynchronizationTemplate) GetApplicationId()(*i561e97a8befe7661a44c8f546
     }
     return nil
 }
-// GetDefault gets the default property value. The default property
+// GetDefault gets the default property value. true if this template is recommended to be the default for the application.
 func (m *SynchronizationTemplate) GetDefault()(*bool) {
     val, err := m.GetBackingStore().Get("defaultEscaped")
     if err != nil {
@@ -42,7 +44,7 @@ func (m *SynchronizationTemplate) GetDefault()(*bool) {
     }
     return nil
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. Description of the template.
 func (m *SynchronizationTemplate) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -53,7 +55,7 @@ func (m *SynchronizationTemplate) GetDescription()(*string) {
     }
     return nil
 }
-// GetDiscoverable gets the discoverable property value. The discoverable property
+// GetDiscoverable gets the discoverable property value. true if this template should appear in the collection of templates available for the application instance (service principal).
 func (m *SynchronizationTemplate) GetDiscoverable()(*bool) {
     val, err := m.GetBackingStore().Get("discoverable")
     if err != nil {
@@ -64,7 +66,7 @@ func (m *SynchronizationTemplate) GetDiscoverable()(*bool) {
     }
     return nil
 }
-// GetFactoryTag gets the factoryTag property value. The factoryTag property
+// GetFactoryTag gets the factoryTag property value. One of the well-known factory tags supported by the synchronization engine. The factoryTag tells the synchronization engine which implementation to use when processing jobs based on this template.
 func (m *SynchronizationTemplate) GetFactoryTag()(*string) {
     val, err := m.GetBackingStore().Get("factoryTag")
     if err != nil {
@@ -156,7 +158,7 @@ func (m *SynchronizationTemplate) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetMetadata gets the metadata property value. The metadata property
+// GetMetadata gets the metadata property value. Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
 func (m *SynchronizationTemplate) GetMetadata()([]SynchronizationMetadataEntryable) {
     val, err := m.GetBackingStore().Get("metadata")
     if err != nil {
@@ -167,7 +169,7 @@ func (m *SynchronizationTemplate) GetMetadata()([]SynchronizationMetadataEntryab
     }
     return nil
 }
-// GetSchema gets the schema property value. The schema property
+// GetSchema gets the schema property value. Default synchronization schema for the jobs based on this template.
 func (m *SynchronizationTemplate) GetSchema()(SynchronizationSchemaable) {
     val, err := m.GetBackingStore().Get("schema")
     if err != nil {
@@ -234,49 +236,49 @@ func (m *SynchronizationTemplate) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetApplicationId sets the applicationId property value. The applicationId property
+// SetApplicationId sets the applicationId property value. Identifier of the application this template belongs to.
 func (m *SynchronizationTemplate) SetApplicationId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     err := m.GetBackingStore().Set("applicationId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDefault sets the default property value. The default property
+// SetDefault sets the default property value. true if this template is recommended to be the default for the application.
 func (m *SynchronizationTemplate) SetDefault(value *bool)() {
     err := m.GetBackingStore().Set("defaultEscaped", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. Description of the template.
 func (m *SynchronizationTemplate) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDiscoverable sets the discoverable property value. The discoverable property
+// SetDiscoverable sets the discoverable property value. true if this template should appear in the collection of templates available for the application instance (service principal).
 func (m *SynchronizationTemplate) SetDiscoverable(value *bool)() {
     err := m.GetBackingStore().Set("discoverable", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFactoryTag sets the factoryTag property value. The factoryTag property
+// SetFactoryTag sets the factoryTag property value. One of the well-known factory tags supported by the synchronization engine. The factoryTag tells the synchronization engine which implementation to use when processing jobs based on this template.
 func (m *SynchronizationTemplate) SetFactoryTag(value *string)() {
     err := m.GetBackingStore().Set("factoryTag", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMetadata sets the metadata property value. The metadata property
+// SetMetadata sets the metadata property value. Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
 func (m *SynchronizationTemplate) SetMetadata(value []SynchronizationMetadataEntryable)() {
     err := m.GetBackingStore().Set("metadata", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSchema sets the schema property value. The schema property
+// SetSchema sets the schema property value. Default synchronization schema for the jobs based on this template.
 func (m *SynchronizationTemplate) SetSchema(value SynchronizationSchemaable)() {
     err := m.GetBackingStore().Set("schema", value)
     if err != nil {

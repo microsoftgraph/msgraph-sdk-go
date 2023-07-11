@@ -8,7 +8,7 @@ import (
 type CustomTimeZone struct {
     TimeZoneBase
 }
-// NewCustomTimeZone instantiates a new CustomTimeZone and sets the default values.
+// NewCustomTimeZone instantiates a new customTimeZone and sets the default values.
 func NewCustomTimeZone()(*CustomTimeZone) {
     m := &CustomTimeZone{
         TimeZoneBase: *NewTimeZoneBase(),
@@ -66,6 +66,16 @@ func (m *CustomTimeZone) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["standardOffset"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateStandardTimeZoneOffsetFromDiscriminatorValue)
         if err != nil {
@@ -77,6 +87,17 @@ func (m *CustomTimeZone) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CustomTimeZone) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetStandardOffset gets the standardOffset property value. Specifies when the time zone switches from daylight saving time to standard time.
 func (m *CustomTimeZone) GetStandardOffset()(StandardTimeZoneOffsetable) {
@@ -108,6 +129,12 @@ func (m *CustomTimeZone) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("standardOffset", m.GetStandardOffset())
         if err != nil {
             return err
@@ -129,6 +156,13 @@ func (m *CustomTimeZone) SetDaylightOffset(value DaylightTimeZoneOffsetable)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CustomTimeZone) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetStandardOffset sets the standardOffset property value. Specifies when the time zone switches from daylight saving time to standard time.
 func (m *CustomTimeZone) SetStandardOffset(value StandardTimeZoneOffsetable)() {
     err := m.GetBackingStore().Set("standardOffset", value)
@@ -142,8 +176,10 @@ type CustomTimeZoneable interface {
     TimeZoneBaseable
     GetBias()(*int32)
     GetDaylightOffset()(DaylightTimeZoneOffsetable)
+    GetOdataType()(*string)
     GetStandardOffset()(StandardTimeZoneOffsetable)
     SetBias(value *int32)()
     SetDaylightOffset(value DaylightTimeZoneOffsetable)()
+    SetOdataType(value *string)()
     SetStandardOffset(value StandardTimeZoneOffsetable)()
 }

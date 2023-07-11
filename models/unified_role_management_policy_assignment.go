@@ -22,6 +22,16 @@ func CreateUnifiedRoleManagementPolicyAssignmentFromDiscriminatorValue(parseNode
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UnifiedRoleManagementPolicyAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["policy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUnifiedRoleManagementPolicyFromDiscriminatorValue)
         if err != nil {
@@ -73,6 +83,17 @@ func (m *UnifiedRoleManagementPolicyAssignment) GetFieldDeserializers()(map[stri
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UnifiedRoleManagementPolicyAssignment) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPolicy gets the policy property value. The policy that's associated with a policy assignment. Supports $expand and a nested $expand of the rules and effectiveRules relationships for the policy.
 func (m *UnifiedRoleManagementPolicyAssignment) GetPolicy()(UnifiedRoleManagementPolicyable) {
@@ -136,6 +157,12 @@ func (m *UnifiedRoleManagementPolicyAssignment) Serialize(writer i878a80d2330e89
         return err
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("policy", m.GetPolicy())
         if err != nil {
             return err
@@ -166,6 +193,13 @@ func (m *UnifiedRoleManagementPolicyAssignment) Serialize(writer i878a80d2330e89
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UnifiedRoleManagementPolicyAssignment) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPolicy sets the policy property value. The policy that's associated with a policy assignment. Supports $expand and a nested $expand of the rules and effectiveRules relationships for the policy.
 func (m *UnifiedRoleManagementPolicyAssignment) SetPolicy(value UnifiedRoleManagementPolicyable)() {
@@ -206,11 +240,13 @@ func (m *UnifiedRoleManagementPolicyAssignment) SetScopeType(value *string)() {
 type UnifiedRoleManagementPolicyAssignmentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetPolicy()(UnifiedRoleManagementPolicyable)
     GetPolicyId()(*string)
     GetRoleDefinitionId()(*string)
     GetScopeId()(*string)
     GetScopeType()(*string)
+    SetOdataType(value *string)()
     SetPolicy(value UnifiedRoleManagementPolicyable)()
     SetPolicyId(value *string)()
     SetRoleDefinitionId(value *string)()

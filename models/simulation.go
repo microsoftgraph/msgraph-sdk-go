@@ -8,6 +8,8 @@ import (
 // Simulation 
 type Simulation struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewSimulation instantiates a new simulation and sets the default values.
 func NewSimulation()(*Simulation) {

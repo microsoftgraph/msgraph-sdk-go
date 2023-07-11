@@ -8,7 +8,7 @@ import (
 type MailFolderCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewMailFolderCollectionResponse instantiates a new MailFolderCollectionResponse and sets the default values.
+// NewMailFolderCollectionResponse instantiates a new mailFolderCollectionResponse and sets the default values.
 func NewMailFolderCollectionResponse()(*MailFolderCollectionResponse) {
     m := &MailFolderCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

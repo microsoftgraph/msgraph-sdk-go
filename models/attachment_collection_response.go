@@ -8,7 +8,7 @@ import (
 type AttachmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAttachmentCollectionResponse instantiates a new AttachmentCollectionResponse and sets the default values.
+// NewAttachmentCollectionResponse instantiates a new attachmentCollectionResponse and sets the default values.
 func NewAttachmentCollectionResponse()(*AttachmentCollectionResponse) {
     m := &AttachmentCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

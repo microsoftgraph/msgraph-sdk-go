@@ -8,6 +8,8 @@ import (
 // BrowserSite singleton entity which is used to specify IE mode site metadata
 type BrowserSite struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewBrowserSite instantiates a new browserSite and sets the default values.
 func NewBrowserSite()(*BrowserSite) {

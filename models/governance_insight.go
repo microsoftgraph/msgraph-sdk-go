@@ -8,6 +8,8 @@ import (
 // GovernanceInsight 
 type GovernanceInsight struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewGovernanceInsight instantiates a new governanceInsight and sets the default values.
 func NewGovernanceInsight()(*GovernanceInsight) {

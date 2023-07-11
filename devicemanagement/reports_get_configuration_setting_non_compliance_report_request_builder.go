@@ -30,10 +30,7 @@ func NewReportsGetConfigurationSettingNonComplianceReportRequestBuilder(rawUrl s
     urlParams["request-raw-url"] = rawUrl
     return NewReportsGetConfigurationSettingNonComplianceReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post not yet documented
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getconfigurationsettingnoncompliancereport?view=graph-rest-1.0
+// Post invoke action getConfigurationSettingNonComplianceReport
 func (m *ReportsGetConfigurationSettingNonComplianceReportRequestBuilder) Post(ctx context.Context, body ReportsGetConfigurationSettingNonComplianceReportPostRequestBodyable, requestConfiguration *ReportsGetConfigurationSettingNonComplianceReportRequestBuilderPostRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -52,7 +49,7 @@ func (m *ReportsGetConfigurationSettingNonComplianceReportRequestBuilder) Post(c
     }
     return res.([]byte), nil
 }
-// ToPostRequestInformation not yet documented
+// ToPostRequestInformation invoke action getConfigurationSettingNonComplianceReport
 func (m *ReportsGetConfigurationSettingNonComplianceReportRequestBuilder) ToPostRequestInformation(ctx context.Context, body ReportsGetConfigurationSettingNonComplianceReportPostRequestBodyable, requestConfiguration *ReportsGetConfigurationSettingNonComplianceReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

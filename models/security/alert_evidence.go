@@ -51,8 +51,6 @@ func CreateAlertEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
                         return NewIpEvidence(), nil
                     case "#microsoft.graph.security.mailboxEvidence":
                         return NewMailboxEvidence(), nil
-                    case "#microsoft.graph.security.mailClusterEvidence":
-                        return NewMailClusterEvidence(), nil
                     case "#microsoft.graph.security.oauthApplicationEvidence":
                         return NewOauthApplicationEvidence(), nil
                     case "#microsoft.graph.security.processEvidence":

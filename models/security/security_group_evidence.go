@@ -7,8 +7,10 @@ import (
 // SecurityGroupEvidence 
 type SecurityGroupEvidence struct {
     AlertEvidence
+    // The OdataType property
+    OdataType *string
 }
-// NewSecurityGroupEvidence instantiates a new SecurityGroupEvidence and sets the default values.
+// NewSecurityGroupEvidence instantiates a new securityGroupEvidence and sets the default values.
 func NewSecurityGroupEvidence()(*SecurityGroupEvidence) {
     m := &SecurityGroupEvidence{
         AlertEvidence: *NewAlertEvidence(),

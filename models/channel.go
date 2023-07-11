@@ -8,6 +8,8 @@ import (
 // Channel 
 type Channel struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewChannel instantiates a new channel and sets the default values.
 func NewChannel()(*Channel) {

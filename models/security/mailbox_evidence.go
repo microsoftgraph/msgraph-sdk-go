@@ -7,8 +7,10 @@ import (
 // MailboxEvidence 
 type MailboxEvidence struct {
     AlertEvidence
+    // The OdataType property
+    OdataType *string
 }
-// NewMailboxEvidence instantiates a new MailboxEvidence and sets the default values.
+// NewMailboxEvidence instantiates a new mailboxEvidence and sets the default values.
 func NewMailboxEvidence()(*MailboxEvidence) {
     m := &MailboxEvidence{
         AlertEvidence: *NewAlertEvidence(),

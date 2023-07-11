@@ -7,8 +7,10 @@ import (
 // UserLastSignInRecommendationInsightSetting 
 type UserLastSignInRecommendationInsightSetting struct {
     AccessReviewRecommendationInsightSetting
+    // The OdataType property
+    OdataType *string
 }
-// NewUserLastSignInRecommendationInsightSetting instantiates a new UserLastSignInRecommendationInsightSetting and sets the default values.
+// NewUserLastSignInRecommendationInsightSetting instantiates a new userLastSignInRecommendationInsightSetting and sets the default values.
 func NewUserLastSignInRecommendationInsightSetting()(*UserLastSignInRecommendationInsightSetting) {
     m := &UserLastSignInRecommendationInsightSetting{
         AccessReviewRecommendationInsightSetting: *NewAccessReviewRecommendationInsightSetting(),

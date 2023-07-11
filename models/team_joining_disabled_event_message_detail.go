@@ -7,8 +7,10 @@ import (
 // TeamJoiningDisabledEventMessageDetail 
 type TeamJoiningDisabledEventMessageDetail struct {
     EventMessageDetail
+    // The OdataType property
+    OdataType *string
 }
-// NewTeamJoiningDisabledEventMessageDetail instantiates a new TeamJoiningDisabledEventMessageDetail and sets the default values.
+// NewTeamJoiningDisabledEventMessageDetail instantiates a new teamJoiningDisabledEventMessageDetail and sets the default values.
 func NewTeamJoiningDisabledEventMessageDetail()(*TeamJoiningDisabledEventMessageDetail) {
     m := &TeamJoiningDisabledEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),

@@ -9,7 +9,7 @@ import (
 type LifecycleWorkflowsContainer struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
 }
-// NewLifecycleWorkflowsContainer instantiates a new LifecycleWorkflowsContainer and sets the default values.
+// NewLifecycleWorkflowsContainer instantiates a new lifecycleWorkflowsContainer and sets the default values.
 func NewLifecycleWorkflowsContainer()(*LifecycleWorkflowsContainer) {
     m := &LifecycleWorkflowsContainer{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
@@ -68,6 +68,16 @@ func (m *LifecycleWorkflowsContainer) GetFieldDeserializers()(map[string]func(i8
         }
         if val != nil {
             m.SetDeletedItems(val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeletedItemContainerable))
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -130,6 +140,17 @@ func (m *LifecycleWorkflowsContainer) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *LifecycleWorkflowsContainer) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSettings gets the settings property value. The settings property
 func (m *LifecycleWorkflowsContainer) GetSettings()(LifecycleManagementSettingsable) {
@@ -200,6 +221,12 @@ func (m *LifecycleWorkflowsContainer) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("settings", m.GetSettings())
         if err != nil {
             return err
@@ -257,6 +284,13 @@ func (m *LifecycleWorkflowsContainer) SetDeletedItems(value iadcd81124412c61e647
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *LifecycleWorkflowsContainer) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSettings sets the settings property value. The settings property
 func (m *LifecycleWorkflowsContainer) SetSettings(value LifecycleManagementSettingsable)() {
     err := m.GetBackingStore().Set("settings", value)
@@ -291,12 +325,14 @@ type LifecycleWorkflowsContainerable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCustomTaskExtensions()([]CustomTaskExtensionable)
     GetDeletedItems()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeletedItemContainerable)
+    GetOdataType()(*string)
     GetSettings()(LifecycleManagementSettingsable)
     GetTaskDefinitions()([]TaskDefinitionable)
     GetWorkflows()([]Workflowable)
     GetWorkflowTemplates()([]WorkflowTemplateable)
     SetCustomTaskExtensions(value []CustomTaskExtensionable)()
     SetDeletedItems(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeletedItemContainerable)()
+    SetOdataType(value *string)()
     SetSettings(value LifecycleManagementSettingsable)()
     SetTaskDefinitions(value []TaskDefinitionable)()
     SetWorkflows(value []Workflowable)()

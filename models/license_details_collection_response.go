@@ -8,7 +8,7 @@ import (
 type LicenseDetailsCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewLicenseDetailsCollectionResponse instantiates a new LicenseDetailsCollectionResponse and sets the default values.
+// NewLicenseDetailsCollectionResponse instantiates a new licenseDetailsCollectionResponse and sets the default values.
 func NewLicenseDetailsCollectionResponse()(*LicenseDetailsCollectionResponse) {
     m := &LicenseDetailsCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

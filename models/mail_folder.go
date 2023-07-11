@@ -7,6 +7,8 @@ import (
 // MailFolder 
 type MailFolder struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewMailFolder instantiates a new mailFolder and sets the default values.
 func NewMailFolder()(*MailFolder) {

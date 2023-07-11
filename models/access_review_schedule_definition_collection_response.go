@@ -8,7 +8,7 @@ import (
 type AccessReviewScheduleDefinitionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAccessReviewScheduleDefinitionCollectionResponse instantiates a new AccessReviewScheduleDefinitionCollectionResponse and sets the default values.
+// NewAccessReviewScheduleDefinitionCollectionResponse instantiates a new accessReviewScheduleDefinitionCollectionResponse and sets the default values.
 func NewAccessReviewScheduleDefinitionCollectionResponse()(*AccessReviewScheduleDefinitionCollectionResponse) {
     m := &AccessReviewScheduleDefinitionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

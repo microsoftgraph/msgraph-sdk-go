@@ -38,7 +38,7 @@ func (m *SynchronizationError) GetAdditionalData()(map[string]any) {
 func (m *SynchronizationError) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCode gets the code property value. The code property
+// GetCode gets the code property value. The error code. For example, AzureDirectoryB2BManagementPolicyCheckFailure.
 func (m *SynchronizationError) GetCode()(*string) {
     val, err := m.GetBackingStore().Get("code")
     if err != nil {
@@ -94,7 +94,7 @@ func (m *SynchronizationError) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetMessage gets the message property value. The message property
+// GetMessage gets the message property value. The error message. For example, Policy permitting auto-redemption of invitations not configured.
 func (m *SynchronizationError) GetMessage()(*string) {
     val, err := m.GetBackingStore().Get("message")
     if err != nil {
@@ -116,7 +116,7 @@ func (m *SynchronizationError) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTenantActionable gets the tenantActionable property value. The tenantActionable property
+// GetTenantActionable gets the tenantActionable property value. The action to take to resolve the error. For example, false.
 func (m *SynchronizationError) GetTenantActionable()(*bool) {
     val, err := m.GetBackingStore().Get("tenantActionable")
     if err != nil {
@@ -172,14 +172,14 @@ func (m *SynchronizationError) SetAdditionalData(value map[string]any)() {
 func (m *SynchronizationError) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCode sets the code property value. The code property
+// SetCode sets the code property value. The error code. For example, AzureDirectoryB2BManagementPolicyCheckFailure.
 func (m *SynchronizationError) SetCode(value *string)() {
     err := m.GetBackingStore().Set("code", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMessage sets the message property value. The message property
+// SetMessage sets the message property value. The error message. For example, Policy permitting auto-redemption of invitations not configured.
 func (m *SynchronizationError) SetMessage(value *string)() {
     err := m.GetBackingStore().Set("message", value)
     if err != nil {
@@ -193,7 +193,7 @@ func (m *SynchronizationError) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTenantActionable sets the tenantActionable property value. The tenantActionable property
+// SetTenantActionable sets the tenantActionable property value. The action to take to resolve the error. For example, false.
 func (m *SynchronizationError) SetTenantActionable(value *bool)() {
     err := m.GetBackingStore().Set("tenantActionable", value)
     if err != nil {

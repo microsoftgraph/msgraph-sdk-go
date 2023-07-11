@@ -7,8 +7,10 @@ import (
 // UnifiedRoleAssignmentScheduleRequest 
 type UnifiedRoleAssignmentScheduleRequest struct {
     Request
+    // The OdataType property
+    OdataType *string
 }
-// NewUnifiedRoleAssignmentScheduleRequest instantiates a new UnifiedRoleAssignmentScheduleRequest and sets the default values.
+// NewUnifiedRoleAssignmentScheduleRequest instantiates a new unifiedRoleAssignmentScheduleRequest and sets the default values.
 func NewUnifiedRoleAssignmentScheduleRequest()(*UnifiedRoleAssignmentScheduleRequest) {
     m := &UnifiedRoleAssignmentScheduleRequest{
         Request: *NewRequest(),

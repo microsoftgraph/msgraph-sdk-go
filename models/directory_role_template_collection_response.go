@@ -8,7 +8,7 @@ import (
 type DirectoryRoleTemplateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDirectoryRoleTemplateCollectionResponse instantiates a new DirectoryRoleTemplateCollectionResponse and sets the default values.
+// NewDirectoryRoleTemplateCollectionResponse instantiates a new directoryRoleTemplateCollectionResponse and sets the default values.
 func NewDirectoryRoleTemplateCollectionResponse()(*DirectoryRoleTemplateCollectionResponse) {
     m := &DirectoryRoleTemplateCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

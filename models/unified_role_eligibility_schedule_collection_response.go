@@ -8,7 +8,7 @@ import (
 type UnifiedRoleEligibilityScheduleCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewUnifiedRoleEligibilityScheduleCollectionResponse instantiates a new UnifiedRoleEligibilityScheduleCollectionResponse and sets the default values.
+// NewUnifiedRoleEligibilityScheduleCollectionResponse instantiates a new unifiedRoleEligibilityScheduleCollectionResponse and sets the default values.
 func NewUnifiedRoleEligibilityScheduleCollectionResponse()(*UnifiedRoleEligibilityScheduleCollectionResponse) {
     m := &UnifiedRoleEligibilityScheduleCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

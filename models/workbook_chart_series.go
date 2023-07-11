@@ -7,6 +7,8 @@ import (
 // WorkbookChartSeries 
 type WorkbookChartSeries struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewWorkbookChartSeries instantiates a new workbookChartSeries and sets the default values.
 func NewWorkbookChartSeries()(*WorkbookChartSeries) {

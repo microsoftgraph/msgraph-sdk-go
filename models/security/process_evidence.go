@@ -8,8 +8,10 @@ import (
 // ProcessEvidence 
 type ProcessEvidence struct {
     AlertEvidence
+    // The OdataType property
+    OdataType *string
 }
-// NewProcessEvidence instantiates a new ProcessEvidence and sets the default values.
+// NewProcessEvidence instantiates a new processEvidence and sets the default values.
 func NewProcessEvidence()(*ProcessEvidence) {
     m := &ProcessEvidence{
         AlertEvidence: *NewAlertEvidence(),

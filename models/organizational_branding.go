@@ -7,8 +7,10 @@ import (
 // OrganizationalBranding 
 type OrganizationalBranding struct {
     OrganizationalBrandingProperties
+    // The OdataType property
+    OdataType *string
 }
-// NewOrganizationalBranding instantiates a new OrganizationalBranding and sets the default values.
+// NewOrganizationalBranding instantiates a new organizationalBranding and sets the default values.
 func NewOrganizationalBranding()(*OrganizationalBranding) {
     m := &OrganizationalBranding{
         OrganizationalBrandingProperties: *NewOrganizationalBrandingProperties(),

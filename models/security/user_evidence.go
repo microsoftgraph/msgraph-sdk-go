@@ -7,8 +7,10 @@ import (
 // UserEvidence 
 type UserEvidence struct {
     AlertEvidence
+    // The OdataType property
+    OdataType *string
 }
-// NewUserEvidence instantiates a new UserEvidence and sets the default values.
+// NewUserEvidence instantiates a new userEvidence and sets the default values.
 func NewUserEvidence()(*UserEvidence) {
     m := &UserEvidence{
         AlertEvidence: *NewAlertEvidence(),

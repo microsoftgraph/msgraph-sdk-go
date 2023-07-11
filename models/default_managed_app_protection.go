@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DefaultManagedAppProtection 
+// DefaultManagedAppProtection policy used to configure detailed management settings for a specified set of apps for all users not targeted by a TargetedManagedAppProtection Policy
 type DefaultManagedAppProtection struct {
     ManagedAppProtection
 }
-// NewDefaultManagedAppProtection instantiates a new DefaultManagedAppProtection and sets the default values.
+// NewDefaultManagedAppProtection instantiates a new defaultManagedAppProtection and sets the default values.
 func NewDefaultManagedAppProtection()(*DefaultManagedAppProtection) {
     m := &DefaultManagedAppProtection{
         ManagedAppProtection: *NewManagedAppProtection(),
@@ -234,6 +234,16 @@ func (m *DefaultManagedAppProtection) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["screenCaptureBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -271,6 +281,17 @@ func (m *DefaultManagedAppProtection) GetMinimumRequiredSdkVersion()(*string) {
 // GetMinimumWarningPatchVersion gets the minimumWarningPatchVersion property value. Define the oldest recommended Android security patch level a user can have for secure access to the app. (Android only)
 func (m *DefaultManagedAppProtection) GetMinimumWarningPatchVersion()(*string) {
     val, err := m.GetBackingStore().Get("minimumWarningPatchVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DefaultManagedAppProtection) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -376,6 +397,12 @@ func (m *DefaultManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("screenCaptureBlocked", m.GetScreenCaptureBlocked())
         if err != nil {
             return err
@@ -460,6 +487,13 @@ func (m *DefaultManagedAppProtection) SetMinimumWarningPatchVersion(value *strin
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DefaultManagedAppProtection) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetScreenCaptureBlocked sets the screenCaptureBlocked property value. Indicates whether screen capture is blocked. (Android only)
 func (m *DefaultManagedAppProtection) SetScreenCaptureBlocked(value *bool)() {
     err := m.GetBackingStore().Set("screenCaptureBlocked", value)
@@ -482,6 +516,7 @@ type DefaultManagedAppProtectionable interface {
     GetMinimumRequiredPatchVersion()(*string)
     GetMinimumRequiredSdkVersion()(*string)
     GetMinimumWarningPatchVersion()(*string)
+    GetOdataType()(*string)
     GetScreenCaptureBlocked()(*bool)
     SetAppDataEncryptionType(value *ManagedAppDataEncryptionType)()
     SetApps(value []ManagedMobileAppable)()
@@ -494,5 +529,6 @@ type DefaultManagedAppProtectionable interface {
     SetMinimumRequiredPatchVersion(value *string)()
     SetMinimumRequiredSdkVersion(value *string)()
     SetMinimumWarningPatchVersion(value *string)()
+    SetOdataType(value *string)()
     SetScreenCaptureBlocked(value *bool)()
 }

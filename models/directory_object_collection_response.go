@@ -8,7 +8,7 @@ import (
 type DirectoryObjectCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDirectoryObjectCollectionResponse instantiates a new DirectoryObjectCollectionResponse and sets the default values.
+// NewDirectoryObjectCollectionResponse instantiates a new directoryObjectCollectionResponse and sets the default values.
 func NewDirectoryObjectCollectionResponse()(*DirectoryObjectCollectionResponse) {
     m := &DirectoryObjectCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

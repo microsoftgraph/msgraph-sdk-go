@@ -7,6 +7,8 @@ import (
 // InferenceClassification 
 type InferenceClassification struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewInferenceClassification instantiates a new inferenceClassification and sets the default values.
 func NewInferenceClassification()(*InferenceClassification) {

@@ -7,8 +7,10 @@ import (
 // WorkbookRange 
 type WorkbookRange struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewWorkbookRange instantiates a new WorkbookRange and sets the default values.
+// NewWorkbookRange instantiates a new workbookRange and sets the default values.
 func NewWorkbookRange()(*WorkbookRange) {
     m := &WorkbookRange{
         Entity: *NewEntity(),

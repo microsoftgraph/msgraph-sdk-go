@@ -7,8 +7,10 @@ import (
 // ResultTemplateDictionary 
 type ResultTemplateDictionary struct {
     Dictionary
+    // The OdataType property
+    OdataType *string
 }
-// NewResultTemplateDictionary instantiates a new ResultTemplateDictionary and sets the default values.
+// NewResultTemplateDictionary instantiates a new resultTemplateDictionary and sets the default values.
 func NewResultTemplateDictionary()(*ResultTemplateDictionary) {
     m := &ResultTemplateDictionary{
         Dictionary: *NewDictionary(),

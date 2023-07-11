@@ -8,7 +8,7 @@ import (
 type ManagedDeviceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewManagedDeviceCollectionResponse instantiates a new ManagedDeviceCollectionResponse and sets the default values.
+// NewManagedDeviceCollectionResponse instantiates a new managedDeviceCollectionResponse and sets the default values.
 func NewManagedDeviceCollectionResponse()(*ManagedDeviceCollectionResponse) {
     m := &ManagedDeviceCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -8,6 +8,8 @@ import (
 // DeviceConfiguration device Configuration.
 type DeviceConfiguration struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDeviceConfiguration instantiates a new deviceConfiguration and sets the default values.
 func NewDeviceConfiguration()(*DeviceConfiguration) {

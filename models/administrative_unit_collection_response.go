@@ -8,7 +8,7 @@ import (
 type AdministrativeUnitCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAdministrativeUnitCollectionResponse instantiates a new AdministrativeUnitCollectionResponse and sets the default values.
+// NewAdministrativeUnitCollectionResponse instantiates a new administrativeUnitCollectionResponse and sets the default values.
 func NewAdministrativeUnitCollectionResponse()(*AdministrativeUnitCollectionResponse) {
     m := &AdministrativeUnitCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

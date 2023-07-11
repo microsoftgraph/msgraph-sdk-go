@@ -9,7 +9,7 @@ import (
 type Host struct {
     Artifact
 }
-// NewHost instantiates a new Host and sets the default values.
+// NewHost instantiates a new host and sets the default values.
 func NewHost()(*Host) {
     m := &Host{
         Artifact: *NewArtifact(),

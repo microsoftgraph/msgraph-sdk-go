@@ -8,7 +8,7 @@ import (
 type SkypeUserConversationMember struct {
     ConversationMember
 }
-// NewSkypeUserConversationMember instantiates a new SkypeUserConversationMember and sets the default values.
+// NewSkypeUserConversationMember instantiates a new skypeUserConversationMember and sets the default values.
 func NewSkypeUserConversationMember()(*SkypeUserConversationMember) {
     m := &SkypeUserConversationMember{
         ConversationMember: *NewConversationMember(),

@@ -7,6 +7,8 @@ import (
 // WorkbookRangeFormat 
 type WorkbookRangeFormat struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewWorkbookRangeFormat instantiates a new workbookRangeFormat and sets the default values.
 func NewWorkbookRangeFormat()(*WorkbookRangeFormat) {

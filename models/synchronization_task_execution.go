@@ -23,7 +23,7 @@ func NewSynchronizationTaskExecution()(*SynchronizationTaskExecution) {
 func CreateSynchronizationTaskExecutionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSynchronizationTaskExecution(), nil
 }
-// GetActivityIdentifier gets the activityIdentifier property value. The activityIdentifier property
+// GetActivityIdentifier gets the activityIdentifier property value. Identifier of the job run.
 func (m *SynchronizationTaskExecution) GetActivityIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("activityIdentifier")
     if err != nil {
@@ -50,7 +50,7 @@ func (m *SynchronizationTaskExecution) GetAdditionalData()(map[string]any) {
 func (m *SynchronizationTaskExecution) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCountEntitled gets the countEntitled property value. The countEntitled property
+// GetCountEntitled gets the countEntitled property value. Count of processed entries that were assigned for this application.
 func (m *SynchronizationTaskExecution) GetCountEntitled()(*int64) {
     val, err := m.GetBackingStore().Get("countEntitled")
     if err != nil {
@@ -61,7 +61,7 @@ func (m *SynchronizationTaskExecution) GetCountEntitled()(*int64) {
     }
     return nil
 }
-// GetCountEntitledForProvisioning gets the countEntitledForProvisioning property value. The countEntitledForProvisioning property
+// GetCountEntitledForProvisioning gets the countEntitledForProvisioning property value. Count of processed entries that were assigned for provisioning.
 func (m *SynchronizationTaskExecution) GetCountEntitledForProvisioning()(*int64) {
     val, err := m.GetBackingStore().Get("countEntitledForProvisioning")
     if err != nil {
@@ -72,7 +72,7 @@ func (m *SynchronizationTaskExecution) GetCountEntitledForProvisioning()(*int64)
     }
     return nil
 }
-// GetCountEscrowed gets the countEscrowed property value. The countEscrowed property
+// GetCountEscrowed gets the countEscrowed property value. Count of entries that were escrowed (errors).
 func (m *SynchronizationTaskExecution) GetCountEscrowed()(*int64) {
     val, err := m.GetBackingStore().Get("countEscrowed")
     if err != nil {
@@ -83,7 +83,7 @@ func (m *SynchronizationTaskExecution) GetCountEscrowed()(*int64) {
     }
     return nil
 }
-// GetCountEscrowedRaw gets the countEscrowedRaw property value. The countEscrowedRaw property
+// GetCountEscrowedRaw gets the countEscrowedRaw property value. Count of entries that were escrowed, including system-generated escrows.
 func (m *SynchronizationTaskExecution) GetCountEscrowedRaw()(*int64) {
     val, err := m.GetBackingStore().Get("countEscrowedRaw")
     if err != nil {
@@ -94,7 +94,7 @@ func (m *SynchronizationTaskExecution) GetCountEscrowedRaw()(*int64) {
     }
     return nil
 }
-// GetCountExported gets the countExported property value. The countExported property
+// GetCountExported gets the countExported property value. Count of exported entries.
 func (m *SynchronizationTaskExecution) GetCountExported()(*int64) {
     val, err := m.GetBackingStore().Get("countExported")
     if err != nil {
@@ -105,7 +105,7 @@ func (m *SynchronizationTaskExecution) GetCountExported()(*int64) {
     }
     return nil
 }
-// GetCountExports gets the countExports property value. The countExports property
+// GetCountExports gets the countExports property value. Count of entries that were expected to be exported.
 func (m *SynchronizationTaskExecution) GetCountExports()(*int64) {
     val, err := m.GetBackingStore().Get("countExports")
     if err != nil {
@@ -116,7 +116,7 @@ func (m *SynchronizationTaskExecution) GetCountExports()(*int64) {
     }
     return nil
 }
-// GetCountImported gets the countImported property value. The countImported property
+// GetCountImported gets the countImported property value. Count of imported entries.
 func (m *SynchronizationTaskExecution) GetCountImported()(*int64) {
     val, err := m.GetBackingStore().Get("countImported")
     if err != nil {
@@ -127,7 +127,7 @@ func (m *SynchronizationTaskExecution) GetCountImported()(*int64) {
     }
     return nil
 }
-// GetCountImportedDeltas gets the countImportedDeltas property value. The countImportedDeltas property
+// GetCountImportedDeltas gets the countImportedDeltas property value. Count of imported delta-changes.
 func (m *SynchronizationTaskExecution) GetCountImportedDeltas()(*int64) {
     val, err := m.GetBackingStore().Get("countImportedDeltas")
     if err != nil {
@@ -138,7 +138,7 @@ func (m *SynchronizationTaskExecution) GetCountImportedDeltas()(*int64) {
     }
     return nil
 }
-// GetCountImportedReferenceDeltas gets the countImportedReferenceDeltas property value. The countImportedReferenceDeltas property
+// GetCountImportedReferenceDeltas gets the countImportedReferenceDeltas property value. Count of imported delta-changes pertaining to reference changes.
 func (m *SynchronizationTaskExecution) GetCountImportedReferenceDeltas()(*int64) {
     val, err := m.GetBackingStore().Get("countImportedReferenceDeltas")
     if err != nil {
@@ -149,7 +149,7 @@ func (m *SynchronizationTaskExecution) GetCountImportedReferenceDeltas()(*int64)
     }
     return nil
 }
-// GetError gets the error property value. The error property
+// GetError gets the error property value. If an error was encountered, contains a synchronizationError object with details.
 func (m *SynchronizationTaskExecution) GetError()(SynchronizationErrorable) {
     val, err := m.GetBackingStore().Get("error")
     if err != nil {
@@ -337,7 +337,7 @@ func (m *SynchronizationTaskExecution) GetState()(*SynchronizationTaskExecutionR
     }
     return nil
 }
-// GetTimeBegan gets the timeBegan property value. The timeBegan property
+// GetTimeBegan gets the timeBegan property value. Time when this job run began. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SynchronizationTaskExecution) GetTimeBegan()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("timeBegan")
     if err != nil {
@@ -348,7 +348,7 @@ func (m *SynchronizationTaskExecution) GetTimeBegan()(*i336074805fc853987abe6f7f
     }
     return nil
 }
-// GetTimeEnded gets the timeEnded property value. The timeEnded property
+// GetTimeEnded gets the timeEnded property value. Time when this job run ended. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SynchronizationTaskExecution) GetTimeEnded()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("timeEnded")
     if err != nil {
@@ -460,7 +460,7 @@ func (m *SynchronizationTaskExecution) Serialize(writer i878a80d2330e89d26896388
     }
     return nil
 }
-// SetActivityIdentifier sets the activityIdentifier property value. The activityIdentifier property
+// SetActivityIdentifier sets the activityIdentifier property value. Identifier of the job run.
 func (m *SynchronizationTaskExecution) SetActivityIdentifier(value *string)() {
     err := m.GetBackingStore().Set("activityIdentifier", value)
     if err != nil {
@@ -478,70 +478,70 @@ func (m *SynchronizationTaskExecution) SetAdditionalData(value map[string]any)()
 func (m *SynchronizationTaskExecution) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCountEntitled sets the countEntitled property value. The countEntitled property
+// SetCountEntitled sets the countEntitled property value. Count of processed entries that were assigned for this application.
 func (m *SynchronizationTaskExecution) SetCountEntitled(value *int64)() {
     err := m.GetBackingStore().Set("countEntitled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCountEntitledForProvisioning sets the countEntitledForProvisioning property value. The countEntitledForProvisioning property
+// SetCountEntitledForProvisioning sets the countEntitledForProvisioning property value. Count of processed entries that were assigned for provisioning.
 func (m *SynchronizationTaskExecution) SetCountEntitledForProvisioning(value *int64)() {
     err := m.GetBackingStore().Set("countEntitledForProvisioning", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCountEscrowed sets the countEscrowed property value. The countEscrowed property
+// SetCountEscrowed sets the countEscrowed property value. Count of entries that were escrowed (errors).
 func (m *SynchronizationTaskExecution) SetCountEscrowed(value *int64)() {
     err := m.GetBackingStore().Set("countEscrowed", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCountEscrowedRaw sets the countEscrowedRaw property value. The countEscrowedRaw property
+// SetCountEscrowedRaw sets the countEscrowedRaw property value. Count of entries that were escrowed, including system-generated escrows.
 func (m *SynchronizationTaskExecution) SetCountEscrowedRaw(value *int64)() {
     err := m.GetBackingStore().Set("countEscrowedRaw", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCountExported sets the countExported property value. The countExported property
+// SetCountExported sets the countExported property value. Count of exported entries.
 func (m *SynchronizationTaskExecution) SetCountExported(value *int64)() {
     err := m.GetBackingStore().Set("countExported", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCountExports sets the countExports property value. The countExports property
+// SetCountExports sets the countExports property value. Count of entries that were expected to be exported.
 func (m *SynchronizationTaskExecution) SetCountExports(value *int64)() {
     err := m.GetBackingStore().Set("countExports", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCountImported sets the countImported property value. The countImported property
+// SetCountImported sets the countImported property value. Count of imported entries.
 func (m *SynchronizationTaskExecution) SetCountImported(value *int64)() {
     err := m.GetBackingStore().Set("countImported", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCountImportedDeltas sets the countImportedDeltas property value. The countImportedDeltas property
+// SetCountImportedDeltas sets the countImportedDeltas property value. Count of imported delta-changes.
 func (m *SynchronizationTaskExecution) SetCountImportedDeltas(value *int64)() {
     err := m.GetBackingStore().Set("countImportedDeltas", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCountImportedReferenceDeltas sets the countImportedReferenceDeltas property value. The countImportedReferenceDeltas property
+// SetCountImportedReferenceDeltas sets the countImportedReferenceDeltas property value. Count of imported delta-changes pertaining to reference changes.
 func (m *SynchronizationTaskExecution) SetCountImportedReferenceDeltas(value *int64)() {
     err := m.GetBackingStore().Set("countImportedReferenceDeltas", value)
     if err != nil {
         panic(err)
     }
 }
-// SetError sets the error property value. The error property
+// SetError sets the error property value. If an error was encountered, contains a synchronizationError object with details.
 func (m *SynchronizationTaskExecution) SetError(value SynchronizationErrorable)() {
     err := m.GetBackingStore().Set("error", value)
     if err != nil {
@@ -562,14 +562,14 @@ func (m *SynchronizationTaskExecution) SetState(value *SynchronizationTaskExecut
         panic(err)
     }
 }
-// SetTimeBegan sets the timeBegan property value. The timeBegan property
+// SetTimeBegan sets the timeBegan property value. Time when this job run began. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SynchronizationTaskExecution) SetTimeBegan(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("timeBegan", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTimeEnded sets the timeEnded property value. The timeEnded property
+// SetTimeEnded sets the timeEnded property value. Time when this job run ended. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SynchronizationTaskExecution) SetTimeEnded(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("timeEnded", value)
     if err != nil {

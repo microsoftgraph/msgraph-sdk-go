@@ -8,7 +8,7 @@ import (
 type UserFlowLanguagePageCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewUserFlowLanguagePageCollectionResponse instantiates a new UserFlowLanguagePageCollectionResponse and sets the default values.
+// NewUserFlowLanguagePageCollectionResponse instantiates a new userFlowLanguagePageCollectionResponse and sets the default values.
 func NewUserFlowLanguagePageCollectionResponse()(*UserFlowLanguagePageCollectionResponse) {
     m := &UserFlowLanguagePageCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

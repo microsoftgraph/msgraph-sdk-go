@@ -31,9 +31,6 @@ func NewManagedDevicesItemRequestRemoteAssistanceRequestBuilder(rawUrl string, r
     return NewManagedDevicesItemRequestRemoteAssistanceRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post request remote assistance
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-devices-manageddevice-requestremoteassistance?view=graph-rest-1.0
 func (m *ManagedDevicesItemRequestRemoteAssistanceRequestBuilder) Post(ctx context.Context, requestConfiguration *ManagedDevicesItemRequestRemoteAssistanceRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -8,7 +8,7 @@ import (
 type VppTokenCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewVppTokenCollectionResponse instantiates a new VppTokenCollectionResponse and sets the default values.
+// NewVppTokenCollectionResponse instantiates a new vppTokenCollectionResponse and sets the default values.
 func NewVppTokenCollectionResponse()(*VppTokenCollectionResponse) {
     m := &VppTokenCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

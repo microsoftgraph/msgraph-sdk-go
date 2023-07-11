@@ -8,7 +8,7 @@ import (
 type ClaimsMappingPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewClaimsMappingPolicyCollectionResponse instantiates a new ClaimsMappingPolicyCollectionResponse and sets the default values.
+// NewClaimsMappingPolicyCollectionResponse instantiates a new claimsMappingPolicyCollectionResponse and sets the default values.
 func NewClaimsMappingPolicyCollectionResponse()(*ClaimsMappingPolicyCollectionResponse) {
     m := &ClaimsMappingPolicyCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

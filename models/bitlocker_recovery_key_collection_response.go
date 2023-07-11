@@ -8,7 +8,7 @@ import (
 type BitlockerRecoveryKeyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewBitlockerRecoveryKeyCollectionResponse instantiates a new BitlockerRecoveryKeyCollectionResponse and sets the default values.
+// NewBitlockerRecoveryKeyCollectionResponse instantiates a new bitlockerRecoveryKeyCollectionResponse and sets the default values.
 func NewBitlockerRecoveryKeyCollectionResponse()(*BitlockerRecoveryKeyCollectionResponse) {
     m := &BitlockerRecoveryKeyCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -8,7 +8,7 @@ import (
 type AgreementFileLocalizationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAgreementFileLocalizationCollectionResponse instantiates a new AgreementFileLocalizationCollectionResponse and sets the default values.
+// NewAgreementFileLocalizationCollectionResponse instantiates a new agreementFileLocalizationCollectionResponse and sets the default values.
 func NewAgreementFileLocalizationCollectionResponse()(*AgreementFileLocalizationCollectionResponse) {
     m := &AgreementFileLocalizationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -136,6 +136,16 @@ func (m *UserExperienceAnalyticsDeviceScores) GetFieldDeserializers()(map[string
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["startupPerformanceScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
@@ -183,6 +193,17 @@ func (m *UserExperienceAnalyticsDeviceScores) GetManufacturer()(*string) {
 // GetModel gets the model property value. The model name of the device. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsDeviceScores) GetModel()(*string) {
     val, err := m.GetBackingStore().Get("model")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UserExperienceAnalyticsDeviceScores) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -263,6 +284,12 @@ func (m *UserExperienceAnalyticsDeviceScores) Serialize(writer i878a80d2330e89d2
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteFloat64Value("startupPerformanceScore", m.GetStartupPerformanceScore())
         if err != nil {
             return err
@@ -325,6 +352,13 @@ func (m *UserExperienceAnalyticsDeviceScores) SetModel(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UserExperienceAnalyticsDeviceScores) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetStartupPerformanceScore sets the startupPerformanceScore property value. Indicates a weighted average of boot score and logon score used for measuring startup performance. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsDeviceScores) SetStartupPerformanceScore(value *float64)() {
     err := m.GetBackingStore().Set("startupPerformanceScore", value)
@@ -350,6 +384,7 @@ type UserExperienceAnalyticsDeviceScoresable interface {
     GetHealthStatus()(*UserExperienceAnalyticsHealthState)
     GetManufacturer()(*string)
     GetModel()(*string)
+    GetOdataType()(*string)
     GetStartupPerformanceScore()(*float64)
     GetWorkFromAnywhereScore()(*float64)
     SetAppReliabilityScore(value *float64)()
@@ -359,6 +394,7 @@ type UserExperienceAnalyticsDeviceScoresable interface {
     SetHealthStatus(value *UserExperienceAnalyticsHealthState)()
     SetManufacturer(value *string)()
     SetModel(value *string)()
+    SetOdataType(value *string)()
     SetStartupPerformanceScore(value *float64)()
     SetWorkFromAnywhereScore(value *float64)()
 }

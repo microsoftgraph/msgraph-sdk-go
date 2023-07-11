@@ -9,8 +9,10 @@ import (
 // AppRoleAssignment 
 type AppRoleAssignment struct {
     DirectoryObject
+    // The OdataType property
+    OdataType *string
 }
-// NewAppRoleAssignment instantiates a new AppRoleAssignment and sets the default values.
+// NewAppRoleAssignment instantiates a new appRoleAssignment and sets the default values.
 func NewAppRoleAssignment()(*AppRoleAssignment) {
     m := &AppRoleAssignment{
         DirectoryObject: *NewDirectoryObject(),

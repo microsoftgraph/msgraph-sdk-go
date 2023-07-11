@@ -7,8 +7,10 @@ import (
 // GroupMembers 
 type GroupMembers struct {
     SubjectSet
+    // The OdataType property
+    OdataType *string
 }
-// NewGroupMembers instantiates a new GroupMembers and sets the default values.
+// NewGroupMembers instantiates a new groupMembers and sets the default values.
 func NewGroupMembers()(*GroupMembers) {
     m := &GroupMembers{
         SubjectSet: *NewSubjectSet(),

@@ -7,6 +7,8 @@ import (
 // TodoTaskList 
 type TodoTaskList struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewTodoTaskList instantiates a new todoTaskList and sets the default values.
 func NewTodoTaskList()(*TodoTaskList) {

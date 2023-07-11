@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GroupAssignmentTarget 
+// GroupAssignmentTarget base type for assignment targets.
 type GroupAssignmentTarget struct {
     DeviceAndAppManagementAssignmentTarget
+    // The OdataType property
+    OdataType *string
 }
-// NewGroupAssignmentTarget instantiates a new GroupAssignmentTarget and sets the default values.
+// NewGroupAssignmentTarget instantiates a new groupAssignmentTarget and sets the default values.
 func NewGroupAssignmentTarget()(*GroupAssignmentTarget) {
     m := &GroupAssignmentTarget{
         DeviceAndAppManagementAssignmentTarget: *NewDeviceAndAppManagementAssignmentTarget(),

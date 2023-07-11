@@ -8,7 +8,7 @@ import (
 type EdiscoveryReviewTag struct {
     Tag
 }
-// NewEdiscoveryReviewTag instantiates a new EdiscoveryReviewTag and sets the default values.
+// NewEdiscoveryReviewTag instantiates a new ediscoveryReviewTag and sets the default values.
 func NewEdiscoveryReviewTag()(*EdiscoveryReviewTag) {
     m := &EdiscoveryReviewTag{
         Tag: *NewTag(),

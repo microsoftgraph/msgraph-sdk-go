@@ -7,8 +7,10 @@ import (
 // TermsOfUseContainer 
 type TermsOfUseContainer struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewTermsOfUseContainer instantiates a new TermsOfUseContainer and sets the default values.
+// NewTermsOfUseContainer instantiates a new termsOfUseContainer and sets the default values.
 func NewTermsOfUseContainer()(*TermsOfUseContainer) {
     m := &TermsOfUseContainer{
         Entity: *NewEntity(),

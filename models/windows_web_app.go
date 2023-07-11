@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsWebApp 
+// WindowsWebApp contains properties and inherited properties for Windows web apps.
 type WindowsWebApp struct {
     MobileApp
+    // The OdataType property
+    OdataType *string
 }
-// NewWindowsWebApp instantiates a new WindowsWebApp and sets the default values.
+// NewWindowsWebApp instantiates a new windowsWebApp and sets the default values.
 func NewWindowsWebApp()(*WindowsWebApp) {
     m := &WindowsWebApp{
         MobileApp: *NewMobileApp(),

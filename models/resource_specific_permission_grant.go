@@ -7,6 +7,8 @@ import (
 // ResourceSpecificPermissionGrant 
 type ResourceSpecificPermissionGrant struct {
     DirectoryObject
+    // The OdataType property
+    OdataType *string
 }
 // NewResourceSpecificPermissionGrant instantiates a new resourceSpecificPermissionGrant and sets the default values.
 func NewResourceSpecificPermissionGrant()(*ResourceSpecificPermissionGrant) {

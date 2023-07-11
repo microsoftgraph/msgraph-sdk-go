@@ -8,7 +8,7 @@ import (
 type AttendanceRecordCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAttendanceRecordCollectionResponse instantiates a new AttendanceRecordCollectionResponse and sets the default values.
+// NewAttendanceRecordCollectionResponse instantiates a new attendanceRecordCollectionResponse and sets the default values.
 func NewAttendanceRecordCollectionResponse()(*AttendanceRecordCollectionResponse) {
     m := &AttendanceRecordCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

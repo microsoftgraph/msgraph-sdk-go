@@ -7,8 +7,10 @@ import (
 // DomainDnsUnavailableRecord 
 type DomainDnsUnavailableRecord struct {
     DomainDnsRecord
+    // The OdataType property
+    OdataType *string
 }
-// NewDomainDnsUnavailableRecord instantiates a new DomainDnsUnavailableRecord and sets the default values.
+// NewDomainDnsUnavailableRecord instantiates a new domainDnsUnavailableRecord and sets the default values.
 func NewDomainDnsUnavailableRecord()(*DomainDnsUnavailableRecord) {
     m := &DomainDnsUnavailableRecord{
         DomainDnsRecord: *NewDomainDnsRecord(),

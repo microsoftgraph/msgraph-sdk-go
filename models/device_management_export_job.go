@@ -8,6 +8,8 @@ import (
 // DeviceManagementExportJob entity representing a job to export a report
 type DeviceManagementExportJob struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDeviceManagementExportJob instantiates a new deviceManagementExportJob and sets the default values.
 func NewDeviceManagementExportJob()(*DeviceManagementExportJob) {

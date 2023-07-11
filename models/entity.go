@@ -42,12 +42,28 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewAccessPackageAssignmentPolicy(), nil
                     case "#microsoft.graph.accessPackageAssignmentRequest":
                         return NewAccessPackageAssignmentRequest(), nil
+                    case "#microsoft.graph.accessPackageAssignmentRequestWorkflowExtension":
+                        return NewAccessPackageAssignmentRequestWorkflowExtension(), nil
+                    case "#microsoft.graph.accessPackageAssignmentWorkflowExtension":
+                        return NewAccessPackageAssignmentWorkflowExtension(), nil
                     case "#microsoft.graph.accessPackageCatalog":
                         return NewAccessPackageCatalog(), nil
                     case "#microsoft.graph.accessPackageMultipleChoiceQuestion":
                         return NewAccessPackageMultipleChoiceQuestion(), nil
                     case "#microsoft.graph.accessPackageQuestion":
                         return NewAccessPackageQuestion(), nil
+                    case "#microsoft.graph.accessPackageResource":
+                        return NewAccessPackageResource(), nil
+                    case "#microsoft.graph.accessPackageResourceEnvironment":
+                        return NewAccessPackageResourceEnvironment(), nil
+                    case "#microsoft.graph.accessPackageResourceRequest":
+                        return NewAccessPackageResourceRequest(), nil
+                    case "#microsoft.graph.accessPackageResourceRole":
+                        return NewAccessPackageResourceRole(), nil
+                    case "#microsoft.graph.accessPackageResourceRoleScope":
+                        return NewAccessPackageResourceRoleScope(), nil
+                    case "#microsoft.graph.accessPackageResourceScope":
+                        return NewAccessPackageResourceScope(), nil
                     case "#microsoft.graph.accessPackageSubject":
                         return NewAccessPackageSubject(), nil
                     case "#microsoft.graph.accessPackageTextInputQuestion":
@@ -302,6 +318,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCrossTenantAccessPolicyConfigurationDefault(), nil
                     case "#microsoft.graph.customCalloutExtension":
                         return NewCustomCalloutExtension(), nil
+                    case "#microsoft.graph.customExtensionStageSetting":
+                        return NewCustomExtensionStageSetting(), nil
                     case "#microsoft.graph.customSecurityAttributeDefinition":
                         return NewCustomSecurityAttributeDefinition(), nil
                     case "#microsoft.graph.dataPolicyOperation":

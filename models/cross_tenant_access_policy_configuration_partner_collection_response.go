@@ -8,7 +8,7 @@ import (
 type CrossTenantAccessPolicyConfigurationPartnerCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCrossTenantAccessPolicyConfigurationPartnerCollectionResponse instantiates a new CrossTenantAccessPolicyConfigurationPartnerCollectionResponse and sets the default values.
+// NewCrossTenantAccessPolicyConfigurationPartnerCollectionResponse instantiates a new crossTenantAccessPolicyConfigurationPartnerCollectionResponse and sets the default values.
 func NewCrossTenantAccessPolicyConfigurationPartnerCollectionResponse()(*CrossTenantAccessPolicyConfigurationPartnerCollectionResponse) {
     m := &CrossTenantAccessPolicyConfigurationPartnerCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

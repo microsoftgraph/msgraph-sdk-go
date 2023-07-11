@@ -7,8 +7,10 @@ import (
 // RequestorManager 
 type RequestorManager struct {
     SubjectSet
+    // The OdataType property
+    OdataType *string
 }
-// NewRequestorManager instantiates a new RequestorManager and sets the default values.
+// NewRequestorManager instantiates a new requestorManager and sets the default values.
 func NewRequestorManager()(*RequestorManager) {
     m := &RequestorManager{
         SubjectSet: *NewSubjectSet(),

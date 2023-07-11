@@ -8,7 +8,7 @@ import (
 type ArticleIndicator struct {
     Indicator
 }
-// NewArticleIndicator instantiates a new ArticleIndicator and sets the default values.
+// NewArticleIndicator instantiates a new articleIndicator and sets the default values.
 func NewArticleIndicator()(*ArticleIndicator) {
     m := &ArticleIndicator{
         Indicator: *NewIndicator(),

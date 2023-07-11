@@ -9,7 +9,7 @@ import (
 type UserSignInInsight struct {
     GovernanceInsight
 }
-// NewUserSignInInsight instantiates a new UserSignInInsight and sets the default values.
+// NewUserSignInInsight instantiates a new userSignInInsight and sets the default values.
 func NewUserSignInInsight()(*UserSignInInsight) {
     m := &UserSignInInsight{
         GovernanceInsight: *NewGovernanceInsight(),

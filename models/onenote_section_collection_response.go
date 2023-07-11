@@ -8,7 +8,7 @@ import (
 type OnenoteSectionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewOnenoteSectionCollectionResponse instantiates a new OnenoteSectionCollectionResponse and sets the default values.
+// NewOnenoteSectionCollectionResponse instantiates a new onenoteSectionCollectionResponse and sets the default values.
 func NewOnenoteSectionCollectionResponse()(*OnenoteSectionCollectionResponse) {
     m := &OnenoteSectionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

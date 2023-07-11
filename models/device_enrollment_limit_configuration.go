@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceEnrollmentLimitConfiguration 
+// DeviceEnrollmentLimitConfiguration device Enrollment Configuration that restricts the number of devices a user can enroll
 type DeviceEnrollmentLimitConfiguration struct {
     DeviceEnrollmentConfiguration
 }
-// NewDeviceEnrollmentLimitConfiguration instantiates a new DeviceEnrollmentLimitConfiguration and sets the default values.
+// NewDeviceEnrollmentLimitConfiguration instantiates a new deviceEnrollmentLimitConfiguration and sets the default values.
 func NewDeviceEnrollmentLimitConfiguration()(*DeviceEnrollmentLimitConfiguration) {
     m := &DeviceEnrollmentLimitConfiguration{
         DeviceEnrollmentConfiguration: *NewDeviceEnrollmentConfiguration(),

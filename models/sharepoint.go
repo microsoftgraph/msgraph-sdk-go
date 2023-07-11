@@ -8,7 +8,7 @@ import (
 type Sharepoint struct {
     Entity
 }
-// NewSharepoint instantiates a new Sharepoint and sets the default values.
+// NewSharepoint instantiates a new sharepoint and sets the default values.
 func NewSharepoint()(*Sharepoint) {
     m := &Sharepoint{
         Entity: *NewEntity(),
@@ -22,6 +22,16 @@ func CreateSharepointFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Sharepoint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSharepointSettingsFromDiscriminatorValue)
         if err != nil {
@@ -33,6 +43,17 @@ func (m *Sharepoint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Sharepoint) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSettings gets the settings property value. The settings property
 func (m *Sharepoint) GetSettings()(SharepointSettingsable) {
@@ -52,12 +73,25 @@ func (m *Sharepoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
         return err
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("settings", m.GetSettings())
         if err != nil {
             return err
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Sharepoint) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettings sets the settings property value. The settings property
 func (m *Sharepoint) SetSettings(value SharepointSettingsable)() {
@@ -70,6 +104,8 @@ func (m *Sharepoint) SetSettings(value SharepointSettingsable)() {
 type Sharepointable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetSettings()(SharepointSettingsable)
+    SetOdataType(value *string)()
     SetSettings(value SharepointSettingsable)()
 }

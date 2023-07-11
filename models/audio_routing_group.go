@@ -7,6 +7,8 @@ import (
 // AudioRoutingGroup 
 type AudioRoutingGroup struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewAudioRoutingGroup instantiates a new audioRoutingGroup and sets the default values.
 func NewAudioRoutingGroup()(*AudioRoutingGroup) {

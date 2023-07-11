@@ -8,7 +8,7 @@ import (
 type ServiceAnnouncement struct {
     Entity
 }
-// NewServiceAnnouncement instantiates a new ServiceAnnouncement and sets the default values.
+// NewServiceAnnouncement instantiates a new serviceAnnouncement and sets the default values.
 func NewServiceAnnouncement()(*ServiceAnnouncement) {
     m := &ServiceAnnouncement{
         Entity: *NewEntity(),
@@ -70,6 +70,16 @@ func (m *ServiceAnnouncement) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetHealthOverviews gets the healthOverviews property value. A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
@@ -102,6 +112,17 @@ func (m *ServiceAnnouncement) GetMessages()([]ServiceUpdateMessageable) {
     }
     if val != nil {
         return val.([]ServiceUpdateMessageable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ServiceAnnouncement) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -147,6 +168,12 @@ func (m *ServiceAnnouncement) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetHealthOverviews sets the healthOverviews property value. A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
@@ -170,6 +197,13 @@ func (m *ServiceAnnouncement) SetMessages(value []ServiceUpdateMessageable)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ServiceAnnouncement) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // ServiceAnnouncementable 
 type ServiceAnnouncementable interface {
     Entityable
@@ -177,7 +211,9 @@ type ServiceAnnouncementable interface {
     GetHealthOverviews()([]ServiceHealthable)
     GetIssues()([]ServiceHealthIssueable)
     GetMessages()([]ServiceUpdateMessageable)
+    GetOdataType()(*string)
     SetHealthOverviews(value []ServiceHealthable)()
     SetIssues(value []ServiceHealthIssueable)()
     SetMessages(value []ServiceUpdateMessageable)()
+    SetOdataType(value *string)()
 }

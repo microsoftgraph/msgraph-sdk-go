@@ -8,7 +8,7 @@ import (
 type InviteParticipantsOperation struct {
     CommsOperation
 }
-// NewInviteParticipantsOperation instantiates a new InviteParticipantsOperation and sets the default values.
+// NewInviteParticipantsOperation instantiates a new inviteParticipantsOperation and sets the default values.
 func NewInviteParticipantsOperation()(*InviteParticipantsOperation) {
     m := &InviteParticipantsOperation{
         CommsOperation: *NewCommsOperation(),

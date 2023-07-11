@@ -7,6 +7,8 @@ import (
 // UserFlowLanguageConfiguration 
 type UserFlowLanguageConfiguration struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewUserFlowLanguageConfiguration instantiates a new userFlowLanguageConfiguration and sets the default values.
 func NewUserFlowLanguageConfiguration()(*UserFlowLanguageConfiguration) {

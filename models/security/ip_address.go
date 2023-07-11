@@ -8,7 +8,7 @@ import (
 type IpAddress struct {
     Host
 }
-// NewIpAddress instantiates a new IpAddress and sets the default values.
+// NewIpAddress instantiates a new ipAddress and sets the default values.
 func NewIpAddress()(*IpAddress) {
     m := &IpAddress{
         Host: *NewHost(),

@@ -8,7 +8,7 @@ import (
 type ExtensionPropertyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewExtensionPropertyCollectionResponse instantiates a new ExtensionPropertyCollectionResponse and sets the default values.
+// NewExtensionPropertyCollectionResponse instantiates a new extensionPropertyCollectionResponse and sets the default values.
 func NewExtensionPropertyCollectionResponse()(*ExtensionPropertyCollectionResponse) {
     m := &ExtensionPropertyCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

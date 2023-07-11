@@ -73,7 +73,7 @@ func (m *ObjectMappingMetadataEntry) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetKey gets the key property value. The key property
+// GetKey gets the key property value. Possible values are: EscrowBehavior, DisableMonitoringForChanges, OriginalJoiningProperty, Disposition, IsCustomerDefined, ExcludeFromReporting, Unsynchronized.
 func (m *ObjectMappingMetadataEntry) GetKey()(*ObjectMappingMetadata) {
     val, err := m.GetBackingStore().Get("key")
     if err != nil {
@@ -95,7 +95,7 @@ func (m *ObjectMappingMetadataEntry) GetOdataType()(*string) {
     }
     return nil
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. Value of the metadata property.
 func (m *ObjectMappingMetadataEntry) GetValue()(*string) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -146,7 +146,7 @@ func (m *ObjectMappingMetadataEntry) SetAdditionalData(value map[string]any)() {
 func (m *ObjectMappingMetadataEntry) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetKey sets the key property value. The key property
+// SetKey sets the key property value. Possible values are: EscrowBehavior, DisableMonitoringForChanges, OriginalJoiningProperty, Disposition, IsCustomerDefined, ExcludeFromReporting, Unsynchronized.
 func (m *ObjectMappingMetadataEntry) SetKey(value *ObjectMappingMetadata)() {
     err := m.GetBackingStore().Set("key", value)
     if err != nil {
@@ -160,7 +160,7 @@ func (m *ObjectMappingMetadataEntry) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. Value of the metadata property.
 func (m *ObjectMappingMetadataEntry) SetValue(value *string)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {

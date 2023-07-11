@@ -31,9 +31,6 @@ func NewManagedDevicesItemLocateDeviceRequestBuilder(rawUrl string, requestAdapt
     return NewManagedDevicesItemLocateDeviceRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post locate a device
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-devices-manageddevice-locatedevice?view=graph-rest-1.0
 func (m *ManagedDevicesItemLocateDeviceRequestBuilder) Post(ctx context.Context, requestConfiguration *ManagedDevicesItemLocateDeviceRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

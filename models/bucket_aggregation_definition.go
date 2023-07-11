@@ -10,7 +10,7 @@ type BucketAggregationDefinition struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewBucketAggregationDefinition instantiates a new BucketAggregationDefinition and sets the default values.
+// NewBucketAggregationDefinition instantiates a new bucketAggregationDefinition and sets the default values.
 func NewBucketAggregationDefinition()(*BucketAggregationDefinition) {
     m := &BucketAggregationDefinition{
     }

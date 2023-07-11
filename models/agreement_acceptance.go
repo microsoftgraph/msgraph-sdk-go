@@ -8,6 +8,8 @@ import (
 // AgreementAcceptance 
 type AgreementAcceptance struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewAgreementAcceptance instantiates a new agreementAcceptance and sets the default values.
 func NewAgreementAcceptance()(*AgreementAcceptance) {

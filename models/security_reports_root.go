@@ -7,8 +7,10 @@ import (
 // SecurityReportsRoot 
 type SecurityReportsRoot struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewSecurityReportsRoot instantiates a new SecurityReportsRoot and sets the default values.
+// NewSecurityReportsRoot instantiates a new securityReportsRoot and sets the default values.
 func NewSecurityReportsRoot()(*SecurityReportsRoot) {
     m := &SecurityReportsRoot{
         Entity: *NewEntity(),

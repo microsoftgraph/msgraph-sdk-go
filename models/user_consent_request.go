@@ -7,8 +7,10 @@ import (
 // UserConsentRequest 
 type UserConsentRequest struct {
     Request
+    // The OdataType property
+    OdataType *string
 }
-// NewUserConsentRequest instantiates a new UserConsentRequest and sets the default values.
+// NewUserConsentRequest instantiates a new userConsentRequest and sets the default values.
 func NewUserConsentRequest()(*UserConsentRequest) {
     m := &UserConsentRequest{
         Request: *NewRequest(),

@@ -8,7 +8,7 @@ import (
 type ChannelCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewChannelCollectionResponse instantiates a new ChannelCollectionResponse and sets the default values.
+// NewChannelCollectionResponse instantiates a new channelCollectionResponse and sets the default values.
 func NewChannelCollectionResponse()(*ChannelCollectionResponse) {
     m := &ChannelCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

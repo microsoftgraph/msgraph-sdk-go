@@ -8,7 +8,7 @@ import (
 type ContractCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewContractCollectionResponse instantiates a new ContractCollectionResponse and sets the default values.
+// NewContractCollectionResponse instantiates a new contractCollectionResponse and sets the default values.
 func NewContractCollectionResponse()(*ContractCollectionResponse) {
     m := &ContractCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

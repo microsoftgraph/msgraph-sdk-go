@@ -7,8 +7,10 @@ import (
 // OauthApplicationEvidence 
 type OauthApplicationEvidence struct {
     AlertEvidence
+    // The OdataType property
+    OdataType *string
 }
-// NewOauthApplicationEvidence instantiates a new OauthApplicationEvidence and sets the default values.
+// NewOauthApplicationEvidence instantiates a new oauthApplicationEvidence and sets the default values.
 func NewOauthApplicationEvidence()(*OauthApplicationEvidence) {
     m := &OauthApplicationEvidence{
         AlertEvidence: *NewAlertEvidence(),

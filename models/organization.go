@@ -8,8 +8,10 @@ import (
 // Organization 
 type Organization struct {
     DirectoryObject
+    // The OdataType property
+    OdataType *string
 }
-// NewOrganization instantiates a new Organization and sets the default values.
+// NewOrganization instantiates a new organization and sets the default values.
 func NewOrganization()(*Organization) {
     m := &Organization{
         DirectoryObject: *NewDirectoryObject(),

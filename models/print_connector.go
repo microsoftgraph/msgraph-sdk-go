@@ -8,6 +8,8 @@ import (
 // PrintConnector 
 type PrintConnector struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewPrintConnector instantiates a new printConnector and sets the default values.
 func NewPrintConnector()(*PrintConnector) {

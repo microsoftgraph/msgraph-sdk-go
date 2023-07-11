@@ -8,7 +8,7 @@ import (
 type EducationSubmissionIndividualRecipient struct {
     EducationSubmissionRecipient
 }
-// NewEducationSubmissionIndividualRecipient instantiates a new EducationSubmissionIndividualRecipient and sets the default values.
+// NewEducationSubmissionIndividualRecipient instantiates a new educationSubmissionIndividualRecipient and sets the default values.
 func NewEducationSubmissionIndividualRecipient()(*EducationSubmissionIndividualRecipient) {
     m := &EducationSubmissionIndividualRecipient{
         EducationSubmissionRecipient: *NewEducationSubmissionRecipient(),
@@ -24,6 +24,16 @@ func CreateEducationSubmissionIndividualRecipientFromDiscriminatorValue(parseNod
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationSubmissionIndividualRecipient) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EducationSubmissionRecipient.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["userId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -35,6 +45,17 @@ func (m *EducationSubmissionIndividualRecipient) GetFieldDeserializers()(map[str
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *EducationSubmissionIndividualRecipient) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUserId gets the userId property value. User ID of the user to whom the submission is assigned.
 func (m *EducationSubmissionIndividualRecipient) GetUserId()(*string) {
@@ -54,12 +75,25 @@ func (m *EducationSubmissionIndividualRecipient) Serialize(writer i878a80d2330e8
         return err
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("userId", m.GetUserId())
         if err != nil {
             return err
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *EducationSubmissionIndividualRecipient) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserId sets the userId property value. User ID of the user to whom the submission is assigned.
 func (m *EducationSubmissionIndividualRecipient) SetUserId(value *string)() {
@@ -72,6 +106,8 @@ func (m *EducationSubmissionIndividualRecipient) SetUserId(value *string)() {
 type EducationSubmissionIndividualRecipientable interface {
     EducationSubmissionRecipientable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetUserId()(*string)
+    SetOdataType(value *string)()
     SetUserId(value *string)()
 }

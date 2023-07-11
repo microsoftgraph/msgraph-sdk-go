@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ManagedApp 
+// ManagedApp abstract class that contains properties and inherited properties for apps that you can manage with an Intune app protection policy.
 type ManagedApp struct {
     MobileApp
+    // The OdataType property
+    OdataType *string
 }
-// NewManagedApp instantiates a new ManagedApp and sets the default values.
+// NewManagedApp instantiates a new managedApp and sets the default values.
 func NewManagedApp()(*ManagedApp) {
     m := &ManagedApp{
         MobileApp: *NewMobileApp(),

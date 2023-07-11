@@ -7,6 +7,8 @@ import (
 // OfficeGraphInsights 
 type OfficeGraphInsights struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewOfficeGraphInsights instantiates a new officeGraphInsights and sets the default values.
 func NewOfficeGraphInsights()(*OfficeGraphInsights) {

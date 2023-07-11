@@ -7,8 +7,10 @@ import (
 // AccessPackageAnswerString 
 type AccessPackageAnswerString struct {
     AccessPackageAnswer
+    // The OdataType property
+    OdataType *string
 }
-// NewAccessPackageAnswerString instantiates a new AccessPackageAnswerString and sets the default values.
+// NewAccessPackageAnswerString instantiates a new accessPackageAnswerString and sets the default values.
 func NewAccessPackageAnswerString()(*AccessPackageAnswerString) {
     m := &AccessPackageAnswerString{
         AccessPackageAnswer: *NewAccessPackageAnswer(),

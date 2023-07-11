@@ -7,6 +7,8 @@ import (
 // DeviceComplianceActionItem scheduled Action Configuration
 type DeviceComplianceActionItem struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDeviceComplianceActionItem instantiates a new deviceComplianceActionItem and sets the default values.
 func NewDeviceComplianceActionItem()(*DeviceComplianceActionItem) {

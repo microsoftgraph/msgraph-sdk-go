@@ -9,7 +9,7 @@ import (
 type Event struct {
     OutlookItem
 }
-// NewEvent instantiates a new Event and sets the default values.
+// NewEvent instantiates a new event and sets the default values.
 func NewEvent()(*Event) {
     m := &Event{
         OutlookItem: *NewOutlookItem(),

@@ -8,6 +8,8 @@ import (
 // ChecklistItem 
 type ChecklistItem struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewChecklistItem instantiates a new checklistItem and sets the default values.
 func NewChecklistItem()(*ChecklistItem) {

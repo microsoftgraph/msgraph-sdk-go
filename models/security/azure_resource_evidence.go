@@ -7,8 +7,10 @@ import (
 // AzureResourceEvidence 
 type AzureResourceEvidence struct {
     AlertEvidence
+    // The OdataType property
+    OdataType *string
 }
-// NewAzureResourceEvidence instantiates a new AzureResourceEvidence and sets the default values.
+// NewAzureResourceEvidence instantiates a new azureResourceEvidence and sets the default values.
 func NewAzureResourceEvidence()(*AzureResourceEvidence) {
     m := &AzureResourceEvidence{
         AlertEvidence: *NewAlertEvidence(),

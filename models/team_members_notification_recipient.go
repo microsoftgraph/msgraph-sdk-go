@@ -7,8 +7,10 @@ import (
 // TeamMembersNotificationRecipient 
 type TeamMembersNotificationRecipient struct {
     TeamworkNotificationRecipient
+    // The OdataType property
+    OdataType *string
 }
-// NewTeamMembersNotificationRecipient instantiates a new TeamMembersNotificationRecipient and sets the default values.
+// NewTeamMembersNotificationRecipient instantiates a new teamMembersNotificationRecipient and sets the default values.
 func NewTeamMembersNotificationRecipient()(*TeamMembersNotificationRecipient) {
     m := &TeamMembersNotificationRecipient{
         TeamworkNotificationRecipient: *NewTeamworkNotificationRecipient(),

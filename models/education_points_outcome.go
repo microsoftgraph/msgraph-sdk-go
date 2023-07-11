@@ -7,8 +7,10 @@ import (
 // EducationPointsOutcome 
 type EducationPointsOutcome struct {
     EducationOutcome
+    // The OdataType property
+    OdataType *string
 }
-// NewEducationPointsOutcome instantiates a new EducationPointsOutcome and sets the default values.
+// NewEducationPointsOutcome instantiates a new educationPointsOutcome and sets the default values.
 func NewEducationPointsOutcome()(*EducationPointsOutcome) {
     m := &EducationPointsOutcome{
         EducationOutcome: *NewEducationOutcome(),

@@ -8,7 +8,7 @@ import (
 type DeviceCompliancePolicyAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDeviceCompliancePolicyAssignmentCollectionResponse instantiates a new DeviceCompliancePolicyAssignmentCollectionResponse and sets the default values.
+// NewDeviceCompliancePolicyAssignmentCollectionResponse instantiates a new deviceCompliancePolicyAssignmentCollectionResponse and sets the default values.
 func NewDeviceCompliancePolicyAssignmentCollectionResponse()(*DeviceCompliancePolicyAssignmentCollectionResponse) {
     m := &DeviceCompliancePolicyAssignmentCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

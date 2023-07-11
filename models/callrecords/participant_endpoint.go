@@ -8,8 +8,10 @@ import (
 // ParticipantEndpoint 
 type ParticipantEndpoint struct {
     Endpoint
+    // The OdataType property
+    OdataType *string
 }
-// NewParticipantEndpoint instantiates a new ParticipantEndpoint and sets the default values.
+// NewParticipantEndpoint instantiates a new participantEndpoint and sets the default values.
 func NewParticipantEndpoint()(*ParticipantEndpoint) {
     m := &ParticipantEndpoint{
         Endpoint: *NewEndpoint(),

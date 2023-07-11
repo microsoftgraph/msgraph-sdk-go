@@ -129,6 +129,16 @@ func (m *AccessReviewHistoryDefinition) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["reviewHistoryPeriodEndDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -195,6 +205,17 @@ func (m *AccessReviewHistoryDefinition) GetInstances()([]AccessReviewHistoryInst
     }
     if val != nil {
         return val.([]AccessReviewHistoryInstanceable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AccessReviewHistoryDefinition) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -296,6 +317,12 @@ func (m *AccessReviewHistoryDefinition) Serialize(writer i878a80d2330e89d2689638
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteTimeValue("reviewHistoryPeriodEndDateTime", m.GetReviewHistoryPeriodEndDateTime())
         if err != nil {
             return err
@@ -369,6 +396,13 @@ func (m *AccessReviewHistoryDefinition) SetInstances(value []AccessReviewHistory
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AccessReviewHistoryDefinition) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetReviewHistoryPeriodEndDateTime sets the reviewHistoryPeriodEndDateTime property value. A timestamp. Reviews ending on or before this date will be included in the fetched history data. Only required if scheduleSettings is not defined.
 func (m *AccessReviewHistoryDefinition) SetReviewHistoryPeriodEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("reviewHistoryPeriodEndDateTime", value)
@@ -413,6 +447,7 @@ type AccessReviewHistoryDefinitionable interface {
     GetDecisions()([]AccessReviewHistoryDecisionFilter)
     GetDisplayName()(*string)
     GetInstances()([]AccessReviewHistoryInstanceable)
+    GetOdataType()(*string)
     GetReviewHistoryPeriodEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetReviewHistoryPeriodStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetScheduleSettings()(AccessReviewHistoryScheduleSettingsable)
@@ -423,6 +458,7 @@ type AccessReviewHistoryDefinitionable interface {
     SetDecisions(value []AccessReviewHistoryDecisionFilter)()
     SetDisplayName(value *string)()
     SetInstances(value []AccessReviewHistoryInstanceable)()
+    SetOdataType(value *string)()
     SetReviewHistoryPeriodEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetReviewHistoryPeriodStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetScheduleSettings(value AccessReviewHistoryScheduleSettingsable)()

@@ -8,7 +8,7 @@ import (
 type RoomListCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewRoomListCollectionResponse instantiates a new RoomListCollectionResponse and sets the default values.
+// NewRoomListCollectionResponse instantiates a new roomListCollectionResponse and sets the default values.
 func NewRoomListCollectionResponse()(*RoomListCollectionResponse) {
     m := &RoomListCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

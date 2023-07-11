@@ -7,8 +7,10 @@ import (
 // AccessReviewInstanceDecisionItemServicePrincipalResource 
 type AccessReviewInstanceDecisionItemServicePrincipalResource struct {
     AccessReviewInstanceDecisionItemResource
+    // The OdataType property
+    OdataType *string
 }
-// NewAccessReviewInstanceDecisionItemServicePrincipalResource instantiates a new AccessReviewInstanceDecisionItemServicePrincipalResource and sets the default values.
+// NewAccessReviewInstanceDecisionItemServicePrincipalResource instantiates a new accessReviewInstanceDecisionItemServicePrincipalResource and sets the default values.
 func NewAccessReviewInstanceDecisionItemServicePrincipalResource()(*AccessReviewInstanceDecisionItemServicePrincipalResource) {
     m := &AccessReviewInstanceDecisionItemServicePrincipalResource{
         AccessReviewInstanceDecisionItemResource: *NewAccessReviewInstanceDecisionItemResource(),

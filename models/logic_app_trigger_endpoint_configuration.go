@@ -7,8 +7,10 @@ import (
 // LogicAppTriggerEndpointConfiguration 
 type LogicAppTriggerEndpointConfiguration struct {
     CustomExtensionEndpointConfiguration
+    // The OdataType property
+    OdataType *string
 }
-// NewLogicAppTriggerEndpointConfiguration instantiates a new LogicAppTriggerEndpointConfiguration and sets the default values.
+// NewLogicAppTriggerEndpointConfiguration instantiates a new logicAppTriggerEndpointConfiguration and sets the default values.
 func NewLogicAppTriggerEndpointConfiguration()(*LogicAppTriggerEndpointConfiguration) {
     m := &LogicAppTriggerEndpointConfiguration{
         CustomExtensionEndpointConfiguration: *NewCustomExtensionEndpointConfiguration(),

@@ -8,6 +8,8 @@ import (
 // DeviceEnrollmentConfiguration the Base Class of Device Enrollment Configuration
 type DeviceEnrollmentConfiguration struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDeviceEnrollmentConfiguration instantiates a new deviceEnrollmentConfiguration and sets the default values.
 func NewDeviceEnrollmentConfiguration()(*DeviceEnrollmentConfiguration) {

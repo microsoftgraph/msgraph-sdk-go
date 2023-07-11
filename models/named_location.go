@@ -8,6 +8,8 @@ import (
 // NamedLocation 
 type NamedLocation struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewNamedLocation instantiates a new namedLocation and sets the default values.
 func NewNamedLocation()(*NamedLocation) {

@@ -8,7 +8,7 @@ import (
 type MobileLobAppCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewMobileLobAppCollectionResponse instantiates a new MobileLobAppCollectionResponse and sets the default values.
+// NewMobileLobAppCollectionResponse instantiates a new mobileLobAppCollectionResponse and sets the default values.
 func NewMobileLobAppCollectionResponse()(*MobileLobAppCollectionResponse) {
     m := &MobileLobAppCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

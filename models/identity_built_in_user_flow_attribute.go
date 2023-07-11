@@ -7,8 +7,10 @@ import (
 // IdentityBuiltInUserFlowAttribute 
 type IdentityBuiltInUserFlowAttribute struct {
     IdentityUserFlowAttribute
+    // The OdataType property
+    OdataType *string
 }
-// NewIdentityBuiltInUserFlowAttribute instantiates a new IdentityBuiltInUserFlowAttribute and sets the default values.
+// NewIdentityBuiltInUserFlowAttribute instantiates a new identityBuiltInUserFlowAttribute and sets the default values.
 func NewIdentityBuiltInUserFlowAttribute()(*IdentityBuiltInUserFlowAttribute) {
     m := &IdentityBuiltInUserFlowAttribute{
         IdentityUserFlowAttribute: *NewIdentityUserFlowAttribute(),

@@ -8,6 +8,8 @@ import (
 // ServiceAnnouncementBase 
 type ServiceAnnouncementBase struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewServiceAnnouncementBase instantiates a new serviceAnnouncementBase and sets the default values.
 func NewServiceAnnouncementBase()(*ServiceAnnouncementBase) {

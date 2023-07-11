@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BookingCustomer 
+// BookingCustomer represents a customer of the business.
 type BookingCustomer struct {
     BookingCustomerBase
 }
-// NewBookingCustomer instantiates a new BookingCustomer and sets the default values.
+// NewBookingCustomer instantiates a new bookingCustomer and sets the default values.
 func NewBookingCustomer()(*BookingCustomer) {
     m := &BookingCustomer{
         BookingCustomerBase: *NewBookingCustomerBase(),
@@ -93,6 +93,16 @@ func (m *BookingCustomer) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["phones"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePhoneFromDiscriminatorValue)
         if err != nil {
@@ -110,6 +120,17 @@ func (m *BookingCustomer) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *BookingCustomer) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPhones gets the phones property value. Phone numbers associated with the customer, including home, business and mobile numbers.
 func (m *BookingCustomer) GetPhones()([]Phoneable) {
@@ -152,6 +173,12 @@ func (m *BookingCustomer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPhones() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPhones()))
         for i, v := range m.GetPhones() {
@@ -187,6 +214,13 @@ func (m *BookingCustomer) SetEmailAddress(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *BookingCustomer) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPhones sets the phones property value. Phone numbers associated with the customer, including home, business and mobile numbers.
 func (m *BookingCustomer) SetPhones(value []Phoneable)() {
     err := m.GetBackingStore().Set("phones", value)
@@ -201,9 +235,11 @@ type BookingCustomerable interface {
     GetAddresses()([]PhysicalAddressable)
     GetDisplayName()(*string)
     GetEmailAddress()(*string)
+    GetOdataType()(*string)
     GetPhones()([]Phoneable)
     SetAddresses(value []PhysicalAddressable)()
     SetDisplayName(value *string)()
     SetEmailAddress(value *string)()
+    SetOdataType(value *string)()
     SetPhones(value []Phoneable)()
 }

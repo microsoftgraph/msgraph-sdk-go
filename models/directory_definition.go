@@ -31,7 +31,7 @@ func (m *DirectoryDefinition) GetDiscoverabilities()(*DirectoryDefinitionDiscove
     }
     return nil
 }
-// GetDiscoveryDateTime gets the discoveryDateTime property value. The discoveryDateTime property
+// GetDiscoveryDateTime gets the discoveryDateTime property value. Represents the discovery date and time using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *DirectoryDefinition) GetDiscoveryDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("discoveryDateTime")
     if err != nil {
@@ -91,6 +91,16 @@ func (m *DirectoryDefinition) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["readOnly"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -113,7 +123,7 @@ func (m *DirectoryDefinition) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. Name of the directory. Must be unique within the synchronization schema. Not nullable.
 func (m *DirectoryDefinition) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -124,7 +134,7 @@ func (m *DirectoryDefinition) GetName()(*string) {
     }
     return nil
 }
-// GetObjects gets the objects property value. The objects property
+// GetObjects gets the objects property value. Collection of objects supported by the directory.
 func (m *DirectoryDefinition) GetObjects()([]ObjectDefinitionable) {
     val, err := m.GetBackingStore().Get("objects")
     if err != nil {
@@ -135,7 +145,18 @@ func (m *DirectoryDefinition) GetObjects()([]ObjectDefinitionable) {
     }
     return nil
 }
-// GetReadOnly gets the readOnly property value. The readOnly property
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DirectoryDefinition) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetReadOnly gets the readOnly property value. Whether this object is read-only.
 func (m *DirectoryDefinition) GetReadOnly()(*bool) {
     val, err := m.GetBackingStore().Get("readOnly")
     if err != nil {
@@ -146,7 +167,7 @@ func (m *DirectoryDefinition) GetReadOnly()(*bool) {
     }
     return nil
 }
-// GetVersion gets the version property value. The version property
+// GetVersion gets the version property value. Read only value that indicates version discovered. null if discovery has not yet occurred.
 func (m *DirectoryDefinition) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -195,6 +216,12 @@ func (m *DirectoryDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("readOnly", m.GetReadOnly())
         if err != nil {
             return err
@@ -215,35 +242,42 @@ func (m *DirectoryDefinition) SetDiscoverabilities(value *DirectoryDefinitionDis
         panic(err)
     }
 }
-// SetDiscoveryDateTime sets the discoveryDateTime property value. The discoveryDateTime property
+// SetDiscoveryDateTime sets the discoveryDateTime property value. Represents the discovery date and time using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *DirectoryDefinition) SetDiscoveryDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("discoveryDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. Name of the directory. Must be unique within the synchronization schema. Not nullable.
 func (m *DirectoryDefinition) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
         panic(err)
     }
 }
-// SetObjects sets the objects property value. The objects property
+// SetObjects sets the objects property value. Collection of objects supported by the directory.
 func (m *DirectoryDefinition) SetObjects(value []ObjectDefinitionable)() {
     err := m.GetBackingStore().Set("objects", value)
     if err != nil {
         panic(err)
     }
 }
-// SetReadOnly sets the readOnly property value. The readOnly property
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DirectoryDefinition) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetReadOnly sets the readOnly property value. Whether this object is read-only.
 func (m *DirectoryDefinition) SetReadOnly(value *bool)() {
     err := m.GetBackingStore().Set("readOnly", value)
     if err != nil {
         panic(err)
     }
 }
-// SetVersion sets the version property value. The version property
+// SetVersion sets the version property value. Read only value that indicates version discovered. null if discovery has not yet occurred.
 func (m *DirectoryDefinition) SetVersion(value *string)() {
     err := m.GetBackingStore().Set("version", value)
     if err != nil {
@@ -258,12 +292,14 @@ type DirectoryDefinitionable interface {
     GetDiscoveryDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetName()(*string)
     GetObjects()([]ObjectDefinitionable)
+    GetOdataType()(*string)
     GetReadOnly()(*bool)
     GetVersion()(*string)
     SetDiscoverabilities(value *DirectoryDefinitionDiscoverabilities)()
     SetDiscoveryDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetName(value *string)()
     SetObjects(value []ObjectDefinitionable)()
+    SetOdataType(value *string)()
     SetReadOnly(value *bool)()
     SetVersion(value *string)()
 }

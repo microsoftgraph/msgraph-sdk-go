@@ -152,6 +152,16 @@ func (m *ThreatAssessmentRequest) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["requestSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseThreatAssessmentRequestSource)
         if err != nil {
@@ -189,6 +199,17 @@ func (m *ThreatAssessmentRequest) GetFieldDeserializers()(map[string]func(i878a8
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ThreatAssessmentRequest) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRequestSource gets the requestSource property value. The source of the threat assessment request. Possible values are: administrator.
 func (m *ThreatAssessmentRequest) GetRequestSource()(*ThreatAssessmentRequestSource) {
@@ -262,6 +283,12 @@ func (m *ThreatAssessmentRequest) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRequestSource() != nil {
         cast := (*m.GetRequestSource()).String()
         err = writer.WriteStringValue("requestSource", &cast)
@@ -325,6 +352,13 @@ func (m *ThreatAssessmentRequest) SetExpectedAssessment(value *ThreatExpectedAss
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ThreatAssessmentRequest) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRequestSource sets the requestSource property value. The source of the threat assessment request. Possible values are: administrator.
 func (m *ThreatAssessmentRequest) SetRequestSource(value *ThreatAssessmentRequestSource)() {
     err := m.GetBackingStore().Set("requestSource", value)
@@ -355,6 +389,7 @@ type ThreatAssessmentRequestable interface {
     GetCreatedBy()(IdentitySetable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetExpectedAssessment()(*ThreatExpectedAssessment)
+    GetOdataType()(*string)
     GetRequestSource()(*ThreatAssessmentRequestSource)
     GetResults()([]ThreatAssessmentResultable)
     GetStatus()(*ThreatAssessmentStatus)
@@ -363,6 +398,7 @@ type ThreatAssessmentRequestable interface {
     SetCreatedBy(value IdentitySetable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetExpectedAssessment(value *ThreatExpectedAssessment)()
+    SetOdataType(value *string)()
     SetRequestSource(value *ThreatAssessmentRequestSource)()
     SetResults(value []ThreatAssessmentResultable)()
     SetStatus(value *ThreatAssessmentStatus)()

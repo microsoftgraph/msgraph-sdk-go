@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceCategory 
+// DeviceCategory device categories provides a way to organize your devices. Using device categories, company administrators can define their own categories that make sense to their company. These categories can then be applied to a device in the Intune Azure console or selected by a user during device enrollment. You can filter reports and create dynamic Azure Active Directory device groups based on device categories.
 type DeviceCategory struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDeviceCategory instantiates a new deviceCategory and sets the default values.
 func NewDeviceCategory()(*DeviceCategory) {

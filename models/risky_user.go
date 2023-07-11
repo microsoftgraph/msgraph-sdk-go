@@ -8,8 +8,10 @@ import (
 // RiskyUser 
 type RiskyUser struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewRiskyUser instantiates a new RiskyUser and sets the default values.
+// NewRiskyUser instantiates a new riskyUser and sets the default values.
 func NewRiskyUser()(*RiskyUser) {
     m := &RiskyUser{
         Entity: *NewEntity(),

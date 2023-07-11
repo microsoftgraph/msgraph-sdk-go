@@ -7,6 +7,8 @@ import (
 // ContentType 
 type ContentType struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewContentType instantiates a new contentType and sets the default values.
 func NewContentType()(*ContentType) {

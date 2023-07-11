@@ -10,7 +10,7 @@ type UserRegistrationMethodCount struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewUserRegistrationMethodCount instantiates a new UserRegistrationMethodCount and sets the default values.
+// NewUserRegistrationMethodCount instantiates a new userRegistrationMethodCount and sets the default values.
 func NewUserRegistrationMethodCount()(*UserRegistrationMethodCount) {
     m := &UserRegistrationMethodCount{
     }
@@ -34,7 +34,7 @@ func (m *UserRegistrationMethodCount) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAuthenticationMethod gets the authenticationMethod property value. The authenticationMethod property
+// GetAuthenticationMethod gets the authenticationMethod property value. Name of the authentication method.
 func (m *UserRegistrationMethodCount) GetAuthenticationMethod()(*string) {
     val, err := m.GetBackingStore().Get("authenticationMethod")
     if err != nil {
@@ -95,7 +95,7 @@ func (m *UserRegistrationMethodCount) GetOdataType()(*string) {
     }
     return nil
 }
-// GetUserCount gets the userCount property value. The userCount property
+// GetUserCount gets the userCount property value. Number of users registered.
 func (m *UserRegistrationMethodCount) GetUserCount()(*int64) {
     val, err := m.GetBackingStore().Get("userCount")
     if err != nil {
@@ -141,7 +141,7 @@ func (m *UserRegistrationMethodCount) SetAdditionalData(value map[string]any)() 
         panic(err)
     }
 }
-// SetAuthenticationMethod sets the authenticationMethod property value. The authenticationMethod property
+// SetAuthenticationMethod sets the authenticationMethod property value. Name of the authentication method.
 func (m *UserRegistrationMethodCount) SetAuthenticationMethod(value *string)() {
     err := m.GetBackingStore().Set("authenticationMethod", value)
     if err != nil {
@@ -159,7 +159,7 @@ func (m *UserRegistrationMethodCount) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetUserCount sets the userCount property value. The userCount property
+// SetUserCount sets the userCount property value. Number of users registered.
 func (m *UserRegistrationMethodCount) SetUserCount(value *int64)() {
     err := m.GetBackingStore().Set("userCount", value)
     if err != nil {

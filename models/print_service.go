@@ -7,8 +7,10 @@ import (
 // PrintService 
 type PrintService struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewPrintService instantiates a new PrintService and sets the default values.
+// NewPrintService instantiates a new printService and sets the default values.
 func NewPrintService()(*PrintService) {
     m := &PrintService{
         Entity: *NewEntity(),

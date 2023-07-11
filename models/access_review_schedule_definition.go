@@ -8,6 +8,8 @@ import (
 // AccessReviewScheduleDefinition 
 type AccessReviewScheduleDefinition struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewAccessReviewScheduleDefinition instantiates a new accessReviewScheduleDefinition and sets the default values.
 func NewAccessReviewScheduleDefinition()(*AccessReviewScheduleDefinition) {

@@ -73,7 +73,7 @@ func (m *ObjectDefinitionMetadataEntry) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetKey gets the key property value. The key property
+// GetKey gets the key property value. Possible values are: PropertyNameAccountEnabled, PropertyNameSoftDeleted, IsSoftDeletionSupported, IsSynchronizeAllSupported, ConnectorDataStorageRequired, Extensions, LinkTypeName.
 func (m *ObjectDefinitionMetadataEntry) GetKey()(*ObjectDefinitionMetadata) {
     val, err := m.GetBackingStore().Get("key")
     if err != nil {
@@ -95,7 +95,7 @@ func (m *ObjectDefinitionMetadataEntry) GetOdataType()(*string) {
     }
     return nil
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. Value of the metadata property.
 func (m *ObjectDefinitionMetadataEntry) GetValue()(*string) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -146,7 +146,7 @@ func (m *ObjectDefinitionMetadataEntry) SetAdditionalData(value map[string]any)(
 func (m *ObjectDefinitionMetadataEntry) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetKey sets the key property value. The key property
+// SetKey sets the key property value. Possible values are: PropertyNameAccountEnabled, PropertyNameSoftDeleted, IsSoftDeletionSupported, IsSynchronizeAllSupported, ConnectorDataStorageRequired, Extensions, LinkTypeName.
 func (m *ObjectDefinitionMetadataEntry) SetKey(value *ObjectDefinitionMetadata)() {
     err := m.GetBackingStore().Set("key", value)
     if err != nil {
@@ -160,7 +160,7 @@ func (m *ObjectDefinitionMetadataEntry) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. Value of the metadata property.
 func (m *ObjectDefinitionMetadataEntry) SetValue(value *string)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {

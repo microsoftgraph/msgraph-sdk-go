@@ -8,7 +8,7 @@ import (
 type EdiscoveryTagOperation struct {
     CaseOperation
 }
-// NewEdiscoveryTagOperation instantiates a new EdiscoveryTagOperation and sets the default values.
+// NewEdiscoveryTagOperation instantiates a new ediscoveryTagOperation and sets the default values.
 func NewEdiscoveryTagOperation()(*EdiscoveryTagOperation) {
     m := &EdiscoveryTagOperation{
         CaseOperation: *NewCaseOperation(),

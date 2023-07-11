@@ -8,7 +8,7 @@ import (
 type PlayPromptOperation struct {
     CommsOperation
 }
-// NewPlayPromptOperation instantiates a new PlayPromptOperation and sets the default values.
+// NewPlayPromptOperation instantiates a new playPromptOperation and sets the default values.
 func NewPlayPromptOperation()(*PlayPromptOperation) {
     m := &PlayPromptOperation{
         CommsOperation: *NewCommsOperation(),

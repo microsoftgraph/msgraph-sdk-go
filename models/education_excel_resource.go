@@ -7,8 +7,10 @@ import (
 // EducationExcelResource 
 type EducationExcelResource struct {
     EducationResource
+    // The OdataType property
+    OdataType *string
 }
-// NewEducationExcelResource instantiates a new EducationExcelResource and sets the default values.
+// NewEducationExcelResource instantiates a new educationExcelResource and sets the default values.
 func NewEducationExcelResource()(*EducationExcelResource) {
     m := &EducationExcelResource{
         EducationResource: *NewEducationResource(),

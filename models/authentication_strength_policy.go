@@ -9,7 +9,7 @@ import (
 type AuthenticationStrengthPolicy struct {
     Entity
 }
-// NewAuthenticationStrengthPolicy instantiates a new AuthenticationStrengthPolicy and sets the default values.
+// NewAuthenticationStrengthPolicy instantiates a new authenticationStrengthPolicy and sets the default values.
 func NewAuthenticationStrengthPolicy()(*AuthenticationStrengthPolicy) {
     m := &AuthenticationStrengthPolicy{
         Entity: *NewEntity(),
@@ -150,6 +150,16 @@ func (m *AuthenticationStrengthPolicy) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["policyType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAuthenticationStrengthPolicyType)
         if err != nil {
@@ -180,6 +190,17 @@ func (m *AuthenticationStrengthPolicy) GetModifiedDateTime()(*i336074805fc853987
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AuthenticationStrengthPolicy) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -253,6 +274,12 @@ func (m *AuthenticationStrengthPolicy) Serialize(writer i878a80d2330e89d26896388
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPolicyType() != nil {
         cast := (*m.GetPolicyType()).String()
         err = writer.WriteStringValue("policyType", &cast)
@@ -311,6 +338,13 @@ func (m *AuthenticationStrengthPolicy) SetModifiedDateTime(value *i336074805fc85
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AuthenticationStrengthPolicy) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPolicyType sets the policyType property value. The policyType property
 func (m *AuthenticationStrengthPolicy) SetPolicyType(value *AuthenticationStrengthPolicyType)() {
     err := m.GetBackingStore().Set("policyType", value)
@@ -335,6 +369,7 @@ type AuthenticationStrengthPolicyable interface {
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetPolicyType()(*AuthenticationStrengthPolicyType)
     GetRequirementsSatisfied()(*AuthenticationStrengthRequirements)
     SetAllowedCombinations(value []AuthenticationMethodModes)()
@@ -343,6 +378,7 @@ type AuthenticationStrengthPolicyable interface {
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetPolicyType(value *AuthenticationStrengthPolicyType)()
     SetRequirementsSatisfied(value *AuthenticationStrengthRequirements)()
 }

@@ -8,6 +8,8 @@ import (
 // UserExperienceAnalyticsMetricHistory the user experience analytics metric history.
 type UserExperienceAnalyticsMetricHistory struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewUserExperienceAnalyticsMetricHistory instantiates a new userExperienceAnalyticsMetricHistory and sets the default values.
 func NewUserExperienceAnalyticsMetricHistory()(*UserExperienceAnalyticsMetricHistory) {

@@ -8,7 +8,7 @@ import (
 type ThumbnailSetCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewThumbnailSetCollectionResponse instantiates a new ThumbnailSetCollectionResponse and sets the default values.
+// NewThumbnailSetCollectionResponse instantiates a new thumbnailSetCollectionResponse and sets the default values.
 func NewThumbnailSetCollectionResponse()(*ThumbnailSetCollectionResponse) {
     m := &ThumbnailSetCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

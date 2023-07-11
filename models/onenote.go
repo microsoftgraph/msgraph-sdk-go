@@ -7,6 +7,8 @@ import (
 // Onenote 
 type Onenote struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewOnenote instantiates a new onenote and sets the default values.
 func NewOnenote()(*Onenote) {

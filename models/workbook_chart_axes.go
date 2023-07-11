@@ -43,6 +43,16 @@ func (m *WorkbookChartAxes) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["seriesAxis"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateWorkbookChartAxisFromDiscriminatorValue)
         if err != nil {
@@ -64,6 +74,17 @@ func (m *WorkbookChartAxes) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WorkbookChartAxes) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSeriesAxis gets the seriesAxis property value. Represents the series axis of a 3-dimensional chart. Read-only.
 func (m *WorkbookChartAxes) GetSeriesAxis()(WorkbookChartAxisable) {
@@ -100,6 +121,12 @@ func (m *WorkbookChartAxes) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("seriesAxis", m.GetSeriesAxis())
         if err != nil {
             return err
@@ -116,6 +143,13 @@ func (m *WorkbookChartAxes) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 // SetCategoryAxis sets the categoryAxis property value. Represents the category axis in a chart. Read-only.
 func (m *WorkbookChartAxes) SetCategoryAxis(value WorkbookChartAxisable)() {
     err := m.GetBackingStore().Set("categoryAxis", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WorkbookChartAxes) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -139,9 +173,11 @@ type WorkbookChartAxesable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCategoryAxis()(WorkbookChartAxisable)
+    GetOdataType()(*string)
     GetSeriesAxis()(WorkbookChartAxisable)
     GetValueAxis()(WorkbookChartAxisable)
     SetCategoryAxis(value WorkbookChartAxisable)()
+    SetOdataType(value *string)()
     SetSeriesAxis(value WorkbookChartAxisable)()
     SetValueAxis(value WorkbookChartAxisable)()
 }

@@ -497,6 +497,16 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["signInPageText"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -611,6 +621,17 @@ func (m *OrganizationalBrandingProperties) GetLoginPageTextVisibilitySettings()(
     }
     if val != nil {
         return val.(LoginPageTextVisibilitySettingsable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *OrganizationalBrandingProperties) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -831,6 +852,12 @@ func (m *OrganizationalBrandingProperties) Serialize(writer i878a80d2330e89d2689
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("signInPageText", m.GetSignInPageText())
         if err != nil {
             return err
@@ -1036,6 +1063,13 @@ func (m *OrganizationalBrandingProperties) SetLoginPageTextVisibilitySettings(va
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *OrganizationalBrandingProperties) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSignInPageText sets the signInPageText property value. Text that appears at the bottom of the sign-in box. You can use this to communicate additional information, such as the phone number to your help desk or a legal statement. This text must be Unicode and not exceed 1024 characters.
 func (m *OrganizationalBrandingProperties) SetSignInPageText(value *string)() {
     err := m.GetBackingStore().Set("signInPageText", value)
@@ -1106,6 +1140,7 @@ type OrganizationalBrandingPropertiesable interface {
     GetHeaderLogoRelativeUrl()(*string)
     GetLoginPageLayoutConfiguration()(LoginPageLayoutConfigurationable)
     GetLoginPageTextVisibilitySettings()(LoginPageTextVisibilitySettingsable)
+    GetOdataType()(*string)
     GetSignInPageText()(*string)
     GetSquareLogo()([]byte)
     GetSquareLogoDark()([]byte)
@@ -1136,6 +1171,7 @@ type OrganizationalBrandingPropertiesable interface {
     SetHeaderLogoRelativeUrl(value *string)()
     SetLoginPageLayoutConfiguration(value LoginPageLayoutConfigurationable)()
     SetLoginPageTextVisibilitySettings(value LoginPageTextVisibilitySettingsable)()
+    SetOdataType(value *string)()
     SetSignInPageText(value *string)()
     SetSquareLogo(value []byte)()
     SetSquareLogoDark(value []byte)()

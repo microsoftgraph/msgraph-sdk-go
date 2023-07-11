@@ -7,8 +7,10 @@ import (
 // TargetApplicationOwners 
 type TargetApplicationOwners struct {
     SubjectSet
+    // The OdataType property
+    OdataType *string
 }
-// NewTargetApplicationOwners instantiates a new TargetApplicationOwners and sets the default values.
+// NewTargetApplicationOwners instantiates a new targetApplicationOwners and sets the default values.
 func NewTargetApplicationOwners()(*TargetApplicationOwners) {
     m := &TargetApplicationOwners{
         SubjectSet: *NewSubjectSet(),

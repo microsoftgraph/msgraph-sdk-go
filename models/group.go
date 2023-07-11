@@ -8,8 +8,10 @@ import (
 // Group 
 type Group struct {
     DirectoryObject
+    // The OdataType property
+    OdataType *string
 }
-// NewGroup instantiates a new Group and sets the default values.
+// NewGroup instantiates a new group and sets the default values.
 func NewGroup()(*Group) {
     m := &Group{
         DirectoryObject: *NewDirectoryObject(),

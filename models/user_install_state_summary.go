@@ -7,6 +7,8 @@ import (
 // UserInstallStateSummary contains properties for the installation state summary for a user.
 type UserInstallStateSummary struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewUserInstallStateSummary instantiates a new userInstallStateSummary and sets the default values.
 func NewUserInstallStateSummary()(*UserInstallStateSummary) {

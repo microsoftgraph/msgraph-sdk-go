@@ -7,8 +7,10 @@ import (
 // DirectoryRole 
 type DirectoryRole struct {
     DirectoryObject
+    // The OdataType property
+    OdataType *string
 }
-// NewDirectoryRole instantiates a new DirectoryRole and sets the default values.
+// NewDirectoryRole instantiates a new directoryRole and sets the default values.
 func NewDirectoryRole()(*DirectoryRole) {
     m := &DirectoryRole{
         DirectoryObject: *NewDirectoryObject(),

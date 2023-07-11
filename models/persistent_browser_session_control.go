@@ -8,7 +8,7 @@ import (
 type PersistentBrowserSessionControl struct {
     ConditionalAccessSessionControl
 }
-// NewPersistentBrowserSessionControl instantiates a new PersistentBrowserSessionControl and sets the default values.
+// NewPersistentBrowserSessionControl instantiates a new persistentBrowserSessionControl and sets the default values.
 func NewPersistentBrowserSessionControl()(*PersistentBrowserSessionControl) {
     m := &PersistentBrowserSessionControl{
         ConditionalAccessSessionControl: *NewConditionalAccessSessionControl(),
@@ -34,6 +34,16 @@ func (m *PersistentBrowserSessionControl) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetMode gets the mode property value. Possible values are: always, never.
@@ -44,6 +54,17 @@ func (m *PersistentBrowserSessionControl) GetMode()(*PersistentBrowserSessionMod
     }
     if val != nil {
         return val.(*PersistentBrowserSessionMode)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PersistentBrowserSessionControl) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -60,6 +81,12 @@ func (m *PersistentBrowserSessionControl) Serialize(writer i878a80d2330e89d26896
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetMode sets the mode property value. Possible values are: always, never.
@@ -69,10 +96,19 @@ func (m *PersistentBrowserSessionControl) SetMode(value *PersistentBrowserSessio
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PersistentBrowserSessionControl) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // PersistentBrowserSessionControlable 
 type PersistentBrowserSessionControlable interface {
     ConditionalAccessSessionControlable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetMode()(*PersistentBrowserSessionMode)
+    GetOdataType()(*string)
     SetMode(value *PersistentBrowserSessionMode)()
+    SetOdataType(value *string)()
 }

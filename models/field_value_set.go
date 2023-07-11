@@ -7,6 +7,8 @@ import (
 // FieldValueSet 
 type FieldValueSet struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewFieldValueSet instantiates a new fieldValueSet and sets the default values.
 func NewFieldValueSet()(*FieldValueSet) {

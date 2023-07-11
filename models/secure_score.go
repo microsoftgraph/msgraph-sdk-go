@@ -8,6 +8,8 @@ import (
 // SecureScore 
 type SecureScore struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewSecureScore instantiates a new secureScore and sets the default values.
 func NewSecureScore()(*SecureScore) {

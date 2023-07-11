@@ -8,7 +8,7 @@ import (
 type TimeOff struct {
     ChangeTrackedEntity
 }
-// NewTimeOff instantiates a new TimeOff and sets the default values.
+// NewTimeOff instantiates a new timeOff and sets the default values.
 func NewTimeOff()(*TimeOff) {
     m := &TimeOff{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EBookInstallSummary 
+// EBookInstallSummary contains properties for the installation summary of a book for a device.
 type EBookInstallSummary struct {
     Entity
 }
@@ -104,6 +104,16 @@ func (m *EBookInstallSummary) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetInstalledDeviceCount gets the installedDeviceCount property value. Number of Devices that have successfully installed this book.
@@ -150,6 +160,17 @@ func (m *EBookInstallSummary) GetNotInstalledUserCount()(*int32) {
     }
     return nil
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *EBookInstallSummary) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *EBookInstallSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
@@ -188,6 +209,12 @@ func (m *EBookInstallSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     {
         err = writer.WriteInt32Value("notInstalledUserCount", m.GetNotInstalledUserCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -236,6 +263,13 @@ func (m *EBookInstallSummary) SetNotInstalledUserCount(value *int32)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *EBookInstallSummary) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // EBookInstallSummaryable 
 type EBookInstallSummaryable interface {
     Entityable
@@ -246,10 +280,12 @@ type EBookInstallSummaryable interface {
     GetInstalledUserCount()(*int32)
     GetNotInstalledDeviceCount()(*int32)
     GetNotInstalledUserCount()(*int32)
+    GetOdataType()(*string)
     SetFailedDeviceCount(value *int32)()
     SetFailedUserCount(value *int32)()
     SetInstalledDeviceCount(value *int32)()
     SetInstalledUserCount(value *int32)()
     SetNotInstalledDeviceCount(value *int32)()
     SetNotInstalledUserCount(value *int32)()
+    SetOdataType(value *string)()
 }

@@ -31,9 +31,6 @@ func NewItemRemoveAllDevicesFromManagementRequestBuilder(rawUrl string, requestA
     return NewItemRemoveAllDevicesFromManagementRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post retire all devices from management for this user
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-devices-user-removealldevicesfrommanagement?view=graph-rest-1.0
 func (m *ItemRemoveAllDevicesFromManagementRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemRemoveAllDevicesFromManagementRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

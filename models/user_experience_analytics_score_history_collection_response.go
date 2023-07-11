@@ -8,7 +8,7 @@ import (
 type UserExperienceAnalyticsScoreHistoryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewUserExperienceAnalyticsScoreHistoryCollectionResponse instantiates a new UserExperienceAnalyticsScoreHistoryCollectionResponse and sets the default values.
+// NewUserExperienceAnalyticsScoreHistoryCollectionResponse instantiates a new userExperienceAnalyticsScoreHistoryCollectionResponse and sets the default values.
 func NewUserExperienceAnalyticsScoreHistoryCollectionResponse()(*UserExperienceAnalyticsScoreHistoryCollectionResponse) {
     m := &UserExperienceAnalyticsScoreHistoryCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

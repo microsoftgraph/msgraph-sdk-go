@@ -73,7 +73,7 @@ func (m *StringKeyLongValuePair) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetKey gets the key property value. The key property
+// GetKey gets the key property value. The mapping of the user type from the source system to the target system. For example:User to User - For Azure AD to Azure AD synchronization worker to user - For Workday to Azure AD synchronization.
 func (m *StringKeyLongValuePair) GetKey()(*string) {
     val, err := m.GetBackingStore().Get("key")
     if err != nil {
@@ -95,7 +95,7 @@ func (m *StringKeyLongValuePair) GetOdataType()(*string) {
     }
     return nil
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. Total number of synchronized objects.
 func (m *StringKeyLongValuePair) GetValue()(*int64) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -145,7 +145,7 @@ func (m *StringKeyLongValuePair) SetAdditionalData(value map[string]any)() {
 func (m *StringKeyLongValuePair) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetKey sets the key property value. The key property
+// SetKey sets the key property value. The mapping of the user type from the source system to the target system. For example:User to User - For Azure AD to Azure AD synchronization worker to user - For Workday to Azure AD synchronization.
 func (m *StringKeyLongValuePair) SetKey(value *string)() {
     err := m.GetBackingStore().Set("key", value)
     if err != nil {
@@ -159,7 +159,7 @@ func (m *StringKeyLongValuePair) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. Total number of synchronized objects.
 func (m *StringKeyLongValuePair) SetValue(value *int64)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {

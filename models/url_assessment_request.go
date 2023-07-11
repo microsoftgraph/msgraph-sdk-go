@@ -8,7 +8,7 @@ import (
 type UrlAssessmentRequest struct {
     ThreatAssessmentRequest
 }
-// NewUrlAssessmentRequest instantiates a new UrlAssessmentRequest and sets the default values.
+// NewUrlAssessmentRequest instantiates a new urlAssessmentRequest and sets the default values.
 func NewUrlAssessmentRequest()(*UrlAssessmentRequest) {
     m := &UrlAssessmentRequest{
         ThreatAssessmentRequest: *NewThreatAssessmentRequest(),
@@ -24,6 +24,16 @@ func CreateUrlAssessmentRequestFromDiscriminatorValue(parseNode i878a80d2330e89d
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UrlAssessmentRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ThreatAssessmentRequest.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -35,6 +45,17 @@ func (m *UrlAssessmentRequest) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UrlAssessmentRequest) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUrl gets the url property value. The URL string.
 func (m *UrlAssessmentRequest) GetUrl()(*string) {
@@ -54,12 +75,25 @@ func (m *UrlAssessmentRequest) Serialize(writer i878a80d2330e89d26896388a3f487ee
         return err
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("url", m.GetUrl())
         if err != nil {
             return err
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UrlAssessmentRequest) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUrl sets the url property value. The URL string.
 func (m *UrlAssessmentRequest) SetUrl(value *string)() {
@@ -72,6 +106,8 @@ func (m *UrlAssessmentRequest) SetUrl(value *string)() {
 type UrlAssessmentRequestable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     ThreatAssessmentRequestable
+    GetOdataType()(*string)
     GetUrl()(*string)
+    SetOdataType(value *string)()
     SetUrl(value *string)()
 }

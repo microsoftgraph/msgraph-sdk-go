@@ -5,11 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ImportedWindowsAutopilotDeviceIdentityUpload 
+// ImportedWindowsAutopilotDeviceIdentityUpload import windows autopilot devices using upload.
 type ImportedWindowsAutopilotDeviceIdentityUpload struct {
     Entity
 }
-// NewImportedWindowsAutopilotDeviceIdentityUpload instantiates a new ImportedWindowsAutopilotDeviceIdentityUpload and sets the default values.
+// NewImportedWindowsAutopilotDeviceIdentityUpload instantiates a new importedWindowsAutopilotDeviceIdentityUpload and sets the default values.
 func NewImportedWindowsAutopilotDeviceIdentityUpload()(*ImportedWindowsAutopilotDeviceIdentityUpload) {
     m := &ImportedWindowsAutopilotDeviceIdentityUpload{
         Entity: *NewEntity(),
@@ -71,6 +71,16 @@ func (m *ImportedWindowsAutopilotDeviceIdentityUpload) GetFieldDeserializers()(m
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseImportedWindowsAutopilotDeviceIdentityUploadStatus)
         if err != nil {
@@ -82,6 +92,17 @@ func (m *ImportedWindowsAutopilotDeviceIdentityUpload) GetFieldDeserializers()(m
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ImportedWindowsAutopilotDeviceIdentityUpload) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetStatus gets the status property value. The status property
 func (m *ImportedWindowsAutopilotDeviceIdentityUpload) GetStatus()(*ImportedWindowsAutopilotDeviceIdentityUploadStatus) {
@@ -118,6 +139,12 @@ func (m *ImportedWindowsAutopilotDeviceIdentityUpload) Serialize(writer i878a80d
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetStatus() != nil {
         cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
@@ -141,6 +168,13 @@ func (m *ImportedWindowsAutopilotDeviceIdentityUpload) SetDeviceIdentities(value
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ImportedWindowsAutopilotDeviceIdentityUpload) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetStatus sets the status property value. The status property
 func (m *ImportedWindowsAutopilotDeviceIdentityUpload) SetStatus(value *ImportedWindowsAutopilotDeviceIdentityUploadStatus)() {
     err := m.GetBackingStore().Set("status", value)
@@ -154,8 +188,10 @@ type ImportedWindowsAutopilotDeviceIdentityUploadable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCreatedDateTimeUtc()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDeviceIdentities()([]ImportedWindowsAutopilotDeviceIdentityable)
+    GetOdataType()(*string)
     GetStatus()(*ImportedWindowsAutopilotDeviceIdentityUploadStatus)
     SetCreatedDateTimeUtc(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDeviceIdentities(value []ImportedWindowsAutopilotDeviceIdentityable)()
+    SetOdataType(value *string)()
     SetStatus(value *ImportedWindowsAutopilotDeviceIdentityUploadStatus)()
 }
