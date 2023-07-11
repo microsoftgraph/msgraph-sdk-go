@@ -8,7 +8,7 @@ import (
 type DelegatedAdminRelationshipRequestCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDelegatedAdminRelationshipRequestCollectionResponse instantiates a new DelegatedAdminRelationshipRequestCollectionResponse and sets the default values.
+// NewDelegatedAdminRelationshipRequestCollectionResponse instantiates a new delegatedAdminRelationshipRequestCollectionResponse and sets the default values.
 func NewDelegatedAdminRelationshipRequestCollectionResponse()(*DelegatedAdminRelationshipRequestCollectionResponse) {
     m := &DelegatedAdminRelationshipRequestCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

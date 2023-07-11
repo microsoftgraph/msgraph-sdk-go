@@ -8,7 +8,7 @@ import (
 type PermissionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewPermissionCollectionResponse instantiates a new PermissionCollectionResponse and sets the default values.
+// NewPermissionCollectionResponse instantiates a new permissionCollectionResponse and sets the default values.
 func NewPermissionCollectionResponse()(*PermissionCollectionResponse) {
     m := &PermissionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

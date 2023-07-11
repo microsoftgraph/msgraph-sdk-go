@@ -8,6 +8,8 @@ import (
 // MobileAppContentFile contains properties for a single installer file that is associated with a given mobileAppContent version.
 type MobileAppContentFile struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewMobileAppContentFile instantiates a new mobileAppContentFile and sets the default values.
 func NewMobileAppContentFile()(*MobileAppContentFile) {

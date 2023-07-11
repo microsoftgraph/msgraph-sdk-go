@@ -9,6 +9,8 @@ import (
 // Group 
 type Group struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewGroup instantiates a new group and sets the default values.
 func NewGroup()(*Group) {

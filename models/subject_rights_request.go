@@ -8,8 +8,10 @@ import (
 // SubjectRightsRequest 
 type SubjectRightsRequest struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewSubjectRightsRequest instantiates a new SubjectRightsRequest and sets the default values.
+// NewSubjectRightsRequest instantiates a new subjectRightsRequest and sets the default values.
 func NewSubjectRightsRequest()(*SubjectRightsRequest) {
     m := &SubjectRightsRequest{
         Entity: *NewEntity(),

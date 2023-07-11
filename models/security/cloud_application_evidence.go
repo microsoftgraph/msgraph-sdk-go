@@ -7,8 +7,10 @@ import (
 // CloudApplicationEvidence 
 type CloudApplicationEvidence struct {
     AlertEvidence
+    // The OdataType property
+    OdataType *string
 }
-// NewCloudApplicationEvidence instantiates a new CloudApplicationEvidence and sets the default values.
+// NewCloudApplicationEvidence instantiates a new cloudApplicationEvidence and sets the default values.
 func NewCloudApplicationEvidence()(*CloudApplicationEvidence) {
     m := &CloudApplicationEvidence{
         AlertEvidence: *NewAlertEvidence(),

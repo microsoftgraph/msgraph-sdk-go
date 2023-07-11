@@ -8,7 +8,7 @@ import (
 type DeviceAndAppManagementRoleAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDeviceAndAppManagementRoleAssignmentCollectionResponse instantiates a new DeviceAndAppManagementRoleAssignmentCollectionResponse and sets the default values.
+// NewDeviceAndAppManagementRoleAssignmentCollectionResponse instantiates a new deviceAndAppManagementRoleAssignmentCollectionResponse and sets the default values.
 func NewDeviceAndAppManagementRoleAssignmentCollectionResponse()(*DeviceAndAppManagementRoleAssignmentCollectionResponse) {
     m := &DeviceAndAppManagementRoleAssignmentCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

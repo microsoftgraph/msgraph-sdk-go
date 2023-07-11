@@ -8,6 +8,8 @@ import (
 // DirectoryAudit 
 type DirectoryAudit struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDirectoryAudit instantiates a new directoryAudit and sets the default values.
 func NewDirectoryAudit()(*DirectoryAudit) {

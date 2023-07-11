@@ -8,6 +8,8 @@ import (
 // ManagedDevice devices that are managed or pre-enrolled through Intune
 type ManagedDevice struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewManagedDevice instantiates a new managedDevice and sets the default values.
 func NewManagedDevice()(*ManagedDevice) {
@@ -20,7 +22,7 @@ func NewManagedDevice()(*ManagedDevice) {
 func CreateManagedDeviceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagedDevice(), nil
 }
-// GetActivationLockBypassCode gets the activationLockBypassCode property value. The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. Individual GET call with select query options is needed to retrieve actual values. Supports: $select. $Search is not supported. Read-only. This property is read-only.
+// GetActivationLockBypassCode gets the activationLockBypassCode property value. The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.
 func (m *ManagedDevice) GetActivationLockBypassCode()(*string) {
     val, err := m.GetBackingStore().Get("activationLockBypassCode")
     if err != nil {
@@ -119,7 +121,7 @@ func (m *ManagedDevice) GetDeviceCategory()(DeviceCategoryable) {
     }
     return nil
 }
-// GetDeviceCategoryDisplayName gets the deviceCategoryDisplayName property value. Device category display name. This property is read-only.
+// GetDeviceCategoryDisplayName gets the deviceCategoryDisplayName property value. Device category display name. Default is an empty string. Supports $filter operator 'eq' and 'or'. This property is read-only.
 func (m *ManagedDevice) GetDeviceCategoryDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("deviceCategoryDisplayName")
     if err != nil {
@@ -240,7 +242,7 @@ func (m *ManagedDevice) GetEmailAddress()(*string) {
     }
     return nil
 }
-// GetEnrolledDateTime gets the enrolledDateTime property value. Enrollment time of the device. This property is read-only.
+// GetEnrolledDateTime gets the enrolledDateTime property value. Enrollment time of the device. Supports $filter operator 'lt' and 'gt'. This property is read-only.
 func (m *ManagedDevice) GetEnrolledDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("enrolledDateTime")
     if err != nil {
@@ -931,7 +933,7 @@ func (m *ManagedDevice) GetFreeStorageSpaceInBytes()(*int64) {
     }
     return nil
 }
-// GetIccid gets the iccid property value. Integrated Circuit Card Identifier, it is A SIM card's unique identification number. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.
+// GetIccid gets the iccid property value. Integrated Circuit Card Identifier, it is A SIM card's unique identification number. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.
 func (m *ManagedDevice) GetIccid()(*string) {
     val, err := m.GetBackingStore().Get("iccid")
     if err != nil {
@@ -975,7 +977,7 @@ func (m *ManagedDevice) GetIsSupervised()(*bool) {
     }
     return nil
 }
-// GetJailBroken gets the jailBroken property value. whether the device is jail broken or rooted. This property is read-only.
+// GetJailBroken gets the jailBroken property value. Whether the device is jail broken or rooted. Default is an empty string. Supports $filter operator 'eq' and 'or'. This property is read-only.
 func (m *ManagedDevice) GetJailBroken()(*string) {
     val, err := m.GetBackingStore().Get("jailBroken")
     if err != nil {
@@ -986,7 +988,7 @@ func (m *ManagedDevice) GetJailBroken()(*string) {
     }
     return nil
 }
-// GetLastSyncDateTime gets the lastSyncDateTime property value. The date and time that the device last completed a successful sync with Intune. This property is read-only.
+// GetLastSyncDateTime gets the lastSyncDateTime property value. The date and time that the device last completed a successful sync with Intune. Supports $filter operator 'lt' and 'gt'. This property is read-only.
 func (m *ManagedDevice) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSyncDateTime")
     if err != nil {
@@ -1085,7 +1087,7 @@ func (m *ManagedDevice) GetModel()(*string) {
     }
     return nil
 }
-// GetNotes gets the notes property value. Notes on the device created by IT Admin. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select.  $Search is not supported.
+// GetNotes gets the notes property value. Notes on the device created by IT Admin. Default is null. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported.
 func (m *ManagedDevice) GetNotes()(*string) {
     val, err := m.GetBackingStore().Get("notes")
     if err != nil {
@@ -1140,7 +1142,7 @@ func (m *ManagedDevice) GetPhoneNumber()(*string) {
     }
     return nil
 }
-// GetPhysicalMemoryInBytes gets the physicalMemoryInBytes property value. Total Memory in Bytes. Return default value 0 in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. Default value is 0. Read-only. This property is read-only.
+// GetPhysicalMemoryInBytes gets the physicalMemoryInBytes property value. Total Memory in Bytes. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. Read-only. This property is read-only.
 func (m *ManagedDevice) GetPhysicalMemoryInBytes()(*int64) {
     val, err := m.GetBackingStore().Get("physicalMemoryInBytes")
     if err != nil {
@@ -1162,7 +1164,7 @@ func (m *ManagedDevice) GetRemoteAssistanceSessionErrorDetails()(*string) {
     }
     return nil
 }
-// GetRemoteAssistanceSessionUrl gets the remoteAssistanceSessionUrl property value. Url that allows a Remote Assistance session to be established with the device. This property is read-only.
+// GetRemoteAssistanceSessionUrl gets the remoteAssistanceSessionUrl property value. Url that allows a Remote Assistance session to be established with the device. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.
 func (m *ManagedDevice) GetRemoteAssistanceSessionUrl()(*string) {
     val, err := m.GetBackingStore().Get("remoteAssistanceSessionUrl")
     if err != nil {
@@ -1217,7 +1219,7 @@ func (m *ManagedDevice) GetTotalStorageSpaceInBytes()(*int64) {
     }
     return nil
 }
-// GetUdid gets the udid property value. Unique Device Identifier for iOS and macOS devices. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.
+// GetUdid gets the udid property value. Unique Device Identifier for iOS and macOS devices. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.
 func (m *ManagedDevice) GetUdid()(*string) {
     val, err := m.GetBackingStore().Get("udid")
     if err != nil {
@@ -1430,7 +1432,7 @@ func (m *ManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     return nil
 }
-// SetActivationLockBypassCode sets the activationLockBypassCode property value. The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. Individual GET call with select query options is needed to retrieve actual values. Supports: $select. $Search is not supported. Read-only. This property is read-only.
+// SetActivationLockBypassCode sets the activationLockBypassCode property value. The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.
 func (m *ManagedDevice) SetActivationLockBypassCode(value *string)() {
     err := m.GetBackingStore().Set("activationLockBypassCode", value)
     if err != nil {
@@ -1493,7 +1495,7 @@ func (m *ManagedDevice) SetDeviceCategory(value DeviceCategoryable)() {
         panic(err)
     }
 }
-// SetDeviceCategoryDisplayName sets the deviceCategoryDisplayName property value. Device category display name. This property is read-only.
+// SetDeviceCategoryDisplayName sets the deviceCategoryDisplayName property value. Device category display name. Default is an empty string. Supports $filter operator 'eq' and 'or'. This property is read-only.
 func (m *ManagedDevice) SetDeviceCategoryDisplayName(value *string)() {
     err := m.GetBackingStore().Set("deviceCategoryDisplayName", value)
     if err != nil {
@@ -1570,7 +1572,7 @@ func (m *ManagedDevice) SetEmailAddress(value *string)() {
         panic(err)
     }
 }
-// SetEnrolledDateTime sets the enrolledDateTime property value. Enrollment time of the device. This property is read-only.
+// SetEnrolledDateTime sets the enrolledDateTime property value. Enrollment time of the device. Supports $filter operator 'lt' and 'gt'. This property is read-only.
 func (m *ManagedDevice) SetEnrolledDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("enrolledDateTime", value)
     if err != nil {
@@ -1612,7 +1614,7 @@ func (m *ManagedDevice) SetFreeStorageSpaceInBytes(value *int64)() {
         panic(err)
     }
 }
-// SetIccid sets the iccid property value. Integrated Circuit Card Identifier, it is A SIM card's unique identification number. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.
+// SetIccid sets the iccid property value. Integrated Circuit Card Identifier, it is A SIM card's unique identification number. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.
 func (m *ManagedDevice) SetIccid(value *string)() {
     err := m.GetBackingStore().Set("iccid", value)
     if err != nil {
@@ -1640,14 +1642,14 @@ func (m *ManagedDevice) SetIsSupervised(value *bool)() {
         panic(err)
     }
 }
-// SetJailBroken sets the jailBroken property value. whether the device is jail broken or rooted. This property is read-only.
+// SetJailBroken sets the jailBroken property value. Whether the device is jail broken or rooted. Default is an empty string. Supports $filter operator 'eq' and 'or'. This property is read-only.
 func (m *ManagedDevice) SetJailBroken(value *string)() {
     err := m.GetBackingStore().Set("jailBroken", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastSyncDateTime sets the lastSyncDateTime property value. The date and time that the device last completed a successful sync with Intune. This property is read-only.
+// SetLastSyncDateTime sets the lastSyncDateTime property value. The date and time that the device last completed a successful sync with Intune. Supports $filter operator 'lt' and 'gt'. This property is read-only.
 func (m *ManagedDevice) SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastSyncDateTime", value)
     if err != nil {
@@ -1710,7 +1712,7 @@ func (m *ManagedDevice) SetModel(value *string)() {
         panic(err)
     }
 }
-// SetNotes sets the notes property value. Notes on the device created by IT Admin. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select.  $Search is not supported.
+// SetNotes sets the notes property value. Notes on the device created by IT Admin. Default is null. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported.
 func (m *ManagedDevice) SetNotes(value *string)() {
     err := m.GetBackingStore().Set("notes", value)
     if err != nil {
@@ -1745,7 +1747,7 @@ func (m *ManagedDevice) SetPhoneNumber(value *string)() {
         panic(err)
     }
 }
-// SetPhysicalMemoryInBytes sets the physicalMemoryInBytes property value. Total Memory in Bytes. Return default value 0 in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. Default value is 0. Read-only. This property is read-only.
+// SetPhysicalMemoryInBytes sets the physicalMemoryInBytes property value. Total Memory in Bytes. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. Read-only. This property is read-only.
 func (m *ManagedDevice) SetPhysicalMemoryInBytes(value *int64)() {
     err := m.GetBackingStore().Set("physicalMemoryInBytes", value)
     if err != nil {
@@ -1759,7 +1761,7 @@ func (m *ManagedDevice) SetRemoteAssistanceSessionErrorDetails(value *string)() 
         panic(err)
     }
 }
-// SetRemoteAssistanceSessionUrl sets the remoteAssistanceSessionUrl property value. Url that allows a Remote Assistance session to be established with the device. This property is read-only.
+// SetRemoteAssistanceSessionUrl sets the remoteAssistanceSessionUrl property value. Url that allows a Remote Assistance session to be established with the device. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.
 func (m *ManagedDevice) SetRemoteAssistanceSessionUrl(value *string)() {
     err := m.GetBackingStore().Set("remoteAssistanceSessionUrl", value)
     if err != nil {
@@ -1794,7 +1796,7 @@ func (m *ManagedDevice) SetTotalStorageSpaceInBytes(value *int64)() {
         panic(err)
     }
 }
-// SetUdid sets the udid property value. Unique Device Identifier for iOS and macOS devices. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.
+// SetUdid sets the udid property value. Unique Device Identifier for iOS and macOS devices. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.
 func (m *ManagedDevice) SetUdid(value *string)() {
     err := m.GetBackingStore().Set("udid", value)
     if err != nil {

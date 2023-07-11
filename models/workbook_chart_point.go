@@ -7,6 +7,8 @@ import (
 // WorkbookChartPoint 
 type WorkbookChartPoint struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewWorkbookChartPoint instantiates a new workbookChartPoint and sets the default values.
 func NewWorkbookChartPoint()(*WorkbookChartPoint) {

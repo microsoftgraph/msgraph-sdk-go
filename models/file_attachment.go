@@ -8,7 +8,7 @@ import (
 type FileAttachment struct {
     Attachment
 }
-// NewFileAttachment instantiates a new FileAttachment and sets the default values.
+// NewFileAttachment instantiates a new fileAttachment and sets the default values.
 func NewFileAttachment()(*FileAttachment) {
     m := &FileAttachment{
         Attachment: *NewAttachment(),

@@ -7,6 +7,8 @@ import (
 // RoleAssignment the Role Assignment resource. Role assignments tie together a role definition with members and scopes. There can be one or more role assignments per role. This applies to custom and built-in roles.
 type RoleAssignment struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewRoleAssignment instantiates a new roleAssignment and sets the default values.
 func NewRoleAssignment()(*RoleAssignment) {

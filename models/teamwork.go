@@ -7,8 +7,10 @@ import (
 // Teamwork 
 type Teamwork struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewTeamwork instantiates a new Teamwork and sets the default values.
+// NewTeamwork instantiates a new teamwork and sets the default values.
 func NewTeamwork()(*Teamwork) {
     m := &Teamwork{
         Entity: *NewEntity(),

@@ -8,7 +8,7 @@ import (
 type SubscriptionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewSubscriptionCollectionResponse instantiates a new SubscriptionCollectionResponse and sets the default values.
+// NewSubscriptionCollectionResponse instantiates a new subscriptionCollectionResponse and sets the default values.
 func NewSubscriptionCollectionResponse()(*SubscriptionCollectionResponse) {
     m := &SubscriptionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -9,7 +9,7 @@ import (
 type UnifiedGroupSourceCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
 }
-// NewUnifiedGroupSourceCollectionResponse instantiates a new UnifiedGroupSourceCollectionResponse and sets the default values.
+// NewUnifiedGroupSourceCollectionResponse instantiates a new unifiedGroupSourceCollectionResponse and sets the default values.
 func NewUnifiedGroupSourceCollectionResponse()(*UnifiedGroupSourceCollectionResponse) {
     m := &UnifiedGroupSourceCollectionResponse{
         BaseCollectionPaginationCountResponse: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewBaseCollectionPaginationCountResponse(),

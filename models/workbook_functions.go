@@ -7,6 +7,8 @@ import (
 // WorkbookFunctions 
 type WorkbookFunctions struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewWorkbookFunctions instantiates a new workbookFunctions and sets the default values.
 func NewWorkbookFunctions()(*WorkbookFunctions) {

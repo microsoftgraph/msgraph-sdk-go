@@ -7,6 +7,8 @@ import (
 // CalendarPermission 
 type CalendarPermission struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewCalendarPermission instantiates a new calendarPermission and sets the default values.
 func NewCalendarPermission()(*CalendarPermission) {

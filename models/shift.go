@@ -8,7 +8,7 @@ import (
 type Shift struct {
     ChangeTrackedEntity
 }
-// NewShift instantiates a new Shift and sets the default values.
+// NewShift instantiates a new shift and sets the default values.
 func NewShift()(*Shift) {
     m := &Shift{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),

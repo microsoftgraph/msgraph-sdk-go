@@ -38,7 +38,7 @@ func (m *AttributeMappingSource) GetAdditionalData()(map[string]any) {
 func (m *AttributeMappingSource) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetExpression gets the expression property value. The expression property
+// GetExpression gets the expression property value. Equivalent expression representation of this attributeMappingSource object.
 func (m *AttributeMappingSource) GetExpression()(*string) {
     val, err := m.GetBackingStore().Get("expression")
     if err != nil {
@@ -110,7 +110,7 @@ func (m *AttributeMappingSource) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. Name parameter of the mapping source. Depending on the type property value, this can be the name of the function, the name of the source attribute, or a constant value to be used.
 func (m *AttributeMappingSource) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -132,7 +132,7 @@ func (m *AttributeMappingSource) GetOdataType()(*string) {
     }
     return nil
 }
-// GetParameters gets the parameters property value. The parameters property
+// GetParameters gets the parameters property value. If this object represents a function, lists function parameters. Parameters consist of attributeMappingSource objects themselves, allowing for complex expressions. If type is not Function, this property will be null/empty array.
 func (m *AttributeMappingSource) GetParameters()([]StringKeyAttributeMappingSourceValuePairable) {
     val, err := m.GetBackingStore().Get("parameters")
     if err != nil {
@@ -212,14 +212,14 @@ func (m *AttributeMappingSource) SetAdditionalData(value map[string]any)() {
 func (m *AttributeMappingSource) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetExpression sets the expression property value. The expression property
+// SetExpression sets the expression property value. Equivalent expression representation of this attributeMappingSource object.
 func (m *AttributeMappingSource) SetExpression(value *string)() {
     err := m.GetBackingStore().Set("expression", value)
     if err != nil {
         panic(err)
     }
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. Name parameter of the mapping source. Depending on the type property value, this can be the name of the function, the name of the source attribute, or a constant value to be used.
 func (m *AttributeMappingSource) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
@@ -233,7 +233,7 @@ func (m *AttributeMappingSource) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetParameters sets the parameters property value. The parameters property
+// SetParameters sets the parameters property value. If this object represents a function, lists function parameters. Parameters consist of attributeMappingSource objects themselves, allowing for complex expressions. If type is not Function, this property will be null/empty array.
 func (m *AttributeMappingSource) SetParameters(value []StringKeyAttributeMappingSourceValuePairable)() {
     err := m.GetBackingStore().Set("parameters", value)
     if err != nil {

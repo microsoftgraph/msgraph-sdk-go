@@ -8,6 +8,8 @@ import (
 // PrintJob 
 type PrintJob struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewPrintJob instantiates a new printJob and sets the default values.
 func NewPrintJob()(*PrintJob) {

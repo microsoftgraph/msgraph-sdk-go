@@ -9,7 +9,7 @@ import (
 type RetentionEventCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
 }
-// NewRetentionEventCollectionResponse instantiates a new RetentionEventCollectionResponse and sets the default values.
+// NewRetentionEventCollectionResponse instantiates a new retentionEventCollectionResponse and sets the default values.
 func NewRetentionEventCollectionResponse()(*RetentionEventCollectionResponse) {
     m := &RetentionEventCollectionResponse{
         BaseCollectionPaginationCountResponse: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewBaseCollectionPaginationCountResponse(),

@@ -7,6 +7,8 @@ import (
 // Calendar 
 type Calendar struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewCalendar instantiates a new calendar and sets the default values.
 func NewCalendar()(*Calendar) {

@@ -95,7 +95,7 @@ func (m *SynchronizationSecretKeyStringValuePair) GetOdataType()(*string) {
     }
     return nil
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. The value of the secret.
 func (m *SynchronizationSecretKeyStringValuePair) GetValue()(*string) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -160,7 +160,7 @@ func (m *SynchronizationSecretKeyStringValuePair) SetOdataType(value *string)() 
         panic(err)
     }
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. The value of the secret.
 func (m *SynchronizationSecretKeyStringValuePair) SetValue(value *string)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {

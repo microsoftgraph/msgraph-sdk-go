@@ -7,6 +7,8 @@ import (
 // DeviceConfigurationAssignment the device configuration assignment entity assigns an AAD group to a specific device configuration.
 type DeviceConfigurationAssignment struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDeviceConfigurationAssignment instantiates a new deviceConfigurationAssignment and sets the default values.
 func NewDeviceConfigurationAssignment()(*DeviceConfigurationAssignment) {

@@ -8,6 +8,8 @@ import (
 // TriggersRoot 
 type TriggersRoot struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewTriggersRoot instantiates a new triggersRoot and sets the default values.
 func NewTriggersRoot()(*TriggersRoot) {

@@ -10,7 +10,7 @@ type AuditActivityInitiator struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAuditActivityInitiator instantiates a new AuditActivityInitiator and sets the default values.
+// NewAuditActivityInitiator instantiates a new auditActivityInitiator and sets the default values.
 func NewAuditActivityInitiator()(*AuditActivityInitiator) {
     m := &AuditActivityInitiator{
     }

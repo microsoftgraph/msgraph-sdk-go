@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosVppEBookAssignment 
+// IosVppEBookAssignment contains properties used to assign an iOS VPP EBook to a group.
 type IosVppEBookAssignment struct {
     ManagedEBookAssignment
 }
-// NewIosVppEBookAssignment instantiates a new IosVppEBookAssignment and sets the default values.
+// NewIosVppEBookAssignment instantiates a new iosVppEBookAssignment and sets the default values.
 func NewIosVppEBookAssignment()(*IosVppEBookAssignment) {
     m := &IosVppEBookAssignment{
         ManagedEBookAssignment: *NewManagedEBookAssignment(),

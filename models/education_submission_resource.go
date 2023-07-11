@@ -7,6 +7,8 @@ import (
 // EducationSubmissionResource 
 type EducationSubmissionResource struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewEducationSubmissionResource instantiates a new educationSubmissionResource and sets the default values.
 func NewEducationSubmissionResource()(*EducationSubmissionResource) {

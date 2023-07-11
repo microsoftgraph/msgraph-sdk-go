@@ -9,7 +9,7 @@ import (
 type HostCookieCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
 }
-// NewHostCookieCollectionResponse instantiates a new HostCookieCollectionResponse and sets the default values.
+// NewHostCookieCollectionResponse instantiates a new hostCookieCollectionResponse and sets the default values.
 func NewHostCookieCollectionResponse()(*HostCookieCollectionResponse) {
     m := &HostCookieCollectionResponse{
         BaseCollectionPaginationCountResponse: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewBaseCollectionPaginationCountResponse(),

@@ -9,7 +9,7 @@ import (
 type LearningSelfInitiatedCourse struct {
     LearningCourseActivity
 }
-// NewLearningSelfInitiatedCourse instantiates a new LearningSelfInitiatedCourse and sets the default values.
+// NewLearningSelfInitiatedCourse instantiates a new learningSelfInitiatedCourse and sets the default values.
 func NewLearningSelfInitiatedCourse()(*LearningSelfInitiatedCourse) {
     m := &LearningSelfInitiatedCourse{
         LearningCourseActivity: *NewLearningCourseActivity(),

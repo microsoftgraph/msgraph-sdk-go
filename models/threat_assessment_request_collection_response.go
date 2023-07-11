@@ -8,7 +8,7 @@ import (
 type ThreatAssessmentRequestCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewThreatAssessmentRequestCollectionResponse instantiates a new ThreatAssessmentRequestCollectionResponse and sets the default values.
+// NewThreatAssessmentRequestCollectionResponse instantiates a new threatAssessmentRequestCollectionResponse and sets the default values.
 func NewThreatAssessmentRequestCollectionResponse()(*ThreatAssessmentRequestCollectionResponse) {
     m := &ThreatAssessmentRequestCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

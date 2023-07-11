@@ -7,8 +7,10 @@ import (
 // Pkcs12Certificate 
 type Pkcs12Certificate struct {
     ApiAuthenticationConfigurationBase
+    // The OdataType property
+    OdataType *string
 }
-// NewPkcs12Certificate instantiates a new Pkcs12Certificate and sets the default values.
+// NewPkcs12Certificate instantiates a new pkcs12Certificate and sets the default values.
 func NewPkcs12Certificate()(*Pkcs12Certificate) {
     m := &Pkcs12Certificate{
         ApiAuthenticationConfigurationBase: *NewApiAuthenticationConfigurationBase(),

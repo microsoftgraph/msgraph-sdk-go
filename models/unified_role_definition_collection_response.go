@@ -8,7 +8,7 @@ import (
 type UnifiedRoleDefinitionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewUnifiedRoleDefinitionCollectionResponse instantiates a new UnifiedRoleDefinitionCollectionResponse and sets the default values.
+// NewUnifiedRoleDefinitionCollectionResponse instantiates a new unifiedRoleDefinitionCollectionResponse and sets the default values.
 func NewUnifiedRoleDefinitionCollectionResponse()(*UnifiedRoleDefinitionCollectionResponse) {
     m := &UnifiedRoleDefinitionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

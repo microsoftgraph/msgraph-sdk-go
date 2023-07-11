@@ -7,6 +7,8 @@ import (
 // WindowsInformationProtectionAppLockerFile windows Information Protection AppLocker File
 type WindowsInformationProtectionAppLockerFile struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewWindowsInformationProtectionAppLockerFile instantiates a new windowsInformationProtectionAppLockerFile and sets the default values.
 func NewWindowsInformationProtectionAppLockerFile()(*WindowsInformationProtectionAppLockerFile) {

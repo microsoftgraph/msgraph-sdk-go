@@ -10,7 +10,7 @@ type CrossTenantAccessPolicyConfigurationPartner struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewCrossTenantAccessPolicyConfigurationPartner instantiates a new CrossTenantAccessPolicyConfigurationPartner and sets the default values.
+// NewCrossTenantAccessPolicyConfigurationPartner instantiates a new crossTenantAccessPolicyConfigurationPartner and sets the default values.
 func NewCrossTenantAccessPolicyConfigurationPartner()(*CrossTenantAccessPolicyConfigurationPartner) {
     m := &CrossTenantAccessPolicyConfigurationPartner{
     }

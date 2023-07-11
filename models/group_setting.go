@@ -7,6 +7,8 @@ import (
 // GroupSetting 
 type GroupSetting struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewGroupSetting instantiates a new groupSetting and sets the default values.
 func NewGroupSetting()(*GroupSetting) {

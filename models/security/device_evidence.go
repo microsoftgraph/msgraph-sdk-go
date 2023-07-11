@@ -8,8 +8,10 @@ import (
 // DeviceEvidence 
 type DeviceEvidence struct {
     AlertEvidence
+    // The OdataType property
+    OdataType *string
 }
-// NewDeviceEvidence instantiates a new DeviceEvidence and sets the default values.
+// NewDeviceEvidence instantiates a new deviceEvidence and sets the default values.
 func NewDeviceEvidence()(*DeviceEvidence) {
     m := &DeviceEvidence{
         AlertEvidence: *NewAlertEvidence(),

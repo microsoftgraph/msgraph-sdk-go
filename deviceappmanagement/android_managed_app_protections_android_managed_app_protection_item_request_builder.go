@@ -18,7 +18,7 @@ type AndroidManagedAppProtectionsAndroidManagedAppProtectionItemRequestBuilderDe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AndroidManagedAppProtectionsAndroidManagedAppProtectionItemRequestBuilderGetQueryParameters read properties and relationships of the androidManagedAppProtection object.
+// AndroidManagedAppProtectionsAndroidManagedAppProtectionItemRequestBuilderGetQueryParameters android managed app policies.
 type AndroidManagedAppProtectionsAndroidManagedAppProtectionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -62,10 +62,7 @@ func NewAndroidManagedAppProtectionsAndroidManagedAppProtectionItemRequestBuilde
     urlParams["request-raw-url"] = rawUrl
     return NewAndroidManagedAppProtectionsAndroidManagedAppProtectionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a androidManagedAppProtection.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-mam-androidmanagedappprotection-delete?view=graph-rest-1.0
+// Delete delete navigation property androidManagedAppProtections for deviceAppManagement
 func (m *AndroidManagedAppProtectionsAndroidManagedAppProtectionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AndroidManagedAppProtectionsAndroidManagedAppProtectionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -85,10 +82,7 @@ func (m *AndroidManagedAppProtectionsAndroidManagedAppProtectionItemRequestBuild
 func (m *AndroidManagedAppProtectionsAndroidManagedAppProtectionItemRequestBuilder) DeploymentSummary()(*AndroidManagedAppProtectionsItemDeploymentSummaryRequestBuilder) {
     return NewAndroidManagedAppProtectionsItemDeploymentSummaryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read properties and relationships of the androidManagedAppProtection object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-mam-androidmanagedappprotection-get?view=graph-rest-1.0
+// Get android managed app policies.
 func (m *AndroidManagedAppProtectionsAndroidManagedAppProtectionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AndroidManagedAppProtectionsAndroidManagedAppProtectionItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AndroidManagedAppProtectionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -107,10 +101,7 @@ func (m *AndroidManagedAppProtectionsAndroidManagedAppProtectionItemRequestBuild
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AndroidManagedAppProtectionable), nil
 }
-// Patch update the properties of a androidManagedAppProtection object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-mam-androidmanagedappprotection-update?view=graph-rest-1.0
+// Patch update the navigation property androidManagedAppProtections in deviceAppManagement
 func (m *AndroidManagedAppProtectionsAndroidManagedAppProtectionItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AndroidManagedAppProtectionable, requestConfiguration *AndroidManagedAppProtectionsAndroidManagedAppProtectionItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AndroidManagedAppProtectionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -129,7 +120,7 @@ func (m *AndroidManagedAppProtectionsAndroidManagedAppProtectionItemRequestBuild
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AndroidManagedAppProtectionable), nil
 }
-// ToDeleteRequestInformation deletes a androidManagedAppProtection.
+// ToDeleteRequestInformation delete navigation property androidManagedAppProtections for deviceAppManagement
 func (m *AndroidManagedAppProtectionsAndroidManagedAppProtectionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AndroidManagedAppProtectionsAndroidManagedAppProtectionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -141,7 +132,7 @@ func (m *AndroidManagedAppProtectionsAndroidManagedAppProtectionItemRequestBuild
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read properties and relationships of the androidManagedAppProtection object.
+// ToGetRequestInformation android managed app policies.
 func (m *AndroidManagedAppProtectionsAndroidManagedAppProtectionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AndroidManagedAppProtectionsAndroidManagedAppProtectionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -157,7 +148,7 @@ func (m *AndroidManagedAppProtectionsAndroidManagedAppProtectionItemRequestBuild
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a androidManagedAppProtection object.
+// ToPatchRequestInformation update the navigation property androidManagedAppProtections in deviceAppManagement
 func (m *AndroidManagedAppProtectionsAndroidManagedAppProtectionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AndroidManagedAppProtectionable, requestConfiguration *AndroidManagedAppProtectionsAndroidManagedAppProtectionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

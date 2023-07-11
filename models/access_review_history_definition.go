@@ -8,6 +8,8 @@ import (
 // AccessReviewHistoryDefinition 
 type AccessReviewHistoryDefinition struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewAccessReviewHistoryDefinition instantiates a new accessReviewHistoryDefinition and sets the default values.
 func NewAccessReviewHistoryDefinition()(*AccessReviewHistoryDefinition) {

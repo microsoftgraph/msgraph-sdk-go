@@ -8,7 +8,7 @@ import (
 type EducationLinkResource struct {
     EducationResource
 }
-// NewEducationLinkResource instantiates a new EducationLinkResource and sets the default values.
+// NewEducationLinkResource instantiates a new educationLinkResource and sets the default values.
 func NewEducationLinkResource()(*EducationLinkResource) {
     m := &EducationLinkResource{
         EducationResource: *NewEducationResource(),
@@ -34,11 +34,32 @@ func (m *EducationLinkResource) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLink gets the link property value. URL to the resource.
 func (m *EducationLinkResource) GetLink()(*string) {
     val, err := m.GetBackingStore().Get("link")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *EducationLinkResource) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -59,6 +80,12 @@ func (m *EducationLinkResource) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetLink sets the link property value. URL to the resource.
@@ -68,10 +95,19 @@ func (m *EducationLinkResource) SetLink(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *EducationLinkResource) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // EducationLinkResourceable 
 type EducationLinkResourceable interface {
     EducationResourceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetLink()(*string)
+    GetOdataType()(*string)
     SetLink(value *string)()
+    SetOdataType(value *string)()
 }

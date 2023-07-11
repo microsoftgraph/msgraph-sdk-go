@@ -74,7 +74,7 @@ func (m *TeamsAppAuthorization) GetOdataType()(*string) {
     }
     return nil
 }
-// GetRequiredPermissionSet gets the requiredPermissionSet property value. The requiredPermissionSet property
+// GetRequiredPermissionSet gets the requiredPermissionSet property value. Set of permissions required by the teamsApp.
 func (m *TeamsAppAuthorization) GetRequiredPermissionSet()(TeamsAppPermissionSetable) {
     val, err := m.GetBackingStore().Get("requiredPermissionSet")
     if err != nil {
@@ -125,7 +125,7 @@ func (m *TeamsAppAuthorization) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetRequiredPermissionSet sets the requiredPermissionSet property value. The requiredPermissionSet property
+// SetRequiredPermissionSet sets the requiredPermissionSet property value. Set of permissions required by the teamsApp.
 func (m *TeamsAppAuthorization) SetRequiredPermissionSet(value TeamsAppPermissionSetable)() {
     err := m.GetBackingStore().Set("requiredPermissionSet", value)
     if err != nil {

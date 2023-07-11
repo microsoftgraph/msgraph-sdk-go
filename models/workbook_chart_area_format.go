@@ -7,6 +7,8 @@ import (
 // WorkbookChartAreaFormat 
 type WorkbookChartAreaFormat struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewWorkbookChartAreaFormat instantiates a new workbookChartAreaFormat and sets the default values.
 func NewWorkbookChartAreaFormat()(*WorkbookChartAreaFormat) {

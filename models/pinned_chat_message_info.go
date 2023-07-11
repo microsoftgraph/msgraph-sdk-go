@@ -7,6 +7,8 @@ import (
 // PinnedChatMessageInfo 
 type PinnedChatMessageInfo struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewPinnedChatMessageInfo instantiates a new pinnedChatMessageInfo and sets the default values.
 func NewPinnedChatMessageInfo()(*PinnedChatMessageInfo) {

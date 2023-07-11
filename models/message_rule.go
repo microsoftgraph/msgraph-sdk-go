@@ -7,6 +7,8 @@ import (
 // MessageRule 
 type MessageRule struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewMessageRule instantiates a new messageRule and sets the default values.
 func NewMessageRule()(*MessageRule) {

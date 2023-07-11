@@ -34,7 +34,7 @@ func (m *ObjectDefinition) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAttributes gets the attributes property value. The attributes property
+// GetAttributes gets the attributes property value. Defines attributes of the object.
 func (m *ObjectDefinition) GetAttributes()([]AttributeDefinitionable) {
     val, err := m.GetBackingStore().Get("attributes")
     if err != nil {
@@ -122,7 +122,7 @@ func (m *ObjectDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetMetadata gets the metadata property value. The metadata property
+// GetMetadata gets the metadata property value. Metadata for the given object.
 func (m *ObjectDefinition) GetMetadata()([]ObjectDefinitionMetadataEntryable) {
     val, err := m.GetBackingStore().Get("metadata")
     if err != nil {
@@ -133,7 +133,7 @@ func (m *ObjectDefinition) GetMetadata()([]ObjectDefinitionMetadataEntryable) {
     }
     return nil
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. Name of the object. Must be unique within a directory definition. Not nullable.
 func (m *ObjectDefinition) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -155,7 +155,7 @@ func (m *ObjectDefinition) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSupportedApis gets the supportedApis property value. The supportedApis property
+// GetSupportedApis gets the supportedApis property value. The API that the provisioning service queries to retrieve data for synchronization.
 func (m *ObjectDefinition) GetSupportedApis()([]string) {
     val, err := m.GetBackingStore().Get("supportedApis")
     if err != nil {
@@ -225,7 +225,7 @@ func (m *ObjectDefinition) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAttributes sets the attributes property value. The attributes property
+// SetAttributes sets the attributes property value. Defines attributes of the object.
 func (m *ObjectDefinition) SetAttributes(value []AttributeDefinitionable)() {
     err := m.GetBackingStore().Set("attributes", value)
     if err != nil {
@@ -236,14 +236,14 @@ func (m *ObjectDefinition) SetAttributes(value []AttributeDefinitionable)() {
 func (m *ObjectDefinition) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetMetadata sets the metadata property value. The metadata property
+// SetMetadata sets the metadata property value. Metadata for the given object.
 func (m *ObjectDefinition) SetMetadata(value []ObjectDefinitionMetadataEntryable)() {
     err := m.GetBackingStore().Set("metadata", value)
     if err != nil {
         panic(err)
     }
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. Name of the object. Must be unique within a directory definition. Not nullable.
 func (m *ObjectDefinition) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
@@ -257,7 +257,7 @@ func (m *ObjectDefinition) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSupportedApis sets the supportedApis property value. The supportedApis property
+// SetSupportedApis sets the supportedApis property value. The API that the provisioning service queries to retrieve data for synchronization.
 func (m *ObjectDefinition) SetSupportedApis(value []string)() {
     err := m.GetBackingStore().Set("supportedApis", value)
     if err != nil {

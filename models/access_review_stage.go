@@ -8,6 +8,8 @@ import (
 // AccessReviewStage 
 type AccessReviewStage struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewAccessReviewStage instantiates a new accessReviewStage and sets the default values.
 func NewAccessReviewStage()(*AccessReviewStage) {

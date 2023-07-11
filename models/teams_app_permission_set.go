@@ -80,7 +80,7 @@ func (m *TeamsAppPermissionSet) GetOdataType()(*string) {
     }
     return nil
 }
-// GetResourceSpecificPermissions gets the resourceSpecificPermissions property value. The resourceSpecificPermissions property
+// GetResourceSpecificPermissions gets the resourceSpecificPermissions property value. A collection of resource-specific permissions.
 func (m *TeamsAppPermissionSet) GetResourceSpecificPermissions()([]TeamsAppResourceSpecificPermissionable) {
     val, err := m.GetBackingStore().Get("resourceSpecificPermissions")
     if err != nil {
@@ -137,7 +137,7 @@ func (m *TeamsAppPermissionSet) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetResourceSpecificPermissions sets the resourceSpecificPermissions property value. The resourceSpecificPermissions property
+// SetResourceSpecificPermissions sets the resourceSpecificPermissions property value. A collection of resource-specific permissions.
 func (m *TeamsAppPermissionSet) SetResourceSpecificPermissions(value []TeamsAppResourceSpecificPermissionable)() {
     err := m.GetBackingStore().Set("resourceSpecificPermissions", value)
     if err != nil {

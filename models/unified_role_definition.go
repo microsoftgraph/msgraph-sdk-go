@@ -7,6 +7,8 @@ import (
 // UnifiedRoleDefinition 
 type UnifiedRoleDefinition struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewUnifiedRoleDefinition instantiates a new unifiedRoleDefinition and sets the default values.
 func NewUnifiedRoleDefinition()(*UnifiedRoleDefinition) {

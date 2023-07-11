@@ -7,8 +7,10 @@ import (
 // TeleconferenceDeviceScreenSharingQuality 
 type TeleconferenceDeviceScreenSharingQuality struct {
     TeleconferenceDeviceVideoQuality
+    // The OdataType property
+    OdataType *string
 }
-// NewTeleconferenceDeviceScreenSharingQuality instantiates a new TeleconferenceDeviceScreenSharingQuality and sets the default values.
+// NewTeleconferenceDeviceScreenSharingQuality instantiates a new teleconferenceDeviceScreenSharingQuality and sets the default values.
 func NewTeleconferenceDeviceScreenSharingQuality()(*TeleconferenceDeviceScreenSharingQuality) {
     m := &TeleconferenceDeviceScreenSharingQuality{
         TeleconferenceDeviceVideoQuality: *NewTeleconferenceDeviceVideoQuality(),

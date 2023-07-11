@@ -8,7 +8,7 @@ import (
 type TemporaryAccessPassAuthenticationMethodConfiguration struct {
     AuthenticationMethodConfiguration
 }
-// NewTemporaryAccessPassAuthenticationMethodConfiguration instantiates a new TemporaryAccessPassAuthenticationMethodConfiguration and sets the default values.
+// NewTemporaryAccessPassAuthenticationMethodConfiguration instantiates a new temporaryAccessPassAuthenticationMethodConfiguration and sets the default values.
 func NewTemporaryAccessPassAuthenticationMethodConfiguration()(*TemporaryAccessPassAuthenticationMethodConfiguration) {
     m := &TemporaryAccessPassAuthenticationMethodConfiguration{
         AuthenticationMethodConfiguration: *NewAuthenticationMethodConfiguration(),

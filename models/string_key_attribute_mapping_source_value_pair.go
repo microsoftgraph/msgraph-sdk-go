@@ -73,7 +73,7 @@ func (m *StringKeyAttributeMappingSourceValuePair) GetFieldDeserializers()(map[s
     }
     return res
 }
-// GetKey gets the key property value. The key property
+// GetKey gets the key property value. The name of the parameter.
 func (m *StringKeyAttributeMappingSourceValuePair) GetKey()(*string) {
     val, err := m.GetBackingStore().Get("key")
     if err != nil {
@@ -95,7 +95,7 @@ func (m *StringKeyAttributeMappingSourceValuePair) GetOdataType()(*string) {
     }
     return nil
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. The value of the parameter.
 func (m *StringKeyAttributeMappingSourceValuePair) GetValue()(AttributeMappingSourceable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -145,7 +145,7 @@ func (m *StringKeyAttributeMappingSourceValuePair) SetAdditionalData(value map[s
 func (m *StringKeyAttributeMappingSourceValuePair) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetKey sets the key property value. The key property
+// SetKey sets the key property value. The name of the parameter.
 func (m *StringKeyAttributeMappingSourceValuePair) SetKey(value *string)() {
     err := m.GetBackingStore().Set("key", value)
     if err != nil {
@@ -159,7 +159,7 @@ func (m *StringKeyAttributeMappingSourceValuePair) SetOdataType(value *string)()
         panic(err)
     }
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. The value of the parameter.
 func (m *StringKeyAttributeMappingSourceValuePair) SetValue(value AttributeMappingSourceable)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {

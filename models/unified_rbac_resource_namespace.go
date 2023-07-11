@@ -7,6 +7,8 @@ import (
 // UnifiedRbacResourceNamespace 
 type UnifiedRbacResourceNamespace struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewUnifiedRbacResourceNamespace instantiates a new unifiedRbacResourceNamespace and sets the default values.
 func NewUnifiedRbacResourceNamespace()(*UnifiedRbacResourceNamespace) {

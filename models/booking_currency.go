@@ -7,8 +7,10 @@ import (
 // BookingCurrency 
 type BookingCurrency struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewBookingCurrency instantiates a new BookingCurrency and sets the default values.
+// NewBookingCurrency instantiates a new bookingCurrency and sets the default values.
 func NewBookingCurrency()(*BookingCurrency) {
     m := &BookingCurrency{
         Entity: *NewEntity(),

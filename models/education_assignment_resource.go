@@ -7,6 +7,8 @@ import (
 // EducationAssignmentResource 
 type EducationAssignmentResource struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewEducationAssignmentResource instantiates a new educationAssignmentResource and sets the default values.
 func NewEducationAssignmentResource()(*EducationAssignmentResource) {

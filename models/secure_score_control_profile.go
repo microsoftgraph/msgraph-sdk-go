@@ -8,6 +8,8 @@ import (
 // SecureScoreControlProfile 
 type SecureScoreControlProfile struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewSecureScoreControlProfile instantiates a new secureScoreControlProfile and sets the default values.
 func NewSecureScoreControlProfile()(*SecureScoreControlProfile) {

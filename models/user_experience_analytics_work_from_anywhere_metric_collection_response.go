@@ -8,7 +8,7 @@ import (
 type UserExperienceAnalyticsWorkFromAnywhereMetricCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewUserExperienceAnalyticsWorkFromAnywhereMetricCollectionResponse instantiates a new UserExperienceAnalyticsWorkFromAnywhereMetricCollectionResponse and sets the default values.
+// NewUserExperienceAnalyticsWorkFromAnywhereMetricCollectionResponse instantiates a new userExperienceAnalyticsWorkFromAnywhereMetricCollectionResponse and sets the default values.
 func NewUserExperienceAnalyticsWorkFromAnywhereMetricCollectionResponse()(*UserExperienceAnalyticsWorkFromAnywhereMetricCollectionResponse) {
     m := &UserExperienceAnalyticsWorkFromAnywhereMetricCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

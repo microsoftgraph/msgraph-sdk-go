@@ -39,7 +39,7 @@ func (m *SynchronizationProgress) GetAdditionalData()(map[string]any) {
 func (m *SynchronizationProgress) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCompletedUnits gets the completedUnits property value. The completedUnits property
+// GetCompletedUnits gets the completedUnits property value. The numerator of a progress ratio; the number of units of changes already processed.
 func (m *SynchronizationProgress) GetCompletedUnits()(*int64) {
     val, err := m.GetBackingStore().Get("completedUnits")
     if err != nil {
@@ -116,7 +116,7 @@ func (m *SynchronizationProgress) GetOdataType()(*string) {
     }
     return nil
 }
-// GetProgressObservationDateTime gets the progressObservationDateTime property value. The progressObservationDateTime property
+// GetProgressObservationDateTime gets the progressObservationDateTime property value. The time of a progress observation as an offset in minutes from UTC.
 func (m *SynchronizationProgress) GetProgressObservationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("progressObservationDateTime")
     if err != nil {
@@ -127,7 +127,7 @@ func (m *SynchronizationProgress) GetProgressObservationDateTime()(*i336074805fc
     }
     return nil
 }
-// GetTotalUnits gets the totalUnits property value. The totalUnits property
+// GetTotalUnits gets the totalUnits property value. The denominator of a progress ratio; a number of units of changes to be processed to accomplish synchronization.
 func (m *SynchronizationProgress) GetTotalUnits()(*int64) {
     val, err := m.GetBackingStore().Get("totalUnits")
     if err != nil {
@@ -138,7 +138,7 @@ func (m *SynchronizationProgress) GetTotalUnits()(*int64) {
     }
     return nil
 }
-// GetUnits gets the units property value. The units property
+// GetUnits gets the units property value. An optional description of the units.
 func (m *SynchronizationProgress) GetUnits()(*string) {
     val, err := m.GetBackingStore().Get("units")
     if err != nil {
@@ -200,7 +200,7 @@ func (m *SynchronizationProgress) SetAdditionalData(value map[string]any)() {
 func (m *SynchronizationProgress) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCompletedUnits sets the completedUnits property value. The completedUnits property
+// SetCompletedUnits sets the completedUnits property value. The numerator of a progress ratio; the number of units of changes already processed.
 func (m *SynchronizationProgress) SetCompletedUnits(value *int64)() {
     err := m.GetBackingStore().Set("completedUnits", value)
     if err != nil {
@@ -214,21 +214,21 @@ func (m *SynchronizationProgress) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetProgressObservationDateTime sets the progressObservationDateTime property value. The progressObservationDateTime property
+// SetProgressObservationDateTime sets the progressObservationDateTime property value. The time of a progress observation as an offset in minutes from UTC.
 func (m *SynchronizationProgress) SetProgressObservationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("progressObservationDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTotalUnits sets the totalUnits property value. The totalUnits property
+// SetTotalUnits sets the totalUnits property value. The denominator of a progress ratio; a number of units of changes to be processed to accomplish synchronization.
 func (m *SynchronizationProgress) SetTotalUnits(value *int64)() {
     err := m.GetBackingStore().Set("totalUnits", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUnits sets the units property value. The units property
+// SetUnits sets the units property value. An optional description of the units.
 func (m *SynchronizationProgress) SetUnits(value *string)() {
     err := m.GetBackingStore().Set("units", value)
     if err != nil {

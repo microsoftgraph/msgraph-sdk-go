@@ -8,6 +8,8 @@ import (
 // SignIn 
 type SignIn struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewSignIn instantiates a new signIn and sets the default values.
 func NewSignIn()(*SignIn) {

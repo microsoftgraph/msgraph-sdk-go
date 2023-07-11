@@ -8,7 +8,7 @@ import (
 type ConditionalAccessPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewConditionalAccessPolicyCollectionResponse instantiates a new ConditionalAccessPolicyCollectionResponse and sets the default values.
+// NewConditionalAccessPolicyCollectionResponse instantiates a new conditionalAccessPolicyCollectionResponse and sets the default values.
 func NewConditionalAccessPolicyCollectionResponse()(*ConditionalAccessPolicyCollectionResponse) {
     m := &ConditionalAccessPolicyCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -7,6 +7,8 @@ import (
 // WorkbookRangeBorder 
 type WorkbookRangeBorder struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewWorkbookRangeBorder instantiates a new workbookRangeBorder and sets the default values.
 func NewWorkbookRangeBorder()(*WorkbookRangeBorder) {

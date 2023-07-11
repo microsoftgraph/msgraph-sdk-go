@@ -7,8 +7,10 @@ import (
 // PolicyRoot 
 type PolicyRoot struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewPolicyRoot instantiates a new PolicyRoot and sets the default values.
+// NewPolicyRoot instantiates a new policyRoot and sets the default values.
 func NewPolicyRoot()(*PolicyRoot) {
     m := &PolicyRoot{
         Entity: *NewEntity(),

@@ -8,6 +8,8 @@ import (
 // ConversationMember 
 type ConversationMember struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewConversationMember instantiates a new conversationMember and sets the default values.
 func NewConversationMember()(*ConversationMember) {

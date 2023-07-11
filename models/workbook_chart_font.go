@@ -7,6 +7,8 @@ import (
 // WorkbookChartFont 
 type WorkbookChartFont struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewWorkbookChartFont instantiates a new workbookChartFont and sets the default values.
 func NewWorkbookChartFont()(*WorkbookChartFont) {

@@ -7,6 +7,8 @@ import (
 // UserExperienceAnalyticsWorkFromAnywhereDevice the user experience analytics device for work from anywhere report.
 type UserExperienceAnalyticsWorkFromAnywhereDevice struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewUserExperienceAnalyticsWorkFromAnywhereDevice instantiates a new userExperienceAnalyticsWorkFromAnywhereDevice and sets the default values.
 func NewUserExperienceAnalyticsWorkFromAnywhereDevice()(*UserExperienceAnalyticsWorkFromAnywhereDevice) {

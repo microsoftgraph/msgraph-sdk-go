@@ -8,7 +8,7 @@ import (
 type MailAssessmentRequest struct {
     ThreatAssessmentRequest
 }
-// NewMailAssessmentRequest instantiates a new MailAssessmentRequest and sets the default values.
+// NewMailAssessmentRequest instantiates a new mailAssessmentRequest and sets the default values.
 func NewMailAssessmentRequest()(*MailAssessmentRequest) {
     m := &MailAssessmentRequest{
         ThreatAssessmentRequest: *NewThreatAssessmentRequest(),

@@ -10,7 +10,7 @@ import (
 type CustomTaskExtension struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CustomCalloutExtension
 }
-// NewCustomTaskExtension instantiates a new CustomTaskExtension and sets the default values.
+// NewCustomTaskExtension instantiates a new customTaskExtension and sets the default values.
 func NewCustomTaskExtension()(*CustomTaskExtension) {
     m := &CustomTaskExtension{
         CustomCalloutExtension: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewCustomCalloutExtension(),

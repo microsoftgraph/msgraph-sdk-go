@@ -9,7 +9,7 @@ import (
 type SiteSource struct {
     DataSource
 }
-// NewSiteSource instantiates a new SiteSource and sets the default values.
+// NewSiteSource instantiates a new siteSource and sets the default values.
 func NewSiteSource()(*SiteSource) {
     m := &SiteSource{
         DataSource: *NewDataSource(),

@@ -8,6 +8,8 @@ import (
 // DirectoryObject 
 type DirectoryObject struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDirectoryObject instantiates a new directoryObject and sets the default values.
 func NewDirectoryObject()(*DirectoryObject) {

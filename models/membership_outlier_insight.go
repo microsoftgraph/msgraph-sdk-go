@@ -8,7 +8,7 @@ import (
 type MembershipOutlierInsight struct {
     GovernanceInsight
 }
-// NewMembershipOutlierInsight instantiates a new MembershipOutlierInsight and sets the default values.
+// NewMembershipOutlierInsight instantiates a new membershipOutlierInsight and sets the default values.
 func NewMembershipOutlierInsight()(*MembershipOutlierInsight) {
     m := &MembershipOutlierInsight{
         GovernanceInsight: *NewGovernanceInsight(),

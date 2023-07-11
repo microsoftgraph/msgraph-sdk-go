@@ -8,7 +8,7 @@ import (
 type UserScopeTeamsAppInstallationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewUserScopeTeamsAppInstallationCollectionResponse instantiates a new UserScopeTeamsAppInstallationCollectionResponse and sets the default values.
+// NewUserScopeTeamsAppInstallationCollectionResponse instantiates a new userScopeTeamsAppInstallationCollectionResponse and sets the default values.
 func NewUserScopeTeamsAppInstallationCollectionResponse()(*UserScopeTeamsAppInstallationCollectionResponse) {
     m := &UserScopeTeamsAppInstallationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

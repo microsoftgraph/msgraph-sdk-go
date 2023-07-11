@@ -7,6 +7,8 @@ import (
 // ContactFolder 
 type ContactFolder struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewContactFolder instantiates a new contactFolder and sets the default values.
 func NewContactFolder()(*ContactFolder) {

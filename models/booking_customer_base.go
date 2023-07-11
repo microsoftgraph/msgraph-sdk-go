@@ -7,6 +7,8 @@ import (
 // BookingCustomerBase booking entities that provide a display name.
 type BookingCustomerBase struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewBookingCustomerBase instantiates a new bookingCustomerBase and sets the default values.
 func NewBookingCustomerBase()(*BookingCustomerBase) {

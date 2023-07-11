@@ -8,6 +8,8 @@ import (
 // ManagedEBook an abstract class containing the base properties for Managed eBook.
 type ManagedEBook struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewManagedEBook instantiates a new managedEBook and sets the default values.
 func NewManagedEBook()(*ManagedEBook) {

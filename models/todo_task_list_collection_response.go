@@ -8,7 +8,7 @@ import (
 type TodoTaskListCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewTodoTaskListCollectionResponse instantiates a new TodoTaskListCollectionResponse and sets the default values.
+// NewTodoTaskListCollectionResponse instantiates a new todoTaskListCollectionResponse and sets the default values.
 func NewTodoTaskListCollectionResponse()(*TodoTaskListCollectionResponse) {
     m := &TodoTaskListCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

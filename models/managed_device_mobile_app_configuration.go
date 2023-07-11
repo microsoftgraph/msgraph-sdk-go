@@ -8,6 +8,8 @@ import (
 // ManagedDeviceMobileAppConfiguration an abstract class for Mobile app configuration for enrolled devices.
 type ManagedDeviceMobileAppConfiguration struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewManagedDeviceMobileAppConfiguration instantiates a new managedDeviceMobileAppConfiguration and sets the default values.
 func NewManagedDeviceMobileAppConfiguration()(*ManagedDeviceMobileAppConfiguration) {

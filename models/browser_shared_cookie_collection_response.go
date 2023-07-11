@@ -8,7 +8,7 @@ import (
 type BrowserSharedCookieCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewBrowserSharedCookieCollectionResponse instantiates a new BrowserSharedCookieCollectionResponse and sets the default values.
+// NewBrowserSharedCookieCollectionResponse instantiates a new browserSharedCookieCollectionResponse and sets the default values.
 func NewBrowserSharedCookieCollectionResponse()(*BrowserSharedCookieCollectionResponse) {
     m := &BrowserSharedCookieCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

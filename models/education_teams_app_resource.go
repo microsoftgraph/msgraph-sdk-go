@@ -8,7 +8,7 @@ import (
 type EducationTeamsAppResource struct {
     EducationResource
 }
-// NewEducationTeamsAppResource instantiates a new EducationTeamsAppResource and sets the default values.
+// NewEducationTeamsAppResource instantiates a new educationTeamsAppResource and sets the default values.
 func NewEducationTeamsAppResource()(*EducationTeamsAppResource) {
     m := &EducationTeamsAppResource{
         EducationResource: *NewEducationResource(),
@@ -66,6 +66,16 @@ func (m *EducationTeamsAppResource) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["teamsEmbeddedContentUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -87,6 +97,17 @@ func (m *EducationTeamsAppResource) GetFieldDeserializers()(map[string]func(i878
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *EducationTeamsAppResource) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTeamsEmbeddedContentUrl gets the teamsEmbeddedContentUrl property value. URL for the app resource that will be opened by Teams.
 func (m *EducationTeamsAppResource) GetTeamsEmbeddedContentUrl()(*string) {
@@ -129,6 +150,12 @@ func (m *EducationTeamsAppResource) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("teamsEmbeddedContentUrl", m.GetTeamsEmbeddedContentUrl())
         if err != nil {
             return err
@@ -156,6 +183,13 @@ func (m *EducationTeamsAppResource) SetAppId(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *EducationTeamsAppResource) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTeamsEmbeddedContentUrl sets the teamsEmbeddedContentUrl property value. URL for the app resource that will be opened by Teams.
 func (m *EducationTeamsAppResource) SetTeamsEmbeddedContentUrl(value *string)() {
     err := m.GetBackingStore().Set("teamsEmbeddedContentUrl", value)
@@ -176,10 +210,12 @@ type EducationTeamsAppResourceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAppIconWebUrl()(*string)
     GetAppId()(*string)
+    GetOdataType()(*string)
     GetTeamsEmbeddedContentUrl()(*string)
     GetWebUrl()(*string)
     SetAppIconWebUrl(value *string)()
     SetAppId(value *string)()
+    SetOdataType(value *string)()
     SetTeamsEmbeddedContentUrl(value *string)()
     SetWebUrl(value *string)()
 }

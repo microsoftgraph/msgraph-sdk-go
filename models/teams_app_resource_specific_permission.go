@@ -84,7 +84,7 @@ func (m *TeamsAppResourceSpecificPermission) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPermissionType gets the permissionType property value. The permissionType property
+// GetPermissionType gets the permissionType property value. The type of resource-specific permission.
 func (m *TeamsAppResourceSpecificPermission) GetPermissionType()(*TeamsAppResourceSpecificPermissionType) {
     val, err := m.GetBackingStore().Get("permissionType")
     if err != nil {
@@ -95,7 +95,7 @@ func (m *TeamsAppResourceSpecificPermission) GetPermissionType()(*TeamsAppResour
     }
     return nil
 }
-// GetPermissionValue gets the permissionValue property value. The permissionValue property
+// GetPermissionValue gets the permissionValue property value. The name of the resource-specific permission.
 func (m *TeamsAppResourceSpecificPermission) GetPermissionValue()(*string) {
     val, err := m.GetBackingStore().Get("permissionValue")
     if err != nil {
@@ -153,14 +153,14 @@ func (m *TeamsAppResourceSpecificPermission) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPermissionType sets the permissionType property value. The permissionType property
+// SetPermissionType sets the permissionType property value. The type of resource-specific permission.
 func (m *TeamsAppResourceSpecificPermission) SetPermissionType(value *TeamsAppResourceSpecificPermissionType)() {
     err := m.GetBackingStore().Set("permissionType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPermissionValue sets the permissionValue property value. The permissionValue property
+// SetPermissionValue sets the permissionValue property value. The name of the resource-specific permission.
 func (m *TeamsAppResourceSpecificPermission) SetPermissionValue(value *string)() {
     err := m.GetBackingStore().Set("permissionValue", value)
     if err != nil {

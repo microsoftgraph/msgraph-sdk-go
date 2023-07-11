@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsUniversalAppX 
+// WindowsUniversalAppX contains properties and inherited properties for Windows Universal AppX Line Of Business apps.
 type WindowsUniversalAppX struct {
     MobileLobApp
 }
-// NewWindowsUniversalAppX instantiates a new WindowsUniversalAppX and sets the default values.
+// NewWindowsUniversalAppX instantiates a new windowsUniversalAppX and sets the default values.
 func NewWindowsUniversalAppX()(*WindowsUniversalAppX) {
     m := &WindowsUniversalAppX{
         MobileLobApp: *NewMobileLobApp(),

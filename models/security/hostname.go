@@ -8,7 +8,7 @@ import (
 type Hostname struct {
     Host
 }
-// NewHostname instantiates a new Hostname and sets the default values.
+// NewHostname instantiates a new hostname and sets the default values.
 func NewHostname()(*Hostname) {
     m := &Hostname{
         Host: *NewHost(),

@@ -7,6 +7,8 @@ import (
 // MobileAppContent contains content properties for a specific app version. Each mobileAppContent can have multiple mobileAppContentFile.
 type MobileAppContent struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewMobileAppContent instantiates a new mobileAppContent and sets the default values.
 func NewMobileAppContent()(*MobileAppContent) {

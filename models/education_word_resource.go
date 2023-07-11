@@ -8,7 +8,7 @@ import (
 type EducationWordResource struct {
     EducationResource
 }
-// NewEducationWordResource instantiates a new EducationWordResource and sets the default values.
+// NewEducationWordResource instantiates a new educationWordResource and sets the default values.
 func NewEducationWordResource()(*EducationWordResource) {
     m := &EducationWordResource{
         EducationResource: *NewEducationResource(),
@@ -34,11 +34,32 @@ func (m *EducationWordResource) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetFileUrl gets the fileUrl property value. Location of the file on disk.
 func (m *EducationWordResource) GetFileUrl()(*string) {
     val, err := m.GetBackingStore().Get("fileUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *EducationWordResource) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -59,6 +80,12 @@ func (m *EducationWordResource) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetFileUrl sets the fileUrl property value. Location of the file on disk.
@@ -68,10 +95,19 @@ func (m *EducationWordResource) SetFileUrl(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *EducationWordResource) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // EducationWordResourceable 
 type EducationWordResourceable interface {
     EducationResourceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetFileUrl()(*string)
+    GetOdataType()(*string)
     SetFileUrl(value *string)()
+    SetOdataType(value *string)()
 }

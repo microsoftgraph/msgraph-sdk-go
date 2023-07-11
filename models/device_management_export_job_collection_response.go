@@ -8,7 +8,7 @@ import (
 type DeviceManagementExportJobCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDeviceManagementExportJobCollectionResponse instantiates a new DeviceManagementExportJobCollectionResponse and sets the default values.
+// NewDeviceManagementExportJobCollectionResponse instantiates a new deviceManagementExportJobCollectionResponse and sets the default values.
 func NewDeviceManagementExportJobCollectionResponse()(*DeviceManagementExportJobCollectionResponse) {
     m := &DeviceManagementExportJobCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

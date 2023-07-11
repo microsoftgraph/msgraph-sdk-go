@@ -10,7 +10,7 @@ type EmployeeExperience struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewEmployeeExperience instantiates a new EmployeeExperience and sets the default values.
+// NewEmployeeExperience instantiates a new employeeExperience and sets the default values.
 func NewEmployeeExperience()(*EmployeeExperience) {
     m := &EmployeeExperience{
     }

@@ -7,6 +7,8 @@ import (
 // WorkbookChartGridlinesFormat 
 type WorkbookChartGridlinesFormat struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewWorkbookChartGridlinesFormat instantiates a new workbookChartGridlinesFormat and sets the default values.
 func NewWorkbookChartGridlinesFormat()(*WorkbookChartGridlinesFormat) {

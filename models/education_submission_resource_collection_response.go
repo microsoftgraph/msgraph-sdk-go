@@ -8,7 +8,7 @@ import (
 type EducationSubmissionResourceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewEducationSubmissionResourceCollectionResponse instantiates a new EducationSubmissionResourceCollectionResponse and sets the default values.
+// NewEducationSubmissionResourceCollectionResponse instantiates a new educationSubmissionResourceCollectionResponse and sets the default values.
 func NewEducationSubmissionResourceCollectionResponse()(*EducationSubmissionResourceCollectionResponse) {
     m := &EducationSubmissionResourceCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

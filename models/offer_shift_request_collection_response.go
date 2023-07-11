@@ -8,7 +8,7 @@ import (
 type OfferShiftRequestCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewOfferShiftRequestCollectionResponse instantiates a new OfferShiftRequestCollectionResponse and sets the default values.
+// NewOfferShiftRequestCollectionResponse instantiates a new offerShiftRequestCollectionResponse and sets the default values.
 func NewOfferShiftRequestCollectionResponse()(*OfferShiftRequestCollectionResponse) {
     m := &OfferShiftRequestCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -8,7 +8,7 @@ import (
 type ChannelUnsetAsFavoriteByDefaultEventMessageDetail struct {
     EventMessageDetail
 }
-// NewChannelUnsetAsFavoriteByDefaultEventMessageDetail instantiates a new ChannelUnsetAsFavoriteByDefaultEventMessageDetail and sets the default values.
+// NewChannelUnsetAsFavoriteByDefaultEventMessageDetail instantiates a new channelUnsetAsFavoriteByDefaultEventMessageDetail and sets the default values.
 func NewChannelUnsetAsFavoriteByDefaultEventMessageDetail()(*ChannelUnsetAsFavoriteByDefaultEventMessageDetail) {
     m := &ChannelUnsetAsFavoriteByDefaultEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),
@@ -55,6 +55,16 @@ func (m *ChannelUnsetAsFavoriteByDefaultEventMessageDetail) GetFieldDeserializer
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetInitiator gets the initiator property value. Initiator of the event.
@@ -65,6 +75,17 @@ func (m *ChannelUnsetAsFavoriteByDefaultEventMessageDetail) GetInitiator()(Ident
     }
     if val != nil {
         return val.(IdentitySetable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ChannelUnsetAsFavoriteByDefaultEventMessageDetail) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -86,6 +107,12 @@ func (m *ChannelUnsetAsFavoriteByDefaultEventMessageDetail) Serialize(writer i87
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetChannelId sets the channelId property value. Unique identifier of the channel.
@@ -102,12 +129,21 @@ func (m *ChannelUnsetAsFavoriteByDefaultEventMessageDetail) SetInitiator(value I
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ChannelUnsetAsFavoriteByDefaultEventMessageDetail) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // ChannelUnsetAsFavoriteByDefaultEventMessageDetailable 
 type ChannelUnsetAsFavoriteByDefaultEventMessageDetailable interface {
     EventMessageDetailable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetChannelId()(*string)
     GetInitiator()(IdentitySetable)
+    GetOdataType()(*string)
     SetChannelId(value *string)()
     SetInitiator(value IdentitySetable)()
+    SetOdataType(value *string)()
 }

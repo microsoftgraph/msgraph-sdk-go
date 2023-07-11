@@ -8,7 +8,7 @@ import (
 type SamlOrWsFedProvider struct {
     IdentityProviderBase
 }
-// NewSamlOrWsFedProvider instantiates a new SamlOrWsFedProvider and sets the default values.
+// NewSamlOrWsFedProvider instantiates a new samlOrWsFedProvider and sets the default values.
 func NewSamlOrWsFedProvider()(*SamlOrWsFedProvider) {
     m := &SamlOrWsFedProvider{
         IdentityProviderBase: *NewIdentityProviderBase(),

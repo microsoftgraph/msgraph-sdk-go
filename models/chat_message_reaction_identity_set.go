@@ -7,8 +7,10 @@ import (
 // ChatMessageReactionIdentitySet 
 type ChatMessageReactionIdentitySet struct {
     IdentitySet
+    // The OdataType property
+    OdataType *string
 }
-// NewChatMessageReactionIdentitySet instantiates a new ChatMessageReactionIdentitySet and sets the default values.
+// NewChatMessageReactionIdentitySet instantiates a new chatMessageReactionIdentitySet and sets the default values.
 func NewChatMessageReactionIdentitySet()(*ChatMessageReactionIdentitySet) {
     m := &ChatMessageReactionIdentitySet{
         IdentitySet: *NewIdentitySet(),

@@ -10,7 +10,7 @@ type CvssSummary struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewCvssSummary instantiates a new CvssSummary and sets the default values.
+// NewCvssSummary instantiates a new cvssSummary and sets the default values.
 func NewCvssSummary()(*CvssSummary) {
     m := &CvssSummary{
     }

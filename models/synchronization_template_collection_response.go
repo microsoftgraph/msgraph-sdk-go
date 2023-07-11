@@ -8,7 +8,7 @@ import (
 type SynchronizationTemplateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewSynchronizationTemplateCollectionResponse instantiates a new SynchronizationTemplateCollectionResponse and sets the default values.
+// NewSynchronizationTemplateCollectionResponse instantiates a new synchronizationTemplateCollectionResponse and sets the default values.
 func NewSynchronizationTemplateCollectionResponse()(*SynchronizationTemplateCollectionResponse) {
     m := &SynchronizationTemplateCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

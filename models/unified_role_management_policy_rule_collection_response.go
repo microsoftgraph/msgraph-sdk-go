@@ -8,7 +8,7 @@ import (
 type UnifiedRoleManagementPolicyRuleCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewUnifiedRoleManagementPolicyRuleCollectionResponse instantiates a new UnifiedRoleManagementPolicyRuleCollectionResponse and sets the default values.
+// NewUnifiedRoleManagementPolicyRuleCollectionResponse instantiates a new unifiedRoleManagementPolicyRuleCollectionResponse and sets the default values.
 func NewUnifiedRoleManagementPolicyRuleCollectionResponse()(*UnifiedRoleManagementPolicyRuleCollectionResponse) {
     m := &UnifiedRoleManagementPolicyRuleCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

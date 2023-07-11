@@ -8,7 +8,7 @@ import (
 type FeatureRolloutPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewFeatureRolloutPolicyCollectionResponse instantiates a new FeatureRolloutPolicyCollectionResponse and sets the default values.
+// NewFeatureRolloutPolicyCollectionResponse instantiates a new featureRolloutPolicyCollectionResponse and sets the default values.
 func NewFeatureRolloutPolicyCollectionResponse()(*FeatureRolloutPolicyCollectionResponse) {
     m := &FeatureRolloutPolicyCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

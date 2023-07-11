@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ManagedAppPolicyDeploymentSummary 
+// ManagedAppPolicyDeploymentSummary the ManagedAppEntity is the base entity type for all other entity types under app management workflow.
 type ManagedAppPolicyDeploymentSummary struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewManagedAppPolicyDeploymentSummary instantiates a new managedAppPolicyDeploymentSummary and sets the default values.
 func NewManagedAppPolicyDeploymentSummary()(*ManagedAppPolicyDeploymentSummary) {

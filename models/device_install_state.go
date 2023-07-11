@@ -8,6 +8,8 @@ import (
 // DeviceInstallState contains properties for the installation state for a device.
 type DeviceInstallState struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDeviceInstallState instantiates a new deviceInstallState and sets the default values.
 func NewDeviceInstallState()(*DeviceInstallState) {

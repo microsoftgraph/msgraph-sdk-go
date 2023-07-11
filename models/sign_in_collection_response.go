@@ -8,7 +8,7 @@ import (
 type SignInCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewSignInCollectionResponse instantiates a new SignInCollectionResponse and sets the default values.
+// NewSignInCollectionResponse instantiates a new signInCollectionResponse and sets the default values.
 func NewSignInCollectionResponse()(*SignInCollectionResponse) {
     m := &SignInCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

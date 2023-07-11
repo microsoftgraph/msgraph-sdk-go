@@ -11,7 +11,7 @@ type BrowserSharedCookieHistory struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewBrowserSharedCookieHistory instantiates a new BrowserSharedCookieHistory and sets the default values.
+// NewBrowserSharedCookieHistory instantiates a new browserSharedCookieHistory and sets the default values.
 func NewBrowserSharedCookieHistory()(*BrowserSharedCookieHistory) {
     m := &BrowserSharedCookieHistory{
     }

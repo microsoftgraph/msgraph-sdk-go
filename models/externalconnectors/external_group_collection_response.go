@@ -9,7 +9,7 @@ import (
 type ExternalGroupCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
 }
-// NewExternalGroupCollectionResponse instantiates a new ExternalGroupCollectionResponse and sets the default values.
+// NewExternalGroupCollectionResponse instantiates a new externalGroupCollectionResponse and sets the default values.
 func NewExternalGroupCollectionResponse()(*ExternalGroupCollectionResponse) {
     m := &ExternalGroupCollectionResponse{
         BaseCollectionPaginationCountResponse: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewBaseCollectionPaginationCountResponse(),

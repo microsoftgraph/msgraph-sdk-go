@@ -7,6 +7,8 @@ import (
 // BookingCustomQuestion represents a custom question of the business.
 type BookingCustomQuestion struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewBookingCustomQuestion instantiates a new bookingCustomQuestion and sets the default values.
 func NewBookingCustomQuestion()(*BookingCustomQuestion) {

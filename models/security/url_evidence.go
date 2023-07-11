@@ -7,8 +7,10 @@ import (
 // UrlEvidence 
 type UrlEvidence struct {
     AlertEvidence
+    // The OdataType property
+    OdataType *string
 }
-// NewUrlEvidence instantiates a new UrlEvidence and sets the default values.
+// NewUrlEvidence instantiates a new urlEvidence and sets the default values.
 func NewUrlEvidence()(*UrlEvidence) {
     m := &UrlEvidence{
         AlertEvidence: *NewAlertEvidence(),

@@ -8,6 +8,8 @@ import (
 // EducationUser 
 type EducationUser struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewEducationUser instantiates a new educationUser and sets the default values.
 func NewEducationUser()(*EducationUser) {

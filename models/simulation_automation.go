@@ -8,6 +8,8 @@ import (
 // SimulationAutomation 
 type SimulationAutomation struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewSimulationAutomation instantiates a new simulationAutomation and sets the default values.
 func NewSimulationAutomation()(*SimulationAutomation) {

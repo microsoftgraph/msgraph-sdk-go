@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IPv6Range 
+// IPv6Range iPv6 Range definition.
 type IPv6Range struct {
     IpRange
 }
-// NewIPv6Range instantiates a new IPv6Range and sets the default values.
+// NewIPv6Range instantiates a new iPv6Range and sets the default values.
 func NewIPv6Range()(*IPv6Range) {
     m := &IPv6Range{
         IpRange: *NewIpRange(),
@@ -34,6 +34,16 @@ func (m *IPv6Range) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["upperAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -49,6 +59,17 @@ func (m *IPv6Range) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 // GetLowerAddress gets the lowerAddress property value. Lower address.
 func (m *IPv6Range) GetLowerAddress()(*string) {
     val, err := m.GetBackingStore().Get("lowerAddress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *IPv6Range) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -81,6 +102,12 @@ func (m *IPv6Range) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("upperAddress", m.GetUpperAddress())
         if err != nil {
             return err
@@ -91,6 +118,13 @@ func (m *IPv6Range) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 // SetLowerAddress sets the lowerAddress property value. Lower address.
 func (m *IPv6Range) SetLowerAddress(value *string)() {
     err := m.GetBackingStore().Set("lowerAddress", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *IPv6Range) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -107,7 +141,9 @@ type IPv6Rangeable interface {
     IpRangeable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetLowerAddress()(*string)
+    GetOdataType()(*string)
     GetUpperAddress()(*string)
     SetLowerAddress(value *string)()
+    SetOdataType(value *string)()
     SetUpperAddress(value *string)()
 }

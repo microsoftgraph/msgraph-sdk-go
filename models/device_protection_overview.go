@@ -38,7 +38,7 @@ func (m *DeviceProtectionOverview) GetAdditionalData()(map[string]any) {
 func (m *DeviceProtectionOverview) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCleanDeviceCount gets the cleanDeviceCount property value. Clean device count.
+// GetCleanDeviceCount gets the cleanDeviceCount property value. Indicates number of devices reporting as clean
 func (m *DeviceProtectionOverview) GetCleanDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("cleanDeviceCount")
     if err != nil {
@@ -49,7 +49,7 @@ func (m *DeviceProtectionOverview) GetCleanDeviceCount()(*int32) {
     }
     return nil
 }
-// GetCriticalFailuresDeviceCount gets the criticalFailuresDeviceCount property value. Critical failures device count.
+// GetCriticalFailuresDeviceCount gets the criticalFailuresDeviceCount property value. Indicates number of devices with critical failures
 func (m *DeviceProtectionOverview) GetCriticalFailuresDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("criticalFailuresDeviceCount")
     if err != nil {
@@ -185,7 +185,7 @@ func (m *DeviceProtectionOverview) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetInactiveThreatAgentDeviceCount gets the inactiveThreatAgentDeviceCount property value. Device with inactive threat agent count
+// GetInactiveThreatAgentDeviceCount gets the inactiveThreatAgentDeviceCount property value. Indicates number of devices with inactive threat agent
 func (m *DeviceProtectionOverview) GetInactiveThreatAgentDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("inactiveThreatAgentDeviceCount")
     if err != nil {
@@ -207,7 +207,7 @@ func (m *DeviceProtectionOverview) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPendingFullScanDeviceCount gets the pendingFullScanDeviceCount property value. Pending full scan device count.
+// GetPendingFullScanDeviceCount gets the pendingFullScanDeviceCount property value. Indicates number of devices pending full scan
 func (m *DeviceProtectionOverview) GetPendingFullScanDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("pendingFullScanDeviceCount")
     if err != nil {
@@ -218,7 +218,7 @@ func (m *DeviceProtectionOverview) GetPendingFullScanDeviceCount()(*int32) {
     }
     return nil
 }
-// GetPendingManualStepsDeviceCount gets the pendingManualStepsDeviceCount property value. Pending manual steps device count.
+// GetPendingManualStepsDeviceCount gets the pendingManualStepsDeviceCount property value. Indicates number of devices with pending manual steps
 func (m *DeviceProtectionOverview) GetPendingManualStepsDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("pendingManualStepsDeviceCount")
     if err != nil {
@@ -229,7 +229,7 @@ func (m *DeviceProtectionOverview) GetPendingManualStepsDeviceCount()(*int32) {
     }
     return nil
 }
-// GetPendingOfflineScanDeviceCount gets the pendingOfflineScanDeviceCount property value. Pending offline scan device count.
+// GetPendingOfflineScanDeviceCount gets the pendingOfflineScanDeviceCount property value. Indicates number of pending offline scan devices
 func (m *DeviceProtectionOverview) GetPendingOfflineScanDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("pendingOfflineScanDeviceCount")
     if err != nil {
@@ -240,7 +240,7 @@ func (m *DeviceProtectionOverview) GetPendingOfflineScanDeviceCount()(*int32) {
     }
     return nil
 }
-// GetPendingQuickScanDeviceCount gets the pendingQuickScanDeviceCount property value. Pending quick scan device count. Valid values -2147483648 to 2147483647
+// GetPendingQuickScanDeviceCount gets the pendingQuickScanDeviceCount property value. Indicates the number of devices that have a pending full scan. Valid values -2147483648 to 2147483647
 func (m *DeviceProtectionOverview) GetPendingQuickScanDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("pendingQuickScanDeviceCount")
     if err != nil {
@@ -251,7 +251,7 @@ func (m *DeviceProtectionOverview) GetPendingQuickScanDeviceCount()(*int32) {
     }
     return nil
 }
-// GetPendingRestartDeviceCount gets the pendingRestartDeviceCount property value. Pending restart device count.
+// GetPendingRestartDeviceCount gets the pendingRestartDeviceCount property value. Indicates number of devices pending restart
 func (m *DeviceProtectionOverview) GetPendingRestartDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("pendingRestartDeviceCount")
     if err != nil {
@@ -262,7 +262,7 @@ func (m *DeviceProtectionOverview) GetPendingRestartDeviceCount()(*int32) {
     }
     return nil
 }
-// GetPendingSignatureUpdateDeviceCount gets the pendingSignatureUpdateDeviceCount property value. Device with old signature count.
+// GetPendingSignatureUpdateDeviceCount gets the pendingSignatureUpdateDeviceCount property value. Indicates number of devices with an old signature
 func (m *DeviceProtectionOverview) GetPendingSignatureUpdateDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("pendingSignatureUpdateDeviceCount")
     if err != nil {
@@ -284,7 +284,7 @@ func (m *DeviceProtectionOverview) GetTotalReportedDeviceCount()(*int32) {
     }
     return nil
 }
-// GetUnknownStateThreatAgentDeviceCount gets the unknownStateThreatAgentDeviceCount property value. Device with threat agent state as unknown count.
+// GetUnknownStateThreatAgentDeviceCount gets the unknownStateThreatAgentDeviceCount property value. Indicates number of devices with threat agent state as unknown
 func (m *DeviceProtectionOverview) GetUnknownStateThreatAgentDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("unknownStateThreatAgentDeviceCount")
     if err != nil {
@@ -388,21 +388,21 @@ func (m *DeviceProtectionOverview) SetAdditionalData(value map[string]any)() {
 func (m *DeviceProtectionOverview) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCleanDeviceCount sets the cleanDeviceCount property value. Clean device count.
+// SetCleanDeviceCount sets the cleanDeviceCount property value. Indicates number of devices reporting as clean
 func (m *DeviceProtectionOverview) SetCleanDeviceCount(value *int32)() {
     err := m.GetBackingStore().Set("cleanDeviceCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCriticalFailuresDeviceCount sets the criticalFailuresDeviceCount property value. Critical failures device count.
+// SetCriticalFailuresDeviceCount sets the criticalFailuresDeviceCount property value. Indicates number of devices with critical failures
 func (m *DeviceProtectionOverview) SetCriticalFailuresDeviceCount(value *int32)() {
     err := m.GetBackingStore().Set("criticalFailuresDeviceCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetInactiveThreatAgentDeviceCount sets the inactiveThreatAgentDeviceCount property value. Device with inactive threat agent count
+// SetInactiveThreatAgentDeviceCount sets the inactiveThreatAgentDeviceCount property value. Indicates number of devices with inactive threat agent
 func (m *DeviceProtectionOverview) SetInactiveThreatAgentDeviceCount(value *int32)() {
     err := m.GetBackingStore().Set("inactiveThreatAgentDeviceCount", value)
     if err != nil {
@@ -416,42 +416,42 @@ func (m *DeviceProtectionOverview) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPendingFullScanDeviceCount sets the pendingFullScanDeviceCount property value. Pending full scan device count.
+// SetPendingFullScanDeviceCount sets the pendingFullScanDeviceCount property value. Indicates number of devices pending full scan
 func (m *DeviceProtectionOverview) SetPendingFullScanDeviceCount(value *int32)() {
     err := m.GetBackingStore().Set("pendingFullScanDeviceCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPendingManualStepsDeviceCount sets the pendingManualStepsDeviceCount property value. Pending manual steps device count.
+// SetPendingManualStepsDeviceCount sets the pendingManualStepsDeviceCount property value. Indicates number of devices with pending manual steps
 func (m *DeviceProtectionOverview) SetPendingManualStepsDeviceCount(value *int32)() {
     err := m.GetBackingStore().Set("pendingManualStepsDeviceCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPendingOfflineScanDeviceCount sets the pendingOfflineScanDeviceCount property value. Pending offline scan device count.
+// SetPendingOfflineScanDeviceCount sets the pendingOfflineScanDeviceCount property value. Indicates number of pending offline scan devices
 func (m *DeviceProtectionOverview) SetPendingOfflineScanDeviceCount(value *int32)() {
     err := m.GetBackingStore().Set("pendingOfflineScanDeviceCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPendingQuickScanDeviceCount sets the pendingQuickScanDeviceCount property value. Pending quick scan device count. Valid values -2147483648 to 2147483647
+// SetPendingQuickScanDeviceCount sets the pendingQuickScanDeviceCount property value. Indicates the number of devices that have a pending full scan. Valid values -2147483648 to 2147483647
 func (m *DeviceProtectionOverview) SetPendingQuickScanDeviceCount(value *int32)() {
     err := m.GetBackingStore().Set("pendingQuickScanDeviceCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPendingRestartDeviceCount sets the pendingRestartDeviceCount property value. Pending restart device count.
+// SetPendingRestartDeviceCount sets the pendingRestartDeviceCount property value. Indicates number of devices pending restart
 func (m *DeviceProtectionOverview) SetPendingRestartDeviceCount(value *int32)() {
     err := m.GetBackingStore().Set("pendingRestartDeviceCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPendingSignatureUpdateDeviceCount sets the pendingSignatureUpdateDeviceCount property value. Device with old signature count.
+// SetPendingSignatureUpdateDeviceCount sets the pendingSignatureUpdateDeviceCount property value. Indicates number of devices with an old signature
 func (m *DeviceProtectionOverview) SetPendingSignatureUpdateDeviceCount(value *int32)() {
     err := m.GetBackingStore().Set("pendingSignatureUpdateDeviceCount", value)
     if err != nil {
@@ -465,7 +465,7 @@ func (m *DeviceProtectionOverview) SetTotalReportedDeviceCount(value *int32)() {
         panic(err)
     }
 }
-// SetUnknownStateThreatAgentDeviceCount sets the unknownStateThreatAgentDeviceCount property value. Device with threat agent state as unknown count.
+// SetUnknownStateThreatAgentDeviceCount sets the unknownStateThreatAgentDeviceCount property value. Indicates number of devices with threat agent state as unknown
 func (m *DeviceProtectionOverview) SetUnknownStateThreatAgentDeviceCount(value *int32)() {
     err := m.GetBackingStore().Set("unknownStateThreatAgentDeviceCount", value)
     if err != nil {

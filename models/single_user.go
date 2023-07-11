@@ -7,8 +7,10 @@ import (
 // SingleUser 
 type SingleUser struct {
     SubjectSet
+    // The OdataType property
+    OdataType *string
 }
-// NewSingleUser instantiates a new SingleUser and sets the default values.
+// NewSingleUser instantiates a new singleUser and sets the default values.
 func NewSingleUser()(*SingleUser) {
     m := &SingleUser{
         SubjectSet: *NewSubjectSet(),

@@ -7,6 +7,8 @@ import (
 // OnPremisesDirectorySynchronization 
 type OnPremisesDirectorySynchronization struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewOnPremisesDirectorySynchronization instantiates a new onPremisesDirectorySynchronization and sets the default values.
 func NewOnPremisesDirectorySynchronization()(*OnPremisesDirectorySynchronization) {

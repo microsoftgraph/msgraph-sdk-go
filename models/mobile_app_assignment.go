@@ -7,6 +7,8 @@ import (
 // MobileAppAssignment a class containing the properties used for Group Assignment of a Mobile App.
 type MobileAppAssignment struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewMobileAppAssignment instantiates a new mobileAppAssignment and sets the default values.
 func NewMobileAppAssignment()(*MobileAppAssignment) {

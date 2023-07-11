@@ -8,7 +8,7 @@ import (
 type AuthenticationContextClassReferenceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAuthenticationContextClassReferenceCollectionResponse instantiates a new AuthenticationContextClassReferenceCollectionResponse and sets the default values.
+// NewAuthenticationContextClassReferenceCollectionResponse instantiates a new authenticationContextClassReferenceCollectionResponse and sets the default values.
 func NewAuthenticationContextClassReferenceCollectionResponse()(*AuthenticationContextClassReferenceCollectionResponse) {
     m := &AuthenticationContextClassReferenceCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

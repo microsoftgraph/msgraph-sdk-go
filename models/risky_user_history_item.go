@@ -7,6 +7,8 @@ import (
 // RiskyUserHistoryItem 
 type RiskyUserHistoryItem struct {
     RiskyUser
+    // The OdataType property
+    OdataType *string
 }
 // NewRiskyUserHistoryItem instantiates a new riskyUserHistoryItem and sets the default values.
 func NewRiskyUserHistoryItem()(*RiskyUserHistoryItem) {

@@ -8,6 +8,8 @@ import (
 // AttachmentSession 
 type AttachmentSession struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewAttachmentSession instantiates a new attachmentSession and sets the default values.
 func NewAttachmentSession()(*AttachmentSession) {

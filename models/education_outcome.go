@@ -8,6 +8,8 @@ import (
 // EducationOutcome 
 type EducationOutcome struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewEducationOutcome instantiates a new educationOutcome and sets the default values.
 func NewEducationOutcome()(*EducationOutcome) {

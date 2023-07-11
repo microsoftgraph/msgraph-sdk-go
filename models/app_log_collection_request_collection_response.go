@@ -8,7 +8,7 @@ import (
 type AppLogCollectionRequestCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAppLogCollectionRequestCollectionResponse instantiates a new AppLogCollectionRequestCollectionResponse and sets the default values.
+// NewAppLogCollectionRequestCollectionResponse instantiates a new appLogCollectionRequestCollectionResponse and sets the default values.
 func NewAppLogCollectionRequestCollectionResponse()(*AppLogCollectionRequestCollectionResponse) {
     m := &AppLogCollectionRequestCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -8,6 +8,8 @@ import (
 // ConversationThread 
 type ConversationThread struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewConversationThread instantiates a new conversationThread and sets the default values.
 func NewConversationThread()(*ConversationThread) {

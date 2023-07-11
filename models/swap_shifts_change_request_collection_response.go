@@ -8,7 +8,7 @@ import (
 type SwapShiftsChangeRequestCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewSwapShiftsChangeRequestCollectionResponse instantiates a new SwapShiftsChangeRequestCollectionResponse and sets the default values.
+// NewSwapShiftsChangeRequestCollectionResponse instantiates a new swapShiftsChangeRequestCollectionResponse and sets the default values.
 func NewSwapShiftsChangeRequestCollectionResponse()(*SwapShiftsChangeRequestCollectionResponse) {
     m := &SwapShiftsChangeRequestCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -8,7 +8,7 @@ import (
 type TimeOffReasonCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewTimeOffReasonCollectionResponse instantiates a new TimeOffReasonCollectionResponse and sets the default values.
+// NewTimeOffReasonCollectionResponse instantiates a new timeOffReasonCollectionResponse and sets the default values.
 func NewTimeOffReasonCollectionResponse()(*TimeOffReasonCollectionResponse) {
     m := &TimeOffReasonCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

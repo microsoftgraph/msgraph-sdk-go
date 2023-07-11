@@ -8,7 +8,7 @@ import (
 type SubjectRightsRequestCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewSubjectRightsRequestCollectionResponse instantiates a new SubjectRightsRequestCollectionResponse and sets the default values.
+// NewSubjectRightsRequestCollectionResponse instantiates a new subjectRightsRequestCollectionResponse and sets the default values.
 func NewSubjectRightsRequestCollectionResponse()(*SubjectRightsRequestCollectionResponse) {
     m := &SubjectRightsRequestCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

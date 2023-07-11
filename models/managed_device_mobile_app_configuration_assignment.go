@@ -7,6 +7,8 @@ import (
 // ManagedDeviceMobileAppConfigurationAssignment contains the properties used to assign an MDM app configuration to a group.
 type ManagedDeviceMobileAppConfigurationAssignment struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewManagedDeviceMobileAppConfigurationAssignment instantiates a new managedDeviceMobileAppConfigurationAssignment and sets the default values.
 func NewManagedDeviceMobileAppConfigurationAssignment()(*ManagedDeviceMobileAppConfigurationAssignment) {

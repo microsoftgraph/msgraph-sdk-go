@@ -9,7 +9,7 @@ import (
 type WindowsHelloForBusinessAuthenticationMethod struct {
     AuthenticationMethod
 }
-// NewWindowsHelloForBusinessAuthenticationMethod instantiates a new WindowsHelloForBusinessAuthenticationMethod and sets the default values.
+// NewWindowsHelloForBusinessAuthenticationMethod instantiates a new windowsHelloForBusinessAuthenticationMethod and sets the default values.
 func NewWindowsHelloForBusinessAuthenticationMethod()(*WindowsHelloForBusinessAuthenticationMethod) {
     m := &WindowsHelloForBusinessAuthenticationMethod{
         AuthenticationMethod: *NewAuthenticationMethod(),

@@ -8,7 +8,7 @@ import (
 type SubscribedSkuCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewSubscribedSkuCollectionResponse instantiates a new SubscribedSkuCollectionResponse and sets the default values.
+// NewSubscribedSkuCollectionResponse instantiates a new subscribedSkuCollectionResponse and sets the default values.
 func NewSubscribedSkuCollectionResponse()(*SubscribedSkuCollectionResponse) {
     m := &SubscribedSkuCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

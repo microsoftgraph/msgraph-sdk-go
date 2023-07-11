@@ -9,6 +9,8 @@ import (
 // DeviceLogCollectionResponse windows Log Collection request entity.
 type DeviceLogCollectionResponse struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDeviceLogCollectionResponse instantiates a new deviceLogCollectionResponse and sets the default values.
 func NewDeviceLogCollectionResponse()(*DeviceLogCollectionResponse) {

@@ -7,6 +7,8 @@ import (
 // WorkbookChartTitle 
 type WorkbookChartTitle struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewWorkbookChartTitle instantiates a new workbookChartTitle and sets the default values.
 func NewWorkbookChartTitle()(*WorkbookChartTitle) {

@@ -10,7 +10,7 @@ type SynchronizationJobSubject struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewSynchronizationJobSubject instantiates a new SynchronizationJobSubject and sets the default values.
+// NewSynchronizationJobSubject instantiates a new synchronizationJobSubject and sets the default values.
 func NewSynchronizationJobSubject()(*SynchronizationJobSubject) {
     m := &SynchronizationJobSubject{
     }
@@ -83,7 +83,7 @@ func (m *SynchronizationJobSubject) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetLinks gets the links property value. The links property
+// GetLinks gets the links property value. Principals that you would like to provision.
 func (m *SynchronizationJobSubject) GetLinks()(SynchronizationLinkedObjectsable) {
     val, err := m.GetBackingStore().Get("links")
     if err != nil {
@@ -94,7 +94,7 @@ func (m *SynchronizationJobSubject) GetLinks()(SynchronizationLinkedObjectsable)
     }
     return nil
 }
-// GetObjectId gets the objectId property value. The objectId property
+// GetObjectId gets the objectId property value. The identifier of an object to which a synchronizationJob is to be applied. Can be one of the following: An onPremisesDistinguishedName for synchronization from Active Directory to Azure AD.The user ID for synchronization from Azure AD to a third-party.The Worker ID of the Workday worker for synchronization from Workday to either Active Directory or Azure AD.
 func (m *SynchronizationJobSubject) GetObjectId()(*string) {
     val, err := m.GetBackingStore().Get("objectId")
     if err != nil {
@@ -105,7 +105,7 @@ func (m *SynchronizationJobSubject) GetObjectId()(*string) {
     }
     return nil
 }
-// GetObjectTypeName gets the objectTypeName property value. The objectTypeName property
+// GetObjectTypeName gets the objectTypeName property value. The type of the object to which a synchronizationJob is to be applied. Can be one of the following: user for synchronizing between Active Directory and Azure AD.User for synchronizing a user between Azure AD and a third-party application. Worker for synchronization a user between Workday and either Active Directory or Azure AD.Group for synchronizing a group between Azure AD and a third-party application.
 func (m *SynchronizationJobSubject) GetObjectTypeName()(*string) {
     val, err := m.GetBackingStore().Get("objectTypeName")
     if err != nil {
@@ -172,21 +172,21 @@ func (m *SynchronizationJobSubject) SetAdditionalData(value map[string]any)() {
 func (m *SynchronizationJobSubject) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetLinks sets the links property value. The links property
+// SetLinks sets the links property value. Principals that you would like to provision.
 func (m *SynchronizationJobSubject) SetLinks(value SynchronizationLinkedObjectsable)() {
     err := m.GetBackingStore().Set("links", value)
     if err != nil {
         panic(err)
     }
 }
-// SetObjectId sets the objectId property value. The objectId property
+// SetObjectId sets the objectId property value. The identifier of an object to which a synchronizationJob is to be applied. Can be one of the following: An onPremisesDistinguishedName for synchronization from Active Directory to Azure AD.The user ID for synchronization from Azure AD to a third-party.The Worker ID of the Workday worker for synchronization from Workday to either Active Directory or Azure AD.
 func (m *SynchronizationJobSubject) SetObjectId(value *string)() {
     err := m.GetBackingStore().Set("objectId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetObjectTypeName sets the objectTypeName property value. The objectTypeName property
+// SetObjectTypeName sets the objectTypeName property value. The type of the object to which a synchronizationJob is to be applied. Can be one of the following: user for synchronizing between Active Directory and Azure AD.User for synchronizing a user between Azure AD and a third-party application. Worker for synchronization a user between Workday and either Active Directory or Azure AD.Group for synchronizing a group between Azure AD and a third-party application.
 func (m *SynchronizationJobSubject) SetObjectTypeName(value *string)() {
     err := m.GetBackingStore().Set("objectTypeName", value)
     if err != nil {

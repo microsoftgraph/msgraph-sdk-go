@@ -8,7 +8,7 @@ import (
 type TaskFileAttachment struct {
     AttachmentBase
 }
-// NewTaskFileAttachment instantiates a new TaskFileAttachment and sets the default values.
+// NewTaskFileAttachment instantiates a new taskFileAttachment and sets the default values.
 func NewTaskFileAttachment()(*TaskFileAttachment) {
     m := &TaskFileAttachment{
         AttachmentBase: *NewAttachmentBase(),

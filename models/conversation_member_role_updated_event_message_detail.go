@@ -8,7 +8,7 @@ import (
 type ConversationMemberRoleUpdatedEventMessageDetail struct {
     EventMessageDetail
 }
-// NewConversationMemberRoleUpdatedEventMessageDetail instantiates a new ConversationMemberRoleUpdatedEventMessageDetail and sets the default values.
+// NewConversationMemberRoleUpdatedEventMessageDetail instantiates a new conversationMemberRoleUpdatedEventMessageDetail and sets the default values.
 func NewConversationMemberRoleUpdatedEventMessageDetail()(*ConversationMemberRoleUpdatedEventMessageDetail) {
     m := &ConversationMemberRoleUpdatedEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),
@@ -82,6 +82,16 @@ func (m *ConversationMemberRoleUpdatedEventMessageDetail) GetFieldDeserializers(
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetInitiator gets the initiator property value. Initiator of the event.
@@ -92,6 +102,17 @@ func (m *ConversationMemberRoleUpdatedEventMessageDetail) GetInitiator()(Identit
     }
     if val != nil {
         return val.(IdentitySetable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ConversationMemberRoleUpdatedEventMessageDetail) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -119,6 +140,12 @@ func (m *ConversationMemberRoleUpdatedEventMessageDetail) Serialize(writer i878a
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetConversationMemberRoles sets the conversationMemberRoles property value. Roles for the coversation member user.
@@ -142,6 +169,13 @@ func (m *ConversationMemberRoleUpdatedEventMessageDetail) SetInitiator(value Ide
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ConversationMemberRoleUpdatedEventMessageDetail) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // ConversationMemberRoleUpdatedEventMessageDetailable 
 type ConversationMemberRoleUpdatedEventMessageDetailable interface {
     EventMessageDetailable
@@ -149,7 +183,9 @@ type ConversationMemberRoleUpdatedEventMessageDetailable interface {
     GetConversationMemberRoles()([]string)
     GetConversationMemberUser()(TeamworkUserIdentityable)
     GetInitiator()(IdentitySetable)
+    GetOdataType()(*string)
     SetConversationMemberRoles(value []string)()
     SetConversationMemberUser(value TeamworkUserIdentityable)()
     SetInitiator(value IdentitySetable)()
+    SetOdataType(value *string)()
 }

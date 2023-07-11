@@ -8,7 +8,7 @@ import (
 type AuditEventCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAuditEventCollectionResponse instantiates a new AuditEventCollectionResponse and sets the default values.
+// NewAuditEventCollectionResponse instantiates a new auditEventCollectionResponse and sets the default values.
 func NewAuditEventCollectionResponse()(*AuditEventCollectionResponse) {
     m := &AuditEventCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

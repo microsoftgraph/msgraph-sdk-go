@@ -8,6 +8,8 @@ import (
 // RemoteAssistancePartner remoteAssistPartner resources represent the metadata and status of a given Remote Assistance partner service.
 type RemoteAssistancePartner struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewRemoteAssistancePartner instantiates a new remoteAssistancePartner and sets the default values.
 func NewRemoteAssistancePartner()(*RemoteAssistancePartner) {

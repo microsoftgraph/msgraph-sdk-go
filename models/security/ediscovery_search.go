@@ -8,7 +8,7 @@ import (
 type EdiscoverySearch struct {
     Search
 }
-// NewEdiscoverySearch instantiates a new EdiscoverySearch and sets the default values.
+// NewEdiscoverySearch instantiates a new ediscoverySearch and sets the default values.
 func NewEdiscoverySearch()(*EdiscoverySearch) {
     m := &EdiscoverySearch{
         Search: *NewSearch(),

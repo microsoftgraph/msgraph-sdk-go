@@ -8,7 +8,7 @@ import (
 type TermsAndConditionsCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewTermsAndConditionsCollectionResponse instantiates a new TermsAndConditionsCollectionResponse and sets the default values.
+// NewTermsAndConditionsCollectionResponse instantiates a new termsAndConditionsCollectionResponse and sets the default values.
 func NewTermsAndConditionsCollectionResponse()(*TermsAndConditionsCollectionResponse) {
     m := &TermsAndConditionsCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

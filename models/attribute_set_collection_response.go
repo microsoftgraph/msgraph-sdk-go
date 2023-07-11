@@ -8,7 +8,7 @@ import (
 type AttributeSetCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAttributeSetCollectionResponse instantiates a new AttributeSetCollectionResponse and sets the default values.
+// NewAttributeSetCollectionResponse instantiates a new attributeSetCollectionResponse and sets the default values.
 func NewAttributeSetCollectionResponse()(*AttributeSetCollectionResponse) {
     m := &AttributeSetCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

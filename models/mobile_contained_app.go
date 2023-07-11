@@ -7,6 +7,8 @@ import (
 // MobileContainedApp an abstract class that represents a contained app in a mobileApp acting as a package.
 type MobileContainedApp struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewMobileContainedApp instantiates a new mobileContainedApp and sets the default values.
 func NewMobileContainedApp()(*MobileContainedApp) {

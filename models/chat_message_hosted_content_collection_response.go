@@ -8,7 +8,7 @@ import (
 type ChatMessageHostedContentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewChatMessageHostedContentCollectionResponse instantiates a new ChatMessageHostedContentCollectionResponse and sets the default values.
+// NewChatMessageHostedContentCollectionResponse instantiates a new chatMessageHostedContentCollectionResponse and sets the default values.
 func NewChatMessageHostedContentCollectionResponse()(*ChatMessageHostedContentCollectionResponse) {
     m := &ChatMessageHostedContentCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -8,7 +8,7 @@ import (
 type DelegatedAdminAccessAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDelegatedAdminAccessAssignmentCollectionResponse instantiates a new DelegatedAdminAccessAssignmentCollectionResponse and sets the default values.
+// NewDelegatedAdminAccessAssignmentCollectionResponse instantiates a new delegatedAdminAccessAssignmentCollectionResponse and sets the default values.
 func NewDelegatedAdminAccessAssignmentCollectionResponse()(*DelegatedAdminAccessAssignmentCollectionResponse) {
     m := &DelegatedAdminAccessAssignmentCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -8,6 +8,8 @@ import (
 // ComplianceManagementPartner compliance management partner for all platforms
 type ComplianceManagementPartner struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewComplianceManagementPartner instantiates a new complianceManagementPartner and sets the default values.
 func NewComplianceManagementPartner()(*ComplianceManagementPartner) {

@@ -8,7 +8,7 @@ import (
 type WindowsInformationProtectionNetworkLearningSummaryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewWindowsInformationProtectionNetworkLearningSummaryCollectionResponse instantiates a new WindowsInformationProtectionNetworkLearningSummaryCollectionResponse and sets the default values.
+// NewWindowsInformationProtectionNetworkLearningSummaryCollectionResponse instantiates a new windowsInformationProtectionNetworkLearningSummaryCollectionResponse and sets the default values.
 func NewWindowsInformationProtectionNetworkLearningSummaryCollectionResponse()(*WindowsInformationProtectionNetworkLearningSummaryCollectionResponse) {
     m := &WindowsInformationProtectionNetworkLearningSummaryCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

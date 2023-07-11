@@ -7,8 +7,10 @@ import (
 // Place 
 type Place struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewPlace instantiates a new Place and sets the default values.
+// NewPlace instantiates a new place and sets the default values.
 func NewPlace()(*Place) {
     m := &Place{
         Entity: *NewEntity(),

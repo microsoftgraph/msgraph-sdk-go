@@ -9,7 +9,7 @@ import (
 type OnenoteEntityHierarchyModel struct {
     OnenoteEntitySchemaObjectModel
 }
-// NewOnenoteEntityHierarchyModel instantiates a new OnenoteEntityHierarchyModel and sets the default values.
+// NewOnenoteEntityHierarchyModel instantiates a new onenoteEntityHierarchyModel and sets the default values.
 func NewOnenoteEntityHierarchyModel()(*OnenoteEntityHierarchyModel) {
     m := &OnenoteEntityHierarchyModel{
         OnenoteEntitySchemaObjectModel: *NewOnenoteEntitySchemaObjectModel(),

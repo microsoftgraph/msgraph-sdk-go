@@ -8,7 +8,7 @@ import (
 type WindowsAutopilotDeviceIdentityCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewWindowsAutopilotDeviceIdentityCollectionResponse instantiates a new WindowsAutopilotDeviceIdentityCollectionResponse and sets the default values.
+// NewWindowsAutopilotDeviceIdentityCollectionResponse instantiates a new windowsAutopilotDeviceIdentityCollectionResponse and sets the default values.
 func NewWindowsAutopilotDeviceIdentityCollectionResponse()(*WindowsAutopilotDeviceIdentityCollectionResponse) {
     m := &WindowsAutopilotDeviceIdentityCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

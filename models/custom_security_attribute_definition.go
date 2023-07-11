@@ -7,8 +7,10 @@ import (
 // CustomSecurityAttributeDefinition 
 type CustomSecurityAttributeDefinition struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewCustomSecurityAttributeDefinition instantiates a new CustomSecurityAttributeDefinition and sets the default values.
+// NewCustomSecurityAttributeDefinition instantiates a new customSecurityAttributeDefinition and sets the default values.
 func NewCustomSecurityAttributeDefinition()(*CustomSecurityAttributeDefinition) {
     m := &CustomSecurityAttributeDefinition{
         Entity: *NewEntity(),

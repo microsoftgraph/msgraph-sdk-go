@@ -9,7 +9,7 @@ import (
 type IntelligenceProfileCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
 }
-// NewIntelligenceProfileCollectionResponse instantiates a new IntelligenceProfileCollectionResponse and sets the default values.
+// NewIntelligenceProfileCollectionResponse instantiates a new intelligenceProfileCollectionResponse and sets the default values.
 func NewIntelligenceProfileCollectionResponse()(*IntelligenceProfileCollectionResponse) {
     m := &IntelligenceProfileCollectionResponse{
         BaseCollectionPaginationCountResponse: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewBaseCollectionPaginationCountResponse(),

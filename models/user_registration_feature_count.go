@@ -10,7 +10,7 @@ type UserRegistrationFeatureCount struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewUserRegistrationFeatureCount instantiates a new UserRegistrationFeatureCount and sets the default values.
+// NewUserRegistrationFeatureCount instantiates a new userRegistrationFeatureCount and sets the default values.
 func NewUserRegistrationFeatureCount()(*UserRegistrationFeatureCount) {
     m := &UserRegistrationFeatureCount{
     }
@@ -95,7 +95,7 @@ func (m *UserRegistrationFeatureCount) GetOdataType()(*string) {
     }
     return nil
 }
-// GetUserCount gets the userCount property value. The userCount property
+// GetUserCount gets the userCount property value. Number of users.
 func (m *UserRegistrationFeatureCount) GetUserCount()(*int64) {
     val, err := m.GetBackingStore().Get("userCount")
     if err != nil {
@@ -160,7 +160,7 @@ func (m *UserRegistrationFeatureCount) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetUserCount sets the userCount property value. The userCount property
+// SetUserCount sets the userCount property value. Number of users.
 func (m *UserRegistrationFeatureCount) SetUserCount(value *int64)() {
     err := m.GetBackingStore().Set("userCount", value)
     if err != nil {

@@ -7,6 +7,8 @@ import (
 // ScopedRoleMembership 
 type ScopedRoleMembership struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewScopedRoleMembership instantiates a new scopedRoleMembership and sets the default values.
 func NewScopedRoleMembership()(*ScopedRoleMembership) {

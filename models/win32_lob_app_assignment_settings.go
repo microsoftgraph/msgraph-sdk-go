@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Win32LobAppAssignmentSettings 
+// Win32LobAppAssignmentSettings contains properties used to assign an Win32 LOB mobile app to a group.
 type Win32LobAppAssignmentSettings struct {
     MobileAppAssignmentSettings
+    // The OdataType property
+    OdataType *string
 }
-// NewWin32LobAppAssignmentSettings instantiates a new Win32LobAppAssignmentSettings and sets the default values.
+// NewWin32LobAppAssignmentSettings instantiates a new win32LobAppAssignmentSettings and sets the default values.
 func NewWin32LobAppAssignmentSettings()(*Win32LobAppAssignmentSettings) {
     m := &Win32LobAppAssignmentSettings{
         MobileAppAssignmentSettings: *NewMobileAppAssignmentSettings(),

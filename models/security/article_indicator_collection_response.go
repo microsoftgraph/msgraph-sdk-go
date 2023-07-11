@@ -9,7 +9,7 @@ import (
 type ArticleIndicatorCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
 }
-// NewArticleIndicatorCollectionResponse instantiates a new ArticleIndicatorCollectionResponse and sets the default values.
+// NewArticleIndicatorCollectionResponse instantiates a new articleIndicatorCollectionResponse and sets the default values.
 func NewArticleIndicatorCollectionResponse()(*ArticleIndicatorCollectionResponse) {
     m := &ArticleIndicatorCollectionResponse{
         BaseCollectionPaginationCountResponse: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewBaseCollectionPaginationCountResponse(),

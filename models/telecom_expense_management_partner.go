@@ -8,6 +8,8 @@ import (
 // TelecomExpenseManagementPartner telecomExpenseManagementPartner resources represent the metadata and status of a given TEM service. Once your organization has onboarded with a partner, the partner can be enabled or disabled to switch TEM functionality on or off.
 type TelecomExpenseManagementPartner struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewTelecomExpenseManagementPartner instantiates a new telecomExpenseManagementPartner and sets the default values.
 func NewTelecomExpenseManagementPartner()(*TelecomExpenseManagementPartner) {

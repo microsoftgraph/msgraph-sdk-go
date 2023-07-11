@@ -7,8 +7,10 @@ import (
 // OrganizerMeetingInfo 
 type OrganizerMeetingInfo struct {
     MeetingInfo
+    // The OdataType property
+    OdataType *string
 }
-// NewOrganizerMeetingInfo instantiates a new OrganizerMeetingInfo and sets the default values.
+// NewOrganizerMeetingInfo instantiates a new organizerMeetingInfo and sets the default values.
 func NewOrganizerMeetingInfo()(*OrganizerMeetingInfo) {
     m := &OrganizerMeetingInfo{
         MeetingInfo: *NewMeetingInfo(),

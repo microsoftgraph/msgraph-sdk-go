@@ -147,6 +147,16 @@ func (m *UserExperienceAnalyticsDeviceStartupHistory) GetFieldDeserializers()(ma
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["operatingSystemVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -270,6 +280,17 @@ func (m *UserExperienceAnalyticsDeviceStartupHistory) GetIsFirstLogin()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UserExperienceAnalyticsDeviceStartupHistory) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -416,6 +437,12 @@ func (m *UserExperienceAnalyticsDeviceStartupHistory) Serialize(writer i878a80d2
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("operatingSystemVersion", m.GetOperatingSystemVersion())
         if err != nil {
             return err
@@ -522,6 +549,13 @@ func (m *UserExperienceAnalyticsDeviceStartupHistory) SetIsFirstLogin(value *boo
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UserExperienceAnalyticsDeviceStartupHistory) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOperatingSystemVersion sets the operatingSystemVersion property value. The user experience analytics device boot record's operating system version. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsDeviceStartupHistory) SetOperatingSystemVersion(value *string)() {
     err := m.GetBackingStore().Set("operatingSystemVersion", value)
@@ -590,6 +624,7 @@ type UserExperienceAnalyticsDeviceStartupHistoryable interface {
     GetGroupPolicyLoginTimeInMs()(*int32)
     GetIsFeatureUpdate()(*bool)
     GetIsFirstLogin()(*bool)
+    GetOdataType()(*string)
     GetOperatingSystemVersion()(*string)
     GetResponsiveDesktopTimeInMs()(*int32)
     GetRestartCategory()(*UserExperienceAnalyticsOperatingSystemRestartCategory)
@@ -606,6 +641,7 @@ type UserExperienceAnalyticsDeviceStartupHistoryable interface {
     SetGroupPolicyLoginTimeInMs(value *int32)()
     SetIsFeatureUpdate(value *bool)()
     SetIsFirstLogin(value *bool)()
+    SetOdataType(value *string)()
     SetOperatingSystemVersion(value *string)()
     SetResponsiveDesktopTimeInMs(value *int32)()
     SetRestartCategory(value *UserExperienceAnalyticsOperatingSystemRestartCategory)()

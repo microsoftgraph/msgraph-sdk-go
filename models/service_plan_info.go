@@ -11,7 +11,7 @@ type ServicePlanInfo struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewServicePlanInfo instantiates a new ServicePlanInfo and sets the default values.
+// NewServicePlanInfo instantiates a new servicePlanInfo and sets the default values.
 func NewServicePlanInfo()(*ServicePlanInfo) {
     m := &ServicePlanInfo{
     }

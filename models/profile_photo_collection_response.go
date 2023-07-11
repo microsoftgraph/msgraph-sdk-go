@@ -8,7 +8,7 @@ import (
 type ProfilePhotoCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewProfilePhotoCollectionResponse instantiates a new ProfilePhotoCollectionResponse and sets the default values.
+// NewProfilePhotoCollectionResponse instantiates a new profilePhotoCollectionResponse and sets the default values.
 func NewProfilePhotoCollectionResponse()(*ProfilePhotoCollectionResponse) {
     m := &ProfilePhotoCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

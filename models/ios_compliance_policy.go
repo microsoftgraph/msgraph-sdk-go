@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosCompliancePolicy 
+// IosCompliancePolicy this class contains compliance settings for IOS.
 type IosCompliancePolicy struct {
     DeviceCompliancePolicy
 }
-// NewIosCompliancePolicy instantiates a new IosCompliancePolicy and sets the default values.
+// NewIosCompliancePolicy instantiates a new iosCompliancePolicy and sets the default values.
 func NewIosCompliancePolicy()(*IosCompliancePolicy) {
     m := &IosCompliancePolicy{
         DeviceCompliancePolicy: *NewDeviceCompliancePolicy(),

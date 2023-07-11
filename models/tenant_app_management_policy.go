@@ -8,7 +8,7 @@ import (
 type TenantAppManagementPolicy struct {
     PolicyBase
 }
-// NewTenantAppManagementPolicy instantiates a new TenantAppManagementPolicy and sets the default values.
+// NewTenantAppManagementPolicy instantiates a new tenantAppManagementPolicy and sets the default values.
 func NewTenantAppManagementPolicy()(*TenantAppManagementPolicy) {
     m := &TenantAppManagementPolicy{
         PolicyBase: *NewPolicyBase(),

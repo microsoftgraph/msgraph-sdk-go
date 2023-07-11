@@ -7,6 +7,8 @@ import (
 // WorkbookRangeFill 
 type WorkbookRangeFill struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewWorkbookRangeFill instantiates a new workbookRangeFill and sets the default values.
 func NewWorkbookRangeFill()(*WorkbookRangeFill) {

@@ -8,6 +8,8 @@ import (
 // BaseItem 
 type BaseItem struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewBaseItem instantiates a new baseItem and sets the default values.
 func NewBaseItem()(*BaseItem) {

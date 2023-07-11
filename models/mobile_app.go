@@ -8,6 +8,8 @@ import (
 // MobileApp an abstract class containing the base properties for Intune mobile apps. Note: Listing mobile apps with `$expand=assignments` has been deprecated. Instead get the list of apps without the `$expand` query on `assignments`. Then, perform the expansion on individual applications.
 type MobileApp struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewMobileApp instantiates a new mobileApp and sets the default values.
 func NewMobileApp()(*MobileApp) {

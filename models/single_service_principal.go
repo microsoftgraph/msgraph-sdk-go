@@ -7,8 +7,10 @@ import (
 // SingleServicePrincipal 
 type SingleServicePrincipal struct {
     SubjectSet
+    // The OdataType property
+    OdataType *string
 }
-// NewSingleServicePrincipal instantiates a new SingleServicePrincipal and sets the default values.
+// NewSingleServicePrincipal instantiates a new singleServicePrincipal and sets the default values.
 func NewSingleServicePrincipal()(*SingleServicePrincipal) {
     m := &SingleServicePrincipal{
         SubjectSet: *NewSubjectSet(),

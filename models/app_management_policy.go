@@ -8,7 +8,7 @@ import (
 type AppManagementPolicy struct {
     PolicyBase
 }
-// NewAppManagementPolicy instantiates a new AppManagementPolicy and sets the default values.
+// NewAppManagementPolicy instantiates a new appManagementPolicy and sets the default values.
 func NewAppManagementPolicy()(*AppManagementPolicy) {
     m := &AppManagementPolicy{
         PolicyBase: *NewPolicyBase(),

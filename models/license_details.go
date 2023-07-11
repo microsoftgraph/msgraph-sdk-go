@@ -8,6 +8,8 @@ import (
 // LicenseDetails 
 type LicenseDetails struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewLicenseDetails instantiates a new licenseDetails and sets the default values.
 func NewLicenseDetails()(*LicenseDetails) {

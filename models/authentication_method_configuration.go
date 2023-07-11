@@ -7,8 +7,10 @@ import (
 // AuthenticationMethodConfiguration 
 type AuthenticationMethodConfiguration struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewAuthenticationMethodConfiguration instantiates a new AuthenticationMethodConfiguration and sets the default values.
+// NewAuthenticationMethodConfiguration instantiates a new authenticationMethodConfiguration and sets the default values.
 func NewAuthenticationMethodConfiguration()(*AuthenticationMethodConfiguration) {
     m := &AuthenticationMethodConfiguration{
         Entity: *NewEntity(),

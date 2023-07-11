@@ -8,7 +8,7 @@ import (
 type SchedulingGroupCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewSchedulingGroupCollectionResponse instantiates a new SchedulingGroupCollectionResponse and sets the default values.
+// NewSchedulingGroupCollectionResponse instantiates a new schedulingGroupCollectionResponse and sets the default values.
 func NewSchedulingGroupCollectionResponse()(*SchedulingGroupCollectionResponse) {
     m := &SchedulingGroupCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

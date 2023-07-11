@@ -8,6 +8,8 @@ import (
 // RiskyServicePrincipal 
 type RiskyServicePrincipal struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewRiskyServicePrincipal instantiates a new riskyServicePrincipal and sets the default values.
 func NewRiskyServicePrincipal()(*RiskyServicePrincipal) {

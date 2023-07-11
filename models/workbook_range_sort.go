@@ -7,6 +7,8 @@ import (
 // WorkbookRangeSort 
 type WorkbookRangeSort struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewWorkbookRangeSort instantiates a new workbookRangeSort and sets the default values.
 func NewWorkbookRangeSort()(*WorkbookRangeSort) {

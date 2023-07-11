@@ -8,7 +8,7 @@ import (
 type MicrosoftAccountUserConversationMember struct {
     ConversationMember
 }
-// NewMicrosoftAccountUserConversationMember instantiates a new MicrosoftAccountUserConversationMember and sets the default values.
+// NewMicrosoftAccountUserConversationMember instantiates a new microsoftAccountUserConversationMember and sets the default values.
 func NewMicrosoftAccountUserConversationMember()(*MicrosoftAccountUserConversationMember) {
     m := &MicrosoftAccountUserConversationMember{
         ConversationMember: *NewConversationMember(),

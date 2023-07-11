@@ -8,6 +8,8 @@ import (
 // ManagedAppRegistration the ManagedAppEntity is the base entity type for all other entity types under app management workflow.
 type ManagedAppRegistration struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewManagedAppRegistration instantiates a new managedAppRegistration and sets the default values.
 func NewManagedAppRegistration()(*ManagedAppRegistration) {

@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidManagedAppRegistration 
+// AndroidManagedAppRegistration represents the synchronization details of an android app, with management capabilities, for a specific user.
 type AndroidManagedAppRegistration struct {
     ManagedAppRegistration
 }
-// NewAndroidManagedAppRegistration instantiates a new AndroidManagedAppRegistration and sets the default values.
+// NewAndroidManagedAppRegistration instantiates a new androidManagedAppRegistration and sets the default values.
 func NewAndroidManagedAppRegistration()(*AndroidManagedAppRegistration) {
     m := &AndroidManagedAppRegistration{
         ManagedAppRegistration: *NewManagedAppRegistration(),

@@ -8,7 +8,7 @@ import (
 type NamedLocationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewNamedLocationCollectionResponse instantiates a new NamedLocationCollectionResponse and sets the default values.
+// NewNamedLocationCollectionResponse instantiates a new namedLocationCollectionResponse and sets the default values.
 func NewNamedLocationCollectionResponse()(*NamedLocationCollectionResponse) {
     m := &NamedLocationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

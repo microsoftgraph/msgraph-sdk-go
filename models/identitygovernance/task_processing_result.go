@@ -9,6 +9,8 @@ import (
 // TaskProcessingResult 
 type TaskProcessingResult struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewTaskProcessingResult instantiates a new taskProcessingResult and sets the default values.
 func NewTaskProcessingResult()(*TaskProcessingResult) {

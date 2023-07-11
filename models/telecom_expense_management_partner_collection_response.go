@@ -8,7 +8,7 @@ import (
 type TelecomExpenseManagementPartnerCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewTelecomExpenseManagementPartnerCollectionResponse instantiates a new TelecomExpenseManagementPartnerCollectionResponse and sets the default values.
+// NewTelecomExpenseManagementPartnerCollectionResponse instantiates a new telecomExpenseManagementPartnerCollectionResponse and sets the default values.
 func NewTelecomExpenseManagementPartnerCollectionResponse()(*TelecomExpenseManagementPartnerCollectionResponse) {
     m := &TelecomExpenseManagementPartnerCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

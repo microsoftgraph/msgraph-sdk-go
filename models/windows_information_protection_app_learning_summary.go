@@ -7,6 +7,8 @@ import (
 // WindowsInformationProtectionAppLearningSummary windows Information Protection AppLearning Summary entity.
 type WindowsInformationProtectionAppLearningSummary struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewWindowsInformationProtectionAppLearningSummary instantiates a new windowsInformationProtectionAppLearningSummary and sets the default values.
 func NewWindowsInformationProtectionAppLearningSummary()(*WindowsInformationProtectionAppLearningSummary) {

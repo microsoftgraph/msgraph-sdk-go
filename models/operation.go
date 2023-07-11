@@ -8,6 +8,8 @@ import (
 // Operation 
 type Operation struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewOperation instantiates a new operation and sets the default values.
 func NewOperation()(*Operation) {

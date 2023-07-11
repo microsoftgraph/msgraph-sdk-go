@@ -8,6 +8,8 @@ import (
 // BrowserSharedCookie 
 type BrowserSharedCookie struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewBrowserSharedCookie instantiates a new browserSharedCookie and sets the default values.
 func NewBrowserSharedCookie()(*BrowserSharedCookie) {

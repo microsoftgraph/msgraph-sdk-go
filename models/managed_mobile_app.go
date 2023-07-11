@@ -7,6 +7,8 @@ import (
 // ManagedMobileApp the identifier for the deployment an app.
 type ManagedMobileApp struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewManagedMobileApp instantiates a new managedMobileApp and sets the default values.
 func NewManagedMobileApp()(*ManagedMobileApp) {

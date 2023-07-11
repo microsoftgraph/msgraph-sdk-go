@@ -8,7 +8,7 @@ import (
 type ActivityBasedTimeoutPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewActivityBasedTimeoutPolicyCollectionResponse instantiates a new ActivityBasedTimeoutPolicyCollectionResponse and sets the default values.
+// NewActivityBasedTimeoutPolicyCollectionResponse instantiates a new activityBasedTimeoutPolicyCollectionResponse and sets the default values.
 func NewActivityBasedTimeoutPolicyCollectionResponse()(*ActivityBasedTimeoutPolicyCollectionResponse) {
     m := &ActivityBasedTimeoutPolicyCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

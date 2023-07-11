@@ -8,7 +8,7 @@ import (
 type TokenIssuancePolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewTokenIssuancePolicyCollectionResponse instantiates a new TokenIssuancePolicyCollectionResponse and sets the default values.
+// NewTokenIssuancePolicyCollectionResponse instantiates a new tokenIssuancePolicyCollectionResponse and sets the default values.
 func NewTokenIssuancePolicyCollectionResponse()(*TokenIssuancePolicyCollectionResponse) {
     m := &TokenIssuancePolicyCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -7,8 +7,10 @@ import (
 // Directory 
 type Directory struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewDirectory instantiates a new Directory and sets the default values.
+// NewDirectory instantiates a new directory and sets the default values.
 func NewDirectory()(*Directory) {
     m := &Directory{
         Entity: *NewEntity(),

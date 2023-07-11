@@ -8,7 +8,7 @@ import (
 type AttributeSet struct {
     Entity
 }
-// NewAttributeSet instantiates a new AttributeSet and sets the default values.
+// NewAttributeSet instantiates a new attributeSet and sets the default values.
 func NewAttributeSet()(*AttributeSet) {
     m := &AttributeSet{
         Entity: *NewEntity(),
@@ -53,6 +53,16 @@ func (m *AttributeSet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetMaxAttributesPerSet gets the maxAttributesPerSet property value. Maximum number of custom security attributes that can be defined in this attribute set. Default value is null. If not specified, the administrator can add up to the maximum of 500 active attributes per tenant. Can be changed later.
@@ -63,6 +73,17 @@ func (m *AttributeSet) GetMaxAttributesPerSet()(*int32) {
     }
     if val != nil {
         return val.(*int32)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AttributeSet) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -84,6 +105,12 @@ func (m *AttributeSet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDescription sets the description property value. Description of the attribute set. Can be up to 128 characters long and include Unicode characters. Can be changed later.
@@ -100,12 +127,21 @@ func (m *AttributeSet) SetMaxAttributesPerSet(value *int32)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AttributeSet) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // AttributeSetable 
 type AttributeSetable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDescription()(*string)
     GetMaxAttributesPerSet()(*int32)
+    GetOdataType()(*string)
     SetDescription(value *string)()
     SetMaxAttributesPerSet(value *int32)()
+    SetOdataType(value *string)()
 }

@@ -7,6 +7,8 @@ import (
 // Todo 
 type Todo struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewTodo instantiates a new todo and sets the default values.
 func NewTodo()(*Todo) {

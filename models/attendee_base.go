@@ -8,7 +8,7 @@ import (
 type AttendeeBase struct {
     Recipient
 }
-// NewAttendeeBase instantiates a new AttendeeBase and sets the default values.
+// NewAttendeeBase instantiates a new attendeeBase and sets the default values.
 func NewAttendeeBase()(*AttendeeBase) {
     m := &AttendeeBase{
         Recipient: *NewRecipient(),
@@ -42,6 +42,16 @@ func CreateAttendeeBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AttendeeBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Recipient.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAttendeeType)
         if err != nil {
@@ -53,6 +63,17 @@ func (m *AttendeeBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AttendeeBase) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetType gets the type property value. The type of attendee. The possible values are: required, optional, resource. Currently if the attendee is a person, findMeetingTimes always considers the person is of the Required type.
 func (m *AttendeeBase) GetType()(*AttendeeType) {
@@ -71,6 +92,12 @@ func (m *AttendeeBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetType() != nil {
         cast := (*m.GetType()).String()
         err = writer.WriteStringValue("type", &cast)
@@ -79,6 +106,13 @@ func (m *AttendeeBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AttendeeBase) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetType sets the type property value. The type of attendee. The possible values are: required, optional, resource. Currently if the attendee is a person, findMeetingTimes always considers the person is of the Required type.
 func (m *AttendeeBase) SetType(value *AttendeeType)() {
@@ -91,6 +125,8 @@ func (m *AttendeeBase) SetType(value *AttendeeType)() {
 type AttendeeBaseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     Recipientable
+    GetOdataType()(*string)
     GetType()(*AttendeeType)
+    SetOdataType(value *string)()
     SetType(value *AttendeeType)()
 }

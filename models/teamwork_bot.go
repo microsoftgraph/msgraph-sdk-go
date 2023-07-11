@@ -7,6 +7,8 @@ import (
 // TeamworkBot 
 type TeamworkBot struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewTeamworkBot instantiates a new teamworkBot and sets the default values.
 func NewTeamworkBot()(*TeamworkBot) {

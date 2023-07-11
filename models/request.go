@@ -8,6 +8,8 @@ import (
 // Request 
 type Request struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewRequest instantiates a new request and sets the default values.
 func NewRequest()(*Request) {

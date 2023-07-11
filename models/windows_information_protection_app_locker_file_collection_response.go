@@ -8,7 +8,7 @@ import (
 type WindowsInformationProtectionAppLockerFileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewWindowsInformationProtectionAppLockerFileCollectionResponse instantiates a new WindowsInformationProtectionAppLockerFileCollectionResponse and sets the default values.
+// NewWindowsInformationProtectionAppLockerFileCollectionResponse instantiates a new windowsInformationProtectionAppLockerFileCollectionResponse and sets the default values.
 func NewWindowsInformationProtectionAppLockerFileCollectionResponse()(*WindowsInformationProtectionAppLockerFileCollectionResponse) {
     m := &WindowsInformationProtectionAppLockerFileCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

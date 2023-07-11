@@ -8,7 +8,7 @@ import (
 type PhoneAuthenticationMethodCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewPhoneAuthenticationMethodCollectionResponse instantiates a new PhoneAuthenticationMethodCollectionResponse and sets the default values.
+// NewPhoneAuthenticationMethodCollectionResponse instantiates a new phoneAuthenticationMethodCollectionResponse and sets the default values.
 func NewPhoneAuthenticationMethodCollectionResponse()(*PhoneAuthenticationMethodCollectionResponse) {
     m := &PhoneAuthenticationMethodCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

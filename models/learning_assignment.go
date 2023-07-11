@@ -9,7 +9,7 @@ import (
 type LearningAssignment struct {
     LearningCourseActivity
 }
-// NewLearningAssignment instantiates a new LearningAssignment and sets the default values.
+// NewLearningAssignment instantiates a new learningAssignment and sets the default values.
 func NewLearningAssignment()(*LearningAssignment) {
     m := &LearningAssignment{
         LearningCourseActivity: *NewLearningCourseActivity(),

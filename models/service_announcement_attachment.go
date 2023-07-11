@@ -8,6 +8,8 @@ import (
 // ServiceAnnouncementAttachment 
 type ServiceAnnouncementAttachment struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewServiceAnnouncementAttachment instantiates a new serviceAnnouncementAttachment and sets the default values.
 func NewServiceAnnouncementAttachment()(*ServiceAnnouncementAttachment) {

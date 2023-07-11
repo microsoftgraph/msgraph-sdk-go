@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosStoreAppAssignmentSettings 
+// IosStoreAppAssignmentSettings contains properties used to assign an iOS Store mobile app to a group.
 type IosStoreAppAssignmentSettings struct {
     MobileAppAssignmentSettings
+    // The OdataType property
+    OdataType *string
 }
-// NewIosStoreAppAssignmentSettings instantiates a new IosStoreAppAssignmentSettings and sets the default values.
+// NewIosStoreAppAssignmentSettings instantiates a new iosStoreAppAssignmentSettings and sets the default values.
 func NewIosStoreAppAssignmentSettings()(*IosStoreAppAssignmentSettings) {
     m := &IosStoreAppAssignmentSettings{
         MobileAppAssignmentSettings: *NewMobileAppAssignmentSettings(),
@@ -78,7 +80,7 @@ func (m *IosStoreAppAssignmentSettings) GetUninstallOnDeviceRemoval()(*bool) {
     }
     return nil
 }
-// GetVpnConfigurationId gets the vpnConfigurationId property value. The VPN Configuration Id to apply for this app.
+// GetVpnConfigurationId gets the vpnConfigurationId property value. This is the unique identifier (Id) of the VPN Configuration to apply to the app.
 func (m *IosStoreAppAssignmentSettings) GetVpnConfigurationId()(*string) {
     val, err := m.GetBackingStore().Get("vpnConfigurationId")
     if err != nil {
@@ -129,7 +131,7 @@ func (m *IosStoreAppAssignmentSettings) SetUninstallOnDeviceRemoval(value *bool)
         panic(err)
     }
 }
-// SetVpnConfigurationId sets the vpnConfigurationId property value. The VPN Configuration Id to apply for this app.
+// SetVpnConfigurationId sets the vpnConfigurationId property value. This is the unique identifier (Id) of the VPN Configuration to apply to the app.
 func (m *IosStoreAppAssignmentSettings) SetVpnConfigurationId(value *string)() {
     err := m.GetBackingStore().Set("vpnConfigurationId", value)
     if err != nil {

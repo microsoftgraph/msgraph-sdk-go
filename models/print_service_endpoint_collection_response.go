@@ -8,7 +8,7 @@ import (
 type PrintServiceEndpointCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewPrintServiceEndpointCollectionResponse instantiates a new PrintServiceEndpointCollectionResponse and sets the default values.
+// NewPrintServiceEndpointCollectionResponse instantiates a new printServiceEndpointCollectionResponse and sets the default values.
 func NewPrintServiceEndpointCollectionResponse()(*PrintServiceEndpointCollectionResponse) {
     m := &PrintServiceEndpointCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

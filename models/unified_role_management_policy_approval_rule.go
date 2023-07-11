@@ -8,7 +8,7 @@ import (
 type UnifiedRoleManagementPolicyApprovalRule struct {
     UnifiedRoleManagementPolicyRule
 }
-// NewUnifiedRoleManagementPolicyApprovalRule instantiates a new UnifiedRoleManagementPolicyApprovalRule and sets the default values.
+// NewUnifiedRoleManagementPolicyApprovalRule instantiates a new unifiedRoleManagementPolicyApprovalRule and sets the default values.
 func NewUnifiedRoleManagementPolicyApprovalRule()(*UnifiedRoleManagementPolicyApprovalRule) {
     m := &UnifiedRoleManagementPolicyApprovalRule{
         UnifiedRoleManagementPolicyRule: *NewUnifiedRoleManagementPolicyRule(),

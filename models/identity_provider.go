@@ -7,6 +7,8 @@ import (
 // IdentityProvider 
 type IdentityProvider struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewIdentityProvider instantiates a new identityProvider and sets the default values.
 func NewIdentityProvider()(*IdentityProvider) {

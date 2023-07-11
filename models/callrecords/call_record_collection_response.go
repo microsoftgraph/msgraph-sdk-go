@@ -9,7 +9,7 @@ import (
 type CallRecordCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
 }
-// NewCallRecordCollectionResponse instantiates a new CallRecordCollectionResponse and sets the default values.
+// NewCallRecordCollectionResponse instantiates a new callRecordCollectionResponse and sets the default values.
 func NewCallRecordCollectionResponse()(*CallRecordCollectionResponse) {
     m := &CallRecordCollectionResponse{
         BaseCollectionPaginationCountResponse: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewBaseCollectionPaginationCountResponse(),
