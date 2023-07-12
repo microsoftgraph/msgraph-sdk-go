@@ -7,8 +7,10 @@ import (
 // CallEndedEventMessageDetail 
 type CallEndedEventMessageDetail struct {
     EventMessageDetail
+    // The OdataType property
+    OdataType *string
 }
-// NewCallEndedEventMessageDetail instantiates a new CallEndedEventMessageDetail and sets the default values.
+// NewCallEndedEventMessageDetail instantiates a new callEndedEventMessageDetail and sets the default values.
 func NewCallEndedEventMessageDetail()(*CallEndedEventMessageDetail) {
     m := &CallEndedEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),

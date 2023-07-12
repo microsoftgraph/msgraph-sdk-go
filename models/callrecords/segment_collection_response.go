@@ -9,7 +9,7 @@ import (
 type SegmentCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
 }
-// NewSegmentCollectionResponse instantiates a new SegmentCollectionResponse and sets the default values.
+// NewSegmentCollectionResponse instantiates a new segmentCollectionResponse and sets the default values.
 func NewSegmentCollectionResponse()(*SegmentCollectionResponse) {
     m := &SegmentCollectionResponse{
         BaseCollectionPaginationCountResponse: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewBaseCollectionPaginationCountResponse(),

@@ -7,6 +7,8 @@ import (
 // PrintDocument 
 type PrintDocument struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewPrintDocument instantiates a new printDocument and sets the default values.
 func NewPrintDocument()(*PrintDocument) {

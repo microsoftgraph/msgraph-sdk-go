@@ -8,7 +8,7 @@ import (
 type DeviceLogCollectionResponseCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDeviceLogCollectionResponseCollectionResponse instantiates a new DeviceLogCollectionResponseCollectionResponse and sets the default values.
+// NewDeviceLogCollectionResponseCollectionResponse instantiates a new deviceLogCollectionResponseCollectionResponse and sets the default values.
 func NewDeviceLogCollectionResponseCollectionResponse()(*DeviceLogCollectionResponseCollectionResponse) {
     m := &DeviceLogCollectionResponseCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

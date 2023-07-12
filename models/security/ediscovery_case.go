@@ -10,7 +10,7 @@ import (
 type EdiscoveryCase struct {
     CaseEscaped
 }
-// NewEdiscoveryCase instantiates a new EdiscoveryCase and sets the default values.
+// NewEdiscoveryCase instantiates a new ediscoveryCase and sets the default values.
 func NewEdiscoveryCase()(*EdiscoveryCase) {
     m := &EdiscoveryCase{
         CaseEscaped: *NewCaseEscaped(),

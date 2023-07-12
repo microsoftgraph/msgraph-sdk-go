@@ -8,7 +8,7 @@ import (
 type AppleManagedIdentityProvider struct {
     IdentityProviderBase
 }
-// NewAppleManagedIdentityProvider instantiates a new AppleManagedIdentityProvider and sets the default values.
+// NewAppleManagedIdentityProvider instantiates a new appleManagedIdentityProvider and sets the default values.
 func NewAppleManagedIdentityProvider()(*AppleManagedIdentityProvider) {
     m := &AppleManagedIdentityProvider{
         IdentityProviderBase: *NewIdentityProviderBase(),

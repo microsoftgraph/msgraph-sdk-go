@@ -7,8 +7,10 @@ import (
 // RegistryValueEvidence 
 type RegistryValueEvidence struct {
     AlertEvidence
+    // The OdataType property
+    OdataType *string
 }
-// NewRegistryValueEvidence instantiates a new RegistryValueEvidence and sets the default values.
+// NewRegistryValueEvidence instantiates a new registryValueEvidence and sets the default values.
 func NewRegistryValueEvidence()(*RegistryValueEvidence) {
     m := &RegistryValueEvidence{
         AlertEvidence: *NewAlertEvidence(),

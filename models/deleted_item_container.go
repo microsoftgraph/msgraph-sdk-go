@@ -7,6 +7,8 @@ import (
 // DeletedItemContainer 
 type DeletedItemContainer struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDeletedItemContainer instantiates a new deletedItemContainer and sets the default values.
 func NewDeletedItemContainer()(*DeletedItemContainer) {

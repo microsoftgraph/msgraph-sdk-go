@@ -8,7 +8,7 @@ import (
 type MobileAppTroubleshootingEventCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewMobileAppTroubleshootingEventCollectionResponse instantiates a new MobileAppTroubleshootingEventCollectionResponse and sets the default values.
+// NewMobileAppTroubleshootingEventCollectionResponse instantiates a new mobileAppTroubleshootingEventCollectionResponse and sets the default values.
 func NewMobileAppTroubleshootingEventCollectionResponse()(*MobileAppTroubleshootingEventCollectionResponse) {
     m := &MobileAppTroubleshootingEventCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

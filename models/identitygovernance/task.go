@@ -8,6 +8,8 @@ import (
 // Task 
 type Task struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewTask instantiates a new task and sets the default values.
 func NewTask()(*Task) {

@@ -8,8 +8,10 @@ import (
 // AuthenticationStrengthPolicy 
 type AuthenticationStrengthPolicy struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewAuthenticationStrengthPolicy instantiates a new AuthenticationStrengthPolicy and sets the default values.
+// NewAuthenticationStrengthPolicy instantiates a new authenticationStrengthPolicy and sets the default values.
 func NewAuthenticationStrengthPolicy()(*AuthenticationStrengthPolicy) {
     m := &AuthenticationStrengthPolicy{
         Entity: *NewEntity(),

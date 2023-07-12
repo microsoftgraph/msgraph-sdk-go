@@ -8,7 +8,7 @@ import (
 type OutlookCategoryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewOutlookCategoryCollectionResponse instantiates a new OutlookCategoryCollectionResponse and sets the default values.
+// NewOutlookCategoryCollectionResponse instantiates a new outlookCategoryCollectionResponse and sets the default values.
 func NewOutlookCategoryCollectionResponse()(*OutlookCategoryCollectionResponse) {
     m := &OutlookCategoryCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

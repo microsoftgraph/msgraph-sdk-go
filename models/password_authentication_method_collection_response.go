@@ -8,7 +8,7 @@ import (
 type PasswordAuthenticationMethodCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewPasswordAuthenticationMethodCollectionResponse instantiates a new PasswordAuthenticationMethodCollectionResponse and sets the default values.
+// NewPasswordAuthenticationMethodCollectionResponse instantiates a new passwordAuthenticationMethodCollectionResponse and sets the default values.
 func NewPasswordAuthenticationMethodCollectionResponse()(*PasswordAuthenticationMethodCollectionResponse) {
     m := &PasswordAuthenticationMethodCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

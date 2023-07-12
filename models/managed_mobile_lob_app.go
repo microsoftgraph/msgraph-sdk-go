@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ManagedMobileLobApp 
+// ManagedMobileLobApp an abstract base class containing properties for all managed mobile line of business apps.
 type ManagedMobileLobApp struct {
     ManagedApp
 }
-// NewManagedMobileLobApp instantiates a new ManagedMobileLobApp and sets the default values.
+// NewManagedMobileLobApp instantiates a new managedMobileLobApp and sets the default values.
 func NewManagedMobileLobApp()(*ManagedMobileLobApp) {
     m := &ManagedMobileLobApp{
         ManagedApp: *NewManagedApp(),

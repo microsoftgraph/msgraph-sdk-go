@@ -30,10 +30,7 @@ func NewManagedAppRegistrationsItemIntendedPoliciesItemTargetAppsRequestBuilder(
     urlParams["request-raw-url"] = rawUrl
     return NewManagedAppRegistrationsItemIntendedPoliciesItemTargetAppsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post not yet documented
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-mam-managedappprotection-targetapps?view=graph-rest-1.0
+// Post invoke action targetApps
 func (m *ManagedAppRegistrationsItemIntendedPoliciesItemTargetAppsRequestBuilder) Post(ctx context.Context, body ManagedAppRegistrationsItemIntendedPoliciesItemTargetAppsPostRequestBodyable, requestConfiguration *ManagedAppRegistrationsItemIntendedPoliciesItemTargetAppsRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *ManagedAppRegistrationsItemIntendedPoliciesItemTargetAppsRequestBuilder
     }
     return nil
 }
-// ToPostRequestInformation not yet documented
+// ToPostRequestInformation invoke action targetApps
 func (m *ManagedAppRegistrationsItemIntendedPoliciesItemTargetAppsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ManagedAppRegistrationsItemIntendedPoliciesItemTargetAppsPostRequestBodyable, requestConfiguration *ManagedAppRegistrationsItemIntendedPoliciesItemTargetAppsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

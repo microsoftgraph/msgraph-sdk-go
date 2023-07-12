@@ -7,8 +7,10 @@ import (
 // TeamRenamedEventMessageDetail 
 type TeamRenamedEventMessageDetail struct {
     EventMessageDetail
+    // The OdataType property
+    OdataType *string
 }
-// NewTeamRenamedEventMessageDetail instantiates a new TeamRenamedEventMessageDetail and sets the default values.
+// NewTeamRenamedEventMessageDetail instantiates a new teamRenamedEventMessageDetail and sets the default values.
 func NewTeamRenamedEventMessageDetail()(*TeamRenamedEventMessageDetail) {
     m := &TeamRenamedEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),

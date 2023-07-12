@@ -73,7 +73,7 @@ func (m *StringKeyStringValuePair) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetKey gets the key property value. The key property
+// GetKey gets the key property value. Key.
 func (m *StringKeyStringValuePair) GetKey()(*string) {
     val, err := m.GetBackingStore().Get("key")
     if err != nil {
@@ -95,7 +95,7 @@ func (m *StringKeyStringValuePair) GetOdataType()(*string) {
     }
     return nil
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. Value.
 func (m *StringKeyStringValuePair) GetValue()(*string) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -145,7 +145,7 @@ func (m *StringKeyStringValuePair) SetAdditionalData(value map[string]any)() {
 func (m *StringKeyStringValuePair) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetKey sets the key property value. The key property
+// SetKey sets the key property value. Key.
 func (m *StringKeyStringValuePair) SetKey(value *string)() {
     err := m.GetBackingStore().Set("key", value)
     if err != nil {
@@ -159,7 +159,7 @@ func (m *StringKeyStringValuePair) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. Value.
 func (m *StringKeyStringValuePair) SetValue(value *string)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {

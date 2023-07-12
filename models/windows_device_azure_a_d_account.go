@@ -7,8 +7,10 @@ import (
 // WindowsDeviceAzureADAccount 
 type WindowsDeviceAzureADAccount struct {
     WindowsDeviceAccount
+    // The OdataType property
+    OdataType *string
 }
-// NewWindowsDeviceAzureADAccount instantiates a new WindowsDeviceAzureADAccount and sets the default values.
+// NewWindowsDeviceAzureADAccount instantiates a new windowsDeviceAzureADAccount and sets the default values.
 func NewWindowsDeviceAzureADAccount()(*WindowsDeviceAzureADAccount) {
     m := &WindowsDeviceAzureADAccount{
         WindowsDeviceAccount: *NewWindowsDeviceAccount(),

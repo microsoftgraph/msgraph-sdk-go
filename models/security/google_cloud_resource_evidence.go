@@ -7,8 +7,10 @@ import (
 // GoogleCloudResourceEvidence 
 type GoogleCloudResourceEvidence struct {
     AlertEvidence
+    // The OdataType property
+    OdataType *string
 }
-// NewGoogleCloudResourceEvidence instantiates a new GoogleCloudResourceEvidence and sets the default values.
+// NewGoogleCloudResourceEvidence instantiates a new googleCloudResourceEvidence and sets the default values.
 func NewGoogleCloudResourceEvidence()(*GoogleCloudResourceEvidence) {
     m := &GoogleCloudResourceEvidence{
         AlertEvidence: *NewAlertEvidence(),

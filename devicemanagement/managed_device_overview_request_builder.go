@@ -11,7 +11,7 @@ import (
 type ManagedDeviceOverviewRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ManagedDeviceOverviewRequestBuilderGetQueryParameters read properties and relationships of the managedDeviceOverview object.
+// ManagedDeviceOverviewRequestBuilderGetQueryParameters device overview
 type ManagedDeviceOverviewRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,10 +40,7 @@ func NewManagedDeviceOverviewRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewManagedDeviceOverviewRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get read properties and relationships of the managedDeviceOverview object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-devices-manageddeviceoverview-get?view=graph-rest-1.0
+// Get device overview
 func (m *ManagedDeviceOverviewRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedDeviceOverviewRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedDeviceOverviewable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -62,7 +59,7 @@ func (m *ManagedDeviceOverviewRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedDeviceOverviewable), nil
 }
-// ToGetRequestInformation read properties and relationships of the managedDeviceOverview object.
+// ToGetRequestInformation device overview
 func (m *ManagedDeviceOverviewRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedDeviceOverviewRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

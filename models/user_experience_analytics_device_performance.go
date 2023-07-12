@@ -7,6 +7,8 @@ import (
 // UserExperienceAnalyticsDevicePerformance the user experience analytics device performance entity contains device boot performance details.
 type UserExperienceAnalyticsDevicePerformance struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewUserExperienceAnalyticsDevicePerformance instantiates a new userExperienceAnalyticsDevicePerformance and sets the default values.
 func NewUserExperienceAnalyticsDevicePerformance()(*UserExperienceAnalyticsDevicePerformance) {

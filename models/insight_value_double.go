@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// InsightValueDouble 
+// InsightValueDouble the value in an user experience analytics insight.
 type InsightValueDouble struct {
     UserExperienceAnalyticsInsightValue
 }
-// NewInsightValueDouble instantiates a new InsightValueDouble and sets the default values.
+// NewInsightValueDouble instantiates a new insightValueDouble and sets the default values.
 func NewInsightValueDouble()(*InsightValueDouble) {
     m := &InsightValueDouble{
         UserExperienceAnalyticsInsightValue: *NewUserExperienceAnalyticsInsightValue(),
@@ -24,6 +24,16 @@ func CreateInsightValueDoubleFromDiscriminatorValue(parseNode i878a80d2330e89d26
 // GetFieldDeserializers the deserialization information for the current model
 func (m *InsightValueDouble) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.UserExperienceAnalyticsInsightValue.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
@@ -35,6 +45,17 @@ func (m *InsightValueDouble) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *InsightValueDouble) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetValue gets the value property value. The double value of the user experience analytics insight.
 func (m *InsightValueDouble) GetValue()(*float64) {
@@ -54,12 +75,25 @@ func (m *InsightValueDouble) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         return err
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteFloat64Value("value", m.GetValue())
         if err != nil {
             return err
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *InsightValueDouble) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetValue sets the value property value. The double value of the user experience analytics insight.
 func (m *InsightValueDouble) SetValue(value *float64)() {
@@ -72,6 +106,8 @@ func (m *InsightValueDouble) SetValue(value *float64)() {
 type InsightValueDoubleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     UserExperienceAnalyticsInsightValueable
+    GetOdataType()(*string)
     GetValue()(*float64)
+    SetOdataType(value *string)()
     SetValue(value *float64)()
 }

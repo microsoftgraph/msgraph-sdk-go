@@ -8,7 +8,7 @@ import (
 type UserActivityCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewUserActivityCollectionResponse instantiates a new UserActivityCollectionResponse and sets the default values.
+// NewUserActivityCollectionResponse instantiates a new userActivityCollectionResponse and sets the default values.
 func NewUserActivityCollectionResponse()(*UserActivityCollectionResponse) {
     m := &UserActivityCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

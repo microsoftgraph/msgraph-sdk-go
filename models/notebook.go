@@ -8,7 +8,7 @@ import (
 type Notebook struct {
     OnenoteEntityHierarchyModel
 }
-// NewNotebook instantiates a new Notebook and sets the default values.
+// NewNotebook instantiates a new notebook and sets the default values.
 func NewNotebook()(*Notebook) {
     m := &Notebook{
         OnenoteEntityHierarchyModel: *NewOnenoteEntityHierarchyModel(),

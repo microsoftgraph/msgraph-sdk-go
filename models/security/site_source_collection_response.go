@@ -9,7 +9,7 @@ import (
 type SiteSourceCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
 }
-// NewSiteSourceCollectionResponse instantiates a new SiteSourceCollectionResponse and sets the default values.
+// NewSiteSourceCollectionResponse instantiates a new siteSourceCollectionResponse and sets the default values.
 func NewSiteSourceCollectionResponse()(*SiteSourceCollectionResponse) {
     m := &SiteSourceCollectionResponse{
         BaseCollectionPaginationCountResponse: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewBaseCollectionPaginationCountResponse(),

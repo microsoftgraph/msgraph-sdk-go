@@ -7,6 +7,8 @@ import (
 // CommsOperation 
 type CommsOperation struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewCommsOperation instantiates a new commsOperation and sets the default values.
 func NewCommsOperation()(*CommsOperation) {

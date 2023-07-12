@@ -7,6 +7,8 @@ import (
 // TeamsTab 
 type TeamsTab struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewTeamsTab instantiates a new teamsTab and sets the default values.
 func NewTeamsTab()(*TeamsTab) {

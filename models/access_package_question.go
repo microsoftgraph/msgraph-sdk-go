@@ -7,6 +7,8 @@ import (
 // AccessPackageQuestion 
 type AccessPackageQuestion struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewAccessPackageQuestion instantiates a new accessPackageQuestion and sets the default values.
 func NewAccessPackageQuestion()(*AccessPackageQuestion) {

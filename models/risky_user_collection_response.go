@@ -8,7 +8,7 @@ import (
 type RiskyUserCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewRiskyUserCollectionResponse instantiates a new RiskyUserCollectionResponse and sets the default values.
+// NewRiskyUserCollectionResponse instantiates a new riskyUserCollectionResponse and sets the default values.
 func NewRiskyUserCollectionResponse()(*RiskyUserCollectionResponse) {
     m := &RiskyUserCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

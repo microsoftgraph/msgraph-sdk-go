@@ -7,8 +7,10 @@ import (
 // PrintUsage 
 type PrintUsage struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewPrintUsage instantiates a new PrintUsage and sets the default values.
+// NewPrintUsage instantiates a new printUsage and sets the default values.
 func NewPrintUsage()(*PrintUsage) {
     m := &PrintUsage{
         Entity: *NewEntity(),

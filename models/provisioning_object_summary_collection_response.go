@@ -8,7 +8,7 @@ import (
 type ProvisioningObjectSummaryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewProvisioningObjectSummaryCollectionResponse instantiates a new ProvisioningObjectSummaryCollectionResponse and sets the default values.
+// NewProvisioningObjectSummaryCollectionResponse instantiates a new provisioningObjectSummaryCollectionResponse and sets the default values.
 func NewProvisioningObjectSummaryCollectionResponse()(*ProvisioningObjectSummaryCollectionResponse) {
     m := &ProvisioningObjectSummaryCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

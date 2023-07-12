@@ -7,6 +7,8 @@ import (
 // InferenceClassificationOverride 
 type InferenceClassificationOverride struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewInferenceClassificationOverride instantiates a new inferenceClassificationOverride and sets the default values.
 func NewInferenceClassificationOverride()(*InferenceClassificationOverride) {

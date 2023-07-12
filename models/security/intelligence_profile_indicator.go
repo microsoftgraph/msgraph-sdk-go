@@ -9,7 +9,7 @@ import (
 type IntelligenceProfileIndicator struct {
     Indicator
 }
-// NewIntelligenceProfileIndicator instantiates a new IntelligenceProfileIndicator and sets the default values.
+// NewIntelligenceProfileIndicator instantiates a new intelligenceProfileIndicator and sets the default values.
 func NewIntelligenceProfileIndicator()(*IntelligenceProfileIndicator) {
     m := &IntelligenceProfileIndicator{
         Indicator: *NewIndicator(),

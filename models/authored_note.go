@@ -8,8 +8,10 @@ import (
 // AuthoredNote 
 type AuthoredNote struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewAuthoredNote instantiates a new AuthoredNote and sets the default values.
+// NewAuthoredNote instantiates a new authoredNote and sets the default values.
 func NewAuthoredNote()(*AuthoredNote) {
     m := &AuthoredNote{
         Entity: *NewEntity(),

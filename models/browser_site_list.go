@@ -8,6 +8,8 @@ import (
 // BrowserSiteList a singleton entity which is used to specify IE mode site list metadata
 type BrowserSiteList struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewBrowserSiteList instantiates a new browserSiteList and sets the default values.
 func NewBrowserSiteList()(*BrowserSiteList) {

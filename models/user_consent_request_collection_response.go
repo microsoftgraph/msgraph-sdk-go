@@ -8,7 +8,7 @@ import (
 type UserConsentRequestCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewUserConsentRequestCollectionResponse instantiates a new UserConsentRequestCollectionResponse and sets the default values.
+// NewUserConsentRequestCollectionResponse instantiates a new userConsentRequestCollectionResponse and sets the default values.
 func NewUserConsentRequestCollectionResponse()(*UserConsentRequestCollectionResponse) {
     m := &UserConsentRequestCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

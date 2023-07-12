@@ -7,6 +7,8 @@ import (
 // ThumbnailSet 
 type ThumbnailSet struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewThumbnailSet instantiates a new thumbnailSet and sets the default values.
 func NewThumbnailSet()(*ThumbnailSet) {

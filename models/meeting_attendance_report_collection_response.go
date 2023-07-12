@@ -8,7 +8,7 @@ import (
 type MeetingAttendanceReportCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewMeetingAttendanceReportCollectionResponse instantiates a new MeetingAttendanceReportCollectionResponse and sets the default values.
+// NewMeetingAttendanceReportCollectionResponse instantiates a new meetingAttendanceReportCollectionResponse and sets the default values.
 func NewMeetingAttendanceReportCollectionResponse()(*MeetingAttendanceReportCollectionResponse) {
     m := &MeetingAttendanceReportCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

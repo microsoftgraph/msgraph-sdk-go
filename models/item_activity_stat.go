@@ -8,6 +8,8 @@ import (
 // ItemActivityStat 
 type ItemActivityStat struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewItemActivityStat instantiates a new itemActivityStat and sets the default values.
 func NewItemActivityStat()(*ItemActivityStat) {

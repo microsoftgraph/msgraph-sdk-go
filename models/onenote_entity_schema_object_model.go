@@ -9,7 +9,7 @@ import (
 type OnenoteEntitySchemaObjectModel struct {
     OnenoteEntityBaseModel
 }
-// NewOnenoteEntitySchemaObjectModel instantiates a new OnenoteEntitySchemaObjectModel and sets the default values.
+// NewOnenoteEntitySchemaObjectModel instantiates a new onenoteEntitySchemaObjectModel and sets the default values.
 func NewOnenoteEntitySchemaObjectModel()(*OnenoteEntitySchemaObjectModel) {
     m := &OnenoteEntitySchemaObjectModel{
         OnenoteEntityBaseModel: *NewOnenoteEntityBaseModel(),

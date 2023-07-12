@@ -9,7 +9,7 @@ import (
 type CaseOperationCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
 }
-// NewCaseOperationCollectionResponse instantiates a new CaseOperationCollectionResponse and sets the default values.
+// NewCaseOperationCollectionResponse instantiates a new caseOperationCollectionResponse and sets the default values.
 func NewCaseOperationCollectionResponse()(*CaseOperationCollectionResponse) {
     m := &CaseOperationCollectionResponse{
         BaseCollectionPaginationCountResponse: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewBaseCollectionPaginationCountResponse(),

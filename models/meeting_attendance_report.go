@@ -8,6 +8,8 @@ import (
 // MeetingAttendanceReport 
 type MeetingAttendanceReport struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewMeetingAttendanceReport instantiates a new meetingAttendanceReport and sets the default values.
 func NewMeetingAttendanceReport()(*MeetingAttendanceReport) {

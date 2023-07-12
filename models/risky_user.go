@@ -9,7 +9,7 @@ import (
 type RiskyUser struct {
     Entity
 }
-// NewRiskyUser instantiates a new RiskyUser and sets the default values.
+// NewRiskyUser instantiates a new riskyUser and sets the default values.
 func NewRiskyUser()(*RiskyUser) {
     m := &RiskyUser{
         Entity: *NewEntity(),
@@ -74,6 +74,16 @@ func (m *RiskyUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         if val != nil {
             m.SetIsProcessing(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -169,6 +179,17 @@ func (m *RiskyUser) GetIsProcessing()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *RiskyUser) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -268,6 +289,12 @@ func (m *RiskyUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRiskDetail() != nil {
         cast := (*m.GetRiskDetail()).String()
         err = writer.WriteStringValue("riskDetail", &cast)
@@ -330,6 +357,13 @@ func (m *RiskyUser) SetIsProcessing(value *bool)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *RiskyUser) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRiskDetail sets the riskDetail property value. Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.
 func (m *RiskyUser) SetRiskDetail(value *RiskDetail)() {
     err := m.GetBackingStore().Set("riskDetail", value)
@@ -379,6 +413,7 @@ type RiskyUserable interface {
     GetHistory()([]RiskyUserHistoryItemable)
     GetIsDeleted()(*bool)
     GetIsProcessing()(*bool)
+    GetOdataType()(*string)
     GetRiskDetail()(*RiskDetail)
     GetRiskLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetRiskLevel()(*RiskLevel)
@@ -388,6 +423,7 @@ type RiskyUserable interface {
     SetHistory(value []RiskyUserHistoryItemable)()
     SetIsDeleted(value *bool)()
     SetIsProcessing(value *bool)()
+    SetOdataType(value *string)()
     SetRiskDetail(value *RiskDetail)()
     SetRiskLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetRiskLevel(value *RiskLevel)()

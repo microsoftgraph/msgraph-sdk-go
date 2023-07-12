@@ -7,8 +7,10 @@ import (
 // DeletedTeam 
 type DeletedTeam struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewDeletedTeam instantiates a new DeletedTeam and sets the default values.
+// NewDeletedTeam instantiates a new deletedTeam and sets the default values.
 func NewDeletedTeam()(*DeletedTeam) {
     m := &DeletedTeam{
         Entity: *NewEntity(),

@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ManagedIOSStoreApp 
+// ManagedIOSStoreApp contains properties and inherited properties for an iOS store app that you can manage with an Intune app protection policy.
 type ManagedIOSStoreApp struct {
     ManagedApp
 }
-// NewManagedIOSStoreApp instantiates a new ManagedIOSStoreApp and sets the default values.
+// NewManagedIOSStoreApp instantiates a new managedIOSStoreApp and sets the default values.
 func NewManagedIOSStoreApp()(*ManagedIOSStoreApp) {
     m := &ManagedIOSStoreApp{
         ManagedApp: *NewManagedApp(),

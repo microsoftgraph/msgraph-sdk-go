@@ -8,7 +8,7 @@ import (
 type DeviceConfigurationUserStatusCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDeviceConfigurationUserStatusCollectionResponse instantiates a new DeviceConfigurationUserStatusCollectionResponse and sets the default values.
+// NewDeviceConfigurationUserStatusCollectionResponse instantiates a new deviceConfigurationUserStatusCollectionResponse and sets the default values.
 func NewDeviceConfigurationUserStatusCollectionResponse()(*DeviceConfigurationUserStatusCollectionResponse) {
     m := &DeviceConfigurationUserStatusCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

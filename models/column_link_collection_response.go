@@ -8,7 +8,7 @@ import (
 type ColumnLinkCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewColumnLinkCollectionResponse instantiates a new ColumnLinkCollectionResponse and sets the default values.
+// NewColumnLinkCollectionResponse instantiates a new columnLinkCollectionResponse and sets the default values.
 func NewColumnLinkCollectionResponse()(*ColumnLinkCollectionResponse) {
     m := &ColumnLinkCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

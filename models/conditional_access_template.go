@@ -7,6 +7,8 @@ import (
 // ConditionalAccessTemplate 
 type ConditionalAccessTemplate struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewConditionalAccessTemplate instantiates a new conditionalAccessTemplate and sets the default values.
 func NewConditionalAccessTemplate()(*ConditionalAccessTemplate) {

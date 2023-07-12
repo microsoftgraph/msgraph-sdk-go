@@ -8,6 +8,8 @@ import (
 // MobileThreatDefenseConnector entity which represents a connection to Mobile Threat Defense partner.
 type MobileThreatDefenseConnector struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewMobileThreatDefenseConnector instantiates a new mobileThreatDefenseConnector and sets the default values.
 func NewMobileThreatDefenseConnector()(*MobileThreatDefenseConnector) {

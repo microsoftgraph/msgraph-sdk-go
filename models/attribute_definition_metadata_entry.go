@@ -73,7 +73,7 @@ func (m *AttributeDefinitionMetadataEntry) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetKey gets the key property value. The key property
+// GetKey gets the key property value. Possible values are: BaseAttributeName, ComplexObjectDefinition, IsContainer, IsCustomerDefined, IsDomainQualified, LinkPropertyNames, LinkTypeName, MaximumLength, ReferencedProperty.
 func (m *AttributeDefinitionMetadataEntry) GetKey()(*AttributeDefinitionMetadata) {
     val, err := m.GetBackingStore().Get("key")
     if err != nil {
@@ -95,7 +95,7 @@ func (m *AttributeDefinitionMetadataEntry) GetOdataType()(*string) {
     }
     return nil
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. Value of the metadata property.
 func (m *AttributeDefinitionMetadataEntry) GetValue()(*string) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -146,7 +146,7 @@ func (m *AttributeDefinitionMetadataEntry) SetAdditionalData(value map[string]an
 func (m *AttributeDefinitionMetadataEntry) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetKey sets the key property value. The key property
+// SetKey sets the key property value. Possible values are: BaseAttributeName, ComplexObjectDefinition, IsContainer, IsCustomerDefined, IsDomainQualified, LinkPropertyNames, LinkTypeName, MaximumLength, ReferencedProperty.
 func (m *AttributeDefinitionMetadataEntry) SetKey(value *AttributeDefinitionMetadata)() {
     err := m.GetBackingStore().Set("key", value)
     if err != nil {
@@ -160,7 +160,7 @@ func (m *AttributeDefinitionMetadataEntry) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. Value of the metadata property.
 func (m *AttributeDefinitionMetadataEntry) SetValue(value *string)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {

@@ -7,8 +7,10 @@ import (
 // Edge 
 type Edge struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewEdge instantiates a new Edge and sets the default values.
+// NewEdge instantiates a new edge and sets the default values.
 func NewEdge()(*Edge) {
     m := &Edge{
         Entity: *NewEntity(),

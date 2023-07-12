@@ -8,7 +8,7 @@ import (
 type ExternalDomainFederation struct {
     IdentitySource
 }
-// NewExternalDomainFederation instantiates a new ExternalDomainFederation and sets the default values.
+// NewExternalDomainFederation instantiates a new externalDomainFederation and sets the default values.
 func NewExternalDomainFederation()(*ExternalDomainFederation) {
     m := &ExternalDomainFederation{
         IdentitySource: *NewIdentitySource(),
@@ -76,11 +76,32 @@ func (m *ExternalDomainFederation) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIssuerUri gets the issuerUri property value. The issuerURI of the incoming federation. Read only.
 func (m *ExternalDomainFederation) GetIssuerUri()(*string) {
     val, err := m.GetBackingStore().Get("issuerUri")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ExternalDomainFederation) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -113,6 +134,12 @@ func (m *ExternalDomainFederation) Serialize(writer i878a80d2330e89d26896388a3f4
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDisplayName sets the displayName property value. The name of the identity source, typically also the domain name. Read only.
@@ -136,6 +163,13 @@ func (m *ExternalDomainFederation) SetIssuerUri(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ExternalDomainFederation) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // ExternalDomainFederationable 
 type ExternalDomainFederationable interface {
     IdentitySourceable
@@ -143,7 +177,9 @@ type ExternalDomainFederationable interface {
     GetDisplayName()(*string)
     GetDomainName()(*string)
     GetIssuerUri()(*string)
+    GetOdataType()(*string)
     SetDisplayName(value *string)()
     SetDomainName(value *string)()
     SetIssuerUri(value *string)()
+    SetOdataType(value *string)()
 }

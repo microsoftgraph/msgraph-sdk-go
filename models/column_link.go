@@ -7,6 +7,8 @@ import (
 // ColumnLink 
 type ColumnLink struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewColumnLink instantiates a new columnLink and sets the default values.
 func NewColumnLink()(*ColumnLink) {

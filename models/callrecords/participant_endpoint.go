@@ -9,7 +9,7 @@ import (
 type ParticipantEndpoint struct {
     Endpoint
 }
-// NewParticipantEndpoint instantiates a new ParticipantEndpoint and sets the default values.
+// NewParticipantEndpoint instantiates a new participantEndpoint and sets the default values.
 func NewParticipantEndpoint()(*ParticipantEndpoint) {
     m := &ParticipantEndpoint{
         Endpoint: *NewEndpoint(),
@@ -129,6 +129,16 @@ func (m *ParticipantEndpoint) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIdentity gets the identity property value. Identity associated with the endpoint.
@@ -145,6 +155,17 @@ func (m *ParticipantEndpoint) GetIdentity()(iadcd81124412c61e647227ecfc4449d8bba
 // GetName gets the name property value. Name of the device used by the media endpoint.
 func (m *ParticipantEndpoint) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ParticipantEndpoint) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -195,6 +216,12 @@ func (m *ParticipantEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetCpuCoresCount sets the cpuCoresCount property value. CPU number of cores used by the media endpoint.
@@ -239,6 +266,13 @@ func (m *ParticipantEndpoint) SetName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ParticipantEndpoint) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // ParticipantEndpointable 
 type ParticipantEndpointable interface {
     Endpointable
@@ -249,10 +283,12 @@ type ParticipantEndpointable interface {
     GetFeedback()(UserFeedbackable)
     GetIdentity()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable)
     GetName()(*string)
+    GetOdataType()(*string)
     SetCpuCoresCount(value *int32)()
     SetCpuName(value *string)()
     SetCpuProcessorSpeedInMhz(value *int32)()
     SetFeedback(value UserFeedbackable)()
     SetIdentity(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable)()
     SetName(value *string)()
+    SetOdataType(value *string)()
 }

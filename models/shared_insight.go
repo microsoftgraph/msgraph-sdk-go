@@ -7,6 +7,8 @@ import (
 // SharedInsight 
 type SharedInsight struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewSharedInsight instantiates a new sharedInsight and sets the default values.
 func NewSharedInsight()(*SharedInsight) {

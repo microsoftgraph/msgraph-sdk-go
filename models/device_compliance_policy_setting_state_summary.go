@@ -7,6 +7,8 @@ import (
 // DeviceCompliancePolicySettingStateSummary device Compilance Policy Setting State summary across the account.
 type DeviceCompliancePolicySettingStateSummary struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDeviceCompliancePolicySettingStateSummary instantiates a new deviceCompliancePolicySettingStateSummary and sets the default values.
 func NewDeviceCompliancePolicySettingStateSummary()(*DeviceCompliancePolicySettingStateSummary) {

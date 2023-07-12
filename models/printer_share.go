@@ -9,7 +9,7 @@ import (
 type PrinterShare struct {
     PrinterBase
 }
-// NewPrinterShare instantiates a new PrinterShare and sets the default values.
+// NewPrinterShare instantiates a new printerShare and sets the default values.
 func NewPrinterShare()(*PrinterShare) {
     m := &PrinterShare{
         PrinterBase: *NewPrinterBase(),

@@ -8,6 +8,8 @@ import (
 // OnlineMeeting 
 type OnlineMeeting struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewOnlineMeeting instantiates a new onlineMeeting and sets the default values.
 func NewOnlineMeeting()(*OnlineMeeting) {

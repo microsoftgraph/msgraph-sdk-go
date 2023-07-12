@@ -8,7 +8,7 @@ import (
 type UnifiedRoleManagementPolicyEnablementRule struct {
     UnifiedRoleManagementPolicyRule
 }
-// NewUnifiedRoleManagementPolicyEnablementRule instantiates a new UnifiedRoleManagementPolicyEnablementRule and sets the default values.
+// NewUnifiedRoleManagementPolicyEnablementRule instantiates a new unifiedRoleManagementPolicyEnablementRule and sets the default values.
 func NewUnifiedRoleManagementPolicyEnablementRule()(*UnifiedRoleManagementPolicyEnablementRule) {
     m := &UnifiedRoleManagementPolicyEnablementRule{
         UnifiedRoleManagementPolicyRule: *NewUnifiedRoleManagementPolicyRule(),

@@ -8,7 +8,7 @@ import (
 type ProvisionedIdentity struct {
     Identity
 }
-// NewProvisionedIdentity instantiates a new ProvisionedIdentity and sets the default values.
+// NewProvisionedIdentity instantiates a new provisionedIdentity and sets the default values.
 func NewProvisionedIdentity()(*ProvisionedIdentity) {
     m := &ProvisionedIdentity{
         Identity: *NewIdentity(),
@@ -55,11 +55,32 @@ func (m *ProvisionedIdentity) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIdentityType gets the identityType property value. Type of identity that has been provisioned, such as 'user' or 'group'.
 func (m *ProvisionedIdentity) GetIdentityType()(*string) {
     val, err := m.GetBackingStore().Get("identityType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ProvisionedIdentity) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -86,6 +107,12 @@ func (m *ProvisionedIdentity) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDetails sets the details property value. Details of the identity.
@@ -102,12 +129,21 @@ func (m *ProvisionedIdentity) SetIdentityType(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ProvisionedIdentity) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // ProvisionedIdentityable 
 type ProvisionedIdentityable interface {
     Identityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDetails()(DetailsInfoable)
     GetIdentityType()(*string)
+    GetOdataType()(*string)
     SetDetails(value DetailsInfoable)()
     SetIdentityType(value *string)()
+    SetOdataType(value *string)()
 }

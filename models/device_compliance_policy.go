@@ -8,6 +8,8 @@ import (
 // DeviceCompliancePolicy this is the base class for Compliance policy. Compliance policies are platform specific and individual per-platform compliance policies inherit from here. 
 type DeviceCompliancePolicy struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDeviceCompliancePolicy instantiates a new deviceCompliancePolicy and sets the default values.
 func NewDeviceCompliancePolicy()(*DeviceCompliancePolicy) {

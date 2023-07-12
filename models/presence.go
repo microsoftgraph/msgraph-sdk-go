@@ -7,6 +7,8 @@ import (
 // Presence 
 type Presence struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewPresence instantiates a new presence and sets the default values.
 func NewPresence()(*Presence) {

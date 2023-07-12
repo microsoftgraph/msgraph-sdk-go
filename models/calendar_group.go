@@ -8,6 +8,8 @@ import (
 // CalendarGroup 
 type CalendarGroup struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewCalendarGroup instantiates a new calendarGroup and sets the default values.
 func NewCalendarGroup()(*CalendarGroup) {

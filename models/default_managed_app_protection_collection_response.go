@@ -8,7 +8,7 @@ import (
 type DefaultManagedAppProtectionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDefaultManagedAppProtectionCollectionResponse instantiates a new DefaultManagedAppProtectionCollectionResponse and sets the default values.
+// NewDefaultManagedAppProtectionCollectionResponse instantiates a new defaultManagedAppProtectionCollectionResponse and sets the default values.
 func NewDefaultManagedAppProtectionCollectionResponse()(*DefaultManagedAppProtectionCollectionResponse) {
     m := &DefaultManagedAppProtectionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

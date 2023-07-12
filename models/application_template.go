@@ -8,7 +8,7 @@ import (
 type ApplicationTemplate struct {
     Entity
 }
-// NewApplicationTemplate instantiates a new ApplicationTemplate and sets the default values.
+// NewApplicationTemplate instantiates a new applicationTemplate and sets the default values.
 func NewApplicationTemplate()(*ApplicationTemplate) {
     m := &ApplicationTemplate{
         Entity: *NewEntity(),
@@ -111,6 +111,16 @@ func (m *ApplicationTemplate) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["publisher"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -169,6 +179,17 @@ func (m *ApplicationTemplate) GetHomePageUrl()(*string) {
 // GetLogoUrl gets the logoUrl property value. The URL to get the logo for this application.
 func (m *ApplicationTemplate) GetLogoUrl()(*string) {
     val, err := m.GetBackingStore().Get("logoUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ApplicationTemplate) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -247,6 +268,12 @@ func (m *ApplicationTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("publisher", m.GetPublisher())
         if err != nil {
             return err
@@ -301,6 +328,13 @@ func (m *ApplicationTemplate) SetLogoUrl(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ApplicationTemplate) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPublisher sets the publisher property value. The name of the publisher for this application.
 func (m *ApplicationTemplate) SetPublisher(value *string)() {
     err := m.GetBackingStore().Set("publisher", value)
@@ -331,6 +365,7 @@ type ApplicationTemplateable interface {
     GetDisplayName()(*string)
     GetHomePageUrl()(*string)
     GetLogoUrl()(*string)
+    GetOdataType()(*string)
     GetPublisher()(*string)
     GetSupportedProvisioningTypes()([]string)
     GetSupportedSingleSignOnModes()([]string)
@@ -339,6 +374,7 @@ type ApplicationTemplateable interface {
     SetDisplayName(value *string)()
     SetHomePageUrl(value *string)()
     SetLogoUrl(value *string)()
+    SetOdataType(value *string)()
     SetPublisher(value *string)()
     SetSupportedProvisioningTypes(value []string)()
     SetSupportedSingleSignOnModes(value []string)()

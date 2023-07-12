@@ -7,8 +7,10 @@ import (
 // Security 
 type Security struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewSecurity instantiates a new Security and sets the default values.
+// NewSecurity instantiates a new security and sets the default values.
 func NewSecurity()(*Security) {
     m := &Security{
         Entity: *NewEntity(),

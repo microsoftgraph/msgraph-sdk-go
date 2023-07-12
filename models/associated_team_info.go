@@ -8,7 +8,7 @@ import (
 type AssociatedTeamInfo struct {
     TeamInfo
 }
-// NewAssociatedTeamInfo instantiates a new AssociatedTeamInfo and sets the default values.
+// NewAssociatedTeamInfo instantiates a new associatedTeamInfo and sets the default values.
 func NewAssociatedTeamInfo()(*AssociatedTeamInfo) {
     m := &AssociatedTeamInfo{
         TeamInfo: *NewTeamInfo(),

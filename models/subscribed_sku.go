@@ -8,6 +8,8 @@ import (
 // SubscribedSku 
 type SubscribedSku struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewSubscribedSku instantiates a new subscribedSku and sets the default values.
 func NewSubscribedSku()(*SubscribedSku) {

@@ -7,8 +7,10 @@ import (
 // UserScopeTeamsAppInstallation 
 type UserScopeTeamsAppInstallation struct {
     TeamsAppInstallation
+    // The OdataType property
+    OdataType *string
 }
-// NewUserScopeTeamsAppInstallation instantiates a new UserScopeTeamsAppInstallation and sets the default values.
+// NewUserScopeTeamsAppInstallation instantiates a new userScopeTeamsAppInstallation and sets the default values.
 func NewUserScopeTeamsAppInstallation()(*UserScopeTeamsAppInstallation) {
     m := &UserScopeTeamsAppInstallation{
         TeamsAppInstallation: *NewTeamsAppInstallation(),

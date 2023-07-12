@@ -7,8 +7,10 @@ import (
 // AmazonResourceEvidence 
 type AmazonResourceEvidence struct {
     AlertEvidence
+    // The OdataType property
+    OdataType *string
 }
-// NewAmazonResourceEvidence instantiates a new AmazonResourceEvidence and sets the default values.
+// NewAmazonResourceEvidence instantiates a new amazonResourceEvidence and sets the default values.
 func NewAmazonResourceEvidence()(*AmazonResourceEvidence) {
     m := &AmazonResourceEvidence{
         AlertEvidence: *NewAlertEvidence(),

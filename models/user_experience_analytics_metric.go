@@ -7,6 +7,8 @@ import (
 // UserExperienceAnalyticsMetric the user experience analytics metric contains the score and units of a metric of a user experience anlaytics category.
 type UserExperienceAnalyticsMetric struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewUserExperienceAnalyticsMetric instantiates a new userExperienceAnalyticsMetric and sets the default values.
 func NewUserExperienceAnalyticsMetric()(*UserExperienceAnalyticsMetric) {

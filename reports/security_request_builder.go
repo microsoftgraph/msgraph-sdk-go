@@ -18,7 +18,7 @@ type SecurityRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// SecurityRequestBuilderGetQueryParameters get security from reports
+// SecurityRequestBuilderGetQueryParameters represents an abstract type that contains resources for attack simulation and training reports.
 type SecurityRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *SecurityRequestBuilder) Delete(ctx context.Context, requestConfiguratio
     }
     return nil
 }
-// Get get security from reports
+// Get represents an abstract type that contains resources for attack simulation and training reports.
 func (m *SecurityRequestBuilder) Get(ctx context.Context, requestConfiguration *SecurityRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SecurityReportsRootable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *SecurityRequestBuilder) ToDeleteRequestInformation(ctx context.Context,
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get security from reports
+// ToGetRequestInformation represents an abstract type that contains resources for attack simulation and training reports.
 func (m *SecurityRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SecurityRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

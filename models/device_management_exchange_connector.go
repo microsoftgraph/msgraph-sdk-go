@@ -8,6 +8,8 @@ import (
 // DeviceManagementExchangeConnector entity which represents a connection to an Exchange environment.
 type DeviceManagementExchangeConnector struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDeviceManagementExchangeConnector instantiates a new deviceManagementExchangeConnector and sets the default values.
 func NewDeviceManagementExchangeConnector()(*DeviceManagementExchangeConnector) {

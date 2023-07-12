@@ -8,6 +8,8 @@ import (
 // ManagedAppOperation represents an operation applied against an app registration.
 type ManagedAppOperation struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewManagedAppOperation instantiates a new managedAppOperation and sets the default values.
 func NewManagedAppOperation()(*ManagedAppOperation) {

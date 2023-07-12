@@ -30,7 +30,10 @@ func NewItemSynchronizationAcquireAccessTokenRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewItemSynchronizationAcquireAccessTokenRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action acquireAccessToken
+// Post acquire an OAuth access token to authorize the Azure AD provisioning service to provision users into an application.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/synchronization-synchronization-acquireaccesstoken?view=graph-rest-1.0
 func (m *ItemSynchronizationAcquireAccessTokenRequestBuilder) Post(ctx context.Context, body ItemSynchronizationAcquireAccessTokenPostRequestBodyable, requestConfiguration *ItemSynchronizationAcquireAccessTokenRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *ItemSynchronizationAcquireAccessTokenRequestBuilder) Post(ctx context.C
     }
     return nil
 }
-// ToPostRequestInformation invoke action acquireAccessToken
+// ToPostRequestInformation acquire an OAuth access token to authorize the Azure AD provisioning service to provision users into an application.
 func (m *ItemSynchronizationAcquireAccessTokenRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemSynchronizationAcquireAccessTokenPostRequestBodyable, requestConfiguration *ItemSynchronizationAcquireAccessTokenRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

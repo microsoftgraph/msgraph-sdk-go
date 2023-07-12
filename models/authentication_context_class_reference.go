@@ -7,6 +7,8 @@ import (
 // AuthenticationContextClassReference 
 type AuthenticationContextClassReference struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewAuthenticationContextClassReference instantiates a new authenticationContextClassReference and sets the default values.
 func NewAuthenticationContextClassReference()(*AuthenticationContextClassReference) {

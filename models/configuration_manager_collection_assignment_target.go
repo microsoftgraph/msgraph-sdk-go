@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ConfigurationManagerCollectionAssignmentTarget 
+// ConfigurationManagerCollectionAssignmentTarget represents an assignment to a Configuration Manager Collection.
 type ConfigurationManagerCollectionAssignmentTarget struct {
     DeviceAndAppManagementAssignmentTarget
+    // The OdataType property
+    OdataType *string
 }
-// NewConfigurationManagerCollectionAssignmentTarget instantiates a new ConfigurationManagerCollectionAssignmentTarget and sets the default values.
+// NewConfigurationManagerCollectionAssignmentTarget instantiates a new configurationManagerCollectionAssignmentTarget and sets the default values.
 func NewConfigurationManagerCollectionAssignmentTarget()(*ConfigurationManagerCollectionAssignmentTarget) {
     m := &ConfigurationManagerCollectionAssignmentTarget{
         DeviceAndAppManagementAssignmentTarget: *NewDeviceAndAppManagementAssignmentTarget(),

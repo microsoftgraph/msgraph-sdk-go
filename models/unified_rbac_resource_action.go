@@ -7,6 +7,8 @@ import (
 // UnifiedRbacResourceAction 
 type UnifiedRbacResourceAction struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewUnifiedRbacResourceAction instantiates a new unifiedRbacResourceAction and sets the default values.
 func NewUnifiedRbacResourceAction()(*UnifiedRbacResourceAction) {

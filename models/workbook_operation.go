@@ -7,6 +7,8 @@ import (
 // WorkbookOperation 
 type WorkbookOperation struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewWorkbookOperation instantiates a new workbookOperation and sets the default values.
 func NewWorkbookOperation()(*WorkbookOperation) {

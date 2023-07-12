@@ -8,6 +8,8 @@ import (
 // LearningContent 
 type LearningContent struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewLearningContent instantiates a new learningContent and sets the default values.
 func NewLearningContent()(*LearningContent) {

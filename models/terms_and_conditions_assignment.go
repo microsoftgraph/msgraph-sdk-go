@@ -7,6 +7,8 @@ import (
 // TermsAndConditionsAssignment a termsAndConditionsAssignment entity represents the assignment of a given Terms and Conditions (T&C) policy to a given group. Users in the group will be required to accept the terms in order to have devices enrolled into Intune.
 type TermsAndConditionsAssignment struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewTermsAndConditionsAssignment instantiates a new termsAndConditionsAssignment and sets the default values.
 func NewTermsAndConditionsAssignment()(*TermsAndConditionsAssignment) {

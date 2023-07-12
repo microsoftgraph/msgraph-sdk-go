@@ -9,7 +9,7 @@ import (
 type MicrosoftAuthenticatorAuthenticationMethod struct {
     AuthenticationMethod
 }
-// NewMicrosoftAuthenticatorAuthenticationMethod instantiates a new MicrosoftAuthenticatorAuthenticationMethod and sets the default values.
+// NewMicrosoftAuthenticatorAuthenticationMethod instantiates a new microsoftAuthenticatorAuthenticationMethod and sets the default values.
 func NewMicrosoftAuthenticatorAuthenticationMethod()(*MicrosoftAuthenticatorAuthenticationMethod) {
     m := &MicrosoftAuthenticatorAuthenticationMethod{
         AuthenticationMethod: *NewAuthenticationMethod(),

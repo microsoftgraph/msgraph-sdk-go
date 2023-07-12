@@ -8,7 +8,7 @@ import (
 type LongRunningOperationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewLongRunningOperationCollectionResponse instantiates a new LongRunningOperationCollectionResponse and sets the default values.
+// NewLongRunningOperationCollectionResponse instantiates a new longRunningOperationCollectionResponse and sets the default values.
 func NewLongRunningOperationCollectionResponse()(*LongRunningOperationCollectionResponse) {
     m := &LongRunningOperationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

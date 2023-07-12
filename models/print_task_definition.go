@@ -7,6 +7,8 @@ import (
 // PrintTaskDefinition 
 type PrintTaskDefinition struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewPrintTaskDefinition instantiates a new printTaskDefinition and sets the default values.
 func NewPrintTaskDefinition()(*PrintTaskDefinition) {

@@ -7,6 +7,8 @@ import (
 // UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion the user experience analytics application performance entity contains app performance details by OS version.
 type UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewUserExperienceAnalyticsAppHealthAppPerformanceByOSVersion instantiates a new userExperienceAnalyticsAppHealthAppPerformanceByOSVersion and sets the default values.
 func NewUserExperienceAnalyticsAppHealthAppPerformanceByOSVersion()(*UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion) {

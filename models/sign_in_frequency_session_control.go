@@ -8,7 +8,7 @@ import (
 type SignInFrequencySessionControl struct {
     ConditionalAccessSessionControl
 }
-// NewSignInFrequencySessionControl instantiates a new SignInFrequencySessionControl and sets the default values.
+// NewSignInFrequencySessionControl instantiates a new signInFrequencySessionControl and sets the default values.
 func NewSignInFrequencySessionControl()(*SignInFrequencySessionControl) {
     m := &SignInFrequencySessionControl{
         ConditionalAccessSessionControl: *NewConditionalAccessSessionControl(),
@@ -55,6 +55,16 @@ func (m *SignInFrequencySessionControl) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseSigninFrequencyType)
         if err != nil {
@@ -85,6 +95,17 @@ func (m *SignInFrequencySessionControl) GetFrequencyInterval()(*SignInFrequencyI
     }
     if val != nil {
         return val.(*SignInFrequencyInterval)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SignInFrequencySessionControl) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -130,6 +151,12 @@ func (m *SignInFrequencySessionControl) Serialize(writer i878a80d2330e89d2689638
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetType() != nil {
         cast := (*m.GetType()).String()
         err = writer.WriteStringValue("type", &cast)
@@ -159,6 +186,13 @@ func (m *SignInFrequencySessionControl) SetFrequencyInterval(value *SignInFreque
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SignInFrequencySessionControl) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetType sets the type property value. Possible values are: days, hours.
 func (m *SignInFrequencySessionControl) SetType(value *SigninFrequencyType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
@@ -179,10 +213,12 @@ type SignInFrequencySessionControlable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAuthenticationType()(*SignInFrequencyAuthenticationType)
     GetFrequencyInterval()(*SignInFrequencyInterval)
+    GetOdataType()(*string)
     GetType()(*SigninFrequencyType)
     GetValue()(*int32)
     SetAuthenticationType(value *SignInFrequencyAuthenticationType)()
     SetFrequencyInterval(value *SignInFrequencyInterval)()
+    SetOdataType(value *string)()
     SetType(value *SigninFrequencyType)()
     SetValue(value *int32)()
 }

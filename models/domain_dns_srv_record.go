@@ -8,7 +8,7 @@ import (
 type DomainDnsSrvRecord struct {
     DomainDnsRecord
 }
-// NewDomainDnsSrvRecord instantiates a new DomainDnsSrvRecord and sets the default values.
+// NewDomainDnsSrvRecord instantiates a new domainDnsSrvRecord and sets the default values.
 func NewDomainDnsSrvRecord()(*DomainDnsSrvRecord) {
     m := &DomainDnsSrvRecord{
         DomainDnsRecord: *NewDomainDnsRecord(),

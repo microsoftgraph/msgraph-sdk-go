@@ -7,8 +7,10 @@ import (
 // AuthenticationCombinationConfiguration 
 type AuthenticationCombinationConfiguration struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewAuthenticationCombinationConfiguration instantiates a new AuthenticationCombinationConfiguration and sets the default values.
+// NewAuthenticationCombinationConfiguration instantiates a new authenticationCombinationConfiguration and sets the default values.
 func NewAuthenticationCombinationConfiguration()(*AuthenticationCombinationConfiguration) {
     m := &AuthenticationCombinationConfiguration{
         Entity: *NewEntity(),

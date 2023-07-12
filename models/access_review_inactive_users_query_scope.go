@@ -7,8 +7,10 @@ import (
 // AccessReviewInactiveUsersQueryScope 
 type AccessReviewInactiveUsersQueryScope struct {
     AccessReviewQueryScope
+    // The OdataType property
+    OdataType *string
 }
-// NewAccessReviewInactiveUsersQueryScope instantiates a new AccessReviewInactiveUsersQueryScope and sets the default values.
+// NewAccessReviewInactiveUsersQueryScope instantiates a new accessReviewInactiveUsersQueryScope and sets the default values.
 func NewAccessReviewInactiveUsersQueryScope()(*AccessReviewInactiveUsersQueryScope) {
     m := &AccessReviewInactiveUsersQueryScope{
         AccessReviewQueryScope: *NewAccessReviewQueryScope(),

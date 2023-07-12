@@ -8,8 +8,10 @@ import (
 // MembersAddedEventMessageDetail 
 type MembersAddedEventMessageDetail struct {
     EventMessageDetail
+    // The OdataType property
+    OdataType *string
 }
-// NewMembersAddedEventMessageDetail instantiates a new MembersAddedEventMessageDetail and sets the default values.
+// NewMembersAddedEventMessageDetail instantiates a new membersAddedEventMessageDetail and sets the default values.
 func NewMembersAddedEventMessageDetail()(*MembersAddedEventMessageDetail) {
     m := &MembersAddedEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),

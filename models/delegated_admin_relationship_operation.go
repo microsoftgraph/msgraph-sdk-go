@@ -8,6 +8,8 @@ import (
 // DelegatedAdminRelationshipOperation 
 type DelegatedAdminRelationshipOperation struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDelegatedAdminRelationshipOperation instantiates a new delegatedAdminRelationshipOperation and sets the default values.
 func NewDelegatedAdminRelationshipOperation()(*DelegatedAdminRelationshipOperation) {

@@ -7,6 +7,8 @@ import (
 // CertificateBasedAuthConfiguration 
 type CertificateBasedAuthConfiguration struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewCertificateBasedAuthConfiguration instantiates a new certificateBasedAuthConfiguration and sets the default values.
 func NewCertificateBasedAuthConfiguration()(*CertificateBasedAuthConfiguration) {

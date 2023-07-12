@@ -18,7 +18,7 @@ type ManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilderDeleteRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilderGetQueryParameters read properties and relationships of the deviceInstallState object.
+// ManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilderGetQueryParameters the list of installation states for this eBook.
 type ManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,10 +54,7 @@ func NewManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilder(rawUrl
     urlParams["request-raw-url"] = rawUrl
     return NewManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a deviceInstallState.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-books-deviceinstallstate-delete?view=graph-rest-1.0
+// Delete delete navigation property deviceStates for deviceAppManagement
 func (m *ManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,10 +70,7 @@ func (m *ManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilder) Dele
     }
     return nil
 }
-// Get read properties and relationships of the deviceInstallState object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-books-deviceinstallstate-get?view=graph-rest-1.0
+// Get the list of installation states for this eBook.
 func (m *ManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceInstallStateable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,10 +89,7 @@ func (m *ManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilder) Get(
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceInstallStateable), nil
 }
-// Patch update the properties of a deviceInstallState object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-books-deviceinstallstate-update?view=graph-rest-1.0
+// Patch update the navigation property deviceStates in deviceAppManagement
 func (m *ManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceInstallStateable, requestConfiguration *ManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceInstallStateable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -117,7 +108,7 @@ func (m *ManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilder) Patc
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceInstallStateable), nil
 }
-// ToDeleteRequestInformation deletes a deviceInstallState.
+// ToDeleteRequestInformation delete navigation property deviceStates for deviceAppManagement
 func (m *ManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -129,7 +120,7 @@ func (m *ManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilder) ToDe
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read properties and relationships of the deviceInstallState object.
+// ToGetRequestInformation the list of installation states for this eBook.
 func (m *ManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +136,7 @@ func (m *ManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilder) ToGe
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a deviceInstallState object.
+// ToPatchRequestInformation update the navigation property deviceStates in deviceAppManagement
 func (m *ManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceInstallStateable, requestConfiguration *ManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

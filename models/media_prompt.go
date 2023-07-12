@@ -7,8 +7,10 @@ import (
 // MediaPrompt 
 type MediaPrompt struct {
     Prompt
+    // The OdataType property
+    OdataType *string
 }
-// NewMediaPrompt instantiates a new MediaPrompt and sets the default values.
+// NewMediaPrompt instantiates a new mediaPrompt and sets the default values.
 func NewMediaPrompt()(*MediaPrompt) {
     m := &MediaPrompt{
         Prompt: *NewPrompt(),

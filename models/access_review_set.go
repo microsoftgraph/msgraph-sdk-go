@@ -7,8 +7,10 @@ import (
 // AccessReviewSet 
 type AccessReviewSet struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewAccessReviewSet instantiates a new AccessReviewSet and sets the default values.
+// NewAccessReviewSet instantiates a new accessReviewSet and sets the default values.
 func NewAccessReviewSet()(*AccessReviewSet) {
     m := &AccessReviewSet{
         Entity: *NewEntity(),

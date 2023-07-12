@@ -8,7 +8,7 @@ import (
 type SoftwareOathAuthenticationMethodConfiguration struct {
     AuthenticationMethodConfiguration
 }
-// NewSoftwareOathAuthenticationMethodConfiguration instantiates a new SoftwareOathAuthenticationMethodConfiguration and sets the default values.
+// NewSoftwareOathAuthenticationMethodConfiguration instantiates a new softwareOathAuthenticationMethodConfiguration and sets the default values.
 func NewSoftwareOathAuthenticationMethodConfiguration()(*SoftwareOathAuthenticationMethodConfiguration) {
     m := &SoftwareOathAuthenticationMethodConfiguration{
         AuthenticationMethodConfiguration: *NewAuthenticationMethodConfiguration(),

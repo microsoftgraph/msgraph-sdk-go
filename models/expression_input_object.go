@@ -38,7 +38,7 @@ func (m *ExpressionInputObject) GetAdditionalData()(map[string]any) {
 func (m *ExpressionInputObject) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDefinition gets the definition property value. The definition property
+// GetDefinition gets the definition property value. Definition of the test object.
 func (m *ExpressionInputObject) GetDefinition()(ObjectDefinitionable) {
     val, err := m.GetBackingStore().Get("definition")
     if err != nil {
@@ -101,7 +101,7 @@ func (m *ExpressionInputObject) GetOdataType()(*string) {
     }
     return nil
 }
-// GetProperties gets the properties property value. The properties property
+// GetProperties gets the properties property value. Property values of the test object.
 func (m *ExpressionInputObject) GetProperties()([]StringKeyObjectValuePairable) {
     val, err := m.GetBackingStore().Get("properties")
     if err != nil {
@@ -157,7 +157,7 @@ func (m *ExpressionInputObject) SetAdditionalData(value map[string]any)() {
 func (m *ExpressionInputObject) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDefinition sets the definition property value. The definition property
+// SetDefinition sets the definition property value. Definition of the test object.
 func (m *ExpressionInputObject) SetDefinition(value ObjectDefinitionable)() {
     err := m.GetBackingStore().Set("definition", value)
     if err != nil {
@@ -171,7 +171,7 @@ func (m *ExpressionInputObject) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetProperties sets the properties property value. The properties property
+// SetProperties sets the properties property value. Property values of the test object.
 func (m *ExpressionInputObject) SetProperties(value []StringKeyObjectValuePairable)() {
     err := m.GetBackingStore().Set("properties", value)
     if err != nil {

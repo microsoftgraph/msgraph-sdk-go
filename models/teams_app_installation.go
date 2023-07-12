@@ -37,7 +37,7 @@ func CreateTeamsAppInstallationFromDiscriminatorValue(parseNode i878a80d2330e89d
     }
     return NewTeamsAppInstallation(), nil
 }
-// GetConsentedPermissionSet gets the consentedPermissionSet property value. The consentedPermissionSet property
+// GetConsentedPermissionSet gets the consentedPermissionSet property value. The set of resource-specific permissions consented to while installing or upgrading the teamsApp.
 func (m *TeamsAppInstallation) GetConsentedPermissionSet()(TeamsAppPermissionSetable) {
     val, err := m.GetBackingStore().Get("consentedPermissionSet")
     if err != nil {
@@ -58,6 +58,16 @@ func (m *TeamsAppInstallation) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         if val != nil {
             m.SetConsentedPermissionSet(val.(TeamsAppPermissionSetable))
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -82,6 +92,17 @@ func (m *TeamsAppInstallation) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TeamsAppInstallation) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTeamsApp gets the teamsApp property value. The app that is installed.
 func (m *TeamsAppInstallation) GetTeamsApp()(TeamsAppable) {
@@ -118,6 +139,12 @@ func (m *TeamsAppInstallation) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("teamsApp", m.GetTeamsApp())
         if err != nil {
             return err
@@ -131,9 +158,16 @@ func (m *TeamsAppInstallation) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetConsentedPermissionSet sets the consentedPermissionSet property value. The consentedPermissionSet property
+// SetConsentedPermissionSet sets the consentedPermissionSet property value. The set of resource-specific permissions consented to while installing or upgrading the teamsApp.
 func (m *TeamsAppInstallation) SetConsentedPermissionSet(value TeamsAppPermissionSetable)() {
     err := m.GetBackingStore().Set("consentedPermissionSet", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TeamsAppInstallation) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -157,9 +191,11 @@ type TeamsAppInstallationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetConsentedPermissionSet()(TeamsAppPermissionSetable)
+    GetOdataType()(*string)
     GetTeamsApp()(TeamsAppable)
     GetTeamsAppDefinition()(TeamsAppDefinitionable)
     SetConsentedPermissionSet(value TeamsAppPermissionSetable)()
+    SetOdataType(value *string)()
     SetTeamsApp(value TeamsAppable)()
     SetTeamsAppDefinition(value TeamsAppDefinitionable)()
 }

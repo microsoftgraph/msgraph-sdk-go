@@ -7,8 +7,10 @@ import (
 // AppHostedMediaConfig 
 type AppHostedMediaConfig struct {
     MediaConfig
+    // The OdataType property
+    OdataType *string
 }
-// NewAppHostedMediaConfig instantiates a new AppHostedMediaConfig and sets the default values.
+// NewAppHostedMediaConfig instantiates a new appHostedMediaConfig and sets the default values.
 func NewAppHostedMediaConfig()(*AppHostedMediaConfig) {
     m := &AppHostedMediaConfig{
         MediaConfig: *NewMediaConfig(),

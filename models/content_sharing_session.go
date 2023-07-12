@@ -7,6 +7,8 @@ import (
 // ContentSharingSession 
 type ContentSharingSession struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewContentSharingSession instantiates a new contentSharingSession and sets the default values.
 func NewContentSharingSession()(*ContentSharingSession) {

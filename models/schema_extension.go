@@ -7,8 +7,10 @@ import (
 // SchemaExtension 
 type SchemaExtension struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewSchemaExtension instantiates a new SchemaExtension and sets the default values.
+// NewSchemaExtension instantiates a new schemaExtension and sets the default values.
 func NewSchemaExtension()(*SchemaExtension) {
     m := &SchemaExtension{
         Entity: *NewEntity(),

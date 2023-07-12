@@ -8,7 +8,7 @@ import (
 type ComplianceManagementPartnerCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewComplianceManagementPartnerCollectionResponse instantiates a new ComplianceManagementPartnerCollectionResponse and sets the default values.
+// NewComplianceManagementPartnerCollectionResponse instantiates a new complianceManagementPartnerCollectionResponse and sets the default values.
 func NewComplianceManagementPartnerCollectionResponse()(*ComplianceManagementPartnerCollectionResponse) {
     m := &ComplianceManagementPartnerCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

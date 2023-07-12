@@ -38,7 +38,7 @@ func (m *Filter) GetAdditionalData()(map[string]any) {
 func (m *Filter) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCategoryFilterGroups gets the categoryFilterGroups property value. The categoryFilterGroups property
+// GetCategoryFilterGroups gets the categoryFilterGroups property value. *Experimental* Filter group set used to decide whether given object belongs and should be processed as part of this object mapping. An object is considered in scope if ANY of the groups in the collection is evaluated to true.
 func (m *Filter) GetCategoryFilterGroups()([]FilterGroupable) {
     val, err := m.GetBackingStore().Get("categoryFilterGroups")
     if err != nil {
@@ -112,7 +112,7 @@ func (m *Filter) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     }
     return res
 }
-// GetGroups gets the groups property value. The groups property
+// GetGroups gets the groups property value. Filter group set used to decide whether given object is in scope for provisioning. This is the filter which should be used in most cases. If an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter is not satisfied any longer, such object will get de-provisioned'. An object is considered in scope if ANY of the groups in the collection is evaluated to true.
 func (m *Filter) GetGroups()([]FilterGroupable) {
     val, err := m.GetBackingStore().Get("groups")
     if err != nil {
@@ -123,7 +123,7 @@ func (m *Filter) GetGroups()([]FilterGroupable) {
     }
     return nil
 }
-// GetInputFilterGroups gets the inputFilterGroups property value. The inputFilterGroups property
+// GetInputFilterGroups gets the inputFilterGroups property value. *Experimental* Filter group set used to filter out objects at the early stage of reading them from the directory. If an object doesn't satisfy this filter it will not be processed further. Important to understand is that if an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter is no longer satisfied, such object will NOT get de-provisioned. An object is considered in scope if ANY of the groups in the collection is evaluated to true.
 func (m *Filter) GetInputFilterGroups()([]FilterGroupable) {
     val, err := m.GetBackingStore().Get("inputFilterGroups")
     if err != nil {
@@ -208,21 +208,21 @@ func (m *Filter) SetAdditionalData(value map[string]any)() {
 func (m *Filter) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCategoryFilterGroups sets the categoryFilterGroups property value. The categoryFilterGroups property
+// SetCategoryFilterGroups sets the categoryFilterGroups property value. *Experimental* Filter group set used to decide whether given object belongs and should be processed as part of this object mapping. An object is considered in scope if ANY of the groups in the collection is evaluated to true.
 func (m *Filter) SetCategoryFilterGroups(value []FilterGroupable)() {
     err := m.GetBackingStore().Set("categoryFilterGroups", value)
     if err != nil {
         panic(err)
     }
 }
-// SetGroups sets the groups property value. The groups property
+// SetGroups sets the groups property value. Filter group set used to decide whether given object is in scope for provisioning. This is the filter which should be used in most cases. If an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter is not satisfied any longer, such object will get de-provisioned'. An object is considered in scope if ANY of the groups in the collection is evaluated to true.
 func (m *Filter) SetGroups(value []FilterGroupable)() {
     err := m.GetBackingStore().Set("groups", value)
     if err != nil {
         panic(err)
     }
 }
-// SetInputFilterGroups sets the inputFilterGroups property value. The inputFilterGroups property
+// SetInputFilterGroups sets the inputFilterGroups property value. *Experimental* Filter group set used to filter out objects at the early stage of reading them from the directory. If an object doesn't satisfy this filter it will not be processed further. Important to understand is that if an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter is no longer satisfied, such object will NOT get de-provisioned. An object is considered in scope if ANY of the groups in the collection is evaluated to true.
 func (m *Filter) SetInputFilterGroups(value []FilterGroupable)() {
     err := m.GetBackingStore().Set("inputFilterGroups", value)
     if err != nil {

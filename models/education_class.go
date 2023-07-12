@@ -7,8 +7,10 @@ import (
 // EducationClass 
 type EducationClass struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewEducationClass instantiates a new EducationClass and sets the default values.
+// NewEducationClass instantiates a new educationClass and sets the default values.
 func NewEducationClass()(*EducationClass) {
     m := &EducationClass{
         Entity: *NewEntity(),

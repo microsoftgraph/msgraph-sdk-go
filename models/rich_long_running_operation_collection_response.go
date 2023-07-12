@@ -8,7 +8,7 @@ import (
 type RichLongRunningOperationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewRichLongRunningOperationCollectionResponse instantiates a new RichLongRunningOperationCollectionResponse and sets the default values.
+// NewRichLongRunningOperationCollectionResponse instantiates a new richLongRunningOperationCollectionResponse and sets the default values.
 func NewRichLongRunningOperationCollectionResponse()(*RichLongRunningOperationCollectionResponse) {
     m := &RichLongRunningOperationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

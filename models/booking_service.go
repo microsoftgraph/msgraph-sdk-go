@@ -7,6 +7,8 @@ import (
 // BookingService represents a particular service offered by a booking business.
 type BookingService struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewBookingService instantiates a new bookingService and sets the default values.
 func NewBookingService()(*BookingService) {

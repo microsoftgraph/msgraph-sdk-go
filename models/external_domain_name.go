@@ -7,6 +7,8 @@ import (
 // ExternalDomainName 
 type ExternalDomainName struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewExternalDomainName instantiates a new externalDomainName and sets the default values.
 func NewExternalDomainName()(*ExternalDomainName) {

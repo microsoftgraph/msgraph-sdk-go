@@ -7,6 +7,8 @@ import (
 // FederatedIdentityCredential 
 type FederatedIdentityCredential struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewFederatedIdentityCredential instantiates a new federatedIdentityCredential and sets the default values.
 func NewFederatedIdentityCredential()(*FederatedIdentityCredential) {

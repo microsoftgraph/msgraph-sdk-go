@@ -7,6 +7,8 @@ import (
 // ColumnDefinition 
 type ColumnDefinition struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewColumnDefinition instantiates a new columnDefinition and sets the default values.
 func NewColumnDefinition()(*ColumnDefinition) {

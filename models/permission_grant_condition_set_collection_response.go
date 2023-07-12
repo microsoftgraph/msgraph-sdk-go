@@ -8,7 +8,7 @@ import (
 type PermissionGrantConditionSetCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewPermissionGrantConditionSetCollectionResponse instantiates a new PermissionGrantConditionSetCollectionResponse and sets the default values.
+// NewPermissionGrantConditionSetCollectionResponse instantiates a new permissionGrantConditionSetCollectionResponse and sets the default values.
 func NewPermissionGrantConditionSetCollectionResponse()(*PermissionGrantConditionSetCollectionResponse) {
     m := &PermissionGrantConditionSetCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

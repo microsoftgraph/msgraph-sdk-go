@@ -7,6 +7,8 @@ import (
 // WorkbookChartPointFormat 
 type WorkbookChartPointFormat struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewWorkbookChartPointFormat instantiates a new workbookChartPointFormat and sets the default values.
 func NewWorkbookChartPointFormat()(*WorkbookChartPointFormat) {

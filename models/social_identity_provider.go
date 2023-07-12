@@ -8,7 +8,7 @@ import (
 type SocialIdentityProvider struct {
     IdentityProviderBase
 }
-// NewSocialIdentityProvider instantiates a new SocialIdentityProvider and sets the default values.
+// NewSocialIdentityProvider instantiates a new socialIdentityProvider and sets the default values.
 func NewSocialIdentityProvider()(*SocialIdentityProvider) {
     m := &SocialIdentityProvider{
         IdentityProviderBase: *NewIdentityProviderBase(),

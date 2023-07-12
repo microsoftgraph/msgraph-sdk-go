@@ -7,6 +7,8 @@ import (
 // DelegatedPermissionClassification 
 type DelegatedPermissionClassification struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDelegatedPermissionClassification instantiates a new delegatedPermissionClassification and sets the default values.
 func NewDelegatedPermissionClassification()(*DelegatedPermissionClassification) {

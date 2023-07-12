@@ -8,7 +8,7 @@ import (
 type Initiator struct {
     Identity
 }
-// NewInitiator instantiates a new Initiator and sets the default values.
+// NewInitiator instantiates a new initiator and sets the default values.
 func NewInitiator()(*Initiator) {
     m := &Initiator{
         Identity: *NewIdentity(),
@@ -34,6 +34,16 @@ func (m *Initiator) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetInitiatorType gets the initiatorType property value. Type of initiator. Possible values are: user, application, system, unknownFutureValue.
@@ -44,6 +54,17 @@ func (m *Initiator) GetInitiatorType()(*InitiatorType) {
     }
     if val != nil {
         return val.(*InitiatorType)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Initiator) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -60,6 +81,12 @@ func (m *Initiator) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetInitiatorType sets the initiatorType property value. Type of initiator. Possible values are: user, application, system, unknownFutureValue.
@@ -69,10 +96,19 @@ func (m *Initiator) SetInitiatorType(value *InitiatorType)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Initiator) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // Initiatorable 
 type Initiatorable interface {
     Identityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetInitiatorType()(*InitiatorType)
+    GetOdataType()(*string)
     SetInitiatorType(value *InitiatorType)()
+    SetOdataType(value *string)()
 }

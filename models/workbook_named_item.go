@@ -7,6 +7,8 @@ import (
 // WorkbookNamedItem 
 type WorkbookNamedItem struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewWorkbookNamedItem instantiates a new workbookNamedItem and sets the default values.
 func NewWorkbookNamedItem()(*WorkbookNamedItem) {

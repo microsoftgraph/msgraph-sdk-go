@@ -8,7 +8,7 @@ import (
 type ExtensionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewExtensionCollectionResponse instantiates a new ExtensionCollectionResponse and sets the default values.
+// NewExtensionCollectionResponse instantiates a new extensionCollectionResponse and sets the default values.
 func NewExtensionCollectionResponse()(*ExtensionCollectionResponse) {
     m := &ExtensionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -7,6 +7,8 @@ import (
 // MobileAppTroubleshootingEvent 
 type MobileAppTroubleshootingEvent struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewMobileAppTroubleshootingEvent instantiates a new mobileAppTroubleshootingEvent and sets the default values.
 func NewMobileAppTroubleshootingEvent()(*MobileAppTroubleshootingEvent) {

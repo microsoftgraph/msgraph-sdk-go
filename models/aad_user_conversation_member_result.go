@@ -7,8 +7,10 @@ import (
 // AadUserConversationMemberResult 
 type AadUserConversationMemberResult struct {
     ActionResultPart
+    // The OdataType property
+    OdataType *string
 }
-// NewAadUserConversationMemberResult instantiates a new AadUserConversationMemberResult and sets the default values.
+// NewAadUserConversationMemberResult instantiates a new aadUserConversationMemberResult and sets the default values.
 func NewAadUserConversationMemberResult()(*AadUserConversationMemberResult) {
     m := &AadUserConversationMemberResult{
         ActionResultPart: *NewActionResultPart(),

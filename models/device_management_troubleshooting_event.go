@@ -8,6 +8,8 @@ import (
 // DeviceManagementTroubleshootingEvent event representing an general failure.
 type DeviceManagementTroubleshootingEvent struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDeviceManagementTroubleshootingEvent instantiates a new deviceManagementTroubleshootingEvent and sets the default values.
 func NewDeviceManagementTroubleshootingEvent()(*DeviceManagementTroubleshootingEvent) {

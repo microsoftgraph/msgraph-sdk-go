@@ -10,7 +10,7 @@ type UserRegistrationMethodSummary struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewUserRegistrationMethodSummary instantiates a new UserRegistrationMethodSummary and sets the default values.
+// NewUserRegistrationMethodSummary instantiates a new userRegistrationMethodSummary and sets the default values.
 func NewUserRegistrationMethodSummary()(*UserRegistrationMethodSummary) {
     m := &UserRegistrationMethodSummary{
     }
@@ -110,7 +110,7 @@ func (m *UserRegistrationMethodSummary) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTotalUserCount gets the totalUserCount property value. The totalUserCount property
+// GetTotalUserCount gets the totalUserCount property value. Total number of users in the tenant.
 func (m *UserRegistrationMethodSummary) GetTotalUserCount()(*int64) {
     val, err := m.GetBackingStore().Get("totalUserCount")
     if err != nil {
@@ -121,7 +121,7 @@ func (m *UserRegistrationMethodSummary) GetTotalUserCount()(*int64) {
     }
     return nil
 }
-// GetUserRegistrationMethodCounts gets the userRegistrationMethodCounts property value. The userRegistrationMethodCounts property
+// GetUserRegistrationMethodCounts gets the userRegistrationMethodCounts property value. Number of users registered for each authentication method.
 func (m *UserRegistrationMethodSummary) GetUserRegistrationMethodCounts()([]UserRegistrationMethodCountable) {
     val, err := m.GetBackingStore().Get("userRegistrationMethodCounts")
     if err != nil {
@@ -132,7 +132,7 @@ func (m *UserRegistrationMethodSummary) GetUserRegistrationMethodCounts()([]User
     }
     return nil
 }
-// GetUserRoles gets the userRoles property value. The userRoles property
+// GetUserRoles gets the userRoles property value. The role type of the user. Possible values are: all, privilegedAdmin, admin, user, unknownFutureValue.
 func (m *UserRegistrationMethodSummary) GetUserRoles()(*IncludedUserRoles) {
     val, err := m.GetBackingStore().Get("userRoles")
     if err != nil {
@@ -143,7 +143,7 @@ func (m *UserRegistrationMethodSummary) GetUserRoles()(*IncludedUserRoles) {
     }
     return nil
 }
-// GetUserTypes gets the userTypes property value. The userTypes property
+// GetUserTypes gets the userTypes property value. User type. Possible values are: all, member, guest, unknownFutureValue.
 func (m *UserRegistrationMethodSummary) GetUserTypes()(*IncludedUserTypes) {
     val, err := m.GetBackingStore().Get("userTypes")
     if err != nil {
@@ -220,28 +220,28 @@ func (m *UserRegistrationMethodSummary) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTotalUserCount sets the totalUserCount property value. The totalUserCount property
+// SetTotalUserCount sets the totalUserCount property value. Total number of users in the tenant.
 func (m *UserRegistrationMethodSummary) SetTotalUserCount(value *int64)() {
     err := m.GetBackingStore().Set("totalUserCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserRegistrationMethodCounts sets the userRegistrationMethodCounts property value. The userRegistrationMethodCounts property
+// SetUserRegistrationMethodCounts sets the userRegistrationMethodCounts property value. Number of users registered for each authentication method.
 func (m *UserRegistrationMethodSummary) SetUserRegistrationMethodCounts(value []UserRegistrationMethodCountable)() {
     err := m.GetBackingStore().Set("userRegistrationMethodCounts", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserRoles sets the userRoles property value. The userRoles property
+// SetUserRoles sets the userRoles property value. The role type of the user. Possible values are: all, privilegedAdmin, admin, user, unknownFutureValue.
 func (m *UserRegistrationMethodSummary) SetUserRoles(value *IncludedUserRoles)() {
     err := m.GetBackingStore().Set("userRoles", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserTypes sets the userTypes property value. The userTypes property
+// SetUserTypes sets the userTypes property value. User type. Possible values are: all, member, guest, unknownFutureValue.
 func (m *UserRegistrationMethodSummary) SetUserTypes(value *IncludedUserTypes)() {
     err := m.GetBackingStore().Set("userTypes", value)
     if err != nil {

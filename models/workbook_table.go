@@ -7,6 +7,8 @@ import (
 // WorkbookTable 
 type WorkbookTable struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewWorkbookTable instantiates a new workbookTable and sets the default values.
 func NewWorkbookTable()(*WorkbookTable) {

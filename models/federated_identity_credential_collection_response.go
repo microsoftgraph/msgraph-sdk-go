@@ -8,7 +8,7 @@ import (
 type FederatedIdentityCredentialCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewFederatedIdentityCredentialCollectionResponse instantiates a new FederatedIdentityCredentialCollectionResponse and sets the default values.
+// NewFederatedIdentityCredentialCollectionResponse instantiates a new federatedIdentityCredentialCollectionResponse and sets the default values.
 func NewFederatedIdentityCredentialCollectionResponse()(*FederatedIdentityCredentialCollectionResponse) {
     m := &FederatedIdentityCredentialCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

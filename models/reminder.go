@@ -10,7 +10,7 @@ type Reminder struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewReminder instantiates a new Reminder and sets the default values.
+// NewReminder instantiates a new reminder and sets the default values.
 func NewReminder()(*Reminder) {
     m := &Reminder{
     }

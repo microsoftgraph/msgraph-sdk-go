@@ -8,6 +8,8 @@ import (
 // WindowsAutopilotDeviceIdentity the windowsAutopilotDeviceIdentity resource represents a Windows Autopilot Device.
 type WindowsAutopilotDeviceIdentity struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewWindowsAutopilotDeviceIdentity instantiates a new windowsAutopilotDeviceIdentity and sets the default values.
 func NewWindowsAutopilotDeviceIdentity()(*WindowsAutopilotDeviceIdentity) {

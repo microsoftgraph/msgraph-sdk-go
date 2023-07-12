@@ -8,7 +8,7 @@ import (
 type DriveItemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDriveItemCollectionResponse instantiates a new DriveItemCollectionResponse and sets the default values.
+// NewDriveItemCollectionResponse instantiates a new driveItemCollectionResponse and sets the default values.
 func NewDriveItemCollectionResponse()(*DriveItemCollectionResponse) {
     m := &DriveItemCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

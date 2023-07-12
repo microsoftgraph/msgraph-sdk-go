@@ -7,6 +7,8 @@ import (
 // Person 
 type Person struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewPerson instantiates a new person and sets the default values.
 func NewPerson()(*Person) {

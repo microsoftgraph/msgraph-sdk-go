@@ -8,6 +8,8 @@ import (
 // DeviceManagementPartner entity which represents a connection to device management partner.
 type DeviceManagementPartner struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDeviceManagementPartner instantiates a new deviceManagementPartner and sets the default values.
 func NewDeviceManagementPartner()(*DeviceManagementPartner) {

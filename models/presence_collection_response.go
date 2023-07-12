@@ -8,7 +8,7 @@ import (
 type PresenceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewPresenceCollectionResponse instantiates a new PresenceCollectionResponse and sets the default values.
+// NewPresenceCollectionResponse instantiates a new presenceCollectionResponse and sets the default values.
 func NewPresenceCollectionResponse()(*PresenceCollectionResponse) {
     m := &PresenceCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

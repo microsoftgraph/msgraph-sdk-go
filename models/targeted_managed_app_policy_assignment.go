@@ -7,6 +7,8 @@ import (
 // TargetedManagedAppPolicyAssignment the type for deployment of groups or apps.
 type TargetedManagedAppPolicyAssignment struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewTargetedManagedAppPolicyAssignment instantiates a new targetedManagedAppPolicyAssignment and sets the default values.
 func NewTargetedManagedAppPolicyAssignment()(*TargetedManagedAppPolicyAssignment) {

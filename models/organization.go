@@ -9,7 +9,7 @@ import (
 type Organization struct {
     DirectoryObject
 }
-// NewOrganization instantiates a new Organization and sets the default values.
+// NewOrganization instantiates a new organization and sets the default values.
 func NewOrganization()(*Organization) {
     m := &Organization{
         DirectoryObject: *NewDirectoryObject(),

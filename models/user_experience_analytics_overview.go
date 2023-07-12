@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsOverview 
+// UserExperienceAnalyticsOverview the user experience analytics overview entity contains the overall score and the scores and insights of every metric of all categories.
 type UserExperienceAnalyticsOverview struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewUserExperienceAnalyticsOverview instantiates a new userExperienceAnalyticsOverview and sets the default values.
 func NewUserExperienceAnalyticsOverview()(*UserExperienceAnalyticsOverview) {

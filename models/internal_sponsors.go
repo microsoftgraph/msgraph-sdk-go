@@ -7,8 +7,10 @@ import (
 // InternalSponsors 
 type InternalSponsors struct {
     SubjectSet
+    // The OdataType property
+    OdataType *string
 }
-// NewInternalSponsors instantiates a new InternalSponsors and sets the default values.
+// NewInternalSponsors instantiates a new internalSponsors and sets the default values.
 func NewInternalSponsors()(*InternalSponsors) {
     m := &InternalSponsors{
         SubjectSet: *NewSubjectSet(),

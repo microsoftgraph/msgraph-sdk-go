@@ -8,6 +8,8 @@ import (
 // ThreatAssessmentRequest 
 type ThreatAssessmentRequest struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewThreatAssessmentRequest instantiates a new threatAssessmentRequest and sets the default values.
 func NewThreatAssessmentRequest()(*ThreatAssessmentRequest) {

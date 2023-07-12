@@ -94,7 +94,7 @@ func (m *FilterClause) GetOdataType()(*string) {
     }
     return nil
 }
-// GetOperatorName gets the operatorName property value. The operatorName property
+// GetOperatorName gets the operatorName property value. Name of the operator to be applied to the source and target operands. Must be one of the supported operators. Supported operators can be discovered.
 func (m *FilterClause) GetOperatorName()(*string) {
     val, err := m.GetBackingStore().Get("operatorName")
     if err != nil {
@@ -105,7 +105,7 @@ func (m *FilterClause) GetOperatorName()(*string) {
     }
     return nil
 }
-// GetSourceOperandName gets the sourceOperandName property value. The sourceOperandName property
+// GetSourceOperandName gets the sourceOperandName property value. Name of source operand (the operand being tested). The source operand name must match one of the attribute names on the source object.
 func (m *FilterClause) GetSourceOperandName()(*string) {
     val, err := m.GetBackingStore().Get("sourceOperandName")
     if err != nil {
@@ -116,7 +116,7 @@ func (m *FilterClause) GetSourceOperandName()(*string) {
     }
     return nil
 }
-// GetTargetOperand gets the targetOperand property value. The targetOperand property
+// GetTargetOperand gets the targetOperand property value. Values that the source operand will be tested against.
 func (m *FilterClause) GetTargetOperand()(FilterOperandable) {
     val, err := m.GetBackingStore().Get("targetOperand")
     if err != nil {
@@ -179,21 +179,21 @@ func (m *FilterClause) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetOperatorName sets the operatorName property value. The operatorName property
+// SetOperatorName sets the operatorName property value. Name of the operator to be applied to the source and target operands. Must be one of the supported operators. Supported operators can be discovered.
 func (m *FilterClause) SetOperatorName(value *string)() {
     err := m.GetBackingStore().Set("operatorName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSourceOperandName sets the sourceOperandName property value. The sourceOperandName property
+// SetSourceOperandName sets the sourceOperandName property value. Name of source operand (the operand being tested). The source operand name must match one of the attribute names on the source object.
 func (m *FilterClause) SetSourceOperandName(value *string)() {
     err := m.GetBackingStore().Set("sourceOperandName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTargetOperand sets the targetOperand property value. The targetOperand property
+// SetTargetOperand sets the targetOperand property value. Values that the source operand will be tested against.
 func (m *FilterClause) SetTargetOperand(value FilterOperandable)() {
     err := m.GetBackingStore().Set("targetOperand", value)
     if err != nil {

@@ -7,8 +7,10 @@ import (
 // WindowsUpdateScheduledInstall 
 type WindowsUpdateScheduledInstall struct {
     WindowsUpdateInstallScheduleType
+    // The OdataType property
+    OdataType *string
 }
-// NewWindowsUpdateScheduledInstall instantiates a new WindowsUpdateScheduledInstall and sets the default values.
+// NewWindowsUpdateScheduledInstall instantiates a new windowsUpdateScheduledInstall and sets the default values.
 func NewWindowsUpdateScheduledInstall()(*WindowsUpdateScheduledInstall) {
     m := &WindowsUpdateScheduledInstall{
         WindowsUpdateInstallScheduleType: *NewWindowsUpdateInstallScheduleType(),

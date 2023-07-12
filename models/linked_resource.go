@@ -7,6 +7,8 @@ import (
 // LinkedResource 
 type LinkedResource struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewLinkedResource instantiates a new linkedResource and sets the default values.
 func NewLinkedResource()(*LinkedResource) {

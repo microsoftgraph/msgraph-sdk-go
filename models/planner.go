@@ -7,8 +7,10 @@ import (
 // Planner 
 type Planner struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewPlanner instantiates a new Planner and sets the default values.
+// NewPlanner instantiates a new planner and sets the default values.
 func NewPlanner()(*Planner) {
     m := &Planner{
         Entity: *NewEntity(),

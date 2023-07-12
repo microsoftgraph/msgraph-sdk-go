@@ -31,9 +31,6 @@ func NewManagedDevicesItemCleanWindowsDeviceRequestBuilder(rawUrl string, reques
     return NewManagedDevicesItemCleanWindowsDeviceRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post clean Windows device
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-devices-manageddevice-cleanwindowsdevice?view=graph-rest-1.0
 func (m *ManagedDevicesItemCleanWindowsDeviceRequestBuilder) Post(ctx context.Context, body ManagedDevicesItemCleanWindowsDevicePostRequestBodyable, requestConfiguration *ManagedDevicesItemCleanWindowsDeviceRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

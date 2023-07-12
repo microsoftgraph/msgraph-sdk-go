@@ -7,6 +7,8 @@ import (
 // InternetExplorerMode 
 type InternetExplorerMode struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewInternetExplorerMode instantiates a new internetExplorerMode and sets the default values.
 func NewInternetExplorerMode()(*InternetExplorerMode) {

@@ -8,7 +8,7 @@ import (
 type EndpointCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewEndpointCollectionResponse instantiates a new EndpointCollectionResponse and sets the default values.
+// NewEndpointCollectionResponse instantiates a new endpointCollectionResponse and sets the default values.
 func NewEndpointCollectionResponse()(*EndpointCollectionResponse) {
     m := &EndpointCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

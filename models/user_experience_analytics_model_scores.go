@@ -7,6 +7,8 @@ import (
 // UserExperienceAnalyticsModelScores the user experience analytics model scores entity consolidates the various Endpoint Analytics scores.
 type UserExperienceAnalyticsModelScores struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewUserExperienceAnalyticsModelScores instantiates a new userExperienceAnalyticsModelScores and sets the default values.
 func NewUserExperienceAnalyticsModelScores()(*UserExperienceAnalyticsModelScores) {

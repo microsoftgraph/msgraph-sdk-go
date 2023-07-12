@@ -8,7 +8,7 @@ import (
 type OpenTypeExtension struct {
     Extension
 }
-// NewOpenTypeExtension instantiates a new OpenTypeExtension and sets the default values.
+// NewOpenTypeExtension instantiates a new openTypeExtension and sets the default values.
 func NewOpenTypeExtension()(*OpenTypeExtension) {
     m := &OpenTypeExtension{
         Extension: *NewExtension(),

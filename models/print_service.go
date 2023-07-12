@@ -8,7 +8,7 @@ import (
 type PrintService struct {
     Entity
 }
-// NewPrintService instantiates a new PrintService and sets the default values.
+// NewPrintService instantiates a new printService and sets the default values.
 func NewPrintService()(*PrintService) {
     m := &PrintService{
         Entity: *NewEntity(),
@@ -49,7 +49,28 @@ func (m *PrintService) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PrintService) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PrintService) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -69,6 +90,12 @@ func (m *PrintService) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetEndpoints sets the endpoints property value. Endpoints that can be used to access the service. Read-only. Nullable.
@@ -78,10 +105,19 @@ func (m *PrintService) SetEndpoints(value []PrintServiceEndpointable)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PrintService) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // PrintServiceable 
 type PrintServiceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetEndpoints()([]PrintServiceEndpointable)
+    GetOdataType()(*string)
     SetEndpoints(value []PrintServiceEndpointable)()
+    SetOdataType(value *string)()
 }

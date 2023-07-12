@@ -8,7 +8,7 @@ import (
 type AddLargeGalleryViewOperation struct {
     CommsOperation
 }
-// NewAddLargeGalleryViewOperation instantiates a new AddLargeGalleryViewOperation and sets the default values.
+// NewAddLargeGalleryViewOperation instantiates a new addLargeGalleryViewOperation and sets the default values.
 func NewAddLargeGalleryViewOperation()(*AddLargeGalleryViewOperation) {
     m := &AddLargeGalleryViewOperation{
         CommsOperation: *NewCommsOperation(),

@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidStoreApp 
+// AndroidStoreApp contains properties and inherited properties for Android store apps.
 type AndroidStoreApp struct {
     MobileApp
 }
-// NewAndroidStoreApp instantiates a new AndroidStoreApp and sets the default values.
+// NewAndroidStoreApp instantiates a new androidStoreApp and sets the default values.
 func NewAndroidStoreApp()(*AndroidStoreApp) {
     m := &AndroidStoreApp{
         MobileApp: *NewMobileApp(),

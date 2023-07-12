@@ -7,6 +7,8 @@ import (
 // AttendanceRecord 
 type AttendanceRecord struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewAttendanceRecord instantiates a new attendanceRecord and sets the default values.
 func NewAttendanceRecord()(*AttendanceRecord) {

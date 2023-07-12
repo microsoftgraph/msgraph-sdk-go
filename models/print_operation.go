@@ -8,6 +8,8 @@ import (
 // PrintOperation 
 type PrintOperation struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewPrintOperation instantiates a new printOperation and sets the default values.
 func NewPrintOperation()(*PrintOperation) {

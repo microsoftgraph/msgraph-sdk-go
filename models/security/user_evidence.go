@@ -8,7 +8,7 @@ import (
 type UserEvidence struct {
     AlertEvidence
 }
-// NewUserEvidence instantiates a new UserEvidence and sets the default values.
+// NewUserEvidence instantiates a new userEvidence and sets the default values.
 func NewUserEvidence()(*UserEvidence) {
     m := &UserEvidence{
         AlertEvidence: *NewAlertEvidence(),
@@ -22,6 +22,16 @@ func CreateUserEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AlertEvidence.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["userAccount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUserAccountFromDiscriminatorValue)
         if err != nil {
@@ -33,6 +43,17 @@ func (m *UserEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UserEvidence) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUserAccount gets the userAccount property value. The user account details.
 func (m *UserEvidence) GetUserAccount()(UserAccountable) {
@@ -52,12 +73,25 @@ func (m *UserEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
         return err
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("userAccount", m.GetUserAccount())
         if err != nil {
             return err
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UserEvidence) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserAccount sets the userAccount property value. The user account details.
 func (m *UserEvidence) SetUserAccount(value UserAccountable)() {
@@ -70,6 +104,8 @@ func (m *UserEvidence) SetUserAccount(value UserAccountable)() {
 type UserEvidenceable interface {
     AlertEvidenceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetUserAccount()(UserAccountable)
+    SetOdataType(value *string)()
     SetUserAccount(value UserAccountable)()
 }

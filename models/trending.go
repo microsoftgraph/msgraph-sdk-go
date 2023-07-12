@@ -8,6 +8,8 @@ import (
 // Trending 
 type Trending struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewTrending instantiates a new trending and sets the default values.
 func NewTrending()(*Trending) {

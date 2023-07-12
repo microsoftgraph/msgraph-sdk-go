@@ -7,6 +7,8 @@ import (
 // Schedule 
 type Schedule struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewSchedule instantiates a new schedule and sets the default values.
 func NewSchedule()(*Schedule) {

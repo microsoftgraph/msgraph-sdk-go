@@ -93,6 +93,10 @@ func (m *ItemMemberOfRequestBuilder) Get(ctx context.Context, requestConfigurati
 func (m *ItemMemberOfRequestBuilder) GraphAdministrativeUnit()(*ItemMemberOfGraphAdministrativeUnitRequestBuilder) {
     return NewItemMemberOfGraphAdministrativeUnitRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// GraphDirectoryRole casts the previous resource to directoryRole.
+func (m *ItemMemberOfRequestBuilder) GraphDirectoryRole()(*ItemMemberOfGraphDirectoryRoleRequestBuilder) {
+    return NewItemMemberOfGraphDirectoryRoleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // GraphGroup casts the previous resource to group.
 func (m *ItemMemberOfRequestBuilder) GraphGroup()(*ItemMemberOfGraphGroupRequestBuilder) {
     return NewItemMemberOfGraphGroupRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

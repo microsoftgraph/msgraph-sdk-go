@@ -7,6 +7,8 @@ import (
 // WorkbookTableSort 
 type WorkbookTableSort struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewWorkbookTableSort instantiates a new workbookTableSort and sets the default values.
 func NewWorkbookTableSort()(*WorkbookTableSort) {

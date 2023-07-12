@@ -7,6 +7,8 @@ import (
 // AttackSimulationRoot 
 type AttackSimulationRoot struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewAttackSimulationRoot instantiates a new attackSimulationRoot and sets the default values.
 func NewAttackSimulationRoot()(*AttackSimulationRoot) {

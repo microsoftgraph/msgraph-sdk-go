@@ -30,10 +30,7 @@ func NewItemManagedDevicesItemWindowsDefenderScanRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewItemManagedDevicesItemWindowsDefenderScanRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post not yet documented
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-devices-manageddevice-windowsdefenderscan?view=graph-rest-1.0
+// Post invoke action windowsDefenderScan
 func (m *ItemManagedDevicesItemWindowsDefenderScanRequestBuilder) Post(ctx context.Context, body ItemManagedDevicesItemWindowsDefenderScanPostRequestBodyable, requestConfiguration *ItemManagedDevicesItemWindowsDefenderScanRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *ItemManagedDevicesItemWindowsDefenderScanRequestBuilder) Post(ctx conte
     }
     return nil
 }
-// ToPostRequestInformation not yet documented
+// ToPostRequestInformation invoke action windowsDefenderScan
 func (m *ItemManagedDevicesItemWindowsDefenderScanRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemManagedDevicesItemWindowsDefenderScanPostRequestBodyable, requestConfiguration *ItemManagedDevicesItemWindowsDefenderScanRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

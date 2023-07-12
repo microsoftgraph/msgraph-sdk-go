@@ -10,7 +10,7 @@ type ReportRoot struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewReportRoot instantiates a new ReportRoot and sets the default values.
+// NewReportRoot instantiates a new reportRoot and sets the default values.
 func NewReportRoot()(*ReportRoot) {
     m := &ReportRoot{
     }
@@ -34,7 +34,7 @@ func (m *ReportRoot) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAuthenticationMethods gets the authenticationMethods property value. The authenticationMethods property
+// GetAuthenticationMethods gets the authenticationMethods property value. Container for navigation properties for Azure AD authentication methods resources.
 func (m *ReportRoot) GetAuthenticationMethods()(AuthenticationMethodsRootable) {
     val, err := m.GetBackingStore().Get("authenticationMethods")
     if err != nil {
@@ -49,7 +49,7 @@ func (m *ReportRoot) GetAuthenticationMethods()(AuthenticationMethodsRootable) {
 func (m *ReportRoot) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDailyPrintUsageByPrinter gets the dailyPrintUsageByPrinter property value. The dailyPrintUsageByPrinter property
+// GetDailyPrintUsageByPrinter gets the dailyPrintUsageByPrinter property value. Retrieve a list of daily print usage summaries, grouped by printer.
 func (m *ReportRoot) GetDailyPrintUsageByPrinter()([]PrintUsageByPrinterable) {
     val, err := m.GetBackingStore().Get("dailyPrintUsageByPrinter")
     if err != nil {
@@ -60,7 +60,7 @@ func (m *ReportRoot) GetDailyPrintUsageByPrinter()([]PrintUsageByPrinterable) {
     }
     return nil
 }
-// GetDailyPrintUsageByUser gets the dailyPrintUsageByUser property value. The dailyPrintUsageByUser property
+// GetDailyPrintUsageByUser gets the dailyPrintUsageByUser property value. Retrieve a list of daily print usage summaries, grouped by user.
 func (m *ReportRoot) GetDailyPrintUsageByUser()([]PrintUsageByUserable) {
     val, err := m.GetBackingStore().Get("dailyPrintUsageByUser")
     if err != nil {
@@ -170,7 +170,7 @@ func (m *ReportRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetMonthlyPrintUsageByPrinter gets the monthlyPrintUsageByPrinter property value. The monthlyPrintUsageByPrinter property
+// GetMonthlyPrintUsageByPrinter gets the monthlyPrintUsageByPrinter property value. Retrieve a list of monthly print usage summaries, grouped by printer.
 func (m *ReportRoot) GetMonthlyPrintUsageByPrinter()([]PrintUsageByPrinterable) {
     val, err := m.GetBackingStore().Get("monthlyPrintUsageByPrinter")
     if err != nil {
@@ -181,7 +181,7 @@ func (m *ReportRoot) GetMonthlyPrintUsageByPrinter()([]PrintUsageByPrinterable) 
     }
     return nil
 }
-// GetMonthlyPrintUsageByUser gets the monthlyPrintUsageByUser property value. The monthlyPrintUsageByUser property
+// GetMonthlyPrintUsageByUser gets the monthlyPrintUsageByUser property value. Retrieve a list of monthly print usage summaries, grouped by user.
 func (m *ReportRoot) GetMonthlyPrintUsageByUser()([]PrintUsageByUserable) {
     val, err := m.GetBackingStore().Get("monthlyPrintUsageByUser")
     if err != nil {
@@ -203,7 +203,7 @@ func (m *ReportRoot) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSecurity gets the security property value. The security property
+// GetSecurity gets the security property value. Represents an abstract type that contains resources for attack simulation and training reports.
 func (m *ReportRoot) GetSecurity()(SecurityReportsRootable) {
     val, err := m.GetBackingStore().Get("security")
     if err != nil {
@@ -297,7 +297,7 @@ func (m *ReportRoot) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAuthenticationMethods sets the authenticationMethods property value. The authenticationMethods property
+// SetAuthenticationMethods sets the authenticationMethods property value. Container for navigation properties for Azure AD authentication methods resources.
 func (m *ReportRoot) SetAuthenticationMethods(value AuthenticationMethodsRootable)() {
     err := m.GetBackingStore().Set("authenticationMethods", value)
     if err != nil {
@@ -308,28 +308,28 @@ func (m *ReportRoot) SetAuthenticationMethods(value AuthenticationMethodsRootabl
 func (m *ReportRoot) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDailyPrintUsageByPrinter sets the dailyPrintUsageByPrinter property value. The dailyPrintUsageByPrinter property
+// SetDailyPrintUsageByPrinter sets the dailyPrintUsageByPrinter property value. Retrieve a list of daily print usage summaries, grouped by printer.
 func (m *ReportRoot) SetDailyPrintUsageByPrinter(value []PrintUsageByPrinterable)() {
     err := m.GetBackingStore().Set("dailyPrintUsageByPrinter", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDailyPrintUsageByUser sets the dailyPrintUsageByUser property value. The dailyPrintUsageByUser property
+// SetDailyPrintUsageByUser sets the dailyPrintUsageByUser property value. Retrieve a list of daily print usage summaries, grouped by user.
 func (m *ReportRoot) SetDailyPrintUsageByUser(value []PrintUsageByUserable)() {
     err := m.GetBackingStore().Set("dailyPrintUsageByUser", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMonthlyPrintUsageByPrinter sets the monthlyPrintUsageByPrinter property value. The monthlyPrintUsageByPrinter property
+// SetMonthlyPrintUsageByPrinter sets the monthlyPrintUsageByPrinter property value. Retrieve a list of monthly print usage summaries, grouped by printer.
 func (m *ReportRoot) SetMonthlyPrintUsageByPrinter(value []PrintUsageByPrinterable)() {
     err := m.GetBackingStore().Set("monthlyPrintUsageByPrinter", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMonthlyPrintUsageByUser sets the monthlyPrintUsageByUser property value. The monthlyPrintUsageByUser property
+// SetMonthlyPrintUsageByUser sets the monthlyPrintUsageByUser property value. Retrieve a list of monthly print usage summaries, grouped by user.
 func (m *ReportRoot) SetMonthlyPrintUsageByUser(value []PrintUsageByUserable)() {
     err := m.GetBackingStore().Set("monthlyPrintUsageByUser", value)
     if err != nil {
@@ -343,7 +343,7 @@ func (m *ReportRoot) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSecurity sets the security property value. The security property
+// SetSecurity sets the security property value. Represents an abstract type that contains resources for attack simulation and training reports.
 func (m *ReportRoot) SetSecurity(value SecurityReportsRootable)() {
     err := m.GetBackingStore().Set("security", value)
     if err != nil {

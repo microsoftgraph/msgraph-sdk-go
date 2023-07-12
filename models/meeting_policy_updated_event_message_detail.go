@@ -8,7 +8,7 @@ import (
 type MeetingPolicyUpdatedEventMessageDetail struct {
     EventMessageDetail
 }
-// NewMeetingPolicyUpdatedEventMessageDetail instantiates a new MeetingPolicyUpdatedEventMessageDetail and sets the default values.
+// NewMeetingPolicyUpdatedEventMessageDetail instantiates a new meetingPolicyUpdatedEventMessageDetail and sets the default values.
 func NewMeetingPolicyUpdatedEventMessageDetail()(*MeetingPolicyUpdatedEventMessageDetail) {
     m := &MeetingPolicyUpdatedEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),
@@ -54,6 +54,16 @@ func (m *MeetingPolicyUpdatedEventMessageDetail) GetFieldDeserializers()(map[str
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetInitiator gets the initiator property value. Initiator of the event.
@@ -89,6 +99,17 @@ func (m *MeetingPolicyUpdatedEventMessageDetail) GetMeetingChatId()(*string) {
     }
     return nil
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MeetingPolicyUpdatedEventMessageDetail) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *MeetingPolicyUpdatedEventMessageDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.EventMessageDetail.Serialize(writer)
@@ -109,6 +130,12 @@ func (m *MeetingPolicyUpdatedEventMessageDetail) Serialize(writer i878a80d2330e8
     }
     {
         err = writer.WriteStringValue("meetingChatId", m.GetMeetingChatId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -136,6 +163,13 @@ func (m *MeetingPolicyUpdatedEventMessageDetail) SetMeetingChatId(value *string)
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MeetingPolicyUpdatedEventMessageDetail) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // MeetingPolicyUpdatedEventMessageDetailable 
 type MeetingPolicyUpdatedEventMessageDetailable interface {
     EventMessageDetailable
@@ -143,7 +177,9 @@ type MeetingPolicyUpdatedEventMessageDetailable interface {
     GetInitiator()(IdentitySetable)
     GetMeetingChatEnabled()(*bool)
     GetMeetingChatId()(*string)
+    GetOdataType()(*string)
     SetInitiator(value IdentitySetable)()
     SetMeetingChatEnabled(value *bool)()
     SetMeetingChatId(value *string)()
+    SetOdataType(value *string)()
 }

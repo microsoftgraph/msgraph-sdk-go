@@ -8,7 +8,7 @@ import (
 type BookingAppointmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewBookingAppointmentCollectionResponse instantiates a new BookingAppointmentCollectionResponse and sets the default values.
+// NewBookingAppointmentCollectionResponse instantiates a new bookingAppointmentCollectionResponse and sets the default values.
 func NewBookingAppointmentCollectionResponse()(*BookingAppointmentCollectionResponse) {
     m := &BookingAppointmentCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

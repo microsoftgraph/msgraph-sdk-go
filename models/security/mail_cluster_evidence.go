@@ -7,8 +7,10 @@ import (
 // MailClusterEvidence 
 type MailClusterEvidence struct {
     AlertEvidence
+    // The OdataType property
+    OdataType *string
 }
-// NewMailClusterEvidence instantiates a new MailClusterEvidence and sets the default values.
+// NewMailClusterEvidence instantiates a new mailClusterEvidence and sets the default values.
 func NewMailClusterEvidence()(*MailClusterEvidence) {
     m := &MailClusterEvidence{
         AlertEvidence: *NewAlertEvidence(),

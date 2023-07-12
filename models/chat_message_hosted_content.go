@@ -8,7 +8,7 @@ import (
 type ChatMessageHostedContent struct {
     TeamworkHostedContent
 }
-// NewChatMessageHostedContent instantiates a new ChatMessageHostedContent and sets the default values.
+// NewChatMessageHostedContent instantiates a new chatMessageHostedContent and sets the default values.
 func NewChatMessageHostedContent()(*ChatMessageHostedContent) {
     m := &ChatMessageHostedContent{
         TeamworkHostedContent: *NewTeamworkHostedContent(),

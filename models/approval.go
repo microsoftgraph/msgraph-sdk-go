@@ -7,6 +7,8 @@ import (
 // Approval 
 type Approval struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewApproval instantiates a new approval and sets the default values.
 func NewApproval()(*Approval) {

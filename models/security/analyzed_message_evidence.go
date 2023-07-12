@@ -8,8 +8,10 @@ import (
 // AnalyzedMessageEvidence 
 type AnalyzedMessageEvidence struct {
     AlertEvidence
+    // The OdataType property
+    OdataType *string
 }
-// NewAnalyzedMessageEvidence instantiates a new AnalyzedMessageEvidence and sets the default values.
+// NewAnalyzedMessageEvidence instantiates a new analyzedMessageEvidence and sets the default values.
 func NewAnalyzedMessageEvidence()(*AnalyzedMessageEvidence) {
     m := &AnalyzedMessageEvidence{
         AlertEvidence: *NewAlertEvidence(),

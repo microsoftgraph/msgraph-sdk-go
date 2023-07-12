@@ -9,6 +9,8 @@ import (
 // CaseOperation 
 type CaseOperation struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewCaseOperation instantiates a new caseOperation and sets the default values.
 func NewCaseOperation()(*CaseOperation) {
@@ -35,6 +37,8 @@ func CreateCaseOperationFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
                         return NewEdiscoveryAddToReviewSetOperation(), nil
                     case "#microsoft.graph.security.ediscoveryEstimateOperation":
                         return NewEdiscoveryEstimateOperation(), nil
+                    case "#microsoft.graph.security.ediscoveryExportOperation":
+                        return NewEdiscoveryExportOperation(), nil
                     case "#microsoft.graph.security.ediscoveryHoldOperation":
                         return NewEdiscoveryHoldOperation(), nil
                     case "#microsoft.graph.security.ediscoveryIndexOperation":

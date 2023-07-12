@@ -8,6 +8,8 @@ import (
 // ConditionalAccessPolicy 
 type ConditionalAccessPolicy struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewConditionalAccessPolicy instantiates a new conditionalAccessPolicy and sets the default values.
 func NewConditionalAccessPolicy()(*ConditionalAccessPolicy) {

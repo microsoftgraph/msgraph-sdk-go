@@ -7,6 +7,8 @@ import (
 // EmployeeExperienceUser 
 type EmployeeExperienceUser struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewEmployeeExperienceUser instantiates a new employeeExperienceUser and sets the default values.
 func NewEmployeeExperienceUser()(*EmployeeExperienceUser) {

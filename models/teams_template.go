@@ -7,6 +7,8 @@ import (
 // TeamsTemplate 
 type TeamsTemplate struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewTeamsTemplate instantiates a new teamsTemplate and sets the default values.
 func NewTeamsTemplate()(*TeamsTemplate) {

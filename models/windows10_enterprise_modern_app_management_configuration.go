@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Windows10EnterpriseModernAppManagementConfiguration 
+// Windows10EnterpriseModernAppManagementConfiguration windows10 Enterprise Modern App Management Configuration.
 type Windows10EnterpriseModernAppManagementConfiguration struct {
     DeviceConfiguration
 }
-// NewWindows10EnterpriseModernAppManagementConfiguration instantiates a new Windows10EnterpriseModernAppManagementConfiguration and sets the default values.
+// NewWindows10EnterpriseModernAppManagementConfiguration instantiates a new windows10EnterpriseModernAppManagementConfiguration and sets the default values.
 func NewWindows10EnterpriseModernAppManagementConfiguration()(*Windows10EnterpriseModernAppManagementConfiguration) {
     m := &Windows10EnterpriseModernAppManagementConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),

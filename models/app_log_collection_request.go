@@ -8,6 +8,8 @@ import (
 // AppLogCollectionRequest entity for AppLogCollectionRequest contains all logs values.
 type AppLogCollectionRequest struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewAppLogCollectionRequest instantiates a new appLogCollectionRequest and sets the default values.
 func NewAppLogCollectionRequest()(*AppLogCollectionRequest) {

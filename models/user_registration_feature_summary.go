@@ -10,7 +10,7 @@ type UserRegistrationFeatureSummary struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewUserRegistrationFeatureSummary instantiates a new UserRegistrationFeatureSummary and sets the default values.
+// NewUserRegistrationFeatureSummary instantiates a new userRegistrationFeatureSummary and sets the default values.
 func NewUserRegistrationFeatureSummary()(*UserRegistrationFeatureSummary) {
     m := &UserRegistrationFeatureSummary{
     }
@@ -110,7 +110,7 @@ func (m *UserRegistrationFeatureSummary) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTotalUserCount gets the totalUserCount property value. The totalUserCount property
+// GetTotalUserCount gets the totalUserCount property value. Total number of users accounts, excluding those that are blocked.
 func (m *UserRegistrationFeatureSummary) GetTotalUserCount()(*int64) {
     val, err := m.GetBackingStore().Get("totalUserCount")
     if err != nil {
@@ -121,7 +121,7 @@ func (m *UserRegistrationFeatureSummary) GetTotalUserCount()(*int64) {
     }
     return nil
 }
-// GetUserRegistrationFeatureCounts gets the userRegistrationFeatureCounts property value. The userRegistrationFeatureCounts property
+// GetUserRegistrationFeatureCounts gets the userRegistrationFeatureCounts property value. Number of users registered or capable for multi-factor authentication, self-service password reset, and passwordless authentication.
 func (m *UserRegistrationFeatureSummary) GetUserRegistrationFeatureCounts()([]UserRegistrationFeatureCountable) {
     val, err := m.GetBackingStore().Get("userRegistrationFeatureCounts")
     if err != nil {
@@ -132,7 +132,7 @@ func (m *UserRegistrationFeatureSummary) GetUserRegistrationFeatureCounts()([]Us
     }
     return nil
 }
-// GetUserRoles gets the userRoles property value. The userRoles property
+// GetUserRoles gets the userRoles property value. The role type of the user. Possible values are: all, privilegedAdmin, admin, user, unknownFutureValue.
 func (m *UserRegistrationFeatureSummary) GetUserRoles()(*IncludedUserRoles) {
     val, err := m.GetBackingStore().Get("userRoles")
     if err != nil {
@@ -143,7 +143,7 @@ func (m *UserRegistrationFeatureSummary) GetUserRoles()(*IncludedUserRoles) {
     }
     return nil
 }
-// GetUserTypes gets the userTypes property value. The userTypes property
+// GetUserTypes gets the userTypes property value. User type. Possible values are: all, member, guest, unknownFutureValue.
 func (m *UserRegistrationFeatureSummary) GetUserTypes()(*IncludedUserTypes) {
     val, err := m.GetBackingStore().Get("userTypes")
     if err != nil {
@@ -220,28 +220,28 @@ func (m *UserRegistrationFeatureSummary) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTotalUserCount sets the totalUserCount property value. The totalUserCount property
+// SetTotalUserCount sets the totalUserCount property value. Total number of users accounts, excluding those that are blocked.
 func (m *UserRegistrationFeatureSummary) SetTotalUserCount(value *int64)() {
     err := m.GetBackingStore().Set("totalUserCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserRegistrationFeatureCounts sets the userRegistrationFeatureCounts property value. The userRegistrationFeatureCounts property
+// SetUserRegistrationFeatureCounts sets the userRegistrationFeatureCounts property value. Number of users registered or capable for multi-factor authentication, self-service password reset, and passwordless authentication.
 func (m *UserRegistrationFeatureSummary) SetUserRegistrationFeatureCounts(value []UserRegistrationFeatureCountable)() {
     err := m.GetBackingStore().Set("userRegistrationFeatureCounts", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserRoles sets the userRoles property value. The userRoles property
+// SetUserRoles sets the userRoles property value. The role type of the user. Possible values are: all, privilegedAdmin, admin, user, unknownFutureValue.
 func (m *UserRegistrationFeatureSummary) SetUserRoles(value *IncludedUserRoles)() {
     err := m.GetBackingStore().Set("userRoles", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserTypes sets the userTypes property value. The userTypes property
+// SetUserTypes sets the userTypes property value. User type. Possible values are: all, member, guest, unknownFutureValue.
 func (m *UserRegistrationFeatureSummary) SetUserTypes(value *IncludedUserTypes)() {
     err := m.GetBackingStore().Set("userTypes", value)
     if err != nil {

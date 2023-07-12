@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Win32LobAppProductCodeRule 
+// Win32LobAppProductCodeRule a complex type to store the product code and version rule data for a Win32 LOB app. This rule is not supported as a requirement rule.
 type Win32LobAppProductCodeRule struct {
     Win32LobAppRule
 }
-// NewWin32LobAppProductCodeRule instantiates a new Win32LobAppProductCodeRule and sets the default values.
+// NewWin32LobAppProductCodeRule instantiates a new win32LobAppProductCodeRule and sets the default values.
 func NewWin32LobAppProductCodeRule()(*Win32LobAppProductCodeRule) {
     m := &Win32LobAppProductCodeRule{
         Win32LobAppRule: *NewWin32LobAppRule(),
@@ -24,6 +24,16 @@ func CreateWin32LobAppProductCodeRuleFromDiscriminatorValue(parseNode i878a80d23
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Win32LobAppProductCodeRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Win32LobAppRule.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["productCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -55,6 +65,17 @@ func (m *Win32LobAppProductCodeRule) GetFieldDeserializers()(map[string]func(i87
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Win32LobAppProductCodeRule) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetProductCode gets the productCode property value. The product code of the app.
 func (m *Win32LobAppProductCodeRule) GetProductCode()(*string) {
@@ -96,6 +117,12 @@ func (m *Win32LobAppProductCodeRule) Serialize(writer i878a80d2330e89d26896388a3
         return err
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("productCode", m.GetProductCode())
         if err != nil {
             return err
@@ -115,6 +142,13 @@ func (m *Win32LobAppProductCodeRule) Serialize(writer i878a80d2330e89d26896388a3
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Win32LobAppProductCodeRule) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProductCode sets the productCode property value. The product code of the app.
 func (m *Win32LobAppProductCodeRule) SetProductCode(value *string)() {
@@ -141,9 +175,11 @@ func (m *Win32LobAppProductCodeRule) SetProductVersionOperator(value *Win32LobAp
 type Win32LobAppProductCodeRuleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     Win32LobAppRuleable
+    GetOdataType()(*string)
     GetProductCode()(*string)
     GetProductVersion()(*string)
     GetProductVersionOperator()(*Win32LobAppRuleOperator)
+    SetOdataType(value *string)()
     SetProductCode(value *string)()
     SetProductVersion(value *string)()
     SetProductVersionOperator(value *Win32LobAppRuleOperator)()

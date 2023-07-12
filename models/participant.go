@@ -7,6 +7,8 @@ import (
 // Participant 
 type Participant struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewParticipant instantiates a new participant and sets the default values.
 func NewParticipant()(*Participant) {

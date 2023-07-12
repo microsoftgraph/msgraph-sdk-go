@@ -8,6 +8,8 @@ import (
 // BaseItemVersion 
 type BaseItemVersion struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewBaseItemVersion instantiates a new baseItemVersion and sets the default values.
 func NewBaseItemVersion()(*BaseItemVersion) {

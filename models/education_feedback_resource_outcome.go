@@ -8,7 +8,7 @@ import (
 type EducationFeedbackResourceOutcome struct {
     EducationOutcome
 }
-// NewEducationFeedbackResourceOutcome instantiates a new EducationFeedbackResourceOutcome and sets the default values.
+// NewEducationFeedbackResourceOutcome instantiates a new educationFeedbackResourceOutcome and sets the default values.
 func NewEducationFeedbackResourceOutcome()(*EducationFeedbackResourceOutcome) {
     m := &EducationFeedbackResourceOutcome{
         EducationOutcome: *NewEducationOutcome(),

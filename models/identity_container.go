@@ -7,8 +7,10 @@ import (
 // IdentityContainer 
 type IdentityContainer struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
-// NewIdentityContainer instantiates a new IdentityContainer and sets the default values.
+// NewIdentityContainer instantiates a new identityContainer and sets the default values.
 func NewIdentityContainer()(*IdentityContainer) {
     m := &IdentityContainer{
         Entity: *NewEntity(),

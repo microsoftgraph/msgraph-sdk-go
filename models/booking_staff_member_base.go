@@ -7,6 +7,8 @@ import (
 // BookingStaffMemberBase booking entities that provide a display name.
 type BookingStaffMemberBase struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewBookingStaffMemberBase instantiates a new bookingStaffMemberBase and sets the default values.
 func NewBookingStaffMemberBase()(*BookingStaffMemberBase) {

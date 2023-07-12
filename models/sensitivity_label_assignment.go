@@ -10,7 +10,7 @@ type SensitivityLabelAssignment struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewSensitivityLabelAssignment instantiates a new SensitivityLabelAssignment and sets the default values.
+// NewSensitivityLabelAssignment instantiates a new sensitivityLabelAssignment and sets the default values.
 func NewSensitivityLabelAssignment()(*SensitivityLabelAssignment) {
     m := &SensitivityLabelAssignment{
     }

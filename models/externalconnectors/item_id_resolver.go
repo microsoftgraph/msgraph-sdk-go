@@ -7,8 +7,10 @@ import (
 // ItemIdResolver 
 type ItemIdResolver struct {
     UrlToItemResolverBase
+    // The OdataType property
+    OdataType *string
 }
-// NewItemIdResolver instantiates a new ItemIdResolver and sets the default values.
+// NewItemIdResolver instantiates a new itemIdResolver and sets the default values.
 func NewItemIdResolver()(*ItemIdResolver) {
     m := &ItemIdResolver{
         UrlToItemResolverBase: *NewUrlToItemResolverBase(),

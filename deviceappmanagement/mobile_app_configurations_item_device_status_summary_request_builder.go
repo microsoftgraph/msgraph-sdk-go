@@ -18,7 +18,7 @@ type MobileAppConfigurationsItemDeviceStatusSummaryRequestBuilderDeleteRequestCo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// MobileAppConfigurationsItemDeviceStatusSummaryRequestBuilderGetQueryParameters read properties and relationships of the managedDeviceMobileAppConfigurationDeviceSummary object.
+// MobileAppConfigurationsItemDeviceStatusSummaryRequestBuilderGetQueryParameters app configuration device status summary.
 type MobileAppConfigurationsItemDeviceStatusSummaryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,10 +70,7 @@ func (m *MobileAppConfigurationsItemDeviceStatusSummaryRequestBuilder) Delete(ct
     }
     return nil
 }
-// Get read properties and relationships of the managedDeviceMobileAppConfigurationDeviceSummary object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationdevicesummary-get?view=graph-rest-1.0
+// Get app configuration device status summary.
 func (m *MobileAppConfigurationsItemDeviceStatusSummaryRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppConfigurationsItemDeviceStatusSummaryRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedDeviceMobileAppConfigurationDeviceSummaryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,10 +89,7 @@ func (m *MobileAppConfigurationsItemDeviceStatusSummaryRequestBuilder) Get(ctx c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedDeviceMobileAppConfigurationDeviceSummaryable), nil
 }
-// Patch update the properties of a managedDeviceMobileAppConfigurationDeviceSummary object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationdevicesummary-update?view=graph-rest-1.0
+// Patch update the navigation property deviceStatusSummary in deviceAppManagement
 func (m *MobileAppConfigurationsItemDeviceStatusSummaryRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedDeviceMobileAppConfigurationDeviceSummaryable, requestConfiguration *MobileAppConfigurationsItemDeviceStatusSummaryRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedDeviceMobileAppConfigurationDeviceSummaryable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -126,7 +120,7 @@ func (m *MobileAppConfigurationsItemDeviceStatusSummaryRequestBuilder) ToDeleteR
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read properties and relationships of the managedDeviceMobileAppConfigurationDeviceSummary object.
+// ToGetRequestInformation app configuration device status summary.
 func (m *MobileAppConfigurationsItemDeviceStatusSummaryRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppConfigurationsItemDeviceStatusSummaryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +136,7 @@ func (m *MobileAppConfigurationsItemDeviceStatusSummaryRequestBuilder) ToGetRequ
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a managedDeviceMobileAppConfigurationDeviceSummary object.
+// ToPatchRequestInformation update the navigation property deviceStatusSummary in deviceAppManagement
 func (m *MobileAppConfigurationsItemDeviceStatusSummaryRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedDeviceMobileAppConfigurationDeviceSummaryable, requestConfiguration *MobileAppConfigurationsItemDeviceStatusSummaryRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

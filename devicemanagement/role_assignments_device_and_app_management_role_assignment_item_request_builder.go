@@ -18,7 +18,7 @@ type RoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilderDelete
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// RoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilderGetQueryParameters read properties and relationships of the deviceAndAppManagementRoleAssignment object.
+// RoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilderGetQueryParameters the Role Assignments.
 type RoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,10 +54,7 @@ func NewRoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilder(ra
     urlParams["request-raw-url"] = rawUrl
     return NewRoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a deviceAndAppManagementRoleAssignment.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroleassignment-delete?view=graph-rest-1.0
+// Delete delete navigation property roleAssignments for deviceManagement
 func (m *RoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *RoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,10 +70,7 @@ func (m *RoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilder) 
     }
     return nil
 }
-// Get read properties and relationships of the deviceAndAppManagementRoleAssignment object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroleassignment-get?view=graph-rest-1.0
+// Get the Role Assignments.
 func (m *RoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *RoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceAndAppManagementRoleAssignmentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,10 +89,7 @@ func (m *RoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilder) 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceAndAppManagementRoleAssignmentable), nil
 }
-// Patch update the properties of a deviceAndAppManagementRoleAssignment object.
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroleassignment-update?view=graph-rest-1.0
+// Patch update the navigation property roleAssignments in deviceManagement
 func (m *RoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceAndAppManagementRoleAssignmentable, requestConfiguration *RoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceAndAppManagementRoleAssignmentable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -121,7 +112,7 @@ func (m *RoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilder) 
 func (m *RoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilder) RoleDefinition()(*RoleAssignmentsItemRoleDefinitionRequestBuilder) {
     return NewRoleAssignmentsItemRoleDefinitionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation deletes a deviceAndAppManagementRoleAssignment.
+// ToDeleteRequestInformation delete navigation property roleAssignments for deviceManagement
 func (m *RoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *RoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -133,7 +124,7 @@ func (m *RoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilder) 
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read properties and relationships of the deviceAndAppManagementRoleAssignment object.
+// ToGetRequestInformation the Role Assignments.
 func (m *RoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -149,7 +140,7 @@ func (m *RoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilder) 
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a deviceAndAppManagementRoleAssignment object.
+// ToPatchRequestInformation update the navigation property roleAssignments in deviceManagement
 func (m *RoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceAndAppManagementRoleAssignmentable, requestConfiguration *RoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

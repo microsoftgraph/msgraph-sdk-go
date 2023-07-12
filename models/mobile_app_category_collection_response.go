@@ -8,7 +8,7 @@ import (
 type MobileAppCategoryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewMobileAppCategoryCollectionResponse instantiates a new MobileAppCategoryCollectionResponse and sets the default values.
+// NewMobileAppCategoryCollectionResponse instantiates a new mobileAppCategoryCollectionResponse and sets the default values.
 func NewMobileAppCategoryCollectionResponse()(*MobileAppCategoryCollectionResponse) {
     m := &MobileAppCategoryCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

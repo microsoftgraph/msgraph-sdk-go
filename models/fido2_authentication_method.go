@@ -9,7 +9,7 @@ import (
 type Fido2AuthenticationMethod struct {
     AuthenticationMethod
 }
-// NewFido2AuthenticationMethod instantiates a new Fido2AuthenticationMethod and sets the default values.
+// NewFido2AuthenticationMethod instantiates a new fido2AuthenticationMethod and sets the default values.
 func NewFido2AuthenticationMethod()(*Fido2AuthenticationMethod) {
     m := &Fido2AuthenticationMethod{
         AuthenticationMethod: *NewAuthenticationMethod(),

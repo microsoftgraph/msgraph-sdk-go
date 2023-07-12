@@ -8,7 +8,7 @@ import (
 type EdiscoveryPurgeDataOperation struct {
     CaseOperation
 }
-// NewEdiscoveryPurgeDataOperation instantiates a new EdiscoveryPurgeDataOperation and sets the default values.
+// NewEdiscoveryPurgeDataOperation instantiates a new ediscoveryPurgeDataOperation and sets the default values.
 func NewEdiscoveryPurgeDataOperation()(*EdiscoveryPurgeDataOperation) {
     m := &EdiscoveryPurgeDataOperation{
         CaseOperation: *NewCaseOperation(),

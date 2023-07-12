@@ -8,7 +8,7 @@ import (
 type AccessReviewQueryScope struct {
     AccessReviewScope
 }
-// NewAccessReviewQueryScope instantiates a new AccessReviewQueryScope and sets the default values.
+// NewAccessReviewQueryScope instantiates a new accessReviewQueryScope and sets the default values.
 func NewAccessReviewQueryScope()(*AccessReviewQueryScope) {
     m := &AccessReviewQueryScope{
         AccessReviewScope: *NewAccessReviewScope(),
@@ -42,6 +42,16 @@ func CreateAccessReviewQueryScopeFromDiscriminatorValue(parseNode i878a80d2330e8
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessReviewQueryScope) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AccessReviewScope.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["query"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -73,6 +83,17 @@ func (m *AccessReviewQueryScope) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AccessReviewQueryScope) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetQuery gets the query property value. The query representing what will be reviewed in an access review.
 func (m *AccessReviewQueryScope) GetQuery()(*string) {
@@ -114,6 +135,12 @@ func (m *AccessReviewQueryScope) Serialize(writer i878a80d2330e89d26896388a3f487
         return err
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("query", m.GetQuery())
         if err != nil {
             return err
@@ -132,6 +159,13 @@ func (m *AccessReviewQueryScope) Serialize(writer i878a80d2330e89d26896388a3f487
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AccessReviewQueryScope) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetQuery sets the query property value. The query representing what will be reviewed in an access review.
 func (m *AccessReviewQueryScope) SetQuery(value *string)() {
@@ -158,9 +192,11 @@ func (m *AccessReviewQueryScope) SetQueryType(value *string)() {
 type AccessReviewQueryScopeable interface {
     AccessReviewScopeable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetQuery()(*string)
     GetQueryRoot()(*string)
     GetQueryType()(*string)
+    SetOdataType(value *string)()
     SetQuery(value *string)()
     SetQueryRoot(value *string)()
     SetQueryType(value *string)()

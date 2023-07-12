@@ -7,8 +7,10 @@ import (
 // EducationFileResource 
 type EducationFileResource struct {
     EducationResource
+    // The OdataType property
+    OdataType *string
 }
-// NewEducationFileResource instantiates a new EducationFileResource and sets the default values.
+// NewEducationFileResource instantiates a new educationFileResource and sets the default values.
 func NewEducationFileResource()(*EducationFileResource) {
     m := &EducationFileResource{
         EducationResource: *NewEducationResource(),

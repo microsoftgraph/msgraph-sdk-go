@@ -8,7 +8,7 @@ import (
 type ClaimsMappingPolicy struct {
     StsPolicy
 }
-// NewClaimsMappingPolicy instantiates a new ClaimsMappingPolicy and sets the default values.
+// NewClaimsMappingPolicy instantiates a new claimsMappingPolicy and sets the default values.
 func NewClaimsMappingPolicy()(*ClaimsMappingPolicy) {
     m := &ClaimsMappingPolicy{
         StsPolicy: *NewStsPolicy(),

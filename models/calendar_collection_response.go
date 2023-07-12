@@ -8,7 +8,7 @@ import (
 type CalendarCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCalendarCollectionResponse instantiates a new CalendarCollectionResponse and sets the default values.
+// NewCalendarCollectionResponse instantiates a new calendarCollectionResponse and sets the default values.
 func NewCalendarCollectionResponse()(*CalendarCollectionResponse) {
     m := &CalendarCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -8,7 +8,7 @@ import (
 type ManagedAppPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewManagedAppPolicyCollectionResponse instantiates a new ManagedAppPolicyCollectionResponse and sets the default values.
+// NewManagedAppPolicyCollectionResponse instantiates a new managedAppPolicyCollectionResponse and sets the default values.
 func NewManagedAppPolicyCollectionResponse()(*ManagedAppPolicyCollectionResponse) {
     m := &ManagedAppPolicyCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

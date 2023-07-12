@@ -8,6 +8,8 @@ import (
 // DeviceComplianceUserOverview 
 type DeviceComplianceUserOverview struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDeviceComplianceUserOverview instantiates a new deviceComplianceUserOverview and sets the default values.
 func NewDeviceComplianceUserOverview()(*DeviceComplianceUserOverview) {

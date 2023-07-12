@@ -30,10 +30,7 @@ func NewDeviceEnrollmentConfigurationsItemAssignRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceEnrollmentConfigurationsItemAssignRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post not yet documented
-// [Find more info here]
-// 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-onboarding-deviceenrollmentconfiguration-assign?view=graph-rest-1.0
+// Post invoke action assign
 func (m *DeviceEnrollmentConfigurationsItemAssignRequestBuilder) Post(ctx context.Context, body DeviceEnrollmentConfigurationsItemAssignPostRequestBodyable, requestConfiguration *DeviceEnrollmentConfigurationsItemAssignRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +46,7 @@ func (m *DeviceEnrollmentConfigurationsItemAssignRequestBuilder) Post(ctx contex
     }
     return nil
 }
-// ToPostRequestInformation not yet documented
+// ToPostRequestInformation invoke action assign
 func (m *DeviceEnrollmentConfigurationsItemAssignRequestBuilder) ToPostRequestInformation(ctx context.Context, body DeviceEnrollmentConfigurationsItemAssignPostRequestBodyable, requestConfiguration *DeviceEnrollmentConfigurationsItemAssignRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

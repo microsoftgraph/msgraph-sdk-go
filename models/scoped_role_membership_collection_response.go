@@ -8,7 +8,7 @@ import (
 type ScopedRoleMembershipCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewScopedRoleMembershipCollectionResponse instantiates a new ScopedRoleMembershipCollectionResponse and sets the default values.
+// NewScopedRoleMembershipCollectionResponse instantiates a new scopedRoleMembershipCollectionResponse and sets the default values.
 func NewScopedRoleMembershipCollectionResponse()(*ScopedRoleMembershipCollectionResponse) {
     m := &ScopedRoleMembershipCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

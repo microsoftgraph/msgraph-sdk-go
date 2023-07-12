@@ -7,6 +7,8 @@ import (
 // DetectedApp a managed or unmanaged app that is installed on a managed device. Unmanaged apps will only appear for devices marked as corporate owned.
 type DetectedApp struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewDetectedApp instantiates a new detectedApp and sets the default values.
 func NewDetectedApp()(*DetectedApp) {

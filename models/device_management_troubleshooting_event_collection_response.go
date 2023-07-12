@@ -8,7 +8,7 @@ import (
 type DeviceManagementTroubleshootingEventCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDeviceManagementTroubleshootingEventCollectionResponse instantiates a new DeviceManagementTroubleshootingEventCollectionResponse and sets the default values.
+// NewDeviceManagementTroubleshootingEventCollectionResponse instantiates a new deviceManagementTroubleshootingEventCollectionResponse and sets the default values.
 func NewDeviceManagementTroubleshootingEventCollectionResponse()(*DeviceManagementTroubleshootingEventCollectionResponse) {
     m := &DeviceManagementTroubleshootingEventCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -8,7 +8,7 @@ import (
 type OnPremisesDirectorySynchronizationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewOnPremisesDirectorySynchronizationCollectionResponse instantiates a new OnPremisesDirectorySynchronizationCollectionResponse and sets the default values.
+// NewOnPremisesDirectorySynchronizationCollectionResponse instantiates a new onPremisesDirectorySynchronizationCollectionResponse and sets the default values.
 func NewOnPremisesDirectorySynchronizationCollectionResponse()(*OnPremisesDirectorySynchronizationCollectionResponse) {
     m := &OnPremisesDirectorySynchronizationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

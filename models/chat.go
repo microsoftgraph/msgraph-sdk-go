@@ -8,6 +8,8 @@ import (
 // Chat 
 type Chat struct {
     Entity
+    // The OdataType property
+    OdataType *string
 }
 // NewChat instantiates a new chat and sets the default values.
 func NewChat()(*Chat) {

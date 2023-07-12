@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OmaSettingStringXml 
+// OmaSettingStringXml oMA Settings StringXML definition.
 type OmaSettingStringXml struct {
     OmaSetting
 }
-// NewOmaSettingStringXml instantiates a new OmaSettingStringXml and sets the default values.
+// NewOmaSettingStringXml instantiates a new omaSettingStringXml and sets the default values.
 func NewOmaSettingStringXml()(*OmaSettingStringXml) {
     m := &OmaSettingStringXml{
         OmaSetting: *NewOmaSetting(),
@@ -34,6 +34,16 @@ func (m *OmaSettingStringXml) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
@@ -49,6 +59,17 @@ func (m *OmaSettingStringXml) GetFieldDeserializers()(map[string]func(i878a80d23
 // GetFileName gets the fileName property value. File name associated with the Value property (.xml).
 func (m *OmaSettingStringXml) GetFileName()(*string) {
     val, err := m.GetBackingStore().Get("fileName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *OmaSettingStringXml) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -81,6 +102,12 @@ func (m *OmaSettingStringXml) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteByteArrayValue("value", m.GetValue())
         if err != nil {
             return err
@@ -91,6 +118,13 @@ func (m *OmaSettingStringXml) Serialize(writer i878a80d2330e89d26896388a3f487eef
 // SetFileName sets the fileName property value. File name associated with the Value property (.xml).
 func (m *OmaSettingStringXml) SetFileName(value *string)() {
     err := m.GetBackingStore().Set("fileName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *OmaSettingStringXml) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -107,7 +141,9 @@ type OmaSettingStringXmlable interface {
     OmaSettingable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetFileName()(*string)
+    GetOdataType()(*string)
     GetValue()([]byte)
     SetFileName(value *string)()
+    SetOdataType(value *string)()
     SetValue(value []byte)()
 }
