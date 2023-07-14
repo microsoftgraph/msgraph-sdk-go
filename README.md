@@ -143,7 +143,7 @@ func printOdataError(err error) {
         switch err.(type) {
         case *odataerrors.ODataError:
                 typed := err.(*odataerrors.ODataError)
-                fmt.Printf("error:", typed.Error())
+                fmt.Printf("error: %s", typed.Error())
                 if terr := typed.GetError(); terr != nil {
                         fmt.Printf("code: %s", *terr.GetCode())
                         fmt.Printf("msg: %s", *terr.GetMessage())
