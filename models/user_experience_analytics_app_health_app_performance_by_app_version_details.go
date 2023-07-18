@@ -7,8 +7,6 @@ import (
 // UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails the user experience analytics application performance entity contains application performance by application version details.
 type UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails instantiates a new userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails and sets the default values.
 func NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails()(*UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) {
@@ -170,6 +168,16 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetF
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsLatestUsedVersion gets the isLatestUsedVersion property value. When TRUE, indicates the version of application is the latest version for that application that is in use. When FALSE, indicates the version is not the latest version. FALSE by default. Supports: $select, $OrderBy.
@@ -191,6 +199,17 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetI
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -244,6 +263,12 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) Seri
     }
     {
         err = writer.WriteBoolValue("isMostUsedVersion", m.GetIsMostUsedVersion())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -306,6 +331,13 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) SetI
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsable 
 type UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsable interface {
     Entityable
@@ -318,6 +350,7 @@ type UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsable inter
     GetDeviceCountWithCrashes()(*int32)
     GetIsLatestUsedVersion()(*bool)
     GetIsMostUsedVersion()(*bool)
+    GetOdataType()(*string)
     SetAppCrashCount(value *int32)()
     SetAppDisplayName(value *string)()
     SetAppName(value *string)()
@@ -326,4 +359,5 @@ type UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsable inter
     SetDeviceCountWithCrashes(value *int32)()
     SetIsLatestUsedVersion(value *bool)()
     SetIsMostUsedVersion(value *bool)()
+    SetOdataType(value *string)()
 }

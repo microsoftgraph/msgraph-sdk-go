@@ -44,6 +44,16 @@ func (m *UnifiedRoleManagementPolicyExpirationRule) GetFieldDeserializers()(map[
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsExpirationRequired gets the isExpirationRequired property value. Indicates whether expiration is required or if it's a permanently active assignment or eligibility.
@@ -68,6 +78,17 @@ func (m *UnifiedRoleManagementPolicyExpirationRule) GetMaximumDuration()(*i878a8
     }
     return nil
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UnifiedRoleManagementPolicyExpirationRule) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *UnifiedRoleManagementPolicyExpirationRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.UnifiedRoleManagementPolicyRule.Serialize(writer)
@@ -82,6 +103,12 @@ func (m *UnifiedRoleManagementPolicyExpirationRule) Serialize(writer i878a80d233
     }
     {
         err = writer.WriteISODurationValue("maximumDuration", m.GetMaximumDuration())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -102,12 +129,21 @@ func (m *UnifiedRoleManagementPolicyExpirationRule) SetMaximumDuration(value *i8
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UnifiedRoleManagementPolicyExpirationRule) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // UnifiedRoleManagementPolicyExpirationRuleable 
 type UnifiedRoleManagementPolicyExpirationRuleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     UnifiedRoleManagementPolicyRuleable
     GetIsExpirationRequired()(*bool)
     GetMaximumDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
+    GetOdataType()(*string)
     SetIsExpirationRequired(value *bool)()
     SetMaximumDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
+    SetOdataType(value *string)()
 }

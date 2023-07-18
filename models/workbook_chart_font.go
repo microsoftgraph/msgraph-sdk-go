@@ -7,8 +7,6 @@ import (
 // WorkbookChartFont 
 type WorkbookChartFont struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewWorkbookChartFont instantiates a new workbookChartFont and sets the default values.
 func NewWorkbookChartFont()(*WorkbookChartFont) {
@@ -86,6 +84,16 @@ func (m *WorkbookChartFont) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["size"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
@@ -122,6 +130,17 @@ func (m *WorkbookChartFont) GetItalic()(*bool) {
 // GetName gets the name property value. Font name (e.g. 'Calibri')
 func (m *WorkbookChartFont) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WorkbookChartFont) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -183,6 +202,12 @@ func (m *WorkbookChartFont) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteFloat64Value("size", m.GetSize())
         if err != nil {
             return err
@@ -224,6 +249,13 @@ func (m *WorkbookChartFont) SetName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WorkbookChartFont) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSize sets the size property value. Size of the font (e.g. 11)
 func (m *WorkbookChartFont) SetSize(value *float64)() {
     err := m.GetBackingStore().Set("size", value)
@@ -246,12 +278,14 @@ type WorkbookChartFontable interface {
     GetColor()(*string)
     GetItalic()(*bool)
     GetName()(*string)
+    GetOdataType()(*string)
     GetSize()(*float64)
     GetUnderline()(*string)
     SetBold(value *bool)()
     SetColor(value *string)()
     SetItalic(value *bool)()
     SetName(value *string)()
+    SetOdataType(value *string)()
     SetSize(value *float64)()
     SetUnderline(value *string)()
 }

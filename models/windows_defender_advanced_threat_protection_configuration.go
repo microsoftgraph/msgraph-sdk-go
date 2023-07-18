@@ -7,6 +7,8 @@ import (
 // WindowsDefenderAdvancedThreatProtectionConfiguration windows Defender AdvancedThreatProtection Configuration.
 type WindowsDefenderAdvancedThreatProtectionConfiguration struct {
     DeviceConfiguration
+    // The OdataType property
+    OdataType *string
 }
 // NewWindowsDefenderAdvancedThreatProtectionConfiguration instantiates a new windowsDefenderAdvancedThreatProtectionConfiguration and sets the default values.
 func NewWindowsDefenderAdvancedThreatProtectionConfiguration()(*WindowsDefenderAdvancedThreatProtectionConfiguration) {

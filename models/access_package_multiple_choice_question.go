@@ -7,6 +7,8 @@ import (
 // AccessPackageMultipleChoiceQuestion 
 type AccessPackageMultipleChoiceQuestion struct {
     AccessPackageQuestion
+    // The OdataType property
+    OdataType *string
 }
 // NewAccessPackageMultipleChoiceQuestion instantiates a new accessPackageMultipleChoiceQuestion and sets the default values.
 func NewAccessPackageMultipleChoiceQuestion()(*AccessPackageMultipleChoiceQuestion) {

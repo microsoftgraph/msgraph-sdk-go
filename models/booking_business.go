@@ -7,8 +7,6 @@ import (
 // BookingBusiness represents a Microsot Bookings Business.
 type BookingBusiness struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewBookingBusiness instantiates a new bookingBusiness and sets the default values.
 func NewBookingBusiness()(*BookingBusiness) {
@@ -284,6 +282,16 @@ func (m *BookingBusiness) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["phone"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -372,6 +380,17 @@ func (m *BookingBusiness) GetIsPublished()(*bool) {
 // GetLanguageTag gets the languageTag property value. The language of the self-service booking page.
 func (m *BookingBusiness) GetLanguageTag()(*string) {
     val, err := m.GetBackingStore().Get("languageTag")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *BookingBusiness) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -549,6 +568,12 @@ func (m *BookingBusiness) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("phone", m.GetPhone())
         if err != nil {
             return err
@@ -676,6 +701,13 @@ func (m *BookingBusiness) SetLanguageTag(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *BookingBusiness) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPhone sets the phone property value. The telephone number for the business. The phone property, together with address and webSiteUrl, appear in the footer of a business scheduling page.
 func (m *BookingBusiness) SetPhone(value *string)() {
     err := m.GetBackingStore().Set("phone", value)
@@ -734,6 +766,7 @@ type BookingBusinessable interface {
     GetEmail()(*string)
     GetIsPublished()(*bool)
     GetLanguageTag()(*string)
+    GetOdataType()(*string)
     GetPhone()(*string)
     GetPublicUrl()(*string)
     GetSchedulingPolicy()(BookingSchedulingPolicyable)
@@ -752,6 +785,7 @@ type BookingBusinessable interface {
     SetEmail(value *string)()
     SetIsPublished(value *bool)()
     SetLanguageTag(value *string)()
+    SetOdataType(value *string)()
     SetPhone(value *string)()
     SetPublicUrl(value *string)()
     SetSchedulingPolicy(value BookingSchedulingPolicyable)()

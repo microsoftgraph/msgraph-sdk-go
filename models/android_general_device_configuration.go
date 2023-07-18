@@ -7,6 +7,8 @@ import (
 // AndroidGeneralDeviceConfiguration this topic provides descriptions of the declared methods, properties and relationships exposed by the androidGeneralDeviceConfiguration resource.
 type AndroidGeneralDeviceConfiguration struct {
     DeviceConfiguration
+    // The OdataType property
+    OdataType *string
 }
 // NewAndroidGeneralDeviceConfiguration instantiates a new androidGeneralDeviceConfiguration and sets the default values.
 func NewAndroidGeneralDeviceConfiguration()(*AndroidGeneralDeviceConfiguration) {

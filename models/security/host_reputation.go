@@ -8,8 +8,6 @@ import (
 // HostReputation 
 type HostReputation struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewHostReputation instantiates a new hostReputation and sets the default values.
 func NewHostReputation()(*HostReputation) {
@@ -46,6 +44,16 @@ func (m *HostReputation) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["rules"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateHostReputationRuleFromDiscriminatorValue)
         if err != nil {
@@ -73,6 +81,17 @@ func (m *HostReputation) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *HostReputation) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRules gets the rules property value. A collection of rules that have been used to calculate the classification and score.
 func (m *HostReputation) GetRules()([]HostReputationRuleable) {
@@ -109,6 +128,12 @@ func (m *HostReputation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRules() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRules()))
         for i, v := range m.GetRules() {
@@ -136,6 +161,13 @@ func (m *HostReputation) SetClassification(value *HostReputationClassification)(
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *HostReputation) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRules sets the rules property value. A collection of rules that have been used to calculate the classification and score.
 func (m *HostReputation) SetRules(value []HostReputationRuleable)() {
     err := m.GetBackingStore().Set("rules", value)
@@ -155,9 +187,11 @@ type HostReputationable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetClassification()(*HostReputationClassification)
+    GetOdataType()(*string)
     GetRules()([]HostReputationRuleable)
     GetScore()(*int32)
     SetClassification(value *HostReputationClassification)()
+    SetOdataType(value *string)()
     SetRules(value []HostReputationRuleable)()
     SetScore(value *int32)()
 }

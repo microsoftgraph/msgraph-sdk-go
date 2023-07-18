@@ -109,6 +109,16 @@ func (m *MicrosoftAuthenticatorAuthenticationMethod) GetFieldDeserializers()(map
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["phoneAppVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -120,6 +130,17 @@ func (m *MicrosoftAuthenticatorAuthenticationMethod) GetFieldDeserializers()(map
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MicrosoftAuthenticatorAuthenticationMethod) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPhoneAppVersion gets the phoneAppVersion property value. Numerical version of this instance of the Authenticator app.
 func (m *MicrosoftAuthenticatorAuthenticationMethod) GetPhoneAppVersion()(*string) {
@@ -163,6 +184,12 @@ func (m *MicrosoftAuthenticatorAuthenticationMethod) Serialize(writer i878a80d23
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("phoneAppVersion", m.GetPhoneAppVersion())
         if err != nil {
             return err
@@ -198,6 +225,13 @@ func (m *MicrosoftAuthenticatorAuthenticationMethod) SetDisplayName(value *strin
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MicrosoftAuthenticatorAuthenticationMethod) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPhoneAppVersion sets the phoneAppVersion property value. Numerical version of this instance of the Authenticator app.
 func (m *MicrosoftAuthenticatorAuthenticationMethod) SetPhoneAppVersion(value *string)() {
     err := m.GetBackingStore().Set("phoneAppVersion", value)
@@ -213,10 +247,12 @@ type MicrosoftAuthenticatorAuthenticationMethodable interface {
     GetDevice()(Deviceable)
     GetDeviceTag()(*string)
     GetDisplayName()(*string)
+    GetOdataType()(*string)
     GetPhoneAppVersion()(*string)
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDevice(value Deviceable)()
     SetDeviceTag(value *string)()
     SetDisplayName(value *string)()
+    SetOdataType(value *string)()
     SetPhoneAppVersion(value *string)()
 }

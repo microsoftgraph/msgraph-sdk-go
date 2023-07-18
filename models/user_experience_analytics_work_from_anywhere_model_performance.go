@@ -7,8 +7,6 @@ import (
 // UserExperienceAnalyticsWorkFromAnywhereModelPerformance the user experience analytics work from anywhere model performance.
 type UserExperienceAnalyticsWorkFromAnywhereModelPerformance struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewUserExperienceAnalyticsWorkFromAnywhereModelPerformance instantiates a new userExperienceAnalyticsWorkFromAnywhereModelPerformance and sets the default values.
 func NewUserExperienceAnalyticsWorkFromAnywhereModelPerformance()(*UserExperienceAnalyticsWorkFromAnywhereModelPerformance) {
@@ -127,6 +125,16 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetFieldDeseri
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["windowsScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
@@ -190,6 +198,17 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetModelDevice
     }
     if val != nil {
         return val.(*int32)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -265,6 +284,12 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) Serialize(writ
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteFloat64Value("windowsScore", m.GetWindowsScore())
         if err != nil {
             return err
@@ -327,6 +352,13 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) SetModelDevice
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetWindowsScore sets the windowsScore property value. The window score of the device model. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) SetWindowsScore(value *float64)() {
     err := m.GetBackingStore().Set("windowsScore", value)
@@ -352,6 +384,7 @@ type UserExperienceAnalyticsWorkFromAnywhereModelPerformanceable interface {
     GetManufacturer()(*string)
     GetModel()(*string)
     GetModelDeviceCount()(*int32)
+    GetOdataType()(*string)
     GetWindowsScore()(*float64)
     GetWorkFromAnywhereScore()(*float64)
     SetCloudIdentityScore(value *float64)()
@@ -361,6 +394,7 @@ type UserExperienceAnalyticsWorkFromAnywhereModelPerformanceable interface {
     SetManufacturer(value *string)()
     SetModel(value *string)()
     SetModelDeviceCount(value *int32)()
+    SetOdataType(value *string)()
     SetWindowsScore(value *float64)()
     SetWorkFromAnywhereScore(value *float64)()
 }

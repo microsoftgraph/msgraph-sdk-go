@@ -8,8 +8,6 @@ import (
 // SharepointSettings 
 type SharepointSettings struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewSharepointSettings instantiates a new sharepointSettings and sets the default values.
 func NewSharepointSettings()(*SharepointSettings) {
@@ -297,6 +295,16 @@ func (m *SharepointSettings) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["personalSiteDefaultStorageLimitInMB"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
@@ -578,6 +586,17 @@ func (m *SharepointSettings) GetIsUnmanagedSyncAppForTenantRestricted()(*bool) {
     }
     return nil
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SharepointSettings) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetPersonalSiteDefaultStorageLimitInMB gets the personalSiteDefaultStorageLimitInMB property value. The default OneDrive storage limit for all new and existing users who are assigned a qualifying license. Measured in megabytes (MB).
 func (m *SharepointSettings) GetPersonalSiteDefaultStorageLimitInMB()(*int64) {
     val, err := m.GetBackingStore().Get("personalSiteDefaultStorageLimitInMB")
@@ -800,6 +819,12 @@ func (m *SharepointSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt64Value("personalSiteDefaultStorageLimitInMB", m.GetPersonalSiteDefaultStorageLimitInMB())
         if err != nil {
             return err
@@ -998,6 +1023,13 @@ func (m *SharepointSettings) SetIsUnmanagedSyncAppForTenantRestricted(value *boo
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SharepointSettings) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPersonalSiteDefaultStorageLimitInMB sets the personalSiteDefaultStorageLimitInMB property value. The default OneDrive storage limit for all new and existing users who are assigned a qualifying license. Measured in megabytes (MB).
 func (m *SharepointSettings) SetPersonalSiteDefaultStorageLimitInMB(value *int64)() {
     err := m.GetBackingStore().Set("personalSiteDefaultStorageLimitInMB", value)
@@ -1079,6 +1111,7 @@ type SharepointSettingsable interface {
     GetIsSitesStorageLimitAutomatic()(*bool)
     GetIsSyncButtonHiddenOnPersonalSite()(*bool)
     GetIsUnmanagedSyncAppForTenantRestricted()(*bool)
+    GetOdataType()(*string)
     GetPersonalSiteDefaultStorageLimitInMB()(*int64)
     GetSharingAllowedDomainList()([]string)
     GetSharingBlockedDomainList()([]string)
@@ -1108,6 +1141,7 @@ type SharepointSettingsable interface {
     SetIsSitesStorageLimitAutomatic(value *bool)()
     SetIsSyncButtonHiddenOnPersonalSite(value *bool)()
     SetIsUnmanagedSyncAppForTenantRestricted(value *bool)()
+    SetOdataType(value *string)()
     SetPersonalSiteDefaultStorageLimitInMB(value *int64)()
     SetSharingAllowedDomainList(value []string)()
     SetSharingBlockedDomainList(value []string)()

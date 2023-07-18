@@ -8,8 +8,6 @@ import (
 // ProvisioningObjectSummary 
 type ProvisioningObjectSummary struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewProvisioningObjectSummary instantiates a new provisioningObjectSummary and sets the default values.
 func NewProvisioningObjectSummary()(*ProvisioningObjectSummary) {
@@ -145,6 +143,16 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["provisioningAction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseProvisioningAction)
         if err != nil {
@@ -273,6 +281,17 @@ func (m *ProvisioningObjectSummary) GetModifiedProperties()([]ModifiedPropertyab
     }
     if val != nil {
         return val.([]ModifiedPropertyable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ProvisioningObjectSummary) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -429,6 +448,12 @@ func (m *ProvisioningObjectSummary) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetProvisioningAction() != nil {
         cast := (*m.GetProvisioningAction()).String()
         err = writer.WriteStringValue("provisioningAction", &cast)
@@ -541,6 +566,13 @@ func (m *ProvisioningObjectSummary) SetModifiedProperties(value []ModifiedProper
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ProvisioningObjectSummary) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetProvisioningAction sets the provisioningAction property value. Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Azure AD activity list.
 func (m *ProvisioningObjectSummary) SetProvisioningAction(value *ProvisioningAction)() {
     err := m.GetBackingStore().Set("provisioningAction", value)
@@ -615,6 +647,7 @@ type ProvisioningObjectSummaryable interface {
     GetInitiatedBy()(Initiatorable)
     GetJobId()(*string)
     GetModifiedProperties()([]ModifiedPropertyable)
+    GetOdataType()(*string)
     GetProvisioningAction()(*ProvisioningAction)
     GetProvisioningStatusInfo()(ProvisioningStatusInfoable)
     GetProvisioningSteps()([]ProvisioningStepable)
@@ -631,6 +664,7 @@ type ProvisioningObjectSummaryable interface {
     SetInitiatedBy(value Initiatorable)()
     SetJobId(value *string)()
     SetModifiedProperties(value []ModifiedPropertyable)()
+    SetOdataType(value *string)()
     SetProvisioningAction(value *ProvisioningAction)()
     SetProvisioningStatusInfo(value ProvisioningStatusInfoable)()
     SetProvisioningSteps(value []ProvisioningStepable)()

@@ -7,8 +7,6 @@ import (
 // UnifiedRoleDefinition 
 type UnifiedRoleDefinition struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewUnifiedRoleDefinition instantiates a new unifiedRoleDefinition and sets the default values.
 func NewUnifiedRoleDefinition()(*UnifiedRoleDefinition) {
@@ -102,6 +100,16 @@ func (m *UnifiedRoleDefinition) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["resourceScopes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -186,6 +194,17 @@ func (m *UnifiedRoleDefinition) GetIsEnabled()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UnifiedRoleDefinition) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -275,6 +294,12 @@ func (m *UnifiedRoleDefinition) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetResourceScopes() != nil {
         err = writer.WriteCollectionOfStringValues("resourceScopes", m.GetResourceScopes())
         if err != nil {
@@ -342,6 +367,13 @@ func (m *UnifiedRoleDefinition) SetIsEnabled(value *bool)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UnifiedRoleDefinition) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetResourceScopes sets the resourceScopes property value. List of the scopes or permissions the role definition applies to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment.
 func (m *UnifiedRoleDefinition) SetResourceScopes(value []string)() {
     err := m.GetBackingStore().Set("resourceScopes", value)
@@ -379,6 +411,7 @@ type UnifiedRoleDefinitionable interface {
     GetInheritsPermissionsFrom()([]UnifiedRoleDefinitionable)
     GetIsBuiltIn()(*bool)
     GetIsEnabled()(*bool)
+    GetOdataType()(*string)
     GetResourceScopes()([]string)
     GetRolePermissions()([]UnifiedRolePermissionable)
     GetTemplateId()(*string)
@@ -388,6 +421,7 @@ type UnifiedRoleDefinitionable interface {
     SetInheritsPermissionsFrom(value []UnifiedRoleDefinitionable)()
     SetIsBuiltIn(value *bool)()
     SetIsEnabled(value *bool)()
+    SetOdataType(value *string)()
     SetResourceScopes(value []string)()
     SetRolePermissions(value []UnifiedRolePermissionable)()
     SetTemplateId(value *string)()

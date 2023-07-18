@@ -7,8 +7,6 @@ import (
 // MessageRule 
 type MessageRule struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewMessageRule instantiates a new messageRule and sets the default values.
 func NewMessageRule()(*MessageRule) {
@@ -138,6 +136,16 @@ func (m *MessageRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["sequence"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -180,6 +188,17 @@ func (m *MessageRule) GetIsReadOnly()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MessageRule) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -243,6 +262,12 @@ func (m *MessageRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("sequence", m.GetSequence())
         if err != nil {
             return err
@@ -299,6 +324,13 @@ func (m *MessageRule) SetIsReadOnly(value *bool)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MessageRule) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSequence sets the sequence property value. Indicates the order in which the rule is executed, among other rules.
 func (m *MessageRule) SetSequence(value *int32)() {
     err := m.GetBackingStore().Set("sequence", value)
@@ -317,6 +349,7 @@ type MessageRuleable interface {
     GetHasError()(*bool)
     GetIsEnabled()(*bool)
     GetIsReadOnly()(*bool)
+    GetOdataType()(*string)
     GetSequence()(*int32)
     SetActions(value MessageRuleActionsable)()
     SetConditions(value MessageRulePredicatesable)()
@@ -325,5 +358,6 @@ type MessageRuleable interface {
     SetHasError(value *bool)()
     SetIsEnabled(value *bool)()
     SetIsReadOnly(value *bool)()
+    SetOdataType(value *string)()
     SetSequence(value *int32)()
 }

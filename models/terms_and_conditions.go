@@ -8,8 +8,6 @@ import (
 // TermsAndConditions a termsAndConditions entity represents the metadata and contents of a given Terms and Conditions (T&C) policy. T&C policies’ contents are presented to users upon their first attempt to enroll into Intune and subsequently upon edits where an administrator has required re-acceptance. They enable administrators to communicate the provisions to which a user must agree in order to have devices enrolled into Intune.
 type TermsAndConditions struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewTermsAndConditions instantiates a new termsAndConditions and sets the default values.
 func NewTermsAndConditions()(*TermsAndConditions) {
@@ -194,6 +192,16 @@ func (m *TermsAndConditions) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["title"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -224,6 +232,17 @@ func (m *TermsAndConditions) GetLastModifiedDateTime()(*i336074805fc853987abe6f7
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TermsAndConditions) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -316,6 +335,12 @@ func (m *TermsAndConditions) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("title", m.GetTitle())
         if err != nil {
             return err
@@ -385,6 +410,13 @@ func (m *TermsAndConditions) SetLastModifiedDateTime(value *i336074805fc853987ab
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TermsAndConditions) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTitle sets the title property value. Administrator-supplied title of the terms and conditions. This is shown to the user on prompts to accept the T&C policy.
 func (m *TermsAndConditions) SetTitle(value *string)() {
     err := m.GetBackingStore().Set("title", value)
@@ -411,6 +443,7 @@ type TermsAndConditionsable interface {
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetTitle()(*string)
     GetVersion()(*int32)
     SetAcceptanceStatement(value *string)()
@@ -421,6 +454,7 @@ type TermsAndConditionsable interface {
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetTitle(value *string)()
     SetVersion(value *int32)()
 }

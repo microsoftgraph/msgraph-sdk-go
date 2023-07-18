@@ -82,6 +82,16 @@ func (m *DirectoryRole) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["roleTemplateId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -118,6 +128,17 @@ func (m *DirectoryRole) GetMembers()([]DirectoryObjectable) {
     }
     if val != nil {
         return val.([]DirectoryObjectable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DirectoryRole) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -174,6 +195,12 @@ func (m *DirectoryRole) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("roleTemplateId", m.GetRoleTemplateId())
         if err != nil {
             return err
@@ -214,6 +241,13 @@ func (m *DirectoryRole) SetMembers(value []DirectoryObjectable)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DirectoryRole) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRoleTemplateId sets the roleTemplateId property value. The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only. Supports $filter (eq), $select.
 func (m *DirectoryRole) SetRoleTemplateId(value *string)() {
     err := m.GetBackingStore().Set("roleTemplateId", value)
@@ -235,11 +269,13 @@ type DirectoryRoleable interface {
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetMembers()([]DirectoryObjectable)
+    GetOdataType()(*string)
     GetRoleTemplateId()(*string)
     GetScopedMembers()([]ScopedRoleMembershipable)
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetMembers(value []DirectoryObjectable)()
+    SetOdataType(value *string)()
     SetRoleTemplateId(value *string)()
     SetScopedMembers(value []ScopedRoleMembershipable)()
 }

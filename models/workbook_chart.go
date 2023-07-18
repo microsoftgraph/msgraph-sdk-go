@@ -7,8 +7,6 @@ import (
 // WorkbookChart 
 type WorkbookChart struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewWorkbookChart instantiates a new workbookChart and sets the default values.
 func NewWorkbookChart()(*WorkbookChart) {
@@ -113,6 +111,16 @@ func (m *WorkbookChart) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         if val != nil {
             m.SetName(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -229,6 +237,17 @@ func (m *WorkbookChart) GetName()(*string) {
     }
     return nil
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WorkbookChart) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetSeries gets the series property value. Represents either a single series or collection of series in the chart. Read-only.
 func (m *WorkbookChart) GetSeries()([]WorkbookChartSeriesable) {
     val, err := m.GetBackingStore().Get("series")
@@ -332,6 +351,12 @@ func (m *WorkbookChart) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSeries() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSeries()))
         for i, v := range m.GetSeries() {
@@ -419,6 +444,13 @@ func (m *WorkbookChart) SetName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WorkbookChart) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSeries sets the series property value. Represents either a single series or collection of series in the chart. Read-only.
 func (m *WorkbookChart) SetSeries(value []WorkbookChartSeriesable)() {
     err := m.GetBackingStore().Set("series", value)
@@ -465,6 +497,7 @@ type WorkbookChartable interface {
     GetLeft()(*float64)
     GetLegend()(WorkbookChartLegendable)
     GetName()(*string)
+    GetOdataType()(*string)
     GetSeries()([]WorkbookChartSeriesable)
     GetTitle()(WorkbookChartTitleable)
     GetTop()(*float64)
@@ -477,6 +510,7 @@ type WorkbookChartable interface {
     SetLeft(value *float64)()
     SetLegend(value WorkbookChartLegendable)()
     SetName(value *string)()
+    SetOdataType(value *string)()
     SetSeries(value []WorkbookChartSeriesable)()
     SetTitle(value WorkbookChartTitleable)()
     SetTop(value *float64)()

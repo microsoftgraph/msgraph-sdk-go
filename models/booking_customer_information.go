@@ -7,6 +7,8 @@ import (
 // BookingCustomerInformation 
 type BookingCustomerInformation struct {
     BookingCustomerInformationBase
+    // The OdataType property
+    OdataType *string
 }
 // NewBookingCustomerInformation instantiates a new bookingCustomerInformation and sets the default values.
 func NewBookingCustomerInformation()(*BookingCustomerInformation) {
@@ -123,16 +125,6 @@ func (m *BookingCustomerInformation) GetFieldDeserializers()(map[string]func(i87
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["phone"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -180,17 +172,6 @@ func (m *BookingCustomerInformation) GetName()(*string) {
 // GetNotes gets the notes property value. Notes from the customer associated with this appointment. You can get the value only when reading this bookingAppointment by its ID. You can set this property only when initially creating an appointment with a new customer. After that point, the value is computed from the customer represented by the customerId.
 func (m *BookingCustomerInformation) GetNotes()(*string) {
     val, err := m.GetBackingStore().Get("notes")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *BookingCustomerInformation) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -270,12 +251,6 @@ func (m *BookingCustomerInformation) Serialize(writer i878a80d2330e89d26896388a3
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("phone", m.GetPhone())
         if err != nil {
             return err
@@ -331,13 +306,6 @@ func (m *BookingCustomerInformation) SetNotes(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *BookingCustomerInformation) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetPhone sets the phone property value. The customer's phone number.
 func (m *BookingCustomerInformation) SetPhone(value *string)() {
     err := m.GetBackingStore().Set("phone", value)
@@ -362,7 +330,6 @@ type BookingCustomerInformationable interface {
     GetLocation()(Locationable)
     GetName()(*string)
     GetNotes()(*string)
-    GetOdataType()(*string)
     GetPhone()(*string)
     GetTimeZone()(*string)
     SetCustomerId(value *string)()
@@ -371,7 +338,6 @@ type BookingCustomerInformationable interface {
     SetLocation(value Locationable)()
     SetName(value *string)()
     SetNotes(value *string)()
-    SetOdataType(value *string)()
     SetPhone(value *string)()
     SetTimeZone(value *string)()
 }

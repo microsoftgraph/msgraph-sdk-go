@@ -7,8 +7,6 @@ import (
 // Place 
 type Place struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewPlace instantiates a new place and sets the default values.
 func NewPlace()(*Place) {
@@ -96,6 +94,16 @@ func (m *Place) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["phone"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -116,6 +124,17 @@ func (m *Place) GetGeoCoordinates()(OutlookGeoCoordinatesable) {
     }
     if val != nil {
         return val.(OutlookGeoCoordinatesable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Place) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -155,6 +174,12 @@ func (m *Place) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("phone", m.GetPhone())
         if err != nil {
             return err
@@ -183,6 +208,13 @@ func (m *Place) SetGeoCoordinates(value OutlookGeoCoordinatesable)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Place) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPhone sets the phone property value. The phone number of the place.
 func (m *Place) SetPhone(value *string)() {
     err := m.GetBackingStore().Set("phone", value)
@@ -197,9 +229,11 @@ type Placeable interface {
     GetAddress()(PhysicalAddressable)
     GetDisplayName()(*string)
     GetGeoCoordinates()(OutlookGeoCoordinatesable)
+    GetOdataType()(*string)
     GetPhone()(*string)
     SetAddress(value PhysicalAddressable)()
     SetDisplayName(value *string)()
     SetGeoCoordinates(value OutlookGeoCoordinatesable)()
+    SetOdataType(value *string)()
     SetPhone(value *string)()
 }

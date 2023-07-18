@@ -8,6 +8,8 @@ import (
 // HostCookie 
 type HostCookie struct {
     Artifact
+    // The OdataType property
+    OdataType *string
 }
 // NewHostCookie instantiates a new hostCookie and sets the default values.
 func NewHostCookie()(*HostCookie) {

@@ -7,6 +7,8 @@ import (
 // ManagedIOSStoreApp contains properties and inherited properties for an iOS store app that you can manage with an Intune app protection policy.
 type ManagedIOSStoreApp struct {
     ManagedApp
+    // The OdataType property
+    OdataType *string
 }
 // NewManagedIOSStoreApp instantiates a new managedIOSStoreApp and sets the default values.
 func NewManagedIOSStoreApp()(*ManagedIOSStoreApp) {

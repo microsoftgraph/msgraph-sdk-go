@@ -8,8 +8,6 @@ import (
 // Trending 
 type Trending struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewTrending instantiates a new trending and sets the default values.
 func NewTrending()(*Trending) {
@@ -32,6 +30,16 @@ func (m *Trending) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         if val != nil {
             m.SetLastModifiedDateTime(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -85,6 +93,17 @@ func (m *Trending) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Trending) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -145,6 +164,12 @@ func (m *Trending) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("resource", m.GetResource())
         if err != nil {
             return err
@@ -161,6 +186,13 @@ func (m *Trending) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *Trending) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Trending) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -198,11 +230,13 @@ type Trendingable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetResource()(Entityable)
     GetResourceReference()(ResourceReferenceable)
     GetResourceVisualization()(ResourceVisualizationable)
     GetWeight()(*float64)
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetResource(value Entityable)()
     SetResourceReference(value ResourceReferenceable)()
     SetResourceVisualization(value ResourceVisualizationable)()

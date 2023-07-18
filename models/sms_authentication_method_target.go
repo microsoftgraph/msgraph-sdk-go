@@ -32,6 +32,16 @@ func (m *SmsAuthenticationMethodTarget) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsUsableForSignIn gets the isUsableForSignIn property value. Determines if users can use this authentication method to sign in to Azure AD. true if users can use this method for primary authentication, otherwise false.
@@ -42,6 +52,17 @@ func (m *SmsAuthenticationMethodTarget) GetIsUsableForSignIn()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SmsAuthenticationMethodTarget) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -57,6 +78,12 @@ func (m *SmsAuthenticationMethodTarget) Serialize(writer i878a80d2330e89d2689638
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetIsUsableForSignIn sets the isUsableForSignIn property value. Determines if users can use this authentication method to sign in to Azure AD. true if users can use this method for primary authentication, otherwise false.
@@ -66,10 +93,19 @@ func (m *SmsAuthenticationMethodTarget) SetIsUsableForSignIn(value *bool)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SmsAuthenticationMethodTarget) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SmsAuthenticationMethodTargetable 
 type SmsAuthenticationMethodTargetable interface {
     AuthenticationMethodTargetable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetIsUsableForSignIn()(*bool)
+    GetOdataType()(*string)
     SetIsUsableForSignIn(value *bool)()
+    SetOdataType(value *string)()
 }

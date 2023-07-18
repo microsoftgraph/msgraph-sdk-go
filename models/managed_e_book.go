@@ -8,8 +8,6 @@ import (
 // ManagedEBook an abstract class containing the base properties for Managed eBook.
 type ManagedEBook struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewManagedEBook instantiates a new managedEBook and sets the default values.
 func NewManagedEBook()(*ManagedEBook) {
@@ -200,6 +198,16 @@ func (m *ManagedEBook) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["privacyInformationUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -289,6 +297,17 @@ func (m *ManagedEBook) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad9
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ManagedEBook) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -409,6 +428,12 @@ func (m *ManagedEBook) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("privacyInformationUrl", m.GetPrivacyInformationUrl())
         if err != nil {
             return err
@@ -503,6 +528,13 @@ func (m *ManagedEBook) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ManagedEBook) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPrivacyInformationUrl sets the privacyInformationUrl property value. The privacy statement Url.
 func (m *ManagedEBook) SetPrivacyInformationUrl(value *string)() {
     err := m.GetBackingStore().Set("privacyInformationUrl", value)
@@ -544,6 +576,7 @@ type ManagedEBookable interface {
     GetInstallSummary()(EBookInstallSummaryable)
     GetLargeCover()(MimeContentable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetPrivacyInformationUrl()(*string)
     GetPublishedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetPublisher()(*string)
@@ -557,6 +590,7 @@ type ManagedEBookable interface {
     SetInstallSummary(value EBookInstallSummaryable)()
     SetLargeCover(value MimeContentable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetPrivacyInformationUrl(value *string)()
     SetPublishedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetPublisher(value *string)()

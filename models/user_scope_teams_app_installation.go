@@ -7,8 +7,6 @@ import (
 // UserScopeTeamsAppInstallation 
 type UserScopeTeamsAppInstallation struct {
     TeamsAppInstallation
-    // The OdataType property
-    OdataType *string
 }
 // NewUserScopeTeamsAppInstallation instantiates a new userScopeTeamsAppInstallation and sets the default values.
 func NewUserScopeTeamsAppInstallation()(*UserScopeTeamsAppInstallation) {
@@ -47,7 +45,28 @@ func (m *UserScopeTeamsAppInstallation) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UserScopeTeamsAppInstallation) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserScopeTeamsAppInstallation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -61,6 +80,12 @@ func (m *UserScopeTeamsAppInstallation) Serialize(writer i878a80d2330e89d2689638
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetChat sets the chat property value. The chat between the user and Teams app.
@@ -70,10 +95,19 @@ func (m *UserScopeTeamsAppInstallation) SetChat(value Chatable)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UserScopeTeamsAppInstallation) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // UserScopeTeamsAppInstallationable 
 type UserScopeTeamsAppInstallationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     TeamsAppInstallationable
     GetChat()(Chatable)
+    GetOdataType()(*string)
     SetChat(value Chatable)()
+    SetOdataType(value *string)()
 }

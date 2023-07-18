@@ -7,6 +7,8 @@ import (
 // AndroidWorkProfileGeneralDeviceConfiguration android Work Profile general device configuration.
 type AndroidWorkProfileGeneralDeviceConfiguration struct {
     DeviceConfiguration
+    // The OdataType property
+    OdataType *string
 }
 // NewAndroidWorkProfileGeneralDeviceConfiguration instantiates a new androidWorkProfileGeneralDeviceConfiguration and sets the default values.
 func NewAndroidWorkProfileGeneralDeviceConfiguration()(*AndroidWorkProfileGeneralDeviceConfiguration) {

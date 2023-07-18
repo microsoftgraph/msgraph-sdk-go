@@ -7,8 +7,6 @@ import (
 // ServiceUserAgent 
 type ServiceUserAgent struct {
     UserAgent
-    // The OdataType property
-    OdataType *string
 }
 // NewServiceUserAgent instantiates a new serviceUserAgent and sets the default values.
 func NewServiceUserAgent()(*ServiceUserAgent) {
@@ -26,6 +24,16 @@ func CreateServiceUserAgentFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ServiceUserAgent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.UserAgent.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["role"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseServiceRole)
         if err != nil {
@@ -37,6 +45,17 @@ func (m *ServiceUserAgent) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ServiceUserAgent) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRole gets the role property value. The role property
 func (m *ServiceUserAgent) GetRole()(*ServiceRole) {
@@ -55,6 +74,12 @@ func (m *ServiceUserAgent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRole() != nil {
         cast := (*m.GetRole()).String()
         err = writer.WriteStringValue("role", &cast)
@@ -63,6 +88,13 @@ func (m *ServiceUserAgent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ServiceUserAgent) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetRole sets the role property value. The role property
 func (m *ServiceUserAgent) SetRole(value *ServiceRole)() {
@@ -75,6 +107,8 @@ func (m *ServiceUserAgent) SetRole(value *ServiceRole)() {
 type ServiceUserAgentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     UserAgentable
+    GetOdataType()(*string)
     GetRole()(*ServiceRole)
+    SetOdataType(value *string)()
     SetRole(value *ServiceRole)()
 }

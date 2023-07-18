@@ -7,8 +7,6 @@ import (
 // ChatRenamedEventMessageDetail 
 type ChatRenamedEventMessageDetail struct {
     EventMessageDetail
-    // The OdataType property
-    OdataType *string
 }
 // NewChatRenamedEventMessageDetail instantiates a new chatRenamedEventMessageDetail and sets the default values.
 func NewChatRenamedEventMessageDetail()(*ChatRenamedEventMessageDetail) {
@@ -78,6 +76,16 @@ func (m *ChatRenamedEventMessageDetail) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetInitiator gets the initiator property value. Initiator of the event.
@@ -88,6 +96,17 @@ func (m *ChatRenamedEventMessageDetail) GetInitiator()(IdentitySetable) {
     }
     if val != nil {
         return val.(IdentitySetable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ChatRenamedEventMessageDetail) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -115,6 +134,12 @@ func (m *ChatRenamedEventMessageDetail) Serialize(writer i878a80d2330e89d2689638
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetChatDisplayName sets the chatDisplayName property value. The updated name of the chat.
@@ -138,6 +163,13 @@ func (m *ChatRenamedEventMessageDetail) SetInitiator(value IdentitySetable)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ChatRenamedEventMessageDetail) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // ChatRenamedEventMessageDetailable 
 type ChatRenamedEventMessageDetailable interface {
     EventMessageDetailable
@@ -145,7 +177,9 @@ type ChatRenamedEventMessageDetailable interface {
     GetChatDisplayName()(*string)
     GetChatId()(*string)
     GetInitiator()(IdentitySetable)
+    GetOdataType()(*string)
     SetChatDisplayName(value *string)()
     SetChatId(value *string)()
     SetInitiator(value IdentitySetable)()
+    SetOdataType(value *string)()
 }

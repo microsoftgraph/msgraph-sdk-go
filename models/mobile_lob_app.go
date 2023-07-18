@@ -7,6 +7,8 @@ import (
 // MobileLobApp an abstract base class containing properties for all mobile line of business apps.
 type MobileLobApp struct {
     MobileApp
+    // The OdataType property
+    OdataType *string
 }
 // NewMobileLobApp instantiates a new mobileLobApp and sets the default values.
 func NewMobileLobApp()(*MobileLobApp) {

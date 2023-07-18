@@ -8,6 +8,8 @@ import (
 // IosVppApp contains properties and inherited properties for iOS Volume-Purchased Program (VPP) Apps.
 type IosVppApp struct {
     MobileApp
+    // The OdataType property
+    OdataType *string
 }
 // NewIosVppApp instantiates a new iosVppApp and sets the default values.
 func NewIosVppApp()(*IosVppApp) {

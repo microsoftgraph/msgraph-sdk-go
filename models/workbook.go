@@ -7,8 +7,6 @@ import (
 // Workbook 
 type Workbook struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewWorkbook instantiates a new workbook and sets the default values.
 func NewWorkbook()(*Workbook) {
@@ -98,6 +96,16 @@ func (m *Workbook) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["operations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWorkbookOperationFromDiscriminatorValue)
         if err != nil {
@@ -167,6 +175,17 @@ func (m *Workbook) GetNames()([]WorkbookNamedItemable) {
     }
     if val != nil {
         return val.([]WorkbookNamedItemable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Workbook) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -245,6 +264,12 @@ func (m *Workbook) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetOperations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOperations()))
         for i, v := range m.GetOperations() {
@@ -311,6 +336,13 @@ func (m *Workbook) SetNames(value []WorkbookNamedItemable)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Workbook) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOperations sets the operations property value. The status of workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only.
 func (m *Workbook) SetOperations(value []WorkbookOperationable)() {
     err := m.GetBackingStore().Set("operations", value)
@@ -340,6 +372,7 @@ type Workbookable interface {
     GetComments()([]WorkbookCommentable)
     GetFunctions()(WorkbookFunctionsable)
     GetNames()([]WorkbookNamedItemable)
+    GetOdataType()(*string)
     GetOperations()([]WorkbookOperationable)
     GetTables()([]WorkbookTableable)
     GetWorksheets()([]WorkbookWorksheetable)
@@ -347,6 +380,7 @@ type Workbookable interface {
     SetComments(value []WorkbookCommentable)()
     SetFunctions(value WorkbookFunctionsable)()
     SetNames(value []WorkbookNamedItemable)()
+    SetOdataType(value *string)()
     SetOperations(value []WorkbookOperationable)()
     SetTables(value []WorkbookTableable)()
     SetWorksheets(value []WorkbookWorksheetable)()

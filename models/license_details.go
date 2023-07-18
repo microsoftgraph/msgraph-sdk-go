@@ -8,8 +8,6 @@ import (
 // LicenseDetails 
 type LicenseDetails struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewLicenseDetails instantiates a new licenseDetails and sets the default values.
 func NewLicenseDetails()(*LicenseDetails) {
@@ -25,6 +23,16 @@ func CreateLicenseDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 // GetFieldDeserializers the deserialization information for the current model
 func (m *LicenseDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["servicePlans"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateServicePlanInfoFromDiscriminatorValue)
         if err != nil {
@@ -62,6 +70,17 @@ func (m *LicenseDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *LicenseDetails) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetServicePlans gets the servicePlans property value. Information about the service plans assigned with the license. Read-only, Not nullable
 func (m *LicenseDetails) GetServicePlans()([]ServicePlanInfoable) {
@@ -102,6 +121,12 @@ func (m *LicenseDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetServicePlans() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetServicePlans()))
         for i, v := range m.GetServicePlans() {
@@ -128,6 +153,13 @@ func (m *LicenseDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     return nil
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *LicenseDetails) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetServicePlans sets the servicePlans property value. Information about the service plans assigned with the license. Read-only, Not nullable
 func (m *LicenseDetails) SetServicePlans(value []ServicePlanInfoable)() {
     err := m.GetBackingStore().Set("servicePlans", value)
@@ -153,9 +185,11 @@ func (m *LicenseDetails) SetSkuPartNumber(value *string)() {
 type LicenseDetailsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetServicePlans()([]ServicePlanInfoable)
     GetSkuId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetSkuPartNumber()(*string)
+    SetOdataType(value *string)()
     SetServicePlans(value []ServicePlanInfoable)()
     SetSkuId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetSkuPartNumber(value *string)()

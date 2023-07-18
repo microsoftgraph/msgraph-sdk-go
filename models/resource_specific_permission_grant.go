@@ -66,6 +66,16 @@ func (m *ResourceSpecificPermissionGrant) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["permission"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -97,6 +107,17 @@ func (m *ResourceSpecificPermissionGrant) GetFieldDeserializers()(map[string]fun
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ResourceSpecificPermissionGrant) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPermission gets the permission property value. The name of the resource-specific permission. Read-only.
 func (m *ResourceSpecificPermissionGrant) GetPermission()(*string) {
@@ -150,6 +171,12 @@ func (m *ResourceSpecificPermissionGrant) Serialize(writer i878a80d2330e89d26896
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("permission", m.GetPermission())
         if err != nil {
             return err
@@ -183,6 +210,13 @@ func (m *ResourceSpecificPermissionGrant) SetClientId(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ResourceSpecificPermissionGrant) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPermission sets the permission property value. The name of the resource-specific permission. Read-only.
 func (m *ResourceSpecificPermissionGrant) SetPermission(value *string)() {
     err := m.GetBackingStore().Set("permission", value)
@@ -210,11 +244,13 @@ type ResourceSpecificPermissionGrantable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetClientAppId()(*string)
     GetClientId()(*string)
+    GetOdataType()(*string)
     GetPermission()(*string)
     GetPermissionType()(*string)
     GetResourceAppId()(*string)
     SetClientAppId(value *string)()
     SetClientId(value *string)()
+    SetOdataType(value *string)()
     SetPermission(value *string)()
     SetPermissionType(value *string)()
     SetResourceAppId(value *string)()

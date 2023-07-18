@@ -8,8 +8,6 @@ import (
 // VppToken you purchase multiple licenses for iOS apps through the Apple Volume Purchase Program for Business or Education. This involves setting up an Apple VPP account from the Apple website and uploading the Apple VPP Business or Education token to Intune. You can then synchronize your volume purchase information with Intune and track your volume-purchased app use. You can upload multiple Apple VPP Business or Education tokens.
 type VppToken struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewVppToken instantiates a new vppToken and sets the default values.
 func NewVppToken()(*VppToken) {
@@ -139,6 +137,16 @@ func (m *VppToken) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["organizationName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -211,6 +219,17 @@ func (m *VppToken) GetLastSyncStatus()(*VppTokenSyncStatus) {
     }
     if val != nil {
         return val.(*VppTokenSyncStatus)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *VppToken) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -308,6 +327,12 @@ func (m *VppToken) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("organizationName", m.GetOrganizationName())
         if err != nil {
             return err
@@ -384,6 +409,13 @@ func (m *VppToken) SetLastSyncStatus(value *VppTokenSyncStatus)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *VppToken) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOrganizationName sets the organizationName property value. The organization associated with the Apple Volume Purchase Program Token
 func (m *VppToken) SetOrganizationName(value *string)() {
     err := m.GetBackingStore().Set("organizationName", value)
@@ -423,6 +455,7 @@ type VppTokenable interface {
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastSyncStatus()(*VppTokenSyncStatus)
+    GetOdataType()(*string)
     GetOrganizationName()(*string)
     GetState()(*VppTokenState)
     GetToken()(*string)
@@ -434,6 +467,7 @@ type VppTokenable interface {
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastSyncStatus(value *VppTokenSyncStatus)()
+    SetOdataType(value *string)()
     SetOrganizationName(value *string)()
     SetState(value *VppTokenState)()
     SetToken(value *string)()

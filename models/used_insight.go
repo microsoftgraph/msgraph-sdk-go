@@ -7,8 +7,6 @@ import (
 // UsedInsight 
 type UsedInsight struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewUsedInsight instantiates a new usedInsight and sets the default values.
 func NewUsedInsight()(*UsedInsight) {
@@ -31,6 +29,16 @@ func (m *UsedInsight) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         if val != nil {
             m.SetLastUsed(val.(UsageDetailsable))
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -74,6 +82,17 @@ func (m *UsedInsight) GetLastUsed()(UsageDetailsable) {
     }
     if val != nil {
         return val.(UsageDetailsable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UsedInsight) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -123,6 +142,12 @@ func (m *UsedInsight) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("resource", m.GetResource())
         if err != nil {
             return err
@@ -133,6 +158,13 @@ func (m *UsedInsight) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 // SetLastUsed sets the lastUsed property value. Information about when the item was last viewed or modified by the user. Read only.
 func (m *UsedInsight) SetLastUsed(value UsageDetailsable)() {
     err := m.GetBackingStore().Set("lastUsed", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UsedInsight) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -163,10 +195,12 @@ type UsedInsightable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetLastUsed()(UsageDetailsable)
+    GetOdataType()(*string)
     GetResource()(Entityable)
     GetResourceReference()(ResourceReferenceable)
     GetResourceVisualization()(ResourceVisualizationable)
     SetLastUsed(value UsageDetailsable)()
+    SetOdataType(value *string)()
     SetResource(value Entityable)()
     SetResourceReference(value ResourceReferenceable)()
     SetResourceVisualization(value ResourceVisualizationable)()

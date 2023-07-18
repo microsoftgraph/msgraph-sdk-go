@@ -7,6 +7,8 @@ import (
 // FileAttachment 
 type FileAttachment struct {
     Attachment
+    // The OdataType property
+    OdataType *string
 }
 // NewFileAttachment instantiates a new fileAttachment and sets the default values.
 func NewFileAttachment()(*FileAttachment) {

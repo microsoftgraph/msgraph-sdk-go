@@ -7,6 +7,8 @@ import (
 // ApplicationEnforcedRestrictionsSessionControl 
 type ApplicationEnforcedRestrictionsSessionControl struct {
     ConditionalAccessSessionControl
+    // The OdataType property
+    OdataType *string
 }
 // NewApplicationEnforcedRestrictionsSessionControl instantiates a new applicationEnforcedRestrictionsSessionControl and sets the default values.
 func NewApplicationEnforcedRestrictionsSessionControl()(*ApplicationEnforcedRestrictionsSessionControl) {
@@ -24,28 +26,7 @@ func CreateApplicationEnforcedRestrictionsSessionControlFromDiscriminatorValue(p
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ApplicationEnforcedRestrictionsSessionControl) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ConditionalAccessSessionControl.GetFieldDeserializers()
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *ApplicationEnforcedRestrictionsSessionControl) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // Serialize serializes information the current object
 func (m *ApplicationEnforcedRestrictionsSessionControl) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -53,25 +34,10 @@ func (m *ApplicationEnforcedRestrictionsSessionControl) Serialize(writer i878a80
     if err != nil {
         return err
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     return nil
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *ApplicationEnforcedRestrictionsSessionControl) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
 }
 // ApplicationEnforcedRestrictionsSessionControlable 
 type ApplicationEnforcedRestrictionsSessionControlable interface {
     ConditionalAccessSessionControlable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetOdataType()(*string)
-    SetOdataType(value *string)()
 }

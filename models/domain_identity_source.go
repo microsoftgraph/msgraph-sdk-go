@@ -7,6 +7,8 @@ import (
 // DomainIdentitySource 
 type DomainIdentitySource struct {
     IdentitySource
+    // The OdataType property
+    OdataType *string
 }
 // NewDomainIdentitySource instantiates a new domainIdentitySource and sets the default values.
 func NewDomainIdentitySource()(*DomainIdentitySource) {
@@ -66,28 +68,7 @@ func (m *DomainIdentitySource) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *DomainIdentitySource) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // Serialize serializes information the current object
 func (m *DomainIdentitySource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -103,12 +84,6 @@ func (m *DomainIdentitySource) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     {
         err = writer.WriteStringValue("domainName", m.GetDomainName())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -129,21 +104,12 @@ func (m *DomainIdentitySource) SetDomainName(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *DomainIdentitySource) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // DomainIdentitySourceable 
 type DomainIdentitySourceable interface {
     IdentitySourceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDisplayName()(*string)
     GetDomainName()(*string)
-    GetOdataType()(*string)
     SetDisplayName(value *string)()
     SetDomainName(value *string)()
-    SetOdataType(value *string)()
 }

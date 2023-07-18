@@ -8,6 +8,8 @@ import (
 // SiteSource 
 type SiteSource struct {
     DataSource
+    // The OdataType property
+    OdataType *string
 }
 // NewSiteSource instantiates a new siteSource and sets the default values.
 func NewSiteSource()(*SiteSource) {

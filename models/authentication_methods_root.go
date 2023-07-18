@@ -7,8 +7,6 @@ import (
 // AuthenticationMethodsRoot 
 type AuthenticationMethodsRoot struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewAuthenticationMethodsRoot instantiates a new authenticationMethodsRoot and sets the default values.
 func NewAuthenticationMethodsRoot()(*AuthenticationMethodsRoot) {
@@ -24,6 +22,16 @@ func CreateAuthenticationMethodsRootFromDiscriminatorValue(parseNode i878a80d233
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AuthenticationMethodsRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["userRegistrationDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserRegistrationDetailsFromDiscriminatorValue)
         if err != nil {
@@ -42,6 +50,17 @@ func (m *AuthenticationMethodsRoot) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AuthenticationMethodsRoot) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetUserRegistrationDetails gets the userRegistrationDetails property value. Represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).
 func (m *AuthenticationMethodsRoot) GetUserRegistrationDetails()([]UserRegistrationDetailsable) {
     val, err := m.GetBackingStore().Get("userRegistrationDetails")
@@ -59,6 +78,12 @@ func (m *AuthenticationMethodsRoot) Serialize(writer i878a80d2330e89d26896388a3f
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetUserRegistrationDetails() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserRegistrationDetails()))
         for i, v := range m.GetUserRegistrationDetails() {
@@ -73,6 +98,13 @@ func (m *AuthenticationMethodsRoot) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AuthenticationMethodsRoot) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetUserRegistrationDetails sets the userRegistrationDetails property value. Represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).
 func (m *AuthenticationMethodsRoot) SetUserRegistrationDetails(value []UserRegistrationDetailsable)() {
     err := m.GetBackingStore().Set("userRegistrationDetails", value)
@@ -84,6 +116,8 @@ func (m *AuthenticationMethodsRoot) SetUserRegistrationDetails(value []UserRegis
 type AuthenticationMethodsRootable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetUserRegistrationDetails()([]UserRegistrationDetailsable)
+    SetOdataType(value *string)()
     SetUserRegistrationDetails(value []UserRegistrationDetailsable)()
 }

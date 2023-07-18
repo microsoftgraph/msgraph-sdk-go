@@ -8,8 +8,6 @@ import (
 // Chat 
 type Chat struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewChat instantiates a new chat and sets the default values.
 func NewChat()(*Chat) {
@@ -132,6 +130,16 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
                 }
             }
             m.SetMessages(res)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -271,6 +279,17 @@ func (m *Chat) GetMessages()([]ChatMessageable) {
     }
     if val != nil {
         return val.([]ChatMessageable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Chat) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -419,6 +438,12 @@ func (m *Chat) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("onlineMeetingInfo", m.GetOnlineMeetingInfo())
         if err != nil {
             return err
@@ -523,6 +548,13 @@ func (m *Chat) SetMessages(value []ChatMessageable)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Chat) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOnlineMeetingInfo sets the onlineMeetingInfo property value. Represents details about an online meeting. If the chat isn't associated with an online meeting, the property is empty. Read-only.
 func (m *Chat) SetOnlineMeetingInfo(value TeamworkOnlineMeetingInfoable)() {
     err := m.GetBackingStore().Set("onlineMeetingInfo", value)
@@ -583,6 +615,7 @@ type Chatable interface {
     GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetMembers()([]ConversationMemberable)
     GetMessages()([]ChatMessageable)
+    GetOdataType()(*string)
     GetOnlineMeetingInfo()(TeamworkOnlineMeetingInfoable)
     GetPinnedMessages()([]PinnedChatMessageInfoable)
     GetTabs()([]TeamsTabable)
@@ -597,6 +630,7 @@ type Chatable interface {
     SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetMembers(value []ConversationMemberable)()
     SetMessages(value []ChatMessageable)()
+    SetOdataType(value *string)()
     SetOnlineMeetingInfo(value TeamworkOnlineMeetingInfoable)()
     SetPinnedMessages(value []PinnedChatMessageInfoable)()
     SetTabs(value []TeamsTabable)()

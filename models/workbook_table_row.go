@@ -7,8 +7,6 @@ import (
 // WorkbookTableRow 
 type WorkbookTableRow struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewWorkbookTableRow instantiates a new workbookTableRow and sets the default values.
 func NewWorkbookTableRow()(*WorkbookTableRow) {
@@ -34,6 +32,16 @@ func (m *WorkbookTableRow) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["values"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateJsonFromDiscriminatorValue)
         if err != nil {
@@ -54,6 +62,17 @@ func (m *WorkbookTableRow) GetIndex()(*int32) {
     }
     if val != nil {
         return val.(*int32)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WorkbookTableRow) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -81,6 +100,12 @@ func (m *WorkbookTableRow) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("values", m.GetValues())
         if err != nil {
             return err
@@ -91,6 +116,13 @@ func (m *WorkbookTableRow) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 // SetIndex sets the index property value. Returns the index number of the row within the rows collection of the table. Zero-indexed. Read-only.
 func (m *WorkbookTableRow) SetIndex(value *int32)() {
     err := m.GetBackingStore().Set("index", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WorkbookTableRow) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -107,7 +139,9 @@ type WorkbookTableRowable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetIndex()(*int32)
+    GetOdataType()(*string)
     GetValues()(Jsonable)
     SetIndex(value *int32)()
+    SetOdataType(value *string)()
     SetValues(value Jsonable)()
 }

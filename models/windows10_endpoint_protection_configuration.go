@@ -7,6 +7,8 @@ import (
 // Windows10EndpointProtectionConfiguration this topic provides descriptions of the declared methods, properties and relationships exposed by the Windows10EndpointProtectionConfiguration resource.
 type Windows10EndpointProtectionConfiguration struct {
     DeviceConfiguration
+    // The OdataType property
+    OdataType *string
 }
 // NewWindows10EndpointProtectionConfiguration instantiates a new windows10EndpointProtectionConfiguration and sets the default values.
 func NewWindows10EndpointProtectionConfiguration()(*Windows10EndpointProtectionConfiguration) {

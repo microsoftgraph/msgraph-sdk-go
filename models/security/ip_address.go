@@ -7,6 +7,8 @@ import (
 // IpAddress 
 type IpAddress struct {
     Host
+    // The OdataType property
+    OdataType *string
 }
 // NewIpAddress instantiates a new ipAddress and sets the default values.
 func NewIpAddress()(*IpAddress) {

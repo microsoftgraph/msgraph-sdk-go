@@ -8,6 +8,8 @@ import (
 // UserSignInInsight 
 type UserSignInInsight struct {
     GovernanceInsight
+    // The OdataType property
+    OdataType *string
 }
 // NewUserSignInInsight instantiates a new userSignInInsight and sets the default values.
 func NewUserSignInInsight()(*UserSignInInsight) {

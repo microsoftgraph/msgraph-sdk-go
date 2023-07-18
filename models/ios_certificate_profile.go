@@ -7,6 +7,8 @@ import (
 // IosCertificateProfile device Configuration.
 type IosCertificateProfile struct {
     DeviceConfiguration
+    // The OdataType property
+    OdataType *string
 }
 // NewIosCertificateProfile instantiates a new iosCertificateProfile and sets the default values.
 func NewIosCertificateProfile()(*IosCertificateProfile) {

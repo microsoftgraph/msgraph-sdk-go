@@ -7,6 +7,8 @@ import (
 // ItemAttachment 
 type ItemAttachment struct {
     Attachment
+    // The OdataType property
+    OdataType *string
 }
 // NewItemAttachment instantiates a new itemAttachment and sets the default values.
 func NewItemAttachment()(*ItemAttachment) {

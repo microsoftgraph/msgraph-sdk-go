@@ -8,8 +8,6 @@ import (
 // Indicator 
 type Indicator struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewIndicator instantiates a new indicator and sets the default values.
 func NewIndicator()(*Indicator) {
@@ -66,6 +64,16 @@ func (m *Indicator) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["source"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseIndicatorSource)
         if err != nil {
@@ -77,6 +85,17 @@ func (m *Indicator) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Indicator) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSource gets the source property value. The source property
 func (m *Indicator) GetSource()(*IndicatorSource) {
@@ -101,6 +120,12 @@ func (m *Indicator) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSource() != nil {
         cast := (*m.GetSource()).String()
         err = writer.WriteStringValue("source", &cast)
@@ -117,6 +142,13 @@ func (m *Indicator) SetArtifact(value Artifactable)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Indicator) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSource sets the source property value. The source property
 func (m *Indicator) SetSource(value *IndicatorSource)() {
     err := m.GetBackingStore().Set("source", value)
@@ -129,7 +161,9 @@ type Indicatorable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetArtifact()(Artifactable)
+    GetOdataType()(*string)
     GetSource()(*IndicatorSource)
     SetArtifact(value Artifactable)()
+    SetOdataType(value *string)()
     SetSource(value *IndicatorSource)()
 }

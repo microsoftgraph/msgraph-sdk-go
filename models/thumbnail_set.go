@@ -7,8 +7,6 @@ import (
 // ThumbnailSet 
 type ThumbnailSet struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewThumbnailSet instantiates a new thumbnailSet and sets the default values.
 func NewThumbnailSet()(*ThumbnailSet) {
@@ -41,6 +39,16 @@ func (m *ThumbnailSet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         if val != nil {
             m.SetMedium(val.(Thumbnailable))
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -88,6 +96,17 @@ func (m *ThumbnailSet) GetMedium()(Thumbnailable) {
     }
     return nil
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ThumbnailSet) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetSmall gets the small property value. A 48x48 cropped thumbnail.
 func (m *ThumbnailSet) GetSmall()(Thumbnailable) {
     val, err := m.GetBackingStore().Get("small")
@@ -129,6 +148,12 @@ func (m *ThumbnailSet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("small", m.GetSmall())
         if err != nil {
             return err
@@ -156,6 +181,13 @@ func (m *ThumbnailSet) SetMedium(value Thumbnailable)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ThumbnailSet) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSmall sets the small property value. A 48x48 cropped thumbnail.
 func (m *ThumbnailSet) SetSmall(value Thumbnailable)() {
     err := m.GetBackingStore().Set("small", value)
@@ -176,10 +208,12 @@ type ThumbnailSetable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetLarge()(Thumbnailable)
     GetMedium()(Thumbnailable)
+    GetOdataType()(*string)
     GetSmall()(Thumbnailable)
     GetSource()(Thumbnailable)
     SetLarge(value Thumbnailable)()
     SetMedium(value Thumbnailable)()
+    SetOdataType(value *string)()
     SetSmall(value Thumbnailable)()
     SetSource(value Thumbnailable)()
 }

@@ -7,6 +7,8 @@ import (
 // ArticleIndicator 
 type ArticleIndicator struct {
     Indicator
+    // The OdataType property
+    OdataType *string
 }
 // NewArticleIndicator instantiates a new articleIndicator and sets the default values.
 func NewArticleIndicator()(*ArticleIndicator) {

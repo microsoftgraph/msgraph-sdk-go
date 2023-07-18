@@ -8,8 +8,6 @@ import (
 // LifecycleManagementSettings 
 type LifecycleManagementSettings struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewLifecycleManagementSettings instantiates a new lifecycleManagementSettings and sets the default values.
 func NewLifecycleManagementSettings()(*LifecycleManagementSettings) {
@@ -46,6 +44,16 @@ func (m *LifecycleManagementSettings) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["workflowScheduleIntervalInHours"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -57,6 +65,17 @@ func (m *LifecycleManagementSettings) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *LifecycleManagementSettings) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetWorkflowScheduleIntervalInHours gets the workflowScheduleIntervalInHours property value. The interval in hours at which all workflows running in the tenant should be scheduled for execution. This interval has a minimum value of 1 and a maximum value of 24. The default value is 3 hours.
 func (m *LifecycleManagementSettings) GetWorkflowScheduleIntervalInHours()(*int32) {
@@ -82,6 +101,12 @@ func (m *LifecycleManagementSettings) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("workflowScheduleIntervalInHours", m.GetWorkflowScheduleIntervalInHours())
         if err != nil {
             return err
@@ -92,6 +117,13 @@ func (m *LifecycleManagementSettings) Serialize(writer i878a80d2330e89d26896388a
 // SetEmailSettings sets the emailSettings property value. The emailSettings property
 func (m *LifecycleManagementSettings) SetEmailSettings(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EmailSettingsable)() {
     err := m.GetBackingStore().Set("emailSettings", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *LifecycleManagementSettings) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -108,7 +140,9 @@ type LifecycleManagementSettingsable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetEmailSettings()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EmailSettingsable)
+    GetOdataType()(*string)
     GetWorkflowScheduleIntervalInHours()(*int32)
     SetEmailSettings(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EmailSettingsable)()
+    SetOdataType(value *string)()
     SetWorkflowScheduleIntervalInHours(value *int32)()
 }

@@ -7,6 +7,8 @@ import (
 // ListItemVersion 
 type ListItemVersion struct {
     BaseItemVersion
+    // The OdataType property
+    OdataType *string
 }
 // NewListItemVersion instantiates a new listItemVersion and sets the default values.
 func NewListItemVersion()(*ListItemVersion) {

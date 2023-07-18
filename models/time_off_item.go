@@ -7,8 +7,6 @@ import (
 // TimeOffItem 
 type TimeOffItem struct {
     ScheduleEntity
-    // The OdataType property
-    OdataType *string
 }
 // NewTimeOffItem instantiates a new timeOffItem and sets the default values.
 func NewTimeOffItem()(*TimeOffItem) {
@@ -24,6 +22,16 @@ func CreateTimeOffItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TimeOffItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ScheduleEntity.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["timeOffReasonId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -35,6 +43,17 @@ func (m *TimeOffItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TimeOffItem) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTimeOffReasonId gets the timeOffReasonId property value. ID of the timeOffReason for this timeOffItem. Required.
 func (m *TimeOffItem) GetTimeOffReasonId()(*string) {
@@ -54,12 +73,25 @@ func (m *TimeOffItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         return err
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("timeOffReasonId", m.GetTimeOffReasonId())
         if err != nil {
             return err
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TimeOffItem) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTimeOffReasonId sets the timeOffReasonId property value. ID of the timeOffReason for this timeOffItem. Required.
 func (m *TimeOffItem) SetTimeOffReasonId(value *string)() {
@@ -72,6 +104,8 @@ func (m *TimeOffItem) SetTimeOffReasonId(value *string)() {
 type TimeOffItemable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     ScheduleEntityable
+    GetOdataType()(*string)
     GetTimeOffReasonId()(*string)
+    SetOdataType(value *string)()
     SetTimeOffReasonId(value *string)()
 }

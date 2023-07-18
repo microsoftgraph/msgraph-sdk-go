@@ -7,6 +7,8 @@ import (
 // MicrosoftStoreForBusinessApp microsoft Store for Business Apps. This class does not support Create, Delete, or Update.
 type MicrosoftStoreForBusinessApp struct {
     MobileApp
+    // The OdataType property
+    OdataType *string
 }
 // NewMicrosoftStoreForBusinessApp instantiates a new microsoftStoreForBusinessApp and sets the default values.
 func NewMicrosoftStoreForBusinessApp()(*MicrosoftStoreForBusinessApp) {

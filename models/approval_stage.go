@@ -8,8 +8,6 @@ import (
 // ApprovalStage 
 type ApprovalStage struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewApprovalStage instantiates a new approvalStage and sets the default values.
 func NewApprovalStage()(*ApprovalStage) {
@@ -77,6 +75,16 @@ func (m *ApprovalStage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["reviewedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIdentityFromDiscriminatorValue)
         if err != nil {
@@ -122,6 +130,17 @@ func (m *ApprovalStage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 // GetJustification gets the justification property value. The justification associated with the approval stage decision.
 func (m *ApprovalStage) GetJustification()(*string) {
     val, err := m.GetBackingStore().Get("justification")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ApprovalStage) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -199,6 +218,12 @@ func (m *ApprovalStage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("reviewedBy", m.GetReviewedBy())
         if err != nil {
             return err
@@ -245,6 +270,13 @@ func (m *ApprovalStage) SetJustification(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ApprovalStage) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetReviewedBy sets the reviewedBy property value. The identifier of the reviewer. 00000000-0000-0000-0000-000000000000 if the assigned reviewer hasn't reviewed. Read-only.
 func (m *ApprovalStage) SetReviewedBy(value Identityable)() {
     err := m.GetBackingStore().Set("reviewedBy", value)
@@ -280,6 +312,7 @@ type ApprovalStageable interface {
     GetAssignedToMe()(*bool)
     GetDisplayName()(*string)
     GetJustification()(*string)
+    GetOdataType()(*string)
     GetReviewedBy()(Identityable)
     GetReviewedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetReviewResult()(*string)
@@ -287,6 +320,7 @@ type ApprovalStageable interface {
     SetAssignedToMe(value *bool)()
     SetDisplayName(value *string)()
     SetJustification(value *string)()
+    SetOdataType(value *string)()
     SetReviewedBy(value Identityable)()
     SetReviewedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetReviewResult(value *string)()

@@ -8,8 +8,6 @@ import (
 // ConversationThread 
 type ConversationThread struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewConversationThread instantiates a new conversationThread and sets the default values.
 func NewConversationThread()(*ConversationThread) {
@@ -79,6 +77,16 @@ func (m *ConversationThread) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         if val != nil {
             m.SetLastDeliveredDateTime(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -185,6 +193,17 @@ func (m *ConversationThread) GetLastDeliveredDateTime()(*i336074805fc853987abe6f
     }
     return nil
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ConversationThread) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetPosts gets the posts property value. The posts property
 func (m *ConversationThread) GetPosts()([]Postable) {
     val, err := m.GetBackingStore().Get("posts")
@@ -276,6 +295,12 @@ func (m *ConversationThread) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPosts() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPosts()))
         for i, v := range m.GetPosts() {
@@ -348,6 +373,13 @@ func (m *ConversationThread) SetLastDeliveredDateTime(value *i336074805fc853987a
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ConversationThread) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPosts sets the posts property value. The posts property
 func (m *ConversationThread) SetPosts(value []Postable)() {
     err := m.GetBackingStore().Set("posts", value)
@@ -391,6 +423,7 @@ type ConversationThreadable interface {
     GetHasAttachments()(*bool)
     GetIsLocked()(*bool)
     GetLastDeliveredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetPosts()([]Postable)
     GetPreview()(*string)
     GetTopic()(*string)
@@ -400,6 +433,7 @@ type ConversationThreadable interface {
     SetHasAttachments(value *bool)()
     SetIsLocked(value *bool)()
     SetLastDeliveredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetPosts(value []Postable)()
     SetPreview(value *string)()
     SetTopic(value *string)()

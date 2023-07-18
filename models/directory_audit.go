@@ -8,8 +8,6 @@ import (
 // DirectoryAudit 
 type DirectoryAudit struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewDirectoryAudit instantiates a new directoryAudit and sets the default values.
 func NewDirectoryAudit()(*DirectoryAudit) {
@@ -33,7 +31,7 @@ func (m *DirectoryAudit) GetActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a
     }
     return nil
 }
-// GetActivityDisplayName gets the activityDisplayName property value. Indicates the activity name or the operation name (examples: 'Create User' and 'Add member to group'). For full list, see Azure AD activity list.
+// GetActivityDisplayName gets the activityDisplayName property value. Indicates the activity name or the operation name (examples: 'Create User' and 'Add member to group'). For a list of activities logged, refer to Azure AD audit log categories and activities.
 func (m *DirectoryAudit) GetActivityDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("activityDisplayName")
     if err != nil {
@@ -55,7 +53,7 @@ func (m *DirectoryAudit) GetAdditionalDetails()([]KeyValueable) {
     }
     return nil
 }
-// GetCategory gets the category property value. Indicates which resource category that's targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement.
+// GetCategory gets the category property value. Indicates which resource category that's targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement. For a list of categories for activities logged, refer to Azure AD audit log categories and activities.
 func (m *DirectoryAudit) GetCategory()(*string) {
     val, err := m.GetBackingStore().Get("category")
     if err != nil {
@@ -156,6 +154,16 @@ func (m *DirectoryAudit) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["operationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -218,6 +226,17 @@ func (m *DirectoryAudit) GetInitiatedBy()(AuditActivityInitiatorable) {
 // GetLoggedByService gets the loggedByService property value. Indicates information on which service initiated the activity (For example: Self-service Password Management, Core Directory, B2C, Invited Users, Microsoft Identity Manager, Privileged Identity Management.
 func (m *DirectoryAudit) GetLoggedByService()(*string) {
     val, err := m.GetBackingStore().Get("loggedByService")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DirectoryAudit) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -325,6 +344,12 @@ func (m *DirectoryAudit) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("operationType", m.GetOperationType())
         if err != nil {
             return err
@@ -364,7 +389,7 @@ func (m *DirectoryAudit) SetActivityDateTime(value *i336074805fc853987abe6f7fe3a
         panic(err)
     }
 }
-// SetActivityDisplayName sets the activityDisplayName property value. Indicates the activity name or the operation name (examples: 'Create User' and 'Add member to group'). For full list, see Azure AD activity list.
+// SetActivityDisplayName sets the activityDisplayName property value. Indicates the activity name or the operation name (examples: 'Create User' and 'Add member to group'). For a list of activities logged, refer to Azure AD audit log categories and activities.
 func (m *DirectoryAudit) SetActivityDisplayName(value *string)() {
     err := m.GetBackingStore().Set("activityDisplayName", value)
     if err != nil {
@@ -378,7 +403,7 @@ func (m *DirectoryAudit) SetAdditionalDetails(value []KeyValueable)() {
         panic(err)
     }
 }
-// SetCategory sets the category property value. Indicates which resource category that's targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement.
+// SetCategory sets the category property value. Indicates which resource category that's targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement. For a list of categories for activities logged, refer to Azure AD audit log categories and activities.
 func (m *DirectoryAudit) SetCategory(value *string)() {
     err := m.GetBackingStore().Set("category", value)
     if err != nil {
@@ -402,6 +427,13 @@ func (m *DirectoryAudit) SetInitiatedBy(value AuditActivityInitiatorable)() {
 // SetLoggedByService sets the loggedByService property value. Indicates information on which service initiated the activity (For example: Self-service Password Management, Core Directory, B2C, Invited Users, Microsoft Identity Manager, Privileged Identity Management.
 func (m *DirectoryAudit) SetLoggedByService(value *string)() {
     err := m.GetBackingStore().Set("loggedByService", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DirectoryAudit) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -445,6 +477,7 @@ type DirectoryAuditable interface {
     GetCorrelationId()(*string)
     GetInitiatedBy()(AuditActivityInitiatorable)
     GetLoggedByService()(*string)
+    GetOdataType()(*string)
     GetOperationType()(*string)
     GetResult()(*OperationResult)
     GetResultReason()(*string)
@@ -456,6 +489,7 @@ type DirectoryAuditable interface {
     SetCorrelationId(value *string)()
     SetInitiatedBy(value AuditActivityInitiatorable)()
     SetLoggedByService(value *string)()
+    SetOdataType(value *string)()
     SetOperationType(value *string)()
     SetResult(value *OperationResult)()
     SetResultReason(value *string)()

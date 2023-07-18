@@ -247,6 +247,16 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["package"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePackageEscapedFromDiscriminatorValue)
         if err != nil {
@@ -527,6 +537,17 @@ func (m *DriveItem) GetMalware()(Malwareable) {
     }
     if val != nil {
         return val.(Malwareable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DriveItem) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -825,6 +846,12 @@ func (m *DriveItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("package", m.GetPackage())
         if err != nil {
             return err
@@ -1056,6 +1083,13 @@ func (m *DriveItem) SetMalware(value Malwareable)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DriveItem) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPackage sets the package property value. If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
 func (m *DriveItem) SetPackage(value PackageEscapedable)() {
     err := m.GetBackingStore().Set("packageEscaped", value)
@@ -1200,6 +1234,7 @@ type DriveItemable interface {
     GetListItem()(ListItemable)
     GetLocation()(GeoCoordinatesable)
     GetMalware()(Malwareable)
+    GetOdataType()(*string)
     GetPackage()(PackageEscapedable)
     GetPendingOperations()(PendingOperationsable)
     GetPermissions()([]Permissionable)
@@ -1232,6 +1267,7 @@ type DriveItemable interface {
     SetListItem(value ListItemable)()
     SetLocation(value GeoCoordinatesable)()
     SetMalware(value Malwareable)()
+    SetOdataType(value *string)()
     SetPackage(value PackageEscapedable)()
     SetPendingOperations(value PendingOperationsable)()
     SetPermissions(value []Permissionable)()

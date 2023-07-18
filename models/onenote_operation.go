@@ -7,6 +7,8 @@ import (
 // OnenoteOperation 
 type OnenoteOperation struct {
     Operation
+    // The OdataType property
+    OdataType *string
 }
 // NewOnenoteOperation instantiates a new onenoteOperation and sets the default values.
 func NewOnenoteOperation()(*OnenoteOperation) {

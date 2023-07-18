@@ -45,6 +45,16 @@ func (m *EducationFeedbackResourceOutcome) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["resourceStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseEducationFeedbackResourceOutcomeStatus)
         if err != nil {
@@ -56,6 +66,17 @@ func (m *EducationFeedbackResourceOutcome) GetFieldDeserializers()(map[string]fu
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *EducationFeedbackResourceOutcome) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetResourceStatus gets the resourceStatus property value. The status of the feedback resource. The possible values are: notPublished, pendingPublish, published, failedPublish, unknownFutureValue.
 func (m *EducationFeedbackResourceOutcome) GetResourceStatus()(*EducationFeedbackResourceOutcomeStatus) {
@@ -80,6 +101,12 @@ func (m *EducationFeedbackResourceOutcome) Serialize(writer i878a80d2330e89d2689
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetResourceStatus() != nil {
         cast := (*m.GetResourceStatus()).String()
         err = writer.WriteStringValue("resourceStatus", &cast)
@@ -96,6 +123,13 @@ func (m *EducationFeedbackResourceOutcome) SetFeedbackResource(value EducationRe
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *EducationFeedbackResourceOutcome) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetResourceStatus sets the resourceStatus property value. The status of the feedback resource. The possible values are: notPublished, pendingPublish, published, failedPublish, unknownFutureValue.
 func (m *EducationFeedbackResourceOutcome) SetResourceStatus(value *EducationFeedbackResourceOutcomeStatus)() {
     err := m.GetBackingStore().Set("resourceStatus", value)
@@ -108,7 +142,9 @@ type EducationFeedbackResourceOutcomeable interface {
     EducationOutcomeable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetFeedbackResource()(EducationResourceable)
+    GetOdataType()(*string)
     GetResourceStatus()(*EducationFeedbackResourceOutcomeStatus)
     SetFeedbackResource(value EducationResourceable)()
+    SetOdataType(value *string)()
     SetResourceStatus(value *EducationFeedbackResourceOutcomeStatus)()
 }

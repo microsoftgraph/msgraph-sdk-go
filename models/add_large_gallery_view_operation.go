@@ -7,6 +7,8 @@ import (
 // AddLargeGalleryViewOperation 
 type AddLargeGalleryViewOperation struct {
     CommsOperation
+    // The OdataType property
+    OdataType *string
 }
 // NewAddLargeGalleryViewOperation instantiates a new addLargeGalleryViewOperation and sets the default values.
 func NewAddLargeGalleryViewOperation()(*AddLargeGalleryViewOperation) {

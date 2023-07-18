@@ -7,6 +7,8 @@ import (
 // MacOSGeneralDeviceConfiguration this topic provides descriptions of the declared methods, properties and relationships exposed by the macOSGeneralDeviceConfiguration resource.
 type MacOSGeneralDeviceConfiguration struct {
     DeviceConfiguration
+    // The OdataType property
+    OdataType *string
 }
 // NewMacOSGeneralDeviceConfiguration instantiates a new macOSGeneralDeviceConfiguration and sets the default values.
 func NewMacOSGeneralDeviceConfiguration()(*MacOSGeneralDeviceConfiguration) {

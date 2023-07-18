@@ -24,6 +24,16 @@ func CreateAndroidWorkProfileCustomConfigurationFromDiscriminatorValue(parseNode
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidWorkProfileCustomConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["omaSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateOmaSettingFromDiscriminatorValue)
         if err != nil {
@@ -42,6 +52,17 @@ func (m *AndroidWorkProfileCustomConfiguration) GetFieldDeserializers()(map[stri
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AndroidWorkProfileCustomConfiguration) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetOmaSettings gets the omaSettings property value. OMA settings. This collection can contain a maximum of 500 elements.
 func (m *AndroidWorkProfileCustomConfiguration) GetOmaSettings()([]OmaSettingable) {
     val, err := m.GetBackingStore().Get("omaSettings")
@@ -59,6 +80,12 @@ func (m *AndroidWorkProfileCustomConfiguration) Serialize(writer i878a80d2330e89
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetOmaSettings() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOmaSettings()))
         for i, v := range m.GetOmaSettings() {
@@ -73,6 +100,13 @@ func (m *AndroidWorkProfileCustomConfiguration) Serialize(writer i878a80d2330e89
     }
     return nil
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AndroidWorkProfileCustomConfiguration) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOmaSettings sets the omaSettings property value. OMA settings. This collection can contain a maximum of 500 elements.
 func (m *AndroidWorkProfileCustomConfiguration) SetOmaSettings(value []OmaSettingable)() {
     err := m.GetBackingStore().Set("omaSettings", value)
@@ -84,6 +118,8 @@ func (m *AndroidWorkProfileCustomConfiguration) SetOmaSettings(value []OmaSettin
 type AndroidWorkProfileCustomConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetOmaSettings()([]OmaSettingable)
+    SetOdataType(value *string)()
     SetOmaSettings(value []OmaSettingable)()
 }

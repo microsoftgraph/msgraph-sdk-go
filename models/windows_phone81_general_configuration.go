@@ -7,6 +7,8 @@ import (
 // WindowsPhone81GeneralConfiguration this topic provides descriptions of the declared methods, properties and relationships exposed by the windowsPhone81GeneralConfiguration resource.
 type WindowsPhone81GeneralConfiguration struct {
     DeviceConfiguration
+    // The OdataType property
+    OdataType *string
 }
 // NewWindowsPhone81GeneralConfiguration instantiates a new windowsPhone81GeneralConfiguration and sets the default values.
 func NewWindowsPhone81GeneralConfiguration()(*WindowsPhone81GeneralConfiguration) {

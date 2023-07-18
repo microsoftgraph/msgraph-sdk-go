@@ -9,8 +9,6 @@ import (
 // Incident 
 type Incident struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewIncident instantiates a new incident and sets the default values.
 func NewIncident()(*Incident) {
@@ -232,6 +230,16 @@ func (m *Incident) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["redirectIncidentId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -293,6 +301,17 @@ func (m *Incident) GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Incident) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -421,6 +440,12 @@ func (m *Incident) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("redirectIncidentId", m.GetRedirectIncidentId())
         if err != nil {
             return err
@@ -518,6 +543,13 @@ func (m *Incident) SetLastUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Incident) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRedirectIncidentId sets the redirectIncidentId property value. Only populated in case an incident is grouped together with another incident, as part of the logic that processes incidents. In such a case, the status property is redirected.
 func (m *Incident) SetRedirectIncidentId(value *string)() {
     err := m.GetBackingStore().Set("redirectIncidentId", value)
@@ -560,6 +592,7 @@ type Incidentable interface {
     GetDisplayName()(*string)
     GetIncidentWebUrl()(*string)
     GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetRedirectIncidentId()(*string)
     GetSeverity()(*AlertSeverity)
     GetStatus()(*IncidentStatus)
@@ -574,6 +607,7 @@ type Incidentable interface {
     SetDisplayName(value *string)()
     SetIncidentWebUrl(value *string)()
     SetLastUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetRedirectIncidentId(value *string)()
     SetSeverity(value *AlertSeverity)()
     SetStatus(value *IncidentStatus)()

@@ -7,6 +7,8 @@ import (
 // UnclassifiedArtifact 
 type UnclassifiedArtifact struct {
     Artifact
+    // The OdataType property
+    OdataType *string
 }
 // NewUnclassifiedArtifact instantiates a new unclassifiedArtifact and sets the default values.
 func NewUnclassifiedArtifact()(*UnclassifiedArtifact) {

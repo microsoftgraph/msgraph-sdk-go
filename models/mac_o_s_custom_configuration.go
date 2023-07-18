@@ -7,6 +7,8 @@ import (
 // MacOSCustomConfiguration this topic provides descriptions of the declared methods, properties and relationships exposed by the macOSCustomConfiguration resource.
 type MacOSCustomConfiguration struct {
     DeviceConfiguration
+    // The OdataType property
+    OdataType *string
 }
 // NewMacOSCustomConfiguration instantiates a new macOSCustomConfiguration and sets the default values.
 func NewMacOSCustomConfiguration()(*MacOSCustomConfiguration) {

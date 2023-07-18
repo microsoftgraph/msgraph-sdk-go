@@ -8,8 +8,6 @@ import (
 // PlannerTask 
 type PlannerTask struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewPlannerTask instantiates a new plannerTask and sets the default values.
 func NewPlannerTask()(*PlannerTask) {
@@ -350,6 +348,16 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["orderHint"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -450,6 +458,17 @@ func (m *PlannerTask) GetHasDescription()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PlannerTask) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -655,6 +674,12 @@ func (m *PlannerTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("orderHint", m.GetOrderHint())
         if err != nil {
             return err
@@ -823,6 +848,13 @@ func (m *PlannerTask) SetHasDescription(value *bool)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PlannerTask) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOrderHint sets the orderHint property value. Hint used to order items of this type in a list view. The format is defined as outlined here.
 func (m *PlannerTask) SetOrderHint(value *string)() {
     err := m.GetBackingStore().Set("orderHint", value)
@@ -906,6 +938,7 @@ type PlannerTaskable interface {
     GetDetails()(PlannerTaskDetailsable)
     GetDueDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetHasDescription()(*bool)
+    GetOdataType()(*string)
     GetOrderHint()(*string)
     GetPercentComplete()(*int32)
     GetPlanId()(*string)
@@ -931,6 +964,7 @@ type PlannerTaskable interface {
     SetDetails(value PlannerTaskDetailsable)()
     SetDueDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetHasDescription(value *bool)()
+    SetOdataType(value *string)()
     SetOrderHint(value *string)()
     SetPercentComplete(value *int32)()
     SetPlanId(value *string)()

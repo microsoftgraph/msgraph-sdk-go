@@ -8,8 +8,6 @@ import (
 // DeviceComplianceSettingState device compliance setting State for a given device.
 type DeviceComplianceSettingState struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceComplianceSettingState instantiates a new deviceComplianceSettingState and sets the default values.
 func NewDeviceComplianceSettingState()(*DeviceComplianceSettingState) {
@@ -109,6 +107,16 @@ func (m *DeviceComplianceSettingState) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["setting"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -180,6 +188,17 @@ func (m *DeviceComplianceSettingState) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceComplianceSettingState) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSetting gets the setting property value. The setting class name and property name.
 func (m *DeviceComplianceSettingState) GetSetting()(*string) {
@@ -289,6 +308,12 @@ func (m *DeviceComplianceSettingState) Serialize(writer i878a80d2330e89d26896388
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("setting", m.GetSetting())
         if err != nil {
             return err
@@ -361,6 +386,13 @@ func (m *DeviceComplianceSettingState) SetDeviceName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceComplianceSettingState) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSetting sets the setting property value. The setting class name and property name.
 func (m *DeviceComplianceSettingState) SetSetting(value *string)() {
     err := m.GetBackingStore().Set("setting", value)
@@ -418,6 +450,7 @@ type DeviceComplianceSettingStateable interface {
     GetDeviceId()(*string)
     GetDeviceModel()(*string)
     GetDeviceName()(*string)
+    GetOdataType()(*string)
     GetSetting()(*string)
     GetSettingName()(*string)
     GetState()(*ComplianceStatus)
@@ -429,6 +462,7 @@ type DeviceComplianceSettingStateable interface {
     SetDeviceId(value *string)()
     SetDeviceModel(value *string)()
     SetDeviceName(value *string)()
+    SetOdataType(value *string)()
     SetSetting(value *string)()
     SetSettingName(value *string)()
     SetState(value *ComplianceStatus)()

@@ -8,8 +8,6 @@ import (
 // ChatMessage 
 type ChatMessage struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewChatMessage instantiates a new chatMessage and sets the default values.
 func NewChatMessage()(*ChatMessage) {
@@ -307,6 +305,16 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["policyViolation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateChatMessagePolicyViolationFromDiscriminatorValue)
         if err != nil {
@@ -487,6 +495,17 @@ func (m *ChatMessage) GetMessageType()(*ChatMessageType) {
     }
     if val != nil {
         return val.(*ChatMessageType)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ChatMessage) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -702,6 +721,12 @@ func (m *ChatMessage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("policyViolation", m.GetPolicyViolation())
         if err != nil {
             return err
@@ -876,6 +901,13 @@ func (m *ChatMessage) SetMessageType(value *ChatMessageType)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ChatMessage) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPolicyViolation sets the policyViolation property value. Defines the properties of a policy violation set by a data loss prevention (DLP) application.
 func (m *ChatMessage) SetPolicyViolation(value ChatMessagePolicyViolationable)() {
     err := m.GetBackingStore().Set("policyViolation", value)
@@ -946,6 +978,7 @@ type ChatMessageable interface {
     GetMentions()([]ChatMessageMentionable)
     GetMessageHistory()([]ChatMessageHistoryItemable)
     GetMessageType()(*ChatMessageType)
+    GetOdataType()(*string)
     GetPolicyViolation()(ChatMessagePolicyViolationable)
     GetReactions()([]ChatMessageReactionable)
     GetReplies()([]ChatMessageable)
@@ -970,6 +1003,7 @@ type ChatMessageable interface {
     SetMentions(value []ChatMessageMentionable)()
     SetMessageHistory(value []ChatMessageHistoryItemable)()
     SetMessageType(value *ChatMessageType)()
+    SetOdataType(value *string)()
     SetPolicyViolation(value ChatMessagePolicyViolationable)()
     SetReactions(value []ChatMessageReactionable)()
     SetReplies(value []ChatMessageable)()

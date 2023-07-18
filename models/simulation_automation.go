@@ -8,8 +8,6 @@ import (
 // SimulationAutomation 
 type SimulationAutomation struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewSimulationAutomation instantiates a new simulationAutomation and sets the default values.
 func NewSimulationAutomation()(*SimulationAutomation) {
@@ -149,6 +147,16 @@ func (m *SimulationAutomation) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["runs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSimulationAutomationRunFromDiscriminatorValue)
         if err != nil {
@@ -218,6 +226,17 @@ func (m *SimulationAutomation) GetNextRunDateTime()(*i336074805fc853987abe6f7fe3
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SimulationAutomation) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -293,6 +312,12 @@ func (m *SimulationAutomation) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     {
         err = writer.WriteTimeValue("nextRunDateTime", m.GetNextRunDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -374,6 +399,13 @@ func (m *SimulationAutomation) SetNextRunDateTime(value *i336074805fc853987abe6f
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SimulationAutomation) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRuns sets the runs property value. A collection of simulation automation runs.
 func (m *SimulationAutomation) SetRuns(value []SimulationAutomationRunable)() {
     err := m.GetBackingStore().Set("runs", value)
@@ -400,6 +432,7 @@ type SimulationAutomationable interface {
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastRunDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetNextRunDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetRuns()([]SimulationAutomationRunable)
     GetStatus()(*SimulationAutomationStatus)
     SetCreatedBy(value EmailIdentityable)()
@@ -410,6 +443,7 @@ type SimulationAutomationable interface {
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastRunDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetNextRunDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetRuns(value []SimulationAutomationRunable)()
     SetStatus(value *SimulationAutomationStatus)()
 }

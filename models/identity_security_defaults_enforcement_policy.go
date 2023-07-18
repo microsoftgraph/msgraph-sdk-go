@@ -34,6 +34,16 @@ func (m *IdentitySecurityDefaultsEnforcementPolicy) GetFieldDeserializers()(map[
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsEnabled gets the isEnabled property value. If set to true, Azure Active Directory security defaults is enabled for the tenant.
@@ -44,6 +54,17 @@ func (m *IdentitySecurityDefaultsEnforcementPolicy) GetIsEnabled()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *IdentitySecurityDefaultsEnforcementPolicy) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -59,6 +80,12 @@ func (m *IdentitySecurityDefaultsEnforcementPolicy) Serialize(writer i878a80d233
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetIsEnabled sets the isEnabled property value. If set to true, Azure Active Directory security defaults is enabled for the tenant.
@@ -68,10 +95,19 @@ func (m *IdentitySecurityDefaultsEnforcementPolicy) SetIsEnabled(value *bool)() 
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *IdentitySecurityDefaultsEnforcementPolicy) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // IdentitySecurityDefaultsEnforcementPolicyable 
 type IdentitySecurityDefaultsEnforcementPolicyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PolicyBaseable
     GetIsEnabled()(*bool)
+    GetOdataType()(*string)
     SetIsEnabled(value *bool)()
+    SetOdataType(value *string)()
 }

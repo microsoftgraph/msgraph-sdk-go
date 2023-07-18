@@ -7,6 +7,8 @@ import (
 // Hostname 
 type Hostname struct {
     Host
+    // The OdataType property
+    OdataType *string
 }
 // NewHostname instantiates a new hostname and sets the default values.
 func NewHostname()(*Hostname) {

@@ -8,8 +8,6 @@ import (
 // AccessPackageAssignment 
 type AccessPackageAssignment struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewAccessPackageAssignment instantiates a new accessPackageAssignment and sets the default values.
 func NewAccessPackageAssignment()(*AccessPackageAssignment) {
@@ -115,6 +113,16 @@ func (m *AccessPackageAssignment) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["schedule"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateEntitlementManagementScheduleFromDiscriminatorValue)
         if err != nil {
@@ -156,6 +164,17 @@ func (m *AccessPackageAssignment) GetFieldDeserializers()(map[string]func(i878a8
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AccessPackageAssignment) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSchedule gets the schedule property value. When the access assignment is to be in place. Read-only.
 func (m *AccessPackageAssignment) GetSchedule()(EntitlementManagementScheduleable) {
@@ -238,6 +257,12 @@ func (m *AccessPackageAssignment) Serialize(writer i878a80d2330e89d26896388a3f48
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("schedule", m.GetSchedule())
         if err != nil {
             return err
@@ -292,6 +317,13 @@ func (m *AccessPackageAssignment) SetExpiredDateTime(value *i336074805fc853987ab
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AccessPackageAssignment) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSchedule sets the schedule property value. When the access assignment is to be in place. Read-only.
 func (m *AccessPackageAssignment) SetSchedule(value EntitlementManagementScheduleable)() {
     err := m.GetBackingStore().Set("schedule", value)
@@ -328,6 +360,7 @@ type AccessPackageAssignmentable interface {
     GetAssignmentPolicy()(AccessPackageAssignmentPolicyable)
     GetCustomExtensionCalloutInstances()([]CustomExtensionCalloutInstanceable)
     GetExpiredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetSchedule()(EntitlementManagementScheduleable)
     GetState()(*AccessPackageAssignmentState)
     GetStatus()(*string)
@@ -336,6 +369,7 @@ type AccessPackageAssignmentable interface {
     SetAssignmentPolicy(value AccessPackageAssignmentPolicyable)()
     SetCustomExtensionCalloutInstances(value []CustomExtensionCalloutInstanceable)()
     SetExpiredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetSchedule(value EntitlementManagementScheduleable)()
     SetState(value *AccessPackageAssignmentState)()
     SetStatus(value *string)()

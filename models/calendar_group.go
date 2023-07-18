@@ -8,8 +8,6 @@ import (
 // CalendarGroup 
 type CalendarGroup struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewCalendarGroup instantiates a new calendarGroup and sets the default values.
 func NewCalendarGroup()(*CalendarGroup) {
@@ -104,11 +102,32 @@ func (m *CalendarGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetName gets the name property value. The group name.
 func (m *CalendarGroup) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CalendarGroup) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -153,6 +172,12 @@ func (m *CalendarGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetCalendars sets the calendars property value. The calendars in the calendar group. Navigation property. Read-only. Nullable.
@@ -183,6 +208,13 @@ func (m *CalendarGroup) SetName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CalendarGroup) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // CalendarGroupable 
 type CalendarGroupable interface {
     Entityable
@@ -191,8 +223,10 @@ type CalendarGroupable interface {
     GetChangeKey()(*string)
     GetClassId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetName()(*string)
+    GetOdataType()(*string)
     SetCalendars(value []Calendarable)()
     SetChangeKey(value *string)()
     SetClassId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetName(value *string)()
+    SetOdataType(value *string)()
 }

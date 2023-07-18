@@ -7,8 +7,6 @@ import (
 // OutlookCategory 
 type OutlookCategory struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewOutlookCategory instantiates a new outlookCategory and sets the default values.
 func NewOutlookCategory()(*OutlookCategory) {
@@ -66,7 +64,28 @@ func (m *OutlookCategory) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *OutlookCategory) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *OutlookCategory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -87,6 +106,12 @@ func (m *OutlookCategory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetColor sets the color property value. A pre-set color constant that characterizes a category, and that is mapped to one of 25 predefined colors. For more details, see the following note.
@@ -103,12 +128,21 @@ func (m *OutlookCategory) SetDisplayName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *OutlookCategory) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // OutlookCategoryable 
 type OutlookCategoryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetColor()(*CategoryColor)
     GetDisplayName()(*string)
+    GetOdataType()(*string)
     SetColor(value *CategoryColor)()
     SetDisplayName(value *string)()
+    SetOdataType(value *string)()
 }

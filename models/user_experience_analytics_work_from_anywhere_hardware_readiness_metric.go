@@ -7,8 +7,6 @@ import (
 // UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric the user experience analytics hardware readiness entity contains account level information about hardware blockers for windows upgrade.
 type UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric instantiates a new userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric and sets the default values.
 func NewUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric()(*UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) {
@@ -24,6 +22,16 @@ func CreateUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricFromDis
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["osCheckFailedPercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
@@ -135,6 +143,17 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetFiel
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOsCheckFailedPercentage gets the osCheckFailedPercentage property value. The percentage of devices for which OS check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetOsCheckFailedPercentage()(*float64) {
@@ -264,6 +283,12 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) Seriali
         return err
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteFloat64Value("osCheckFailedPercentage", m.GetOsCheckFailedPercentage())
         if err != nil {
             return err
@@ -330,6 +355,13 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) Seriali
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOsCheckFailedPercentage sets the osCheckFailedPercentage property value. The percentage of devices for which OS check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) SetOsCheckFailedPercentage(value *float64)() {
@@ -412,6 +444,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) SetUpgr
 type UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetOsCheckFailedPercentage()(*float64)
     GetProcessor64BitCheckFailedPercentage()(*float64)
     GetProcessorCoreCountCheckFailedPercentage()(*float64)
@@ -423,6 +456,7 @@ type UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricable interfac
     GetTotalDeviceCount()(*int32)
     GetTpmCheckFailedPercentage()(*float64)
     GetUpgradeEligibleDeviceCount()(*int32)
+    SetOdataType(value *string)()
     SetOsCheckFailedPercentage(value *float64)()
     SetProcessor64BitCheckFailedPercentage(value *float64)()
     SetProcessorCoreCountCheckFailedPercentage(value *float64)()

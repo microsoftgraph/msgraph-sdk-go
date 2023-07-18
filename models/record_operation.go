@@ -7,6 +7,8 @@ import (
 // RecordOperation 
 type RecordOperation struct {
     CommsOperation
+    // The OdataType property
+    OdataType *string
 }
 // NewRecordOperation instantiates a new recordOperation and sets the default values.
 func NewRecordOperation()(*RecordOperation) {

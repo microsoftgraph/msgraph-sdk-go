@@ -7,8 +7,6 @@ import (
 // WorkbookRangeView 
 type WorkbookRangeView struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewWorkbookRangeView instantiates a new workbookRangeView and sets the default values.
 func NewWorkbookRangeView()(*WorkbookRangeView) {
@@ -113,6 +111,16 @@ func (m *WorkbookRangeView) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         if val != nil {
             m.SetNumberFormat(val.(Jsonable))
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -229,6 +237,17 @@ func (m *WorkbookRangeView) GetNumberFormat()(Jsonable) {
     }
     return nil
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WorkbookRangeView) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetRowCount gets the rowCount property value. Returns the number of visible rows. Read-only.
 func (m *WorkbookRangeView) GetRowCount()(*int32) {
     val, err := m.GetBackingStore().Get("rowCount")
@@ -333,6 +352,12 @@ func (m *WorkbookRangeView) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("rowCount", m.GetRowCount())
         if err != nil {
             return err
@@ -419,6 +444,13 @@ func (m *WorkbookRangeView) SetNumberFormat(value Jsonable)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WorkbookRangeView) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRowCount sets the rowCount property value. Returns the number of visible rows. Read-only.
 func (m *WorkbookRangeView) SetRowCount(value *int32)() {
     err := m.GetBackingStore().Set("rowCount", value)
@@ -465,6 +497,7 @@ type WorkbookRangeViewable interface {
     GetFormulasR1C1()(Jsonable)
     GetIndex()(*int32)
     GetNumberFormat()(Jsonable)
+    GetOdataType()(*string)
     GetRowCount()(*int32)
     GetRows()([]WorkbookRangeViewable)
     GetText()(Jsonable)
@@ -477,6 +510,7 @@ type WorkbookRangeViewable interface {
     SetFormulasR1C1(value Jsonable)()
     SetIndex(value *int32)()
     SetNumberFormat(value Jsonable)()
+    SetOdataType(value *string)()
     SetRowCount(value *int32)()
     SetRows(value []WorkbookRangeViewable)()
     SetText(value Jsonable)()

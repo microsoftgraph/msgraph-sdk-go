@@ -7,8 +7,6 @@ import (
 // EducationClass 
 type EducationClass struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewEducationClass instantiates a new educationClass and sets the default values.
 func NewEducationClass()(*EducationClass) {
@@ -355,6 +353,16 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["schools"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateEducationSchoolFromDiscriminatorValue)
         if err != nil {
@@ -440,6 +448,17 @@ func (m *EducationClass) GetMembers()([]EducationUserable) {
     }
     if val != nil {
         return val.([]EducationUserable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *EducationClass) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -603,6 +622,12 @@ func (m *EducationClass) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSchools() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSchools()))
         for i, v := range m.GetSchools() {
@@ -754,6 +779,13 @@ func (m *EducationClass) SetMembers(value []EducationUserable)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *EducationClass) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSchools sets the schools property value. All schools that this class is associated with. Nullable.
 func (m *EducationClass) SetSchools(value []EducationSchoolable)() {
     err := m.GetBackingStore().Set("schools", value)
@@ -796,6 +828,7 @@ type EducationClassable interface {
     GetGroup()(Groupable)
     GetMailNickname()(*string)
     GetMembers()([]EducationUserable)
+    GetOdataType()(*string)
     GetSchools()([]EducationSchoolable)
     GetTeachers()([]EducationUserable)
     GetTerm()(EducationTermable)
@@ -816,6 +849,7 @@ type EducationClassable interface {
     SetGroup(value Groupable)()
     SetMailNickname(value *string)()
     SetMembers(value []EducationUserable)()
+    SetOdataType(value *string)()
     SetSchools(value []EducationSchoolable)()
     SetTeachers(value []EducationUserable)()
     SetTerm(value EducationTermable)()

@@ -7,6 +7,8 @@ import (
 // ManagedAndroidStoreApp contains properties and inherited properties for Android store apps that you can manage with an Intune app protection policy.
 type ManagedAndroidStoreApp struct {
     ManagedApp
+    // The OdataType property
+    OdataType *string
 }
 // NewManagedAndroidStoreApp instantiates a new managedAndroidStoreApp and sets the default values.
 func NewManagedAndroidStoreApp()(*ManagedAndroidStoreApp) {

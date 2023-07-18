@@ -8,6 +8,8 @@ import (
 // ScheduleChangeRequest 
 type ScheduleChangeRequest struct {
     ChangeTrackedEntity
+    // The OdataType property
+    OdataType *string
 }
 // NewScheduleChangeRequest instantiates a new scheduleChangeRequest and sets the default values.
 func NewScheduleChangeRequest()(*ScheduleChangeRequest) {

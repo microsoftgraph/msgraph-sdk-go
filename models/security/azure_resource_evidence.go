@@ -7,8 +7,6 @@ import (
 // AzureResourceEvidence 
 type AzureResourceEvidence struct {
     AlertEvidence
-    // The OdataType property
-    OdataType *string
 }
 // NewAzureResourceEvidence instantiates a new azureResourceEvidence and sets the default values.
 func NewAzureResourceEvidence()(*AzureResourceEvidence) {
@@ -24,6 +22,16 @@ func CreateAzureResourceEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AzureResourceEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AlertEvidence.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["resourceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -55,6 +63,17 @@ func (m *AzureResourceEvidence) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AzureResourceEvidence) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetResourceId gets the resourceId property value. The unique identifier for the Azure resource.
 func (m *AzureResourceEvidence) GetResourceId()(*string) {
@@ -96,6 +115,12 @@ func (m *AzureResourceEvidence) Serialize(writer i878a80d2330e89d26896388a3f487e
         return err
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("resourceId", m.GetResourceId())
         if err != nil {
             return err
@@ -114,6 +139,13 @@ func (m *AzureResourceEvidence) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AzureResourceEvidence) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetResourceId sets the resourceId property value. The unique identifier for the Azure resource.
 func (m *AzureResourceEvidence) SetResourceId(value *string)() {
@@ -140,9 +172,11 @@ func (m *AzureResourceEvidence) SetResourceType(value *string)() {
 type AzureResourceEvidenceable interface {
     AlertEvidenceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetResourceId()(*string)
     GetResourceName()(*string)
     GetResourceType()(*string)
+    SetOdataType(value *string)()
     SetResourceId(value *string)()
     SetResourceName(value *string)()
     SetResourceType(value *string)()

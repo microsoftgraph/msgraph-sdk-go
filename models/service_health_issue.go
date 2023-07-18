@@ -7,6 +7,8 @@ import (
 // ServiceHealthIssue 
 type ServiceHealthIssue struct {
     ServiceAnnouncementBase
+    // The OdataType property
+    OdataType *string
 }
 // NewServiceHealthIssue instantiates a new serviceHealthIssue and sets the default values.
 func NewServiceHealthIssue()(*ServiceHealthIssue) {

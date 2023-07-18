@@ -8,8 +8,6 @@ import (
 // ThreatIntelligence 
 type ThreatIntelligence struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewThreatIntelligence instantiates a new threatIntelligence and sets the default values.
 func NewThreatIntelligence()(*ThreatIntelligence) {
@@ -175,6 +173,16 @@ func (m *ThreatIntelligence) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["passiveDnsRecords"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePassiveDnsRecordFromDiscriminatorValue)
         if err != nil {
@@ -272,6 +280,17 @@ func (m *ThreatIntelligence) GetIntelProfiles()([]IntelligenceProfileable) {
     }
     if val != nil {
         return val.([]IntelligenceProfileable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ThreatIntelligence) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -399,6 +418,12 @@ func (m *ThreatIntelligence) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPassiveDnsRecords() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPassiveDnsRecords()))
         for i, v := range m.GetPassiveDnsRecords() {
@@ -481,6 +506,13 @@ func (m *ThreatIntelligence) SetIntelProfiles(value []IntelligenceProfileable)()
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ThreatIntelligence) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPassiveDnsRecords sets the passiveDnsRecords property value. Retrieve details about microsoft.graph.security.passiveDnsRecord objects.Note: List retrieval is not yet supported.
 func (m *ThreatIntelligence) SetPassiveDnsRecords(value []PassiveDnsRecordable)() {
     err := m.GetBackingStore().Set("passiveDnsRecords", value)
@@ -507,6 +539,7 @@ type ThreatIntelligenceable interface {
     GetHostTrackers()([]HostTrackerable)
     GetIntelligenceProfileIndicators()([]IntelligenceProfileIndicatorable)
     GetIntelProfiles()([]IntelligenceProfileable)
+    GetOdataType()(*string)
     GetPassiveDnsRecords()([]PassiveDnsRecordable)
     GetVulnerabilities()([]Vulnerabilityable)
     SetArticleIndicators(value []ArticleIndicatorable)()
@@ -517,6 +550,7 @@ type ThreatIntelligenceable interface {
     SetHostTrackers(value []HostTrackerable)()
     SetIntelligenceProfileIndicators(value []IntelligenceProfileIndicatorable)()
     SetIntelProfiles(value []IntelligenceProfileable)()
+    SetOdataType(value *string)()
     SetPassiveDnsRecords(value []PassiveDnsRecordable)()
     SetVulnerabilities(value []Vulnerabilityable)()
 }

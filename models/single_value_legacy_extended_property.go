@@ -7,8 +7,6 @@ import (
 // SingleValueLegacyExtendedProperty 
 type SingleValueLegacyExtendedProperty struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewSingleValueLegacyExtendedProperty instantiates a new singleValueLegacyExtendedProperty and sets the default values.
 func NewSingleValueLegacyExtendedProperty()(*SingleValueLegacyExtendedProperty) {
@@ -24,6 +22,16 @@ func CreateSingleValueLegacyExtendedPropertyFromDiscriminatorValue(parseNode i87
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SingleValueLegacyExtendedProperty) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -35,6 +43,17 @@ func (m *SingleValueLegacyExtendedProperty) GetFieldDeserializers()(map[string]f
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SingleValueLegacyExtendedProperty) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetValue gets the value property value. A property value.
 func (m *SingleValueLegacyExtendedProperty) GetValue()(*string) {
@@ -54,12 +73,25 @@ func (m *SingleValueLegacyExtendedProperty) Serialize(writer i878a80d2330e89d268
         return err
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("value", m.GetValue())
         if err != nil {
             return err
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SingleValueLegacyExtendedProperty) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetValue sets the value property value. A property value.
 func (m *SingleValueLegacyExtendedProperty) SetValue(value *string)() {
@@ -72,6 +104,8 @@ func (m *SingleValueLegacyExtendedProperty) SetValue(value *string)() {
 type SingleValueLegacyExtendedPropertyable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetValue()(*string)
+    SetOdataType(value *string)()
     SetValue(value *string)()
 }

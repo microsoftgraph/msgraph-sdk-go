@@ -7,8 +7,6 @@ import (
 // Synchronization 
 type Synchronization struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewSynchronization instantiates a new synchronization and sets the default values.
 func NewSynchronization()(*Synchronization) {
@@ -37,6 +35,16 @@ func (m *Synchronization) GetFieldDeserializers()(map[string]func(i878a80d2330e8
                 }
             }
             m.SetJobs(res)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -85,6 +93,17 @@ func (m *Synchronization) GetJobs()([]SynchronizationJobable) {
     }
     return nil
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Synchronization) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetSecrets gets the secrets property value. Represents a collection of credentials to access provisioned cloud applications.
 func (m *Synchronization) GetSecrets()([]SynchronizationSecretKeyStringValuePairable) {
     val, err := m.GetBackingStore().Get("secrets")
@@ -125,6 +144,12 @@ func (m *Synchronization) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSecrets() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSecrets()))
         for i, v := range m.GetSecrets() {
@@ -158,6 +183,13 @@ func (m *Synchronization) SetJobs(value []SynchronizationJobable)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Synchronization) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSecrets sets the secrets property value. Represents a collection of credentials to access provisioned cloud applications.
 func (m *Synchronization) SetSecrets(value []SynchronizationSecretKeyStringValuePairable)() {
     err := m.GetBackingStore().Set("secrets", value)
@@ -177,9 +209,11 @@ type Synchronizationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetJobs()([]SynchronizationJobable)
+    GetOdataType()(*string)
     GetSecrets()([]SynchronizationSecretKeyStringValuePairable)
     GetTemplates()([]SynchronizationTemplateable)
     SetJobs(value []SynchronizationJobable)()
+    SetOdataType(value *string)()
     SetSecrets(value []SynchronizationSecretKeyStringValuePairable)()
     SetTemplates(value []SynchronizationTemplateable)()
 }

@@ -7,8 +7,6 @@ import (
 // PlannerTaskDetails 
 type PlannerTaskDetails struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewPlannerTaskDetails instantiates a new plannerTaskDetails and sets the default values.
 func NewPlannerTaskDetails()(*PlannerTaskDetails) {
@@ -66,6 +64,16 @@ func (m *PlannerTaskDetails) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["previewType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParsePlannerPreviewType)
         if err != nil {
@@ -87,6 +95,17 @@ func (m *PlannerTaskDetails) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PlannerTaskDetails) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPreviewType gets the previewType property value. This sets the type of preview that shows up on the task. The possible values are: automatic, noPreview, checklist, description, reference. When set to automatic the displayed preview is chosen by the app viewing the task.
 func (m *PlannerTaskDetails) GetPreviewType()(*PlannerPreviewType) {
@@ -128,6 +147,12 @@ func (m *PlannerTaskDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPreviewType() != nil {
         cast := (*m.GetPreviewType()).String()
         err = writer.WriteStringValue("previewType", &cast)
@@ -157,6 +182,13 @@ func (m *PlannerTaskDetails) SetDescription(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PlannerTaskDetails) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPreviewType sets the previewType property value. This sets the type of preview that shows up on the task. The possible values are: automatic, noPreview, checklist, description, reference. When set to automatic the displayed preview is chosen by the app viewing the task.
 func (m *PlannerTaskDetails) SetPreviewType(value *PlannerPreviewType)() {
     err := m.GetBackingStore().Set("previewType", value)
@@ -177,10 +209,12 @@ type PlannerTaskDetailsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetChecklist()(PlannerChecklistItemsable)
     GetDescription()(*string)
+    GetOdataType()(*string)
     GetPreviewType()(*PlannerPreviewType)
     GetReferences()(PlannerExternalReferencesable)
     SetChecklist(value PlannerChecklistItemsable)()
     SetDescription(value *string)()
+    SetOdataType(value *string)()
     SetPreviewType(value *PlannerPreviewType)()
     SetReferences(value PlannerExternalReferencesable)()
 }

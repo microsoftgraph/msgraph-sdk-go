@@ -7,8 +7,6 @@ import (
 // FileEvidence 
 type FileEvidence struct {
     AlertEvidence
-    // The OdataType property
-    OdataType *string
 }
 // NewFileEvidence instantiates a new fileEvidence and sets the default values.
 func NewFileEvidence()(*FileEvidence) {
@@ -65,6 +63,16 @@ func (m *FileEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetFileDetails gets the fileDetails property value. The file details.
@@ -81,6 +89,17 @@ func (m *FileEvidence) GetFileDetails()(FileDetailsable) {
 // GetMdeDeviceId gets the mdeDeviceId property value. A unique identifier assigned to a device by Microsoft Defender for Endpoint.
 func (m *FileEvidence) GetMdeDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("mdeDeviceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *FileEvidence) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -114,6 +133,12 @@ func (m *FileEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDetectionStatus sets the detectionStatus property value. The status of the detection.The possible values are: detected, blocked, prevented, unknownFutureValue.
@@ -137,6 +162,13 @@ func (m *FileEvidence) SetMdeDeviceId(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *FileEvidence) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // FileEvidenceable 
 type FileEvidenceable interface {
     AlertEvidenceable
@@ -144,7 +176,9 @@ type FileEvidenceable interface {
     GetDetectionStatus()(*DetectionStatus)
     GetFileDetails()(FileDetailsable)
     GetMdeDeviceId()(*string)
+    GetOdataType()(*string)
     SetDetectionStatus(value *DetectionStatus)()
     SetFileDetails(value FileDetailsable)()
     SetMdeDeviceId(value *string)()
+    SetOdataType(value *string)()
 }

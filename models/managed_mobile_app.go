@@ -7,8 +7,6 @@ import (
 // ManagedMobileApp the identifier for the deployment an app.
 type ManagedMobileApp struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewManagedMobileApp instantiates a new managedMobileApp and sets the default values.
 func NewManagedMobileApp()(*ManagedMobileApp) {
@@ -34,6 +32,16 @@ func (m *ManagedMobileApp) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["version"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -54,6 +62,17 @@ func (m *ManagedMobileApp) GetMobileAppIdentifier()(MobileAppIdentifierable) {
     }
     if val != nil {
         return val.(MobileAppIdentifierable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ManagedMobileApp) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -81,6 +100,12 @@ func (m *ManagedMobileApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("version", m.GetVersion())
         if err != nil {
             return err
@@ -91,6 +116,13 @@ func (m *ManagedMobileApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 // SetMobileAppIdentifier sets the mobileAppIdentifier property value. The identifier for an app with it's operating system type.
 func (m *ManagedMobileApp) SetMobileAppIdentifier(value MobileAppIdentifierable)() {
     err := m.GetBackingStore().Set("mobileAppIdentifier", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ManagedMobileApp) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -107,7 +139,9 @@ type ManagedMobileAppable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetMobileAppIdentifier()(MobileAppIdentifierable)
+    GetOdataType()(*string)
     GetVersion()(*string)
     SetMobileAppIdentifier(value MobileAppIdentifierable)()
+    SetOdataType(value *string)()
     SetVersion(value *string)()
 }

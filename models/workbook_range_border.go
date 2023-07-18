@@ -7,8 +7,6 @@ import (
 // WorkbookRangeBorder 
 type WorkbookRangeBorder struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewWorkbookRangeBorder instantiates a new workbookRangeBorder and sets the default values.
 func NewWorkbookRangeBorder()(*WorkbookRangeBorder) {
@@ -45,6 +43,16 @@ func (m *WorkbookRangeBorder) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["sideIndex"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -76,6 +84,17 @@ func (m *WorkbookRangeBorder) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WorkbookRangeBorder) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSideIndex gets the sideIndex property value. Constant value that indicates the specific side of the border. The possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight, InsideVertical, InsideHorizontal, DiagonalDown, DiagonalUp. Read-only.
 func (m *WorkbookRangeBorder) GetSideIndex()(*string) {
@@ -123,6 +142,12 @@ func (m *WorkbookRangeBorder) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("sideIndex", m.GetSideIndex())
         if err != nil {
             return err
@@ -145,6 +170,13 @@ func (m *WorkbookRangeBorder) Serialize(writer i878a80d2330e89d26896388a3f487eef
 // SetColor sets the color property value. HTML color code representing the color of the border line, of the form #RRGGBB (e.g. 'FFA500') or as a named HTML color (e.g. 'orange').
 func (m *WorkbookRangeBorder) SetColor(value *string)() {
     err := m.GetBackingStore().Set("color", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WorkbookRangeBorder) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -175,10 +207,12 @@ type WorkbookRangeBorderable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetColor()(*string)
+    GetOdataType()(*string)
     GetSideIndex()(*string)
     GetStyle()(*string)
     GetWeight()(*string)
     SetColor(value *string)()
+    SetOdataType(value *string)()
     SetSideIndex(value *string)()
     SetStyle(value *string)()
     SetWeight(value *string)()

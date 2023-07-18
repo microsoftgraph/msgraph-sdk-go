@@ -7,6 +7,8 @@ import (
 // StopHoldMusicOperation 
 type StopHoldMusicOperation struct {
     CommsOperation
+    // The OdataType property
+    OdataType *string
 }
 // NewStopHoldMusicOperation instantiates a new stopHoldMusicOperation and sets the default values.
 func NewStopHoldMusicOperation()(*StopHoldMusicOperation) {

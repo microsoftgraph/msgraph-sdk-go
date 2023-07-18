@@ -8,8 +8,6 @@ import (
 // TermsAndConditionsAcceptanceStatus a termsAndConditionsAcceptanceStatus entity represents the acceptance status of a given Terms and Conditions (T&C) policy by a given user. Users must accept the most up-to-date version of the terms in order to retain access to the Company Portal.
 type TermsAndConditionsAcceptanceStatus struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewTermsAndConditionsAcceptanceStatus instantiates a new termsAndConditionsAcceptanceStatus and sets the default values.
 func NewTermsAndConditionsAcceptanceStatus()(*TermsAndConditionsAcceptanceStatus) {
@@ -67,6 +65,16 @@ func (m *TermsAndConditionsAcceptanceStatus) GetFieldDeserializers()(map[string]
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["termsAndConditions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTermsAndConditionsFromDiscriminatorValue)
         if err != nil {
@@ -98,6 +106,17 @@ func (m *TermsAndConditionsAcceptanceStatus) GetFieldDeserializers()(map[string]
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TermsAndConditionsAcceptanceStatus) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTermsAndConditions gets the termsAndConditions property value. Navigation link to the terms and conditions that are assigned.
 func (m *TermsAndConditionsAcceptanceStatus) GetTermsAndConditions()(TermsAndConditionsable) {
@@ -151,6 +170,12 @@ func (m *TermsAndConditionsAcceptanceStatus) Serialize(writer i878a80d2330e89d26
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("termsAndConditions", m.GetTermsAndConditions())
         if err != nil {
             return err
@@ -184,6 +209,13 @@ func (m *TermsAndConditionsAcceptanceStatus) SetAcceptedVersion(value *int32)() 
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TermsAndConditionsAcceptanceStatus) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTermsAndConditions sets the termsAndConditions property value. Navigation link to the terms and conditions that are assigned.
 func (m *TermsAndConditionsAcceptanceStatus) SetTermsAndConditions(value TermsAndConditionsable)() {
     err := m.GetBackingStore().Set("termsAndConditions", value)
@@ -211,11 +243,13 @@ type TermsAndConditionsAcceptanceStatusable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAcceptedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetAcceptedVersion()(*int32)
+    GetOdataType()(*string)
     GetTermsAndConditions()(TermsAndConditionsable)
     GetUserDisplayName()(*string)
     GetUserPrincipalName()(*string)
     SetAcceptedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetAcceptedVersion(value *int32)()
+    SetOdataType(value *string)()
     SetTermsAndConditions(value TermsAndConditionsable)()
     SetUserDisplayName(value *string)()
     SetUserPrincipalName(value *string)()

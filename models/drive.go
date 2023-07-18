@@ -7,6 +7,8 @@ import (
 // Drive 
 type Drive struct {
     BaseItem
+    // The OdataType property
+    OdataType *string
 }
 // NewDrive instantiates a new drive and sets the default values.
 func NewDrive()(*Drive) {
