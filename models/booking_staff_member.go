@@ -97,6 +97,16 @@ func (m *BookingStaffMember) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["role"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseBookingStaffRole)
         if err != nil {
@@ -153,6 +163,17 @@ func (m *BookingStaffMember) GetIsEmailNotificationEnabled()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *BookingStaffMember) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -230,6 +251,12 @@ func (m *BookingStaffMember) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRole() != nil {
         cast := (*m.GetRole()).String()
         err = writer.WriteStringValue("role", &cast)
@@ -291,6 +318,13 @@ func (m *BookingStaffMember) SetIsEmailNotificationEnabled(value *bool)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *BookingStaffMember) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRole sets the role property value. The role property
 func (m *BookingStaffMember) SetRole(value *BookingStaffRole)() {
     err := m.GetBackingStore().Set("role", value)
@@ -327,6 +361,7 @@ type BookingStaffMemberable interface {
     GetDisplayName()(*string)
     GetEmailAddress()(*string)
     GetIsEmailNotificationEnabled()(*bool)
+    GetOdataType()(*string)
     GetRole()(*BookingStaffRole)
     GetTimeZone()(*string)
     GetUseBusinessHours()(*bool)
@@ -335,6 +370,7 @@ type BookingStaffMemberable interface {
     SetDisplayName(value *string)()
     SetEmailAddress(value *string)()
     SetIsEmailNotificationEnabled(value *bool)()
+    SetOdataType(value *string)()
     SetRole(value *BookingStaffRole)()
     SetTimeZone(value *string)()
     SetUseBusinessHours(value *bool)()

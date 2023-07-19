@@ -7,6 +7,8 @@ import (
 // WebApp contains properties and inherited properties for web apps.
 type WebApp struct {
     MobileApp
+    // The OdataType property
+    OdataType *string
 }
 // NewWebApp instantiates a new webApp and sets the default values.
 func NewWebApp()(*WebApp) {

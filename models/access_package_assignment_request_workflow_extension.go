@@ -108,6 +108,16 @@ func (m *AccessPackageAssignmentRequestWorkflowExtension) GetFieldDeserializers(
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
@@ -129,6 +139,17 @@ func (m *AccessPackageAssignmentRequestWorkflowExtension) GetLastModifiedDateTim
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AccessPackageAssignmentRequestWorkflowExtension) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -164,6 +185,12 @@ func (m *AccessPackageAssignmentRequestWorkflowExtension) Serialize(writer i878a
     }
     {
         err = writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -205,6 +232,13 @@ func (m *AccessPackageAssignmentRequestWorkflowExtension) SetLastModifiedDateTim
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AccessPackageAssignmentRequestWorkflowExtension) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // AccessPackageAssignmentRequestWorkflowExtensionable 
 type AccessPackageAssignmentRequestWorkflowExtensionable interface {
     CustomCalloutExtensionable
@@ -214,9 +248,11 @@ type AccessPackageAssignmentRequestWorkflowExtensionable interface {
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastModifiedBy()(*string)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     SetCallbackConfiguration(value CustomExtensionCallbackConfigurationable)()
     SetCreatedBy(value *string)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastModifiedBy(value *string)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
 }

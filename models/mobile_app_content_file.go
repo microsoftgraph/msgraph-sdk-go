@@ -8,8 +8,6 @@ import (
 // MobileAppContentFile contains properties for a single installer file that is associated with a given mobileAppContent version.
 type MobileAppContentFile struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewMobileAppContentFile instantiates a new mobileAppContentFile and sets the default values.
 func NewMobileAppContentFile()(*MobileAppContentFile) {
@@ -118,6 +116,16 @@ func (m *MobileAppContentFile) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["size"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
@@ -175,6 +183,17 @@ func (m *MobileAppContentFile) GetManifest()([]byte) {
 // GetName gets the name property value. the file name.
 func (m *MobileAppContentFile) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MobileAppContentFile) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -259,6 +278,12 @@ func (m *MobileAppContentFile) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt64Value("size", m.GetSize())
         if err != nil {
             return err
@@ -321,6 +346,13 @@ func (m *MobileAppContentFile) SetName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MobileAppContentFile) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSize sets the size property value. The size of the file prior to encryption.
 func (m *MobileAppContentFile) SetSize(value *int64)() {
     err := m.GetBackingStore().Set("size", value)
@@ -352,6 +384,7 @@ type MobileAppContentFileable interface {
     GetIsCommitted()(*bool)
     GetManifest()([]byte)
     GetName()(*string)
+    GetOdataType()(*string)
     GetSize()(*int64)
     GetSizeEncrypted()(*int64)
     GetUploadState()(*MobileAppContentFileUploadState)
@@ -361,6 +394,7 @@ type MobileAppContentFileable interface {
     SetIsCommitted(value *bool)()
     SetManifest(value []byte)()
     SetName(value *string)()
+    SetOdataType(value *string)()
     SetSize(value *int64)()
     SetSizeEncrypted(value *int64)()
     SetUploadState(value *MobileAppContentFileUploadState)()

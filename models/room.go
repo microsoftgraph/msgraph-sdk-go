@@ -7,6 +7,8 @@ import (
 // Room 
 type Room struct {
     Place
+    // The OdataType property
+    OdataType *string
 }
 // NewRoom instantiates a new room and sets the default values.
 func NewRoom()(*Room) {

@@ -7,6 +7,8 @@ import (
 // IosManagedAppRegistration represents the synchronization details of an ios app, with management capabilities, for a specific user.
 type IosManagedAppRegistration struct {
     ManagedAppRegistration
+    // The OdataType property
+    OdataType *string
 }
 // NewIosManagedAppRegistration instantiates a new iosManagedAppRegistration and sets the default values.
 func NewIosManagedAppRegistration()(*IosManagedAppRegistration) {

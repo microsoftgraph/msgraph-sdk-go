@@ -7,8 +7,6 @@ import (
 // PlannerUser 
 type PlannerUser struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewPlannerUser instantiates a new plannerUser and sets the default values.
 func NewPlannerUser()(*PlannerUser) {
@@ -24,6 +22,16 @@ func CreatePlannerUserFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PlannerUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["plans"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePlannerPlanFromDiscriminatorValue)
         if err != nil {
@@ -58,6 +66,17 @@ func (m *PlannerUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PlannerUser) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetPlans gets the plans property value. Read-only. Nullable. Returns the plannerTasks assigned to the user.
 func (m *PlannerUser) GetPlans()([]PlannerPlanable) {
     val, err := m.GetBackingStore().Get("plans")
@@ -86,6 +105,12 @@ func (m *PlannerUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPlans() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPlans()))
         for i, v := range m.GetPlans() {
@@ -112,6 +137,13 @@ func (m *PlannerUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PlannerUser) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPlans sets the plans property value. Read-only. Nullable. Returns the plannerTasks assigned to the user.
 func (m *PlannerUser) SetPlans(value []PlannerPlanable)() {
     err := m.GetBackingStore().Set("plans", value)
@@ -130,8 +162,10 @@ func (m *PlannerUser) SetTasks(value []PlannerTaskable)() {
 type PlannerUserable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetPlans()([]PlannerPlanable)
     GetTasks()([]PlannerTaskable)
+    SetOdataType(value *string)()
     SetPlans(value []PlannerPlanable)()
     SetTasks(value []PlannerTaskable)()
 }

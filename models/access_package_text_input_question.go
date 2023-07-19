@@ -34,6 +34,16 @@ func (m *AccessPackageTextInputQuestion) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["regexPattern"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -54,6 +64,17 @@ func (m *AccessPackageTextInputQuestion) GetIsSingleLineQuestion()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AccessPackageTextInputQuestion) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -81,6 +102,12 @@ func (m *AccessPackageTextInputQuestion) Serialize(writer i878a80d2330e89d268963
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("regexPattern", m.GetRegexPattern())
         if err != nil {
             return err
@@ -91,6 +118,13 @@ func (m *AccessPackageTextInputQuestion) Serialize(writer i878a80d2330e89d268963
 // SetIsSingleLineQuestion sets the isSingleLineQuestion property value. Indicates whether the answer will be in single or multiple line format.
 func (m *AccessPackageTextInputQuestion) SetIsSingleLineQuestion(value *bool)() {
     err := m.GetBackingStore().Set("isSingleLineQuestion", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AccessPackageTextInputQuestion) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -107,7 +141,9 @@ type AccessPackageTextInputQuestionable interface {
     AccessPackageQuestionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetIsSingleLineQuestion()(*bool)
+    GetOdataType()(*string)
     GetRegexPattern()(*string)
     SetIsSingleLineQuestion(value *bool)()
+    SetOdataType(value *string)()
     SetRegexPattern(value *string)()
 }

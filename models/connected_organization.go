@@ -8,8 +8,6 @@ import (
 // ConnectedOrganization 
 type ConnectedOrganization struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewConnectedOrganization instantiates a new connectedOrganization and sets the default values.
 func NewConnectedOrganization()(*ConnectedOrganization) {
@@ -157,6 +155,16 @@ func (m *ConnectedOrganization) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseConnectedOrganizationState)
         if err != nil {
@@ -199,6 +207,17 @@ func (m *ConnectedOrganization) GetModifiedDateTime()(*i336074805fc853987abe6f7f
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ConnectedOrganization) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -279,6 +298,12 @@ func (m *ConnectedOrganization) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetState() != nil {
         cast := (*m.GetState()).String()
         err = writer.WriteStringValue("state", &cast)
@@ -337,6 +362,13 @@ func (m *ConnectedOrganization) SetModifiedDateTime(value *i336074805fc853987abe
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ConnectedOrganization) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetState sets the state property value. The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not.  The possible values are: configured, proposed, unknownFutureValue.
 func (m *ConnectedOrganization) SetState(value *ConnectedOrganizationState)() {
     err := m.GetBackingStore().Set("state", value)
@@ -355,6 +387,7 @@ type ConnectedOrganizationable interface {
     GetIdentitySources()([]IdentitySourceable)
     GetInternalSponsors()([]DirectoryObjectable)
     GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetState()(*ConnectedOrganizationState)
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDescription(value *string)()
@@ -363,5 +396,6 @@ type ConnectedOrganizationable interface {
     SetIdentitySources(value []IdentitySourceable)()
     SetInternalSponsors(value []DirectoryObjectable)()
     SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetState(value *ConnectedOrganizationState)()
 }

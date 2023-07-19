@@ -7,8 +7,6 @@ import (
 // AccessPackageResourceScope 
 type AccessPackageResourceScope struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewAccessPackageResourceScope instantiates a new accessPackageResourceScope and sets the default values.
 func NewAccessPackageResourceScope()(*AccessPackageResourceScope) {
@@ -76,6 +74,16 @@ func (m *AccessPackageResourceScope) GetFieldDeserializers()(map[string]func(i87
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["originId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -116,6 +124,17 @@ func (m *AccessPackageResourceScope) GetIsRootScope()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AccessPackageResourceScope) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -177,6 +196,12 @@ func (m *AccessPackageResourceScope) Serialize(writer i878a80d2330e89d26896388a3
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("originId", m.GetOriginId())
         if err != nil {
             return err
@@ -217,6 +242,13 @@ func (m *AccessPackageResourceScope) SetIsRootScope(value *bool)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AccessPackageResourceScope) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOriginId sets the originId property value. The originId property
 func (m *AccessPackageResourceScope) SetOriginId(value *string)() {
     err := m.GetBackingStore().Set("originId", value)
@@ -245,12 +277,14 @@ type AccessPackageResourceScopeable interface {
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetIsRootScope()(*bool)
+    GetOdataType()(*string)
     GetOriginId()(*string)
     GetOriginSystem()(*string)
     GetResource()(AccessPackageResourceable)
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetIsRootScope(value *bool)()
+    SetOdataType(value *string)()
     SetOriginId(value *string)()
     SetOriginSystem(value *string)()
     SetResource(value AccessPackageResourceable)()

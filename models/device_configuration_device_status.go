@@ -8,8 +8,6 @@ import (
 // DeviceConfigurationDeviceStatus 
 type DeviceConfigurationDeviceStatus struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceConfigurationDeviceStatus instantiates a new deviceConfigurationDeviceStatus and sets the default values.
 func NewDeviceConfigurationDeviceStatus()(*DeviceConfigurationDeviceStatus) {
@@ -98,6 +96,16 @@ func (m *DeviceConfigurationDeviceStatus) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseComplianceStatus)
         if err != nil {
@@ -138,6 +146,17 @@ func (m *DeviceConfigurationDeviceStatus) GetLastReportedDateTime()(*i336074805f
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceConfigurationDeviceStatus) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -204,6 +223,12 @@ func (m *DeviceConfigurationDeviceStatus) Serialize(writer i878a80d2330e89d26896
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetStatus() != nil {
         cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
@@ -253,6 +278,13 @@ func (m *DeviceConfigurationDeviceStatus) SetLastReportedDateTime(value *i336074
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceConfigurationDeviceStatus) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetStatus sets the status property value. The status property
 func (m *DeviceConfigurationDeviceStatus) SetStatus(value *ComplianceStatus)() {
     err := m.GetBackingStore().Set("status", value)
@@ -282,6 +314,7 @@ type DeviceConfigurationDeviceStatusable interface {
     GetDeviceDisplayName()(*string)
     GetDeviceModel()(*string)
     GetLastReportedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetStatus()(*ComplianceStatus)
     GetUserName()(*string)
     GetUserPrincipalName()(*string)
@@ -289,6 +322,7 @@ type DeviceConfigurationDeviceStatusable interface {
     SetDeviceDisplayName(value *string)()
     SetDeviceModel(value *string)()
     SetLastReportedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetStatus(value *ComplianceStatus)()
     SetUserName(value *string)()
     SetUserPrincipalName(value *string)()

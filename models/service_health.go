@@ -7,8 +7,6 @@ import (
 // ServiceHealth 
 type ServiceHealth struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewServiceHealth instantiates a new serviceHealth and sets the default values.
 func NewServiceHealth()(*ServiceHealth) {
@@ -37,6 +35,16 @@ func (m *ServiceHealth) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
                 }
             }
             m.SetIssues(res)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -70,6 +78,17 @@ func (m *ServiceHealth) GetIssues()([]ServiceHealthIssueable) {
     }
     if val != nil {
         return val.([]ServiceHealthIssueable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ServiceHealth) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -114,6 +133,12 @@ func (m *ServiceHealth) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("service", m.GetService())
         if err != nil {
             return err
@@ -131,6 +156,13 @@ func (m *ServiceHealth) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 // SetIssues sets the issues property value. A collection of issues that happened on the service, with detailed information for each issue.
 func (m *ServiceHealth) SetIssues(value []ServiceHealthIssueable)() {
     err := m.GetBackingStore().Set("issues", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ServiceHealth) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -154,9 +186,11 @@ type ServiceHealthable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetIssues()([]ServiceHealthIssueable)
+    GetOdataType()(*string)
     GetService()(*string)
     GetStatus()(*ServiceHealthStatus)
     SetIssues(value []ServiceHealthIssueable)()
+    SetOdataType(value *string)()
     SetService(value *string)()
     SetStatus(value *ServiceHealthStatus)()
 }

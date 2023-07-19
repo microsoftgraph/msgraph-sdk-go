@@ -7,8 +7,6 @@ import (
 // AuthenticationMethodConfiguration 
 type AuthenticationMethodConfiguration struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewAuthenticationMethodConfiguration instantiates a new authenticationMethodConfiguration and sets the default values.
 func NewAuthenticationMethodConfiguration()(*AuthenticationMethodConfiguration) {
@@ -83,6 +81,16 @@ func (m *AuthenticationMethodConfiguration) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAuthenticationMethodState)
         if err != nil {
@@ -94,6 +102,17 @@ func (m *AuthenticationMethodConfiguration) GetFieldDeserializers()(map[string]f
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AuthenticationMethodConfiguration) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetState gets the state property value. The state of the policy. Possible values are: enabled, disabled.
 func (m *AuthenticationMethodConfiguration) GetState()(*AuthenticationMethodState) {
@@ -124,6 +143,12 @@ func (m *AuthenticationMethodConfiguration) Serialize(writer i878a80d2330e89d268
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetState() != nil {
         cast := (*m.GetState()).String()
         err = writer.WriteStringValue("state", &cast)
@@ -140,6 +165,13 @@ func (m *AuthenticationMethodConfiguration) SetExcludeTargets(value []ExcludeTar
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AuthenticationMethodConfiguration) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetState sets the state property value. The state of the policy. Possible values are: enabled, disabled.
 func (m *AuthenticationMethodConfiguration) SetState(value *AuthenticationMethodState)() {
     err := m.GetBackingStore().Set("state", value)
@@ -152,7 +184,9 @@ type AuthenticationMethodConfigurationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetExcludeTargets()([]ExcludeTargetable)
+    GetOdataType()(*string)
     GetState()(*AuthenticationMethodState)
     SetExcludeTargets(value []ExcludeTargetable)()
+    SetOdataType(value *string)()
     SetState(value *AuthenticationMethodState)()
 }

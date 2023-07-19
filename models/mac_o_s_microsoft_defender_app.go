@@ -7,6 +7,8 @@ import (
 // MacOSMicrosoftDefenderApp contains properties and inherited properties for the macOS Microsoft Defender App.
 type MacOSMicrosoftDefenderApp struct {
     MobileApp
+    // The OdataType property
+    OdataType *string
 }
 // NewMacOSMicrosoftDefenderApp instantiates a new macOSMicrosoftDefenderApp and sets the default values.
 func NewMacOSMicrosoftDefenderApp()(*MacOSMicrosoftDefenderApp) {

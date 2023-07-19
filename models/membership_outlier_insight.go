@@ -7,6 +7,8 @@ import (
 // MembershipOutlierInsight 
 type MembershipOutlierInsight struct {
     GovernanceInsight
+    // The OdataType property
+    OdataType *string
 }
 // NewMembershipOutlierInsight instantiates a new membershipOutlierInsight and sets the default values.
 func NewMembershipOutlierInsight()(*MembershipOutlierInsight) {

@@ -64,6 +64,16 @@ func (m *SamlOrWsFedProvider) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["passiveSignInUri"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -110,6 +120,17 @@ func (m *SamlOrWsFedProvider) GetIssuerUri()(*string) {
 // GetMetadataExchangeUri gets the metadataExchangeUri property value. URI of the metadata exchange endpoint used for authentication from rich client applications.
 func (m *SamlOrWsFedProvider) GetMetadataExchangeUri()(*string) {
     val, err := m.GetBackingStore().Get("metadataExchangeUri")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SamlOrWsFedProvider) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -170,6 +191,12 @@ func (m *SamlOrWsFedProvider) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("passiveSignInUri", m.GetPassiveSignInUri())
         if err != nil {
             return err
@@ -204,6 +231,13 @@ func (m *SamlOrWsFedProvider) SetMetadataExchangeUri(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SamlOrWsFedProvider) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPassiveSignInUri sets the passiveSignInUri property value. URI that web-based clients are directed to when signing in to Azure Active Directory (Azure AD) services.
 func (m *SamlOrWsFedProvider) SetPassiveSignInUri(value *string)() {
     err := m.GetBackingStore().Set("passiveSignInUri", value)
@@ -231,11 +265,13 @@ type SamlOrWsFedProviderable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetIssuerUri()(*string)
     GetMetadataExchangeUri()(*string)
+    GetOdataType()(*string)
     GetPassiveSignInUri()(*string)
     GetPreferredAuthenticationProtocol()(*AuthenticationProtocol)
     GetSigningCertificate()(*string)
     SetIssuerUri(value *string)()
     SetMetadataExchangeUri(value *string)()
+    SetOdataType(value *string)()
     SetPassiveSignInUri(value *string)()
     SetPreferredAuthenticationProtocol(value *AuthenticationProtocol)()
     SetSigningCertificate(value *string)()

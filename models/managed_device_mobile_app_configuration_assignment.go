@@ -7,8 +7,6 @@ import (
 // ManagedDeviceMobileAppConfigurationAssignment contains the properties used to assign an MDM app configuration to a group.
 type ManagedDeviceMobileAppConfigurationAssignment struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewManagedDeviceMobileAppConfigurationAssignment instantiates a new managedDeviceMobileAppConfigurationAssignment and sets the default values.
 func NewManagedDeviceMobileAppConfigurationAssignment()(*ManagedDeviceMobileAppConfigurationAssignment) {
@@ -24,6 +22,16 @@ func CreateManagedDeviceMobileAppConfigurationAssignmentFromDiscriminatorValue(p
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedDeviceMobileAppConfigurationAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["target"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDeviceAndAppManagementAssignmentTargetFromDiscriminatorValue)
         if err != nil {
@@ -35,6 +43,17 @@ func (m *ManagedDeviceMobileAppConfigurationAssignment) GetFieldDeserializers()(
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ManagedDeviceMobileAppConfigurationAssignment) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTarget gets the target property value. Assignment target that the T&C policy is assigned to.
 func (m *ManagedDeviceMobileAppConfigurationAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
@@ -54,12 +73,25 @@ func (m *ManagedDeviceMobileAppConfigurationAssignment) Serialize(writer i878a80
         return err
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("target", m.GetTarget())
         if err != nil {
             return err
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ManagedDeviceMobileAppConfigurationAssignment) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTarget sets the target property value. Assignment target that the T&C policy is assigned to.
 func (m *ManagedDeviceMobileAppConfigurationAssignment) SetTarget(value DeviceAndAppManagementAssignmentTargetable)() {
@@ -72,6 +104,8 @@ func (m *ManagedDeviceMobileAppConfigurationAssignment) SetTarget(value DeviceAn
 type ManagedDeviceMobileAppConfigurationAssignmentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetTarget()(DeviceAndAppManagementAssignmentTargetable)
+    SetOdataType(value *string)()
     SetTarget(value DeviceAndAppManagementAssignmentTargetable)()
 }

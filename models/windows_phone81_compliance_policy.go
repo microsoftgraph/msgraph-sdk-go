@@ -7,6 +7,8 @@ import (
 // WindowsPhone81CompliancePolicy this class contains compliance settings for Windows 8.1 Mobile.
 type WindowsPhone81CompliancePolicy struct {
     DeviceCompliancePolicy
+    // The OdataType property
+    OdataType *string
 }
 // NewWindowsPhone81CompliancePolicy instantiates a new windowsPhone81CompliancePolicy and sets the default values.
 func NewWindowsPhone81CompliancePolicy()(*WindowsPhone81CompliancePolicy) {

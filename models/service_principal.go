@@ -8,6 +8,8 @@ import (
 // ServicePrincipal 
 type ServicePrincipal struct {
     DirectoryObject
+    // The OdataType property
+    OdataType *string
 }
 // NewServicePrincipal instantiates a new servicePrincipal and sets the default values.
 func NewServicePrincipal()(*ServicePrincipal) {

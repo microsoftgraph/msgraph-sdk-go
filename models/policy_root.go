@@ -7,8 +7,6 @@ import (
 // PolicyRoot 
 type PolicyRoot struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewPolicyRoot instantiates a new policyRoot and sets the default values.
 func NewPolicyRoot()(*PolicyRoot) {
@@ -338,6 +336,16 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["permissionGrantPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePermissionGrantPolicyFromDiscriminatorValue)
         if err != nil {
@@ -439,6 +447,17 @@ func (m *PolicyRoot) GetIdentitySecurityDefaultsEnforcementPolicy()(IdentitySecu
     }
     if val != nil {
         return val.(IdentitySecurityDefaultsEnforcementPolicyable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PolicyRoot) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -629,6 +648,12 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPermissionGrantPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPermissionGrantPolicies()))
         for i, v := range m.GetPermissionGrantPolicies() {
@@ -789,6 +814,13 @@ func (m *PolicyRoot) SetIdentitySecurityDefaultsEnforcementPolicy(value Identity
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PolicyRoot) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPermissionGrantPolicies sets the permissionGrantPolicies property value. The policy that specifies the conditions under which consent can be granted.
 func (m *PolicyRoot) SetPermissionGrantPolicies(value []PermissionGrantPolicyable)() {
     err := m.GetBackingStore().Set("permissionGrantPolicies", value)
@@ -842,6 +874,7 @@ type PolicyRootable interface {
     GetFeatureRolloutPolicies()([]FeatureRolloutPolicyable)
     GetHomeRealmDiscoveryPolicies()([]HomeRealmDiscoveryPolicyable)
     GetIdentitySecurityDefaultsEnforcementPolicy()(IdentitySecurityDefaultsEnforcementPolicyable)
+    GetOdataType()(*string)
     GetPermissionGrantPolicies()([]PermissionGrantPolicyable)
     GetRoleManagementPolicies()([]UnifiedRoleManagementPolicyable)
     GetRoleManagementPolicyAssignments()([]UnifiedRoleManagementPolicyAssignmentable)
@@ -861,6 +894,7 @@ type PolicyRootable interface {
     SetFeatureRolloutPolicies(value []FeatureRolloutPolicyable)()
     SetHomeRealmDiscoveryPolicies(value []HomeRealmDiscoveryPolicyable)()
     SetIdentitySecurityDefaultsEnforcementPolicy(value IdentitySecurityDefaultsEnforcementPolicyable)()
+    SetOdataType(value *string)()
     SetPermissionGrantPolicies(value []PermissionGrantPolicyable)()
     SetRoleManagementPolicies(value []UnifiedRoleManagementPolicyable)()
     SetRoleManagementPolicyAssignments(value []UnifiedRoleManagementPolicyAssignmentable)()

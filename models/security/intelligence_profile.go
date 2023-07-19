@@ -9,8 +9,6 @@ import (
 // IntelligenceProfile 
 type IntelligenceProfile struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewIntelligenceProfile instantiates a new intelligenceProfile and sets the default values.
 func NewIntelligenceProfile()(*IntelligenceProfile) {
@@ -137,6 +135,16 @@ func (m *IntelligenceProfile) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["summary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateFormattedContentFromDiscriminatorValue)
         if err != nil {
@@ -215,6 +223,17 @@ func (m *IntelligenceProfile) GetKind()(*IntelligenceProfileKind) {
     }
     if val != nil {
         return val.(*IntelligenceProfileKind)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *IntelligenceProfile) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -318,6 +337,12 @@ func (m *IntelligenceProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("summary", m.GetSummary())
         if err != nil {
             return err
@@ -385,6 +410,13 @@ func (m *IntelligenceProfile) SetKind(value *IntelligenceProfileKind)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *IntelligenceProfile) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSummary sets the summary property value. The summary property
 func (m *IntelligenceProfile) SetSummary(value FormattedContentable)() {
     err := m.GetBackingStore().Set("summary", value)
@@ -423,6 +455,7 @@ type IntelligenceProfileable interface {
     GetFirstActiveDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetIndicators()([]IntelligenceProfileIndicatorable)
     GetKind()(*IntelligenceProfileKind)
+    GetOdataType()(*string)
     GetSummary()(FormattedContentable)
     GetTargets()([]string)
     GetTitle()(*string)
@@ -433,6 +466,7 @@ type IntelligenceProfileable interface {
     SetFirstActiveDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetIndicators(value []IntelligenceProfileIndicatorable)()
     SetKind(value *IntelligenceProfileKind)()
+    SetOdataType(value *string)()
     SetSummary(value FormattedContentable)()
     SetTargets(value []string)()
     SetTitle(value *string)()

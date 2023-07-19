@@ -8,6 +8,8 @@ import (
 // Device 
 type Device struct {
     DirectoryObject
+    // The OdataType property
+    OdataType *string
 }
 // NewDevice instantiates a new device and sets the default values.
 func NewDevice()(*Device) {

@@ -8,8 +8,6 @@ import (
 // SynchronizationTemplate 
 type SynchronizationTemplate struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewSynchronizationTemplate instantiates a new synchronizationTemplate and sets the default values.
 func NewSynchronizationTemplate()(*SynchronizationTemplate) {
@@ -146,6 +144,16 @@ func (m *SynchronizationTemplate) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["schema"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSynchronizationSchemaFromDiscriminatorValue)
         if err != nil {
@@ -166,6 +174,17 @@ func (m *SynchronizationTemplate) GetMetadata()([]SynchronizationMetadataEntryab
     }
     if val != nil {
         return val.([]SynchronizationMetadataEntryable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SynchronizationTemplate) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -229,6 +248,12 @@ func (m *SynchronizationTemplate) Serialize(writer i878a80d2330e89d26896388a3f48
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("schema", m.GetSchema())
         if err != nil {
             return err
@@ -278,6 +303,13 @@ func (m *SynchronizationTemplate) SetMetadata(value []SynchronizationMetadataEnt
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SynchronizationTemplate) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSchema sets the schema property value. Default synchronization schema for the jobs based on this template.
 func (m *SynchronizationTemplate) SetSchema(value SynchronizationSchemaable)() {
     err := m.GetBackingStore().Set("schema", value)
@@ -295,6 +327,7 @@ type SynchronizationTemplateable interface {
     GetDiscoverable()(*bool)
     GetFactoryTag()(*string)
     GetMetadata()([]SynchronizationMetadataEntryable)
+    GetOdataType()(*string)
     GetSchema()(SynchronizationSchemaable)
     SetApplicationId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetDefault(value *bool)()
@@ -302,5 +335,6 @@ type SynchronizationTemplateable interface {
     SetDiscoverable(value *bool)()
     SetFactoryTag(value *string)()
     SetMetadata(value []SynchronizationMetadataEntryable)()
+    SetOdataType(value *string)()
     SetSchema(value SynchronizationSchemaable)()
 }

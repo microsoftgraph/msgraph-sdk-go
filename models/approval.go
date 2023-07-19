@@ -7,8 +7,6 @@ import (
 // Approval 
 type Approval struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewApproval instantiates a new approval and sets the default values.
 func NewApproval()(*Approval) {
@@ -24,6 +22,16 @@ func CreateApprovalFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Approval) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["stages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateApprovalStageFromDiscriminatorValue)
         if err != nil {
@@ -42,6 +50,17 @@ func (m *Approval) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Approval) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetStages gets the stages property value. A collection of stages in the approval decision.
 func (m *Approval) GetStages()([]ApprovalStageable) {
     val, err := m.GetBackingStore().Get("stages")
@@ -59,6 +78,12 @@ func (m *Approval) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetStages() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetStages()))
         for i, v := range m.GetStages() {
@@ -73,6 +98,13 @@ func (m *Approval) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Approval) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetStages sets the stages property value. A collection of stages in the approval decision.
 func (m *Approval) SetStages(value []ApprovalStageable)() {
     err := m.GetBackingStore().Set("stages", value)
@@ -84,6 +116,8 @@ func (m *Approval) SetStages(value []ApprovalStageable)() {
 type Approvalable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetStages()([]ApprovalStageable)
+    SetOdataType(value *string)()
     SetStages(value []ApprovalStageable)()
 }

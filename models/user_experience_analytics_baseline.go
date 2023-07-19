@@ -8,8 +8,6 @@ import (
 // UserExperienceAnalyticsBaseline the user experience analytics baseline entity contains baseline values against which to compare the user experience analytics scores.
 type UserExperienceAnalyticsBaseline struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewUserExperienceAnalyticsBaseline instantiates a new userExperienceAnalyticsBaseline and sets the default values.
 func NewUserExperienceAnalyticsBaseline()(*UserExperienceAnalyticsBaseline) {
@@ -161,6 +159,16 @@ func (m *UserExperienceAnalyticsBaseline) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["rebootAnalyticsMetrics"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUserExperienceAnalyticsCategoryFromDiscriminatorValue)
         if err != nil {
@@ -201,6 +209,17 @@ func (m *UserExperienceAnalyticsBaseline) GetIsBuiltIn()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UserExperienceAnalyticsBaseline) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -286,6 +305,12 @@ func (m *UserExperienceAnalyticsBaseline) Serialize(writer i878a80d2330e89d26896
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("rebootAnalyticsMetrics", m.GetRebootAnalyticsMetrics())
         if err != nil {
             return err
@@ -354,6 +379,13 @@ func (m *UserExperienceAnalyticsBaseline) SetIsBuiltIn(value *bool)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UserExperienceAnalyticsBaseline) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRebootAnalyticsMetrics sets the rebootAnalyticsMetrics property value. The scores and insights for the reboot analytics metrics.
 func (m *UserExperienceAnalyticsBaseline) SetRebootAnalyticsMetrics(value UserExperienceAnalyticsCategoryable)() {
     err := m.GetBackingStore().Set("rebootAnalyticsMetrics", value)
@@ -386,6 +418,7 @@ type UserExperienceAnalyticsBaselineable interface {
     GetDeviceBootPerformanceMetrics()(UserExperienceAnalyticsCategoryable)
     GetDisplayName()(*string)
     GetIsBuiltIn()(*bool)
+    GetOdataType()(*string)
     GetRebootAnalyticsMetrics()(UserExperienceAnalyticsCategoryable)
     GetResourcePerformanceMetrics()(UserExperienceAnalyticsCategoryable)
     GetWorkFromAnywhereMetrics()(UserExperienceAnalyticsCategoryable)
@@ -396,6 +429,7 @@ type UserExperienceAnalyticsBaselineable interface {
     SetDeviceBootPerformanceMetrics(value UserExperienceAnalyticsCategoryable)()
     SetDisplayName(value *string)()
     SetIsBuiltIn(value *bool)()
+    SetOdataType(value *string)()
     SetRebootAnalyticsMetrics(value UserExperienceAnalyticsCategoryable)()
     SetResourcePerformanceMetrics(value UserExperienceAnalyticsCategoryable)()
     SetWorkFromAnywhereMetrics(value UserExperienceAnalyticsCategoryable)()

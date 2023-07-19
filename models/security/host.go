@@ -119,6 +119,16 @@ func (m *Host) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["passiveDns"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePassiveDnsRecordFromDiscriminatorValue)
         if err != nil {
@@ -198,6 +208,17 @@ func (m *Host) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a1
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Host) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -287,6 +308,12 @@ func (m *Host) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPassiveDns() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPassiveDns()))
         for i, v := range m.GetPassiveDns() {
@@ -359,6 +386,13 @@ func (m *Host) SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f30
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Host) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPassiveDns sets the passiveDns property value. Passive DNS retrieval about this host.
 func (m *Host) SetPassiveDns(value []PassiveDnsRecordable)() {
     err := m.GetBackingStore().Set("passiveDns", value)
@@ -395,6 +429,7 @@ type Hostable interface {
     GetCookies()([]HostCookieable)
     GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetPassiveDns()([]PassiveDnsRecordable)
     GetPassiveDnsReverse()([]PassiveDnsRecordable)
     GetReputation()(HostReputationable)
@@ -403,6 +438,7 @@ type Hostable interface {
     SetCookies(value []HostCookieable)()
     SetFirstSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetPassiveDns(value []PassiveDnsRecordable)()
     SetPassiveDnsReverse(value []PassiveDnsRecordable)()
     SetReputation(value HostReputationable)()

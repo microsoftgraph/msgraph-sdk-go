@@ -7,8 +7,6 @@ import (
 // WorkbookRangeFormat 
 type WorkbookRangeFormat struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewWorkbookRangeFormat instantiates a new workbookRangeFormat and sets the default values.
 func NewWorkbookRangeFormat()(*WorkbookRangeFormat) {
@@ -102,6 +100,16 @@ func (m *WorkbookRangeFormat) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["protection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateWorkbookFormatProtectionFromDiscriminatorValue)
         if err != nil {
@@ -169,6 +177,17 @@ func (m *WorkbookRangeFormat) GetFont()(WorkbookRangeFontable) {
 // GetHorizontalAlignment gets the horizontalAlignment property value. Represents the horizontal alignment for the specified object. The possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.
 func (m *WorkbookRangeFormat) GetHorizontalAlignment()(*string) {
     val, err := m.GetBackingStore().Get("horizontalAlignment")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WorkbookRangeFormat) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -264,6 +283,12 @@ func (m *WorkbookRangeFormat) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("protection", m.GetProtection())
         if err != nil {
             return err
@@ -324,6 +349,13 @@ func (m *WorkbookRangeFormat) SetHorizontalAlignment(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WorkbookRangeFormat) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetProtection sets the protection property value. Returns the format protection object for a range. Read-only.
 func (m *WorkbookRangeFormat) SetProtection(value WorkbookFormatProtectionable)() {
     err := m.GetBackingStore().Set("protection", value)
@@ -361,6 +393,7 @@ type WorkbookRangeFormatable interface {
     GetFill()(WorkbookRangeFillable)
     GetFont()(WorkbookRangeFontable)
     GetHorizontalAlignment()(*string)
+    GetOdataType()(*string)
     GetProtection()(WorkbookFormatProtectionable)
     GetRowHeight()(*float64)
     GetVerticalAlignment()(*string)
@@ -370,6 +403,7 @@ type WorkbookRangeFormatable interface {
     SetFill(value WorkbookRangeFillable)()
     SetFont(value WorkbookRangeFontable)()
     SetHorizontalAlignment(value *string)()
+    SetOdataType(value *string)()
     SetProtection(value WorkbookFormatProtectionable)()
     SetRowHeight(value *float64)()
     SetVerticalAlignment(value *string)()

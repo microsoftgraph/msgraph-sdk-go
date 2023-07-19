@@ -7,8 +7,6 @@ import (
 // InternetExplorerMode 
 type InternetExplorerMode struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewInternetExplorerMode instantiates a new internetExplorerMode and sets the default values.
 func NewInternetExplorerMode()(*InternetExplorerMode) {
@@ -24,6 +22,16 @@ func CreateInternetExplorerModeFromDiscriminatorValue(parseNode i878a80d2330e89d
 // GetFieldDeserializers the deserialization information for the current model
 func (m *InternetExplorerMode) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["siteLists"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateBrowserSiteListFromDiscriminatorValue)
         if err != nil {
@@ -42,6 +50,17 @@ func (m *InternetExplorerMode) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *InternetExplorerMode) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetSiteLists gets the siteLists property value. A collection of site lists to support Internet Explorer mode.
 func (m *InternetExplorerMode) GetSiteLists()([]BrowserSiteListable) {
     val, err := m.GetBackingStore().Get("siteLists")
@@ -59,6 +78,12 @@ func (m *InternetExplorerMode) Serialize(writer i878a80d2330e89d26896388a3f487ee
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSiteLists() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSiteLists()))
         for i, v := range m.GetSiteLists() {
@@ -73,6 +98,13 @@ func (m *InternetExplorerMode) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *InternetExplorerMode) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSiteLists sets the siteLists property value. A collection of site lists to support Internet Explorer mode.
 func (m *InternetExplorerMode) SetSiteLists(value []BrowserSiteListable)() {
     err := m.GetBackingStore().Set("siteLists", value)
@@ -84,6 +116,8 @@ func (m *InternetExplorerMode) SetSiteLists(value []BrowserSiteListable)() {
 type InternetExplorerModeable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetSiteLists()([]BrowserSiteListable)
+    SetOdataType(value *string)()
     SetSiteLists(value []BrowserSiteListable)()
 }

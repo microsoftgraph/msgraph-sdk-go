@@ -7,6 +7,8 @@ import (
 // SharedPCConfiguration this topic provides descriptions of the declared methods, properties and relationships exposed by the sharedPCConfiguration resource.
 type SharedPCConfiguration struct {
     DeviceConfiguration
+    // The OdataType property
+    OdataType *string
 }
 // NewSharedPCConfiguration instantiates a new sharedPCConfiguration and sets the default values.
 func NewSharedPCConfiguration()(*SharedPCConfiguration) {

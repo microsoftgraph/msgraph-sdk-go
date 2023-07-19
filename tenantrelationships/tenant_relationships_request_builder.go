@@ -55,6 +55,14 @@ func (m *TenantRelationshipsRequestBuilder) DelegatedAdminCustomers()(*Delegated
 func (m *TenantRelationshipsRequestBuilder) DelegatedAdminRelationships()(*DelegatedAdminRelationshipsRequestBuilder) {
     return NewDelegatedAdminRelationshipsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// FindTenantInformationByDomainNameWithDomainName provides operations to call the findTenantInformationByDomainName method.
+func (m *TenantRelationshipsRequestBuilder) FindTenantInformationByDomainNameWithDomainName(domainName *string)(*FindTenantInformationByDomainNameWithDomainNameRequestBuilder) {
+    return NewFindTenantInformationByDomainNameWithDomainNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, domainName)
+}
+// FindTenantInformationByTenantIdWithTenantId provides operations to call the findTenantInformationByTenantId method.
+func (m *TenantRelationshipsRequestBuilder) FindTenantInformationByTenantIdWithTenantId(tenantId *string)(*FindTenantInformationByTenantIdWithTenantIdRequestBuilder) {
+    return NewFindTenantInformationByTenantIdWithTenantIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, tenantId)
+}
 // Get get tenantRelationships
 func (m *TenantRelationshipsRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantRelationshipsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TenantRelationshipable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);

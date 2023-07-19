@@ -7,8 +7,6 @@ import (
 // SettingStateDeviceSummary device Compilance Policy and Configuration for a Setting State summary
 type SettingStateDeviceSummary struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewSettingStateDeviceSummary instantiates a new settingStateDeviceSummary and sets the default values.
 func NewSettingStateDeviceSummary()(*SettingStateDeviceSummary) {
@@ -117,6 +115,16 @@ func (m *SettingStateDeviceSummary) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["remediatedDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -179,6 +187,17 @@ func (m *SettingStateDeviceSummary) GetNotApplicableDeviceCount()(*int32) {
     }
     if val != nil {
         return val.(*int32)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SettingStateDeviceSummary) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -258,6 +277,12 @@ func (m *SettingStateDeviceSummary) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("remediatedDeviceCount", m.GetRemediatedDeviceCount())
         if err != nil {
             return err
@@ -319,6 +344,13 @@ func (m *SettingStateDeviceSummary) SetNotApplicableDeviceCount(value *int32)() 
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SettingStateDeviceSummary) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRemediatedDeviceCount sets the remediatedDeviceCount property value. Device Compliant count for the setting
 func (m *SettingStateDeviceSummary) SetRemediatedDeviceCount(value *int32)() {
     err := m.GetBackingStore().Set("remediatedDeviceCount", value)
@@ -350,6 +382,7 @@ type SettingStateDeviceSummaryable interface {
     GetInstancePath()(*string)
     GetNonCompliantDeviceCount()(*int32)
     GetNotApplicableDeviceCount()(*int32)
+    GetOdataType()(*string)
     GetRemediatedDeviceCount()(*int32)
     GetSettingName()(*string)
     GetUnknownDeviceCount()(*int32)
@@ -359,6 +392,7 @@ type SettingStateDeviceSummaryable interface {
     SetInstancePath(value *string)()
     SetNonCompliantDeviceCount(value *int32)()
     SetNotApplicableDeviceCount(value *int32)()
+    SetOdataType(value *string)()
     SetRemediatedDeviceCount(value *int32)()
     SetSettingName(value *string)()
     SetUnknownDeviceCount(value *int32)()

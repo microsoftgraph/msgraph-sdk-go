@@ -7,6 +7,8 @@ import (
 // IosCustomConfiguration this topic provides descriptions of the declared methods, properties and relationships exposed by the iosCustomConfiguration resource.
 type IosCustomConfiguration struct {
     DeviceConfiguration
+    // The OdataType property
+    OdataType *string
 }
 // NewIosCustomConfiguration instantiates a new iosCustomConfiguration and sets the default values.
 func NewIosCustomConfiguration()(*IosCustomConfiguration) {

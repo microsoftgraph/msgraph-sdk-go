@@ -8,6 +8,8 @@ import (
 // ServiceUpdateMessage 
 type ServiceUpdateMessage struct {
     ServiceAnnouncementBase
+    // The OdataType property
+    OdataType *string
 }
 // NewServiceUpdateMessage instantiates a new serviceUpdateMessage and sets the default values.
 func NewServiceUpdateMessage()(*ServiceUpdateMessage) {

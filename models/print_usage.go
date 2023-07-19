@@ -7,8 +7,6 @@ import (
 // PrintUsage 
 type PrintUsage struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewPrintUsage instantiates a new printUsage and sets the default values.
 func NewPrintUsage()(*PrintUsage) {
@@ -190,6 +188,16 @@ func (m *PrintUsage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["pageCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
@@ -241,6 +249,17 @@ func (m *PrintUsage) GetMediaSheetCount()(*int64) {
     }
     if val != nil {
         return val.(*int64)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PrintUsage) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -332,6 +351,12 @@ func (m *PrintUsage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt64Value("pageCount", m.GetPageCount())
         if err != nil {
             return err
@@ -407,6 +432,13 @@ func (m *PrintUsage) SetMediaSheetCount(value *int64)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PrintUsage) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPageCount sets the pageCount property value. The pageCount property
 func (m *PrintUsage) SetPageCount(value *int64)() {
     err := m.GetBackingStore().Set("pageCount", value)
@@ -440,6 +472,7 @@ type PrintUsageable interface {
     GetDoubleSidedSheetCount()(*int64)
     GetIncompleteJobCount()(*int64)
     GetMediaSheetCount()(*int64)
+    GetOdataType()(*string)
     GetPageCount()(*int64)
     GetSingleSidedSheetCount()(*int64)
     GetUsageDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
@@ -451,6 +484,7 @@ type PrintUsageable interface {
     SetDoubleSidedSheetCount(value *int64)()
     SetIncompleteJobCount(value *int64)()
     SetMediaSheetCount(value *int64)()
+    SetOdataType(value *string)()
     SetPageCount(value *int64)()
     SetSingleSidedSheetCount(value *int64)()
     SetUsageDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()

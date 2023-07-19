@@ -7,8 +7,6 @@ import (
 // AadUserConversationMemberResult 
 type AadUserConversationMemberResult struct {
     ActionResultPart
-    // The OdataType property
-    OdataType *string
 }
 // NewAadUserConversationMemberResult instantiates a new aadUserConversationMemberResult and sets the default values.
 func NewAadUserConversationMemberResult()(*AadUserConversationMemberResult) {
@@ -26,6 +24,16 @@ func CreateAadUserConversationMemberResultFromDiscriminatorValue(parseNode i878a
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AadUserConversationMemberResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ActionResultPart.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["userId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -37,6 +45,17 @@ func (m *AadUserConversationMemberResult) GetFieldDeserializers()(map[string]fun
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AadUserConversationMemberResult) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetUserId gets the userId property value. The userId property
 func (m *AadUserConversationMemberResult) GetUserId()(*string) {
@@ -56,12 +75,25 @@ func (m *AadUserConversationMemberResult) Serialize(writer i878a80d2330e89d26896
         return err
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("userId", m.GetUserId())
         if err != nil {
             return err
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AadUserConversationMemberResult) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetUserId sets the userId property value. The userId property
 func (m *AadUserConversationMemberResult) SetUserId(value *string)() {
@@ -74,6 +106,8 @@ func (m *AadUserConversationMemberResult) SetUserId(value *string)() {
 type AadUserConversationMemberResultable interface {
     ActionResultPartable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetUserId()(*string)
+    SetOdataType(value *string)()
     SetUserId(value *string)()
 }

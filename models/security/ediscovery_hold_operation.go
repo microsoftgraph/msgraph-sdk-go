@@ -7,6 +7,8 @@ import (
 // EdiscoveryHoldOperation 
 type EdiscoveryHoldOperation struct {
     CaseOperation
+    // The OdataType property
+    OdataType *string
 }
 // NewEdiscoveryHoldOperation instantiates a new ediscoveryHoldOperation and sets the default values.
 func NewEdiscoveryHoldOperation()(*EdiscoveryHoldOperation) {

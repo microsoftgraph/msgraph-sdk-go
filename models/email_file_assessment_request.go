@@ -66,6 +66,16 @@ func (m *EmailFileAssessmentRequest) GetFieldDeserializers()(map[string]func(i87
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["recipientEmail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -77,6 +87,17 @@ func (m *EmailFileAssessmentRequest) GetFieldDeserializers()(map[string]func(i87
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *EmailFileAssessmentRequest) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetRecipientEmail gets the recipientEmail property value. The mail recipient whose policies are used to assess the mail.
 func (m *EmailFileAssessmentRequest) GetRecipientEmail()(*string) {
@@ -109,6 +130,12 @@ func (m *EmailFileAssessmentRequest) Serialize(writer i878a80d2330e89d26896388a3
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("recipientEmail", m.GetRecipientEmail())
         if err != nil {
             return err
@@ -130,6 +157,13 @@ func (m *EmailFileAssessmentRequest) SetDestinationRoutingReason(value *MailDest
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *EmailFileAssessmentRequest) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRecipientEmail sets the recipientEmail property value. The mail recipient whose policies are used to assess the mail.
 func (m *EmailFileAssessmentRequest) SetRecipientEmail(value *string)() {
     err := m.GetBackingStore().Set("recipientEmail", value)
@@ -143,8 +177,10 @@ type EmailFileAssessmentRequestable interface {
     ThreatAssessmentRequestable
     GetContentData()(*string)
     GetDestinationRoutingReason()(*MailDestinationRoutingReason)
+    GetOdataType()(*string)
     GetRecipientEmail()(*string)
     SetContentData(value *string)()
     SetDestinationRoutingReason(value *MailDestinationRoutingReason)()
+    SetOdataType(value *string)()
     SetRecipientEmail(value *string)()
 }

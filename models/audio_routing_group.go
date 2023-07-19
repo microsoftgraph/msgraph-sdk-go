@@ -7,8 +7,6 @@ import (
 // AudioRoutingGroup 
 type AudioRoutingGroup struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewAudioRoutingGroup instantiates a new audioRoutingGroup and sets the default values.
 func NewAudioRoutingGroup()(*AudioRoutingGroup) {
@@ -24,6 +22,16 @@ func CreateAudioRoutingGroupFromDiscriminatorValue(parseNode i878a80d2330e89d268
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AudioRoutingGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["receivers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -68,6 +76,17 @@ func (m *AudioRoutingGroup) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AudioRoutingGroup) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetReceivers gets the receivers property value. The receivers property
 func (m *AudioRoutingGroup) GetReceivers()([]string) {
     val, err := m.GetBackingStore().Get("receivers")
@@ -107,6 +126,12 @@ func (m *AudioRoutingGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetReceivers() != nil {
         err = writer.WriteCollectionOfStringValues("receivers", m.GetReceivers())
         if err != nil {
@@ -127,6 +152,13 @@ func (m *AudioRoutingGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AudioRoutingGroup) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetReceivers sets the receivers property value. The receivers property
 func (m *AudioRoutingGroup) SetReceivers(value []string)() {
@@ -153,9 +185,11 @@ func (m *AudioRoutingGroup) SetSources(value []string)() {
 type AudioRoutingGroupable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetReceivers()([]string)
     GetRoutingMode()(*RoutingMode)
     GetSources()([]string)
+    SetOdataType(value *string)()
     SetReceivers(value []string)()
     SetRoutingMode(value *RoutingMode)()
     SetSources(value []string)()

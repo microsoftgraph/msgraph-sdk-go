@@ -32,6 +32,16 @@ func (m *DomainDnsSrvRecord) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["port"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -87,6 +97,17 @@ func (m *DomainDnsSrvRecord) GetFieldDeserializers()(map[string]func(i878a80d233
 // GetNameTarget gets the nameTarget property value. Value to use when configuring the Target property of the SRV record at the DNS host.
 func (m *DomainDnsSrvRecord) GetNameTarget()(*string) {
     val, err := m.GetBackingStore().Get("nameTarget")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DomainDnsSrvRecord) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -163,6 +184,12 @@ func (m *DomainDnsSrvRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("port", m.GetPort())
         if err != nil {
             return err
@@ -197,6 +224,13 @@ func (m *DomainDnsSrvRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 // SetNameTarget sets the nameTarget property value. Value to use when configuring the Target property of the SRV record at the DNS host.
 func (m *DomainDnsSrvRecord) SetNameTarget(value *string)() {
     err := m.GetBackingStore().Set("nameTarget", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DomainDnsSrvRecord) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -241,12 +275,14 @@ type DomainDnsSrvRecordable interface {
     DomainDnsRecordable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetNameTarget()(*string)
+    GetOdataType()(*string)
     GetPort()(*int32)
     GetPriority()(*int32)
     GetProtocol()(*string)
     GetService()(*string)
     GetWeight()(*int32)
     SetNameTarget(value *string)()
+    SetOdataType(value *string)()
     SetPort(value *int32)()
     SetPriority(value *int32)()
     SetProtocol(value *string)()

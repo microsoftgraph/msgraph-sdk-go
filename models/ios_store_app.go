@@ -7,6 +7,8 @@ import (
 // IosStoreApp contains properties and inherited properties for iOS store apps.
 type IosStoreApp struct {
     MobileApp
+    // The OdataType property
+    OdataType *string
 }
 // NewIosStoreApp instantiates a new iosStoreApp and sets the default values.
 func NewIosStoreApp()(*IosStoreApp) {

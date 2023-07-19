@@ -8,8 +8,6 @@ import (
 // AttachmentBase 
 type AttachmentBase struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewAttachmentBase instantiates a new attachmentBase and sets the default values.
 func NewAttachmentBase()(*AttachmentBase) {
@@ -84,6 +82,16 @@ func (m *AttachmentBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["size"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -110,6 +118,17 @@ func (m *AttachmentBase) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3a
 // GetName gets the name property value. The display name of the attachment. This does not need to be the actual file name.
 func (m *AttachmentBase) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AttachmentBase) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -154,6 +173,12 @@ func (m *AttachmentBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("size", m.GetSize())
         if err != nil {
             return err
@@ -182,6 +207,13 @@ func (m *AttachmentBase) SetName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AttachmentBase) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSize sets the size property value. The length of the attachment in bytes.
 func (m *AttachmentBase) SetSize(value *int32)() {
     err := m.GetBackingStore().Set("size", value)
@@ -196,9 +228,11 @@ type AttachmentBaseable interface {
     GetContentType()(*string)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetName()(*string)
+    GetOdataType()(*string)
     GetSize()(*int32)
     SetContentType(value *string)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetName(value *string)()
+    SetOdataType(value *string)()
     SetSize(value *int32)()
 }

@@ -8,6 +8,8 @@ import (
 // OrgContact 
 type OrgContact struct {
     DirectoryObject
+    // The OdataType property
+    OdataType *string
 }
 // NewOrgContact instantiates a new orgContact and sets the default values.
 func NewOrgContact()(*OrgContact) {

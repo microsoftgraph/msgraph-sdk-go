@@ -61,6 +61,16 @@ func (m *EmailAuthenticationMethodConfiguration) GetFieldDeserializers()(map[str
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIncludeTargets gets the includeTargets property value. A collection of groups that are enabled to use the authentication method.
@@ -71,6 +81,17 @@ func (m *EmailAuthenticationMethodConfiguration) GetIncludeTargets()([]Authentic
     }
     if val != nil {
         return val.([]AuthenticationMethodTargetable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *EmailAuthenticationMethodConfiguration) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -99,6 +120,12 @@ func (m *EmailAuthenticationMethodConfiguration) Serialize(writer i878a80d2330e8
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAllowExternalIdToUseEmailOtp sets the allowExternalIdToUseEmailOtp property value. Determines whether email OTP is usable by external users for authentication. Possible values are: default, enabled, disabled, unknownFutureValue. Tenants in the default state who did not use public preview will automatically have email OTP enabled beginning in October 2021.
@@ -115,12 +142,21 @@ func (m *EmailAuthenticationMethodConfiguration) SetIncludeTargets(value []Authe
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *EmailAuthenticationMethodConfiguration) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // EmailAuthenticationMethodConfigurationable 
 type EmailAuthenticationMethodConfigurationable interface {
     AuthenticationMethodConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAllowExternalIdToUseEmailOtp()(*ExternalEmailOtpState)
     GetIncludeTargets()([]AuthenticationMethodTargetable)
+    GetOdataType()(*string)
     SetAllowExternalIdToUseEmailOtp(value *ExternalEmailOtpState)()
     SetIncludeTargets(value []AuthenticationMethodTargetable)()
+    SetOdataType(value *string)()
 }

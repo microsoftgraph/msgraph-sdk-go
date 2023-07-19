@@ -7,8 +7,6 @@ import (
 // WorkbookChartGridlinesFormat 
 type WorkbookChartGridlinesFormat struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewWorkbookChartGridlinesFormat instantiates a new workbookChartGridlinesFormat and sets the default values.
 func NewWorkbookChartGridlinesFormat()(*WorkbookChartGridlinesFormat) {
@@ -34,6 +32,16 @@ func (m *WorkbookChartGridlinesFormat) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLine gets the line property value. Represents chart line formatting. Read-only.
@@ -44,6 +52,17 @@ func (m *WorkbookChartGridlinesFormat) GetLine()(WorkbookChartLineFormatable) {
     }
     if val != nil {
         return val.(WorkbookChartLineFormatable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WorkbookChartGridlinesFormat) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -59,6 +78,12 @@ func (m *WorkbookChartGridlinesFormat) Serialize(writer i878a80d2330e89d26896388
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetLine sets the line property value. Represents chart line formatting. Read-only.
@@ -68,10 +93,19 @@ func (m *WorkbookChartGridlinesFormat) SetLine(value WorkbookChartLineFormatable
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WorkbookChartGridlinesFormat) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // WorkbookChartGridlinesFormatable 
 type WorkbookChartGridlinesFormatable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetLine()(WorkbookChartLineFormatable)
+    GetOdataType()(*string)
     SetLine(value WorkbookChartLineFormatable)()
+    SetOdataType(value *string)()
 }

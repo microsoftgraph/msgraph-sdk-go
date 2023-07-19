@@ -8,8 +8,6 @@ import (
 // Store 
 type Store struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewStore instantiates a new store and sets the default values.
 func NewStore()(*Store) {
@@ -78,6 +76,16 @@ func (m *Store) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["sets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSetFromDiscriminatorValue)
         if err != nil {
@@ -115,6 +123,17 @@ func (m *Store) GetLanguageTags()([]string) {
     }
     if val != nil {
         return val.([]string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Store) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -159,6 +178,12 @@ func (m *Store) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSets() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSets()))
         for i, v := range m.GetSets() {
@@ -194,6 +219,13 @@ func (m *Store) SetLanguageTags(value []string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Store) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSets sets the sets property value. Collection of all sets available in the term store. This relationship can only be used to load a specific term set.
 func (m *Store) SetSets(value []Setable)() {
     err := m.GetBackingStore().Set("sets", value)
@@ -208,9 +240,11 @@ type Storeable interface {
     GetDefaultLanguageTag()(*string)
     GetGroups()([]Groupable)
     GetLanguageTags()([]string)
+    GetOdataType()(*string)
     GetSets()([]Setable)
     SetDefaultLanguageTag(value *string)()
     SetGroups(value []Groupable)()
     SetLanguageTags(value []string)()
+    SetOdataType(value *string)()
     SetSets(value []Setable)()
 }

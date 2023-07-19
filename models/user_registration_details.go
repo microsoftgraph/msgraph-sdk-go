@@ -8,8 +8,6 @@ import (
 // UserRegistrationDetails 
 type UserRegistrationDetails struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewUserRegistrationDetails instantiates a new userRegistrationDetails and sets the default values.
 func NewUserRegistrationDetails()(*UserRegistrationDetails) {
@@ -128,6 +126,16 @@ func (m *UserRegistrationDetails) GetFieldDeserializers()(map[string]func(i878a8
                 }
             }
             m.SetMethodsRegistered(res)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -299,6 +307,17 @@ func (m *UserRegistrationDetails) GetMethodsRegistered()([]string) {
     }
     return nil
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UserRegistrationDetails) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetSystemPreferredAuthenticationMethods gets the systemPreferredAuthenticationMethods property value. Collection of authentication methods that the system determined to be the most secure authentication methods among the registered methods for second factor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue. Supports $filter (any with eq).
 func (m *UserRegistrationDetails) GetSystemPreferredAuthenticationMethods()([]string) {
     val, err := m.GetBackingStore().Get("systemPreferredAuthenticationMethods")
@@ -420,6 +439,12 @@ func (m *UserRegistrationDetails) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSystemPreferredAuthenticationMethods() != nil {
         err = writer.WriteCollectionOfStringValues("systemPreferredAuthenticationMethods", m.GetSystemPreferredAuthenticationMethods())
         if err != nil {
@@ -524,6 +549,13 @@ func (m *UserRegistrationDetails) SetMethodsRegistered(value []string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UserRegistrationDetails) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSystemPreferredAuthenticationMethods sets the systemPreferredAuthenticationMethods property value. Collection of authentication methods that the system determined to be the most secure authentication methods among the registered methods for second factor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue. Supports $filter (any with eq).
 func (m *UserRegistrationDetails) SetSystemPreferredAuthenticationMethods(value []string)() {
     err := m.GetBackingStore().Set("systemPreferredAuthenticationMethods", value)
@@ -573,6 +605,7 @@ type UserRegistrationDetailsable interface {
     GetIsSystemPreferredAuthenticationMethodEnabled()(*bool)
     GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetMethodsRegistered()([]string)
+    GetOdataType()(*string)
     GetSystemPreferredAuthenticationMethods()([]string)
     GetUserDisplayName()(*string)
     GetUserPreferredMethodForSecondaryAuthentication()(*UserDefaultAuthenticationMethod)
@@ -588,6 +621,7 @@ type UserRegistrationDetailsable interface {
     SetIsSystemPreferredAuthenticationMethodEnabled(value *bool)()
     SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetMethodsRegistered(value []string)()
+    SetOdataType(value *string)()
     SetSystemPreferredAuthenticationMethods(value []string)()
     SetUserDisplayName(value *string)()
     SetUserPreferredMethodForSecondaryAuthentication(value *UserDefaultAuthenticationMethod)()

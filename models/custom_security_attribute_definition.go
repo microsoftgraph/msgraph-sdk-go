@@ -7,8 +7,6 @@ import (
 // CustomSecurityAttributeDefinition 
 type CustomSecurityAttributeDefinition struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewCustomSecurityAttributeDefinition instantiates a new customSecurityAttributeDefinition and sets the default values.
 func NewCustomSecurityAttributeDefinition()(*CustomSecurityAttributeDefinition) {
@@ -123,6 +121,16 @@ func (m *CustomSecurityAttributeDefinition) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -180,6 +188,17 @@ func (m *CustomSecurityAttributeDefinition) GetIsSearchable()(*bool) {
 // GetName gets the name property value. Name of the custom security attribute. Must be unique within an attribute set. Can be up to 32 characters long and include Unicode characters. Cannot contain spaces or special characters. Cannot be changed later. Case insensitive.
 func (m *CustomSecurityAttributeDefinition) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CustomSecurityAttributeDefinition) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -270,6 +289,12 @@ func (m *CustomSecurityAttributeDefinition) Serialize(writer i878a80d2330e89d268
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("status", m.GetStatus())
         if err != nil {
             return err
@@ -331,6 +356,13 @@ func (m *CustomSecurityAttributeDefinition) SetName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CustomSecurityAttributeDefinition) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetStatus sets the status property value. Specifies whether the custom security attribute is active or deactivated. Acceptable values are: Available and Deprecated. Can be changed later.
 func (m *CustomSecurityAttributeDefinition) SetStatus(value *string)() {
     err := m.GetBackingStore().Set("status", value)
@@ -362,6 +394,7 @@ type CustomSecurityAttributeDefinitionable interface {
     GetIsCollection()(*bool)
     GetIsSearchable()(*bool)
     GetName()(*string)
+    GetOdataType()(*string)
     GetStatus()(*string)
     GetType()(*string)
     GetUsePreDefinedValuesOnly()(*bool)
@@ -371,6 +404,7 @@ type CustomSecurityAttributeDefinitionable interface {
     SetIsCollection(value *bool)()
     SetIsSearchable(value *bool)()
     SetName(value *string)()
+    SetOdataType(value *string)()
     SetStatus(value *string)()
     SetType(value *string)()
     SetUsePreDefinedValuesOnly(value *bool)()

@@ -76,6 +76,16 @@ func (m *AndroidWorkProfileCompliancePolicy) GetFieldDeserializers()(map[string]
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["osMaximumVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -261,6 +271,17 @@ func (m *AndroidWorkProfileCompliancePolicy) GetFieldDeserializers()(map[string]
 // GetMinAndroidSecurityPatchLevel gets the minAndroidSecurityPatchLevel property value. Minimum Android security patch level.
 func (m *AndroidWorkProfileCompliancePolicy) GetMinAndroidSecurityPatchLevel()(*string) {
     val, err := m.GetBackingStore().Get("minAndroidSecurityPatchLevel")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AndroidWorkProfileCompliancePolicy) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -493,6 +514,12 @@ func (m *AndroidWorkProfileCompliancePolicy) Serialize(writer i878a80d2330e89d26
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("osMaximumVersion", m.GetOsMaximumVersion())
         if err != nil {
             return err
@@ -620,6 +647,13 @@ func (m *AndroidWorkProfileCompliancePolicy) SetDeviceThreatProtectionRequiredSe
 // SetMinAndroidSecurityPatchLevel sets the minAndroidSecurityPatchLevel property value. Minimum Android security patch level.
 func (m *AndroidWorkProfileCompliancePolicy) SetMinAndroidSecurityPatchLevel(value *string)() {
     err := m.GetBackingStore().Set("minAndroidSecurityPatchLevel", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AndroidWorkProfileCompliancePolicy) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -757,6 +791,7 @@ type AndroidWorkProfileCompliancePolicyable interface {
     GetDeviceThreatProtectionEnabled()(*bool)
     GetDeviceThreatProtectionRequiredSecurityLevel()(*DeviceThreatProtectionLevel)
     GetMinAndroidSecurityPatchLevel()(*string)
+    GetOdataType()(*string)
     GetOsMaximumVersion()(*string)
     GetOsMinimumVersion()(*string)
     GetPasswordExpirationDays()(*int32)
@@ -778,6 +813,7 @@ type AndroidWorkProfileCompliancePolicyable interface {
     SetDeviceThreatProtectionEnabled(value *bool)()
     SetDeviceThreatProtectionRequiredSecurityLevel(value *DeviceThreatProtectionLevel)()
     SetMinAndroidSecurityPatchLevel(value *string)()
+    SetOdataType(value *string)()
     SetOsMaximumVersion(value *string)()
     SetOsMinimumVersion(value *string)()
     SetPasswordExpirationDays(value *int32)()

@@ -7,8 +7,6 @@ import (
 // DelegatedAdminCustomer 
 type DelegatedAdminCustomer struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewDelegatedAdminCustomer instantiates a new delegatedAdminCustomer and sets the default values.
 func NewDelegatedAdminCustomer()(*DelegatedAdminCustomer) {
@@ -45,6 +43,16 @@ func (m *DelegatedAdminCustomer) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["serviceManagementDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDelegatedAdminServiceManagementDetailFromDiscriminatorValue)
         if err != nil {
@@ -72,6 +80,17 @@ func (m *DelegatedAdminCustomer) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DelegatedAdminCustomer) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetServiceManagementDetails gets the serviceManagementDetails property value. Contains the management details of a service in the customer tenant that's managed by delegated administration.
 func (m *DelegatedAdminCustomer) GetServiceManagementDetails()([]DelegatedAdminServiceManagementDetailable) {
@@ -107,6 +126,12 @@ func (m *DelegatedAdminCustomer) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetServiceManagementDetails() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetServiceManagementDetails()))
         for i, v := range m.GetServiceManagementDetails() {
@@ -134,6 +159,13 @@ func (m *DelegatedAdminCustomer) SetDisplayName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DelegatedAdminCustomer) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetServiceManagementDetails sets the serviceManagementDetails property value. Contains the management details of a service in the customer tenant that's managed by delegated administration.
 func (m *DelegatedAdminCustomer) SetServiceManagementDetails(value []DelegatedAdminServiceManagementDetailable)() {
     err := m.GetBackingStore().Set("serviceManagementDetails", value)
@@ -153,9 +185,11 @@ type DelegatedAdminCustomerable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDisplayName()(*string)
+    GetOdataType()(*string)
     GetServiceManagementDetails()([]DelegatedAdminServiceManagementDetailable)
     GetTenantId()(*string)
     SetDisplayName(value *string)()
+    SetOdataType(value *string)()
     SetServiceManagementDetails(value []DelegatedAdminServiceManagementDetailable)()
     SetTenantId(value *string)()
 }

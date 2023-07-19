@@ -11,7 +11,7 @@ import (
 type TermsOfUseAgreementsItemFileLocalizationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TermsOfUseAgreementsItemFileLocalizationsRequestBuilderGetQueryParameters the localized version of the terms of use agreement files attached to the agreement.
+// TermsOfUseAgreementsItemFileLocalizationsRequestBuilderGetQueryParameters get a list of the default and localized agreement files.
 type TermsOfUseAgreementsItemFileLocalizationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewTermsOfUseAgreementsItemFileLocalizationsRequestBuilder(rawUrl string, r
 func (m *TermsOfUseAgreementsItemFileLocalizationsRequestBuilder) Count()(*TermsOfUseAgreementsItemFileLocalizationsCountRequestBuilder) {
     return NewTermsOfUseAgreementsItemFileLocalizationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the localized version of the terms of use agreement files attached to the agreement.
+// Get get a list of the default and localized agreement files.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/agreementfile-list-localizations?view=graph-rest-1.0
 func (m *TermsOfUseAgreementsItemFileLocalizationsRequestBuilder) Get(ctx context.Context, requestConfiguration *TermsOfUseAgreementsItemFileLocalizationsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AgreementFileLocalizationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +115,7 @@ func (m *TermsOfUseAgreementsItemFileLocalizationsRequestBuilder) Post(ctx conte
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AgreementFileLocalizationable), nil
 }
-// ToGetRequestInformation the localized version of the terms of use agreement files attached to the agreement.
+// ToGetRequestInformation get a list of the default and localized agreement files.
 func (m *TermsOfUseAgreementsItemFileLocalizationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TermsOfUseAgreementsItemFileLocalizationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

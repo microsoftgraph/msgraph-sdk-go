@@ -7,6 +7,8 @@ import (
 // ListItem 
 type ListItem struct {
     BaseItem
+    // The OdataType property
+    OdataType *string
 }
 // NewListItem instantiates a new listItem and sets the default values.
 func NewListItem()(*ListItem) {

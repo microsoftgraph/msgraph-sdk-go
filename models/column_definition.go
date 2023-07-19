@@ -7,8 +7,6 @@ import (
 // ColumnDefinition 
 type ColumnDefinition struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewColumnDefinition instantiates a new columnDefinition and sets the default values.
 func NewColumnDefinition()(*ColumnDefinition) {
@@ -355,6 +353,16 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["personOrGroup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePersonOrGroupColumnFromDiscriminatorValue)
         if err != nil {
@@ -574,6 +582,17 @@ func (m *ColumnDefinition) GetNumber()(NumberColumnable) {
     }
     if val != nil {
         return val.(NumberColumnable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ColumnDefinition) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -831,6 +850,12 @@ func (m *ColumnDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("personOrGroup", m.GetPersonOrGroup())
         if err != nil {
             return err
@@ -1046,6 +1071,13 @@ func (m *ColumnDefinition) SetNumber(value NumberColumnable)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ColumnDefinition) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPersonOrGroup sets the personOrGroup property value. This column stores Person or Group values.
 func (m *ColumnDefinition) SetPersonOrGroup(value PersonOrGroupColumnable)() {
     err := m.GetBackingStore().Set("personOrGroup", value)
@@ -1148,6 +1180,7 @@ type ColumnDefinitionable interface {
     GetLookup()(LookupColumnable)
     GetName()(*string)
     GetNumber()(NumberColumnable)
+    GetOdataType()(*string)
     GetPersonOrGroup()(PersonOrGroupColumnable)
     GetPropagateChanges()(*bool)
     GetReadOnly()(*bool)
@@ -1180,6 +1213,7 @@ type ColumnDefinitionable interface {
     SetLookup(value LookupColumnable)()
     SetName(value *string)()
     SetNumber(value NumberColumnable)()
+    SetOdataType(value *string)()
     SetPersonOrGroup(value PersonOrGroupColumnable)()
     SetPropagateChanges(value *bool)()
     SetReadOnly(value *bool)()

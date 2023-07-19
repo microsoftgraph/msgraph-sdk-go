@@ -7,8 +7,6 @@ import (
 // AuditLogRoot 
 type AuditLogRoot struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewAuditLogRoot instantiates a new auditLogRoot and sets the default values.
 func NewAuditLogRoot()(*AuditLogRoot) {
@@ -51,6 +49,16 @@ func (m *AuditLogRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["provisioning"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateProvisioningObjectSummaryFromDiscriminatorValue)
         if err != nil {
@@ -84,6 +92,17 @@ func (m *AuditLogRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AuditLogRoot) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetProvisioning gets the provisioning property value. The provisioning property
 func (m *AuditLogRoot) GetProvisioning()([]ProvisioningObjectSummaryable) {
@@ -125,6 +144,12 @@ func (m *AuditLogRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetProvisioning() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetProvisioning()))
         for i, v := range m.GetProvisioning() {
@@ -158,6 +183,13 @@ func (m *AuditLogRoot) SetDirectoryAudits(value []DirectoryAuditable)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AuditLogRoot) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetProvisioning sets the provisioning property value. The provisioning property
 func (m *AuditLogRoot) SetProvisioning(value []ProvisioningObjectSummaryable)() {
     err := m.GetBackingStore().Set("provisioning", value)
@@ -177,9 +209,11 @@ type AuditLogRootable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDirectoryAudits()([]DirectoryAuditable)
+    GetOdataType()(*string)
     GetProvisioning()([]ProvisioningObjectSummaryable)
     GetSignIns()([]SignInable)
     SetDirectoryAudits(value []DirectoryAuditable)()
+    SetOdataType(value *string)()
     SetProvisioning(value []ProvisioningObjectSummaryable)()
     SetSignIns(value []SignInable)()
 }

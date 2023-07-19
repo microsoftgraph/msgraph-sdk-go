@@ -7,8 +7,6 @@ import (
 // WorkbookTableColumn 
 type WorkbookTableColumn struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewWorkbookTableColumn instantiates a new workbookTableColumn and sets the default values.
 func NewWorkbookTableColumn()(*WorkbookTableColumn) {
@@ -51,6 +49,16 @@ func (m *WorkbookTableColumn) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         if val != nil {
             m.SetName(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -99,6 +107,17 @@ func (m *WorkbookTableColumn) GetName()(*string) {
     }
     return nil
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WorkbookTableColumn) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetValues gets the values property value. Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
 func (m *WorkbookTableColumn) GetValues()(Jsonable) {
     val, err := m.GetBackingStore().Get("values")
@@ -135,6 +154,12 @@ func (m *WorkbookTableColumn) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("values", m.GetValues())
         if err != nil {
             return err
@@ -163,6 +188,13 @@ func (m *WorkbookTableColumn) SetName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WorkbookTableColumn) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetValues sets the values property value. Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
 func (m *WorkbookTableColumn) SetValues(value Jsonable)() {
     err := m.GetBackingStore().Set("values", value)
@@ -177,9 +209,11 @@ type WorkbookTableColumnable interface {
     GetFilter()(WorkbookFilterable)
     GetIndex()(*int32)
     GetName()(*string)
+    GetOdataType()(*string)
     GetValues()(Jsonable)
     SetFilter(value WorkbookFilterable)()
     SetIndex(value *int32)()
     SetName(value *string)()
+    SetOdataType(value *string)()
     SetValues(value Jsonable)()
 }

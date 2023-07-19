@@ -7,8 +7,6 @@ import (
 // Teamwork 
 type Teamwork struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewTeamwork instantiates a new teamwork and sets the default values.
 func NewTeamwork()(*Teamwork) {
@@ -51,6 +49,16 @@ func (m *Teamwork) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["workforceIntegrations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWorkforceIntegrationFromDiscriminatorValue)
         if err != nil {
@@ -68,6 +76,17 @@ func (m *Teamwork) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Teamwork) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetWorkforceIntegrations gets the workforceIntegrations property value. The workforceIntegrations property
 func (m *Teamwork) GetWorkforceIntegrations()([]WorkforceIntegrationable) {
@@ -98,6 +117,12 @@ func (m *Teamwork) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetWorkforceIntegrations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWorkforceIntegrations()))
         for i, v := range m.GetWorkforceIntegrations() {
@@ -119,6 +144,13 @@ func (m *Teamwork) SetDeletedTeams(value []DeletedTeamable)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Teamwork) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetWorkforceIntegrations sets the workforceIntegrations property value. The workforceIntegrations property
 func (m *Teamwork) SetWorkforceIntegrations(value []WorkforceIntegrationable)() {
     err := m.GetBackingStore().Set("workforceIntegrations", value)
@@ -131,7 +163,9 @@ type Teamworkable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDeletedTeams()([]DeletedTeamable)
+    GetOdataType()(*string)
     GetWorkforceIntegrations()([]WorkforceIntegrationable)
     SetDeletedTeams(value []DeletedTeamable)()
+    SetOdataType(value *string)()
     SetWorkforceIntegrations(value []WorkforceIntegrationable)()
 }

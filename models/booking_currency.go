@@ -7,8 +7,6 @@ import (
 // BookingCurrency 
 type BookingCurrency struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewBookingCurrency instantiates a new bookingCurrency and sets the default values.
 func NewBookingCurrency()(*BookingCurrency) {
@@ -24,6 +22,16 @@ func CreateBookingCurrencyFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 // GetFieldDeserializers the deserialization information for the current model
 func (m *BookingCurrency) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["symbol"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -35,6 +43,17 @@ func (m *BookingCurrency) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *BookingCurrency) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSymbol gets the symbol property value. The currency symbol. For example, the currency symbol for the US dollar and for the Australian dollar is $.
 func (m *BookingCurrency) GetSymbol()(*string) {
@@ -54,12 +73,25 @@ func (m *BookingCurrency) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         return err
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("symbol", m.GetSymbol())
         if err != nil {
             return err
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *BookingCurrency) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSymbol sets the symbol property value. The currency symbol. For example, the currency symbol for the US dollar and for the Australian dollar is $.
 func (m *BookingCurrency) SetSymbol(value *string)() {
@@ -72,6 +104,8 @@ func (m *BookingCurrency) SetSymbol(value *string)() {
 type BookingCurrencyable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetSymbol()(*string)
+    SetOdataType(value *string)()
     SetSymbol(value *string)()
 }

@@ -7,6 +7,8 @@ import (
 // Windows10CompliancePolicy this class contains compliance settings for Windows 10.
 type Windows10CompliancePolicy struct {
     DeviceCompliancePolicy
+    // The OdataType property
+    OdataType *string
 }
 // NewWindows10CompliancePolicy instantiates a new windows10CompliancePolicy and sets the default values.
 func NewWindows10CompliancePolicy()(*Windows10CompliancePolicy) {

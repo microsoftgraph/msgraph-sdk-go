@@ -7,6 +7,8 @@ import (
 // WindowsMicrosoftEdgeApp contains properties and inherited properties for the Microsoft Edge app on Windows.
 type WindowsMicrosoftEdgeApp struct {
     MobileApp
+    // The OdataType property
+    OdataType *string
 }
 // NewWindowsMicrosoftEdgeApp instantiates a new windowsMicrosoftEdgeApp and sets the default values.
 func NewWindowsMicrosoftEdgeApp()(*WindowsMicrosoftEdgeApp) {

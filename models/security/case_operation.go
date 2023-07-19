@@ -9,8 +9,6 @@ import (
 // CaseOperation 
 type CaseOperation struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewCaseOperation instantiates a new caseOperation and sets the default values.
 func NewCaseOperation()(*CaseOperation) {
@@ -140,6 +138,16 @@ func (m *CaseOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["percentProgress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -171,6 +179,17 @@ func (m *CaseOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CaseOperation) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPercentProgress gets the percentProgress property value. The progress of the operation.
 func (m *CaseOperation) GetPercentProgress()(*int32) {
@@ -237,6 +256,12 @@ func (m *CaseOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("percentProgress", m.GetPercentProgress())
         if err != nil {
             return err
@@ -285,6 +310,13 @@ func (m *CaseOperation) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad9
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CaseOperation) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPercentProgress sets the percentProgress property value. The progress of the operation.
 func (m *CaseOperation) SetPercentProgress(value *int32)() {
     err := m.GetBackingStore().Set("percentProgress", value)
@@ -314,6 +346,7 @@ type CaseOperationable interface {
     GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetCreatedBy()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetPercentProgress()(*int32)
     GetResultInfo()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ResultInfoable)
     GetStatus()(*CaseOperationStatus)
@@ -321,6 +354,7 @@ type CaseOperationable interface {
     SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCreatedBy(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetPercentProgress(value *int32)()
     SetResultInfo(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ResultInfoable)()
     SetStatus(value *CaseOperationStatus)()

@@ -7,8 +7,6 @@ import (
 // IPv4CidrRange 
 type IPv4CidrRange struct {
     IpRange
-    // The OdataType property
-    OdataType *string
 }
 // NewIPv4CidrRange instantiates a new iPv4CidrRange and sets the default values.
 func NewIPv4CidrRange()(*IPv4CidrRange) {
@@ -47,7 +45,28 @@ func (m *IPv4CidrRange) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *IPv4CidrRange) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *IPv4CidrRange) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -61,6 +80,12 @@ func (m *IPv4CidrRange) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetCidrAddress sets the cidrAddress property value. IPv4 address in CIDR notation. Not nullable.
@@ -70,10 +95,19 @@ func (m *IPv4CidrRange) SetCidrAddress(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *IPv4CidrRange) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // IPv4CidrRangeable 
 type IPv4CidrRangeable interface {
     IpRangeable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCidrAddress()(*string)
+    GetOdataType()(*string)
     SetCidrAddress(value *string)()
+    SetOdataType(value *string)()
 }

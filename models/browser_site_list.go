@@ -8,8 +8,6 @@ import (
 // BrowserSiteList a singleton entity which is used to specify IE mode site list metadata
 type BrowserSiteList struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewBrowserSiteList instantiates a new browserSiteList and sets the default values.
 func NewBrowserSiteList()(*BrowserSiteList) {
@@ -84,6 +82,16 @@ func (m *BrowserSiteList) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         if val != nil {
             m.SetLastModifiedDateTime(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -180,6 +188,17 @@ func (m *BrowserSiteList) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *BrowserSiteList) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -280,6 +299,12 @@ func (m *BrowserSiteList) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("publishedBy", m.GetPublishedBy())
         if err != nil {
             return err
@@ -358,6 +383,13 @@ func (m *BrowserSiteList) SetLastModifiedDateTime(value *i336074805fc853987abe6f
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *BrowserSiteList) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPublishedBy sets the publishedBy property value. The user who published the site list.
 func (m *BrowserSiteList) SetPublishedBy(value IdentitySetable)() {
     err := m.GetBackingStore().Set("publishedBy", value)
@@ -408,6 +440,7 @@ type BrowserSiteListable interface {
     GetDisplayName()(*string)
     GetLastModifiedBy()(IdentitySetable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetPublishedBy()(IdentitySetable)
     GetPublishedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetRevision()(*string)
@@ -418,6 +451,7 @@ type BrowserSiteListable interface {
     SetDisplayName(value *string)()
     SetLastModifiedBy(value IdentitySetable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetPublishedBy(value IdentitySetable)()
     SetPublishedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetRevision(value *string)()

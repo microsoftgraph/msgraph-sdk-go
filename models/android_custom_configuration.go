@@ -7,6 +7,8 @@ import (
 // AndroidCustomConfiguration this topic provides descriptions of the declared methods, properties and relationships exposed by the androidCustomConfiguration resource.
 type AndroidCustomConfiguration struct {
     DeviceConfiguration
+    // The OdataType property
+    OdataType *string
 }
 // NewAndroidCustomConfiguration instantiates a new androidCustomConfiguration and sets the default values.
 func NewAndroidCustomConfiguration()(*AndroidCustomConfiguration) {

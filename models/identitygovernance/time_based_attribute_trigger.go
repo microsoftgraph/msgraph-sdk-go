@@ -7,8 +7,6 @@ import (
 // TimeBasedAttributeTrigger 
 type TimeBasedAttributeTrigger struct {
     WorkflowExecutionTrigger
-    // The OdataType property
-    OdataType *string
 }
 // NewTimeBasedAttributeTrigger instantiates a new timeBasedAttributeTrigger and sets the default values.
 func NewTimeBasedAttributeTrigger()(*TimeBasedAttributeTrigger) {
@@ -26,6 +24,16 @@ func CreateTimeBasedAttributeTriggerFromDiscriminatorValue(parseNode i878a80d233
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TimeBasedAttributeTrigger) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.WorkflowExecutionTrigger.GetFieldDeserializers()
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["offsetInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -47,6 +55,17 @@ func (m *TimeBasedAttributeTrigger) GetFieldDeserializers()(map[string]func(i878
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TimeBasedAttributeTrigger) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOffsetInDays gets the offsetInDays property value. How many days before or after the time-based attribute specified the workflow should trigger. For example, if the attribute is employeeHireDate and offsetInDays is -1, then the workflow should trigger one day before the employee hire date. The value can range between -180 and 180 days.
 func (m *TimeBasedAttributeTrigger) GetOffsetInDays()(*int32) {
@@ -77,6 +96,12 @@ func (m *TimeBasedAttributeTrigger) Serialize(writer i878a80d2330e89d26896388a3f
         return err
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("offsetInDays", m.GetOffsetInDays())
         if err != nil {
             return err
@@ -90,6 +115,13 @@ func (m *TimeBasedAttributeTrigger) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     return nil
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TimeBasedAttributeTrigger) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetOffsetInDays sets the offsetInDays property value. How many days before or after the time-based attribute specified the workflow should trigger. For example, if the attribute is employeeHireDate and offsetInDays is -1, then the workflow should trigger one day before the employee hire date. The value can range between -180 and 180 days.
 func (m *TimeBasedAttributeTrigger) SetOffsetInDays(value *int32)() {
@@ -109,8 +141,10 @@ func (m *TimeBasedAttributeTrigger) SetTimeBasedAttribute(value *WorkflowTrigger
 type TimeBasedAttributeTriggerable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     WorkflowExecutionTriggerable
+    GetOdataType()(*string)
     GetOffsetInDays()(*int32)
     GetTimeBasedAttribute()(*WorkflowTriggerTimeBasedAttribute)
+    SetOdataType(value *string)()
     SetOffsetInDays(value *int32)()
     SetTimeBasedAttribute(value *WorkflowTriggerTimeBasedAttribute)()
 }

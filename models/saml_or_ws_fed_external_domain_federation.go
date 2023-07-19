@@ -7,6 +7,8 @@ import (
 // SamlOrWsFedExternalDomainFederation 
 type SamlOrWsFedExternalDomainFederation struct {
     SamlOrWsFedProvider
+    // The OdataType property
+    OdataType *string
 }
 // NewSamlOrWsFedExternalDomainFederation instantiates a new samlOrWsFedExternalDomainFederation and sets the default values.
 func NewSamlOrWsFedExternalDomainFederation()(*SamlOrWsFedExternalDomainFederation) {

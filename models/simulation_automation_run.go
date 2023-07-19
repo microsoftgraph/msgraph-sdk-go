@@ -8,8 +8,6 @@ import (
 // SimulationAutomationRun 
 type SimulationAutomationRun struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewSimulationAutomationRun instantiates a new simulationAutomationRun and sets the default values.
 func NewSimulationAutomationRun()(*SimulationAutomationRun) {
@@ -46,6 +44,16 @@ func (m *SimulationAutomationRun) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["simulationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -77,6 +85,17 @@ func (m *SimulationAutomationRun) GetFieldDeserializers()(map[string]func(i878a8
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SimulationAutomationRun) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSimulationId gets the simulationId property value. Unique identifier for the attack simulation campaign initiated in the attack simulation automation run.
 func (m *SimulationAutomationRun) GetSimulationId()(*string) {
@@ -124,6 +143,12 @@ func (m *SimulationAutomationRun) Serialize(writer i878a80d2330e89d26896388a3f48
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("simulationId", m.GetSimulationId())
         if err != nil {
             return err
@@ -147,6 +172,13 @@ func (m *SimulationAutomationRun) Serialize(writer i878a80d2330e89d26896388a3f48
 // SetEndDateTime sets the endDateTime property value. Date and time when the run ends in an attack simulation automation.
 func (m *SimulationAutomationRun) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("endDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SimulationAutomationRun) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -177,10 +209,12 @@ type SimulationAutomationRunable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetSimulationId()(*string)
     GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetStatus()(*SimulationAutomationRunStatus)
     SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetSimulationId(value *string)()
     SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetStatus(value *SimulationAutomationRunStatus)()

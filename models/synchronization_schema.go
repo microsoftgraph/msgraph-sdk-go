@@ -7,8 +7,6 @@ import (
 // SynchronizationSchema 
 type SynchronizationSchema struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewSynchronizationSchema instantiates a new synchronizationSchema and sets the default values.
 func NewSynchronizationSchema()(*SynchronizationSchema) {
@@ -51,6 +49,16 @@ func (m *SynchronizationSchema) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["synchronizationRules"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSynchronizationRuleFromDiscriminatorValue)
         if err != nil {
@@ -78,6 +86,17 @@ func (m *SynchronizationSchema) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SynchronizationSchema) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetSynchronizationRules gets the synchronizationRules property value. A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
 func (m *SynchronizationSchema) GetSynchronizationRules()([]SynchronizationRuleable) {
@@ -119,6 +138,12 @@ func (m *SynchronizationSchema) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSynchronizationRules() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSynchronizationRules()))
         for i, v := range m.GetSynchronizationRules() {
@@ -146,6 +171,13 @@ func (m *SynchronizationSchema) SetDirectories(value []DirectoryDefinitionable)(
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SynchronizationSchema) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSynchronizationRules sets the synchronizationRules property value. A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
 func (m *SynchronizationSchema) SetSynchronizationRules(value []SynchronizationRuleable)() {
     err := m.GetBackingStore().Set("synchronizationRules", value)
@@ -165,9 +197,11 @@ type SynchronizationSchemaable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDirectories()([]DirectoryDefinitionable)
+    GetOdataType()(*string)
     GetSynchronizationRules()([]SynchronizationRuleable)
     GetVersion()(*string)
     SetDirectories(value []DirectoryDefinitionable)()
+    SetOdataType(value *string)()
     SetSynchronizationRules(value []SynchronizationRuleable)()
     SetVersion(value *string)()
 }

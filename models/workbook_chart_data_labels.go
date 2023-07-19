@@ -7,8 +7,6 @@ import (
 // WorkbookChartDataLabels 
 type WorkbookChartDataLabels struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewWorkbookChartDataLabels instantiates a new workbookChartDataLabels and sets the default values.
 func NewWorkbookChartDataLabels()(*WorkbookChartDataLabels) {
@@ -31,6 +29,16 @@ func (m *WorkbookChartDataLabels) GetFieldDeserializers()(map[string]func(i878a8
         }
         if val != nil {
             m.SetFormat(val.(WorkbookChartDataLabelFormatable))
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -124,6 +132,17 @@ func (m *WorkbookChartDataLabels) GetFormat()(WorkbookChartDataLabelFormatable) 
     }
     if val != nil {
         return val.(WorkbookChartDataLabelFormatable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WorkbookChartDataLabels) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -228,6 +247,12 @@ func (m *WorkbookChartDataLabels) Serialize(writer i878a80d2330e89d26896388a3f48
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("position", m.GetPosition())
         if err != nil {
             return err
@@ -280,6 +305,13 @@ func (m *WorkbookChartDataLabels) Serialize(writer i878a80d2330e89d26896388a3f48
 // SetFormat sets the format property value. Represents the format of chart data labels, which includes fill and font formatting. Read-only.
 func (m *WorkbookChartDataLabels) SetFormat(value WorkbookChartDataLabelFormatable)() {
     err := m.GetBackingStore().Set("format", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WorkbookChartDataLabels) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -345,6 +377,7 @@ type WorkbookChartDataLabelsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetFormat()(WorkbookChartDataLabelFormatable)
+    GetOdataType()(*string)
     GetPosition()(*string)
     GetSeparator()(*string)
     GetShowBubbleSize()(*bool)
@@ -354,6 +387,7 @@ type WorkbookChartDataLabelsable interface {
     GetShowSeriesName()(*bool)
     GetShowValue()(*bool)
     SetFormat(value WorkbookChartDataLabelFormatable)()
+    SetOdataType(value *string)()
     SetPosition(value *string)()
     SetSeparator(value *string)()
     SetShowBubbleSize(value *bool)()

@@ -118,11 +118,32 @@ func (m *Windows10SecureAssessmentConfiguration) GetFieldDeserializers()(map[str
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLaunchUri gets the launchUri property value. Url link to an assessment that's automatically loaded when the secure assessment browser is launched. It has to be a valid Url (http[s]://msdn.microsoft.com/).
 func (m *Windows10SecureAssessmentConfiguration) GetLaunchUri()(*string) {
     val, err := m.GetBackingStore().Get("launchUri")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Windows10SecureAssessmentConfiguration) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -167,6 +188,12 @@ func (m *Windows10SecureAssessmentConfiguration) Serialize(writer i878a80d2330e8
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAllowPrinting sets the allowPrinting property value. Indicates whether or not to allow the app from printing during the test.
@@ -204,6 +231,13 @@ func (m *Windows10SecureAssessmentConfiguration) SetLaunchUri(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Windows10SecureAssessmentConfiguration) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // Windows10SecureAssessmentConfigurationable 
 type Windows10SecureAssessmentConfigurationable interface {
     DeviceConfigurationable
@@ -213,9 +247,11 @@ type Windows10SecureAssessmentConfigurationable interface {
     GetAllowTextSuggestion()(*bool)
     GetConfigurationAccount()(*string)
     GetLaunchUri()(*string)
+    GetOdataType()(*string)
     SetAllowPrinting(value *bool)()
     SetAllowScreenCapture(value *bool)()
     SetAllowTextSuggestion(value *bool)()
     SetConfigurationAccount(value *string)()
     SetLaunchUri(value *string)()
+    SetOdataType(value *string)()
 }

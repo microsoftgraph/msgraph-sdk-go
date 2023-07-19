@@ -7,6 +7,8 @@ import (
 // DomainDnsCnameRecord 
 type DomainDnsCnameRecord struct {
     DomainDnsRecord
+    // The OdataType property
+    OdataType *string
 }
 // NewDomainDnsCnameRecord instantiates a new domainDnsCnameRecord and sets the default values.
 func NewDomainDnsCnameRecord()(*DomainDnsCnameRecord) {

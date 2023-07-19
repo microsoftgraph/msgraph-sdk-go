@@ -7,6 +7,8 @@ import (
 // Windows10CustomConfiguration this topic provides descriptions of the declared methods, properties and relationships exposed by the windows10CustomConfiguration resource.
 type Windows10CustomConfiguration struct {
     DeviceConfiguration
+    // The OdataType property
+    OdataType *string
 }
 // NewWindows10CustomConfiguration instantiates a new windows10CustomConfiguration and sets the default values.
 func NewWindows10CustomConfiguration()(*Windows10CustomConfiguration) {

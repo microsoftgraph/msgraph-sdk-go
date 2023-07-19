@@ -7,6 +7,8 @@ import (
 // WindowsUniversalAppXContainedApp a class that represents a contained app of a WindowsUniversalAppX app.
 type WindowsUniversalAppXContainedApp struct {
     MobileContainedApp
+    // The OdataType property
+    OdataType *string
 }
 // NewWindowsUniversalAppXContainedApp instantiates a new windowsUniversalAppXContainedApp and sets the default values.
 func NewWindowsUniversalAppXContainedApp()(*WindowsUniversalAppXContainedApp) {

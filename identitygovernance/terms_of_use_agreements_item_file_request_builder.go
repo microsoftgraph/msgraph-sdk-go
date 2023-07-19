@@ -18,7 +18,7 @@ type TermsOfUseAgreementsItemFileRequestBuilderDeleteRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TermsOfUseAgreementsItemFileRequestBuilderGetQueryParameters retrieve the details of the default file for an agreement, including the language and version information. The file information is specified through the agreementFile object.
+// TermsOfUseAgreementsItemFileRequestBuilderGetQueryParameters retrieve the details of an agreement file, including the language and version information. The default file can have multiple versions, each with its own language, that can be retrieved by specifying the **Accept-Language** header.
 type TermsOfUseAgreementsItemFileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *TermsOfUseAgreementsItemFileRequestBuilder) Delete(ctx context.Context,
     }
     return nil
 }
-// Get retrieve the details of the default file for an agreement, including the language and version information. The file information is specified through the agreementFile object.
+// Get retrieve the details of an agreement file, including the language and version information. The default file can have multiple versions, each with its own language, that can be retrieved by specifying the **Accept-Language** header.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/agreementfile-get?view=graph-rest-1.0
@@ -127,7 +127,7 @@ func (m *TermsOfUseAgreementsItemFileRequestBuilder) ToDeleteRequestInformation(
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the details of the default file for an agreement, including the language and version information. The file information is specified through the agreementFile object.
+// ToGetRequestInformation retrieve the details of an agreement file, including the language and version information. The default file can have multiple versions, each with its own language, that can be retrieved by specifying the **Accept-Language** header.
 func (m *TermsOfUseAgreementsItemFileRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TermsOfUseAgreementsItemFileRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

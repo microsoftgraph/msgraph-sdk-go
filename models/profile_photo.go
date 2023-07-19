@@ -7,8 +7,6 @@ import (
 // ProfilePhoto 
 type ProfilePhoto struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewProfilePhoto instantiates a new profilePhoto and sets the default values.
 func NewProfilePhoto()(*ProfilePhoto) {
@@ -34,6 +32,16 @@ func (m *ProfilePhoto) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["width"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -54,6 +62,17 @@ func (m *ProfilePhoto) GetHeight()(*int32) {
     }
     if val != nil {
         return val.(*int32)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ProfilePhoto) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -81,6 +100,12 @@ func (m *ProfilePhoto) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
         }
     }
     {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("width", m.GetWidth())
         if err != nil {
             return err
@@ -91,6 +116,13 @@ func (m *ProfilePhoto) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 // SetHeight sets the height property value. The height of the photo. Read-only.
 func (m *ProfilePhoto) SetHeight(value *int32)() {
     err := m.GetBackingStore().Set("height", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ProfilePhoto) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -107,7 +139,9 @@ type ProfilePhotoable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetHeight()(*int32)
+    GetOdataType()(*string)
     GetWidth()(*int32)
     SetHeight(value *int32)()
+    SetOdataType(value *string)()
     SetWidth(value *int32)()
 }

@@ -7,8 +7,6 @@ import (
 // WorkbookChartAxisFormat 
 type WorkbookChartAxisFormat struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewWorkbookChartAxisFormat instantiates a new workbookChartAxisFormat and sets the default values.
 func NewWorkbookChartAxisFormat()(*WorkbookChartAxisFormat) {
@@ -44,6 +42,16 @@ func (m *WorkbookChartAxisFormat) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetFont gets the font property value. Represents the font attributes (font name, font size, color, etc.) for a chart axis element. Read-only.
@@ -68,6 +76,17 @@ func (m *WorkbookChartAxisFormat) GetLine()(WorkbookChartLineFormatable) {
     }
     return nil
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WorkbookChartAxisFormat) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *WorkbookChartAxisFormat) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
@@ -82,6 +101,12 @@ func (m *WorkbookChartAxisFormat) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     {
         err = writer.WriteObjectValue("line", m.GetLine())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -102,12 +127,21 @@ func (m *WorkbookChartAxisFormat) SetLine(value WorkbookChartLineFormatable)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WorkbookChartAxisFormat) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // WorkbookChartAxisFormatable 
 type WorkbookChartAxisFormatable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetFont()(WorkbookChartFontable)
     GetLine()(WorkbookChartLineFormatable)
+    GetOdataType()(*string)
     SetFont(value WorkbookChartFontable)()
     SetLine(value WorkbookChartLineFormatable)()
+    SetOdataType(value *string)()
 }

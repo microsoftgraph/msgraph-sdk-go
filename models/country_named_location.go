@@ -7,6 +7,8 @@ import (
 // CountryNamedLocation 
 type CountryNamedLocation struct {
     NamedLocation
+    // The OdataType property
+    OdataType *string
 }
 // NewCountryNamedLocation instantiates a new countryNamedLocation and sets the default values.
 func NewCountryNamedLocation()(*CountryNamedLocation) {

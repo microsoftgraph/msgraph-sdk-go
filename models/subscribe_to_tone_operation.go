@@ -7,6 +7,8 @@ import (
 // SubscribeToToneOperation 
 type SubscribeToToneOperation struct {
     CommsOperation
+    // The OdataType property
+    OdataType *string
 }
 // NewSubscribeToToneOperation instantiates a new subscribeToToneOperation and sets the default values.
 func NewSubscribeToToneOperation()(*SubscribeToToneOperation) {

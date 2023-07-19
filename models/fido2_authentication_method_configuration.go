@@ -7,6 +7,8 @@ import (
 // Fido2AuthenticationMethodConfiguration 
 type Fido2AuthenticationMethodConfiguration struct {
     AuthenticationMethodConfiguration
+    // The OdataType property
+    OdataType *string
 }
 // NewFido2AuthenticationMethodConfiguration instantiates a new fido2AuthenticationMethodConfiguration and sets the default values.
 func NewFido2AuthenticationMethodConfiguration()(*Fido2AuthenticationMethodConfiguration) {

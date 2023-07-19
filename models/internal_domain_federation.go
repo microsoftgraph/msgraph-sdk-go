@@ -7,6 +7,8 @@ import (
 // InternalDomainFederation 
 type InternalDomainFederation struct {
     SamlOrWsFedProvider
+    // The OdataType property
+    OdataType *string
 }
 // NewInternalDomainFederation instantiates a new internalDomainFederation and sets the default values.
 func NewInternalDomainFederation()(*InternalDomainFederation) {

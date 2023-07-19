@@ -7,8 +7,6 @@ import (
 // WorkbookTable 
 type WorkbookTable struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewWorkbookTable instantiates a new workbookTable and sets the default values.
 func NewWorkbookTable()(*WorkbookTable) {
@@ -88,6 +86,16 @@ func (m *WorkbookTable) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         if val != nil {
             m.SetName(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -225,6 +233,17 @@ func (m *WorkbookTable) GetLegacyId()(*string) {
 // GetName gets the name property value. Name of the table.
 func (m *WorkbookTable) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WorkbookTable) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -374,6 +393,12 @@ func (m *WorkbookTable) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRows() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRows()))
         for i, v := range m.GetRows() {
@@ -471,6 +496,13 @@ func (m *WorkbookTable) SetName(value *string)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WorkbookTable) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRows sets the rows property value. Represents a collection of all the rows in the table. Read-only.
 func (m *WorkbookTable) SetRows(value []WorkbookTableRowable)() {
     err := m.GetBackingStore().Set("rows", value)
@@ -543,6 +575,7 @@ type WorkbookTableable interface {
     GetHighlightLastColumn()(*bool)
     GetLegacyId()(*string)
     GetName()(*string)
+    GetOdataType()(*string)
     GetRows()([]WorkbookTableRowable)
     GetShowBandedColumns()(*bool)
     GetShowBandedRows()(*bool)
@@ -557,6 +590,7 @@ type WorkbookTableable interface {
     SetHighlightLastColumn(value *bool)()
     SetLegacyId(value *string)()
     SetName(value *string)()
+    SetOdataType(value *string)()
     SetRows(value []WorkbookTableRowable)()
     SetShowBandedColumns(value *bool)()
     SetShowBandedRows(value *bool)()
