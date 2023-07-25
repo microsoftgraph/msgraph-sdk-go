@@ -7,8 +7,6 @@ import (
 // ConditionalAccessAllExternalTenants 
 type ConditionalAccessAllExternalTenants struct {
     ConditionalAccessExternalTenants
-    // The OdataType property
-    OdataType *string
 }
 // NewConditionalAccessAllExternalTenants instantiates a new conditionalAccessAllExternalTenants and sets the default values.
 func NewConditionalAccessAllExternalTenants()(*ConditionalAccessAllExternalTenants) {

@@ -39,8 +39,18 @@ func CreateAlertEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
                         return NewAnalyzedMessageEvidence(), nil
                     case "#microsoft.graph.security.azureResourceEvidence":
                         return NewAzureResourceEvidence(), nil
+                    case "#microsoft.graph.security.blobContainerEvidence":
+                        return NewBlobContainerEvidence(), nil
+                    case "#microsoft.graph.security.blobEvidence":
+                        return NewBlobEvidence(), nil
                     case "#microsoft.graph.security.cloudApplicationEvidence":
                         return NewCloudApplicationEvidence(), nil
+                    case "#microsoft.graph.security.containerEvidence":
+                        return NewContainerEvidence(), nil
+                    case "#microsoft.graph.security.containerImageEvidence":
+                        return NewContainerImageEvidence(), nil
+                    case "#microsoft.graph.security.containerRegistryEvidence":
+                        return NewContainerRegistryEvidence(), nil
                     case "#microsoft.graph.security.deviceEvidence":
                         return NewDeviceEvidence(), nil
                     case "#microsoft.graph.security.fileEvidence":
@@ -49,6 +59,20 @@ func CreateAlertEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
                         return NewGoogleCloudResourceEvidence(), nil
                     case "#microsoft.graph.security.ipEvidence":
                         return NewIpEvidence(), nil
+                    case "#microsoft.graph.security.kubernetesClusterEvidence":
+                        return NewKubernetesClusterEvidence(), nil
+                    case "#microsoft.graph.security.kubernetesControllerEvidence":
+                        return NewKubernetesControllerEvidence(), nil
+                    case "#microsoft.graph.security.kubernetesNamespaceEvidence":
+                        return NewKubernetesNamespaceEvidence(), nil
+                    case "#microsoft.graph.security.kubernetesPodEvidence":
+                        return NewKubernetesPodEvidence(), nil
+                    case "#microsoft.graph.security.kubernetesSecretEvidence":
+                        return NewKubernetesSecretEvidence(), nil
+                    case "#microsoft.graph.security.kubernetesServiceAccountEvidence":
+                        return NewKubernetesServiceAccountEvidence(), nil
+                    case "#microsoft.graph.security.kubernetesServiceEvidence":
+                        return NewKubernetesServiceEvidence(), nil
                     case "#microsoft.graph.security.mailboxEvidence":
                         return NewMailboxEvidence(), nil
                     case "#microsoft.graph.security.mailClusterEvidence":
@@ -61,8 +85,6 @@ func CreateAlertEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
                         return NewRegistryKeyEvidence(), nil
                     case "#microsoft.graph.security.registryValueEvidence":
                         return NewRegistryValueEvidence(), nil
-                    case "#microsoft.graph.security.securityGroupEvidence":
-                        return NewSecurityGroupEvidence(), nil
                     case "#microsoft.graph.security.urlEvidence":
                         return NewUrlEvidence(), nil
                     case "#microsoft.graph.security.userEvidence":

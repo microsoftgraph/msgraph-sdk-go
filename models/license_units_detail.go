@@ -104,7 +104,7 @@ func (m *LicenseUnitsDetail) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetLockedOut gets the lockedOut property value. The lockedOut property
+// GetLockedOut gets the lockedOut property value. The number of units that are locked out because the customer cancelled their subscription of the service SKU.
 func (m *LicenseUnitsDetail) GetLockedOut()(*int32) {
     val, err := m.GetBackingStore().Get("lockedOut")
     if err != nil {
@@ -206,7 +206,7 @@ func (m *LicenseUnitsDetail) SetEnabled(value *int32)() {
         panic(err)
     }
 }
-// SetLockedOut sets the lockedOut property value. The lockedOut property
+// SetLockedOut sets the lockedOut property value. The number of units that are locked out because the customer cancelled their subscription of the service SKU.
 func (m *LicenseUnitsDetail) SetLockedOut(value *int32)() {
     err := m.GetBackingStore().Set("lockedOut", value)
     if err != nil {

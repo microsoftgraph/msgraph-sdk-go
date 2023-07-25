@@ -7,8 +7,6 @@ import (
 // DomainIdentitySource 
 type DomainIdentitySource struct {
     IdentitySource
-    // The OdataType property
-    OdataType *string
 }
 // NewDomainIdentitySource instantiates a new domainIdentitySource and sets the default values.
 func NewDomainIdentitySource()(*DomainIdentitySource) {

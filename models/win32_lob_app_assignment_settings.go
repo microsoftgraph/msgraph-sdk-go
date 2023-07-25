@@ -7,8 +7,6 @@ import (
 // Win32LobAppAssignmentSettings contains properties used to assign an Win32 LOB mobile app to a group.
 type Win32LobAppAssignmentSettings struct {
     MobileAppAssignmentSettings
-    // The OdataType property
-    OdataType *string
 }
 // NewWin32LobAppAssignmentSettings instantiates a new win32LobAppAssignmentSettings and sets the default values.
 func NewWin32LobAppAssignmentSettings()(*Win32LobAppAssignmentSettings) {

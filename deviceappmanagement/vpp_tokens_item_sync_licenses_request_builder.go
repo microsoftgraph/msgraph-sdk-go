@@ -32,6 +32,9 @@ func NewVppTokensItemSyncLicensesRequestBuilder(rawUrl string, requestAdapter i2
     return NewVppTokensItemSyncLicensesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post syncs licenses associated with a specific appleVolumePurchaseProgramToken
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-onboarding-vpptoken-synclicenses?view=graph-rest-1.0
 func (m *VppTokensItemSyncLicensesRequestBuilder) Post(ctx context.Context, requestConfiguration *VppTokensItemSyncLicensesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VppTokenable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -7,8 +7,6 @@ import (
 // EditionUpgradeConfiguration windows 10 Edition Upgrade configuration.
 type EditionUpgradeConfiguration struct {
     DeviceConfiguration
-    // The OdataType property
-    OdataType *string
 }
 // NewEditionUpgradeConfiguration instantiates a new editionUpgradeConfiguration and sets the default values.
 func NewEditionUpgradeConfiguration()(*EditionUpgradeConfiguration) {

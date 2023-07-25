@@ -40,16 +40,6 @@ func (m *SmsAuthenticationMethodConfiguration) GetFieldDeserializers()(map[strin
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     return res
 }
 // GetIncludeTargets gets the includeTargets property value. A collection of groups that are enabled to use the authentication method.
@@ -60,17 +50,6 @@ func (m *SmsAuthenticationMethodConfiguration) GetIncludeTargets()([]SmsAuthenti
     }
     if val != nil {
         return val.([]SmsAuthenticationMethodTargetable)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *SmsAuthenticationMethodConfiguration) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -92,12 +71,6 @@ func (m *SmsAuthenticationMethodConfiguration) Serialize(writer i878a80d2330e89d
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetIncludeTargets sets the includeTargets property value. A collection of groups that are enabled to use the authentication method.
@@ -107,19 +80,10 @@ func (m *SmsAuthenticationMethodConfiguration) SetIncludeTargets(value []SmsAuth
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *SmsAuthenticationMethodConfiguration) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SmsAuthenticationMethodConfigurationable 
 type SmsAuthenticationMethodConfigurationable interface {
     AuthenticationMethodConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetIncludeTargets()([]SmsAuthenticationMethodTargetable)
-    GetOdataType()(*string)
     SetIncludeTargets(value []SmsAuthenticationMethodTargetable)()
-    SetOdataType(value *string)()
 }

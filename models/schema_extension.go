@@ -7,8 +7,6 @@ import (
 // SchemaExtension 
 type SchemaExtension struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewSchemaExtension instantiates a new schemaExtension and sets the default values.
 func NewSchemaExtension()(*SchemaExtension) {

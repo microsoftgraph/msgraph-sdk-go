@@ -55,16 +55,6 @@ func (m *UserSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["siteWebUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -85,17 +75,6 @@ func (m *UserSource) GetIncludedSources()(*SourceType) {
     }
     if val != nil {
         return val.(*SourceType)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *UserSource) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -130,12 +109,6 @@ func (m *UserSource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("siteWebUrl", m.GetSiteWebUrl())
         if err != nil {
             return err
@@ -157,13 +130,6 @@ func (m *UserSource) SetIncludedSources(value *SourceType)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *UserSource) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetSiteWebUrl sets the siteWebUrl property value. The URL of the user's OneDrive for Business site. Read-only.
 func (m *UserSource) SetSiteWebUrl(value *string)() {
     err := m.GetBackingStore().Set("siteWebUrl", value)
@@ -177,10 +143,8 @@ type UserSourceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetEmail()(*string)
     GetIncludedSources()(*SourceType)
-    GetOdataType()(*string)
     GetSiteWebUrl()(*string)
     SetEmail(value *string)()
     SetIncludedSources(value *SourceType)()
-    SetOdataType(value *string)()
     SetSiteWebUrl(value *string)()
 }

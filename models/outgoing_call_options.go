@@ -7,8 +7,6 @@ import (
 // OutgoingCallOptions 
 type OutgoingCallOptions struct {
     CallOptions
-    // The OdataType property
-    OdataType *string
 }
 // NewOutgoingCallOptions instantiates a new outgoingCallOptions and sets the default values.
 func NewOutgoingCallOptions()(*OutgoingCallOptions) {

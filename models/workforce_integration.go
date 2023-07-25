@@ -7,8 +7,6 @@ import (
 // WorkforceIntegration 
 type WorkforceIntegration struct {
     ChangeTrackedEntity
-    // The OdataType property
-    OdataType *string
 }
 // NewWorkforceIntegration instantiates a new workforceIntegration and sets the default values.
 func NewWorkforceIntegration()(*WorkforceIntegration) {

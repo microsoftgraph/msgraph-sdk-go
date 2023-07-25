@@ -7,8 +7,6 @@ import (
 // Domain 
 type Domain struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewDomain instantiates a new domain and sets the default values.
 func NewDomain()(*Domain) {

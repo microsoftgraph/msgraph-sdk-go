@@ -7,8 +7,6 @@ import (
 // WindowsPhone81CustomConfiguration this topic provides descriptions of the declared methods, properties and relationships exposed by the windowsPhone81CustomConfiguration resource.
 type WindowsPhone81CustomConfiguration struct {
     DeviceConfiguration
-    // The OdataType property
-    OdataType *string
 }
 // NewWindowsPhone81CustomConfiguration instantiates a new windowsPhone81CustomConfiguration and sets the default values.
 func NewWindowsPhone81CustomConfiguration()(*WindowsPhone81CustomConfiguration) {

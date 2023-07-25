@@ -64,16 +64,6 @@ func (m *AuthenticationFlowsPolicy) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["selfServiceSignUp"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSelfServiceSignUpAuthenticationFlowConfigurationFromDiscriminatorValue)
         if err != nil {
@@ -85,17 +75,6 @@ func (m *AuthenticationFlowsPolicy) GetFieldDeserializers()(map[string]func(i878
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *AuthenticationFlowsPolicy) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetSelfServiceSignUp gets the selfServiceSignUp property value. Contains selfServiceSignUpAuthenticationFlowConfiguration settings that convey whether self-service sign-up is enabled or disabled. Optional. Read-only.
 func (m *AuthenticationFlowsPolicy) GetSelfServiceSignUp()(SelfServiceSignUpAuthenticationFlowConfigurationable) {
@@ -127,12 +106,6 @@ func (m *AuthenticationFlowsPolicy) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteObjectValue("selfServiceSignUp", m.GetSelfServiceSignUp())
         if err != nil {
             return err
@@ -154,13 +127,6 @@ func (m *AuthenticationFlowsPolicy) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *AuthenticationFlowsPolicy) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetSelfServiceSignUp sets the selfServiceSignUp property value. Contains selfServiceSignUpAuthenticationFlowConfiguration settings that convey whether self-service sign-up is enabled or disabled. Optional. Read-only.
 func (m *AuthenticationFlowsPolicy) SetSelfServiceSignUp(value SelfServiceSignUpAuthenticationFlowConfigurationable)() {
     err := m.GetBackingStore().Set("selfServiceSignUp", value)
@@ -174,10 +140,8 @@ type AuthenticationFlowsPolicyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDescription()(*string)
     GetDisplayName()(*string)
-    GetOdataType()(*string)
     GetSelfServiceSignUp()(SelfServiceSignUpAuthenticationFlowConfigurationable)
     SetDescription(value *string)()
     SetDisplayName(value *string)()
-    SetOdataType(value *string)()
     SetSelfServiceSignUp(value SelfServiceSignUpAuthenticationFlowConfigurationable)()
 }

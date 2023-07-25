@@ -7,8 +7,6 @@ import (
 // Shift 
 type Shift struct {
     ChangeTrackedEntity
-    // The OdataType property
-    OdataType *string
 }
 // NewShift instantiates a new shift and sets the default values.
 func NewShift()(*Shift) {

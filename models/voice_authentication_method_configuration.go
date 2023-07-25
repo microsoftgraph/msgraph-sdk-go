@@ -50,16 +50,6 @@ func (m *VoiceAuthenticationMethodConfiguration) GetFieldDeserializers()(map[str
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     return res
 }
 // GetIncludeTargets gets the includeTargets property value. A collection of groups that are enabled to use the authentication method. Expanded by default.
@@ -81,17 +71,6 @@ func (m *VoiceAuthenticationMethodConfiguration) GetIsOfficePhoneAllowed()(*bool
     }
     if val != nil {
         return val.(*bool)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *VoiceAuthenticationMethodConfiguration) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -119,12 +98,6 @@ func (m *VoiceAuthenticationMethodConfiguration) Serialize(writer i878a80d2330e8
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetIncludeTargets sets the includeTargets property value. A collection of groups that are enabled to use the authentication method. Expanded by default.
@@ -141,21 +114,12 @@ func (m *VoiceAuthenticationMethodConfiguration) SetIsOfficePhoneAllowed(value *
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *VoiceAuthenticationMethodConfiguration) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // VoiceAuthenticationMethodConfigurationable 
 type VoiceAuthenticationMethodConfigurationable interface {
     AuthenticationMethodConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetIncludeTargets()([]AuthenticationMethodTargetable)
     GetIsOfficePhoneAllowed()(*bool)
-    GetOdataType()(*string)
     SetIncludeTargets(value []AuthenticationMethodTargetable)()
     SetIsOfficePhoneAllowed(value *bool)()
-    SetOdataType(value *string)()
 }

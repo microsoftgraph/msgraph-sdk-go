@@ -7,8 +7,6 @@ import (
 // PermissionGrantPolicy 
 type PermissionGrantPolicy struct {
     PolicyBase
-    // The OdataType property
-    OdataType *string
 }
 // NewPermissionGrantPolicy instantiates a new permissionGrantPolicy and sets the default values.
 func NewPermissionGrantPolicy()(*PermissionGrantPolicy) {

@@ -22,16 +22,6 @@ func CreateInferenceClassificationFromDiscriminatorValue(parseNode i878a80d2330e
 // GetFieldDeserializers the deserialization information for the current model
 func (m *InferenceClassification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["overrides"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateInferenceClassificationOverrideFromDiscriminatorValue)
         if err != nil {
@@ -50,17 +40,6 @@ func (m *InferenceClassification) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *InferenceClassification) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetOverrides gets the overrides property value. A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.
 func (m *InferenceClassification) GetOverrides()([]InferenceClassificationOverrideable) {
     val, err := m.GetBackingStore().Get("overrides")
@@ -78,12 +57,6 @@ func (m *InferenceClassification) Serialize(writer i878a80d2330e89d26896388a3f48
     if err != nil {
         return err
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetOverrides() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOverrides()))
         for i, v := range m.GetOverrides() {
@@ -98,13 +71,6 @@ func (m *InferenceClassification) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *InferenceClassification) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetOverrides sets the overrides property value. A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.
 func (m *InferenceClassification) SetOverrides(value []InferenceClassificationOverrideable)() {
     err := m.GetBackingStore().Set("overrides", value)
@@ -116,8 +82,6 @@ func (m *InferenceClassification) SetOverrides(value []InferenceClassificationOv
 type InferenceClassificationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetOdataType()(*string)
     GetOverrides()([]InferenceClassificationOverrideable)
-    SetOdataType(value *string)()
     SetOverrides(value []InferenceClassificationOverrideable)()
 }

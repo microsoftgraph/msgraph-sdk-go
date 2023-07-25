@@ -7,8 +7,6 @@ import (
 // EdiscoveryTagOperation 
 type EdiscoveryTagOperation struct {
     CaseOperation
-    // The OdataType property
-    OdataType *string
 }
 // NewEdiscoveryTagOperation instantiates a new ediscoveryTagOperation and sets the default values.
 func NewEdiscoveryTagOperation()(*EdiscoveryTagOperation) {

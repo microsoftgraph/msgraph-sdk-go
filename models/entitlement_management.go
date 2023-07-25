@@ -211,16 +211,6 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["resourceEnvironments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessPackageResourceEnvironmentFromDiscriminatorValue)
         if err != nil {
@@ -296,17 +286,6 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *EntitlementManagement) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetResourceEnvironments gets the resourceEnvironments property value. The resourceEnvironments property
 func (m *EntitlementManagement) GetResourceEnvironments()([]AccessPackageResourceEnvironmentable) {
@@ -453,12 +432,6 @@ func (m *EntitlementManagement) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetResourceEnvironments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetResourceEnvironments()))
         for i, v := range m.GetResourceEnvironments() {
@@ -564,13 +537,6 @@ func (m *EntitlementManagement) SetConnectedOrganizations(value []ConnectedOrgan
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *EntitlementManagement) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetResourceEnvironments sets the resourceEnvironments property value. The resourceEnvironments property
 func (m *EntitlementManagement) SetResourceEnvironments(value []AccessPackageResourceEnvironmentable)() {
     err := m.GetBackingStore().Set("resourceEnvironments", value)
@@ -617,7 +583,6 @@ type EntitlementManagementable interface {
     GetAssignments()([]AccessPackageAssignmentable)
     GetCatalogs()([]AccessPackageCatalogable)
     GetConnectedOrganizations()([]ConnectedOrganizationable)
-    GetOdataType()(*string)
     GetResourceEnvironments()([]AccessPackageResourceEnvironmentable)
     GetResourceRequests()([]AccessPackageResourceRequestable)
     GetResourceRoleScopes()([]AccessPackageResourceRoleScopeable)
@@ -630,7 +595,6 @@ type EntitlementManagementable interface {
     SetAssignments(value []AccessPackageAssignmentable)()
     SetCatalogs(value []AccessPackageCatalogable)()
     SetConnectedOrganizations(value []ConnectedOrganizationable)()
-    SetOdataType(value *string)()
     SetResourceEnvironments(value []AccessPackageResourceEnvironmentable)()
     SetResourceRequests(value []AccessPackageResourceRequestable)()
     SetResourceRoleScopes(value []AccessPackageResourceRoleScopeable)()

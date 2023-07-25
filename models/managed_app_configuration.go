@@ -7,8 +7,6 @@ import (
 // ManagedAppConfiguration configuration used to deliver a set of custom settings as-is to apps for users to whom the configuration is scoped
 type ManagedAppConfiguration struct {
     ManagedAppPolicy
-    // The OdataType property
-    OdataType *string
 }
 // NewManagedAppConfiguration instantiates a new managedAppConfiguration and sets the default values.
 func NewManagedAppConfiguration()(*ManagedAppConfiguration) {

@@ -96,16 +96,6 @@ func (m *TelecomExpenseManagementPartner) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -126,17 +116,6 @@ func (m *TelecomExpenseManagementPartner) GetLastConnectionDateTime()(*i33607480
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *TelecomExpenseManagementPartner) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -182,12 +161,6 @@ func (m *TelecomExpenseManagementPartner) Serialize(writer i878a80d2330e89d26896
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("url", m.GetUrl())
         if err != nil {
             return err
@@ -223,13 +196,6 @@ func (m *TelecomExpenseManagementPartner) SetLastConnectionDateTime(value *i3360
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *TelecomExpenseManagementPartner) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetUrl sets the url property value. URL of the TEM partner's administrative control panel, where an administrator can configure their TEM service.
 func (m *TelecomExpenseManagementPartner) SetUrl(value *string)() {
     err := m.GetBackingStore().Set("url", value)
@@ -245,12 +211,10 @@ type TelecomExpenseManagementPartnerable interface {
     GetDisplayName()(*string)
     GetEnabled()(*bool)
     GetLastConnectionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetOdataType()(*string)
     GetUrl()(*string)
     SetAppAuthorized(value *bool)()
     SetDisplayName(value *string)()
     SetEnabled(value *bool)()
     SetLastConnectionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetOdataType(value *string)()
     SetUrl(value *string)()
 }

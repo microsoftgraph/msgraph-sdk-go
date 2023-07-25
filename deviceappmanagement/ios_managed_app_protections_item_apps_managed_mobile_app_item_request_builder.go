@@ -18,7 +18,7 @@ type IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderDeleteReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderGetQueryParameters list of apps to which the policy is deployed.
+// IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderGetQueryParameters read properties and relationships of the managedMobileApp object.
 type IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewIosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder(rawUr
     urlParams["request-raw-url"] = rawUrl
     return NewIosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property apps for deviceAppManagement
+// Delete deletes a managedMobileApp.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-mam-managedmobileapp-delete?view=graph-rest-1.0
 func (m *IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder) Del
     }
     return nil
 }
-// Get list of apps to which the policy is deployed.
+// Get read properties and relationships of the managedMobileApp object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-mam-managedmobileapp-get?view=graph-rest-1.0
 func (m *IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder) Get(ctx context.Context, requestConfiguration *IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedMobileAppable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder) Get
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedMobileAppable), nil
 }
-// Patch update the navigation property apps in deviceAppManagement
+// Patch update the properties of a managedMobileApp object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-mam-managedmobileapp-update?view=graph-rest-1.0
 func (m *IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedMobileAppable, requestConfiguration *IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedMobileAppable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -108,7 +117,7 @@ func (m *IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder) Pat
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedMobileAppable), nil
 }
-// ToDeleteRequestInformation delete navigation property apps for deviceAppManagement
+// ToDeleteRequestInformation deletes a managedMobileApp.
 func (m *IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +129,7 @@ func (m *IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder) ToD
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation list of apps to which the policy is deployed.
+// ToGetRequestInformation read properties and relationships of the managedMobileApp object.
 func (m *IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +145,7 @@ func (m *IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder) ToG
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property apps in deviceAppManagement
+// ToPatchRequestInformation update the properties of a managedMobileApp object.
 func (m *IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedMobileAppable, requestConfiguration *IosManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

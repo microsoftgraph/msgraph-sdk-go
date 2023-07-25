@@ -42,16 +42,6 @@ func (m *SharedInsight) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["resource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateEntityFromDiscriminatorValue)
         if err != nil {
@@ -122,17 +112,6 @@ func (m *SharedInsight) GetLastSharedMethod()(Entityable) {
     }
     return nil
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *SharedInsight) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetResource gets the resource property value. Used for navigating to the item that was shared. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.
 func (m *SharedInsight) GetResource()(Entityable) {
     val, err := m.GetBackingStore().Get("resource")
@@ -196,12 +175,6 @@ func (m *SharedInsight) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteObjectValue("resource", m.GetResource())
         if err != nil {
             return err
@@ -231,13 +204,6 @@ func (m *SharedInsight) SetLastShared(value SharingDetailable)() {
 // SetLastSharedMethod sets the lastSharedMethod property value. The lastSharedMethod property
 func (m *SharedInsight) SetLastSharedMethod(value Entityable)() {
     err := m.GetBackingStore().Set("lastSharedMethod", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *SharedInsight) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -276,14 +242,12 @@ type SharedInsightable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetLastShared()(SharingDetailable)
     GetLastSharedMethod()(Entityable)
-    GetOdataType()(*string)
     GetResource()(Entityable)
     GetResourceReference()(ResourceReferenceable)
     GetResourceVisualization()(ResourceVisualizationable)
     GetSharingHistory()([]SharingDetailable)
     SetLastShared(value SharingDetailable)()
     SetLastSharedMethod(value Entityable)()
-    SetOdataType(value *string)()
     SetResource(value Entityable)()
     SetResourceReference(value ResourceReferenceable)()
     SetResourceVisualization(value ResourceVisualizationable)()

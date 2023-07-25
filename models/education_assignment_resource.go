@@ -43,16 +43,6 @@ func (m *EducationAssignmentResource) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["resource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateEducationResourceFromDiscriminatorValue)
         if err != nil {
@@ -64,17 +54,6 @@ func (m *EducationAssignmentResource) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *EducationAssignmentResource) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetResource gets the resource property value. Resource object that has been associated with this assignment.
 func (m *EducationAssignmentResource) GetResource()(EducationResourceable) {
@@ -100,12 +79,6 @@ func (m *EducationAssignmentResource) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteObjectValue("resource", m.GetResource())
         if err != nil {
             return err
@@ -116,13 +89,6 @@ func (m *EducationAssignmentResource) Serialize(writer i878a80d2330e89d26896388a
 // SetDistributeForStudentWork sets the distributeForStudentWork property value. Indicates whether this resource should be copied to each student submission for modification and submission. Required
 func (m *EducationAssignmentResource) SetDistributeForStudentWork(value *bool)() {
     err := m.GetBackingStore().Set("distributeForStudentWork", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *EducationAssignmentResource) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -139,9 +105,7 @@ type EducationAssignmentResourceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDistributeForStudentWork()(*bool)
-    GetOdataType()(*string)
     GetResource()(EducationResourceable)
     SetDistributeForStudentWork(value *bool)()
-    SetOdataType(value *string)()
     SetResource(value EducationResourceable)()
 }

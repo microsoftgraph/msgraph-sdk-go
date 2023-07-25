@@ -194,16 +194,6 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["optOutOfCustomerEmail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -399,17 +389,6 @@ func (m *BookingAppointment) GetMaximumAttendeesCount()(*int32) {
     }
     if val != nil {
         return val.(*int32)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *BookingAppointment) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -628,12 +607,6 @@ func (m *BookingAppointment) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteBoolValue("optOutOfCustomerEmail", m.GetOptOutOfCustomerEmail())
         if err != nil {
             return err
@@ -796,13 +769,6 @@ func (m *BookingAppointment) SetMaximumAttendeesCount(value *int32)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *BookingAppointment) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetOptOutOfCustomerEmail sets the optOutOfCustomerEmail property value. If true indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
 func (m *BookingAppointment) SetOptOutOfCustomerEmail(value *bool)() {
     err := m.GetBackingStore().Set("optOutOfCustomerEmail", value)
@@ -915,7 +881,6 @@ type BookingAppointmentable interface {
     GetIsLocationOnline()(*bool)
     GetJoinWebUrl()(*string)
     GetMaximumAttendeesCount()(*int32)
-    GetOdataType()(*string)
     GetOptOutOfCustomerEmail()(*bool)
     GetPostBuffer()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
     GetPreBuffer()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
@@ -940,7 +905,6 @@ type BookingAppointmentable interface {
     SetIsLocationOnline(value *bool)()
     SetJoinWebUrl(value *string)()
     SetMaximumAttendeesCount(value *int32)()
-    SetOdataType(value *string)()
     SetOptOutOfCustomerEmail(value *bool)()
     SetPostBuffer(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
     SetPreBuffer(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()

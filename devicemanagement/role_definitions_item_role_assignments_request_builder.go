@@ -11,7 +11,7 @@ import (
 type RoleDefinitionsItemRoleAssignmentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// RoleDefinitionsItemRoleAssignmentsRequestBuilderGetQueryParameters list of Role assignments for this role definition.
+// RoleDefinitionsItemRoleAssignmentsRequestBuilderGetQueryParameters list properties and relationships of the roleAssignment objects.
 type RoleDefinitionsItemRoleAssignmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewRoleDefinitionsItemRoleAssignmentsRequestBuilder(rawUrl string, requestA
 func (m *RoleDefinitionsItemRoleAssignmentsRequestBuilder) Count()(*RoleDefinitionsItemRoleAssignmentsCountRequestBuilder) {
     return NewRoleDefinitionsItemRoleAssignmentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list of Role assignments for this role definition.
+// Get list properties and relationships of the roleAssignment objects.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-rbac-roleassignment-list?view=graph-rest-1.0
 func (m *RoleDefinitionsItemRoleAssignmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *RoleDefinitionsItemRoleAssignmentsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RoleAssignmentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *RoleDefinitionsItemRoleAssignmentsRequestBuilder) Get(ctx context.Conte
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RoleAssignmentCollectionResponseable), nil
 }
-// Post create new navigation property to roleAssignments for deviceManagement
+// Post create a new roleAssignment object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-rbac-roleassignment-create?view=graph-rest-1.0
 func (m *RoleDefinitionsItemRoleAssignmentsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RoleAssignmentable, requestConfiguration *RoleDefinitionsItemRoleAssignmentsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RoleAssignmentable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *RoleDefinitionsItemRoleAssignmentsRequestBuilder) Post(ctx context.Cont
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RoleAssignmentable), nil
 }
-// ToGetRequestInformation list of Role assignments for this role definition.
+// ToGetRequestInformation list properties and relationships of the roleAssignment objects.
 func (m *RoleDefinitionsItemRoleAssignmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RoleDefinitionsItemRoleAssignmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *RoleDefinitionsItemRoleAssignmentsRequestBuilder) ToGetRequestInformati
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to roleAssignments for deviceManagement
+// ToPostRequestInformation create a new roleAssignment object.
 func (m *RoleDefinitionsItemRoleAssignmentsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RoleAssignmentable, requestConfiguration *RoleDefinitionsItemRoleAssignmentsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

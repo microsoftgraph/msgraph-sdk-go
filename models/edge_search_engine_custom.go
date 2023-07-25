@@ -7,8 +7,6 @@ import (
 // EdgeSearchEngineCustom allows IT admins to set a custom default search engine for MDM-Controlled devices.
 type EdgeSearchEngineCustom struct {
     EdgeSearchEngineBase
-    // The OdataType property
-    OdataType *string
 }
 // NewEdgeSearchEngineCustom instantiates a new edgeSearchEngineCustom and sets the default values.
 func NewEdgeSearchEngineCustom()(*EdgeSearchEngineCustom) {

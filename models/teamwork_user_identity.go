@@ -7,8 +7,6 @@ import (
 // TeamworkUserIdentity 
 type TeamworkUserIdentity struct {
     Identity
-    // The OdataType property
-    OdataType *string
 }
 // NewTeamworkUserIdentity instantiates a new teamworkUserIdentity and sets the default values.
 func NewTeamworkUserIdentity()(*TeamworkUserIdentity) {

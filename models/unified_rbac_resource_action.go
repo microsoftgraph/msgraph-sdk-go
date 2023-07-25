@@ -105,16 +105,6 @@ func (m *UnifiedRbacResourceAction) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["resourceScopeId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -141,17 +131,6 @@ func (m *UnifiedRbacResourceAction) GetIsAuthenticationContextSettable()(*bool) 
 // GetName gets the name property value. The name property
 func (m *UnifiedRbacResourceAction) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *UnifiedRbacResourceAction) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -208,12 +187,6 @@ func (m *UnifiedRbacResourceAction) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("resourceScopeId", m.GetResourceScopeId())
         if err != nil {
             return err
@@ -256,13 +229,6 @@ func (m *UnifiedRbacResourceAction) SetName(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *UnifiedRbacResourceAction) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetResourceScopeId sets the resourceScopeId property value. The resourceScopeId property
 func (m *UnifiedRbacResourceAction) SetResourceScopeId(value *string)() {
     err := m.GetBackingStore().Set("resourceScopeId", value)
@@ -279,13 +245,11 @@ type UnifiedRbacResourceActionable interface {
     GetDescription()(*string)
     GetIsAuthenticationContextSettable()(*bool)
     GetName()(*string)
-    GetOdataType()(*string)
     GetResourceScopeId()(*string)
     SetActionVerb(value *string)()
     SetAuthenticationContextId(value *string)()
     SetDescription(value *string)()
     SetIsAuthenticationContextSettable(value *bool)()
     SetName(value *string)()
-    SetOdataType(value *string)()
     SetResourceScopeId(value *string)()
 }

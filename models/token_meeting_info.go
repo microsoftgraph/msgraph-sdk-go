@@ -7,8 +7,6 @@ import (
 // TokenMeetingInfo 
 type TokenMeetingInfo struct {
     MeetingInfo
-    // The OdataType property
-    OdataType *string
 }
 // NewTokenMeetingInfo instantiates a new tokenMeetingInfo and sets the default values.
 func NewTokenMeetingInfo()(*TokenMeetingInfo) {

@@ -7,8 +7,6 @@ import (
 // AndroidStoreApp contains properties and inherited properties for Android store apps.
 type AndroidStoreApp struct {
     MobileApp
-    // The OdataType property
-    OdataType *string
 }
 // NewAndroidStoreApp instantiates a new androidStoreApp and sets the default values.
 func NewAndroidStoreApp()(*AndroidStoreApp) {

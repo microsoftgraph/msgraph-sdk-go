@@ -227,16 +227,6 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["resourceDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -401,17 +391,6 @@ func (m *SignIn) GetLocation()(SignInLocationable) {
     }
     if val != nil {
         return val.(SignInLocationable)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *SignIn) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -627,12 +606,6 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("resourceDisplayName", m.GetResourceDisplayName())
         if err != nil {
             return err
@@ -787,13 +760,6 @@ func (m *SignIn) SetLocation(value SignInLocationable)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *SignIn) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetResourceDisplayName sets the resourceDisplayName property value. Name of the resource the user signed into. Supports $filter (eq operator only).
 func (m *SignIn) SetResourceDisplayName(value *string)() {
     err := m.GetBackingStore().Set("resourceDisplayName", value)
@@ -893,7 +859,6 @@ type SignInable interface {
     GetIpAddress()(*string)
     GetIsInteractive()(*bool)
     GetLocation()(SignInLocationable)
-    GetOdataType()(*string)
     GetResourceDisplayName()(*string)
     GetResourceId()(*string)
     GetRiskDetail()(*RiskDetail)
@@ -917,7 +882,6 @@ type SignInable interface {
     SetIpAddress(value *string)()
     SetIsInteractive(value *bool)()
     SetLocation(value SignInLocationable)()
-    SetOdataType(value *string)()
     SetResourceDisplayName(value *string)()
     SetResourceId(value *string)()
     SetRiskDetail(value *RiskDetail)()

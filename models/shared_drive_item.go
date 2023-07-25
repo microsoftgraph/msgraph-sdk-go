@@ -7,8 +7,6 @@ import (
 // SharedDriveItem 
 type SharedDriveItem struct {
     BaseItem
-    // The OdataType property
-    OdataType *string
 }
 // NewSharedDriveItem instantiates a new sharedDriveItem and sets the default values.
 func NewSharedDriveItem()(*SharedDriveItem) {

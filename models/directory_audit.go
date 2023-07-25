@@ -154,16 +154,6 @@ func (m *DirectoryAudit) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["operationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -226,17 +216,6 @@ func (m *DirectoryAudit) GetInitiatedBy()(AuditActivityInitiatorable) {
 // GetLoggedByService gets the loggedByService property value. Indicates information on which service initiated the activity (For example: Self-service Password Management, Core Directory, B2C, Invited Users, Microsoft Identity Manager, Privileged Identity Management.
 func (m *DirectoryAudit) GetLoggedByService()(*string) {
     val, err := m.GetBackingStore().Get("loggedByService")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *DirectoryAudit) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -344,12 +323,6 @@ func (m *DirectoryAudit) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("operationType", m.GetOperationType())
         if err != nil {
             return err
@@ -431,13 +404,6 @@ func (m *DirectoryAudit) SetLoggedByService(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *DirectoryAudit) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetOperationType sets the operationType property value. Indicates the type of operation that was performed. The possible values include but are not limited to the following: Add, Assign, Update, Unassign, and Delete.
 func (m *DirectoryAudit) SetOperationType(value *string)() {
     err := m.GetBackingStore().Set("operationType", value)
@@ -477,7 +443,6 @@ type DirectoryAuditable interface {
     GetCorrelationId()(*string)
     GetInitiatedBy()(AuditActivityInitiatorable)
     GetLoggedByService()(*string)
-    GetOdataType()(*string)
     GetOperationType()(*string)
     GetResult()(*OperationResult)
     GetResultReason()(*string)
@@ -489,7 +454,6 @@ type DirectoryAuditable interface {
     SetCorrelationId(value *string)()
     SetInitiatedBy(value AuditActivityInitiatorable)()
     SetLoggedByService(value *string)()
-    SetOdataType(value *string)()
     SetOperationType(value *string)()
     SetResult(value *OperationResult)()
     SetResultReason(value *string)()

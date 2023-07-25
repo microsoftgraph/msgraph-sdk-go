@@ -7,8 +7,6 @@ import (
 // TeamworkHostedContent 
 type TeamworkHostedContent struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewTeamworkHostedContent instantiates a new teamworkHostedContent and sets the default values.
 func NewTeamworkHostedContent()(*TeamworkHostedContent) {

@@ -7,8 +7,6 @@ import (
 // MacOSOfficeSuiteApp contains properties and inherited properties for the MacOS Office Suite App.
 type MacOSOfficeSuiteApp struct {
     MobileApp
-    // The OdataType property
-    OdataType *string
 }
 // NewMacOSOfficeSuiteApp instantiates a new macOSOfficeSuiteApp and sets the default values.
 func NewMacOSOfficeSuiteApp()(*MacOSOfficeSuiteApp) {

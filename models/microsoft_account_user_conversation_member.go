@@ -7,8 +7,6 @@ import (
 // MicrosoftAccountUserConversationMember 
 type MicrosoftAccountUserConversationMember struct {
     ConversationMember
-    // The OdataType property
-    OdataType *string
 }
 // NewMicrosoftAccountUserConversationMember instantiates a new microsoftAccountUserConversationMember and sets the default values.
 func NewMicrosoftAccountUserConversationMember()(*MicrosoftAccountUserConversationMember) {

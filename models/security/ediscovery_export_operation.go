@@ -112,16 +112,6 @@ func (m *EdiscoveryExportOperation) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["outputName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -153,17 +143,6 @@ func (m *EdiscoveryExportOperation) GetFieldDeserializers()(map[string]func(i878
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *EdiscoveryExportOperation) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetOutputName gets the outputName property value. The name provided for the export.
 func (m *EdiscoveryExportOperation) GetOutputName()(*string) {
@@ -237,12 +216,6 @@ func (m *EdiscoveryExportOperation) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("outputName", m.GetOutputName())
         if err != nil {
             return err
@@ -290,13 +263,6 @@ func (m *EdiscoveryExportOperation) SetExportStructure(value *ExportFileStructur
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *EdiscoveryExportOperation) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetOutputName sets the outputName property value. The name provided for the export.
 func (m *EdiscoveryExportOperation) SetOutputName(value *string)() {
     err := m.GetBackingStore().Set("outputName", value)
@@ -326,7 +292,6 @@ type EdiscoveryExportOperationable interface {
     GetExportFileMetadata()([]ExportFileMetadataable)
     GetExportOptions()(*ExportOptions)
     GetExportStructure()(*ExportFileStructure)
-    GetOdataType()(*string)
     GetOutputName()(*string)
     GetReviewSet()(EdiscoveryReviewSetable)
     GetReviewSetQuery()(EdiscoveryReviewSetQueryable)
@@ -334,7 +299,6 @@ type EdiscoveryExportOperationable interface {
     SetExportFileMetadata(value []ExportFileMetadataable)()
     SetExportOptions(value *ExportOptions)()
     SetExportStructure(value *ExportFileStructure)()
-    SetOdataType(value *string)()
     SetOutputName(value *string)()
     SetReviewSet(value EdiscoveryReviewSetable)()
     SetReviewSetQuery(value EdiscoveryReviewSetQueryable)()

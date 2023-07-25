@@ -76,16 +76,6 @@ func (m *Win32LobAppFileSystemRule) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["operationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseWin32LobAppFileSystemOperationType)
         if err != nil {
@@ -121,17 +111,6 @@ func (m *Win32LobAppFileSystemRule) GetFieldDeserializers()(map[string]func(i878
 // GetFileOrFolderName gets the fileOrFolderName property value. The file or folder name to look up.
 func (m *Win32LobAppFileSystemRule) GetFileOrFolderName()(*string) {
     val, err := m.GetBackingStore().Get("fileOrFolderName")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *Win32LobAppFileSystemRule) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -197,12 +176,6 @@ func (m *Win32LobAppFileSystemRule) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetOperationType() != nil {
         cast := (*m.GetOperationType()).String()
         err = writer.WriteStringValue("operationType", &cast)
@@ -246,13 +219,6 @@ func (m *Win32LobAppFileSystemRule) SetFileOrFolderName(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *Win32LobAppFileSystemRule) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetOperationType sets the operationType property value. Contains all supported file system detection type.
 func (m *Win32LobAppFileSystemRule) SetOperationType(value *Win32LobAppFileSystemOperationType)() {
     err := m.GetBackingStore().Set("operationType", value)
@@ -281,14 +247,12 @@ type Win32LobAppFileSystemRuleable interface {
     GetCheck32BitOn64System()(*bool)
     GetComparisonValue()(*string)
     GetFileOrFolderName()(*string)
-    GetOdataType()(*string)
     GetOperationType()(*Win32LobAppFileSystemOperationType)
     GetOperator()(*Win32LobAppRuleOperator)
     GetPath()(*string)
     SetCheck32BitOn64System(value *bool)()
     SetComparisonValue(value *string)()
     SetFileOrFolderName(value *string)()
-    SetOdataType(value *string)()
     SetOperationType(value *Win32LobAppFileSystemOperationType)()
     SetOperator(value *Win32LobAppRuleOperator)()
     SetPath(value *string)()

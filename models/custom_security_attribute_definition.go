@@ -121,16 +121,6 @@ func (m *CustomSecurityAttributeDefinition) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -147,7 +137,7 @@ func (m *CustomSecurityAttributeDefinition) GetFieldDeserializers()(map[string]f
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetTypeEscaped(val)
         }
         return nil
     }
@@ -196,17 +186,6 @@ func (m *CustomSecurityAttributeDefinition) GetName()(*string) {
     }
     return nil
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *CustomSecurityAttributeDefinition) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetStatus gets the status property value. Specifies whether the custom security attribute is active or deactivated. Acceptable values are: Available and Deprecated. Can be changed later.
 func (m *CustomSecurityAttributeDefinition) GetStatus()(*string) {
     val, err := m.GetBackingStore().Get("status")
@@ -218,8 +197,8 @@ func (m *CustomSecurityAttributeDefinition) GetStatus()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. Data type for the custom security attribute values. Supported types are: Boolean, Integer, and String. Cannot be changed later.
-func (m *CustomSecurityAttributeDefinition) GetType()(*string) {
+// GetTypeEscaped gets the type property value. Data type for the custom security attribute values. Supported types are: Boolean, Integer, and String. Cannot be changed later.
+func (m *CustomSecurityAttributeDefinition) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -289,19 +268,13 @@ func (m *CustomSecurityAttributeDefinition) Serialize(writer i878a80d2330e89d268
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("status", m.GetStatus())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("type", m.GetType())
+        err = writer.WriteStringValue("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -356,13 +329,6 @@ func (m *CustomSecurityAttributeDefinition) SetName(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *CustomSecurityAttributeDefinition) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetStatus sets the status property value. Specifies whether the custom security attribute is active or deactivated. Acceptable values are: Available and Deprecated. Can be changed later.
 func (m *CustomSecurityAttributeDefinition) SetStatus(value *string)() {
     err := m.GetBackingStore().Set("status", value)
@@ -370,8 +336,8 @@ func (m *CustomSecurityAttributeDefinition) SetStatus(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. Data type for the custom security attribute values. Supported types are: Boolean, Integer, and String. Cannot be changed later.
-func (m *CustomSecurityAttributeDefinition) SetType(value *string)() {
+// SetTypeEscaped sets the type property value. Data type for the custom security attribute values. Supported types are: Boolean, Integer, and String. Cannot be changed later.
+func (m *CustomSecurityAttributeDefinition) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -394,9 +360,8 @@ type CustomSecurityAttributeDefinitionable interface {
     GetIsCollection()(*bool)
     GetIsSearchable()(*bool)
     GetName()(*string)
-    GetOdataType()(*string)
     GetStatus()(*string)
-    GetType()(*string)
+    GetTypeEscaped()(*string)
     GetUsePreDefinedValuesOnly()(*bool)
     SetAllowedValues(value []AllowedValueable)()
     SetAttributeSet(value *string)()
@@ -404,8 +369,7 @@ type CustomSecurityAttributeDefinitionable interface {
     SetIsCollection(value *bool)()
     SetIsSearchable(value *bool)()
     SetName(value *string)()
-    SetOdataType(value *string)()
     SetStatus(value *string)()
-    SetType(value *string)()
+    SetTypeEscaped(value *string)()
     SetUsePreDefinedValuesOnly(value *bool)()
 }

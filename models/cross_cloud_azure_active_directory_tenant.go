@@ -7,8 +7,6 @@ import (
 // CrossCloudAzureActiveDirectoryTenant 
 type CrossCloudAzureActiveDirectoryTenant struct {
     IdentitySource
-    // The OdataType property
-    OdataType *string
 }
 // NewCrossCloudAzureActiveDirectoryTenant instantiates a new crossCloudAzureActiveDirectoryTenant and sets the default values.
 func NewCrossCloudAzureActiveDirectoryTenant()(*CrossCloudAzureActiveDirectoryTenant) {

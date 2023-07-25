@@ -7,8 +7,6 @@ import (
 // EmailIdentity 
 type EmailIdentity struct {
     Identity
-    // The OdataType property
-    OdataType *string
 }
 // NewEmailIdentity instantiates a new emailIdentity and sets the default values.
 func NewEmailIdentity()(*EmailIdentity) {

@@ -7,8 +7,6 @@ import (
 // TargetManager 
 type TargetManager struct {
     SubjectSet
-    // The OdataType property
-    OdataType *string
 }
 // NewTargetManager instantiates a new targetManager and sets the default values.
 func NewTargetManager()(*TargetManager) {

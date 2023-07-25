@@ -7,8 +7,6 @@ import (
 // IosVppAppAssignmentSettings contains properties used to assign an iOS VPP mobile app to a group.
 type IosVppAppAssignmentSettings struct {
     MobileAppAssignmentSettings
-    // The OdataType property
-    OdataType *string
 }
 // NewIosVppAppAssignmentSettings instantiates a new iosVppAppAssignmentSettings and sets the default values.
 func NewIosVppAppAssignmentSettings()(*IosVppAppAssignmentSettings) {

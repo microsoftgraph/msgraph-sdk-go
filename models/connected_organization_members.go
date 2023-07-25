@@ -7,8 +7,6 @@ import (
 // ConnectedOrganizationMembers 
 type ConnectedOrganizationMembers struct {
     SubjectSet
-    // The OdataType property
-    OdataType *string
 }
 // NewConnectedOrganizationMembers instantiates a new connectedOrganizationMembers and sets the default values.
 func NewConnectedOrganizationMembers()(*ConnectedOrganizationMembers) {

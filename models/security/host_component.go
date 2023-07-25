@@ -86,16 +86,6 @@ func (m *HostComponent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["version"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -152,17 +142,6 @@ func (m *HostComponent) GetName()(*string) {
     }
     return nil
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *HostComponent) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetVersion gets the version property value. The component version running on the artifact, for example, v8.5. This should not be assumed to be strictly numerical.
 func (m *HostComponent) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
@@ -211,12 +190,6 @@ func (m *HostComponent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("version", m.GetVersion())
         if err != nil {
             return err
@@ -259,13 +232,6 @@ func (m *HostComponent) SetName(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *HostComponent) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetVersion sets the version property value. The component version running on the artifact, for example, v8.5. This should not be assumed to be strictly numerical.
 func (m *HostComponent) SetVersion(value *string)() {
     err := m.GetBackingStore().Set("version", value)
@@ -282,13 +248,11 @@ type HostComponentable interface {
     GetHost()(Hostable)
     GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetName()(*string)
-    GetOdataType()(*string)
     GetVersion()(*string)
     SetCategory(value *string)()
     SetFirstSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetHost(value Hostable)()
     SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetName(value *string)()
-    SetOdataType(value *string)()
     SetVersion(value *string)()
 }

@@ -31,6 +31,9 @@ func NewManagedDevicesItemBypassActivationLockRequestBuilder(rawUrl string, requ
     return NewManagedDevicesItemBypassActivationLockRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post bypass activation lock
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-devices-manageddevice-bypassactivationlock?view=graph-rest-1.0
 func (m *ManagedDevicesItemBypassActivationLockRequestBuilder) Post(ctx context.Context, requestConfiguration *ManagedDevicesItemBypassActivationLockRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

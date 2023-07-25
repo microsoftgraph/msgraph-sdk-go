@@ -7,8 +7,6 @@ import (
 // AppManagementPolicy 
 type AppManagementPolicy struct {
     PolicyBase
-    // The OdataType property
-    OdataType *string
 }
 // NewAppManagementPolicy instantiates a new appManagementPolicy and sets the default values.
 func NewAppManagementPolicy()(*AppManagementPolicy) {

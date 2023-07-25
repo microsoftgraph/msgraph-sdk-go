@@ -24,16 +24,6 @@ func CreateWindows81CompliancePolicyFromDiscriminatorValue(parseNode i878a80d233
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Windows81CompliancePolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceCompliancePolicy.GetFieldDeserializers()
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["osMaximumVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -145,17 +135,6 @@ func (m *Windows81CompliancePolicy) GetFieldDeserializers()(map[string]func(i878
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *Windows81CompliancePolicy) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetOsMaximumVersion gets the osMaximumVersion property value. Maximum Windows 8.1 version.
 func (m *Windows81CompliancePolicy) GetOsMaximumVersion()(*string) {
@@ -285,12 +264,6 @@ func (m *Windows81CompliancePolicy) Serialize(writer i878a80d2330e89d26896388a3f
         return err
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("osMaximumVersion", m.GetOsMaximumVersion())
         if err != nil {
             return err
@@ -358,13 +331,6 @@ func (m *Windows81CompliancePolicy) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     return nil
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *Windows81CompliancePolicy) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
 }
 // SetOsMaximumVersion sets the osMaximumVersion property value. Maximum Windows 8.1 version.
 func (m *Windows81CompliancePolicy) SetOsMaximumVersion(value *string)() {
@@ -447,7 +413,6 @@ func (m *Windows81CompliancePolicy) SetStorageRequireEncryption(value *bool)() {
 type Windows81CompliancePolicyable interface {
     DeviceCompliancePolicyable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetOdataType()(*string)
     GetOsMaximumVersion()(*string)
     GetOsMinimumVersion()(*string)
     GetPasswordBlockSimple()(*bool)
@@ -459,7 +424,6 @@ type Windows81CompliancePolicyable interface {
     GetPasswordRequired()(*bool)
     GetPasswordRequiredType()(*RequiredPasswordType)
     GetStorageRequireEncryption()(*bool)
-    SetOdataType(value *string)()
     SetOsMaximumVersion(value *string)()
     SetOsMinimumVersion(value *string)()
     SetPasswordBlockSimple(value *bool)()

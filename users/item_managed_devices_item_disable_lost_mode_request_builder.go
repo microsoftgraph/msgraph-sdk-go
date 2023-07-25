@@ -31,6 +31,9 @@ func NewItemManagedDevicesItemDisableLostModeRequestBuilder(rawUrl string, reque
     return NewItemManagedDevicesItemDisableLostModeRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post disable lost mode
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-devices-manageddevice-disablelostmode?view=graph-rest-1.0
 func (m *ItemManagedDevicesItemDisableLostModeRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemManagedDevicesItemDisableLostModeRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

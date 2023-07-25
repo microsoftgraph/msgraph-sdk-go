@@ -53,16 +53,6 @@ func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) GetFieldDeseriali
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["osBuildNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -103,17 +93,6 @@ func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) GetMeanTimeToFail
     }
     if val != nil {
         return val.(*int32)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -169,12 +148,6 @@ func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) Serialize(writer 
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("osBuildNumber", m.GetOsBuildNumber())
         if err != nil {
             return err
@@ -208,13 +181,6 @@ func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) SetMeanTimeToFail
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetOsBuildNumber sets the osBuildNumber property value. The OS build number installed on the device. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) SetOsBuildNumber(value *string)() {
     err := m.GetBackingStore().Set("osBuildNumber", value)
@@ -242,13 +208,11 @@ type UserExperienceAnalyticsAppHealthOSVersionPerformanceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetActiveDeviceCount()(*int32)
     GetMeanTimeToFailureInMinutes()(*int32)
-    GetOdataType()(*string)
     GetOsBuildNumber()(*string)
     GetOsVersion()(*string)
     GetOsVersionAppHealthScore()(*float64)
     SetActiveDeviceCount(value *int32)()
     SetMeanTimeToFailureInMinutes(value *int32)()
-    SetOdataType(value *string)()
     SetOsBuildNumber(value *string)()
     SetOsVersion(value *string)()
     SetOsVersionAppHealthScore(value *float64)()

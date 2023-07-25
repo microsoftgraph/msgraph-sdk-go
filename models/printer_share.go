@@ -121,16 +121,6 @@ func (m *PrinterShare) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["printer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePrinterFromDiscriminatorValue)
         if err != nil {
@@ -152,17 +142,6 @@ func (m *PrinterShare) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *PrinterShare) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetPrinter gets the printer property value. The printer that this printer share is related to.
 func (m *PrinterShare) GetPrinter()(Printerable) {
@@ -229,12 +208,6 @@ func (m *PrinterShare) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteObjectValue("printer", m.GetPrinter())
         if err != nil {
             return err
@@ -276,13 +249,6 @@ func (m *PrinterShare) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *PrinterShare) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetPrinter sets the printer property value. The printer that this printer share is related to.
 func (m *PrinterShare) SetPrinter(value Printerable)() {
     err := m.GetBackingStore().Set("printer", value)
@@ -305,14 +271,12 @@ type PrinterShareable interface {
     GetAllowedGroups()([]Groupable)
     GetAllowedUsers()([]Userable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetOdataType()(*string)
     GetPrinter()(Printerable)
     GetViewPoint()(PrinterShareViewpointable)
     SetAllowAllUsers(value *bool)()
     SetAllowedGroups(value []Groupable)()
     SetAllowedUsers(value []Userable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetOdataType(value *string)()
     SetPrinter(value Printerable)()
     SetViewPoint(value PrinterShareViewpointable)()
 }

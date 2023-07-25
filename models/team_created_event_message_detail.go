@@ -34,16 +34,6 @@ func (m *TeamCreatedEventMessageDetail) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["teamDescription"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -84,17 +74,6 @@ func (m *TeamCreatedEventMessageDetail) GetInitiator()(IdentitySetable) {
     }
     if val != nil {
         return val.(IdentitySetable)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *TeamCreatedEventMessageDetail) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -144,12 +123,6 @@ func (m *TeamCreatedEventMessageDetail) Serialize(writer i878a80d2330e89d2689638
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("teamDescription", m.GetTeamDescription())
         if err != nil {
             return err
@@ -172,13 +145,6 @@ func (m *TeamCreatedEventMessageDetail) Serialize(writer i878a80d2330e89d2689638
 // SetInitiator sets the initiator property value. Initiator of the event.
 func (m *TeamCreatedEventMessageDetail) SetInitiator(value IdentitySetable)() {
     err := m.GetBackingStore().Set("initiator", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *TeamCreatedEventMessageDetail) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -209,12 +175,10 @@ type TeamCreatedEventMessageDetailable interface {
     EventMessageDetailable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetInitiator()(IdentitySetable)
-    GetOdataType()(*string)
     GetTeamDescription()(*string)
     GetTeamDisplayName()(*string)
     GetTeamId()(*string)
     SetInitiator(value IdentitySetable)()
-    SetOdataType(value *string)()
     SetTeamDescription(value *string)()
     SetTeamDisplayName(value *string)()
     SetTeamId(value *string)()

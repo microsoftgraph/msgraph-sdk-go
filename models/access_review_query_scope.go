@@ -7,8 +7,6 @@ import (
 // AccessReviewQueryScope 
 type AccessReviewQueryScope struct {
     AccessReviewScope
-    // The OdataType property
-    OdataType *string
 }
 // NewAccessReviewQueryScope instantiates a new accessReviewQueryScope and sets the default values.
 func NewAccessReviewQueryScope()(*AccessReviewQueryScope) {

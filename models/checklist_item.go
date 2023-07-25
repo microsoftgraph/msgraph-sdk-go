@@ -96,16 +96,6 @@ func (m *ChecklistItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     return res
 }
 // GetIsChecked gets the isChecked property value. State indicating whether the item is checked off or not.
@@ -116,17 +106,6 @@ func (m *ChecklistItem) GetIsChecked()(*bool) {
     }
     if val != nil {
         return val.(*bool)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *ChecklistItem) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -156,12 +135,6 @@ func (m *ChecklistItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     {
         err = writer.WriteBoolValue("isChecked", m.GetIsChecked())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -196,13 +169,6 @@ func (m *ChecklistItem) SetIsChecked(value *bool)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *ChecklistItem) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // ChecklistItemable 
 type ChecklistItemable interface {
     Entityable
@@ -211,10 +177,8 @@ type ChecklistItemable interface {
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDisplayName()(*string)
     GetIsChecked()(*bool)
-    GetOdataType()(*string)
     SetCheckedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDisplayName(value *string)()
     SetIsChecked(value *bool)()
-    SetOdataType(value *string)()
 }

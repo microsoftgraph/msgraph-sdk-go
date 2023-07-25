@@ -54,16 +54,6 @@ func (m *UserExperienceAnalyticsCategory) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     return res
 }
 // GetInsights gets the insights property value. The insights for the category. Read-only.
@@ -85,17 +75,6 @@ func (m *UserExperienceAnalyticsCategory) GetMetricValues()([]UserExperienceAnal
     }
     if val != nil {
         return val.([]UserExperienceAnalyticsMetricable)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *UserExperienceAnalyticsCategory) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -129,12 +108,6 @@ func (m *UserExperienceAnalyticsCategory) Serialize(writer i878a80d2330e89d26896
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetInsights sets the insights property value. The insights for the category. Read-only.
@@ -151,21 +124,12 @@ func (m *UserExperienceAnalyticsCategory) SetMetricValues(value []UserExperience
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *UserExperienceAnalyticsCategory) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // UserExperienceAnalyticsCategoryable 
 type UserExperienceAnalyticsCategoryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetInsights()([]UserExperienceAnalyticsInsightable)
     GetMetricValues()([]UserExperienceAnalyticsMetricable)
-    GetOdataType()(*string)
     SetInsights(value []UserExperienceAnalyticsInsightable)()
     SetMetricValues(value []UserExperienceAnalyticsMetricable)()
-    SetOdataType(value *string)()
 }

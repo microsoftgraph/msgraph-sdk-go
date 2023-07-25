@@ -7,8 +7,6 @@ import (
 // DeviceEnrollmentLimitConfiguration device Enrollment Configuration that restricts the number of devices a user can enroll
 type DeviceEnrollmentLimitConfiguration struct {
     DeviceEnrollmentConfiguration
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceEnrollmentLimitConfiguration instantiates a new deviceEnrollmentLimitConfiguration and sets the default values.
 func NewDeviceEnrollmentLimitConfiguration()(*DeviceEnrollmentLimitConfiguration) {

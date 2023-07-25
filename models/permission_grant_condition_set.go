@@ -7,8 +7,6 @@ import (
 // PermissionGrantConditionSet 
 type PermissionGrantConditionSet struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewPermissionGrantConditionSet instantiates a new permissionGrantConditionSet and sets the default values.
 func NewPermissionGrantConditionSet()(*PermissionGrantConditionSet) {

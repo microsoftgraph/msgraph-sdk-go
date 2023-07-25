@@ -7,8 +7,6 @@ import (
 // AndroidMobileAppIdentifier the identifier for an Android app.
 type AndroidMobileAppIdentifier struct {
     MobileAppIdentifier
-    // The OdataType property
-    OdataType *string
 }
 // NewAndroidMobileAppIdentifier instantiates a new androidMobileAppIdentifier and sets the default values.
 func NewAndroidMobileAppIdentifier()(*AndroidMobileAppIdentifier) {

@@ -7,8 +7,6 @@ import (
 // ExclusionGroupAssignmentTarget represents a group that should be excluded from an assignment.
 type ExclusionGroupAssignmentTarget struct {
     GroupAssignmentTarget
-    // The OdataType property
-    OdataType *string
 }
 // NewExclusionGroupAssignmentTarget instantiates a new exclusionGroupAssignmentTarget and sets the default values.
 func NewExclusionGroupAssignmentTarget()(*ExclusionGroupAssignmentTarget) {

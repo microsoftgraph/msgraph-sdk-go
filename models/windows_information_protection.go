@@ -460,16 +460,6 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["protectedAppLockerFiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionAppLockerFileFromDiscriminatorValue)
         if err != nil {
@@ -591,17 +581,6 @@ func (m *WindowsInformationProtection) GetNeutralDomainResources()([]WindowsInfo
     }
     if val != nil {
         return val.([]WindowsInformationProtectionResourceCollectionable)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *WindowsInformationProtection) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -852,12 +831,6 @@ func (m *WindowsInformationProtection) Serialize(writer i878a80d2330e89d26896388
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetProtectedAppLockerFiles() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetProtectedAppLockerFiles()))
         for i, v := range m.GetProtectedAppLockerFiles() {
@@ -1047,13 +1020,6 @@ func (m *WindowsInformationProtection) SetNeutralDomainResources(value []Windows
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *WindowsInformationProtection) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetProtectedAppLockerFiles sets the protectedAppLockerFiles property value. Another way to input protected apps through xml files
 func (m *WindowsInformationProtection) SetProtectedAppLockerFiles(value []WindowsInformationProtectionAppLockerFileable)() {
     err := m.GetBackingStore().Set("protectedAppLockerFiles", value)
@@ -1119,7 +1085,6 @@ type WindowsInformationProtectionable interface {
     GetIndexingEncryptedStoresOrItemsBlocked()(*bool)
     GetIsAssigned()(*bool)
     GetNeutralDomainResources()([]WindowsInformationProtectionResourceCollectionable)
-    GetOdataType()(*string)
     GetProtectedAppLockerFiles()([]WindowsInformationProtectionAppLockerFileable)
     GetProtectedApps()([]WindowsInformationProtectionAppable)
     GetProtectionUnderLockConfigRequired()(*bool)
@@ -1145,7 +1110,6 @@ type WindowsInformationProtectionable interface {
     SetIndexingEncryptedStoresOrItemsBlocked(value *bool)()
     SetIsAssigned(value *bool)()
     SetNeutralDomainResources(value []WindowsInformationProtectionResourceCollectionable)()
-    SetOdataType(value *string)()
     SetProtectedAppLockerFiles(value []WindowsInformationProtectionAppLockerFileable)()
     SetProtectedApps(value []WindowsInformationProtectionAppable)()
     SetProtectionUnderLockConfigRequired(value *bool)()

@@ -7,8 +7,6 @@ import (
 // IosUpdateConfiguration iOS Update Configuration, allows you to configure time window within week to install iOS updates
 type IosUpdateConfiguration struct {
     DeviceConfiguration
-    // The OdataType property
-    OdataType *string
 }
 // NewIosUpdateConfiguration instantiates a new iosUpdateConfiguration and sets the default values.
 func NewIosUpdateConfiguration()(*IosUpdateConfiguration) {

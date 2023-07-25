@@ -7,8 +7,6 @@ import (
 // ManagedAppProtection policy used to configure detailed management settings for a specified set of apps
 type ManagedAppProtection struct {
     ManagedAppPolicy
-    // The OdataType property
-    OdataType *string
 }
 // NewManagedAppProtection instantiates a new managedAppProtection and sets the default values.
 func NewManagedAppProtection()(*ManagedAppProtection) {

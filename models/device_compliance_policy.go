@@ -230,16 +230,6 @@ func (m *DeviceCompliancePolicy) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["scheduledActionsForRule"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceComplianceScheduledActionForRuleFromDiscriminatorValue)
         if err != nil {
@@ -302,17 +292,6 @@ func (m *DeviceCompliancePolicy) GetLastModifiedDateTime()(*i336074805fc853987ab
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *DeviceCompliancePolicy) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -432,12 +411,6 @@ func (m *DeviceCompliancePolicy) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetScheduledActionsForRule() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetScheduledActionsForRule()))
         for i, v := range m.GetScheduledActionsForRule() {
@@ -532,13 +505,6 @@ func (m *DeviceCompliancePolicy) SetLastModifiedDateTime(value *i336074805fc8539
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *DeviceCompliancePolicy) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetScheduledActionsForRule sets the scheduledActionsForRule property value. The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
 func (m *DeviceCompliancePolicy) SetScheduledActionsForRule(value []DeviceComplianceScheduledActionForRuleable)() {
     err := m.GetBackingStore().Set("scheduledActionsForRule", value)
@@ -579,7 +545,6 @@ type DeviceCompliancePolicyable interface {
     GetDeviceStatusOverview()(DeviceComplianceDeviceOverviewable)
     GetDisplayName()(*string)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetOdataType()(*string)
     GetScheduledActionsForRule()([]DeviceComplianceScheduledActionForRuleable)
     GetUserStatuses()([]DeviceComplianceUserStatusable)
     GetUserStatusOverview()(DeviceComplianceUserOverviewable)
@@ -592,7 +557,6 @@ type DeviceCompliancePolicyable interface {
     SetDeviceStatusOverview(value DeviceComplianceDeviceOverviewable)()
     SetDisplayName(value *string)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetOdataType(value *string)()
     SetScheduledActionsForRule(value []DeviceComplianceScheduledActionForRuleable)()
     SetUserStatuses(value []DeviceComplianceUserStatusable)()
     SetUserStatusOverview(value DeviceComplianceUserOverviewable)()

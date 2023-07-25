@@ -63,16 +63,6 @@ func (m *WindowsInformationProtectionAppLockerFile) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["version"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -99,17 +89,6 @@ func (m *WindowsInformationProtectionAppLockerFile) GetFile()([]byte) {
 // GetFileHash gets the fileHash property value. SHA256 hash of the file
 func (m *WindowsInformationProtectionAppLockerFile) GetFileHash()(*string) {
     val, err := m.GetBackingStore().Get("fileHash")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *WindowsInformationProtectionAppLockerFile) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -154,12 +133,6 @@ func (m *WindowsInformationProtectionAppLockerFile) Serialize(writer i878a80d233
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("version", m.GetVersion())
         if err != nil {
             return err
@@ -188,13 +161,6 @@ func (m *WindowsInformationProtectionAppLockerFile) SetFileHash(value *string)()
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *WindowsInformationProtectionAppLockerFile) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetVersion sets the version property value. Version of the entity.
 func (m *WindowsInformationProtectionAppLockerFile) SetVersion(value *string)() {
     err := m.GetBackingStore().Set("version", value)
@@ -209,11 +175,9 @@ type WindowsInformationProtectionAppLockerFileable interface {
     GetDisplayName()(*string)
     GetFile()([]byte)
     GetFileHash()(*string)
-    GetOdataType()(*string)
     GetVersion()(*string)
     SetDisplayName(value *string)()
     SetFile(value []byte)()
     SetFileHash(value *string)()
-    SetOdataType(value *string)()
     SetVersion(value *string)()
 }

@@ -7,8 +7,6 @@ import (
 // EdiscoveryAddToReviewSetOperation 
 type EdiscoveryAddToReviewSetOperation struct {
     CaseOperation
-    // The OdataType property
-    OdataType *string
 }
 // NewEdiscoveryAddToReviewSetOperation instantiates a new ediscoveryAddToReviewSetOperation and sets the default values.
 func NewEdiscoveryAddToReviewSetOperation()(*EdiscoveryAddToReviewSetOperation) {

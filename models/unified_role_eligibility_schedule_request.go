@@ -7,8 +7,6 @@ import (
 // UnifiedRoleEligibilityScheduleRequest 
 type UnifiedRoleEligibilityScheduleRequest struct {
     Request
-    // The OdataType property
-    OdataType *string
 }
 // NewUnifiedRoleEligibilityScheduleRequest instantiates a new unifiedRoleEligibilityScheduleRequest and sets the default values.
 func NewUnifiedRoleEligibilityScheduleRequest()(*UnifiedRoleEligibilityScheduleRequest) {

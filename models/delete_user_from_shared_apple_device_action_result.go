@@ -22,16 +22,6 @@ func CreateDeleteUserFromSharedAppleDeviceActionResultFromDiscriminatorValue(par
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeleteUserFromSharedAppleDeviceActionResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceActionResult.GetFieldDeserializers()
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -43,17 +33,6 @@ func (m *DeleteUserFromSharedAppleDeviceActionResult) GetFieldDeserializers()(ma
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *DeleteUserFromSharedAppleDeviceActionResult) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. User principal name of the user to be deleted
 func (m *DeleteUserFromSharedAppleDeviceActionResult) GetUserPrincipalName()(*string) {
@@ -73,25 +52,12 @@ func (m *DeleteUserFromSharedAppleDeviceActionResult) Serialize(writer i878a80d2
         return err
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("userPrincipalName", m.GetUserPrincipalName())
         if err != nil {
             return err
         }
     }
     return nil
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *DeleteUserFromSharedAppleDeviceActionResult) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. User principal name of the user to be deleted
 func (m *DeleteUserFromSharedAppleDeviceActionResult) SetUserPrincipalName(value *string)() {
@@ -104,8 +70,6 @@ func (m *DeleteUserFromSharedAppleDeviceActionResult) SetUserPrincipalName(value
 type DeleteUserFromSharedAppleDeviceActionResultable interface {
     DeviceActionResultable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetOdataType()(*string)
     GetUserPrincipalName()(*string)
-    SetOdataType(value *string)()
     SetUserPrincipalName(value *string)()
 }

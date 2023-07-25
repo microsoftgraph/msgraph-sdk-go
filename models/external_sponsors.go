@@ -7,8 +7,6 @@ import (
 // ExternalSponsors 
 type ExternalSponsors struct {
     SubjectSet
-    // The OdataType property
-    OdataType *string
 }
 // NewExternalSponsors instantiates a new externalSponsors and sets the default values.
 func NewExternalSponsors()(*ExternalSponsors) {

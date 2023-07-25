@@ -524,16 +524,6 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["remoteAssistancePartners"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRemoteAssistancePartnerFromDiscriminatorValue)
         if err != nil {
@@ -1202,17 +1192,6 @@ func (m *DeviceManagement) GetNotificationMessageTemplates()([]NotificationMessa
     }
     if val != nil {
         return val.([]NotificationMessageTemplateable)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *DeviceManagement) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -1891,12 +1870,6 @@ func (m *DeviceManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetRemoteAssistancePartners() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRemoteAssistancePartners()))
         for i, v := range m.GetRemoteAssistancePartners() {
@@ -2482,13 +2455,6 @@ func (m *DeviceManagement) SetNotificationMessageTemplates(value []NotificationM
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *DeviceManagement) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetRemoteAssistancePartners sets the remoteAssistancePartners property value. The remote assist partners.
 func (m *DeviceManagement) SetRemoteAssistancePartners(value []RemoteAssistancePartnerable)() {
     err := m.GetBackingStore().Set("remoteAssistancePartners", value)
@@ -2790,7 +2756,6 @@ type DeviceManagementable interface {
     GetMobileAppTroubleshootingEvents()([]MobileAppTroubleshootingEventable)
     GetMobileThreatDefenseConnectors()([]MobileThreatDefenseConnectorable)
     GetNotificationMessageTemplates()([]NotificationMessageTemplateable)
-    GetOdataType()(*string)
     GetRemoteAssistancePartners()([]RemoteAssistancePartnerable)
     GetReports()(DeviceManagementReportsable)
     GetResourceOperations()([]ResourceOperationable)
@@ -2854,7 +2819,6 @@ type DeviceManagementable interface {
     SetMobileAppTroubleshootingEvents(value []MobileAppTroubleshootingEventable)()
     SetMobileThreatDefenseConnectors(value []MobileThreatDefenseConnectorable)()
     SetNotificationMessageTemplates(value []NotificationMessageTemplateable)()
-    SetOdataType(value *string)()
     SetRemoteAssistancePartners(value []RemoteAssistancePartnerable)()
     SetReports(value DeviceManagementReportsable)()
     SetResourceOperations(value []ResourceOperationable)()

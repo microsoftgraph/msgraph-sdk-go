@@ -31,6 +31,9 @@ func NewItemWipeManagedAppRegistrationsByDeviceTagRequestBuilder(rawUrl string, 
     return NewItemWipeManagedAppRegistrationsByDeviceTagRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post issues a wipe operation on an app registration with specified device tag.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-mam-user-wipemanagedappregistrationsbydevicetag?view=graph-rest-1.0
 func (m *ItemWipeManagedAppRegistrationsByDeviceTagRequestBuilder) Post(ctx context.Context, body ItemWipeManagedAppRegistrationsByDeviceTagPostRequestBodyable, requestConfiguration *ItemWipeManagedAppRegistrationsByDeviceTagRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

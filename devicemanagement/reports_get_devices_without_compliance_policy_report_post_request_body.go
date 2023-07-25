@@ -115,7 +115,7 @@ func (m *ReportsGetDevicesWithoutCompliancePolicyReportPostRequestBody) GetField
                     res[i] = *(v.(*string))
                 }
             }
-            m.SetSelect(res)
+            m.SetSelectEscaped(res)
         }
         return nil
     }
@@ -206,8 +206,8 @@ func (m *ReportsGetDevicesWithoutCompliancePolicyReportPostRequestBody) GetSearc
     }
     return nil
 }
-// GetSelect gets the select property value. The select property
-func (m *ReportsGetDevicesWithoutCompliancePolicyReportPostRequestBody) GetSelect()([]string) {
+// GetSelectEscaped gets the select property value. The select property
+func (m *ReportsGetDevicesWithoutCompliancePolicyReportPostRequestBody) GetSelectEscaped()([]string) {
     val, err := m.GetBackingStore().Get("selectEscaped")
     if err != nil {
         panic(err)
@@ -282,8 +282,8 @@ func (m *ReportsGetDevicesWithoutCompliancePolicyReportPostRequestBody) Serializ
             return err
         }
     }
-    if m.GetSelect() != nil {
-        err := writer.WriteCollectionOfStringValues("select", m.GetSelect())
+    if m.GetSelectEscaped() != nil {
+        err := writer.WriteCollectionOfStringValues("select", m.GetSelectEscaped())
         if err != nil {
             return err
         }
@@ -360,8 +360,8 @@ func (m *ReportsGetDevicesWithoutCompliancePolicyReportPostRequestBody) SetSearc
         panic(err)
     }
 }
-// SetSelect sets the select property value. The select property
-func (m *ReportsGetDevicesWithoutCompliancePolicyReportPostRequestBody) SetSelect(value []string)() {
+// SetSelectEscaped sets the select property value. The select property
+func (m *ReportsGetDevicesWithoutCompliancePolicyReportPostRequestBody) SetSelectEscaped(value []string)() {
     err := m.GetBackingStore().Set("selectEscaped", value)
     if err != nil {
         panic(err)
@@ -399,7 +399,7 @@ type ReportsGetDevicesWithoutCompliancePolicyReportPostRequestBodyable interface
     GetName()(*string)
     GetOrderBy()([]string)
     GetSearch()(*string)
-    GetSelect()([]string)
+    GetSelectEscaped()([]string)
     GetSessionId()(*string)
     GetSkip()(*int32)
     GetTop()(*int32)
@@ -409,7 +409,7 @@ type ReportsGetDevicesWithoutCompliancePolicyReportPostRequestBodyable interface
     SetName(value *string)()
     SetOrderBy(value []string)()
     SetSearch(value *string)()
-    SetSelect(value []string)()
+    SetSelectEscaped(value []string)()
     SetSessionId(value *string)()
     SetSkip(value *int32)()
     SetTop(value *int32)()

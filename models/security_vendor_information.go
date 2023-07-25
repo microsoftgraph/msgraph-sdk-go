@@ -87,7 +87,7 @@ func (m *SecurityVendorInformation) GetFieldDeserializers()(map[string]func(i878
             return err
         }
         if val != nil {
-            m.SetVendor(val)
+            m.SetVendorEscaped(val)
         }
         return nil
     }
@@ -137,8 +137,8 @@ func (m *SecurityVendorInformation) GetSubProvider()(*string) {
     }
     return nil
 }
-// GetVendor gets the vendor property value. Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
-func (m *SecurityVendorInformation) GetVendor()(*string) {
+// GetVendorEscaped gets the vendor property value. Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
+func (m *SecurityVendorInformation) GetVendorEscaped()(*string) {
     val, err := m.GetBackingStore().Get("vendorEscaped")
     if err != nil {
         panic(err)
@@ -175,7 +175,7 @@ func (m *SecurityVendorInformation) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
-        err := writer.WriteStringValue("vendor", m.GetVendor())
+        err := writer.WriteStringValue("vendor", m.GetVendorEscaped())
         if err != nil {
             return err
         }
@@ -227,8 +227,8 @@ func (m *SecurityVendorInformation) SetSubProvider(value *string)() {
         panic(err)
     }
 }
-// SetVendor sets the vendor property value. Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
-func (m *SecurityVendorInformation) SetVendor(value *string)() {
+// SetVendorEscaped sets the vendor property value. Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
+func (m *SecurityVendorInformation) SetVendorEscaped(value *string)() {
     err := m.GetBackingStore().Set("vendorEscaped", value)
     if err != nil {
         panic(err)
@@ -244,11 +244,11 @@ type SecurityVendorInformationable interface {
     GetProvider()(*string)
     GetProviderVersion()(*string)
     GetSubProvider()(*string)
-    GetVendor()(*string)
+    GetVendorEscaped()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
     SetProvider(value *string)()
     SetProviderVersion(value *string)()
     SetSubProvider(value *string)()
-    SetVendor(value *string)()
+    SetVendorEscaped(value *string)()
 }

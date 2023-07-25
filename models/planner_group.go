@@ -22,16 +22,6 @@ func CreatePlannerGroupFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PlannerGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["plans"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePlannerPlanFromDiscriminatorValue)
         if err != nil {
@@ -50,17 +40,6 @@ func (m *PlannerGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *PlannerGroup) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetPlans gets the plans property value. Read-only. Nullable. Returns the plannerPlans owned by the group.
 func (m *PlannerGroup) GetPlans()([]PlannerPlanable) {
     val, err := m.GetBackingStore().Get("plans")
@@ -78,12 +57,6 @@ func (m *PlannerGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     if err != nil {
         return err
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetPlans() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPlans()))
         for i, v := range m.GetPlans() {
@@ -98,13 +71,6 @@ func (m *PlannerGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     return nil
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *PlannerGroup) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetPlans sets the plans property value. Read-only. Nullable. Returns the plannerPlans owned by the group.
 func (m *PlannerGroup) SetPlans(value []PlannerPlanable)() {
     err := m.GetBackingStore().Set("plans", value)
@@ -116,8 +82,6 @@ func (m *PlannerGroup) SetPlans(value []PlannerPlanable)() {
 type PlannerGroupable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetOdataType()(*string)
     GetPlans()([]PlannerPlanable)
-    SetOdataType(value *string)()
     SetPlans(value []PlannerPlanable)()
 }
