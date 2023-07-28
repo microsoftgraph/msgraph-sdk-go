@@ -8,8 +8,6 @@ import (
 // CustomTaskExtensionCallbackConfiguration 
 type CustomTaskExtensionCallbackConfiguration struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CustomExtensionCallbackConfiguration
-    // The OdataType property
-    OdataType *string
 }
 // NewCustomTaskExtensionCallbackConfiguration instantiates a new customTaskExtensionCallbackConfiguration and sets the default values.
 func NewCustomTaskExtensionCallbackConfiguration()(*CustomTaskExtensionCallbackConfiguration) {

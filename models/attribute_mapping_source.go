@@ -104,7 +104,7 @@ func (m *AttributeMappingSource) GetFieldDeserializers()(map[string]func(i878a80
             return err
         }
         if val != nil {
-            m.SetType(val.(*AttributeMappingSourceType))
+            m.SetTypeEscaped(val.(*AttributeMappingSourceType))
         }
         return nil
     }
@@ -143,8 +143,8 @@ func (m *AttributeMappingSource) GetParameters()([]StringKeyAttributeMappingSour
     }
     return nil
 }
-// GetType gets the type property value. The type property
-func (m *AttributeMappingSource) GetType()(*AttributeMappingSourceType) {
+// GetTypeEscaped gets the type property value. The type property
+func (m *AttributeMappingSource) GetTypeEscaped()(*AttributeMappingSourceType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -186,8 +186,8 @@ func (m *AttributeMappingSource) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
+    if m.GetTypeEscaped() != nil {
+        cast := (*m.GetTypeEscaped()).String()
         err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
@@ -240,8 +240,8 @@ func (m *AttributeMappingSource) SetParameters(value []StringKeyAttributeMapping
         panic(err)
     }
 }
-// SetType sets the type property value. The type property
-func (m *AttributeMappingSource) SetType(value *AttributeMappingSourceType)() {
+// SetTypeEscaped sets the type property value. The type property
+func (m *AttributeMappingSource) SetTypeEscaped(value *AttributeMappingSourceType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -257,11 +257,11 @@ type AttributeMappingSourceable interface {
     GetName()(*string)
     GetOdataType()(*string)
     GetParameters()([]StringKeyAttributeMappingSourceValuePairable)
-    GetType()(*AttributeMappingSourceType)
+    GetTypeEscaped()(*AttributeMappingSourceType)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetExpression(value *string)()
     SetName(value *string)()
     SetOdataType(value *string)()
     SetParameters(value []StringKeyAttributeMappingSourceValuePairable)()
-    SetType(value *AttributeMappingSourceType)()
+    SetTypeEscaped(value *AttributeMappingSourceType)()
 }

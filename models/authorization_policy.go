@@ -8,8 +8,6 @@ import (
 // AuthorizationPolicy 
 type AuthorizationPolicy struct {
     PolicyBase
-    // The OdataType property
-    OdataType *string
 }
 // NewAuthorizationPolicy instantiates a new authorizationPolicy and sets the default values.
 func NewAuthorizationPolicy()(*AuthorizationPolicy) {

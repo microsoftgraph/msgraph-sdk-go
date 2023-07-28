@@ -109,7 +109,7 @@ func (m *ItemItemsItemCreateLinkPostRequestBody) GetFieldDeserializers()(map[str
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetTypeEscaped(val)
         }
         return nil
     }
@@ -159,8 +159,8 @@ func (m *ItemItemsItemCreateLinkPostRequestBody) GetScope()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. The type property
-func (m *ItemItemsItemCreateLinkPostRequestBody) GetType()(*string) {
+// GetTypeEscaped gets the type property value. The type property
+func (m *ItemItemsItemCreateLinkPostRequestBody) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -203,7 +203,7 @@ func (m *ItemItemsItemCreateLinkPostRequestBody) Serialize(writer i878a80d2330e8
         }
     }
     {
-        err := writer.WriteStringValue("type", m.GetType())
+        err := writer.WriteStringValue("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -262,8 +262,8 @@ func (m *ItemItemsItemCreateLinkPostRequestBody) SetScope(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. The type property
-func (m *ItemItemsItemCreateLinkPostRequestBody) SetType(value *string)() {
+// SetTypeEscaped sets the type property value. The type property
+func (m *ItemItemsItemCreateLinkPostRequestBody) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -280,12 +280,12 @@ type ItemItemsItemCreateLinkPostRequestBodyable interface {
     GetPassword()(*string)
     GetRetainInheritedPermissions()(*bool)
     GetScope()(*string)
-    GetType()(*string)
+    GetTypeEscaped()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetMessage(value *string)()
     SetPassword(value *string)()
     SetRetainInheritedPermissions(value *bool)()
     SetScope(value *string)()
-    SetType(value *string)()
+    SetTypeEscaped(value *string)()
 }

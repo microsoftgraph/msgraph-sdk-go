@@ -8,8 +8,6 @@ import (
 // LearningCourseActivity 
 type LearningCourseActivity struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewLearningCourseActivity instantiates a new learningCourseActivity and sets the default values.
 func NewLearningCourseActivity()(*LearningCourseActivity) {

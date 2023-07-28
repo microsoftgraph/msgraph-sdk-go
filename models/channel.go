@@ -169,16 +169,6 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["sharedWithTeams"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSharedWithChannelTeamInfoFromDiscriminatorValue)
         if err != nil {
@@ -285,17 +275,6 @@ func (m *Channel) GetMessages()([]ChatMessageable) {
     }
     if val != nil {
         return val.([]ChatMessageable)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *Channel) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -416,12 +395,6 @@ func (m *Channel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetSharedWithTeams() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSharedWithTeams()))
         for i, v := range m.GetSharedWithTeams() {
@@ -523,13 +496,6 @@ func (m *Channel) SetMessages(value []ChatMessageable)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *Channel) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetSharedWithTeams sets the sharedWithTeams property value. A collection of teams with which a channel is shared.
 func (m *Channel) SetSharedWithTeams(value []SharedWithChannelTeamInfoable)() {
     err := m.GetBackingStore().Set("sharedWithTeams", value)
@@ -571,7 +537,6 @@ type Channelable interface {
     GetMembers()([]ConversationMemberable)
     GetMembershipType()(*ChannelMembershipType)
     GetMessages()([]ChatMessageable)
-    GetOdataType()(*string)
     GetSharedWithTeams()([]SharedWithChannelTeamInfoable)
     GetTabs()([]TeamsTabable)
     GetTenantId()(*string)
@@ -585,7 +550,6 @@ type Channelable interface {
     SetMembers(value []ConversationMemberable)()
     SetMembershipType(value *ChannelMembershipType)()
     SetMessages(value []ChatMessageable)()
-    SetOdataType(value *string)()
     SetSharedWithTeams(value []SharedWithChannelTeamInfoable)()
     SetTabs(value []TeamsTabable)()
     SetTenantId(value *string)()

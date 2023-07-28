@@ -7,8 +7,6 @@ import (
 // Fido2CombinationConfiguration 
 type Fido2CombinationConfiguration struct {
     AuthenticationCombinationConfiguration
-    // The OdataType property
-    OdataType *string
 }
 // NewFido2CombinationConfiguration instantiates a new fido2CombinationConfiguration and sets the default values.
 func NewFido2CombinationConfiguration()(*Fido2CombinationConfiguration) {

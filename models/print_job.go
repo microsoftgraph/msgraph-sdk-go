@@ -123,16 +123,6 @@ func (m *PrintJob) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["redirectedFrom"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -189,17 +179,6 @@ func (m *PrintJob) GetIsFetchable()(*bool) {
     }
     if val != nil {
         return val.(*bool)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *PrintJob) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -290,12 +269,6 @@ func (m *PrintJob) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("redirectedFrom", m.GetRedirectedFrom())
         if err != nil {
             return err
@@ -362,13 +335,6 @@ func (m *PrintJob) SetIsFetchable(value *bool)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *PrintJob) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetRedirectedFrom sets the redirectedFrom property value. Contains the source job URL, if the job has been redirected from another printer.
 func (m *PrintJob) SetRedirectedFrom(value *string)() {
     err := m.GetBackingStore().Set("redirectedFrom", value)
@@ -406,7 +372,6 @@ type PrintJobable interface {
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDocuments()([]PrintDocumentable)
     GetIsFetchable()(*bool)
-    GetOdataType()(*string)
     GetRedirectedFrom()(*string)
     GetRedirectedTo()(*string)
     GetStatus()(PrintJobStatusable)
@@ -416,7 +381,6 @@ type PrintJobable interface {
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDocuments(value []PrintDocumentable)()
     SetIsFetchable(value *bool)()
-    SetOdataType(value *string)()
     SetRedirectedFrom(value *string)()
     SetRedirectedTo(value *string)()
     SetStatus(value PrintJobStatusable)()

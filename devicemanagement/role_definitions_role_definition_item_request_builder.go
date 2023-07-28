@@ -18,7 +18,7 @@ type RoleDefinitionsRoleDefinitionItemRequestBuilderDeleteRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// RoleDefinitionsRoleDefinitionItemRequestBuilderGetQueryParameters the Role Definitions.
+// RoleDefinitionsRoleDefinitionItemRequestBuilderGetQueryParameters read properties and relationships of the deviceAndAppManagementRoleDefinition object.
 type RoleDefinitionsRoleDefinitionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewRoleDefinitionsRoleDefinitionItemRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewRoleDefinitionsRoleDefinitionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property roleDefinitions for deviceManagement
+// Delete deletes a roleDefinition.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-rbac-roledefinition-delete?view=graph-rest-1.0
 func (m *RoleDefinitionsRoleDefinitionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *RoleDefinitionsRoleDefinitionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *RoleDefinitionsRoleDefinitionItemRequestBuilder) Delete(ctx context.Con
     }
     return nil
 }
-// Get the Role Definitions.
+// Get read properties and relationships of the deviceAndAppManagementRoleDefinition object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroledefinition-get?view=graph-rest-1.0
 func (m *RoleDefinitionsRoleDefinitionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *RoleDefinitionsRoleDefinitionItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RoleDefinitionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *RoleDefinitionsRoleDefinitionItemRequestBuilder) Get(ctx context.Contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RoleDefinitionable), nil
 }
-// Patch update the navigation property roleDefinitions in deviceManagement
+// Patch update the properties of a deviceAndAppManagementRoleDefinition object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroledefinition-update?view=graph-rest-1.0
 func (m *RoleDefinitionsRoleDefinitionItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RoleDefinitionable, requestConfiguration *RoleDefinitionsRoleDefinitionItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RoleDefinitionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +121,7 @@ func (m *RoleDefinitionsRoleDefinitionItemRequestBuilder) Patch(ctx context.Cont
 func (m *RoleDefinitionsRoleDefinitionItemRequestBuilder) RoleAssignments()(*RoleDefinitionsItemRoleAssignmentsRequestBuilder) {
     return NewRoleDefinitionsItemRoleAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete navigation property roleDefinitions for deviceManagement
+// ToDeleteRequestInformation deletes a roleDefinition.
 func (m *RoleDefinitionsRoleDefinitionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *RoleDefinitionsRoleDefinitionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -124,7 +133,7 @@ func (m *RoleDefinitionsRoleDefinitionItemRequestBuilder) ToDeleteRequestInforma
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the Role Definitions.
+// ToGetRequestInformation read properties and relationships of the deviceAndAppManagementRoleDefinition object.
 func (m *RoleDefinitionsRoleDefinitionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RoleDefinitionsRoleDefinitionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -140,7 +149,7 @@ func (m *RoleDefinitionsRoleDefinitionItemRequestBuilder) ToGetRequestInformatio
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property roleDefinitions in deviceManagement
+// ToPatchRequestInformation update the properties of a deviceAndAppManagementRoleDefinition object.
 func (m *RoleDefinitionsRoleDefinitionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RoleDefinitionable, requestConfiguration *RoleDefinitionsRoleDefinitionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -57,7 +57,7 @@ func (m *PackageEscaped) GetFieldDeserializers()(map[string]func(i878a80d2330e89
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetTypeEscaped(val)
         }
         return nil
     }
@@ -74,8 +74,8 @@ func (m *PackageEscaped) GetOdataType()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. A string indicating the type of package. While oneNote is the only currently defined value, you should expect other package types to be returned and handle them accordingly.
-func (m *PackageEscaped) GetType()(*string) {
+// GetTypeEscaped gets the type property value. A string indicating the type of package. While oneNote is the only currently defined value, you should expect other package types to be returned and handle them accordingly.
+func (m *PackageEscaped) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -94,7 +94,7 @@ func (m *PackageEscaped) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     {
-        err := writer.WriteStringValue("type", m.GetType())
+        err := writer.WriteStringValue("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -125,8 +125,8 @@ func (m *PackageEscaped) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. A string indicating the type of package. While oneNote is the only currently defined value, you should expect other package types to be returned and handle them accordingly.
-func (m *PackageEscaped) SetType(value *string)() {
+// SetTypeEscaped sets the type property value. A string indicating the type of package. While oneNote is the only currently defined value, you should expect other package types to be returned and handle them accordingly.
+func (m *PackageEscaped) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -139,8 +139,8 @@ type PackageEscapedable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
-    GetType()(*string)
+    GetTypeEscaped()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
-    SetType(value *string)()
+    SetTypeEscaped(value *string)()
 }

@@ -7,8 +7,6 @@ import (
 // Windows10TeamGeneralConfiguration this topic provides descriptions of the declared methods, properties and relationships exposed by the windows10TeamGeneralConfiguration resource.
 type Windows10TeamGeneralConfiguration struct {
     DeviceConfiguration
-    // The OdataType property
-    OdataType *string
 }
 // NewWindows10TeamGeneralConfiguration instantiates a new windows10TeamGeneralConfiguration and sets the default values.
 func NewWindows10TeamGeneralConfiguration()(*Windows10TeamGeneralConfiguration) {

@@ -43,16 +43,6 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["offerShiftRequests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateOfferShiftRequestFromDiscriminatorValue)
         if err != nil {
@@ -295,17 +285,6 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *Schedule) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetOfferShiftRequests gets the offerShiftRequests property value. The offer requests for shifts in the schedule.
 func (m *Schedule) GetOfferShiftRequests()([]OfferShiftRequestable) {
     val, err := m.GetBackingStore().Get("offerShiftRequests")
@@ -516,12 +495,6 @@ func (m *Schedule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetOfferShiftRequests() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOfferShiftRequests()))
         for i, v := range m.GetOfferShiftRequests() {
@@ -681,13 +654,6 @@ func (m *Schedule) SetEnabled(value *bool)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *Schedule) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetOfferShiftRequests sets the offerShiftRequests property value. The offer requests for shifts in the schedule.
 func (m *Schedule) SetOfferShiftRequests(value []OfferShiftRequestable)() {
     err := m.GetBackingStore().Set("offerShiftRequests", value)
@@ -819,7 +785,6 @@ type Scheduleable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetEnabled()(*bool)
-    GetOdataType()(*string)
     GetOfferShiftRequests()([]OfferShiftRequestable)
     GetOfferShiftRequestsEnabled()(*bool)
     GetOpenShiftChangeRequests()([]OpenShiftChangeRequestable)
@@ -839,7 +804,6 @@ type Scheduleable interface {
     GetTimeZone()(*string)
     GetWorkforceIntegrationIds()([]string)
     SetEnabled(value *bool)()
-    SetOdataType(value *string)()
     SetOfferShiftRequests(value []OfferShiftRequestable)()
     SetOfferShiftRequestsEnabled(value *bool)()
     SetOpenShiftChangeRequests(value []OpenShiftChangeRequestable)()

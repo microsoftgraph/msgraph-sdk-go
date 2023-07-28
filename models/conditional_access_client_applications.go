@@ -94,6 +94,16 @@ func (m *ConditionalAccessClientApplications) GetFieldDeserializers()(map[string
         }
         return nil
     }
+    res["servicePrincipalFilter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateConditionalAccessFilterFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetServicePrincipalFilter(val.(ConditionalAccessFilterable))
+        }
+        return nil
+    }
     return res
 }
 // GetIncludeServicePrincipals gets the includeServicePrincipals property value. Service principal IDs included in the policy scope, or ServicePrincipalsInMyTenant.
@@ -118,6 +128,17 @@ func (m *ConditionalAccessClientApplications) GetOdataType()(*string) {
     }
     return nil
 }
+// GetServicePrincipalFilter gets the servicePrincipalFilter property value. The servicePrincipalFilter property
+func (m *ConditionalAccessClientApplications) GetServicePrincipalFilter()(ConditionalAccessFilterable) {
+    val, err := m.GetBackingStore().Get("servicePrincipalFilter")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ConditionalAccessFilterable)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *ConditionalAccessClientApplications) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetExcludeServicePrincipals() != nil {
@@ -134,6 +155,12 @@ func (m *ConditionalAccessClientApplications) Serialize(writer i878a80d2330e89d2
     }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("servicePrincipalFilter", m.GetServicePrincipalFilter())
         if err != nil {
             return err
         }
@@ -178,6 +205,13 @@ func (m *ConditionalAccessClientApplications) SetOdataType(value *string)() {
         panic(err)
     }
 }
+// SetServicePrincipalFilter sets the servicePrincipalFilter property value. The servicePrincipalFilter property
+func (m *ConditionalAccessClientApplications) SetServicePrincipalFilter(value ConditionalAccessFilterable)() {
+    err := m.GetBackingStore().Set("servicePrincipalFilter", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // ConditionalAccessClientApplicationsable 
 type ConditionalAccessClientApplicationsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
@@ -187,8 +221,10 @@ type ConditionalAccessClientApplicationsable interface {
     GetExcludeServicePrincipals()([]string)
     GetIncludeServicePrincipals()([]string)
     GetOdataType()(*string)
+    GetServicePrincipalFilter()(ConditionalAccessFilterable)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetExcludeServicePrincipals(value []string)()
     SetIncludeServicePrincipals(value []string)()
     SetOdataType(value *string)()
+    SetServicePrincipalFilter(value ConditionalAccessFilterable)()
 }

@@ -63,16 +63,6 @@ func (m *GroupLifecyclePolicy) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     return res
 }
 // GetGroupLifetimeInDays gets the groupLifetimeInDays property value. Number of days before a group expires and needs to be renewed. Once renewed, the group expiration is extended by the number of days defined.
@@ -89,17 +79,6 @@ func (m *GroupLifecyclePolicy) GetGroupLifetimeInDays()(*int32) {
 // GetManagedGroupTypes gets the managedGroupTypes property value. The group type for which the expiration policy applies. Possible values are All, Selected or None.
 func (m *GroupLifecyclePolicy) GetManagedGroupTypes()(*string) {
     val, err := m.GetBackingStore().Get("managedGroupTypes")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *GroupLifecyclePolicy) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -132,12 +111,6 @@ func (m *GroupLifecyclePolicy) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetAlternateNotificationEmails sets the alternateNotificationEmails property value. List of email address to send notifications for groups without owners. Multiple email address can be defined by separating email address with a semicolon.
@@ -161,13 +134,6 @@ func (m *GroupLifecyclePolicy) SetManagedGroupTypes(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *GroupLifecyclePolicy) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // GroupLifecyclePolicyable 
 type GroupLifecyclePolicyable interface {
     Entityable
@@ -175,9 +141,7 @@ type GroupLifecyclePolicyable interface {
     GetAlternateNotificationEmails()(*string)
     GetGroupLifetimeInDays()(*int32)
     GetManagedGroupTypes()(*string)
-    GetOdataType()(*string)
     SetAlternateNotificationEmails(value *string)()
     SetGroupLifetimeInDays(value *int32)()
     SetManagedGroupTypes(value *string)()
-    SetOdataType(value *string)()
 }

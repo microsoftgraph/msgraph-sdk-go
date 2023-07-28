@@ -7,8 +7,6 @@ import (
 // ItemAnalytics 
 type ItemAnalytics struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewItemAnalytics instantiates a new itemAnalytics and sets the default values.
 func NewItemAnalytics()(*ItemAnalytics) {

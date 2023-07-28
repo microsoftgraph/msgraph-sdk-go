@@ -7,8 +7,6 @@ import (
 // DeviceEnrollmentWindowsHelloForBusinessConfiguration windows Hello for Business settings lets users access their devices using a gesture, such as biometric authentication, or a PIN. Configure settings for enrolled Windows 10, Windows 10 Mobile and later.
 type DeviceEnrollmentWindowsHelloForBusinessConfiguration struct {
     DeviceEnrollmentConfiguration
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceEnrollmentWindowsHelloForBusinessConfiguration instantiates a new deviceEnrollmentWindowsHelloForBusinessConfiguration and sets the default values.
 func NewDeviceEnrollmentWindowsHelloForBusinessConfiguration()(*DeviceEnrollmentWindowsHelloForBusinessConfiguration) {

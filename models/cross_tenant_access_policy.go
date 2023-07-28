@@ -7,8 +7,6 @@ import (
 // CrossTenantAccessPolicy 
 type CrossTenantAccessPolicy struct {
     PolicyBase
-    // The OdataType property
-    OdataType *string
 }
 // NewCrossTenantAccessPolicy instantiates a new crossTenantAccessPolicy and sets the default values.
 func NewCrossTenantAccessPolicy()(*CrossTenantAccessPolicy) {
@@ -34,8 +32,8 @@ func (m *CrossTenantAccessPolicy) GetAllowedCloudEndpoints()([]string) {
     }
     return nil
 }
-// GetDefault gets the default property value. Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
-func (m *CrossTenantAccessPolicy) GetDefault()(CrossTenantAccessPolicyConfigurationDefaultable) {
+// GetDefaultEscaped gets the default property value. Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
+func (m *CrossTenantAccessPolicy) GetDefaultEscaped()(CrossTenantAccessPolicyConfigurationDefaultable) {
     val, err := m.GetBackingStore().Get("defaultEscaped")
     if err != nil {
         panic(err)
@@ -70,7 +68,7 @@ func (m *CrossTenantAccessPolicy) GetFieldDeserializers()(map[string]func(i878a8
             return err
         }
         if val != nil {
-            m.SetDefault(val.(CrossTenantAccessPolicyConfigurationDefaultable))
+            m.SetDefaultEscaped(val.(CrossTenantAccessPolicyConfigurationDefaultable))
         }
         return nil
     }
@@ -116,7 +114,7 @@ func (m *CrossTenantAccessPolicy) Serialize(writer i878a80d2330e89d26896388a3f48
         }
     }
     {
-        err = writer.WriteObjectValue("default", m.GetDefault())
+        err = writer.WriteObjectValue("default", m.GetDefaultEscaped())
         if err != nil {
             return err
         }
@@ -142,8 +140,8 @@ func (m *CrossTenantAccessPolicy) SetAllowedCloudEndpoints(value []string)() {
         panic(err)
     }
 }
-// SetDefault sets the default property value. Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
-func (m *CrossTenantAccessPolicy) SetDefault(value CrossTenantAccessPolicyConfigurationDefaultable)() {
+// SetDefaultEscaped sets the default property value. Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
+func (m *CrossTenantAccessPolicy) SetDefaultEscaped(value CrossTenantAccessPolicyConfigurationDefaultable)() {
     err := m.GetBackingStore().Set("defaultEscaped", value)
     if err != nil {
         panic(err)
@@ -161,9 +159,9 @@ type CrossTenantAccessPolicyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PolicyBaseable
     GetAllowedCloudEndpoints()([]string)
-    GetDefault()(CrossTenantAccessPolicyConfigurationDefaultable)
+    GetDefaultEscaped()(CrossTenantAccessPolicyConfigurationDefaultable)
     GetPartners()([]CrossTenantAccessPolicyConfigurationPartnerable)
     SetAllowedCloudEndpoints(value []string)()
-    SetDefault(value CrossTenantAccessPolicyConfigurationDefaultable)()
+    SetDefaultEscaped(value CrossTenantAccessPolicyConfigurationDefaultable)()
     SetPartners(value []CrossTenantAccessPolicyConfigurationPartnerable)()
 }

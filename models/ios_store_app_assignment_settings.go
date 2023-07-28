@@ -7,8 +7,6 @@ import (
 // IosStoreAppAssignmentSettings contains properties used to assign an iOS Store mobile app to a group.
 type IosStoreAppAssignmentSettings struct {
     MobileAppAssignmentSettings
-    // The OdataType property
-    OdataType *string
 }
 // NewIosStoreAppAssignmentSettings instantiates a new iosStoreAppAssignmentSettings and sets the default values.
 func NewIosStoreAppAssignmentSettings()(*IosStoreAppAssignmentSettings) {

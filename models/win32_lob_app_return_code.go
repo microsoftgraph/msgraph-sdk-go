@@ -67,7 +67,7 @@ func (m *Win32LobAppReturnCode) GetFieldDeserializers()(map[string]func(i878a80d
             return err
         }
         if val != nil {
-            m.SetType(val.(*Win32LobAppReturnCodeType))
+            m.SetTypeEscaped(val.(*Win32LobAppReturnCodeType))
         }
         return nil
     }
@@ -95,8 +95,8 @@ func (m *Win32LobAppReturnCode) GetReturnCode()(*int32) {
     }
     return nil
 }
-// GetType gets the type property value. Indicates the type of return code.
-func (m *Win32LobAppReturnCode) GetType()(*Win32LobAppReturnCodeType) {
+// GetTypeEscaped gets the type property value. Indicates the type of return code.
+func (m *Win32LobAppReturnCode) GetTypeEscaped()(*Win32LobAppReturnCodeType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -120,8 +120,8 @@ func (m *Win32LobAppReturnCode) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
+    if m.GetTypeEscaped() != nil {
+        cast := (*m.GetTypeEscaped()).String()
         err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
@@ -160,8 +160,8 @@ func (m *Win32LobAppReturnCode) SetReturnCode(value *int32)() {
         panic(err)
     }
 }
-// SetType sets the type property value. Indicates the type of return code.
-func (m *Win32LobAppReturnCode) SetType(value *Win32LobAppReturnCodeType)() {
+// SetTypeEscaped sets the type property value. Indicates the type of return code.
+func (m *Win32LobAppReturnCode) SetTypeEscaped(value *Win32LobAppReturnCodeType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -175,9 +175,9 @@ type Win32LobAppReturnCodeable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
     GetReturnCode()(*int32)
-    GetType()(*Win32LobAppReturnCodeType)
+    GetTypeEscaped()(*Win32LobAppReturnCodeType)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
     SetReturnCode(value *int32)()
-    SetType(value *Win32LobAppReturnCodeType)()
+    SetTypeEscaped(value *Win32LobAppReturnCodeType)()
 }

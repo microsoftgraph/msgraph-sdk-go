@@ -24,16 +24,6 @@ func CreateWindowsUpdateScheduledInstallFromDiscriminatorValue(parseNode i878a80
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsUpdateScheduledInstall) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.WindowsUpdateInstallScheduleType.GetFieldDeserializers()
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["scheduledInstallDay"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseWeeklySchedule)
         if err != nil {
@@ -55,17 +45,6 @@ func (m *WindowsUpdateScheduledInstall) GetFieldDeserializers()(map[string]func(
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *WindowsUpdateScheduledInstall) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetScheduledInstallDay gets the scheduledInstallDay property value. Possible values for a weekly schedule.
 func (m *WindowsUpdateScheduledInstall) GetScheduledInstallDay()(*WeeklySchedule) {
@@ -95,12 +74,6 @@ func (m *WindowsUpdateScheduledInstall) Serialize(writer i878a80d2330e89d2689638
     if err != nil {
         return err
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetScheduledInstallDay() != nil {
         cast := (*m.GetScheduledInstallDay()).String()
         err = writer.WriteStringValue("scheduledInstallDay", &cast)
@@ -115,13 +88,6 @@ func (m *WindowsUpdateScheduledInstall) Serialize(writer i878a80d2330e89d2689638
         }
     }
     return nil
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *WindowsUpdateScheduledInstall) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
 }
 // SetScheduledInstallDay sets the scheduledInstallDay property value. Possible values for a weekly schedule.
 func (m *WindowsUpdateScheduledInstall) SetScheduledInstallDay(value *WeeklySchedule)() {
@@ -141,10 +107,8 @@ func (m *WindowsUpdateScheduledInstall) SetScheduledInstallTime(value *i878a80d2
 type WindowsUpdateScheduledInstallable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     WindowsUpdateInstallScheduleTypeable
-    GetOdataType()(*string)
     GetScheduledInstallDay()(*WeeklySchedule)
     GetScheduledInstallTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)
-    SetOdataType(value *string)()
     SetScheduledInstallDay(value *WeeklySchedule)()
     SetScheduledInstallTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)()
 }

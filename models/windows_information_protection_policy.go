@@ -7,8 +7,6 @@ import (
 // WindowsInformationProtectionPolicy policy for Windows information protection without MDM
 type WindowsInformationProtectionPolicy struct {
     WindowsInformationProtection
-    // The OdataType property
-    OdataType *string
 }
 // NewWindowsInformationProtectionPolicy instantiates a new windowsInformationProtectionPolicy and sets the default values.
 func NewWindowsInformationProtectionPolicy()(*WindowsInformationProtectionPolicy) {

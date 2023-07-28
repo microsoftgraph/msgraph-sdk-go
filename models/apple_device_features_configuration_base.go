@@ -7,8 +7,6 @@ import (
 // AppleDeviceFeaturesConfigurationBase apple device features configuration profile.
 type AppleDeviceFeaturesConfigurationBase struct {
     DeviceConfiguration
-    // The OdataType property
-    OdataType *string
 }
 // NewAppleDeviceFeaturesConfigurationBase instantiates a new appleDeviceFeaturesConfigurationBase and sets the default values.
 func NewAppleDeviceFeaturesConfigurationBase()(*AppleDeviceFeaturesConfigurationBase) {

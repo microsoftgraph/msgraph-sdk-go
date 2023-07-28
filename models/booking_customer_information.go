@@ -7,8 +7,6 @@ import (
 // BookingCustomerInformation 
 type BookingCustomerInformation struct {
     BookingCustomerInformationBase
-    // The OdataType property
-    OdataType *string
 }
 // NewBookingCustomerInformation instantiates a new bookingCustomerInformation and sets the default values.
 func NewBookingCustomerInformation()(*BookingCustomerInformation) {

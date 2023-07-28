@@ -7,8 +7,6 @@ import (
 // UnmuteParticipantOperation 
 type UnmuteParticipantOperation struct {
     CommsOperation
-    // The OdataType property
-    OdataType *string
 }
 // NewUnmuteParticipantOperation instantiates a new unmuteParticipantOperation and sets the default values.
 func NewUnmuteParticipantOperation()(*UnmuteParticipantOperation) {

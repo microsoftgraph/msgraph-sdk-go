@@ -162,7 +162,7 @@ func (m *EventMessage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
             return err
         }
         if val != nil {
-            m.SetType(val.(*EventType))
+            m.SetTypeEscaped(val.(*EventType))
         }
         return nil
     }
@@ -245,8 +245,8 @@ func (m *EventMessage) GetStartDateTime()(DateTimeTimeZoneable) {
     }
     return nil
 }
-// GetType gets the type property value. The type property
-func (m *EventMessage) GetType()(*EventType) {
+// GetTypeEscaped gets the type property value. The type property
+func (m *EventMessage) GetTypeEscaped()(*EventType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -317,8 +317,8 @@ func (m *EventMessage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
             return err
         }
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
+    if m.GetTypeEscaped() != nil {
+        cast := (*m.GetTypeEscaped()).String()
         err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
@@ -389,8 +389,8 @@ func (m *EventMessage) SetStartDateTime(value DateTimeTimeZoneable)() {
         panic(err)
     }
 }
-// SetType sets the type property value. The type property
-func (m *EventMessage) SetType(value *EventType)() {
+// SetTypeEscaped sets the type property value. The type property
+func (m *EventMessage) SetTypeEscaped(value *EventType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -409,7 +409,7 @@ type EventMessageable interface {
     GetMeetingMessageType()(*MeetingMessageType)
     GetRecurrence()(PatternedRecurrenceable)
     GetStartDateTime()(DateTimeTimeZoneable)
-    GetType()(*EventType)
+    GetTypeEscaped()(*EventType)
     SetEndDateTime(value DateTimeTimeZoneable)()
     SetEvent(value Eventable)()
     SetIsAllDay(value *bool)()
@@ -419,5 +419,5 @@ type EventMessageable interface {
     SetMeetingMessageType(value *MeetingMessageType)()
     SetRecurrence(value PatternedRecurrenceable)()
     SetStartDateTime(value DateTimeTimeZoneable)()
-    SetType(value *EventType)()
+    SetTypeEscaped(value *EventType)()
 }

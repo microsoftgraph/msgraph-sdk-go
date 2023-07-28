@@ -22,16 +22,6 @@ func CreateAttackSimulationRootFromDiscriminatorValue(parseNode i878a80d2330e89d
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AttackSimulationRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["simulationAutomations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSimulationAutomationFromDiscriminatorValue)
         if err != nil {
@@ -66,17 +56,6 @@ func (m *AttackSimulationRoot) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *AttackSimulationRoot) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetSimulationAutomations gets the simulationAutomations property value. Represents simulation automation created to run on a tenant.
 func (m *AttackSimulationRoot) GetSimulationAutomations()([]SimulationAutomationable) {
     val, err := m.GetBackingStore().Get("simulationAutomations")
@@ -105,12 +84,6 @@ func (m *AttackSimulationRoot) Serialize(writer i878a80d2330e89d26896388a3f487ee
     if err != nil {
         return err
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetSimulationAutomations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSimulationAutomations()))
         for i, v := range m.GetSimulationAutomations() {
@@ -137,13 +110,6 @@ func (m *AttackSimulationRoot) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *AttackSimulationRoot) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetSimulationAutomations sets the simulationAutomations property value. Represents simulation automation created to run on a tenant.
 func (m *AttackSimulationRoot) SetSimulationAutomations(value []SimulationAutomationable)() {
     err := m.GetBackingStore().Set("simulationAutomations", value)
@@ -162,10 +128,8 @@ func (m *AttackSimulationRoot) SetSimulations(value []Simulationable)() {
 type AttackSimulationRootable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetOdataType()(*string)
     GetSimulationAutomations()([]SimulationAutomationable)
     GetSimulations()([]Simulationable)
-    SetOdataType(value *string)()
     SetSimulationAutomations(value []SimulationAutomationable)()
     SetSimulations(value []Simulationable)()
 }

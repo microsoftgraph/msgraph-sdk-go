@@ -11,7 +11,7 @@ import (
 type WindowsAutopilotDeviceIdentitiesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// WindowsAutopilotDeviceIdentitiesRequestBuilderGetQueryParameters the Windows autopilot device identities contained collection.
+// WindowsAutopilotDeviceIdentitiesRequestBuilderGetQueryParameters list properties and relationships of the windowsAutopilotDeviceIdentity objects.
 type WindowsAutopilotDeviceIdentitiesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewWindowsAutopilotDeviceIdentitiesRequestBuilder(rawUrl string, requestAda
 func (m *WindowsAutopilotDeviceIdentitiesRequestBuilder) Count()(*WindowsAutopilotDeviceIdentitiesCountRequestBuilder) {
     return NewWindowsAutopilotDeviceIdentitiesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the Windows autopilot device identities contained collection.
+// Get list properties and relationships of the windowsAutopilotDeviceIdentity objects.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-enrollment-windowsautopilotdeviceidentity-list?view=graph-rest-1.0
 func (m *WindowsAutopilotDeviceIdentitiesRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsAutopilotDeviceIdentitiesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsAutopilotDeviceIdentityCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *WindowsAutopilotDeviceIdentitiesRequestBuilder) Get(ctx context.Context
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsAutopilotDeviceIdentityCollectionResponseable), nil
 }
-// Post create new navigation property to windowsAutopilotDeviceIdentities for deviceManagement
+// Post create a new windowsAutopilotDeviceIdentity object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-enrollment-windowsautopilotdeviceidentity-create?view=graph-rest-1.0
 func (m *WindowsAutopilotDeviceIdentitiesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsAutopilotDeviceIdentityable, requestConfiguration *WindowsAutopilotDeviceIdentitiesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsAutopilotDeviceIdentityable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *WindowsAutopilotDeviceIdentitiesRequestBuilder) Post(ctx context.Contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsAutopilotDeviceIdentityable), nil
 }
-// ToGetRequestInformation the Windows autopilot device identities contained collection.
+// ToGetRequestInformation list properties and relationships of the windowsAutopilotDeviceIdentity objects.
 func (m *WindowsAutopilotDeviceIdentitiesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsAutopilotDeviceIdentitiesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *WindowsAutopilotDeviceIdentitiesRequestBuilder) ToGetRequestInformation
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to windowsAutopilotDeviceIdentities for deviceManagement
+// ToPostRequestInformation create a new windowsAutopilotDeviceIdentity object.
 func (m *WindowsAutopilotDeviceIdentitiesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsAutopilotDeviceIdentityable, requestConfiguration *WindowsAutopilotDeviceIdentitiesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -117,16 +117,6 @@ func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["originId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -189,17 +179,6 @@ func (m *AccessPackageResource) GetModifiedDateTime()(*i336074805fc853987abe6f7f
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *AccessPackageResource) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -284,12 +263,6 @@ func (m *AccessPackageResource) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("originId", m.GetOriginId())
         if err != nil {
             return err
@@ -362,13 +335,6 @@ func (m *AccessPackageResource) SetModifiedDateTime(value *i336074805fc853987abe
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *AccessPackageResource) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetOriginId sets the originId property value. The originId property
 func (m *AccessPackageResource) SetOriginId(value *string)() {
     err := m.GetBackingStore().Set("originId", value)
@@ -406,7 +372,6 @@ type AccessPackageResourceable interface {
     GetDisplayName()(*string)
     GetEnvironment()(AccessPackageResourceEnvironmentable)
     GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetOdataType()(*string)
     GetOriginId()(*string)
     GetOriginSystem()(*string)
     GetRoles()([]AccessPackageResourceRoleable)
@@ -416,7 +381,6 @@ type AccessPackageResourceable interface {
     SetDisplayName(value *string)()
     SetEnvironment(value AccessPackageResourceEnvironmentable)()
     SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetOdataType(value *string)()
     SetOriginId(value *string)()
     SetOriginSystem(value *string)()
     SetRoles(value []AccessPackageResourceRoleable)()

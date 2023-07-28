@@ -7,8 +7,6 @@ import (
 // MacOSCompliancePolicy this class contains compliance settings for Mac OS.
 type MacOSCompliancePolicy struct {
     DeviceCompliancePolicy
-    // The OdataType property
-    OdataType *string
 }
 // NewMacOSCompliancePolicy instantiates a new macOSCompliancePolicy and sets the default values.
 func NewMacOSCompliancePolicy()(*MacOSCompliancePolicy) {

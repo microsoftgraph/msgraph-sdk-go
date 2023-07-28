@@ -79,16 +79,6 @@ func (m *DeviceComplianceActionItem) GetFieldDeserializers()(map[string]func(i87
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     return res
 }
 // GetGracePeriodHours gets the gracePeriodHours property value. Number of hours to wait till the action will be enforced. Valid values 0 to 8760
@@ -116,17 +106,6 @@ func (m *DeviceComplianceActionItem) GetNotificationMessageCCList()([]string) {
 // GetNotificationTemplateId gets the notificationTemplateId property value. What notification Message template to use
 func (m *DeviceComplianceActionItem) GetNotificationTemplateId()(*string) {
     val, err := m.GetBackingStore().Get("notificationTemplateId")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *DeviceComplianceActionItem) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -166,12 +145,6 @@ func (m *DeviceComplianceActionItem) Serialize(writer i878a80d2330e89d26896388a3
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetActionType sets the actionType property value. Scheduled Action Type Enum
@@ -202,13 +175,6 @@ func (m *DeviceComplianceActionItem) SetNotificationTemplateId(value *string)() 
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *DeviceComplianceActionItem) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // DeviceComplianceActionItemable 
 type DeviceComplianceActionItemable interface {
     Entityable
@@ -217,10 +183,8 @@ type DeviceComplianceActionItemable interface {
     GetGracePeriodHours()(*int32)
     GetNotificationMessageCCList()([]string)
     GetNotificationTemplateId()(*string)
-    GetOdataType()(*string)
     SetActionType(value *DeviceComplianceActionType)()
     SetGracePeriodHours(value *int32)()
     SetNotificationMessageCCList(value []string)()
     SetNotificationTemplateId(value *string)()
-    SetOdataType(value *string)()
 }

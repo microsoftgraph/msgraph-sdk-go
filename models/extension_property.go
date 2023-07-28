@@ -7,8 +7,6 @@ import (
 // ExtensionProperty 
 type ExtensionProperty struct {
     DirectoryObject
-    // The OdataType property
-    OdataType *string
 }
 // NewExtensionProperty instantiates a new extensionProperty and sets the default values.
 func NewExtensionProperty()(*ExtensionProperty) {

@@ -353,16 +353,6 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["personOrGroup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePersonOrGroupColumnFromDiscriminatorValue)
         if err != nil {
@@ -459,7 +449,7 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e
             return err
         }
         if val != nil {
-            m.SetType(val.(*ColumnTypes))
+            m.SetTypeEscaped(val.(*ColumnTypes))
         }
         return nil
     }
@@ -585,17 +575,6 @@ func (m *ColumnDefinition) GetNumber()(NumberColumnable) {
     }
     return nil
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *ColumnDefinition) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetPersonOrGroup gets the personOrGroup property value. This column stores Person or Group values.
 func (m *ColumnDefinition) GetPersonOrGroup()(PersonOrGroupColumnable) {
     val, err := m.GetBackingStore().Get("personOrGroup")
@@ -695,8 +674,8 @@ func (m *ColumnDefinition) GetThumbnail()(ThumbnailColumnable) {
     }
     return nil
 }
-// GetType gets the type property value. For site columns, the type of column. Read-only.
-func (m *ColumnDefinition) GetType()(*ColumnTypes) {
+// GetTypeEscaped gets the type property value. For site columns, the type of column. Read-only.
+func (m *ColumnDefinition) GetTypeEscaped()(*ColumnTypes) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -850,12 +829,6 @@ func (m *ColumnDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteObjectValue("personOrGroup", m.GetPersonOrGroup())
         if err != nil {
             return err
@@ -909,8 +882,8 @@ func (m *ColumnDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
+    if m.GetTypeEscaped() != nil {
+        cast := (*m.GetTypeEscaped()).String()
         err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
@@ -1071,13 +1044,6 @@ func (m *ColumnDefinition) SetNumber(value NumberColumnable)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *ColumnDefinition) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetPersonOrGroup sets the personOrGroup property value. This column stores Person or Group values.
 func (m *ColumnDefinition) SetPersonOrGroup(value PersonOrGroupColumnable)() {
     err := m.GetBackingStore().Set("personOrGroup", value)
@@ -1141,8 +1107,8 @@ func (m *ColumnDefinition) SetThumbnail(value ThumbnailColumnable)() {
         panic(err)
     }
 }
-// SetType sets the type property value. For site columns, the type of column. Read-only.
-func (m *ColumnDefinition) SetType(value *ColumnTypes)() {
+// SetTypeEscaped sets the type property value. For site columns, the type of column. Read-only.
+func (m *ColumnDefinition) SetTypeEscaped(value *ColumnTypes)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -1180,7 +1146,6 @@ type ColumnDefinitionable interface {
     GetLookup()(LookupColumnable)
     GetName()(*string)
     GetNumber()(NumberColumnable)
-    GetOdataType()(*string)
     GetPersonOrGroup()(PersonOrGroupColumnable)
     GetPropagateChanges()(*bool)
     GetReadOnly()(*bool)
@@ -1190,7 +1155,7 @@ type ColumnDefinitionable interface {
     GetTerm()(TermColumnable)
     GetText()(TextColumnable)
     GetThumbnail()(ThumbnailColumnable)
-    GetType()(*ColumnTypes)
+    GetTypeEscaped()(*ColumnTypes)
     GetValidation()(ColumnValidationable)
     SetBoolean(value BooleanColumnable)()
     SetCalculated(value CalculatedColumnable)()
@@ -1213,7 +1178,6 @@ type ColumnDefinitionable interface {
     SetLookup(value LookupColumnable)()
     SetName(value *string)()
     SetNumber(value NumberColumnable)()
-    SetOdataType(value *string)()
     SetPersonOrGroup(value PersonOrGroupColumnable)()
     SetPropagateChanges(value *bool)()
     SetReadOnly(value *bool)()
@@ -1223,6 +1187,6 @@ type ColumnDefinitionable interface {
     SetTerm(value TermColumnable)()
     SetText(value TextColumnable)()
     SetThumbnail(value ThumbnailColumnable)()
-    SetType(value *ColumnTypes)()
+    SetTypeEscaped(value *ColumnTypes)()
     SetValidation(value ColumnValidationable)()
 }

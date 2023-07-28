@@ -7,8 +7,6 @@ import (
 // AppConsentRequest 
 type AppConsentRequest struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewAppConsentRequest instantiates a new appConsentRequest and sets the default values.
 func NewAppConsentRequest()(*AppConsentRequest) {

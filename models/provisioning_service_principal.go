@@ -7,8 +7,6 @@ import (
 // ProvisioningServicePrincipal 
 type ProvisioningServicePrincipal struct {
     Identity
-    // The OdataType property
-    OdataType *string
 }
 // NewProvisioningServicePrincipal instantiates a new provisioningServicePrincipal and sets the default values.
 func NewProvisioningServicePrincipal()(*ProvisioningServicePrincipal) {

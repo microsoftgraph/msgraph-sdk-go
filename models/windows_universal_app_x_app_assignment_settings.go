@@ -7,8 +7,6 @@ import (
 // WindowsUniversalAppXAppAssignmentSettings contains properties used when assigning a Windows Universal AppX mobile app to a group.
 type WindowsUniversalAppXAppAssignmentSettings struct {
     MobileAppAssignmentSettings
-    // The OdataType property
-    OdataType *string
 }
 // NewWindowsUniversalAppXAppAssignmentSettings instantiates a new windowsUniversalAppXAppAssignmentSettings and sets the default values.
 func NewWindowsUniversalAppXAppAssignmentSettings()(*WindowsUniversalAppXAppAssignmentSettings) {

@@ -8,8 +8,6 @@ import (
 // AgreementFileProperties 
 type AgreementFileProperties struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewAgreementFileProperties instantiates a new agreementFileProperties and sets the default values.
 func NewAgreementFileProperties()(*AgreementFileProperties) {

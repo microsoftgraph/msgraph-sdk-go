@@ -64,16 +64,6 @@ func (m *OAuth2PermissionGrant) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["principalId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -105,17 +95,6 @@ func (m *OAuth2PermissionGrant) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *OAuth2PermissionGrant) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetPrincipalId gets the principalId property value. The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal. Supports $filter (eq only).
 func (m *OAuth2PermissionGrant) GetPrincipalId()(*string) {
@@ -169,12 +148,6 @@ func (m *OAuth2PermissionGrant) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("principalId", m.GetPrincipalId())
         if err != nil {
             return err
@@ -208,13 +181,6 @@ func (m *OAuth2PermissionGrant) SetConsentType(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *OAuth2PermissionGrant) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetPrincipalId sets the principalId property value. The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal. Supports $filter (eq only).
 func (m *OAuth2PermissionGrant) SetPrincipalId(value *string)() {
     err := m.GetBackingStore().Set("principalId", value)
@@ -242,13 +208,11 @@ type OAuth2PermissionGrantable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetClientId()(*string)
     GetConsentType()(*string)
-    GetOdataType()(*string)
     GetPrincipalId()(*string)
     GetResourceId()(*string)
     GetScope()(*string)
     SetClientId(value *string)()
     SetConsentType(value *string)()
-    SetOdataType(value *string)()
     SetPrincipalId(value *string)()
     SetResourceId(value *string)()
     SetScope(value *string)()

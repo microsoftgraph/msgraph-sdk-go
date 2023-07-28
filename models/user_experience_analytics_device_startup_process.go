@@ -32,16 +32,6 @@ func (m *UserExperienceAnalyticsDeviceStartupProcess) GetFieldDeserializers()(ma
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["processName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -87,17 +77,6 @@ func (m *UserExperienceAnalyticsDeviceStartupProcess) GetFieldDeserializers()(ma
 // GetManagedDeviceId gets the managedDeviceId property value. The Intune device id of the device. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsDeviceStartupProcess) GetManagedDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("managedDeviceId")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *UserExperienceAnalyticsDeviceStartupProcess) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -163,12 +142,6 @@ func (m *UserExperienceAnalyticsDeviceStartupProcess) Serialize(writer i878a80d2
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("processName", m.GetProcessName())
         if err != nil {
             return err
@@ -197,13 +170,6 @@ func (m *UserExperienceAnalyticsDeviceStartupProcess) Serialize(writer i878a80d2
 // SetManagedDeviceId sets the managedDeviceId property value. The Intune device id of the device. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsDeviceStartupProcess) SetManagedDeviceId(value *string)() {
     err := m.GetBackingStore().Set("managedDeviceId", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *UserExperienceAnalyticsDeviceStartupProcess) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -241,13 +207,11 @@ type UserExperienceAnalyticsDeviceStartupProcessable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetManagedDeviceId()(*string)
-    GetOdataType()(*string)
     GetProcessName()(*string)
     GetProductName()(*string)
     GetPublisher()(*string)
     GetStartupImpactInMs()(*int32)
     SetManagedDeviceId(value *string)()
-    SetOdataType(value *string)()
     SetProcessName(value *string)()
     SetProductName(value *string)()
     SetPublisher(value *string)()

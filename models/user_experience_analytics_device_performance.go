@@ -281,16 +281,6 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["operatingSystemVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -407,17 +397,6 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetModelStartupPerformanceSco
     }
     if val != nil {
         return val.(*float64)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *UserExperienceAnalyticsDevicePerformance) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -570,12 +549,6 @@ func (m *UserExperienceAnalyticsDevicePerformance) Serialize(writer i878a80d2330
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("operatingSystemVersion", m.GetOperatingSystemVersion())
         if err != nil {
             return err
@@ -713,13 +686,6 @@ func (m *UserExperienceAnalyticsDevicePerformance) SetModelStartupPerformanceSco
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *UserExperienceAnalyticsDevicePerformance) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetOperatingSystemVersion sets the operatingSystemVersion property value. The user experience analytics device Operating System version.
 func (m *UserExperienceAnalyticsDevicePerformance) SetOperatingSystemVersion(value *string)() {
     err := m.GetBackingStore().Set("operatingSystemVersion", value)
@@ -768,7 +734,6 @@ type UserExperienceAnalyticsDevicePerformanceable interface {
     GetManufacturer()(*string)
     GetModel()(*string)
     GetModelStartupPerformanceScore()(*float64)
-    GetOdataType()(*string)
     GetOperatingSystemVersion()(*string)
     GetResponsiveDesktopTimeInMs()(*int32)
     GetRestartCount()(*int32)
@@ -789,7 +754,6 @@ type UserExperienceAnalyticsDevicePerformanceable interface {
     SetManufacturer(value *string)()
     SetModel(value *string)()
     SetModelStartupPerformanceScore(value *float64)()
-    SetOdataType(value *string)()
     SetOperatingSystemVersion(value *string)()
     SetResponsiveDesktopTimeInMs(value *int32)()
     SetRestartCount(value *int32)()

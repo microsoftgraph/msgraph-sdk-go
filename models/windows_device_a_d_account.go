@@ -45,16 +45,6 @@ func (m *WindowsDeviceADAccount) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["userName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -66,17 +56,6 @@ func (m *WindowsDeviceADAccount) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *WindowsDeviceADAccount) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetUserName gets the userName property value. Not yet documented
 func (m *WindowsDeviceADAccount) GetUserName()(*string) {
@@ -102,12 +81,6 @@ func (m *WindowsDeviceADAccount) Serialize(writer i878a80d2330e89d26896388a3f487
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("userName", m.GetUserName())
         if err != nil {
             return err
@@ -118,13 +91,6 @@ func (m *WindowsDeviceADAccount) Serialize(writer i878a80d2330e89d26896388a3f487
 // SetDomainName sets the domainName property value. Not yet documented
 func (m *WindowsDeviceADAccount) SetDomainName(value *string)() {
     err := m.GetBackingStore().Set("domainName", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *WindowsDeviceADAccount) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -141,9 +107,7 @@ type WindowsDeviceADAccountable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     WindowsDeviceAccountable
     GetDomainName()(*string)
-    GetOdataType()(*string)
     GetUserName()(*string)
     SetDomainName(value *string)()
-    SetOdataType(value *string)()
     SetUserName(value *string)()
 }

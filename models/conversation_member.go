@@ -72,16 +72,6 @@ func (m *ConversationMember) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["roles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -109,17 +99,6 @@ func (m *ConversationMember) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *ConversationMember) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetRoles gets the roles property value. The roles for that user. This property contains additional qualifiers only when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is an in-tenant guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property. An Out-of-tenant external member is assigned the owner role.
 func (m *ConversationMember) GetRoles()([]string) {
@@ -155,12 +134,6 @@ func (m *ConversationMember) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetRoles() != nil {
         err = writer.WriteCollectionOfStringValues("roles", m.GetRoles())
         if err != nil {
@@ -178,13 +151,6 @@ func (m *ConversationMember) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 // SetDisplayName sets the displayName property value. The display name of the user.
 func (m *ConversationMember) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *ConversationMember) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -208,11 +174,9 @@ type ConversationMemberable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDisplayName()(*string)
-    GetOdataType()(*string)
     GetRoles()([]string)
     GetVisibleHistoryStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     SetDisplayName(value *string)()
-    SetOdataType(value *string)()
     SetRoles(value []string)()
     SetVisibleHistoryStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
 }

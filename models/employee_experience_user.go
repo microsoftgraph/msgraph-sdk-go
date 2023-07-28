@@ -38,16 +38,6 @@ func (m *EmployeeExperienceUser) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     return res
 }
 // GetLearningCourseActivities gets the learningCourseActivities property value. The learningCourseActivities property
@@ -58,17 +48,6 @@ func (m *EmployeeExperienceUser) GetLearningCourseActivities()([]LearningCourseA
     }
     if val != nil {
         return val.([]LearningCourseActivityable)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *EmployeeExperienceUser) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -90,12 +69,6 @@ func (m *EmployeeExperienceUser) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetLearningCourseActivities sets the learningCourseActivities property value. The learningCourseActivities property
@@ -105,19 +78,10 @@ func (m *EmployeeExperienceUser) SetLearningCourseActivities(value []LearningCou
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *EmployeeExperienceUser) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // EmployeeExperienceUserable 
 type EmployeeExperienceUserable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetLearningCourseActivities()([]LearningCourseActivityable)
-    GetOdataType()(*string)
     SetLearningCourseActivities(value []LearningCourseActivityable)()
-    SetOdataType(value *string)()
 }

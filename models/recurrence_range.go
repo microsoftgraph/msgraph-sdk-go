@@ -108,7 +108,7 @@ func (m *RecurrenceRange) GetFieldDeserializers()(map[string]func(i878a80d2330e8
             return err
         }
         if val != nil {
-            m.SetType(val.(*RecurrenceRangeType))
+            m.SetTypeEscaped(val.(*RecurrenceRangeType))
         }
         return nil
     }
@@ -158,8 +158,8 @@ func (m *RecurrenceRange) GetStartDate()(*i878a80d2330e89d26896388a3f487eef27b0a
     }
     return nil
 }
-// GetType gets the type property value. The recurrence range. The possible values are: endDate, noEnd, numbered. Required.
-func (m *RecurrenceRange) GetType()(*RecurrenceRangeType) {
+// GetTypeEscaped gets the type property value. The recurrence range. The possible values are: endDate, noEnd, numbered. Required.
+func (m *RecurrenceRange) GetTypeEscaped()(*RecurrenceRangeType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -201,8 +201,8 @@ func (m *RecurrenceRange) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
+    if m.GetTypeEscaped() != nil {
+        cast := (*m.GetTypeEscaped()).String()
         err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
@@ -262,8 +262,8 @@ func (m *RecurrenceRange) SetStartDate(value *i878a80d2330e89d26896388a3f487eef2
         panic(err)
     }
 }
-// SetType sets the type property value. The recurrence range. The possible values are: endDate, noEnd, numbered. Required.
-func (m *RecurrenceRange) SetType(value *RecurrenceRangeType)() {
+// SetTypeEscaped sets the type property value. The recurrence range. The possible values are: endDate, noEnd, numbered. Required.
+func (m *RecurrenceRange) SetTypeEscaped(value *RecurrenceRangeType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -280,12 +280,12 @@ type RecurrenceRangeable interface {
     GetOdataType()(*string)
     GetRecurrenceTimeZone()(*string)
     GetStartDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
-    GetType()(*RecurrenceRangeType)
+    GetTypeEscaped()(*RecurrenceRangeType)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetEndDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
     SetNumberOfOccurrences(value *int32)()
     SetOdataType(value *string)()
     SetRecurrenceTimeZone(value *string)()
     SetStartDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
-    SetType(value *RecurrenceRangeType)()
+    SetTypeEscaped(value *RecurrenceRangeType)()
 }

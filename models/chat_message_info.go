@@ -116,16 +116,6 @@ func (m *ChatMessageInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     return res
 }
 // GetFrom gets the from property value. Information about the sender of the message.
@@ -158,17 +148,6 @@ func (m *ChatMessageInfo) GetMessageType()(*ChatMessageType) {
     }
     if val != nil {
         return val.(*ChatMessageType)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *ChatMessageInfo) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -211,12 +190,6 @@ func (m *ChatMessageInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if m.GetMessageType() != nil {
         cast := (*m.GetMessageType()).String()
         err = writer.WriteStringValue("messageType", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -265,13 +238,6 @@ func (m *ChatMessageInfo) SetMessageType(value *ChatMessageType)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *ChatMessageInfo) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // ChatMessageInfoable 
 type ChatMessageInfoable interface {
     Entityable
@@ -282,12 +248,10 @@ type ChatMessageInfoable interface {
     GetFrom()(ChatMessageFromIdentitySetable)
     GetIsDeleted()(*bool)
     GetMessageType()(*ChatMessageType)
-    GetOdataType()(*string)
     SetBody(value ItemBodyable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetEventDetail(value EventMessageDetailable)()
     SetFrom(value ChatMessageFromIdentitySetable)()
     SetIsDeleted(value *bool)()
     SetMessageType(value *ChatMessageType)()
-    SetOdataType(value *string)()
 }

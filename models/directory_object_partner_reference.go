@@ -8,8 +8,6 @@ import (
 // DirectoryObjectPartnerReference 
 type DirectoryObjectPartnerReference struct {
     DirectoryObject
-    // The OdataType property
-    OdataType *string
 }
 // NewDirectoryObjectPartnerReference instantiates a new directoryObjectPartnerReference and sets the default values.
 func NewDirectoryObjectPartnerReference()(*DirectoryObjectPartnerReference) {

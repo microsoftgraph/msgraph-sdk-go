@@ -57,7 +57,7 @@ func (m *ExternalItemContent) GetFieldDeserializers()(map[string]func(i878a80d23
             return err
         }
         if val != nil {
-            m.SetType(val.(*ExternalItemContentType))
+            m.SetTypeEscaped(val.(*ExternalItemContentType))
         }
         return nil
     }
@@ -84,8 +84,8 @@ func (m *ExternalItemContent) GetOdataType()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. The type property
-func (m *ExternalItemContent) GetType()(*ExternalItemContentType) {
+// GetTypeEscaped gets the type property value. The type property
+func (m *ExternalItemContent) GetTypeEscaped()(*ExternalItemContentType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -114,8 +114,8 @@ func (m *ExternalItemContent) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
+    if m.GetTypeEscaped() != nil {
+        cast := (*m.GetTypeEscaped()).String()
         err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
@@ -153,8 +153,8 @@ func (m *ExternalItemContent) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. The type property
-func (m *ExternalItemContent) SetType(value *ExternalItemContentType)() {
+// SetTypeEscaped sets the type property value. The type property
+func (m *ExternalItemContent) SetTypeEscaped(value *ExternalItemContentType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -174,10 +174,10 @@ type ExternalItemContentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
-    GetType()(*ExternalItemContentType)
+    GetTypeEscaped()(*ExternalItemContentType)
     GetValue()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
-    SetType(value *ExternalItemContentType)()
+    SetTypeEscaped(value *ExternalItemContentType)()
     SetValue(value *string)()
 }

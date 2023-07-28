@@ -79,7 +79,7 @@ func (m *LifecycleWorkflowsWorkflowsItemRunsItemUserProcessingResultsItemTaskPro
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetTypeEscaped(val)
         }
         return nil
     }
@@ -96,8 +96,8 @@ func (m *LifecycleWorkflowsWorkflowsItemRunsItemUserProcessingResultsItemTaskPro
     }
     return nil
 }
-// GetType gets the type property value. The type property
-func (m *LifecycleWorkflowsWorkflowsItemRunsItemUserProcessingResultsItemTaskProcessingResultsItemMicrosoftGraphIdentityGovernanceResumeResumePostRequestBody) GetType()(*string) {
+// GetTypeEscaped gets the type property value. The type property
+func (m *LifecycleWorkflowsWorkflowsItemRunsItemUserProcessingResultsItemTaskProcessingResultsItemMicrosoftGraphIdentityGovernanceResumeResumePostRequestBody) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -122,7 +122,7 @@ func (m *LifecycleWorkflowsWorkflowsItemRunsItemUserProcessingResultsItemTaskPro
         }
     }
     {
-        err := writer.WriteStringValue("type", m.GetType())
+        err := writer.WriteStringValue("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -160,8 +160,8 @@ func (m *LifecycleWorkflowsWorkflowsItemRunsItemUserProcessingResultsItemTaskPro
         panic(err)
     }
 }
-// SetType sets the type property value. The type property
-func (m *LifecycleWorkflowsWorkflowsItemRunsItemUserProcessingResultsItemTaskProcessingResultsItemMicrosoftGraphIdentityGovernanceResumeResumePostRequestBody) SetType(value *string)() {
+// SetTypeEscaped sets the type property value. The type property
+func (m *LifecycleWorkflowsWorkflowsItemRunsItemUserProcessingResultsItemTaskProcessingResultsItemMicrosoftGraphIdentityGovernanceResumeResumePostRequestBody) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -175,9 +175,9 @@ type LifecycleWorkflowsWorkflowsItemRunsItemUserProcessingResultsItemTaskProcess
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetData()(ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.CustomTaskExtensionCallbackDataable)
     GetSource()(*string)
-    GetType()(*string)
+    GetTypeEscaped()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetData(value ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.CustomTaskExtensionCallbackDataable)()
     SetSource(value *string)()
-    SetType(value *string)()
+    SetTypeEscaped(value *string)()
 }

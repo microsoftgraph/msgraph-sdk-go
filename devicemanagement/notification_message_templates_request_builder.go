@@ -11,7 +11,7 @@ import (
 type NotificationMessageTemplatesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// NotificationMessageTemplatesRequestBuilderGetQueryParameters the Notification Message Templates.
+// NotificationMessageTemplatesRequestBuilderGetQueryParameters list properties and relationships of the notificationMessageTemplate objects.
 type NotificationMessageTemplatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewNotificationMessageTemplatesRequestBuilder(rawUrl string, requestAdapter
 func (m *NotificationMessageTemplatesRequestBuilder) Count()(*NotificationMessageTemplatesCountRequestBuilder) {
     return NewNotificationMessageTemplatesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the Notification Message Templates.
+// Get list properties and relationships of the notificationMessageTemplate objects.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-notification-notificationmessagetemplate-list?view=graph-rest-1.0
 func (m *NotificationMessageTemplatesRequestBuilder) Get(ctx context.Context, requestConfiguration *NotificationMessageTemplatesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NotificationMessageTemplateCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *NotificationMessageTemplatesRequestBuilder) Get(ctx context.Context, re
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NotificationMessageTemplateCollectionResponseable), nil
 }
-// Post create new navigation property to notificationMessageTemplates for deviceManagement
+// Post create a new notificationMessageTemplate object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-notification-notificationmessagetemplate-create?view=graph-rest-1.0
 func (m *NotificationMessageTemplatesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NotificationMessageTemplateable, requestConfiguration *NotificationMessageTemplatesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NotificationMessageTemplateable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *NotificationMessageTemplatesRequestBuilder) Post(ctx context.Context, b
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NotificationMessageTemplateable), nil
 }
-// ToGetRequestInformation the Notification Message Templates.
+// ToGetRequestInformation list properties and relationships of the notificationMessageTemplate objects.
 func (m *NotificationMessageTemplatesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *NotificationMessageTemplatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *NotificationMessageTemplatesRequestBuilder) ToGetRequestInformation(ctx
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to notificationMessageTemplates for deviceManagement
+// ToPostRequestInformation create a new notificationMessageTemplate object.
 func (m *NotificationMessageTemplatesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NotificationMessageTemplateable, requestConfiguration *NotificationMessageTemplatesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

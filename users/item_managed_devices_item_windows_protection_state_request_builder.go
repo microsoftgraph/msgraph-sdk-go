@@ -18,7 +18,7 @@ type ItemManagedDevicesItemWindowsProtectionStateRequestBuilderDeleteRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemManagedDevicesItemWindowsProtectionStateRequestBuilderGetQueryParameters the device protection status. This property is read-only.
+// ItemManagedDevicesItemWindowsProtectionStateRequestBuilderGetQueryParameters read properties and relationships of the windowsProtectionState object.
 type ItemManagedDevicesItemWindowsProtectionStateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,10 @@ func (m *ItemManagedDevicesItemWindowsProtectionStateRequestBuilder) Delete(ctx 
 func (m *ItemManagedDevicesItemWindowsProtectionStateRequestBuilder) DetectedMalwareState()(*ItemManagedDevicesItemWindowsProtectionStateDetectedMalwareStateRequestBuilder) {
     return NewItemManagedDevicesItemWindowsProtectionStateDetectedMalwareStateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the device protection status. This property is read-only.
+// Get read properties and relationships of the windowsProtectionState object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-devices-windowsprotectionstate-get?view=graph-rest-1.0
 func (m *ItemManagedDevicesItemWindowsProtectionStateRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemManagedDevicesItemWindowsProtectionStateRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsProtectionStateable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *ItemManagedDevicesItemWindowsProtectionStateRequestBuilder) Get(ctx con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsProtectionStateable), nil
 }
-// Patch update the navigation property windowsProtectionState in users
+// Patch update the properties of a windowsProtectionState object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/intune-devices-windowsprotectionstate-update?view=graph-rest-1.0
 func (m *ItemManagedDevicesItemWindowsProtectionStateRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsProtectionStateable, requestConfiguration *ItemManagedDevicesItemWindowsProtectionStateRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsProtectionStateable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -124,7 +130,7 @@ func (m *ItemManagedDevicesItemWindowsProtectionStateRequestBuilder) ToDeleteReq
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the device protection status. This property is read-only.
+// ToGetRequestInformation read properties and relationships of the windowsProtectionState object.
 func (m *ItemManagedDevicesItemWindowsProtectionStateRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemManagedDevicesItemWindowsProtectionStateRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -140,7 +146,7 @@ func (m *ItemManagedDevicesItemWindowsProtectionStateRequestBuilder) ToGetReques
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property windowsProtectionState in users
+// ToPatchRequestInformation update the properties of a windowsProtectionState object.
 func (m *ItemManagedDevicesItemWindowsProtectionStateRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsProtectionStateable, requestConfiguration *ItemManagedDevicesItemWindowsProtectionStateRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

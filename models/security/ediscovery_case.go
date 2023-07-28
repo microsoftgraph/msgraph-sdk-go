@@ -9,8 +9,6 @@ import (
 // EdiscoveryCase 
 type EdiscoveryCase struct {
     CaseEscaped
-    // The OdataType property
-    OdataType *string
 }
 // NewEdiscoveryCase instantiates a new ediscoveryCase and sets the default values.
 func NewEdiscoveryCase()(*EdiscoveryCase) {

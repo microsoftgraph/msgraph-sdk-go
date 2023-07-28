@@ -68,16 +68,6 @@ func (m *DomainDnsRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["recordType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -124,17 +114,6 @@ func (m *DomainDnsRecord) GetIsOptional()(*bool) {
 // GetLabel gets the label property value. Value used when configuring the name of the DNS record at the DNS host.
 func (m *DomainDnsRecord) GetLabel()(*string) {
     val, err := m.GetBackingStore().Get("label")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *DomainDnsRecord) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -195,12 +174,6 @@ func (m *DomainDnsRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("recordType", m.GetRecordType())
         if err != nil {
             return err
@@ -234,13 +207,6 @@ func (m *DomainDnsRecord) SetLabel(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *DomainDnsRecord) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetRecordType sets the recordType property value. Indicates what type of DNS record this entity represents.The value can be one of the following: CName, Mx, Srv, Txt.
 func (m *DomainDnsRecord) SetRecordType(value *string)() {
     err := m.GetBackingStore().Set("recordType", value)
@@ -268,13 +234,11 @@ type DomainDnsRecordable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetIsOptional()(*bool)
     GetLabel()(*string)
-    GetOdataType()(*string)
     GetRecordType()(*string)
     GetSupportedService()(*string)
     GetTtl()(*int32)
     SetIsOptional(value *bool)()
     SetLabel(value *string)()
-    SetOdataType(value *string)()
     SetRecordType(value *string)()
     SetSupportedService(value *string)()
     SetTtl(value *int32)()

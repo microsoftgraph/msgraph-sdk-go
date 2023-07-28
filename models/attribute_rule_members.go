@@ -7,8 +7,6 @@ import (
 // AttributeRuleMembers 
 type AttributeRuleMembers struct {
     SubjectSet
-    // The OdataType property
-    OdataType *string
 }
 // NewAttributeRuleMembers instantiates a new attributeRuleMembers and sets the default values.
 func NewAttributeRuleMembers()(*AttributeRuleMembers) {

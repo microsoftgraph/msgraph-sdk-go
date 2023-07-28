@@ -303,16 +303,6 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["osCheckFailed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -542,17 +532,6 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetManufacturer()(*strin
 // GetModel gets the model property value. The model name of the device. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetModel()(*string) {
     val, err := m.GetBackingStore().Get("model")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -863,12 +842,6 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) Serialize(writer i878a80
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteBoolValue("osCheckFailed", m.GetOsCheckFailed())
         if err != nil {
             return err
@@ -1091,13 +1064,6 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetModel(value *string)(
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetOsCheckFailed sets the osCheckFailed property value. When TRUE, indicates OS check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetOsCheckFailed(value *bool)() {
     err := m.GetBackingStore().Set("osCheckFailed", value)
@@ -1244,7 +1210,6 @@ type UserExperienceAnalyticsWorkFromAnywhereDeviceable interface {
     GetManagedBy()(*string)
     GetManufacturer()(*string)
     GetModel()(*string)
-    GetOdataType()(*string)
     GetOsCheckFailed()(*bool)
     GetOsDescription()(*string)
     GetOsVersion()(*string)
@@ -1279,7 +1244,6 @@ type UserExperienceAnalyticsWorkFromAnywhereDeviceable interface {
     SetManagedBy(value *string)()
     SetManufacturer(value *string)()
     SetModel(value *string)()
-    SetOdataType(value *string)()
     SetOsCheckFailed(value *bool)()
     SetOsDescription(value *string)()
     SetOsVersion(value *string)()

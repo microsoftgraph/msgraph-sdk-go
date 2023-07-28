@@ -160,7 +160,7 @@ func (m *ResourceVisualization) GetFieldDeserializers()(map[string]func(i878a80d
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetTypeEscaped(val)
         }
         return nil
     }
@@ -221,8 +221,8 @@ func (m *ResourceVisualization) GetTitle()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
-func (m *ResourceVisualization) GetType()(*string) {
+// GetTypeEscaped gets the type property value. The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
+func (m *ResourceVisualization) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -283,7 +283,7 @@ func (m *ResourceVisualization) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     {
-        err := writer.WriteStringValue("type", m.GetType())
+        err := writer.WriteStringValue("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -363,8 +363,8 @@ func (m *ResourceVisualization) SetTitle(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
-func (m *ResourceVisualization) SetType(value *string)() {
+// SetTypeEscaped sets the type property value. The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
+func (m *ResourceVisualization) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -384,7 +384,7 @@ type ResourceVisualizationable interface {
     GetPreviewImageUrl()(*string)
     GetPreviewText()(*string)
     GetTitle()(*string)
-    GetType()(*string)
+    GetTypeEscaped()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetContainerDisplayName(value *string)()
     SetContainerType(value *string)()
@@ -394,5 +394,5 @@ type ResourceVisualizationable interface {
     SetPreviewImageUrl(value *string)()
     SetPreviewText(value *string)()
     SetTitle(value *string)()
-    SetType(value *string)()
+    SetTypeEscaped(value *string)()
 }

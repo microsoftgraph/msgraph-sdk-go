@@ -98,7 +98,7 @@ func (m *AttributeMappingParameterSchema) GetFieldDeserializers()(map[string]fun
             return err
         }
         if val != nil {
-            m.SetType(val.(*AttributeType))
+            m.SetTypeEscaped(val.(*AttributeType))
         }
         return nil
     }
@@ -137,8 +137,8 @@ func (m *AttributeMappingParameterSchema) GetRequired()(*bool) {
     }
     return nil
 }
-// GetType gets the type property value. The type property
-func (m *AttributeMappingParameterSchema) GetType()(*AttributeType) {
+// GetTypeEscaped gets the type property value. The type property
+func (m *AttributeMappingParameterSchema) GetTypeEscaped()(*AttributeType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -174,8 +174,8 @@ func (m *AttributeMappingParameterSchema) Serialize(writer i878a80d2330e89d26896
             return err
         }
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
+    if m.GetTypeEscaped() != nil {
+        cast := (*m.GetTypeEscaped()).String()
         err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
@@ -228,8 +228,8 @@ func (m *AttributeMappingParameterSchema) SetRequired(value *bool)() {
         panic(err)
     }
 }
-// SetType sets the type property value. The type property
-func (m *AttributeMappingParameterSchema) SetType(value *AttributeType)() {
+// SetTypeEscaped sets the type property value. The type property
+func (m *AttributeMappingParameterSchema) SetTypeEscaped(value *AttributeType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -245,11 +245,11 @@ type AttributeMappingParameterSchemaable interface {
     GetName()(*string)
     GetOdataType()(*string)
     GetRequired()(*bool)
-    GetType()(*AttributeType)
+    GetTypeEscaped()(*AttributeType)
     SetAllowMultipleOccurrences(value *bool)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetName(value *string)()
     SetOdataType(value *string)()
     SetRequired(value *bool)()
-    SetType(value *AttributeType)()
+    SetTypeEscaped(value *AttributeType)()
 }

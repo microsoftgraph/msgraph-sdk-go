@@ -7,8 +7,6 @@ import (
 // IPv4Range iPv4 Range definition.
 type IPv4Range struct {
     IpRange
-    // The OdataType property
-    OdataType *string
 }
 // NewIPv4Range instantiates a new iPv4Range and sets the default values.
 func NewIPv4Range()(*IPv4Range) {

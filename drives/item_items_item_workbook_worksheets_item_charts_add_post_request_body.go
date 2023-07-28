@@ -68,7 +68,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsAddPostRequestBody) GetFieldDe
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetTypeEscaped(val)
         }
         return nil
     }
@@ -96,8 +96,8 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsAddPostRequestBody) GetSourceD
     }
     return nil
 }
-// GetType gets the type property value. The type property
-func (m *ItemItemsItemWorkbookWorksheetsItemChartsAddPostRequestBody) GetType()(*string) {
+// GetTypeEscaped gets the type property value. The type property
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsAddPostRequestBody) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -122,7 +122,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsAddPostRequestBody) Serialize(
         }
     }
     {
-        err := writer.WriteStringValue("type", m.GetType())
+        err := writer.WriteStringValue("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -160,8 +160,8 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsAddPostRequestBody) SetSourceD
         panic(err)
     }
 }
-// SetType sets the type property value. The type property
-func (m *ItemItemsItemWorkbookWorksheetsItemChartsAddPostRequestBody) SetType(value *string)() {
+// SetTypeEscaped sets the type property value. The type property
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsAddPostRequestBody) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -175,9 +175,9 @@ type ItemItemsItemWorkbookWorksheetsItemChartsAddPostRequestBodyable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetSeriesBy()(*string)
     GetSourceData()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
-    GetType()(*string)
+    GetTypeEscaped()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetSeriesBy(value *string)()
     SetSourceData(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
-    SetType(value *string)()
+    SetTypeEscaped(value *string)()
 }

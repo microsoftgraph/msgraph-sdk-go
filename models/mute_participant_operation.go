@@ -7,8 +7,6 @@ import (
 // MuteParticipantOperation 
 type MuteParticipantOperation struct {
     CommsOperation
-    // The OdataType property
-    OdataType *string
 }
 // NewMuteParticipantOperation instantiates a new muteParticipantOperation and sets the default values.
 func NewMuteParticipantOperation()(*MuteParticipantOperation) {

@@ -8,8 +8,6 @@ import (
 // MessagePinnedEventMessageDetail 
 type MessagePinnedEventMessageDetail struct {
     EventMessageDetail
-    // The OdataType property
-    OdataType *string
 }
 // NewMessagePinnedEventMessageDetail instantiates a new messagePinnedEventMessageDetail and sets the default values.
 func NewMessagePinnedEventMessageDetail()(*MessagePinnedEventMessageDetail) {

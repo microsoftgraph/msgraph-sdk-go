@@ -98,7 +98,7 @@ func (m *SharingLink) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetTypeEscaped(val)
         }
         return nil
     }
@@ -157,8 +157,8 @@ func (m *SharingLink) GetScope()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. The type of the link created.
-func (m *SharingLink) GetType()(*string) {
+// GetTypeEscaped gets the type property value. The type of the link created.
+func (m *SharingLink) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -217,7 +217,7 @@ func (m *SharingLink) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
-        err := writer.WriteStringValue("type", m.GetType())
+        err := writer.WriteStringValue("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -281,8 +281,8 @@ func (m *SharingLink) SetScope(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. The type of the link created.
-func (m *SharingLink) SetType(value *string)() {
+// SetTypeEscaped sets the type property value. The type of the link created.
+func (m *SharingLink) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -312,7 +312,7 @@ type SharingLinkable interface {
     GetOdataType()(*string)
     GetPreventsDownload()(*bool)
     GetScope()(*string)
-    GetType()(*string)
+    GetTypeEscaped()(*string)
     GetWebHtml()(*string)
     GetWebUrl()(*string)
     SetApplication(value Identityable)()
@@ -320,7 +320,7 @@ type SharingLinkable interface {
     SetOdataType(value *string)()
     SetPreventsDownload(value *bool)()
     SetScope(value *string)()
-    SetType(value *string)()
+    SetTypeEscaped(value *string)()
     SetWebHtml(value *string)()
     SetWebUrl(value *string)()
 }

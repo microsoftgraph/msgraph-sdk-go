@@ -7,8 +7,6 @@ import (
 // Windows10EnterpriseModernAppManagementConfiguration windows10 Enterprise Modern App Management Configuration.
 type Windows10EnterpriseModernAppManagementConfiguration struct {
     DeviceConfiguration
-    // The OdataType property
-    OdataType *string
 }
 // NewWindows10EnterpriseModernAppManagementConfiguration instantiates a new windows10EnterpriseModernAppManagementConfiguration and sets the default values.
 func NewWindows10EnterpriseModernAppManagementConfiguration()(*Windows10EnterpriseModernAppManagementConfiguration) {

@@ -64,28 +64,7 @@ func (m *AuthenticationMethodModeDetail) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *AuthenticationMethodModeDetail) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // Serialize serializes information the current object
 func (m *AuthenticationMethodModeDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -106,12 +85,6 @@ func (m *AuthenticationMethodModeDetail) Serialize(writer i878a80d2330e89d268963
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetAuthenticationMethod sets the authenticationMethod property value. The authenticationMethod property
@@ -128,21 +101,12 @@ func (m *AuthenticationMethodModeDetail) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *AuthenticationMethodModeDetail) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // AuthenticationMethodModeDetailable 
 type AuthenticationMethodModeDetailable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAuthenticationMethod()(*BaseAuthenticationMethod)
     GetDisplayName()(*string)
-    GetOdataType()(*string)
     SetAuthenticationMethod(value *BaseAuthenticationMethod)()
     SetDisplayName(value *string)()
-    SetOdataType(value *string)()
 }

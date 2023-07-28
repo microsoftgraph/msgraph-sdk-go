@@ -7,8 +7,6 @@ import (
 // IosMobileAppIdentifier the identifier for an iOS app.
 type IosMobileAppIdentifier struct {
     MobileAppIdentifier
-    // The OdataType property
-    OdataType *string
 }
 // NewIosMobileAppIdentifier instantiates a new iosMobileAppIdentifier and sets the default values.
 func NewIosMobileAppIdentifier()(*IosMobileAppIdentifier) {

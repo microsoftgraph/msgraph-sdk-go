@@ -7,8 +7,6 @@ import (
 // EdiscoveryIndexOperation 
 type EdiscoveryIndexOperation struct {
     CaseOperation
-    // The OdataType property
-    OdataType *string
 }
 // NewEdiscoveryIndexOperation instantiates a new ediscoveryIndexOperation and sets the default values.
 func NewEdiscoveryIndexOperation()(*EdiscoveryIndexOperation) {

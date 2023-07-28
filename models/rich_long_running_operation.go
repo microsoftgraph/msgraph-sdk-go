@@ -43,16 +43,6 @@ func (m *RichLongRunningOperation) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["percentageComplete"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -79,22 +69,11 @@ func (m *RichLongRunningOperation) GetFieldDeserializers()(map[string]func(i878a
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetTypeEscaped(val)
         }
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *RichLongRunningOperation) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetPercentageComplete gets the percentageComplete property value. A value between 0 and 100 that indicates the progress of the operation.
 func (m *RichLongRunningOperation) GetPercentageComplete()(*int32) {
@@ -118,8 +97,8 @@ func (m *RichLongRunningOperation) GetResourceId()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. The type of the operation.
-func (m *RichLongRunningOperation) GetType()(*string) {
+// GetTypeEscaped gets the type property value. The type of the operation.
+func (m *RichLongRunningOperation) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -142,12 +121,6 @@ func (m *RichLongRunningOperation) Serialize(writer i878a80d2330e89d26896388a3f4
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteInt32Value("percentageComplete", m.GetPercentageComplete())
         if err != nil {
             return err
@@ -160,7 +133,7 @@ func (m *RichLongRunningOperation) Serialize(writer i878a80d2330e89d26896388a3f4
         }
     }
     {
-        err = writer.WriteStringValue("type", m.GetType())
+        err = writer.WriteStringValue("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -170,13 +143,6 @@ func (m *RichLongRunningOperation) Serialize(writer i878a80d2330e89d26896388a3f4
 // SetError sets the error property value. Error that caused the operation to fail.
 func (m *RichLongRunningOperation) SetError(value PublicErrorable)() {
     err := m.GetBackingStore().Set("error", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *RichLongRunningOperation) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -195,8 +161,8 @@ func (m *RichLongRunningOperation) SetResourceId(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. The type of the operation.
-func (m *RichLongRunningOperation) SetType(value *string)() {
+// SetTypeEscaped sets the type property value. The type of the operation.
+func (m *RichLongRunningOperation) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -207,13 +173,11 @@ type RichLongRunningOperationable interface {
     LongRunningOperationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetError()(PublicErrorable)
-    GetOdataType()(*string)
     GetPercentageComplete()(*int32)
     GetResourceId()(*string)
-    GetType()(*string)
+    GetTypeEscaped()(*string)
     SetError(value PublicErrorable)()
-    SetOdataType(value *string)()
     SetPercentageComplete(value *int32)()
     SetResourceId(value *string)()
-    SetType(value *string)()
+    SetTypeEscaped(value *string)()
 }

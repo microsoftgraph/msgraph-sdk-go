@@ -7,8 +7,6 @@ import (
 // AndroidManagedAppRegistration represents the synchronization details of an android app, with management capabilities, for a specific user.
 type AndroidManagedAppRegistration struct {
     ManagedAppRegistration
-    // The OdataType property
-    OdataType *string
 }
 // NewAndroidManagedAppRegistration instantiates a new androidManagedAppRegistration and sets the default values.
 func NewAndroidManagedAppRegistration()(*AndroidManagedAppRegistration) {

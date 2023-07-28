@@ -252,16 +252,6 @@ func (m *LearningContent) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["skillTags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -384,17 +374,6 @@ func (m *LearningContent) GetNumberOfPages()(*int32) {
     }
     if val != nil {
         return val.(*int32)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *LearningContent) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -532,12 +511,6 @@ func (m *LearningContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetSkillTags() != nil {
         err = writer.WriteCollectionOfStringValues("skillTags", m.GetSkillTags())
         if err != nil {
@@ -662,13 +635,6 @@ func (m *LearningContent) SetNumberOfPages(value *int32)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *LearningContent) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetSkillTags sets the skillTags property value. The skills tags associated with the learning content. Optional.
 func (m *LearningContent) SetSkillTags(value []string)() {
     err := m.GetBackingStore().Set("skillTags", value)
@@ -715,7 +681,6 @@ type LearningContentable interface {
     GetLanguageTag()(*string)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetNumberOfPages()(*int32)
-    GetOdataType()(*string)
     GetSkillTags()([]string)
     GetSourceName()(*string)
     GetThumbnailWebUrl()(*string)
@@ -734,7 +699,6 @@ type LearningContentable interface {
     SetLanguageTag(value *string)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetNumberOfPages(value *int32)()
-    SetOdataType(value *string)()
     SetSkillTags(value []string)()
     SetSourceName(value *string)()
     SetThumbnailWebUrl(value *string)()

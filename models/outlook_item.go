@@ -8,8 +8,6 @@ import (
 // OutlookItem 
 type OutlookItem struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewOutlookItem instantiates a new outlookItem and sets the default values.
 func NewOutlookItem()(*OutlookItem) {

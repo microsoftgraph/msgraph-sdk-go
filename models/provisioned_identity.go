@@ -7,8 +7,6 @@ import (
 // ProvisionedIdentity 
 type ProvisionedIdentity struct {
     Identity
-    // The OdataType property
-    OdataType *string
 }
 // NewProvisionedIdentity instantiates a new provisionedIdentity and sets the default values.
 func NewProvisionedIdentity()(*ProvisionedIdentity) {

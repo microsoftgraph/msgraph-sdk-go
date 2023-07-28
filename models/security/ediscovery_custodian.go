@@ -8,8 +8,6 @@ import (
 // EdiscoveryCustodian 
 type EdiscoveryCustodian struct {
     DataSourceContainer
-    // The OdataType property
-    OdataType *string
 }
 // NewEdiscoveryCustodian instantiates a new ediscoveryCustodian and sets the default values.
 func NewEdiscoveryCustodian()(*EdiscoveryCustodian) {

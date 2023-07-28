@@ -87,16 +87,6 @@ func (m *Windows10MobileCompliancePolicy) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["osMaximumVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -228,17 +218,6 @@ func (m *Windows10MobileCompliancePolicy) GetFieldDeserializers()(map[string]fun
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *Windows10MobileCompliancePolicy) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetOsMaximumVersion gets the osMaximumVersion property value. Maximum Windows Phone version.
 func (m *Windows10MobileCompliancePolicy) GetOsMaximumVersion()(*string) {
@@ -408,12 +387,6 @@ func (m *Windows10MobileCompliancePolicy) Serialize(writer i878a80d2330e89d26896
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("osMaximumVersion", m.GetOsMaximumVersion())
         if err != nil {
             return err
@@ -511,13 +484,6 @@ func (m *Windows10MobileCompliancePolicy) SetCodeIntegrityEnabled(value *bool)()
 // SetEarlyLaunchAntiMalwareDriverEnabled sets the earlyLaunchAntiMalwareDriverEnabled property value. Require devices to be reported as healthy by Windows Device Health Attestation - early launch antimalware driver is enabled.
 func (m *Windows10MobileCompliancePolicy) SetEarlyLaunchAntiMalwareDriverEnabled(value *bool)() {
     err := m.GetBackingStore().Set("earlyLaunchAntiMalwareDriverEnabled", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *Windows10MobileCompliancePolicy) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -620,7 +586,6 @@ type Windows10MobileCompliancePolicyable interface {
     GetBitLockerEnabled()(*bool)
     GetCodeIntegrityEnabled()(*bool)
     GetEarlyLaunchAntiMalwareDriverEnabled()(*bool)
-    GetOdataType()(*string)
     GetOsMaximumVersion()(*string)
     GetOsMinimumVersion()(*string)
     GetPasswordBlockSimple()(*bool)
@@ -637,7 +602,6 @@ type Windows10MobileCompliancePolicyable interface {
     SetBitLockerEnabled(value *bool)()
     SetCodeIntegrityEnabled(value *bool)()
     SetEarlyLaunchAntiMalwareDriverEnabled(value *bool)()
-    SetOdataType(value *string)()
     SetOsMaximumVersion(value *string)()
     SetOsMinimumVersion(value *string)()
     SetPasswordBlockSimple(value *bool)()

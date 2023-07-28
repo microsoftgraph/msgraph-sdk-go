@@ -43,16 +43,6 @@ func (m *DelegatedPermissionClassification) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["permissionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -74,17 +64,6 @@ func (m *DelegatedPermissionClassification) GetFieldDeserializers()(map[string]f
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *DelegatedPermissionClassification) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetPermissionId gets the permissionId property value. The unique identifier (id) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.
 func (m *DelegatedPermissionClassification) GetPermissionId()(*string) {
@@ -122,12 +101,6 @@ func (m *DelegatedPermissionClassification) Serialize(writer i878a80d2330e89d268
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("permissionId", m.GetPermissionId())
         if err != nil {
             return err
@@ -144,13 +117,6 @@ func (m *DelegatedPermissionClassification) Serialize(writer i878a80d2330e89d268
 // SetClassification sets the classification property value. The classification value being given. Possible value: low. Does not support $filter.
 func (m *DelegatedPermissionClassification) SetClassification(value *PermissionClassificationType)() {
     err := m.GetBackingStore().Set("classification", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *DelegatedPermissionClassification) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -174,11 +140,9 @@ type DelegatedPermissionClassificationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetClassification()(*PermissionClassificationType)
-    GetOdataType()(*string)
     GetPermissionId()(*string)
     GetPermissionName()(*string)
     SetClassification(value *PermissionClassificationType)()
-    SetOdataType(value *string)()
     SetPermissionId(value *string)()
     SetPermissionName(value *string)()
 }

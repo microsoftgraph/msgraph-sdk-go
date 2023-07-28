@@ -8,8 +8,6 @@ import (
 // RiskyUser 
 type RiskyUser struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewRiskyUser instantiates a new riskyUser and sets the default values.
 func NewRiskyUser()(*RiskyUser) {

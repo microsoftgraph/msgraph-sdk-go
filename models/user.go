@@ -8,8 +8,6 @@ import (
 // User 
 type User struct {
     DirectoryObject
-    // The OdataType property
-    OdataType *string
 }
 // NewUser instantiates a new user and sets the default values.
 func NewUser()(*User) {

@@ -7,8 +7,6 @@ import (
 // WorkbookPivotTable 
 type WorkbookPivotTable struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewWorkbookPivotTable instantiates a new workbookPivotTable and sets the default values.
 func NewWorkbookPivotTable()(*WorkbookPivotTable) {

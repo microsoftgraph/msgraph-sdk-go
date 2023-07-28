@@ -8,8 +8,6 @@ import (
 // PassiveDnsRecord 
 type PassiveDnsRecord struct {
     Artifact
-    // The OdataType property
-    OdataType *string
 }
 // NewPassiveDnsRecord instantiates a new passiveDnsRecord and sets the default values.
 func NewPassiveDnsRecord()(*PassiveDnsRecord) {

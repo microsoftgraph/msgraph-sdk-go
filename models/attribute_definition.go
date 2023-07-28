@@ -229,7 +229,7 @@ func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(i878a80d23
             return err
         }
         if val != nil {
-            m.SetType(val.(*AttributeType))
+            m.SetTypeEscaped(val.(*AttributeType))
         }
         return nil
     }
@@ -323,8 +323,8 @@ func (m *AttributeDefinition) GetRequired()(*bool) {
     }
     return nil
 }
-// GetType gets the type property value. The type property
-func (m *AttributeDefinition) GetType()(*AttributeType) {
+// GetTypeEscaped gets the type property value. The type property
+func (m *AttributeDefinition) GetTypeEscaped()(*AttributeType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -427,8 +427,8 @@ func (m *AttributeDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
+    if m.GetTypeEscaped() != nil {
+        cast := (*m.GetTypeEscaped()).String()
         err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
@@ -537,8 +537,8 @@ func (m *AttributeDefinition) SetRequired(value *bool)() {
         panic(err)
     }
 }
-// SetType sets the type property value. The type property
-func (m *AttributeDefinition) SetType(value *AttributeType)() {
+// SetTypeEscaped sets the type property value. The type property
+func (m *AttributeDefinition) SetTypeEscaped(value *AttributeType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -562,7 +562,7 @@ type AttributeDefinitionable interface {
     GetOdataType()(*string)
     GetReferencedObjects()([]ReferencedObjectable)
     GetRequired()(*bool)
-    GetType()(*AttributeType)
+    GetTypeEscaped()(*AttributeType)
     SetAnchor(value *bool)()
     SetApiExpressions(value []StringKeyStringValuePairable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
@@ -576,5 +576,5 @@ type AttributeDefinitionable interface {
     SetOdataType(value *string)()
     SetReferencedObjects(value []ReferencedObjectable)()
     SetRequired(value *bool)()
-    SetType(value *AttributeType)()
+    SetTypeEscaped(value *AttributeType)()
 }

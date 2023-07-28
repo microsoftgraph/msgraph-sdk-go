@@ -7,8 +7,6 @@ import (
 // TimeOff 
 type TimeOff struct {
     ChangeTrackedEntity
-    // The OdataType property
-    OdataType *string
 }
 // NewTimeOff instantiates a new timeOff and sets the default values.
 func NewTimeOff()(*TimeOff) {

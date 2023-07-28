@@ -34,16 +34,6 @@ func (m *SharePointIdentitySet) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["siteGroup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSharePointIdentityFromDiscriminatorValue)
         if err != nil {
@@ -74,17 +64,6 @@ func (m *SharePointIdentitySet) GetGroup()(Identityable) {
     }
     if val != nil {
         return val.(Identityable)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *SharePointIdentitySet) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -123,12 +102,6 @@ func (m *SharePointIdentitySet) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteObjectValue("siteGroup", m.GetSiteGroup())
         if err != nil {
             return err
@@ -145,13 +118,6 @@ func (m *SharePointIdentitySet) Serialize(writer i878a80d2330e89d26896388a3f487e
 // SetGroup sets the group property value. The group associated with this action. Optional.
 func (m *SharePointIdentitySet) SetGroup(value Identityable)() {
     err := m.GetBackingStore().Set("group", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *SharePointIdentitySet) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -175,11 +141,9 @@ type SharePointIdentitySetable interface {
     IdentitySetable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetGroup()(Identityable)
-    GetOdataType()(*string)
     GetSiteGroup()(SharePointIdentityable)
     GetSiteUser()(SharePointIdentityable)
     SetGroup(value Identityable)()
-    SetOdataType(value *string)()
     SetSiteGroup(value SharePointIdentityable)()
     SetSiteUser(value SharePointIdentityable)()
 }

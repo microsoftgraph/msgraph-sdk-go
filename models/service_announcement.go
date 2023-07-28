@@ -7,8 +7,6 @@ import (
 // ServiceAnnouncement 
 type ServiceAnnouncement struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewServiceAnnouncement instantiates a new serviceAnnouncement and sets the default values.
 func NewServiceAnnouncement()(*ServiceAnnouncement) {

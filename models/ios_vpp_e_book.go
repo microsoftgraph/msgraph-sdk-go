@@ -8,8 +8,6 @@ import (
 // IosVppEBook a class containing the properties for iOS Vpp eBook.
 type IosVppEBook struct {
     ManagedEBook
-    // The OdataType property
-    OdataType *string
 }
 // NewIosVppEBook instantiates a new iosVppEBook and sets the default values.
 func NewIosVppEBook()(*IosVppEBook) {

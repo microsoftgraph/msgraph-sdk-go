@@ -58,16 +58,6 @@ func (m *WorkbookTableSort) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     return res
 }
 // GetFields gets the fields property value. Represents the current conditions used to last sort the table. Read-only.
@@ -95,17 +85,6 @@ func (m *WorkbookTableSort) GetMatchCase()(*bool) {
 // GetMethod gets the method property value. Represents Chinese character ordering method last used to sort the table. The possible values are: PinYin, StrokeCount. Read-only.
 func (m *WorkbookTableSort) GetMethod()(*string) {
     val, err := m.GetBackingStore().Get("method")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *WorkbookTableSort) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -144,12 +123,6 @@ func (m *WorkbookTableSort) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetFields sets the fields property value. Represents the current conditions used to last sort the table. Read-only.
@@ -173,13 +146,6 @@ func (m *WorkbookTableSort) SetMethod(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *WorkbookTableSort) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // WorkbookTableSortable 
 type WorkbookTableSortable interface {
     Entityable
@@ -187,9 +153,7 @@ type WorkbookTableSortable interface {
     GetFields()([]WorkbookSortFieldable)
     GetMatchCase()(*bool)
     GetMethod()(*string)
-    GetOdataType()(*string)
     SetFields(value []WorkbookSortFieldable)()
     SetMatchCase(value *bool)()
     SetMethod(value *string)()
-    SetOdataType(value *string)()
 }

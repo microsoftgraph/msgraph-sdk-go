@@ -32,16 +32,6 @@ func (m *UnifiedRoleEligibilitySchedule) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["scheduleInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateRequestScheduleFromDiscriminatorValue)
         if err != nil {
@@ -57,17 +47,6 @@ func (m *UnifiedRoleEligibilitySchedule) GetFieldDeserializers()(map[string]func
 // GetMemberType gets the memberType property value. How the role eligibility is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleEligibilitySchedule can be managed by the caller. Supports $filter (eq, ne).
 func (m *UnifiedRoleEligibilitySchedule) GetMemberType()(*string) {
     val, err := m.GetBackingStore().Get("memberType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *UnifiedRoleEligibilitySchedule) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -100,12 +79,6 @@ func (m *UnifiedRoleEligibilitySchedule) Serialize(writer i878a80d2330e89d268963
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteObjectValue("scheduleInfo", m.GetScheduleInfo())
         if err != nil {
             return err
@@ -116,13 +89,6 @@ func (m *UnifiedRoleEligibilitySchedule) Serialize(writer i878a80d2330e89d268963
 // SetMemberType sets the memberType property value. How the role eligibility is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleEligibilitySchedule can be managed by the caller. Supports $filter (eq, ne).
 func (m *UnifiedRoleEligibilitySchedule) SetMemberType(value *string)() {
     err := m.GetBackingStore().Set("memberType", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *UnifiedRoleEligibilitySchedule) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -139,9 +105,7 @@ type UnifiedRoleEligibilityScheduleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     UnifiedRoleScheduleBaseable
     GetMemberType()(*string)
-    GetOdataType()(*string)
     GetScheduleInfo()(RequestScheduleable)
     SetMemberType(value *string)()
-    SetOdataType(value *string)()
     SetScheduleInfo(value RequestScheduleable)()
 }
