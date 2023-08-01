@@ -287,7 +287,7 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetResourceEnvironments gets the resourceEnvironments property value. The resourceEnvironments property
+// GetResourceEnvironments gets the resourceEnvironments property value. A reference to the geolocation environments in which a resource is located.
 func (m *EntitlementManagement) GetResourceEnvironments()([]AccessPackageResourceEnvironmentable) {
     val, err := m.GetBackingStore().Get("resourceEnvironments")
     if err != nil {
@@ -298,7 +298,7 @@ func (m *EntitlementManagement) GetResourceEnvironments()([]AccessPackageResourc
     }
     return nil
 }
-// GetResourceRequests gets the resourceRequests property value. The resourceRequests property
+// GetResourceRequests gets the resourceRequests property value. Represents a request to add or remove a resource to or from a catalog respectively.
 func (m *EntitlementManagement) GetResourceRequests()([]AccessPackageResourceRequestable) {
     val, err := m.GetBackingStore().Get("resourceRequests")
     if err != nil {
@@ -320,7 +320,7 @@ func (m *EntitlementManagement) GetResourceRoleScopes()([]AccessPackageResourceR
     }
     return nil
 }
-// GetResources gets the resources property value. The resources property
+// GetResources gets the resources property value. The resources associated with the catalogs.
 func (m *EntitlementManagement) GetResources()([]AccessPackageResourceable) {
     val, err := m.GetBackingStore().Get("resources")
     if err != nil {
@@ -537,14 +537,14 @@ func (m *EntitlementManagement) SetConnectedOrganizations(value []ConnectedOrgan
         panic(err)
     }
 }
-// SetResourceEnvironments sets the resourceEnvironments property value. The resourceEnvironments property
+// SetResourceEnvironments sets the resourceEnvironments property value. A reference to the geolocation environments in which a resource is located.
 func (m *EntitlementManagement) SetResourceEnvironments(value []AccessPackageResourceEnvironmentable)() {
     err := m.GetBackingStore().Set("resourceEnvironments", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResourceRequests sets the resourceRequests property value. The resourceRequests property
+// SetResourceRequests sets the resourceRequests property value. Represents a request to add or remove a resource to or from a catalog respectively.
 func (m *EntitlementManagement) SetResourceRequests(value []AccessPackageResourceRequestable)() {
     err := m.GetBackingStore().Set("resourceRequests", value)
     if err != nil {
@@ -558,7 +558,7 @@ func (m *EntitlementManagement) SetResourceRoleScopes(value []AccessPackageResou
         panic(err)
     }
 }
-// SetResources sets the resources property value. The resources property
+// SetResources sets the resources property value. The resources associated with the catalogs.
 func (m *EntitlementManagement) SetResources(value []AccessPackageResourceable)() {
     err := m.GetBackingStore().Set("resources", value)
     if err != nil {

@@ -18,7 +18,7 @@ type EntitlementManagementCatalogsItemResourcesAccessPackageResourceItemRequestB
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EntitlementManagementCatalogsItemResourcesAccessPackageResourceItemRequestBuilderGetQueryParameters get resources from identityGovernance
+// EntitlementManagementCatalogsItemResourcesAccessPackageResourceItemRequestBuilderGetQueryParameters access package resources in this catalog.
 type EntitlementManagementCatalogsItemResourcesAccessPackageResourceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,7 @@ func (m *EntitlementManagementCatalogsItemResourcesAccessPackageResourceItemRequ
 func (m *EntitlementManagementCatalogsItemResourcesAccessPackageResourceItemRequestBuilder) Environment()(*EntitlementManagementCatalogsItemResourcesItemEnvironmentRequestBuilder) {
     return NewEntitlementManagementCatalogsItemResourcesItemEnvironmentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get resources from identityGovernance
+// Get access package resources in this catalog.
 func (m *EntitlementManagementCatalogsItemResourcesAccessPackageResourceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementCatalogsItemResourcesAccessPackageResourceItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageResourceable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *EntitlementManagementCatalogsItemResourcesAccessPackageResourceItemRequ
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get resources from identityGovernance
+// ToGetRequestInformation access package resources in this catalog.
 func (m *EntitlementManagementCatalogsItemResourcesAccessPackageResourceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementCatalogsItemResourcesAccessPackageResourceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

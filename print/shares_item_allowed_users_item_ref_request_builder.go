@@ -40,7 +40,7 @@ func NewSharesItemAllowedUsersItemRefRequestBuilder(rawUrl string, requestAdapte
 // Delete revoke the specified user's access to submit print jobs to the associated printerShare.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/printershare-delete-alloweduser?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/printershare-delete-alloweduser?view=graph-rest-1.0
 func (m *SharesItemAllowedUsersItemRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *SharesItemAllowedUsersItemRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {

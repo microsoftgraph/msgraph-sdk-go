@@ -33,7 +33,7 @@ func NewReportsGetConfigurationPolicyNonComplianceReportRequestBuilder(rawUrl st
 // Post not yet documented
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getconfigurationpolicynoncompliancereport?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getconfigurationpolicynoncompliancereport?view=graph-rest-1.0
 func (m *ReportsGetConfigurationPolicyNonComplianceReportRequestBuilder) Post(ctx context.Context, body ReportsGetConfigurationPolicyNonComplianceReportPostRequestBodyable, requestConfiguration *ReportsGetConfigurationPolicyNonComplianceReportRequestBuilderPostRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

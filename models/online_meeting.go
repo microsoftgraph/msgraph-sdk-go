@@ -64,6 +64,17 @@ func (m *OnlineMeeting) GetAllowMeetingChat()(*MeetingChatMode) {
     }
     return nil
 }
+// GetAllowParticipantsToChangeName gets the allowParticipantsToChangeName property value. The allowParticipantsToChangeName property
+func (m *OnlineMeeting) GetAllowParticipantsToChangeName()(*bool) {
+    val, err := m.GetBackingStore().Get("allowParticipantsToChangeName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetAllowTeamworkReactions gets the allowTeamworkReactions property value. Indicates whether Teams reactions are enabled for the meeting.
 func (m *OnlineMeeting) GetAllowTeamworkReactions()(*bool) {
     val, err := m.GetBackingStore().Get("allowTeamworkReactions")
@@ -203,6 +214,16 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         if val != nil {
             m.SetAllowMeetingChat(val.(*MeetingChatMode))
+        }
+        return nil
+    }
+    res["allowParticipantsToChangeName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllowParticipantsToChangeName(val)
         }
         return nil
     }
@@ -589,6 +610,12 @@ func (m *OnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
+        err = writer.WriteBoolValue("allowParticipantsToChangeName", m.GetAllowParticipantsToChangeName())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("allowTeamworkReactions", m.GetAllowTeamworkReactions())
         if err != nil {
             return err
@@ -750,6 +777,13 @@ func (m *OnlineMeeting) SetAllowMeetingChat(value *MeetingChatMode)() {
         panic(err)
     }
 }
+// SetAllowParticipantsToChangeName sets the allowParticipantsToChangeName property value. The allowParticipantsToChangeName property
+func (m *OnlineMeeting) SetAllowParticipantsToChangeName(value *bool)() {
+    err := m.GetBackingStore().Set("allowParticipantsToChangeName", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetAllowTeamworkReactions sets the allowTeamworkReactions property value. Indicates whether Teams reactions are enabled for the meeting.
 func (m *OnlineMeeting) SetAllowTeamworkReactions(value *bool)() {
     err := m.GetBackingStore().Set("allowTeamworkReactions", value)
@@ -905,6 +939,7 @@ type OnlineMeetingable interface {
     GetAllowAttendeeToEnableMic()(*bool)
     GetAllowedPresenters()(*OnlineMeetingPresenters)
     GetAllowMeetingChat()(*MeetingChatMode)
+    GetAllowParticipantsToChangeName()(*bool)
     GetAllowTeamworkReactions()(*bool)
     GetAttendanceReports()([]MeetingAttendanceReportable)
     GetAttendeeReport()([]byte)
@@ -930,6 +965,7 @@ type OnlineMeetingable interface {
     SetAllowAttendeeToEnableMic(value *bool)()
     SetAllowedPresenters(value *OnlineMeetingPresenters)()
     SetAllowMeetingChat(value *MeetingChatMode)()
+    SetAllowParticipantsToChangeName(value *bool)()
     SetAllowTeamworkReactions(value *bool)()
     SetAttendanceReports(value []MeetingAttendanceReportable)()
     SetAttendeeReport(value []byte)()

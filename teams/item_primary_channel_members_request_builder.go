@@ -81,7 +81,7 @@ func (m *ItemPrimaryChannelMembersRequestBuilder) Count()(*ItemPrimaryChannelMem
 // Get retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/channel-list-members?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/channel-list-members?view=graph-rest-1.0
 func (m *ItemPrimaryChannelMembersRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPrimaryChannelMembersRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -103,7 +103,7 @@ func (m *ItemPrimaryChannelMembersRequestBuilder) Get(ctx context.Context, reque
 // Post add a conversationMember to a channel.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
 func (m *ItemPrimaryChannelMembersRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberable, requestConfiguration *ItemPrimaryChannelMembersRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

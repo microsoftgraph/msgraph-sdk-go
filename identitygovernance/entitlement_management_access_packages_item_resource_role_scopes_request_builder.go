@@ -11,7 +11,7 @@ import (
 type EntitlementManagementAccessPackagesItemResourceRoleScopesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementAccessPackagesItemResourceRoleScopesRequestBuilderGetQueryParameters get resourceRoleScopes from identityGovernance
+// EntitlementManagementAccessPackagesItemResourceRoleScopesRequestBuilderGetQueryParameters the resource roles and scopes in this access package.
 type EntitlementManagementAccessPackagesItemResourceRoleScopesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewEntitlementManagementAccessPackagesItemResourceRoleScopesRequestBuilder(
 func (m *EntitlementManagementAccessPackagesItemResourceRoleScopesRequestBuilder) Count()(*EntitlementManagementAccessPackagesItemResourceRoleScopesCountRequestBuilder) {
     return NewEntitlementManagementAccessPackagesItemResourceRoleScopesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get resourceRoleScopes from identityGovernance
+// Get the resource roles and scopes in this access package.
 func (m *EntitlementManagementAccessPackagesItemResourceRoleScopesRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemResourceRoleScopesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageResourceRoleScopeCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +93,10 @@ func (m *EntitlementManagementAccessPackagesItemResourceRoleScopesRequestBuilder
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageResourceRoleScopeCollectionResponseable), nil
 }
-// Post create new navigation property to resourceRoleScopes for identityGovernance
+// Post create a new accessPackageResourceRoleScope for adding a resource role to an access package. The access package resource, for a group, an app, or a SharePoint Online site, must already exist in the access package catalog, and the originId for the resource role retrieved from the list of the resource roles. Once you add the resource role scope to the access package, the user will receive this resource role through any current and future access package assignments.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/accesspackage-post-resourcerolescopes?view=graph-rest-1.0
 func (m *EntitlementManagementAccessPackagesItemResourceRoleScopesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageResourceRoleScopeable, requestConfiguration *EntitlementManagementAccessPackagesItemResourceRoleScopesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageResourceRoleScopeable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +115,7 @@ func (m *EntitlementManagementAccessPackagesItemResourceRoleScopesRequestBuilder
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageResourceRoleScopeable), nil
 }
-// ToGetRequestInformation get resourceRoleScopes from identityGovernance
+// ToGetRequestInformation the resource roles and scopes in this access package.
 func (m *EntitlementManagementAccessPackagesItemResourceRoleScopesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemResourceRoleScopesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +131,7 @@ func (m *EntitlementManagementAccessPackagesItemResourceRoleScopesRequestBuilder
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to resourceRoleScopes for identityGovernance
+// ToPostRequestInformation create a new accessPackageResourceRoleScope for adding a resource role to an access package. The access package resource, for a group, an app, or a SharePoint Online site, must already exist in the access package catalog, and the originId for the resource role retrieved from the list of the resource roles. Once you add the resource role scope to the access package, the user will receive this resource role through any current and future access package assignments.
 func (m *EntitlementManagementAccessPackagesItemResourceRoleScopesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageResourceRoleScopeable, requestConfiguration *EntitlementManagementAccessPackagesItemResourceRoleScopesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -55,7 +55,7 @@ func NewItemJoinedTeamsItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuild
 // Delete delete a timeOffRequest object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/timeoffrequest-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/timeoffrequest-delete?view=graph-rest-1.0
 func (m *ItemJoinedTeamsItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -74,7 +74,7 @@ func (m *ItemJoinedTeamsItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuil
 // Get retrieve the properties and relationships of a timeoffrequest object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/timeoffrequest-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/timeoffrequest-get?view=graph-rest-1.0
 func (m *ItemJoinedTeamsItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemScheduleTimeOffRequestsTimeOffRequestItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeOffRequestable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

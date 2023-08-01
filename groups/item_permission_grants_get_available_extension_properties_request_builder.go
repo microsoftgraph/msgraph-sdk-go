@@ -33,7 +33,7 @@ func NewItemPermissionGrantsGetAvailableExtensionPropertiesRequestBuilder(rawUrl
 // Post return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:+ user+ group+ administrativeUnit+ application+ device+ organization
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
 func (m *ItemPermissionGrantsGetAvailableExtensionPropertiesRequestBuilder) Post(ctx context.Context, body ItemPermissionGrantsGetAvailableExtensionPropertiesPostRequestBodyable, requestConfiguration *ItemPermissionGrantsGetAvailableExtensionPropertiesRequestBuilderPostRequestConfiguration)(ItemPermissionGrantsGetAvailableExtensionPropertiesResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

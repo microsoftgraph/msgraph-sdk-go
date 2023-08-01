@@ -34,7 +34,7 @@ func NewItemItemsItemWorkbookTablesItemColumnsItemTotalRowRangeRequestBuilder(ra
 // Get gets the range object associated with the totals row of the column.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/tablecolumn-totalrowrange?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/tablecolumn-totalrowrange?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookTablesItemColumnsItemTotalRowRangeRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemColumnsItemTotalRowRangeRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookRangeable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

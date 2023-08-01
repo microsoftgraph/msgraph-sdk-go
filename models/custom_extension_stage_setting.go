@@ -19,7 +19,7 @@ func NewCustomExtensionStageSetting()(*CustomExtensionStageSetting) {
 func CreateCustomExtensionStageSettingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCustomExtensionStageSetting(), nil
 }
-// GetCustomExtension gets the customExtension property value. The customExtension property
+// GetCustomExtension gets the customExtension property value. Indicates the custom workflow extension that will be executed at this stage. Nullable. Supports $expand.
 func (m *CustomExtensionStageSetting) GetCustomExtension()(CustomCalloutExtensionable) {
     val, err := m.GetBackingStore().Get("customExtension")
     if err != nil {
@@ -87,7 +87,7 @@ func (m *CustomExtensionStageSetting) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetCustomExtension sets the customExtension property value. The customExtension property
+// SetCustomExtension sets the customExtension property value. Indicates the custom workflow extension that will be executed at this stage. Nullable. Supports $expand.
 func (m *CustomExtensionStageSetting) SetCustomExtension(value CustomCalloutExtensionable)() {
     err := m.GetBackingStore().Set("customExtension", value)
     if err != nil {

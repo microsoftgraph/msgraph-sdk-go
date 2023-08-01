@@ -73,7 +73,7 @@ func (m *SharepointSettingsRequestBuilder) Delete(ctx context.Context, requestCo
 // Get get the tenant-level settings for SharePoint and OneDrive.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/sharepointsettings-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/sharepointsettings-get?view=graph-rest-1.0
 func (m *SharepointSettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *SharepointSettingsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SharepointSettingsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +95,7 @@ func (m *SharepointSettingsRequestBuilder) Get(ctx context.Context, requestConfi
 // Patch update one or more tenant-level settings for SharePoint and OneDrive.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/sharepointsettings-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/sharepointsettings-update?view=graph-rest-1.0
 func (m *SharepointSettingsRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SharepointSettingsable, requestConfiguration *SharepointSettingsRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SharepointSettingsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

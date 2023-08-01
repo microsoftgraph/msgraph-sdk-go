@@ -33,7 +33,7 @@ func NewItemManagedDevicesItemResetPasscodeRequestBuilder(rawUrl string, request
 // Post reset passcode
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-devices-manageddevice-resetpasscode?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-resetpasscode?view=graph-rest-1.0
 func (m *ItemManagedDevicesItemResetPasscodeRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemManagedDevicesItemResetPasscodeRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -33,7 +33,7 @@ func NewItemItemsItemWorkbookCloseSessionRequestBuilder(rawUrl string, requestAd
 // Post use this API to close an existing workbook session.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/workbook-closesession?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/workbook-closesession?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookCloseSessionRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookCloseSessionRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

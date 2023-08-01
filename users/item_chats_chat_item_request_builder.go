@@ -73,7 +73,7 @@ func (m *ItemChatsChatItemRequestBuilder) Delete(ctx context.Context, requestCon
 // Get retrieve a single chat (without its messages). This method supports federation. To access a chat, at least one chat member must belong to the tenant the request initiated from.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/chat-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/chat-get?view=graph-rest-1.0
 func (m *ItemChatsChatItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemChatsChatItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Chatable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -138,6 +138,10 @@ func (m *ItemChatsChatItemRequestBuilder) Patch(ctx context.Context, body iadcd8
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Chatable), nil
+}
+// PermissionGrants provides operations to manage the permissionGrants property of the microsoft.graph.chat entity.
+func (m *ItemChatsChatItemRequestBuilder) PermissionGrants()(*ItemChatsItemPermissionGrantsRequestBuilder) {
+    return NewItemChatsItemPermissionGrantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // PinnedMessages provides operations to manage the pinnedMessages property of the microsoft.graph.chat entity.
 func (m *ItemChatsChatItemRequestBuilder) PinnedMessages()(*ItemChatsItemPinnedMessagesRequestBuilder) {

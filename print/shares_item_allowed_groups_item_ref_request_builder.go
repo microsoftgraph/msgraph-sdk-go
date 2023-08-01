@@ -40,7 +40,7 @@ func NewSharesItemAllowedGroupsItemRefRequestBuilder(rawUrl string, requestAdapt
 // Delete revoke the specified group's access to submit print jobs to the associated printerShare.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/printershare-delete-allowedgroup?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/printershare-delete-allowedgroup?view=graph-rest-1.0
 func (m *SharesItemAllowedGroupsItemRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *SharesItemAllowedGroupsItemRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {

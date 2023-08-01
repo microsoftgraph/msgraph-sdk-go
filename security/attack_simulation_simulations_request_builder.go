@@ -77,7 +77,7 @@ func (m *AttackSimulationSimulationsRequestBuilder) Count()(*AttackSimulationSim
 // Get get a list of attack simulation campaigns for a tenant.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/attacksimulationroot-list-simulations?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/attacksimulationroot-list-simulations?view=graph-rest-1.0
 func (m *AttackSimulationSimulationsRequestBuilder) Get(ctx context.Context, requestConfiguration *AttackSimulationSimulationsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SimulationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

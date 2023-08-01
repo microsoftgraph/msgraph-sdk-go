@@ -55,7 +55,7 @@ func NewSubscriptionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 // Delete delete a subscription. For the list of resources that support subscribing to change notifications, see the table in the Permissions section.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/subscription-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/subscription-delete?view=graph-rest-1.0
 func (m *SubscriptionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *SubscriptionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -74,7 +74,7 @@ func (m *SubscriptionItemRequestBuilder) Delete(ctx context.Context, requestConf
 // Get retrieve the properties and relationships of a subscription. See the table in the Permissions section for the list of resources that support subscribing to change notifications.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/subscription-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/subscription-get?view=graph-rest-1.0
 func (m *SubscriptionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *SubscriptionItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Subscriptionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,7 +96,7 @@ func (m *SubscriptionItemRequestBuilder) Get(ctx context.Context, requestConfigu
 // Patch renew a subscription by extending its expiry time. The table in the Permissions section lists the resources that support subscribing to change notifications. Subscriptions expire after a length of time that varies by resource type. In order to avoid missing change notifications, an app should renew its subscriptions well in advance of their expiry date. See subscription for maximum length of a subscription for each resource type.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/subscription-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/subscription-update?view=graph-rest-1.0
 func (m *SubscriptionItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Subscriptionable, requestConfiguration *SubscriptionItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Subscriptionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

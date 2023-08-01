@@ -71,7 +71,7 @@ func NewItemSitesItemListsItemItemsRequestBuilder(rawUrl string, requestAdapter 
 // Get get the collection of [items][item] in a [list][].
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/listitem-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/listitem-list?view=graph-rest-1.0
 func (m *ItemSitesItemListsItemItemsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemListsItemItemsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +93,7 @@ func (m *ItemSitesItemListsItemItemsRequestBuilder) Get(ctx context.Context, req
 // Post create a new [listItem][] in a [list][].
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/listitem-create?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/listitem-create?view=graph-rest-1.0
 func (m *ItemSitesItemListsItemItemsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemable, requestConfiguration *ItemSitesItemListsItemItemsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

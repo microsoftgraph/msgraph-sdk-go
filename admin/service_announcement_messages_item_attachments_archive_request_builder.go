@@ -40,7 +40,7 @@ func NewServiceAnnouncementMessagesItemAttachmentsArchiveRequestBuilder(rawUrl s
 // Get the zip file that contains all attachments for a message.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/serviceannouncement-list-messages?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/serviceannouncement-list-messages?view=graph-rest-1.0
 func (m *ServiceAnnouncementMessagesItemAttachmentsArchiveRequestBuilder) Get(ctx context.Context, requestConfiguration *ServiceAnnouncementMessagesItemAttachmentsArchiveRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

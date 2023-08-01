@@ -70,7 +70,7 @@ func (m *ThreatIntelligenceHostsItemTrackersRequestBuilder) Count()(*ThreatIntel
 // Get get a list of hostTracker resources.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-host-list-trackers?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-host-list-trackers?view=graph-rest-1.0
 func (m *ThreatIntelligenceHostsItemTrackersRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceHostsItemTrackersRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.HostTrackerCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

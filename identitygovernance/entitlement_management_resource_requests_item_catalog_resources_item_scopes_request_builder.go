@@ -11,7 +11,7 @@ import (
 type EntitlementManagementResourceRequestsItemCatalogResourcesItemScopesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementResourceRequestsItemCatalogResourcesItemScopesRequestBuilderGetQueryParameters get scopes from identityGovernance
+// EntitlementManagementResourceRequestsItemCatalogResourcesItemScopesRequestBuilderGetQueryParameters read-only. Nullable. Supports $expand.
 type EntitlementManagementResourceRequestsItemCatalogResourcesItemScopesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewEntitlementManagementResourceRequestsItemCatalogResourcesItemScopesReque
 func (m *EntitlementManagementResourceRequestsItemCatalogResourcesItemScopesRequestBuilder) Count()(*EntitlementManagementResourceRequestsItemCatalogResourcesItemScopesCountRequestBuilder) {
     return NewEntitlementManagementResourceRequestsItemCatalogResourcesItemScopesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get scopes from identityGovernance
+// Get read-only. Nullable. Supports $expand.
 func (m *EntitlementManagementResourceRequestsItemCatalogResourcesItemScopesRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementResourceRequestsItemCatalogResourcesItemScopesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageResourceScopeCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *EntitlementManagementResourceRequestsItemCatalogResourcesItemScopesRequ
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageResourceScopeable), nil
 }
-// ToGetRequestInformation get scopes from identityGovernance
+// ToGetRequestInformation read-only. Nullable. Supports $expand.
 func (m *EntitlementManagementResourceRequestsItemCatalogResourcesItemScopesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementResourceRequestsItemCatalogResourcesItemScopesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

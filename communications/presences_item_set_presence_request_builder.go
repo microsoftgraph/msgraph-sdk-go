@@ -33,7 +33,7 @@ func NewPresencesItemSetPresenceRequestBuilder(rawUrl string, requestAdapter i2a
 // Post set the state of a user's presence session as an application.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/presence-setpresence?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/presence-setpresence?view=graph-rest-1.0
 func (m *PresencesItemSetPresenceRequestBuilder) Post(ctx context.Context, body PresencesItemSetPresencePostRequestBodyable, requestConfiguration *PresencesItemSetPresenceRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

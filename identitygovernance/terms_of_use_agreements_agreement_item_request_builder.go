@@ -61,7 +61,7 @@ func NewTermsOfUseAgreementsAgreementItemRequestBuilder(rawUrl string, requestAd
 // Delete delete an agreement object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/agreement-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/agreement-delete?view=graph-rest-1.0
 func (m *TermsOfUseAgreementsAgreementItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TermsOfUseAgreementsAgreementItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -88,7 +88,7 @@ func (m *TermsOfUseAgreementsAgreementItemRequestBuilder) Files()(*TermsOfUseAgr
 // Get retrieve the properties and relationships of an agreement object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/agreement-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/agreement-get?view=graph-rest-1.0
 func (m *TermsOfUseAgreementsAgreementItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TermsOfUseAgreementsAgreementItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Agreementable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -110,7 +110,7 @@ func (m *TermsOfUseAgreementsAgreementItemRequestBuilder) Get(ctx context.Contex
 // Patch update the properties of an agreement object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/agreement-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/agreement-update?view=graph-rest-1.0
 func (m *TermsOfUseAgreementsAgreementItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Agreementable, requestConfiguration *TermsOfUseAgreementsAgreementItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Agreementable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

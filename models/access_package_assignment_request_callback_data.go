@@ -21,7 +21,7 @@ func NewAccessPackageAssignmentRequestCallbackData()(*AccessPackageAssignmentReq
 func CreateAccessPackageAssignmentRequestCallbackDataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessPackageAssignmentRequestCallbackData(), nil
 }
-// GetCustomExtensionStageInstanceDetail gets the customExtensionStageInstanceDetail property value. The customExtensionStageInstanceDetail property
+// GetCustomExtensionStageInstanceDetail gets the customExtensionStageInstanceDetail property value. Details for the callback.
 func (m *AccessPackageAssignmentRequestCallbackData) GetCustomExtensionStageInstanceDetail()(*string) {
     val, err := m.GetBackingStore().Get("customExtensionStageInstanceDetail")
     if err != nil {
@@ -32,7 +32,7 @@ func (m *AccessPackageAssignmentRequestCallbackData) GetCustomExtensionStageInst
     }
     return nil
 }
-// GetCustomExtensionStageInstanceId gets the customExtensionStageInstanceId property value. The customExtensionStageInstanceId property
+// GetCustomExtensionStageInstanceId gets the customExtensionStageInstanceId property value. Unique identifier of the callout to the custom extension.
 func (m *AccessPackageAssignmentRequestCallbackData) GetCustomExtensionStageInstanceId()(*string) {
     val, err := m.GetBackingStore().Get("customExtensionStageInstanceId")
     if err != nil {
@@ -88,7 +88,7 @@ func (m *AccessPackageAssignmentRequestCallbackData) GetFieldDeserializers()(map
     }
     return res
 }
-// GetStage gets the stage property value. The stage property
+// GetStage gets the stage property value. Indicates the stage at which the custom callout extension will be executed. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
 func (m *AccessPackageAssignmentRequestCallbackData) GetStage()(*AccessPackageCustomExtensionStage) {
     val, err := m.GetBackingStore().Get("stage")
     if err != nil {
@@ -99,7 +99,7 @@ func (m *AccessPackageAssignmentRequestCallbackData) GetStage()(*AccessPackageCu
     }
     return nil
 }
-// GetState gets the state property value. The state property
+// GetState gets the state property value. Allow the extension to be able to deny or cancel the request submitted by the requestor. The supported values are Denied and Canceled. This property can only be set for an assignmentRequestCreated stage.
 func (m *AccessPackageAssignmentRequestCallbackData) GetState()(*string) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -143,28 +143,28 @@ func (m *AccessPackageAssignmentRequestCallbackData) Serialize(writer i878a80d23
     }
     return nil
 }
-// SetCustomExtensionStageInstanceDetail sets the customExtensionStageInstanceDetail property value. The customExtensionStageInstanceDetail property
+// SetCustomExtensionStageInstanceDetail sets the customExtensionStageInstanceDetail property value. Details for the callback.
 func (m *AccessPackageAssignmentRequestCallbackData) SetCustomExtensionStageInstanceDetail(value *string)() {
     err := m.GetBackingStore().Set("customExtensionStageInstanceDetail", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCustomExtensionStageInstanceId sets the customExtensionStageInstanceId property value. The customExtensionStageInstanceId property
+// SetCustomExtensionStageInstanceId sets the customExtensionStageInstanceId property value. Unique identifier of the callout to the custom extension.
 func (m *AccessPackageAssignmentRequestCallbackData) SetCustomExtensionStageInstanceId(value *string)() {
     err := m.GetBackingStore().Set("customExtensionStageInstanceId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStage sets the stage property value. The stage property
+// SetStage sets the stage property value. Indicates the stage at which the custom callout extension will be executed. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
 func (m *AccessPackageAssignmentRequestCallbackData) SetStage(value *AccessPackageCustomExtensionStage)() {
     err := m.GetBackingStore().Set("stage", value)
     if err != nil {
         panic(err)
     }
 }
-// SetState sets the state property value. The state property
+// SetState sets the state property value. Allow the extension to be able to deny or cancel the request submitted by the requestor. The supported values are Denied and Canceled. This property can only be set for an assignmentRequestCreated stage.
 func (m *AccessPackageAssignmentRequestCallbackData) SetState(value *string)() {
     err := m.GetBackingStore().Set("state", value)
     if err != nil {

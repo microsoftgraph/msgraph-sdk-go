@@ -33,7 +33,7 @@ func NewCrossTenantAccessPolicyDefaultResetToSystemDefaultRequestBuilder(rawUrl 
 // Post reset any changes made to the default configuration in a cross-tenant access policy back to the system default.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationdefault-resettosystemdefault?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationdefault-resettosystemdefault?view=graph-rest-1.0
 func (m *CrossTenantAccessPolicyDefaultResetToSystemDefaultRequestBuilder) Post(ctx context.Context, requestConfiguration *CrossTenantAccessPolicyDefaultResetToSystemDefaultRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

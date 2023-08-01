@@ -73,7 +73,7 @@ func (m *ItemCalendarGroupsRequestBuilder) Count()(*ItemCalendarGroupsCountReque
 // Get get the user's calendar groups.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/user-list-calendargroups?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-list-calendargroups?view=graph-rest-1.0
 func (m *ItemCalendarGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarGroupsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarGroupCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +95,7 @@ func (m *ItemCalendarGroupsRequestBuilder) Get(ctx context.Context, requestConfi
 // Post use this API to create a new CalendarGroup.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/user-post-calendargroups?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-post-calendargroups?view=graph-rest-1.0
 func (m *ItemCalendarGroupsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarGroupable, requestConfiguration *ItemCalendarGroupsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarGroupable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

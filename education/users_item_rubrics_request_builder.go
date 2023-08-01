@@ -77,7 +77,7 @@ func (m *UsersItemRubricsRequestBuilder) Count()(*UsersItemRubricsCountRequestBu
 // Get retrieve a list of educationRubric objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationuser-list-rubrics?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationuser-list-rubrics?view=graph-rest-1.0
 func (m *UsersItemRubricsRequestBuilder) Get(ctx context.Context, requestConfiguration *UsersItemRubricsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationRubricCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *UsersItemRubricsRequestBuilder) Get(ctx context.Context, requestConfigu
 // Post create a new educationRubric object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationuser-post-rubrics?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationuser-post-rubrics?view=graph-rest-1.0
 func (m *UsersItemRubricsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationRubricable, requestConfiguration *UsersItemRubricsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationRubricable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

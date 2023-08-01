@@ -57,7 +57,7 @@ func NewManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilder(rawUrl
 // Delete deletes a deviceInstallState.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-books-deviceinstallstate-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-books-deviceinstallstate-delete?view=graph-rest-1.0
 func (m *ManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *ManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilder) Dele
 // Get read properties and relationships of the deviceInstallState object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-books-deviceinstallstate-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-books-deviceinstallstate-get?view=graph-rest-1.0
 func (m *ManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceInstallStateable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *ManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilder) Get(
 // Patch update the properties of a deviceInstallState object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-books-deviceinstallstate-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-books-deviceinstallstate-update?view=graph-rest-1.0
 func (m *ManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceInstallStateable, requestConfiguration *ManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceInstallStateable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

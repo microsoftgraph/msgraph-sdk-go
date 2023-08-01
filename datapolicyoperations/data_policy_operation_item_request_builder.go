@@ -18,7 +18,7 @@ type DataPolicyOperationItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DataPolicyOperationItemRequestBuilderGetQueryParameters retrieve the properties of a **dataPolicyOperation** object.
+// DataPolicyOperationItemRequestBuilderGetQueryParameters retrieve the properties of a dataPolicyOperation object.
 type DataPolicyOperationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,10 +70,10 @@ func (m *DataPolicyOperationItemRequestBuilder) Delete(ctx context.Context, requ
     }
     return nil
 }
-// Get retrieve the properties of a **dataPolicyOperation** object.
+// Get retrieve the properties of a dataPolicyOperation object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/datapolicyoperation-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/datapolicyoperation-get?view=graph-rest-1.0
 func (m *DataPolicyOperationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DataPolicyOperationItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DataPolicyOperationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -123,7 +123,7 @@ func (m *DataPolicyOperationItemRequestBuilder) ToDeleteRequestInformation(ctx c
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties of a **dataPolicyOperation** object.
+// ToGetRequestInformation retrieve the properties of a dataPolicyOperation object.
 func (m *DataPolicyOperationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DataPolicyOperationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

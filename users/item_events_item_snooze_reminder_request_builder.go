@@ -33,7 +33,7 @@ func NewItemEventsItemSnoozeReminderRequestBuilder(rawUrl string, requestAdapter
 // Post postpone a reminder for an event in a user calendar until a new time.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
 func (m *ItemEventsItemSnoozeReminderRequestBuilder) Post(ctx context.Context, body ItemEventsItemSnoozeReminderPostRequestBodyable, requestConfiguration *ItemEventsItemSnoozeReminderRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -70,7 +70,7 @@ func (m *SharesItemAllowedGroupsRequestBuilder) Count()(*SharesItemAllowedGroups
 // Get retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/printershare-list-allowedgroups?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/printershare-list-allowedgroups?view=graph-rest-1.0
 func (m *SharesItemAllowedGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *SharesItemAllowedGroupsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

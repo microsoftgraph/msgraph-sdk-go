@@ -59,7 +59,7 @@ func NewItemCalendarGroupsCalendarGroupItemRequestBuilder(rawUrl string, request
 // Delete delete a calendar group other than the default calendar group.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/calendargroup-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/calendargroup-delete?view=graph-rest-1.0
 func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemCalendarGroupsCalendarGroupItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,7 +78,7 @@ func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) Delete(ctx context.C
 // Get retrieve the properties and relationships of a calendar group object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/calendargroup-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/calendargroup-get?view=graph-rest-1.0
 func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarGroupsCalendarGroupItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarGroupable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -100,7 +100,7 @@ func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) Get(ctx context.Cont
 // Patch update the properties of calendargroup object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/calendargroup-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/calendargroup-update?view=graph-rest-1.0
 func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarGroupable, requestConfiguration *ItemCalendarGroupsCalendarGroupItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarGroupable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

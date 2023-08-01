@@ -11,7 +11,7 @@ import (
 type BucketsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// BucketsRequestBuilderGetQueryParameters retrieve a list of **plannerbucket** objects.
+// BucketsRequestBuilderGetQueryParameters retrieve a list of plannerbucket objects.
 type BucketsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,10 @@ func NewBucketsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 func (m *BucketsRequestBuilder) Count()(*BucketsCountRequestBuilder) {
     return NewBucketsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of **plannerbucket** objects.
+// Get retrieve a list of plannerbucket objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/planner-list-buckets?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/planner-list-buckets?view=graph-rest-1.0
 func (m *BucketsRequestBuilder) Get(ctx context.Context, requestConfiguration *BucketsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerBucketCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *BucketsRequestBuilder) Get(ctx context.Context, requestConfiguration *B
 // Post create a new plannerBucket object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/planner-post-buckets?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/planner-post-buckets?view=graph-rest-1.0
 func (m *BucketsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerBucketable, requestConfiguration *BucketsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerBucketable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +118,7 @@ func (m *BucketsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerBucketable), nil
 }
-// ToGetRequestInformation retrieve a list of **plannerbucket** objects.
+// ToGetRequestInformation retrieve a list of plannerbucket objects.
 func (m *BucketsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BucketsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
