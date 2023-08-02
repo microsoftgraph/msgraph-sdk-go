@@ -57,7 +57,7 @@ func NewItemJoinedTeamsItemScheduleOpenShiftsOpenShiftItemRequestBuilder(rawUrl 
 // Delete delete an openShift object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/openshift-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/openshift-delete?view=graph-rest-1.0
 func (m *ItemJoinedTeamsItemScheduleOpenShiftsOpenShiftItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemScheduleOpenShiftsOpenShiftItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *ItemJoinedTeamsItemScheduleOpenShiftsOpenShiftItemRequestBuilder) Delet
 // Get retrieve the properties and relationships of an openshift object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/openshift-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/openshift-get?view=graph-rest-1.0
 func (m *ItemJoinedTeamsItemScheduleOpenShiftsOpenShiftItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemScheduleOpenShiftsOpenShiftItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OpenShiftable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *ItemJoinedTeamsItemScheduleOpenShiftsOpenShiftItemRequestBuilder) Get(c
 // Patch update the properties of an openShift object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/openshift-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/openshift-update?view=graph-rest-1.0
 func (m *ItemJoinedTeamsItemScheduleOpenShiftsOpenShiftItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OpenShiftable, requestConfiguration *ItemJoinedTeamsItemScheduleOpenShiftsOpenShiftItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OpenShiftable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

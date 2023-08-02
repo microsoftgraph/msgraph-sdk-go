@@ -33,7 +33,7 @@ func NewItemManagedDevicesItemLocateDeviceRequestBuilder(rawUrl string, requestA
 // Post locate a device
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-devices-manageddevice-locatedevice?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-locatedevice?view=graph-rest-1.0
 func (m *ItemManagedDevicesItemLocateDeviceRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemManagedDevicesItemLocateDeviceRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

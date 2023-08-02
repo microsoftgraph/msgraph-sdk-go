@@ -61,7 +61,7 @@ func NewItemTermStoresItemGroupsItemSetsItemTermsTermItemRequestBuilder(rawUrl s
 // Delete delete a term object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/termstore-term-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/termstore-term-delete?view=graph-rest-1.0
 func (m *ItemTermStoresItemGroupsItemSetsItemTermsTermItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTermStoresItemGroupsItemSetsItemTermsTermItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -80,7 +80,7 @@ func (m *ItemTermStoresItemGroupsItemSetsItemTermsTermItemRequestBuilder) Delete
 // Get read the properties and relationships of a term object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/termstore-term-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/termstore-term-get?view=graph-rest-1.0
 func (m *ItemTermStoresItemGroupsItemSetsItemTermsTermItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTermStoresItemGroupsItemSetsItemTermsTermItemRequestBuilderGetRequestConfiguration)(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Termable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -102,7 +102,7 @@ func (m *ItemTermStoresItemGroupsItemSetsItemTermsTermItemRequestBuilder) Get(ct
 // Patch update the properties of a term object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/termstore-term-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/termstore-term-update?view=graph-rest-1.0
 func (m *ItemTermStoresItemGroupsItemSetsItemTermsTermItemRequestBuilder) Patch(ctx context.Context, body ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Termable, requestConfiguration *ItemTermStoresItemGroupsItemSetsItemTermsTermItemRequestBuilderPatchRequestConfiguration)(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Termable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

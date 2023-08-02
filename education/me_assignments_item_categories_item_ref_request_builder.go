@@ -40,7 +40,7 @@ func NewMeAssignmentsItemCategoriesItemRefRequestBuilder(rawUrl string, requestA
 // Delete remove an educationCategory from an educationAssignment. Only teachers can perform this operation.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationassignment-remove-category?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationassignment-remove-category?view=graph-rest-1.0
 func (m *MeAssignmentsItemCategoriesItemRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *MeAssignmentsItemCategoriesItemRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {

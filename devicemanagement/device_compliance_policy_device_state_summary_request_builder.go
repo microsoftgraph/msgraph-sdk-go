@@ -73,7 +73,7 @@ func (m *DeviceCompliancePolicyDeviceStateSummaryRequestBuilder) Delete(ctx cont
 // Get read properties and relationships of the deviceCompliancePolicyDeviceStateSummary object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-deviceconfig-devicecompliancepolicydevicestatesummary-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancepolicydevicestatesummary-get?view=graph-rest-1.0
 func (m *DeviceCompliancePolicyDeviceStateSummaryRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceCompliancePolicyDeviceStateSummaryRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCompliancePolicyDeviceStateSummaryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +95,7 @@ func (m *DeviceCompliancePolicyDeviceStateSummaryRequestBuilder) Get(ctx context
 // Patch update the properties of a deviceCompliancePolicyDeviceStateSummary object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-deviceconfig-devicecompliancepolicydevicestatesummary-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancepolicydevicestatesummary-update?view=graph-rest-1.0
 func (m *DeviceCompliancePolicyDeviceStateSummaryRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCompliancePolicyDeviceStateSummaryable, requestConfiguration *DeviceCompliancePolicyDeviceStateSummaryRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCompliancePolicyDeviceStateSummaryable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

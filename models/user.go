@@ -308,6 +308,17 @@ func (m *User) GetCreationType()(*string) {
     }
     return nil
 }
+// GetCustomSecurityAttributes gets the customSecurityAttributes property value. The customSecurityAttributes property
+func (m *User) GetCustomSecurityAttributes()(CustomSecurityAttributeValueable) {
+    val, err := m.GetBackingStore().Get("customSecurityAttributes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CustomSecurityAttributeValueable)
+    }
+    return nil
+}
 // GetDepartment gets the department property value. The name for the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
 func (m *User) GetDepartment()(*string) {
     val, err := m.GetBackingStore().Get("department")
@@ -844,6 +855,16 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         if val != nil {
             m.SetCreationType(val)
+        }
+        return nil
+    }
+    res["customSecurityAttributes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCustomSecurityAttributeValueFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCustomSecurityAttributes(val.(CustomSecurityAttributeValueable))
         }
         return nil
     }
@@ -3106,6 +3127,12 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     {
+        err = writer.WriteObjectValue("customSecurityAttributes", m.GetCustomSecurityAttributes())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("department", m.GetDepartment())
         if err != nil {
             return err
@@ -4021,6 +4048,13 @@ func (m *User) SetCreationType(value *string)() {
         panic(err)
     }
 }
+// SetCustomSecurityAttributes sets the customSecurityAttributes property value. The customSecurityAttributes property
+func (m *User) SetCustomSecurityAttributes(value CustomSecurityAttributeValueable)() {
+    err := m.GetBackingStore().Set("customSecurityAttributes", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDepartment sets the department property value. The name for the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
 func (m *User) SetDepartment(value *string)() {
     err := m.GetBackingStore().Set("department", value)
@@ -4723,6 +4757,7 @@ type Userable interface {
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetCreatedObjects()([]DirectoryObjectable)
     GetCreationType()(*string)
+    GetCustomSecurityAttributes()(CustomSecurityAttributeValueable)
     GetDepartment()(*string)
     GetDeviceEnrollmentLimit()(*int32)
     GetDeviceManagementTroubleshootingEvents()([]DeviceManagementTroubleshootingEventable)
@@ -4845,6 +4880,7 @@ type Userable interface {
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCreatedObjects(value []DirectoryObjectable)()
     SetCreationType(value *string)()
+    SetCustomSecurityAttributes(value CustomSecurityAttributeValueable)()
     SetDepartment(value *string)()
     SetDeviceEnrollmentLimit(value *int32)()
     SetDeviceManagementTroubleshootingEvents(value []DeviceManagementTroubleshootingEventable)()

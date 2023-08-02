@@ -57,7 +57,7 @@ func NewConnectionsExternalConnectionItemRequestBuilder(rawUrl string, requestAd
 // Delete deletes an externalConnection object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-delete?view=graph-rest-1.0
 func (m *ConnectionsExternalConnectionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConnectionsExternalConnectionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *ConnectionsExternalConnectionItemRequestBuilder) Delete(ctx context.Con
 // Get read the properties and relationships of an externalConnection object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-get?view=graph-rest-1.0
 func (m *ConnectionsExternalConnectionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectionsExternalConnectionItemRequestBuilderGetRequestConfiguration)(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalConnectionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -110,7 +110,7 @@ func (m *ConnectionsExternalConnectionItemRequestBuilder) Operations()(*Connecti
 // Patch update the properties of an externalConnection object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-update?view=graph-rest-1.0
 func (m *ConnectionsExternalConnectionItemRequestBuilder) Patch(ctx context.Context, body i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalConnectionable, requestConfiguration *ConnectionsExternalConnectionItemRequestBuilderPatchRequestConfiguration)(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalConnectionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

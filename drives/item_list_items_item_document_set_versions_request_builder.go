@@ -77,7 +77,7 @@ func (m *ItemListItemsItemDocumentSetVersionsRequestBuilder) Count()(*ItemListIt
 // Get get a list of the versions of a document set item in a list.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/listitem-list-documentsetversions?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/listitem-list-documentsetversions?view=graph-rest-1.0
 func (m *ItemListItemsItemDocumentSetVersionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemListItemsItemDocumentSetVersionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DocumentSetVersionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *ItemListItemsItemDocumentSetVersionsRequestBuilder) Get(ctx context.Con
 // Post create a new version of a document set item in a list.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/listitem-post-documentsetversions?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/listitem-post-documentsetversions?view=graph-rest-1.0
 func (m *ItemListItemsItemDocumentSetVersionsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DocumentSetVersionable, requestConfiguration *ItemListItemsItemDocumentSetVersionsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DocumentSetVersionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

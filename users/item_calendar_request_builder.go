@@ -64,7 +64,7 @@ func (m *ItemCalendarRequestBuilder) Events()(*ItemCalendarEventsRequestBuilder)
 // Get get the properties and relationships of a calendar object. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. There are two scenarios where an app can get another user's calendar:
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/calendar-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/calendar-get?view=graph-rest-1.0
 func (m *ItemCalendarRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Calendarable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,7 +90,7 @@ func (m *ItemCalendarRequestBuilder) GetSchedule()(*ItemCalendarGetScheduleReque
 // Patch update the properties of a calendar object. The calendar can be one for a user, or the default calendar of a Microsoft 365 group.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/calendar-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/calendar-update?view=graph-rest-1.0
 func (m *ItemCalendarRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Calendarable, requestConfiguration *ItemCalendarRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Calendarable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

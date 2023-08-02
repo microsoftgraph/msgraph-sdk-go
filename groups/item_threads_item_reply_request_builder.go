@@ -30,10 +30,10 @@ func NewItemThreadsItemReplyRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewItemThreadsItemReplyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post reply to a thread in a group conversation and add a new post to it. You can specify the parent conversation in the request, or, you can specify just the thread without the parent conversation.
+// Post add an attachment when creating a group post. This operation limits the size of the attachment you can add to under 3 MB. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource. 
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/conversationthread-reply?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/post-post-attachments?view=graph-rest-1.0
 func (m *ItemThreadsItemReplyRequestBuilder) Post(ctx context.Context, body ItemThreadsItemReplyPostRequestBodyable, requestConfiguration *ItemThreadsItemReplyRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +49,7 @@ func (m *ItemThreadsItemReplyRequestBuilder) Post(ctx context.Context, body Item
     }
     return nil
 }
-// ToPostRequestInformation reply to a thread in a group conversation and add a new post to it. You can specify the parent conversation in the request, or, you can specify just the thread without the parent conversation.
+// ToPostRequestInformation add an attachment when creating a group post. This operation limits the size of the attachment you can add to under 3 MB. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource. 
 func (m *ItemThreadsItemReplyRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemThreadsItemReplyPostRequestBodyable, requestConfiguration *ItemThreadsItemReplyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -57,7 +57,7 @@ func NewNotificationMessageTemplatesItemLocalizedNotificationMessagesLocalizedNo
 // Delete deletes a localizedNotificationMessage.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-notification-localizednotificationmessage-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-notification-localizednotificationmessage-delete?view=graph-rest-1.0
 func (m *NotificationMessageTemplatesItemLocalizedNotificationMessagesLocalizedNotificationMessageItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *NotificationMessageTemplatesItemLocalizedNotificationMessagesLocalizedNotificationMessageItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *NotificationMessageTemplatesItemLocalizedNotificationMessagesLocalizedN
 // Get read properties and relationships of the localizedNotificationMessage object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-notification-localizednotificationmessage-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-notification-localizednotificationmessage-get?view=graph-rest-1.0
 func (m *NotificationMessageTemplatesItemLocalizedNotificationMessagesLocalizedNotificationMessageItemRequestBuilder) Get(ctx context.Context, requestConfiguration *NotificationMessageTemplatesItemLocalizedNotificationMessagesLocalizedNotificationMessageItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LocalizedNotificationMessageable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *NotificationMessageTemplatesItemLocalizedNotificationMessagesLocalizedN
 // Patch update the properties of a localizedNotificationMessage object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-notification-localizednotificationmessage-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-notification-localizednotificationmessage-update?view=graph-rest-1.0
 func (m *NotificationMessageTemplatesItemLocalizedNotificationMessagesLocalizedNotificationMessageItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LocalizedNotificationMessageable, requestConfiguration *NotificationMessageTemplatesItemLocalizedNotificationMessagesLocalizedNotificationMessageItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LocalizedNotificationMessageable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -19,7 +19,7 @@ func NewAccessPackageResourceRole()(*AccessPackageResourceRole) {
 func CreateAccessPackageResourceRoleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessPackageResourceRole(), nil
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. A description for the resource role.
 func (m *AccessPackageResourceRole) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -30,7 +30,7 @@ func (m *AccessPackageResourceRole) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name of the resource role such as the role defined by the application.
 func (m *AccessPackageResourceRole) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -96,7 +96,7 @@ func (m *AccessPackageResourceRole) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetOriginId gets the originId property value. The originId property
+// GetOriginId gets the originId property value. The unique identifier of the resource role in the origin system. For a SharePoint Online site, the originId will be the sequence number of the role in the site.
 func (m *AccessPackageResourceRole) GetOriginId()(*string) {
     val, err := m.GetBackingStore().Get("originId")
     if err != nil {
@@ -107,7 +107,7 @@ func (m *AccessPackageResourceRole) GetOriginId()(*string) {
     }
     return nil
 }
-// GetOriginSystem gets the originSystem property value. The originSystem property
+// GetOriginSystem gets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
 func (m *AccessPackageResourceRole) GetOriginSystem()(*string) {
     val, err := m.GetBackingStore().Get("originSystem")
     if err != nil {
@@ -167,28 +167,28 @@ func (m *AccessPackageResourceRole) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. A description for the resource role.
 func (m *AccessPackageResourceRole) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name of the resource role such as the role defined by the application.
 func (m *AccessPackageResourceRole) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOriginId sets the originId property value. The originId property
+// SetOriginId sets the originId property value. The unique identifier of the resource role in the origin system. For a SharePoint Online site, the originId will be the sequence number of the role in the site.
 func (m *AccessPackageResourceRole) SetOriginId(value *string)() {
     err := m.GetBackingStore().Set("originId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOriginSystem sets the originSystem property value. The originSystem property
+// SetOriginSystem sets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
 func (m *AccessPackageResourceRole) SetOriginSystem(value *string)() {
     err := m.GetBackingStore().Set("originSystem", value)
     if err != nil {

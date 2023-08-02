@@ -34,7 +34,7 @@ func NewCallsItemAddLargeGalleryViewRequestBuilder(rawUrl string, requestAdapter
 // Post add the large gallery view to a call.  For details about how to identify a large gallery view participant in a roster so that you can retrieve the relevant data to subscribe to the video feed, see Identify large gallery view participants in a roster.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/call-addlargegalleryview?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/call-addlargegalleryview?view=graph-rest-1.0
 func (m *CallsItemAddLargeGalleryViewRequestBuilder) Post(ctx context.Context, body CallsItemAddLargeGalleryViewPostRequestBodyable, requestConfiguration *CallsItemAddLargeGalleryViewRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AddLargeGalleryViewOperationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

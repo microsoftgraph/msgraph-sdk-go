@@ -57,7 +57,7 @@ func NewMobileAppCategoriesMobileAppCategoryItemRequestBuilder(rawUrl string, re
 // Delete deletes a mobileAppCategory.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-apps-mobileappcategory-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-apps-mobileappcategory-delete?view=graph-rest-1.0
 func (m *MobileAppCategoriesMobileAppCategoryItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *MobileAppCategoriesMobileAppCategoryItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *MobileAppCategoriesMobileAppCategoryItemRequestBuilder) Delete(ctx cont
 // Get read properties and relationships of the mobileAppCategory object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-apps-mobileappcategory-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-apps-mobileappcategory-get?view=graph-rest-1.0
 func (m *MobileAppCategoriesMobileAppCategoryItemRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppCategoriesMobileAppCategoryItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppCategoryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *MobileAppCategoriesMobileAppCategoryItemRequestBuilder) Get(ctx context
 // Patch update the properties of a mobileAppCategory object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-apps-mobileappcategory-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-apps-mobileappcategory-update?view=graph-rest-1.0
 func (m *MobileAppCategoriesMobileAppCategoryItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppCategoryable, requestConfiguration *MobileAppCategoriesMobileAppCategoryItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppCategoryable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

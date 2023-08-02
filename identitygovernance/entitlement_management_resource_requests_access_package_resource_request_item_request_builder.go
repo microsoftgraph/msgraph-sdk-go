@@ -18,7 +18,7 @@ type EntitlementManagementResourceRequestsAccessPackageResourceRequestItemReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EntitlementManagementResourceRequestsAccessPackageResourceRequestItemRequestBuilderGetQueryParameters get resourceRequests from identityGovernance
+// EntitlementManagementResourceRequestsAccessPackageResourceRequestItemRequestBuilderGetQueryParameters represents a request to add or remove a resource to or from a catalog respectively.
 type EntitlementManagementResourceRequestsAccessPackageResourceRequestItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,7 @@ func (m *EntitlementManagementResourceRequestsAccessPackageResourceRequestItemRe
     }
     return nil
 }
-// Get get resourceRequests from identityGovernance
+// Get represents a request to add or remove a resource to or from a catalog respectively.
 func (m *EntitlementManagementResourceRequestsAccessPackageResourceRequestItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementResourceRequestsAccessPackageResourceRequestItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageResourceRequestable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -128,7 +128,7 @@ func (m *EntitlementManagementResourceRequestsAccessPackageResourceRequestItemRe
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get resourceRequests from identityGovernance
+// ToGetRequestInformation represents a request to add or remove a resource to or from a catalog respectively.
 func (m *EntitlementManagementResourceRequestsAccessPackageResourceRequestItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementResourceRequestsAccessPackageResourceRequestItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

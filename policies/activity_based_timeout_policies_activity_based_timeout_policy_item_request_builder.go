@@ -61,7 +61,7 @@ func NewActivityBasedTimeoutPoliciesActivityBasedTimeoutPolicyItemRequestBuilder
 // Delete delete an activityBasedTimeoutPolicy object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/activitybasedtimeoutpolicy-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/activitybasedtimeoutpolicy-delete?view=graph-rest-1.0
 func (m *ActivityBasedTimeoutPoliciesActivityBasedTimeoutPolicyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ActivityBasedTimeoutPoliciesActivityBasedTimeoutPolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -80,7 +80,7 @@ func (m *ActivityBasedTimeoutPoliciesActivityBasedTimeoutPolicyItemRequestBuilde
 // Get get the properties of an activityBasedTimeoutPolicy object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/activitybasedtimeoutpolicy-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/activitybasedtimeoutpolicy-get?view=graph-rest-1.0
 func (m *ActivityBasedTimeoutPoliciesActivityBasedTimeoutPolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ActivityBasedTimeoutPoliciesActivityBasedTimeoutPolicyItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ActivityBasedTimeoutPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -102,7 +102,7 @@ func (m *ActivityBasedTimeoutPoliciesActivityBasedTimeoutPolicyItemRequestBuilde
 // Patch update the properties of an activityBasedTimeoutPolicy object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/activitybasedtimeoutpolicy-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/activitybasedtimeoutpolicy-update?view=graph-rest-1.0
 func (m *ActivityBasedTimeoutPoliciesActivityBasedTimeoutPolicyItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ActivityBasedTimeoutPolicyable, requestConfiguration *ActivityBasedTimeoutPoliciesActivityBasedTimeoutPolicyItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ActivityBasedTimeoutPolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

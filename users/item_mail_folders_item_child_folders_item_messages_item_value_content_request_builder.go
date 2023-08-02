@@ -40,7 +40,7 @@ func NewItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilde
 // Get get media content for the navigation property messages from users
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-1.0
 func (m *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

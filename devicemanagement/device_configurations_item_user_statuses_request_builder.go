@@ -77,7 +77,7 @@ func (m *DeviceConfigurationsItemUserStatusesRequestBuilder) Count()(*DeviceConf
 // Get list properties and relationships of the deviceConfigurationUserStatus objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationuserstatus-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationuserstatus-list?view=graph-rest-1.0
 func (m *DeviceConfigurationsItemUserStatusesRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceConfigurationsItemUserStatusesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceConfigurationUserStatusCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *DeviceConfigurationsItemUserStatusesRequestBuilder) Get(ctx context.Con
 // Post create a new deviceConfigurationUserStatus object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationuserstatus-create?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationuserstatus-create?view=graph-rest-1.0
 func (m *DeviceConfigurationsItemUserStatusesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceConfigurationUserStatusable, requestConfiguration *DeviceConfigurationsItemUserStatusesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceConfigurationUserStatusable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

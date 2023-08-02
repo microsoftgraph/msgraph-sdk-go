@@ -31,7 +31,7 @@ func (m *AccessPackageResourceRequest) GetCatalog()(AccessPackageCatalogable) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *AccessPackageResourceRequest) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -97,7 +97,7 @@ func (m *AccessPackageResourceRequest) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetRequestType gets the requestType property value. The requestType property
+// GetRequestType gets the requestType property value. The type of the request. Use adminAdd to add a resource, if the caller is an administrator or resource owner, adminUpdate to update a resource, or adminRemove to remove a resource.
 func (m *AccessPackageResourceRequest) GetRequestType()(*AccessPackageRequestType) {
     val, err := m.GetBackingStore().Get("requestType")
     if err != nil {
@@ -119,7 +119,7 @@ func (m *AccessPackageResourceRequest) GetResource()(AccessPackageResourceable) 
     }
     return nil
 }
-// GetState gets the state property value. The state property
+// GetState gets the state property value. The outcome of whether the service was able to add the resource to the catalog.  The value is delivered if the resource was added or removed. Read-only.
 func (m *AccessPackageResourceRequest) GetState()(*AccessPackageRequestState) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -177,14 +177,14 @@ func (m *AccessPackageResourceRequest) SetCatalog(value AccessPackageCatalogable
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *AccessPackageResourceRequest) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRequestType sets the requestType property value. The requestType property
+// SetRequestType sets the requestType property value. The type of the request. Use adminAdd to add a resource, if the caller is an administrator or resource owner, adminUpdate to update a resource, or adminRemove to remove a resource.
 func (m *AccessPackageResourceRequest) SetRequestType(value *AccessPackageRequestType)() {
     err := m.GetBackingStore().Set("requestType", value)
     if err != nil {
@@ -198,7 +198,7 @@ func (m *AccessPackageResourceRequest) SetResource(value AccessPackageResourceab
         panic(err)
     }
 }
-// SetState sets the state property value. The state property
+// SetState sets the state property value. The outcome of whether the service was able to add the resource to the catalog.  The value is delivered if the resource was added or removed. Read-only.
 func (m *AccessPackageResourceRequest) SetState(value *AccessPackageRequestState)() {
     err := m.GetBackingStore().Set("state", value)
     if err != nil {

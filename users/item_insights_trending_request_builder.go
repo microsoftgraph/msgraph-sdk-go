@@ -77,7 +77,7 @@ func (m *ItemInsightsTrendingRequestBuilder) Count()(*ItemInsightsTrendingCountR
 // Get calculated insight that includes a list of documents trending around the user.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/insights-list-trending?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/insights-list-trending?view=graph-rest-1.0
 func (m *ItemInsightsTrendingRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemInsightsTrendingRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TrendingCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

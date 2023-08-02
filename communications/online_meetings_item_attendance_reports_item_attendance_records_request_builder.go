@@ -77,7 +77,7 @@ func (m *OnlineMeetingsItemAttendanceReportsItemAttendanceRecordsRequestBuilder)
 // Get get a list of attendanceRecord objects and their properties.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
 func (m *OnlineMeetingsItemAttendanceReportsItemAttendanceRecordsRequestBuilder) Get(ctx context.Context, requestConfiguration *OnlineMeetingsItemAttendanceReportsItemAttendanceRecordsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttendanceRecordCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

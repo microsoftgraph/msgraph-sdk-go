@@ -77,7 +77,7 @@ func (m *ItemTodoListsItemTasksItemChecklistItemsRequestBuilder) Count()(*ItemTo
 // Get get the checklistItem resources associated to a todoTask from the checklistItems navigation property.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/todotask-list-checklistitems?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/todotask-list-checklistitems?view=graph-rest-1.0
 func (m *ItemTodoListsItemTasksItemChecklistItemsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemChecklistItemsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChecklistItemCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *ItemTodoListsItemTasksItemChecklistItemsRequestBuilder) Get(ctx context
 // Post create a new checklistItem object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/todotask-post-checklistitems?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/todotask-post-checklistitems?view=graph-rest-1.0
 func (m *ItemTodoListsItemTasksItemChecklistItemsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChecklistItemable, requestConfiguration *ItemTodoListsItemTasksItemChecklistItemsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChecklistItemable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -70,7 +70,7 @@ func (m *ThreatIntelligenceHostsItemCookiesRequestBuilder) Count()(*ThreatIntell
 // Get get a list of hostCookie resources.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-host-list-cookies?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-host-list-cookies?view=graph-rest-1.0
 func (m *ThreatIntelligenceHostsItemCookiesRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceHostsItemCookiesRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.HostCookieCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

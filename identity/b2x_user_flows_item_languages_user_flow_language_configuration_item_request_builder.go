@@ -18,7 +18,7 @@ type B2xUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilderDel
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// B2xUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilderGetQueryParameters read the properties and relationships of a userFlowLanguageConfiguration object. These objects represent a language available in a user flow. **Note:** Language customization is enabled by default in Azure Active Directory user flows.
+// B2xUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilderGetQueryParameters read the properties and relationships of a userFlowLanguageConfiguration object. These objects represent a language available in a user flow. Note: Language customization is enabled by default in Azure Active Directory user flows.
 type B2xUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,10 +74,10 @@ func (m *B2xUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilde
     }
     return nil
 }
-// Get read the properties and relationships of a userFlowLanguageConfiguration object. These objects represent a language available in a user flow. **Note:** Language customization is enabled by default in Azure Active Directory user flows.
+// Get read the properties and relationships of a userFlowLanguageConfiguration object. These objects represent a language available in a user flow. Note: Language customization is enabled by default in Azure Active Directory user flows.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/userflowlanguageconfiguration-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/userflowlanguageconfiguration-get?view=graph-rest-1.0
 func (m *B2xUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *B2xUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserFlowLanguageConfigurationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -131,7 +131,7 @@ func (m *B2xUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilde
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a userFlowLanguageConfiguration object. These objects represent a language available in a user flow. **Note:** Language customization is enabled by default in Azure Active Directory user flows.
+// ToGetRequestInformation read the properties and relationships of a userFlowLanguageConfiguration object. These objects represent a language available in a user flow. Note: Language customization is enabled by default in Azure Active Directory user flows.
 func (m *B2xUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *B2xUserFlowsItemLanguagesUserFlowLanguageConfigurationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -61,7 +61,7 @@ func NewFeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder(rawUrl stri
 // Delete delete a featureRolloutPolicy object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/featurerolloutpolicy-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/featurerolloutpolicy-delete?view=graph-rest-1.0
 func (m *FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -80,7 +80,7 @@ func (m *FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder) Delete(ct
 // Get retrieve the properties and relationships of a featureRolloutPolicy object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/featurerolloutpolicy-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/featurerolloutpolicy-get?view=graph-rest-1.0
 func (m *FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FeatureRolloutPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -102,7 +102,7 @@ func (m *FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder) Get(ctx c
 // Patch update the properties of featureRolloutPolicy object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/featurerolloutpolicy-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/featurerolloutpolicy-update?view=graph-rest-1.0
 func (m *FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FeatureRolloutPolicyable, requestConfiguration *FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FeatureRolloutPolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

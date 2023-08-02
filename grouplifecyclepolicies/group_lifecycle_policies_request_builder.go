@@ -77,7 +77,7 @@ func (m *GroupLifecyclePoliciesRequestBuilder) Count()(*CountRequestBuilder) {
 // Get list all the groupLifecyclePolicies.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/grouplifecyclepolicy-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/grouplifecyclepolicy-list?view=graph-rest-1.0
 func (m *GroupLifecyclePoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *GroupLifecyclePoliciesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupLifecyclePolicyCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *GroupLifecyclePoliciesRequestBuilder) Get(ctx context.Context, requestC
 // Post creates a new groupLifecyclePolicy.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/grouplifecyclepolicy-post-grouplifecyclepolicies?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/grouplifecyclepolicy-post-grouplifecyclepolicies?view=graph-rest-1.0
 func (m *GroupLifecyclePoliciesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupLifecyclePolicyable, requestConfiguration *GroupLifecyclePoliciesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupLifecyclePolicyable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

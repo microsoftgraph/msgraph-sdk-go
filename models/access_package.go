@@ -31,7 +31,7 @@ func (m *AccessPackage) GetAccessPackagesIncompatibleWith()([]AccessPackageable)
     }
     return nil
 }
-// GetAssignmentPolicies gets the assignmentPolicies property value. The assignmentPolicies property
+// GetAssignmentPolicies gets the assignmentPolicies property value. Read-only. Nullable. Supports $expand.
 func (m *AccessPackage) GetAssignmentPolicies()([]AccessPackageAssignmentPolicyable) {
     val, err := m.GetBackingStore().Get("assignmentPolicies")
     if err != nil {
@@ -42,7 +42,7 @@ func (m *AccessPackage) GetAssignmentPolicies()([]AccessPackageAssignmentPolicya
     }
     return nil
 }
-// GetCatalog gets the catalog property value. The catalog property
+// GetCatalog gets the catalog property value. Required when creating the access package. Read-only. Nullable.
 func (m *AccessPackage) GetCatalog()(AccessPackageCatalogable) {
     val, err := m.GetBackingStore().Get("catalog")
     if err != nil {
@@ -75,7 +75,7 @@ func (m *AccessPackage) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The display name of the access package. Supports $filter (eq, contains).
+// GetDisplayName gets the displayName property value. Required. The display name of the access package. Supports $filter (eq, contains).
 func (m *AccessPackage) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -275,7 +275,7 @@ func (m *AccessPackage) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     }
     return nil
 }
-// GetResourceRoleScopes gets the resourceRoleScopes property value. The resourceRoleScopes property
+// GetResourceRoleScopes gets the resourceRoleScopes property value. The resource roles and scopes in this access package.
 func (m *AccessPackage) GetResourceRoleScopes()([]AccessPackageResourceRoleScopeable) {
     val, err := m.GetBackingStore().Get("resourceRoleScopes")
     if err != nil {
@@ -397,14 +397,14 @@ func (m *AccessPackage) SetAccessPackagesIncompatibleWith(value []AccessPackagea
         panic(err)
     }
 }
-// SetAssignmentPolicies sets the assignmentPolicies property value. The assignmentPolicies property
+// SetAssignmentPolicies sets the assignmentPolicies property value. Read-only. Nullable. Supports $expand.
 func (m *AccessPackage) SetAssignmentPolicies(value []AccessPackageAssignmentPolicyable)() {
     err := m.GetBackingStore().Set("assignmentPolicies", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCatalog sets the catalog property value. The catalog property
+// SetCatalog sets the catalog property value. Required when creating the access package. Read-only. Nullable.
 func (m *AccessPackage) SetCatalog(value AccessPackageCatalogable)() {
     err := m.GetBackingStore().Set("catalog", value)
     if err != nil {
@@ -425,7 +425,7 @@ func (m *AccessPackage) SetDescription(value *string)() {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The display name of the access package. Supports $filter (eq, contains).
+// SetDisplayName sets the displayName property value. Required. The display name of the access package. Supports $filter (eq, contains).
 func (m *AccessPackage) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
@@ -460,7 +460,7 @@ func (m *AccessPackage) SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad
         panic(err)
     }
 }
-// SetResourceRoleScopes sets the resourceRoleScopes property value. The resourceRoleScopes property
+// SetResourceRoleScopes sets the resourceRoleScopes property value. The resource roles and scopes in this access package.
 func (m *AccessPackage) SetResourceRoleScopes(value []AccessPackageResourceRoleScopeable)() {
     err := m.GetBackingStore().Set("resourceRoleScopes", value)
     if err != nil {

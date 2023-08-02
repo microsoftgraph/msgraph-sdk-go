@@ -33,7 +33,7 @@ func NewItemTranslateExchangeIdsRequestBuilder(rawUrl string, requestAdapter i2a
 // Post translate identifiers of Outlook-related resources between formats.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/user-translateexchangeids?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-translateexchangeids?view=graph-rest-1.0
 func (m *ItemTranslateExchangeIdsRequestBuilder) Post(ctx context.Context, body ItemTranslateExchangeIdsPostRequestBodyable, requestConfiguration *ItemTranslateExchangeIdsRequestBuilderPostRequestConfiguration)(ItemTranslateExchangeIdsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

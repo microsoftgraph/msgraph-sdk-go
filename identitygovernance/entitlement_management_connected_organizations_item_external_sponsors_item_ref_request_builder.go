@@ -40,7 +40,7 @@ func NewEntitlementManagementConnectedOrganizationsItemExternalSponsorsItemRefRe
 // Delete remove a user or a group from the connected organization's external sponsors. The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/connectedorganization-delete-externalsponsors?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/connectedorganization-delete-externalsponsors?view=graph-rest-1.0
 func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsItemRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *EntitlementManagementConnectedOrganizationsItemExternalSponsorsItemRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {

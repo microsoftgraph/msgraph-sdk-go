@@ -57,7 +57,7 @@ func NewGroupSettingItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 // Delete delete a tenant-level or group-specific groupSetting object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/groupsetting-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/groupsetting-delete?view=graph-rest-1.0
 func (m *GroupSettingItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *GroupSettingItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *GroupSettingItemRequestBuilder) Delete(ctx context.Context, requestConf
 // Get retrieve the properties of a specific group setting object. The setting can be a tenant-level or group-specific setting.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/groupsetting-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/groupsetting-get?view=graph-rest-1.0
 func (m *GroupSettingItemRequestBuilder) Get(ctx context.Context, requestConfiguration *GroupSettingItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupSettingable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *GroupSettingItemRequestBuilder) Get(ctx context.Context, requestConfigu
 // Patch update the properties of a groupSetting object for tenant-wide group settings or a specific group setting.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/groupsetting-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/groupsetting-update?view=graph-rest-1.0
 func (m *GroupSettingItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupSettingable, requestConfiguration *GroupSettingItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupSettingable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

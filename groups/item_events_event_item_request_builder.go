@@ -75,7 +75,7 @@ func (m *ItemEventsEventItemRequestBuilder) Decline()(*ItemEventsItemDeclineRequ
 // Delete delete an event object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/group-delete-event?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/group-delete-event?view=graph-rest-1.0
 func (m *ItemEventsEventItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemEventsEventItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -106,7 +106,7 @@ func (m *ItemEventsEventItemRequestBuilder) Forward()(*ItemEventsItemForwardRequ
 // Get get an event object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/group-get-event?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/group-get-event?view=graph-rest-1.0
 func (m *ItemEventsEventItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemEventsEventItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Eventable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

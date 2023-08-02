@@ -81,7 +81,7 @@ func (m *DirectoryRoleAssignmentSchedulesRequestBuilder) FilterByCurrentUserWith
 // Get get the schedules for active role assignment operations.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/rbacapplication-list-roleassignmentschedules?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/rbacapplication-list-roleassignmentschedules?view=graph-rest-1.0
 func (m *DirectoryRoleAssignmentSchedulesRequestBuilder) Get(ctx context.Context, requestConfiguration *DirectoryRoleAssignmentSchedulesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleAssignmentScheduleCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

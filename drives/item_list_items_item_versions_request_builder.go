@@ -77,7 +77,7 @@ func (m *ItemListItemsItemVersionsRequestBuilder) Count()(*ItemListItemsItemVers
 // Get sharePoint can be configured to retain the history for list items. Previous versions may be retained for a finite period of time depending on admin settings which may be unique per user or location.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/listitem-list-versions?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/listitem-list-versions?view=graph-rest-1.0
 func (m *ItemListItemsItemVersionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemListItemsItemVersionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemVersionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

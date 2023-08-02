@@ -33,7 +33,7 @@ func NewDeviceEnrollmentConfigurationsItemSetPriorityRequestBuilder(rawUrl strin
 // Post not yet documented
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-onboarding-deviceenrollmentconfiguration-setpriority?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentconfiguration-setpriority?view=graph-rest-1.0
 func (m *DeviceEnrollmentConfigurationsItemSetPriorityRequestBuilder) Post(ctx context.Context, body DeviceEnrollmentConfigurationsItemSetPriorityPostRequestBodyable, requestConfiguration *DeviceEnrollmentConfigurationsItemSetPriorityRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

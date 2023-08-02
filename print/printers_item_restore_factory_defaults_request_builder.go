@@ -33,7 +33,7 @@ func NewPrintersItemRestoreFactoryDefaultsRequestBuilder(rawUrl string, requestA
 // Post restore a printer's default settings to the values specified by the manufacturer.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/printer-restorefactorydefaults?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/printer-restorefactorydefaults?view=graph-rest-1.0
 func (m *PrintersItemRestoreFactoryDefaultsRequestBuilder) Post(ctx context.Context, requestConfiguration *PrintersItemRestoreFactoryDefaultsRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -33,7 +33,7 @@ func NewManagedDevicesItemDisableLostModeRequestBuilder(rawUrl string, requestAd
 // Post disable lost mode
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-devices-manageddevice-disablelostmode?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-disablelostmode?view=graph-rest-1.0
 func (m *ManagedDevicesItemDisableLostModeRequestBuilder) Post(ctx context.Context, requestConfiguration *ManagedDevicesItemDisableLostModeRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

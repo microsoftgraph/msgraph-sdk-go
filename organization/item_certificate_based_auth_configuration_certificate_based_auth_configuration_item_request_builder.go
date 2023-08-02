@@ -50,7 +50,7 @@ func NewItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationIt
 // Delete delete a certificateBasedAuthConfiguration object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/certificatebasedauthconfiguration-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/certificatebasedauthconfiguration-delete?view=graph-rest-1.0
 func (m *ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -69,7 +69,7 @@ func (m *ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationI
 // Get get the properties of a certificateBasedAuthConfiguration object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/certificatebasedauthconfiguration-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/certificatebasedauthconfiguration-get?view=graph-rest-1.0
 func (m *ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CertificateBasedAuthConfigurationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -57,7 +57,7 @@ func NewTriggersRetentionEventsRetentionEventItemRequestBuilder(rawUrl string, r
 // Delete delete a retentionEvent object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-retentionevent-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-retentionevent-delete?view=graph-rest-1.0
 func (m *TriggersRetentionEventsRetentionEventItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TriggersRetentionEventsRetentionEventItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *TriggersRetentionEventsRetentionEventItemRequestBuilder) Delete(ctx con
 // Get read the properties and relationships of a retentionEvent object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-retentionevent-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-retentionevent-get?view=graph-rest-1.0
 func (m *TriggersRetentionEventsRetentionEventItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TriggersRetentionEventsRetentionEventItemRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.RetentionEventable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

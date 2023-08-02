@@ -11,7 +11,7 @@ import (
 type EntitlementManagementResourceRequestsItemResourceRolesItemResourceScopesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementResourceRequestsItemResourceRolesItemResourceScopesRequestBuilderGetQueryParameters get scopes from identityGovernance
+// EntitlementManagementResourceRequestsItemResourceRolesItemResourceScopesRequestBuilderGetQueryParameters read-only. Nullable. Supports $expand.
 type EntitlementManagementResourceRequestsItemResourceRolesItemResourceScopesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewEntitlementManagementResourceRequestsItemResourceRolesItemResourceScopes
 func (m *EntitlementManagementResourceRequestsItemResourceRolesItemResourceScopesRequestBuilder) Count()(*EntitlementManagementResourceRequestsItemResourceRolesItemResourceScopesCountRequestBuilder) {
     return NewEntitlementManagementResourceRequestsItemResourceRolesItemResourceScopesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get scopes from identityGovernance
+// Get read-only. Nullable. Supports $expand.
 func (m *EntitlementManagementResourceRequestsItemResourceRolesItemResourceScopesRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementResourceRequestsItemResourceRolesItemResourceScopesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageResourceScopeCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *EntitlementManagementResourceRequestsItemResourceRolesItemResourceScope
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageResourceScopeable), nil
 }
-// ToGetRequestInformation get scopes from identityGovernance
+// ToGetRequestInformation read-only. Nullable. Supports $expand.
 func (m *EntitlementManagementResourceRequestsItemResourceRolesItemResourceScopesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementResourceRequestsItemResourceRolesItemResourceScopesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

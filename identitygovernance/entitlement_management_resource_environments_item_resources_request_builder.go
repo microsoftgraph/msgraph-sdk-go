@@ -11,7 +11,7 @@ import (
 type EntitlementManagementResourceEnvironmentsItemResourcesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementResourceEnvironmentsItemResourcesRequestBuilderGetQueryParameters get resources from identityGovernance
+// EntitlementManagementResourceEnvironmentsItemResourcesRequestBuilderGetQueryParameters read-only. Required.
 type EntitlementManagementResourceEnvironmentsItemResourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewEntitlementManagementResourceEnvironmentsItemResourcesRequestBuilder(raw
 func (m *EntitlementManagementResourceEnvironmentsItemResourcesRequestBuilder) Count()(*EntitlementManagementResourceEnvironmentsItemResourcesCountRequestBuilder) {
     return NewEntitlementManagementResourceEnvironmentsItemResourcesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get resources from identityGovernance
+// Get read-only. Required.
 func (m *EntitlementManagementResourceEnvironmentsItemResourcesRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementResourceEnvironmentsItemResourcesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageResourceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *EntitlementManagementResourceEnvironmentsItemResourcesRequestBuilder) P
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageResourceable), nil
 }
-// ToGetRequestInformation get resources from identityGovernance
+// ToGetRequestInformation read-only. Required.
 func (m *EntitlementManagementResourceEnvironmentsItemResourcesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementResourceEnvironmentsItemResourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

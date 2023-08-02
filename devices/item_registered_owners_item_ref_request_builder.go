@@ -40,7 +40,7 @@ func NewItemRegisteredOwnersItemRefRequestBuilder(rawUrl string, requestAdapter 
 // Delete remove a user as a registered owner of the device.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/device-delete-registeredowners?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/device-delete-registeredowners?view=graph-rest-1.0
 func (m *ItemRegisteredOwnersItemRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemRegisteredOwnersItemRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {

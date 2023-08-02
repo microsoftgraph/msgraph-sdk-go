@@ -57,7 +57,7 @@ func NewItemChatsItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilder(rawUr
 // Delete unpin a message from a chat.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/chat-delete-pinnedmessages?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/chat-delete-pinnedmessages?view=graph-rest-1.0
 func (m *ItemChatsItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemChatsItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {

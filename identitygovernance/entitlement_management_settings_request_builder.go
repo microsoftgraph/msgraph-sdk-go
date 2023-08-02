@@ -73,7 +73,7 @@ func (m *EntitlementManagementSettingsRequestBuilder) Delete(ctx context.Context
 // Get retrieve the properties of an entitlementManagementSettings object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/entitlementmanagementsettings-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/entitlementmanagementsettings-get?view=graph-rest-1.0
 func (m *EntitlementManagementSettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementSettingsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EntitlementManagementSettingsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +95,7 @@ func (m *EntitlementManagementSettingsRequestBuilder) Get(ctx context.Context, r
 // Patch update an existing entitlementManagementSettings object to change one or more of its properties.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/entitlementmanagementsettings-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/entitlementmanagementsettings-update?view=graph-rest-1.0
 func (m *EntitlementManagementSettingsRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EntitlementManagementSettingsable, requestConfiguration *EntitlementManagementSettingsRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EntitlementManagementSettingsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

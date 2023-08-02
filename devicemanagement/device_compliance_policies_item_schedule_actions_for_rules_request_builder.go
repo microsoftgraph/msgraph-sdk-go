@@ -33,7 +33,7 @@ func NewDeviceCompliancePoliciesItemScheduleActionsForRulesRequestBuilder(rawUrl
 // Post not yet documented
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-deviceconfig-devicecompliancepolicy-scheduleactionsforrules?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancepolicy-scheduleactionsforrules?view=graph-rest-1.0
 func (m *DeviceCompliancePoliciesItemScheduleActionsForRulesRequestBuilder) Post(ctx context.Context, body DeviceCompliancePoliciesItemScheduleActionsForRulesPostRequestBodyable, requestConfiguration *DeviceCompliancePoliciesItemScheduleActionsForRulesRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

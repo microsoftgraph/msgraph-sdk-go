@@ -73,7 +73,7 @@ func (m *ChatItemRequestBuilder) Delete(ctx context.Context, requestConfiguratio
 // Get retrieve a single chat (without its messages). This method supports federation. To access a chat, at least one chat member must belong to the tenant the request initiated from.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/chat-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/chat-get?view=graph-rest-1.0
 func (m *ChatItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ChatItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Chatable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -123,7 +123,7 @@ func (m *ChatItemRequestBuilder) Messages()(*ItemMessagesRequestBuilder) {
 // Patch update the properties of a chat object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/chat-patch?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/chat-patch?view=graph-rest-1.0
 func (m *ChatItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Chatable, requestConfiguration *ChatItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Chatable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -141,6 +141,10 @@ func (m *ChatItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c6
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Chatable), nil
+}
+// PermissionGrants provides operations to manage the permissionGrants property of the microsoft.graph.chat entity.
+func (m *ChatItemRequestBuilder) PermissionGrants()(*ItemPermissionGrantsRequestBuilder) {
+    return NewItemPermissionGrantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // PinnedMessages provides operations to manage the pinnedMessages property of the microsoft.graph.chat entity.
 func (m *ChatItemRequestBuilder) PinnedMessages()(*ItemPinnedMessagesRequestBuilder) {

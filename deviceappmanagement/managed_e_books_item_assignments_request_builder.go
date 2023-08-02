@@ -77,7 +77,7 @@ func (m *ManagedEBooksItemAssignmentsRequestBuilder) Count()(*ManagedEBooksItemA
 // Get list properties and relationships of the iosVppEBookAssignment objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-books-iosvppebookassignment-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-books-iosvppebookassignment-list?view=graph-rest-1.0
 func (m *ManagedEBooksItemAssignmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedEBooksItemAssignmentsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedEBookAssignmentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *ManagedEBooksItemAssignmentsRequestBuilder) Get(ctx context.Context, re
 // Post create a new managedEBookAssignment object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-books-managedebookassignment-create?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-books-managedebookassignment-create?view=graph-rest-1.0
 func (m *ManagedEBooksItemAssignmentsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedEBookAssignmentable, requestConfiguration *ManagedEBooksItemAssignmentsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedEBookAssignmentable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

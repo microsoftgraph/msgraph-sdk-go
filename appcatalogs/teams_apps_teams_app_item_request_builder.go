@@ -61,7 +61,7 @@ func NewTeamsAppsTeamsAppItemRequestBuilder(rawUrl string, requestAdapter i2ae41
 // Delete delete teamsApp
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/teamsapp-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/teamsapp-delete?view=graph-rest-1.0
 func (m *TeamsAppsTeamsAppItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TeamsAppsTeamsAppItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {

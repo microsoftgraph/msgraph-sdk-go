@@ -83,7 +83,7 @@ func (m *IdentityProvidersRequestBuilder) Count()(*CountRequestBuilder) {
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/identityprovider-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/identityprovider-list?view=graph-rest-1.0
 func (m *IdentityProvidersRequestBuilder) Get(ctx context.Context, requestConfiguration *IdentityProvidersRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProviderCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -106,7 +106,7 @@ func (m *IdentityProvidersRequestBuilder) Get(ctx context.Context, requestConfig
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/identityprovider-post-identityproviders?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/identityprovider-post-identityproviders?view=graph-rest-1.0
 func (m *IdentityProvidersRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProviderable, requestConfiguration *IdentityProvidersRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProviderable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

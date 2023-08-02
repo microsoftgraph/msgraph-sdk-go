@@ -81,7 +81,7 @@ func (m *IdentityProvidersRequestBuilder) Count()(*IdentityProvidersCountRequest
 // Get get a collection of identity provider resources that are configured for a tenant, and that are derived from identityProviderBase. For an Azure AD tenant, the providers can be socialIdentityProviders or builtinIdentityProviders objects. For an Azure AD B2C, the providers can be socialIdentityProvider, or appleManagedIdentityProvider objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/identitycontainer-list-identityproviders?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/identitycontainer-list-identityproviders?view=graph-rest-1.0
 func (m *IdentityProvidersRequestBuilder) Get(ctx context.Context, requestConfiguration *IdentityProvidersRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProviderBaseCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -103,7 +103,7 @@ func (m *IdentityProvidersRequestBuilder) Get(ctx context.Context, requestConfig
 // Post create an identity provider object that is of the type specified in the request body. Among the types of providers derived from identityProviderBase, you can currently create a socialIdentityProvider resource in Azure AD. In Azure AD B2C, this operation can currently create a socialIdentityProvider, or an appleManagedIdentityProvider resource.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/identitycontainer-post-identityproviders?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/identitycontainer-post-identityproviders?view=graph-rest-1.0
 func (m *IdentityProvidersRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProviderBaseable, requestConfiguration *IdentityProvidersRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProviderBaseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

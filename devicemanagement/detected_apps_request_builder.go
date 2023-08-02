@@ -77,7 +77,7 @@ func (m *DetectedAppsRequestBuilder) Count()(*DetectedAppsCountRequestBuilder) {
 // Get list properties and relationships of the detectedApp objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-devices-detectedapp-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-detectedapp-list?view=graph-rest-1.0
 func (m *DetectedAppsRequestBuilder) Get(ctx context.Context, requestConfiguration *DetectedAppsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DetectedAppCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *DetectedAppsRequestBuilder) Get(ctx context.Context, requestConfigurati
 // Post create a new detectedApp object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-devices-detectedapp-create?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-detectedapp-create?view=graph-rest-1.0
 func (m *DetectedAppsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DetectedAppable, requestConfiguration *DetectedAppsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DetectedAppable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

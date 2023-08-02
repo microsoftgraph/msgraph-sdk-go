@@ -33,7 +33,7 @@ func NewItemSynchronizationAcquireAccessTokenRequestBuilder(rawUrl string, reque
 // Post acquire an OAuth access token to authorize the Azure AD provisioning service to provision users into an application.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/synchronization-synchronization-acquireaccesstoken?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/synchronization-synchronization-acquireaccesstoken?view=graph-rest-1.0
 func (m *ItemSynchronizationAcquireAccessTokenRequestBuilder) Post(ctx context.Context, body ItemSynchronizationAcquireAccessTokenPostRequestBodyable, requestConfiguration *ItemSynchronizationAcquireAccessTokenRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

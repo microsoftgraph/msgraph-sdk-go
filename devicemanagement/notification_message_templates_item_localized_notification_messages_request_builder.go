@@ -77,7 +77,7 @@ func (m *NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBui
 // Get list properties and relationships of the localizedNotificationMessage objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-notification-localizednotificationmessage-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-notification-localizednotificationmessage-list?view=graph-rest-1.0
 func (m *NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilder) Get(ctx context.Context, requestConfiguration *NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LocalizedNotificationMessageCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBui
 // Post create a new localizedNotificationMessage object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-notification-localizednotificationmessage-create?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-notification-localizednotificationmessage-create?view=graph-rest-1.0
 func (m *NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LocalizedNotificationMessageable, requestConfiguration *NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LocalizedNotificationMessageable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

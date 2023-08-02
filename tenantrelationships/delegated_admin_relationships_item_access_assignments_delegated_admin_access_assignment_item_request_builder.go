@@ -57,7 +57,7 @@ func NewDelegatedAdminRelationshipsItemAccessAssignmentsDelegatedAdminAccessAssi
 // Delete delete a delegatedAdminAccessAssignment object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/delegatedadminaccessassignment-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/delegatedadminaccessassignment-delete?view=graph-rest-1.0
 func (m *DelegatedAdminRelationshipsItemAccessAssignmentsDelegatedAdminAccessAssignmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DelegatedAdminRelationshipsItemAccessAssignmentsDelegatedAdminAccessAssignmentItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *DelegatedAdminRelationshipsItemAccessAssignmentsDelegatedAdminAccessAss
 // Get read the properties of a delegatedAdminAccessAssignment object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/delegatedadminaccessassignment-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/delegatedadminaccessassignment-get?view=graph-rest-1.0
 func (m *DelegatedAdminRelationshipsItemAccessAssignmentsDelegatedAdminAccessAssignmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DelegatedAdminRelationshipsItemAccessAssignmentsDelegatedAdminAccessAssignmentItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DelegatedAdminAccessAssignmentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *DelegatedAdminRelationshipsItemAccessAssignmentsDelegatedAdminAccessAss
 // Patch update the properties of a delegatedAdminAccessAssignment object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/delegatedadminaccessassignment-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/delegatedadminaccessassignment-update?view=graph-rest-1.0
 func (m *DelegatedAdminRelationshipsItemAccessAssignmentsDelegatedAdminAccessAssignmentItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DelegatedAdminAccessAssignmentable, requestConfiguration *DelegatedAdminRelationshipsItemAccessAssignmentsDelegatedAdminAccessAssignmentItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DelegatedAdminAccessAssignmentable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

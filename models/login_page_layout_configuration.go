@@ -83,7 +83,7 @@ func (m *LoginPageLayoutConfiguration) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetIsFooterShown gets the isFooterShown property value. The isFooterShown property
+// GetIsFooterShown gets the isFooterShown property value. Option to show the footer on the sign-in page.
 func (m *LoginPageLayoutConfiguration) GetIsFooterShown()(*bool) {
     val, err := m.GetBackingStore().Get("isFooterShown")
     if err != nil {
@@ -94,7 +94,7 @@ func (m *LoginPageLayoutConfiguration) GetIsFooterShown()(*bool) {
     }
     return nil
 }
-// GetIsHeaderShown gets the isHeaderShown property value. The isHeaderShown property
+// GetIsHeaderShown gets the isHeaderShown property value. Option to show the header on the sign-in page.
 func (m *LoginPageLayoutConfiguration) GetIsHeaderShown()(*bool) {
     val, err := m.GetBackingStore().Get("isHeaderShown")
     if err != nil {
@@ -105,7 +105,7 @@ func (m *LoginPageLayoutConfiguration) GetIsHeaderShown()(*bool) {
     }
     return nil
 }
-// GetLayoutTemplateType gets the layoutTemplateType property value. The layoutTemplateType property
+// GetLayoutTemplateType gets the layoutTemplateType property value. Represents the layout template to be displayed on the login page for a tenant. The possible values are  default - Represents the default Microsoft layout with a centered lightbox.  verticalSplit - Represents a layout with a backgound on the left side and a full-height lightbox to the right.  unknownFutureValue - Evolvable enumeration sentinel value. Do not use.
 func (m *LoginPageLayoutConfiguration) GetLayoutTemplateType()(*LayoutTemplateType) {
     val, err := m.GetBackingStore().Get("layoutTemplateType")
     if err != nil {
@@ -173,21 +173,21 @@ func (m *LoginPageLayoutConfiguration) SetAdditionalData(value map[string]any)()
 func (m *LoginPageLayoutConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIsFooterShown sets the isFooterShown property value. The isFooterShown property
+// SetIsFooterShown sets the isFooterShown property value. Option to show the footer on the sign-in page.
 func (m *LoginPageLayoutConfiguration) SetIsFooterShown(value *bool)() {
     err := m.GetBackingStore().Set("isFooterShown", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsHeaderShown sets the isHeaderShown property value. The isHeaderShown property
+// SetIsHeaderShown sets the isHeaderShown property value. Option to show the header on the sign-in page.
 func (m *LoginPageLayoutConfiguration) SetIsHeaderShown(value *bool)() {
     err := m.GetBackingStore().Set("isHeaderShown", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLayoutTemplateType sets the layoutTemplateType property value. The layoutTemplateType property
+// SetLayoutTemplateType sets the layoutTemplateType property value. Represents the layout template to be displayed on the login page for a tenant. The possible values are  default - Represents the default Microsoft layout with a centered lightbox.  verticalSplit - Represents a layout with a backgound on the left side and a full-height lightbox to the right.  unknownFutureValue - Evolvable enumeration sentinel value. Do not use.
 func (m *LoginPageLayoutConfiguration) SetLayoutTemplateType(value *LayoutTemplateType)() {
     err := m.GetBackingStore().Set("layoutTemplateType", value)
     if err != nil {

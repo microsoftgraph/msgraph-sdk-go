@@ -77,7 +77,7 @@ func (m *MobileAppTroubleshootingEventsRequestBuilder) Count()(*MobileAppTrouble
 // Get list properties and relationships of the mobileAppTroubleshootingEvent objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-devices-mobileapptroubleshootingevent-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-mobileapptroubleshootingevent-list?view=graph-rest-1.0
 func (m *MobileAppTroubleshootingEventsRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppTroubleshootingEventsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppTroubleshootingEventCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *MobileAppTroubleshootingEventsRequestBuilder) Get(ctx context.Context, 
 // Post create a new mobileAppTroubleshootingEvent object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-devices-mobileapptroubleshootingevent-create?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-mobileapptroubleshootingevent-create?view=graph-rest-1.0
 func (m *MobileAppTroubleshootingEventsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppTroubleshootingEventable, requestConfiguration *MobileAppTroubleshootingEventsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppTroubleshootingEventable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

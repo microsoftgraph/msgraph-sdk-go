@@ -85,6 +85,8 @@ func CreateAlertEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
                         return NewRegistryKeyEvidence(), nil
                     case "#microsoft.graph.security.registryValueEvidence":
                         return NewRegistryValueEvidence(), nil
+                    case "#microsoft.graph.security.securityGroupEvidence":
+                        return NewSecurityGroupEvidence(), nil
                     case "#microsoft.graph.security.urlEvidence":
                         return NewUrlEvidence(), nil
                     case "#microsoft.graph.security.userEvidence":

@@ -77,7 +77,7 @@ func (m *OnlineMeetingsItemAttendanceReportsRequestBuilder) Count()(*OnlineMeeti
 // Get get a list of meetingAttendanceReport objects for an onlineMeeting. Each time an online meeting ends, an attendance report is generated for that session.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/meetingattendancereport-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/meetingattendancereport-list?view=graph-rest-1.0
 func (m *OnlineMeetingsItemAttendanceReportsRequestBuilder) Get(ctx context.Context, requestConfiguration *OnlineMeetingsItemAttendanceReportsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MeetingAttendanceReportCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -79,7 +79,7 @@ func (m *ItemEventsItemInstancesItemAttachmentsRequestBuilder) CreateUploadSessi
 // Get retrieve a list of attachment objects attached to an event.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
 func (m *ItemEventsItemInstancesItemAttachmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemEventsItemInstancesItemAttachmentsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -101,7 +101,7 @@ func (m *ItemEventsItemInstancesItemAttachmentsRequestBuilder) Get(ctx context.C
 // Post use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource. 
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
 func (m *ItemEventsItemInstancesItemAttachmentsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Attachmentable, requestConfiguration *ItemEventsItemInstancesItemAttachmentsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Attachmentable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

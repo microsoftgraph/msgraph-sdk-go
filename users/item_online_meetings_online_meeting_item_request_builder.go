@@ -65,7 +65,7 @@ func NewItemOnlineMeetingsOnlineMeetingItemRequestBuilder(rawUrl string, request
 // Delete delete an onlineMeeting object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/onlinemeeting-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/onlinemeeting-delete?view=graph-rest-1.0
 func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemOnlineMeetingsOnlineMeetingItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -84,7 +84,7 @@ func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) Delete(ctx context.C
 // Get retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report is an online meeting artifact. For details, see Online meeting artifacts and permissions.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
 func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnlineMeetingsOnlineMeetingItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnlineMeetingable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -110,7 +110,7 @@ func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) GetVirtualAppointmen
 // Patch update the properties of the specified onlineMeeting object. Please see Request body section for the list of properties that support updating.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/onlinemeeting-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/onlinemeeting-update?view=graph-rest-1.0
 func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnlineMeetingable, requestConfiguration *ItemOnlineMeetingsOnlineMeetingItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnlineMeetingable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

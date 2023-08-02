@@ -61,7 +61,7 @@ func NewDelegatedAdminRelationshipsDelegatedAdminRelationshipItemRequestBuilder(
 // Delete delete a delegatedAdminRelationship object. A relationship can only be deleted if it's in the 'created' status. 
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/delegatedadminrelationship-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/delegatedadminrelationship-delete?view=graph-rest-1.0
 func (m *DelegatedAdminRelationshipsDelegatedAdminRelationshipItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DelegatedAdminRelationshipsDelegatedAdminRelationshipItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -80,7 +80,7 @@ func (m *DelegatedAdminRelationshipsDelegatedAdminRelationshipItemRequestBuilder
 // Get read the properties of a delegatedAdminRelationship object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/delegatedadminrelationship-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/delegatedadminrelationship-get?view=graph-rest-1.0
 func (m *DelegatedAdminRelationshipsDelegatedAdminRelationshipItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DelegatedAdminRelationshipsDelegatedAdminRelationshipItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DelegatedAdminRelationshipable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -103,10 +103,10 @@ func (m *DelegatedAdminRelationshipsDelegatedAdminRelationshipItemRequestBuilder
 func (m *DelegatedAdminRelationshipsDelegatedAdminRelationshipItemRequestBuilder) Operations()(*DelegatedAdminRelationshipsItemOperationsRequestBuilder) {
     return NewDelegatedAdminRelationshipsItemOperationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of a delegatedAdminRelationship object. A relationship can only be updated if it's in the `created` **status**.
+// Patch update the properties of a delegatedAdminRelationship object. A relationship can only be updated if it's in the created status.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/delegatedadminrelationship-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/delegatedadminrelationship-update?view=graph-rest-1.0
 func (m *DelegatedAdminRelationshipsDelegatedAdminRelationshipItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DelegatedAdminRelationshipable, requestConfiguration *DelegatedAdminRelationshipsDelegatedAdminRelationshipItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DelegatedAdminRelationshipable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -157,7 +157,7 @@ func (m *DelegatedAdminRelationshipsDelegatedAdminRelationshipItemRequestBuilder
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a delegatedAdminRelationship object. A relationship can only be updated if it's in the `created` **status**.
+// ToPatchRequestInformation update the properties of a delegatedAdminRelationship object. A relationship can only be updated if it's in the created status.
 func (m *DelegatedAdminRelationshipsDelegatedAdminRelationshipItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DelegatedAdminRelationshipable, requestConfiguration *DelegatedAdminRelationshipsDelegatedAdminRelationshipItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -20,7 +20,7 @@ func NewAccessPackageAssignmentPolicy()(*AccessPackageAssignmentPolicy) {
 func CreateAccessPackageAssignmentPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessPackageAssignmentPolicy(), nil
 }
-// GetAccessPackage gets the accessPackage property value. Access package containing this policy. Read-only.
+// GetAccessPackage gets the accessPackage property value. Access package containing this policy. Read-only.  Supports $expand.
 func (m *AccessPackageAssignmentPolicy) GetAccessPackage()(AccessPackageable) {
     val, err := m.GetBackingStore().Get("accessPackage")
     if err != nil {
@@ -75,7 +75,7 @@ func (m *AccessPackageAssignmentPolicy) GetCreatedDateTime()(*i336074805fc853987
     }
     return nil
 }
-// GetCustomExtensionStageSettings gets the customExtensionStageSettings property value. The customExtensionStageSettings property
+// GetCustomExtensionStageSettings gets the customExtensionStageSettings property value. The collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
 func (m *AccessPackageAssignmentPolicy) GetCustomExtensionStageSettings()([]CustomExtensionStageSettingable) {
     val, err := m.GetBackingStore().Get("customExtensionStageSettings")
     if err != nil {
@@ -475,7 +475,7 @@ func (m *AccessPackageAssignmentPolicy) Serialize(writer i878a80d2330e89d2689638
     }
     return nil
 }
-// SetAccessPackage sets the accessPackage property value. Access package containing this policy. Read-only.
+// SetAccessPackage sets the accessPackage property value. Access package containing this policy. Read-only.  Supports $expand.
 func (m *AccessPackageAssignmentPolicy) SetAccessPackage(value AccessPackageable)() {
     err := m.GetBackingStore().Set("accessPackage", value)
     if err != nil {
@@ -510,7 +510,7 @@ func (m *AccessPackageAssignmentPolicy) SetCreatedDateTime(value *i336074805fc85
         panic(err)
     }
 }
-// SetCustomExtensionStageSettings sets the customExtensionStageSettings property value. The customExtensionStageSettings property
+// SetCustomExtensionStageSettings sets the customExtensionStageSettings property value. The collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
 func (m *AccessPackageAssignmentPolicy) SetCustomExtensionStageSettings(value []CustomExtensionStageSettingable)() {
     err := m.GetBackingStore().Set("customExtensionStageSettings", value)
     if err != nil {

@@ -77,7 +77,7 @@ func (m *ItemInstalledAppsRequestBuilder) Count()(*ItemInstalledAppsCountRequest
 // Get list all app installations within a chat.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/chat-list-installedapps?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/chat-list-installedapps?view=graph-rest-1.0
 func (m *ItemInstalledAppsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemInstalledAppsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsAppInstallationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *ItemInstalledAppsRequestBuilder) Get(ctx context.Context, requestConfig
 // Post install a teamsApp to the specified chat.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/chat-post-installedapps?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/chat-post-installedapps?view=graph-rest-1.0
 func (m *ItemInstalledAppsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsAppInstallationable, requestConfiguration *ItemInstalledAppsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsAppInstallationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

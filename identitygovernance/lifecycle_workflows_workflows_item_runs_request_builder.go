@@ -71,7 +71,7 @@ func (m *LifecycleWorkflowsWorkflowsItemRunsRequestBuilder) Count()(*LifecycleWo
 // Get get a list of the run objects and their properties for a lifecycle workflow.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/identitygovernance-workflow-list-runs?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/identitygovernance-workflow-list-runs?view=graph-rest-1.0
 func (m *LifecycleWorkflowsWorkflowsItemRunsRequestBuilder) Get(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsItemRunsRequestBuilderGetRequestConfiguration)(ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.RunCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

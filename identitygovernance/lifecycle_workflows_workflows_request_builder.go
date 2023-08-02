@@ -77,7 +77,7 @@ func (m *LifecycleWorkflowsWorkflowsRequestBuilder) Count()(*LifecycleWorkflowsW
 // Get get a list of workflow resources that are associated with lifecycle workflows.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-list-workflows?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-list-workflows?view=graph-rest-1.0
 func (m *LifecycleWorkflowsWorkflowsRequestBuilder) Get(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsRequestBuilderGetRequestConfiguration)(ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.WorkflowCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *LifecycleWorkflowsWorkflowsRequestBuilder) Get(ctx context.Context, req
 // Post create a new workflow object. You can create up to 50 workflows in a tenant.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-post-workflows?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-post-workflows?view=graph-rest-1.0
 func (m *LifecycleWorkflowsWorkflowsRequestBuilder) Post(ctx context.Context, body ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.Workflowable, requestConfiguration *LifecycleWorkflowsWorkflowsRequestBuilderPostRequestConfiguration)(ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.Workflowable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

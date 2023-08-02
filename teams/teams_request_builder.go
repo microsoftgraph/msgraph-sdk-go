@@ -77,7 +77,7 @@ func (m *TeamsRequestBuilder) Count()(*CountRequestBuilder) {
 // Get list all teams in an organization.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/teams-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/teams-list?view=graph-rest-1.0
 func (m *TeamsRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -103,7 +103,7 @@ func (m *TeamsRequestBuilder) GetAllMessages()(*GetAllMessagesRequestBuilder) {
 // Post create a new team.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/team-post?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/team-post?view=graph-rest-1.0
 func (m *TeamsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamable, requestConfiguration *TeamsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

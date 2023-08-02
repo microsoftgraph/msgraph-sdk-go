@@ -57,7 +57,7 @@ func NewDeviceConfigurationsItemUserStatusesDeviceConfigurationUserStatusItemReq
 // Delete deletes a deviceConfigurationUserStatus.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationuserstatus-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationuserstatus-delete?view=graph-rest-1.0
 func (m *DeviceConfigurationsItemUserStatusesDeviceConfigurationUserStatusItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DeviceConfigurationsItemUserStatusesDeviceConfigurationUserStatusItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *DeviceConfigurationsItemUserStatusesDeviceConfigurationUserStatusItemRe
 // Get read properties and relationships of the deviceConfigurationUserStatus object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationuserstatus-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationuserstatus-get?view=graph-rest-1.0
 func (m *DeviceConfigurationsItemUserStatusesDeviceConfigurationUserStatusItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceConfigurationsItemUserStatusesDeviceConfigurationUserStatusItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceConfigurationUserStatusable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *DeviceConfigurationsItemUserStatusesDeviceConfigurationUserStatusItemRe
 // Patch update the properties of a deviceConfigurationUserStatus object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationuserstatus-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationuserstatus-update?view=graph-rest-1.0
 func (m *DeviceConfigurationsItemUserStatusesDeviceConfigurationUserStatusItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceConfigurationUserStatusable, requestConfiguration *DeviceConfigurationsItemUserStatusesDeviceConfigurationUserStatusItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceConfigurationUserStatusable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

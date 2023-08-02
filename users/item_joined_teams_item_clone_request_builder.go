@@ -33,7 +33,7 @@ func NewItemJoinedTeamsItemCloneRequestBuilder(rawUrl string, requestAdapter i2a
 // Post create a copy of a team. This operation also creates a copy of the corresponding group.You can specify which parts of the team to clone: When tabs are cloned, they are put into an unconfigured state -- they are displayed on the tab bar in Microsoft Teams, and the first time you open them, you'll go through the configuration screen. (If the person opening the tab does not have permission to configure apps, they will see a message explaining that the tab hasn't been configured.) Cloning is a long-running operation.After the POST clone returns, you need to GET the operation to see if it's 'running' or 'succeeded' or 'failed'. You should continue to GET until the status is not 'running'. The recommended delay between GETs is 5 seconds.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/team-clone?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/team-clone?view=graph-rest-1.0
 func (m *ItemJoinedTeamsItemCloneRequestBuilder) Post(ctx context.Context, body ItemJoinedTeamsItemClonePostRequestBodyable, requestConfiguration *ItemJoinedTeamsItemCloneRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

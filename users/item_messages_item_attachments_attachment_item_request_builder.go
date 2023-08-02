@@ -66,7 +66,7 @@ func (m *ItemMessagesItemAttachmentsAttachmentItemRequestBuilder) Delete(ctx con
 // Get read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, or group post.  An attachment can be one of the following types: All these types of attachments are derived from the attachment resource. 
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/attachment-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/attachment-get?view=graph-rest-1.0
 func (m *ItemMessagesItemAttachmentsAttachmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMessagesItemAttachmentsAttachmentItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Attachmentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

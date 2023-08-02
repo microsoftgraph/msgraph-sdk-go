@@ -42,7 +42,7 @@ func (m *AccessPackageAssignment) GetAssignmentPolicy()(AccessPackageAssignmentP
     }
     return nil
 }
-// GetCustomExtensionCalloutInstances gets the customExtensionCalloutInstances property value. The customExtensionCalloutInstances property
+// GetCustomExtensionCalloutInstances gets the customExtensionCalloutInstances property value. Information about all the custom extension calls that were made during the access package assignment workflow.
 func (m *AccessPackageAssignment) GetCustomExtensionCalloutInstances()([]CustomExtensionCalloutInstanceable) {
     val, err := m.GetBackingStore().Get("customExtensionCalloutInstances")
     if err != nil {
@@ -276,7 +276,7 @@ func (m *AccessPackageAssignment) SetAssignmentPolicy(value AccessPackageAssignm
         panic(err)
     }
 }
-// SetCustomExtensionCalloutInstances sets the customExtensionCalloutInstances property value. The customExtensionCalloutInstances property
+// SetCustomExtensionCalloutInstances sets the customExtensionCalloutInstances property value. Information about all the custom extension calls that were made during the access package assignment workflow.
 func (m *AccessPackageAssignment) SetCustomExtensionCalloutInstances(value []CustomExtensionCalloutInstanceable)() {
     err := m.GetBackingStore().Set("customExtensionCalloutInstances", value)
     if err != nil {

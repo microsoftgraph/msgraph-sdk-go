@@ -33,7 +33,7 @@ func NewDeviceManagementPartnersItemTerminateRequestBuilder(rawUrl string, reque
 // Post not yet documented
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-onboarding-devicemanagementpartner-terminate?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-devicemanagementpartner-terminate?view=graph-rest-1.0
 func (m *DeviceManagementPartnersItemTerminateRequestBuilder) Post(ctx context.Context, requestConfiguration *DeviceManagementPartnersItemTerminateRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

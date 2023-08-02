@@ -30,10 +30,10 @@ func NewAccessReviewsDefinitionsItemInstancesItemBatchRecordDecisionsRequestBuil
     urlParams["request-raw-url"] = rawUrl
     return NewAccessReviewsDefinitionsItemInstancesItemBatchRecordDecisionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post enables reviewers to review all accessReviewInstanceDecisionItem objects in batches by using **principalId**, **resourceId**, or neither.
+// Post enables reviewers to review all accessReviewInstanceDecisionItem objects in batches by using principalId, resourceId, or neither.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/accessreviewinstance-batchrecorddecisions?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/accessreviewinstance-batchrecorddecisions?view=graph-rest-1.0
 func (m *AccessReviewsDefinitionsItemInstancesItemBatchRecordDecisionsRequestBuilder) Post(ctx context.Context, body AccessReviewsDefinitionsItemInstancesItemBatchRecordDecisionsPostRequestBodyable, requestConfiguration *AccessReviewsDefinitionsItemInstancesItemBatchRecordDecisionsRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +49,7 @@ func (m *AccessReviewsDefinitionsItemInstancesItemBatchRecordDecisionsRequestBui
     }
     return nil
 }
-// ToPostRequestInformation enables reviewers to review all accessReviewInstanceDecisionItem objects in batches by using **principalId**, **resourceId**, or neither.
+// ToPostRequestInformation enables reviewers to review all accessReviewInstanceDecisionItem objects in batches by using principalId, resourceId, or neither.
 func (m *AccessReviewsDefinitionsItemInstancesItemBatchRecordDecisionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body AccessReviewsDefinitionsItemInstancesItemBatchRecordDecisionsPostRequestBodyable, requestConfiguration *AccessReviewsDefinitionsItemInstancesItemBatchRecordDecisionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

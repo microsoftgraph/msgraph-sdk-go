@@ -77,7 +77,7 @@ func (m *TokenIssuancePoliciesRequestBuilder) Count()(*TokenIssuancePoliciesCoun
 // Get get a list of tokenIssuancePolicy objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/tokenissuancepolicy-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/tokenissuancepolicy-list?view=graph-rest-1.0
 func (m *TokenIssuancePoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *TokenIssuancePoliciesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TokenIssuancePolicyCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *TokenIssuancePoliciesRequestBuilder) Get(ctx context.Context, requestCo
 // Post create a new tokenIssuancePolicy object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/tokenissuancepolicy-post-tokenissuancepolicy?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/tokenissuancepolicy-post-tokenissuancepolicy?view=graph-rest-1.0
 func (m *TokenIssuancePoliciesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TokenIssuancePolicyable, requestConfiguration *TokenIssuancePoliciesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TokenIssuancePolicyable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

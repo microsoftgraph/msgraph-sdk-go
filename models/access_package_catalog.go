@@ -274,7 +274,7 @@ func (m *AccessPackageCatalog) GetResourceRoles()([]AccessPackageResourceRoleabl
     }
     return nil
 }
-// GetResources gets the resources property value. The resources property
+// GetResources gets the resources property value. Access package resources in this catalog.
 func (m *AccessPackageCatalog) GetResources()([]AccessPackageResourceable) {
     val, err := m.GetBackingStore().Get("resources")
     if err != nil {
@@ -482,7 +482,7 @@ func (m *AccessPackageCatalog) SetResourceRoles(value []AccessPackageResourceRol
         panic(err)
     }
 }
-// SetResources sets the resources property value. The resources property
+// SetResources sets the resources property value. Access package resources in this catalog.
 func (m *AccessPackageCatalog) SetResources(value []AccessPackageResourceable)() {
     err := m.GetBackingStore().Set("resources", value)
     if err != nil {

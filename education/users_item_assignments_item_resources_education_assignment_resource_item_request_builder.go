@@ -57,7 +57,7 @@ func NewUsersItemAssignmentsItemResourcesEducationAssignmentResourceItemRequestB
 // Delete delete a specific educationAssignmentResource attached to an assignment. In general, only teachers in the class can remove a resource. However, teachers cannot remove resources marked as 'distributeToStudents', after the assignment has been published to students.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationassignmentresource-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationassignmentresource-delete?view=graph-rest-1.0
 func (m *UsersItemAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *UsersItemAssignmentsItemResourcesEducationAssignmentResourceItemRequest
 // Get get the properties of an education assignment resource associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationassignmentresource-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationassignmentresource-get?view=graph-rest-1.0
 func (m *UsersItemAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationAssignmentResourceable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

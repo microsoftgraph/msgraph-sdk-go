@@ -22,7 +22,7 @@ func NewAccessPackageAssignmentWorkflowExtension()(*AccessPackageAssignmentWorkf
 func CreateAccessPackageAssignmentWorkflowExtensionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessPackageAssignmentWorkflowExtension(), nil
 }
-// GetCallbackConfiguration gets the callbackConfiguration property value. The callbackConfiguration property
+// GetCallbackConfiguration gets the callbackConfiguration property value. The callback configuration for a custom extension.
 func (m *AccessPackageAssignmentWorkflowExtension) GetCallbackConfiguration()(CustomExtensionCallbackConfigurationable) {
     val, err := m.GetBackingStore().Get("callbackConfiguration")
     if err != nil {
@@ -33,7 +33,7 @@ func (m *AccessPackageAssignmentWorkflowExtension) GetCallbackConfiguration()(Cu
     }
     return nil
 }
-// GetCreatedBy gets the createdBy property value. The createdBy property
+// GetCreatedBy gets the createdBy property value. The userPrincipalName of the user or identity of the subject that created this resource. Read-only.
 func (m *AccessPackageAssignmentWorkflowExtension) GetCreatedBy()(*string) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -44,7 +44,7 @@ func (m *AccessPackageAssignmentWorkflowExtension) GetCreatedBy()(*string) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. When the entity was created.
 func (m *AccessPackageAssignmentWorkflowExtension) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -110,7 +110,7 @@ func (m *AccessPackageAssignmentWorkflowExtension) GetFieldDeserializers()(map[s
     }
     return res
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
+// GetLastModifiedBy gets the lastModifiedBy property value. The userPrincipalName of the identity that last modified the entity.
 func (m *AccessPackageAssignmentWorkflowExtension) GetLastModifiedBy()(*string) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -121,7 +121,7 @@ func (m *AccessPackageAssignmentWorkflowExtension) GetLastModifiedBy()(*string) 
     }
     return nil
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. When the entity was last modified.
 func (m *AccessPackageAssignmentWorkflowExtension) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -170,35 +170,35 @@ func (m *AccessPackageAssignmentWorkflowExtension) Serialize(writer i878a80d2330
     }
     return nil
 }
-// SetCallbackConfiguration sets the callbackConfiguration property value. The callbackConfiguration property
+// SetCallbackConfiguration sets the callbackConfiguration property value. The callback configuration for a custom extension.
 func (m *AccessPackageAssignmentWorkflowExtension) SetCallbackConfiguration(value CustomExtensionCallbackConfigurationable)() {
     err := m.GetBackingStore().Set("callbackConfiguration", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedBy sets the createdBy property value. The createdBy property
+// SetCreatedBy sets the createdBy property value. The userPrincipalName of the user or identity of the subject that created this resource. Read-only.
 func (m *AccessPackageAssignmentWorkflowExtension) SetCreatedBy(value *string)() {
     err := m.GetBackingStore().Set("createdBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. When the entity was created.
 func (m *AccessPackageAssignmentWorkflowExtension) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedBy sets the lastModifiedBy property value. The lastModifiedBy property
+// SetLastModifiedBy sets the lastModifiedBy property value. The userPrincipalName of the identity that last modified the entity.
 func (m *AccessPackageAssignmentWorkflowExtension) SetLastModifiedBy(value *string)() {
     err := m.GetBackingStore().Set("lastModifiedBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. When the entity was last modified.
 func (m *AccessPackageAssignmentWorkflowExtension) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {

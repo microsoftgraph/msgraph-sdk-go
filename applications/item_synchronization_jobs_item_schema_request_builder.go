@@ -85,7 +85,7 @@ func (m *ItemSynchronizationJobsItemSchemaRequestBuilder) Functions()(*ItemSynch
 // Get retrieve the schema for a given synchronization job or template.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-get?view=graph-rest-1.0
 func (m *ItemSynchronizationJobsItemSchemaRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSynchronizationJobsItemSchemaRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SynchronizationSchemaable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -111,7 +111,7 @@ func (m *ItemSynchronizationJobsItemSchemaRequestBuilder) ParseExpression()(*Ite
 // Patch update the synchronization schema for a given job or template. This method fully replaces the current schema with the one provided in the request. To update the schema of a template, make the call on the application object. You must be the owner of the application.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-update?view=graph-rest-1.0
 func (m *ItemSynchronizationJobsItemSchemaRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SynchronizationSchemaable, requestConfiguration *ItemSynchronizationJobsItemSchemaRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SynchronizationSchemaable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

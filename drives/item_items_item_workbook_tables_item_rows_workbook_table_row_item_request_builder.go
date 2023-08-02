@@ -57,7 +57,7 @@ func NewItemItemsItemWorkbookTablesItemRowsWorkbookTableRowItemRequestBuilder(ra
 // Delete deletes the row from the table.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/tablerow-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/tablerow-delete?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookTablesItemRowsWorkbookTableRowItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemRowsWorkbookTableRowItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *ItemItemsItemWorkbookTablesItemRowsWorkbookTableRowItemRequestBuilder) 
 // Get retrieve the properties and relationships of tablerow object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/tablerow-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/tablerow-get?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookTablesItemRowsWorkbookTableRowItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemRowsWorkbookTableRowItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableRowable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *ItemItemsItemWorkbookTablesItemRowsWorkbookTableRowItemRequestBuilder) 
 // Patch update the properties of tablerow object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/tablerow-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/tablerow-update?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookTablesItemRowsWorkbookTableRowItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableRowable, requestConfiguration *ItemItemsItemWorkbookTablesItemRowsWorkbookTableRowItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableRowable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

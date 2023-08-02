@@ -73,7 +73,7 @@ func (m *ThreatIntelligenceArticlesArticleItemRequestBuilder) Delete(ctx context
 // Get read the properties and relationships of an article object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-article-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-article-get?view=graph-rest-1.0
 func (m *ThreatIntelligenceArticlesArticleItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceArticlesArticleItemRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.Articleable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

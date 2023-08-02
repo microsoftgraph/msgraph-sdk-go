@@ -73,7 +73,7 @@ func (m *ItemConversationsItemThreadsItemPostsItemExtensionsExtensionItemRequest
 // Get get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
 func (m *ItemConversationsItemThreadsItemPostsItemExtensionsExtensionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemConversationsItemThreadsItemPostsItemExtensionsExtensionItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Extensionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +95,7 @@ func (m *ItemConversationsItemThreadsItemPostsItemExtensionsExtensionItemRequest
 // Patch update an open extension (openTypeExtension object) with the properties in the request body: The data in an extension can be primitive types, or arrays of primitive types. See the table in the Permissions section for the list of resources that support open extensions.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/opentypeextension-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/opentypeextension-update?view=graph-rest-1.0
 func (m *ItemConversationsItemThreadsItemPostsItemExtensionsExtensionItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Extensionable, requestConfiguration *ItemConversationsItemThreadsItemPostsItemExtensionsExtensionItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Extensionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

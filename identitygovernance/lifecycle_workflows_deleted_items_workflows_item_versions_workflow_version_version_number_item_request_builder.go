@@ -47,7 +47,7 @@ func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemVersionsWorkflowVersionVersi
 // Get read the properties and relationships of a workflowVersion object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/identitygovernance-workflowversion-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/identitygovernance-workflowversion-get?view=graph-rest-1.0
 func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemVersionsWorkflowVersionVersionNumberItemRequestBuilder) Get(ctx context.Context, requestConfiguration *LifecycleWorkflowsDeletedItemsWorkflowsItemVersionsWorkflowVersionVersionNumberItemRequestBuilderGetRequestConfiguration)(ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.WorkflowVersionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

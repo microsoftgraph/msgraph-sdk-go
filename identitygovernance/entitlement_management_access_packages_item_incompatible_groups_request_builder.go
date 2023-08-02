@@ -70,7 +70,7 @@ func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsRequestBuilder
 // Get retrieve a list of the group objects that have been marked as incompatible on an accessPackage.  
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/accesspackage-list-incompatiblegroups?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/accesspackage-list-incompatiblegroups?view=graph-rest-1.0
 func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemIncompatibleGroupsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

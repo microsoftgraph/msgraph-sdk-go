@@ -77,7 +77,7 @@ func (m *MobileAppConfigurationsItemDeviceStatusesRequestBuilder) Count()(*Mobil
 // Get list properties and relationships of the managedDeviceMobileAppConfigurationDeviceStatus objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationdevicestatus-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationdevicestatus-list?view=graph-rest-1.0
 func (m *MobileAppConfigurationsItemDeviceStatusesRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppConfigurationsItemDeviceStatusesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedDeviceMobileAppConfigurationDeviceStatusCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *MobileAppConfigurationsItemDeviceStatusesRequestBuilder) Get(ctx contex
 // Post create a new managedDeviceMobileAppConfigurationDeviceStatus object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationdevicestatus-create?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationdevicestatus-create?view=graph-rest-1.0
 func (m *MobileAppConfigurationsItemDeviceStatusesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedDeviceMobileAppConfigurationDeviceStatusable, requestConfiguration *MobileAppConfigurationsItemDeviceStatusesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedDeviceMobileAppConfigurationDeviceStatusable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

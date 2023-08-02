@@ -58,7 +58,7 @@ func NewItemMembersRefRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 // Get the members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/group-list-members?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/group-list-members?view=graph-rest-1.0
 func (m *ItemMembersRefRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMembersRefRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -77,10 +77,10 @@ func (m *ItemMembersRefRequestBuilder) Get(ctx context.Context, requestConfigura
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable), nil
 }
-// Post add a member to a security or Microsoft 365 group through the **members** navigation property. The following table shows the types of members that can be added to either security groups or Microsoft 365 groups.
+// Post add a member to a security or Microsoft 365 group through the members navigation property. The following table shows the types of members that can be added to either security groups or Microsoft 365 groups.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/group-post-members?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/group-post-members?view=graph-rest-1.0
 func (m *ItemMembersRefRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *ItemMembersRefRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *ItemMembersRefRequestBuilder) ToGetRequestInformation(ctx context.Conte
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation add a member to a security or Microsoft 365 group through the **members** navigation property. The following table shows the types of members that can be added to either security groups or Microsoft 365 groups.
+// ToPostRequestInformation add a member to a security or Microsoft 365 group through the members navigation property. The following table shows the types of members that can be added to either security groups or Microsoft 365 groups.
 func (m *ItemMembersRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *ItemMembersRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

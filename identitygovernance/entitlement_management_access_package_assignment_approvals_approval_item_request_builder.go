@@ -73,7 +73,7 @@ func (m *EntitlementManagementAccessPackageAssignmentApprovalsApprovalItemReques
 // Get in Azure AD entitlement management, retrieve the properties of an approval object.  This call can be made by an approver, providing the identifier of the access package assignment request.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/approval-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/approval-get?view=graph-rest-1.0
 func (m *EntitlementManagementAccessPackageAssignmentApprovalsApprovalItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentApprovalsApprovalItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Approvalable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

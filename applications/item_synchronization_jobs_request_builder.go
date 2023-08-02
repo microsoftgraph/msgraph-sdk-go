@@ -77,7 +77,7 @@ func (m *ItemSynchronizationJobsRequestBuilder) Count()(*ItemSynchronizationJobs
 // Get list existing jobs for a given application instance (service principal).
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/synchronization-synchronization-list-jobs?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/synchronization-synchronization-list-jobs?view=graph-rest-1.0
 func (m *ItemSynchronizationJobsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSynchronizationJobsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SynchronizationJobCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *ItemSynchronizationJobsRequestBuilder) Get(ctx context.Context, request
 // Post create new synchronization job with a default synchronization schema. The job is created in a disabled state. Call Start job to start synchronization.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/synchronization-synchronization-post-jobs?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/synchronization-synchronization-post-jobs?view=graph-rest-1.0
 func (m *ItemSynchronizationJobsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SynchronizationJobable, requestConfiguration *ItemSynchronizationJobsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SynchronizationJobable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

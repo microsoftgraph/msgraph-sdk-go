@@ -30,10 +30,10 @@ func NewEntitlementManagementAssignmentRequestsItemReprocessRequestBuilder(rawUr
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementAssignmentRequestsItemReprocessRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post in Azure AD entitlement management, callers can automatically retry a user's request for access to an access package. It is performed on an accessPackageAssignmentRequest object whose **requestState** is in a `DeliveryFailed` or `PartiallyDelivered` state.  You can only reprocess a request within 14 days from the time the original request was completed. For requests completed more than 14 days, you will need to ask the users to cancel the request(s) and make a new request in the MyAccess portal.
+// Post in Azure AD entitlement management, callers can automatically retry a user's request for access to an access package. It is performed on an accessPackageAssignmentRequest object whose requestState is in a DeliveryFailed or PartiallyDelivered state.  You can only reprocess a request within 14 days from the time the original request was completed. For requests completed more than 14 days, you will need to ask the users to cancel the request(s) and make a new request in the MyAccess portal.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/accesspackageassignmentrequest-reprocess?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/accesspackageassignmentrequest-reprocess?view=graph-rest-1.0
 func (m *EntitlementManagementAssignmentRequestsItemReprocessRequestBuilder) Post(ctx context.Context, requestConfiguration *EntitlementManagementAssignmentRequestsItemReprocessRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -49,7 +49,7 @@ func (m *EntitlementManagementAssignmentRequestsItemReprocessRequestBuilder) Pos
     }
     return nil
 }
-// ToPostRequestInformation in Azure AD entitlement management, callers can automatically retry a user's request for access to an access package. It is performed on an accessPackageAssignmentRequest object whose **requestState** is in a `DeliveryFailed` or `PartiallyDelivered` state.  You can only reprocess a request within 14 days from the time the original request was completed. For requests completed more than 14 days, you will need to ask the users to cancel the request(s) and make a new request in the MyAccess portal.
+// ToPostRequestInformation in Azure AD entitlement management, callers can automatically retry a user's request for access to an access package. It is performed on an accessPackageAssignmentRequest object whose requestState is in a DeliveryFailed or PartiallyDelivered state.  You can only reprocess a request within 14 days from the time the original request was completed. For requests completed more than 14 days, you will need to ask the users to cancel the request(s) and make a new request in the MyAccess portal.
 func (m *EntitlementManagementAssignmentRequestsItemReprocessRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAssignmentRequestsItemReprocessRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

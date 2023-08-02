@@ -11,7 +11,7 @@ import (
 type ItemJoinedTeamsItemChannelsItemSharedWithTeamsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemJoinedTeamsItemChannelsItemSharedWithTeamsRequestBuilderGetQueryParameters get the list of teams that has been shared a specified channel. This operation is allowed only for channels with a **membershipType** value of `shared`.
+// ItemJoinedTeamsItemChannelsItemSharedWithTeamsRequestBuilderGetQueryParameters get the list of teams that has been shared a specified channel. This operation is allowed only for channels with a membershipType value of shared.
 type ItemJoinedTeamsItemChannelsItemSharedWithTeamsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,10 @@ func NewItemJoinedTeamsItemChannelsItemSharedWithTeamsRequestBuilder(rawUrl stri
 func (m *ItemJoinedTeamsItemChannelsItemSharedWithTeamsRequestBuilder) Count()(*ItemJoinedTeamsItemChannelsItemSharedWithTeamsCountRequestBuilder) {
     return NewItemJoinedTeamsItemChannelsItemSharedWithTeamsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of teams that has been shared a specified channel. This operation is allowed only for channels with a **membershipType** value of `shared`.
+// Get get the list of teams that has been shared a specified channel. This operation is allowed only for channels with a membershipType value of shared.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/sharedwithchannelteaminfo-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/sharedwithchannelteaminfo-list?view=graph-rest-1.0
 func (m *ItemJoinedTeamsItemChannelsItemSharedWithTeamsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemChannelsItemSharedWithTeamsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SharedWithChannelTeamInfoCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +115,7 @@ func (m *ItemJoinedTeamsItemChannelsItemSharedWithTeamsRequestBuilder) Post(ctx 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SharedWithChannelTeamInfoable), nil
 }
-// ToGetRequestInformation get the list of teams that has been shared a specified channel. This operation is allowed only for channels with a **membershipType** value of `shared`.
+// ToGetRequestInformation get the list of teams that has been shared a specified channel. This operation is allowed only for channels with a membershipType value of shared.
 func (m *ItemJoinedTeamsItemChannelsItemSharedWithTeamsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemChannelsItemSharedWithTeamsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

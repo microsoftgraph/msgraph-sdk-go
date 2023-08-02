@@ -57,7 +57,7 @@ func NewDetectedAppsDetectedAppItemRequestBuilder(rawUrl string, requestAdapter 
 // Delete deletes a detectedApp.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-devices-detectedapp-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-detectedapp-delete?view=graph-rest-1.0
 func (m *DetectedAppsDetectedAppItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DetectedAppsDetectedAppItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *DetectedAppsDetectedAppItemRequestBuilder) Delete(ctx context.Context, 
 // Get read properties and relationships of the detectedApp object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-devices-detectedapp-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-detectedapp-get?view=graph-rest-1.0
 func (m *DetectedAppsDetectedAppItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DetectedAppsDetectedAppItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DetectedAppable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -102,7 +102,7 @@ func (m *DetectedAppsDetectedAppItemRequestBuilder) ManagedDevices()(*DetectedAp
 // Patch update the properties of a detectedApp object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-devices-detectedapp-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-detectedapp-update?view=graph-rest-1.0
 func (m *DetectedAppsDetectedAppItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DetectedAppable, requestConfiguration *DetectedAppsDetectedAppItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DetectedAppable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

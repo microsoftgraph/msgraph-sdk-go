@@ -33,7 +33,7 @@ func NewItemItemsItemVersionsItemRestoreVersionRequestBuilder(rawUrl string, req
 // Post restore a previous version of a DriveItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the file.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/driveitemversion-restore?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/driveitemversion-restore?view=graph-rest-1.0
 func (m *ItemItemsItemVersionsItemRestoreVersionRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemItemsItemVersionsItemRestoreVersionRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -70,7 +70,7 @@ func (m *ItemFollowingRequestBuilder) Count()(*ItemFollowingCountRequestBuilder)
 // Get list the items that have been followed by the signed in user.This collection includes items that are in the user's drive as well as items they have access to from other drives.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/drive-list-following?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/drive-list-following?view=graph-rest-1.0
 func (m *ItemFollowingRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemFollowingRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -57,7 +57,7 @@ func NewVppTokensVppTokenItemRequestBuilder(rawUrl string, requestAdapter i2ae41
 // Delete deletes a vppToken.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-onboarding-vpptoken-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-vpptoken-delete?view=graph-rest-1.0
 func (m *VppTokensVppTokenItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *VppTokensVppTokenItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *VppTokensVppTokenItemRequestBuilder) Delete(ctx context.Context, reques
 // Get read properties and relationships of the vppToken object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-onboarding-vpptoken-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-vpptoken-get?view=graph-rest-1.0
 func (m *VppTokensVppTokenItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VppTokensVppTokenItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VppTokenable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *VppTokensVppTokenItemRequestBuilder) Get(ctx context.Context, requestCo
 // Patch update the properties of a vppToken object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-onboarding-vpptoken-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-vpptoken-update?view=graph-rest-1.0
 func (m *VppTokensVppTokenItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VppTokenable, requestConfiguration *VppTokensVppTokenItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VppTokenable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

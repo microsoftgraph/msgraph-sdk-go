@@ -526,7 +526,7 @@ func (m *PstnCallLogRow) GetUserDisplayName()(*string) {
     }
     return nil
 }
-// GetUserId gets the userId property value. Calling user's ID in Graph. GUID. This and other user info will be null/empty for bot call types (ucap_in, ucap_out).
+// GetUserId gets the userId property value. Calling user's ID in Graph. GUID. This and other user info will be null/empty for bot call types (ucapin, ucapout).
 func (m *PstnCallLogRow) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -868,7 +868,7 @@ func (m *PstnCallLogRow) SetUserDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetUserId sets the userId property value. Calling user's ID in Graph. GUID. This and other user info will be null/empty for bot call types (ucap_in, ucap_out).
+// SetUserId sets the userId property value. Calling user's ID in Graph. GUID. This and other user info will be null/empty for bot call types (ucapin, ucapout).
 func (m *PstnCallLogRow) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
     if err != nil {

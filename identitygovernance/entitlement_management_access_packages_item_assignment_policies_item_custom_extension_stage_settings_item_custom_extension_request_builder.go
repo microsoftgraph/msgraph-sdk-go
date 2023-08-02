@@ -11,7 +11,7 @@ import (
 type EntitlementManagementAccessPackagesItemAssignmentPoliciesItemCustomExtensionStageSettingsItemCustomExtensionRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementAccessPackagesItemAssignmentPoliciesItemCustomExtensionStageSettingsItemCustomExtensionRequestBuilderGetQueryParameters get customExtension from identityGovernance
+// EntitlementManagementAccessPackagesItemAssignmentPoliciesItemCustomExtensionStageSettingsItemCustomExtensionRequestBuilderGetQueryParameters indicates the custom workflow extension that will be executed at this stage. Nullable. Supports $expand.
 type EntitlementManagementAccessPackagesItemAssignmentPoliciesItemCustomExtensionStageSettingsItemCustomExtensionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewEntitlementManagementAccessPackagesItemAssignmentPoliciesItemCustomExten
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementAccessPackagesItemAssignmentPoliciesItemCustomExtensionStageSettingsItemCustomExtensionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get customExtension from identityGovernance
+// Get indicates the custom workflow extension that will be executed at this stage. Nullable. Supports $expand.
 func (m *EntitlementManagementAccessPackagesItemAssignmentPoliciesItemCustomExtensionStageSettingsItemCustomExtensionRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemAssignmentPoliciesItemCustomExtensionStageSettingsItemCustomExtensionRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CustomCalloutExtensionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *EntitlementManagementAccessPackagesItemAssignmentPoliciesItemCustomExte
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CustomCalloutExtensionable), nil
 }
-// ToGetRequestInformation get customExtension from identityGovernance
+// ToGetRequestInformation indicates the custom workflow extension that will be executed at this stage. Nullable. Supports $expand.
 func (m *EntitlementManagementAccessPackagesItemAssignmentPoliciesItemCustomExtensionStageSettingsItemCustomExtensionRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemAssignmentPoliciesItemCustomExtensionStageSettingsItemCustomExtensionRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

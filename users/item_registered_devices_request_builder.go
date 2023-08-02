@@ -70,7 +70,7 @@ func (m *ItemRegisteredDevicesRequestBuilder) Count()(*ItemRegisteredDevicesCoun
 // Get devices that are registered for the user. Read-only. Nullable. Supports $expand.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/user-list-registereddevices?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-list-registereddevices?view=graph-rest-1.0
 func (m *ItemRegisteredDevicesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemRegisteredDevicesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

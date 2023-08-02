@@ -57,7 +57,7 @@ func NewReportsExportJobsDeviceManagementExportJobItemRequestBuilder(rawUrl stri
 // Delete deletes a deviceManagementExportJob.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-reporting-devicemanagementexportjob-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementexportjob-delete?view=graph-rest-1.0
 func (m *ReportsExportJobsDeviceManagementExportJobItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ReportsExportJobsDeviceManagementExportJobItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *ReportsExportJobsDeviceManagementExportJobItemRequestBuilder) Delete(ct
 // Get read properties and relationships of the deviceManagementExportJob object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-reporting-devicemanagementexportjob-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementexportjob-get?view=graph-rest-1.0
 func (m *ReportsExportJobsDeviceManagementExportJobItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ReportsExportJobsDeviceManagementExportJobItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementExportJobable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *ReportsExportJobsDeviceManagementExportJobItemRequestBuilder) Get(ctx c
 // Patch update the properties of a deviceManagementExportJob object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-reporting-devicemanagementexportjob-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementexportjob-update?view=graph-rest-1.0
 func (m *ReportsExportJobsDeviceManagementExportJobItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementExportJobable, requestConfiguration *ReportsExportJobsDeviceManagementExportJobItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementExportJobable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
