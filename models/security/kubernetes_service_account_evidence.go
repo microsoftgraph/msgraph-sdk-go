@@ -46,7 +46,7 @@ func (m *KubernetesServiceAccountEvidence) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. The service account name.
 func (m *KubernetesServiceAccountEvidence) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -57,7 +57,7 @@ func (m *KubernetesServiceAccountEvidence) GetName()(*string) {
     }
     return nil
 }
-// GetNamespace gets the namespace property value. The namespace property
+// GetNamespace gets the namespace property value. The service account namespace.
 func (m *KubernetesServiceAccountEvidence) GetNamespace()(KubernetesNamespaceEvidenceable) {
     val, err := m.GetBackingStore().Get("namespace")
     if err != nil {
@@ -88,14 +88,14 @@ func (m *KubernetesServiceAccountEvidence) Serialize(writer i878a80d2330e89d2689
     }
     return nil
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. The service account name.
 func (m *KubernetesServiceAccountEvidence) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
         panic(err)
     }
 }
-// SetNamespace sets the namespace property value. The namespace property
+// SetNamespace sets the namespace property value. The service account namespace.
 func (m *KubernetesServiceAccountEvidence) SetNamespace(value KubernetesNamespaceEvidenceable)() {
     err := m.GetBackingStore().Set("namespace", value)
     if err != nil {

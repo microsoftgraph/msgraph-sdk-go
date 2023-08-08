@@ -124,7 +124,7 @@ func (m *AlertEvidence) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     }
     return nil
 }
-// GetDetailedRoles gets the detailedRoles property value. The detailedRoles property
+// GetDetailedRoles gets the detailedRoles property value. Detailed description of the entity role/s in an alert. Values are free-form.
 func (m *AlertEvidence) GetDetailedRoles()([]string) {
     val, err := m.GetBackingStore().Get("detailedRoles")
     if err != nil {
@@ -271,7 +271,7 @@ func (m *AlertEvidence) GetRemediationStatusDetails()(*string) {
     }
     return nil
 }
-// GetRoles gets the roles property value. One or more roles that an evidence entity represents in an alert. For example, an IP address that is associated with an attacker has the evidence role Attacker.
+// GetRoles gets the roles property value. The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role Attacker.
 func (m *AlertEvidence) GetRoles()([]EvidenceRole) {
     val, err := m.GetBackingStore().Get("roles")
     if err != nil {
@@ -282,7 +282,7 @@ func (m *AlertEvidence) GetRoles()([]EvidenceRole) {
     }
     return nil
 }
-// GetTags gets the tags property value. Array of custom tags associated with an evidence instance. For example, to denote a group of devices or high value assets.
+// GetTags gets the tags property value. Array of custom tags associated with an evidence instance, for example, to denote a group of devices, high-value assets, etc.
 func (m *AlertEvidence) GetTags()([]string) {
     val, err := m.GetBackingStore().Get("tags")
     if err != nil {
@@ -382,7 +382,7 @@ func (m *AlertEvidence) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad9
         panic(err)
     }
 }
-// SetDetailedRoles sets the detailedRoles property value. The detailedRoles property
+// SetDetailedRoles sets the detailedRoles property value. Detailed description of the entity role/s in an alert. Values are free-form.
 func (m *AlertEvidence) SetDetailedRoles(value []string)() {
     err := m.GetBackingStore().Set("detailedRoles", value)
     if err != nil {
@@ -410,14 +410,14 @@ func (m *AlertEvidence) SetRemediationStatusDetails(value *string)() {
         panic(err)
     }
 }
-// SetRoles sets the roles property value. One or more roles that an evidence entity represents in an alert. For example, an IP address that is associated with an attacker has the evidence role Attacker.
+// SetRoles sets the roles property value. The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role Attacker.
 func (m *AlertEvidence) SetRoles(value []EvidenceRole)() {
     err := m.GetBackingStore().Set("roles", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTags sets the tags property value. Array of custom tags associated with an evidence instance. For example, to denote a group of devices or high value assets.
+// SetTags sets the tags property value. Array of custom tags associated with an evidence instance, for example, to denote a group of devices, high-value assets, etc.
 func (m *AlertEvidence) SetTags(value []string)() {
     err := m.GetBackingStore().Set("tags", value)
     if err != nil {
