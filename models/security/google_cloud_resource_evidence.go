@@ -13,6 +13,8 @@ func NewGoogleCloudResourceEvidence()(*GoogleCloudResourceEvidence) {
     m := &GoogleCloudResourceEvidence{
         AlertEvidence: *NewAlertEvidence(),
     }
+    odataTypeValue := "#microsoft.graph.security.googleCloudResourceEvidence"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateGoogleCloudResourceEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -39,16 +41,6 @@ func (m *GoogleCloudResourceEvidence) GetFieldDeserializers()(map[string]func(i8
         }
         if val != nil {
             m.SetLocationType(val.(*GoogleCloudLocationType))
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
         }
         return nil
     }
@@ -116,17 +108,6 @@ func (m *GoogleCloudResourceEvidence) GetLocationType()(*GoogleCloudLocationType
     }
     return nil
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *GoogleCloudResourceEvidence) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetProjectId gets the projectId property value. The Google project ID as defined by the user.
 func (m *GoogleCloudResourceEvidence) GetProjectId()(*string) {
     val, err := m.GetBackingStore().Get("projectId")
@@ -191,12 +172,6 @@ func (m *GoogleCloudResourceEvidence) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("projectId", m.GetProjectId())
         if err != nil {
             return err
@@ -236,13 +211,6 @@ func (m *GoogleCloudResourceEvidence) SetLocationType(value *GoogleCloudLocation
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *GoogleCloudResourceEvidence) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetProjectId sets the projectId property value. The Google project ID as defined by the user.
 func (m *GoogleCloudResourceEvidence) SetProjectId(value *string)() {
     err := m.GetBackingStore().Set("projectId", value)
@@ -277,14 +245,12 @@ type GoogleCloudResourceEvidenceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetLocation()(*string)
     GetLocationType()(*GoogleCloudLocationType)
-    GetOdataType()(*string)
     GetProjectId()(*string)
     GetProjectNumber()(*int64)
     GetResourceName()(*string)
     GetResourceType()(*string)
     SetLocation(value *string)()
     SetLocationType(value *GoogleCloudLocationType)()
-    SetOdataType(value *string)()
     SetProjectId(value *string)()
     SetProjectNumber(value *int64)()
     SetResourceName(value *string)()

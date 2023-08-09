@@ -25,16 +25,6 @@ func CreateCustomTaskExtensionCallbackDataFromDiscriminatorValue(parseNode i878a
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CustomTaskExtensionCallbackData) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.CustomExtensionData.GetFieldDeserializers()
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["operationStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCustomTaskExtensionOperationStatus)
         if err != nil {
@@ -46,17 +36,6 @@ func (m *CustomTaskExtensionCallbackData) GetFieldDeserializers()(map[string]fun
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *CustomTaskExtensionCallbackData) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetOperationStatus gets the operationStatus property value. Operation status that's provided by the Azure Logic App indicating whenever the Azure Logic App has run successfully or not. Supported values: completed, failed, unknownFutureValue.
 func (m *CustomTaskExtensionCallbackData) GetOperationStatus()(*CustomTaskExtensionOperationStatus) {
@@ -75,12 +54,6 @@ func (m *CustomTaskExtensionCallbackData) Serialize(writer i878a80d2330e89d26896
     if err != nil {
         return err
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetOperationStatus() != nil {
         cast := (*m.GetOperationStatus()).String()
         err = writer.WriteStringValue("operationStatus", &cast)
@@ -89,13 +62,6 @@ func (m *CustomTaskExtensionCallbackData) Serialize(writer i878a80d2330e89d26896
         }
     }
     return nil
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *CustomTaskExtensionCallbackData) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
 }
 // SetOperationStatus sets the operationStatus property value. Operation status that's provided by the Azure Logic App indicating whenever the Azure Logic App has run successfully or not. Supported values: completed, failed, unknownFutureValue.
 func (m *CustomTaskExtensionCallbackData) SetOperationStatus(value *CustomTaskExtensionOperationStatus)() {
@@ -108,8 +74,6 @@ func (m *CustomTaskExtensionCallbackData) SetOperationStatus(value *CustomTaskEx
 type CustomTaskExtensionCallbackDataable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CustomExtensionDataable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetOdataType()(*string)
     GetOperationStatus()(*CustomTaskExtensionOperationStatus)
-    SetOdataType(value *string)()
     SetOperationStatus(value *CustomTaskExtensionOperationStatus)()
 }

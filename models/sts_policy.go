@@ -7,8 +7,6 @@ import (
 // StsPolicy 
 type StsPolicy struct {
     PolicyBase
-    // The OdataType property
-    OdataType *string
 }
 // NewStsPolicy instantiates a new stsPolicy and sets the default values.
 func NewStsPolicy()(*StsPolicy) {

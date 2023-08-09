@@ -7,8 +7,6 @@ import (
 // UnifiedRoleManagementPolicyNotificationRule 
 type UnifiedRoleManagementPolicyNotificationRule struct {
     UnifiedRoleManagementPolicyRule
-    // The OdataType property
-    OdataType *string
 }
 // NewUnifiedRoleManagementPolicyNotificationRule instantiates a new unifiedRoleManagementPolicyNotificationRule and sets the default values.
 func NewUnifiedRoleManagementPolicyNotificationRule()(*UnifiedRoleManagementPolicyNotificationRule) {

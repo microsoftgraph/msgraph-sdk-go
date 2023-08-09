@@ -30,7 +30,10 @@ func NewTargetedManagedAppConfigurationsItemAssignRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewTargetedManagedAppConfigurationsItemAssignRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action assign
+// Post not yet documented
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-mam-targetedmanagedappconfiguration-assign?view=graph-rest-1.0
 func (m *TargetedManagedAppConfigurationsItemAssignRequestBuilder) Post(ctx context.Context, body TargetedManagedAppConfigurationsItemAssignPostRequestBodyable, requestConfiguration *TargetedManagedAppConfigurationsItemAssignRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *TargetedManagedAppConfigurationsItemAssignRequestBuilder) Post(ctx cont
     }
     return nil
 }
-// ToPostRequestInformation invoke action assign
+// ToPostRequestInformation not yet documented
 func (m *TargetedManagedAppConfigurationsItemAssignRequestBuilder) ToPostRequestInformation(ctx context.Context, body TargetedManagedAppConfigurationsItemAssignPostRequestBodyable, requestConfiguration *TargetedManagedAppConfigurationsItemAssignRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

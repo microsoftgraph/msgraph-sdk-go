@@ -11,7 +11,7 @@ import (
 type DeviceCompliancePoliciesItemDeviceStatusesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DeviceCompliancePoliciesItemDeviceStatusesRequestBuilderGetQueryParameters list of DeviceComplianceDeviceStatus.
+// DeviceCompliancePoliciesItemDeviceStatusesRequestBuilderGetQueryParameters list properties and relationships of the deviceComplianceDeviceStatus objects.
 type DeviceCompliancePoliciesItemDeviceStatusesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewDeviceCompliancePoliciesItemDeviceStatusesRequestBuilder(rawUrl string, 
 func (m *DeviceCompliancePoliciesItemDeviceStatusesRequestBuilder) Count()(*DeviceCompliancePoliciesItemDeviceStatusesCountRequestBuilder) {
     return NewDeviceCompliancePoliciesItemDeviceStatusesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list of DeviceComplianceDeviceStatus.
+// Get list properties and relationships of the deviceComplianceDeviceStatus objects.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancedevicestatus-list?view=graph-rest-1.0
 func (m *DeviceCompliancePoliciesItemDeviceStatusesRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceCompliancePoliciesItemDeviceStatusesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceComplianceDeviceStatusCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *DeviceCompliancePoliciesItemDeviceStatusesRequestBuilder) Get(ctx conte
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceComplianceDeviceStatusCollectionResponseable), nil
 }
-// Post create new navigation property to deviceStatuses for deviceManagement
+// Post create a new deviceComplianceDeviceStatus object.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancedevicestatus-create?view=graph-rest-1.0
 func (m *DeviceCompliancePoliciesItemDeviceStatusesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceComplianceDeviceStatusable, requestConfiguration *DeviceCompliancePoliciesItemDeviceStatusesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceComplianceDeviceStatusable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *DeviceCompliancePoliciesItemDeviceStatusesRequestBuilder) Post(ctx cont
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceComplianceDeviceStatusable), nil
 }
-// ToGetRequestInformation list of DeviceComplianceDeviceStatus.
+// ToGetRequestInformation list properties and relationships of the deviceComplianceDeviceStatus objects.
 func (m *DeviceCompliancePoliciesItemDeviceStatusesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceCompliancePoliciesItemDeviceStatusesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *DeviceCompliancePoliciesItemDeviceStatusesRequestBuilder) ToGetRequestI
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to deviceStatuses for deviceManagement
+// ToPostRequestInformation create a new deviceComplianceDeviceStatus object.
 func (m *DeviceCompliancePoliciesItemDeviceStatusesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceComplianceDeviceStatusable, requestConfiguration *DeviceCompliancePoliciesItemDeviceStatusesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

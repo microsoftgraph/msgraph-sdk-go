@@ -73,7 +73,7 @@ func (m *ItemCalendarsItemCalendarPermissionsRequestBuilder) Count()(*ItemCalend
 // Get get a collection of calendarPermission resources that describe the identity and roles of users with whom the specified calendar has been shared or delegated. Here, the calendar can be a user calendar or group calendar.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/calendar-list-calendarpermissions?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/calendar-list-calendarpermissions?view=graph-rest-1.0
 func (m *ItemCalendarsItemCalendarPermissionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarsItemCalendarPermissionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarPermissionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +95,7 @@ func (m *ItemCalendarsItemCalendarPermissionsRequestBuilder) Get(ctx context.Con
 // Post create a calendarPermission resource to specify the identity and role of the user with whom the specified calendar is being shared or delegated.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/calendar-post-calendarpermissions?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/calendar-post-calendarpermissions?view=graph-rest-1.0
 func (m *ItemCalendarsItemCalendarPermissionsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarPermissionable, requestConfiguration *ItemCalendarsItemCalendarPermissionsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarPermissionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

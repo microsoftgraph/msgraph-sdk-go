@@ -64,16 +64,6 @@ func (m *PrintDocument) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["size"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
@@ -85,17 +75,6 @@ func (m *PrintDocument) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *PrintDocument) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetSize gets the size property value. The document's size in bytes. Read-only.
 func (m *PrintDocument) GetSize()(*int64) {
@@ -127,12 +106,6 @@ func (m *PrintDocument) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteInt64Value("size", m.GetSize())
         if err != nil {
             return err
@@ -154,13 +127,6 @@ func (m *PrintDocument) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *PrintDocument) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetSize sets the size property value. The document's size in bytes. Read-only.
 func (m *PrintDocument) SetSize(value *int64)() {
     err := m.GetBackingStore().Set("size", value)
@@ -174,10 +140,8 @@ type PrintDocumentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetContentType()(*string)
     GetDisplayName()(*string)
-    GetOdataType()(*string)
     GetSize()(*int64)
     SetContentType(value *string)()
     SetDisplayName(value *string)()
-    SetOdataType(value *string)()
     SetSize(value *int64)()
 }

@@ -126,16 +126,6 @@ func (m *UnifiedRoleScheduleInstanceBase) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["principal"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
@@ -177,17 +167,6 @@ func (m *UnifiedRoleScheduleInstanceBase) GetFieldDeserializers()(map[string]fun
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *UnifiedRoleScheduleInstanceBase) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetPrincipal gets the principal property value. The principal that's getting a role assignment or role eligibility through the request.
 func (m *UnifiedRoleScheduleInstanceBase) GetPrincipal()(DirectoryObjectable) {
@@ -264,12 +243,6 @@ func (m *UnifiedRoleScheduleInstanceBase) Serialize(writer i878a80d2330e89d26896
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteObjectValue("principal", m.GetPrincipal())
         if err != nil {
             return err
@@ -323,13 +296,6 @@ func (m *UnifiedRoleScheduleInstanceBase) SetDirectoryScopeId(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *UnifiedRoleScheduleInstanceBase) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetPrincipal sets the principal property value. The principal that's getting a role assignment or role eligibility through the request.
 func (m *UnifiedRoleScheduleInstanceBase) SetPrincipal(value DirectoryObjectable)() {
     err := m.GetBackingStore().Set("principal", value)
@@ -366,7 +332,6 @@ type UnifiedRoleScheduleInstanceBaseable interface {
     GetAppScopeId()(*string)
     GetDirectoryScope()(DirectoryObjectable)
     GetDirectoryScopeId()(*string)
-    GetOdataType()(*string)
     GetPrincipal()(DirectoryObjectable)
     GetPrincipalId()(*string)
     GetRoleDefinition()(UnifiedRoleDefinitionable)
@@ -375,7 +340,6 @@ type UnifiedRoleScheduleInstanceBaseable interface {
     SetAppScopeId(value *string)()
     SetDirectoryScope(value DirectoryObjectable)()
     SetDirectoryScopeId(value *string)()
-    SetOdataType(value *string)()
     SetPrincipal(value DirectoryObjectable)()
     SetPrincipalId(value *string)()
     SetRoleDefinition(value UnifiedRoleDefinitionable)()

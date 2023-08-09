@@ -7,8 +7,6 @@ import (
 // CloudAppSecuritySessionControl 
 type CloudAppSecuritySessionControl struct {
     ConditionalAccessSessionControl
-    // The OdataType property
-    OdataType *string
 }
 // NewCloudAppSecuritySessionControl instantiates a new cloudAppSecuritySessionControl and sets the default values.
 func NewCloudAppSecuritySessionControl()(*CloudAppSecuritySessionControl) {

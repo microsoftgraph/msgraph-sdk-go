@@ -57,7 +57,7 @@ func NewItemSitesItemPermissionsPermissionItemRequestBuilder(rawUrl string, requ
 // Delete delete a permission object on a site.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/site-delete-permission?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/site-delete-permission?view=graph-rest-1.0
 func (m *ItemSitesItemPermissionsPermissionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSitesItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *ItemSitesItemPermissionsPermissionItemRequestBuilder) Delete(ctx contex
 // Get retrieve the properties and relationships of a permission object on a site.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/site-get-permission?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/site-get-permission?view=graph-rest-1.0
 func (m *ItemSitesItemPermissionsPermissionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemPermissionsPermissionItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -102,7 +102,7 @@ func (m *ItemSitesItemPermissionsPermissionItemRequestBuilder) Grant()(*ItemSite
 // Patch update an application permission object on a site. 
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/site-update-permission?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/site-update-permission?view=graph-rest-1.0
 func (m *ItemSitesItemPermissionsPermissionItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable, requestConfiguration *ItemSitesItemPermissionsPermissionItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

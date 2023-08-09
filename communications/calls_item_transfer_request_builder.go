@@ -33,7 +33,7 @@ func NewCallsItemTransferRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 // Post transfer an active peer-to-peer call or group call. A consultative transfer means that the transferor can inform the person they want to transfer the call to (the transferee), before the transfer is made. This is opposed to transfering the call directly.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/call-transfer?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/call-transfer?view=graph-rest-1.0
 func (m *CallsItemTransferRequestBuilder) Post(ctx context.Context, body CallsItemTransferPostRequestBodyable, requestConfiguration *CallsItemTransferRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

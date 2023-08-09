@@ -65,16 +65,6 @@ func (m *AccessReviewSet) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     return res
 }
 // GetHistoryDefinitions gets the historyDefinitions property value. Represents a collection of access review history data and the scopes used to collect that data.
@@ -85,17 +75,6 @@ func (m *AccessReviewSet) GetHistoryDefinitions()([]AccessReviewHistoryDefinitio
     }
     if val != nil {
         return val.([]AccessReviewHistoryDefinitionable)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *AccessReviewSet) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -129,12 +108,6 @@ func (m *AccessReviewSet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetDefinitions sets the definitions property value. Represents the template and scheduling for an access review.
@@ -151,21 +124,12 @@ func (m *AccessReviewSet) SetHistoryDefinitions(value []AccessReviewHistoryDefin
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *AccessReviewSet) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // AccessReviewSetable 
 type AccessReviewSetable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDefinitions()([]AccessReviewScheduleDefinitionable)
     GetHistoryDefinitions()([]AccessReviewHistoryDefinitionable)
-    GetOdataType()(*string)
     SetDefinitions(value []AccessReviewScheduleDefinitionable)()
     SetHistoryDefinitions(value []AccessReviewHistoryDefinitionable)()
-    SetOdataType(value *string)()
 }

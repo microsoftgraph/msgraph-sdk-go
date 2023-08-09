@@ -30,7 +30,10 @@ func NewItemManagedDevicesItemWindowsDefenderUpdateSignaturesRequestBuilder(rawU
     urlParams["request-raw-url"] = rawUrl
     return NewItemManagedDevicesItemWindowsDefenderUpdateSignaturesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action windowsDefenderUpdateSignatures
+// Post not yet documented
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-windowsdefenderupdatesignatures?view=graph-rest-1.0
 func (m *ItemManagedDevicesItemWindowsDefenderUpdateSignaturesRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemManagedDevicesItemWindowsDefenderUpdateSignaturesRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *ItemManagedDevicesItemWindowsDefenderUpdateSignaturesRequestBuilder) Po
     }
     return nil
 }
-// ToPostRequestInformation invoke action windowsDefenderUpdateSignatures
+// ToPostRequestInformation not yet documented
 func (m *ItemManagedDevicesItemWindowsDefenderUpdateSignaturesRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemManagedDevicesItemWindowsDefenderUpdateSignaturesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

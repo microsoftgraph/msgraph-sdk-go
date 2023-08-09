@@ -7,8 +7,6 @@ import (
 // OpenShift 
 type OpenShift struct {
     ChangeTrackedEntity
-    // The OdataType property
-    OdataType *string
 }
 // NewOpenShift instantiates a new openShift and sets the default values.
 func NewOpenShift()(*OpenShift) {

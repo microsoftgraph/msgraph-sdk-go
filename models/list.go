@@ -146,16 +146,6 @@ func (m *List) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["operations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRichLongRunningOperationFromDiscriminatorValue)
         if err != nil {
@@ -229,17 +219,6 @@ func (m *List) GetList()(ListInfoable) {
     }
     if val != nil {
         return val.(ListInfoable)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *List) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -347,12 +326,6 @@ func (m *List) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetOperations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOperations()))
         for i, v := range m.GetOperations() {
@@ -433,13 +406,6 @@ func (m *List) SetList(value ListInfoable)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *List) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetOperations sets the operations property value. The collection of long-running operations on the list.
 func (m *List) SetOperations(value []RichLongRunningOperationable)() {
     err := m.GetBackingStore().Set("operations", value)
@@ -478,7 +444,6 @@ type Listable interface {
     GetDrive()(Driveable)
     GetItems()([]ListItemable)
     GetList()(ListInfoable)
-    GetOdataType()(*string)
     GetOperations()([]RichLongRunningOperationable)
     GetSharepointIds()(SharepointIdsable)
     GetSubscriptions()([]Subscriptionable)
@@ -489,7 +454,6 @@ type Listable interface {
     SetDrive(value Driveable)()
     SetItems(value []ListItemable)()
     SetList(value ListInfoable)()
-    SetOdataType(value *string)()
     SetOperations(value []RichLongRunningOperationable)()
     SetSharepointIds(value SharepointIdsable)()
     SetSubscriptions(value []Subscriptionable)()

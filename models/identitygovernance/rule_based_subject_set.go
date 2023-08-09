@@ -8,8 +8,6 @@ import (
 // RuleBasedSubjectSet 
 type RuleBasedSubjectSet struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubjectSet
-    // The OdataType property
-    OdataType *string
 }
 // NewRuleBasedSubjectSet instantiates a new ruleBasedSubjectSet and sets the default values.
 func NewRuleBasedSubjectSet()(*RuleBasedSubjectSet) {

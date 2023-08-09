@@ -22,16 +22,6 @@ func CreateDomainDnsTxtRecordFromDiscriminatorValue(parseNode i878a80d2330e89d26
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DomainDnsTxtRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DomainDnsRecord.GetFieldDeserializers()
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["text"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -43,17 +33,6 @@ func (m *DomainDnsTxtRecord) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *DomainDnsTxtRecord) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetText gets the text property value. Value used when configuring the text property at the DNS host.
 func (m *DomainDnsTxtRecord) GetText()(*string) {
@@ -73,25 +52,12 @@ func (m *DomainDnsTxtRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         return err
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("text", m.GetText())
         if err != nil {
             return err
         }
     }
     return nil
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *DomainDnsTxtRecord) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
 }
 // SetText sets the text property value. Value used when configuring the text property at the DNS host.
 func (m *DomainDnsTxtRecord) SetText(value *string)() {
@@ -104,8 +70,6 @@ func (m *DomainDnsTxtRecord) SetText(value *string)() {
 type DomainDnsTxtRecordable interface {
     DomainDnsRecordable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetOdataType()(*string)
     GetText()(*string)
-    SetOdataType(value *string)()
     SetText(value *string)()
 }

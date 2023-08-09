@@ -7,8 +7,6 @@ import (
 // DeviceAndAppManagementRoleAssignment the Role Assignment resource. Role assignments tie together a role definition with members and scopes. There can be one or more role assignments per role. This applies to custom and built-in roles.
 type DeviceAndAppManagementRoleAssignment struct {
     RoleAssignment
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceAndAppManagementRoleAssignment instantiates a new deviceAndAppManagementRoleAssignment and sets the default values.
 func NewDeviceAndAppManagementRoleAssignment()(*DeviceAndAppManagementRoleAssignment) {

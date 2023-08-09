@@ -19,7 +19,7 @@ func NewCustomExtensionStageSetting()(*CustomExtensionStageSetting) {
 func CreateCustomExtensionStageSettingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCustomExtensionStageSetting(), nil
 }
-// GetCustomExtension gets the customExtension property value. The customExtension property
+// GetCustomExtension gets the customExtension property value. Indicates the custom workflow extension that will be executed at this stage. Nullable. Supports $expand.
 func (m *CustomExtensionStageSetting) GetCustomExtension()(CustomCalloutExtensionable) {
     val, err := m.GetBackingStore().Get("customExtension")
     if err != nil {
@@ -43,16 +43,6 @@ func (m *CustomExtensionStageSetting) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["stage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAccessPackageCustomExtensionStage)
         if err != nil {
@@ -64,17 +54,6 @@ func (m *CustomExtensionStageSetting) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *CustomExtensionStageSetting) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetStage gets the stage property value. The stage property
 func (m *CustomExtensionStageSetting) GetStage()(*AccessPackageCustomExtensionStage) {
@@ -99,12 +78,6 @@ func (m *CustomExtensionStageSetting) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetStage() != nil {
         cast := (*m.GetStage()).String()
         err = writer.WriteStringValue("stage", &cast)
@@ -114,16 +87,9 @@ func (m *CustomExtensionStageSetting) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetCustomExtension sets the customExtension property value. The customExtension property
+// SetCustomExtension sets the customExtension property value. Indicates the custom workflow extension that will be executed at this stage. Nullable. Supports $expand.
 func (m *CustomExtensionStageSetting) SetCustomExtension(value CustomCalloutExtensionable)() {
     err := m.GetBackingStore().Set("customExtension", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *CustomExtensionStageSetting) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -140,9 +106,7 @@ type CustomExtensionStageSettingable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCustomExtension()(CustomCalloutExtensionable)
-    GetOdataType()(*string)
     GetStage()(*AccessPackageCustomExtensionStage)
     SetCustomExtension(value CustomCalloutExtensionable)()
-    SetOdataType(value *string)()
     SetStage(value *AccessPackageCustomExtensionStage)()
 }

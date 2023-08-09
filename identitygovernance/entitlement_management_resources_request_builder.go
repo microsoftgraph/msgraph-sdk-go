@@ -11,7 +11,7 @@ import (
 type EntitlementManagementResourcesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementResourcesRequestBuilderGetQueryParameters get resources from identityGovernance
+// EntitlementManagementResourcesRequestBuilderGetQueryParameters the resources associated with the catalogs.
 type EntitlementManagementResourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewEntitlementManagementResourcesRequestBuilder(rawUrl string, requestAdapt
 func (m *EntitlementManagementResourcesRequestBuilder) Count()(*EntitlementManagementResourcesCountRequestBuilder) {
     return NewEntitlementManagementResourcesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get resources from identityGovernance
+// Get the resources associated with the catalogs.
 func (m *EntitlementManagementResourcesRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementResourcesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageResourceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *EntitlementManagementResourcesRequestBuilder) Post(ctx context.Context,
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageResourceable), nil
 }
-// ToGetRequestInformation get resources from identityGovernance
+// ToGetRequestInformation the resources associated with the catalogs.
 func (m *EntitlementManagementResourcesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementResourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

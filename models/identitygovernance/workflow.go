@@ -93,16 +93,6 @@ func (m *Workflow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["runs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRunFromDiscriminatorValue)
         if err != nil {
@@ -201,17 +191,6 @@ func (m *Workflow) GetNextScheduleRunDateTime()(*i336074805fc853987abe6f7fe3ad97
     }
     return nil
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *Workflow) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetRuns gets the runs property value. Workflow runs.
 func (m *Workflow) GetRuns()([]Runable) {
     val, err := m.GetBackingStore().Get("runs")
@@ -303,12 +282,6 @@ func (m *Workflow) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetRuns() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRuns()))
         for i, v := range m.GetRuns() {
@@ -393,13 +366,6 @@ func (m *Workflow) SetNextScheduleRunDateTime(value *i336074805fc853987abe6f7fe3
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *Workflow) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetRuns sets the runs property value. Workflow runs.
 func (m *Workflow) SetRuns(value []Runable)() {
     err := m.GetBackingStore().Set("runs", value)
@@ -443,7 +409,6 @@ type Workflowable interface {
     GetExecutionScope()([]UserProcessingResultable)
     GetId()(*string)
     GetNextScheduleRunDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetOdataType()(*string)
     GetRuns()([]Runable)
     GetTaskReports()([]TaskReportable)
     GetUserProcessingResults()([]UserProcessingResultable)
@@ -453,7 +418,6 @@ type Workflowable interface {
     SetExecutionScope(value []UserProcessingResultable)()
     SetId(value *string)()
     SetNextScheduleRunDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetOdataType(value *string)()
     SetRuns(value []Runable)()
     SetTaskReports(value []TaskReportable)()
     SetUserProcessingResults(value []UserProcessingResultable)()

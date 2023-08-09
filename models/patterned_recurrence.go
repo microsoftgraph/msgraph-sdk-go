@@ -67,7 +67,7 @@ func (m *PatternedRecurrence) GetFieldDeserializers()(map[string]func(i878a80d23
             return err
         }
         if val != nil {
-            m.SetRange(val.(RecurrenceRangeable))
+            m.SetRangeEscaped(val.(RecurrenceRangeable))
         }
         return nil
     }
@@ -95,8 +95,8 @@ func (m *PatternedRecurrence) GetPattern()(RecurrencePatternable) {
     }
     return nil
 }
-// GetRange gets the range property value. The duration of an event.
-func (m *PatternedRecurrence) GetRange()(RecurrenceRangeable) {
+// GetRangeEscaped gets the range property value. The duration of an event.
+func (m *PatternedRecurrence) GetRangeEscaped()(RecurrenceRangeable) {
     val, err := m.GetBackingStore().Get("rangeEscaped")
     if err != nil {
         panic(err)
@@ -121,7 +121,7 @@ func (m *PatternedRecurrence) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     {
-        err := writer.WriteObjectValue("range", m.GetRange())
+        err := writer.WriteObjectValue("range", m.GetRangeEscaped())
         if err != nil {
             return err
         }
@@ -159,8 +159,8 @@ func (m *PatternedRecurrence) SetPattern(value RecurrencePatternable)() {
         panic(err)
     }
 }
-// SetRange sets the range property value. The duration of an event.
-func (m *PatternedRecurrence) SetRange(value RecurrenceRangeable)() {
+// SetRangeEscaped sets the range property value. The duration of an event.
+func (m *PatternedRecurrence) SetRangeEscaped(value RecurrenceRangeable)() {
     err := m.GetBackingStore().Set("rangeEscaped", value)
     if err != nil {
         panic(err)
@@ -174,9 +174,9 @@ type PatternedRecurrenceable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
     GetPattern()(RecurrencePatternable)
-    GetRange()(RecurrenceRangeable)
+    GetRangeEscaped()(RecurrenceRangeable)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
     SetPattern(value RecurrencePatternable)()
-    SetRange(value RecurrenceRangeable)()
+    SetRangeEscaped(value RecurrenceRangeable)()
 }

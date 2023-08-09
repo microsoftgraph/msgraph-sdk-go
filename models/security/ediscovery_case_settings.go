@@ -33,16 +33,6 @@ func (m *EdiscoveryCaseSettings) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["redundancyDetection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateRedundancyDetectionSettingsFromDiscriminatorValue)
         if err != nil {
@@ -73,17 +63,6 @@ func (m *EdiscoveryCaseSettings) GetOcr()(OcrSettingsable) {
     }
     if val != nil {
         return val.(OcrSettingsable)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *EdiscoveryCaseSettings) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -122,12 +101,6 @@ func (m *EdiscoveryCaseSettings) Serialize(writer i878a80d2330e89d26896388a3f487
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteObjectValue("redundancyDetection", m.GetRedundancyDetection())
         if err != nil {
             return err
@@ -144,13 +117,6 @@ func (m *EdiscoveryCaseSettings) Serialize(writer i878a80d2330e89d26896388a3f487
 // SetOcr sets the ocr property value. The OCR (Optical Character Recognition) settings for the case.
 func (m *EdiscoveryCaseSettings) SetOcr(value OcrSettingsable)() {
     err := m.GetBackingStore().Set("ocr", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *EdiscoveryCaseSettings) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -174,11 +140,9 @@ type EdiscoveryCaseSettingsable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetOcr()(OcrSettingsable)
-    GetOdataType()(*string)
     GetRedundancyDetection()(RedundancyDetectionSettingsable)
     GetTopicModeling()(TopicModelingSettingsable)
     SetOcr(value OcrSettingsable)()
-    SetOdataType(value *string)()
     SetRedundancyDetection(value RedundancyDetectionSettingsable)()
     SetTopicModeling(value TopicModelingSettingsable)()
 }

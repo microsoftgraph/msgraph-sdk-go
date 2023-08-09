@@ -7,8 +7,6 @@ import (
 // IdentityUserFlowAttributeAssignment 
 type IdentityUserFlowAttributeAssignment struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewIdentityUserFlowAttributeAssignment instantiates a new identityUserFlowAttributeAssignment and sets the default values.
 func NewIdentityUserFlowAttributeAssignment()(*IdentityUserFlowAttributeAssignment) {

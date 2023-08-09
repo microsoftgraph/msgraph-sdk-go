@@ -87,7 +87,7 @@ func (m *Phone) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
             return err
         }
         if val != nil {
-            m.SetType(val.(*PhoneType))
+            m.SetTypeEscaped(val.(*PhoneType))
         }
         return nil
     }
@@ -137,8 +137,8 @@ func (m *Phone) GetRegion()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. The type of phone number. The possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
-func (m *Phone) GetType()(*PhoneType) {
+// GetTypeEscaped gets the type property value. The type of phone number. The possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
+func (m *Phone) GetTypeEscaped()(*PhoneType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -174,8 +174,8 @@ func (m *Phone) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
             return err
         }
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
+    if m.GetTypeEscaped() != nil {
+        cast := (*m.GetTypeEscaped()).String()
         err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
@@ -228,8 +228,8 @@ func (m *Phone) SetRegion(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. The type of phone number. The possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
-func (m *Phone) SetType(value *PhoneType)() {
+// SetTypeEscaped sets the type property value. The type of phone number. The possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
+func (m *Phone) SetTypeEscaped(value *PhoneType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -245,11 +245,11 @@ type Phoneable interface {
     GetNumber()(*string)
     GetOdataType()(*string)
     GetRegion()(*string)
-    GetType()(*PhoneType)
+    GetTypeEscaped()(*PhoneType)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetLanguage(value *string)()
     SetNumber(value *string)()
     SetOdataType(value *string)()
     SetRegion(value *string)()
-    SetType(value *PhoneType)()
+    SetTypeEscaped(value *PhoneType)()
 }

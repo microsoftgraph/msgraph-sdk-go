@@ -19,7 +19,7 @@ func NewAccessPackageResourceScope()(*AccessPackageResourceScope) {
 func CreateAccessPackageResourceScopeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessPackageResourceScope(), nil
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. The description of the scope.
 func (m *AccessPackageResourceScope) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -30,7 +30,7 @@ func (m *AccessPackageResourceScope) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name of the scope.
 func (m *AccessPackageResourceScope) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -74,16 +74,6 @@ func (m *AccessPackageResourceScope) GetFieldDeserializers()(map[string]func(i87
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["originId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -116,7 +106,7 @@ func (m *AccessPackageResourceScope) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetIsRootScope gets the isRootScope property value. The isRootScope property
+// GetIsRootScope gets the isRootScope property value. True if the scopes are arranged in a hierarchy and this is the top or root scope of the resource.
 func (m *AccessPackageResourceScope) GetIsRootScope()(*bool) {
     val, err := m.GetBackingStore().Get("isRootScope")
     if err != nil {
@@ -127,18 +117,7 @@ func (m *AccessPackageResourceScope) GetIsRootScope()(*bool) {
     }
     return nil
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *AccessPackageResourceScope) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetOriginId gets the originId property value. The originId property
+// GetOriginId gets the originId property value. The unique identifier for the scope in the resource as defined in the origin system.
 func (m *AccessPackageResourceScope) GetOriginId()(*string) {
     val, err := m.GetBackingStore().Get("originId")
     if err != nil {
@@ -149,7 +128,7 @@ func (m *AccessPackageResourceScope) GetOriginId()(*string) {
     }
     return nil
 }
-// GetOriginSystem gets the originSystem property value. The originSystem property
+// GetOriginSystem gets the originSystem property value. The origin system for the scope.
 func (m *AccessPackageResourceScope) GetOriginSystem()(*string) {
     val, err := m.GetBackingStore().Get("originSystem")
     if err != nil {
@@ -196,12 +175,6 @@ func (m *AccessPackageResourceScope) Serialize(writer i878a80d2330e89d26896388a3
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("originId", m.GetOriginId())
         if err != nil {
             return err
@@ -221,42 +194,35 @@ func (m *AccessPackageResourceScope) Serialize(writer i878a80d2330e89d26896388a3
     }
     return nil
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. The description of the scope.
 func (m *AccessPackageResourceScope) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name of the scope.
 func (m *AccessPackageResourceScope) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsRootScope sets the isRootScope property value. The isRootScope property
+// SetIsRootScope sets the isRootScope property value. True if the scopes are arranged in a hierarchy and this is the top or root scope of the resource.
 func (m *AccessPackageResourceScope) SetIsRootScope(value *bool)() {
     err := m.GetBackingStore().Set("isRootScope", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *AccessPackageResourceScope) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetOriginId sets the originId property value. The originId property
+// SetOriginId sets the originId property value. The unique identifier for the scope in the resource as defined in the origin system.
 func (m *AccessPackageResourceScope) SetOriginId(value *string)() {
     err := m.GetBackingStore().Set("originId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOriginSystem sets the originSystem property value. The originSystem property
+// SetOriginSystem sets the originSystem property value. The origin system for the scope.
 func (m *AccessPackageResourceScope) SetOriginSystem(value *string)() {
     err := m.GetBackingStore().Set("originSystem", value)
     if err != nil {
@@ -277,14 +243,12 @@ type AccessPackageResourceScopeable interface {
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetIsRootScope()(*bool)
-    GetOdataType()(*string)
     GetOriginId()(*string)
     GetOriginSystem()(*string)
     GetResource()(AccessPackageResourceable)
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetIsRootScope(value *bool)()
-    SetOdataType(value *string)()
     SetOriginId(value *string)()
     SetOriginSystem(value *string)()
     SetResource(value AccessPackageResourceable)()

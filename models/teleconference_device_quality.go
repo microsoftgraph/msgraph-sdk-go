@@ -72,7 +72,7 @@ func (m *TeleconferenceDeviceQuality) GetCloudServiceDeploymentId()(*string) {
     }
     return nil
 }
-// GetCloudServiceInstanceName gets the cloudServiceInstanceName property value. The Azure deployed cloud service instance name, such as FrontEnd_IN_3.
+// GetCloudServiceInstanceName gets the cloudServiceInstanceName property value. The Azure deployed cloud service instance name, such as FrontEndIN3.
 func (m *TeleconferenceDeviceQuality) GetCloudServiceInstanceName()(*string) {
     val, err := m.GetBackingStore().Get("cloudServiceInstanceName")
     if err != nil {
@@ -395,7 +395,7 @@ func (m *TeleconferenceDeviceQuality) SetCloudServiceDeploymentId(value *string)
         panic(err)
     }
 }
-// SetCloudServiceInstanceName sets the cloudServiceInstanceName property value. The Azure deployed cloud service instance name, such as FrontEnd_IN_3.
+// SetCloudServiceInstanceName sets the cloudServiceInstanceName property value. The Azure deployed cloud service instance name, such as FrontEndIN3.
 func (m *TeleconferenceDeviceQuality) SetCloudServiceInstanceName(value *string)() {
     err := m.GetBackingStore().Set("cloudServiceInstanceName", value)
     if err != nil {

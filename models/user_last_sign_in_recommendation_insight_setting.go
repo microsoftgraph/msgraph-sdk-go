@@ -24,16 +24,6 @@ func CreateUserLastSignInRecommendationInsightSettingFromDiscriminatorValue(pars
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserLastSignInRecommendationInsightSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AccessReviewRecommendationInsightSetting.GetFieldDeserializers()
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["recommendationLookBackDuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
@@ -55,17 +45,6 @@ func (m *UserLastSignInRecommendationInsightSetting) GetFieldDeserializers()(map
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *UserLastSignInRecommendationInsightSetting) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetRecommendationLookBackDuration gets the recommendationLookBackDuration property value. Optional. Indicates the time period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look-back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days.
 func (m *UserLastSignInRecommendationInsightSetting) GetRecommendationLookBackDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
@@ -96,12 +75,6 @@ func (m *UserLastSignInRecommendationInsightSetting) Serialize(writer i878a80d23
         return err
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteISODurationValue("recommendationLookBackDuration", m.GetRecommendationLookBackDuration())
         if err != nil {
             return err
@@ -115,13 +88,6 @@ func (m *UserLastSignInRecommendationInsightSetting) Serialize(writer i878a80d23
         }
     }
     return nil
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *UserLastSignInRecommendationInsightSetting) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
 }
 // SetRecommendationLookBackDuration sets the recommendationLookBackDuration property value. Optional. Indicates the time period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look-back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days.
 func (m *UserLastSignInRecommendationInsightSetting) SetRecommendationLookBackDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
@@ -141,10 +107,8 @@ func (m *UserLastSignInRecommendationInsightSetting) SetSignInScope(value *UserS
 type UserLastSignInRecommendationInsightSettingable interface {
     AccessReviewRecommendationInsightSettingable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetOdataType()(*string)
     GetRecommendationLookBackDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
     GetSignInScope()(*UserSignInRecommendationScope)
-    SetOdataType(value *string)()
     SetRecommendationLookBackDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
     SetSignInScope(value *UserSignInRecommendationScope)()
 }

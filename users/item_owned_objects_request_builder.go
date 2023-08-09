@@ -70,7 +70,7 @@ func (m *ItemOwnedObjectsRequestBuilder) Count()(*ItemOwnedObjectsCountRequestBu
 // Get directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/user-list-ownedobjects?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-list-ownedobjects?view=graph-rest-1.0
 func (m *ItemOwnedObjectsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOwnedObjectsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

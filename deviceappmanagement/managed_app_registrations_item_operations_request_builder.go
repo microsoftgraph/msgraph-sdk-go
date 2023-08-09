@@ -11,7 +11,7 @@ import (
 type ManagedAppRegistrationsItemOperationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ManagedAppRegistrationsItemOperationsRequestBuilderGetQueryParameters zero or more long running operations triggered on the app registration.
+// ManagedAppRegistrationsItemOperationsRequestBuilderGetQueryParameters list properties and relationships of the managedAppOperation objects.
 type ManagedAppRegistrationsItemOperationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewManagedAppRegistrationsItemOperationsRequestBuilder(rawUrl string, reque
 func (m *ManagedAppRegistrationsItemOperationsRequestBuilder) Count()(*ManagedAppRegistrationsItemOperationsCountRequestBuilder) {
     return NewManagedAppRegistrationsItemOperationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get zero or more long running operations triggered on the app registration.
+// Get list properties and relationships of the managedAppOperation objects.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-mam-managedappoperation-list?view=graph-rest-1.0
 func (m *ManagedAppRegistrationsItemOperationsRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedAppRegistrationsItemOperationsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAppOperationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +96,10 @@ func (m *ManagedAppRegistrationsItemOperationsRequestBuilder) Get(ctx context.Co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAppOperationCollectionResponseable), nil
 }
-// Post create new navigation property to operations for deviceAppManagement
+// Post create a new managedAppOperation object.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-mam-managedappoperation-create?view=graph-rest-1.0
 func (m *ManagedAppRegistrationsItemOperationsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAppOperationable, requestConfiguration *ManagedAppRegistrationsItemOperationsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAppOperationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +118,7 @@ func (m *ManagedAppRegistrationsItemOperationsRequestBuilder) Post(ctx context.C
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAppOperationable), nil
 }
-// ToGetRequestInformation zero or more long running operations triggered on the app registration.
+// ToGetRequestInformation list properties and relationships of the managedAppOperation objects.
 func (m *ManagedAppRegistrationsItemOperationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedAppRegistrationsItemOperationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -128,7 +134,7 @@ func (m *ManagedAppRegistrationsItemOperationsRequestBuilder) ToGetRequestInform
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to operations for deviceAppManagement
+// ToPostRequestInformation create a new managedAppOperation object.
 func (m *ManagedAppRegistrationsItemOperationsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAppOperationable, requestConfiguration *ManagedAppRegistrationsItemOperationsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

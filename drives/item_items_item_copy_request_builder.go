@@ -34,7 +34,7 @@ func NewItemItemsItemCopyRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 // Post asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/driveitem-copy?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/driveitem-copy?view=graph-rest-1.0
 func (m *ItemItemsItemCopyRequestBuilder) Post(ctx context.Context, body ItemItemsItemCopyPostRequestBodyable, requestConfiguration *ItemItemsItemCopyRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

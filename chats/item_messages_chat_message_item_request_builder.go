@@ -73,7 +73,7 @@ func (m *ItemMessagesChatMessageItemRequestBuilder) Delete(ctx context.Context, 
 // Get retrieve a single message or a message reply in a channel or a chat.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/chatmessage-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/chatmessage-get?view=graph-rest-1.0
 func (m *ItemMessagesChatMessageItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMessagesChatMessageItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -118,6 +118,10 @@ func (m *ItemMessagesChatMessageItemRequestBuilder) Patch(ctx context.Context, b
 // Replies provides operations to manage the replies property of the microsoft.graph.chatMessage entity.
 func (m *ItemMessagesChatMessageItemRequestBuilder) Replies()(*ItemMessagesItemRepliesRequestBuilder) {
     return NewItemMessagesItemRepliesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// SetReaction provides operations to call the setReaction method.
+func (m *ItemMessagesChatMessageItemRequestBuilder) SetReaction()(*ItemMessagesItemSetReactionRequestBuilder) {
+    return NewItemMessagesItemSetReactionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SoftDelete provides operations to call the softDelete method.
 func (m *ItemMessagesChatMessageItemRequestBuilder) SoftDelete()(*ItemMessagesItemSoftDeleteRequestBuilder) {
@@ -171,4 +175,8 @@ func (m *ItemMessagesChatMessageItemRequestBuilder) ToPatchRequestInformation(ct
 // UndoSoftDelete provides operations to call the undoSoftDelete method.
 func (m *ItemMessagesChatMessageItemRequestBuilder) UndoSoftDelete()(*ItemMessagesItemUndoSoftDeleteRequestBuilder) {
     return NewItemMessagesItemUndoSoftDeleteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// UnsetReaction provides operations to call the unsetReaction method.
+func (m *ItemMessagesChatMessageItemRequestBuilder) UnsetReaction()(*ItemMessagesItemUnsetReactionRequestBuilder) {
+    return NewItemMessagesItemUnsetReactionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

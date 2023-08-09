@@ -7,8 +7,6 @@ import (
 // Win32LobAppPowerShellScriptRule a complex type to store the PowerShell script rule data for a Win32 LOB app.
 type Win32LobAppPowerShellScriptRule struct {
     Win32LobAppRule
-    // The OdataType property
-    OdataType *string
 }
 // NewWin32LobAppPowerShellScriptRule instantiates a new win32LobAppPowerShellScriptRule and sets the default values.
 func NewWin32LobAppPowerShellScriptRule()(*Win32LobAppPowerShellScriptRule) {

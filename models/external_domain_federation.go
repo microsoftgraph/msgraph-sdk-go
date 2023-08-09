@@ -7,8 +7,6 @@ import (
 // ExternalDomainFederation 
 type ExternalDomainFederation struct {
     IdentitySource
-    // The OdataType property
-    OdataType *string
 }
 // NewExternalDomainFederation instantiates a new externalDomainFederation and sets the default values.
 func NewExternalDomainFederation()(*ExternalDomainFederation) {

@@ -34,7 +34,7 @@ func NewItemAssignLicenseRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 // Post add or remove subscriptions for the user. You can also enable and disable specific plans associated with a subscription.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/user-assignlicense?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-assignlicense?view=graph-rest-1.0
 func (m *ItemAssignLicenseRequestBuilder) Post(ctx context.Context, body ItemAssignLicensePostRequestBodyable, requestConfiguration *ItemAssignLicenseRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

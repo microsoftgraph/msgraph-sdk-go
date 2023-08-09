@@ -18,7 +18,7 @@ type RoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilderDeleteReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// RoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilderGetQueryParameters list of Role assignments for this role definition.
+// RoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilderGetQueryParameters read properties and relationships of the roleAssignment object.
 type RoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewRoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilder(rawUr
     urlParams["request-raw-url"] = rawUrl
     return NewRoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property roleAssignments for deviceManagement
+// Delete deletes a roleAssignment.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-rbac-roleassignment-delete?view=graph-rest-1.0
 func (m *RoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *RoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *RoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilder) Del
     }
     return nil
 }
-// Get list of Role assignments for this role definition.
+// Get read properties and relationships of the roleAssignment object.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-rbac-roleassignment-get?view=graph-rest-1.0
 func (m *RoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *RoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RoleAssignmentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *RoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilder) Get
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RoleAssignmentable), nil
 }
-// Patch update the navigation property roleAssignments in deviceManagement
+// Patch update the properties of a roleAssignment object.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-rbac-roleassignment-update?view=graph-rest-1.0
 func (m *RoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RoleAssignmentable, requestConfiguration *RoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RoleAssignmentable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +121,7 @@ func (m *RoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilder) Pat
 func (m *RoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilder) RoleDefinition()(*RoleDefinitionsItemRoleAssignmentsItemRoleDefinitionRequestBuilder) {
     return NewRoleDefinitionsItemRoleAssignmentsItemRoleDefinitionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete navigation property roleAssignments for deviceManagement
+// ToDeleteRequestInformation deletes a roleAssignment.
 func (m *RoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *RoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -124,7 +133,7 @@ func (m *RoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilder) ToD
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation list of Role assignments for this role definition.
+// ToGetRequestInformation read properties and relationships of the roleAssignment object.
 func (m *RoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -140,7 +149,7 @@ func (m *RoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilder) ToG
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property roleAssignments in deviceManagement
+// ToPatchRequestInformation update the properties of a roleAssignment object.
 func (m *RoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RoleAssignmentable, requestConfiguration *RoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

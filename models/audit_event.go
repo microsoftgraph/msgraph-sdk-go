@@ -234,16 +234,6 @@ func (m *AuditEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["resources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAuditResourceFromDiscriminatorValue)
         if err != nil {
@@ -261,17 +251,6 @@ func (m *AuditEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *AuditEvent) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetResources gets the resources property value. Resources being modified.
 func (m *AuditEvent) GetResources()([]AuditResourceable) {
@@ -346,12 +325,6 @@ func (m *AuditEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     {
         err = writer.WriteStringValue("displayName", m.GetDisplayName())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -440,13 +413,6 @@ func (m *AuditEvent) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *AuditEvent) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetResources sets the resources property value. Resources being modified.
 func (m *AuditEvent) SetResources(value []AuditResourceable)() {
     err := m.GetBackingStore().Set("resources", value)
@@ -468,7 +434,6 @@ type AuditEventable interface {
     GetComponentName()(*string)
     GetCorrelationId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetDisplayName()(*string)
-    GetOdataType()(*string)
     GetResources()([]AuditResourceable)
     SetActivity(value *string)()
     SetActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -480,6 +445,5 @@ type AuditEventable interface {
     SetComponentName(value *string)()
     SetCorrelationId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetDisplayName(value *string)()
-    SetOdataType(value *string)()
     SetResources(value []AuditResourceable)()
 }

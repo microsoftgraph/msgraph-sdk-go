@@ -38,16 +38,6 @@ func (m *UserExperienceAnalyticsOverview) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     return res
 }
 // GetInsights gets the insights property value. The user experience analytics insights. Read-only.
@@ -58,17 +48,6 @@ func (m *UserExperienceAnalyticsOverview) GetInsights()([]UserExperienceAnalytic
     }
     if val != nil {
         return val.([]UserExperienceAnalyticsInsightable)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *UserExperienceAnalyticsOverview) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -90,12 +69,6 @@ func (m *UserExperienceAnalyticsOverview) Serialize(writer i878a80d2330e89d26896
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetInsights sets the insights property value. The user experience analytics insights. Read-only.
@@ -105,19 +78,10 @@ func (m *UserExperienceAnalyticsOverview) SetInsights(value []UserExperienceAnal
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *UserExperienceAnalyticsOverview) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // UserExperienceAnalyticsOverviewable 
 type UserExperienceAnalyticsOverviewable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetInsights()([]UserExperienceAnalyticsInsightable)
-    GetOdataType()(*string)
     SetInsights(value []UserExperienceAnalyticsInsightable)()
-    SetOdataType(value *string)()
 }

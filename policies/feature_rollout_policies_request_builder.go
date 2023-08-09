@@ -77,7 +77,7 @@ func (m *FeatureRolloutPoliciesRequestBuilder) Count()(*FeatureRolloutPoliciesCo
 // Get retrieve a list of featureRolloutPolicy objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/featurerolloutpolicies-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/featurerolloutpolicies-list?view=graph-rest-1.0
 func (m *FeatureRolloutPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *FeatureRolloutPoliciesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FeatureRolloutPolicyCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *FeatureRolloutPoliciesRequestBuilder) Get(ctx context.Context, requestC
 // Post create a new featureRolloutPolicy object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/featurerolloutpolicies-post?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/featurerolloutpolicies-post?view=graph-rest-1.0
 func (m *FeatureRolloutPoliciesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FeatureRolloutPolicyable, requestConfiguration *FeatureRolloutPoliciesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FeatureRolloutPolicyable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

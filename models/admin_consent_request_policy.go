@@ -42,16 +42,6 @@ func (m *AdminConsentRequestPolicy) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["remindersEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -122,17 +112,6 @@ func (m *AdminConsentRequestPolicy) GetNotifyReviewers()(*bool) {
     }
     return nil
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *AdminConsentRequestPolicy) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetRemindersEnabled gets the remindersEnabled property value. Specifies whether reviewers will receive reminder emails. Required.
 func (m *AdminConsentRequestPolicy) GetRemindersEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("remindersEnabled")
@@ -196,12 +175,6 @@ func (m *AdminConsentRequestPolicy) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteBoolValue("remindersEnabled", m.GetRemindersEnabled())
         if err != nil {
             return err
@@ -247,13 +220,6 @@ func (m *AdminConsentRequestPolicy) SetNotifyReviewers(value *bool)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *AdminConsentRequestPolicy) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetRemindersEnabled sets the remindersEnabled property value. Specifies whether reviewers will receive reminder emails. Required.
 func (m *AdminConsentRequestPolicy) SetRemindersEnabled(value *bool)() {
     err := m.GetBackingStore().Set("remindersEnabled", value)
@@ -288,14 +254,12 @@ type AdminConsentRequestPolicyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetIsEnabled()(*bool)
     GetNotifyReviewers()(*bool)
-    GetOdataType()(*string)
     GetRemindersEnabled()(*bool)
     GetRequestDurationInDays()(*int32)
     GetReviewers()([]AccessReviewReviewerScopeable)
     GetVersion()(*int32)
     SetIsEnabled(value *bool)()
     SetNotifyReviewers(value *bool)()
-    SetOdataType(value *string)()
     SetRemindersEnabled(value *bool)()
     SetRequestDurationInDays(value *int32)()
     SetReviewers(value []AccessReviewReviewerScopeable)()

@@ -70,7 +70,7 @@ func (m *ItemSitesRequestBuilder) Count()(*ItemSitesCountRequestBuilder) {
 // Get get a collection of subsites defined for a [site][].
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/site-list-subsites?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/site-list-subsites?view=graph-rest-1.0
 func (m *ItemSitesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SiteCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

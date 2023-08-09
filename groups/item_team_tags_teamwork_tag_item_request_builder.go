@@ -57,7 +57,7 @@ func NewItemTeamTagsTeamworkTagItemRequestBuilder(rawUrl string, requestAdapter 
 // Delete delete a tag object permanently.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/teamworktag-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/teamworktag-delete?view=graph-rest-1.0
 func (m *ItemTeamTagsTeamworkTagItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTeamTagsTeamworkTagItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *ItemTeamTagsTeamworkTagItemRequestBuilder) Delete(ctx context.Context, 
 // Get read the properties and relationships of a tag object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/teamworktag-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/teamworktag-get?view=graph-rest-1.0
 func (m *ItemTeamTagsTeamworkTagItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamTagsTeamworkTagItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -102,7 +102,7 @@ func (m *ItemTeamTagsTeamworkTagItemRequestBuilder) Members()(*ItemTeamTagsItemM
 // Patch update the properties of a tag object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/teamworktag-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/teamworktag-update?view=graph-rest-1.0
 func (m *ItemTeamTagsTeamworkTagItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagable, requestConfiguration *ItemTeamTagsTeamworkTagItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

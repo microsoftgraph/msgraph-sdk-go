@@ -66,16 +66,6 @@ func (m *UserProcessingResult) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["processingStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseLifecycleWorkflowProcessingStatus)
         if err != nil {
@@ -173,17 +163,6 @@ func (m *UserProcessingResult) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *UserProcessingResult) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetProcessingStatus gets the processingStatus property value. The processingStatus property
 func (m *UserProcessingResult) GetProcessingStatus()(*LifecycleWorkflowProcessingStatus) {
@@ -302,12 +281,6 @@ func (m *UserProcessingResult) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetProcessingStatus() != nil {
         cast := (*m.GetProcessingStatus()).String()
         err = writer.WriteStringValue("processingStatus", &cast)
@@ -386,13 +359,6 @@ func (m *UserProcessingResult) SetFailedTasksCount(value *int32)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *UserProcessingResult) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetProcessingStatus sets the processingStatus property value. The processingStatus property
 func (m *UserProcessingResult) SetProcessingStatus(value *LifecycleWorkflowProcessingStatus)() {
     err := m.GetBackingStore().Set("processingStatus", value)
@@ -462,7 +428,6 @@ type UserProcessingResultable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetFailedTasksCount()(*int32)
-    GetOdataType()(*string)
     GetProcessingStatus()(*LifecycleWorkflowProcessingStatus)
     GetScheduledDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetStartedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -474,7 +439,6 @@ type UserProcessingResultable interface {
     GetWorkflowVersion()(*int32)
     SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetFailedTasksCount(value *int32)()
-    SetOdataType(value *string)()
     SetProcessingStatus(value *LifecycleWorkflowProcessingStatus)()
     SetScheduledDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetStartedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()

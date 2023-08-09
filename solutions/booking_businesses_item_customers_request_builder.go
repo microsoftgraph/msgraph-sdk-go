@@ -77,7 +77,7 @@ func (m *BookingBusinessesItemCustomersRequestBuilder) Count()(*BookingBusinesse
 // Get get a list of bookingCustomer objects of a business.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/bookingbusiness-list-customers?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/bookingbusiness-list-customers?view=graph-rest-1.0
 func (m *BookingBusinessesItemCustomersRequestBuilder) Get(ctx context.Context, requestConfiguration *BookingBusinessesItemCustomersRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingCustomerBaseCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *BookingBusinessesItemCustomersRequestBuilder) Get(ctx context.Context, 
 // Post create a new bookingCustomer object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/bookingbusiness-post-customers?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/bookingbusiness-post-customers?view=graph-rest-1.0
 func (m *BookingBusinessesItemCustomersRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingCustomerBaseable, requestConfiguration *BookingBusinessesItemCustomersRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingCustomerBaseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

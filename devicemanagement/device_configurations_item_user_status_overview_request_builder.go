@@ -18,7 +18,7 @@ type DeviceConfigurationsItemUserStatusOverviewRequestBuilderDeleteRequestConfig
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DeviceConfigurationsItemUserStatusOverviewRequestBuilderGetQueryParameters device Configuration users status overview
+// DeviceConfigurationsItemUserStatusOverviewRequestBuilderGetQueryParameters read properties and relationships of the deviceConfigurationUserOverview object.
 type DeviceConfigurationsItemUserStatusOverviewRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,10 @@ func (m *DeviceConfigurationsItemUserStatusOverviewRequestBuilder) Delete(ctx co
     }
     return nil
 }
-// Get device Configuration users status overview
+// Get read properties and relationships of the deviceConfigurationUserOverview object.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationuseroverview-get?view=graph-rest-1.0
 func (m *DeviceConfigurationsItemUserStatusOverviewRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceConfigurationsItemUserStatusOverviewRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceConfigurationUserOverviewable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +92,10 @@ func (m *DeviceConfigurationsItemUserStatusOverviewRequestBuilder) Get(ctx conte
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceConfigurationUserOverviewable), nil
 }
-// Patch update the navigation property userStatusOverview in deviceManagement
+// Patch update the properties of a deviceConfigurationUserOverview object.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationuseroverview-update?view=graph-rest-1.0
 func (m *DeviceConfigurationsItemUserStatusOverviewRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceConfigurationUserOverviewable, requestConfiguration *DeviceConfigurationsItemUserStatusOverviewRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceConfigurationUserOverviewable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -120,7 +126,7 @@ func (m *DeviceConfigurationsItemUserStatusOverviewRequestBuilder) ToDeleteReque
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation device Configuration users status overview
+// ToGetRequestInformation read properties and relationships of the deviceConfigurationUserOverview object.
 func (m *DeviceConfigurationsItemUserStatusOverviewRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceConfigurationsItemUserStatusOverviewRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +142,7 @@ func (m *DeviceConfigurationsItemUserStatusOverviewRequestBuilder) ToGetRequestI
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property userStatusOverview in deviceManagement
+// ToPatchRequestInformation update the properties of a deviceConfigurationUserOverview object.
 func (m *DeviceConfigurationsItemUserStatusOverviewRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceConfigurationUserOverviewable, requestConfiguration *DeviceConfigurationsItemUserStatusOverviewRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

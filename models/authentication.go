@@ -108,16 +108,6 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["operations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateLongRunningOperationFromDiscriminatorValue)
         if err != nil {
@@ -235,17 +225,6 @@ func (m *Authentication) GetMicrosoftAuthenticatorMethods()([]MicrosoftAuthentic
     }
     if val != nil {
         return val.([]MicrosoftAuthenticatorAuthenticationMethodable)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *Authentication) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -369,12 +348,6 @@ func (m *Authentication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetOperations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOperations()))
         for i, v := range m.GetOperations() {
@@ -477,13 +450,6 @@ func (m *Authentication) SetMicrosoftAuthenticatorMethods(value []MicrosoftAuthe
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *Authentication) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetOperations sets the operations property value. Represents the status of a long-running operation.
 func (m *Authentication) SetOperations(value []LongRunningOperationable)() {
     err := m.GetBackingStore().Set("operations", value)
@@ -534,7 +500,6 @@ type Authenticationable interface {
     GetFido2Methods()([]Fido2AuthenticationMethodable)
     GetMethods()([]AuthenticationMethodable)
     GetMicrosoftAuthenticatorMethods()([]MicrosoftAuthenticatorAuthenticationMethodable)
-    GetOdataType()(*string)
     GetOperations()([]LongRunningOperationable)
     GetPasswordMethods()([]PasswordAuthenticationMethodable)
     GetPhoneMethods()([]PhoneAuthenticationMethodable)
@@ -545,7 +510,6 @@ type Authenticationable interface {
     SetFido2Methods(value []Fido2AuthenticationMethodable)()
     SetMethods(value []AuthenticationMethodable)()
     SetMicrosoftAuthenticatorMethods(value []MicrosoftAuthenticatorAuthenticationMethodable)()
-    SetOdataType(value *string)()
     SetOperations(value []LongRunningOperationable)()
     SetPasswordMethods(value []PasswordAuthenticationMethodable)()
     SetPhoneMethods(value []PhoneAuthenticationMethodable)()

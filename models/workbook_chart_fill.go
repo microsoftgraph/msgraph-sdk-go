@@ -7,8 +7,6 @@ import (
 // WorkbookChartFill 
 type WorkbookChartFill struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewWorkbookChartFill instantiates a new workbookChartFill and sets the default values.
 func NewWorkbookChartFill()(*WorkbookChartFill) {

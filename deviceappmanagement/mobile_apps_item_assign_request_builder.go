@@ -30,7 +30,10 @@ func NewMobileAppsItemAssignRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppsItemAssignRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action assign
+// Post not yet documented
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-apps-mobileapp-assign?view=graph-rest-1.0
 func (m *MobileAppsItemAssignRequestBuilder) Post(ctx context.Context, body MobileAppsItemAssignPostRequestBodyable, requestConfiguration *MobileAppsItemAssignRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *MobileAppsItemAssignRequestBuilder) Post(ctx context.Context, body Mobi
     }
     return nil
 }
-// ToPostRequestInformation invoke action assign
+// ToPostRequestInformation not yet documented
 func (m *MobileAppsItemAssignRequestBuilder) ToPostRequestInformation(ctx context.Context, body MobileAppsItemAssignPostRequestBodyable, requestConfiguration *MobileAppsItemAssignRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -61,7 +61,7 @@ func NewTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder(rawUrl string
 // Delete delete a tokenLifetimePolicy object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/tokenlifetimepolicy-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/tokenlifetimepolicy-delete?view=graph-rest-1.0
 func (m *TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -80,7 +80,7 @@ func (m *TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) Delete(ctx 
 // Get retrieve the properties and relationships of a tokenLifetimePolicy object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/tokenlifetimepolicy-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/tokenlifetimepolicy-get?view=graph-rest-1.0
 func (m *TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TokenLifetimePolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -102,7 +102,7 @@ func (m *TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) Get(ctx con
 // Patch update the properties of a tokenLifetimePolicy object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/tokenlifetimepolicy-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/tokenlifetimepolicy-update?view=graph-rest-1.0
 func (m *TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TokenLifetimePolicyable, requestConfiguration *TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TokenLifetimePolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

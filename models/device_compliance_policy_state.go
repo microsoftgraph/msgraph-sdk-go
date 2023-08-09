@@ -43,16 +43,6 @@ func (m *DeviceCompliancePolicyState) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["platformType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParsePolicyPlatformType)
         if err != nil {
@@ -110,17 +100,6 @@ func (m *DeviceCompliancePolicyState) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *DeviceCompliancePolicyState) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetPlatformType gets the platformType property value. Supported platform types for policies.
 func (m *DeviceCompliancePolicyState) GetPlatformType()(*PolicyPlatformType) {
@@ -189,12 +168,6 @@ func (m *DeviceCompliancePolicyState) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetPlatformType() != nil {
         cast := (*m.GetPlatformType()).String()
         err = writer.WriteStringValue("platformType", &cast)
@@ -242,13 +215,6 @@ func (m *DeviceCompliancePolicyState) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *DeviceCompliancePolicyState) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetPlatformType sets the platformType property value. Supported platform types for policies.
 func (m *DeviceCompliancePolicyState) SetPlatformType(value *PolicyPlatformType)() {
     err := m.GetBackingStore().Set("platformType", value)
@@ -289,14 +255,12 @@ type DeviceCompliancePolicyStateable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDisplayName()(*string)
-    GetOdataType()(*string)
     GetPlatformType()(*PolicyPlatformType)
     GetSettingCount()(*int32)
     GetSettingStates()([]DeviceCompliancePolicySettingStateable)
     GetState()(*ComplianceStatus)
     GetVersion()(*int32)
     SetDisplayName(value *string)()
-    SetOdataType(value *string)()
     SetPlatformType(value *PolicyPlatformType)()
     SetSettingCount(value *int32)()
     SetSettingStates(value []DeviceCompliancePolicySettingStateable)()

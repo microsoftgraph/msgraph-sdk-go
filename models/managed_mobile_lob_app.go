@@ -7,8 +7,6 @@ import (
 // ManagedMobileLobApp an abstract base class containing properties for all managed mobile line of business apps.
 type ManagedMobileLobApp struct {
     ManagedApp
-    // The OdataType property
-    OdataType *string
 }
 // NewManagedMobileLobApp instantiates a new managedMobileLobApp and sets the default values.
 func NewManagedMobileLobApp()(*ManagedMobileLobApp) {

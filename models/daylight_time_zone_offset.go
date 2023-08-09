@@ -7,8 +7,6 @@ import (
 // DaylightTimeZoneOffset 
 type DaylightTimeZoneOffset struct {
     StandardTimeZoneOffset
-    // The OdataType property
-    OdataType *string
 }
 // NewDaylightTimeZoneOffset instantiates a new daylightTimeZoneOffset and sets the default values.
 func NewDaylightTimeZoneOffset()(*DaylightTimeZoneOffset) {

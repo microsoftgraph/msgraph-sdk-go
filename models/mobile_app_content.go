@@ -65,16 +65,6 @@ func (m *MobileAppContent) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     return res
 }
 // GetFiles gets the files property value. The list of files for this app content version.
@@ -85,17 +75,6 @@ func (m *MobileAppContent) GetFiles()([]MobileAppContentFileable) {
     }
     if val != nil {
         return val.([]MobileAppContentFileable)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *MobileAppContent) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -129,12 +108,6 @@ func (m *MobileAppContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetContainedApps sets the containedApps property value. The collection of contained apps in a MobileLobApp acting as a package.
@@ -151,21 +124,12 @@ func (m *MobileAppContent) SetFiles(value []MobileAppContentFileable)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *MobileAppContent) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // MobileAppContentable 
 type MobileAppContentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetContainedApps()([]MobileContainedAppable)
     GetFiles()([]MobileAppContentFileable)
-    GetOdataType()(*string)
     SetContainedApps(value []MobileContainedAppable)()
     SetFiles(value []MobileAppContentFileable)()
-    SetOdataType(value *string)()
 }

@@ -7,8 +7,6 @@ import (
 // IosiPadOSWebClip contains properties and inherited properties for iOS web apps.
 type IosiPadOSWebClip struct {
     MobileApp
-    // The OdataType property
-    OdataType *string
 }
 // NewIosiPadOSWebClip instantiates a new iosiPadOSWebClip and sets the default values.
 func NewIosiPadOSWebClip()(*IosiPadOSWebClip) {

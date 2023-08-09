@@ -7,8 +7,6 @@ import (
 // Invitation 
 type Invitation struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewInvitation instantiates a new invitation and sets the default values.
 func NewInvitation()(*Invitation) {

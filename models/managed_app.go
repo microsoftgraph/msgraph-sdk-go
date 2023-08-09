@@ -71,16 +71,6 @@ func (m *ManagedApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["version"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -92,17 +82,6 @@ func (m *ManagedApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *ManagedApp) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetVersion gets the version property value. The Application's version.
 func (m *ManagedApp) GetVersion()(*string) {
@@ -129,12 +108,6 @@ func (m *ManagedApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("version", m.GetVersion())
         if err != nil {
             return err
@@ -145,13 +118,6 @@ func (m *ManagedApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 // SetAppAvailability sets the appAvailability property value. A managed (MAM) application's availability.
 func (m *ManagedApp) SetAppAvailability(value *ManagedAppAvailability)() {
     err := m.GetBackingStore().Set("appAvailability", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *ManagedApp) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -168,9 +134,7 @@ type ManagedAppable interface {
     MobileAppable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAppAvailability()(*ManagedAppAvailability)
-    GetOdataType()(*string)
     GetVersion()(*string)
     SetAppAvailability(value *ManagedAppAvailability)()
-    SetOdataType(value *string)()
     SetVersion(value *string)()
 }

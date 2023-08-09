@@ -33,7 +33,7 @@ func NewItemUnsetVerifiedPublisherRequestBuilder(rawUrl string, requestAdapter i
 // Post unset the verifiedPublisher previously set on an application, removing all verified publisher properties. For more information, see Publisher verification.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/application-unsetverifiedpublisher?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/application-unsetverifiedpublisher?view=graph-rest-1.0
 func (m *ItemUnsetVerifiedPublisherRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemUnsetVerifiedPublisherRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -136,16 +136,6 @@ func (m *Permission) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["roles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -262,17 +252,6 @@ func (m *Permission) GetLink()(SharingLinkable) {
     }
     return nil
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *Permission) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetRoles gets the roles property value. The type of permission, for example, read. See below for the full list of roles. Read-only.
 func (m *Permission) GetRoles()([]string) {
     val, err := m.GetBackingStore().Get("roles")
@@ -284,7 +263,7 @@ func (m *Permission) GetRoles()([]string) {
     }
     return nil
 }
-// GetShareId gets the shareId property value. A unique token that can be used to access this shared item via the **shares** API. Read-only.
+// GetShareId gets the shareId property value. A unique token that can be used to access this shared item via the shares API. Read-only.
 func (m *Permission) GetShareId()(*string) {
     val, err := m.GetBackingStore().Get("shareId")
     if err != nil {
@@ -367,12 +346,6 @@ func (m *Permission) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetRoles() != nil {
         err = writer.WriteCollectionOfStringValues("roles", m.GetRoles())
         if err != nil {
@@ -450,13 +423,6 @@ func (m *Permission) SetLink(value SharingLinkable)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *Permission) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetRoles sets the roles property value. The type of permission, for example, read. See below for the full list of roles. Read-only.
 func (m *Permission) SetRoles(value []string)() {
     err := m.GetBackingStore().Set("roles", value)
@@ -464,7 +430,7 @@ func (m *Permission) SetRoles(value []string)() {
         panic(err)
     }
 }
-// SetShareId sets the shareId property value. A unique token that can be used to access this shared item via the **shares** API. Read-only.
+// SetShareId sets the shareId property value. A unique token that can be used to access this shared item via the shares API. Read-only.
 func (m *Permission) SetShareId(value *string)() {
     err := m.GetBackingStore().Set("shareId", value)
     if err != nil {
@@ -484,7 +450,6 @@ type Permissionable interface {
     GetInheritedFrom()(ItemReferenceable)
     GetInvitation()(SharingInvitationable)
     GetLink()(SharingLinkable)
-    GetOdataType()(*string)
     GetRoles()([]string)
     GetShareId()(*string)
     SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -496,7 +461,6 @@ type Permissionable interface {
     SetInheritedFrom(value ItemReferenceable)()
     SetInvitation(value SharingInvitationable)()
     SetLink(value SharingLinkable)()
-    SetOdataType(value *string)()
     SetRoles(value []string)()
     SetShareId(value *string)()
 }

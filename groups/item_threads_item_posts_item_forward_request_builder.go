@@ -33,7 +33,7 @@ func NewItemThreadsItemPostsItemForwardRequestBuilder(rawUrl string, requestAdap
 // Post forward a post to a recipient. You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation. 
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/post-forward?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/post-forward?view=graph-rest-1.0
 func (m *ItemThreadsItemPostsItemForwardRequestBuilder) Post(ctx context.Context, body ItemThreadsItemPostsItemForwardPostRequestBodyable, requestConfiguration *ItemThreadsItemPostsItemForwardRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

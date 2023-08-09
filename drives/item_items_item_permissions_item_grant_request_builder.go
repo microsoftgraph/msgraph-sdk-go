@@ -33,7 +33,7 @@ func NewItemItemsItemPermissionsItemGrantRequestBuilder(rawUrl string, requestAd
 // Post grant users access to a link represented by a [permission][].
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0
 func (m *ItemItemsItemPermissionsItemGrantRequestBuilder) Post(ctx context.Context, body ItemItemsItemPermissionsItemGrantPostRequestBodyable, requestConfiguration *ItemItemsItemPermissionsItemGrantRequestBuilderPostRequestConfiguration)(ItemItemsItemPermissionsItemGrantResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

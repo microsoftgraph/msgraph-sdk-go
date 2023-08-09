@@ -279,16 +279,6 @@ func (m *Team) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["operations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTeamsAsyncOperationFromDiscriminatorValue)
         if err != nil {
@@ -302,6 +292,22 @@ func (m *Team) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
                 }
             }
             m.SetOperations(res)
+        }
+        return nil
+    }
+    res["permissionGrants"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateResourceSpecificPermissionGrantFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ResourceSpecificPermissionGrantable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ResourceSpecificPermissionGrantable)
+                }
+            }
+            m.SetPermissionGrants(res)
         }
         return nil
     }
@@ -523,17 +529,6 @@ func (m *Team) GetMessagingSettings()(TeamMessagingSettingsable) {
     }
     return nil
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *Team) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetOperations gets the operations property value. The async operations that ran or are running on this team.
 func (m *Team) GetOperations()([]TeamsAsyncOperationable) {
     val, err := m.GetBackingStore().Get("operations")
@@ -542,6 +537,17 @@ func (m *Team) GetOperations()([]TeamsAsyncOperationable) {
     }
     if val != nil {
         return val.([]TeamsAsyncOperationable)
+    }
+    return nil
+}
+// GetPermissionGrants gets the permissionGrants property value. The permissionGrants property
+func (m *Team) GetPermissionGrants()([]ResourceSpecificPermissionGrantable) {
+    val, err := m.GetBackingStore().Get("permissionGrants")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ResourceSpecificPermissionGrantable)
     }
     return nil
 }
@@ -787,12 +793,6 @@ func (m *Team) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetOperations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOperations()))
         for i, v := range m.GetOperations() {
@@ -801,6 +801,18 @@ func (m *Team) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             }
         }
         err = writer.WriteCollectionOfObjectValues("operations", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetPermissionGrants() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPermissionGrants()))
+        for i, v := range m.GetPermissionGrants() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("permissionGrants", cast)
         if err != nil {
             return err
         }
@@ -987,16 +999,16 @@ func (m *Team) SetMessagingSettings(value TeamMessagingSettingsable)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *Team) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
+// SetOperations sets the operations property value. The async operations that ran or are running on this team.
+func (m *Team) SetOperations(value []TeamsAsyncOperationable)() {
+    err := m.GetBackingStore().Set("operations", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOperations sets the operations property value. The async operations that ran or are running on this team.
-func (m *Team) SetOperations(value []TeamsAsyncOperationable)() {
-    err := m.GetBackingStore().Set("operations", value)
+// SetPermissionGrants sets the permissionGrants property value. The permissionGrants property
+func (m *Team) SetPermissionGrants(value []ResourceSpecificPermissionGrantable)() {
+    err := m.GetBackingStore().Set("permissionGrants", value)
     if err != nil {
         panic(err)
     }
@@ -1091,8 +1103,8 @@ type Teamable interface {
     GetMembers()([]ConversationMemberable)
     GetMemberSettings()(TeamMemberSettingsable)
     GetMessagingSettings()(TeamMessagingSettingsable)
-    GetOdataType()(*string)
     GetOperations()([]TeamsAsyncOperationable)
+    GetPermissionGrants()([]ResourceSpecificPermissionGrantable)
     GetPhoto()(ProfilePhotoable)
     GetPrimaryChannel()(Channelable)
     GetSchedule()(Scheduleable)
@@ -1119,8 +1131,8 @@ type Teamable interface {
     SetMembers(value []ConversationMemberable)()
     SetMemberSettings(value TeamMemberSettingsable)()
     SetMessagingSettings(value TeamMessagingSettingsable)()
-    SetOdataType(value *string)()
     SetOperations(value []TeamsAsyncOperationable)()
+    SetPermissionGrants(value []ResourceSpecificPermissionGrantable)()
     SetPhoto(value ProfilePhotoable)()
     SetPrimaryChannel(value Channelable)()
     SetSchedule(value Scheduleable)()

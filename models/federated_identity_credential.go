@@ -90,16 +90,6 @@ func (m *FederatedIdentityCredential) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["subject"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -126,17 +116,6 @@ func (m *FederatedIdentityCredential) GetIssuer()(*string) {
 // GetName gets the name property value. is the unique identifier for the federated identity credential, which has a limit of 120 characters and must be URL friendly. It is immutable once created. Required. Not nullable. Supports $filter (eq).
 func (m *FederatedIdentityCredential) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *FederatedIdentityCredential) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -187,12 +166,6 @@ func (m *FederatedIdentityCredential) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("subject", m.GetSubject())
         if err != nil {
             return err
@@ -228,13 +201,6 @@ func (m *FederatedIdentityCredential) SetName(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *FederatedIdentityCredential) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetSubject sets the subject property value. Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Azure AD. The combination of issuer and subject must be unique on the app. It has a limit of 600 characters. Supports $filter (eq).
 func (m *FederatedIdentityCredential) SetSubject(value *string)() {
     err := m.GetBackingStore().Set("subject", value)
@@ -250,12 +216,10 @@ type FederatedIdentityCredentialable interface {
     GetDescription()(*string)
     GetIssuer()(*string)
     GetName()(*string)
-    GetOdataType()(*string)
     GetSubject()(*string)
     SetAudiences(value []string)()
     SetDescription(value *string)()
     SetIssuer(value *string)()
     SetName(value *string)()
-    SetOdataType(value *string)()
     SetSubject(value *string)()
 }

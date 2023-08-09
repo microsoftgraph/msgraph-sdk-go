@@ -30,7 +30,10 @@ func NewReportsGetDeviceManagementIntentSettingsReportRequestBuilder(rawUrl stri
     urlParams["request-raw-url"] = rawUrl
     return NewReportsGetDeviceManagementIntentSettingsReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action getDeviceManagementIntentSettingsReport
+// Post not yet documented
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getdevicemanagementintentsettingsreport?view=graph-rest-1.0
 func (m *ReportsGetDeviceManagementIntentSettingsReportRequestBuilder) Post(ctx context.Context, body ReportsGetDeviceManagementIntentSettingsReportPostRequestBodyable, requestConfiguration *ReportsGetDeviceManagementIntentSettingsReportRequestBuilderPostRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +52,7 @@ func (m *ReportsGetDeviceManagementIntentSettingsReportRequestBuilder) Post(ctx 
     }
     return res.([]byte), nil
 }
-// ToPostRequestInformation invoke action getDeviceManagementIntentSettingsReport
+// ToPostRequestInformation not yet documented
 func (m *ReportsGetDeviceManagementIntentSettingsReportRequestBuilder) ToPostRequestInformation(ctx context.Context, body ReportsGetDeviceManagementIntentSettingsReportPostRequestBodyable, requestConfiguration *ReportsGetDeviceManagementIntentSettingsReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

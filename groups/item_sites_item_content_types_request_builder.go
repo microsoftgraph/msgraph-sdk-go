@@ -85,7 +85,7 @@ func (m *ItemSitesItemContentTypesRequestBuilder) Count()(*ItemSitesItemContentT
 // Get get the collection of [contentType][contentType] resources in a [site][].
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/site-list-contenttypes?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/site-list-contenttypes?view=graph-rest-1.0
 func (m *ItemSitesItemContentTypesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemContentTypesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -111,7 +111,7 @@ func (m *ItemSitesItemContentTypesRequestBuilder) GetCompatibleHubContentTypes()
 // Post create a new [contentType][] in a [site][].
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/site-post-contenttypes?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/site-post-contenttypes?view=graph-rest-1.0
 func (m *ItemSitesItemContentTypesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeable, requestConfiguration *ItemSitesItemContentTypesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

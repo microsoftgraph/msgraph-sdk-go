@@ -7,8 +7,6 @@ import (
 // Win32LobAppRegistryRule a complex type to store registry rule data for a Win32 LOB app.
 type Win32LobAppRegistryRule struct {
     Win32LobAppRule
-    // The OdataType property
-    OdataType *string
 }
 // NewWin32LobAppRegistryRule instantiates a new win32LobAppRegistryRule and sets the default values.
 func NewWin32LobAppRegistryRule()(*Win32LobAppRegistryRule) {

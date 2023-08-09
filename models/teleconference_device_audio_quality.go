@@ -7,8 +7,6 @@ import (
 // TeleconferenceDeviceAudioQuality 
 type TeleconferenceDeviceAudioQuality struct {
     TeleconferenceDeviceMediaQuality
-    // The OdataType property
-    OdataType *string
 }
 // NewTeleconferenceDeviceAudioQuality instantiates a new teleconferenceDeviceAudioQuality and sets the default values.
 func NewTeleconferenceDeviceAudioQuality()(*TeleconferenceDeviceAudioQuality) {

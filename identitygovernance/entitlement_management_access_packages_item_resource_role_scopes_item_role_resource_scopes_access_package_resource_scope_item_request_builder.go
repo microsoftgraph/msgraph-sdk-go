@@ -18,7 +18,7 @@ type EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceSc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceScopesAccessPackageResourceScopeItemRequestBuilderGetQueryParameters get scopes from identityGovernance
+// EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceScopesAccessPackageResourceScopeItemRequestBuilderGetQueryParameters read-only. Nullable. Supports $expand.
 type EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceScopesAccessPackageResourceScopeItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResour
     }
     return nil
 }
-// Get get scopes from identityGovernance
+// Get read-only. Nullable. Supports $expand.
 func (m *EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceScopesAccessPackageResourceScopeItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceScopesAccessPackageResourceScopeItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageResourceScopeable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +124,7 @@ func (m *EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResour
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get scopes from identityGovernance
+// ToGetRequestInformation read-only. Nullable. Supports $expand.
 func (m *EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceScopesAccessPackageResourceScopeItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceScopesAccessPackageResourceScopeItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

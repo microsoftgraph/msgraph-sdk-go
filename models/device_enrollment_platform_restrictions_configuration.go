@@ -7,8 +7,6 @@ import (
 // DeviceEnrollmentPlatformRestrictionsConfiguration device Enrollment Configuration that restricts the types of devices a user can enroll
 type DeviceEnrollmentPlatformRestrictionsConfiguration struct {
     DeviceEnrollmentConfiguration
-    // The OdataType property
-    OdataType *string
 }
 // NewDeviceEnrollmentPlatformRestrictionsConfiguration instantiates a new deviceEnrollmentPlatformRestrictionsConfiguration and sets the default values.
 func NewDeviceEnrollmentPlatformRestrictionsConfiguration()(*DeviceEnrollmentPlatformRestrictionsConfiguration) {

@@ -32,7 +32,7 @@ func (m *SocialIdentityProvider) GetClientId()(*string) {
     }
     return nil
 }
-// GetClientSecret gets the clientSecret property value. The client secret for the application that is obtained when the application is registered with the identity provider. This is write-only. A read operation returns ****. Required.
+// GetClientSecret gets the clientSecret property value. The client secret for the application that is obtained when the application is registered with the identity provider. This is write-only. A read operation returns . Required.
 func (m *SocialIdentityProvider) GetClientSecret()(*string) {
     val, err := m.GetBackingStore().Get("clientSecret")
     if err != nil {
@@ -76,32 +76,11 @@ func (m *SocialIdentityProvider) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     return res
 }
 // GetIdentityProviderType gets the identityProviderType property value. For a B2B scenario, possible values: Google, Facebook. For a B2C scenario, possible values: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo, QQ, WeChat. Required.
 func (m *SocialIdentityProvider) GetIdentityProviderType()(*string) {
     val, err := m.GetBackingStore().Get("identityProviderType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *SocialIdentityProvider) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -134,12 +113,6 @@ func (m *SocialIdentityProvider) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetClientId sets the clientId property value. The identifier for the client application obtained when registering the application with the identity provider. Required.
@@ -149,7 +122,7 @@ func (m *SocialIdentityProvider) SetClientId(value *string)() {
         panic(err)
     }
 }
-// SetClientSecret sets the clientSecret property value. The client secret for the application that is obtained when the application is registered with the identity provider. This is write-only. A read operation returns ****. Required.
+// SetClientSecret sets the clientSecret property value. The client secret for the application that is obtained when the application is registered with the identity provider. This is write-only. A read operation returns . Required.
 func (m *SocialIdentityProvider) SetClientSecret(value *string)() {
     err := m.GetBackingStore().Set("clientSecret", value)
     if err != nil {
@@ -163,13 +136,6 @@ func (m *SocialIdentityProvider) SetIdentityProviderType(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *SocialIdentityProvider) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SocialIdentityProviderable 
 type SocialIdentityProviderable interface {
     IdentityProviderBaseable
@@ -177,9 +143,7 @@ type SocialIdentityProviderable interface {
     GetClientId()(*string)
     GetClientSecret()(*string)
     GetIdentityProviderType()(*string)
-    GetOdataType()(*string)
     SetClientId(value *string)()
     SetClientSecret(value *string)()
     SetIdentityProviderType(value *string)()
-    SetOdataType(value *string)()
 }

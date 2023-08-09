@@ -81,16 +81,6 @@ func (m *CommsOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["resultInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateResultInfoFromDiscriminatorValue)
         if err != nil {
@@ -112,17 +102,6 @@ func (m *CommsOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *CommsOperation) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetResultInfo gets the resultInfo property value. The result information. Read-only.
 func (m *CommsOperation) GetResultInfo()(ResultInfoable) {
@@ -159,12 +138,6 @@ func (m *CommsOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteObjectValue("resultInfo", m.GetResultInfo())
         if err != nil {
             return err
@@ -182,13 +155,6 @@ func (m *CommsOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 // SetClientContext sets the clientContext property value. Unique Client Context string. Max limit is 256 chars.
 func (m *CommsOperation) SetClientContext(value *string)() {
     err := m.GetBackingStore().Set("clientContext", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *CommsOperation) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -212,11 +178,9 @@ type CommsOperationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetClientContext()(*string)
-    GetOdataType()(*string)
     GetResultInfo()(ResultInfoable)
     GetStatus()(*OperationStatus)
     SetClientContext(value *string)()
-    SetOdataType(value *string)()
     SetResultInfo(value ResultInfoable)()
     SetStatus(value *OperationStatus)()
 }

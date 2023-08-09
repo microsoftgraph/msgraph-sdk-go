@@ -18,7 +18,7 @@ type DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilderDeleteRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilderGetQueryParameters the list of Device Management Partners configured by the tenant.
+// DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilderGetQueryParameters read properties and relationships of the deviceManagementPartner object.
 type DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewDeviceManagementPartnersDeviceManagementPartnerItemRequestBuilder(rawUrl
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementPartnersDeviceManagementPartnerItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property deviceManagementPartners for deviceManagement
+// Delete deletes a deviceManagementPartner.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-devicemanagementpartner-delete?view=graph-rest-1.0
 func (m *DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilder) Dele
     }
     return nil
 }
-// Get the list of Device Management Partners configured by the tenant.
+// Get read properties and relationships of the deviceManagementPartner object.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-devicemanagementpartner-get?view=graph-rest-1.0
 func (m *DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementPartnerable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilder) Get(
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementPartnerable), nil
 }
-// Patch update the navigation property deviceManagementPartners in deviceManagement
+// Patch update the properties of a deviceManagementPartner object.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-devicemanagementpartner-update?view=graph-rest-1.0
 func (m *DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementPartnerable, requestConfiguration *DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementPartnerable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -112,7 +121,7 @@ func (m *DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilder) Patc
 func (m *DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilder) Terminate()(*DeviceManagementPartnersItemTerminateRequestBuilder) {
     return NewDeviceManagementPartnersItemTerminateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete navigation property deviceManagementPartners for deviceManagement
+// ToDeleteRequestInformation deletes a deviceManagementPartner.
 func (m *DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -124,7 +133,7 @@ func (m *DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilder) ToDe
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the list of Device Management Partners configured by the tenant.
+// ToGetRequestInformation read properties and relationships of the deviceManagementPartner object.
 func (m *DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -140,7 +149,7 @@ func (m *DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilder) ToGe
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property deviceManagementPartners in deviceManagement
+// ToPatchRequestInformation update the properties of a deviceManagementPartner object.
 func (m *DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementPartnerable, requestConfiguration *DeviceManagementPartnersDeviceManagementPartnerItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

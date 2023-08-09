@@ -7,8 +7,6 @@ import (
 // MicrosoftStoreForBusinessAppAssignmentSettings contains properties used to assign an Microsoft Store for Business mobile app to a group.
 type MicrosoftStoreForBusinessAppAssignmentSettings struct {
     MobileAppAssignmentSettings
-    // The OdataType property
-    OdataType *string
 }
 // NewMicrosoftStoreForBusinessAppAssignmentSettings instantiates a new microsoftStoreForBusinessAppAssignmentSettings and sets the default values.
 func NewMicrosoftStoreForBusinessAppAssignmentSettings()(*MicrosoftStoreForBusinessAppAssignmentSettings) {

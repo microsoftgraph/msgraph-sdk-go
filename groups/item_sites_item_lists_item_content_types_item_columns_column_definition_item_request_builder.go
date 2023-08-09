@@ -57,7 +57,7 @@ func NewItemSitesItemListsItemContentTypesItemColumnsColumnDefinitionItemRequest
 // Delete remove a [column][columndefinition] from a [site][], a [list][], or a [content type][contentType].
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/columndefinition-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/columndefinition-delete?view=graph-rest-1.0
 func (m *ItemSitesItemListsItemContentTypesItemColumnsColumnDefinitionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSitesItemListsItemContentTypesItemColumnsColumnDefinitionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *ItemSitesItemListsItemContentTypesItemColumnsColumnDefinitionItemReques
 // Get retrieve the metadata for a [site][], a [list][], or a [contentType][] [column][columnDefinition].
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/columndefinition-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/columndefinition-get?view=graph-rest-1.0
 func (m *ItemSitesItemListsItemContentTypesItemColumnsColumnDefinitionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemListsItemContentTypesItemColumnsColumnDefinitionItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *ItemSitesItemListsItemContentTypesItemColumnsColumnDefinitionItemReques
 // Patch update a [site][], a [list][], or a [content type][contentType] [column][columnDefinition].
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/columndefinition-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/columndefinition-update?view=graph-rest-1.0
 func (m *ItemSitesItemListsItemContentTypesItemColumnsColumnDefinitionItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionable, requestConfiguration *ItemSitesItemListsItemContentTypesItemColumnsColumnDefinitionItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

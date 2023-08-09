@@ -77,7 +77,7 @@ func (m *CallRecordsItemSessionsRequestBuilder) Count()(*CallRecordsItemSessions
 // Get retrieve the list of sessions associated with a callRecord object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/callrecords-session-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/callrecords-session-list?view=graph-rest-1.0
 func (m *CallRecordsItemSessionsRequestBuilder) Get(ctx context.Context, requestConfiguration *CallRecordsItemSessionsRequestBuilderGetRequestConfiguration)(iaf7085b34cf3df74d75420043707a37fee7e9a355a2db4b4b46244736f7f1d19.SessionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

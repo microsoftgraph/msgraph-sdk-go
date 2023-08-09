@@ -116,16 +116,6 @@ func (m *ManagedDeviceOverview) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     return res
 }
 // GetMdmEnrolledCount gets the mdmEnrolledCount property value. The number of devices enrolled in MDM
@@ -136,17 +126,6 @@ func (m *ManagedDeviceOverview) GetMdmEnrolledCount()(*int32) {
     }
     if val != nil {
         return val.(*int32)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *ManagedDeviceOverview) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -182,12 +161,6 @@ func (m *ManagedDeviceOverview) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     {
         err = writer.WriteInt32Value("mdmEnrolledCount", m.GetMdmEnrolledCount())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -229,13 +202,6 @@ func (m *ManagedDeviceOverview) SetMdmEnrolledCount(value *int32)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *ManagedDeviceOverview) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // ManagedDeviceOverviewable 
 type ManagedDeviceOverviewable interface {
     Entityable
@@ -245,11 +211,9 @@ type ManagedDeviceOverviewable interface {
     GetDualEnrolledDeviceCount()(*int32)
     GetEnrolledDeviceCount()(*int32)
     GetMdmEnrolledCount()(*int32)
-    GetOdataType()(*string)
     SetDeviceExchangeAccessStateSummary(value DeviceExchangeAccessStateSummaryable)()
     SetDeviceOperatingSystemSummary(value DeviceOperatingSystemSummaryable)()
     SetDualEnrolledDeviceCount(value *int32)()
     SetEnrolledDeviceCount(value *int32)()
     SetMdmEnrolledCount(value *int32)()
-    SetOdataType(value *string)()
 }

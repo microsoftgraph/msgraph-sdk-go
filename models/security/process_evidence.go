@@ -8,14 +8,14 @@ import (
 // ProcessEvidence 
 type ProcessEvidence struct {
     AlertEvidence
-    // The OdataType property
-    OdataType *string
 }
 // NewProcessEvidence instantiates a new processEvidence and sets the default values.
 func NewProcessEvidence()(*ProcessEvidence) {
     m := &ProcessEvidence{
         AlertEvidence: *NewAlertEvidence(),
     }
+    odataTypeValue := "#microsoft.graph.security.processEvidence"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateProcessEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

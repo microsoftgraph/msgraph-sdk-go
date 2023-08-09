@@ -54,16 +54,6 @@ func (m *MailSearchFolder) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["sourceFolderIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -115,17 +105,6 @@ func (m *MailSearchFolder) GetIsSupported()(*bool) {
     }
     return nil
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *MailSearchFolder) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetSourceFolderIds gets the sourceFolderIds property value. The mailbox folders that should be mined.
 func (m *MailSearchFolder) GetSourceFolderIds()([]string) {
     val, err := m.GetBackingStore().Get("sourceFolderIds")
@@ -161,12 +140,6 @@ func (m *MailSearchFolder) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetSourceFolderIds() != nil {
         err = writer.WriteCollectionOfStringValues("sourceFolderIds", m.GetSourceFolderIds())
         if err != nil {
@@ -196,13 +169,6 @@ func (m *MailSearchFolder) SetIsSupported(value *bool)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *MailSearchFolder) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetSourceFolderIds sets the sourceFolderIds property value. The mailbox folders that should be mined.
 func (m *MailSearchFolder) SetSourceFolderIds(value []string)() {
     err := m.GetBackingStore().Set("sourceFolderIds", value)
@@ -217,11 +183,9 @@ type MailSearchFolderable interface {
     GetFilterQuery()(*string)
     GetIncludeNestedFolders()(*bool)
     GetIsSupported()(*bool)
-    GetOdataType()(*string)
     GetSourceFolderIds()([]string)
     SetFilterQuery(value *string)()
     SetIncludeNestedFolders(value *bool)()
     SetIsSupported(value *bool)()
-    SetOdataType(value *string)()
     SetSourceFolderIds(value []string)()
 }

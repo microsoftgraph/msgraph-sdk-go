@@ -7,8 +7,6 @@ import (
 // CancelMediaProcessingOperation 
 type CancelMediaProcessingOperation struct {
     CommsOperation
-    // The OdataType property
-    OdataType *string
 }
 // NewCancelMediaProcessingOperation instantiates a new cancelMediaProcessingOperation and sets the default values.
 func NewCancelMediaProcessingOperation()(*CancelMediaProcessingOperation) {

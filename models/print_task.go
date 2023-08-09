@@ -43,16 +43,6 @@ func (m *PrintTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["parentUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -84,17 +74,6 @@ func (m *PrintTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *PrintTask) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetParentUrl gets the parentUrl property value. The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/v1.0/print/printers/{printerId}/jobs/{jobId}. Read-only.
 func (m *PrintTask) GetParentUrl()(*string) {
@@ -142,12 +121,6 @@ func (m *PrintTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("parentUrl", m.GetParentUrl())
         if err != nil {
             return err
@@ -170,13 +143,6 @@ func (m *PrintTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 // SetDefinition sets the definition property value. The definition property
 func (m *PrintTask) SetDefinition(value PrintTaskDefinitionable)() {
     err := m.GetBackingStore().Set("definition", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *PrintTask) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -207,12 +173,10 @@ type PrintTaskable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDefinition()(PrintTaskDefinitionable)
-    GetOdataType()(*string)
     GetParentUrl()(*string)
     GetStatus()(PrintTaskStatusable)
     GetTrigger()(PrintTaskTriggerable)
     SetDefinition(value PrintTaskDefinitionable)()
-    SetOdataType(value *string)()
     SetParentUrl(value *string)()
     SetStatus(value PrintTaskStatusable)()
     SetTrigger(value PrintTaskTriggerable)()

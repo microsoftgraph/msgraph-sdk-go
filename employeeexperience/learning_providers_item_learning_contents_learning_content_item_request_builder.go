@@ -57,7 +57,7 @@ func NewLearningProvidersItemLearningContentsLearningContentItemRequestBuilder(r
 // Delete delete the specified learningContent resource that represents the metadata of the specified provider's ingested content.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/learningprovider-delete-learningcontents?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/learningprovider-delete-learningcontents?view=graph-rest-1.0
 func (m *LearningProvidersItemLearningContentsLearningContentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *LearningProvidersItemLearningContentsLearningContentItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *LearningProvidersItemLearningContentsLearningContentItemRequestBuilder)
 // Get get the specified learningContent resource which represents the metadata of the specified provider's ingested content.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/learningcontent-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/learningcontent-get?view=graph-rest-1.0
 func (m *LearningProvidersItemLearningContentsLearningContentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *LearningProvidersItemLearningContentsLearningContentItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LearningContentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

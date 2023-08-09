@@ -38,7 +38,7 @@ func (m *TenantInformation) GetAdditionalData()(map[string]any) {
 func (m *TenantInformation) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDefaultDomainName gets the defaultDomainName property value. The defaultDomainName property
+// GetDefaultDomainName gets the defaultDomainName property value. Primary domain name of an Azure AD tenant.
 func (m *TenantInformation) GetDefaultDomainName()(*string) {
     val, err := m.GetBackingStore().Get("defaultDomainName")
     if err != nil {
@@ -49,7 +49,7 @@ func (m *TenantInformation) GetDefaultDomainName()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. Display name of an Azure AD tenant.
 func (m *TenantInformation) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -60,7 +60,7 @@ func (m *TenantInformation) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetFederationBrandName gets the federationBrandName property value. The federationBrandName property
+// GetFederationBrandName gets the federationBrandName property value. Name shown to users that sign in to an Azure AD tenant.
 func (m *TenantInformation) GetFederationBrandName()(*string) {
     val, err := m.GetBackingStore().Get("federationBrandName")
     if err != nil {
@@ -137,7 +137,7 @@ func (m *TenantInformation) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTenantId gets the tenantId property value. The tenantId property
+// GetTenantId gets the tenantId property value. Unique identifier of an Azure AD tenant.
 func (m *TenantInformation) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -199,21 +199,21 @@ func (m *TenantInformation) SetAdditionalData(value map[string]any)() {
 func (m *TenantInformation) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDefaultDomainName sets the defaultDomainName property value. The defaultDomainName property
+// SetDefaultDomainName sets the defaultDomainName property value. Primary domain name of an Azure AD tenant.
 func (m *TenantInformation) SetDefaultDomainName(value *string)() {
     err := m.GetBackingStore().Set("defaultDomainName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. Display name of an Azure AD tenant.
 func (m *TenantInformation) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFederationBrandName sets the federationBrandName property value. The federationBrandName property
+// SetFederationBrandName sets the federationBrandName property value. Name shown to users that sign in to an Azure AD tenant.
 func (m *TenantInformation) SetFederationBrandName(value *string)() {
     err := m.GetBackingStore().Set("federationBrandName", value)
     if err != nil {
@@ -227,7 +227,7 @@ func (m *TenantInformation) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTenantId sets the tenantId property value. The tenantId property
+// SetTenantId sets the tenantId property value. Unique identifier of an Azure AD tenant.
 func (m *TenantInformation) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
     if err != nil {

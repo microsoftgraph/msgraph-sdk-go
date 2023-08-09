@@ -7,8 +7,6 @@ import (
 // EducationExternalResource 
 type EducationExternalResource struct {
     EducationResource
-    // The OdataType property
-    OdataType *string
 }
 // NewEducationExternalResource instantiates a new educationExternalResource and sets the default values.
 func NewEducationExternalResource()(*EducationExternalResource) {

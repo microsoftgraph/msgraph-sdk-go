@@ -11,7 +11,7 @@ import (
 type EntitlementManagementResourceRequestsItemCatalogResourcesItemRolesItemResourceScopesItemResourceEnvironmentRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementResourceRequestsItemCatalogResourcesItemRolesItemResourceScopesItemResourceEnvironmentRequestBuilderGetQueryParameters get environment from identityGovernance
+// EntitlementManagementResourceRequestsItemCatalogResourcesItemRolesItemResourceScopesItemResourceEnvironmentRequestBuilderGetQueryParameters contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 type EntitlementManagementResourceRequestsItemCatalogResourcesItemRolesItemResourceScopesItemResourceEnvironmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewEntitlementManagementResourceRequestsItemCatalogResourcesItemRolesItemRe
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementResourceRequestsItemCatalogResourcesItemRolesItemResourceScopesItemResourceEnvironmentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get environment from identityGovernance
+// Get contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 func (m *EntitlementManagementResourceRequestsItemCatalogResourcesItemRolesItemResourceScopesItemResourceEnvironmentRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementResourceRequestsItemCatalogResourcesItemRolesItemResourceScopesItemResourceEnvironmentRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageResourceEnvironmentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *EntitlementManagementResourceRequestsItemCatalogResourcesItemRolesItemR
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageResourceEnvironmentable), nil
 }
-// ToGetRequestInformation get environment from identityGovernance
+// ToGetRequestInformation contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 func (m *EntitlementManagementResourceRequestsItemCatalogResourcesItemRolesItemResourceScopesItemResourceEnvironmentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementResourceRequestsItemCatalogResourcesItemRolesItemResourceScopesItemResourceEnvironmentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

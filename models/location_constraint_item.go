@@ -7,8 +7,6 @@ import (
 // LocationConstraintItem 
 type LocationConstraintItem struct {
     Location
-    // The OdataType property
-    OdataType *string
 }
 // NewLocationConstraintItem instantiates a new locationConstraintItem and sets the default values.
 func NewLocationConstraintItem()(*LocationConstraintItem) {

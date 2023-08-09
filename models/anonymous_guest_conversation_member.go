@@ -45,28 +45,7 @@ func (m *AnonymousGuestConversationMember) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *AnonymousGuestConversationMember) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // Serialize serializes information the current object
 func (m *AnonymousGuestConversationMember) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -80,12 +59,6 @@ func (m *AnonymousGuestConversationMember) Serialize(writer i878a80d2330e89d2689
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetAnonymousGuestId sets the anonymousGuestId property value. Unique ID that represents the user. Note: This ID can change if the user leaves and rejoins the meeting, or joins from a different device.
@@ -95,19 +68,10 @@ func (m *AnonymousGuestConversationMember) SetAnonymousGuestId(value *string)() 
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *AnonymousGuestConversationMember) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // AnonymousGuestConversationMemberable 
 type AnonymousGuestConversationMemberable interface {
     ConversationMemberable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAnonymousGuestId()(*string)
-    GetOdataType()(*string)
     SetAnonymousGuestId(value *string)()
-    SetOdataType(value *string)()
 }

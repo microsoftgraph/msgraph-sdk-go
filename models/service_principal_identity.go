@@ -7,8 +7,6 @@ import (
 // ServicePrincipalIdentity 
 type ServicePrincipalIdentity struct {
     Identity
-    // The OdataType property
-    OdataType *string
 }
 // NewServicePrincipalIdentity instantiates a new servicePrincipalIdentity and sets the default values.
 func NewServicePrincipalIdentity()(*ServicePrincipalIdentity) {

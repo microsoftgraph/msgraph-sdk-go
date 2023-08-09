@@ -76,16 +76,6 @@ func (m *IosCompliancePolicy) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["osMaximumVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -206,17 +196,6 @@ func (m *IosCompliancePolicy) GetManagedEmailProfileRequired()(*bool) {
     }
     if val != nil {
         return val.(*bool)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *IosCompliancePolicy) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -367,12 +346,6 @@ func (m *IosCompliancePolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("osMaximumVersion", m.GetOsMaximumVersion())
         if err != nil {
             return err
@@ -462,13 +435,6 @@ func (m *IosCompliancePolicy) SetManagedEmailProfileRequired(value *bool)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *IosCompliancePolicy) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetOsMaximumVersion sets the osMaximumVersion property value. Maximum IOS version.
 func (m *IosCompliancePolicy) SetOsMaximumVersion(value *string)() {
     err := m.GetBackingStore().Set("osMaximumVersion", value)
@@ -553,7 +519,6 @@ type IosCompliancePolicyable interface {
     GetDeviceThreatProtectionEnabled()(*bool)
     GetDeviceThreatProtectionRequiredSecurityLevel()(*DeviceThreatProtectionLevel)
     GetManagedEmailProfileRequired()(*bool)
-    GetOdataType()(*string)
     GetOsMaximumVersion()(*string)
     GetOsMinimumVersion()(*string)
     GetPasscodeBlockSimple()(*bool)
@@ -568,7 +533,6 @@ type IosCompliancePolicyable interface {
     SetDeviceThreatProtectionEnabled(value *bool)()
     SetDeviceThreatProtectionRequiredSecurityLevel(value *DeviceThreatProtectionLevel)()
     SetManagedEmailProfileRequired(value *bool)()
-    SetOdataType(value *string)()
     SetOsMaximumVersion(value *string)()
     SetOsMinimumVersion(value *string)()
     SetPasscodeBlockSimple(value *bool)()

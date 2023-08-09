@@ -77,7 +77,7 @@ func (m *LearningProvidersRequestBuilder) Count()(*LearningProvidersCountRequest
 // Get get a list of the learningProvider resources registered in Viva Learning for a tenant.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/employeeexperience-list-learningproviders?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/employeeexperience-list-learningproviders?view=graph-rest-1.0
 func (m *LearningProvidersRequestBuilder) Get(ctx context.Context, requestConfiguration *LearningProvidersRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LearningProviderCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *LearningProvidersRequestBuilder) Get(ctx context.Context, requestConfig
 // Post create a new learningProvider object and register it with Viva Learning using the specified display name and logos for different themes.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/employeeexperience-post-learningproviders?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/employeeexperience-post-learningproviders?view=graph-rest-1.0
 func (m *LearningProvidersRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LearningProviderable, requestConfiguration *LearningProvidersRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LearningProviderable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

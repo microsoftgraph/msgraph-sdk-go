@@ -66,16 +66,6 @@ func (m *GroupSettingTemplate) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["values"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSettingTemplateValueFromDiscriminatorValue)
         if err != nil {
@@ -93,17 +83,6 @@ func (m *GroupSettingTemplate) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *GroupSettingTemplate) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetValues gets the values property value. Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.
 func (m *GroupSettingTemplate) GetValues()([]SettingTemplateValueable) {
@@ -130,12 +109,6 @@ func (m *GroupSettingTemplate) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     {
         err = writer.WriteStringValue("displayName", m.GetDisplayName())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -168,13 +141,6 @@ func (m *GroupSettingTemplate) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *GroupSettingTemplate) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetValues sets the values property value. Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.
 func (m *GroupSettingTemplate) SetValues(value []SettingTemplateValueable)() {
     err := m.GetBackingStore().Set("values", value)
@@ -188,10 +154,8 @@ type GroupSettingTemplateable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDescription()(*string)
     GetDisplayName()(*string)
-    GetOdataType()(*string)
     GetValues()([]SettingTemplateValueable)
     SetDescription(value *string)()
     SetDisplayName(value *string)()
-    SetOdataType(value *string)()
     SetValues(value []SettingTemplateValueable)()
 }

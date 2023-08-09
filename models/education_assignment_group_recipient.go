@@ -7,8 +7,6 @@ import (
 // EducationAssignmentGroupRecipient 
 type EducationAssignmentGroupRecipient struct {
     EducationAssignmentRecipient
-    // The OdataType property
-    OdataType *string
 }
 // NewEducationAssignmentGroupRecipient instantiates a new educationAssignmentGroupRecipient and sets the default values.
 func NewEducationAssignmentGroupRecipient()(*EducationAssignmentGroupRecipient) {

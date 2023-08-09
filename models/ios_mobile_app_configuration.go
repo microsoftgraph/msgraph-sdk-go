@@ -7,8 +7,6 @@ import (
 // IosMobileAppConfiguration contains properties, inherited properties and actions for iOS mobile app configurations.
 type IosMobileAppConfiguration struct {
     ManagedDeviceMobileAppConfiguration
-    // The OdataType property
-    OdataType *string
 }
 // NewIosMobileAppConfiguration instantiates a new iosMobileAppConfiguration and sets the default values.
 func NewIosMobileAppConfiguration()(*IosMobileAppConfiguration) {

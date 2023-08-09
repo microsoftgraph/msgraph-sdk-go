@@ -40,7 +40,7 @@ func NewSchoolsItemUsersItemRefRequestBuilder(rawUrl string, requestAdapter i2ae
 // Delete delete a user from a school.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationschool-delete-users?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationschool-delete-users?view=graph-rest-1.0
 func (m *SchoolsItemUsersItemRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *SchoolsItemUsersItemRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {

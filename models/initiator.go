@@ -7,8 +7,6 @@ import (
 // Initiator 
 type Initiator struct {
     Identity
-    // The OdataType property
-    OdataType *string
 }
 // NewInitiator instantiates a new initiator and sets the default values.
 func NewInitiator()(*Initiator) {

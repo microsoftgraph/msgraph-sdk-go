@@ -75,16 +75,6 @@ func (m *B2xIdentityUserFlow) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["userAttributeAssignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateIdentityUserFlowAttributeAssignmentFromDiscriminatorValue)
         if err != nil {
@@ -138,17 +128,6 @@ func (m *B2xIdentityUserFlow) GetLanguages()([]UserFlowLanguageConfigurationable
     }
     if val != nil {
         return val.([]UserFlowLanguageConfigurationable)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *B2xIdentityUserFlow) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -210,12 +189,6 @@ func (m *B2xIdentityUserFlow) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetUserAttributeAssignments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserAttributeAssignments()))
         for i, v := range m.GetUserAttributeAssignments() {
@@ -263,13 +236,6 @@ func (m *B2xIdentityUserFlow) SetLanguages(value []UserFlowLanguageConfiguration
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *B2xIdentityUserFlow) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetUserAttributeAssignments sets the userAttributeAssignments property value. The user attribute assignments included in the user flow.
 func (m *B2xIdentityUserFlow) SetUserAttributeAssignments(value []IdentityUserFlowAttributeAssignmentable)() {
     err := m.GetBackingStore().Set("userAttributeAssignments", value)
@@ -291,13 +257,11 @@ type B2xIdentityUserFlowable interface {
     GetApiConnectorConfiguration()(UserFlowApiConnectorConfigurationable)
     GetIdentityProviders()([]IdentityProviderable)
     GetLanguages()([]UserFlowLanguageConfigurationable)
-    GetOdataType()(*string)
     GetUserAttributeAssignments()([]IdentityUserFlowAttributeAssignmentable)
     GetUserFlowIdentityProviders()([]IdentityProviderBaseable)
     SetApiConnectorConfiguration(value UserFlowApiConnectorConfigurationable)()
     SetIdentityProviders(value []IdentityProviderable)()
     SetLanguages(value []UserFlowLanguageConfigurationable)()
-    SetOdataType(value *string)()
     SetUserAttributeAssignments(value []IdentityUserFlowAttributeAssignmentable)()
     SetUserFlowIdentityProviders(value []IdentityProviderBaseable)()
 }

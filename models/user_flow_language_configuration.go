@@ -80,16 +80,6 @@ func (m *UserFlowLanguageConfiguration) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["overridesPages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserFlowLanguagePageFromDiscriminatorValue)
         if err != nil {
@@ -116,17 +106,6 @@ func (m *UserFlowLanguageConfiguration) GetIsEnabled()(*bool) {
     }
     if val != nil {
         return val.(*bool)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *UserFlowLanguageConfiguration) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -171,12 +150,6 @@ func (m *UserFlowLanguageConfiguration) Serialize(writer i878a80d2330e89d2689638
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetOverridesPages() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOverridesPages()))
         for i, v := range m.GetOverridesPages() {
@@ -212,13 +185,6 @@ func (m *UserFlowLanguageConfiguration) SetIsEnabled(value *bool)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *UserFlowLanguageConfiguration) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetOverridesPages sets the overridesPages property value. Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows to modify the content of the page, any other modification is not allowed (creation or deletion of pages).
 func (m *UserFlowLanguageConfiguration) SetOverridesPages(value []UserFlowLanguagePageable)() {
     err := m.GetBackingStore().Set("overridesPages", value)
@@ -233,11 +199,9 @@ type UserFlowLanguageConfigurationable interface {
     GetDefaultPages()([]UserFlowLanguagePageable)
     GetDisplayName()(*string)
     GetIsEnabled()(*bool)
-    GetOdataType()(*string)
     GetOverridesPages()([]UserFlowLanguagePageable)
     SetDefaultPages(value []UserFlowLanguagePageable)()
     SetDisplayName(value *string)()
     SetIsEnabled(value *bool)()
-    SetOdataType(value *string)()
     SetOverridesPages(value []UserFlowLanguagePageable)()
 }

@@ -73,7 +73,7 @@ func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) Delete(ctx
 // Get read the properties and relationships of a subjectRightsRequest object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/subjectrightsrequest-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/subjectrightsrequest-get?view=graph-rest-1.0
 func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) Get(ctx context.Context, requestConfiguration *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubjectRightsRequestable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -107,7 +107,7 @@ func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) Notes()(*S
 // Patch update the properties of a subjectRightsRequest object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/subjectrightsrequest-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/subjectrightsrequest-update?view=graph-rest-1.0
 func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubjectRightsRequestable, requestConfiguration *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubjectRightsRequestable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

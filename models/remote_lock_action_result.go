@@ -7,8 +7,6 @@ import (
 // RemoteLockActionResult lock action result with a pin to unlock
 type RemoteLockActionResult struct {
     DeviceActionResult
-    // The OdataType property
-    OdataType *string
 }
 // NewRemoteLockActionResult instantiates a new remoteLockActionResult and sets the default values.
 func NewRemoteLockActionResult()(*RemoteLockActionResult) {

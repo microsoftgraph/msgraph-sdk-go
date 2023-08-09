@@ -13,6 +13,8 @@ func NewSecurityGroupEvidence()(*SecurityGroupEvidence) {
     m := &SecurityGroupEvidence{
         AlertEvidence: *NewAlertEvidence(),
     }
+    odataTypeValue := "#microsoft.graph.security.securityGroupEvidence"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateSecurityGroupEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,16 +45,6 @@ func (m *SecurityGroupEvidence) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["securityGroupId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -64,17 +56,6 @@ func (m *SecurityGroupEvidence) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *SecurityGroupEvidence) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetSecurityGroupId gets the securityGroupId property value. Unique identifier of the security group.
 func (m *SecurityGroupEvidence) GetSecurityGroupId()(*string) {
@@ -100,12 +81,6 @@ func (m *SecurityGroupEvidence) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("securityGroupId", m.GetSecurityGroupId())
         if err != nil {
             return err
@@ -116,13 +91,6 @@ func (m *SecurityGroupEvidence) Serialize(writer i878a80d2330e89d26896388a3f487e
 // SetDisplayName sets the displayName property value. The name of the security group.
 func (m *SecurityGroupEvidence) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *SecurityGroupEvidence) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -139,9 +107,7 @@ type SecurityGroupEvidenceable interface {
     AlertEvidenceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDisplayName()(*string)
-    GetOdataType()(*string)
     GetSecurityGroupId()(*string)
     SetDisplayName(value *string)()
-    SetOdataType(value *string)()
     SetSecurityGroupId(value *string)()
 }

@@ -7,8 +7,6 @@ import (
 // SchedulingGroup 
 type SchedulingGroup struct {
     ChangeTrackedEntity
-    // The OdataType property
-    OdataType *string
 }
 // NewSchedulingGroup instantiates a new schedulingGroup and sets the default values.
 func NewSchedulingGroup()(*SchedulingGroup) {

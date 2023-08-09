@@ -73,7 +73,7 @@ func (m *ItemSettingsGroupSettingItemRequestBuilder) Delete(ctx context.Context,
 // Get retrieve the properties of a specific group setting object. The setting can be a tenant-level or group-specific setting.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/groupsetting-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/groupsetting-get?view=graph-rest-1.0
 func (m *ItemSettingsGroupSettingItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSettingsGroupSettingItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupSettingable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +95,7 @@ func (m *ItemSettingsGroupSettingItemRequestBuilder) Get(ctx context.Context, re
 // Patch update the properties of a groupSetting object for tenant-wide group settings or a specific group setting.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/groupsetting-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/groupsetting-update?view=graph-rest-1.0
 func (m *ItemSettingsGroupSettingItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupSettingable, requestConfiguration *ItemSettingsGroupSettingItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupSettingable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

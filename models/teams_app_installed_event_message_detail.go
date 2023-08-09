@@ -7,8 +7,6 @@ import (
 // TeamsAppInstalledEventMessageDetail 
 type TeamsAppInstalledEventMessageDetail struct {
     EventMessageDetail
-    // The OdataType property
-    OdataType *string
 }
 // NewTeamsAppInstalledEventMessageDetail instantiates a new teamsAppInstalledEventMessageDetail and sets the default values.
 func NewTeamsAppInstalledEventMessageDetail()(*TeamsAppInstalledEventMessageDetail) {

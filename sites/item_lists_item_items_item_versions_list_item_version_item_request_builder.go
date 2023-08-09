@@ -77,7 +77,7 @@ func (m *ItemListsItemItemsItemVersionsListItemVersionItemRequestBuilder) Fields
 // Get retrieve the metadata for a specific version of a ListItem.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/listitemversion-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/listitemversion-get?view=graph-rest-1.0
 func (m *ItemListsItemItemsItemVersionsListItemVersionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemListsItemItemsItemVersionsListItemVersionItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemVersionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

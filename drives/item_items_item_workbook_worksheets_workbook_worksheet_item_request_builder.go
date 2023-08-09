@@ -65,7 +65,7 @@ func NewItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder(rawUr
 // Delete deletes the worksheet from the workbook.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/worksheet-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/worksheet-delete?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -84,7 +84,7 @@ func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) Del
 // Get retrieve the properties and relationships of worksheet object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/worksheet-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/worksheet-get?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookWorksheetable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -110,7 +110,7 @@ func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) Nam
 // Patch update the properties of worksheet object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/worksheet-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/worksheet-update?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookWorksheetable, requestConfiguration *ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookWorksheetable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

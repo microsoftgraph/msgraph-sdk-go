@@ -7,8 +7,6 @@ import (
 // ManagedEBookAssignment contains properties used to assign a eBook to a group.
 type ManagedEBookAssignment struct {
     Entity
-    // The OdataType property
-    OdataType *string
 }
 // NewManagedEBookAssignment instantiates a new managedEBookAssignment and sets the default values.
 func NewManagedEBookAssignment()(*ManagedEBookAssignment) {

@@ -77,7 +77,7 @@ func (m *ItemChatsRequestBuilder) Count()(*ItemChatsCountRequestBuilder) {
 // Get retrieve the list of chats that the user is part of. This method supports federation. When a user ID is provided, the calling application must belong to the same tenant that the user belongs to.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/chat-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/chat-list?view=graph-rest-1.0
 func (m *ItemChatsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemChatsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

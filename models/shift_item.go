@@ -98,32 +98,11 @@ func (m *ShiftItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     return res
 }
 // GetNotes gets the notes property value. The shift notes for the shiftItem.
 func (m *ShiftItem) GetNotes()(*string) {
     val, err := m.GetBackingStore().Get("notes")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *ShiftItem) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -162,12 +141,6 @@ func (m *ShiftItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetActivities sets the activities property value. An incremental part of a shift which can cover details of when and where an employee is during their shift. For example, an assignment or a scheduled break or lunch. Required.
@@ -191,13 +164,6 @@ func (m *ShiftItem) SetNotes(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *ShiftItem) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // ShiftItemable 
 type ShiftItemable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -205,9 +171,7 @@ type ShiftItemable interface {
     GetActivities()([]ShiftActivityable)
     GetDisplayName()(*string)
     GetNotes()(*string)
-    GetOdataType()(*string)
     SetActivities(value []ShiftActivityable)()
     SetDisplayName(value *string)()
     SetNotes(value *string)()
-    SetOdataType(value *string)()
 }

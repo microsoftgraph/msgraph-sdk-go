@@ -11,7 +11,7 @@ import (
 type EntitlementManagementCatalogsItemResourcesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementCatalogsItemResourcesRequestBuilderGetQueryParameters get resources from identityGovernance
+// EntitlementManagementCatalogsItemResourcesRequestBuilderGetQueryParameters retrieve a list of accessPackageResource objects in an accessPackageCatalog.  
 type EntitlementManagementCatalogsItemResourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewEntitlementManagementCatalogsItemResourcesRequestBuilder(rawUrl string, 
 func (m *EntitlementManagementCatalogsItemResourcesRequestBuilder) Count()(*EntitlementManagementCatalogsItemResourcesCountRequestBuilder) {
     return NewEntitlementManagementCatalogsItemResourcesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get resources from identityGovernance
+// Get retrieve a list of accessPackageResource objects in an accessPackageCatalog.  
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/accesspackagecatalog-list-resources?view=graph-rest-1.0
 func (m *EntitlementManagementCatalogsItemResourcesRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementCatalogsItemResourcesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageResourceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +115,7 @@ func (m *EntitlementManagementCatalogsItemResourcesRequestBuilder) Post(ctx cont
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageResourceable), nil
 }
-// ToGetRequestInformation get resources from identityGovernance
+// ToGetRequestInformation retrieve a list of accessPackageResource objects in an accessPackageCatalog.  
 func (m *EntitlementManagementCatalogsItemResourcesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementCatalogsItemResourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

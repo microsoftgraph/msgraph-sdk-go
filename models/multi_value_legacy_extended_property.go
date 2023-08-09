@@ -22,16 +22,6 @@ func CreateMultiValueLegacyExtendedPropertyFromDiscriminatorValue(parseNode i878
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MultiValueLegacyExtendedProperty) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -50,17 +40,6 @@ func (m *MultiValueLegacyExtendedProperty) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *MultiValueLegacyExtendedProperty) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetValue gets the value property value. A collection of property values.
 func (m *MultiValueLegacyExtendedProperty) GetValue()([]string) {
     val, err := m.GetBackingStore().Get("value")
@@ -78,12 +57,6 @@ func (m *MultiValueLegacyExtendedProperty) Serialize(writer i878a80d2330e89d2689
     if err != nil {
         return err
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetValue() != nil {
         err = writer.WriteCollectionOfStringValues("value", m.GetValue())
         if err != nil {
@@ -91,13 +64,6 @@ func (m *MultiValueLegacyExtendedProperty) Serialize(writer i878a80d2330e89d2689
         }
     }
     return nil
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *MultiValueLegacyExtendedProperty) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
 }
 // SetValue sets the value property value. A collection of property values.
 func (m *MultiValueLegacyExtendedProperty) SetValue(value []string)() {
@@ -110,8 +76,6 @@ func (m *MultiValueLegacyExtendedProperty) SetValue(value []string)() {
 type MultiValueLegacyExtendedPropertyable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetOdataType()(*string)
     GetValue()([]string)
-    SetOdataType(value *string)()
     SetValue(value []string)()
 }

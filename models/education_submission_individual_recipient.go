@@ -7,8 +7,6 @@ import (
 // EducationSubmissionIndividualRecipient 
 type EducationSubmissionIndividualRecipient struct {
     EducationSubmissionRecipient
-    // The OdataType property
-    OdataType *string
 }
 // NewEducationSubmissionIndividualRecipient instantiates a new educationSubmissionIndividualRecipient and sets the default values.
 func NewEducationSubmissionIndividualRecipient()(*EducationSubmissionIndividualRecipient) {

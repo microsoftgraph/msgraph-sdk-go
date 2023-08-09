@@ -211,16 +211,6 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["resourceEnvironments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessPackageResourceEnvironmentFromDiscriminatorValue)
         if err != nil {
@@ -297,18 +287,7 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *EntitlementManagement) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetResourceEnvironments gets the resourceEnvironments property value. The resourceEnvironments property
+// GetResourceEnvironments gets the resourceEnvironments property value. A reference to the geolocation environments in which a resource is located.
 func (m *EntitlementManagement) GetResourceEnvironments()([]AccessPackageResourceEnvironmentable) {
     val, err := m.GetBackingStore().Get("resourceEnvironments")
     if err != nil {
@@ -319,7 +298,7 @@ func (m *EntitlementManagement) GetResourceEnvironments()([]AccessPackageResourc
     }
     return nil
 }
-// GetResourceRequests gets the resourceRequests property value. The resourceRequests property
+// GetResourceRequests gets the resourceRequests property value. Represents a request to add or remove a resource to or from a catalog respectively.
 func (m *EntitlementManagement) GetResourceRequests()([]AccessPackageResourceRequestable) {
     val, err := m.GetBackingStore().Get("resourceRequests")
     if err != nil {
@@ -341,7 +320,7 @@ func (m *EntitlementManagement) GetResourceRoleScopes()([]AccessPackageResourceR
     }
     return nil
 }
-// GetResources gets the resources property value. The resources property
+// GetResources gets the resources property value. The resources associated with the catalogs.
 func (m *EntitlementManagement) GetResources()([]AccessPackageResourceable) {
     val, err := m.GetBackingStore().Get("resources")
     if err != nil {
@@ -453,12 +432,6 @@ func (m *EntitlementManagement) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetResourceEnvironments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetResourceEnvironments()))
         for i, v := range m.GetResourceEnvironments() {
@@ -564,21 +537,14 @@ func (m *EntitlementManagement) SetConnectedOrganizations(value []ConnectedOrgan
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *EntitlementManagement) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetResourceEnvironments sets the resourceEnvironments property value. The resourceEnvironments property
+// SetResourceEnvironments sets the resourceEnvironments property value. A reference to the geolocation environments in which a resource is located.
 func (m *EntitlementManagement) SetResourceEnvironments(value []AccessPackageResourceEnvironmentable)() {
     err := m.GetBackingStore().Set("resourceEnvironments", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResourceRequests sets the resourceRequests property value. The resourceRequests property
+// SetResourceRequests sets the resourceRequests property value. Represents a request to add or remove a resource to or from a catalog respectively.
 func (m *EntitlementManagement) SetResourceRequests(value []AccessPackageResourceRequestable)() {
     err := m.GetBackingStore().Set("resourceRequests", value)
     if err != nil {
@@ -592,7 +558,7 @@ func (m *EntitlementManagement) SetResourceRoleScopes(value []AccessPackageResou
         panic(err)
     }
 }
-// SetResources sets the resources property value. The resources property
+// SetResources sets the resources property value. The resources associated with the catalogs.
 func (m *EntitlementManagement) SetResources(value []AccessPackageResourceable)() {
     err := m.GetBackingStore().Set("resources", value)
     if err != nil {
@@ -617,7 +583,6 @@ type EntitlementManagementable interface {
     GetAssignments()([]AccessPackageAssignmentable)
     GetCatalogs()([]AccessPackageCatalogable)
     GetConnectedOrganizations()([]ConnectedOrganizationable)
-    GetOdataType()(*string)
     GetResourceEnvironments()([]AccessPackageResourceEnvironmentable)
     GetResourceRequests()([]AccessPackageResourceRequestable)
     GetResourceRoleScopes()([]AccessPackageResourceRoleScopeable)
@@ -630,7 +595,6 @@ type EntitlementManagementable interface {
     SetAssignments(value []AccessPackageAssignmentable)()
     SetCatalogs(value []AccessPackageCatalogable)()
     SetConnectedOrganizations(value []ConnectedOrganizationable)()
-    SetOdataType(value *string)()
     SetResourceEnvironments(value []AccessPackageResourceEnvironmentable)()
     SetResourceRequests(value []AccessPackageResourceRequestable)()
     SetResourceRoleScopes(value []AccessPackageResourceRoleScopeable)()

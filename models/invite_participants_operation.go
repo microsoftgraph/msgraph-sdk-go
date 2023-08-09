@@ -22,16 +22,6 @@ func CreateInviteParticipantsOperationFromDiscriminatorValue(parseNode i878a80d2
 // GetFieldDeserializers the deserialization information for the current model
 func (m *InviteParticipantsOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.CommsOperation.GetFieldDeserializers()
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["participants"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateInvitationParticipantInfoFromDiscriminatorValue)
         if err != nil {
@@ -50,17 +40,6 @@ func (m *InviteParticipantsOperation) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *InviteParticipantsOperation) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetParticipants gets the participants property value. The participants to invite.
 func (m *InviteParticipantsOperation) GetParticipants()([]InvitationParticipantInfoable) {
     val, err := m.GetBackingStore().Get("participants")
@@ -78,12 +57,6 @@ func (m *InviteParticipantsOperation) Serialize(writer i878a80d2330e89d26896388a
     if err != nil {
         return err
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetParticipants() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetParticipants()))
         for i, v := range m.GetParticipants() {
@@ -98,13 +71,6 @@ func (m *InviteParticipantsOperation) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *InviteParticipantsOperation) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetParticipants sets the participants property value. The participants to invite.
 func (m *InviteParticipantsOperation) SetParticipants(value []InvitationParticipantInfoable)() {
     err := m.GetBackingStore().Set("participants", value)
@@ -116,8 +82,6 @@ func (m *InviteParticipantsOperation) SetParticipants(value []InvitationParticip
 type InviteParticipantsOperationable interface {
     CommsOperationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetOdataType()(*string)
     GetParticipants()([]InvitationParticipantInfoable)
-    SetOdataType(value *string)()
     SetParticipants(value []InvitationParticipantInfoable)()
 }

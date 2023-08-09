@@ -7,8 +7,6 @@ import (
 // WindowsWebApp contains properties and inherited properties for Windows web apps.
 type WindowsWebApp struct {
     MobileApp
-    // The OdataType property
-    OdataType *string
 }
 // NewWindowsWebApp instantiates a new windowsWebApp and sets the default values.
 func NewWindowsWebApp()(*WindowsWebApp) {

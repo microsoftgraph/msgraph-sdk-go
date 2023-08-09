@@ -77,7 +77,7 @@ func (m *ApiConnectorsRequestBuilder) Count()(*ApiConnectorsCountRequestBuilder)
 // Get read the properties of an identityApiConnector object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/identityapiconnector-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/identityapiconnector-list?view=graph-rest-1.0
 func (m *ApiConnectorsRequestBuilder) Get(ctx context.Context, requestConfiguration *ApiConnectorsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityApiConnectorCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *ApiConnectorsRequestBuilder) Get(ctx context.Context, requestConfigurat
 // Post create a new identityApiConnector object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/identityapiconnector-create?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/identityapiconnector-create?view=graph-rest-1.0
 func (m *ApiConnectorsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityApiConnectorable, requestConfiguration *ApiConnectorsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityApiConnectorable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -134,16 +134,6 @@ func (m *Session) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["segments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSegmentFromDiscriminatorValue)
         if err != nil {
@@ -191,17 +181,6 @@ func (m *Session) GetModalities()([]Modality) {
     }
     if val != nil {
         return val.([]Modality)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *Session) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -269,12 +248,6 @@ func (m *Session) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetSegments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSegments()))
         for i, v := range m.GetSegments() {
@@ -337,13 +310,6 @@ func (m *Session) SetModalities(value []Modality)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *Session) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetSegments sets the segments property value. The list of segments involved in the session. Read-only. Nullable.
 func (m *Session) SetSegments(value []Segmentable)() {
     err := m.GetBackingStore().Set("segments", value)
@@ -368,7 +334,6 @@ type Sessionable interface {
     GetFailureInfo()(FailureInfoable)
     GetIsTest()(*bool)
     GetModalities()([]Modality)
-    GetOdataType()(*string)
     GetSegments()([]Segmentable)
     GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     SetCallee(value Endpointable)()
@@ -377,7 +342,6 @@ type Sessionable interface {
     SetFailureInfo(value FailureInfoable)()
     SetIsTest(value *bool)()
     SetModalities(value []Modality)()
-    SetOdataType(value *string)()
     SetSegments(value []Segmentable)()
     SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
 }

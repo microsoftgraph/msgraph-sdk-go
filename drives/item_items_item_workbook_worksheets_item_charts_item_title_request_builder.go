@@ -77,7 +77,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemTitleRequestBuilder) Forma
 // Get retrieve the properties and relationships of charttitle object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/charttitle-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/charttitle-get?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemTitleRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemTitleRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartTitleable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemTitleRequestBuilder) Get(c
 // Patch update the properties of charttitle object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/charttitle-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/charttitle-update?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemTitleRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartTitleable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemTitleRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartTitleable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -33,7 +33,7 @@ func NewItemSynchronizationJobsItemPauseRequestBuilder(rawUrl string, requestAda
 // Post temporarily stop a running synchronization job. All the progress, including job state, is persisted, and the job will continue from where it left off when a start call is made.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-pause?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-pause?view=graph-rest-1.0
 func (m *ItemSynchronizationJobsItemPauseRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemSynchronizationJobsItemPauseRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -105,16 +105,6 @@ func (m *IdentityUserFlowAttribute) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["userFlowAttributeType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseIdentityUserFlowAttributeType)
         if err != nil {
@@ -126,17 +116,6 @@ func (m *IdentityUserFlowAttribute) GetFieldDeserializers()(map[string]func(i878
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *IdentityUserFlowAttribute) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetUserFlowAttributeType gets the userFlowAttributeType property value. The userFlowAttributeType property
 func (m *IdentityUserFlowAttribute) GetUserFlowAttributeType()(*IdentityUserFlowAttributeType) {
@@ -174,12 +153,6 @@ func (m *IdentityUserFlowAttribute) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetUserFlowAttributeType() != nil {
         cast := (*m.GetUserFlowAttributeType()).String()
         err = writer.WriteStringValue("userFlowAttributeType", &cast)
@@ -210,13 +183,6 @@ func (m *IdentityUserFlowAttribute) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *IdentityUserFlowAttribute) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetUserFlowAttributeType sets the userFlowAttributeType property value. The userFlowAttributeType property
 func (m *IdentityUserFlowAttribute) SetUserFlowAttributeType(value *IdentityUserFlowAttributeType)() {
     err := m.GetBackingStore().Set("userFlowAttributeType", value)
@@ -231,11 +197,9 @@ type IdentityUserFlowAttributeable interface {
     GetDataType()(*IdentityUserFlowAttributeDataType)
     GetDescription()(*string)
     GetDisplayName()(*string)
-    GetOdataType()(*string)
     GetUserFlowAttributeType()(*IdentityUserFlowAttributeType)
     SetDataType(value *IdentityUserFlowAttributeDataType)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
-    SetOdataType(value *string)()
     SetUserFlowAttributeType(value *IdentityUserFlowAttributeType)()
 }

@@ -8,8 +8,6 @@ import (
 // UnifiedRoleAssignmentScheduleInstance 
 type UnifiedRoleAssignmentScheduleInstance struct {
     UnifiedRoleScheduleInstanceBase
-    // The OdataType property
-    OdataType *string
 }
 // NewUnifiedRoleAssignmentScheduleInstance instantiates a new unifiedRoleAssignmentScheduleInstance and sets the default values.
 func NewUnifiedRoleAssignmentScheduleInstance()(*UnifiedRoleAssignmentScheduleInstance) {

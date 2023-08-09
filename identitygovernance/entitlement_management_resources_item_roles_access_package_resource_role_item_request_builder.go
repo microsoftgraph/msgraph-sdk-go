@@ -18,7 +18,7 @@ type EntitlementManagementResourcesItemRolesAccessPackageResourceRoleItemRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EntitlementManagementResourcesItemRolesAccessPackageResourceRoleItemRequestBuilderGetQueryParameters get roles from identityGovernance
+// EntitlementManagementResourcesItemRolesAccessPackageResourceRoleItemRequestBuilderGetQueryParameters read-only. Nullable. Supports $expand.
 type EntitlementManagementResourcesItemRolesAccessPackageResourceRoleItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *EntitlementManagementResourcesItemRolesAccessPackageResourceRoleItemReq
     }
     return nil
 }
-// Get get roles from identityGovernance
+// Get read-only. Nullable. Supports $expand.
 func (m *EntitlementManagementResourcesItemRolesAccessPackageResourceRoleItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementResourcesItemRolesAccessPackageResourceRoleItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageResourceRoleable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +124,7 @@ func (m *EntitlementManagementResourcesItemRolesAccessPackageResourceRoleItemReq
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get roles from identityGovernance
+// ToGetRequestInformation read-only. Nullable. Supports $expand.
 func (m *EntitlementManagementResourcesItemRolesAccessPackageResourceRoleItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementResourcesItemRolesAccessPackageResourceRoleItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

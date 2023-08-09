@@ -7,14 +7,14 @@ import (
 // UserEvidence 
 type UserEvidence struct {
     AlertEvidence
-    // The OdataType property
-    OdataType *string
 }
 // NewUserEvidence instantiates a new userEvidence and sets the default values.
 func NewUserEvidence()(*UserEvidence) {
     m := &UserEvidence{
         AlertEvidence: *NewAlertEvidence(),
     }
+    odataTypeValue := "#microsoft.graph.security.userEvidence"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateUserEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

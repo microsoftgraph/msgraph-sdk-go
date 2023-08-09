@@ -120,7 +120,7 @@ func (m *SubjectRightsRequestHistory) GetFieldDeserializers()(map[string]func(i8
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetTypeEscaped(val)
         }
         return nil
     }
@@ -159,8 +159,8 @@ func (m *SubjectRightsRequestHistory) GetStageStatus()(*SubjectRightsRequestStag
     }
     return nil
 }
-// GetType gets the type property value. Type of history.
-func (m *SubjectRightsRequestHistory) GetType()(*string) {
+// GetTypeEscaped gets the type property value. Type of history.
+func (m *SubjectRightsRequestHistory) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -205,7 +205,7 @@ func (m *SubjectRightsRequestHistory) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
-        err := writer.WriteStringValue("type", m.GetType())
+        err := writer.WriteStringValue("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -264,8 +264,8 @@ func (m *SubjectRightsRequestHistory) SetStageStatus(value *SubjectRightsRequest
         panic(err)
     }
 }
-// SetType sets the type property value. Type of history.
-func (m *SubjectRightsRequestHistory) SetType(value *string)() {
+// SetTypeEscaped sets the type property value. Type of history.
+func (m *SubjectRightsRequestHistory) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -282,12 +282,12 @@ type SubjectRightsRequestHistoryable interface {
     GetOdataType()(*string)
     GetStage()(*SubjectRightsRequestStage)
     GetStageStatus()(*SubjectRightsRequestStageStatus)
-    GetType()(*string)
+    GetTypeEscaped()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetChangedBy(value IdentitySetable)()
     SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetOdataType(value *string)()
     SetStage(value *SubjectRightsRequestStage)()
     SetStageStatus(value *SubjectRightsRequestStageStatus)()
-    SetType(value *string)()
+    SetTypeEscaped(value *string)()
 }

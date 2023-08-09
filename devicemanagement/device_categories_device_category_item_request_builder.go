@@ -18,7 +18,7 @@ type DeviceCategoriesDeviceCategoryItemRequestBuilderDeleteRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DeviceCategoriesDeviceCategoryItemRequestBuilderGetQueryParameters the list of device categories with the tenant.
+// DeviceCategoriesDeviceCategoryItemRequestBuilderGetQueryParameters read properties and relationships of the deviceCategory object.
 type DeviceCategoriesDeviceCategoryItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,10 @@ func NewDeviceCategoriesDeviceCategoryItemRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceCategoriesDeviceCategoryItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property deviceCategories for deviceManagement
+// Delete deletes a deviceCategory.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-devicecategory-delete?view=graph-rest-1.0
 func (m *DeviceCategoriesDeviceCategoryItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DeviceCategoriesDeviceCategoryItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,10 @@ func (m *DeviceCategoriesDeviceCategoryItemRequestBuilder) Delete(ctx context.Co
     }
     return nil
 }
-// Get the list of device categories with the tenant.
+// Get read properties and relationships of the deviceCategory object.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-devicecategory-get?view=graph-rest-1.0
 func (m *DeviceCategoriesDeviceCategoryItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceCategoriesDeviceCategoryItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCategoryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,10 @@ func (m *DeviceCategoriesDeviceCategoryItemRequestBuilder) Get(ctx context.Conte
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCategoryable), nil
 }
-// Patch update the navigation property deviceCategories in deviceManagement
+// Patch update the properties of a deviceCategory object.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-devicecategory-update?view=graph-rest-1.0
 func (m *DeviceCategoriesDeviceCategoryItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCategoryable, requestConfiguration *DeviceCategoriesDeviceCategoryItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCategoryable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -108,7 +117,7 @@ func (m *DeviceCategoriesDeviceCategoryItemRequestBuilder) Patch(ctx context.Con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCategoryable), nil
 }
-// ToDeleteRequestInformation delete navigation property deviceCategories for deviceManagement
+// ToDeleteRequestInformation deletes a deviceCategory.
 func (m *DeviceCategoriesDeviceCategoryItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DeviceCategoriesDeviceCategoryItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -120,7 +129,7 @@ func (m *DeviceCategoriesDeviceCategoryItemRequestBuilder) ToDeleteRequestInform
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the list of device categories with the tenant.
+// ToGetRequestInformation read properties and relationships of the deviceCategory object.
 func (m *DeviceCategoriesDeviceCategoryItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceCategoriesDeviceCategoryItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +145,7 @@ func (m *DeviceCategoriesDeviceCategoryItemRequestBuilder) ToGetRequestInformati
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property deviceCategories in deviceManagement
+// ToPatchRequestInformation update the properties of a deviceCategory object.
 func (m *DeviceCategoriesDeviceCategoryItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCategoryable, requestConfiguration *DeviceCategoriesDeviceCategoryItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

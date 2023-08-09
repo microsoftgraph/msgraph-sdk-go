@@ -33,7 +33,7 @@ func NewItemJoinedTeamsItemArchiveRequestBuilder(rawUrl string, requestAdapter i
 // Post archive the specified team. When a team is archived, users can no longer send or like messages on any channel in the team, edit the team's name, description, or other settings, or in general make most changes to the team.Membership changes to the team continue to be allowed. Archiving is an async operation. A team is archived once the async operation completes successfully, which may occur subsequent to a response from this API. To archive a team, the team and group must have an owner. To restore a team from its archived state, use the API to unarchive.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/team-archive?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/team-archive?view=graph-rest-1.0
 func (m *ItemJoinedTeamsItemArchiveRequestBuilder) Post(ctx context.Context, body ItemJoinedTeamsItemArchivePostRequestBodyable, requestConfiguration *ItemJoinedTeamsItemArchiveRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -98,16 +98,6 @@ func (m *ExternalItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["properties"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePropertiesFromDiscriminatorValue)
         if err != nil {
@@ -119,17 +109,6 @@ func (m *ExternalItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *ExternalItem) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetProperties gets the properties property value. A property bag with the properties of the item. The properties MUST conform to the schema defined for the externalConnection. Required.
 func (m *ExternalItem) GetProperties()(Propertiesable) {
@@ -179,12 +158,6 @@ func (m *ExternalItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
         }
     }
     {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteObjectValue("properties", m.GetProperties())
         if err != nil {
             return err
@@ -213,13 +186,6 @@ func (m *ExternalItem) SetContent(value ExternalItemContentable)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *ExternalItem) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetProperties sets the properties property value. A property bag with the properties of the item. The properties MUST conform to the schema defined for the externalConnection. Required.
 func (m *ExternalItem) SetProperties(value Propertiesable)() {
     err := m.GetBackingStore().Set("properties", value)
@@ -234,11 +200,9 @@ type ExternalItemable interface {
     GetAcl()([]Aclable)
     GetActivities()([]ExternalActivityable)
     GetContent()(ExternalItemContentable)
-    GetOdataType()(*string)
     GetProperties()(Propertiesable)
     SetAcl(value []Aclable)()
     SetActivities(value []ExternalActivityable)()
     SetContent(value ExternalItemContentable)()
-    SetOdataType(value *string)()
     SetProperties(value Propertiesable)()
 }

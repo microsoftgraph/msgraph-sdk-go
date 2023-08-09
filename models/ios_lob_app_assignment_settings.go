@@ -7,8 +7,6 @@ import (
 // IosLobAppAssignmentSettings contains properties used to assign an iOS LOB mobile app to a group.
 type IosLobAppAssignmentSettings struct {
     MobileAppAssignmentSettings
-    // The OdataType property
-    OdataType *string
 }
 // NewIosLobAppAssignmentSettings instantiates a new iosLobAppAssignmentSettings and sets the default values.
 func NewIosLobAppAssignmentSettings()(*IosLobAppAssignmentSettings) {

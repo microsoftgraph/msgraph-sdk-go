@@ -132,16 +132,6 @@ func (m *FeatureRolloutPolicy) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     return res
 }
 // GetIsAppliedToOrganization gets the isAppliedToOrganization property value. Indicates whether this feature rollout policy should be applied to the entire organization.
@@ -163,17 +153,6 @@ func (m *FeatureRolloutPolicy) GetIsEnabled()(*bool) {
     }
     if val != nil {
         return val.(*bool)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *FeatureRolloutPolicy) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -226,12 +205,6 @@ func (m *FeatureRolloutPolicy) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetAppliesTo sets the appliesTo property value. Nullable. Specifies a list of directoryObjects that feature is enabled for.
@@ -276,13 +249,6 @@ func (m *FeatureRolloutPolicy) SetIsEnabled(value *bool)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *FeatureRolloutPolicy) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // FeatureRolloutPolicyable 
 type FeatureRolloutPolicyable interface {
     Entityable
@@ -293,12 +259,10 @@ type FeatureRolloutPolicyable interface {
     GetFeature()(*StagedFeatureName)
     GetIsAppliedToOrganization()(*bool)
     GetIsEnabled()(*bool)
-    GetOdataType()(*string)
     SetAppliesTo(value []DirectoryObjectable)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetFeature(value *StagedFeatureName)()
     SetIsAppliedToOrganization(value *bool)()
     SetIsEnabled(value *bool)()
-    SetOdataType(value *string)()
 }

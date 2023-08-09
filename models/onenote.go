@@ -38,16 +38,6 @@ func (m *Onenote) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["operations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateOnenoteOperationFromDiscriminatorValue)
         if err != nil {
@@ -141,17 +131,6 @@ func (m *Onenote) GetNotebooks()([]Notebookable) {
     }
     return nil
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *Onenote) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetOperations gets the operations property value. The status of OneNote operations. Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.
 func (m *Onenote) GetOperations()([]OnenoteOperationable) {
     val, err := m.GetBackingStore().Get("operations")
@@ -225,12 +204,6 @@ func (m *Onenote) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetOperations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOperations()))
         for i, v := range m.GetOperations() {
@@ -300,13 +273,6 @@ func (m *Onenote) SetNotebooks(value []Notebookable)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *Onenote) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetOperations sets the operations property value. The status of OneNote operations. Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.
 func (m *Onenote) SetOperations(value []OnenoteOperationable)() {
     err := m.GetBackingStore().Set("operations", value)
@@ -347,14 +313,12 @@ type Onenoteable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetNotebooks()([]Notebookable)
-    GetOdataType()(*string)
     GetOperations()([]OnenoteOperationable)
     GetPages()([]OnenotePageable)
     GetResources()([]OnenoteResourceable)
     GetSectionGroups()([]SectionGroupable)
     GetSections()([]OnenoteSectionable)
     SetNotebooks(value []Notebookable)()
-    SetOdataType(value *string)()
     SetOperations(value []OnenoteOperationable)()
     SetPages(value []OnenotePageable)()
     SetResources(value []OnenoteResourceable)()

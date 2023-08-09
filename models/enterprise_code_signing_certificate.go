@@ -85,16 +85,6 @@ func (m *EnterpriseCodeSigningCertificate) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCertificateStatus)
         if err != nil {
@@ -151,17 +141,6 @@ func (m *EnterpriseCodeSigningCertificate) GetIssuer()(*string) {
 // GetIssuerName gets the issuerName property value. The issuer name for the cert. This might contain information such as country (C), state or province (S), locality (L), common name of the cert (CN), organization (O), and organizational unit (OU). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
 func (m *EnterpriseCodeSigningCertificate) GetIssuerName()(*string) {
     val, err := m.GetBackingStore().Get("issuerName")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-func (m *EnterpriseCodeSigningCertificate) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
@@ -244,12 +223,6 @@ func (m *EnterpriseCodeSigningCertificate) Serialize(writer i878a80d2330e89d2689
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetStatus() != nil {
         cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
@@ -305,13 +278,6 @@ func (m *EnterpriseCodeSigningCertificate) SetIssuerName(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *EnterpriseCodeSigningCertificate) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetStatus sets the status property value. The status property
 func (m *EnterpriseCodeSigningCertificate) SetStatus(value *CertificateStatus)() {
     err := m.GetBackingStore().Set("status", value)
@@ -348,7 +314,6 @@ type EnterpriseCodeSigningCertificateable interface {
     GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetIssuer()(*string)
     GetIssuerName()(*string)
-    GetOdataType()(*string)
     GetStatus()(*CertificateStatus)
     GetSubject()(*string)
     GetSubjectName()(*string)
@@ -357,7 +322,6 @@ type EnterpriseCodeSigningCertificateable interface {
     SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetIssuer(value *string)()
     SetIssuerName(value *string)()
-    SetOdataType(value *string)()
     SetStatus(value *CertificateStatus)()
     SetSubject(value *string)()
     SetSubjectName(value *string)()

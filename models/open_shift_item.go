@@ -7,8 +7,6 @@ import (
 // OpenShiftItem 
 type OpenShiftItem struct {
     ShiftItem
-    // The OdataType property
-    OdataType *string
 }
 // NewOpenShiftItem instantiates a new openShiftItem and sets the default values.
 func NewOpenShiftItem()(*OpenShiftItem) {

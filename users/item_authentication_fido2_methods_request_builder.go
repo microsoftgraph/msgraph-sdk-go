@@ -70,7 +70,7 @@ func (m *ItemAuthenticationFido2MethodsRequestBuilder) Count()(*ItemAuthenticati
 // Get retrieve a list of a user's FIDO2 Security Key Authentication Method objects and their properties.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/fido2authenticationmethod-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/fido2authenticationmethod-list?view=graph-rest-1.0
 func (m *ItemAuthenticationFido2MethodsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAuthenticationFido2MethodsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Fido2AuthenticationMethodCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

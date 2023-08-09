@@ -7,8 +7,6 @@ import (
 // AadUserConversationMember 
 type AadUserConversationMember struct {
     ConversationMember
-    // The OdataType property
-    OdataType *string
 }
 // NewAadUserConversationMember instantiates a new aadUserConversationMember and sets the default values.
 func NewAadUserConversationMember()(*AadUserConversationMember) {

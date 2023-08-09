@@ -7,8 +7,6 @@ import (
 // ApplicationEnforcedRestrictionsSessionControl 
 type ApplicationEnforcedRestrictionsSessionControl struct {
     ConditionalAccessSessionControl
-    // The OdataType property
-    OdataType *string
 }
 // NewApplicationEnforcedRestrictionsSessionControl instantiates a new applicationEnforcedRestrictionsSessionControl and sets the default values.
 func NewApplicationEnforcedRestrictionsSessionControl()(*ApplicationEnforcedRestrictionsSessionControl) {
