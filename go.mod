@@ -8,6 +8,7 @@ require (
 	github.com/microsoft/kiota-abstractions-go v1.2.0
 	github.com/microsoft/kiota-serialization-form-go v1.0.0
 	github.com/microsoft/kiota-serialization-json-go v1.0.4
+	github.com/microsoft/kiota-serialization-multipart-go v1.0.0
 	github.com/microsoft/kiota-serialization-text-go v1.0.0
 	github.com/microsoftgraph/msgraph-sdk-go-core v1.0.0
 	github.com/stretchr/testify v1.8.4
