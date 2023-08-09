@@ -77,7 +77,7 @@ func (m *EdgeInternetExplorerModeSiteListsItemSitesRequestBuilder) Count()(*Edge
 // Get get a list of the browserSite objects and their properties.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/browsersitelist-list-sites?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/browsersitelist-list-sites?view=graph-rest-1.0
 func (m *EdgeInternetExplorerModeSiteListsItemSitesRequestBuilder) Get(ctx context.Context, requestConfiguration *EdgeInternetExplorerModeSiteListsItemSitesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BrowserSiteCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *EdgeInternetExplorerModeSiteListsItemSitesRequestBuilder) Get(ctx conte
 // Post create a new browserSite object in a browserSiteList.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/browsersitelist-post-sites?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/browsersitelist-post-sites?view=graph-rest-1.0
 func (m *EdgeInternetExplorerModeSiteListsItemSitesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BrowserSiteable, requestConfiguration *EdgeInternetExplorerModeSiteListsItemSitesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BrowserSiteable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

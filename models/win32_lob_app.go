@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Win32LobApp 
+// Win32LobApp contains properties and inherited properties for Win32 apps.
 type Win32LobApp struct {
     MobileLobApp
 }
-// NewWin32LobApp instantiates a new Win32LobApp and sets the default values.
+// NewWin32LobApp instantiates a new win32LobApp and sets the default values.
 func NewWin32LobApp()(*Win32LobApp) {
     m := &Win32LobApp{
         MobileLobApp: *NewMobileLobApp(),

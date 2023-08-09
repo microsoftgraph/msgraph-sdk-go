@@ -8,7 +8,7 @@ import (
 type EventMessageRequest struct {
     EventMessage
 }
-// NewEventMessageRequest instantiates a new EventMessageRequest and sets the default values.
+// NewEventMessageRequest instantiates a new eventMessageRequest and sets the default values.
 func NewEventMessageRequest()(*EventMessageRequest) {
     m := &EventMessageRequest{
         EventMessage: *NewEventMessage(),

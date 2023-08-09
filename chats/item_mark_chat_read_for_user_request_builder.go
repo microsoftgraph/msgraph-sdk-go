@@ -33,7 +33,7 @@ func NewItemMarkChatReadForUserRequestBuilder(rawUrl string, requestAdapter i2ae
 // Post mark a chat as read for a user.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/chat-markchatreadforuser?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/chat-markchatreadforuser?view=graph-rest-1.0
 func (m *ItemMarkChatReadForUserRequestBuilder) Post(ctx context.Context, body ItemMarkChatReadForUserPostRequestBodyable, requestConfiguration *ItemMarkChatReadForUserRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

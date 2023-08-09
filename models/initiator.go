@@ -8,7 +8,7 @@ import (
 type Initiator struct {
     Identity
 }
-// NewInitiator instantiates a new Initiator and sets the default values.
+// NewInitiator instantiates a new initiator and sets the default values.
 func NewInitiator()(*Initiator) {
     m := &Initiator{
         Identity: *NewIdentity(),

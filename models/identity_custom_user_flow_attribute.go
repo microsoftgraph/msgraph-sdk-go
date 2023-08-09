@@ -8,7 +8,7 @@ import (
 type IdentityCustomUserFlowAttribute struct {
     IdentityUserFlowAttribute
 }
-// NewIdentityCustomUserFlowAttribute instantiates a new IdentityCustomUserFlowAttribute and sets the default values.
+// NewIdentityCustomUserFlowAttribute instantiates a new identityCustomUserFlowAttribute and sets the default values.
 func NewIdentityCustomUserFlowAttribute()(*IdentityCustomUserFlowAttribute) {
     m := &IdentityCustomUserFlowAttribute{
         IdentityUserFlowAttribute: *NewIdentityUserFlowAttribute(),

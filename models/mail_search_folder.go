@@ -8,7 +8,7 @@ import (
 type MailSearchFolder struct {
     MailFolder
 }
-// NewMailSearchFolder instantiates a new MailSearchFolder and sets the default values.
+// NewMailSearchFolder instantiates a new mailSearchFolder and sets the default values.
 func NewMailSearchFolder()(*MailSearchFolder) {
     m := &MailSearchFolder{
         MailFolder: *NewMailFolder(),

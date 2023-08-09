@@ -67,7 +67,7 @@ func (m *AlertTrigger) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetTypeEscaped(val)
         }
         return nil
     }
@@ -105,8 +105,8 @@ func (m *AlertTrigger) GetOdataType()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. Type of the property in the key:value pair for interpretation. For example, String, Boolean etc.
-func (m *AlertTrigger) GetType()(*string) {
+// GetTypeEscaped gets the type property value. Type of the property in the key:value pair for interpretation. For example, String, Boolean etc.
+func (m *AlertTrigger) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -142,7 +142,7 @@ func (m *AlertTrigger) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
         }
     }
     {
-        err := writer.WriteStringValue("type", m.GetType())
+        err := writer.WriteStringValue("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -186,8 +186,8 @@ func (m *AlertTrigger) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. Type of the property in the key:value pair for interpretation. For example, String, Boolean etc.
-func (m *AlertTrigger) SetType(value *string)() {
+// SetTypeEscaped sets the type property value. Type of the property in the key:value pair for interpretation. For example, String, Boolean etc.
+func (m *AlertTrigger) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -208,11 +208,11 @@ type AlertTriggerable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetName()(*string)
     GetOdataType()(*string)
-    GetType()(*string)
+    GetTypeEscaped()(*string)
     GetValue()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetName(value *string)()
     SetOdataType(value *string)()
-    SetType(value *string)()
+    SetTypeEscaped(value *string)()
     SetValue(value *string)()
 }

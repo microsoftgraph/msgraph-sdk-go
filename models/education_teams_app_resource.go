@@ -8,7 +8,7 @@ import (
 type EducationTeamsAppResource struct {
     EducationResource
 }
-// NewEducationTeamsAppResource instantiates a new EducationTeamsAppResource and sets the default values.
+// NewEducationTeamsAppResource instantiates a new educationTeamsAppResource and sets the default values.
 func NewEducationTeamsAppResource()(*EducationTeamsAppResource) {
     m := &EducationTeamsAppResource{
         EducationResource: *NewEducationResource(),

@@ -8,7 +8,7 @@ import (
 type BookingCurrency struct {
     Entity
 }
-// NewBookingCurrency instantiates a new BookingCurrency and sets the default values.
+// NewBookingCurrency instantiates a new bookingCurrency and sets the default values.
 func NewBookingCurrency()(*BookingCurrency) {
     m := &BookingCurrency{
         Entity: *NewEntity(),

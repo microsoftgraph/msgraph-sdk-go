@@ -8,7 +8,7 @@ import (
 type EmailAuthenticationMethodCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewEmailAuthenticationMethodCollectionResponse instantiates a new EmailAuthenticationMethodCollectionResponse and sets the default values.
+// NewEmailAuthenticationMethodCollectionResponse instantiates a new emailAuthenticationMethodCollectionResponse and sets the default values.
 func NewEmailAuthenticationMethodCollectionResponse()(*EmailAuthenticationMethodCollectionResponse) {
     m := &EmailAuthenticationMethodCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

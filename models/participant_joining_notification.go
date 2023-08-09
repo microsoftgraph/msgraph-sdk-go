@@ -8,7 +8,7 @@ import (
 type ParticipantJoiningNotification struct {
     Entity
 }
-// NewParticipantJoiningNotification instantiates a new ParticipantJoiningNotification and sets the default values.
+// NewParticipantJoiningNotification instantiates a new participantJoiningNotification and sets the default values.
 func NewParticipantJoiningNotification()(*ParticipantJoiningNotification) {
     m := &ParticipantJoiningNotification{
         Entity: *NewEntity(),

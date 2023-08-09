@@ -6,13 +6,13 @@ import (
 type DiskType int
 
 const (
-    // Enum member for unknown or default diskType
+    // Enum member for unknown or default diskType.
     UNKNOWN_DISKTYPE DiskType = iota
-    // Enum member for HDD devices
+    // Enum member for HDD devices.
     HDD_DISKTYPE
-    // Enum member for SSD devices
+    // Enum member for SSD devices.
     SSD_DISKTYPE
-    // Evolvable enum member
+    // Evolvable enumeration sentinel value.Do not use.
     UNKNOWNFUTUREVALUE_DISKTYPE
 )
 

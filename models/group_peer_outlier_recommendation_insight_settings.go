@@ -8,7 +8,7 @@ import (
 type GroupPeerOutlierRecommendationInsightSettings struct {
     AccessReviewRecommendationInsightSetting
 }
-// NewGroupPeerOutlierRecommendationInsightSettings instantiates a new GroupPeerOutlierRecommendationInsightSettings and sets the default values.
+// NewGroupPeerOutlierRecommendationInsightSettings instantiates a new groupPeerOutlierRecommendationInsightSettings and sets the default values.
 func NewGroupPeerOutlierRecommendationInsightSettings()(*GroupPeerOutlierRecommendationInsightSettings) {
     m := &GroupPeerOutlierRecommendationInsightSettings{
         AccessReviewRecommendationInsightSetting: *NewAccessReviewRecommendationInsightSetting(),

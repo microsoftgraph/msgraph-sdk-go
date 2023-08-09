@@ -8,7 +8,7 @@ import (
 type DelegatedPermissionClassificationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDelegatedPermissionClassificationCollectionResponse instantiates a new DelegatedPermissionClassificationCollectionResponse and sets the default values.
+// NewDelegatedPermissionClassificationCollectionResponse instantiates a new delegatedPermissionClassificationCollectionResponse and sets the default values.
 func NewDelegatedPermissionClassificationCollectionResponse()(*DelegatedPermissionClassificationCollectionResponse) {
     m := &DelegatedPermissionClassificationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

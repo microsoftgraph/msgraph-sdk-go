@@ -8,7 +8,7 @@ import (
 type MobileThreatDefenseConnectorCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewMobileThreatDefenseConnectorCollectionResponse instantiates a new MobileThreatDefenseConnectorCollectionResponse and sets the default values.
+// NewMobileThreatDefenseConnectorCollectionResponse instantiates a new mobileThreatDefenseConnectorCollectionResponse and sets the default values.
 func NewMobileThreatDefenseConnectorCollectionResponse()(*MobileThreatDefenseConnectorCollectionResponse) {
     m := &MobileThreatDefenseConnectorCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

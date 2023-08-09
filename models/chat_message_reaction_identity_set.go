@@ -8,7 +8,7 @@ import (
 type ChatMessageReactionIdentitySet struct {
     IdentitySet
 }
-// NewChatMessageReactionIdentitySet instantiates a new ChatMessageReactionIdentitySet and sets the default values.
+// NewChatMessageReactionIdentitySet instantiates a new chatMessageReactionIdentitySet and sets the default values.
 func NewChatMessageReactionIdentitySet()(*ChatMessageReactionIdentitySet) {
     m := &ChatMessageReactionIdentitySet{
         IdentitySet: *NewIdentitySet(),

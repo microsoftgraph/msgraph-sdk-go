@@ -8,7 +8,7 @@ import (
 type CustomSecurityAttributeDefinition struct {
     Entity
 }
-// NewCustomSecurityAttributeDefinition instantiates a new CustomSecurityAttributeDefinition and sets the default values.
+// NewCustomSecurityAttributeDefinition instantiates a new customSecurityAttributeDefinition and sets the default values.
 func NewCustomSecurityAttributeDefinition()(*CustomSecurityAttributeDefinition) {
     m := &CustomSecurityAttributeDefinition{
         Entity: *NewEntity(),
@@ -137,7 +137,7 @@ func (m *CustomSecurityAttributeDefinition) GetFieldDeserializers()(map[string]f
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetTypeEscaped(val)
         }
         return nil
     }
@@ -197,8 +197,8 @@ func (m *CustomSecurityAttributeDefinition) GetStatus()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. Data type for the custom security attribute values. Supported types are: Boolean, Integer, and String. Cannot be changed later.
-func (m *CustomSecurityAttributeDefinition) GetType()(*string) {
+// GetTypeEscaped gets the type property value. Data type for the custom security attribute values. Supported types are: Boolean, Integer, and String. Cannot be changed later.
+func (m *CustomSecurityAttributeDefinition) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -274,7 +274,7 @@ func (m *CustomSecurityAttributeDefinition) Serialize(writer i878a80d2330e89d268
         }
     }
     {
-        err = writer.WriteStringValue("type", m.GetType())
+        err = writer.WriteStringValue("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -336,8 +336,8 @@ func (m *CustomSecurityAttributeDefinition) SetStatus(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. Data type for the custom security attribute values. Supported types are: Boolean, Integer, and String. Cannot be changed later.
-func (m *CustomSecurityAttributeDefinition) SetType(value *string)() {
+// SetTypeEscaped sets the type property value. Data type for the custom security attribute values. Supported types are: Boolean, Integer, and String. Cannot be changed later.
+func (m *CustomSecurityAttributeDefinition) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -361,7 +361,7 @@ type CustomSecurityAttributeDefinitionable interface {
     GetIsSearchable()(*bool)
     GetName()(*string)
     GetStatus()(*string)
-    GetType()(*string)
+    GetTypeEscaped()(*string)
     GetUsePreDefinedValuesOnly()(*bool)
     SetAllowedValues(value []AllowedValueable)()
     SetAttributeSet(value *string)()
@@ -370,6 +370,6 @@ type CustomSecurityAttributeDefinitionable interface {
     SetIsSearchable(value *bool)()
     SetName(value *string)()
     SetStatus(value *string)()
-    SetType(value *string)()
+    SetTypeEscaped(value *string)()
     SetUsePreDefinedValuesOnly(value *bool)()
 }

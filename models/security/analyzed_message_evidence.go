@@ -9,11 +9,13 @@ import (
 type AnalyzedMessageEvidence struct {
     AlertEvidence
 }
-// NewAnalyzedMessageEvidence instantiates a new AnalyzedMessageEvidence and sets the default values.
+// NewAnalyzedMessageEvidence instantiates a new analyzedMessageEvidence and sets the default values.
 func NewAnalyzedMessageEvidence()(*AnalyzedMessageEvidence) {
     m := &AnalyzedMessageEvidence{
         AlertEvidence: *NewAlertEvidence(),
     }
+    odataTypeValue := "#microsoft.graph.security.analyzedMessageEvidence"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAnalyzedMessageEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

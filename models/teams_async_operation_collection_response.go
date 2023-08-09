@@ -8,7 +8,7 @@ import (
 type TeamsAsyncOperationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewTeamsAsyncOperationCollectionResponse instantiates a new TeamsAsyncOperationCollectionResponse and sets the default values.
+// NewTeamsAsyncOperationCollectionResponse instantiates a new teamsAsyncOperationCollectionResponse and sets the default values.
 func NewTeamsAsyncOperationCollectionResponse()(*TeamsAsyncOperationCollectionResponse) {
     m := &TeamsAsyncOperationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

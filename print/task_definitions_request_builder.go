@@ -77,7 +77,7 @@ func (m *TaskDefinitionsRequestBuilder) Count()(*TaskDefinitionsCountRequestBuil
 // Get retrieve a list of task definitions that the requesting app defined in the tenant. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/print-list-taskdefinitions?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/print-list-taskdefinitions?view=graph-rest-1.0
 func (m *TaskDefinitionsRequestBuilder) Get(ctx context.Context, requestConfiguration *TaskDefinitionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintTaskDefinitionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *TaskDefinitionsRequestBuilder) Get(ctx context.Context, requestConfigur
 // Post create a new task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/print-post-taskdefinitions?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/print-post-taskdefinitions?view=graph-rest-1.0
 func (m *TaskDefinitionsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintTaskDefinitionable, requestConfiguration *TaskDefinitionsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintTaskDefinitionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

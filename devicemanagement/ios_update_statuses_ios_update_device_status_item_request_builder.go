@@ -57,7 +57,7 @@ func NewIosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilder(rawUrl string, 
 // Delete deletes a iosUpdateDeviceStatus.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-deviceconfig-iosupdatedevicestatus-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-iosupdatedevicestatus-delete?view=graph-rest-1.0
 func (m *IosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *IosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *IosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilder) Delete(ctx co
 // Get read properties and relationships of the iosUpdateDeviceStatus object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-deviceconfig-iosupdatedevicestatus-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-iosupdatedevicestatus-get?view=graph-rest-1.0
 func (m *IosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilder) Get(ctx context.Context, requestConfiguration *IosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IosUpdateDeviceStatusable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *IosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilder) Get(ctx conte
 // Patch update the properties of a iosUpdateDeviceStatus object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-deviceconfig-iosupdatedevicestatus-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-iosupdatedevicestatus-update?view=graph-rest-1.0
 func (m *IosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IosUpdateDeviceStatusable, requestConfiguration *IosUpdateStatusesIosUpdateDeviceStatusItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IosUpdateDeviceStatusable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

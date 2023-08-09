@@ -55,7 +55,7 @@ func NewItemMailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBui
 // Delete delete the specified messageRule object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/messagerule-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/messagerule-delete?view=graph-rest-1.0
 func (m *ItemMailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -74,7 +74,7 @@ func (m *ItemMailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBu
 // Get get the properties and relationships of a messageRule object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/messagerule-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/messagerule-get?view=graph-rest-1.0
 func (m *ItemMailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MessageRuleable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,7 +96,7 @@ func (m *ItemMailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBu
 // Patch change writable properties on a messageRule object and save the changes.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/messagerule-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/messagerule-update?view=graph-rest-1.0
 func (m *ItemMailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MessageRuleable, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MessageRuleable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

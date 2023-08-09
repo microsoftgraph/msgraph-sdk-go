@@ -81,7 +81,7 @@ func (m *GroupSettingTemplateItemRequestBuilder) Delete(ctx context.Context, req
 // Get a group setting template represents a template of settings from which settings may be created within a tenant. This operation allows retrieval of the properties of the groupSettingTemplate object, including the available settings and their defaults.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/groupsettingtemplate-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/groupsettingtemplate-get?view=graph-rest-1.0
 func (m *GroupSettingTemplateItemRequestBuilder) Get(ctx context.Context, requestConfiguration *GroupSettingTemplateItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupSettingTemplateable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

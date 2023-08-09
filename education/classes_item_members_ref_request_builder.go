@@ -58,7 +58,7 @@ func NewClassesItemMembersRefRequestBuilder(rawUrl string, requestAdapter i2ae41
 // Get retrieves the educationUser members of an educationClass.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationclass-list-members?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationclass-list-members?view=graph-rest-1.0
 func (m *ClassesItemMembersRefRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassesItemMembersRefRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -80,7 +80,7 @@ func (m *ClassesItemMembersRefRequestBuilder) Get(ctx context.Context, requestCo
 // Post add an educationUser member to an educationClass.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationclass-post-members?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationclass-post-members?view=graph-rest-1.0
 func (m *ClassesItemMembersRefRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *ClassesItemMembersRefRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

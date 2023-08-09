@@ -40,7 +40,7 @@ func NewEntitlementManagementAccessPackagesItemIncompatibleGroupsItemRefRequestB
 // Delete remove a group from the list of groups that have been marked as incompatible on an accessPackage.  
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/accesspackage-delete-incompatiblegroup?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/accesspackage-delete-incompatiblegroup?view=graph-rest-1.0
 func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsItemRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemIncompatibleGroupsItemRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -295,6 +295,22 @@ func (m *Team) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["permissionGrants"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateResourceSpecificPermissionGrantFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ResourceSpecificPermissionGrantable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ResourceSpecificPermissionGrantable)
+                }
+            }
+            m.SetPermissionGrants(res)
+        }
+        return nil
+    }
     res["photo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateProfilePhotoFromDiscriminatorValue)
         if err != nil {
@@ -521,6 +537,17 @@ func (m *Team) GetOperations()([]TeamsAsyncOperationable) {
     }
     if val != nil {
         return val.([]TeamsAsyncOperationable)
+    }
+    return nil
+}
+// GetPermissionGrants gets the permissionGrants property value. The permissionGrants property
+func (m *Team) GetPermissionGrants()([]ResourceSpecificPermissionGrantable) {
+    val, err := m.GetBackingStore().Get("permissionGrants")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ResourceSpecificPermissionGrantable)
     }
     return nil
 }
@@ -778,6 +805,18 @@ func (m *Team) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    if m.GetPermissionGrants() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPermissionGrants()))
+        for i, v := range m.GetPermissionGrants() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("permissionGrants", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("photo", m.GetPhoto())
         if err != nil {
@@ -967,6 +1006,13 @@ func (m *Team) SetOperations(value []TeamsAsyncOperationable)() {
         panic(err)
     }
 }
+// SetPermissionGrants sets the permissionGrants property value. The permissionGrants property
+func (m *Team) SetPermissionGrants(value []ResourceSpecificPermissionGrantable)() {
+    err := m.GetBackingStore().Set("permissionGrants", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPhoto sets the photo property value. The profile photo for the team.
 func (m *Team) SetPhoto(value ProfilePhotoable)() {
     err := m.GetBackingStore().Set("photo", value)
@@ -1058,6 +1104,7 @@ type Teamable interface {
     GetMemberSettings()(TeamMemberSettingsable)
     GetMessagingSettings()(TeamMessagingSettingsable)
     GetOperations()([]TeamsAsyncOperationable)
+    GetPermissionGrants()([]ResourceSpecificPermissionGrantable)
     GetPhoto()(ProfilePhotoable)
     GetPrimaryChannel()(Channelable)
     GetSchedule()(Scheduleable)
@@ -1085,6 +1132,7 @@ type Teamable interface {
     SetMemberSettings(value TeamMemberSettingsable)()
     SetMessagingSettings(value TeamMessagingSettingsable)()
     SetOperations(value []TeamsAsyncOperationable)()
+    SetPermissionGrants(value []ResourceSpecificPermissionGrantable)()
     SetPhoto(value ProfilePhotoable)()
     SetPrimaryChannel(value Channelable)()
     SetSchedule(value Scheduleable)()

@@ -57,7 +57,7 @@ func NewItemContactsContactItemRequestBuilder(rawUrl string, requestAdapter i2ae
 // Delete delete a contact.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/contact-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/contact-delete?view=graph-rest-1.0
 func (m *ItemContactsContactItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemContactsContactItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -80,7 +80,7 @@ func (m *ItemContactsContactItemRequestBuilder) Extensions()(*ItemContactsItemEx
 // Get retrieve the properties and relationships of a contact object. There are two scenarios where an app can get a contact in another user's contact folder:
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/contact-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/contact-get?view=graph-rest-1.0
 func (m *ItemContactsContactItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemContactsContactItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Contactable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -102,7 +102,7 @@ func (m *ItemContactsContactItemRequestBuilder) Get(ctx context.Context, request
 // Patch update the properties of a contact object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/contact-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/contact-update?view=graph-rest-1.0
 func (m *ItemContactsContactItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Contactable, requestConfiguration *ItemContactsContactItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Contactable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

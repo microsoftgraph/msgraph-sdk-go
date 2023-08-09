@@ -61,7 +61,7 @@ func NewItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilder
 // Delete uninstall an app from the personal scope of the specified user.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/userteamwork-delete-installedapps?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/userteamwork-delete-installedapps?view=graph-rest-1.0
 func (m *ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -80,7 +80,7 @@ func (m *ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilde
 // Get retrieve the app installed in the personal scope of the specified user.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/userteamwork-get-installedapps?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/userteamwork-get-installedapps?view=graph-rest-1.0
 func (m *ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserScopeTeamsAppInstallationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

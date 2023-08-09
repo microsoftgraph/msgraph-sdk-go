@@ -5,11 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosVppApp 
+// IosVppApp contains properties and inherited properties for iOS Volume-Purchased Program (VPP) Apps.
 type IosVppApp struct {
     MobileApp
 }
-// NewIosVppApp instantiates a new IosVppApp and sets the default values.
+// NewIosVppApp instantiates a new iosVppApp and sets the default values.
 func NewIosVppApp()(*IosVppApp) {
     m := &IosVppApp{
         MobileApp: *NewMobileApp(),

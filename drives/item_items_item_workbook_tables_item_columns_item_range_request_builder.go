@@ -34,7 +34,7 @@ func NewItemItemsItemWorkbookTablesItemColumnsItemRangeRequestBuilder(rawUrl str
 // Get gets the range object associated with the entire column.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/tablecolumn-range?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/tablecolumn-range?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookTablesItemColumnsItemRangeRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemColumnsItemRangeRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookRangeable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

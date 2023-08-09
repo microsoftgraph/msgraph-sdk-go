@@ -8,7 +8,7 @@ import (
 type BrowserSiteCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewBrowserSiteCollectionResponse instantiates a new BrowserSiteCollectionResponse and sets the default values.
+// NewBrowserSiteCollectionResponse instantiates a new browserSiteCollectionResponse and sets the default values.
 func NewBrowserSiteCollectionResponse()(*BrowserSiteCollectionResponse) {
     m := &BrowserSiteCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

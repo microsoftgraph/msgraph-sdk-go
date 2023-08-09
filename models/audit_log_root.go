@@ -8,7 +8,7 @@ import (
 type AuditLogRoot struct {
     Entity
 }
-// NewAuditLogRoot instantiates a new AuditLogRoot and sets the default values.
+// NewAuditLogRoot instantiates a new auditLogRoot and sets the default values.
 func NewAuditLogRoot()(*AuditLogRoot) {
     m := &AuditLogRoot{
         Entity: *NewEntity(),

@@ -8,7 +8,7 @@ import (
 type RemoteAssistancePartnerCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewRemoteAssistancePartnerCollectionResponse instantiates a new RemoteAssistancePartnerCollectionResponse and sets the default values.
+// NewRemoteAssistancePartnerCollectionResponse instantiates a new remoteAssistancePartnerCollectionResponse and sets the default values.
 func NewRemoteAssistancePartnerCollectionResponse()(*RemoteAssistancePartnerCollectionResponse) {
     m := &RemoteAssistancePartnerCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

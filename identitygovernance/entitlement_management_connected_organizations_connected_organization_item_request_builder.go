@@ -57,7 +57,7 @@ func NewEntitlementManagementConnectedOrganizationsConnectedOrganizationItemRequ
 // Delete delete a connectedOrganization object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/connectedorganization-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/connectedorganization-delete?view=graph-rest-1.0
 func (m *EntitlementManagementConnectedOrganizationsConnectedOrganizationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *EntitlementManagementConnectedOrganizationsConnectedOrganizationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -80,7 +80,7 @@ func (m *EntitlementManagementConnectedOrganizationsConnectedOrganizationItemReq
 // Get retrieve the properties and relationships of a connectedOrganization object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/connectedorganization-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/connectedorganization-get?view=graph-rest-1.0
 func (m *EntitlementManagementConnectedOrganizationsConnectedOrganizationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementConnectedOrganizationsConnectedOrganizationItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConnectedOrganizationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -106,7 +106,7 @@ func (m *EntitlementManagementConnectedOrganizationsConnectedOrganizationItemReq
 // Patch update a connectedOrganization object to change one or more of its properties.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/connectedorganization-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/connectedorganization-update?view=graph-rest-1.0
 func (m *EntitlementManagementConnectedOrganizationsConnectedOrganizationItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConnectedOrganizationable, requestConfiguration *EntitlementManagementConnectedOrganizationsConnectedOrganizationItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConnectedOrganizationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

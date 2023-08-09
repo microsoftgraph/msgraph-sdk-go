@@ -8,7 +8,7 @@ import (
 type WindowsHelloForBusinessAuthenticationMethodCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewWindowsHelloForBusinessAuthenticationMethodCollectionResponse instantiates a new WindowsHelloForBusinessAuthenticationMethodCollectionResponse and sets the default values.
+// NewWindowsHelloForBusinessAuthenticationMethodCollectionResponse instantiates a new windowsHelloForBusinessAuthenticationMethodCollectionResponse and sets the default values.
 func NewWindowsHelloForBusinessAuthenticationMethodCollectionResponse()(*WindowsHelloForBusinessAuthenticationMethodCollectionResponse) {
     m := &WindowsHelloForBusinessAuthenticationMethodCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -50,7 +50,7 @@ func NewItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder(rawUrl s
 // Get retrieve the properties and relationships of an authenticationMethod object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/authenticationmethod-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/authenticationmethod-get?view=graph-rest-1.0
 func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationMethodable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

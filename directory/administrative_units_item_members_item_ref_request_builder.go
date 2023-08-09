@@ -40,7 +40,7 @@ func NewAdministrativeUnitsItemMembersItemRefRequestBuilder(rawUrl string, reque
 // Delete use this API to remove a member (user, group, or device) from an administrative unit.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/administrativeunit-delete-members?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/administrativeunit-delete-members?view=graph-rest-1.0
 func (m *AdministrativeUnitsItemMembersItemRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *AdministrativeUnitsItemMembersItemRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {

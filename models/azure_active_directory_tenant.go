@@ -8,7 +8,7 @@ import (
 type AzureActiveDirectoryTenant struct {
     IdentitySource
 }
-// NewAzureActiveDirectoryTenant instantiates a new AzureActiveDirectoryTenant and sets the default values.
+// NewAzureActiveDirectoryTenant instantiates a new azureActiveDirectoryTenant and sets the default values.
 func NewAzureActiveDirectoryTenant()(*AzureActiveDirectoryTenant) {
     m := &AzureActiveDirectoryTenant{
         IdentitySource: *NewIdentitySource(),

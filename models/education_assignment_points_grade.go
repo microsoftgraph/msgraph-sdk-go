@@ -8,7 +8,7 @@ import (
 type EducationAssignmentPointsGrade struct {
     EducationAssignmentGrade
 }
-// NewEducationAssignmentPointsGrade instantiates a new EducationAssignmentPointsGrade and sets the default values.
+// NewEducationAssignmentPointsGrade instantiates a new educationAssignmentPointsGrade and sets the default values.
 func NewEducationAssignmentPointsGrade()(*EducationAssignmentPointsGrade) {
     m := &EducationAssignmentPointsGrade{
         EducationAssignmentGrade: *NewEducationAssignmentGrade(),

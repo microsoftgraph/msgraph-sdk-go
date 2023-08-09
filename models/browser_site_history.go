@@ -11,7 +11,7 @@ type BrowserSiteHistory struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewBrowserSiteHistory instantiates a new BrowserSiteHistory and sets the default values.
+// NewBrowserSiteHistory instantiates a new browserSiteHistory and sets the default values.
 func NewBrowserSiteHistory()(*BrowserSiteHistory) {
     m := &BrowserSiteHistory{
     }

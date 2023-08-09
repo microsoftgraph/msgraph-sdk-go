@@ -8,7 +8,7 @@ import (
 type ExternalSponsors struct {
     SubjectSet
 }
-// NewExternalSponsors instantiates a new ExternalSponsors and sets the default values.
+// NewExternalSponsors instantiates a new externalSponsors and sets the default values.
 func NewExternalSponsors()(*ExternalSponsors) {
     m := &ExternalSponsors{
         SubjectSet: *NewSubjectSet(),

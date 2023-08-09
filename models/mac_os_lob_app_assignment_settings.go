@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MacOsLobAppAssignmentSettings 
+// MacOsLobAppAssignmentSettings contains properties used to assign a macOS LOB app to a group.
 type MacOsLobAppAssignmentSettings struct {
     MobileAppAssignmentSettings
 }
-// NewMacOsLobAppAssignmentSettings instantiates a new MacOsLobAppAssignmentSettings and sets the default values.
+// NewMacOsLobAppAssignmentSettings instantiates a new macOsLobAppAssignmentSettings and sets the default values.
 func NewMacOsLobAppAssignmentSettings()(*MacOsLobAppAssignmentSettings) {
     m := &MacOsLobAppAssignmentSettings{
         MobileAppAssignmentSettings: *NewMobileAppAssignmentSettings(),

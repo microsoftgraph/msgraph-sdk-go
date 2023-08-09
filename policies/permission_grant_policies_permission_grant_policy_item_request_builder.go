@@ -57,7 +57,7 @@ func NewPermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder(rawUrl st
 // Delete delete a permissionGrantPolicy object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/permissiongrantpolicy-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/permissiongrantpolicy-delete?view=graph-rest-1.0
 func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -80,7 +80,7 @@ func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) Exclude
 // Get retrieve a single permissionGrantPolicy object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/permissiongrantpolicy-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/permissiongrantpolicy-get?view=graph-rest-1.0
 func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PermissionGrantPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -106,7 +106,7 @@ func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) Include
 // Patch update properties of a  permissionGrantPolicy.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/permissiongrantpolicy-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/permissiongrantpolicy-update?view=graph-rest-1.0
 func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PermissionGrantPolicyable, requestConfiguration *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PermissionGrantPolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

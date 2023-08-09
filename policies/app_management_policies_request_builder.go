@@ -77,7 +77,7 @@ func (m *AppManagementPoliciesRequestBuilder) Count()(*AppManagementPoliciesCoun
 // Get retrieve a list of appManagementPolicy objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/appmanagementpolicy-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/appmanagementpolicy-list?view=graph-rest-1.0
 func (m *AppManagementPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *AppManagementPoliciesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AppManagementPolicyCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *AppManagementPoliciesRequestBuilder) Get(ctx context.Context, requestCo
 // Post create an appManagementPolicy object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/appmanagementpolicy-post?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/appmanagementpolicy-post?view=graph-rest-1.0
 func (m *AppManagementPoliciesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AppManagementPolicyable, requestConfiguration *AppManagementPoliciesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AppManagementPolicyable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

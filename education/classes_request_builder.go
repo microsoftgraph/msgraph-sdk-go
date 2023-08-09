@@ -81,7 +81,7 @@ func (m *ClassesRequestBuilder) Delta()(*ClassesDeltaRequestBuilder) {
 // Get get a list of the educationClass objects and their properties.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationclass-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationclass-list?view=graph-rest-1.0
 func (m *ClassesRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationClassCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -103,7 +103,7 @@ func (m *ClassesRequestBuilder) Get(ctx context.Context, requestConfiguration *C
 // Post create a new educationClass object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationclass-post?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationclass-post?view=graph-rest-1.0
 func (m *ClassesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationClassable, requestConfiguration *ClassesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationClassable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

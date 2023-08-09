@@ -40,7 +40,7 @@ func NewSchoolsItemClassesItemRefRequestBuilder(rawUrl string, requestAdapter i2
 // Delete delete a class from a school.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationschool-delete-classes?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationschool-delete-classes?view=graph-rest-1.0
 func (m *SchoolsItemClassesItemRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *SchoolsItemClassesItemRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -113,7 +113,7 @@ func (m *LoginPageTextVisibilitySettings) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetHideAccountResetCredentials gets the hideAccountResetCredentials property value. The hideAccountResetCredentials property
+// GetHideAccountResetCredentials gets the hideAccountResetCredentials property value. Option to hide the self-service password reset (SSPR) hyperlinks such as 'Can't access your account?', 'Forgot my password' and 'Reset it now' on the sign-in form.
 func (m *LoginPageTextVisibilitySettings) GetHideAccountResetCredentials()(*bool) {
     val, err := m.GetBackingStore().Get("hideAccountResetCredentials")
     if err != nil {
@@ -124,7 +124,7 @@ func (m *LoginPageTextVisibilitySettings) GetHideAccountResetCredentials()(*bool
     }
     return nil
 }
-// GetHideCannotAccessYourAccount gets the hideCannotAccessYourAccount property value. The hideCannotAccessYourAccount property
+// GetHideCannotAccessYourAccount gets the hideCannotAccessYourAccount property value. Option to hide the self-service password reset (SSPR) 'Can't access your account?' hyperlink on the sign-in form.
 func (m *LoginPageTextVisibilitySettings) GetHideCannotAccessYourAccount()(*bool) {
     val, err := m.GetBackingStore().Get("hideCannotAccessYourAccount")
     if err != nil {
@@ -135,7 +135,7 @@ func (m *LoginPageTextVisibilitySettings) GetHideCannotAccessYourAccount()(*bool
     }
     return nil
 }
-// GetHideForgotMyPassword gets the hideForgotMyPassword property value. The hideForgotMyPassword property
+// GetHideForgotMyPassword gets the hideForgotMyPassword property value. Option to hide the self-service password reset (SSPR) 'Forgot my password' hyperlink on the sign-in form.
 func (m *LoginPageTextVisibilitySettings) GetHideForgotMyPassword()(*bool) {
     val, err := m.GetBackingStore().Get("hideForgotMyPassword")
     if err != nil {
@@ -146,7 +146,7 @@ func (m *LoginPageTextVisibilitySettings) GetHideForgotMyPassword()(*bool) {
     }
     return nil
 }
-// GetHidePrivacyAndCookies gets the hidePrivacyAndCookies property value. The hidePrivacyAndCookies property
+// GetHidePrivacyAndCookies gets the hidePrivacyAndCookies property value. Option to hide the 'Privacy & Cookies' hyperlink in the footer.
 func (m *LoginPageTextVisibilitySettings) GetHidePrivacyAndCookies()(*bool) {
     val, err := m.GetBackingStore().Get("hidePrivacyAndCookies")
     if err != nil {
@@ -157,7 +157,7 @@ func (m *LoginPageTextVisibilitySettings) GetHidePrivacyAndCookies()(*bool) {
     }
     return nil
 }
-// GetHideResetItNow gets the hideResetItNow property value. The hideResetItNow property
+// GetHideResetItNow gets the hideResetItNow property value. Option to hide the self-service password reset (SSPR) 'reset it now' hyperlink on the sign-in form.
 func (m *LoginPageTextVisibilitySettings) GetHideResetItNow()(*bool) {
     val, err := m.GetBackingStore().Get("hideResetItNow")
     if err != nil {
@@ -168,7 +168,7 @@ func (m *LoginPageTextVisibilitySettings) GetHideResetItNow()(*bool) {
     }
     return nil
 }
-// GetHideTermsOfUse gets the hideTermsOfUse property value. The hideTermsOfUse property
+// GetHideTermsOfUse gets the hideTermsOfUse property value. Option to hide the 'Terms of Use' hyperlink in the footer.
 func (m *LoginPageTextVisibilitySettings) GetHideTermsOfUse()(*bool) {
     val, err := m.GetBackingStore().Get("hideTermsOfUse")
     if err != nil {
@@ -253,42 +253,42 @@ func (m *LoginPageTextVisibilitySettings) SetAdditionalData(value map[string]any
 func (m *LoginPageTextVisibilitySettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetHideAccountResetCredentials sets the hideAccountResetCredentials property value. The hideAccountResetCredentials property
+// SetHideAccountResetCredentials sets the hideAccountResetCredentials property value. Option to hide the self-service password reset (SSPR) hyperlinks such as 'Can't access your account?', 'Forgot my password' and 'Reset it now' on the sign-in form.
 func (m *LoginPageTextVisibilitySettings) SetHideAccountResetCredentials(value *bool)() {
     err := m.GetBackingStore().Set("hideAccountResetCredentials", value)
     if err != nil {
         panic(err)
     }
 }
-// SetHideCannotAccessYourAccount sets the hideCannotAccessYourAccount property value. The hideCannotAccessYourAccount property
+// SetHideCannotAccessYourAccount sets the hideCannotAccessYourAccount property value. Option to hide the self-service password reset (SSPR) 'Can't access your account?' hyperlink on the sign-in form.
 func (m *LoginPageTextVisibilitySettings) SetHideCannotAccessYourAccount(value *bool)() {
     err := m.GetBackingStore().Set("hideCannotAccessYourAccount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetHideForgotMyPassword sets the hideForgotMyPassword property value. The hideForgotMyPassword property
+// SetHideForgotMyPassword sets the hideForgotMyPassword property value. Option to hide the self-service password reset (SSPR) 'Forgot my password' hyperlink on the sign-in form.
 func (m *LoginPageTextVisibilitySettings) SetHideForgotMyPassword(value *bool)() {
     err := m.GetBackingStore().Set("hideForgotMyPassword", value)
     if err != nil {
         panic(err)
     }
 }
-// SetHidePrivacyAndCookies sets the hidePrivacyAndCookies property value. The hidePrivacyAndCookies property
+// SetHidePrivacyAndCookies sets the hidePrivacyAndCookies property value. Option to hide the 'Privacy & Cookies' hyperlink in the footer.
 func (m *LoginPageTextVisibilitySettings) SetHidePrivacyAndCookies(value *bool)() {
     err := m.GetBackingStore().Set("hidePrivacyAndCookies", value)
     if err != nil {
         panic(err)
     }
 }
-// SetHideResetItNow sets the hideResetItNow property value. The hideResetItNow property
+// SetHideResetItNow sets the hideResetItNow property value. Option to hide the self-service password reset (SSPR) 'reset it now' hyperlink on the sign-in form.
 func (m *LoginPageTextVisibilitySettings) SetHideResetItNow(value *bool)() {
     err := m.GetBackingStore().Set("hideResetItNow", value)
     if err != nil {
         panic(err)
     }
 }
-// SetHideTermsOfUse sets the hideTermsOfUse property value. The hideTermsOfUse property
+// SetHideTermsOfUse sets the hideTermsOfUse property value. Option to hide the 'Terms of Use' hyperlink in the footer.
 func (m *LoginPageTextVisibilitySettings) SetHideTermsOfUse(value *bool)() {
     err := m.GetBackingStore().Set("hideTermsOfUse", value)
     if err != nil {

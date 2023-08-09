@@ -8,7 +8,7 @@ import (
 type NotebookCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewNotebookCollectionResponse instantiates a new NotebookCollectionResponse and sets the default values.
+// NewNotebookCollectionResponse instantiates a new notebookCollectionResponse and sets the default values.
 func NewNotebookCollectionResponse()(*NotebookCollectionResponse) {
     m := &NotebookCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

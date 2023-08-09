@@ -33,7 +33,7 @@ func NewServiceAnnouncementMessagesUnfavoriteRequestBuilder(rawUrl string, reque
 // Post remove the favorite status of serviceUpdateMessages for the signed in user.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/serviceupdatemessage-unfavorite?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/serviceupdatemessage-unfavorite?view=graph-rest-1.0
 func (m *ServiceAnnouncementMessagesUnfavoriteRequestBuilder) Post(ctx context.Context, body ServiceAnnouncementMessagesUnfavoritePostRequestBodyable, requestConfiguration *ServiceAnnouncementMessagesUnfavoriteRequestBuilderPostRequestConfiguration)(ServiceAnnouncementMessagesUnfavoriteResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

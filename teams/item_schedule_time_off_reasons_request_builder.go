@@ -75,7 +75,7 @@ func (m *ItemScheduleTimeOffReasonsRequestBuilder) Count()(*ItemScheduleTimeOffR
 // Get get the list of timeOffReasons in a schedule.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/schedule-list-timeoffreasons?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/schedule-list-timeoffreasons?view=graph-rest-1.0
 func (m *ItemScheduleTimeOffReasonsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemScheduleTimeOffReasonsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeOffReasonCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -97,7 +97,7 @@ func (m *ItemScheduleTimeOffReasonsRequestBuilder) Get(ctx context.Context, requ
 // Post create a new timeOffReason.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/schedule-post-timeoffreasons?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/schedule-post-timeoffreasons?view=graph-rest-1.0
 func (m *ItemScheduleTimeOffReasonsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeOffReasonable, requestConfiguration *ItemScheduleTimeOffReasonsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeOffReasonable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

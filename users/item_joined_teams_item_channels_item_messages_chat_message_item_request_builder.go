@@ -73,7 +73,7 @@ func (m *ItemJoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) D
 // Get retrieve a single message or a message reply in a channel or a chat.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/chatmessage-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/chatmessage-get?view=graph-rest-1.0
 func (m *ItemJoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,10 +96,10 @@ func (m *ItemJoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) G
 func (m *ItemJoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) HostedContents()(*ItemJoinedTeamsItemChannelsItemMessagesItemHostedContentsRequestBuilder) {
     return NewItemJoinedTeamsItemChannelsItemMessagesItemHostedContentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update a chatMessage object. With the exception of the **policyViolation** property, all properties of a **chatMessage** can be updated in delegated permissions scenarios.Only the **policyViolation** property of a **chatMessage** can be updated in application permissions scenarios. The update only works for chats where members are Microsoft Teams users. If one of the participants is using Skype, the operation will fail. This method does not support federation. Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message.
+// Patch update a chatMessage object. With the exception of the policyViolation property, all properties of a chatMessage can be updated in delegated permissions scenarios.Only the policyViolation property of a chatMessage can be updated in application permissions scenarios. The update only works for chats where members are Microsoft Teams users. If one of the participants is using Skype, the operation will fail. This method does not support federation. Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/chatmessage-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/chatmessage-update?view=graph-rest-1.0
 func (m *ItemJoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable, requestConfiguration *ItemJoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -121,6 +121,10 @@ func (m *ItemJoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) P
 // Replies provides operations to manage the replies property of the microsoft.graph.chatMessage entity.
 func (m *ItemJoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) Replies()(*ItemJoinedTeamsItemChannelsItemMessagesItemRepliesRequestBuilder) {
     return NewItemJoinedTeamsItemChannelsItemMessagesItemRepliesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// SetReaction provides operations to call the setReaction method.
+func (m *ItemJoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) SetReaction()(*ItemJoinedTeamsItemChannelsItemMessagesItemSetReactionRequestBuilder) {
+    return NewItemJoinedTeamsItemChannelsItemMessagesItemSetReactionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SoftDelete provides operations to call the softDelete method.
 func (m *ItemJoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) SoftDelete()(*ItemJoinedTeamsItemChannelsItemMessagesItemSoftDeleteRequestBuilder) {
@@ -154,7 +158,7 @@ func (m *ItemJoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) T
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update a chatMessage object. With the exception of the **policyViolation** property, all properties of a **chatMessage** can be updated in delegated permissions scenarios.Only the **policyViolation** property of a **chatMessage** can be updated in application permissions scenarios. The update only works for chats where members are Microsoft Teams users. If one of the participants is using Skype, the operation will fail. This method does not support federation. Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message.
+// ToPatchRequestInformation update a chatMessage object. With the exception of the policyViolation property, all properties of a chatMessage can be updated in delegated permissions scenarios.Only the policyViolation property of a chatMessage can be updated in application permissions scenarios. The update only works for chats where members are Microsoft Teams users. If one of the participants is using Skype, the operation will fail. This method does not support federation. Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message.
 func (m *ItemJoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable, requestConfiguration *ItemJoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -174,4 +178,8 @@ func (m *ItemJoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) T
 // UndoSoftDelete provides operations to call the undoSoftDelete method.
 func (m *ItemJoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) UndoSoftDelete()(*ItemJoinedTeamsItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilder) {
     return NewItemJoinedTeamsItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// UnsetReaction provides operations to call the unsetReaction method.
+func (m *ItemJoinedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) UnsetReaction()(*ItemJoinedTeamsItemChannelsItemMessagesItemUnsetReactionRequestBuilder) {
+    return NewItemJoinedTeamsItemChannelsItemMessagesItemUnsetReactionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

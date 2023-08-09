@@ -8,7 +8,7 @@ import (
 type DisableAndDeleteUserApplyAction struct {
     AccessReviewApplyAction
 }
-// NewDisableAndDeleteUserApplyAction instantiates a new DisableAndDeleteUserApplyAction and sets the default values.
+// NewDisableAndDeleteUserApplyAction instantiates a new disableAndDeleteUserApplyAction and sets the default values.
 func NewDisableAndDeleteUserApplyAction()(*DisableAndDeleteUserApplyAction) {
     m := &DisableAndDeleteUserApplyAction{
         AccessReviewApplyAction: *NewAccessReviewApplyAction(),

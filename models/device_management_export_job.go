@@ -106,7 +106,7 @@ func (m *DeviceManagementExportJob) GetFieldDeserializers()(map[string]func(i878
                     res[i] = *(v.(*string))
                 }
             }
-            m.SetSelect(res)
+            m.SetSelectEscaped(res)
         }
         return nil
     }
@@ -197,8 +197,8 @@ func (m *DeviceManagementExportJob) GetRequestDateTime()(*i336074805fc853987abe6
     }
     return nil
 }
-// GetSelect gets the select property value. Columns selected from the report
-func (m *DeviceManagementExportJob) GetSelect()([]string) {
+// GetSelectEscaped gets the select property value. Columns selected from the report
+func (m *DeviceManagementExportJob) GetSelectEscaped()([]string) {
     val, err := m.GetBackingStore().Get("selectEscaped")
     if err != nil {
         panic(err)
@@ -285,8 +285,8 @@ func (m *DeviceManagementExportJob) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
-    if m.GetSelect() != nil {
-        err = writer.WriteCollectionOfStringValues("select", m.GetSelect())
+    if m.GetSelectEscaped() != nil {
+        err = writer.WriteCollectionOfStringValues("select", m.GetSelectEscaped())
         if err != nil {
             return err
         }
@@ -354,8 +354,8 @@ func (m *DeviceManagementExportJob) SetRequestDateTime(value *i336074805fc853987
         panic(err)
     }
 }
-// SetSelect sets the select property value. Columns selected from the report
-func (m *DeviceManagementExportJob) SetSelect(value []string)() {
+// SetSelectEscaped sets the select property value. Columns selected from the report
+func (m *DeviceManagementExportJob) SetSelectEscaped(value []string)() {
     err := m.GetBackingStore().Set("selectEscaped", value)
     if err != nil {
         panic(err)
@@ -392,7 +392,7 @@ type DeviceManagementExportJobable interface {
     GetLocalizationType()(*DeviceManagementExportJobLocalizationType)
     GetReportName()(*string)
     GetRequestDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetSelect()([]string)
+    GetSelectEscaped()([]string)
     GetSnapshotId()(*string)
     GetStatus()(*DeviceManagementReportStatus)
     GetUrl()(*string)
@@ -402,7 +402,7 @@ type DeviceManagementExportJobable interface {
     SetLocalizationType(value *DeviceManagementExportJobLocalizationType)()
     SetReportName(value *string)()
     SetRequestDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetSelect(value []string)()
+    SetSelectEscaped(value []string)()
     SetSnapshotId(value *string)()
     SetStatus(value *DeviceManagementReportStatus)()
     SetUrl(value *string)()

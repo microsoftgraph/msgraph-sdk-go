@@ -148,6 +148,10 @@ func (m *ItemJoinedTeamsTeamItemRequestBuilder) Patch(ctx context.Context, body 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamable), nil
 }
+// PermissionGrants provides operations to manage the permissionGrants property of the microsoft.graph.team entity.
+func (m *ItemJoinedTeamsTeamItemRequestBuilder) PermissionGrants()(*ItemJoinedTeamsItemPermissionGrantsRequestBuilder) {
+    return NewItemJoinedTeamsItemPermissionGrantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Photo provides operations to manage the photo property of the microsoft.graph.team entity.
 func (m *ItemJoinedTeamsTeamItemRequestBuilder) Photo()(*ItemJoinedTeamsItemPhotoRequestBuilder) {
     return NewItemJoinedTeamsItemPhotoRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

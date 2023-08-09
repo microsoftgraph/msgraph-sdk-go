@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsUniversalAppXContainedApp 
+// WindowsUniversalAppXContainedApp a class that represents a contained app of a WindowsUniversalAppX app.
 type WindowsUniversalAppXContainedApp struct {
     MobileContainedApp
 }
-// NewWindowsUniversalAppXContainedApp instantiates a new WindowsUniversalAppXContainedApp and sets the default values.
+// NewWindowsUniversalAppXContainedApp instantiates a new windowsUniversalAppXContainedApp and sets the default values.
 func NewWindowsUniversalAppXContainedApp()(*WindowsUniversalAppXContainedApp) {
     m := &WindowsUniversalAppXContainedApp{
         MobileContainedApp: *NewMobileContainedApp(),

@@ -8,7 +8,7 @@ import (
 type EducationExcelResource struct {
     EducationResource
 }
-// NewEducationExcelResource instantiates a new EducationExcelResource and sets the default values.
+// NewEducationExcelResource instantiates a new educationExcelResource and sets the default values.
 func NewEducationExcelResource()(*EducationExcelResource) {
     m := &EducationExcelResource{
         EducationResource: *NewEducationResource(),

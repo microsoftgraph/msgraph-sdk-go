@@ -33,7 +33,7 @@ func NewNotificationMessageTemplatesItemSendTestMessageRequestBuilder(rawUrl str
 // Post sends test message using the specified notificationMessageTemplate in the default locale
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-notification-notificationmessagetemplate-sendtestmessage?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-notification-notificationmessagetemplate-sendtestmessage?view=graph-rest-1.0
 func (m *NotificationMessageTemplatesItemSendTestMessageRequestBuilder) Post(ctx context.Context, requestConfiguration *NotificationMessageTemplatesItemSendTestMessageRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

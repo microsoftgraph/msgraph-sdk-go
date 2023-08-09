@@ -37,10 +37,10 @@ func NewItemBrandingLocalizationsItemSquareLogoDarkRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewItemBrandingLocalizationsItemSquareLogoDarkRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get squareLogoDark for the navigation property localizations from organization
+// Get a square dark version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
 func (m *ItemBrandingLocalizationsItemSquareLogoDarkRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemBrandingLocalizationsItemSquareLogoDarkRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *ItemBrandingLocalizationsItemSquareLogoDarkRequestBuilder) Get(ctx cont
     }
     return res.([]byte), nil
 }
-// Put update squareLogoDark for the navigation property localizations in organization
+// Put a square dark version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
 func (m *ItemBrandingLocalizationsItemSquareLogoDarkRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *ItemBrandingLocalizationsItemSquareLogoDarkRequestBuilderPutRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -78,7 +78,7 @@ func (m *ItemBrandingLocalizationsItemSquareLogoDarkRequestBuilder) Put(ctx cont
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation get squareLogoDark for the navigation property localizations from organization
+// ToGetRequestInformation a square dark version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
 func (m *ItemBrandingLocalizationsItemSquareLogoDarkRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemBrandingLocalizationsItemSquareLogoDarkRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -90,7 +90,7 @@ func (m *ItemBrandingLocalizationsItemSquareLogoDarkRequestBuilder) ToGetRequest
     }
     return requestInfo, nil
 }
-// ToPutRequestInformation update squareLogoDark for the navigation property localizations in organization
+// ToPutRequestInformation a square dark version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
 func (m *ItemBrandingLocalizationsItemSquareLogoDarkRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *ItemBrandingLocalizationsItemSquareLogoDarkRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

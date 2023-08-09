@@ -9,7 +9,7 @@ import (
 type Workflow struct {
     WorkflowBase
 }
-// NewWorkflow instantiates a new Workflow and sets the default values.
+// NewWorkflow instantiates a new workflow and sets the default values.
 func NewWorkflow()(*Workflow) {
     m := &Workflow{
         WorkflowBase: *NewWorkflowBase(),

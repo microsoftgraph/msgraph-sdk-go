@@ -8,7 +8,7 @@ import (
 type X509CertificateAuthenticationMethodConfiguration struct {
     AuthenticationMethodConfiguration
 }
-// NewX509CertificateAuthenticationMethodConfiguration instantiates a new X509CertificateAuthenticationMethodConfiguration and sets the default values.
+// NewX509CertificateAuthenticationMethodConfiguration instantiates a new x509CertificateAuthenticationMethodConfiguration and sets the default values.
 func NewX509CertificateAuthenticationMethodConfiguration()(*X509CertificateAuthenticationMethodConfiguration) {
     m := &X509CertificateAuthenticationMethodConfiguration{
         AuthenticationMethodConfiguration: *NewAuthenticationMethodConfiguration(),

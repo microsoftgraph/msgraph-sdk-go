@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ManagedAppProtection 
+// ManagedAppProtection policy used to configure detailed management settings for a specified set of apps
 type ManagedAppProtection struct {
     ManagedAppPolicy
 }
-// NewManagedAppProtection instantiates a new ManagedAppProtection and sets the default values.
+// NewManagedAppProtection instantiates a new managedAppProtection and sets the default values.
 func NewManagedAppProtection()(*ManagedAppProtection) {
     m := &ManagedAppProtection{
         ManagedAppPolicy: *NewManagedAppPolicy(),

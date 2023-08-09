@@ -8,7 +8,7 @@ import (
 type AccessReviewInstanceDecisionItemAzureRoleResource struct {
     AccessReviewInstanceDecisionItemResource
 }
-// NewAccessReviewInstanceDecisionItemAzureRoleResource instantiates a new AccessReviewInstanceDecisionItemAzureRoleResource and sets the default values.
+// NewAccessReviewInstanceDecisionItemAzureRoleResource instantiates a new accessReviewInstanceDecisionItemAzureRoleResource and sets the default values.
 func NewAccessReviewInstanceDecisionItemAzureRoleResource()(*AccessReviewInstanceDecisionItemAzureRoleResource) {
     m := &AccessReviewInstanceDecisionItemAzureRoleResource{
         AccessReviewInstanceDecisionItemResource: *NewAccessReviewInstanceDecisionItemResource(),

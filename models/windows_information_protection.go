@@ -5,11 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsInformationProtection 
+// WindowsInformationProtection policy for Windows information protection to configure detailed management settings
 type WindowsInformationProtection struct {
     ManagedAppPolicy
 }
-// NewWindowsInformationProtection instantiates a new WindowsInformationProtection and sets the default values.
+// NewWindowsInformationProtection instantiates a new windowsInformationProtection and sets the default values.
 func NewWindowsInformationProtection()(*WindowsInformationProtection) {
     m := &WindowsInformationProtection{
         ManagedAppPolicy: *NewManagedAppPolicy(),

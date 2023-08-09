@@ -93,7 +93,7 @@ func (m *TeamItemRequestBuilder) Delete(ctx context.Context, requestConfiguratio
 // Get retrieve the properties and relationships of the specified team.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/team-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/team-get?view=graph-rest-1.0
 func (m *TeamItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -135,7 +135,7 @@ func (m *TeamItemRequestBuilder) Operations()(*ItemOperationsRequestBuilder) {
 // Patch update the properties of the specified team.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/team-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/team-update?view=graph-rest-1.0
 func (m *TeamItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamable, requestConfiguration *TeamItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -153,6 +153,10 @@ func (m *TeamItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c6
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamable), nil
+}
+// PermissionGrants provides operations to manage the permissionGrants property of the microsoft.graph.team entity.
+func (m *TeamItemRequestBuilder) PermissionGrants()(*ItemPermissionGrantsRequestBuilder) {
+    return NewItemPermissionGrantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Photo provides operations to manage the photo property of the microsoft.graph.team entity.
 func (m *TeamItemRequestBuilder) Photo()(*ItemPhotoRequestBuilder) {

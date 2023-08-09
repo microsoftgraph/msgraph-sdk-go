@@ -8,7 +8,7 @@ import (
 type DomainCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDomainCollectionResponse instantiates a new DomainCollectionResponse and sets the default values.
+// NewDomainCollectionResponse instantiates a new domainCollectionResponse and sets the default values.
 func NewDomainCollectionResponse()(*DomainCollectionResponse) {
     m := &DomainCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

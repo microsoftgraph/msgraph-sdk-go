@@ -8,7 +8,7 @@ import (
 type SharedWithChannelTeamInfoCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewSharedWithChannelTeamInfoCollectionResponse instantiates a new SharedWithChannelTeamInfoCollectionResponse and sets the default values.
+// NewSharedWithChannelTeamInfoCollectionResponse instantiates a new sharedWithChannelTeamInfoCollectionResponse and sets the default values.
 func NewSharedWithChannelTeamInfoCollectionResponse()(*SharedWithChannelTeamInfoCollectionResponse) {
     m := &SharedWithChannelTeamInfoCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

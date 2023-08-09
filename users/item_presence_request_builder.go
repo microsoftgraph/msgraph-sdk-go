@@ -81,7 +81,7 @@ func (m *ItemPresenceRequestBuilder) Delete(ctx context.Context, requestConfigur
 // Get get a user's presence information.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/presence-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/presence-get?view=graph-rest-1.0
 func (m *ItemPresenceRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPresenceRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Presenceable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

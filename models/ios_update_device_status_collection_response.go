@@ -8,7 +8,7 @@ import (
 type IosUpdateDeviceStatusCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewIosUpdateDeviceStatusCollectionResponse instantiates a new IosUpdateDeviceStatusCollectionResponse and sets the default values.
+// NewIosUpdateDeviceStatusCollectionResponse instantiates a new iosUpdateDeviceStatusCollectionResponse and sets the default values.
 func NewIosUpdateDeviceStatusCollectionResponse()(*IosUpdateDeviceStatusCollectionResponse) {
     m := &IosUpdateDeviceStatusCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

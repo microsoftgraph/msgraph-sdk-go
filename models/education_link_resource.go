@@ -8,7 +8,7 @@ import (
 type EducationLinkResource struct {
     EducationResource
 }
-// NewEducationLinkResource instantiates a new EducationLinkResource and sets the default values.
+// NewEducationLinkResource instantiates a new educationLinkResource and sets the default values.
 func NewEducationLinkResource()(*EducationLinkResource) {
     m := &EducationLinkResource{
         EducationResource: *NewEducationResource(),

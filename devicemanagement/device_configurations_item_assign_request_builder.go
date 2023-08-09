@@ -33,7 +33,7 @@ func NewDeviceConfigurationsItemAssignRequestBuilder(rawUrl string, requestAdapt
 // Post not yet documented
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-deviceconfig-deviceconfiguration-assign?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfiguration-assign?view=graph-rest-1.0
 func (m *DeviceConfigurationsItemAssignRequestBuilder) Post(ctx context.Context, body DeviceConfigurationsItemAssignPostRequestBodyable, requestConfiguration *DeviceConfigurationsItemAssignRequestBuilderPostRequestConfiguration)(DeviceConfigurationsItemAssignResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

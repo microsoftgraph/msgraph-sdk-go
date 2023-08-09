@@ -9,7 +9,7 @@ import (
 type CustomTaskExtensionCallbackData struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CustomExtensionData
 }
-// NewCustomTaskExtensionCallbackData instantiates a new CustomTaskExtensionCallbackData and sets the default values.
+// NewCustomTaskExtensionCallbackData instantiates a new customTaskExtensionCallbackData and sets the default values.
 func NewCustomTaskExtensionCallbackData()(*CustomTaskExtensionCallbackData) {
     m := &CustomTaskExtensionCallbackData{
         CustomExtensionData: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewCustomExtensionData(),

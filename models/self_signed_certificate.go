@@ -12,7 +12,7 @@ type SelfSignedCertificate struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewSelfSignedCertificate instantiates a new SelfSignedCertificate and sets the default values.
+// NewSelfSignedCertificate instantiates a new selfSignedCertificate and sets the default values.
 func NewSelfSignedCertificate()(*SelfSignedCertificate) {
     m := &SelfSignedCertificate{
     }
@@ -162,7 +162,7 @@ func (m *SelfSignedCertificate) GetFieldDeserializers()(map[string]func(i878a80d
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetTypeEscaped(val)
         }
         return nil
     }
@@ -233,8 +233,8 @@ func (m *SelfSignedCertificate) GetThumbprint()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. The type property
-func (m *SelfSignedCertificate) GetType()(*string) {
+// GetTypeEscaped gets the type property value. The type property
+func (m *SelfSignedCertificate) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -306,7 +306,7 @@ func (m *SelfSignedCertificate) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     {
-        err := writer.WriteStringValue("type", m.GetType())
+        err := writer.WriteStringValue("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -392,8 +392,8 @@ func (m *SelfSignedCertificate) SetThumbprint(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. The type property
-func (m *SelfSignedCertificate) SetType(value *string)() {
+// SetTypeEscaped sets the type property value. The type property
+func (m *SelfSignedCertificate) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -420,7 +420,7 @@ type SelfSignedCertificateable interface {
     GetOdataType()(*string)
     GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetThumbprint()(*string)
-    GetType()(*string)
+    GetTypeEscaped()(*string)
     GetUsage()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCustomKeyIdentifier(value []byte)()
@@ -431,6 +431,6 @@ type SelfSignedCertificateable interface {
     SetOdataType(value *string)()
     SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetThumbprint(value *string)()
-    SetType(value *string)()
+    SetTypeEscaped(value *string)()
     SetUsage(value *string)()
 }

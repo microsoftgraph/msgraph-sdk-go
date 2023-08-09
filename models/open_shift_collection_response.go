@@ -8,7 +8,7 @@ import (
 type OpenShiftCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewOpenShiftCollectionResponse instantiates a new OpenShiftCollectionResponse and sets the default values.
+// NewOpenShiftCollectionResponse instantiates a new openShiftCollectionResponse and sets the default values.
 func NewOpenShiftCollectionResponse()(*OpenShiftCollectionResponse) {
     m := &OpenShiftCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

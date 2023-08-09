@@ -8,11 +8,13 @@ import (
 type SecurityGroupEvidence struct {
     AlertEvidence
 }
-// NewSecurityGroupEvidence instantiates a new SecurityGroupEvidence and sets the default values.
+// NewSecurityGroupEvidence instantiates a new securityGroupEvidence and sets the default values.
 func NewSecurityGroupEvidence()(*SecurityGroupEvidence) {
     m := &SecurityGroupEvidence{
         AlertEvidence: *NewAlertEvidence(),
     }
+    odataTypeValue := "#microsoft.graph.security.securityGroupEvidence"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateSecurityGroupEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

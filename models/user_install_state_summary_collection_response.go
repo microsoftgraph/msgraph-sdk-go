@@ -8,7 +8,7 @@ import (
 type UserInstallStateSummaryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewUserInstallStateSummaryCollectionResponse instantiates a new UserInstallStateSummaryCollectionResponse and sets the default values.
+// NewUserInstallStateSummaryCollectionResponse instantiates a new userInstallStateSummaryCollectionResponse and sets the default values.
 func NewUserInstallStateSummaryCollectionResponse()(*UserInstallStateSummaryCollectionResponse) {
     m := &UserInstallStateSummaryCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

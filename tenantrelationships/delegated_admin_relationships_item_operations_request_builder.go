@@ -77,7 +77,7 @@ func (m *DelegatedAdminRelationshipsItemOperationsRequestBuilder) Count()(*Deleg
 // Get get a list of the delegatedAdminRelationshipOperation objects and their properties.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/delegatedadminrelationship-list-operations?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/delegatedadminrelationship-list-operations?view=graph-rest-1.0
 func (m *DelegatedAdminRelationshipsItemOperationsRequestBuilder) Get(ctx context.Context, requestConfiguration *DelegatedAdminRelationshipsItemOperationsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DelegatedAdminRelationshipOperationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

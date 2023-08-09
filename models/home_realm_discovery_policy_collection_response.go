@@ -8,7 +8,7 @@ import (
 type HomeRealmDiscoveryPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewHomeRealmDiscoveryPolicyCollectionResponse instantiates a new HomeRealmDiscoveryPolicyCollectionResponse and sets the default values.
+// NewHomeRealmDiscoveryPolicyCollectionResponse instantiates a new homeRealmDiscoveryPolicyCollectionResponse and sets the default values.
 func NewHomeRealmDiscoveryPolicyCollectionResponse()(*HomeRealmDiscoveryPolicyCollectionResponse) {
     m := &HomeRealmDiscoveryPolicyCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

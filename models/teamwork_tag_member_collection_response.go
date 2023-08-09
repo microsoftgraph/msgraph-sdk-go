@@ -8,7 +8,7 @@ import (
 type TeamworkTagMemberCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewTeamworkTagMemberCollectionResponse instantiates a new TeamworkTagMemberCollectionResponse and sets the default values.
+// NewTeamworkTagMemberCollectionResponse instantiates a new teamworkTagMemberCollectionResponse and sets the default values.
 func NewTeamworkTagMemberCollectionResponse()(*TeamworkTagMemberCollectionResponse) {
     m := &TeamworkTagMemberCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

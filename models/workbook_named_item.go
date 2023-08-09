@@ -69,7 +69,7 @@ func (m *WorkbookNamedItem) GetFieldDeserializers()(map[string]func(i878a80d2330
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetTypeEscaped(val)
         }
         return nil
     }
@@ -127,8 +127,8 @@ func (m *WorkbookNamedItem) GetScope()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. Indicates what type of reference is associated with the name. The possible values are: String, Integer, Double, Boolean, Range. Read-only.
-func (m *WorkbookNamedItem) GetType()(*string) {
+// GetTypeEscaped gets the type property value. Indicates what type of reference is associated with the name. The possible values are: String, Integer, Double, Boolean, Range. Read-only.
+func (m *WorkbookNamedItem) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -196,7 +196,7 @@ func (m *WorkbookNamedItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     {
-        err = writer.WriteStringValue("type", m.GetType())
+        err = writer.WriteStringValue("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -242,8 +242,8 @@ func (m *WorkbookNamedItem) SetScope(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. Indicates what type of reference is associated with the name. The possible values are: String, Integer, Double, Boolean, Range. Read-only.
-func (m *WorkbookNamedItem) SetType(value *string)() {
+// SetTypeEscaped sets the type property value. Indicates what type of reference is associated with the name. The possible values are: String, Integer, Double, Boolean, Range. Read-only.
+func (m *WorkbookNamedItem) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -277,14 +277,14 @@ type WorkbookNamedItemable interface {
     GetComment()(*string)
     GetName()(*string)
     GetScope()(*string)
-    GetType()(*string)
+    GetTypeEscaped()(*string)
     GetValue()(Jsonable)
     GetVisible()(*bool)
     GetWorksheet()(WorkbookWorksheetable)
     SetComment(value *string)()
     SetName(value *string)()
     SetScope(value *string)()
-    SetType(value *string)()
+    SetTypeEscaped(value *string)()
     SetValue(value Jsonable)()
     SetVisible(value *bool)()
     SetWorksheet(value WorkbookWorksheetable)()

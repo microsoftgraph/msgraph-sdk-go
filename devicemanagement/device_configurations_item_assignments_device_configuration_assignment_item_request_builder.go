@@ -57,7 +57,7 @@ func NewDeviceConfigurationsItemAssignmentsDeviceConfigurationAssignmentItemRequ
 // Delete deletes a deviceConfigurationAssignment.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationassignment-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationassignment-delete?view=graph-rest-1.0
 func (m *DeviceConfigurationsItemAssignmentsDeviceConfigurationAssignmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DeviceConfigurationsItemAssignmentsDeviceConfigurationAssignmentItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *DeviceConfigurationsItemAssignmentsDeviceConfigurationAssignmentItemReq
 // Get read properties and relationships of the deviceConfigurationAssignment object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationassignment-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationassignment-get?view=graph-rest-1.0
 func (m *DeviceConfigurationsItemAssignmentsDeviceConfigurationAssignmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceConfigurationsItemAssignmentsDeviceConfigurationAssignmentItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceConfigurationAssignmentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *DeviceConfigurationsItemAssignmentsDeviceConfigurationAssignmentItemReq
 // Patch update the properties of a deviceConfigurationAssignment object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationassignment-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationassignment-update?view=graph-rest-1.0
 func (m *DeviceConfigurationsItemAssignmentsDeviceConfigurationAssignmentItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceConfigurationAssignmentable, requestConfiguration *DeviceConfigurationsItemAssignmentsDeviceConfigurationAssignmentItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceConfigurationAssignmentable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

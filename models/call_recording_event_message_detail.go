@@ -8,7 +8,7 @@ import (
 type CallRecordingEventMessageDetail struct {
     EventMessageDetail
 }
-// NewCallRecordingEventMessageDetail instantiates a new CallRecordingEventMessageDetail and sets the default values.
+// NewCallRecordingEventMessageDetail instantiates a new callRecordingEventMessageDetail and sets the default values.
 func NewCallRecordingEventMessageDetail()(*CallRecordingEventMessageDetail) {
     m := &CallRecordingEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),

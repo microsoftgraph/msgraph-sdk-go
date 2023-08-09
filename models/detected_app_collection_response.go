@@ -8,7 +8,7 @@ import (
 type DetectedAppCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDetectedAppCollectionResponse instantiates a new DetectedAppCollectionResponse and sets the default values.
+// NewDetectedAppCollectionResponse instantiates a new detectedAppCollectionResponse and sets the default values.
 func NewDetectedAppCollectionResponse()(*DetectedAppCollectionResponse) {
     m := &DetectedAppCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

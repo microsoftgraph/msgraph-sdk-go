@@ -8,7 +8,7 @@ import (
 type EducationWordResource struct {
     EducationResource
 }
-// NewEducationWordResource instantiates a new EducationWordResource and sets the default values.
+// NewEducationWordResource instantiates a new educationWordResource and sets the default values.
 func NewEducationWordResource()(*EducationWordResource) {
     m := &EducationWordResource{
         EducationResource: *NewEducationResource(),

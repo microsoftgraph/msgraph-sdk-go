@@ -114,7 +114,7 @@ func (m *TargetResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetTypeEscaped(val)
         }
         return nil
     }
@@ -174,8 +174,8 @@ func (m *TargetResource) GetOdataType()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. Describes the resource type.  Example values include Application, Group, ServicePrincipal, and User.
-func (m *TargetResource) GetType()(*string) {
+// GetTypeEscaped gets the type property value. Describes the resource type.  Example values include Application, Group, ServicePrincipal, and User.
+func (m *TargetResource) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -236,7 +236,7 @@ func (m *TargetResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     {
-        err := writer.WriteStringValue("type", m.GetType())
+        err := writer.WriteStringValue("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -301,8 +301,8 @@ func (m *TargetResource) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. Describes the resource type.  Example values include Application, Group, ServicePrincipal, and User.
-func (m *TargetResource) SetType(value *string)() {
+// SetTypeEscaped sets the type property value. Describes the resource type.  Example values include Application, Group, ServicePrincipal, and User.
+func (m *TargetResource) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -326,7 +326,7 @@ type TargetResourceable interface {
     GetId()(*string)
     GetModifiedProperties()([]ModifiedPropertyable)
     GetOdataType()(*string)
-    GetType()(*string)
+    GetTypeEscaped()(*string)
     GetUserPrincipalName()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDisplayName(value *string)()
@@ -334,6 +334,6 @@ type TargetResourceable interface {
     SetId(value *string)()
     SetModifiedProperties(value []ModifiedPropertyable)()
     SetOdataType(value *string)()
-    SetType(value *string)()
+    SetTypeEscaped(value *string)()
     SetUserPrincipalName(value *string)()
 }

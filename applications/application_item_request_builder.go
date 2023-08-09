@@ -81,7 +81,7 @@ func (m *ApplicationItemRequestBuilder) CreatedOnBehalfOf()(*ItemCreatedOnBehalf
 // Delete delete an application object. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/application-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/application-delete?view=graph-rest-1.0
 func (m *ApplicationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ApplicationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -108,7 +108,7 @@ func (m *ApplicationItemRequestBuilder) FederatedIdentityCredentials()(*ItemFede
 // Get get the properties and relationships of an application object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/application-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/application-get?view=graph-rest-1.0
 func (m *ApplicationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ApplicationItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Applicationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -150,7 +150,7 @@ func (m *ApplicationItemRequestBuilder) Owners()(*ItemOwnersRequestBuilder) {
 // Patch update the properties of an application object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/application-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/application-update?view=graph-rest-1.0
 func (m *ApplicationItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Applicationable, requestConfiguration *ApplicationItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Applicationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

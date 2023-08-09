@@ -8,7 +8,7 @@ import (
 type SharedDriveItemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewSharedDriveItemCollectionResponse instantiates a new SharedDriveItemCollectionResponse and sets the default values.
+// NewSharedDriveItemCollectionResponse instantiates a new sharedDriveItemCollectionResponse and sets the default values.
 func NewSharedDriveItemCollectionResponse()(*SharedDriveItemCollectionResponse) {
     m := &SharedDriveItemCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

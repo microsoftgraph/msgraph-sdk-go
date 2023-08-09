@@ -9,7 +9,7 @@ import (
 type AuthorizationPolicy struct {
     PolicyBase
 }
-// NewAuthorizationPolicy instantiates a new AuthorizationPolicy and sets the default values.
+// NewAuthorizationPolicy instantiates a new authorizationPolicy and sets the default values.
 func NewAuthorizationPolicy()(*AuthorizationPolicy) {
     m := &AuthorizationPolicy{
         PolicyBase: *NewPolicyBase(),

@@ -8,7 +8,7 @@ import (
 type FilterOperatorSchemaCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewFilterOperatorSchemaCollectionResponse instantiates a new FilterOperatorSchemaCollectionResponse and sets the default values.
+// NewFilterOperatorSchemaCollectionResponse instantiates a new filterOperatorSchemaCollectionResponse and sets the default values.
 func NewFilterOperatorSchemaCollectionResponse()(*FilterOperatorSchemaCollectionResponse) {
     m := &FilterOperatorSchemaCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

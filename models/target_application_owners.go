@@ -8,7 +8,7 @@ import (
 type TargetApplicationOwners struct {
     SubjectSet
 }
-// NewTargetApplicationOwners instantiates a new TargetApplicationOwners and sets the default values.
+// NewTargetApplicationOwners instantiates a new targetApplicationOwners and sets the default values.
 func NewTargetApplicationOwners()(*TargetApplicationOwners) {
     m := &TargetApplicationOwners{
         SubjectSet: *NewSubjectSet(),

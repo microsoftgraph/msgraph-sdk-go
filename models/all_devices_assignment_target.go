@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AllDevicesAssignmentTarget 
+// AllDevicesAssignmentTarget represents an assignment to all managed devices in the tenant.
 type AllDevicesAssignmentTarget struct {
     DeviceAndAppManagementAssignmentTarget
 }
-// NewAllDevicesAssignmentTarget instantiates a new AllDevicesAssignmentTarget and sets the default values.
+// NewAllDevicesAssignmentTarget instantiates a new allDevicesAssignmentTarget and sets the default values.
 func NewAllDevicesAssignmentTarget()(*AllDevicesAssignmentTarget) {
     m := &AllDevicesAssignmentTarget{
         DeviceAndAppManagementAssignmentTarget: *NewDeviceAndAppManagementAssignmentTarget(),

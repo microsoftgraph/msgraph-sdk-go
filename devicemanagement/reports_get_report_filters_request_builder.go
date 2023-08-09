@@ -33,7 +33,7 @@ func NewReportsGetReportFiltersRequestBuilder(rawUrl string, requestAdapter i2ae
 // Post not yet documented
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getreportfilters?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getreportfilters?view=graph-rest-1.0
 func (m *ReportsGetReportFiltersRequestBuilder) Post(ctx context.Context, body ReportsGetReportFiltersPostRequestBodyable, requestConfiguration *ReportsGetReportFiltersRequestBuilderPostRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

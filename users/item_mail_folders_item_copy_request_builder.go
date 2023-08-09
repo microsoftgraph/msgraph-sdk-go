@@ -34,7 +34,7 @@ func NewItemMailFoldersItemCopyRequestBuilder(rawUrl string, requestAdapter i2ae
 // Post copy a mailfolder and its contents to another mailfolder.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/mailfolder-copy?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/mailfolder-copy?view=graph-rest-1.0
 func (m *ItemMailFoldersItemCopyRequestBuilder) Post(ctx context.Context, body ItemMailFoldersItemCopyPostRequestBodyable, requestConfiguration *ItemMailFoldersItemCopyRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailFolderable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

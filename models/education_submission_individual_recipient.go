@@ -8,7 +8,7 @@ import (
 type EducationSubmissionIndividualRecipient struct {
     EducationSubmissionRecipient
 }
-// NewEducationSubmissionIndividualRecipient instantiates a new EducationSubmissionIndividualRecipient and sets the default values.
+// NewEducationSubmissionIndividualRecipient instantiates a new educationSubmissionIndividualRecipient and sets the default values.
 func NewEducationSubmissionIndividualRecipient()(*EducationSubmissionIndividualRecipient) {
     m := &EducationSubmissionIndividualRecipient{
         EducationSubmissionRecipient: *NewEducationSubmissionRecipient(),

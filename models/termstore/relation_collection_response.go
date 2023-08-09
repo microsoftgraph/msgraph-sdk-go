@@ -9,7 +9,7 @@ import (
 type RelationCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
 }
-// NewRelationCollectionResponse instantiates a new RelationCollectionResponse and sets the default values.
+// NewRelationCollectionResponse instantiates a new relationCollectionResponse and sets the default values.
 func NewRelationCollectionResponse()(*RelationCollectionResponse) {
     m := &RelationCollectionResponse{
         BaseCollectionPaginationCountResponse: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewBaseCollectionPaginationCountResponse(),

@@ -8,7 +8,7 @@ import (
 type EducationFileResource struct {
     EducationResource
 }
-// NewEducationFileResource instantiates a new EducationFileResource and sets the default values.
+// NewEducationFileResource instantiates a new educationFileResource and sets the default values.
 func NewEducationFileResource()(*EducationFileResource) {
     m := &EducationFileResource{
         EducationResource: *NewEducationResource(),

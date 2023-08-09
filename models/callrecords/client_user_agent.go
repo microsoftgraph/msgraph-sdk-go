@@ -8,7 +8,7 @@ import (
 type ClientUserAgent struct {
     UserAgent
 }
-// NewClientUserAgent instantiates a new ClientUserAgent and sets the default values.
+// NewClientUserAgent instantiates a new clientUserAgent and sets the default values.
 func NewClientUserAgent()(*ClientUserAgent) {
     m := &ClientUserAgent{
         UserAgent: *NewUserAgent(),

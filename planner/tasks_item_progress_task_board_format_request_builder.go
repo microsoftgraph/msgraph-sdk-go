@@ -18,7 +18,7 @@ type TasksItemProgressTaskBoardFormatRequestBuilderDeleteRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TasksItemProgressTaskBoardFormatRequestBuilderGetQueryParameters retrieve the properties and relationships of **plannerProgressTaskBoardTaskFormat** object.
+// TasksItemProgressTaskBoardFormatRequestBuilderGetQueryParameters retrieve the properties and relationships of plannerProgressTaskBoardTaskFormat object.
 type TasksItemProgressTaskBoardFormatRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,10 +70,10 @@ func (m *TasksItemProgressTaskBoardFormatRequestBuilder) Delete(ctx context.Cont
     }
     return nil
 }
-// Get retrieve the properties and relationships of **plannerProgressTaskBoardTaskFormat** object.
+// Get retrieve the properties and relationships of plannerProgressTaskBoardTaskFormat object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-get?view=graph-rest-1.0
 func (m *TasksItemProgressTaskBoardFormatRequestBuilder) Get(ctx context.Context, requestConfiguration *TasksItemProgressTaskBoardFormatRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerProgressTaskBoardTaskFormatable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +95,7 @@ func (m *TasksItemProgressTaskBoardFormatRequestBuilder) Get(ctx context.Context
 // Patch update the navigation property progressTaskBoardFormat in planner
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-update?view=graph-rest-1.0
 func (m *TasksItemProgressTaskBoardFormatRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerProgressTaskBoardTaskFormatable, requestConfiguration *TasksItemProgressTaskBoardFormatRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerProgressTaskBoardTaskFormatable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -126,7 +126,7 @@ func (m *TasksItemProgressTaskBoardFormatRequestBuilder) ToDeleteRequestInformat
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of **plannerProgressTaskBoardTaskFormat** object.
+// ToGetRequestInformation retrieve the properties and relationships of plannerProgressTaskBoardTaskFormat object.
 func (m *TasksItemProgressTaskBoardFormatRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TasksItemProgressTaskBoardFormatRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

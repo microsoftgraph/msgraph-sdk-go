@@ -77,7 +77,7 @@ func (m *ItemInsightsSharedRequestBuilder) Count()(*ItemInsightsSharedCountReque
 // Get calculated insight that includes the list of documents shared with a user. This insight includes documents hosted on OneDrive/SharePoint in the user's Microsoft 365 tenant that are shared with the user, and documents that are attached as files and sent to the user.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/insights-list-shared?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/insights-list-shared?view=graph-rest-1.0
 func (m *ItemInsightsSharedRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemInsightsSharedRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SharedInsightCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

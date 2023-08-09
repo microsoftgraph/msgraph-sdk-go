@@ -8,7 +8,7 @@ import (
 type ConnectedOrganizationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewConnectedOrganizationCollectionResponse instantiates a new ConnectedOrganizationCollectionResponse and sets the default values.
+// NewConnectedOrganizationCollectionResponse instantiates a new connectedOrganizationCollectionResponse and sets the default values.
 func NewConnectedOrganizationCollectionResponse()(*ConnectedOrganizationCollectionResponse) {
     m := &ConnectedOrganizationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

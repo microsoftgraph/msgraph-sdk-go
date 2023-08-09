@@ -77,7 +77,7 @@ func (m *ItemChannelsItemTabsRequestBuilder) Count()(*ItemChannelsItemTabsCountR
 // Get retrieve the list of tabs in the specified channel within a team. 
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/channel-list-tabs?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/channel-list-tabs?view=graph-rest-1.0
 func (m *ItemChannelsItemTabsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemChannelsItemTabsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *ItemChannelsItemTabsRequestBuilder) Get(ctx context.Context, requestCon
 // Post adds (pins) a tab to the specified channel within a team. The corresponding app must already be installed in the team.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/channel-post-tabs?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/channel-post-tabs?view=graph-rest-1.0
 func (m *ItemChannelsItemTabsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabable, requestConfiguration *ItemChannelsItemTabsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

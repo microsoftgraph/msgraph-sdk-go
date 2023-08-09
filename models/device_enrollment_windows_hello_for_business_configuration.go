@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceEnrollmentWindowsHelloForBusinessConfiguration 
+// DeviceEnrollmentWindowsHelloForBusinessConfiguration windows Hello for Business settings lets users access their devices using a gesture, such as biometric authentication, or a PIN. Configure settings for enrolled Windows 10, Windows 10 Mobile and later.
 type DeviceEnrollmentWindowsHelloForBusinessConfiguration struct {
     DeviceEnrollmentConfiguration
 }
-// NewDeviceEnrollmentWindowsHelloForBusinessConfiguration instantiates a new DeviceEnrollmentWindowsHelloForBusinessConfiguration and sets the default values.
+// NewDeviceEnrollmentWindowsHelloForBusinessConfiguration instantiates a new deviceEnrollmentWindowsHelloForBusinessConfiguration and sets the default values.
 func NewDeviceEnrollmentWindowsHelloForBusinessConfiguration()(*DeviceEnrollmentWindowsHelloForBusinessConfiguration) {
     m := &DeviceEnrollmentWindowsHelloForBusinessConfiguration{
         DeviceEnrollmentConfiguration: *NewDeviceEnrollmentConfiguration(),

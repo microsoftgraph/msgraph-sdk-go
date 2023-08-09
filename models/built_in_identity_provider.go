@@ -8,7 +8,7 @@ import (
 type BuiltInIdentityProvider struct {
     IdentityProviderBase
 }
-// NewBuiltInIdentityProvider instantiates a new BuiltInIdentityProvider and sets the default values.
+// NewBuiltInIdentityProvider instantiates a new builtInIdentityProvider and sets the default values.
 func NewBuiltInIdentityProvider()(*BuiltInIdentityProvider) {
     m := &BuiltInIdentityProvider{
         IdentityProviderBase: *NewIdentityProviderBase(),

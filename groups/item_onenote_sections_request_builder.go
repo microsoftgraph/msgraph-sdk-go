@@ -77,7 +77,7 @@ func (m *ItemOnenoteSectionsRequestBuilder) Count()(*ItemOnenoteSectionsCountReq
 // Get retrieve a list of onenoteSection objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/onenote-list-sections?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/onenote-list-sections?view=graph-rest-1.0
 func (m *ItemOnenoteSectionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnenoteSectionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenoteSectionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

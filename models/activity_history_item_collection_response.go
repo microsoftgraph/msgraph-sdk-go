@@ -8,7 +8,7 @@ import (
 type ActivityHistoryItemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewActivityHistoryItemCollectionResponse instantiates a new ActivityHistoryItemCollectionResponse and sets the default values.
+// NewActivityHistoryItemCollectionResponse instantiates a new activityHistoryItemCollectionResponse and sets the default values.
 func NewActivityHistoryItemCollectionResponse()(*ActivityHistoryItemCollectionResponse) {
     m := &ActivityHistoryItemCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

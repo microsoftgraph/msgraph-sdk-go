@@ -81,7 +81,7 @@ func (m *ItemChatsItemMembersRequestBuilder) Count()(*ItemChatsItemMembersCountR
 // Get list all conversation members in a chat or channel.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/conversationmember-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/conversationmember-list?view=graph-rest-1.0
 func (m *ItemChatsItemMembersRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemChatsItemMembersRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -103,7 +103,7 @@ func (m *ItemChatsItemMembersRequestBuilder) Get(ctx context.Context, requestCon
 // Post add a conversationMember to a chat.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/chat-post-members?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/chat-post-members?view=graph-rest-1.0
 func (m *ItemChatsItemMembersRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberable, requestConfiguration *ItemChatsItemMembersRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

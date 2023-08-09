@@ -8,7 +8,7 @@ import (
 type JoinMeetingIdMeetingInfo struct {
     MeetingInfo
 }
-// NewJoinMeetingIdMeetingInfo instantiates a new JoinMeetingIdMeetingInfo and sets the default values.
+// NewJoinMeetingIdMeetingInfo instantiates a new joinMeetingIdMeetingInfo and sets the default values.
 func NewJoinMeetingIdMeetingInfo()(*JoinMeetingIdMeetingInfo) {
     m := &JoinMeetingIdMeetingInfo{
         MeetingInfo: *NewMeetingInfo(),

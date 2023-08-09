@@ -77,7 +77,7 @@ func (m *MobileAppCategoriesRequestBuilder) Count()(*MobileAppCategoriesCountReq
 // Get list properties and relationships of the mobileAppCategory objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-apps-mobileappcategory-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-apps-mobileappcategory-list?view=graph-rest-1.0
 func (m *MobileAppCategoriesRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppCategoriesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppCategoryCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *MobileAppCategoriesRequestBuilder) Get(ctx context.Context, requestConf
 // Post create a new mobileAppCategory object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-apps-mobileappcategory-create?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-apps-mobileappcategory-create?view=graph-rest-1.0
 func (m *MobileAppCategoriesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppCategoryable, requestConfiguration *MobileAppCategoriesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppCategoryable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

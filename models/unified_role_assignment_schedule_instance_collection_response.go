@@ -8,7 +8,7 @@ import (
 type UnifiedRoleAssignmentScheduleInstanceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewUnifiedRoleAssignmentScheduleInstanceCollectionResponse instantiates a new UnifiedRoleAssignmentScheduleInstanceCollectionResponse and sets the default values.
+// NewUnifiedRoleAssignmentScheduleInstanceCollectionResponse instantiates a new unifiedRoleAssignmentScheduleInstanceCollectionResponse and sets the default values.
 func NewUnifiedRoleAssignmentScheduleInstanceCollectionResponse()(*UnifiedRoleAssignmentScheduleInstanceCollectionResponse) {
     m := &UnifiedRoleAssignmentScheduleInstanceCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

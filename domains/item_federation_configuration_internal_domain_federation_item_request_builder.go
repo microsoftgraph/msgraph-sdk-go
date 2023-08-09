@@ -57,7 +57,7 @@ func NewItemFederationConfigurationInternalDomainFederationItemRequestBuilder(ra
 // Delete delete an internalDomainFederation object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/internaldomainfederation-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/internaldomainfederation-delete?view=graph-rest-1.0
 func (m *ItemFederationConfigurationInternalDomainFederationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemFederationConfigurationInternalDomainFederationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *ItemFederationConfigurationInternalDomainFederationItemRequestBuilder) 
 // Get read the properties and relationships of an internalDomainFederation object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/internaldomainfederation-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/internaldomainfederation-get?view=graph-rest-1.0
 func (m *ItemFederationConfigurationInternalDomainFederationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemFederationConfigurationInternalDomainFederationItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InternalDomainFederationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *ItemFederationConfigurationInternalDomainFederationItemRequestBuilder) 
 // Patch update the properties of an internalDomainFederation object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/internaldomainfederation-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/internaldomainfederation-update?view=graph-rest-1.0
 func (m *ItemFederationConfigurationInternalDomainFederationItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InternalDomainFederationable, requestConfiguration *ItemFederationConfigurationInternalDomainFederationItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InternalDomainFederationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

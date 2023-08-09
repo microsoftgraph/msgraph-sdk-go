@@ -8,7 +8,7 @@ import (
 type TargetedManagedAppPolicyAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewTargetedManagedAppPolicyAssignmentCollectionResponse instantiates a new TargetedManagedAppPolicyAssignmentCollectionResponse and sets the default values.
+// NewTargetedManagedAppPolicyAssignmentCollectionResponse instantiates a new targetedManagedAppPolicyAssignmentCollectionResponse and sets the default values.
 func NewTargetedManagedAppPolicyAssignmentCollectionResponse()(*TargetedManagedAppPolicyAssignmentCollectionResponse) {
     m := &TargetedManagedAppPolicyAssignmentCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

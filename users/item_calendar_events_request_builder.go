@@ -79,7 +79,7 @@ func (m *ItemCalendarEventsRequestBuilder) Delta()(*ItemCalendarEventsDeltaReque
 // Get retrieve a list of events in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. The list of events contains single instance meetings and series masters. To get expanded event instances, you can get the calendar view, or get the instances of an event.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/calendar-list-events?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/calendar-list-events?view=graph-rest-1.0
 func (m *ItemCalendarEventsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarEventsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EventCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -101,7 +101,7 @@ func (m *ItemCalendarEventsRequestBuilder) Get(ctx context.Context, requestConfi
 // Post use this API to create a new event in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. 
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/calendar-post-events?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/calendar-post-events?view=graph-rest-1.0
 func (m *ItemCalendarEventsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Eventable, requestConfiguration *ItemCalendarEventsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Eventable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -73,7 +73,7 @@ func (m *AdminConsentRequestPolicyRequestBuilder) Delete(ctx context.Context, re
 // Get read the properties and relationships of an adminConsentRequestPolicy object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/adminconsentrequestpolicy-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/adminconsentrequestpolicy-get?view=graph-rest-1.0
 func (m *AdminConsentRequestPolicyRequestBuilder) Get(ctx context.Context, requestConfiguration *AdminConsentRequestPolicyRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AdminConsentRequestPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +95,7 @@ func (m *AdminConsentRequestPolicyRequestBuilder) Get(ctx context.Context, reque
 // Patch update the properties of an adminConsentRequestPolicy object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/adminconsentrequestpolicy-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/adminconsentrequestpolicy-update?view=graph-rest-1.0
 func (m *AdminConsentRequestPolicyRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AdminConsentRequestPolicyable, requestConfiguration *AdminConsentRequestPolicyRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AdminConsentRequestPolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

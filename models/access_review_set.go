@@ -8,7 +8,7 @@ import (
 type AccessReviewSet struct {
     Entity
 }
-// NewAccessReviewSet instantiates a new AccessReviewSet and sets the default values.
+// NewAccessReviewSet instantiates a new accessReviewSet and sets the default values.
 func NewAccessReviewSet()(*AccessReviewSet) {
     m := &AccessReviewSet{
         Entity: *NewEntity(),

@@ -8,7 +8,7 @@ import (
 type TeamworkUserIdentity struct {
     Identity
 }
-// NewTeamworkUserIdentity instantiates a new TeamworkUserIdentity and sets the default values.
+// NewTeamworkUserIdentity instantiates a new teamworkUserIdentity and sets the default values.
 func NewTeamworkUserIdentity()(*TeamworkUserIdentity) {
     m := &TeamworkUserIdentity{
         Identity: *NewIdentity(),

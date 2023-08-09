@@ -9,7 +9,7 @@ import (
 type TaskCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
 }
-// NewTaskCollectionResponse instantiates a new TaskCollectionResponse and sets the default values.
+// NewTaskCollectionResponse instantiates a new taskCollectionResponse and sets the default values.
 func NewTaskCollectionResponse()(*TaskCollectionResponse) {
     m := &TaskCollectionResponse{
         BaseCollectionPaginationCountResponse: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewBaseCollectionPaginationCountResponse(),

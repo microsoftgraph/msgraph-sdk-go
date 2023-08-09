@@ -9,7 +9,7 @@ import (
 type DocumentSetVersion struct {
     ListItemVersion
 }
-// NewDocumentSetVersion instantiates a new DocumentSetVersion and sets the default values.
+// NewDocumentSetVersion instantiates a new documentSetVersion and sets the default values.
 func NewDocumentSetVersion()(*DocumentSetVersion) {
     m := &DocumentSetVersion{
         ListItemVersion: *NewListItemVersion(),

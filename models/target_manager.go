@@ -8,7 +8,7 @@ import (
 type TargetManager struct {
     SubjectSet
 }
-// NewTargetManager instantiates a new TargetManager and sets the default values.
+// NewTargetManager instantiates a new targetManager and sets the default values.
 func NewTargetManager()(*TargetManager) {
     m := &TargetManager{
         SubjectSet: *NewSubjectSet(),

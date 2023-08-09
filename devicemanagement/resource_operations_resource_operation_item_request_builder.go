@@ -57,7 +57,7 @@ func NewResourceOperationsResourceOperationItemRequestBuilder(rawUrl string, req
 // Delete deletes a resourceOperation.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-rbac-resourceoperation-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-rbac-resourceoperation-delete?view=graph-rest-1.0
 func (m *ResourceOperationsResourceOperationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ResourceOperationsResourceOperationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *ResourceOperationsResourceOperationItemRequestBuilder) Delete(ctx conte
 // Get read properties and relationships of the resourceOperation object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-rbac-resourceoperation-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-rbac-resourceoperation-get?view=graph-rest-1.0
 func (m *ResourceOperationsResourceOperationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ResourceOperationsResourceOperationItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ResourceOperationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *ResourceOperationsResourceOperationItemRequestBuilder) Get(ctx context.
 // Patch update the properties of a resourceOperation object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-rbac-resourceoperation-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-rbac-resourceoperation-update?view=graph-rest-1.0
 func (m *ResourceOperationsResourceOperationItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ResourceOperationable, requestConfiguration *ResourceOperationsResourceOperationItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ResourceOperationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

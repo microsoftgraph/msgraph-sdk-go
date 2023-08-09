@@ -8,7 +8,7 @@ import (
 type UnifiedRoleEligibilityScheduleRequest struct {
     Request
 }
-// NewUnifiedRoleEligibilityScheduleRequest instantiates a new UnifiedRoleEligibilityScheduleRequest and sets the default values.
+// NewUnifiedRoleEligibilityScheduleRequest instantiates a new unifiedRoleEligibilityScheduleRequest and sets the default values.
 func NewUnifiedRoleEligibilityScheduleRequest()(*UnifiedRoleEligibilityScheduleRequest) {
     m := &UnifiedRoleEligibilityScheduleRequest{
         Request: *NewRequest(),

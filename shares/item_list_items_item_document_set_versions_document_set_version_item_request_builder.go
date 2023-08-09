@@ -57,7 +57,7 @@ func NewItemListItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilder
 // Delete delete a version of a document set in a list.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/documentsetversion-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/documentsetversion-delete?view=graph-rest-1.0
 func (m *ItemListItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemListItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -80,7 +80,7 @@ func (m *ItemListItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilde
 // Get read the properties and relationships of a documentSetVersion object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/documentsetversion-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/documentsetversion-get?view=graph-rest-1.0
 func (m *ItemListItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemListItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DocumentSetVersionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

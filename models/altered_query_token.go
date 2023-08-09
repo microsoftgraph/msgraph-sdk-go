@@ -10,7 +10,7 @@ type AlteredQueryToken struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAlteredQueryToken instantiates a new AlteredQueryToken and sets the default values.
+// NewAlteredQueryToken instantiates a new alteredQueryToken and sets the default values.
 func NewAlteredQueryToken()(*AlteredQueryToken) {
     m := &AlteredQueryToken{
     }

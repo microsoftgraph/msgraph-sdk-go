@@ -8,7 +8,7 @@ import (
 type SearchEntity struct {
     Entity
 }
-// NewSearchEntity instantiates a new SearchEntity and sets the default values.
+// NewSearchEntity instantiates a new searchEntity and sets the default values.
 func NewSearchEntity()(*SearchEntity) {
     m := &SearchEntity{
         Entity: *NewEntity(),

@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosLobAppProvisioningConfigurationAssignment 
+// IosLobAppProvisioningConfigurationAssignment a class containing the properties used for Group Assignment of an iOS LOB App Provisioning and Configuration.
 type IosLobAppProvisioningConfigurationAssignment struct {
     Entity
 }
-// NewIosLobAppProvisioningConfigurationAssignment instantiates a new IosLobAppProvisioningConfigurationAssignment and sets the default values.
+// NewIosLobAppProvisioningConfigurationAssignment instantiates a new iosLobAppProvisioningConfigurationAssignment and sets the default values.
 func NewIosLobAppProvisioningConfigurationAssignment()(*IosLobAppProvisioningConfigurationAssignment) {
     m := &IosLobAppProvisioningConfigurationAssignment{
         Entity: *NewEntity(),

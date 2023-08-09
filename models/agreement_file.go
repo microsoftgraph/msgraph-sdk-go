@@ -8,7 +8,7 @@ import (
 type AgreementFile struct {
     AgreementFileProperties
 }
-// NewAgreementFile instantiates a new AgreementFile and sets the default values.
+// NewAgreementFile instantiates a new agreementFile and sets the default values.
 func NewAgreementFile()(*AgreementFile) {
     m := &AgreementFile{
         AgreementFileProperties: *NewAgreementFileProperties(),

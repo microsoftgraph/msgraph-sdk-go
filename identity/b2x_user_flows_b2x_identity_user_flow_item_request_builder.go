@@ -41,6 +41,10 @@ type B2xUserFlowsB2xIdentityUserFlowItemRequestBuilderPatchRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ApiConnectorConfiguration the apiConnectorConfiguration property
+func (m *B2xUserFlowsB2xIdentityUserFlowItemRequestBuilder) ApiConnectorConfiguration()(*B2xUserFlowsItemApiConnectorConfigurationRequestBuilder) {
+    return NewB2xUserFlowsItemApiConnectorConfigurationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewB2xUserFlowsB2xIdentityUserFlowItemRequestBuilderInternal instantiates a new B2xIdentityUserFlowItemRequestBuilder and sets the default values.
 func NewB2xUserFlowsB2xIdentityUserFlowItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*B2xUserFlowsB2xIdentityUserFlowItemRequestBuilder) {
     m := &B2xUserFlowsB2xIdentityUserFlowItemRequestBuilder{
@@ -57,7 +61,7 @@ func NewB2xUserFlowsB2xIdentityUserFlowItemRequestBuilder(rawUrl string, request
 // Delete delete a b2xIdentityUserFlow object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/b2xidentityuserflow-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/b2xidentityuserflow-delete?view=graph-rest-1.0
 func (m *B2xUserFlowsB2xIdentityUserFlowItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *B2xUserFlowsB2xIdentityUserFlowItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +80,7 @@ func (m *B2xUserFlowsB2xIdentityUserFlowItemRequestBuilder) Delete(ctx context.C
 // Get retrieve the properties and relationships of a b2xIdentityUserFlow object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/b2xidentityuserflow-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/b2xidentityuserflow-get?view=graph-rest-1.0
 func (m *B2xUserFlowsB2xIdentityUserFlowItemRequestBuilder) Get(ctx context.Context, requestConfiguration *B2xUserFlowsB2xIdentityUserFlowItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.B2xIdentityUserFlowable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

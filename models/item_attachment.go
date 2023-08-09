@@ -8,7 +8,7 @@ import (
 type ItemAttachment struct {
     Attachment
 }
-// NewItemAttachment instantiates a new ItemAttachment and sets the default values.
+// NewItemAttachment instantiates a new itemAttachment and sets the default values.
 func NewItemAttachment()(*ItemAttachment) {
     m := &ItemAttachment{
         Attachment: *NewAttachment(),

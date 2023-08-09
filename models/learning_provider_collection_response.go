@@ -8,7 +8,7 @@ import (
 type LearningProviderCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewLearningProviderCollectionResponse instantiates a new LearningProviderCollectionResponse and sets the default values.
+// NewLearningProviderCollectionResponse instantiates a new learningProviderCollectionResponse and sets the default values.
 func NewLearningProviderCollectionResponse()(*LearningProviderCollectionResponse) {
     m := &LearningProviderCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

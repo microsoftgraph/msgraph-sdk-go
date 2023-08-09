@@ -8,7 +8,7 @@ import (
 type ClientCertificateAuthentication struct {
     ApiAuthenticationConfigurationBase
 }
-// NewClientCertificateAuthentication instantiates a new ClientCertificateAuthentication and sets the default values.
+// NewClientCertificateAuthentication instantiates a new clientCertificateAuthentication and sets the default values.
 func NewClientCertificateAuthentication()(*ClientCertificateAuthentication) {
     m := &ClientCertificateAuthentication{
         ApiAuthenticationConfigurationBase: *NewApiAuthenticationConfigurationBase(),

@@ -11,7 +11,7 @@ import (
 type ItemContactFoldersItemChildFoldersItemContactsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemContactFoldersItemChildFoldersItemContactsRequestBuilderGetQueryParameters get a contact collection from the default Contacts folder of the signed-in user (`.../me/contacts`), or from the specified contact folder.
+// ItemContactFoldersItemChildFoldersItemContactsRequestBuilderGetQueryParameters get a contact collection from the default Contacts folder of the signed-in user (.../me/contacts), or from the specified contact folder.
 type ItemContactFoldersItemChildFoldersItemContactsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,10 +76,10 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) Count()(*
 func (m *ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) Delta()(*ItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilder) {
     return NewItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a contact collection from the default Contacts folder of the signed-in user (`.../me/contacts`), or from the specified contact folder.
+// Get get a contact collection from the default Contacts folder of the signed-in user (.../me/contacts), or from the specified contact folder.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/contactfolder-list-contacts?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/contactfolder-list-contacts?view=graph-rest-1.0
 func (m *ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemContactFoldersItemChildFoldersItemContactsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContactCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,10 +98,10 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) Get(ctx c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContactCollectionResponseable), nil
 }
-// Post add a contact to the root Contacts folder or to the `contacts` endpoint of another contact folder.
+// Post add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/contactfolder-post-contacts?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/contactfolder-post-contacts?view=graph-rest-1.0
 func (m *ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Contactable, requestConfiguration *ItemContactFoldersItemChildFoldersItemContactsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Contactable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -120,7 +120,7 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) Post(ctx 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Contactable), nil
 }
-// ToGetRequestInformation get a contact collection from the default Contacts folder of the signed-in user (`.../me/contacts`), or from the specified contact folder.
+// ToGetRequestInformation get a contact collection from the default Contacts folder of the signed-in user (.../me/contacts), or from the specified contact folder.
 func (m *ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemContactFoldersItemChildFoldersItemContactsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +136,7 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) ToGetRequ
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation add a contact to the root Contacts folder or to the `contacts` endpoint of another contact folder.
+// ToPostRequestInformation add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
 func (m *ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Contactable, requestConfiguration *ItemContactFoldersItemChildFoldersItemContactsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

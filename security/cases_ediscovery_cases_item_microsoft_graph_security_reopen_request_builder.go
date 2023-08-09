@@ -33,7 +33,7 @@ func NewCasesEdiscoveryCasesItemMicrosoftGraphSecurityReopenRequestBuilder(rawUr
 // Post reopen an eDiscovery case that was closed. For details, see Reopen a closed case.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-ediscoverycase-reopen?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoverycase-reopen?view=graph-rest-1.0
 func (m *CasesEdiscoveryCasesItemMicrosoftGraphSecurityReopenRequestBuilder) Post(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemMicrosoftGraphSecurityReopenRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

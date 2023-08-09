@@ -8,7 +8,7 @@ import (
 type ResultTemplateDictionary struct {
     Dictionary
 }
-// NewResultTemplateDictionary instantiates a new ResultTemplateDictionary and sets the default values.
+// NewResultTemplateDictionary instantiates a new resultTemplateDictionary and sets the default values.
 func NewResultTemplateDictionary()(*ResultTemplateDictionary) {
     m := &ResultTemplateDictionary{
         Dictionary: *NewDictionary(),

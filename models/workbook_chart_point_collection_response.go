@@ -8,7 +8,7 @@ import (
 type WorkbookChartPointCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewWorkbookChartPointCollectionResponse instantiates a new WorkbookChartPointCollectionResponse and sets the default values.
+// NewWorkbookChartPointCollectionResponse instantiates a new workbookChartPointCollectionResponse and sets the default values.
 func NewWorkbookChartPointCollectionResponse()(*WorkbookChartPointCollectionResponse) {
     m := &WorkbookChartPointCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

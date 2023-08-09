@@ -11,7 +11,7 @@ import (
 type EntitlementManagementAssignmentPoliciesItemAccessPackageRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementAssignmentPoliciesItemAccessPackageRequestBuilderGetQueryParameters access package containing this policy. Read-only.
+// EntitlementManagementAssignmentPoliciesItemAccessPackageRequestBuilderGetQueryParameters access package containing this policy. Read-only.  Supports $expand.
 type EntitlementManagementAssignmentPoliciesItemAccessPackageRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewEntitlementManagementAssignmentPoliciesItemAccessPackageRequestBuilder(r
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementAssignmentPoliciesItemAccessPackageRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get access package containing this policy. Read-only.
+// Get access package containing this policy. Read-only.  Supports $expand.
 func (m *EntitlementManagementAssignmentPoliciesItemAccessPackageRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAssignmentPoliciesItemAccessPackageRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *EntitlementManagementAssignmentPoliciesItemAccessPackageRequestBuilder)
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable), nil
 }
-// ToGetRequestInformation access package containing this policy. Read-only.
+// ToGetRequestInformation access package containing this policy. Read-only.  Supports $expand.
 func (m *EntitlementManagementAssignmentPoliciesItemAccessPackageRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAssignmentPoliciesItemAccessPackageRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

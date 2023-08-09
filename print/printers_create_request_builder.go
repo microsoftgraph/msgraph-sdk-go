@@ -33,7 +33,7 @@ func NewPrintersCreateRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 // Post create (register) a printer with the Universal Print service. This is a long-running operation and as such, it returns a printerCreateOperation that can be used to track and verify the registration of the printer. For help creating the required Certificate Signing Request (CSR) for creating printer, see the CSR generation code sample.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/printer-create?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/printer-create?view=graph-rest-1.0
 func (m *PrintersCreateRequestBuilder) Post(ctx context.Context, body PrintersCreatePostRequestBodyable, requestConfiguration *PrintersCreateRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

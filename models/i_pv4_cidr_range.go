@@ -8,7 +8,7 @@ import (
 type IPv4CidrRange struct {
     IpRange
 }
-// NewIPv4CidrRange instantiates a new IPv4CidrRange and sets the default values.
+// NewIPv4CidrRange instantiates a new iPv4CidrRange and sets the default values.
 func NewIPv4CidrRange()(*IPv4CidrRange) {
     m := &IPv4CidrRange{
         IpRange: *NewIpRange(),

@@ -8,7 +8,7 @@ import (
 type AttributeMappingFunctionSchemaCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAttributeMappingFunctionSchemaCollectionResponse instantiates a new AttributeMappingFunctionSchemaCollectionResponse and sets the default values.
+// NewAttributeMappingFunctionSchemaCollectionResponse instantiates a new attributeMappingFunctionSchemaCollectionResponse and sets the default values.
 func NewAttributeMappingFunctionSchemaCollectionResponse()(*AttributeMappingFunctionSchemaCollectionResponse) {
     m := &AttributeMappingFunctionSchemaCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

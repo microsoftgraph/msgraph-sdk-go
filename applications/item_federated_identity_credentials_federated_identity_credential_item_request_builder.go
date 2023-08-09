@@ -57,7 +57,7 @@ func NewItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBu
 // Delete delete a federatedIdentityCredential object from an application.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/federatedidentitycredential-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/federatedidentitycredential-delete?view=graph-rest-1.0
 func (m *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestB
 // Get read the properties and relationships of a federatedIdentityCredential object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/federatedidentitycredential-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/federatedidentitycredential-get?view=graph-rest-1.0
 func (m *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FederatedIdentityCredentialable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestB
 // Patch update the properties of a federatedIdentityCredential object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/federatedidentitycredential-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/federatedidentitycredential-update?view=graph-rest-1.0
 func (m *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FederatedIdentityCredentialable, requestConfiguration *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FederatedIdentityCredentialable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

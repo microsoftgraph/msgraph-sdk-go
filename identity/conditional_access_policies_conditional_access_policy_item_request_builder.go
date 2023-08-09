@@ -57,7 +57,7 @@ func NewConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder(rawUr
 // Delete delete a conditionalAccessPolicy object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/conditionalaccesspolicy-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/conditionalaccesspolicy-delete?view=graph-rest-1.0
 func (m *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) Del
 // Get retrieve the properties and relationships of a conditionalAccessPolicy object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/conditionalaccesspolicy-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/conditionalaccesspolicy-get?view=graph-rest-1.0
 func (m *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConditionalAccessPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) Get
 // Patch update the properties of a conditionalAccessPolicy object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/conditionalaccesspolicy-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/conditionalaccesspolicy-update?view=graph-rest-1.0
 func (m *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConditionalAccessPolicyable, requestConfiguration *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConditionalAccessPolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -6,11 +6,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AuditEvent 
+// AuditEvent a class containing the properties for Audit Event.
 type AuditEvent struct {
     Entity
 }
-// NewAuditEvent instantiates a new AuditEvent and sets the default values.
+// NewAuditEvent instantiates a new auditEvent and sets the default values.
 func NewAuditEvent()(*AuditEvent) {
     m := &AuditEvent{
         Entity: *NewEntity(),

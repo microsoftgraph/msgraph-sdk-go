@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OmaSettingStringXml 
+// OmaSettingStringXml oMA Settings StringXML definition.
 type OmaSettingStringXml struct {
     OmaSetting
 }
-// NewOmaSettingStringXml instantiates a new OmaSettingStringXml and sets the default values.
+// NewOmaSettingStringXml instantiates a new omaSettingStringXml and sets the default values.
 func NewOmaSettingStringXml()(*OmaSettingStringXml) {
     m := &OmaSettingStringXml{
         OmaSetting: *NewOmaSetting(),

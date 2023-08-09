@@ -8,7 +8,7 @@ import (
 type UnmuteParticipantOperation struct {
     CommsOperation
 }
-// NewUnmuteParticipantOperation instantiates a new UnmuteParticipantOperation and sets the default values.
+// NewUnmuteParticipantOperation instantiates a new unmuteParticipantOperation and sets the default values.
 func NewUnmuteParticipantOperation()(*UnmuteParticipantOperation) {
     m := &UnmuteParticipantOperation{
         CommsOperation: *NewCommsOperation(),

@@ -8,7 +8,7 @@ import (
 type PermissionGrantPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewPermissionGrantPolicyCollectionResponse instantiates a new PermissionGrantPolicyCollectionResponse and sets the default values.
+// NewPermissionGrantPolicyCollectionResponse instantiates a new permissionGrantPolicyCollectionResponse and sets the default values.
 func NewPermissionGrantPolicyCollectionResponse()(*PermissionGrantPolicyCollectionResponse) {
     m := &PermissionGrantPolicyCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -8,7 +8,7 @@ import (
 type PrincipalResourceMembershipsScope struct {
     AccessReviewScope
 }
-// NewPrincipalResourceMembershipsScope instantiates a new PrincipalResourceMembershipsScope and sets the default values.
+// NewPrincipalResourceMembershipsScope instantiates a new principalResourceMembershipsScope and sets the default values.
 func NewPrincipalResourceMembershipsScope()(*PrincipalResourceMembershipsScope) {
     m := &PrincipalResourceMembershipsScope{
         AccessReviewScope: *NewAccessReviewScope(),

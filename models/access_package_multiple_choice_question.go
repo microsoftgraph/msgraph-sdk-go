@@ -8,7 +8,7 @@ import (
 type AccessPackageMultipleChoiceQuestion struct {
     AccessPackageQuestion
 }
-// NewAccessPackageMultipleChoiceQuestion instantiates a new AccessPackageMultipleChoiceQuestion and sets the default values.
+// NewAccessPackageMultipleChoiceQuestion instantiates a new accessPackageMultipleChoiceQuestion and sets the default values.
 func NewAccessPackageMultipleChoiceQuestion()(*AccessPackageMultipleChoiceQuestion) {
     m := &AccessPackageMultipleChoiceQuestion{
         AccessPackageQuestion: *NewAccessPackageQuestion(),

@@ -8,11 +8,13 @@ import (
 type GoogleCloudResourceEvidence struct {
     AlertEvidence
 }
-// NewGoogleCloudResourceEvidence instantiates a new GoogleCloudResourceEvidence and sets the default values.
+// NewGoogleCloudResourceEvidence instantiates a new googleCloudResourceEvidence and sets the default values.
 func NewGoogleCloudResourceEvidence()(*GoogleCloudResourceEvidence) {
     m := &GoogleCloudResourceEvidence{
         AlertEvidence: *NewAlertEvidence(),
     }
+    odataTypeValue := "#microsoft.graph.security.googleCloudResourceEvidence"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateGoogleCloudResourceEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -68,7 +68,7 @@ func (m *ExternalActivity) GetFieldDeserializers()(map[string]func(i878a80d2330e
             return err
         }
         if val != nil {
-            m.SetType(val.(*ExternalActivityType))
+            m.SetTypeEscaped(val.(*ExternalActivityType))
         }
         return nil
     }
@@ -96,8 +96,8 @@ func (m *ExternalActivity) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     }
     return nil
 }
-// GetType gets the type property value. The type property
-func (m *ExternalActivity) GetType()(*ExternalActivityType) {
+// GetTypeEscaped gets the type property value. The type property
+func (m *ExternalActivity) GetTypeEscaped()(*ExternalActivityType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -125,8 +125,8 @@ func (m *ExternalActivity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
+    if m.GetTypeEscaped() != nil {
+        cast := (*m.GetTypeEscaped()).String()
         err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
@@ -148,8 +148,8 @@ func (m *ExternalActivity) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad
         panic(err)
     }
 }
-// SetType sets the type property value. The type property
-func (m *ExternalActivity) SetType(value *ExternalActivityType)() {
+// SetTypeEscaped sets the type property value. The type property
+func (m *ExternalActivity) SetTypeEscaped(value *ExternalActivityType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -161,8 +161,8 @@ type ExternalActivityable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetPerformedBy()(Identityable)
     GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetType()(*ExternalActivityType)
+    GetTypeEscaped()(*ExternalActivityType)
     SetPerformedBy(value Identityable)()
     SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetType(value *ExternalActivityType)()
+    SetTypeEscaped(value *ExternalActivityType)()
 }

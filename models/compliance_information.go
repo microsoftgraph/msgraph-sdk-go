@@ -38,7 +38,7 @@ func (m *ComplianceInformation) GetAdditionalData()(map[string]any) {
 func (m *ComplianceInformation) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCertificationControls gets the certificationControls property value. Collection of the certification controls associated with certification
+// GetCertificationControls gets the certificationControls property value. Collection of the certification controls associated with the certification.
 func (m *ComplianceInformation) GetCertificationControls()([]CertificationControlable) {
     val, err := m.GetBackingStore().Get("certificationControls")
     if err != nil {
@@ -49,7 +49,7 @@ func (m *ComplianceInformation) GetCertificationControls()([]CertificationContro
     }
     return nil
 }
-// GetCertificationName gets the certificationName property value. Compliance certification name (for example, ISO 27018:2014, GDPR, FedRAMP, NIST 800-171)
+// GetCertificationName gets the certificationName property value. The name of the compliance certification, for example, ISO 27018:2014, GDPR, FedRAMP, and NIST 800-171.
 func (m *ComplianceInformation) GetCertificationName()(*string) {
     val, err := m.GetBackingStore().Get("certificationName")
     if err != nil {
@@ -157,14 +157,14 @@ func (m *ComplianceInformation) SetAdditionalData(value map[string]any)() {
 func (m *ComplianceInformation) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCertificationControls sets the certificationControls property value. Collection of the certification controls associated with certification
+// SetCertificationControls sets the certificationControls property value. Collection of the certification controls associated with the certification.
 func (m *ComplianceInformation) SetCertificationControls(value []CertificationControlable)() {
     err := m.GetBackingStore().Set("certificationControls", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCertificationName sets the certificationName property value. Compliance certification name (for example, ISO 27018:2014, GDPR, FedRAMP, NIST 800-171)
+// SetCertificationName sets the certificationName property value. The name of the compliance certification, for example, ISO 27018:2014, GDPR, FedRAMP, and NIST 800-171.
 func (m *ComplianceInformation) SetCertificationName(value *string)() {
     err := m.GetBackingStore().Set("certificationName", value)
     if err != nil {

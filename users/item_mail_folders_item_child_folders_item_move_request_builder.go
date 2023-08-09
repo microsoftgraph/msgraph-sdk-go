@@ -34,7 +34,7 @@ func NewItemMailFoldersItemChildFoldersItemMoveRequestBuilder(rawUrl string, req
 // Post move a mailfolder and its contents to another mailfolder.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/mailfolder-move?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/mailfolder-move?view=graph-rest-1.0
 func (m *ItemMailFoldersItemChildFoldersItemMoveRequestBuilder) Post(ctx context.Context, body ItemMailFoldersItemChildFoldersItemMovePostRequestBodyable, requestConfiguration *ItemMailFoldersItemChildFoldersItemMoveRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MailFolderable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

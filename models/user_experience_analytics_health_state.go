@@ -6,11 +6,15 @@ import (
 type UserExperienceAnalyticsHealthState int
 
 const (
+    // Indicates that the health state is unknown.
     UNKNOWN_USEREXPERIENCEANALYTICSHEALTHSTATE UserExperienceAnalyticsHealthState = iota
+    // Indicates that the health state is insufficient data.
     INSUFFICIENTDATA_USEREXPERIENCEANALYTICSHEALTHSTATE
+    // Indicates that the health state needs attention.
     NEEDSATTENTION_USEREXPERIENCEANALYTICSHEALTHSTATE
+    // Indicates that the health state is meeting goals.
     MEETINGGOALS_USEREXPERIENCEANALYTICSHEALTHSTATE
-    // Evolvable enum member
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_USEREXPERIENCEANALYTICSHEALTHSTATE
 )
 

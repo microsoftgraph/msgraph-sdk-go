@@ -8,7 +8,7 @@ import (
 type AuthenticationStrengthPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAuthenticationStrengthPolicyCollectionResponse instantiates a new AuthenticationStrengthPolicyCollectionResponse and sets the default values.
+// NewAuthenticationStrengthPolicyCollectionResponse instantiates a new authenticationStrengthPolicyCollectionResponse and sets the default values.
 func NewAuthenticationStrengthPolicyCollectionResponse()(*AuthenticationStrengthPolicyCollectionResponse) {
     m := &AuthenticationStrengthPolicyCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

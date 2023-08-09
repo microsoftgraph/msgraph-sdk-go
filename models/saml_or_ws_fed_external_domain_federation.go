@@ -8,7 +8,7 @@ import (
 type SamlOrWsFedExternalDomainFederation struct {
     SamlOrWsFedProvider
 }
-// NewSamlOrWsFedExternalDomainFederation instantiates a new SamlOrWsFedExternalDomainFederation and sets the default values.
+// NewSamlOrWsFedExternalDomainFederation instantiates a new samlOrWsFedExternalDomainFederation and sets the default values.
 func NewSamlOrWsFedExternalDomainFederation()(*SamlOrWsFedExternalDomainFederation) {
     m := &SamlOrWsFedExternalDomainFederation{
         SamlOrWsFedProvider: *NewSamlOrWsFedProvider(),

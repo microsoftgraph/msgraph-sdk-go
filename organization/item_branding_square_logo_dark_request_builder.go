@@ -37,10 +37,10 @@ func NewItemBrandingSquareLogoDarkRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewItemBrandingSquareLogoDarkRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get squareLogoDark for the navigation property branding from organization
+// Get a square dark version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
 func (m *ItemBrandingSquareLogoDarkRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemBrandingSquareLogoDarkRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *ItemBrandingSquareLogoDarkRequestBuilder) Get(ctx context.Context, requ
     }
     return res.([]byte), nil
 }
-// Put update squareLogoDark for the navigation property branding in organization
+// Put a square dark version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
 func (m *ItemBrandingSquareLogoDarkRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *ItemBrandingSquareLogoDarkRequestBuilderPutRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -78,7 +78,7 @@ func (m *ItemBrandingSquareLogoDarkRequestBuilder) Put(ctx context.Context, body
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation get squareLogoDark for the navigation property branding from organization
+// ToGetRequestInformation a square dark version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
 func (m *ItemBrandingSquareLogoDarkRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemBrandingSquareLogoDarkRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -90,7 +90,7 @@ func (m *ItemBrandingSquareLogoDarkRequestBuilder) ToGetRequestInformation(ctx c
     }
     return requestInfo, nil
 }
-// ToPutRequestInformation update squareLogoDark for the navigation property branding in organization
+// ToPutRequestInformation a square dark version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
 func (m *ItemBrandingSquareLogoDarkRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *ItemBrandingSquareLogoDarkRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

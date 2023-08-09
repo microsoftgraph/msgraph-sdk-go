@@ -8,7 +8,7 @@ import (
 type TimeOffItem struct {
     ScheduleEntity
 }
-// NewTimeOffItem instantiates a new TimeOffItem and sets the default values.
+// NewTimeOffItem instantiates a new timeOffItem and sets the default values.
 func NewTimeOffItem()(*TimeOffItem) {
     m := &TimeOffItem{
         ScheduleEntity: *NewScheduleEntity(),

@@ -8,7 +8,7 @@ import (
 type AudioRoutingGroupCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAudioRoutingGroupCollectionResponse instantiates a new AudioRoutingGroupCollectionResponse and sets the default values.
+// NewAudioRoutingGroupCollectionResponse instantiates a new audioRoutingGroupCollectionResponse and sets the default values.
 func NewAudioRoutingGroupCollectionResponse()(*AudioRoutingGroupCollectionResponse) {
     m := &AudioRoutingGroupCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -8,7 +8,7 @@ import (
 type WorkforceIntegrationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewWorkforceIntegrationCollectionResponse instantiates a new WorkforceIntegrationCollectionResponse and sets the default values.
+// NewWorkforceIntegrationCollectionResponse instantiates a new workforceIntegrationCollectionResponse and sets the default values.
 func NewWorkforceIntegrationCollectionResponse()(*WorkforceIntegrationCollectionResponse) {
     m := &WorkforceIntegrationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

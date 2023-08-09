@@ -8,7 +8,7 @@ import (
 type TokenLifetimePolicy struct {
     StsPolicy
 }
-// NewTokenLifetimePolicy instantiates a new TokenLifetimePolicy and sets the default values.
+// NewTokenLifetimePolicy instantiates a new tokenLifetimePolicy and sets the default values.
 func NewTokenLifetimePolicy()(*TokenLifetimePolicy) {
     m := &TokenLifetimePolicy{
         StsPolicy: *NewStsPolicy(),

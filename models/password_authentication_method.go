@@ -9,7 +9,7 @@ import (
 type PasswordAuthenticationMethod struct {
     AuthenticationMethod
 }
-// NewPasswordAuthenticationMethod instantiates a new PasswordAuthenticationMethod and sets the default values.
+// NewPasswordAuthenticationMethod instantiates a new passwordAuthenticationMethod and sets the default values.
 func NewPasswordAuthenticationMethod()(*PasswordAuthenticationMethod) {
     m := &PasswordAuthenticationMethod{
         AuthenticationMethod: *NewAuthenticationMethod(),

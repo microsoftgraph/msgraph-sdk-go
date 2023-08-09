@@ -57,7 +57,7 @@ func NewBookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuil
 // Delete delete a bookingCustomQuestion object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/bookingcustomquestion-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/bookingcustomquestion-delete?view=graph-rest-1.0
 func (m *BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBui
 // Get read the properties and relationships of a bookingCustomQuestion object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/bookingcustomquestion-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/bookingcustomquestion-get?view=graph-rest-1.0
 func (m *BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingCustomQuestionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBui
 // Patch update the properties of a bookingCustomQuestion object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/bookingcustomquestion-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/bookingcustomquestion-update?view=graph-rest-1.0
 func (m *BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingCustomQuestionable, requestConfiguration *BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingCustomQuestionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

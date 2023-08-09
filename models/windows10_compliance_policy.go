@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Windows10CompliancePolicy 
+// Windows10CompliancePolicy this class contains compliance settings for Windows 10.
 type Windows10CompliancePolicy struct {
     DeviceCompliancePolicy
 }
-// NewWindows10CompliancePolicy instantiates a new Windows10CompliancePolicy and sets the default values.
+// NewWindows10CompliancePolicy instantiates a new windows10CompliancePolicy and sets the default values.
 func NewWindows10CompliancePolicy()(*Windows10CompliancePolicy) {
     m := &Windows10CompliancePolicy{
         DeviceCompliancePolicy: *NewDeviceCompliancePolicy(),

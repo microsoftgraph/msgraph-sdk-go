@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Win32LobAppProductCodeRule 
+// Win32LobAppProductCodeRule a complex type to store the product code and version rule data for a Win32 LOB app. This rule is not supported as a requirement rule.
 type Win32LobAppProductCodeRule struct {
     Win32LobAppRule
 }
-// NewWin32LobAppProductCodeRule instantiates a new Win32LobAppProductCodeRule and sets the default values.
+// NewWin32LobAppProductCodeRule instantiates a new win32LobAppProductCodeRule and sets the default values.
 func NewWin32LobAppProductCodeRule()(*Win32LobAppProductCodeRule) {
     m := &Win32LobAppProductCodeRule{
         Win32LobAppRule: *NewWin32LobAppRule(),

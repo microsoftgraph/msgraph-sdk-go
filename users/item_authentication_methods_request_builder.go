@@ -77,7 +77,7 @@ func (m *ItemAuthenticationMethodsRequestBuilder) Count()(*ItemAuthenticationMet
 // Get retrieve a list of authentication methods registered to a user. The authentication methods are defined by the types derived from the authenticationMethod resource type, and only the methods supported on this API version. See Azure AD authentication methods API overview for a list of currently supported methods.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/authentication-list-methods?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/authentication-list-methods?view=graph-rest-1.0
 func (m *ItemAuthenticationMethodsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAuthenticationMethodsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationMethodCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

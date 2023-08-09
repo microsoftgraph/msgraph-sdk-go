@@ -8,11 +8,13 @@ import (
 type AmazonResourceEvidence struct {
     AlertEvidence
 }
-// NewAmazonResourceEvidence instantiates a new AmazonResourceEvidence and sets the default values.
+// NewAmazonResourceEvidence instantiates a new amazonResourceEvidence and sets the default values.
 func NewAmazonResourceEvidence()(*AmazonResourceEvidence) {
     m := &AmazonResourceEvidence{
         AlertEvidence: *NewAlertEvidence(),
     }
+    odataTypeValue := "#microsoft.graph.security.amazonResourceEvidence"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAmazonResourceEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

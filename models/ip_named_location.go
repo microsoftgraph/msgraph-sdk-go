@@ -8,7 +8,7 @@ import (
 type IpNamedLocation struct {
     NamedLocation
 }
-// NewIpNamedLocation instantiates a new IpNamedLocation and sets the default values.
+// NewIpNamedLocation instantiates a new ipNamedLocation and sets the default values.
 func NewIpNamedLocation()(*IpNamedLocation) {
     m := &IpNamedLocation{
         NamedLocation: *NewNamedLocation(),

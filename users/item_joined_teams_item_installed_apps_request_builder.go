@@ -77,7 +77,7 @@ func (m *ItemJoinedTeamsItemInstalledAppsRequestBuilder) Count()(*ItemJoinedTeam
 // Get retrieve a list of apps installed in the specified team.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/team-list-installedapps?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/team-list-installedapps?view=graph-rest-1.0
 func (m *ItemJoinedTeamsItemInstalledAppsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemInstalledAppsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsAppInstallationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *ItemJoinedTeamsItemInstalledAppsRequestBuilder) Get(ctx context.Context
 // Post install an app to the specified team.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/team-post-installedapps?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/team-post-installedapps?view=graph-rest-1.0
 func (m *ItemJoinedTeamsItemInstalledAppsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsAppInstallationable, requestConfiguration *ItemJoinedTeamsItemInstalledAppsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsAppInstallationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

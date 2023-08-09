@@ -50,7 +50,7 @@ func NewItemCalendarCalendarViewItemAttachmentsAttachmentItemRequestBuilder(rawU
 // Delete delete an attachment from a user calendar event, mail message, or group post.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/attachment-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/attachment-delete?view=graph-rest-1.0
 func (m *ItemCalendarCalendarViewItemAttachmentsAttachmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemCalendarCalendarViewItemAttachmentsAttachmentItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {

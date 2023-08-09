@@ -8,7 +8,7 @@ import (
 type Fido2AuthenticationMethodCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewFido2AuthenticationMethodCollectionResponse instantiates a new Fido2AuthenticationMethodCollectionResponse and sets the default values.
+// NewFido2AuthenticationMethodCollectionResponse instantiates a new fido2AuthenticationMethodCollectionResponse and sets the default values.
 func NewFido2AuthenticationMethodCollectionResponse()(*Fido2AuthenticationMethodCollectionResponse) {
     m := &Fido2AuthenticationMethodCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

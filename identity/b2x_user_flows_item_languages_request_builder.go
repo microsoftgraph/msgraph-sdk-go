@@ -77,7 +77,7 @@ func (m *B2xUserFlowsItemLanguagesRequestBuilder) Count()(*B2xUserFlowsItemLangu
 // Get retrieve a list of languages supported for customization in a B2X user flow.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/b2xidentityuserflow-list-languages?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/b2xidentityuserflow-list-languages?view=graph-rest-1.0
 func (m *B2xUserFlowsItemLanguagesRequestBuilder) Get(ctx context.Context, requestConfiguration *B2xUserFlowsItemLanguagesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserFlowLanguageConfigurationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -8,7 +8,7 @@ import (
 type AccessPackageAnswerString struct {
     AccessPackageAnswer
 }
-// NewAccessPackageAnswerString instantiates a new AccessPackageAnswerString and sets the default values.
+// NewAccessPackageAnswerString instantiates a new accessPackageAnswerString and sets the default values.
 func NewAccessPackageAnswerString()(*AccessPackageAnswerString) {
     m := &AccessPackageAnswerString{
         AccessPackageAnswer: *NewAccessPackageAnswer(),

@@ -9,7 +9,7 @@ import (
 type ServiceUpdateMessage struct {
     ServiceAnnouncementBase
 }
-// NewServiceUpdateMessage instantiates a new ServiceUpdateMessage and sets the default values.
+// NewServiceUpdateMessage instantiates a new serviceUpdateMessage and sets the default values.
 func NewServiceUpdateMessage()(*ServiceUpdateMessage) {
     m := &ServiceUpdateMessage{
         ServiceAnnouncementBase: *NewServiceAnnouncementBase(),

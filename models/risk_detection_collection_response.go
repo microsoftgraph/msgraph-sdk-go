@@ -8,7 +8,7 @@ import (
 type RiskDetectionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewRiskDetectionCollectionResponse instantiates a new RiskDetectionCollectionResponse and sets the default values.
+// NewRiskDetectionCollectionResponse instantiates a new riskDetectionCollectionResponse and sets the default values.
 func NewRiskDetectionCollectionResponse()(*RiskDetectionCollectionResponse) {
     m := &RiskDetectionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

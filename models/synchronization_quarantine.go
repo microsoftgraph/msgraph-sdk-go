@@ -39,7 +39,7 @@ func (m *SynchronizationQuarantine) GetAdditionalData()(map[string]any) {
 func (m *SynchronizationQuarantine) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCurrentBegan gets the currentBegan property value. The currentBegan property
+// GetCurrentBegan gets the currentBegan property value. Date and time when the quarantine was last evaluated and imposed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SynchronizationQuarantine) GetCurrentBegan()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("currentBegan")
     if err != nil {
@@ -50,7 +50,7 @@ func (m *SynchronizationQuarantine) GetCurrentBegan()(*i336074805fc853987abe6f7f
     }
     return nil
 }
-// GetError gets the error property value. The error property
+// GetError gets the error property value. Describes the error(s) that occurred when putting the synchronization job into quarantine.
 func (m *SynchronizationQuarantine) GetError()(SynchronizationErrorable) {
     val, err := m.GetBackingStore().Get("error")
     if err != nil {
@@ -136,7 +136,7 @@ func (m *SynchronizationQuarantine) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetNextAttempt gets the nextAttempt property value. The nextAttempt property
+// GetNextAttempt gets the nextAttempt property value. Date and time when the next attempt to re-evaluate the quarantine will be made. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SynchronizationQuarantine) GetNextAttempt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("nextAttempt")
     if err != nil {
@@ -169,7 +169,7 @@ func (m *SynchronizationQuarantine) GetReason()(*QuarantineReason) {
     }
     return nil
 }
-// GetSeriesBegan gets the seriesBegan property value. The seriesBegan property
+// GetSeriesBegan gets the seriesBegan property value. Date and time when the quarantine was first imposed in this series (a series starts when a quarantine is first imposed, and is reset as soon as the quarantine is lifted). The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SynchronizationQuarantine) GetSeriesBegan()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("seriesBegan")
     if err != nil {
@@ -180,7 +180,7 @@ func (m *SynchronizationQuarantine) GetSeriesBegan()(*i336074805fc853987abe6f7fe
     }
     return nil
 }
-// GetSeriesCount gets the seriesCount property value. The seriesCount property
+// GetSeriesCount gets the seriesCount property value. Number of times in this series the quarantine was re-evaluated and left in effect (a series starts when quarantine is first imposed, and is reset as soon as quarantine is lifted).
 func (m *SynchronizationQuarantine) GetSeriesCount()(*int64) {
     val, err := m.GetBackingStore().Get("seriesCount")
     if err != nil {
@@ -255,21 +255,21 @@ func (m *SynchronizationQuarantine) SetAdditionalData(value map[string]any)() {
 func (m *SynchronizationQuarantine) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCurrentBegan sets the currentBegan property value. The currentBegan property
+// SetCurrentBegan sets the currentBegan property value. Date and time when the quarantine was last evaluated and imposed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SynchronizationQuarantine) SetCurrentBegan(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("currentBegan", value)
     if err != nil {
         panic(err)
     }
 }
-// SetError sets the error property value. The error property
+// SetError sets the error property value. Describes the error(s) that occurred when putting the synchronization job into quarantine.
 func (m *SynchronizationQuarantine) SetError(value SynchronizationErrorable)() {
     err := m.GetBackingStore().Set("error", value)
     if err != nil {
         panic(err)
     }
 }
-// SetNextAttempt sets the nextAttempt property value. The nextAttempt property
+// SetNextAttempt sets the nextAttempt property value. Date and time when the next attempt to re-evaluate the quarantine will be made. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SynchronizationQuarantine) SetNextAttempt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("nextAttempt", value)
     if err != nil {
@@ -290,14 +290,14 @@ func (m *SynchronizationQuarantine) SetReason(value *QuarantineReason)() {
         panic(err)
     }
 }
-// SetSeriesBegan sets the seriesBegan property value. The seriesBegan property
+// SetSeriesBegan sets the seriesBegan property value. Date and time when the quarantine was first imposed in this series (a series starts when a quarantine is first imposed, and is reset as soon as the quarantine is lifted). The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SynchronizationQuarantine) SetSeriesBegan(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("seriesBegan", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSeriesCount sets the seriesCount property value. The seriesCount property
+// SetSeriesCount sets the seriesCount property value. Number of times in this series the quarantine was re-evaluated and left in effect (a series starts when quarantine is first imposed, and is reset as soon as quarantine is lifted).
 func (m *SynchronizationQuarantine) SetSeriesCount(value *int64)() {
     err := m.GetBackingStore().Set("seriesCount", value)
     if err != nil {
