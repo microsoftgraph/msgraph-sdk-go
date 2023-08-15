@@ -21,7 +21,7 @@ func NewKubernetesClusterEvidence()(*KubernetesClusterEvidence) {
 func CreateKubernetesClusterEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewKubernetesClusterEvidence(), nil
 }
-// GetCloudResource gets the cloudResource property value. The cloudResource property
+// GetCloudResource gets the cloudResource property value. The cloud identifier of the cluster. Can be either an amazonResourceEvidence, azureResourceEvidence, or googleCloudResourceEvidence object.
 func (m *KubernetesClusterEvidence) GetCloudResource()(AlertEvidenceable) {
     val, err := m.GetBackingStore().Get("cloudResource")
     if err != nil {
@@ -32,7 +32,7 @@ func (m *KubernetesClusterEvidence) GetCloudResource()(AlertEvidenceable) {
     }
     return nil
 }
-// GetDistribution gets the distribution property value. The distribution property
+// GetDistribution gets the distribution property value. The distribution type of the cluster.
 func (m *KubernetesClusterEvidence) GetDistribution()(*string) {
     val, err := m.GetBackingStore().Get("distribution")
     if err != nil {
@@ -98,7 +98,7 @@ func (m *KubernetesClusterEvidence) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. The cluster name.
 func (m *KubernetesClusterEvidence) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -109,7 +109,7 @@ func (m *KubernetesClusterEvidence) GetName()(*string) {
     }
     return nil
 }
-// GetPlatform gets the platform property value. The platform property
+// GetPlatform gets the platform property value. The platform the cluster runs on. Possible values are: unknown, aks, eks, gke, arc, unknownFutureValue.
 func (m *KubernetesClusterEvidence) GetPlatform()(*KubernetesPlatform) {
     val, err := m.GetBackingStore().Get("platform")
     if err != nil {
@@ -120,7 +120,7 @@ func (m *KubernetesClusterEvidence) GetPlatform()(*KubernetesPlatform) {
     }
     return nil
 }
-// GetVersion gets the version property value. The version property
+// GetVersion gets the version property value. The kubernetes version of the cluster.
 func (m *KubernetesClusterEvidence) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -170,35 +170,35 @@ func (m *KubernetesClusterEvidence) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetCloudResource sets the cloudResource property value. The cloudResource property
+// SetCloudResource sets the cloudResource property value. The cloud identifier of the cluster. Can be either an amazonResourceEvidence, azureResourceEvidence, or googleCloudResourceEvidence object.
 func (m *KubernetesClusterEvidence) SetCloudResource(value AlertEvidenceable)() {
     err := m.GetBackingStore().Set("cloudResource", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDistribution sets the distribution property value. The distribution property
+// SetDistribution sets the distribution property value. The distribution type of the cluster.
 func (m *KubernetesClusterEvidence) SetDistribution(value *string)() {
     err := m.GetBackingStore().Set("distribution", value)
     if err != nil {
         panic(err)
     }
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. The cluster name.
 func (m *KubernetesClusterEvidence) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPlatform sets the platform property value. The platform property
+// SetPlatform sets the platform property value. The platform the cluster runs on. Possible values are: unknown, aks, eks, gke, arc, unknownFutureValue.
 func (m *KubernetesClusterEvidence) SetPlatform(value *KubernetesPlatform)() {
     err := m.GetBackingStore().Set("platform", value)
     if err != nil {
         panic(err)
     }
 }
-// SetVersion sets the version property value. The version property
+// SetVersion sets the version property value. The kubernetes version of the cluster.
 func (m *KubernetesClusterEvidence) SetVersion(value *string)() {
     err := m.GetBackingStore().Set("version", value)
     if err != nil {

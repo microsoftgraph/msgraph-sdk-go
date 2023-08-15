@@ -21,7 +21,7 @@ func NewContainerEvidence()(*ContainerEvidence) {
 func CreateContainerEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewContainerEvidence(), nil
 }
-// GetArgs gets the args property value. The args property
+// GetArgs gets the args property value. The list of arguments.
 func (m *ContainerEvidence) GetArgs()([]string) {
     val, err := m.GetBackingStore().Get("args")
     if err != nil {
@@ -32,7 +32,7 @@ func (m *ContainerEvidence) GetArgs()([]string) {
     }
     return nil
 }
-// GetCommand gets the command property value. The command property
+// GetCommand gets the command property value. The list of commands.
 func (m *ContainerEvidence) GetCommand()([]string) {
     val, err := m.GetBackingStore().Get("command")
     if err != nil {
@@ -43,7 +43,7 @@ func (m *ContainerEvidence) GetCommand()([]string) {
     }
     return nil
 }
-// GetContainerId gets the containerId property value. The containerId property
+// GetContainerId gets the containerId property value. The container ID.
 func (m *ContainerEvidence) GetContainerId()(*string) {
     val, err := m.GetBackingStore().Get("containerId")
     if err != nil {
@@ -141,7 +141,7 @@ func (m *ContainerEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetImage gets the image property value. The image property
+// GetImage gets the image property value. The image used to run the container.
 func (m *ContainerEvidence) GetImage()(ContainerImageEvidenceable) {
     val, err := m.GetBackingStore().Get("image")
     if err != nil {
@@ -152,7 +152,7 @@ func (m *ContainerEvidence) GetImage()(ContainerImageEvidenceable) {
     }
     return nil
 }
-// GetIsPrivileged gets the isPrivileged property value. The isPrivileged property
+// GetIsPrivileged gets the isPrivileged property value. The privileged status.
 func (m *ContainerEvidence) GetIsPrivileged()(*bool) {
     val, err := m.GetBackingStore().Get("isPrivileged")
     if err != nil {
@@ -163,7 +163,7 @@ func (m *ContainerEvidence) GetIsPrivileged()(*bool) {
     }
     return nil
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. The container name.
 func (m *ContainerEvidence) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -174,7 +174,7 @@ func (m *ContainerEvidence) GetName()(*string) {
     }
     return nil
 }
-// GetPod gets the pod property value. The pod property
+// GetPod gets the pod property value. The pod this container belongs to.
 func (m *ContainerEvidence) GetPod()(KubernetesPodEvidenceable) {
     val, err := m.GetBackingStore().Get("pod")
     if err != nil {
@@ -235,49 +235,49 @@ func (m *ContainerEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetArgs sets the args property value. The args property
+// SetArgs sets the args property value. The list of arguments.
 func (m *ContainerEvidence) SetArgs(value []string)() {
     err := m.GetBackingStore().Set("args", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCommand sets the command property value. The command property
+// SetCommand sets the command property value. The list of commands.
 func (m *ContainerEvidence) SetCommand(value []string)() {
     err := m.GetBackingStore().Set("command", value)
     if err != nil {
         panic(err)
     }
 }
-// SetContainerId sets the containerId property value. The containerId property
+// SetContainerId sets the containerId property value. The container ID.
 func (m *ContainerEvidence) SetContainerId(value *string)() {
     err := m.GetBackingStore().Set("containerId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetImage sets the image property value. The image property
+// SetImage sets the image property value. The image used to run the container.
 func (m *ContainerEvidence) SetImage(value ContainerImageEvidenceable)() {
     err := m.GetBackingStore().Set("image", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsPrivileged sets the isPrivileged property value. The isPrivileged property
+// SetIsPrivileged sets the isPrivileged property value. The privileged status.
 func (m *ContainerEvidence) SetIsPrivileged(value *bool)() {
     err := m.GetBackingStore().Set("isPrivileged", value)
     if err != nil {
         panic(err)
     }
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. The container name.
 func (m *ContainerEvidence) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPod sets the pod property value. The pod property
+// SetPod sets the pod property value. The pod this container belongs to.
 func (m *ContainerEvidence) SetPod(value KubernetesPodEvidenceable)() {
     err := m.GetBackingStore().Set("pod", value)
     if err != nil {

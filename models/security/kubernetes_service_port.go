@@ -34,7 +34,7 @@ func (m *KubernetesServicePort) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAppProtocol gets the appProtocol property value. The appProtocol property
+// GetAppProtocol gets the appProtocol property value. The application protocol for this port.
 func (m *KubernetesServicePort) GetAppProtocol()(*string) {
     val, err := m.GetBackingStore().Get("appProtocol")
     if err != nil {
@@ -124,7 +124,7 @@ func (m *KubernetesServicePort) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. The name of this port within the service.
 func (m *KubernetesServicePort) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -135,7 +135,7 @@ func (m *KubernetesServicePort) GetName()(*string) {
     }
     return nil
 }
-// GetNodePort gets the nodePort property value. The nodePort property
+// GetNodePort gets the nodePort property value. The port on each node on which this service is exposed when the type is either NodePort or LoadBalancer.
 func (m *KubernetesServicePort) GetNodePort()(*int32) {
     val, err := m.GetBackingStore().Get("nodePort")
     if err != nil {
@@ -157,7 +157,7 @@ func (m *KubernetesServicePort) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPort gets the port property value. The port property
+// GetPort gets the port property value. The port that this service exposes.
 func (m *KubernetesServicePort) GetPort()(*int32) {
     val, err := m.GetBackingStore().Get("port")
     if err != nil {
@@ -168,7 +168,7 @@ func (m *KubernetesServicePort) GetPort()(*int32) {
     }
     return nil
 }
-// GetProtocol gets the protocol property value. The protocol property
+// GetProtocol gets the protocol property value. The protocol name. Possible values are: udp, tcp, sctp, unknownFutureValue.
 func (m *KubernetesServicePort) GetProtocol()(*ContainerPortProtocol) {
     val, err := m.GetBackingStore().Get("protocol")
     if err != nil {
@@ -179,7 +179,7 @@ func (m *KubernetesServicePort) GetProtocol()(*ContainerPortProtocol) {
     }
     return nil
 }
-// GetTargetPort gets the targetPort property value. The targetPort property
+// GetTargetPort gets the targetPort property value. The name or number of the port to access on the pods targeted by the service. The port number must be in the range 1 to 65535. The name must be an IANASVCNAME.
 func (m *KubernetesServicePort) GetTargetPort()(*string) {
     val, err := m.GetBackingStore().Get("targetPort")
     if err != nil {
@@ -250,7 +250,7 @@ func (m *KubernetesServicePort) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAppProtocol sets the appProtocol property value. The appProtocol property
+// SetAppProtocol sets the appProtocol property value. The application protocol for this port.
 func (m *KubernetesServicePort) SetAppProtocol(value *string)() {
     err := m.GetBackingStore().Set("appProtocol", value)
     if err != nil {
@@ -261,14 +261,14 @@ func (m *KubernetesServicePort) SetAppProtocol(value *string)() {
 func (m *KubernetesServicePort) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. The name of this port within the service.
 func (m *KubernetesServicePort) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
         panic(err)
     }
 }
-// SetNodePort sets the nodePort property value. The nodePort property
+// SetNodePort sets the nodePort property value. The port on each node on which this service is exposed when the type is either NodePort or LoadBalancer.
 func (m *KubernetesServicePort) SetNodePort(value *int32)() {
     err := m.GetBackingStore().Set("nodePort", value)
     if err != nil {
@@ -282,21 +282,21 @@ func (m *KubernetesServicePort) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPort sets the port property value. The port property
+// SetPort sets the port property value. The port that this service exposes.
 func (m *KubernetesServicePort) SetPort(value *int32)() {
     err := m.GetBackingStore().Set("port", value)
     if err != nil {
         panic(err)
     }
 }
-// SetProtocol sets the protocol property value. The protocol property
+// SetProtocol sets the protocol property value. The protocol name. Possible values are: udp, tcp, sctp, unknownFutureValue.
 func (m *KubernetesServicePort) SetProtocol(value *ContainerPortProtocol)() {
     err := m.GetBackingStore().Set("protocol", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTargetPort sets the targetPort property value. The targetPort property
+// SetTargetPort sets the targetPort property value. The name or number of the port to access on the pods targeted by the service. The port number must be in the range 1 to 65535. The name must be an IANASVCNAME.
 func (m *KubernetesServicePort) SetTargetPort(value *string)() {
     err := m.GetBackingStore().Set("targetPort", value)
     if err != nil {
