@@ -220,6 +220,16 @@ func (m *Incident) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["lastModifiedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastModifiedBy(val)
+        }
+        return nil
+    }
     res["lastUpdateDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -275,6 +285,17 @@ func (m *Incident) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 // GetIncidentWebUrl gets the incidentWebUrl property value. The URL for the incident page in the Microsoft 365 Defender portal.
 func (m *Incident) GetIncidentWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("incidentWebUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
+func (m *Incident) GetLastModifiedBy()(*string) {
+    val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
         panic(err)
     }
@@ -413,6 +434,12 @@ func (m *Incident) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     {
+        err = writer.WriteStringValue("lastModifiedBy", m.GetLastModifiedBy())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteTimeValue("lastUpdateDateTime", m.GetLastUpdateDateTime())
         if err != nil {
             return err
@@ -509,6 +536,13 @@ func (m *Incident) SetIncidentWebUrl(value *string)() {
         panic(err)
     }
 }
+// SetLastModifiedBy sets the lastModifiedBy property value. The lastModifiedBy property
+func (m *Incident) SetLastModifiedBy(value *string)() {
+    err := m.GetBackingStore().Set("lastModifiedBy", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetLastUpdateDateTime sets the lastUpdateDateTime property value. Time when the incident was last updated.
 func (m *Incident) SetLastUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastUpdateDateTime", value)
@@ -557,6 +591,7 @@ type Incidentable interface {
     GetDetermination()(*AlertDetermination)
     GetDisplayName()(*string)
     GetIncidentWebUrl()(*string)
+    GetLastModifiedBy()(*string)
     GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetRedirectIncidentId()(*string)
     GetSeverity()(*AlertSeverity)
@@ -571,6 +606,7 @@ type Incidentable interface {
     SetDetermination(value *AlertDetermination)()
     SetDisplayName(value *string)()
     SetIncidentWebUrl(value *string)()
+    SetLastModifiedBy(value *string)()
     SetLastUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetRedirectIncidentId(value *string)()
     SetSeverity(value *AlertSeverity)()

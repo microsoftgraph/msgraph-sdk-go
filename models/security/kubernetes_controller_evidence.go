@@ -66,7 +66,7 @@ func (m *KubernetesControllerEvidence) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetLabels gets the labels property value. The labels property
+// GetLabels gets the labels property value. The labels for the Kubernetes pod.
 func (m *KubernetesControllerEvidence) GetLabels()(Dictionaryable) {
     val, err := m.GetBackingStore().Get("labels")
     if err != nil {
@@ -77,7 +77,7 @@ func (m *KubernetesControllerEvidence) GetLabels()(Dictionaryable) {
     }
     return nil
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. The controller name.
 func (m *KubernetesControllerEvidence) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -88,7 +88,7 @@ func (m *KubernetesControllerEvidence) GetName()(*string) {
     }
     return nil
 }
-// GetNamespace gets the namespace property value. The namespace property
+// GetNamespace gets the namespace property value. The service account namespace.
 func (m *KubernetesControllerEvidence) GetNamespace()(KubernetesNamespaceEvidenceable) {
     val, err := m.GetBackingStore().Get("namespace")
     if err != nil {
@@ -99,7 +99,7 @@ func (m *KubernetesControllerEvidence) GetNamespace()(KubernetesNamespaceEvidenc
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. The type property
+// GetTypeEscaped gets the type property value. The controller type.
 func (m *KubernetesControllerEvidence) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -142,28 +142,28 @@ func (m *KubernetesControllerEvidence) Serialize(writer i878a80d2330e89d26896388
     }
     return nil
 }
-// SetLabels sets the labels property value. The labels property
+// SetLabels sets the labels property value. The labels for the Kubernetes pod.
 func (m *KubernetesControllerEvidence) SetLabels(value Dictionaryable)() {
     err := m.GetBackingStore().Set("labels", value)
     if err != nil {
         panic(err)
     }
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. The controller name.
 func (m *KubernetesControllerEvidence) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
         panic(err)
     }
 }
-// SetNamespace sets the namespace property value. The namespace property
+// SetNamespace sets the namespace property value. The service account namespace.
 func (m *KubernetesControllerEvidence) SetNamespace(value KubernetesNamespaceEvidenceable)() {
     err := m.GetBackingStore().Set("namespace", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. The type property
+// SetTypeEscaped sets the type property value. The controller type.
 func (m *KubernetesControllerEvidence) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

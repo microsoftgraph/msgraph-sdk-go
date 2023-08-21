@@ -38,9 +38,30 @@ func (m *PublicationFacet) GetAdditionalData()(map[string]any) {
 func (m *PublicationFacet) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
+// GetCheckedOutBy gets the checkedOutBy property value. The checkedOutBy property
+func (m *PublicationFacet) GetCheckedOutBy()(IdentitySetable) {
+    val, err := m.GetBackingStore().Get("checkedOutBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentitySetable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PublicationFacet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["checkedOutBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCheckedOutBy(val.(IdentitySetable))
+        }
+        return nil
+    }
     res["level"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -109,6 +130,12 @@ func (m *PublicationFacet) GetVersionId()(*string) {
 // Serialize serializes information the current object
 func (m *PublicationFacet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
+        err := writer.WriteObjectValue("checkedOutBy", m.GetCheckedOutBy())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("level", m.GetLevel())
         if err != nil {
             return err
@@ -145,6 +172,13 @@ func (m *PublicationFacet) SetAdditionalData(value map[string]any)() {
 func (m *PublicationFacet) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
+// SetCheckedOutBy sets the checkedOutBy property value. The checkedOutBy property
+func (m *PublicationFacet) SetCheckedOutBy(value IdentitySetable)() {
+    err := m.GetBackingStore().Set("checkedOutBy", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetLevel sets the level property value. The state of publication for this document. Either published or checkout. Read-only.
 func (m *PublicationFacet) SetLevel(value *string)() {
     err := m.GetBackingStore().Set("level", value)
@@ -172,10 +206,12 @@ type PublicationFacetable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetCheckedOutBy()(IdentitySetable)
     GetLevel()(*string)
     GetOdataType()(*string)
     GetVersionId()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetCheckedOutBy(value IdentitySetable)()
     SetLevel(value *string)()
     SetOdataType(value *string)()
     SetVersionId(value *string)()
