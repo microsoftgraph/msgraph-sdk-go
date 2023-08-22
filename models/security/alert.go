@@ -76,7 +76,7 @@ func (m *Alert) GetCategory()(*string) {
     }
     return nil
 }
-// GetClassification gets the classification property value. Specifies whether the alert represents a true threat. Possible values are: unknown, falsePositive, truePositive, benignPositive, unknownFutureValue.
+// GetClassification gets the classification property value. Specifies whether the alert represents a true threat. Possible values are: unknown, falsePositive, truePositive, informationalExpectedActivity, unknownFutureValue.
 func (m *Alert) GetClassification()(*AlertClassification) {
     val, err := m.GetBackingStore().Get("classification")
     if err != nil {
@@ -888,7 +888,7 @@ func (m *Alert) SetCategory(value *string)() {
         panic(err)
     }
 }
-// SetClassification sets the classification property value. Specifies whether the alert represents a true threat. Possible values are: unknown, falsePositive, truePositive, benignPositive, unknownFutureValue.
+// SetClassification sets the classification property value. Specifies whether the alert represents a true threat. Possible values are: unknown, falsePositive, truePositive, informationalExpectedActivity, unknownFutureValue.
 func (m *Alert) SetClassification(value *AlertClassification)() {
     err := m.GetBackingStore().Set("classification", value)
     if err != nil {
