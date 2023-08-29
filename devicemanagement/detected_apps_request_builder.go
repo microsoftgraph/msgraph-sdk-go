@@ -46,8 +46,8 @@ type DetectedAppsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDetectedAppId provides operations to manage the detectedApps property of the microsoft.graph.deviceManagement entity.
-func (m *DetectedAppsRequestBuilder) ByDetectedAppId(detectedAppId string)(*DetectedAppsDetectedAppItemRequestBuilder) {
+// ByDetectedAppIdString provides operations to manage the detectedApps property of the microsoft.graph.deviceManagement entity.
+func (m *DetectedAppsRequestBuilder) ByDetectedAppIdString(detectedAppId string)(*DetectedAppsDetectedAppItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -46,8 +46,8 @@ type ItemTermStoresItemSetsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BySetId provides operations to manage the sets property of the microsoft.graph.termStore.store entity.
-func (m *ItemTermStoresItemSetsRequestBuilder) BySetId(setId string)(*ItemTermStoresItemSetsSetItemRequestBuilder) {
+// BySetIdString provides operations to manage the sets property of the microsoft.graph.termStore.store entity.
+func (m *ItemTermStoresItemSetsRequestBuilder) BySetIdString(setId string)(*ItemTermStoresItemSetsSetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

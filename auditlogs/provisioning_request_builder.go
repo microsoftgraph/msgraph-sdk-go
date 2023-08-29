@@ -46,8 +46,8 @@ type ProvisioningRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByProvisioningObjectSummaryId provides operations to manage the provisioning property of the microsoft.graph.auditLogRoot entity.
-func (m *ProvisioningRequestBuilder) ByProvisioningObjectSummaryId(provisioningObjectSummaryId string)(*ProvisioningProvisioningObjectSummaryItemRequestBuilder) {
+// ByProvisioningObjectSummaryIdString provides operations to manage the provisioning property of the microsoft.graph.auditLogRoot entity.
+func (m *ProvisioningRequestBuilder) ByProvisioningObjectSummaryIdString(provisioningObjectSummaryId string)(*ProvisioningProvisioningObjectSummaryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

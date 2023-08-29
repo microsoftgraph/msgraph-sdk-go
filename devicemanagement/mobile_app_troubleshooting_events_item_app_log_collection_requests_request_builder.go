@@ -46,8 +46,8 @@ type MobileAppTroubleshootingEventsItemAppLogCollectionRequestsRequestBuilderPos
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAppLogCollectionRequestId provides operations to manage the appLogCollectionRequests property of the microsoft.graph.mobileAppTroubleshootingEvent entity.
-func (m *MobileAppTroubleshootingEventsItemAppLogCollectionRequestsRequestBuilder) ByAppLogCollectionRequestId(appLogCollectionRequestId string)(*MobileAppTroubleshootingEventsItemAppLogCollectionRequestsAppLogCollectionRequestItemRequestBuilder) {
+// ByAppLogCollectionRequestIdString provides operations to manage the appLogCollectionRequests property of the microsoft.graph.mobileAppTroubleshootingEvent entity.
+func (m *MobileAppTroubleshootingEventsItemAppLogCollectionRequestsRequestBuilder) ByAppLogCollectionRequestIdString(appLogCollectionRequestId string)(*MobileAppTroubleshootingEventsItemAppLogCollectionRequestsAppLogCollectionRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

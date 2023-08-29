@@ -46,8 +46,8 @@ type CallsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByCallId provides operations to manage the calls property of the microsoft.graph.cloudCommunications entity.
-func (m *CallsRequestBuilder) ByCallId(callId string)(*CallsCallItemRequestBuilder) {
+// ByCallIdString provides operations to manage the calls property of the microsoft.graph.cloudCommunications entity.
+func (m *CallsRequestBuilder) ByCallIdString(callId string)(*CallsCallItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

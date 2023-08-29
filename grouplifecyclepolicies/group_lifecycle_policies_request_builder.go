@@ -46,8 +46,8 @@ type GroupLifecyclePoliciesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByGroupLifecyclePolicyId provides operations to manage the collection of groupLifecyclePolicy entities.
-func (m *GroupLifecyclePoliciesRequestBuilder) ByGroupLifecyclePolicyId(groupLifecyclePolicyId string)(*GroupLifecyclePolicyItemRequestBuilder) {
+// ByGroupLifecyclePolicyIdString provides operations to manage the collection of groupLifecyclePolicy entities.
+func (m *GroupLifecyclePoliciesRequestBuilder) ByGroupLifecyclePolicyIdString(groupLifecyclePolicyId string)(*GroupLifecyclePolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -35,8 +35,8 @@ type ItemPhotosRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemPhotosRequestBuilderGetQueryParameters
 }
-// ByProfilePhotoId provides operations to manage the photos property of the microsoft.graph.group entity.
-func (m *ItemPhotosRequestBuilder) ByProfilePhotoId(profilePhotoId string)(*ItemPhotosProfilePhotoItemRequestBuilder) {
+// ByProfilePhotoIdString provides operations to manage the photos property of the microsoft.graph.group entity.
+func (m *ItemPhotosRequestBuilder) ByProfilePhotoIdString(profilePhotoId string)(*ItemPhotosProfilePhotoItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

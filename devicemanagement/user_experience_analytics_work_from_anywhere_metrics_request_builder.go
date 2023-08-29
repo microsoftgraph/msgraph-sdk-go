@@ -46,8 +46,8 @@ type UserExperienceAnalyticsWorkFromAnywhereMetricsRequestBuilderPostRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUserExperienceAnalyticsWorkFromAnywhereMetricId provides operations to manage the userExperienceAnalyticsWorkFromAnywhereMetrics property of the microsoft.graph.deviceManagement entity.
-func (m *UserExperienceAnalyticsWorkFromAnywhereMetricsRequestBuilder) ByUserExperienceAnalyticsWorkFromAnywhereMetricId(userExperienceAnalyticsWorkFromAnywhereMetricId string)(*UserExperienceAnalyticsWorkFromAnywhereMetricsUserExperienceAnalyticsWorkFromAnywhereMetricItemRequestBuilder) {
+// ByUserExperienceAnalyticsWorkFromAnywhereMetricIdString provides operations to manage the userExperienceAnalyticsWorkFromAnywhereMetrics property of the microsoft.graph.deviceManagement entity.
+func (m *UserExperienceAnalyticsWorkFromAnywhereMetricsRequestBuilder) ByUserExperienceAnalyticsWorkFromAnywhereMetricIdString(userExperienceAnalyticsWorkFromAnywhereMetricId string)(*UserExperienceAnalyticsWorkFromAnywhereMetricsUserExperienceAnalyticsWorkFromAnywhereMetricItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -46,8 +46,8 @@ type LifecycleWorkflowsWorkflowsItemVersionsItemTasksRequestBuilderPostRequestCo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByTaskId provides operations to manage the tasks property of the microsoft.graph.identityGovernance.workflowBase entity.
-func (m *LifecycleWorkflowsWorkflowsItemVersionsItemTasksRequestBuilder) ByTaskId(taskId string)(*LifecycleWorkflowsWorkflowsItemVersionsItemTasksTaskItemRequestBuilder) {
+// ByTaskIdString provides operations to manage the tasks property of the microsoft.graph.identityGovernance.workflowBase entity.
+func (m *LifecycleWorkflowsWorkflowsItemVersionsItemTasksRequestBuilder) ByTaskIdString(taskId string)(*LifecycleWorkflowsWorkflowsItemVersionsItemTasksTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -46,8 +46,8 @@ type ItemTodoListsItemTasksItemLinkedResourcesRequestBuilderPostRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByLinkedResourceId provides operations to manage the linkedResources property of the microsoft.graph.todoTask entity.
-func (m *ItemTodoListsItemTasksItemLinkedResourcesRequestBuilder) ByLinkedResourceId(linkedResourceId string)(*ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilder) {
+// ByLinkedResourceIdString provides operations to manage the linkedResources property of the microsoft.graph.todoTask entity.
+func (m *ItemTodoListsItemTasksItemLinkedResourcesRequestBuilder) ByLinkedResourceIdString(linkedResourceId string)(*ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

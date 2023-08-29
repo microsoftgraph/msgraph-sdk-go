@@ -35,8 +35,8 @@ type ItemRejectedSendersRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemRejectedSendersRequestBuilderGetQueryParameters
 }
-// ByDirectoryObjectId gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.rejectedSenders.item collection
-func (m *ItemRejectedSendersRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemRejectedSendersDirectoryObjectItemRequestBuilder) {
+// ByDirectoryObjectIdString gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.rejectedSenders.item collection
+func (m *ItemRejectedSendersRequestBuilder) ByDirectoryObjectIdString(directoryObjectId string)(*ItemRejectedSendersDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

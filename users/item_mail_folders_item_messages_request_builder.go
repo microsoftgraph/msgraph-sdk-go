@@ -46,8 +46,8 @@ type ItemMailFoldersItemMessagesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByMessageId provides operations to manage the messages property of the microsoft.graph.mailFolder entity.
-func (m *ItemMailFoldersItemMessagesRequestBuilder) ByMessageId(messageId string)(*ItemMailFoldersItemMessagesMessageItemRequestBuilder) {
+// ByMessageIdString provides operations to manage the messages property of the microsoft.graph.mailFolder entity.
+func (m *ItemMailFoldersItemMessagesRequestBuilder) ByMessageIdString(messageId string)(*ItemMailFoldersItemMessagesMessageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

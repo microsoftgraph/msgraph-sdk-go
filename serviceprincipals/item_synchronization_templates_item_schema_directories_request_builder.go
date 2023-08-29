@@ -46,8 +46,8 @@ type ItemSynchronizationTemplatesItemSchemaDirectoriesRequestBuilderPostRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDirectoryDefinitionId provides operations to manage the directories property of the microsoft.graph.synchronizationSchema entity.
-func (m *ItemSynchronizationTemplatesItemSchemaDirectoriesRequestBuilder) ByDirectoryDefinitionId(directoryDefinitionId string)(*ItemSynchronizationTemplatesItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilder) {
+// ByDirectoryDefinitionIdString provides operations to manage the directories property of the microsoft.graph.synchronizationSchema entity.
+func (m *ItemSynchronizationTemplatesItemSchemaDirectoriesRequestBuilder) ByDirectoryDefinitionIdString(directoryDefinitionId string)(*ItemSynchronizationTemplatesItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

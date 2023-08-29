@@ -46,8 +46,8 @@ type CallsItemOperationsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByCommsOperationId provides operations to manage the operations property of the microsoft.graph.call entity.
-func (m *CallsItemOperationsRequestBuilder) ByCommsOperationId(commsOperationId string)(*CallsItemOperationsCommsOperationItemRequestBuilder) {
+// ByCommsOperationIdString provides operations to manage the operations property of the microsoft.graph.call entity.
+func (m *CallsItemOperationsRequestBuilder) ByCommsOperationIdString(commsOperationId string)(*CallsItemOperationsCommsOperationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

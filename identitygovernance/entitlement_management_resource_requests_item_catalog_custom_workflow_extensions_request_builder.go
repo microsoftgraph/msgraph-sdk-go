@@ -46,8 +46,8 @@ type EntitlementManagementResourceRequestsItemCatalogCustomWorkflowExtensionsReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByCustomCalloutExtensionId provides operations to manage the customWorkflowExtensions property of the microsoft.graph.accessPackageCatalog entity.
-func (m *EntitlementManagementResourceRequestsItemCatalogCustomWorkflowExtensionsRequestBuilder) ByCustomCalloutExtensionId(customCalloutExtensionId string)(*EntitlementManagementResourceRequestsItemCatalogCustomWorkflowExtensionsCustomCalloutExtensionItemRequestBuilder) {
+// ByCustomCalloutExtensionIdString provides operations to manage the customWorkflowExtensions property of the microsoft.graph.accessPackageCatalog entity.
+func (m *EntitlementManagementResourceRequestsItemCatalogCustomWorkflowExtensionsRequestBuilder) ByCustomCalloutExtensionIdString(customCalloutExtensionId string)(*EntitlementManagementResourceRequestsItemCatalogCustomWorkflowExtensionsCustomCalloutExtensionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

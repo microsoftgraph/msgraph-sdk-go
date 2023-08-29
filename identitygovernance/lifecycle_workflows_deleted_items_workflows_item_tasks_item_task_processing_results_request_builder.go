@@ -39,8 +39,8 @@ type LifecycleWorkflowsDeletedItemsWorkflowsItemTasksItemTaskProcessingResultsRe
     // Request query parameters
     QueryParameters *LifecycleWorkflowsDeletedItemsWorkflowsItemTasksItemTaskProcessingResultsRequestBuilderGetQueryParameters
 }
-// ByTaskProcessingResultId provides operations to manage the taskProcessingResults property of the microsoft.graph.identityGovernance.task entity.
-func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemTasksItemTaskProcessingResultsRequestBuilder) ByTaskProcessingResultId(taskProcessingResultId string)(*LifecycleWorkflowsDeletedItemsWorkflowsItemTasksItemTaskProcessingResultsTaskProcessingResultItemRequestBuilder) {
+// ByTaskProcessingResultIdString provides operations to manage the taskProcessingResults property of the microsoft.graph.identityGovernance.task entity.
+func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemTasksItemTaskProcessingResultsRequestBuilder) ByTaskProcessingResultIdString(taskProcessingResultId string)(*LifecycleWorkflowsDeletedItemsWorkflowsItemTasksItemTaskProcessingResultsTaskProcessingResultItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -39,8 +39,8 @@ type ItemAuthenticationMicrosoftAuthenticatorMethodsRequestBuilderGetRequestConf
     // Request query parameters
     QueryParameters *ItemAuthenticationMicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters
 }
-// ByMicrosoftAuthenticatorAuthenticationMethodId provides operations to manage the microsoftAuthenticatorMethods property of the microsoft.graph.authentication entity.
-func (m *ItemAuthenticationMicrosoftAuthenticatorMethodsRequestBuilder) ByMicrosoftAuthenticatorAuthenticationMethodId(microsoftAuthenticatorAuthenticationMethodId string)(*ItemAuthenticationMicrosoftAuthenticatorMethodsMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder) {
+// ByMicrosoftAuthenticatorAuthenticationMethodIdString provides operations to manage the microsoftAuthenticatorMethods property of the microsoft.graph.authentication entity.
+func (m *ItemAuthenticationMicrosoftAuthenticatorMethodsRequestBuilder) ByMicrosoftAuthenticatorAuthenticationMethodIdString(microsoftAuthenticatorAuthenticationMethodId string)(*ItemAuthenticationMicrosoftAuthenticatorMethodsMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -39,8 +39,8 @@ type ItemTokenIssuancePoliciesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemTokenIssuancePoliciesRequestBuilderGetQueryParameters
 }
-// ByTokenIssuancePolicyId gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.applications.item.tokenIssuancePolicies.item collection
-func (m *ItemTokenIssuancePoliciesRequestBuilder) ByTokenIssuancePolicyId(tokenIssuancePolicyId string)(*ItemTokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilder) {
+// ByTokenIssuancePolicyIdString gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.applications.item.tokenIssuancePolicies.item collection
+func (m *ItemTokenIssuancePoliciesRequestBuilder) ByTokenIssuancePolicyIdString(tokenIssuancePolicyId string)(*ItemTokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -46,8 +46,8 @@ type NotificationMessageTemplatesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByNotificationMessageTemplateId provides operations to manage the notificationMessageTemplates property of the microsoft.graph.deviceManagement entity.
-func (m *NotificationMessageTemplatesRequestBuilder) ByNotificationMessageTemplateId(notificationMessageTemplateId string)(*NotificationMessageTemplatesNotificationMessageTemplateItemRequestBuilder) {
+// ByNotificationMessageTemplateIdString provides operations to manage the notificationMessageTemplates property of the microsoft.graph.deviceManagement entity.
+func (m *NotificationMessageTemplatesRequestBuilder) ByNotificationMessageTemplateIdString(notificationMessageTemplateId string)(*NotificationMessageTemplatesNotificationMessageTemplateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

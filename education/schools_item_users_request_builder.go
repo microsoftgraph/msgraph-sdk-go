@@ -39,8 +39,8 @@ type SchoolsItemUsersRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *SchoolsItemUsersRequestBuilderGetQueryParameters
 }
-// ByEducationUserId gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.schools.item.users.item collection
-func (m *SchoolsItemUsersRequestBuilder) ByEducationUserId(educationUserId string)(*SchoolsItemUsersEducationUserItemRequestBuilder) {
+// ByEducationUserIdString gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.schools.item.users.item collection
+func (m *SchoolsItemUsersRequestBuilder) ByEducationUserIdString(educationUserId string)(*SchoolsItemUsersEducationUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

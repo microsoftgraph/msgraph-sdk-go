@@ -46,8 +46,8 @@ type CasesEdiscoveryCasesItemReviewSetsRequestBuilderPostRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByEdiscoveryReviewSetId provides operations to manage the reviewSets property of the microsoft.graph.security.ediscoveryCase entity.
-func (m *CasesEdiscoveryCasesItemReviewSetsRequestBuilder) ByEdiscoveryReviewSetId(ediscoveryReviewSetId string)(*CasesEdiscoveryCasesItemReviewSetsEdiscoveryReviewSetItemRequestBuilder) {
+// ByEdiscoveryReviewSetIdString provides operations to manage the reviewSets property of the microsoft.graph.security.ediscoveryCase entity.
+func (m *CasesEdiscoveryCasesItemReviewSetsRequestBuilder) ByEdiscoveryReviewSetIdString(ediscoveryReviewSetId string)(*CasesEdiscoveryCasesItemReviewSetsEdiscoveryReviewSetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

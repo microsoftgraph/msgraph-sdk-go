@@ -39,8 +39,8 @@ type ItemTokenLifetimePoliciesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemTokenLifetimePoliciesRequestBuilderGetQueryParameters
 }
-// ByTokenLifetimePolicyId provides operations to manage the tokenLifetimePolicies property of the microsoft.graph.servicePrincipal entity.
-func (m *ItemTokenLifetimePoliciesRequestBuilder) ByTokenLifetimePolicyId(tokenLifetimePolicyId string)(*ItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) {
+// ByTokenLifetimePolicyIdString provides operations to manage the tokenLifetimePolicies property of the microsoft.graph.servicePrincipal entity.
+func (m *ItemTokenLifetimePoliciesRequestBuilder) ByTokenLifetimePolicyIdString(tokenLifetimePolicyId string)(*ItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

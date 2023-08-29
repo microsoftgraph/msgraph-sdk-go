@@ -40,8 +40,8 @@ type PermissionGrantsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByResourceSpecificPermissionGrantId provides operations to manage the collection of resourceSpecificPermissionGrant entities.
-func (m *PermissionGrantsRequestBuilder) ByResourceSpecificPermissionGrantId(resourceSpecificPermissionGrantId string)(*ResourceSpecificPermissionGrantItemRequestBuilder) {
+// ByResourceSpecificPermissionGrantIdString provides operations to manage the collection of resourceSpecificPermissionGrant entities.
+func (m *PermissionGrantsRequestBuilder) ByResourceSpecificPermissionGrantIdString(resourceSpecificPermissionGrantId string)(*ResourceSpecificPermissionGrantItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

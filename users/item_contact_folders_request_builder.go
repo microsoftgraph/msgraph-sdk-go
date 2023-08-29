@@ -44,8 +44,8 @@ type ItemContactFoldersRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByContactFolderId provides operations to manage the contactFolders property of the microsoft.graph.user entity.
-func (m *ItemContactFoldersRequestBuilder) ByContactFolderId(contactFolderId string)(*ItemContactFoldersContactFolderItemRequestBuilder) {
+// ByContactFolderIdString provides operations to manage the contactFolders property of the microsoft.graph.user entity.
+func (m *ItemContactFoldersRequestBuilder) ByContactFolderIdString(contactFolderId string)(*ItemContactFoldersContactFolderItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

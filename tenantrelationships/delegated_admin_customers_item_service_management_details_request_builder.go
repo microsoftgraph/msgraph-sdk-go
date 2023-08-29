@@ -46,8 +46,8 @@ type DelegatedAdminCustomersItemServiceManagementDetailsRequestBuilderPostReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDelegatedAdminServiceManagementDetailId provides operations to manage the serviceManagementDetails property of the microsoft.graph.delegatedAdminCustomer entity.
-func (m *DelegatedAdminCustomersItemServiceManagementDetailsRequestBuilder) ByDelegatedAdminServiceManagementDetailId(delegatedAdminServiceManagementDetailId string)(*DelegatedAdminCustomersItemServiceManagementDetailsDelegatedAdminServiceManagementDetailItemRequestBuilder) {
+// ByDelegatedAdminServiceManagementDetailIdString provides operations to manage the serviceManagementDetails property of the microsoft.graph.delegatedAdminCustomer entity.
+func (m *DelegatedAdminCustomersItemServiceManagementDetailsRequestBuilder) ByDelegatedAdminServiceManagementDetailIdString(delegatedAdminServiceManagementDetailId string)(*DelegatedAdminCustomersItemServiceManagementDetailsDelegatedAdminServiceManagementDetailItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -46,8 +46,8 @@ type ItemItemsItemThumbnailsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByThumbnailSetId provides operations to manage the thumbnails property of the microsoft.graph.driveItem entity.
-func (m *ItemItemsItemThumbnailsRequestBuilder) ByThumbnailSetId(thumbnailSetId string)(*ItemItemsItemThumbnailsThumbnailSetItemRequestBuilder) {
+// ByThumbnailSetIdString provides operations to manage the thumbnails property of the microsoft.graph.driveItem entity.
+func (m *ItemItemsItemThumbnailsRequestBuilder) ByThumbnailSetIdString(thumbnailSetId string)(*ItemItemsItemThumbnailsThumbnailSetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

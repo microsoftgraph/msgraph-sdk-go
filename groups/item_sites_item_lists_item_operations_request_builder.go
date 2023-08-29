@@ -46,8 +46,8 @@ type ItemSitesItemListsItemOperationsRequestBuilderPostRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByRichLongRunningOperationId provides operations to manage the operations property of the microsoft.graph.list entity.
-func (m *ItemSitesItemListsItemOperationsRequestBuilder) ByRichLongRunningOperationId(richLongRunningOperationId string)(*ItemSitesItemListsItemOperationsRichLongRunningOperationItemRequestBuilder) {
+// ByRichLongRunningOperationIdString provides operations to manage the operations property of the microsoft.graph.list entity.
+func (m *ItemSitesItemListsItemOperationsRequestBuilder) ByRichLongRunningOperationIdString(richLongRunningOperationId string)(*ItemSitesItemListsItemOperationsRichLongRunningOperationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

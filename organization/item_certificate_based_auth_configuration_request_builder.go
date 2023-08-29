@@ -46,8 +46,8 @@ type ItemCertificateBasedAuthConfigurationRequestBuilderPostRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByCertificateBasedAuthConfigurationId provides operations to manage the certificateBasedAuthConfiguration property of the microsoft.graph.organization entity.
-func (m *ItemCertificateBasedAuthConfigurationRequestBuilder) ByCertificateBasedAuthConfigurationId(certificateBasedAuthConfigurationId string)(*ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilder) {
+// ByCertificateBasedAuthConfigurationIdString provides operations to manage the certificateBasedAuthConfiguration property of the microsoft.graph.organization entity.
+func (m *ItemCertificateBasedAuthConfigurationRequestBuilder) ByCertificateBasedAuthConfigurationIdString(certificateBasedAuthConfigurationId string)(*ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

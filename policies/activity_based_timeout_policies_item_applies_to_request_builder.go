@@ -39,8 +39,8 @@ type ActivityBasedTimeoutPoliciesItemAppliesToRequestBuilderGetRequestConfigurat
     // Request query parameters
     QueryParameters *ActivityBasedTimeoutPoliciesItemAppliesToRequestBuilderGetQueryParameters
 }
-// ByDirectoryObjectId provides operations to manage the appliesTo property of the microsoft.graph.stsPolicy entity.
-func (m *ActivityBasedTimeoutPoliciesItemAppliesToRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ActivityBasedTimeoutPoliciesItemAppliesToDirectoryObjectItemRequestBuilder) {
+// ByDirectoryObjectIdString provides operations to manage the appliesTo property of the microsoft.graph.stsPolicy entity.
+func (m *ActivityBasedTimeoutPoliciesItemAppliesToRequestBuilder) ByDirectoryObjectIdString(directoryObjectId string)(*ActivityBasedTimeoutPoliciesItemAppliesToDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

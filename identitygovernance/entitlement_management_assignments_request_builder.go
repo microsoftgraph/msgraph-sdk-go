@@ -54,8 +54,8 @@ func (m *EntitlementManagementAssignmentsRequestBuilder) AdditionalAccess()(*Ent
 func (m *EntitlementManagementAssignmentsRequestBuilder) AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageId(accessPackageId *string, incompatibleAccessPackageId *string)(*EntitlementManagementAssignmentsAdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilder) {
     return NewEntitlementManagementAssignmentsAdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, accessPackageId, incompatibleAccessPackageId)
 }
-// ByAccessPackageAssignmentId provides operations to manage the assignments property of the microsoft.graph.entitlementManagement entity.
-func (m *EntitlementManagementAssignmentsRequestBuilder) ByAccessPackageAssignmentId(accessPackageAssignmentId string)(*EntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuilder) {
+// ByAccessPackageAssignmentIdString provides operations to manage the assignments property of the microsoft.graph.entitlementManagement entity.
+func (m *EntitlementManagementAssignmentsRequestBuilder) ByAccessPackageAssignmentIdString(accessPackageAssignmentId string)(*EntitlementManagementAssignmentsAccessPackageAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

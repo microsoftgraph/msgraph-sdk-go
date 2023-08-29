@@ -46,8 +46,8 @@ type PlansItemBucketsItemTasksRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByPlannerTaskId provides operations to manage the tasks property of the microsoft.graph.plannerBucket entity.
-func (m *PlansItemBucketsItemTasksRequestBuilder) ByPlannerTaskId(plannerTaskId string)(*PlansItemBucketsItemTasksPlannerTaskItemRequestBuilder) {
+// ByPlannerTaskIdString provides operations to manage the tasks property of the microsoft.graph.plannerBucket entity.
+func (m *PlansItemBucketsItemTasksRequestBuilder) ByPlannerTaskIdString(plannerTaskId string)(*PlansItemBucketsItemTasksPlannerTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

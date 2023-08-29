@@ -39,8 +39,8 @@ type ItemCalendarEventsItemInstancesRequestBuilderGetRequestConfiguration struct
     // Request query parameters
     QueryParameters *ItemCalendarEventsItemInstancesRequestBuilderGetQueryParameters
 }
-// ByEventId1 provides operations to manage the instances property of the microsoft.graph.event entity.
-func (m *ItemCalendarEventsItemInstancesRequestBuilder) ByEventId1(eventId1 string)(*ItemCalendarEventsItemInstancesEventItemRequestBuilder) {
+// ByEventId1String provides operations to manage the instances property of the microsoft.graph.event entity.
+func (m *ItemCalendarEventsItemInstancesRequestBuilder) ByEventId1String(eventId1 string)(*ItemCalendarEventsItemInstancesEventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

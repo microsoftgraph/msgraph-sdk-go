@@ -46,8 +46,8 @@ type ItemTermStoresRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByStoreId provides operations to manage the termStores property of the microsoft.graph.site entity.
-func (m *ItemTermStoresRequestBuilder) ByStoreId(storeId string)(*ItemTermStoresStoreItemRequestBuilder) {
+// ByStoreIdString provides operations to manage the termStores property of the microsoft.graph.site entity.
+func (m *ItemTermStoresRequestBuilder) ByStoreIdString(storeId string)(*ItemTermStoresStoreItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

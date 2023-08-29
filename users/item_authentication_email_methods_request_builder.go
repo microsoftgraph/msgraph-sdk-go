@@ -46,8 +46,8 @@ type ItemAuthenticationEmailMethodsRequestBuilderPostRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByEmailAuthenticationMethodId provides operations to manage the emailMethods property of the microsoft.graph.authentication entity.
-func (m *ItemAuthenticationEmailMethodsRequestBuilder) ByEmailAuthenticationMethodId(emailAuthenticationMethodId string)(*ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilder) {
+// ByEmailAuthenticationMethodIdString provides operations to manage the emailMethods property of the microsoft.graph.authentication entity.
+func (m *ItemAuthenticationEmailMethodsRequestBuilder) ByEmailAuthenticationMethodIdString(emailAuthenticationMethodId string)(*ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

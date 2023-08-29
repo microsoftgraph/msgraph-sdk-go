@@ -46,8 +46,8 @@ type EntitlementManagementAssignmentPoliciesItemQuestionsRequestBuilderPostReque
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAccessPackageQuestionId provides operations to manage the questions property of the microsoft.graph.accessPackageAssignmentPolicy entity.
-func (m *EntitlementManagementAssignmentPoliciesItemQuestionsRequestBuilder) ByAccessPackageQuestionId(accessPackageQuestionId string)(*EntitlementManagementAssignmentPoliciesItemQuestionsAccessPackageQuestionItemRequestBuilder) {
+// ByAccessPackageQuestionIdString provides operations to manage the questions property of the microsoft.graph.accessPackageAssignmentPolicy entity.
+func (m *EntitlementManagementAssignmentPoliciesItemQuestionsRequestBuilder) ByAccessPackageQuestionIdString(accessPackageQuestionId string)(*EntitlementManagementAssignmentPoliciesItemQuestionsAccessPackageQuestionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

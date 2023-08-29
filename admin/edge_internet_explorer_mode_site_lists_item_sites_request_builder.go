@@ -46,8 +46,8 @@ type EdgeInternetExplorerModeSiteListsItemSitesRequestBuilderPostRequestConfigur
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByBrowserSiteId provides operations to manage the sites property of the microsoft.graph.browserSiteList entity.
-func (m *EdgeInternetExplorerModeSiteListsItemSitesRequestBuilder) ByBrowserSiteId(browserSiteId string)(*EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilder) {
+// ByBrowserSiteIdString provides operations to manage the sites property of the microsoft.graph.browserSiteList entity.
+func (m *EdgeInternetExplorerModeSiteListsItemSitesRequestBuilder) ByBrowserSiteIdString(browserSiteId string)(*EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

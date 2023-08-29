@@ -39,8 +39,8 @@ type MeSchoolsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *MeSchoolsRequestBuilderGetQueryParameters
 }
-// ByEducationSchoolId provides operations to manage the schools property of the microsoft.graph.educationUser entity.
-func (m *MeSchoolsRequestBuilder) ByEducationSchoolId(educationSchoolId string)(*MeSchoolsEducationSchoolItemRequestBuilder) {
+// ByEducationSchoolIdString provides operations to manage the schools property of the microsoft.graph.educationUser entity.
+func (m *MeSchoolsRequestBuilder) ByEducationSchoolIdString(educationSchoolId string)(*MeSchoolsEducationSchoolItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -41,8 +41,8 @@ type ItemCalendarViewRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemCalendarViewRequestBuilderGetQueryParameters
 }
-// ByEventId provides operations to manage the calendarView property of the microsoft.graph.user entity.
-func (m *ItemCalendarViewRequestBuilder) ByEventId(eventId string)(*ItemCalendarViewEventItemRequestBuilder) {
+// ByEventIdString provides operations to manage the calendarView property of the microsoft.graph.user entity.
+func (m *ItemCalendarViewRequestBuilder) ByEventIdString(eventId string)(*ItemCalendarViewEventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

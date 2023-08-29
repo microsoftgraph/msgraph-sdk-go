@@ -46,8 +46,8 @@ type DeletedTeamsItemChannelsItemMessagesRequestBuilderPostRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByChatMessageId provides operations to manage the messages property of the microsoft.graph.channel entity.
-func (m *DeletedTeamsItemChannelsItemMessagesRequestBuilder) ByChatMessageId(chatMessageId string)(*DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) {
+// ByChatMessageIdString provides operations to manage the messages property of the microsoft.graph.channel entity.
+func (m *DeletedTeamsItemChannelsItemMessagesRequestBuilder) ByChatMessageIdString(chatMessageId string)(*DeletedTeamsItemChannelsItemMessagesChatMessageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

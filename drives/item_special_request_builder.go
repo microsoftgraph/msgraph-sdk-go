@@ -39,8 +39,8 @@ type ItemSpecialRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemSpecialRequestBuilderGetQueryParameters
 }
-// ByDriveItemId provides operations to manage the special property of the microsoft.graph.drive entity.
-func (m *ItemSpecialRequestBuilder) ByDriveItemId(driveItemId string)(*ItemSpecialDriveItemItemRequestBuilder) {
+// ByDriveItemIdString provides operations to manage the special property of the microsoft.graph.drive entity.
+func (m *ItemSpecialRequestBuilder) ByDriveItemIdString(driveItemId string)(*ItemSpecialDriveItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

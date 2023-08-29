@@ -46,8 +46,8 @@ type ItemManagedDevicesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByManagedDeviceId provides operations to manage the managedDevices property of the microsoft.graph.user entity.
-func (m *ItemManagedDevicesRequestBuilder) ByManagedDeviceId(managedDeviceId string)(*ItemManagedDevicesManagedDeviceItemRequestBuilder) {
+// ByManagedDeviceIdString provides operations to manage the managedDevices property of the microsoft.graph.user entity.
+func (m *ItemManagedDevicesRequestBuilder) ByManagedDeviceIdString(managedDeviceId string)(*ItemManagedDevicesManagedDeviceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

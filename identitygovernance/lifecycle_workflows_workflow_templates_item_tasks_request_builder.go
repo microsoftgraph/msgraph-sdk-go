@@ -39,8 +39,8 @@ type LifecycleWorkflowsWorkflowTemplatesItemTasksRequestBuilderGetRequestConfigu
     // Request query parameters
     QueryParameters *LifecycleWorkflowsWorkflowTemplatesItemTasksRequestBuilderGetQueryParameters
 }
-// ByTaskId provides operations to manage the tasks property of the microsoft.graph.identityGovernance.workflowTemplate entity.
-func (m *LifecycleWorkflowsWorkflowTemplatesItemTasksRequestBuilder) ByTaskId(taskId string)(*LifecycleWorkflowsWorkflowTemplatesItemTasksTaskItemRequestBuilder) {
+// ByTaskIdString provides operations to manage the tasks property of the microsoft.graph.identityGovernance.workflowTemplate entity.
+func (m *LifecycleWorkflowsWorkflowTemplatesItemTasksRequestBuilder) ByTaskIdString(taskId string)(*LifecycleWorkflowsWorkflowTemplatesItemTasksTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

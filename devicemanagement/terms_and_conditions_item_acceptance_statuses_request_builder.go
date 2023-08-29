@@ -46,8 +46,8 @@ type TermsAndConditionsItemAcceptanceStatusesRequestBuilderPostRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByTermsAndConditionsAcceptanceStatusId provides operations to manage the acceptanceStatuses property of the microsoft.graph.termsAndConditions entity.
-func (m *TermsAndConditionsItemAcceptanceStatusesRequestBuilder) ByTermsAndConditionsAcceptanceStatusId(termsAndConditionsAcceptanceStatusId string)(*TermsAndConditionsItemAcceptanceStatusesTermsAndConditionsAcceptanceStatusItemRequestBuilder) {
+// ByTermsAndConditionsAcceptanceStatusIdString provides operations to manage the acceptanceStatuses property of the microsoft.graph.termsAndConditions entity.
+func (m *TermsAndConditionsItemAcceptanceStatusesRequestBuilder) ByTermsAndConditionsAcceptanceStatusIdString(termsAndConditionsAcceptanceStatusId string)(*TermsAndConditionsItemAcceptanceStatusesTermsAndConditionsAcceptanceStatusItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

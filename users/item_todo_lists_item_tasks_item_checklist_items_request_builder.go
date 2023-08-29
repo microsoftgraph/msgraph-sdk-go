@@ -46,8 +46,8 @@ type ItemTodoListsItemTasksItemChecklistItemsRequestBuilderPostRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByChecklistItemId provides operations to manage the checklistItems property of the microsoft.graph.todoTask entity.
-func (m *ItemTodoListsItemTasksItemChecklistItemsRequestBuilder) ByChecklistItemId(checklistItemId string)(*ItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilder) {
+// ByChecklistItemIdString provides operations to manage the checklistItems property of the microsoft.graph.todoTask entity.
+func (m *ItemTodoListsItemTasksItemChecklistItemsRequestBuilder) ByChecklistItemIdString(checklistItemId string)(*ItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

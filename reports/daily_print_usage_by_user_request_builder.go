@@ -46,8 +46,8 @@ type DailyPrintUsageByUserRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByPrintUsageByUserId provides operations to manage the dailyPrintUsageByUser property of the microsoft.graph.reportRoot entity.
-func (m *DailyPrintUsageByUserRequestBuilder) ByPrintUsageByUserId(printUsageByUserId string)(*DailyPrintUsageByUserPrintUsageByUserItemRequestBuilder) {
+// ByPrintUsageByUserIdString provides operations to manage the dailyPrintUsageByUser property of the microsoft.graph.reportRoot entity.
+func (m *DailyPrintUsageByUserRequestBuilder) ByPrintUsageByUserIdString(printUsageByUserId string)(*DailyPrintUsageByUserPrintUsageByUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

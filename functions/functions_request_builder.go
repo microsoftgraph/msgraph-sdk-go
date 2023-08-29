@@ -46,8 +46,8 @@ type FunctionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAttributeMappingFunctionSchemaId provides operations to manage the collection of attributeMappingFunctionSchema entities.
-func (m *FunctionsRequestBuilder) ByAttributeMappingFunctionSchemaId(attributeMappingFunctionSchemaId string)(*AttributeMappingFunctionSchemaItemRequestBuilder) {
+// ByAttributeMappingFunctionSchemaIdString provides operations to manage the collection of attributeMappingFunctionSchema entities.
+func (m *FunctionsRequestBuilder) ByAttributeMappingFunctionSchemaIdString(attributeMappingFunctionSchemaId string)(*AttributeMappingFunctionSchemaItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

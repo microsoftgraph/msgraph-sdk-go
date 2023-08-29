@@ -46,8 +46,8 @@ type AlertsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAlertId provides operations to manage the alerts property of the microsoft.graph.security entity.
-func (m *AlertsRequestBuilder) ByAlertId(alertId string)(*AlertsAlertItemRequestBuilder) {
+// ByAlertIdString provides operations to manage the alerts property of the microsoft.graph.security entity.
+func (m *AlertsRequestBuilder) ByAlertIdString(alertId string)(*AlertsAlertItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

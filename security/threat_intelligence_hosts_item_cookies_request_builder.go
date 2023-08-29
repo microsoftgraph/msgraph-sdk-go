@@ -39,8 +39,8 @@ type ThreatIntelligenceHostsItemCookiesRequestBuilderGetRequestConfiguration str
     // Request query parameters
     QueryParameters *ThreatIntelligenceHostsItemCookiesRequestBuilderGetQueryParameters
 }
-// ByHostCookieId provides operations to manage the cookies property of the microsoft.graph.security.host entity.
-func (m *ThreatIntelligenceHostsItemCookiesRequestBuilder) ByHostCookieId(hostCookieId string)(*ThreatIntelligenceHostsItemCookiesHostCookieItemRequestBuilder) {
+// ByHostCookieIdString provides operations to manage the cookies property of the microsoft.graph.security.host entity.
+func (m *ThreatIntelligenceHostsItemCookiesRequestBuilder) ByHostCookieIdString(hostCookieId string)(*ThreatIntelligenceHostsItemCookiesHostCookieItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

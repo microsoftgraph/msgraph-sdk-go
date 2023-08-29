@@ -46,8 +46,8 @@ type UserExperienceAnalyticsModelScoresRequestBuilderPostRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUserExperienceAnalyticsModelScoresId provides operations to manage the userExperienceAnalyticsModelScores property of the microsoft.graph.deviceManagement entity.
-func (m *UserExperienceAnalyticsModelScoresRequestBuilder) ByUserExperienceAnalyticsModelScoresId(userExperienceAnalyticsModelScoresId string)(*UserExperienceAnalyticsModelScoresUserExperienceAnalyticsModelScoresItemRequestBuilder) {
+// ByUserExperienceAnalyticsModelScoresIdString provides operations to manage the userExperienceAnalyticsModelScores property of the microsoft.graph.deviceManagement entity.
+func (m *UserExperienceAnalyticsModelScoresRequestBuilder) ByUserExperienceAnalyticsModelScoresIdString(userExperienceAnalyticsModelScoresId string)(*UserExperienceAnalyticsModelScoresUserExperienceAnalyticsModelScoresItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

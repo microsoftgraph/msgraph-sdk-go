@@ -46,8 +46,8 @@ type CasesEdiscoveryCasesItemSearchesItemAdditionalSourcesRequestBuilderPostRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDataSourceId provides operations to manage the additionalSources property of the microsoft.graph.security.ediscoverySearch entity.
-func (m *CasesEdiscoveryCasesItemSearchesItemAdditionalSourcesRequestBuilder) ByDataSourceId(dataSourceId string)(*CasesEdiscoveryCasesItemSearchesItemAdditionalSourcesDataSourceItemRequestBuilder) {
+// ByDataSourceIdString provides operations to manage the additionalSources property of the microsoft.graph.security.ediscoverySearch entity.
+func (m *CasesEdiscoveryCasesItemSearchesItemAdditionalSourcesRequestBuilder) ByDataSourceIdString(dataSourceId string)(*CasesEdiscoveryCasesItemSearchesItemAdditionalSourcesDataSourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

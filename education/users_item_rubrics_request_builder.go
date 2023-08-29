@@ -46,8 +46,8 @@ type UsersItemRubricsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByEducationRubricId provides operations to manage the rubrics property of the microsoft.graph.educationUser entity.
-func (m *UsersItemRubricsRequestBuilder) ByEducationRubricId(educationRubricId string)(*UsersItemRubricsEducationRubricItemRequestBuilder) {
+// ByEducationRubricIdString provides operations to manage the rubrics property of the microsoft.graph.educationUser entity.
+func (m *UsersItemRubricsRequestBuilder) ByEducationRubricIdString(educationRubricId string)(*UsersItemRubricsEducationRubricItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

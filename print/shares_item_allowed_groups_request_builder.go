@@ -39,8 +39,8 @@ type SharesItemAllowedGroupsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *SharesItemAllowedGroupsRequestBuilderGetQueryParameters
 }
-// ByGroupId gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.print.shares.item.allowedGroups.item collection
-func (m *SharesItemAllowedGroupsRequestBuilder) ByGroupId(groupId string)(*SharesItemAllowedGroupsGroupItemRequestBuilder) {
+// ByGroupIdString gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.print.shares.item.allowedGroups.item collection
+func (m *SharesItemAllowedGroupsRequestBuilder) ByGroupIdString(groupId string)(*SharesItemAllowedGroupsGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

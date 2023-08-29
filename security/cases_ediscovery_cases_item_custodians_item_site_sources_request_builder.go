@@ -46,8 +46,8 @@ type CasesEdiscoveryCasesItemCustodiansItemSiteSourcesRequestBuilderPostRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BySiteSourceId provides operations to manage the siteSources property of the microsoft.graph.security.ediscoveryCustodian entity.
-func (m *CasesEdiscoveryCasesItemCustodiansItemSiteSourcesRequestBuilder) BySiteSourceId(siteSourceId string)(*CasesEdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilder) {
+// BySiteSourceIdString provides operations to manage the siteSources property of the microsoft.graph.security.ediscoveryCustodian entity.
+func (m *CasesEdiscoveryCasesItemCustodiansItemSiteSourcesRequestBuilder) BySiteSourceIdString(siteSourceId string)(*CasesEdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

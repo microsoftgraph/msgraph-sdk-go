@@ -50,8 +50,8 @@ type ItemItemsItemWorkbookTablesItemColumnsRequestBuilderPostRequestConfiguratio
 func (m *ItemItemsItemWorkbookTablesItemColumnsRequestBuilder) Add()(*ItemItemsItemWorkbookTablesItemColumnsAddRequestBuilder) {
     return NewItemItemsItemWorkbookTablesItemColumnsAddRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByWorkbookTableColumnId provides operations to manage the columns property of the microsoft.graph.workbookTable entity.
-func (m *ItemItemsItemWorkbookTablesItemColumnsRequestBuilder) ByWorkbookTableColumnId(workbookTableColumnId string)(*ItemItemsItemWorkbookTablesItemColumnsWorkbookTableColumnItemRequestBuilder) {
+// ByWorkbookTableColumnIdString provides operations to manage the columns property of the microsoft.graph.workbookTable entity.
+func (m *ItemItemsItemWorkbookTablesItemColumnsRequestBuilder) ByWorkbookTableColumnIdString(workbookTableColumnId string)(*ItemItemsItemWorkbookTablesItemColumnsWorkbookTableColumnItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -81,7 +81,7 @@ func (m *ItemItemsItemWorkbookTablesItemColumnsRequestBuilder) Count()(*ItemItem
 // Get retrieve a list of tablecolumn objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/tablecolumn-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/table-list-columns?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookTablesItemColumnsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemColumnsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableColumnCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

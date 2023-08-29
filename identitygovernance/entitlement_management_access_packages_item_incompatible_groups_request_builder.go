@@ -39,8 +39,8 @@ type EntitlementManagementAccessPackagesItemIncompatibleGroupsRequestBuilderGetR
     // Request query parameters
     QueryParameters *EntitlementManagementAccessPackagesItemIncompatibleGroupsRequestBuilderGetQueryParameters
 }
-// ByGroupId gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.entitlementManagement.accessPackages.item.incompatibleGroups.item collection
-func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsRequestBuilder) ByGroupId(groupId string)(*EntitlementManagementAccessPackagesItemIncompatibleGroupsGroupItemRequestBuilder) {
+// ByGroupIdString gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.entitlementManagement.accessPackages.item.incompatibleGroups.item collection
+func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsRequestBuilder) ByGroupIdString(groupId string)(*EntitlementManagementAccessPackagesItemIncompatibleGroupsGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -39,8 +39,8 @@ type ApplicationTemplatesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ApplicationTemplatesRequestBuilderGetQueryParameters
 }
-// ByApplicationTemplateId provides operations to manage the collection of applicationTemplate entities.
-func (m *ApplicationTemplatesRequestBuilder) ByApplicationTemplateId(applicationTemplateId string)(*ApplicationTemplateItemRequestBuilder) {
+// ByApplicationTemplateIdString provides operations to manage the collection of applicationTemplate entities.
+func (m *ApplicationTemplatesRequestBuilder) ByApplicationTemplateIdString(applicationTemplateId string)(*ApplicationTemplateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

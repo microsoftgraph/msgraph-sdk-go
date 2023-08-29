@@ -39,8 +39,8 @@ type MobileAppsItemCategoriesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *MobileAppsItemCategoriesRequestBuilderGetQueryParameters
 }
-// ByMobileAppCategoryId provides operations to manage the categories property of the microsoft.graph.mobileApp entity.
-func (m *MobileAppsItemCategoriesRequestBuilder) ByMobileAppCategoryId(mobileAppCategoryId string)(*MobileAppsItemCategoriesMobileAppCategoryItemRequestBuilder) {
+// ByMobileAppCategoryIdString provides operations to manage the categories property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemCategoriesRequestBuilder) ByMobileAppCategoryIdString(mobileAppCategoryId string)(*MobileAppsItemCategoriesMobileAppCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

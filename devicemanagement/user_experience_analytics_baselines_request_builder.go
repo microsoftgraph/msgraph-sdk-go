@@ -46,8 +46,8 @@ type UserExperienceAnalyticsBaselinesRequestBuilderPostRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUserExperienceAnalyticsBaselineId provides operations to manage the userExperienceAnalyticsBaselines property of the microsoft.graph.deviceManagement entity.
-func (m *UserExperienceAnalyticsBaselinesRequestBuilder) ByUserExperienceAnalyticsBaselineId(userExperienceAnalyticsBaselineId string)(*UserExperienceAnalyticsBaselinesUserExperienceAnalyticsBaselineItemRequestBuilder) {
+// ByUserExperienceAnalyticsBaselineIdString provides operations to manage the userExperienceAnalyticsBaselines property of the microsoft.graph.deviceManagement entity.
+func (m *UserExperienceAnalyticsBaselinesRequestBuilder) ByUserExperienceAnalyticsBaselineIdString(userExperienceAnalyticsBaselineId string)(*UserExperienceAnalyticsBaselinesUserExperienceAnalyticsBaselineItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

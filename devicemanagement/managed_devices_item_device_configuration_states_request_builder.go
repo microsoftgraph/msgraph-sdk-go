@@ -46,8 +46,8 @@ type ManagedDevicesItemDeviceConfigurationStatesRequestBuilderPostRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceConfigurationStateId provides operations to manage the deviceConfigurationStates property of the microsoft.graph.managedDevice entity.
-func (m *ManagedDevicesItemDeviceConfigurationStatesRequestBuilder) ByDeviceConfigurationStateId(deviceConfigurationStateId string)(*ManagedDevicesItemDeviceConfigurationStatesDeviceConfigurationStateItemRequestBuilder) {
+// ByDeviceConfigurationStateIdString provides operations to manage the deviceConfigurationStates property of the microsoft.graph.managedDevice entity.
+func (m *ManagedDevicesItemDeviceConfigurationStatesRequestBuilder) ByDeviceConfigurationStateIdString(deviceConfigurationStateId string)(*ManagedDevicesItemDeviceConfigurationStatesDeviceConfigurationStateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

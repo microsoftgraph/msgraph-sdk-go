@@ -46,8 +46,8 @@ type EntitlementManagementResourceRequestsItemCatalogResourceRolesRequestBuilder
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAccessPackageResourceRoleId provides operations to manage the resourceRoles property of the microsoft.graph.accessPackageCatalog entity.
-func (m *EntitlementManagementResourceRequestsItemCatalogResourceRolesRequestBuilder) ByAccessPackageResourceRoleId(accessPackageResourceRoleId string)(*EntitlementManagementResourceRequestsItemCatalogResourceRolesAccessPackageResourceRoleItemRequestBuilder) {
+// ByAccessPackageResourceRoleIdString provides operations to manage the resourceRoles property of the microsoft.graph.accessPackageCatalog entity.
+func (m *EntitlementManagementResourceRequestsItemCatalogResourceRolesRequestBuilder) ByAccessPackageResourceRoleIdString(accessPackageResourceRoleId string)(*EntitlementManagementResourceRequestsItemCatalogResourceRolesAccessPackageResourceRoleItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

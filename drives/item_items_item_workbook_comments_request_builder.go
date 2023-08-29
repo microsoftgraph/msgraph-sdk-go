@@ -46,8 +46,8 @@ type ItemItemsItemWorkbookCommentsRequestBuilderPostRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByWorkbookCommentId provides operations to manage the comments property of the microsoft.graph.workbook entity.
-func (m *ItemItemsItemWorkbookCommentsRequestBuilder) ByWorkbookCommentId(workbookCommentId string)(*ItemItemsItemWorkbookCommentsWorkbookCommentItemRequestBuilder) {
+// ByWorkbookCommentIdString provides operations to manage the comments property of the microsoft.graph.workbook entity.
+func (m *ItemItemsItemWorkbookCommentsRequestBuilder) ByWorkbookCommentIdString(workbookCommentId string)(*ItemItemsItemWorkbookCommentsWorkbookCommentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

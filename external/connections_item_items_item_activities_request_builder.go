@@ -46,8 +46,8 @@ type ConnectionsItemItemsItemActivitiesRequestBuilderPostRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByExternalActivityId provides operations to manage the activities property of the microsoft.graph.externalConnectors.externalItem entity.
-func (m *ConnectionsItemItemsItemActivitiesRequestBuilder) ByExternalActivityId(externalActivityId string)(*ConnectionsItemItemsItemActivitiesExternalActivityItemRequestBuilder) {
+// ByExternalActivityIdString provides operations to manage the activities property of the microsoft.graph.externalConnectors.externalItem entity.
+func (m *ConnectionsItemItemsItemActivitiesRequestBuilder) ByExternalActivityIdString(externalActivityId string)(*ConnectionsItemItemsItemActivitiesExternalActivityItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

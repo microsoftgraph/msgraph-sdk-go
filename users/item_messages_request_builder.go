@@ -48,8 +48,8 @@ type ItemMessagesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByMessageId provides operations to manage the messages property of the microsoft.graph.user entity.
-func (m *ItemMessagesRequestBuilder) ByMessageId(messageId string)(*ItemMessagesMessageItemRequestBuilder) {
+// ByMessageIdString provides operations to manage the messages property of the microsoft.graph.user entity.
+func (m *ItemMessagesRequestBuilder) ByMessageIdString(messageId string)(*ItemMessagesMessageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

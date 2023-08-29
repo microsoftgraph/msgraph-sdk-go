@@ -46,8 +46,8 @@ type EntitlementManagementResourceRequestsItemCatalogResourceScopesRequestBuilde
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAccessPackageResourceScopeId provides operations to manage the resourceScopes property of the microsoft.graph.accessPackageCatalog entity.
-func (m *EntitlementManagementResourceRequestsItemCatalogResourceScopesRequestBuilder) ByAccessPackageResourceScopeId(accessPackageResourceScopeId string)(*EntitlementManagementResourceRequestsItemCatalogResourceScopesAccessPackageResourceScopeItemRequestBuilder) {
+// ByAccessPackageResourceScopeIdString provides operations to manage the resourceScopes property of the microsoft.graph.accessPackageCatalog entity.
+func (m *EntitlementManagementResourceRequestsItemCatalogResourceScopesRequestBuilder) ByAccessPackageResourceScopeIdString(accessPackageResourceScopeId string)(*EntitlementManagementResourceRequestsItemCatalogResourceScopesAccessPackageResourceScopeItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

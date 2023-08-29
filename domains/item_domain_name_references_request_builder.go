@@ -39,8 +39,8 @@ type ItemDomainNameReferencesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemDomainNameReferencesRequestBuilderGetQueryParameters
 }
-// ByDirectoryObjectId provides operations to manage the domainNameReferences property of the microsoft.graph.domain entity.
-func (m *ItemDomainNameReferencesRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemDomainNameReferencesDirectoryObjectItemRequestBuilder) {
+// ByDirectoryObjectIdString provides operations to manage the domainNameReferences property of the microsoft.graph.domain entity.
+func (m *ItemDomainNameReferencesRequestBuilder) ByDirectoryObjectIdString(directoryObjectId string)(*ItemDomainNameReferencesDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

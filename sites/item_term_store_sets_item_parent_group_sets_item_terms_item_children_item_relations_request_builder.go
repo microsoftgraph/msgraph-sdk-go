@@ -46,8 +46,8 @@ type ItemTermStoreSetsItemParentGroupSetsItemTermsItemChildrenItemRelationsReque
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByRelationId provides operations to manage the relations property of the microsoft.graph.termStore.term entity.
-func (m *ItemTermStoreSetsItemParentGroupSetsItemTermsItemChildrenItemRelationsRequestBuilder) ByRelationId(relationId string)(*ItemTermStoreSetsItemParentGroupSetsItemTermsItemChildrenItemRelationsRelationItemRequestBuilder) {
+// ByRelationIdString provides operations to manage the relations property of the microsoft.graph.termStore.term entity.
+func (m *ItemTermStoreSetsItemParentGroupSetsItemTermsItemChildrenItemRelationsRequestBuilder) ByRelationIdString(relationId string)(*ItemTermStoreSetsItemParentGroupSetsItemTermsItemChildrenItemRelationsRelationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

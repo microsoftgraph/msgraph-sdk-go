@@ -44,8 +44,8 @@ type ItemCalendarsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByCalendarId provides operations to manage the calendars property of the microsoft.graph.user entity.
-func (m *ItemCalendarsRequestBuilder) ByCalendarId(calendarId string)(*ItemCalendarsCalendarItemRequestBuilder) {
+// ByCalendarIdString provides operations to manage the calendars property of the microsoft.graph.user entity.
+func (m *ItemCalendarsRequestBuilder) ByCalendarIdString(calendarId string)(*ItemCalendarsCalendarItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -46,8 +46,8 @@ type DelegatedAdminRelationshipsItemRequestsRequestBuilderPostRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDelegatedAdminRelationshipRequestId provides operations to manage the requests property of the microsoft.graph.delegatedAdminRelationship entity.
-func (m *DelegatedAdminRelationshipsItemRequestsRequestBuilder) ByDelegatedAdminRelationshipRequestId(delegatedAdminRelationshipRequestId string)(*DelegatedAdminRelationshipsItemRequestsDelegatedAdminRelationshipRequestItemRequestBuilder) {
+// ByDelegatedAdminRelationshipRequestIdString provides operations to manage the requests property of the microsoft.graph.delegatedAdminRelationship entity.
+func (m *DelegatedAdminRelationshipsItemRequestsRequestBuilder) ByDelegatedAdminRelationshipRequestIdString(delegatedAdminRelationshipRequestId string)(*DelegatedAdminRelationshipsItemRequestsDelegatedAdminRelationshipRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

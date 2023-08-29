@@ -46,8 +46,8 @@ type Oauth2PermissionGrantsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByOAuth2PermissionGrantId provides operations to manage the collection of oAuth2PermissionGrant entities.
-func (m *Oauth2PermissionGrantsRequestBuilder) ByOAuth2PermissionGrantId(oAuth2PermissionGrantId string)(*OAuth2PermissionGrantItemRequestBuilder) {
+// ByOAuth2PermissionGrantIdString provides operations to manage the collection of oAuth2PermissionGrant entities.
+func (m *Oauth2PermissionGrantsRequestBuilder) ByOAuth2PermissionGrantIdString(oAuth2PermissionGrantId string)(*OAuth2PermissionGrantItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

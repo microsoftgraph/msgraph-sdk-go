@@ -46,8 +46,8 @@ type AttackSimulationSimulationAutomationsItemRunsRequestBuilderPostRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BySimulationAutomationRunId provides operations to manage the runs property of the microsoft.graph.simulationAutomation entity.
-func (m *AttackSimulationSimulationAutomationsItemRunsRequestBuilder) BySimulationAutomationRunId(simulationAutomationRunId string)(*AttackSimulationSimulationAutomationsItemRunsSimulationAutomationRunItemRequestBuilder) {
+// BySimulationAutomationRunIdString provides operations to manage the runs property of the microsoft.graph.simulationAutomation entity.
+func (m *AttackSimulationSimulationAutomationsItemRunsRequestBuilder) BySimulationAutomationRunIdString(simulationAutomationRunId string)(*AttackSimulationSimulationAutomationsItemRunsSimulationAutomationRunItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

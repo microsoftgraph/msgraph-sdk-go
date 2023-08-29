@@ -46,8 +46,8 @@ type UsersItemAssignmentsItemSubmissionsItemOutcomesRequestBuilderPostRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByEducationOutcomeId provides operations to manage the outcomes property of the microsoft.graph.educationSubmission entity.
-func (m *UsersItemAssignmentsItemSubmissionsItemOutcomesRequestBuilder) ByEducationOutcomeId(educationOutcomeId string)(*UsersItemAssignmentsItemSubmissionsItemOutcomesEducationOutcomeItemRequestBuilder) {
+// ByEducationOutcomeIdString provides operations to manage the outcomes property of the microsoft.graph.educationSubmission entity.
+func (m *UsersItemAssignmentsItemSubmissionsItemOutcomesRequestBuilder) ByEducationOutcomeIdString(educationOutcomeId string)(*UsersItemAssignmentsItemSubmissionsItemOutcomesEducationOutcomeItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

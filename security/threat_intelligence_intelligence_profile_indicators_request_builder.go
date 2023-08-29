@@ -46,8 +46,8 @@ type ThreatIntelligenceIntelligenceProfileIndicatorsRequestBuilderPostRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByIntelligenceProfileIndicatorId provides operations to manage the intelligenceProfileIndicators property of the microsoft.graph.security.threatIntelligence entity.
-func (m *ThreatIntelligenceIntelligenceProfileIndicatorsRequestBuilder) ByIntelligenceProfileIndicatorId(intelligenceProfileIndicatorId string)(*ThreatIntelligenceIntelligenceProfileIndicatorsIntelligenceProfileIndicatorItemRequestBuilder) {
+// ByIntelligenceProfileIndicatorIdString provides operations to manage the intelligenceProfileIndicators property of the microsoft.graph.security.threatIntelligence entity.
+func (m *ThreatIntelligenceIntelligenceProfileIndicatorsRequestBuilder) ByIntelligenceProfileIndicatorIdString(intelligenceProfileIndicatorId string)(*ThreatIntelligenceIntelligenceProfileIndicatorsIntelligenceProfileIndicatorItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

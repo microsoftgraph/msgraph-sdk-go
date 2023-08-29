@@ -39,8 +39,8 @@ type ItemManagedAppRegistrationsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemManagedAppRegistrationsRequestBuilderGetQueryParameters
 }
-// ByManagedAppRegistrationId provides operations to manage the managedAppRegistrations property of the microsoft.graph.user entity.
-func (m *ItemManagedAppRegistrationsRequestBuilder) ByManagedAppRegistrationId(managedAppRegistrationId string)(*ItemManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) {
+// ByManagedAppRegistrationIdString provides operations to manage the managedAppRegistrations property of the microsoft.graph.user entity.
+func (m *ItemManagedAppRegistrationsRequestBuilder) ByManagedAppRegistrationIdString(managedAppRegistrationId string)(*ItemManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

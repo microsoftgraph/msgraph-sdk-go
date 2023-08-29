@@ -46,8 +46,8 @@ type CertificateBasedAuthConfigurationRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByCertificateBasedAuthConfigurationId provides operations to manage the collection of certificateBasedAuthConfiguration entities.
-func (m *CertificateBasedAuthConfigurationRequestBuilder) ByCertificateBasedAuthConfigurationId(certificateBasedAuthConfigurationId string)(*CertificateBasedAuthConfigurationItemRequestBuilder) {
+// ByCertificateBasedAuthConfigurationIdString provides operations to manage the collection of certificateBasedAuthConfiguration entities.
+func (m *CertificateBasedAuthConfigurationRequestBuilder) ByCertificateBasedAuthConfigurationIdString(certificateBasedAuthConfigurationId string)(*CertificateBasedAuthConfigurationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -39,8 +39,8 @@ type ItemClaimsMappingPoliciesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemClaimsMappingPoliciesRequestBuilderGetQueryParameters
 }
-// ByClaimsMappingPolicyId gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.servicePrincipals.item.claimsMappingPolicies.item collection
-func (m *ItemClaimsMappingPoliciesRequestBuilder) ByClaimsMappingPolicyId(claimsMappingPolicyId string)(*ItemClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) {
+// ByClaimsMappingPolicyIdString gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.servicePrincipals.item.claimsMappingPolicies.item collection
+func (m *ItemClaimsMappingPoliciesRequestBuilder) ByClaimsMappingPolicyIdString(claimsMappingPolicyId string)(*ItemClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -44,8 +44,8 @@ type ItemCalendarEventsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByEventId provides operations to manage the events property of the microsoft.graph.calendar entity.
-func (m *ItemCalendarEventsRequestBuilder) ByEventId(eventId string)(*ItemCalendarEventsEventItemRequestBuilder) {
+// ByEventIdString provides operations to manage the events property of the microsoft.graph.calendar entity.
+func (m *ItemCalendarEventsRequestBuilder) ByEventIdString(eventId string)(*ItemCalendarEventsEventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

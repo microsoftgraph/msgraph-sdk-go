@@ -46,8 +46,8 @@ type RoleManagementPoliciesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUnifiedRoleManagementPolicyId provides operations to manage the roleManagementPolicies property of the microsoft.graph.policyRoot entity.
-func (m *RoleManagementPoliciesRequestBuilder) ByUnifiedRoleManagementPolicyId(unifiedRoleManagementPolicyId string)(*RoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilder) {
+// ByUnifiedRoleManagementPolicyIdString provides operations to manage the roleManagementPolicies property of the microsoft.graph.policyRoot entity.
+func (m *RoleManagementPoliciesRequestBuilder) ByUnifiedRoleManagementPolicyIdString(unifiedRoleManagementPolicyId string)(*RoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

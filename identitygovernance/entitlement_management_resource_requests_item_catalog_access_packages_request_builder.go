@@ -39,8 +39,8 @@ type EntitlementManagementResourceRequestsItemCatalogAccessPackagesRequestBuilde
     // Request query parameters
     QueryParameters *EntitlementManagementResourceRequestsItemCatalogAccessPackagesRequestBuilderGetQueryParameters
 }
-// ByAccessPackageId provides operations to manage the accessPackages property of the microsoft.graph.accessPackageCatalog entity.
-func (m *EntitlementManagementResourceRequestsItemCatalogAccessPackagesRequestBuilder) ByAccessPackageId(accessPackageId string)(*EntitlementManagementResourceRequestsItemCatalogAccessPackagesAccessPackageItemRequestBuilder) {
+// ByAccessPackageIdString provides operations to manage the accessPackages property of the microsoft.graph.accessPackageCatalog entity.
+func (m *EntitlementManagementResourceRequestsItemCatalogAccessPackagesRequestBuilder) ByAccessPackageIdString(accessPackageId string)(*EntitlementManagementResourceRequestsItemCatalogAccessPackagesAccessPackageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

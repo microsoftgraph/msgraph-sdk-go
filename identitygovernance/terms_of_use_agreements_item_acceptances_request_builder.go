@@ -46,8 +46,8 @@ type TermsOfUseAgreementsItemAcceptancesRequestBuilderPostRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAgreementAcceptanceId provides operations to manage the acceptances property of the microsoft.graph.agreement entity.
-func (m *TermsOfUseAgreementsItemAcceptancesRequestBuilder) ByAgreementAcceptanceId(agreementAcceptanceId string)(*TermsOfUseAgreementsItemAcceptancesAgreementAcceptanceItemRequestBuilder) {
+// ByAgreementAcceptanceIdString provides operations to manage the acceptances property of the microsoft.graph.agreement entity.
+func (m *TermsOfUseAgreementsItemAcceptancesRequestBuilder) ByAgreementAcceptanceIdString(agreementAcceptanceId string)(*TermsOfUseAgreementsItemAcceptancesAgreementAcceptanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -39,8 +39,8 @@ type BitlockerRecoveryKeysRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *BitlockerRecoveryKeysRequestBuilderGetQueryParameters
 }
-// ByBitlockerRecoveryKeyId provides operations to manage the recoveryKeys property of the microsoft.graph.bitlocker entity.
-func (m *BitlockerRecoveryKeysRequestBuilder) ByBitlockerRecoveryKeyId(bitlockerRecoveryKeyId string)(*BitlockerRecoveryKeysBitlockerRecoveryKeyItemRequestBuilder) {
+// ByBitlockerRecoveryKeyIdString provides operations to manage the recoveryKeys property of the microsoft.graph.bitlocker entity.
+func (m *BitlockerRecoveryKeysRequestBuilder) ByBitlockerRecoveryKeyIdString(bitlockerRecoveryKeyId string)(*BitlockerRecoveryKeysBitlockerRecoveryKeyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

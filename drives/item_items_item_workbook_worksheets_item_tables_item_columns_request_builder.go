@@ -50,8 +50,8 @@ type ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilderPostReque
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilder) Add()(*ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsAddRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemTablesItemColumnsAddRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByWorkbookTableColumnId provides operations to manage the columns property of the microsoft.graph.workbookTable entity.
-func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilder) ByWorkbookTableColumnId(workbookTableColumnId string)(*ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsWorkbookTableColumnItemRequestBuilder) {
+// ByWorkbookTableColumnIdString provides operations to manage the columns property of the microsoft.graph.workbookTable entity.
+func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilder) ByWorkbookTableColumnIdString(workbookTableColumnId string)(*ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsWorkbookTableColumnItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -81,7 +81,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilder) Cou
 // Get retrieve a list of tablecolumn objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/tablecolumn-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/table-list-columns?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableColumnCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

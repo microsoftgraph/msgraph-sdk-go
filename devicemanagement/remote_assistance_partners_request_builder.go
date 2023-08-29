@@ -46,8 +46,8 @@ type RemoteAssistancePartnersRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByRemoteAssistancePartnerId provides operations to manage the remoteAssistancePartners property of the microsoft.graph.deviceManagement entity.
-func (m *RemoteAssistancePartnersRequestBuilder) ByRemoteAssistancePartnerId(remoteAssistancePartnerId string)(*RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) {
+// ByRemoteAssistancePartnerIdString provides operations to manage the remoteAssistancePartners property of the microsoft.graph.deviceManagement entity.
+func (m *RemoteAssistancePartnersRequestBuilder) ByRemoteAssistancePartnerIdString(remoteAssistancePartnerId string)(*RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

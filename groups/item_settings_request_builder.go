@@ -46,8 +46,8 @@ type ItemSettingsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByGroupSettingId provides operations to manage the settings property of the microsoft.graph.group entity.
-func (m *ItemSettingsRequestBuilder) ByGroupSettingId(groupSettingId string)(*ItemSettingsGroupSettingItemRequestBuilder) {
+// ByGroupSettingIdString provides operations to manage the settings property of the microsoft.graph.group entity.
+func (m *ItemSettingsRequestBuilder) ByGroupSettingIdString(groupSettingId string)(*ItemSettingsGroupSettingItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

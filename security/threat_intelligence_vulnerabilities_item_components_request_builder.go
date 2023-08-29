@@ -46,8 +46,8 @@ type ThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilderPostRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByVulnerabilityComponentId provides operations to manage the components property of the microsoft.graph.security.vulnerability entity.
-func (m *ThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilder) ByVulnerabilityComponentId(vulnerabilityComponentId string)(*ThreatIntelligenceVulnerabilitiesItemComponentsVulnerabilityComponentItemRequestBuilder) {
+// ByVulnerabilityComponentIdString provides operations to manage the components property of the microsoft.graph.security.vulnerability entity.
+func (m *ThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilder) ByVulnerabilityComponentIdString(vulnerabilityComponentId string)(*ThreatIntelligenceVulnerabilitiesItemComponentsVulnerabilityComponentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

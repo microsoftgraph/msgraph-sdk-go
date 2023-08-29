@@ -46,8 +46,8 @@ type ItemSitesItemPermissionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByPermissionId provides operations to manage the permissions property of the microsoft.graph.site entity.
-func (m *ItemSitesItemPermissionsRequestBuilder) ByPermissionId(permissionId string)(*ItemSitesItemPermissionsPermissionItemRequestBuilder) {
+// ByPermissionIdString provides operations to manage the permissions property of the microsoft.graph.site entity.
+func (m *ItemSitesItemPermissionsRequestBuilder) ByPermissionIdString(permissionId string)(*ItemSitesItemPermissionsPermissionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -54,8 +54,8 @@ func (m *ItemContentTypesRequestBuilder) AddCopy()(*ItemContentTypesAddCopyReque
 func (m *ItemContentTypesRequestBuilder) AddCopyFromContentTypeHub()(*ItemContentTypesAddCopyFromContentTypeHubRequestBuilder) {
     return NewItemContentTypesAddCopyFromContentTypeHubRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByContentTypeId provides operations to manage the contentTypes property of the microsoft.graph.site entity.
-func (m *ItemContentTypesRequestBuilder) ByContentTypeId(contentTypeId string)(*ItemContentTypesContentTypeItemRequestBuilder) {
+// ByContentTypeIdString provides operations to manage the contentTypes property of the microsoft.graph.site entity.
+func (m *ItemContentTypesRequestBuilder) ByContentTypeIdString(contentTypeId string)(*ItemContentTypesContentTypeItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

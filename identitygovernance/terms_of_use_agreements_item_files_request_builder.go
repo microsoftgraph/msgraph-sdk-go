@@ -46,8 +46,8 @@ type TermsOfUseAgreementsItemFilesRequestBuilderPostRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAgreementFileLocalizationId provides operations to manage the files property of the microsoft.graph.agreement entity.
-func (m *TermsOfUseAgreementsItemFilesRequestBuilder) ByAgreementFileLocalizationId(agreementFileLocalizationId string)(*TermsOfUseAgreementsItemFilesAgreementFileLocalizationItemRequestBuilder) {
+// ByAgreementFileLocalizationIdString provides operations to manage the files property of the microsoft.graph.agreement entity.
+func (m *TermsOfUseAgreementsItemFilesRequestBuilder) ByAgreementFileLocalizationIdString(agreementFileLocalizationId string)(*TermsOfUseAgreementsItemFilesAgreementFileLocalizationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -39,8 +39,8 @@ type ItemRegisteredDevicesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemRegisteredDevicesRequestBuilderGetQueryParameters
 }
-// ByDirectoryObjectId provides operations to manage the registeredDevices property of the microsoft.graph.user entity.
-func (m *ItemRegisteredDevicesRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemRegisteredDevicesDirectoryObjectItemRequestBuilder) {
+// ByDirectoryObjectIdString provides operations to manage the registeredDevices property of the microsoft.graph.user entity.
+func (m *ItemRegisteredDevicesRequestBuilder) ByDirectoryObjectIdString(directoryObjectId string)(*ItemRegisteredDevicesDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

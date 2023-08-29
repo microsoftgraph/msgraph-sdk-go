@@ -46,8 +46,8 @@ type MeAssignmentsItemSubmissionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByEducationSubmissionId provides operations to manage the submissions property of the microsoft.graph.educationAssignment entity.
-func (m *MeAssignmentsItemSubmissionsRequestBuilder) ByEducationSubmissionId(educationSubmissionId string)(*MeAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilder) {
+// ByEducationSubmissionIdString provides operations to manage the submissions property of the microsoft.graph.educationAssignment entity.
+func (m *MeAssignmentsItemSubmissionsRequestBuilder) ByEducationSubmissionIdString(educationSubmissionId string)(*MeAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

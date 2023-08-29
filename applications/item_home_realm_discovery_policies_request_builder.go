@@ -39,8 +39,8 @@ type ItemHomeRealmDiscoveryPoliciesRequestBuilderGetRequestConfiguration struct 
     // Request query parameters
     QueryParameters *ItemHomeRealmDiscoveryPoliciesRequestBuilderGetQueryParameters
 }
-// ByHomeRealmDiscoveryPolicyId provides operations to manage the homeRealmDiscoveryPolicies property of the microsoft.graph.application entity.
-func (m *ItemHomeRealmDiscoveryPoliciesRequestBuilder) ByHomeRealmDiscoveryPolicyId(homeRealmDiscoveryPolicyId string)(*ItemHomeRealmDiscoveryPoliciesHomeRealmDiscoveryPolicyItemRequestBuilder) {
+// ByHomeRealmDiscoveryPolicyIdString provides operations to manage the homeRealmDiscoveryPolicies property of the microsoft.graph.application entity.
+func (m *ItemHomeRealmDiscoveryPoliciesRequestBuilder) ByHomeRealmDiscoveryPolicyIdString(homeRealmDiscoveryPolicyId string)(*ItemHomeRealmDiscoveryPoliciesHomeRealmDiscoveryPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

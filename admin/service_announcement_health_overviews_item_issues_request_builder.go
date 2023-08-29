@@ -46,8 +46,8 @@ type ServiceAnnouncementHealthOverviewsItemIssuesRequestBuilderPostRequestConfig
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByServiceHealthIssueId provides operations to manage the issues property of the microsoft.graph.serviceHealth entity.
-func (m *ServiceAnnouncementHealthOverviewsItemIssuesRequestBuilder) ByServiceHealthIssueId(serviceHealthIssueId string)(*ServiceAnnouncementHealthOverviewsItemIssuesServiceHealthIssueItemRequestBuilder) {
+// ByServiceHealthIssueIdString provides operations to manage the issues property of the microsoft.graph.serviceHealth entity.
+func (m *ServiceAnnouncementHealthOverviewsItemIssuesRequestBuilder) ByServiceHealthIssueIdString(serviceHealthIssueId string)(*ServiceAnnouncementHealthOverviewsItemIssuesServiceHealthIssueItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

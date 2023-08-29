@@ -46,8 +46,8 @@ type SharesItemJobsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByPrintJobId provides operations to manage the jobs property of the microsoft.graph.printerBase entity.
-func (m *SharesItemJobsRequestBuilder) ByPrintJobId(printJobId string)(*SharesItemJobsPrintJobItemRequestBuilder) {
+// ByPrintJobIdString provides operations to manage the jobs property of the microsoft.graph.printerBase entity.
+func (m *SharesItemJobsRequestBuilder) ByPrintJobIdString(printJobId string)(*SharesItemJobsPrintJobItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

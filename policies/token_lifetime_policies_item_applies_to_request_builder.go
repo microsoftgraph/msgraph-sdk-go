@@ -39,8 +39,8 @@ type TokenLifetimePoliciesItemAppliesToRequestBuilderGetRequestConfiguration str
     // Request query parameters
     QueryParameters *TokenLifetimePoliciesItemAppliesToRequestBuilderGetQueryParameters
 }
-// ByDirectoryObjectId provides operations to manage the appliesTo property of the microsoft.graph.stsPolicy entity.
-func (m *TokenLifetimePoliciesItemAppliesToRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*TokenLifetimePoliciesItemAppliesToDirectoryObjectItemRequestBuilder) {
+// ByDirectoryObjectIdString provides operations to manage the appliesTo property of the microsoft.graph.stsPolicy entity.
+func (m *TokenLifetimePoliciesItemAppliesToRequestBuilder) ByDirectoryObjectIdString(directoryObjectId string)(*TokenLifetimePoliciesItemAppliesToDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

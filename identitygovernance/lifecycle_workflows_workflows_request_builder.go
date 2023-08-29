@@ -46,8 +46,8 @@ type LifecycleWorkflowsWorkflowsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByWorkflowId provides operations to manage the workflows property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
-func (m *LifecycleWorkflowsWorkflowsRequestBuilder) ByWorkflowId(workflowId string)(*LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) {
+// ByWorkflowIdString provides operations to manage the workflows property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
+func (m *LifecycleWorkflowsWorkflowsRequestBuilder) ByWorkflowIdString(workflowId string)(*LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

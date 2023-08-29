@@ -46,8 +46,8 @@ type TargetedManagedAppConfigurationsItemAppsRequestBuilderPostRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByManagedMobileAppId provides operations to manage the apps property of the microsoft.graph.targetedManagedAppConfiguration entity.
-func (m *TargetedManagedAppConfigurationsItemAppsRequestBuilder) ByManagedMobileAppId(managedMobileAppId string)(*TargetedManagedAppConfigurationsItemAppsManagedMobileAppItemRequestBuilder) {
+// ByManagedMobileAppIdString provides operations to manage the apps property of the microsoft.graph.targetedManagedAppConfiguration entity.
+func (m *TargetedManagedAppConfigurationsItemAppsRequestBuilder) ByManagedMobileAppIdString(managedMobileAppId string)(*TargetedManagedAppConfigurationsItemAppsManagedMobileAppItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
