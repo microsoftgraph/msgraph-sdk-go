@@ -118,3 +118,7 @@ func (m *LifecycleWorkflowsWorkflowsItemVersionsItemCreatedByMailboxSettingsRequ
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *LifecycleWorkflowsWorkflowsItemVersionsItemCreatedByMailboxSettingsRequestBuilder) WithUrl(rawUrl string)(*LifecycleWorkflowsWorkflowsItemVersionsItemCreatedByMailboxSettingsRequestBuilder) {
+    return NewLifecycleWorkflowsWorkflowsItemVersionsItemCreatedByMailboxSettingsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

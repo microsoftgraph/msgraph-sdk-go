@@ -153,3 +153,7 @@ func (m *TeamsAppSettingsRequestBuilder) ToPatchRequestInformation(ctx context.C
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *TeamsAppSettingsRequestBuilder) WithUrl(rawUrl string)(*TeamsAppSettingsRequestBuilder) {
+    return NewTeamsAppSettingsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

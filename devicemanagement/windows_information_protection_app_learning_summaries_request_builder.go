@@ -151,3 +151,7 @@ func (m *WindowsInformationProtectionAppLearningSummariesRequestBuilder) ToPostR
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *WindowsInformationProtectionAppLearningSummariesRequestBuilder) WithUrl(rawUrl string)(*WindowsInformationProtectionAppLearningSummariesRequestBuilder) {
+    return NewWindowsInformationProtectionAppLearningSummariesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

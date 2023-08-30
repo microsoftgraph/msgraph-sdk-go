@@ -18,7 +18,7 @@ type ItemMembersConversationMemberItemRequestBuilderDeleteRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemMembersConversationMemberItemRequestBuilderGetQueryParameters retrieve a conversationMember from a chat or channel.
+// ItemMembersConversationMemberItemRequestBuilderGetQueryParameters retrieve a conversationMember from a chat.
 type ItemMembersConversationMemberItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,10 +73,10 @@ func (m *ItemMembersConversationMemberItemRequestBuilder) Delete(ctx context.Con
     }
     return nil
 }
-// Get retrieve a conversationMember from a chat or channel.
+// Get retrieve a conversationMember from a chat.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/conversationmember-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/chat-get-members?view=graph-rest-1.0
 func (m *ItemMembersConversationMemberItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMembersConversationMemberItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -126,7 +126,7 @@ func (m *ItemMembersConversationMemberItemRequestBuilder) ToDeleteRequestInforma
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve a conversationMember from a chat or channel.
+// ToGetRequestInformation retrieve a conversationMember from a chat.
 func (m *ItemMembersConversationMemberItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMembersConversationMemberItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -158,4 +158,8 @@ func (m *ItemMembersConversationMemberItemRequestBuilder) ToPatchRequestInformat
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemMembersConversationMemberItemRequestBuilder) WithUrl(rawUrl string)(*ItemMembersConversationMemberItemRequestBuilder) {
+    return NewItemMembersConversationMemberItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -145,3 +145,7 @@ func (m *TroubleshootingEventsRequestBuilder) ToPostRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *TroubleshootingEventsRequestBuilder) WithUrl(rawUrl string)(*TroubleshootingEventsRequestBuilder) {
+    return NewTroubleshootingEventsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

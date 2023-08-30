@@ -118,3 +118,7 @@ func (m *ItemInvitedUserMailboxSettingsRequestBuilder) ToPatchRequestInformation
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemInvitedUserMailboxSettingsRequestBuilder) WithUrl(rawUrl string)(*ItemInvitedUserMailboxSettingsRequestBuilder) {
+    return NewItemInvitedUserMailboxSettingsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

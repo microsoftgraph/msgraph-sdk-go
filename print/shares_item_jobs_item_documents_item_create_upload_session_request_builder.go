@@ -70,3 +70,7 @@ func (m *SharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilder) ToPos
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *SharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilder) WithUrl(rawUrl string)(*SharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilder) {
+    return NewSharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

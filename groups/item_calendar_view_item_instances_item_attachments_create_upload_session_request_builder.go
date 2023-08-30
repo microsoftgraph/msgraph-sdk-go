@@ -70,3 +70,7 @@ func (m *ItemCalendarViewItemInstancesItemAttachmentsCreateUploadSessionRequestB
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemCalendarViewItemInstancesItemAttachmentsCreateUploadSessionRequestBuilder) WithUrl(rawUrl string)(*ItemCalendarViewItemInstancesItemAttachmentsCreateUploadSessionRequestBuilder) {
+    return NewItemCalendarViewItemInstancesItemAttachmentsCreateUploadSessionRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

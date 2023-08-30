@@ -164,3 +164,7 @@ func (m *ContactsRequestBuilder) ToPostRequestInformation(ctx context.Context, b
 func (m *ContactsRequestBuilder) ValidateProperties()(*ValidatePropertiesRequestBuilder) {
     return NewValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ContactsRequestBuilder) WithUrl(rawUrl string)(*ContactsRequestBuilder) {
+    return NewContactsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

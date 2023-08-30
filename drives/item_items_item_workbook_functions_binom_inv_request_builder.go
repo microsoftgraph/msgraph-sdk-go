@@ -67,3 +67,7 @@ func (m *ItemItemsItemWorkbookFunctionsBinom_InvRequestBuilder) ToPostRequestInf
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemItemsItemWorkbookFunctionsBinom_InvRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookFunctionsBinom_InvRequestBuilder) {
+    return NewItemItemsItemWorkbookFunctionsBinom_InvRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

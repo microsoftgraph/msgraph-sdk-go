@@ -70,3 +70,7 @@ func (m *ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsCreateUploadS
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsCreateUploadSessionRequestBuilder) WithUrl(rawUrl string)(*ItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsCreateUploadSessionRequestBuilder) {
+    return NewItemMailFoldersItemChildFoldersItemMessagesItemAttachmentsCreateUploadSessionRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -65,3 +65,7 @@ func (m *ItemJoinedTeamsItemCloneRequestBuilder) ToPostRequestInformation(ctx co
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemJoinedTeamsItemCloneRequestBuilder) WithUrl(rawUrl string)(*ItemJoinedTeamsItemCloneRequestBuilder) {
+    return NewItemJoinedTeamsItemCloneRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

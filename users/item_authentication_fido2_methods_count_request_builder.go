@@ -74,3 +74,7 @@ func (m *ItemAuthenticationFido2MethodsCountRequestBuilder) ToGetRequestInformat
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemAuthenticationFido2MethodsCountRequestBuilder) WithUrl(rawUrl string)(*ItemAuthenticationFido2MethodsCountRequestBuilder) {
+    return NewItemAuthenticationFido2MethodsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

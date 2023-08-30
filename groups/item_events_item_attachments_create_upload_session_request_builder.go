@@ -70,3 +70,7 @@ func (m *ItemEventsItemAttachmentsCreateUploadSessionRequestBuilder) ToPostReque
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemEventsItemAttachmentsCreateUploadSessionRequestBuilder) WithUrl(rawUrl string)(*ItemEventsItemAttachmentsCreateUploadSessionRequestBuilder) {
+    return NewItemEventsItemAttachmentsCreateUploadSessionRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

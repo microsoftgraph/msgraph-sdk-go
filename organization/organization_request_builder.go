@@ -164,3 +164,7 @@ func (m *OrganizationRequestBuilder) ToPostRequestInformation(ctx context.Contex
 func (m *OrganizationRequestBuilder) ValidateProperties()(*ValidatePropertiesRequestBuilder) {
     return NewValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *OrganizationRequestBuilder) WithUrl(rawUrl string)(*OrganizationRequestBuilder) {
+    return NewOrganizationRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

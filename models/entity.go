@@ -1479,7 +1479,7 @@ func (m *Entity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     }
     return res
 }
-// GetId gets the id property value. The unique idenfier for an entity. Read-only.
+// GetId gets the id property value. The unique identifier for an entity. Read-only.
 func (m *Entity) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -1534,7 +1534,7 @@ func (m *Entity) SetAdditionalData(value map[string]any)() {
 func (m *Entity) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetId sets the id property value. The unique idenfier for an entity. Read-only.
+// SetId sets the id property value. The unique identifier for an entity. Read-only.
 func (m *Entity) SetId(value *string)() {
     err := m.GetBackingStore().Set("id", value)
     if err != nil {

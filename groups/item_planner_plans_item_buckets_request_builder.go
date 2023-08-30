@@ -148,3 +148,7 @@ func (m *ItemPlannerPlansItemBucketsRequestBuilder) ToPostRequestInformation(ctx
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemPlannerPlansItemBucketsRequestBuilder) WithUrl(rawUrl string)(*ItemPlannerPlansItemBucketsRequestBuilder) {
+    return NewItemPlannerPlansItemBucketsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

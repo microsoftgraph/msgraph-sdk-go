@@ -157,3 +157,7 @@ func (m *ItemFileLocalizationsAgreementFileLocalizationItemRequestBuilder) ToPat
 func (m *ItemFileLocalizationsAgreementFileLocalizationItemRequestBuilder) Versions()(*ItemFileLocalizationsItemVersionsRequestBuilder) {
     return NewItemFileLocalizationsItemVersionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemFileLocalizationsAgreementFileLocalizationItemRequestBuilder) WithUrl(rawUrl string)(*ItemFileLocalizationsAgreementFileLocalizationItemRequestBuilder) {
+    return NewItemFileLocalizationsAgreementFileLocalizationItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -1573,6 +1573,10 @@ func (m *ItemItemsItemWorkbookFunctionsRequestBuilder) WeekNum()(*ItemItemsItemW
 func (m *ItemItemsItemWorkbookFunctionsRequestBuilder) Weibull_Dist()(*ItemItemsItemWorkbookFunctionsWeibull_DistRequestBuilder) {
     return NewItemItemsItemWorkbookFunctionsWeibull_DistRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemItemsItemWorkbookFunctionsRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookFunctionsRequestBuilder) {
+    return NewItemItemsItemWorkbookFunctionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}
 // WorkDay provides operations to call the workDay method.
 func (m *ItemItemsItemWorkbookFunctionsRequestBuilder) WorkDay()(*ItemItemsItemWorkbookFunctionsWorkDayRequestBuilder) {
     return NewItemItemsItemWorkbookFunctionsWorkDayRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

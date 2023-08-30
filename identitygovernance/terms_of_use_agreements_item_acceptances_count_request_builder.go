@@ -74,3 +74,7 @@ func (m *TermsOfUseAgreementsItemAcceptancesCountRequestBuilder) ToGetRequestInf
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *TermsOfUseAgreementsItemAcceptancesCountRequestBuilder) WithUrl(rawUrl string)(*TermsOfUseAgreementsItemAcceptancesCountRequestBuilder) {
+    return NewTermsOfUseAgreementsItemAcceptancesCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

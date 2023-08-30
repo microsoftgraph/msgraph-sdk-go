@@ -74,3 +74,7 @@ func (m *MdmWindowsInformationProtectionPoliciesItemAssignmentsCountRequestBuild
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *MdmWindowsInformationProtectionPoliciesItemAssignmentsCountRequestBuilder) WithUrl(rawUrl string)(*MdmWindowsInformationProtectionPoliciesItemAssignmentsCountRequestBuilder) {
+    return NewMdmWindowsInformationProtectionPoliciesItemAssignmentsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

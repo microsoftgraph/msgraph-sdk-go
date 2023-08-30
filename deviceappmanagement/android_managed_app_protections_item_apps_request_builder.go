@@ -145,3 +145,7 @@ func (m *AndroidManagedAppProtectionsItemAppsRequestBuilder) ToPostRequestInform
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AndroidManagedAppProtectionsItemAppsRequestBuilder) WithUrl(rawUrl string)(*AndroidManagedAppProtectionsItemAppsRequestBuilder) {
+    return NewAndroidManagedAppProtectionsItemAppsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

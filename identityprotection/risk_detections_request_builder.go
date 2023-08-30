@@ -148,3 +148,7 @@ func (m *RiskDetectionsRequestBuilder) ToPostRequestInformation(ctx context.Cont
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *RiskDetectionsRequestBuilder) WithUrl(rawUrl string)(*RiskDetectionsRequestBuilder) {
+    return NewRiskDetectionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

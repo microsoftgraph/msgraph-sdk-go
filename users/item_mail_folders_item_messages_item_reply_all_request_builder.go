@@ -65,3 +65,7 @@ func (m *ItemMailFoldersItemMessagesItemReplyAllRequestBuilder) ToPostRequestInf
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemMailFoldersItemMessagesItemReplyAllRequestBuilder) WithUrl(rawUrl string)(*ItemMailFoldersItemMessagesItemReplyAllRequestBuilder) {
+    return NewItemMailFoldersItemMessagesItemReplyAllRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

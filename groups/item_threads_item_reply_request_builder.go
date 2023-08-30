@@ -65,3 +65,7 @@ func (m *ItemThreadsItemReplyRequestBuilder) ToPostRequestInformation(ctx contex
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemThreadsItemReplyRequestBuilder) WithUrl(rawUrl string)(*ItemThreadsItemReplyRequestBuilder) {
+    return NewItemThreadsItemReplyRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

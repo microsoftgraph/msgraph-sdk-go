@@ -151,3 +151,7 @@ func (m *BookingBusinessesItemAppointmentsRequestBuilder) ToPostRequestInformati
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *BookingBusinessesItemAppointmentsRequestBuilder) WithUrl(rawUrl string)(*BookingBusinessesItemAppointmentsRequestBuilder) {
+    return NewBookingBusinessesItemAppointmentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

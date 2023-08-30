@@ -61,3 +61,7 @@ func (m *CasesEdiscoveryCasesItemMicrosoftGraphSecurityCloseRequestBuilder) ToPo
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CasesEdiscoveryCasesItemMicrosoftGraphSecurityCloseRequestBuilder) WithUrl(rawUrl string)(*CasesEdiscoveryCasesItemMicrosoftGraphSecurityCloseRequestBuilder) {
+    return NewCasesEdiscoveryCasesItemMicrosoftGraphSecurityCloseRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

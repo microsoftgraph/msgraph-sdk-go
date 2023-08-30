@@ -159,3 +159,7 @@ func (m *Alerts_v2AlertItemRequestBuilder) ToPatchRequestInformation(ctx context
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *Alerts_v2AlertItemRequestBuilder) WithUrl(rawUrl string)(*Alerts_v2AlertItemRequestBuilder) {
+    return NewAlerts_v2AlertItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

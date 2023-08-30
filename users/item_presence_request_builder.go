@@ -172,3 +172,7 @@ func (m *ItemPresenceRequestBuilder) ToPatchRequestInformation(ctx context.Conte
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemPresenceRequestBuilder) WithUrl(rawUrl string)(*ItemPresenceRequestBuilder) {
+    return NewItemPresenceRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

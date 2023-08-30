@@ -197,6 +197,10 @@ func (m *ItemItemsItemWorkbookRequestBuilder) ToPatchRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemItemsItemWorkbookRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookRequestBuilder) {
+    return NewItemItemsItemWorkbookRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}
 // Worksheets provides operations to manage the worksheets property of the microsoft.graph.workbook entity.
 func (m *ItemItemsItemWorkbookRequestBuilder) Worksheets()(*ItemItemsItemWorkbookWorksheetsRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

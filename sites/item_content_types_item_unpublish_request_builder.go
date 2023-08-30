@@ -61,3 +61,7 @@ func (m *ItemContentTypesItemUnpublishRequestBuilder) ToPostRequestInformation(c
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemContentTypesItemUnpublishRequestBuilder) WithUrl(rawUrl string)(*ItemContentTypesItemUnpublishRequestBuilder) {
+    return NewItemContentTypesItemUnpublishRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

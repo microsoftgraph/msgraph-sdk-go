@@ -186,3 +186,7 @@ func (m *UsersEducationUserItemRequestBuilder) ToPatchRequestInformation(ctx con
 func (m *UsersEducationUserItemRequestBuilder) User()(*UsersItemUserRequestBuilder) {
     return NewUsersItemUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *UsersEducationUserItemRequestBuilder) WithUrl(rawUrl string)(*UsersEducationUserItemRequestBuilder) {
+    return NewUsersEducationUserItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

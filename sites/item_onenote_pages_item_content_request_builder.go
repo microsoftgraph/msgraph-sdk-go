@@ -105,3 +105,7 @@ func (m *ItemOnenotePagesItemContentRequestBuilder) ToPutRequestInformation(ctx 
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemOnenotePagesItemContentRequestBuilder) WithUrl(rawUrl string)(*ItemOnenotePagesItemContentRequestBuilder) {
+    return NewItemOnenotePagesItemContentRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

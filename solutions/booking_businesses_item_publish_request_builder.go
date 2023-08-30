@@ -61,3 +61,7 @@ func (m *BookingBusinessesItemPublishRequestBuilder) ToPostRequestInformation(ct
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *BookingBusinessesItemPublishRequestBuilder) WithUrl(rawUrl string)(*BookingBusinessesItemPublishRequestBuilder) {
+    return NewBookingBusinessesItemPublishRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

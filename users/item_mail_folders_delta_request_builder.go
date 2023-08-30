@@ -87,3 +87,7 @@ func (m *ItemMailFoldersDeltaRequestBuilder) ToGetRequestInformation(ctx context
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemMailFoldersDeltaRequestBuilder) WithUrl(rawUrl string)(*ItemMailFoldersDeltaRequestBuilder) {
+    return NewItemMailFoldersDeltaRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

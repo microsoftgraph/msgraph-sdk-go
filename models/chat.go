@@ -299,7 +299,7 @@ func (m *Chat) GetOnlineMeetingInfo()(TeamworkOnlineMeetingInfoable) {
     }
     return nil
 }
-// GetPermissionGrants gets the permissionGrants property value. The permissionGrants property
+// GetPermissionGrants gets the permissionGrants property value. A collection of permissions granted to apps for the chat.
 func (m *Chat) GetPermissionGrants()([]ResourceSpecificPermissionGrantable) {
     val, err := m.GetBackingStore().Get("permissionGrants")
     if err != nil {
@@ -567,7 +567,7 @@ func (m *Chat) SetOnlineMeetingInfo(value TeamworkOnlineMeetingInfoable)() {
         panic(err)
     }
 }
-// SetPermissionGrants sets the permissionGrants property value. The permissionGrants property
+// SetPermissionGrants sets the permissionGrants property value. A collection of permissions granted to apps for the chat.
 func (m *Chat) SetPermissionGrants(value []ResourceSpecificPermissionGrantable)() {
     err := m.GetBackingStore().Set("permissionGrants", value)
     if err != nil {

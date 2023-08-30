@@ -61,3 +61,7 @@ func (m *ItemMessagesItemRepliesItemSoftDeleteRequestBuilder) ToPostRequestInfor
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemMessagesItemRepliesItemSoftDeleteRequestBuilder) WithUrl(rawUrl string)(*ItemMessagesItemRepliesItemSoftDeleteRequestBuilder) {
+    return NewItemMessagesItemRepliesItemSoftDeleteRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

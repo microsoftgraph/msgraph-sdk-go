@@ -69,3 +69,7 @@ func (m *ServiceAnnouncementMessagesUnarchiveRequestBuilder) ToPostRequestInform
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ServiceAnnouncementMessagesUnarchiveRequestBuilder) WithUrl(rawUrl string)(*ServiceAnnouncementMessagesUnarchiveRequestBuilder) {
+    return NewServiceAnnouncementMessagesUnarchiveRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

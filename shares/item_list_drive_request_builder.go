@@ -75,3 +75,7 @@ func (m *ItemListDriveRequestBuilder) ToGetRequestInformation(ctx context.Contex
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemListDriveRequestBuilder) WithUrl(rawUrl string)(*ItemListDriveRequestBuilder) {
+    return NewItemListDriveRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

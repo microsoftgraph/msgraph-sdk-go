@@ -195,3 +195,7 @@ func (m *ItemListsItemItemsListItemItemRequestBuilder) ToPatchRequestInformation
 func (m *ItemListsItemItemsListItemItemRequestBuilder) Versions()(*ItemListsItemItemsItemVersionsRequestBuilder) {
     return NewItemListsItemItemsItemVersionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemListsItemItemsListItemItemRequestBuilder) WithUrl(rawUrl string)(*ItemListsItemItemsListItemItemRequestBuilder) {
+    return NewItemListsItemItemsListItemItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

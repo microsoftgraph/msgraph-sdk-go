@@ -55,7 +55,7 @@ func NewItemThreadsConversationThreadItemRequestBuilder(rawUrl string, requestAd
 // Delete delete conversationThread.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/conversationthread-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/group-delete-thread?view=graph-rest-1.0
 func (m *ItemThreadsConversationThreadItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemThreadsConversationThreadItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -167,4 +167,8 @@ func (m *ItemThreadsConversationThreadItemRequestBuilder) ToPatchRequestInformat
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemThreadsConversationThreadItemRequestBuilder) WithUrl(rawUrl string)(*ItemThreadsConversationThreadItemRequestBuilder) {
+    return NewItemThreadsConversationThreadItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -148,3 +148,7 @@ func (m *B2xUserFlowsItemLanguagesRequestBuilder) ToPostRequestInformation(ctx c
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *B2xUserFlowsItemLanguagesRequestBuilder) WithUrl(rawUrl string)(*B2xUserFlowsItemLanguagesRequestBuilder) {
+    return NewB2xUserFlowsItemLanguagesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

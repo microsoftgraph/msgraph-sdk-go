@@ -161,3 +161,7 @@ func (m *SharesItemJobsItemTasksPrintTaskItemRequestBuilder) ToPatchRequestInfor
 func (m *SharesItemJobsItemTasksPrintTaskItemRequestBuilder) Trigger()(*SharesItemJobsItemTasksItemTriggerRequestBuilder) {
     return NewSharesItemJobsItemTasksItemTriggerRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *SharesItemJobsItemTasksPrintTaskItemRequestBuilder) WithUrl(rawUrl string)(*SharesItemJobsItemTasksPrintTaskItemRequestBuilder) {
+    return NewSharesItemJobsItemTasksPrintTaskItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

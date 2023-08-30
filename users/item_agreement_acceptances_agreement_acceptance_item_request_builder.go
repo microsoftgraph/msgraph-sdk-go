@@ -75,3 +75,7 @@ func (m *ItemAgreementAcceptancesAgreementAcceptanceItemRequestBuilder) ToGetReq
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemAgreementAcceptancesAgreementAcceptanceItemRequestBuilder) WithUrl(rawUrl string)(*ItemAgreementAcceptancesAgreementAcceptanceItemRequestBuilder) {
+    return NewItemAgreementAcceptancesAgreementAcceptanceItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

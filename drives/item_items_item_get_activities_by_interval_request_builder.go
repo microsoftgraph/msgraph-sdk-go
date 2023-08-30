@@ -84,3 +84,7 @@ func (m *ItemItemsItemGetActivitiesByIntervalRequestBuilder) ToGetRequestInforma
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemItemsItemGetActivitiesByIntervalRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemGetActivitiesByIntervalRequestBuilder) {
+    return NewItemItemsItemGetActivitiesByIntervalRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

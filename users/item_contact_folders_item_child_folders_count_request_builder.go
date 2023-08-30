@@ -72,3 +72,7 @@ func (m *ItemContactFoldersItemChildFoldersCountRequestBuilder) ToGetRequestInfo
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemContactFoldersItemChildFoldersCountRequestBuilder) WithUrl(rawUrl string)(*ItemContactFoldersItemChildFoldersCountRequestBuilder) {
+    return NewItemContactFoldersItemChildFoldersCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

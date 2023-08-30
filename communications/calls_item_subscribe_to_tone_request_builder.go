@@ -70,3 +70,7 @@ func (m *CallsItemSubscribeToToneRequestBuilder) ToPostRequestInformation(ctx co
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CallsItemSubscribeToToneRequestBuilder) WithUrl(rawUrl string)(*CallsItemSubscribeToToneRequestBuilder) {
+    return NewCallsItemSubscribeToToneRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -160,3 +160,7 @@ func (m *ItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilder) ToPatchReque
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilder) WithUrl(rawUrl string)(*ItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilder) {
+    return NewItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

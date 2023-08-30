@@ -75,3 +75,7 @@ func (m *ItemDomainNameReferencesDirectoryObjectItemRequestBuilder) ToGetRequest
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemDomainNameReferencesDirectoryObjectItemRequestBuilder) WithUrl(rawUrl string)(*ItemDomainNameReferencesDirectoryObjectItemRequestBuilder) {
+    return NewItemDomainNameReferencesDirectoryObjectItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

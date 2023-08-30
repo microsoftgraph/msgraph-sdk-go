@@ -151,3 +151,7 @@ func (m *ItemFederatedIdentityCredentialsRequestBuilder) ToPostRequestInformatio
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemFederatedIdentityCredentialsRequestBuilder) WithUrl(rawUrl string)(*ItemFederatedIdentityCredentialsRequestBuilder) {
+    return NewItemFederatedIdentityCredentialsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

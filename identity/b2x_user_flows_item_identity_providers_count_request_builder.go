@@ -76,3 +76,8 @@ func (m *B2xUserFlowsItemIdentityProvidersCountRequestBuilder) ToGetRequestInfor
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15
+func (m *B2xUserFlowsItemIdentityProvidersCountRequestBuilder) WithUrl(rawUrl string)(*B2xUserFlowsItemIdentityProvidersCountRequestBuilder) {
+    return NewB2xUserFlowsItemIdentityProvidersCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

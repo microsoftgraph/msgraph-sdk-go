@@ -159,3 +159,7 @@ func (m *ItemExtensionPropertiesExtensionPropertyItemRequestBuilder) ToPatchRequ
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemExtensionPropertiesExtensionPropertyItemRequestBuilder) WithUrl(rawUrl string)(*ItemExtensionPropertiesExtensionPropertyItemRequestBuilder) {
+    return NewItemExtensionPropertiesExtensionPropertyItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

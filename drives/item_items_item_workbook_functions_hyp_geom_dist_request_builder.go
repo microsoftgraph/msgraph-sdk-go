@@ -67,3 +67,7 @@ func (m *ItemItemsItemWorkbookFunctionsHypGeom_DistRequestBuilder) ToPostRequest
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemItemsItemWorkbookFunctionsHypGeom_DistRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookFunctionsHypGeom_DistRequestBuilder) {
+    return NewItemItemsItemWorkbookFunctionsHypGeom_DistRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

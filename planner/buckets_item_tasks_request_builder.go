@@ -148,3 +148,7 @@ func (m *BucketsItemTasksRequestBuilder) ToPostRequestInformation(ctx context.Co
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *BucketsItemTasksRequestBuilder) WithUrl(rawUrl string)(*BucketsItemTasksRequestBuilder) {
+    return NewBucketsItemTasksRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

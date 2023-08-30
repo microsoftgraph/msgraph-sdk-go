@@ -65,3 +65,7 @@ func (m *ItemExportPersonalDataRequestBuilder) ToPostRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemExportPersonalDataRequestBuilder) WithUrl(rawUrl string)(*ItemExportPersonalDataRequestBuilder) {
+    return NewItemExportPersonalDataRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

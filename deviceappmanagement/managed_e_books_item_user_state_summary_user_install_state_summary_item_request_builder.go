@@ -166,3 +166,7 @@ func (m *ManagedEBooksItemUserStateSummaryUserInstallStateSummaryItemRequestBuil
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ManagedEBooksItemUserStateSummaryUserInstallStateSummaryItemRequestBuilder) WithUrl(rawUrl string)(*ManagedEBooksItemUserStateSummaryUserInstallStateSummaryItemRequestBuilder) {
+    return NewManagedEBooksItemUserStateSummaryUserInstallStateSummaryItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

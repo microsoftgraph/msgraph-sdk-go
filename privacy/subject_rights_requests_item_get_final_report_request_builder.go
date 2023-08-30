@@ -61,3 +61,7 @@ func (m *SubjectRightsRequestsItemGetFinalReportRequestBuilder) ToGetRequestInfo
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *SubjectRightsRequestsItemGetFinalReportRequestBuilder) WithUrl(rawUrl string)(*SubjectRightsRequestsItemGetFinalReportRequestBuilder) {
+    return NewSubjectRightsRequestsItemGetFinalReportRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -75,3 +75,7 @@ func (m *ItemMemberOfItemGraphAdministrativeUnitRequestBuilder) ToGetRequestInfo
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemMemberOfItemGraphAdministrativeUnitRequestBuilder) WithUrl(rawUrl string)(*ItemMemberOfItemGraphAdministrativeUnitRequestBuilder) {
+    return NewItemMemberOfItemGraphAdministrativeUnitRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

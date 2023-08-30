@@ -149,3 +149,7 @@ func (m *EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilder) To
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilder) {
+    return NewEntitlementManagementAccessPackageAssignmentApprovalsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

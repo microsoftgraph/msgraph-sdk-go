@@ -188,3 +188,7 @@ func (m *ClassesItemAssignmentsItemSubmissionsEducationSubmissionItemRequestBuil
 func (m *ClassesItemAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilder) Unsubmit()(*ClassesItemAssignmentsItemSubmissionsItemUnsubmitRequestBuilder) {
     return NewClassesItemAssignmentsItemSubmissionsItemUnsubmitRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ClassesItemAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilder) WithUrl(rawUrl string)(*ClassesItemAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilder) {
+    return NewClassesItemAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}
