@@ -46,8 +46,8 @@ type ItemItemsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDriveItemId provides operations to manage the items property of the microsoft.graph.drive entity.
-func (m *ItemItemsRequestBuilder) ByDriveItemId(driveItemId string)(*ItemItemsDriveItemItemRequestBuilder) {
+// ByDriveItemIdString provides operations to manage the items property of the microsoft.graph.drive entity.
+func (m *ItemItemsRequestBuilder) ByDriveItemIdString(driveItemId string)(*ItemItemsDriveItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

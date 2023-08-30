@@ -44,8 +44,8 @@ type ItemTeamScheduleSchedulingGroupsRequestBuilderPostRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BySchedulingGroupId provides operations to manage the schedulingGroups property of the microsoft.graph.schedule entity.
-func (m *ItemTeamScheduleSchedulingGroupsRequestBuilder) BySchedulingGroupId(schedulingGroupId string)(*ItemTeamScheduleSchedulingGroupsSchedulingGroupItemRequestBuilder) {
+// BySchedulingGroupIdString provides operations to manage the schedulingGroups property of the microsoft.graph.schedule entity.
+func (m *ItemTeamScheduleSchedulingGroupsRequestBuilder) BySchedulingGroupIdString(schedulingGroupId string)(*ItemTeamScheduleSchedulingGroupsSchedulingGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

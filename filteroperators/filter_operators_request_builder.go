@@ -46,8 +46,8 @@ type FilterOperatorsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByFilterOperatorSchemaId provides operations to manage the collection of filterOperatorSchema entities.
-func (m *FilterOperatorsRequestBuilder) ByFilterOperatorSchemaId(filterOperatorSchemaId string)(*FilterOperatorSchemaItemRequestBuilder) {
+// ByFilterOperatorSchemaIdString provides operations to manage the collection of filterOperatorSchema entities.
+func (m *FilterOperatorsRequestBuilder) ByFilterOperatorSchemaIdString(filterOperatorSchemaId string)(*FilterOperatorSchemaItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

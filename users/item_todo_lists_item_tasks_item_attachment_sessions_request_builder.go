@@ -35,8 +35,8 @@ type ItemTodoListsItemTasksItemAttachmentSessionsRequestBuilderGetRequestConfigu
     // Request query parameters
     QueryParameters *ItemTodoListsItemTasksItemAttachmentSessionsRequestBuilderGetQueryParameters
 }
-// ByAttachmentSessionId provides operations to manage the attachmentSessions property of the microsoft.graph.todoTask entity.
-func (m *ItemTodoListsItemTasksItemAttachmentSessionsRequestBuilder) ByAttachmentSessionId(attachmentSessionId string)(*ItemTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilder) {
+// ByAttachmentSessionIdString provides operations to manage the attachmentSessions property of the microsoft.graph.todoTask entity.
+func (m *ItemTodoListsItemTasksItemAttachmentSessionsRequestBuilder) ByAttachmentSessionIdString(attachmentSessionId string)(*ItemTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

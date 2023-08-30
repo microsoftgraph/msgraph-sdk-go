@@ -18,7 +18,7 @@ type ItemJoinedTeamsItemPermissionGrantsResourceSpecificPermissionGrantItemReque
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemJoinedTeamsItemPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilderGetQueryParameters get permissionGrants from users
+// ItemJoinedTeamsItemPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilderGetQueryParameters a collection of permissions granted to apps to access the team.
 type ItemJoinedTeamsItemPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -78,7 +78,7 @@ func (m *ItemJoinedTeamsItemPermissionGrantsResourceSpecificPermissionGrantItemR
     }
     return nil
 }
-// Get get permissionGrants from users
+// Get a collection of permissions granted to apps to access the team.
 func (m *ItemJoinedTeamsItemPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ResourceSpecificPermissionGrantable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -140,7 +140,7 @@ func (m *ItemJoinedTeamsItemPermissionGrantsResourceSpecificPermissionGrantItemR
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get permissionGrants from users
+// ToGetRequestInformation a collection of permissions granted to apps to access the team.
 func (m *ItemJoinedTeamsItemPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

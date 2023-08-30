@@ -46,8 +46,8 @@ type ClassesItemAssignmentsItemCategoriesRequestBuilderPostRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByEducationCategoryId gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.classes.item.assignments.item.categories.item collection
-func (m *ClassesItemAssignmentsItemCategoriesRequestBuilder) ByEducationCategoryId(educationCategoryId string)(*ClassesItemAssignmentsItemCategoriesEducationCategoryItemRequestBuilder) {
+// ByEducationCategoryIdString gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.classes.item.assignments.item.categories.item collection
+func (m *ClassesItemAssignmentsItemCategoriesRequestBuilder) ByEducationCategoryIdString(educationCategoryId string)(*ClassesItemAssignmentsItemCategoriesEducationCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

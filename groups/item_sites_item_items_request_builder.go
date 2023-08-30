@@ -39,8 +39,8 @@ type ItemSitesItemItemsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemSitesItemItemsRequestBuilderGetQueryParameters
 }
-// ByBaseItemId provides operations to manage the items property of the microsoft.graph.site entity.
-func (m *ItemSitesItemItemsRequestBuilder) ByBaseItemId(baseItemId string)(*ItemSitesItemItemsBaseItemItemRequestBuilder) {
+// ByBaseItemIdString provides operations to manage the items property of the microsoft.graph.site entity.
+func (m *ItemSitesItemItemsRequestBuilder) ByBaseItemIdString(baseItemId string)(*ItemSitesItemItemsBaseItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

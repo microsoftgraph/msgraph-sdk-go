@@ -46,8 +46,8 @@ type AdministrativeUnitsItemExtensionsRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByExtensionId provides operations to manage the extensions property of the microsoft.graph.administrativeUnit entity.
-func (m *AdministrativeUnitsItemExtensionsRequestBuilder) ByExtensionId(extensionId string)(*AdministrativeUnitsItemExtensionsExtensionItemRequestBuilder) {
+// ByExtensionIdString provides operations to manage the extensions property of the microsoft.graph.administrativeUnit entity.
+func (m *AdministrativeUnitsItemExtensionsRequestBuilder) ByExtensionIdString(extensionId string)(*AdministrativeUnitsItemExtensionsExtensionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

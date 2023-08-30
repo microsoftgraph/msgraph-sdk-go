@@ -39,8 +39,8 @@ type ItemExternalColumnsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemExternalColumnsRequestBuilderGetQueryParameters
 }
-// ByColumnDefinitionId provides operations to manage the externalColumns property of the microsoft.graph.site entity.
-func (m *ItemExternalColumnsRequestBuilder) ByColumnDefinitionId(columnDefinitionId string)(*ItemExternalColumnsColumnDefinitionItemRequestBuilder) {
+// ByColumnDefinitionIdString provides operations to manage the externalColumns property of the microsoft.graph.site entity.
+func (m *ItemExternalColumnsRequestBuilder) ByColumnDefinitionIdString(columnDefinitionId string)(*ItemExternalColumnsColumnDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

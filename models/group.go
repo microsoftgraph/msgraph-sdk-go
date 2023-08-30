@@ -1338,7 +1338,7 @@ func (m *Group) GetOwners()([]DirectoryObjectable) {
     }
     return nil
 }
-// GetPermissionGrants gets the permissionGrants property value. The permission that has been granted for a group to a specific application. Supports $expand.
+// GetPermissionGrants gets the permissionGrants property value. The permissionGrants property
 func (m *Group) GetPermissionGrants()([]ResourceSpecificPermissionGrantable) {
     val, err := m.GetBackingStore().Get("permissionGrants")
     if err != nil {
@@ -2432,7 +2432,7 @@ func (m *Group) SetOwners(value []DirectoryObjectable)() {
         panic(err)
     }
 }
-// SetPermissionGrants sets the permissionGrants property value. The permission that has been granted for a group to a specific application. Supports $expand.
+// SetPermissionGrants sets the permissionGrants property value. The permissionGrants property
 func (m *Group) SetPermissionGrants(value []ResourceSpecificPermissionGrantable)() {
     err := m.GetBackingStore().Set("permissionGrants", value)
     if err != nil {

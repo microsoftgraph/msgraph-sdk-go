@@ -39,8 +39,8 @@ type DetectedAppsItemManagedDevicesRequestBuilderGetRequestConfiguration struct 
     // Request query parameters
     QueryParameters *DetectedAppsItemManagedDevicesRequestBuilderGetQueryParameters
 }
-// ByManagedDeviceId provides operations to manage the managedDevices property of the microsoft.graph.detectedApp entity.
-func (m *DetectedAppsItemManagedDevicesRequestBuilder) ByManagedDeviceId(managedDeviceId string)(*DetectedAppsItemManagedDevicesManagedDeviceItemRequestBuilder) {
+// ByManagedDeviceIdString provides operations to manage the managedDevices property of the microsoft.graph.detectedApp entity.
+func (m *DetectedAppsItemManagedDevicesRequestBuilder) ByManagedDeviceIdString(managedDeviceId string)(*DetectedAppsItemManagedDevicesManagedDeviceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

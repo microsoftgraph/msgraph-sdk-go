@@ -39,8 +39,8 @@ type ItemAppManagementPoliciesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemAppManagementPoliciesRequestBuilderGetQueryParameters
 }
-// ByAppManagementPolicyId gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.applications.item.appManagementPolicies.item collection
-func (m *ItemAppManagementPoliciesRequestBuilder) ByAppManagementPolicyId(appManagementPolicyId string)(*ItemAppManagementPoliciesAppManagementPolicyItemRequestBuilder) {
+// ByAppManagementPolicyIdString gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.applications.item.appManagementPolicies.item collection
+func (m *ItemAppManagementPoliciesRequestBuilder) ByAppManagementPolicyIdString(appManagementPolicyId string)(*ItemAppManagementPoliciesAppManagementPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -46,8 +46,8 @@ type ItemTeamChannelsItemSharedWithTeamsRequestBuilderPostRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BySharedWithChannelTeamInfoId provides operations to manage the sharedWithTeams property of the microsoft.graph.channel entity.
-func (m *ItemTeamChannelsItemSharedWithTeamsRequestBuilder) BySharedWithChannelTeamInfoId(sharedWithChannelTeamInfoId string)(*ItemTeamChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilder) {
+// BySharedWithChannelTeamInfoIdString provides operations to manage the sharedWithTeams property of the microsoft.graph.channel entity.
+func (m *ItemTeamChannelsItemSharedWithTeamsRequestBuilder) BySharedWithChannelTeamInfoIdString(sharedWithChannelTeamInfoId string)(*ItemTeamChannelsItemSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

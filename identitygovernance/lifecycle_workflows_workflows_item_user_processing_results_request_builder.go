@@ -40,8 +40,8 @@ type LifecycleWorkflowsWorkflowsItemUserProcessingResultsRequestBuilderGetReques
     // Request query parameters
     QueryParameters *LifecycleWorkflowsWorkflowsItemUserProcessingResultsRequestBuilderGetQueryParameters
 }
-// ByUserProcessingResultId provides operations to manage the userProcessingResults property of the microsoft.graph.identityGovernance.workflow entity.
-func (m *LifecycleWorkflowsWorkflowsItemUserProcessingResultsRequestBuilder) ByUserProcessingResultId(userProcessingResultId string)(*LifecycleWorkflowsWorkflowsItemUserProcessingResultsUserProcessingResultItemRequestBuilder) {
+// ByUserProcessingResultIdString provides operations to manage the userProcessingResults property of the microsoft.graph.identityGovernance.workflow entity.
+func (m *LifecycleWorkflowsWorkflowsItemUserProcessingResultsRequestBuilder) ByUserProcessingResultIdString(userProcessingResultId string)(*LifecycleWorkflowsWorkflowsItemUserProcessingResultsUserProcessingResultItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -46,8 +46,8 @@ type DevicesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceId provides operations to manage the collection of device entities.
-func (m *DevicesRequestBuilder) ByDeviceId(deviceId string)(*DeviceItemRequestBuilder) {
+// ByDeviceIdString provides operations to manage the collection of device entities.
+func (m *DevicesRequestBuilder) ByDeviceIdString(deviceId string)(*DeviceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -39,8 +39,8 @@ type ThreatIntelligenceArticlesItemIndicatorsRequestBuilderGetRequestConfigurati
     // Request query parameters
     QueryParameters *ThreatIntelligenceArticlesItemIndicatorsRequestBuilderGetQueryParameters
 }
-// ByArticleIndicatorId provides operations to manage the indicators property of the microsoft.graph.security.article entity.
-func (m *ThreatIntelligenceArticlesItemIndicatorsRequestBuilder) ByArticleIndicatorId(articleIndicatorId string)(*ThreatIntelligenceArticlesItemIndicatorsArticleIndicatorItemRequestBuilder) {
+// ByArticleIndicatorIdString provides operations to manage the indicators property of the microsoft.graph.security.article entity.
+func (m *ThreatIntelligenceArticlesItemIndicatorsRequestBuilder) ByArticleIndicatorIdString(articleIndicatorId string)(*ThreatIntelligenceArticlesItemIndicatorsArticleIndicatorItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

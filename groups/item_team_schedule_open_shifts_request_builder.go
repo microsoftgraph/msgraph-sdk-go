@@ -46,8 +46,8 @@ type ItemTeamScheduleOpenShiftsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByOpenShiftId provides operations to manage the openShifts property of the microsoft.graph.schedule entity.
-func (m *ItemTeamScheduleOpenShiftsRequestBuilder) ByOpenShiftId(openShiftId string)(*ItemTeamScheduleOpenShiftsOpenShiftItemRequestBuilder) {
+// ByOpenShiftIdString provides operations to manage the openShifts property of the microsoft.graph.schedule entity.
+func (m *ItemTeamScheduleOpenShiftsRequestBuilder) ByOpenShiftIdString(openShiftId string)(*ItemTeamScheduleOpenShiftsOpenShiftItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

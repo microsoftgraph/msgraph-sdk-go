@@ -39,8 +39,8 @@ type CasesEdiscoveryCasesItemSearchesItemCustodianSourcesRequestBuilderGetReques
     // Request query parameters
     QueryParameters *CasesEdiscoveryCasesItemSearchesItemCustodianSourcesRequestBuilderGetQueryParameters
 }
-// ByDataSourceId provides operations to manage the custodianSources property of the microsoft.graph.security.ediscoverySearch entity.
-func (m *CasesEdiscoveryCasesItemSearchesItemCustodianSourcesRequestBuilder) ByDataSourceId(dataSourceId string)(*CasesEdiscoveryCasesItemSearchesItemCustodianSourcesDataSourceItemRequestBuilder) {
+// ByDataSourceIdString provides operations to manage the custodianSources property of the microsoft.graph.security.ediscoverySearch entity.
+func (m *CasesEdiscoveryCasesItemSearchesItemCustodianSourcesRequestBuilder) ByDataSourceIdString(dataSourceId string)(*CasesEdiscoveryCasesItemSearchesItemCustodianSourcesDataSourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

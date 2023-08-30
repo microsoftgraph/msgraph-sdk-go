@@ -42,8 +42,8 @@ type ItemMailFoldersItemChildFoldersItemMessageRulesRequestBuilderPostRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByMessageRuleId provides operations to manage the messageRules property of the microsoft.graph.mailFolder entity.
-func (m *ItemMailFoldersItemChildFoldersItemMessageRulesRequestBuilder) ByMessageRuleId(messageRuleId string)(*ItemMailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBuilder) {
+// ByMessageRuleIdString provides operations to manage the messageRules property of the microsoft.graph.mailFolder entity.
+func (m *ItemMailFoldersItemChildFoldersItemMessageRulesRequestBuilder) ByMessageRuleIdString(messageRuleId string)(*ItemMailFoldersItemChildFoldersItemMessageRulesMessageRuleItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -46,8 +46,8 @@ type ConditionalAccessPoliciesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByConditionalAccessPolicyId provides operations to manage the policies property of the microsoft.graph.conditionalAccessRoot entity.
-func (m *ConditionalAccessPoliciesRequestBuilder) ByConditionalAccessPolicyId(conditionalAccessPolicyId string)(*ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) {
+// ByConditionalAccessPolicyIdString provides operations to manage the policies property of the microsoft.graph.conditionalAccessRoot entity.
+func (m *ConditionalAccessPoliciesRequestBuilder) ByConditionalAccessPolicyIdString(conditionalAccessPolicyId string)(*ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

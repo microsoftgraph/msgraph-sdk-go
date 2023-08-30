@@ -39,8 +39,8 @@ type ItemAgreementAcceptancesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemAgreementAcceptancesRequestBuilderGetQueryParameters
 }
-// ByAgreementAcceptanceId provides operations to manage the agreementAcceptances property of the microsoft.graph.user entity.
-func (m *ItemAgreementAcceptancesRequestBuilder) ByAgreementAcceptanceId(agreementAcceptanceId string)(*ItemAgreementAcceptancesAgreementAcceptanceItemRequestBuilder) {
+// ByAgreementAcceptanceIdString provides operations to manage the agreementAcceptances property of the microsoft.graph.user entity.
+func (m *ItemAgreementAcceptancesRequestBuilder) ByAgreementAcceptanceIdString(agreementAcceptanceId string)(*ItemAgreementAcceptancesAgreementAcceptanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

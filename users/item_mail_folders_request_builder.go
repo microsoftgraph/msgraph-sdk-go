@@ -46,8 +46,8 @@ type ItemMailFoldersRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByMailFolderId provides operations to manage the mailFolders property of the microsoft.graph.user entity.
-func (m *ItemMailFoldersRequestBuilder) ByMailFolderId(mailFolderId string)(*ItemMailFoldersMailFolderItemRequestBuilder) {
+// ByMailFolderIdString provides operations to manage the mailFolders property of the microsoft.graph.user entity.
+func (m *ItemMailFoldersRequestBuilder) ByMailFolderIdString(mailFolderId string)(*ItemMailFoldersMailFolderItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

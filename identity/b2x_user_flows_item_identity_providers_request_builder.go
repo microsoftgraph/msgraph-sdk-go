@@ -39,9 +39,9 @@ type B2xUserFlowsItemIdentityProvidersRequestBuilderGetRequestConfiguration stru
     // Request query parameters
     QueryParameters *B2xUserFlowsItemIdentityProvidersRequestBuilderGetQueryParameters
 }
-// ByIdentityProviderId provides operations to manage the identityProviders property of the microsoft.graph.b2xIdentityUserFlow entity.
+// ByIdentityProviderIdString provides operations to manage the identityProviders property of the microsoft.graph.b2xIdentityUserFlow entity.
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15
-func (m *B2xUserFlowsItemIdentityProvidersRequestBuilder) ByIdentityProviderId(identityProviderId string)(*B2xUserFlowsItemIdentityProvidersIdentityProviderItemRequestBuilder) {
+func (m *B2xUserFlowsItemIdentityProvidersRequestBuilder) ByIdentityProviderIdString(identityProviderId string)(*B2xUserFlowsItemIdentityProvidersIdentityProviderItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -34,8 +34,8 @@ type AgreementsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAgreementId provides operations to manage the collection of agreement entities.
-func (m *AgreementsRequestBuilder) ByAgreementId(agreementId string)(*AgreementItemRequestBuilder) {
+// ByAgreementIdString provides operations to manage the collection of agreement entities.
+func (m *AgreementsRequestBuilder) ByAgreementIdString(agreementId string)(*AgreementItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

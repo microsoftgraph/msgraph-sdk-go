@@ -39,8 +39,8 @@ type ItemDirectReportsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemDirectReportsRequestBuilderGetQueryParameters
 }
-// ByDirectoryObjectId provides operations to manage the directReports property of the microsoft.graph.orgContact entity.
-func (m *ItemDirectReportsRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemDirectReportsDirectoryObjectItemRequestBuilder) {
+// ByDirectoryObjectIdString provides operations to manage the directReports property of the microsoft.graph.orgContact entity.
+func (m *ItemDirectReportsRequestBuilder) ByDirectoryObjectIdString(directoryObjectId string)(*ItemDirectReportsDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

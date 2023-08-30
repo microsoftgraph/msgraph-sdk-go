@@ -46,8 +46,8 @@ type ConditionalAccessNamedLocationsRequestBuilderPostRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByNamedLocationId provides operations to manage the namedLocations property of the microsoft.graph.conditionalAccessRoot entity.
-func (m *ConditionalAccessNamedLocationsRequestBuilder) ByNamedLocationId(namedLocationId string)(*ConditionalAccessNamedLocationsNamedLocationItemRequestBuilder) {
+// ByNamedLocationIdString provides operations to manage the namedLocations property of the microsoft.graph.conditionalAccessRoot entity.
+func (m *ConditionalAccessNamedLocationsRequestBuilder) ByNamedLocationIdString(namedLocationId string)(*ConditionalAccessNamedLocationsNamedLocationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

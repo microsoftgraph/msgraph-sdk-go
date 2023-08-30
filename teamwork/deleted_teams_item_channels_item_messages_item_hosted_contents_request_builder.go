@@ -46,8 +46,8 @@ type DeletedTeamsItemChannelsItemMessagesItemHostedContentsRequestBuilderPostReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByChatMessageHostedContentId provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.
-func (m *DeletedTeamsItemChannelsItemMessagesItemHostedContentsRequestBuilder) ByChatMessageHostedContentId(chatMessageHostedContentId string)(*DeletedTeamsItemChannelsItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilder) {
+// ByChatMessageHostedContentIdString provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.
+func (m *DeletedTeamsItemChannelsItemMessagesItemHostedContentsRequestBuilder) ByChatMessageHostedContentIdString(chatMessageHostedContentId string)(*DeletedTeamsItemChannelsItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

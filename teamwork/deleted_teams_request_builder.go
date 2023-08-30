@@ -46,8 +46,8 @@ type DeletedTeamsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeletedTeamId provides operations to manage the deletedTeams property of the microsoft.graph.teamwork entity.
-func (m *DeletedTeamsRequestBuilder) ByDeletedTeamId(deletedTeamId string)(*DeletedTeamsDeletedTeamItemRequestBuilder) {
+// ByDeletedTeamIdString provides operations to manage the deletedTeams property of the microsoft.graph.teamwork entity.
+func (m *DeletedTeamsRequestBuilder) ByDeletedTeamIdString(deletedTeamId string)(*DeletedTeamsDeletedTeamItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -46,8 +46,8 @@ type ThreatIntelligenceArticleIndicatorsRequestBuilderPostRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByArticleIndicatorId provides operations to manage the articleIndicators property of the microsoft.graph.security.threatIntelligence entity.
-func (m *ThreatIntelligenceArticleIndicatorsRequestBuilder) ByArticleIndicatorId(articleIndicatorId string)(*ThreatIntelligenceArticleIndicatorsArticleIndicatorItemRequestBuilder) {
+// ByArticleIndicatorIdString provides operations to manage the articleIndicators property of the microsoft.graph.security.threatIntelligence entity.
+func (m *ThreatIntelligenceArticleIndicatorsRequestBuilder) ByArticleIndicatorIdString(articleIndicatorId string)(*ThreatIntelligenceArticleIndicatorsArticleIndicatorItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

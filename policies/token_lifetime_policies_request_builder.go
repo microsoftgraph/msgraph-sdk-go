@@ -46,8 +46,8 @@ type TokenLifetimePoliciesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByTokenLifetimePolicyId provides operations to manage the tokenLifetimePolicies property of the microsoft.graph.policyRoot entity.
-func (m *TokenLifetimePoliciesRequestBuilder) ByTokenLifetimePolicyId(tokenLifetimePolicyId string)(*TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) {
+// ByTokenLifetimePolicyIdString provides operations to manage the tokenLifetimePolicies property of the microsoft.graph.policyRoot entity.
+func (m *TokenLifetimePoliciesRequestBuilder) ByTokenLifetimePolicyIdString(tokenLifetimePolicyId string)(*TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

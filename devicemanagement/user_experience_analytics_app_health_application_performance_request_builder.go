@@ -46,8 +46,8 @@ type UserExperienceAnalyticsAppHealthApplicationPerformanceRequestBuilderPostReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUserExperienceAnalyticsAppHealthApplicationPerformanceId provides operations to manage the userExperienceAnalyticsAppHealthApplicationPerformance property of the microsoft.graph.deviceManagement entity.
-func (m *UserExperienceAnalyticsAppHealthApplicationPerformanceRequestBuilder) ByUserExperienceAnalyticsAppHealthApplicationPerformanceId(userExperienceAnalyticsAppHealthApplicationPerformanceId string)(*UserExperienceAnalyticsAppHealthApplicationPerformanceUserExperienceAnalyticsAppHealthApplicationPerformanceItemRequestBuilder) {
+// ByUserExperienceAnalyticsAppHealthApplicationPerformanceIdString provides operations to manage the userExperienceAnalyticsAppHealthApplicationPerformance property of the microsoft.graph.deviceManagement entity.
+func (m *UserExperienceAnalyticsAppHealthApplicationPerformanceRequestBuilder) ByUserExperienceAnalyticsAppHealthApplicationPerformanceIdString(userExperienceAnalyticsAppHealthApplicationPerformanceId string)(*UserExperienceAnalyticsAppHealthApplicationPerformanceUserExperienceAnalyticsAppHealthApplicationPerformanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

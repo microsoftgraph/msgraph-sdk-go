@@ -46,8 +46,8 @@ type ApplicationsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByApplicationId provides operations to manage the collection of application entities.
-func (m *ApplicationsRequestBuilder) ByApplicationId(applicationId string)(*ApplicationItemRequestBuilder) {
+// ByApplicationIdString provides operations to manage the collection of application entities.
+func (m *ApplicationsRequestBuilder) ByApplicationIdString(applicationId string)(*ApplicationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -46,8 +46,8 @@ type SharesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByPrinterShareId provides operations to manage the shares property of the microsoft.graph.print entity.
-func (m *SharesRequestBuilder) ByPrinterShareId(printerShareId string)(*SharesPrinterShareItemRequestBuilder) {
+// ByPrinterShareIdString provides operations to manage the shares property of the microsoft.graph.print entity.
+func (m *SharesRequestBuilder) ByPrinterShareIdString(printerShareId string)(*SharesPrinterShareItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

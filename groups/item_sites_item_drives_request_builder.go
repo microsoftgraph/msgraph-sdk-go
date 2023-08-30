@@ -39,8 +39,8 @@ type ItemSitesItemDrivesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemSitesItemDrivesRequestBuilderGetQueryParameters
 }
-// ByDriveId provides operations to manage the drives property of the microsoft.graph.site entity.
-func (m *ItemSitesItemDrivesRequestBuilder) ByDriveId(driveId string)(*ItemSitesItemDrivesDriveItemRequestBuilder) {
+// ByDriveIdString provides operations to manage the drives property of the microsoft.graph.site entity.
+func (m *ItemSitesItemDrivesRequestBuilder) ByDriveIdString(driveId string)(*ItemSitesItemDrivesDriveItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

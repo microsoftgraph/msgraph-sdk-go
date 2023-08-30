@@ -39,8 +39,8 @@ type ItemTeamAllChannelsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemTeamAllChannelsRequestBuilderGetQueryParameters
 }
-// ByChannelId provides operations to manage the allChannels property of the microsoft.graph.team entity.
-func (m *ItemTeamAllChannelsRequestBuilder) ByChannelId(channelId string)(*ItemTeamAllChannelsChannelItemRequestBuilder) {
+// ByChannelIdString provides operations to manage the allChannels property of the microsoft.graph.team entity.
+func (m *ItemTeamAllChannelsRequestBuilder) ByChannelIdString(channelId string)(*ItemTeamAllChannelsChannelItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

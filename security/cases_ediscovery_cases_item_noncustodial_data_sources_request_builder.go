@@ -46,8 +46,8 @@ type CasesEdiscoveryCasesItemNoncustodialDataSourcesRequestBuilderPostRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByEdiscoveryNoncustodialDataSourceId provides operations to manage the noncustodialDataSources property of the microsoft.graph.security.ediscoveryCase entity.
-func (m *CasesEdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) ByEdiscoveryNoncustodialDataSourceId(ediscoveryNoncustodialDataSourceId string)(*CasesEdiscoveryCasesItemNoncustodialDataSourcesEdiscoveryNoncustodialDataSourceItemRequestBuilder) {
+// ByEdiscoveryNoncustodialDataSourceIdString provides operations to manage the noncustodialDataSources property of the microsoft.graph.security.ediscoveryCase entity.
+func (m *CasesEdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) ByEdiscoveryNoncustodialDataSourceIdString(ediscoveryNoncustodialDataSourceId string)(*CasesEdiscoveryCasesItemNoncustodialDataSourcesEdiscoveryNoncustodialDataSourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

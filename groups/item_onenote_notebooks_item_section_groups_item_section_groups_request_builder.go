@@ -39,8 +39,8 @@ type ItemOnenoteNotebooksItemSectionGroupsItemSectionGroupsRequestBuilderGetRequ
     // Request query parameters
     QueryParameters *ItemOnenoteNotebooksItemSectionGroupsItemSectionGroupsRequestBuilderGetQueryParameters
 }
-// BySectionGroupId1 provides operations to manage the sectionGroups property of the microsoft.graph.sectionGroup entity.
-func (m *ItemOnenoteNotebooksItemSectionGroupsItemSectionGroupsRequestBuilder) BySectionGroupId1(sectionGroupId1 string)(*ItemOnenoteNotebooksItemSectionGroupsItemSectionGroupsSectionGroupItemRequestBuilder) {
+// BySectionGroupId1String provides operations to manage the sectionGroups property of the microsoft.graph.sectionGroup entity.
+func (m *ItemOnenoteNotebooksItemSectionGroupsItemSectionGroupsRequestBuilder) BySectionGroupId1String(sectionGroupId1 string)(*ItemOnenoteNotebooksItemSectionGroupsItemSectionGroupsSectionGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -46,8 +46,8 @@ type B2xUserFlowsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByB2xIdentityUserFlowId provides operations to manage the b2xUserFlows property of the microsoft.graph.identityContainer entity.
-func (m *B2xUserFlowsRequestBuilder) ByB2xIdentityUserFlowId(b2xIdentityUserFlowId string)(*B2xUserFlowsB2xIdentityUserFlowItemRequestBuilder) {
+// ByB2xIdentityUserFlowIdString provides operations to manage the b2xUserFlows property of the microsoft.graph.identityContainer entity.
+func (m *B2xUserFlowsRequestBuilder) ByB2xIdentityUserFlowIdString(b2xIdentityUserFlowId string)(*B2xUserFlowsB2xIdentityUserFlowItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

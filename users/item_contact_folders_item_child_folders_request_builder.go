@@ -44,8 +44,8 @@ type ItemContactFoldersItemChildFoldersRequestBuilderPostRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByContactFolderId1 provides operations to manage the childFolders property of the microsoft.graph.contactFolder entity.
-func (m *ItemContactFoldersItemChildFoldersRequestBuilder) ByContactFolderId1(contactFolderId1 string)(*ItemContactFoldersItemChildFoldersContactFolderItemRequestBuilder) {
+// ByContactFolderId1String provides operations to manage the childFolders property of the microsoft.graph.contactFolder entity.
+func (m *ItemContactFoldersItemChildFoldersRequestBuilder) ByContactFolderId1String(contactFolderId1 string)(*ItemContactFoldersItemChildFoldersContactFolderItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

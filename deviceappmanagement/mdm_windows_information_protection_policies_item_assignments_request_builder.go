@@ -46,8 +46,8 @@ type MdmWindowsInformationProtectionPoliciesItemAssignmentsRequestBuilderPostReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByTargetedManagedAppPolicyAssignmentId provides operations to manage the assignments property of the microsoft.graph.windowsInformationProtection entity.
-func (m *MdmWindowsInformationProtectionPoliciesItemAssignmentsRequestBuilder) ByTargetedManagedAppPolicyAssignmentId(targetedManagedAppPolicyAssignmentId string)(*MdmWindowsInformationProtectionPoliciesItemAssignmentsTargetedManagedAppPolicyAssignmentItemRequestBuilder) {
+// ByTargetedManagedAppPolicyAssignmentIdString provides operations to manage the assignments property of the microsoft.graph.windowsInformationProtection entity.
+func (m *MdmWindowsInformationProtectionPoliciesItemAssignmentsRequestBuilder) ByTargetedManagedAppPolicyAssignmentIdString(targetedManagedAppPolicyAssignmentId string)(*MdmWindowsInformationProtectionPoliciesItemAssignmentsTargetedManagedAppPolicyAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

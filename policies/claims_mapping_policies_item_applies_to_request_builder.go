@@ -39,8 +39,8 @@ type ClaimsMappingPoliciesItemAppliesToRequestBuilderGetRequestConfiguration str
     // Request query parameters
     QueryParameters *ClaimsMappingPoliciesItemAppliesToRequestBuilderGetQueryParameters
 }
-// ByDirectoryObjectId provides operations to manage the appliesTo property of the microsoft.graph.stsPolicy entity.
-func (m *ClaimsMappingPoliciesItemAppliesToRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ClaimsMappingPoliciesItemAppliesToDirectoryObjectItemRequestBuilder) {
+// ByDirectoryObjectIdString provides operations to manage the appliesTo property of the microsoft.graph.stsPolicy entity.
+func (m *ClaimsMappingPoliciesItemAppliesToRequestBuilder) ByDirectoryObjectIdString(directoryObjectId string)(*ClaimsMappingPoliciesItemAppliesToDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

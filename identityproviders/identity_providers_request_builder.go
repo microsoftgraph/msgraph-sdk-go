@@ -50,9 +50,9 @@ type IdentityProvidersRequestBuilderPostRequestConfiguration struct {
 func (m *IdentityProvidersRequestBuilder) AvailableProviderTypes()(*AvailableProviderTypesRequestBuilder) {
     return NewAvailableProviderTypesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByIdentityProviderId provides operations to manage the collection of identityProvider entities.
+// ByIdentityProviderIdString provides operations to manage the collection of identityProvider entities.
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15
-func (m *IdentityProvidersRequestBuilder) ByIdentityProviderId(identityProviderId string)(*IdentityProviderItemRequestBuilder) {
+func (m *IdentityProvidersRequestBuilder) ByIdentityProviderIdString(identityProviderId string)(*IdentityProviderItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

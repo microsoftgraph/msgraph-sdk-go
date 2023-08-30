@@ -44,8 +44,8 @@ type ItemCalendarCalendarViewItemInstancesItemExtensionsRequestBuilderPostReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByExtensionId provides operations to manage the extensions property of the microsoft.graph.event entity.
-func (m *ItemCalendarCalendarViewItemInstancesItemExtensionsRequestBuilder) ByExtensionId(extensionId string)(*ItemCalendarCalendarViewItemInstancesItemExtensionsExtensionItemRequestBuilder) {
+// ByExtensionIdString provides operations to manage the extensions property of the microsoft.graph.event entity.
+func (m *ItemCalendarCalendarViewItemInstancesItemExtensionsRequestBuilder) ByExtensionIdString(extensionId string)(*ItemCalendarCalendarViewItemInstancesItemExtensionsExtensionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

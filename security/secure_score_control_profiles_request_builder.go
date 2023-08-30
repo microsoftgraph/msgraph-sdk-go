@@ -46,8 +46,8 @@ type SecureScoreControlProfilesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BySecureScoreControlProfileId provides operations to manage the secureScoreControlProfiles property of the microsoft.graph.security entity.
-func (m *SecureScoreControlProfilesRequestBuilder) BySecureScoreControlProfileId(secureScoreControlProfileId string)(*SecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilder) {
+// BySecureScoreControlProfileIdString provides operations to manage the secureScoreControlProfiles property of the microsoft.graph.security entity.
+func (m *SecureScoreControlProfilesRequestBuilder) BySecureScoreControlProfileIdString(secureScoreControlProfileId string)(*SecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

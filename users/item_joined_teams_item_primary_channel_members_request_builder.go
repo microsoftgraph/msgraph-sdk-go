@@ -50,8 +50,8 @@ type ItemJoinedTeamsItemPrimaryChannelMembersRequestBuilderPostRequestConfigurat
 func (m *ItemJoinedTeamsItemPrimaryChannelMembersRequestBuilder) Add()(*ItemJoinedTeamsItemPrimaryChannelMembersAddRequestBuilder) {
     return NewItemJoinedTeamsItemPrimaryChannelMembersAddRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByConversationMemberId provides operations to manage the members property of the microsoft.graph.channel entity.
-func (m *ItemJoinedTeamsItemPrimaryChannelMembersRequestBuilder) ByConversationMemberId(conversationMemberId string)(*ItemJoinedTeamsItemPrimaryChannelMembersConversationMemberItemRequestBuilder) {
+// ByConversationMemberIdString provides operations to manage the members property of the microsoft.graph.channel entity.
+func (m *ItemJoinedTeamsItemPrimaryChannelMembersRequestBuilder) ByConversationMemberIdString(conversationMemberId string)(*ItemJoinedTeamsItemPrimaryChannelMembersConversationMemberItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -100,10 +100,10 @@ func (m *ItemJoinedTeamsItemPrimaryChannelMembersRequestBuilder) Get(ctx context
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberCollectionResponseable), nil
 }
-// Post add a conversationMember to a channel. This operation is allowed only for channels with a membershipType value of private or shared.
+// Post add a conversationMember to a channel.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
 func (m *ItemJoinedTeamsItemPrimaryChannelMembersRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberable, requestConfiguration *ItemJoinedTeamsItemPrimaryChannelMembersRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -138,7 +138,7 @@ func (m *ItemJoinedTeamsItemPrimaryChannelMembersRequestBuilder) ToGetRequestInf
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation add a conversationMember to a channel. This operation is allowed only for channels with a membershipType value of private or shared.
+// ToPostRequestInformation add a conversationMember to a channel.
 func (m *ItemJoinedTeamsItemPrimaryChannelMembersRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberable, requestConfiguration *ItemJoinedTeamsItemPrimaryChannelMembersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

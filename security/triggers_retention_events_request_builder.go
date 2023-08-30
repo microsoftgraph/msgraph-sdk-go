@@ -46,8 +46,8 @@ type TriggersRetentionEventsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByRetentionEventId provides operations to manage the retentionEvents property of the microsoft.graph.security.triggersRoot entity.
-func (m *TriggersRetentionEventsRequestBuilder) ByRetentionEventId(retentionEventId string)(*TriggersRetentionEventsRetentionEventItemRequestBuilder) {
+// ByRetentionEventIdString provides operations to manage the retentionEvents property of the microsoft.graph.security.triggersRoot entity.
+func (m *TriggersRetentionEventsRequestBuilder) ByRetentionEventIdString(retentionEventId string)(*TriggersRetentionEventsRetentionEventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

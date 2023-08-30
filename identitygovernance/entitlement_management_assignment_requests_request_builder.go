@@ -46,8 +46,8 @@ type EntitlementManagementAssignmentRequestsRequestBuilderPostRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAccessPackageAssignmentRequestId provides operations to manage the assignmentRequests property of the microsoft.graph.entitlementManagement entity.
-func (m *EntitlementManagementAssignmentRequestsRequestBuilder) ByAccessPackageAssignmentRequestId(accessPackageAssignmentRequestId string)(*EntitlementManagementAssignmentRequestsAccessPackageAssignmentRequestItemRequestBuilder) {
+// ByAccessPackageAssignmentRequestIdString provides operations to manage the assignmentRequests property of the microsoft.graph.entitlementManagement entity.
+func (m *EntitlementManagementAssignmentRequestsRequestBuilder) ByAccessPackageAssignmentRequestIdString(accessPackageAssignmentRequestId string)(*EntitlementManagementAssignmentRequestsAccessPackageAssignmentRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

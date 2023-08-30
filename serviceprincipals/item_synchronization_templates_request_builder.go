@@ -46,8 +46,8 @@ type ItemSynchronizationTemplatesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BySynchronizationTemplateId provides operations to manage the templates property of the microsoft.graph.synchronization entity.
-func (m *ItemSynchronizationTemplatesRequestBuilder) BySynchronizationTemplateId(synchronizationTemplateId string)(*ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder) {
+// BySynchronizationTemplateIdString provides operations to manage the templates property of the microsoft.graph.synchronization entity.
+func (m *ItemSynchronizationTemplatesRequestBuilder) BySynchronizationTemplateIdString(synchronizationTemplateId string)(*ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

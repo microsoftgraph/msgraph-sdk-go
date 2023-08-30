@@ -46,8 +46,8 @@ type AuthenticationMethodConfigurationsRequestBuilderPostRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAuthenticationMethodConfigurationId provides operations to manage the authenticationMethodConfigurations property of the microsoft.graph.authenticationMethodsPolicy entity.
-func (m *AuthenticationMethodConfigurationsRequestBuilder) ByAuthenticationMethodConfigurationId(authenticationMethodConfigurationId string)(*AuthenticationMethodConfigurationsAuthenticationMethodConfigurationItemRequestBuilder) {
+// ByAuthenticationMethodConfigurationIdString provides operations to manage the authenticationMethodConfigurations property of the microsoft.graph.authenticationMethodsPolicy entity.
+func (m *AuthenticationMethodConfigurationsRequestBuilder) ByAuthenticationMethodConfigurationIdString(authenticationMethodConfigurationId string)(*AuthenticationMethodConfigurationsAuthenticationMethodConfigurationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

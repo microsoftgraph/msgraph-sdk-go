@@ -39,8 +39,8 @@ type IncidentsItemAlertsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *IncidentsItemAlertsRequestBuilderGetQueryParameters
 }
-// ByAlertId provides operations to manage the alerts property of the microsoft.graph.security.incident entity.
-func (m *IncidentsItemAlertsRequestBuilder) ByAlertId(alertId string)(*IncidentsItemAlertsAlertItemRequestBuilder) {
+// ByAlertIdString provides operations to manage the alerts property of the microsoft.graph.security.incident entity.
+func (m *IncidentsItemAlertsRequestBuilder) ByAlertIdString(alertId string)(*IncidentsItemAlertsAlertItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

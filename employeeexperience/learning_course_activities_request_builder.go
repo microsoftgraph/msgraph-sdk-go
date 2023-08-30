@@ -46,8 +46,8 @@ type LearningCourseActivitiesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByLearningCourseActivityId provides operations to manage the learningCourseActivities property of the microsoft.graph.employeeExperience entity.
-func (m *LearningCourseActivitiesRequestBuilder) ByLearningCourseActivityId(learningCourseActivityId string)(*LearningCourseActivitiesLearningCourseActivityItemRequestBuilder) {
+// ByLearningCourseActivityIdString provides operations to manage the learningCourseActivities property of the microsoft.graph.employeeExperience entity.
+func (m *LearningCourseActivitiesRequestBuilder) ByLearningCourseActivityIdString(learningCourseActivityId string)(*LearningCourseActivitiesLearningCourseActivityItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

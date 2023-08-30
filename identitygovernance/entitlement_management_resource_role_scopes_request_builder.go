@@ -46,8 +46,8 @@ type EntitlementManagementResourceRoleScopesRequestBuilderPostRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAccessPackageResourceRoleScopeId provides operations to manage the resourceRoleScopes property of the microsoft.graph.entitlementManagement entity.
-func (m *EntitlementManagementResourceRoleScopesRequestBuilder) ByAccessPackageResourceRoleScopeId(accessPackageResourceRoleScopeId string)(*EntitlementManagementResourceRoleScopesAccessPackageResourceRoleScopeItemRequestBuilder) {
+// ByAccessPackageResourceRoleScopeIdString provides operations to manage the resourceRoleScopes property of the microsoft.graph.entitlementManagement entity.
+func (m *EntitlementManagementResourceRoleScopesRequestBuilder) ByAccessPackageResourceRoleScopeIdString(accessPackageResourceRoleScopeId string)(*EntitlementManagementResourceRoleScopesAccessPackageResourceRoleScopeItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

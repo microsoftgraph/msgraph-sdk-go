@@ -39,8 +39,8 @@ type ItemTokenIssuancePoliciesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemTokenIssuancePoliciesRequestBuilderGetQueryParameters
 }
-// ByTokenIssuancePolicyId provides operations to manage the tokenIssuancePolicies property of the microsoft.graph.servicePrincipal entity.
-func (m *ItemTokenIssuancePoliciesRequestBuilder) ByTokenIssuancePolicyId(tokenIssuancePolicyId string)(*ItemTokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilder) {
+// ByTokenIssuancePolicyIdString provides operations to manage the tokenIssuancePolicies property of the microsoft.graph.servicePrincipal entity.
+func (m *ItemTokenIssuancePoliciesRequestBuilder) ByTokenIssuancePolicyIdString(tokenIssuancePolicyId string)(*ItemTokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

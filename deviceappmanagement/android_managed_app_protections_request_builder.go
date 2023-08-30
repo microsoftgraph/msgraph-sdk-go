@@ -46,8 +46,8 @@ type AndroidManagedAppProtectionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAndroidManagedAppProtectionId provides operations to manage the androidManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.
-func (m *AndroidManagedAppProtectionsRequestBuilder) ByAndroidManagedAppProtectionId(androidManagedAppProtectionId string)(*AndroidManagedAppProtectionsAndroidManagedAppProtectionItemRequestBuilder) {
+// ByAndroidManagedAppProtectionIdString provides operations to manage the androidManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.
+func (m *AndroidManagedAppProtectionsRequestBuilder) ByAndroidManagedAppProtectionIdString(androidManagedAppProtectionId string)(*AndroidManagedAppProtectionsAndroidManagedAppProtectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

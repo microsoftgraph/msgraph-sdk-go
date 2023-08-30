@@ -39,8 +39,8 @@ type ItemAuthenticationWindowsHelloForBusinessMethodsRequestBuilderGetRequestCon
     // Request query parameters
     QueryParameters *ItemAuthenticationWindowsHelloForBusinessMethodsRequestBuilderGetQueryParameters
 }
-// ByWindowsHelloForBusinessAuthenticationMethodId provides operations to manage the windowsHelloForBusinessMethods property of the microsoft.graph.authentication entity.
-func (m *ItemAuthenticationWindowsHelloForBusinessMethodsRequestBuilder) ByWindowsHelloForBusinessAuthenticationMethodId(windowsHelloForBusinessAuthenticationMethodId string)(*ItemAuthenticationWindowsHelloForBusinessMethodsWindowsHelloForBusinessAuthenticationMethodItemRequestBuilder) {
+// ByWindowsHelloForBusinessAuthenticationMethodIdString provides operations to manage the windowsHelloForBusinessMethods property of the microsoft.graph.authentication entity.
+func (m *ItemAuthenticationWindowsHelloForBusinessMethodsRequestBuilder) ByWindowsHelloForBusinessAuthenticationMethodIdString(windowsHelloForBusinessAuthenticationMethodId string)(*ItemAuthenticationWindowsHelloForBusinessMethodsWindowsHelloForBusinessAuthenticationMethodItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

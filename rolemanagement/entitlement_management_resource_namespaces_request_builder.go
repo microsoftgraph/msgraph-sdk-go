@@ -46,8 +46,8 @@ type EntitlementManagementResourceNamespacesRequestBuilderPostRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUnifiedRbacResourceNamespaceId provides operations to manage the resourceNamespaces property of the microsoft.graph.rbacApplication entity.
-func (m *EntitlementManagementResourceNamespacesRequestBuilder) ByUnifiedRbacResourceNamespaceId(unifiedRbacResourceNamespaceId string)(*EntitlementManagementResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) {
+// ByUnifiedRbacResourceNamespaceIdString provides operations to manage the resourceNamespaces property of the microsoft.graph.rbacApplication entity.
+func (m *EntitlementManagementResourceNamespacesRequestBuilder) ByUnifiedRbacResourceNamespaceIdString(unifiedRbacResourceNamespaceId string)(*EntitlementManagementResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

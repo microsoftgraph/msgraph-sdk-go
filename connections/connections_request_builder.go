@@ -46,8 +46,8 @@ type ConnectionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByExternalConnectionId provides operations to manage the collection of externalConnection entities.
-func (m *ConnectionsRequestBuilder) ByExternalConnectionId(externalConnectionId string)(*ExternalConnectionItemRequestBuilder) {
+// ByExternalConnectionIdString provides operations to manage the collection of externalConnection entities.
+func (m *ConnectionsRequestBuilder) ByExternalConnectionIdString(externalConnectionId string)(*ExternalConnectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

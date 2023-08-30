@@ -46,8 +46,8 @@ type ItemFileLocalizationsItemVersionsRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAgreementFileVersionId provides operations to manage the versions property of the microsoft.graph.agreementFileLocalization entity.
-func (m *ItemFileLocalizationsItemVersionsRequestBuilder) ByAgreementFileVersionId(agreementFileVersionId string)(*ItemFileLocalizationsItemVersionsAgreementFileVersionItemRequestBuilder) {
+// ByAgreementFileVersionIdString provides operations to manage the versions property of the microsoft.graph.agreementFileLocalization entity.
+func (m *ItemFileLocalizationsItemVersionsRequestBuilder) ByAgreementFileVersionIdString(agreementFileVersionId string)(*ItemFileLocalizationsItemVersionsAgreementFileVersionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -44,8 +44,8 @@ type ItemScheduleShiftsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByShiftId provides operations to manage the shifts property of the microsoft.graph.schedule entity.
-func (m *ItemScheduleShiftsRequestBuilder) ByShiftId(shiftId string)(*ItemScheduleShiftsShiftItemRequestBuilder) {
+// ByShiftIdString provides operations to manage the shifts property of the microsoft.graph.schedule entity.
+func (m *ItemScheduleShiftsRequestBuilder) ByShiftIdString(shiftId string)(*ItemScheduleShiftsShiftItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -39,8 +39,8 @@ type LifecycleWorkflowsWorkflowsItemExecutionScopeRequestBuilderGetRequestConfig
     // Request query parameters
     QueryParameters *LifecycleWorkflowsWorkflowsItemExecutionScopeRequestBuilderGetQueryParameters
 }
-// ByUserProcessingResultId provides operations to manage the executionScope property of the microsoft.graph.identityGovernance.workflow entity.
-func (m *LifecycleWorkflowsWorkflowsItemExecutionScopeRequestBuilder) ByUserProcessingResultId(userProcessingResultId string)(*LifecycleWorkflowsWorkflowsItemExecutionScopeUserProcessingResultItemRequestBuilder) {
+// ByUserProcessingResultIdString provides operations to manage the executionScope property of the microsoft.graph.identityGovernance.workflow entity.
+func (m *LifecycleWorkflowsWorkflowsItemExecutionScopeRequestBuilder) ByUserProcessingResultIdString(userProcessingResultId string)(*LifecycleWorkflowsWorkflowsItemExecutionScopeUserProcessingResultItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

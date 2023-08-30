@@ -39,8 +39,8 @@ type ItemMemberOfRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemMemberOfRequestBuilderGetQueryParameters
 }
-// ByDirectoryObjectId provides operations to manage the memberOf property of the microsoft.graph.servicePrincipal entity.
-func (m *ItemMemberOfRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemMemberOfDirectoryObjectItemRequestBuilder) {
+// ByDirectoryObjectIdString provides operations to manage the memberOf property of the microsoft.graph.servicePrincipal entity.
+func (m *ItemMemberOfRequestBuilder) ByDirectoryObjectIdString(directoryObjectId string)(*ItemMemberOfDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

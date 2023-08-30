@@ -11,7 +11,7 @@ import (
 type ItemTeamPermissionGrantsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTeamPermissionGrantsRequestBuilderGetQueryParameters get permissionGrants from groups
+// ItemTeamPermissionGrantsRequestBuilderGetQueryParameters list all resource-specific permission grants on the team. This list specifies the Azure AD apps that have access to the team, along with each app's corresponding type of resource-specific access.
 type ItemTeamPermissionGrantsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -46,8 +46,8 @@ type ItemTeamPermissionGrantsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByResourceSpecificPermissionGrantId provides operations to manage the permissionGrants property of the microsoft.graph.team entity.
-func (m *ItemTeamPermissionGrantsRequestBuilder) ByResourceSpecificPermissionGrantId(resourceSpecificPermissionGrantId string)(*ItemTeamPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilder) {
+// ByResourceSpecificPermissionGrantIdString provides operations to manage the permissionGrants property of the microsoft.graph.team entity.
+func (m *ItemTeamPermissionGrantsRequestBuilder) ByResourceSpecificPermissionGrantIdString(resourceSpecificPermissionGrantId string)(*ItemTeamPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -78,7 +78,10 @@ func (m *ItemTeamPermissionGrantsRequestBuilder) Count()(*ItemTeamPermissionGran
 func (m *ItemTeamPermissionGrantsRequestBuilder) Delta()(*ItemTeamPermissionGrantsDeltaRequestBuilder) {
     return NewItemTeamPermissionGrantsDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get permissionGrants from groups
+// Get list all resource-specific permission grants on the team. This list specifies the Azure AD apps that have access to the team, along with each app's corresponding type of resource-specific access.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/team-list-permissiongrants?view=graph-rest-1.0
 func (m *ItemTeamPermissionGrantsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamPermissionGrantsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ResourceSpecificPermissionGrantCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +127,7 @@ func (m *ItemTeamPermissionGrantsRequestBuilder) Post(ctx context.Context, body 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ResourceSpecificPermissionGrantable), nil
 }
-// ToGetRequestInformation get permissionGrants from groups
+// ToGetRequestInformation list all resource-specific permission grants on the team. This list specifies the Azure AD apps that have access to the team, along with each app's corresponding type of resource-specific access.
 func (m *ItemTeamPermissionGrantsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamPermissionGrantsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

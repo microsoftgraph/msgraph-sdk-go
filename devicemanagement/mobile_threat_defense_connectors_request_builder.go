@@ -46,8 +46,8 @@ type MobileThreatDefenseConnectorsRequestBuilderPostRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByMobileThreatDefenseConnectorId provides operations to manage the mobileThreatDefenseConnectors property of the microsoft.graph.deviceManagement entity.
-func (m *MobileThreatDefenseConnectorsRequestBuilder) ByMobileThreatDefenseConnectorId(mobileThreatDefenseConnectorId string)(*MobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBuilder) {
+// ByMobileThreatDefenseConnectorIdString provides operations to manage the mobileThreatDefenseConnectors property of the microsoft.graph.deviceManagement entity.
+func (m *MobileThreatDefenseConnectorsRequestBuilder) ByMobileThreatDefenseConnectorIdString(mobileThreatDefenseConnectorId string)(*MobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

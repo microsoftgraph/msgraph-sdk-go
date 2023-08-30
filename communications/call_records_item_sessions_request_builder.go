@@ -46,8 +46,8 @@ type CallRecordsItemSessionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BySessionId provides operations to manage the sessions property of the microsoft.graph.callRecords.callRecord entity.
-func (m *CallRecordsItemSessionsRequestBuilder) BySessionId(sessionId string)(*CallRecordsItemSessionsSessionItemRequestBuilder) {
+// BySessionIdString provides operations to manage the sessions property of the microsoft.graph.callRecords.callRecord entity.
+func (m *CallRecordsItemSessionsRequestBuilder) BySessionIdString(sessionId string)(*CallRecordsItemSessionsSessionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

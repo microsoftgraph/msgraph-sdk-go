@@ -46,8 +46,8 @@ type MeAssignmentsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByEducationAssignmentId provides operations to manage the assignments property of the microsoft.graph.educationUser entity.
-func (m *MeAssignmentsRequestBuilder) ByEducationAssignmentId(educationAssignmentId string)(*MeAssignmentsEducationAssignmentItemRequestBuilder) {
+// ByEducationAssignmentIdString provides operations to manage the assignments property of the microsoft.graph.educationUser entity.
+func (m *MeAssignmentsRequestBuilder) ByEducationAssignmentIdString(educationAssignmentId string)(*MeAssignmentsEducationAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

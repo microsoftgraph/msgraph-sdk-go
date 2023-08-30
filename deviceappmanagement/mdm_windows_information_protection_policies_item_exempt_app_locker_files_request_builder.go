@@ -46,8 +46,8 @@ type MdmWindowsInformationProtectionPoliciesItemExemptAppLockerFilesRequestBuild
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByWindowsInformationProtectionAppLockerFileId provides operations to manage the exemptAppLockerFiles property of the microsoft.graph.windowsInformationProtection entity.
-func (m *MdmWindowsInformationProtectionPoliciesItemExemptAppLockerFilesRequestBuilder) ByWindowsInformationProtectionAppLockerFileId(windowsInformationProtectionAppLockerFileId string)(*MdmWindowsInformationProtectionPoliciesItemExemptAppLockerFilesWindowsInformationProtectionAppLockerFileItemRequestBuilder) {
+// ByWindowsInformationProtectionAppLockerFileIdString provides operations to manage the exemptAppLockerFiles property of the microsoft.graph.windowsInformationProtection entity.
+func (m *MdmWindowsInformationProtectionPoliciesItemExemptAppLockerFilesRequestBuilder) ByWindowsInformationProtectionAppLockerFileIdString(windowsInformationProtectionAppLockerFileId string)(*MdmWindowsInformationProtectionPoliciesItemExemptAppLockerFilesWindowsInformationProtectionAppLockerFileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -39,8 +39,8 @@ type ItemAppManagementPoliciesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemAppManagementPoliciesRequestBuilderGetQueryParameters
 }
-// ByAppManagementPolicyId provides operations to manage the appManagementPolicies property of the microsoft.graph.servicePrincipal entity.
-func (m *ItemAppManagementPoliciesRequestBuilder) ByAppManagementPolicyId(appManagementPolicyId string)(*ItemAppManagementPoliciesAppManagementPolicyItemRequestBuilder) {
+// ByAppManagementPolicyIdString provides operations to manage the appManagementPolicies property of the microsoft.graph.servicePrincipal entity.
+func (m *ItemAppManagementPoliciesRequestBuilder) ByAppManagementPolicyIdString(appManagementPolicyId string)(*ItemAppManagementPoliciesAppManagementPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

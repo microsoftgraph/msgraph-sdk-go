@@ -39,8 +39,8 @@ type ItemTransitiveMemberOfRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemTransitiveMemberOfRequestBuilderGetQueryParameters
 }
-// ByDirectoryObjectId provides operations to manage the transitiveMemberOf property of the microsoft.graph.device entity.
-func (m *ItemTransitiveMemberOfRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemTransitiveMemberOfDirectoryObjectItemRequestBuilder) {
+// ByDirectoryObjectIdString provides operations to manage the transitiveMemberOf property of the microsoft.graph.device entity.
+func (m *ItemTransitiveMemberOfRequestBuilder) ByDirectoryObjectIdString(directoryObjectId string)(*ItemTransitiveMemberOfDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

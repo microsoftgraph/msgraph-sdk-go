@@ -48,7 +48,7 @@ func CreateBaseItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
     }
     return NewBaseItem(), nil
 }
-// GetCreatedBy gets the createdBy property value. Identity of the user, device, or application which created the item. Read-only.
+// GetCreatedBy gets the createdBy property value. Identity of the user, device, or application that created the item. Read-only.
 func (m *BaseItem) GetCreatedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -218,7 +218,7 @@ func (m *BaseItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user, device, and application which last modified the item. Read-only.
+// GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user, device, and application that last modified the item. Read-only.
 func (m *BaseItem) GetLastModifiedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -273,7 +273,7 @@ func (m *BaseItem) GetParentReference()(ItemReferenceable) {
     }
     return nil
 }
-// GetWebUrl gets the webUrl property value. URL that displays the resource in the browser. Read-only.
+// GetWebUrl gets the webUrl property value. URL that either displays the resource in the browser (for Office file formats), or is a direct link to the file (for other formats). Read-only.
 func (m *BaseItem) GetWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("webUrl")
     if err != nil {
@@ -358,7 +358,7 @@ func (m *BaseItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetCreatedBy sets the createdBy property value. Identity of the user, device, or application which created the item. Read-only.
+// SetCreatedBy sets the createdBy property value. Identity of the user, device, or application that created the item. Read-only.
 func (m *BaseItem) SetCreatedBy(value IdentitySetable)() {
     err := m.GetBackingStore().Set("createdBy", value)
     if err != nil {
@@ -393,7 +393,7 @@ func (m *BaseItem) SetETag(value *string)() {
         panic(err)
     }
 }
-// SetLastModifiedBy sets the lastModifiedBy property value. Identity of the user, device, and application which last modified the item. Read-only.
+// SetLastModifiedBy sets the lastModifiedBy property value. Identity of the user, device, and application that last modified the item. Read-only.
 func (m *BaseItem) SetLastModifiedBy(value IdentitySetable)() {
     err := m.GetBackingStore().Set("lastModifiedBy", value)
     if err != nil {
@@ -428,7 +428,7 @@ func (m *BaseItem) SetParentReference(value ItemReferenceable)() {
         panic(err)
     }
 }
-// SetWebUrl sets the webUrl property value. URL that displays the resource in the browser. Read-only.
+// SetWebUrl sets the webUrl property value. URL that either displays the resource in the browser (for Office file formats), or is a direct link to the file (for other formats). Read-only.
 func (m *BaseItem) SetWebUrl(value *string)() {
     err := m.GetBackingStore().Set("webUrl", value)
     if err != nil {

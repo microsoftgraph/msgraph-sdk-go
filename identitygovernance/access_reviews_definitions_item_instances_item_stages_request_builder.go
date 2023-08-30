@@ -46,8 +46,8 @@ type AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilderPostRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAccessReviewStageId provides operations to manage the stages property of the microsoft.graph.accessReviewInstance entity.
-func (m *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder) ByAccessReviewStageId(accessReviewStageId string)(*AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequestBuilder) {
+// ByAccessReviewStageIdString provides operations to manage the stages property of the microsoft.graph.accessReviewInstance entity.
+func (m *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder) ByAccessReviewStageIdString(accessReviewStageId string)(*AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

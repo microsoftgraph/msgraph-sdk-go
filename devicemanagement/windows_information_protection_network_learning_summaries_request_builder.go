@@ -46,8 +46,8 @@ type WindowsInformationProtectionNetworkLearningSummariesRequestBuilderPostReque
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByWindowsInformationProtectionNetworkLearningSummaryId provides operations to manage the windowsInformationProtectionNetworkLearningSummaries property of the microsoft.graph.deviceManagement entity.
-func (m *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) ByWindowsInformationProtectionNetworkLearningSummaryId(windowsInformationProtectionNetworkLearningSummaryId string)(*WindowsInformationProtectionNetworkLearningSummariesWindowsInformationProtectionNetworkLearningSummaryItemRequestBuilder) {
+// ByWindowsInformationProtectionNetworkLearningSummaryIdString provides operations to manage the windowsInformationProtectionNetworkLearningSummaries property of the microsoft.graph.deviceManagement entity.
+func (m *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) ByWindowsInformationProtectionNetworkLearningSummaryIdString(windowsInformationProtectionNetworkLearningSummaryId string)(*WindowsInformationProtectionNetworkLearningSummariesWindowsInformationProtectionNetworkLearningSummaryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

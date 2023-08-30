@@ -39,8 +39,8 @@ type ThreatIntelligenceHostsItemPassiveDnsReverseRequestBuilderGetRequestConfigu
     // Request query parameters
     QueryParameters *ThreatIntelligenceHostsItemPassiveDnsReverseRequestBuilderGetQueryParameters
 }
-// ByPassiveDnsRecordId provides operations to manage the passiveDnsReverse property of the microsoft.graph.security.host entity.
-func (m *ThreatIntelligenceHostsItemPassiveDnsReverseRequestBuilder) ByPassiveDnsRecordId(passiveDnsRecordId string)(*ThreatIntelligenceHostsItemPassiveDnsReversePassiveDnsRecordItemRequestBuilder) {
+// ByPassiveDnsRecordIdString provides operations to manage the passiveDnsReverse property of the microsoft.graph.security.host entity.
+func (m *ThreatIntelligenceHostsItemPassiveDnsReverseRequestBuilder) ByPassiveDnsRecordIdString(passiveDnsRecordId string)(*ThreatIntelligenceHostsItemPassiveDnsReversePassiveDnsRecordItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -39,8 +39,8 @@ type ItemFollowedSitesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemFollowedSitesRequestBuilderGetQueryParameters
 }
-// BySiteId provides operations to manage the followedSites property of the microsoft.graph.user entity.
-func (m *ItemFollowedSitesRequestBuilder) BySiteId(siteId string)(*ItemFollowedSitesSiteItemRequestBuilder) {
+// BySiteIdString provides operations to manage the followedSites property of the microsoft.graph.user entity.
+func (m *ItemFollowedSitesRequestBuilder) BySiteIdString(siteId string)(*ItemFollowedSitesSiteItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

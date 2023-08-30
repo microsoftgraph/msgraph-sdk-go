@@ -46,8 +46,8 @@ type DeviceCompliancePolicySettingStateSummariesItemDeviceComplianceSettingState
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceComplianceSettingStateId provides operations to manage the deviceComplianceSettingStates property of the microsoft.graph.deviceCompliancePolicySettingStateSummary entity.
-func (m *DeviceCompliancePolicySettingStateSummariesItemDeviceComplianceSettingStatesRequestBuilder) ByDeviceComplianceSettingStateId(deviceComplianceSettingStateId string)(*DeviceCompliancePolicySettingStateSummariesItemDeviceComplianceSettingStatesDeviceComplianceSettingStateItemRequestBuilder) {
+// ByDeviceComplianceSettingStateIdString provides operations to manage the deviceComplianceSettingStates property of the microsoft.graph.deviceCompliancePolicySettingStateSummary entity.
+func (m *DeviceCompliancePolicySettingStateSummariesItemDeviceComplianceSettingStatesRequestBuilder) ByDeviceComplianceSettingStateIdString(deviceComplianceSettingStateId string)(*DeviceCompliancePolicySettingStateSummariesItemDeviceComplianceSettingStatesDeviceComplianceSettingStateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

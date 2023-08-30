@@ -39,8 +39,8 @@ type ItemMembersRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemMembersRequestBuilderGetQueryParameters
 }
-// ByDirectoryObjectId gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.members.item collection
-func (m *ItemMembersRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemMembersDirectoryObjectItemRequestBuilder) {
+// ByDirectoryObjectIdString gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.members.item collection
+func (m *ItemMembersRequestBuilder) ByDirectoryObjectIdString(directoryObjectId string)(*ItemMembersDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

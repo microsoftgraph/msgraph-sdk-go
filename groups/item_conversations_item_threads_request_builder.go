@@ -44,8 +44,8 @@ type ItemConversationsItemThreadsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByConversationThreadId provides operations to manage the threads property of the microsoft.graph.conversation entity.
-func (m *ItemConversationsItemThreadsRequestBuilder) ByConversationThreadId(conversationThreadId string)(*ItemConversationsItemThreadsConversationThreadItemRequestBuilder) {
+// ByConversationThreadIdString provides operations to manage the threads property of the microsoft.graph.conversation entity.
+func (m *ItemConversationsItemThreadsRequestBuilder) ByConversationThreadIdString(conversationThreadId string)(*ItemConversationsItemThreadsConversationThreadItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

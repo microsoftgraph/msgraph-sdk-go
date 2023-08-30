@@ -39,8 +39,8 @@ type HomeRealmDiscoveryPoliciesItemAppliesToRequestBuilderGetRequestConfiguratio
     // Request query parameters
     QueryParameters *HomeRealmDiscoveryPoliciesItemAppliesToRequestBuilderGetQueryParameters
 }
-// ByDirectoryObjectId provides operations to manage the appliesTo property of the microsoft.graph.stsPolicy entity.
-func (m *HomeRealmDiscoveryPoliciesItemAppliesToRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*HomeRealmDiscoveryPoliciesItemAppliesToDirectoryObjectItemRequestBuilder) {
+// ByDirectoryObjectIdString provides operations to manage the appliesTo property of the microsoft.graph.stsPolicy entity.
+func (m *HomeRealmDiscoveryPoliciesItemAppliesToRequestBuilder) ByDirectoryObjectIdString(directoryObjectId string)(*HomeRealmDiscoveryPoliciesItemAppliesToDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

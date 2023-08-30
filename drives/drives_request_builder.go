@@ -44,8 +44,8 @@ type DrivesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDriveId provides operations to manage the collection of drive entities.
-func (m *DrivesRequestBuilder) ByDriveId(driveId string)(*DriveItemRequestBuilder) {
+// ByDriveIdString provides operations to manage the collection of drive entities.
+func (m *DrivesRequestBuilder) ByDriveIdString(driveId string)(*DriveItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

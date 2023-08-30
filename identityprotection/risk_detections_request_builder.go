@@ -46,8 +46,8 @@ type RiskDetectionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByRiskDetectionId provides operations to manage the riskDetections property of the microsoft.graph.identityProtectionRoot entity.
-func (m *RiskDetectionsRequestBuilder) ByRiskDetectionId(riskDetectionId string)(*RiskDetectionsRiskDetectionItemRequestBuilder) {
+// ByRiskDetectionIdString provides operations to manage the riskDetections property of the microsoft.graph.identityProtectionRoot entity.
+func (m *RiskDetectionsRequestBuilder) ByRiskDetectionIdString(riskDetectionId string)(*RiskDetectionsRiskDetectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

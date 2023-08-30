@@ -607,6 +607,16 @@ func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["servicePrincipalLockConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateServicePrincipalLockConfigurationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetServicePrincipalLockConfiguration(val.(ServicePrincipalLockConfigurationable))
+        }
+        return nil
+    }
     res["signInAudience"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -934,6 +944,17 @@ func (m *Application) GetServiceManagementReference()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetServicePrincipalLockConfiguration gets the servicePrincipalLockConfiguration property value. Specifies whether sensitive properties of a multi-tenant application should be locked for editing after the application is provisioned in a tenant. Nullable. null by default.
+func (m *Application) GetServicePrincipalLockConfiguration()(ServicePrincipalLockConfigurationable) {
+    val, err := m.GetBackingStore().Get("servicePrincipalLockConfiguration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ServicePrincipalLockConfigurationable)
     }
     return nil
 }
@@ -1313,6 +1334,12 @@ func (m *Application) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err = writer.WriteObjectValue("servicePrincipalLockConfiguration", m.GetServicePrincipalLockConfiguration())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("signInAudience", m.GetSignInAudience())
         if err != nil {
             return err
@@ -1625,6 +1652,13 @@ func (m *Application) SetServiceManagementReference(value *string)() {
         panic(err)
     }
 }
+// SetServicePrincipalLockConfiguration sets the servicePrincipalLockConfiguration property value. Specifies whether sensitive properties of a multi-tenant application should be locked for editing after the application is provisioned in a tenant. Nullable. null by default.
+func (m *Application) SetServicePrincipalLockConfiguration(value ServicePrincipalLockConfigurationable)() {
+    err := m.GetBackingStore().Set("servicePrincipalLockConfiguration", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSignInAudience sets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table. The value of this object also limits the number of permissions an app can request. For more information, see Limits on requested permissions per app. The value for this property has implications on other app object properties. As a result, if you change this property, you may need to change other properties first. For more information, see Validation differences for signInAudience.Supports $filter (eq, ne, not).
 func (m *Application) SetSignInAudience(value *string)() {
     err := m.GetBackingStore().Set("signInAudience", value)
@@ -1727,6 +1761,7 @@ type Applicationable interface {
     GetRequiredResourceAccess()([]RequiredResourceAccessable)
     GetSamlMetadataUrl()(*string)
     GetServiceManagementReference()(*string)
+    GetServicePrincipalLockConfiguration()(ServicePrincipalLockConfigurationable)
     GetSignInAudience()(*string)
     GetSpa()(SpaApplicationable)
     GetSynchronization()(Synchronizationable)
@@ -1771,6 +1806,7 @@ type Applicationable interface {
     SetRequiredResourceAccess(value []RequiredResourceAccessable)()
     SetSamlMetadataUrl(value *string)()
     SetServiceManagementReference(value *string)()
+    SetServicePrincipalLockConfiguration(value ServicePrincipalLockConfigurationable)()
     SetSignInAudience(value *string)()
     SetSpa(value SpaApplicationable)()
     SetSynchronization(value Synchronizationable)()

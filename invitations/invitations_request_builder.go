@@ -46,8 +46,8 @@ type InvitationsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByInvitationId provides operations to manage the collection of invitation entities.
-func (m *InvitationsRequestBuilder) ByInvitationId(invitationId string)(*InvitationItemRequestBuilder) {
+// ByInvitationIdString provides operations to manage the collection of invitation entities.
+func (m *InvitationsRequestBuilder) ByInvitationIdString(invitationId string)(*InvitationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -39,8 +39,8 @@ type ItemEmployeeExperienceLearningCourseActivitiesRequestBuilderGetRequestConfi
     // Request query parameters
     QueryParameters *ItemEmployeeExperienceLearningCourseActivitiesRequestBuilderGetQueryParameters
 }
-// ByLearningCourseActivityId provides operations to manage the learningCourseActivities property of the microsoft.graph.employeeExperienceUser entity.
-func (m *ItemEmployeeExperienceLearningCourseActivitiesRequestBuilder) ByLearningCourseActivityId(learningCourseActivityId string)(*ItemEmployeeExperienceLearningCourseActivitiesLearningCourseActivityItemRequestBuilder) {
+// ByLearningCourseActivityIdString provides operations to manage the learningCourseActivities property of the microsoft.graph.employeeExperienceUser entity.
+func (m *ItemEmployeeExperienceLearningCourseActivitiesRequestBuilder) ByLearningCourseActivityIdString(learningCourseActivityId string)(*ItemEmployeeExperienceLearningCourseActivitiesLearningCourseActivityItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -46,8 +46,8 @@ type TaskDefinitionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByPrintTaskDefinitionId provides operations to manage the taskDefinitions property of the microsoft.graph.print entity.
-func (m *TaskDefinitionsRequestBuilder) ByPrintTaskDefinitionId(printTaskDefinitionId string)(*TaskDefinitionsPrintTaskDefinitionItemRequestBuilder) {
+// ByPrintTaskDefinitionIdString provides operations to manage the taskDefinitions property of the microsoft.graph.print entity.
+func (m *TaskDefinitionsRequestBuilder) ByPrintTaskDefinitionIdString(printTaskDefinitionId string)(*TaskDefinitionsPrintTaskDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

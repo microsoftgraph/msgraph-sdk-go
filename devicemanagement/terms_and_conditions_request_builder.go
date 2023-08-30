@@ -46,8 +46,8 @@ type TermsAndConditionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByTermsAndConditionsId provides operations to manage the termsAndConditions property of the microsoft.graph.deviceManagement entity.
-func (m *TermsAndConditionsRequestBuilder) ByTermsAndConditionsId(termsAndConditionsId string)(*TermsAndConditionsTermsAndConditionsItemRequestBuilder) {
+// ByTermsAndConditionsIdString provides operations to manage the termsAndConditions property of the microsoft.graph.deviceManagement entity.
+func (m *TermsAndConditionsRequestBuilder) ByTermsAndConditionsIdString(termsAndConditionsId string)(*TermsAndConditionsTermsAndConditionsItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

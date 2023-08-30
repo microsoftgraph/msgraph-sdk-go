@@ -46,8 +46,8 @@ type ApiConnectorsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByIdentityApiConnectorId provides operations to manage the apiConnectors property of the microsoft.graph.identityContainer entity.
-func (m *ApiConnectorsRequestBuilder) ByIdentityApiConnectorId(identityApiConnectorId string)(*ApiConnectorsIdentityApiConnectorItemRequestBuilder) {
+// ByIdentityApiConnectorIdString provides operations to manage the apiConnectors property of the microsoft.graph.identityContainer entity.
+func (m *ApiConnectorsRequestBuilder) ByIdentityApiConnectorIdString(identityApiConnectorId string)(*ApiConnectorsIdentityApiConnectorItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

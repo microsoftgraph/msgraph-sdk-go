@@ -39,8 +39,8 @@ type ItemAuthenticationSoftwareOathMethodsRequestBuilderGetRequestConfiguration 
     // Request query parameters
     QueryParameters *ItemAuthenticationSoftwareOathMethodsRequestBuilderGetQueryParameters
 }
-// BySoftwareOathAuthenticationMethodId provides operations to manage the softwareOathMethods property of the microsoft.graph.authentication entity.
-func (m *ItemAuthenticationSoftwareOathMethodsRequestBuilder) BySoftwareOathAuthenticationMethodId(softwareOathAuthenticationMethodId string)(*ItemAuthenticationSoftwareOathMethodsSoftwareOathAuthenticationMethodItemRequestBuilder) {
+// BySoftwareOathAuthenticationMethodIdString provides operations to manage the softwareOathMethods property of the microsoft.graph.authentication entity.
+func (m *ItemAuthenticationSoftwareOathMethodsRequestBuilder) BySoftwareOathAuthenticationMethodIdString(softwareOathAuthenticationMethodId string)(*ItemAuthenticationSoftwareOathMethodsSoftwareOathAuthenticationMethodItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

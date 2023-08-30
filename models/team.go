@@ -540,7 +540,7 @@ func (m *Team) GetOperations()([]TeamsAsyncOperationable) {
     }
     return nil
 }
-// GetPermissionGrants gets the permissionGrants property value. The permissionGrants property
+// GetPermissionGrants gets the permissionGrants property value. A collection of permissions granted to apps to access the team.
 func (m *Team) GetPermissionGrants()([]ResourceSpecificPermissionGrantable) {
     val, err := m.GetBackingStore().Get("permissionGrants")
     if err != nil {
@@ -1006,7 +1006,7 @@ func (m *Team) SetOperations(value []TeamsAsyncOperationable)() {
         panic(err)
     }
 }
-// SetPermissionGrants sets the permissionGrants property value. The permissionGrants property
+// SetPermissionGrants sets the permissionGrants property value. A collection of permissions granted to apps to access the team.
 func (m *Team) SetPermissionGrants(value []ResourceSpecificPermissionGrantable)() {
     err := m.GetBackingStore().Set("permissionGrants", value)
     if err != nil {

@@ -46,8 +46,8 @@ type TroubleshootingEventsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceManagementTroubleshootingEventId provides operations to manage the troubleshootingEvents property of the microsoft.graph.deviceManagement entity.
-func (m *TroubleshootingEventsRequestBuilder) ByDeviceManagementTroubleshootingEventId(deviceManagementTroubleshootingEventId string)(*TroubleshootingEventsDeviceManagementTroubleshootingEventItemRequestBuilder) {
+// ByDeviceManagementTroubleshootingEventIdString provides operations to manage the troubleshootingEvents property of the microsoft.graph.deviceManagement entity.
+func (m *TroubleshootingEventsRequestBuilder) ByDeviceManagementTroubleshootingEventIdString(deviceManagementTroubleshootingEventId string)(*TroubleshootingEventsDeviceManagementTroubleshootingEventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

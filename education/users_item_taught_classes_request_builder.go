@@ -39,8 +39,8 @@ type UsersItemTaughtClassesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *UsersItemTaughtClassesRequestBuilderGetQueryParameters
 }
-// ByEducationClassId provides operations to manage the taughtClasses property of the microsoft.graph.educationUser entity.
-func (m *UsersItemTaughtClassesRequestBuilder) ByEducationClassId(educationClassId string)(*UsersItemTaughtClassesEducationClassItemRequestBuilder) {
+// ByEducationClassIdString provides operations to manage the taughtClasses property of the microsoft.graph.educationUser entity.
+func (m *UsersItemTaughtClassesRequestBuilder) ByEducationClassIdString(educationClassId string)(*UsersItemTaughtClassesEducationClassItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

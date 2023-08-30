@@ -44,8 +44,8 @@ type UsersRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUserId provides operations to manage the collection of user entities.
-func (m *UsersRequestBuilder) ByUserId(userId string)(*UserItemRequestBuilder) {
+// ByUserIdString provides operations to manage the collection of user entities.
+func (m *UsersRequestBuilder) ByUserIdString(userId string)(*UserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -46,8 +46,8 @@ type AccessReviewsDefinitionsItemInstancesRequestBuilderPostRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAccessReviewInstanceId provides operations to manage the instances property of the microsoft.graph.accessReviewScheduleDefinition entity.
-func (m *AccessReviewsDefinitionsItemInstancesRequestBuilder) ByAccessReviewInstanceId(accessReviewInstanceId string)(*AccessReviewsDefinitionsItemInstancesAccessReviewInstanceItemRequestBuilder) {
+// ByAccessReviewInstanceIdString provides operations to manage the instances property of the microsoft.graph.accessReviewScheduleDefinition entity.
+func (m *AccessReviewsDefinitionsItemInstancesRequestBuilder) ByAccessReviewInstanceIdString(accessReviewInstanceId string)(*AccessReviewsDefinitionsItemInstancesAccessReviewInstanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

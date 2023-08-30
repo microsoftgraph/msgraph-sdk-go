@@ -50,8 +50,8 @@ type ItemItemsItemWorkbookTablesRequestBuilderPostRequestConfiguration struct {
 func (m *ItemItemsItemWorkbookTablesRequestBuilder) Add()(*ItemItemsItemWorkbookTablesAddRequestBuilder) {
     return NewItemItemsItemWorkbookTablesAddRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByWorkbookTableId provides operations to manage the tables property of the microsoft.graph.workbook entity.
-func (m *ItemItemsItemWorkbookTablesRequestBuilder) ByWorkbookTableId(workbookTableId string)(*ItemItemsItemWorkbookTablesWorkbookTableItemRequestBuilder) {
+// ByWorkbookTableIdString provides operations to manage the tables property of the microsoft.graph.workbook entity.
+func (m *ItemItemsItemWorkbookTablesRequestBuilder) ByWorkbookTableIdString(workbookTableId string)(*ItemItemsItemWorkbookTablesWorkbookTableItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -81,7 +81,7 @@ func (m *ItemItemsItemWorkbookTablesRequestBuilder) Count()(*ItemItemsItemWorkbo
 // Get retrieve a list of table objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/table-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/workbook-list-tables?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookTablesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

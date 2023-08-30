@@ -46,8 +46,8 @@ type OnPremisesSynchronizationRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByOnPremisesDirectorySynchronizationId provides operations to manage the onPremisesSynchronization property of the microsoft.graph.directory entity.
-func (m *OnPremisesSynchronizationRequestBuilder) ByOnPremisesDirectorySynchronizationId(onPremisesDirectorySynchronizationId string)(*OnPremisesSynchronizationOnPremisesDirectorySynchronizationItemRequestBuilder) {
+// ByOnPremisesDirectorySynchronizationIdString provides operations to manage the onPremisesSynchronization property of the microsoft.graph.directory entity.
+func (m *OnPremisesSynchronizationRequestBuilder) ByOnPremisesDirectorySynchronizationIdString(onPremisesDirectorySynchronizationId string)(*OnPremisesSynchronizationOnPremisesDirectorySynchronizationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

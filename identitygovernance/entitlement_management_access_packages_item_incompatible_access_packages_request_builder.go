@@ -39,8 +39,8 @@ type EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRequestBui
     // Request query parameters
     QueryParameters *EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRequestBuilderGetQueryParameters
 }
-// ByAccessPackageId1 gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.entitlementManagement.accessPackages.item.incompatibleAccessPackages.item collection
-func (m *EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRequestBuilder) ByAccessPackageId1(accessPackageId1 string)(*EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesAccessPackageItemRequestBuilder) {
+// ByAccessPackageId1String gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.entitlementManagement.accessPackages.item.incompatibleAccessPackages.item collection
+func (m *EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRequestBuilder) ByAccessPackageId1String(accessPackageId1 string)(*EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesAccessPackageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

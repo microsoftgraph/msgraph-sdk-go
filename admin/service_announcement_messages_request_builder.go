@@ -50,8 +50,8 @@ type ServiceAnnouncementMessagesRequestBuilderPostRequestConfiguration struct {
 func (m *ServiceAnnouncementMessagesRequestBuilder) Archive()(*ServiceAnnouncementMessagesArchiveRequestBuilder) {
     return NewServiceAnnouncementMessagesArchiveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByServiceUpdateMessageId provides operations to manage the messages property of the microsoft.graph.serviceAnnouncement entity.
-func (m *ServiceAnnouncementMessagesRequestBuilder) ByServiceUpdateMessageId(serviceUpdateMessageId string)(*ServiceAnnouncementMessagesServiceUpdateMessageItemRequestBuilder) {
+// ByServiceUpdateMessageIdString provides operations to manage the messages property of the microsoft.graph.serviceAnnouncement entity.
+func (m *ServiceAnnouncementMessagesRequestBuilder) ByServiceUpdateMessageIdString(serviceUpdateMessageId string)(*ServiceAnnouncementMessagesServiceUpdateMessageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

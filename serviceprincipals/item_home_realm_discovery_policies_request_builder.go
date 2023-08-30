@@ -39,8 +39,8 @@ type ItemHomeRealmDiscoveryPoliciesRequestBuilderGetRequestConfiguration struct 
     // Request query parameters
     QueryParameters *ItemHomeRealmDiscoveryPoliciesRequestBuilderGetQueryParameters
 }
-// ByHomeRealmDiscoveryPolicyId gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.servicePrincipals.item.homeRealmDiscoveryPolicies.item collection
-func (m *ItemHomeRealmDiscoveryPoliciesRequestBuilder) ByHomeRealmDiscoveryPolicyId(homeRealmDiscoveryPolicyId string)(*ItemHomeRealmDiscoveryPoliciesHomeRealmDiscoveryPolicyItemRequestBuilder) {
+// ByHomeRealmDiscoveryPolicyIdString gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.servicePrincipals.item.homeRealmDiscoveryPolicies.item collection
+func (m *ItemHomeRealmDiscoveryPoliciesRequestBuilder) ByHomeRealmDiscoveryPolicyIdString(homeRealmDiscoveryPolicyId string)(*ItemHomeRealmDiscoveryPoliciesHomeRealmDiscoveryPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -39,8 +39,8 @@ type LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilderGetRequestConfiguratio
     // Request query parameters
     QueryParameters *LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilderGetQueryParameters
 }
-// ByWorkflowId provides operations to manage the workflows property of the microsoft.graph.deletedItemContainer entity.
-func (m *LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilder) ByWorkflowId(workflowId string)(*LifecycleWorkflowsDeletedItemsWorkflowsWorkflowItemRequestBuilder) {
+// ByWorkflowIdString provides operations to manage the workflows property of the microsoft.graph.deletedItemContainer entity.
+func (m *LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilder) ByWorkflowIdString(workflowId string)(*LifecycleWorkflowsDeletedItemsWorkflowsWorkflowItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

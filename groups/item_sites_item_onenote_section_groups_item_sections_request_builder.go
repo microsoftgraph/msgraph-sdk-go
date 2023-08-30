@@ -46,8 +46,8 @@ type ItemSitesItemOnenoteSectionGroupsItemSectionsRequestBuilderPostRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByOnenoteSectionId provides operations to manage the sections property of the microsoft.graph.sectionGroup entity.
-func (m *ItemSitesItemOnenoteSectionGroupsItemSectionsRequestBuilder) ByOnenoteSectionId(onenoteSectionId string)(*ItemSitesItemOnenoteSectionGroupsItemSectionsOnenoteSectionItemRequestBuilder) {
+// ByOnenoteSectionIdString provides operations to manage the sections property of the microsoft.graph.sectionGroup entity.
+func (m *ItemSitesItemOnenoteSectionGroupsItemSectionsRequestBuilder) ByOnenoteSectionIdString(onenoteSectionId string)(*ItemSitesItemOnenoteSectionGroupsItemSectionsOnenoteSectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

@@ -46,8 +46,8 @@ type EntitlementManagementCatalogsRequestBuilderPostRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAccessPackageCatalogId provides operations to manage the catalogs property of the microsoft.graph.entitlementManagement entity.
-func (m *EntitlementManagementCatalogsRequestBuilder) ByAccessPackageCatalogId(accessPackageCatalogId string)(*EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) {
+// ByAccessPackageCatalogIdString provides operations to manage the catalogs property of the microsoft.graph.entitlementManagement entity.
+func (m *EntitlementManagementCatalogsRequestBuilder) ByAccessPackageCatalogIdString(accessPackageCatalogId string)(*EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

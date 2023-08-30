@@ -46,8 +46,8 @@ type AccessReviewsHistoryDefinitionsRequestBuilderPostRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAccessReviewHistoryDefinitionId provides operations to manage the historyDefinitions property of the microsoft.graph.accessReviewSet entity.
-func (m *AccessReviewsHistoryDefinitionsRequestBuilder) ByAccessReviewHistoryDefinitionId(accessReviewHistoryDefinitionId string)(*AccessReviewsHistoryDefinitionsAccessReviewHistoryDefinitionItemRequestBuilder) {
+// ByAccessReviewHistoryDefinitionIdString provides operations to manage the historyDefinitions property of the microsoft.graph.accessReviewSet entity.
+func (m *AccessReviewsHistoryDefinitionsRequestBuilder) ByAccessReviewHistoryDefinitionIdString(accessReviewHistoryDefinitionId string)(*AccessReviewsHistoryDefinitionsAccessReviewHistoryDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

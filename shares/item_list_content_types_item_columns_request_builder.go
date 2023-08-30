@@ -46,8 +46,8 @@ type ItemListContentTypesItemColumnsRequestBuilderPostRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByColumnDefinitionId provides operations to manage the columns property of the microsoft.graph.contentType entity.
-func (m *ItemListContentTypesItemColumnsRequestBuilder) ByColumnDefinitionId(columnDefinitionId string)(*ItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilder) {
+// ByColumnDefinitionIdString provides operations to manage the columns property of the microsoft.graph.contentType entity.
+func (m *ItemListContentTypesItemColumnsRequestBuilder) ByColumnDefinitionIdString(columnDefinitionId string)(*ItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

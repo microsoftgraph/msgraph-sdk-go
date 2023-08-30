@@ -50,8 +50,8 @@ type ItemItemsItemWorkbookWorksheetsRequestBuilderPostRequestConfiguration struc
 func (m *ItemItemsItemWorkbookWorksheetsRequestBuilder) Add()(*ItemItemsItemWorkbookWorksheetsAddRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsAddRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByWorkbookWorksheetId provides operations to manage the worksheets property of the microsoft.graph.workbook entity.
-func (m *ItemItemsItemWorkbookWorksheetsRequestBuilder) ByWorkbookWorksheetId(workbookWorksheetId string)(*ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) {
+// ByWorkbookWorksheetIdString provides operations to manage the worksheets property of the microsoft.graph.workbook entity.
+func (m *ItemItemsItemWorkbookWorksheetsRequestBuilder) ByWorkbookWorksheetIdString(workbookWorksheetId string)(*ItemItemsItemWorkbookWorksheetsWorkbookWorksheetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -81,7 +81,7 @@ func (m *ItemItemsItemWorkbookWorksheetsRequestBuilder) Count()(*ItemItemsItemWo
 // Get retrieve a list of worksheet objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/workbook-list-worksheets?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/worksheet-list?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookWorksheetCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

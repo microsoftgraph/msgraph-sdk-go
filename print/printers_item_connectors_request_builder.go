@@ -39,8 +39,8 @@ type PrintersItemConnectorsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *PrintersItemConnectorsRequestBuilderGetQueryParameters
 }
-// ByPrintConnectorId provides operations to manage the connectors property of the microsoft.graph.printer entity.
-func (m *PrintersItemConnectorsRequestBuilder) ByPrintConnectorId(printConnectorId string)(*PrintersItemConnectorsPrintConnectorItemRequestBuilder) {
+// ByPrintConnectorIdString provides operations to manage the connectors property of the microsoft.graph.printer entity.
+func (m *PrintersItemConnectorsRequestBuilder) ByPrintConnectorIdString(printConnectorId string)(*PrintersItemConnectorsPrintConnectorItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
