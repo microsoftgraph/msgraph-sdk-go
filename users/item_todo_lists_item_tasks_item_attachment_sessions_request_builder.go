@@ -35,8 +35,8 @@ type ItemTodoListsItemTasksItemAttachmentSessionsRequestBuilderGetRequestConfigu
     // Request query parameters
     QueryParameters *ItemTodoListsItemTasksItemAttachmentSessionsRequestBuilderGetQueryParameters
 }
-// ByAttachmentSessionIdString provides operations to manage the attachmentSessions property of the microsoft.graph.todoTask entity.
-func (m *ItemTodoListsItemTasksItemAttachmentSessionsRequestBuilder) ByAttachmentSessionIdString(attachmentSessionId string)(*ItemTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilder) {
+// ByAttachmentSessionId provides operations to manage the attachmentSessions property of the microsoft.graph.todoTask entity.
+func (m *ItemTodoListsItemTasksItemAttachmentSessionsRequestBuilder) ByAttachmentSessionId(attachmentSessionId string)(*ItemTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -97,4 +97,8 @@ func (m *ItemTodoListsItemTasksItemAttachmentSessionsRequestBuilder) ToGetReques
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemTodoListsItemTasksItemAttachmentSessionsRequestBuilder) WithUrl(rawUrl string)(*ItemTodoListsItemTasksItemAttachmentSessionsRequestBuilder) {
+    return NewItemTodoListsItemTasksItemAttachmentSessionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

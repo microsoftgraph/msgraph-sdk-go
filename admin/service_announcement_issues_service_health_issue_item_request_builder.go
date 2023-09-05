@@ -160,3 +160,7 @@ func (m *ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilder) ToPatchR
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilder) WithUrl(rawUrl string)(*ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilder) {
+    return NewServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

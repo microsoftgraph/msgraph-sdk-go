@@ -46,8 +46,8 @@ type ItemAppRoleAssignmentsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAppRoleAssignmentIdString provides operations to manage the appRoleAssignments property of the microsoft.graph.servicePrincipal entity.
-func (m *ItemAppRoleAssignmentsRequestBuilder) ByAppRoleAssignmentIdString(appRoleAssignmentId string)(*ItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilder) {
+// ByAppRoleAssignmentId provides operations to manage the appRoleAssignments property of the microsoft.graph.servicePrincipal entity.
+func (m *ItemAppRoleAssignmentsRequestBuilder) ByAppRoleAssignmentId(appRoleAssignmentId string)(*ItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *ItemAppRoleAssignmentsRequestBuilder) ToPostRequestInformation(ctx cont
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemAppRoleAssignmentsRequestBuilder) WithUrl(rawUrl string)(*ItemAppRoleAssignmentsRequestBuilder) {
+    return NewItemAppRoleAssignmentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

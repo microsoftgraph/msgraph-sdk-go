@@ -39,8 +39,8 @@ type TokenLifetimePoliciesItemAppliesToRequestBuilderGetRequestConfiguration str
     // Request query parameters
     QueryParameters *TokenLifetimePoliciesItemAppliesToRequestBuilderGetQueryParameters
 }
-// ByDirectoryObjectIdString provides operations to manage the appliesTo property of the microsoft.graph.stsPolicy entity.
-func (m *TokenLifetimePoliciesItemAppliesToRequestBuilder) ByDirectoryObjectIdString(directoryObjectId string)(*TokenLifetimePoliciesItemAppliesToDirectoryObjectItemRequestBuilder) {
+// ByDirectoryObjectId provides operations to manage the appliesTo property of the microsoft.graph.stsPolicy entity.
+func (m *TokenLifetimePoliciesItemAppliesToRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*TokenLifetimePoliciesItemAppliesToDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -101,4 +101,8 @@ func (m *TokenLifetimePoliciesItemAppliesToRequestBuilder) ToGetRequestInformati
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *TokenLifetimePoliciesItemAppliesToRequestBuilder) WithUrl(rawUrl string)(*TokenLifetimePoliciesItemAppliesToRequestBuilder) {
+    return NewTokenLifetimePoliciesItemAppliesToRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

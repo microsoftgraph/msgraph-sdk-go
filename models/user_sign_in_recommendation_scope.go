@@ -35,3 +35,6 @@ func SerializeUserSignInRecommendationScope(values []UserSignInRecommendationSco
     }
     return result
 }
+func (i UserSignInRecommendationScope) isMultiValue() bool {
+    return false
+}

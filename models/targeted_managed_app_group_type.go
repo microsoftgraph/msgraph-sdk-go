@@ -42,3 +42,6 @@ func SerializeTargetedManagedAppGroupType(values []TargetedManagedAppGroupType) 
     }
     return result
 }
+func (i TargetedManagedAppGroupType) isMultiValue() bool {
+    return false
+}

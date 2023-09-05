@@ -38,3 +38,6 @@ func SerializeRoutingType(values []RoutingType) []string {
     }
     return result
 }
+func (i RoutingType) isMultiValue() bool {
+    return false
+}

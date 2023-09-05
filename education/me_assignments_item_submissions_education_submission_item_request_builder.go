@@ -188,3 +188,7 @@ func (m *MeAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilder) ToPa
 func (m *MeAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilder) Unsubmit()(*MeAssignmentsItemSubmissionsItemUnsubmitRequestBuilder) {
     return NewMeAssignmentsItemSubmissionsItemUnsubmitRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *MeAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilder) WithUrl(rawUrl string)(*MeAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilder) {
+    return NewMeAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

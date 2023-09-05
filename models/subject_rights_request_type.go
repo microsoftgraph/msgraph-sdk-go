@@ -41,3 +41,6 @@ func SerializeSubjectRightsRequestType(values []SubjectRightsRequestType) []stri
     }
     return result
 }
+func (i SubjectRightsRequestType) isMultiValue() bool {
+    return false
+}

@@ -53,3 +53,6 @@ func SerializePrintMultipageLayout(values []PrintMultipageLayout) []string {
     }
     return result
 }
+func (i PrintMultipageLayout) isMultiValue() bool {
+    return false
+}

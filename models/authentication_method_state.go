@@ -32,3 +32,6 @@ func SerializeAuthenticationMethodState(values []AuthenticationMethodState) []st
     }
     return result
 }
+func (i AuthenticationMethodState) isMultiValue() bool {
+    return false
+}

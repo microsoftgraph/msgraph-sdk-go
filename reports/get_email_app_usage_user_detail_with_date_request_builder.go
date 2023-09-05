@@ -65,3 +65,7 @@ func (m *GetEmailAppUsageUserDetailWithDateRequestBuilder) ToGetRequestInformati
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *GetEmailAppUsageUserDetailWithDateRequestBuilder) WithUrl(rawUrl string)(*GetEmailAppUsageUserDetailWithDateRequestBuilder) {
+    return NewGetEmailAppUsageUserDetailWithDateRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

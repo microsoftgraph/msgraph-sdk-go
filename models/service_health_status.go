@@ -80,3 +80,6 @@ func SerializeServiceHealthStatus(values []ServiceHealthStatus) []string {
     }
     return result
 }
+func (i ServiceHealthStatus) isMultiValue() bool {
+    return false
+}

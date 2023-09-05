@@ -34,8 +34,8 @@ type AgreementsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAgreementIdString provides operations to manage the collection of agreement entities.
-func (m *AgreementsRequestBuilder) ByAgreementIdString(agreementId string)(*AgreementItemRequestBuilder) {
+// ByAgreementId provides operations to manage the collection of agreement entities.
+func (m *AgreementsRequestBuilder) ByAgreementId(agreementId string)(*AgreementItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -128,4 +128,8 @@ func (m *AgreementsRequestBuilder) ToPostRequestInformation(ctx context.Context,
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AgreementsRequestBuilder) WithUrl(rawUrl string)(*AgreementsRequestBuilder) {
+    return NewAgreementsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

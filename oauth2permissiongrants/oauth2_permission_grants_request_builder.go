@@ -46,8 +46,8 @@ type Oauth2PermissionGrantsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByOAuth2PermissionGrantIdString provides operations to manage the collection of oAuth2PermissionGrant entities.
-func (m *Oauth2PermissionGrantsRequestBuilder) ByOAuth2PermissionGrantIdString(oAuth2PermissionGrantId string)(*OAuth2PermissionGrantItemRequestBuilder) {
+// ByOAuth2PermissionGrantId provides operations to manage the collection of oAuth2PermissionGrant entities.
+func (m *Oauth2PermissionGrantsRequestBuilder) ByOAuth2PermissionGrantId(oAuth2PermissionGrantId string)(*OAuth2PermissionGrantItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -154,4 +154,8 @@ func (m *Oauth2PermissionGrantsRequestBuilder) ToPostRequestInformation(ctx cont
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *Oauth2PermissionGrantsRequestBuilder) WithUrl(rawUrl string)(*Oauth2PermissionGrantsRequestBuilder) {
+    return NewOauth2PermissionGrantsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

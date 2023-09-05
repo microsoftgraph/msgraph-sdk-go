@@ -38,3 +38,6 @@ func SerializeWin32LobAppNotification(values []Win32LobAppNotification) []string
     }
     return result
 }
+func (i Win32LobAppNotification) isMultiValue() bool {
+    return false
+}

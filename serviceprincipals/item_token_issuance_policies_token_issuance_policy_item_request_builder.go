@@ -75,3 +75,7 @@ func (m *ItemTokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilder) ToGetRe
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemTokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilder) WithUrl(rawUrl string)(*ItemTokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilder) {
+    return NewItemTokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

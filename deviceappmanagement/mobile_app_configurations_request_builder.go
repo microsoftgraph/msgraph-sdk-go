@@ -11,7 +11,7 @@ import (
 type MobileAppConfigurationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// MobileAppConfigurationsRequestBuilderGetQueryParameters list properties and relationships of the managedDeviceMobileAppConfiguration objects.
+// MobileAppConfigurationsRequestBuilderGetQueryParameters list properties and relationships of the iosMobileAppConfiguration objects.
 type MobileAppConfigurationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -46,8 +46,8 @@ type MobileAppConfigurationsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByManagedDeviceMobileAppConfigurationIdString provides operations to manage the mobileAppConfigurations property of the microsoft.graph.deviceAppManagement entity.
-func (m *MobileAppConfigurationsRequestBuilder) ByManagedDeviceMobileAppConfigurationIdString(managedDeviceMobileAppConfigurationId string)(*MobileAppConfigurationsManagedDeviceMobileAppConfigurationItemRequestBuilder) {
+// ByManagedDeviceMobileAppConfigurationId provides operations to manage the mobileAppConfigurations property of the microsoft.graph.deviceAppManagement entity.
+func (m *MobileAppConfigurationsRequestBuilder) ByManagedDeviceMobileAppConfigurationId(managedDeviceMobileAppConfigurationId string)(*MobileAppConfigurationsManagedDeviceMobileAppConfigurationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -74,10 +74,10 @@ func NewMobileAppConfigurationsRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *MobileAppConfigurationsRequestBuilder) Count()(*MobileAppConfigurationsCountRequestBuilder) {
     return NewMobileAppConfigurationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list properties and relationships of the managedDeviceMobileAppConfiguration objects.
+// Get list properties and relationships of the iosMobileAppConfiguration objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfiguration-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-apps-iosmobileappconfiguration-list?view=graph-rest-1.0
 func (m *MobileAppConfigurationsRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppConfigurationsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedDeviceMobileAppConfigurationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -118,7 +118,7 @@ func (m *MobileAppConfigurationsRequestBuilder) Post(ctx context.Context, body i
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedDeviceMobileAppConfigurationable), nil
 }
-// ToGetRequestInformation list properties and relationships of the managedDeviceMobileAppConfiguration objects.
+// ToGetRequestInformation list properties and relationships of the iosMobileAppConfiguration objects.
 func (m *MobileAppConfigurationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppConfigurationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -150,4 +150,8 @@ func (m *MobileAppConfigurationsRequestBuilder) ToPostRequestInformation(ctx con
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *MobileAppConfigurationsRequestBuilder) WithUrl(rawUrl string)(*MobileAppConfigurationsRequestBuilder) {
+    return NewMobileAppConfigurationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

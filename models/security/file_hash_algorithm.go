@@ -44,3 +44,6 @@ func SerializeFileHashAlgorithm(values []FileHashAlgorithm) []string {
     }
     return result
 }
+func (i FileHashAlgorithm) isMultiValue() bool {
+    return false
+}

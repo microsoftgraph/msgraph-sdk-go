@@ -47,3 +47,6 @@ func SerializeProvisioningStepType(values []ProvisioningStepType) []string {
     }
     return result
 }
+func (i ProvisioningStepType) isMultiValue() bool {
+    return false
+}

@@ -74,3 +74,7 @@ func (m *ConditionalAccessTemplatesCountRequestBuilder) ToGetRequestInformation(
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ConditionalAccessTemplatesCountRequestBuilder) WithUrl(rawUrl string)(*ConditionalAccessTemplatesCountRequestBuilder) {
+    return NewConditionalAccessTemplatesCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

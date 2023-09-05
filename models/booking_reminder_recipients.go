@@ -38,3 +38,6 @@ func SerializeBookingReminderRecipients(values []BookingReminderRecipients) []st
     }
     return result
 }
+func (i BookingReminderRecipients) isMultiValue() bool {
+    return false
+}

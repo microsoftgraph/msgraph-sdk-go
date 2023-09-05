@@ -46,8 +46,8 @@ type AccessReviewsHistoryDefinitionsItemInstancesRequestBuilderPostRequestConfig
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAccessReviewHistoryInstanceIdString provides operations to manage the instances property of the microsoft.graph.accessReviewHistoryDefinition entity.
-func (m *AccessReviewsHistoryDefinitionsItemInstancesRequestBuilder) ByAccessReviewHistoryInstanceIdString(accessReviewHistoryInstanceId string)(*AccessReviewsHistoryDefinitionsItemInstancesAccessReviewHistoryInstanceItemRequestBuilder) {
+// ByAccessReviewHistoryInstanceId provides operations to manage the instances property of the microsoft.graph.accessReviewHistoryDefinition entity.
+func (m *AccessReviewsHistoryDefinitionsItemInstancesRequestBuilder) ByAccessReviewHistoryInstanceId(accessReviewHistoryInstanceId string)(*AccessReviewsHistoryDefinitionsItemInstancesAccessReviewHistoryInstanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *AccessReviewsHistoryDefinitionsItemInstancesRequestBuilder) ToPostReque
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AccessReviewsHistoryDefinitionsItemInstancesRequestBuilder) WithUrl(rawUrl string)(*AccessReviewsHistoryDefinitionsItemInstancesRequestBuilder) {
+    return NewAccessReviewsHistoryDefinitionsItemInstancesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

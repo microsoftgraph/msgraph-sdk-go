@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "strings"
 )
 // 
 type WorkforceIntegrationSupportedEntities int
@@ -17,29 +18,38 @@ const (
 )
 
 func (i WorkforceIntegrationSupportedEntities) String() string {
-    return []string{"none", "shift", "swapRequest", "userShiftPreferences", "openShift", "openShiftRequest", "offerShiftRequest", "unknownFutureValue"}[i]
+    var values []string
+    for p := WorkforceIntegrationSupportedEntities(1); p <= UNKNOWNFUTUREVALUE_WORKFORCEINTEGRATIONSUPPORTEDENTITIES; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"none", "shift", "swapRequest", "userShiftPreferences", "openShift", "openShiftRequest", "offerShiftRequest", "unknownFutureValue"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseWorkforceIntegrationSupportedEntities(v string) (any, error) {
-    result := NONE_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
-    switch v {
-        case "none":
-            result = NONE_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
-        case "shift":
-            result = SHIFT_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
-        case "swapRequest":
-            result = SWAPREQUEST_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
-        case "userShiftPreferences":
-            result = USERSHIFTPREFERENCES_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
-        case "openShift":
-            result = OPENSHIFT_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
-        case "openShiftRequest":
-            result = OPENSHIFTREQUEST_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
-        case "offerShiftRequest":
-            result = OFFERSHIFTREQUEST_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
-        default:
-            return 0, errors.New("Unknown WorkforceIntegrationSupportedEntities value: " + v)
+    var result WorkforceIntegrationSupportedEntities
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "none":
+                result |= NONE_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
+            case "shift":
+                result |= SHIFT_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
+            case "swapRequest":
+                result |= SWAPREQUEST_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
+            case "userShiftPreferences":
+                result |= USERSHIFTPREFERENCES_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
+            case "openShift":
+                result |= OPENSHIFT_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
+            case "openShiftRequest":
+                result |= OPENSHIFTREQUEST_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
+            case "offerShiftRequest":
+                result |= OFFERSHIFTREQUEST_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
+            case "unknownFutureValue":
+                result |= UNKNOWNFUTUREVALUE_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
+            default:
+                return 0, errors.New("Unknown WorkforceIntegrationSupportedEntities value: " + v)
+        }
     }
     return &result, nil
 }
@@ -49,4 +59,7 @@ func SerializeWorkforceIntegrationSupportedEntities(values []WorkforceIntegratio
         result[i] = v.String()
     }
     return result
+}
+func (i WorkforceIntegrationSupportedEntities) isMultiValue() bool {
+    return true
 }

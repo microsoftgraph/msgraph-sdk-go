@@ -61,3 +61,7 @@ func (m *ItemJoinedTeamsItemPrimaryChannelMessagesItemUndoSoftDeleteRequestBuild
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemJoinedTeamsItemPrimaryChannelMessagesItemUndoSoftDeleteRequestBuilder) WithUrl(rawUrl string)(*ItemJoinedTeamsItemPrimaryChannelMessagesItemUndoSoftDeleteRequestBuilder) {
+    return NewItemJoinedTeamsItemPrimaryChannelMessagesItemUndoSoftDeleteRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

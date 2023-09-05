@@ -38,3 +38,6 @@ func SerializeSafeSearchFilterType(values []SafeSearchFilterType) []string {
     }
     return result
 }
+func (i SafeSearchFilterType) isMultiValue() bool {
+    return false
+}

@@ -44,3 +44,6 @@ func SerializeProductFamily(values []ProductFamily) []string {
     }
     return result
 }
+func (i ProductFamily) isMultiValue() bool {
+    return false
+}

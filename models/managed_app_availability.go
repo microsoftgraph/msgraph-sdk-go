@@ -34,3 +34,6 @@ func SerializeManagedAppAvailability(values []ManagedAppAvailability) []string {
     }
     return result
 }
+func (i ManagedAppAvailability) isMultiValue() bool {
+    return false
+}

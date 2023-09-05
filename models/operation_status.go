@@ -38,3 +38,6 @@ func SerializeOperationStatus(values []OperationStatus) []string {
     }
     return result
 }
+func (i OperationStatus) isMultiValue() bool {
+    return false
+}

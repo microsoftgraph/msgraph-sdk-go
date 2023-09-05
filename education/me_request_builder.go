@@ -177,3 +177,7 @@ func (m *MeRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i
 func (m *MeRequestBuilder) User()(*MeUserRequestBuilder) {
     return NewMeUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *MeRequestBuilder) WithUrl(rawUrl string)(*MeRequestBuilder) {
+    return NewMeRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

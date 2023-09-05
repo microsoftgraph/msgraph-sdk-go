@@ -69,3 +69,7 @@ func (m *ItemPermissionGrantsGetAvailableExtensionPropertiesRequestBuilder) ToPo
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemPermissionGrantsGetAvailableExtensionPropertiesRequestBuilder) WithUrl(rawUrl string)(*ItemPermissionGrantsGetAvailableExtensionPropertiesRequestBuilder) {
+    return NewItemPermissionGrantsGetAvailableExtensionPropertiesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

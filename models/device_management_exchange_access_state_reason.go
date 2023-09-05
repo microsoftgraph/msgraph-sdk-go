@@ -90,3 +90,6 @@ func SerializeDeviceManagementExchangeAccessStateReason(values []DeviceManagemen
     }
     return result
 }
+func (i DeviceManagementExchangeAccessStateReason) isMultiValue() bool {
+    return false
+}

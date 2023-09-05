@@ -35,3 +35,6 @@ func SerializePurgeType(values []PurgeType) []string {
     }
     return result
 }
+func (i PurgeType) isMultiValue() bool {
+    return false
+}

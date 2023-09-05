@@ -41,3 +41,6 @@ func SerializeHostReputationRuleSeverity(values []HostReputationRuleSeverity) []
     }
     return result
 }
+func (i HostReputationRuleSeverity) isMultiValue() bool {
+    return false
+}

@@ -46,8 +46,8 @@ type ItemItemsItemAnalyticsItemActivityStatsItemActivitiesRequestBuilderPostRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByItemActivityIdString provides operations to manage the activities property of the microsoft.graph.itemActivityStat entity.
-func (m *ItemItemsItemAnalyticsItemActivityStatsItemActivitiesRequestBuilder) ByItemActivityIdString(itemActivityId string)(*ItemItemsItemAnalyticsItemActivityStatsItemActivitiesItemActivityItemRequestBuilder) {
+// ByItemActivityId provides operations to manage the activities property of the microsoft.graph.itemActivityStat entity.
+func (m *ItemItemsItemAnalyticsItemActivityStatsItemActivitiesRequestBuilder) ByItemActivityId(itemActivityId string)(*ItemItemsItemAnalyticsItemActivityStatsItemActivitiesItemActivityItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ItemItemsItemAnalyticsItemActivityStatsItemActivitiesRequestBuilder) To
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemItemsItemAnalyticsItemActivityStatsItemActivitiesRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemAnalyticsItemActivityStatsItemActivitiesRequestBuilder) {
+    return NewItemItemsItemAnalyticsItemActivityStatsItemActivitiesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

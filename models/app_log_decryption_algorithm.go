@@ -34,3 +34,6 @@ func SerializeAppLogDecryptionAlgorithm(values []AppLogDecryptionAlgorithm) []st
     }
     return result
 }
+func (i AppLogDecryptionAlgorithm) isMultiValue() bool {
+    return false
+}

@@ -38,3 +38,6 @@ func SerializeContainerPortProtocol(values []ContainerPortProtocol) []string {
     }
     return result
 }
+func (i ContainerPortProtocol) isMultiValue() bool {
+    return false
+}

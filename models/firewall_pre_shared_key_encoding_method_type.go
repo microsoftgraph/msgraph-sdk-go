@@ -38,3 +38,6 @@ func SerializeFirewallPreSharedKeyEncodingMethodType(values []FirewallPreSharedK
     }
     return result
 }
+func (i FirewallPreSharedKeyEncodingMethodType) isMultiValue() bool {
+    return false
+}

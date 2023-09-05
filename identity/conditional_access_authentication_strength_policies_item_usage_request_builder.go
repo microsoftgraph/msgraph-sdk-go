@@ -63,3 +63,7 @@ func (m *ConditionalAccessAuthenticationStrengthPoliciesItemUsageRequestBuilder)
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ConditionalAccessAuthenticationStrengthPoliciesItemUsageRequestBuilder) WithUrl(rawUrl string)(*ConditionalAccessAuthenticationStrengthPoliciesItemUsageRequestBuilder) {
+    return NewConditionalAccessAuthenticationStrengthPoliciesItemUsageRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

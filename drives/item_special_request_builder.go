@@ -39,8 +39,8 @@ type ItemSpecialRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemSpecialRequestBuilderGetQueryParameters
 }
-// ByDriveItemIdString provides operations to manage the special property of the microsoft.graph.drive entity.
-func (m *ItemSpecialRequestBuilder) ByDriveItemIdString(driveItemId string)(*ItemSpecialDriveItemItemRequestBuilder) {
+// ByDriveItemId provides operations to manage the special property of the microsoft.graph.drive entity.
+func (m *ItemSpecialRequestBuilder) ByDriveItemId(driveItemId string)(*ItemSpecialDriveItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -101,4 +101,8 @@ func (m *ItemSpecialRequestBuilder) ToGetRequestInformation(ctx context.Context,
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemSpecialRequestBuilder) WithUrl(rawUrl string)(*ItemSpecialRequestBuilder) {
+    return NewItemSpecialRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

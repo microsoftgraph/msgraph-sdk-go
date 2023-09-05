@@ -44,3 +44,6 @@ func SerializeAlertSeverity(values []AlertSeverity) []string {
     }
     return result
 }
+func (i AlertSeverity) isMultiValue() bool {
+    return false
+}

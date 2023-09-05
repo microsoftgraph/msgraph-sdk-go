@@ -35,3 +35,6 @@ func SerializeSignInUserType(values []SignInUserType) []string {
     }
     return result
 }
+func (i SignInUserType) isMultiValue() bool {
+    return false
+}

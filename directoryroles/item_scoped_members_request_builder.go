@@ -46,8 +46,8 @@ type ItemScopedMembersRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByScopedRoleMembershipIdString provides operations to manage the scopedMembers property of the microsoft.graph.directoryRole entity.
-func (m *ItemScopedMembersRequestBuilder) ByScopedRoleMembershipIdString(scopedRoleMembershipId string)(*ItemScopedMembersScopedRoleMembershipItemRequestBuilder) {
+// ByScopedRoleMembershipId provides operations to manage the scopedMembers property of the microsoft.graph.directoryRole entity.
+func (m *ItemScopedMembersRequestBuilder) ByScopedRoleMembershipId(scopedRoleMembershipId string)(*ItemScopedMembersScopedRoleMembershipItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *ItemScopedMembersRequestBuilder) ToPostRequestInformation(ctx context.C
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemScopedMembersRequestBuilder) WithUrl(rawUrl string)(*ItemScopedMembersRequestBuilder) {
+    return NewItemScopedMembersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

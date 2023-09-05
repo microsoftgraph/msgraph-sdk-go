@@ -38,3 +38,6 @@ func SerializeOnPremisesDirectorySynchronizationDeletionPreventionType(values []
     }
     return result
 }
+func (i OnPremisesDirectorySynchronizationDeletionPreventionType) isMultiValue() bool {
+    return false
+}

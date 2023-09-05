@@ -46,8 +46,8 @@ type ItemMessagesItemRepliesItemHostedContentsRequestBuilderPostRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByChatMessageHostedContentIdString provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.
-func (m *ItemMessagesItemRepliesItemHostedContentsRequestBuilder) ByChatMessageHostedContentIdString(chatMessageHostedContentId string)(*ItemMessagesItemRepliesItemHostedContentsChatMessageHostedContentItemRequestBuilder) {
+// ByChatMessageHostedContentId provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.
+func (m *ItemMessagesItemRepliesItemHostedContentsRequestBuilder) ByChatMessageHostedContentId(chatMessageHostedContentId string)(*ItemMessagesItemRepliesItemHostedContentsChatMessageHostedContentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *ItemMessagesItemRepliesItemHostedContentsRequestBuilder) ToPostRequestI
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemMessagesItemRepliesItemHostedContentsRequestBuilder) WithUrl(rawUrl string)(*ItemMessagesItemRepliesItemHostedContentsRequestBuilder) {
+    return NewItemMessagesItemRepliesItemHostedContentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

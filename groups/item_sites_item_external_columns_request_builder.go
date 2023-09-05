@@ -39,8 +39,8 @@ type ItemSitesItemExternalColumnsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemSitesItemExternalColumnsRequestBuilderGetQueryParameters
 }
-// ByColumnDefinitionIdString provides operations to manage the externalColumns property of the microsoft.graph.site entity.
-func (m *ItemSitesItemExternalColumnsRequestBuilder) ByColumnDefinitionIdString(columnDefinitionId string)(*ItemSitesItemExternalColumnsColumnDefinitionItemRequestBuilder) {
+// ByColumnDefinitionId provides operations to manage the externalColumns property of the microsoft.graph.site entity.
+func (m *ItemSitesItemExternalColumnsRequestBuilder) ByColumnDefinitionId(columnDefinitionId string)(*ItemSitesItemExternalColumnsColumnDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -101,4 +101,8 @@ func (m *ItemSitesItemExternalColumnsRequestBuilder) ToGetRequestInformation(ctx
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemSitesItemExternalColumnsRequestBuilder) WithUrl(rawUrl string)(*ItemSitesItemExternalColumnsRequestBuilder) {
+    return NewItemSitesItemExternalColumnsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

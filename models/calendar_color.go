@@ -59,3 +59,6 @@ func SerializeCalendarColor(values []CalendarColor) []string {
     }
     return result
 }
+func (i CalendarColor) isMultiValue() bool {
+    return false
+}

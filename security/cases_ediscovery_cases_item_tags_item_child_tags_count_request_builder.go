@@ -74,3 +74,7 @@ func (m *CasesEdiscoveryCasesItemTagsItemChildTagsCountRequestBuilder) ToGetRequ
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CasesEdiscoveryCasesItemTagsItemChildTagsCountRequestBuilder) WithUrl(rawUrl string)(*CasesEdiscoveryCasesItemTagsItemChildTagsCountRequestBuilder) {
+    return NewCasesEdiscoveryCasesItemTagsItemChildTagsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

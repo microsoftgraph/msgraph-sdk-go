@@ -35,3 +35,6 @@ func SerializeCustomTaskExtensionOperationStatus(values []CustomTaskExtensionOpe
     }
     return result
 }
+func (i CustomTaskExtensionOperationStatus) isMultiValue() bool {
+    return false
+}

@@ -53,3 +53,6 @@ func SerializeRegistryHive(values []RegistryHive) []string {
     }
     return result
 }
+func (i RegistryHive) isMultiValue() bool {
+    return false
+}

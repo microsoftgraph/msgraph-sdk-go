@@ -161,3 +161,7 @@ func (m *ItemGroupLifecyclePoliciesGroupLifecyclePolicyItemRequestBuilder) ToPat
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemGroupLifecyclePoliciesGroupLifecyclePolicyItemRequestBuilder) WithUrl(rawUrl string)(*ItemGroupLifecyclePoliciesGroupLifecyclePolicyItemRequestBuilder) {
+    return NewItemGroupLifecyclePoliciesGroupLifecyclePolicyItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

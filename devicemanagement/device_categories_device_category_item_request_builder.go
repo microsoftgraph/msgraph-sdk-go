@@ -162,3 +162,7 @@ func (m *DeviceCategoriesDeviceCategoryItemRequestBuilder) ToPatchRequestInforma
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeviceCategoriesDeviceCategoryItemRequestBuilder) WithUrl(rawUrl string)(*DeviceCategoriesDeviceCategoryItemRequestBuilder) {
+    return NewDeviceCategoriesDeviceCategoryItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

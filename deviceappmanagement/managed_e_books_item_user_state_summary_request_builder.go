@@ -46,8 +46,8 @@ type ManagedEBooksItemUserStateSummaryRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUserInstallStateSummaryIdString provides operations to manage the userStateSummary property of the microsoft.graph.managedEBook entity.
-func (m *ManagedEBooksItemUserStateSummaryRequestBuilder) ByUserInstallStateSummaryIdString(userInstallStateSummaryId string)(*ManagedEBooksItemUserStateSummaryUserInstallStateSummaryItemRequestBuilder) {
+// ByUserInstallStateSummaryId provides operations to manage the userStateSummary property of the microsoft.graph.managedEBook entity.
+func (m *ManagedEBooksItemUserStateSummaryRequestBuilder) ByUserInstallStateSummaryId(userInstallStateSummaryId string)(*ManagedEBooksItemUserStateSummaryUserInstallStateSummaryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *ManagedEBooksItemUserStateSummaryRequestBuilder) ToPostRequestInformati
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ManagedEBooksItemUserStateSummaryRequestBuilder) WithUrl(rawUrl string)(*ManagedEBooksItemUserStateSummaryRequestBuilder) {
+    return NewManagedEBooksItemUserStateSummaryRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

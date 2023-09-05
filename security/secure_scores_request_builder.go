@@ -46,8 +46,8 @@ type SecureScoresRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BySecureScoreIdString provides operations to manage the secureScores property of the microsoft.graph.security entity.
-func (m *SecureScoresRequestBuilder) BySecureScoreIdString(secureScoreId string)(*SecureScoresSecureScoreItemRequestBuilder) {
+// BySecureScoreId provides operations to manage the secureScores property of the microsoft.graph.security entity.
+func (m *SecureScoresRequestBuilder) BySecureScoreId(secureScoreId string)(*SecureScoresSecureScoreItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *SecureScoresRequestBuilder) ToPostRequestInformation(ctx context.Contex
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *SecureScoresRequestBuilder) WithUrl(rawUrl string)(*SecureScoresRequestBuilder) {
+    return NewSecureScoresRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

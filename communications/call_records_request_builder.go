@@ -47,8 +47,8 @@ type CallRecordsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByCallRecordIdString provides operations to manage the callRecords property of the microsoft.graph.cloudCommunications entity.
-func (m *CallRecordsRequestBuilder) ByCallRecordIdString(callRecordId string)(*CallRecordsCallRecordItemRequestBuilder) {
+// ByCallRecordId provides operations to manage the callRecords property of the microsoft.graph.cloudCommunications entity.
+func (m *CallRecordsRequestBuilder) ByCallRecordId(callRecordId string)(*CallRecordsCallRecordItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -153,4 +153,8 @@ func (m *CallRecordsRequestBuilder) ToPostRequestInformation(ctx context.Context
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CallRecordsRequestBuilder) WithUrl(rawUrl string)(*CallRecordsRequestBuilder) {
+    return NewCallRecordsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

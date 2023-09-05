@@ -38,3 +38,6 @@ func SerializeTeamworkConversationIdentityType(values []TeamworkConversationIden
     }
     return result
 }
+func (i TeamworkConversationIdentityType) isMultiValue() bool {
+    return false
+}

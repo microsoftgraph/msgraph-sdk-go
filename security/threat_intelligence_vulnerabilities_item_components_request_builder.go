@@ -46,8 +46,8 @@ type ThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilderPostRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByVulnerabilityComponentIdString provides operations to manage the components property of the microsoft.graph.security.vulnerability entity.
-func (m *ThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilder) ByVulnerabilityComponentIdString(vulnerabilityComponentId string)(*ThreatIntelligenceVulnerabilitiesItemComponentsVulnerabilityComponentItemRequestBuilder) {
+// ByVulnerabilityComponentId provides operations to manage the components property of the microsoft.graph.security.vulnerability entity.
+func (m *ThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilder) ByVulnerabilityComponentId(vulnerabilityComponentId string)(*ThreatIntelligenceVulnerabilitiesItemComponentsVulnerabilityComponentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *ThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilder) ToPostRe
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilder) WithUrl(rawUrl string)(*ThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilder) {
+    return NewThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

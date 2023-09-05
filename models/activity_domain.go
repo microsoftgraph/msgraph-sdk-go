@@ -38,3 +38,6 @@ func SerializeActivityDomain(values []ActivityDomain) []string {
     }
     return result
 }
+func (i ActivityDomain) isMultiValue() bool {
+    return false
+}

@@ -46,8 +46,8 @@ type ItemTeamworkInstalledAppsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUserScopeTeamsAppInstallationIdString provides operations to manage the installedApps property of the microsoft.graph.userTeamwork entity.
-func (m *ItemTeamworkInstalledAppsRequestBuilder) ByUserScopeTeamsAppInstallationIdString(userScopeTeamsAppInstallationId string)(*ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilder) {
+// ByUserScopeTeamsAppInstallationId provides operations to manage the installedApps property of the microsoft.graph.userTeamwork entity.
+func (m *ItemTeamworkInstalledAppsRequestBuilder) ByUserScopeTeamsAppInstallationId(userScopeTeamsAppInstallationId string)(*ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *ItemTeamworkInstalledAppsRequestBuilder) ToPostRequestInformation(ctx c
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemTeamworkInstalledAppsRequestBuilder) WithUrl(rawUrl string)(*ItemTeamworkInstalledAppsRequestBuilder) {
+    return NewItemTeamworkInstalledAppsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

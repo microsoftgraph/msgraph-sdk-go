@@ -41,3 +41,6 @@ func SerializeLongRunningOperationStatus(values []LongRunningOperationStatus) []
     }
     return result
 }
+func (i LongRunningOperationStatus) isMultiValue() bool {
+    return false
+}

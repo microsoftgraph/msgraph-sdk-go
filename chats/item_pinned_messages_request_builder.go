@@ -46,8 +46,8 @@ type ItemPinnedMessagesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByPinnedChatMessageInfoIdString provides operations to manage the pinnedMessages property of the microsoft.graph.chat entity.
-func (m *ItemPinnedMessagesRequestBuilder) ByPinnedChatMessageInfoIdString(pinnedChatMessageInfoId string)(*ItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilder) {
+// ByPinnedChatMessageInfoId provides operations to manage the pinnedMessages property of the microsoft.graph.chat entity.
+func (m *ItemPinnedMessagesRequestBuilder) ByPinnedChatMessageInfoId(pinnedChatMessageInfoId string)(*ItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *ItemPinnedMessagesRequestBuilder) ToPostRequestInformation(ctx context.
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemPinnedMessagesRequestBuilder) WithUrl(rawUrl string)(*ItemPinnedMessagesRequestBuilder) {
+    return NewItemPinnedMessagesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -32,3 +32,6 @@ func SerializeThreatExpectedAssessment(values []ThreatExpectedAssessment) []stri
     }
     return result
 }
+func (i ThreatExpectedAssessment) isMultiValue() bool {
+    return false
+}

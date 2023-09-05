@@ -46,3 +46,6 @@ func SerializeBrowserSharedCookieStatus(values []BrowserSharedCookieStatus) []st
     }
     return result
 }
+func (i BrowserSharedCookieStatus) isMultiValue() bool {
+    return false
+}

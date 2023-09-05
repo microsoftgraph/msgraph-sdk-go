@@ -46,8 +46,8 @@ type EntitlementManagementConnectedOrganizationsRequestBuilderPostRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByConnectedOrganizationIdString provides operations to manage the connectedOrganizations property of the microsoft.graph.entitlementManagement entity.
-func (m *EntitlementManagementConnectedOrganizationsRequestBuilder) ByConnectedOrganizationIdString(connectedOrganizationId string)(*EntitlementManagementConnectedOrganizationsConnectedOrganizationItemRequestBuilder) {
+// ByConnectedOrganizationId provides operations to manage the connectedOrganizations property of the microsoft.graph.entitlementManagement entity.
+func (m *EntitlementManagementConnectedOrganizationsRequestBuilder) ByConnectedOrganizationId(connectedOrganizationId string)(*EntitlementManagementConnectedOrganizationsConnectedOrganizationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *EntitlementManagementConnectedOrganizationsRequestBuilder) ToPostReques
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *EntitlementManagementConnectedOrganizationsRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementConnectedOrganizationsRequestBuilder) {
+    return NewEntitlementManagementConnectedOrganizationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

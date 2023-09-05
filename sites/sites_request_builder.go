@@ -43,8 +43,8 @@ type SitesRequestBuilderGetRequestConfiguration struct {
 func (m *SitesRequestBuilder) Add()(*AddRequestBuilder) {
     return NewAddRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// BySiteIdString provides operations to manage the collection of site entities.
-func (m *SitesRequestBuilder) BySiteIdString(siteId string)(*SiteItemRequestBuilder) {
+// BySiteId provides operations to manage the collection of site entities.
+func (m *SitesRequestBuilder) BySiteId(siteId string)(*SiteItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -116,4 +116,8 @@ func (m *SitesRequestBuilder) ToGetRequestInformation(ctx context.Context, reque
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *SitesRequestBuilder) WithUrl(rawUrl string)(*SitesRequestBuilder) {
+    return NewSitesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

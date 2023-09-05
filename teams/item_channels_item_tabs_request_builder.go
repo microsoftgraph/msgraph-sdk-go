@@ -46,8 +46,8 @@ type ItemChannelsItemTabsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByTeamsTabIdString provides operations to manage the tabs property of the microsoft.graph.channel entity.
-func (m *ItemChannelsItemTabsRequestBuilder) ByTeamsTabIdString(teamsTabId string)(*ItemChannelsItemTabsTeamsTabItemRequestBuilder) {
+// ByTeamsTabId provides operations to manage the tabs property of the microsoft.graph.channel entity.
+func (m *ItemChannelsItemTabsRequestBuilder) ByTeamsTabId(teamsTabId string)(*ItemChannelsItemTabsTeamsTabItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *ItemChannelsItemTabsRequestBuilder) ToPostRequestInformation(ctx contex
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemChannelsItemTabsRequestBuilder) WithUrl(rawUrl string)(*ItemChannelsItemTabsRequestBuilder) {
+    return NewItemChannelsItemTabsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

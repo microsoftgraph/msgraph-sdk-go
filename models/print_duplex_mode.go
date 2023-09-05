@@ -38,3 +38,6 @@ func SerializePrintDuplexMode(values []PrintDuplexMode) []string {
     }
     return result
 }
+func (i PrintDuplexMode) isMultiValue() bool {
+    return false
+}

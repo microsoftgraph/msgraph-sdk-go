@@ -38,3 +38,6 @@ func SerializeWorkbookOperationStatus(values []WorkbookOperationStatus) []string
     }
     return result
 }
+func (i WorkbookOperationStatus) isMultiValue() bool {
+    return false
+}

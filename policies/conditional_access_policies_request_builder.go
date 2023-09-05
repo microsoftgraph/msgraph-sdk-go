@@ -46,8 +46,8 @@ type ConditionalAccessPoliciesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByConditionalAccessPolicyIdString provides operations to manage the conditionalAccessPolicies property of the microsoft.graph.policyRoot entity.
-func (m *ConditionalAccessPoliciesRequestBuilder) ByConditionalAccessPolicyIdString(conditionalAccessPolicyId string)(*ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) {
+// ByConditionalAccessPolicyId provides operations to manage the conditionalAccessPolicies property of the microsoft.graph.policyRoot entity.
+func (m *ConditionalAccessPoliciesRequestBuilder) ByConditionalAccessPolicyId(conditionalAccessPolicyId string)(*ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ConditionalAccessPoliciesRequestBuilder) ToPostRequestInformation(ctx c
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ConditionalAccessPoliciesRequestBuilder) WithUrl(rawUrl string)(*ConditionalAccessPoliciesRequestBuilder) {
+    return NewConditionalAccessPoliciesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

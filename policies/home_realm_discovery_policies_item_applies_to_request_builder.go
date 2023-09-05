@@ -39,8 +39,8 @@ type HomeRealmDiscoveryPoliciesItemAppliesToRequestBuilderGetRequestConfiguratio
     // Request query parameters
     QueryParameters *HomeRealmDiscoveryPoliciesItemAppliesToRequestBuilderGetQueryParameters
 }
-// ByDirectoryObjectIdString provides operations to manage the appliesTo property of the microsoft.graph.stsPolicy entity.
-func (m *HomeRealmDiscoveryPoliciesItemAppliesToRequestBuilder) ByDirectoryObjectIdString(directoryObjectId string)(*HomeRealmDiscoveryPoliciesItemAppliesToDirectoryObjectItemRequestBuilder) {
+// ByDirectoryObjectId provides operations to manage the appliesTo property of the microsoft.graph.stsPolicy entity.
+func (m *HomeRealmDiscoveryPoliciesItemAppliesToRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*HomeRealmDiscoveryPoliciesItemAppliesToDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -101,4 +101,8 @@ func (m *HomeRealmDiscoveryPoliciesItemAppliesToRequestBuilder) ToGetRequestInfo
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *HomeRealmDiscoveryPoliciesItemAppliesToRequestBuilder) WithUrl(rawUrl string)(*HomeRealmDiscoveryPoliciesItemAppliesToRequestBuilder) {
+    return NewHomeRealmDiscoveryPoliciesItemAppliesToRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

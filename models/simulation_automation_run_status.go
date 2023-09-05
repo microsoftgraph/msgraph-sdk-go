@@ -44,3 +44,6 @@ func SerializeSimulationAutomationRunStatus(values []SimulationAutomationRunStat
     }
     return result
 }
+func (i SimulationAutomationRunStatus) isMultiValue() bool {
+    return false
+}

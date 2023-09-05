@@ -46,8 +46,8 @@ type ServicePrincipalsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByServicePrincipalIdString provides operations to manage the collection of servicePrincipal entities.
-func (m *ServicePrincipalsRequestBuilder) ByServicePrincipalIdString(servicePrincipalId string)(*ServicePrincipalItemRequestBuilder) {
+// ByServicePrincipalId provides operations to manage the collection of servicePrincipal entities.
+func (m *ServicePrincipalsRequestBuilder) ByServicePrincipalId(servicePrincipalId string)(*ServicePrincipalItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -166,4 +166,8 @@ func (m *ServicePrincipalsRequestBuilder) ToPostRequestInformation(ctx context.C
 // ValidateProperties provides operations to call the validateProperties method.
 func (m *ServicePrincipalsRequestBuilder) ValidateProperties()(*ValidatePropertiesRequestBuilder) {
     return NewValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ServicePrincipalsRequestBuilder) WithUrl(rawUrl string)(*ServicePrincipalsRequestBuilder) {
+    return NewServicePrincipalsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -32,3 +32,6 @@ func SerializeScopeOperatorMultiValuedComparisonType(values []ScopeOperatorMulti
     }
     return result
 }
+func (i ScopeOperatorMultiValuedComparisonType) isMultiValue() bool {
+    return false
+}

@@ -67,3 +67,7 @@ func (m *ItemItemsItemWorkbookFunctionsPercentile_ExcRequestBuilder) ToPostReque
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemItemsItemWorkbookFunctionsPercentile_ExcRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookFunctionsPercentile_ExcRequestBuilder) {
+    return NewItemItemsItemWorkbookFunctionsPercentile_ExcRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

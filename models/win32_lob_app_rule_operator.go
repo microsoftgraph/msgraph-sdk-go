@@ -54,3 +54,6 @@ func SerializeWin32LobAppRuleOperator(values []Win32LobAppRuleOperator) []string
     }
     return result
 }
+func (i Win32LobAppRuleOperator) isMultiValue() bool {
+    return false
+}

@@ -39,8 +39,8 @@ type ItemCalendarCalendarViewRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemCalendarCalendarViewRequestBuilderGetQueryParameters
 }
-// ByEventIdString provides operations to manage the calendarView property of the microsoft.graph.calendar entity.
-func (m *ItemCalendarCalendarViewRequestBuilder) ByEventIdString(eventId string)(*ItemCalendarCalendarViewEventItemRequestBuilder) {
+// ByEventId provides operations to manage the calendarView property of the microsoft.graph.calendar entity.
+func (m *ItemCalendarCalendarViewRequestBuilder) ByEventId(eventId string)(*ItemCalendarCalendarViewEventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -108,4 +108,8 @@ func (m *ItemCalendarCalendarViewRequestBuilder) ToGetRequestInformation(ctx con
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemCalendarCalendarViewRequestBuilder) WithUrl(rawUrl string)(*ItemCalendarCalendarViewRequestBuilder) {
+    return NewItemCalendarCalendarViewRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

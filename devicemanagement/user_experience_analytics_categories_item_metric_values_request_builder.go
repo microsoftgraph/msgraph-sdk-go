@@ -46,8 +46,8 @@ type UserExperienceAnalyticsCategoriesItemMetricValuesRequestBuilderPostRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUserExperienceAnalyticsMetricIdString provides operations to manage the metricValues property of the microsoft.graph.userExperienceAnalyticsCategory entity.
-func (m *UserExperienceAnalyticsCategoriesItemMetricValuesRequestBuilder) ByUserExperienceAnalyticsMetricIdString(userExperienceAnalyticsMetricId string)(*UserExperienceAnalyticsCategoriesItemMetricValuesUserExperienceAnalyticsMetricItemRequestBuilder) {
+// ByUserExperienceAnalyticsMetricId provides operations to manage the metricValues property of the microsoft.graph.userExperienceAnalyticsCategory entity.
+func (m *UserExperienceAnalyticsCategoriesItemMetricValuesRequestBuilder) ByUserExperienceAnalyticsMetricId(userExperienceAnalyticsMetricId string)(*UserExperienceAnalyticsCategoriesItemMetricValuesUserExperienceAnalyticsMetricItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *UserExperienceAnalyticsCategoriesItemMetricValuesRequestBuilder) ToPost
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *UserExperienceAnalyticsCategoriesItemMetricValuesRequestBuilder) WithUrl(rawUrl string)(*UserExperienceAnalyticsCategoriesItemMetricValuesRequestBuilder) {
+    return NewUserExperienceAnalyticsCategoriesItemMetricValuesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -58,3 +58,6 @@ func SerializeAndroidWorkProfileRequiredPasswordType(values []AndroidWorkProfile
     }
     return result
 }
+func (i AndroidWorkProfileRequiredPasswordType) isMultiValue() bool {
+    return false
+}

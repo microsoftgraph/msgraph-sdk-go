@@ -41,3 +41,6 @@ func SerializeIncludedUserRoles(values []IncludedUserRoles) []string {
     }
     return result
 }
+func (i IncludedUserRoles) isMultiValue() bool {
+    return false
+}

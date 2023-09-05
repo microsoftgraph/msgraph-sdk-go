@@ -46,8 +46,8 @@ type CasesEdiscoveryCasesItemReviewSetsItemQueriesRequestBuilderPostRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByEdiscoveryReviewSetQueryIdString provides operations to manage the queries property of the microsoft.graph.security.ediscoveryReviewSet entity.
-func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesRequestBuilder) ByEdiscoveryReviewSetQueryIdString(ediscoveryReviewSetQueryId string)(*CasesEdiscoveryCasesItemReviewSetsItemQueriesEdiscoveryReviewSetQueryItemRequestBuilder) {
+// ByEdiscoveryReviewSetQueryId provides operations to manage the queries property of the microsoft.graph.security.ediscoveryReviewSet entity.
+func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesRequestBuilder) ByEdiscoveryReviewSetQueryId(ediscoveryReviewSetQueryId string)(*CasesEdiscoveryCasesItemReviewSetsItemQueriesEdiscoveryReviewSetQueryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesRequestBuilder) ToPostRequ
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesRequestBuilder) WithUrl(rawUrl string)(*CasesEdiscoveryCasesItemReviewSetsItemQueriesRequestBuilder) {
+    return NewCasesEdiscoveryCasesItemReviewSetsItemQueriesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

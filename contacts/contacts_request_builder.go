@@ -46,8 +46,8 @@ type ContactsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByOrgContactIdString provides operations to manage the collection of orgContact entities.
-func (m *ContactsRequestBuilder) ByOrgContactIdString(orgContactId string)(*OrgContactItemRequestBuilder) {
+// ByOrgContactId provides operations to manage the collection of orgContact entities.
+func (m *ContactsRequestBuilder) ByOrgContactId(orgContactId string)(*OrgContactItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -163,4 +163,8 @@ func (m *ContactsRequestBuilder) ToPostRequestInformation(ctx context.Context, b
 // ValidateProperties provides operations to call the validateProperties method.
 func (m *ContactsRequestBuilder) ValidateProperties()(*ValidatePropertiesRequestBuilder) {
     return NewValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ContactsRequestBuilder) WithUrl(rawUrl string)(*ContactsRequestBuilder) {
+    return NewContactsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -46,8 +46,8 @@ type ItemTagsItemMembersRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByTeamworkTagMemberIdString provides operations to manage the members property of the microsoft.graph.teamworkTag entity.
-func (m *ItemTagsItemMembersRequestBuilder) ByTeamworkTagMemberIdString(teamworkTagMemberId string)(*ItemTagsItemMembersTeamworkTagMemberItemRequestBuilder) {
+// ByTeamworkTagMemberId provides operations to manage the members property of the microsoft.graph.teamworkTag entity.
+func (m *ItemTagsItemMembersRequestBuilder) ByTeamworkTagMemberId(teamworkTagMemberId string)(*ItemTagsItemMembersTeamworkTagMemberItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *ItemTagsItemMembersRequestBuilder) ToPostRequestInformation(ctx context
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemTagsItemMembersRequestBuilder) WithUrl(rawUrl string)(*ItemTagsItemMembersRequestBuilder) {
+    return NewItemTagsItemMembersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

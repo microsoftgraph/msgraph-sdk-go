@@ -39,8 +39,8 @@ type ItemCalendarsItemEventsItemInstancesRequestBuilderGetRequestConfiguration s
     // Request query parameters
     QueryParameters *ItemCalendarsItemEventsItemInstancesRequestBuilderGetQueryParameters
 }
-// ByEventId1String provides operations to manage the instances property of the microsoft.graph.event entity.
-func (m *ItemCalendarsItemEventsItemInstancesRequestBuilder) ByEventId1String(eventId1 string)(*ItemCalendarsItemEventsItemInstancesEventItemRequestBuilder) {
+// ByEventId1 provides operations to manage the instances property of the microsoft.graph.event entity.
+func (m *ItemCalendarsItemEventsItemInstancesRequestBuilder) ByEventId1(eventId1 string)(*ItemCalendarsItemEventsItemInstancesEventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -108,4 +108,8 @@ func (m *ItemCalendarsItemEventsItemInstancesRequestBuilder) ToGetRequestInforma
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemCalendarsItemEventsItemInstancesRequestBuilder) WithUrl(rawUrl string)(*ItemCalendarsItemEventsItemInstancesRequestBuilder) {
+    return NewItemCalendarsItemEventsItemInstancesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

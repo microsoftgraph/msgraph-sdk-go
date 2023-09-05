@@ -46,8 +46,8 @@ type ItemTermStoresItemGroupsItemSetsItemChildrenItemRelationsRequestBuilderPost
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByRelationIdString provides operations to manage the relations property of the microsoft.graph.termStore.term entity.
-func (m *ItemTermStoresItemGroupsItemSetsItemChildrenItemRelationsRequestBuilder) ByRelationIdString(relationId string)(*ItemTermStoresItemGroupsItemSetsItemChildrenItemRelationsRelationItemRequestBuilder) {
+// ByRelationId provides operations to manage the relations property of the microsoft.graph.termStore.term entity.
+func (m *ItemTermStoresItemGroupsItemSetsItemChildrenItemRelationsRequestBuilder) ByRelationId(relationId string)(*ItemTermStoresItemGroupsItemSetsItemChildrenItemRelationsRelationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ItemTermStoresItemGroupsItemSetsItemChildrenItemRelationsRequestBuilder
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemTermStoresItemGroupsItemSetsItemChildrenItemRelationsRequestBuilder) WithUrl(rawUrl string)(*ItemTermStoresItemGroupsItemSetsItemChildrenItemRelationsRequestBuilder) {
+    return NewItemTermStoresItemGroupsItemSetsItemChildrenItemRelationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

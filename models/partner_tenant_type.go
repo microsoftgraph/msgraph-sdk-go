@@ -47,3 +47,6 @@ func SerializePartnerTenantType(values []PartnerTenantType) []string {
     }
     return result
 }
+func (i PartnerTenantType) isMultiValue() bool {
+    return false
+}

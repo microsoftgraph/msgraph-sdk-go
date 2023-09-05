@@ -64,3 +64,7 @@ func (m *GetMailboxUsageDetailWithPeriodRequestBuilder) ToGetRequestInformation(
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *GetMailboxUsageDetailWithPeriodRequestBuilder) WithUrl(rawUrl string)(*GetMailboxUsageDetailWithPeriodRequestBuilder) {
+    return NewGetMailboxUsageDetailWithPeriodRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

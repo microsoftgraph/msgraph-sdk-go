@@ -46,8 +46,8 @@ type ContractsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByContractIdString provides operations to manage the collection of contract entities.
-func (m *ContractsRequestBuilder) ByContractIdString(contractId string)(*ContractItemRequestBuilder) {
+// ByContractId provides operations to manage the collection of contract entities.
+func (m *ContractsRequestBuilder) ByContractId(contractId string)(*ContractItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -163,4 +163,8 @@ func (m *ContractsRequestBuilder) ToPostRequestInformation(ctx context.Context, 
 // ValidateProperties provides operations to call the validateProperties method.
 func (m *ContractsRequestBuilder) ValidateProperties()(*ValidatePropertiesRequestBuilder) {
     return NewValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ContractsRequestBuilder) WithUrl(rawUrl string)(*ContractsRequestBuilder) {
+    return NewContractsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -74,3 +74,7 @@ func (m *MonthlyPrintUsageByUserCountRequestBuilder) ToGetRequestInformation(ctx
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *MonthlyPrintUsageByUserCountRequestBuilder) WithUrl(rawUrl string)(*MonthlyPrintUsageByUserCountRequestBuilder) {
+    return NewMonthlyPrintUsageByUserCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

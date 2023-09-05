@@ -100,3 +100,7 @@ func (m *ItemLogoRequestBuilder) ToPutRequestInformation(ctx context.Context, bo
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemLogoRequestBuilder) WithUrl(rawUrl string)(*ItemLogoRequestBuilder) {
+    return NewItemLogoRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

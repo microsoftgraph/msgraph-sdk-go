@@ -39,8 +39,8 @@ type ItemManagedAppRegistrationsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemManagedAppRegistrationsRequestBuilderGetQueryParameters
 }
-// ByManagedAppRegistrationIdString provides operations to manage the managedAppRegistrations property of the microsoft.graph.user entity.
-func (m *ItemManagedAppRegistrationsRequestBuilder) ByManagedAppRegistrationIdString(managedAppRegistrationId string)(*ItemManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) {
+// ByManagedAppRegistrationId provides operations to manage the managedAppRegistrations property of the microsoft.graph.user entity.
+func (m *ItemManagedAppRegistrationsRequestBuilder) ByManagedAppRegistrationId(managedAppRegistrationId string)(*ItemManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -101,4 +101,8 @@ func (m *ItemManagedAppRegistrationsRequestBuilder) ToGetRequestInformation(ctx 
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemManagedAppRegistrationsRequestBuilder) WithUrl(rawUrl string)(*ItemManagedAppRegistrationsRequestBuilder) {
+    return NewItemManagedAppRegistrationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

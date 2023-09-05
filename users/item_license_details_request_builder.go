@@ -46,8 +46,8 @@ type ItemLicenseDetailsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByLicenseDetailsIdString provides operations to manage the licenseDetails property of the microsoft.graph.user entity.
-func (m *ItemLicenseDetailsRequestBuilder) ByLicenseDetailsIdString(licenseDetailsId string)(*ItemLicenseDetailsLicenseDetailsItemRequestBuilder) {
+// ByLicenseDetailsId provides operations to manage the licenseDetails property of the microsoft.graph.user entity.
+func (m *ItemLicenseDetailsRequestBuilder) ByLicenseDetailsId(licenseDetailsId string)(*ItemLicenseDetailsLicenseDetailsItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *ItemLicenseDetailsRequestBuilder) ToPostRequestInformation(ctx context.
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemLicenseDetailsRequestBuilder) WithUrl(rawUrl string)(*ItemLicenseDetailsRequestBuilder) {
+    return NewItemLicenseDetailsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -46,8 +46,8 @@ type WindowsInformationProtectionNetworkLearningSummariesRequestBuilderPostReque
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByWindowsInformationProtectionNetworkLearningSummaryIdString provides operations to manage the windowsInformationProtectionNetworkLearningSummaries property of the microsoft.graph.deviceManagement entity.
-func (m *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) ByWindowsInformationProtectionNetworkLearningSummaryIdString(windowsInformationProtectionNetworkLearningSummaryId string)(*WindowsInformationProtectionNetworkLearningSummariesWindowsInformationProtectionNetworkLearningSummaryItemRequestBuilder) {
+// ByWindowsInformationProtectionNetworkLearningSummaryId provides operations to manage the windowsInformationProtectionNetworkLearningSummaries property of the microsoft.graph.deviceManagement entity.
+func (m *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) ByWindowsInformationProtectionNetworkLearningSummaryId(windowsInformationProtectionNetworkLearningSummaryId string)(*WindowsInformationProtectionNetworkLearningSummariesWindowsInformationProtectionNetworkLearningSummaryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) ToP
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) WithUrl(rawUrl string)(*WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) {
+    return NewWindowsInformationProtectionNetworkLearningSummariesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

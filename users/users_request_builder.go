@@ -44,8 +44,8 @@ type UsersRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUserIdString provides operations to manage the collection of user entities.
-func (m *UsersRequestBuilder) ByUserIdString(userId string)(*UserItemRequestBuilder) {
+// ByUserId provides operations to manage the collection of user entities.
+func (m *UsersRequestBuilder) ByUserId(userId string)(*UserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -164,4 +164,8 @@ func (m *UsersRequestBuilder) ToPostRequestInformation(ctx context.Context, body
 // ValidateProperties provides operations to call the validateProperties method.
 func (m *UsersRequestBuilder) ValidateProperties()(*ValidatePropertiesRequestBuilder) {
     return NewValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *UsersRequestBuilder) WithUrl(rawUrl string)(*UsersRequestBuilder) {
+    return NewUsersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

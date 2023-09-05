@@ -46,8 +46,8 @@ type DeletedItemsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDirectoryObjectIdString provides operations to manage the deletedItems property of the microsoft.graph.directory entity.
-func (m *DeletedItemsRequestBuilder) ByDirectoryObjectIdString(directoryObjectId string)(*DeletedItemsDirectoryObjectItemRequestBuilder) {
+// ByDirectoryObjectId provides operations to manage the deletedItems property of the microsoft.graph.directory entity.
+func (m *DeletedItemsRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*DeletedItemsDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -184,4 +184,8 @@ func (m *DeletedItemsRequestBuilder) ToPostRequestInformation(ctx context.Contex
 // ValidateProperties provides operations to call the validateProperties method.
 func (m *DeletedItemsRequestBuilder) ValidateProperties()(*DeletedItemsValidatePropertiesRequestBuilder) {
     return NewDeletedItemsValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeletedItemsRequestBuilder) WithUrl(rawUrl string)(*DeletedItemsRequestBuilder) {
+    return NewDeletedItemsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

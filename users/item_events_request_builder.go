@@ -44,8 +44,8 @@ type ItemEventsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByEventIdString provides operations to manage the events property of the microsoft.graph.user entity.
-func (m *ItemEventsRequestBuilder) ByEventIdString(eventId string)(*ItemEventsEventItemRequestBuilder) {
+// ByEventId provides operations to manage the events property of the microsoft.graph.user entity.
+func (m *ItemEventsRequestBuilder) ByEventId(eventId string)(*ItemEventsEventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -152,4 +152,8 @@ func (m *ItemEventsRequestBuilder) ToPostRequestInformation(ctx context.Context,
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemEventsRequestBuilder) WithUrl(rawUrl string)(*ItemEventsRequestBuilder) {
+    return NewItemEventsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

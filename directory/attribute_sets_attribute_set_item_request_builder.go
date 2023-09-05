@@ -159,3 +159,7 @@ func (m *AttributeSetsAttributeSetItemRequestBuilder) ToPatchRequestInformation(
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AttributeSetsAttributeSetItemRequestBuilder) WithUrl(rawUrl string)(*AttributeSetsAttributeSetItemRequestBuilder) {
+    return NewAttributeSetsAttributeSetItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

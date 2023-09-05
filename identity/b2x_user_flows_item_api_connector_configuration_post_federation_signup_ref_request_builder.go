@@ -137,3 +137,7 @@ func (m *B2xUserFlowsItemApiConnectorConfigurationPostFederationSignupRefRequest
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *B2xUserFlowsItemApiConnectorConfigurationPostFederationSignupRefRequestBuilder) WithUrl(rawUrl string)(*B2xUserFlowsItemApiConnectorConfigurationPostFederationSignupRefRequestBuilder) {
+    return NewB2xUserFlowsItemApiConnectorConfigurationPostFederationSignupRefRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

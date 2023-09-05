@@ -38,3 +38,6 @@ func SerializeDeviceManagementPartnerAppType(values []DeviceManagementPartnerApp
     }
     return result
 }
+func (i DeviceManagementPartnerAppType) isMultiValue() bool {
+    return false
+}

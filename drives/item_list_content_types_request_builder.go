@@ -54,8 +54,8 @@ func (m *ItemListContentTypesRequestBuilder) AddCopy()(*ItemListContentTypesAddC
 func (m *ItemListContentTypesRequestBuilder) AddCopyFromContentTypeHub()(*ItemListContentTypesAddCopyFromContentTypeHubRequestBuilder) {
     return NewItemListContentTypesAddCopyFromContentTypeHubRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByContentTypeIdString provides operations to manage the contentTypes property of the microsoft.graph.list entity.
-func (m *ItemListContentTypesRequestBuilder) ByContentTypeIdString(contentTypeId string)(*ItemListContentTypesContentTypeItemRequestBuilder) {
+// ByContentTypeId provides operations to manage the contentTypes property of the microsoft.graph.list entity.
+func (m *ItemListContentTypesRequestBuilder) ByContentTypeId(contentTypeId string)(*ItemListContentTypesContentTypeItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -159,4 +159,8 @@ func (m *ItemListContentTypesRequestBuilder) ToPostRequestInformation(ctx contex
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemListContentTypesRequestBuilder) WithUrl(rawUrl string)(*ItemListContentTypesRequestBuilder) {
+    return NewItemListContentTypesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

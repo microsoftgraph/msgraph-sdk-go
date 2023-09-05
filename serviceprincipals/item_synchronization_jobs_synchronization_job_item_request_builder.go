@@ -183,3 +183,7 @@ func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) ToPatchReq
 func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) ValidateCredentials()(*ItemSynchronizationJobsItemValidateCredentialsRequestBuilder) {
     return NewItemSynchronizationJobsItemValidateCredentialsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) WithUrl(rawUrl string)(*ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) {
+    return NewItemSynchronizationJobsSynchronizationJobItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

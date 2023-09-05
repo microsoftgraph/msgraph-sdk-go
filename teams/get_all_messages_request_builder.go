@@ -86,3 +86,7 @@ func (m *GetAllMessagesRequestBuilder) ToGetRequestInformation(ctx context.Conte
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *GetAllMessagesRequestBuilder) WithUrl(rawUrl string)(*GetAllMessagesRequestBuilder) {
+    return NewGetAllMessagesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

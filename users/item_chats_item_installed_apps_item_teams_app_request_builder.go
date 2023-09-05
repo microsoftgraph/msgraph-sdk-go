@@ -75,3 +75,7 @@ func (m *ItemChatsItemInstalledAppsItemTeamsAppRequestBuilder) ToGetRequestInfor
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemChatsItemInstalledAppsItemTeamsAppRequestBuilder) WithUrl(rawUrl string)(*ItemChatsItemInstalledAppsItemTeamsAppRequestBuilder) {
+    return NewItemChatsItemInstalledAppsItemTeamsAppRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

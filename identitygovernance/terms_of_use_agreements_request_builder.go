@@ -46,8 +46,8 @@ type TermsOfUseAgreementsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAgreementIdString provides operations to manage the agreements property of the microsoft.graph.termsOfUseContainer entity.
-func (m *TermsOfUseAgreementsRequestBuilder) ByAgreementIdString(agreementId string)(*TermsOfUseAgreementsAgreementItemRequestBuilder) {
+// ByAgreementId provides operations to manage the agreements property of the microsoft.graph.termsOfUseContainer entity.
+func (m *TermsOfUseAgreementsRequestBuilder) ByAgreementId(agreementId string)(*TermsOfUseAgreementsAgreementItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *TermsOfUseAgreementsRequestBuilder) ToPostRequestInformation(ctx contex
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *TermsOfUseAgreementsRequestBuilder) WithUrl(rawUrl string)(*TermsOfUseAgreementsRequestBuilder) {
+    return NewTermsOfUseAgreementsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

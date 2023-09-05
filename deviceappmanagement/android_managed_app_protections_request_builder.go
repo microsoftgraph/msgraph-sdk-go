@@ -46,8 +46,8 @@ type AndroidManagedAppProtectionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAndroidManagedAppProtectionIdString provides operations to manage the androidManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.
-func (m *AndroidManagedAppProtectionsRequestBuilder) ByAndroidManagedAppProtectionIdString(androidManagedAppProtectionId string)(*AndroidManagedAppProtectionsAndroidManagedAppProtectionItemRequestBuilder) {
+// ByAndroidManagedAppProtectionId provides operations to manage the androidManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.
+func (m *AndroidManagedAppProtectionsRequestBuilder) ByAndroidManagedAppProtectionId(androidManagedAppProtectionId string)(*AndroidManagedAppProtectionsAndroidManagedAppProtectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *AndroidManagedAppProtectionsRequestBuilder) ToPostRequestInformation(ct
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AndroidManagedAppProtectionsRequestBuilder) WithUrl(rawUrl string)(*AndroidManagedAppProtectionsRequestBuilder) {
+    return NewAndroidManagedAppProtectionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -46,8 +46,8 @@ type ItemSitesItemListsItemSubscriptionsRequestBuilderPostRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BySubscriptionIdString provides operations to manage the subscriptions property of the microsoft.graph.list entity.
-func (m *ItemSitesItemListsItemSubscriptionsRequestBuilder) BySubscriptionIdString(subscriptionId string)(*ItemSitesItemListsItemSubscriptionsSubscriptionItemRequestBuilder) {
+// BySubscriptionId provides operations to manage the subscriptions property of the microsoft.graph.list entity.
+func (m *ItemSitesItemListsItemSubscriptionsRequestBuilder) BySubscriptionId(subscriptionId string)(*ItemSitesItemListsItemSubscriptionsSubscriptionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ItemSitesItemListsItemSubscriptionsRequestBuilder) ToPostRequestInforma
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemSitesItemListsItemSubscriptionsRequestBuilder) WithUrl(rawUrl string)(*ItemSitesItemListsItemSubscriptionsRequestBuilder) {
+    return NewItemSitesItemListsItemSubscriptionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -35,8 +35,8 @@ type ItemAcceptedSendersRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemAcceptedSendersRequestBuilderGetQueryParameters
 }
-// ByDirectoryObjectIdString gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.acceptedSenders.item collection
-func (m *ItemAcceptedSendersRequestBuilder) ByDirectoryObjectIdString(directoryObjectId string)(*ItemAcceptedSendersDirectoryObjectItemRequestBuilder) {
+// ByDirectoryObjectId gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.acceptedSenders.item collection
+func (m *ItemAcceptedSendersRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemAcceptedSendersDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -104,4 +104,8 @@ func (m *ItemAcceptedSendersRequestBuilder) ToGetRequestInformation(ctx context.
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemAcceptedSendersRequestBuilder) WithUrl(rawUrl string)(*ItemAcceptedSendersRequestBuilder) {
+    return NewItemAcceptedSendersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

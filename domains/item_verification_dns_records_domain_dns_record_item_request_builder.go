@@ -153,3 +153,7 @@ func (m *ItemVerificationDnsRecordsDomainDnsRecordItemRequestBuilder) ToPatchReq
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemVerificationDnsRecordsDomainDnsRecordItemRequestBuilder) WithUrl(rawUrl string)(*ItemVerificationDnsRecordsDomainDnsRecordItemRequestBuilder) {
+    return NewItemVerificationDnsRecordsDomainDnsRecordItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

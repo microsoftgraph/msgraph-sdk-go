@@ -41,3 +41,6 @@ func SerializeTaskStatus(values []TaskStatus) []string {
     }
     return result
 }
+func (i TaskStatus) isMultiValue() bool {
+    return false
+}

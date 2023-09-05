@@ -32,3 +32,6 @@ func SerializeTeamworkActivityTopicSource(values []TeamworkActivityTopicSource) 
     }
     return result
 }
+func (i TeamworkActivityTopicSource) isMultiValue() bool {
+    return false
+}

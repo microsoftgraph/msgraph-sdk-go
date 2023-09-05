@@ -46,8 +46,8 @@ type UserFlowAttributesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByIdentityUserFlowAttributeIdString provides operations to manage the userFlowAttributes property of the microsoft.graph.identityContainer entity.
-func (m *UserFlowAttributesRequestBuilder) ByIdentityUserFlowAttributeIdString(identityUserFlowAttributeId string)(*UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) {
+// ByIdentityUserFlowAttributeId provides operations to manage the userFlowAttributes property of the microsoft.graph.identityContainer entity.
+func (m *UserFlowAttributesRequestBuilder) ByIdentityUserFlowAttributeId(identityUserFlowAttributeId string)(*UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *UserFlowAttributesRequestBuilder) ToPostRequestInformation(ctx context.
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *UserFlowAttributesRequestBuilder) WithUrl(rawUrl string)(*UserFlowAttributesRequestBuilder) {
+    return NewUserFlowAttributesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

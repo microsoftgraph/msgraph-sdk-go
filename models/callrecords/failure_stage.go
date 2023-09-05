@@ -38,3 +38,6 @@ func SerializeFailureStage(values []FailureStage) []string {
     }
     return result
 }
+func (i FailureStage) isMultiValue() bool {
+    return false
+}

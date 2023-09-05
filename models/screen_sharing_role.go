@@ -32,3 +32,6 @@ func SerializeScreenSharingRole(values []ScreenSharingRole) []string {
     }
     return result
 }
+func (i ScreenSharingRole) isMultiValue() bool {
+    return false
+}

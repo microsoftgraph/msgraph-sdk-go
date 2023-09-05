@@ -42,8 +42,8 @@ type ItemCalendarGroupsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByCalendarGroupIdString provides operations to manage the calendarGroups property of the microsoft.graph.user entity.
-func (m *ItemCalendarGroupsRequestBuilder) ByCalendarGroupIdString(calendarGroupId string)(*ItemCalendarGroupsCalendarGroupItemRequestBuilder) {
+// ByCalendarGroupId provides operations to manage the calendarGroups property of the microsoft.graph.user entity.
+func (m *ItemCalendarGroupsRequestBuilder) ByCalendarGroupId(calendarGroupId string)(*ItemCalendarGroupsCalendarGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -146,4 +146,8 @@ func (m *ItemCalendarGroupsRequestBuilder) ToPostRequestInformation(ctx context.
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemCalendarGroupsRequestBuilder) WithUrl(rawUrl string)(*ItemCalendarGroupsRequestBuilder) {
+    return NewItemCalendarGroupsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

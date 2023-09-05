@@ -39,8 +39,8 @@ type EntitlementManagementAccessPackagesItemAccessPackagesIncompatibleWithReques
     // Request query parameters
     QueryParameters *EntitlementManagementAccessPackagesItemAccessPackagesIncompatibleWithRequestBuilderGetQueryParameters
 }
-// ByAccessPackageId1String provides operations to manage the accessPackagesIncompatibleWith property of the microsoft.graph.accessPackage entity.
-func (m *EntitlementManagementAccessPackagesItemAccessPackagesIncompatibleWithRequestBuilder) ByAccessPackageId1String(accessPackageId1 string)(*EntitlementManagementAccessPackagesItemAccessPackagesIncompatibleWithAccessPackageItemRequestBuilder) {
+// ByAccessPackageId1 provides operations to manage the accessPackagesIncompatibleWith property of the microsoft.graph.accessPackage entity.
+func (m *EntitlementManagementAccessPackagesItemAccessPackagesIncompatibleWithRequestBuilder) ByAccessPackageId1(accessPackageId1 string)(*EntitlementManagementAccessPackagesItemAccessPackagesIncompatibleWithAccessPackageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -104,4 +104,8 @@ func (m *EntitlementManagementAccessPackagesItemAccessPackagesIncompatibleWithRe
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *EntitlementManagementAccessPackagesItemAccessPackagesIncompatibleWithRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementAccessPackagesItemAccessPackagesIncompatibleWithRequestBuilder) {
+    return NewEntitlementManagementAccessPackagesItemAccessPackagesIncompatibleWithRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

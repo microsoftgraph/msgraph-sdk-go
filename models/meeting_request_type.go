@@ -47,3 +47,6 @@ func SerializeMeetingRequestType(values []MeetingRequestType) []string {
     }
     return result
 }
+func (i MeetingRequestType) isMultiValue() bool {
+    return false
+}

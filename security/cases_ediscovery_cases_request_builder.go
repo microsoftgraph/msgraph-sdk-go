@@ -46,8 +46,8 @@ type CasesEdiscoveryCasesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByEdiscoveryCaseIdString provides operations to manage the ediscoveryCases property of the microsoft.graph.security.casesRoot entity.
-func (m *CasesEdiscoveryCasesRequestBuilder) ByEdiscoveryCaseIdString(ediscoveryCaseId string)(*CasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilder) {
+// ByEdiscoveryCaseId provides operations to manage the ediscoveryCases property of the microsoft.graph.security.casesRoot entity.
+func (m *CasesEdiscoveryCasesRequestBuilder) ByEdiscoveryCaseId(ediscoveryCaseId string)(*CasesEdiscoveryCasesEdiscoveryCaseItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *CasesEdiscoveryCasesRequestBuilder) ToPostRequestInformation(ctx contex
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CasesEdiscoveryCasesRequestBuilder) WithUrl(rawUrl string)(*CasesEdiscoveryCasesRequestBuilder) {
+    return NewCasesEdiscoveryCasesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

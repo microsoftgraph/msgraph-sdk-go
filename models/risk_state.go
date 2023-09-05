@@ -47,3 +47,6 @@ func SerializeRiskState(values []RiskState) []string {
     }
     return result
 }
+func (i RiskState) isMultiValue() bool {
+    return false
+}

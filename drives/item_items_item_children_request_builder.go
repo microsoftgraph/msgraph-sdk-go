@@ -46,8 +46,8 @@ type ItemItemsItemChildrenRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDriveItemId1String provides operations to manage the children property of the microsoft.graph.driveItem entity.
-func (m *ItemItemsItemChildrenRequestBuilder) ByDriveItemId1String(driveItemId1 string)(*ItemItemsItemChildrenDriveItemItemRequestBuilder) {
+// ByDriveItemId1 provides operations to manage the children property of the microsoft.graph.driveItem entity.
+func (m *ItemItemsItemChildrenRequestBuilder) ByDriveItemId1(driveItemId1 string)(*ItemItemsItemChildrenDriveItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *ItemItemsItemChildrenRequestBuilder) ToPostRequestInformation(ctx conte
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemItemsItemChildrenRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemChildrenRequestBuilder) {
+    return NewItemItemsItemChildrenRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

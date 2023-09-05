@@ -46,8 +46,8 @@ type PrintersItemJobsItemTasksRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByPrintTaskIdString provides operations to manage the tasks property of the microsoft.graph.printJob entity.
-func (m *PrintersItemJobsItemTasksRequestBuilder) ByPrintTaskIdString(printTaskId string)(*PrintersItemJobsItemTasksPrintTaskItemRequestBuilder) {
+// ByPrintTaskId provides operations to manage the tasks property of the microsoft.graph.printJob entity.
+func (m *PrintersItemJobsItemTasksRequestBuilder) ByPrintTaskId(printTaskId string)(*PrintersItemJobsItemTasksPrintTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *PrintersItemJobsItemTasksRequestBuilder) ToPostRequestInformation(ctx c
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *PrintersItemJobsItemTasksRequestBuilder) WithUrl(rawUrl string)(*PrintersItemJobsItemTasksRequestBuilder) {
+    return NewPrintersItemJobsItemTasksRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

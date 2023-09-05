@@ -38,3 +38,6 @@ func SerializeOnlineMeetingProviderType(values []OnlineMeetingProviderType) []st
     }
     return result
 }
+func (i OnlineMeetingProviderType) isMultiValue() bool {
+    return false
+}

@@ -38,3 +38,6 @@ func SerializeRequiredPasswordType(values []RequiredPasswordType) []string {
     }
     return result
 }
+func (i RequiredPasswordType) isMultiValue() bool {
+    return false
+}

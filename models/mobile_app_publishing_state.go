@@ -38,3 +38,6 @@ func SerializeMobileAppPublishingState(values []MobileAppPublishingState) []stri
     }
     return result
 }
+func (i MobileAppPublishingState) isMultiValue() bool {
+    return false
+}

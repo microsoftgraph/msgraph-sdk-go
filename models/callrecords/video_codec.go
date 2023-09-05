@@ -62,3 +62,6 @@ func SerializeVideoCodec(values []VideoCodec) []string {
     }
     return result
 }
+func (i VideoCodec) isMultiValue() bool {
+    return false
+}

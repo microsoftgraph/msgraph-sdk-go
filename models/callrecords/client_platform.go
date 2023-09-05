@@ -59,3 +59,6 @@ func SerializeClientPlatform(values []ClientPlatform) []string {
     }
     return result
 }
+func (i ClientPlatform) isMultiValue() bool {
+    return false
+}

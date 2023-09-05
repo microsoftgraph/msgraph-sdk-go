@@ -138,3 +138,7 @@ func (m *CommunicationsRequestBuilder) ToPatchRequestInformation(ctx context.Con
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CommunicationsRequestBuilder) WithUrl(rawUrl string)(*CommunicationsRequestBuilder) {
+    return NewCommunicationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

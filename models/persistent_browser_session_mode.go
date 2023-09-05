@@ -32,3 +32,6 @@ func SerializePersistentBrowserSessionMode(values []PersistentBrowserSessionMode
     }
     return result
 }
+func (i PersistentBrowserSessionMode) isMultiValue() bool {
+    return false
+}

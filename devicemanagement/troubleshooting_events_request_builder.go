@@ -46,8 +46,8 @@ type TroubleshootingEventsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceManagementTroubleshootingEventIdString provides operations to manage the troubleshootingEvents property of the microsoft.graph.deviceManagement entity.
-func (m *TroubleshootingEventsRequestBuilder) ByDeviceManagementTroubleshootingEventIdString(deviceManagementTroubleshootingEventId string)(*TroubleshootingEventsDeviceManagementTroubleshootingEventItemRequestBuilder) {
+// ByDeviceManagementTroubleshootingEventId provides operations to manage the troubleshootingEvents property of the microsoft.graph.deviceManagement entity.
+func (m *TroubleshootingEventsRequestBuilder) ByDeviceManagementTroubleshootingEventId(deviceManagementTroubleshootingEventId string)(*TroubleshootingEventsDeviceManagementTroubleshootingEventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *TroubleshootingEventsRequestBuilder) ToPostRequestInformation(ctx conte
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *TroubleshootingEventsRequestBuilder) WithUrl(rawUrl string)(*TroubleshootingEventsRequestBuilder) {
+    return NewTroubleshootingEventsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

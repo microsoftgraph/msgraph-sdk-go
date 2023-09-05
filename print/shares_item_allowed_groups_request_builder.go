@@ -39,8 +39,8 @@ type SharesItemAllowedGroupsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *SharesItemAllowedGroupsRequestBuilderGetQueryParameters
 }
-// ByGroupIdString gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.print.shares.item.allowedGroups.item collection
-func (m *SharesItemAllowedGroupsRequestBuilder) ByGroupIdString(groupId string)(*SharesItemAllowedGroupsGroupItemRequestBuilder) {
+// ByGroupId gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.print.shares.item.allowedGroups.item collection
+func (m *SharesItemAllowedGroupsRequestBuilder) ByGroupId(groupId string)(*SharesItemAllowedGroupsGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -108,4 +108,8 @@ func (m *SharesItemAllowedGroupsRequestBuilder) ToGetRequestInformation(ctx cont
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *SharesItemAllowedGroupsRequestBuilder) WithUrl(rawUrl string)(*SharesItemAllowedGroupsRequestBuilder) {
+    return NewSharesItemAllowedGroupsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -64,3 +64,7 @@ func (m *GetOneDriveUsageAccountCountsWithPeriodRequestBuilder) ToGetRequestInfo
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *GetOneDriveUsageAccountCountsWithPeriodRequestBuilder) WithUrl(rawUrl string)(*GetOneDriveUsageAccountCountsWithPeriodRequestBuilder) {
+    return NewGetOneDriveUsageAccountCountsWithPeriodRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

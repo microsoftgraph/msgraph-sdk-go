@@ -39,8 +39,8 @@ type ItemItemsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemItemsRequestBuilderGetQueryParameters
 }
-// ByBaseItemIdString provides operations to manage the items property of the microsoft.graph.site entity.
-func (m *ItemItemsRequestBuilder) ByBaseItemIdString(baseItemId string)(*ItemItemsBaseItemItemRequestBuilder) {
+// ByBaseItemId provides operations to manage the items property of the microsoft.graph.site entity.
+func (m *ItemItemsRequestBuilder) ByBaseItemId(baseItemId string)(*ItemItemsBaseItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -101,4 +101,8 @@ func (m *ItemItemsRequestBuilder) ToGetRequestInformation(ctx context.Context, r
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemItemsRequestBuilder) WithUrl(rawUrl string)(*ItemItemsRequestBuilder) {
+    return NewItemItemsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

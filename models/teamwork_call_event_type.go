@@ -38,3 +38,6 @@ func SerializeTeamworkCallEventType(values []TeamworkCallEventType) []string {
     }
     return result
 }
+func (i TeamworkCallEventType) isMultiValue() bool {
+    return false
+}

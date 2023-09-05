@@ -38,3 +38,6 @@ func SerializeCloudAppSecuritySessionControlType(values []CloudAppSecuritySessio
     }
     return result
 }
+func (i CloudAppSecuritySessionControlType) isMultiValue() bool {
+    return false
+}

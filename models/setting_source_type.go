@@ -32,3 +32,6 @@ func SerializeSettingSourceType(values []SettingSourceType) []string {
     }
     return result
 }
+func (i SettingSourceType) isMultiValue() bool {
+    return false
+}

@@ -35,3 +35,6 @@ func SerializeExternalItemContentType(values []ExternalItemContentType) []string
     }
     return result
 }
+func (i ExternalItemContentType) isMultiValue() bool {
+    return false
+}

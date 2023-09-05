@@ -38,3 +38,6 @@ func SerializeCourseStatus(values []CourseStatus) []string {
     }
     return result
 }
+func (i CourseStatus) isMultiValue() bool {
+    return false
+}

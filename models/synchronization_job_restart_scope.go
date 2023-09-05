@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "strings"
 )
 // 
 type SynchronizationJobRestartScope int
@@ -16,27 +17,36 @@ const (
 )
 
 func (i SynchronizationJobRestartScope) String() string {
-    return []string{"None", "ConnectorDataStore", "Escrows", "Watermark", "QuarantineState", "Full", "ForceDeletes"}[i]
+    var values []string
+    for p := SynchronizationJobRestartScope(1); p <= FORCEDELETES_SYNCHRONIZATIONJOBRESTARTSCOPE; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"None", "ConnectorDataStore", "Escrows", "Watermark", "QuarantineState", "Full", "ForceDeletes"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseSynchronizationJobRestartScope(v string) (any, error) {
-    result := NONE_SYNCHRONIZATIONJOBRESTARTSCOPE
-    switch v {
-        case "None":
-            result = NONE_SYNCHRONIZATIONJOBRESTARTSCOPE
-        case "ConnectorDataStore":
-            result = CONNECTORDATASTORE_SYNCHRONIZATIONJOBRESTARTSCOPE
-        case "Escrows":
-            result = ESCROWS_SYNCHRONIZATIONJOBRESTARTSCOPE
-        case "Watermark":
-            result = WATERMARK_SYNCHRONIZATIONJOBRESTARTSCOPE
-        case "QuarantineState":
-            result = QUARANTINESTATE_SYNCHRONIZATIONJOBRESTARTSCOPE
-        case "Full":
-            result = FULL_SYNCHRONIZATIONJOBRESTARTSCOPE
-        case "ForceDeletes":
-            result = FORCEDELETES_SYNCHRONIZATIONJOBRESTARTSCOPE
-        default:
-            return 0, errors.New("Unknown SynchronizationJobRestartScope value: " + v)
+    var result SynchronizationJobRestartScope
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "None":
+                result |= NONE_SYNCHRONIZATIONJOBRESTARTSCOPE
+            case "ConnectorDataStore":
+                result |= CONNECTORDATASTORE_SYNCHRONIZATIONJOBRESTARTSCOPE
+            case "Escrows":
+                result |= ESCROWS_SYNCHRONIZATIONJOBRESTARTSCOPE
+            case "Watermark":
+                result |= WATERMARK_SYNCHRONIZATIONJOBRESTARTSCOPE
+            case "QuarantineState":
+                result |= QUARANTINESTATE_SYNCHRONIZATIONJOBRESTARTSCOPE
+            case "Full":
+                result |= FULL_SYNCHRONIZATIONJOBRESTARTSCOPE
+            case "ForceDeletes":
+                result |= FORCEDELETES_SYNCHRONIZATIONJOBRESTARTSCOPE
+            default:
+                return 0, errors.New("Unknown SynchronizationJobRestartScope value: " + v)
+        }
     }
     return &result, nil
 }
@@ -46,4 +56,7 @@ func SerializeSynchronizationJobRestartScope(values []SynchronizationJobRestartS
         result[i] = v.String()
     }
     return result
+}
+func (i SynchronizationJobRestartScope) isMultiValue() bool {
+    return true
 }

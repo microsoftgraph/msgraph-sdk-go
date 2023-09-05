@@ -46,8 +46,8 @@ type DirectoryRoleDefinitionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUnifiedRoleDefinitionIdString provides operations to manage the roleDefinitions property of the microsoft.graph.rbacApplication entity.
-func (m *DirectoryRoleDefinitionsRequestBuilder) ByUnifiedRoleDefinitionIdString(unifiedRoleDefinitionId string)(*DirectoryRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilder) {
+// ByUnifiedRoleDefinitionId provides operations to manage the roleDefinitions property of the microsoft.graph.rbacApplication entity.
+func (m *DirectoryRoleDefinitionsRequestBuilder) ByUnifiedRoleDefinitionId(unifiedRoleDefinitionId string)(*DirectoryRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *DirectoryRoleDefinitionsRequestBuilder) ToPostRequestInformation(ctx co
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DirectoryRoleDefinitionsRequestBuilder) WithUrl(rawUrl string)(*DirectoryRoleDefinitionsRequestBuilder) {
+    return NewDirectoryRoleDefinitionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

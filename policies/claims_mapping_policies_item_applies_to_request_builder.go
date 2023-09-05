@@ -39,8 +39,8 @@ type ClaimsMappingPoliciesItemAppliesToRequestBuilderGetRequestConfiguration str
     // Request query parameters
     QueryParameters *ClaimsMappingPoliciesItemAppliesToRequestBuilderGetQueryParameters
 }
-// ByDirectoryObjectIdString provides operations to manage the appliesTo property of the microsoft.graph.stsPolicy entity.
-func (m *ClaimsMappingPoliciesItemAppliesToRequestBuilder) ByDirectoryObjectIdString(directoryObjectId string)(*ClaimsMappingPoliciesItemAppliesToDirectoryObjectItemRequestBuilder) {
+// ByDirectoryObjectId provides operations to manage the appliesTo property of the microsoft.graph.stsPolicy entity.
+func (m *ClaimsMappingPoliciesItemAppliesToRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ClaimsMappingPoliciesItemAppliesToDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -101,4 +101,8 @@ func (m *ClaimsMappingPoliciesItemAppliesToRequestBuilder) ToGetRequestInformati
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ClaimsMappingPoliciesItemAppliesToRequestBuilder) WithUrl(rawUrl string)(*ClaimsMappingPoliciesItemAppliesToRequestBuilder) {
+    return NewClaimsMappingPoliciesItemAppliesToRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

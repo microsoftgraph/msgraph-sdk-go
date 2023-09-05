@@ -39,8 +39,8 @@ type ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilderGetRequestConfig
     // Request query parameters
     QueryParameters *ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilderGetQueryParameters
 }
-// ByIntelligenceProfileIndicatorIdString provides operations to manage the indicators property of the microsoft.graph.security.intelligenceProfile entity.
-func (m *ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilder) ByIntelligenceProfileIndicatorIdString(intelligenceProfileIndicatorId string)(*ThreatIntelligenceIntelProfilesItemIndicatorsIntelligenceProfileIndicatorItemRequestBuilder) {
+// ByIntelligenceProfileIndicatorId provides operations to manage the indicators property of the microsoft.graph.security.intelligenceProfile entity.
+func (m *ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilder) ByIntelligenceProfileIndicatorId(intelligenceProfileIndicatorId string)(*ThreatIntelligenceIntelProfilesItemIndicatorsIntelligenceProfileIndicatorItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -104,4 +104,8 @@ func (m *ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilder) ToGetReque
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilder) WithUrl(rawUrl string)(*ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilder) {
+    return NewThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -46,8 +46,8 @@ type ItemSitesItemTermStoresItemSetsRequestBuilderPostRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BySetIdString provides operations to manage the sets property of the microsoft.graph.termStore.store entity.
-func (m *ItemSitesItemTermStoresItemSetsRequestBuilder) BySetIdString(setId string)(*ItemSitesItemTermStoresItemSetsSetItemRequestBuilder) {
+// BySetId provides operations to manage the sets property of the microsoft.graph.termStore.store entity.
+func (m *ItemSitesItemTermStoresItemSetsRequestBuilder) BySetId(setId string)(*ItemSitesItemTermStoresItemSetsSetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *ItemSitesItemTermStoresItemSetsRequestBuilder) ToPostRequestInformation
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemSitesItemTermStoresItemSetsRequestBuilder) WithUrl(rawUrl string)(*ItemSitesItemTermStoresItemSetsRequestBuilder) {
+    return NewItemSitesItemTermStoresItemSetsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -74,3 +74,7 @@ func (m *AttributeSetsCountRequestBuilder) ToGetRequestInformation(ctx context.C
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AttributeSetsCountRequestBuilder) WithUrl(rawUrl string)(*AttributeSetsCountRequestBuilder) {
+    return NewAttributeSetsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

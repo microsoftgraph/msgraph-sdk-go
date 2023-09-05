@@ -41,3 +41,6 @@ func SerializeExternalActivityType(values []ExternalActivityType) []string {
     }
     return result
 }
+func (i ExternalActivityType) isMultiValue() bool {
+    return false
+}

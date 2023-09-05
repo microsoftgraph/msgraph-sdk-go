@@ -83,3 +83,6 @@ func SerializeDetectionSource(values []DetectionSource) []string {
     }
     return result
 }
+func (i DetectionSource) isMultiValue() bool {
+    return false
+}

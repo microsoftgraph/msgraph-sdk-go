@@ -67,3 +67,7 @@ func (m *ItemItemsItemWorkbookFunctionsChiSq_Inv_RTRequestBuilder) ToPostRequest
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemItemsItemWorkbookFunctionsChiSq_Inv_RTRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookFunctionsChiSq_Inv_RTRequestBuilder) {
+    return NewItemItemsItemWorkbookFunctionsChiSq_Inv_RTRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

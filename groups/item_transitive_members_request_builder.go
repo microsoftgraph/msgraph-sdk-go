@@ -39,8 +39,8 @@ type ItemTransitiveMembersRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemTransitiveMembersRequestBuilderGetQueryParameters
 }
-// ByDirectoryObjectIdString provides operations to manage the transitiveMembers property of the microsoft.graph.group entity.
-func (m *ItemTransitiveMembersRequestBuilder) ByDirectoryObjectIdString(directoryObjectId string)(*ItemTransitiveMembersDirectoryObjectItemRequestBuilder) {
+// ByDirectoryObjectId provides operations to manage the transitiveMembers property of the microsoft.graph.group entity.
+func (m *ItemTransitiveMembersRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemTransitiveMembersDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -128,4 +128,8 @@ func (m *ItemTransitiveMembersRequestBuilder) ToGetRequestInformation(ctx contex
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemTransitiveMembersRequestBuilder) WithUrl(rawUrl string)(*ItemTransitiveMembersRequestBuilder) {
+    return NewItemTransitiveMembersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

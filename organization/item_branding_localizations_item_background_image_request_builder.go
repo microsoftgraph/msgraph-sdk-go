@@ -103,3 +103,7 @@ func (m *ItemBrandingLocalizationsItemBackgroundImageRequestBuilder) ToPutReques
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemBrandingLocalizationsItemBackgroundImageRequestBuilder) WithUrl(rawUrl string)(*ItemBrandingLocalizationsItemBackgroundImageRequestBuilder) {
+    return NewItemBrandingLocalizationsItemBackgroundImageRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

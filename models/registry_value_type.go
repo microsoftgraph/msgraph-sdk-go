@@ -65,3 +65,6 @@ func SerializeRegistryValueType(values []RegistryValueType) []string {
     }
     return result
 }
+func (i RegistryValueType) isMultiValue() bool {
+    return false
+}

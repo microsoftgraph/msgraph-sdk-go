@@ -46,8 +46,8 @@ type ItemTodoListsItemTasksItemChecklistItemsRequestBuilderPostRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByChecklistItemIdString provides operations to manage the checklistItems property of the microsoft.graph.todoTask entity.
-func (m *ItemTodoListsItemTasksItemChecklistItemsRequestBuilder) ByChecklistItemIdString(checklistItemId string)(*ItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilder) {
+// ByChecklistItemId provides operations to manage the checklistItems property of the microsoft.graph.todoTask entity.
+func (m *ItemTodoListsItemTasksItemChecklistItemsRequestBuilder) ByChecklistItemId(checklistItemId string)(*ItemTodoListsItemTasksItemChecklistItemsChecklistItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *ItemTodoListsItemTasksItemChecklistItemsRequestBuilder) ToPostRequestIn
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemTodoListsItemTasksItemChecklistItemsRequestBuilder) WithUrl(rawUrl string)(*ItemTodoListsItemTasksItemChecklistItemsRequestBuilder) {
+    return NewItemTodoListsItemTasksItemChecklistItemsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

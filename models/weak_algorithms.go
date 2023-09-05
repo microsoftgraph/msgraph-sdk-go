@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "strings"
 )
 // 
 type WeakAlgorithms int
@@ -11,17 +12,26 @@ const (
 )
 
 func (i WeakAlgorithms) String() string {
-    return []string{"rsaSha1", "unknownFutureValue"}[i]
+    var values []string
+    for p := WeakAlgorithms(1); p <= UNKNOWNFUTUREVALUE_WEAKALGORITHMS; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"rsaSha1", "unknownFutureValue"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseWeakAlgorithms(v string) (any, error) {
-    result := RSASHA1_WEAKALGORITHMS
-    switch v {
-        case "rsaSha1":
-            result = RSASHA1_WEAKALGORITHMS
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_WEAKALGORITHMS
-        default:
-            return 0, errors.New("Unknown WeakAlgorithms value: " + v)
+    var result WeakAlgorithms
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "rsaSha1":
+                result |= RSASHA1_WEAKALGORITHMS
+            case "unknownFutureValue":
+                result |= UNKNOWNFUTUREVALUE_WEAKALGORITHMS
+            default:
+                return 0, errors.New("Unknown WeakAlgorithms value: " + v)
+        }
     }
     return &result, nil
 }
@@ -31,4 +41,7 @@ func SerializeWeakAlgorithms(values []WeakAlgorithms) []string {
         result[i] = v.String()
     }
     return result
+}
+func (i WeakAlgorithms) isMultiValue() bool {
+    return true
 }

@@ -42,3 +42,6 @@ func SerializeDefenderCloudBlockLevelType(values []DefenderCloudBlockLevelType) 
     }
     return result
 }
+func (i DefenderCloudBlockLevelType) isMultiValue() bool {
+    return false
+}

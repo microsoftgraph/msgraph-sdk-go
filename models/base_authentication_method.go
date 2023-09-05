@@ -65,3 +65,6 @@ func SerializeBaseAuthenticationMethod(values []BaseAuthenticationMethod) []stri
     }
     return result
 }
+func (i BaseAuthenticationMethod) isMultiValue() bool {
+    return false
+}

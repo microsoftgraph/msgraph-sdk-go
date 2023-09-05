@@ -74,3 +74,7 @@ func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsCountRequestBu
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsCountRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementAccessPackagesItemIncompatibleGroupsCountRequestBuilder) {
+    return NewEntitlementManagementAccessPackagesItemIncompatibleGroupsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

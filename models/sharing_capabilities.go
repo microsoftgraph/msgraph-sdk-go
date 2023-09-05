@@ -41,3 +41,6 @@ func SerializeSharingCapabilities(values []SharingCapabilities) []string {
     }
     return result
 }
+func (i SharingCapabilities) isMultiValue() bool {
+    return false
+}

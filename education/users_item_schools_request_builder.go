@@ -39,8 +39,8 @@ type UsersItemSchoolsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *UsersItemSchoolsRequestBuilderGetQueryParameters
 }
-// ByEducationSchoolIdString provides operations to manage the schools property of the microsoft.graph.educationUser entity.
-func (m *UsersItemSchoolsRequestBuilder) ByEducationSchoolIdString(educationSchoolId string)(*UsersItemSchoolsEducationSchoolItemRequestBuilder) {
+// ByEducationSchoolId provides operations to manage the schools property of the microsoft.graph.educationUser entity.
+func (m *UsersItemSchoolsRequestBuilder) ByEducationSchoolId(educationSchoolId string)(*UsersItemSchoolsEducationSchoolItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -104,4 +104,8 @@ func (m *UsersItemSchoolsRequestBuilder) ToGetRequestInformation(ctx context.Con
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *UsersItemSchoolsRequestBuilder) WithUrl(rawUrl string)(*UsersItemSchoolsRequestBuilder) {
+    return NewUsersItemSchoolsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

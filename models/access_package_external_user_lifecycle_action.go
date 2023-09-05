@@ -38,3 +38,6 @@ func SerializeAccessPackageExternalUserLifecycleAction(values []AccessPackageExt
     }
     return result
 }
+func (i AccessPackageExternalUserLifecycleAction) isMultiValue() bool {
+    return false
+}

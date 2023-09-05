@@ -1,6 +1,7 @@
 package security
 import (
     "errors"
+    "strings"
 )
 // 
 type AdditionalDataOptions int
@@ -12,19 +13,28 @@ const (
 )
 
 func (i AdditionalDataOptions) String() string {
-    return []string{"allVersions", "linkedFiles", "unknownFutureValue"}[i]
+    var values []string
+    for p := AdditionalDataOptions(1); p <= UNKNOWNFUTUREVALUE_ADDITIONALDATAOPTIONS; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"allVersions", "linkedFiles", "unknownFutureValue"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseAdditionalDataOptions(v string) (any, error) {
-    result := ALLVERSIONS_ADDITIONALDATAOPTIONS
-    switch v {
-        case "allVersions":
-            result = ALLVERSIONS_ADDITIONALDATAOPTIONS
-        case "linkedFiles":
-            result = LINKEDFILES_ADDITIONALDATAOPTIONS
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_ADDITIONALDATAOPTIONS
-        default:
-            return 0, errors.New("Unknown AdditionalDataOptions value: " + v)
+    var result AdditionalDataOptions
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "allVersions":
+                result |= ALLVERSIONS_ADDITIONALDATAOPTIONS
+            case "linkedFiles":
+                result |= LINKEDFILES_ADDITIONALDATAOPTIONS
+            case "unknownFutureValue":
+                result |= UNKNOWNFUTUREVALUE_ADDITIONALDATAOPTIONS
+            default:
+                return 0, errors.New("Unknown AdditionalDataOptions value: " + v)
+        }
     }
     return &result, nil
 }
@@ -34,4 +44,7 @@ func SerializeAdditionalDataOptions(values []AdditionalDataOptions) []string {
         result[i] = v.String()
     }
     return result
+}
+func (i AdditionalDataOptions) isMultiValue() bool {
+    return true
 }

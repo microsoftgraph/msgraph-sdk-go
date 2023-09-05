@@ -74,3 +74,7 @@ func (m *ItemDirectReportsGraphUserCountRequestBuilder) ToGetRequestInformation(
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemDirectReportsGraphUserCountRequestBuilder) WithUrl(rawUrl string)(*ItemDirectReportsGraphUserCountRequestBuilder) {
+    return NewItemDirectReportsGraphUserCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

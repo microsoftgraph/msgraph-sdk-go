@@ -74,3 +74,7 @@ func (m *ItemFollowedSitesCountRequestBuilder) ToGetRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemFollowedSitesCountRequestBuilder) WithUrl(rawUrl string)(*ItemFollowedSitesCountRequestBuilder) {
+    return NewItemFollowedSitesCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

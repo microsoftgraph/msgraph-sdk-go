@@ -38,3 +38,6 @@ func SerializeEducationGender(values []EducationGender) []string {
     }
     return result
 }
+func (i EducationGender) isMultiValue() bool {
+    return false
+}

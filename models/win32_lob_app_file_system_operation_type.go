@@ -50,3 +50,6 @@ func SerializeWin32LobAppFileSystemOperationType(values []Win32LobAppFileSystemO
     }
     return result
 }
+func (i Win32LobAppFileSystemOperationType) isMultiValue() bool {
+    return false
+}

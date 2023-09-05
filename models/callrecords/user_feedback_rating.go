@@ -47,3 +47,6 @@ func SerializeUserFeedbackRating(values []UserFeedbackRating) []string {
     }
     return result
 }
+func (i UserFeedbackRating) isMultiValue() bool {
+    return false
+}

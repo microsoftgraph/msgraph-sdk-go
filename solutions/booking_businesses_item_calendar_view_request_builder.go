@@ -50,8 +50,8 @@ type BookingBusinessesItemCalendarViewRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByBookingAppointmentIdString provides operations to manage the calendarView property of the microsoft.graph.bookingBusiness entity.
-func (m *BookingBusinessesItemCalendarViewRequestBuilder) ByBookingAppointmentIdString(bookingAppointmentId string)(*BookingBusinessesItemCalendarViewBookingAppointmentItemRequestBuilder) {
+// ByBookingAppointmentId provides operations to manage the calendarView property of the microsoft.graph.bookingBusiness entity.
+func (m *BookingBusinessesItemCalendarViewRequestBuilder) ByBookingAppointmentId(bookingAppointmentId string)(*BookingBusinessesItemCalendarViewBookingAppointmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -151,4 +151,8 @@ func (m *BookingBusinessesItemCalendarViewRequestBuilder) ToPostRequestInformati
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *BookingBusinessesItemCalendarViewRequestBuilder) WithUrl(rawUrl string)(*BookingBusinessesItemCalendarViewRequestBuilder) {
+    return NewBookingBusinessesItemCalendarViewRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

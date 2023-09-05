@@ -65,3 +65,7 @@ func (m *ItemJoinedTeamsItemInstalledAppsItemUpgradeRequestBuilder) ToPostReques
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemJoinedTeamsItemInstalledAppsItemUpgradeRequestBuilder) WithUrl(rawUrl string)(*ItemJoinedTeamsItemInstalledAppsItemUpgradeRequestBuilder) {
+    return NewItemJoinedTeamsItemInstalledAppsItemUpgradeRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

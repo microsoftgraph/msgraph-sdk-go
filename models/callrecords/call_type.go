@@ -38,3 +38,6 @@ func SerializeCallType(values []CallType) []string {
     }
     return result
 }
+func (i CallType) isMultiValue() bool {
+    return false
+}

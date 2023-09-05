@@ -38,3 +38,6 @@ func SerializeTeamVisibilityType(values []TeamVisibilityType) []string {
     }
     return result
 }
+func (i TeamVisibilityType) isMultiValue() bool {
+    return false
+}

@@ -61,3 +61,7 @@ func (m *ItemManagedDevicesItemRecoverPasscodeRequestBuilder) ToPostRequestInfor
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemManagedDevicesItemRecoverPasscodeRequestBuilder) WithUrl(rawUrl string)(*ItemManagedDevicesItemRecoverPasscodeRequestBuilder) {
+    return NewItemManagedDevicesItemRecoverPasscodeRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

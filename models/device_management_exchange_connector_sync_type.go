@@ -34,3 +34,6 @@ func SerializeDeviceManagementExchangeConnectorSyncType(values []DeviceManagemen
     }
     return result
 }
+func (i DeviceManagementExchangeConnectorSyncType) isMultiValue() bool {
+    return false
+}

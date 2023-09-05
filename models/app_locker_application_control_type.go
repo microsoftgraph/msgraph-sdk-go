@@ -46,3 +46,6 @@ func SerializeAppLockerApplicationControlType(values []AppLockerApplicationContr
     }
     return result
 }
+func (i AppLockerApplicationControlType) isMultiValue() bool {
+    return false
+}

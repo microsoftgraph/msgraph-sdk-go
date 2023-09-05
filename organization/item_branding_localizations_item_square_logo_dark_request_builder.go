@@ -103,3 +103,7 @@ func (m *ItemBrandingLocalizationsItemSquareLogoDarkRequestBuilder) ToPutRequest
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemBrandingLocalizationsItemSquareLogoDarkRequestBuilder) WithUrl(rawUrl string)(*ItemBrandingLocalizationsItemSquareLogoDarkRequestBuilder) {
+    return NewItemBrandingLocalizationsItemSquareLogoDarkRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

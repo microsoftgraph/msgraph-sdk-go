@@ -38,3 +38,6 @@ func SerializeChannelMembershipType(values []ChannelMembershipType) []string {
     }
     return result
 }
+func (i ChannelMembershipType) isMultiValue() bool {
+    return false
+}

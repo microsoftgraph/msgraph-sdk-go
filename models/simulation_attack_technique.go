@@ -47,3 +47,6 @@ func SerializeSimulationAttackTechnique(values []SimulationAttackTechnique) []st
     }
     return result
 }
+func (i SimulationAttackTechnique) isMultiValue() bool {
+    return false
+}

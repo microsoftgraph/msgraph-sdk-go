@@ -41,3 +41,6 @@ func SerializeCallRecordingStatus(values []CallRecordingStatus) []string {
     }
     return result
 }
+func (i CallRecordingStatus) isMultiValue() bool {
+    return false
+}

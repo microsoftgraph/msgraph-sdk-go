@@ -41,3 +41,6 @@ func SerializeSimulationAttackType(values []SimulationAttackType) []string {
     }
     return result
 }
+func (i SimulationAttackType) isMultiValue() bool {
+    return false
+}

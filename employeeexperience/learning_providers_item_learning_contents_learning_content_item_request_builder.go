@@ -159,3 +159,7 @@ func (m *LearningProvidersItemLearningContentsLearningContentItemRequestBuilder)
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *LearningProvidersItemLearningContentsLearningContentItemRequestBuilder) WithUrl(rawUrl string)(*LearningProvidersItemLearningContentsLearningContentItemRequestBuilder) {
+    return NewLearningProvidersItemLearningContentsLearningContentItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

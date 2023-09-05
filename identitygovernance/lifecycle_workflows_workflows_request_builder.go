@@ -46,8 +46,8 @@ type LifecycleWorkflowsWorkflowsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByWorkflowIdString provides operations to manage the workflows property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
-func (m *LifecycleWorkflowsWorkflowsRequestBuilder) ByWorkflowIdString(workflowId string)(*LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) {
+// ByWorkflowId provides operations to manage the workflows property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
+func (m *LifecycleWorkflowsWorkflowsRequestBuilder) ByWorkflowId(workflowId string)(*LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *LifecycleWorkflowsWorkflowsRequestBuilder) ToPostRequestInformation(ctx
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *LifecycleWorkflowsWorkflowsRequestBuilder) WithUrl(rawUrl string)(*LifecycleWorkflowsWorkflowsRequestBuilder) {
+    return NewLifecycleWorkflowsWorkflowsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

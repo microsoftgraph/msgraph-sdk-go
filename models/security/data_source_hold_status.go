@@ -44,3 +44,6 @@ func SerializeDataSourceHoldStatus(values []DataSourceHoldStatus) []string {
     }
     return result
 }
+func (i DataSourceHoldStatus) isMultiValue() bool {
+    return false
+}

@@ -46,8 +46,8 @@ type ItemListsItemItemsItemVersionsRequestBuilderPostRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByListItemVersionIdString provides operations to manage the versions property of the microsoft.graph.listItem entity.
-func (m *ItemListsItemItemsItemVersionsRequestBuilder) ByListItemVersionIdString(listItemVersionId string)(*ItemListsItemItemsItemVersionsListItemVersionItemRequestBuilder) {
+// ByListItemVersionId provides operations to manage the versions property of the microsoft.graph.listItem entity.
+func (m *ItemListsItemItemsItemVersionsRequestBuilder) ByListItemVersionId(listItemVersionId string)(*ItemListsItemItemsItemVersionsListItemVersionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *ItemListsItemItemsItemVersionsRequestBuilder) ToPostRequestInformation(
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemListsItemItemsItemVersionsRequestBuilder) WithUrl(rawUrl string)(*ItemListsItemItemsItemVersionsRequestBuilder) {
+    return NewItemListsItemItemsItemVersionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

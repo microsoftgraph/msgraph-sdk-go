@@ -46,8 +46,8 @@ type GroupSettingTemplatesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByGroupSettingTemplateIdString provides operations to manage the collection of groupSettingTemplate entities.
-func (m *GroupSettingTemplatesRequestBuilder) ByGroupSettingTemplateIdString(groupSettingTemplateId string)(*GroupSettingTemplateItemRequestBuilder) {
+// ByGroupSettingTemplateId provides operations to manage the collection of groupSettingTemplate entities.
+func (m *GroupSettingTemplatesRequestBuilder) ByGroupSettingTemplateId(groupSettingTemplateId string)(*GroupSettingTemplateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -163,4 +163,8 @@ func (m *GroupSettingTemplatesRequestBuilder) ToPostRequestInformation(ctx conte
 // ValidateProperties provides operations to call the validateProperties method.
 func (m *GroupSettingTemplatesRequestBuilder) ValidateProperties()(*ValidatePropertiesRequestBuilder) {
     return NewValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *GroupSettingTemplatesRequestBuilder) WithUrl(rawUrl string)(*GroupSettingTemplatesRequestBuilder) {
+    return NewGroupSettingTemplatesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }
